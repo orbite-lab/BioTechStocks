@@ -23,8 +23,8 @@
           "name": "Ulcerative colitis (mod-severe)",
           "market": {
             "tamB": 10.0,
-            "penPct": 8,
-            "peakYear": 2032,
+            "penPct": 14,
+            "peakYear": 2031,
             "notes": "UC drug market ~$8B (2024) → $11-14B (2032). Obefazimod is oral, first-in-class miR-124 enhancer. Phase 3 ABTECT induction positive (Jul 2025): pooled 16.4% placebo-adj response (p<0.0001), 1275 patients randomized. 678/1275 entered maintenance. Favorable tolerability, no new safety signals. Competitors: Entyvio (vedolizumab), Stelara (ustekinumab), Rinvoq (upadacitinib), Zeposia (ozanimod), Velsipity (etrasimod)."
           }
         }
@@ -41,7 +41,7 @@
           "name": "Crohn's disease",
           "market": {
             "tamB": 9.0,
-            "penPct": 5,
+            "penPct": 7,
             "peakYear": 2034,
             "notes": "CD drug market comparable to UC. ENHANCE-CD 12-week induction data expected Q4 2026. Anti-fibrotic activity shown preclinically (ECCO 2026: ~60-90% reduction in fibrosis score). Fibrosis is a key unmet need in CD — could be a differentiator if confirmed clinically."
           }
@@ -61,10 +61,10 @@
         "→ Stock re-rates to pre-Phase 3 levels, pipeline credibility damaged"
       ],
       "assumptions": {
-        "obef_uc": { "uc": { "pos": 90, "apr": 20, "pen": 0.5 } },
+        "obef_uc": { "uc": { "pos": 90, "apr": 30, "pen": 0.7 } },
         "obef_cd": { "cd": { "pos": 15, "apr": 20, "pen": 0.4 } }
       },
-      "val": { "dr": 18, "dil": 10, "mult": 4, "plat": 0, "exus": 0 }
+      "val": { "dr": 15, "dil": 10, "mult": 5, "plat": 0, "exus": 0 }
     },
     "base": {
       "wt": 50,
@@ -76,10 +76,10 @@
         "→ UC approval mid-2027, commercial launch H2 2027"
       ],
       "assumptions": {
-        "obef_uc": { "uc": { "pos": 90, "apr": 70, "pen": 1.0 } },
-        "obef_cd": { "cd": { "pos": 35, "apr": 50, "pen": 0.8 } }
+        "obef_uc": { "uc": { "pos": 90, "apr": 75, "pen": 1.2 } },
+        "obef_cd": { "cd": { "pos": 40, "apr": 50, "pen": 0.8 } }
       },
-      "val": { "dr": 13, "dil": 5, "mult": 5, "plat": 500, "exus": 300 }
+      "val": { "dr": 10, "dil": 5, "mult": 7, "plat": 800, "exus": 500 }
     },
     "bull": {
       "wt": 25,
@@ -91,10 +91,10 @@
         "✓ Anti-fibrotic angle differentiates from JAK/S1P — M&A target"
       ],
       "assumptions": {
-        "obef_uc": { "uc": { "pos": 95, "apr": 85, "pen": 1.5 } },
-        "obef_cd": { "cd": { "pos": 50, "apr": 65, "pen": 1.3 } }
+        "obef_uc": { "uc": { "pos": 95, "apr": 85, "pen": 1.8 } },
+        "obef_cd": { "cd": { "pos": 55, "apr": 70, "pen": 1.3 } }
       },
-      "val": { "dr": 11, "dil": 3, "mult": 6, "plat": 2000, "exus": 800 }
+      "val": { "dr": 9, "dil": 3, "mult": 8, "plat": 3000, "exus": 1200 }
     }
   },
 

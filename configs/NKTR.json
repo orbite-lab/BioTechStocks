@@ -1,0 +1,179 @@
+{
+  "company": {
+    "ticker": "NKTR",
+    "name": "Nektar Therapeutics",
+    "subtitle": "Post-Phase 2b AD/AA · Phase 3 ZENITH-AD starting Q2 2026 · BLA target 2029",
+    "sharesOut": 29,
+    "cash": 720,
+    "currentPrice": 65.0,
+    "currency": "USD",
+    "yahooTicker": "NKTR",
+    "cashRunway": "Well-funded (~$720M after Feb 2026 $400M offering)"
+  },
+
+  "assets": [
+    {
+      "id": "rezpeg_ad",
+      "name": "Rezpegaldesleukin (Treg) — Atopic Dermatitis",
+      "stage": "Phase 2b complete → Phase 3 ZENITH-AD Q2 2026",
+      "designations": ["Fast Track (Feb 2025)"],
+      "indications": [
+        {
+          "id": "ad",
+          "name": "Atopic dermatitis (mod-severe)",
+          "market": {
+            "tamB": 18.0,
+            "penPct": 8,
+            "peakYear": 2033,
+            "notes": "AD market ~$15-20B (Dupixent alone >$13B). REZOLVE-AD Phase 2b (393pts): primary met all doses (p<0.001). Maintenance (Feb 2026): durable Q4W and Q12W, EASI-100 18-22% at wk52, deepening response. No conjunctivitis/oral herpes signal vs JAKi. BLA target 2029. Competitors: Dupixent, Rinvoq, Cibinqo, Adbry, Ebglyss."
+          }
+        }
+      ]
+    },
+    {
+      "id": "rezpeg_aa",
+      "name": "Rezpegaldesleukin — Alopecia Areata",
+      "stage": "Phase 2b (REZOLVE-AA, PoC Dec 2025)",
+      "designations": ["Fast Track (Jul 2025)"],
+      "indications": [
+        {
+          "id": "aa",
+          "name": "Alopecia areata (severe)",
+          "market": {
+            "tamB": 4.0,
+            "penPct": 6,
+            "peakYear": 2034,
+            "notes": "AA market ~$3-5B. High-dose: 28.2% SALT reduction vs 11.2% placebo (36wk). Stat sig achieved with exclusions. Competitors: Olumiant, Litfulo (both JAKi with safety concerns). Treg MOA potentially safer long-term."
+          }
+        }
+      ]
+    },
+    {
+      "id": "rezpeg_t1d",
+      "name": "Rezpegaldesleukin — Type 1 Diabetes",
+      "stage": "Phase 2",
+      "designations": [],
+      "indications": [
+        {
+          "id": "t1d",
+          "name": "Type 1 diabetes",
+          "market": {
+            "tamB": 5.0,
+            "penPct": 3,
+            "peakYear": 2035,
+            "notes": "Early stage. Treg restoration could preserve beta-cell function. Large unmet need but uncertain regulatory path. Option value."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nktr255",
+      "name": "NKTR-255 — IL-15 receptor agonist",
+      "stage": "Phase 1/2 (multiple combos)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "onc",
+          "name": "Oncology (CAR-T/CPI combos)",
+          "market": {
+            "tamB": 12.0,
+            "penPct": 1.5,
+            "peakYear": 2035,
+            "notes": "IL-15 agonist to enhance cancer immunotherapy. Combo trials with Bavencio, Imfinzi, Breyanzi, TIL. Phase 2/3 with CAR-T in LBCL ongoing. Non-core but optionality."
+          }
+        }
+      ]
+    }
+  ],
+
+  "scenarios": {
+    "bear": {
+      "wt": 25,
+      "narrative": "Phase 3 disappoints or efficacy gap vs Dupixent too wide",
+      "events": [
+        "✗ ZENITH-AD Phase 3 fails to replicate Phase 2b",
+        "✗ Efficacy gap vs Dupixent too wide for market adoption",
+        "✗ AA data insufficient for pivotal",
+        "→ Re-rates to cash + residual pipeline"
+      ],
+      "assumptions": {
+        "rezpeg_ad": { "ad": { "pos": 35, "apr": 40, "pen": 0.5 } },
+        "rezpeg_aa": { "aa": { "pos": 15, "apr": 30, "pen": 0.4 } },
+        "rezpeg_t1d": { "t1d": { "pos": 5, "apr": 15, "pen": 0.3 } },
+        "nktr255": { "onc": { "pos": 10, "apr": 25, "pen": 0.4 } }
+      },
+      "val": { "dr": 20, "dil": 10, "mult": 4, "plat": 0, "exus": 0 }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "AD Phase 3 confirms — safety + quarterly dosing differentiate",
+      "events": [
+        "✓ ZENITH-AD replicates Phase 2b efficacy",
+        "✓ Q12W maintenance differentiates vs Dupixent Q2W",
+        "~ AA advances to Phase 3",
+        "→ BLA 2029, launch 2030 as best-in-class Treg"
+      ],
+      "assumptions": {
+        "rezpeg_ad": { "ad": { "pos": 60, "apr": 70, "pen": 1.0 } },
+        "rezpeg_aa": { "aa": { "pos": 35, "apr": 50, "pen": 0.8 } },
+        "rezpeg_t1d": { "t1d": { "pos": 10, "apr": 25, "pen": 0.5 } },
+        "nktr255": { "onc": { "pos": 15, "apr": 35, "pen": 0.5 } }
+      },
+      "val": { "dr": 14, "dil": 5, "mult": 6, "plat": 800, "exus": 400 }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Treg platform validated across derm + autoimmune — M&A",
+      "events": [
+        "✓ AD Phase 3 best-in-class safety + competitive efficacy",
+        "✓ Quarterly dosing wins formulary preference",
+        "✓ AA Phase 3 — Treg platform validated",
+        "✓ M&A target for big pharma"
+      ],
+      "assumptions": {
+        "rezpeg_ad": { "ad": { "pos": 75, "apr": 85, "pen": 1.5 } },
+        "rezpeg_aa": { "aa": { "pos": 55, "apr": 65, "pen": 1.3 } },
+        "rezpeg_t1d": { "t1d": { "pos": 20, "apr": 40, "pen": 0.8 } },
+        "nktr255": { "onc": { "pos": 25, "apr": 45, "pen": 0.8 } }
+      },
+      "val": { "dr": 11, "dil": 3, "mult": 7, "plat": 3000, "exus": 1000 }
+    }
+  },
+
+  "context": {
+    "lastData": {
+      "date": "Feb 10, 2026 + AAD Mar 28",
+      "title": "REZOLVE-AD maintenance + AAD 2026 presentations",
+      "points": [
+        "36-week maintenance: durable with monthly AND quarterly dosing",
+        "EASI-100 (complete clearance): 18-22% at week 52, deepening over time",
+        "No conjunctivitis, oral herpes, malignancy (vs JAKi safety edge)",
+        "AAD: consistent efficacy across moderate + severe (vIGA 3 and 4)",
+        "AA PoC: 28.2% vs 11.2% SALT reduction (high dose, 36wk)",
+        "Stock $6.50 → $70+ (1000%+ rally on data)",
+        "$400M offering at $58 (Feb 2026) — fully funded",
+        "Phase 3 ZENITH-AD planned Q2 2026, BLA target 2029"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Q2 2026",
+      "title": "Phase 3 ZENITH-AD initiation (mod-severe AD)",
+      "thresholds": [
+        "Phase 3 design and primary endpoint disclosure",
+        "Dose confirmed from Phase 2b (24µg/kg Q2W → Q4W/Q12W maint.)",
+        "Registration-enabling — success → BLA 2029",
+        "Also: T1D Phase 2 data, NKTR-255 CAR-T combo"
+      ]
+    },
+    "risks": [
+      "Phase 3 still 3+ years from BLA — long execution timeline",
+      "Dupixent dominates ($13B+) — must show competitive efficacy",
+      "1000% rally — massive pullback risk on any stumble",
+      "Phase 2b→3 translation risk (393pts may not predict pivotal)",
+      "SC injection — oral JAKi may be preferred despite safety edge",
+      "AA stat sig required exclusions — signal weaker than headline",
+      "No pipeline revenue — legacy royalties $55M/yr declining",
+      "$400M dilution already done (17M → 29M shares)"
+    ]
+  }
+}

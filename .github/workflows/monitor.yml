@@ -1,0 +1,50 @@
+name: Biotech catalyst monitor
+
+on:
+  schedule:
+    # Every 12 hours: 7am and 7pm CET (5:00 and 17:00 UTC)
+    - cron: '0 5,17 * * *'
+  workflow_dispatch: # Manual trigger button in GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  check-news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic requests
+
+      - name: Run catalyst monitor
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/monitor.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "Catalyst Bot"
+          git config user.email "bot@catalyst-monitor"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            SUMMARY=$(python -c "
+          import json, os
+          try:
+            with open('changelog/latest_summary.txt') as f:
+              print(f.read().strip())
+          except:
+            print('Config updates')
+          ")
+            git commit -m "🔬 $SUMMARY"
+            git push
+          fi

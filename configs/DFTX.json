@@ -1,0 +1,202 @@
+{
+  "company": {
+    "ticker": "DFTX",
+    "name": "Definium Therapeutics",
+    "subtitle": "Pre-Phase 3 (ex-MindMed)",
+    "sharesOut": 100,
+    "cash": 412,
+    "currentPrice": 19.0,
+    "cashRunway": "Into 2028",
+    "yahooTicker": "DFTX"
+  },
+  "assets": [
+    {
+      "id": "dt120",
+      "name": "DT120 ODT (lysergide)",
+      "stage": "Phase 3",
+      "designations": [
+        "Breakthrough (GAD)"
+      ],
+      "indications": [
+        {
+          "id": "gad",
+          "name": "GAD",
+          "market": {
+            "tamB": 9.0,
+            "penPct": 10,
+            "peakYear": 2032
+          }
+        },
+        {
+          "id": "mdd",
+          "name": "MDD",
+          "market": {
+            "tamB": 20.0,
+            "penPct": 5,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "dt402",
+      "name": "DT402 (R-MDMA)",
+      "stage": "Phase 2a",
+      "designations": [],
+      "indications": [
+        {
+          "id": "asd",
+          "name": "ASD",
+          "market": {
+            "tamB": 5.0,
+            "penPct": 3,
+            "peakYear": 2035
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "bear": {
+      "wt": 30,
+      "narrative": "GAD + MDD fail",
+      "events": [
+        "✗ EMERGE misses",
+        "✗ VOYAGE fails",
+        "~ DT402 mixed",
+        "→ Cash + platform"
+      ],
+      "assumptions": {
+        "dt120": {
+          "gad": {
+            "pos": 0,
+            "apr": 0,
+            "pen": 0.5
+          },
+          "mdd": {
+            "pos": 0,
+            "apr": 0,
+            "pen": 0.5
+          }
+        },
+        "dt402": {
+          "asd": {
+            "pos": 5,
+            "apr": 20,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "dr": 25,
+        "dil": 10,
+        "mult": 4,
+        "plat": 50,
+        "exus": 0
+      }
+    },
+    "base": {
+      "wt": 45,
+      "narrative": "GAD succeeds, MDD mixed",
+      "events": [
+        "~ EMERGE borderline",
+        "✓ VOYAGE replicates",
+        "✓ PANORAMA confirms",
+        "→ GAD launch + REMS"
+      ],
+      "assumptions": {
+        "dt120": {
+          "gad": {
+            "pos": 60,
+            "apr": 80,
+            "pen": 1.0
+          },
+          "mdd": {
+            "pos": 25,
+            "apr": 60,
+            "pen": 1.0
+          }
+        },
+        "dt402": {
+          "asd": {
+            "pos": 15,
+            "apr": 35,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "dr": 15,
+        "dil": 5,
+        "mult": 5,
+        "plat": 400,
+        "exus": 200
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "GAD + MDD dual franchise",
+      "events": [
+        "✓ EMERGE hits",
+        "✓ VOYAGE + PANORAMA",
+        "✓ Dual NDA",
+        "✓ DT402 promise"
+      ],
+      "assumptions": {
+        "dt120": {
+          "gad": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 1.5
+          },
+          "mdd": {
+            "pos": 60,
+            "apr": 80,
+            "pen": 1.5
+          }
+        },
+        "dt402": {
+          "asd": {
+            "pos": 30,
+            "apr": 50,
+            "pen": 1.2
+          }
+        }
+      },
+      "val": {
+        "dr": 12,
+        "dil": 3,
+        "mult": 5.5,
+        "plat": 1500,
+        "exus": 500
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Sep 2025",
+      "title": "Phase 2b GAD — JAMA",
+      "points": [
+        "7.7pt HAM-A delta",
+        "48% GAD remission",
+        "65% response",
+        "Single-dose durable"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Late Q2 2026",
+      "title": "EMERGE (MDD Ph3)",
+      "thresholds": [
+        "80% power for 5pt MADRS",
+        "149 pts",
+        "High placebo risk"
+      ]
+    },
+    "risks": [
+      "Placebo response",
+      "8hr supervised sessions",
+      "REMS complexity",
+      "No GAD drug since 2007"
+    ]
+  }
+}

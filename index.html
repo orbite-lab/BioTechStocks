@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biotech Scenario Model</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0f1117;font-family:'Inter',-apple-system,sans-serif}
+    input[type="range"]::-webkit-slider-thumb{appearance:none;width:11px;height:11px;border-radius:50%;background:#e2e4ea;cursor:pointer;border:2px solid #0f1117}
+    input[type="range"]::-moz-range-thumb{width:11px;height:11px;border-radius:50%;background:#e2e4ea;cursor:pointer;border:2px solid #0f1117}
+    input[type="number"]::-webkit-inner-spin-button{opacity:.3}
+    .loading{color:#6b7080;text-align:center;padding:60px 20px;font-size:14px}
+    .error{color:#ef4444;text-align:center;padding:40px 20px;font-size:13px;background:#161920;border-radius:10px;margin:20px;border:1px solid #ef444422}
+  </style>
+</head>
+<body>
+  <div id="root"><div class="loading">Loading configs...</div></div>
+
+  <script type="text/babel">
+    const { useState, useMemo, useCallback, useEffect } = React;
+    const e = React.createElement;
+
+    // ═══════════════════════════════════════
+    // EMBEDDED CONFIGS (fallback when no server)
+    // On Replit: fetches from configs/ folder
+    // Standalone: uses these embedded defaults
+    // ═══════════════════════════════════════
+
+    const EMBEDDED_CONFIGS = {
+      PEPG: {
+        company: { ticker: "PEPG", name: "PepGen", subtitle: "Post-FREEDOM2 5mg/kg", sharesOut: 69, cash: 148, currentPrice: 2.4, cashRunway: "2H 2027", yahooTicker: "PEPG" },
+        assets: [
+          { id: "edodm1", name: "PGN-EDODM1", stage: "Phase 2", designations: ["Orphan", "Fast Track"],
+            indications: [{ id: "dm1", name: "DM1", market: { patientsK: 25, pricingK: 275, penPct: 14, peakYear: 2033 } }] },
+          { id: "edo51", name: "PGN-EDO51 (DMD)", stage: "Preclinical", designations: [],
+            indications: [{ id: "dmd", name: "DMD", market: { patientsK: 12, pricingK: 400, penPct: 8, peakYear: 2035 } }] }
+        ],
+        scenarios: {
+          bear: { wt: 30, narrative: "Program fails", events: ["\u2717 FDA hold persists","\u2717 10mg/kg disappoints","\u2717 Platform worthless","\u2192 Cash floor"],
+            assumptions: { edodm1: { dm1: { pos: 0, apr: 0, pen: 0.4 } }, edo51: { dmd: { pos: 0, apr: 0, pen: 0.3 } } },
+            val: { dr: 35, dil: 20, mult: 5, plat: 20, exus: 0 } },
+          base: { wt: 45, narrative: "Hold lifted + mixed 10mg", events: ["\u2713 FDA hold resolved","~ 10mg modest splicing","~ 12.5mg helps","\u2192 Partnership talks"],
+            assumptions: { edodm1: { dm1: { pos: 40, apr: 65, pen: 1.0 } }, edo51: { dmd: { pos: 10, apr: 40, pen: 0.8 } } },
+            val: { dr: 28, dil: 22, mult: 5, plat: 100, exus: 75 } },
+          bull: { wt: 25, narrative: "Everything works", events: ["\u2713 Hold lifted fast","\u2713 10mg >40% splicing","\u2713 Fast Ph3 + partnership","\u2192 First-in-class DM1"],
+            assumptions: { edodm1: { dm1: { pos: 75, apr: 80, pen: 1.5 } }, edo51: { dmd: { pos: 25, apr: 55, pen: 1.2 } } },
+            val: { dr: 20, dil: 18, mult: 5, plat: 400, exus: 300 } }
+        },
+        context: { lastData: { date: "Mar 30, 2026", title: "FREEDOM2 5mg/kg MAD", points: ["Splicing 7.3% vs 6.8% placebo","Ex-outlier: 22.9%","vHOT faded W16","Clean safety"] },
+          nextCatalyst: { date: "2H 2026", title: "10mg/kg MAD data", thresholds: ["Splicing >30%","Sustained vHOT","Functional signal"] },
+          risks: ["FDA partial hold","Single-asset","$148M \u2192 2H27","n=8 at 10mg/kg"] }
+      },
+      VRDN: {
+        company: { ticker: "VRDN", name: "Viridian Therapeutics", subtitle: "Post-REVEAL-1", sharesOut: 88, cash: 875, currentPrice: 18.5, cashRunway: "Through profitability", yahooTicker: "VRDN" },
+        assets: [
+          { id: "veli", name: "Veligrotug (IV)", stage: "BLA filed", designations: ["Priority Review", "Breakthrough"],
+            indications: [{ id: "ted_iv", name: "TED (IV)", market: { tamB: 2.0, cagrPct: 12, penPct: 28, peakYear: 2031 } }] },
+          { id: "ele", name: "Elegrobart (SC)", stage: "Phase 3", designations: [],
+            indications: [{ id: "ted_sc", name: "TED (SC)", market: { tamB: 2.4, cagrPct: 12, penPct: 14, peakYear: 2032, expansionPct: 20 } }] }
+        ],
+        scenarios: {
+          bear: { wt: 25, narrative: "Veli approved but Tepezza wins", events: ["\u2713 Veli approved","\u2717 Tepezza price war","\u2717 Ele weak efficacy","\u2192 Single-product"],
+            assumptions: { veli: { ted_iv: { pos: 90, apr: 95, pen: 0.5 } }, ele: { ted_sc: { pos: 55, apr: 80, pen: 0.4 } } },
+            val: { dr: 15, dil: 0, mult: 4, plat: 0, exus: 0, cannib: 30 } },
+          base: { wt: 50, narrative: "Veli strong, ele SC niche", events: ["\u2713 Veli best-in-class IV","\u2713 Strong vs Tepezza","~ Ele SC niche","\u2192 Two-product franchise"],
+            assumptions: { veli: { ted_iv: { pos: 90, apr: 95, pen: 1.0 } }, ele: { ted_sc: { pos: 70, apr: 85, pen: 0.7 } } },
+            val: { dr: 12, dil: 0, mult: 4.5, plat: 300, exus: 0, cannib: 25 } },
+          bull: { wt: 25, narrative: "TED dominance + FcRn", events: ["\u2713 Veli takes IV share","\u2713 Ele expands market","\u2713 REVEAL-2 strong","\u2713 FcRn pipeline"],
+            assumptions: { veli: { ted_iv: { pos: 90, apr: 95, pen: 1.4 } }, ele: { ted_sc: { pos: 85, apr: 90, pen: 1.2 } } },
+            val: { dr: 10, dil: 0, mult: 5.5, plat: 1200, exus: 0, cannib: 20 } }
+        },
+        context: { lastData: { date: "Mar 31, 2026", title: "REVEAL-1 elegrobart Ph3", points: ["Q4W PRR: 54% vs 18%","Q8W: 63% vs 18%","Delta 36%/45% below veli 65%","Diplopia 51% vs 16%"] },
+          nextCatalyst: { date: "Jun 30, 2026", title: "Veligrotug PDUFA", thresholds: ["Approval / CRL","Launch ready mid-2026"] },
+          risks: ["Tepezza competition","Q4W/Q8W inversion","REVEAL-2 must confirm","First launch"] }
+      },
+      DFTX: {
+        company: { ticker: "DFTX", name: "Definium Therapeutics", subtitle: "Pre-Phase 3 (ex-MindMed)", sharesOut: 100, cash: 412, currentPrice: 19.0, cashRunway: "Into 2028", yahooTicker: "DFTX" },
+        assets: [
+          { id: "dt120", name: "DT120 ODT (lysergide)", stage: "Phase 3", designations: ["Breakthrough (GAD)"],
+            indications: [
+              { id: "gad", name: "GAD", market: { tamB: 9.0, penPct: 10, peakYear: 2032 } },
+              { id: "mdd", name: "MDD", market: { tamB: 20.0, penPct: 5, peakYear: 2033 } }
+            ] },
+          { id: "dt402", name: "DT402 (R-MDMA)", stage: "Phase 2a", designations: [],
+            indications: [{ id: "asd", name: "ASD", market: { tamB: 5.0, penPct: 3, peakYear: 2035 } }] }
+        ],
+        scenarios: {
+          bear: { wt: 30, narrative: "GAD + MDD fail", events: ["\u2717 EMERGE misses","\u2717 VOYAGE fails","~ DT402 mixed","\u2192 Cash + platform"],
+            assumptions: { dt120: { gad: { pos: 0, apr: 0, pen: 0.5 }, mdd: { pos: 0, apr: 0, pen: 0.5 } }, dt402: { asd: { pos: 5, apr: 20, pen: 0.5 } } },
+            val: { dr: 25, dil: 10, mult: 4, plat: 50, exus: 0 } },
+          base: { wt: 45, narrative: "GAD succeeds, MDD mixed", events: ["~ EMERGE borderline","\u2713 VOYAGE replicates","\u2713 PANORAMA confirms","\u2192 GAD launch + REMS"],
+            assumptions: { dt120: { gad: { pos: 60, apr: 80, pen: 1.0 }, mdd: { pos: 25, apr: 60, pen: 1.0 } }, dt402: { asd: { pos: 15, apr: 35, pen: 0.8 } } },
+            val: { dr: 15, dil: 5, mult: 5, plat: 400, exus: 200 } },
+          bull: { wt: 25, narrative: "GAD + MDD dual franchise", events: ["\u2713 EMERGE hits","\u2713 VOYAGE + PANORAMA","\u2713 Dual NDA","\u2713 DT402 promise"],
+            assumptions: { dt120: { gad: { pos: 80, apr: 90, pen: 1.5 }, mdd: { pos: 60, apr: 80, pen: 1.5 } }, dt402: { asd: { pos: 30, apr: 50, pen: 1.2 } } },
+            val: { dr: 12, dil: 3, mult: 5.5, plat: 1500, exus: 500 } }
+        },
+        context: { lastData: { date: "Sep 2025", title: "Phase 2b GAD \u2014 JAMA", points: ["7.7pt HAM-A delta","48% GAD remission","65% response","Single-dose durable"] },
+          nextCatalyst: { date: "Late Q2 2026", title: "EMERGE (MDD Ph3)", thresholds: ["80% power for 5pt MADRS","149 pts","High placebo risk"] },
+          risks: ["Placebo response","8hr supervised sessions","REMS complexity","No GAD drug since 2007"] }
+      },
+      VLA: {
+        company: { ticker: "VLA", name: "Valneva SE", subtitle: "Post-VALOR Phase 3", sharesOut: 174, cash: 110, currentPrice: 2.78, cashRunway: "Funded", currency: "EUR", yahooTicker: "VLA.PA" },
+        assets: [
+          { id: "vla15", name: "VLA15/LB6V (Lyme) \u2014 royalties", stage: "Phase 3 complete", designations: ["Fast Track"], partner: "Pfizer",
+            indications: [{ id: "lyme", name: "Lyme (royalties)", market: { tamB: 0.15, penPct: 100, peakYear: 2031, cagrPct: 5 } }] },
+          { id: "ixchiq", name: "IXCHIQ (Chikungunya)", stage: "US withdrawn / ex-US", designations: [],
+            indications: [{ id: "chik", name: "Chikungunya (ex-US)", market: { tamB: 0.5, penPct: 30, peakYear: 2029 } }] },
+          { id: "s4v2", name: "S4V2 (Shigella)", stage: "Phase 2", designations: ["Fast Track"],
+            indications: [{ id: "shig", name: "Shigellosis", market: { tamB: 0.6, penPct: 18, peakYear: 2033 } }] },
+          { id: "zika", name: "VLA1601 (Zika)", stage: "Phase 1", designations: [],
+            indications: [{ id: "zika", name: "Zika", market: { tamB: 0.4, penPct: 10, peakYear: 2034 } }] },
+          { id: "commercial", name: "IXIARO + DUKORAL", stage: "Commercial", designations: [],
+            indications: [{ id: "travel", name: "Travel vaccines", market: {} }] }
+        ],
+        scenarios: {
+          bear: { wt: 30, narrative: "Lyme rejected + pipeline stalls",
+            events: ["\u2717 FDA rejects Lyme BLA","\u2717 IXCHIQ withdrawn globally","\u2717 S4V2 disappoints","\u2192 Travel vaccines only"],
+            assumptions: { vla15: { lyme: { pos: 95, apr: 10, pen: 0.3 } }, ixchiq: { chik: { pos: 0, apr: 0, pen: 0.3 } }, s4v2: { shig: { pos: 0, apr: 0, pen: 0.4 } }, zika: { zika: { pos: 0, apr: 0, pen: 0.3 } }, commercial: { travel: { pos: 100, apr: 100, pen: 1.0 } } },
+            val: { pipelineDR: 18, pipelineMult: 3, commercialMult: 2.0, commercialRevM: 155, milestones: 0, dil: 5 } },
+          base: { wt: 45, narrative: "Lyme approved + IXCHIQ ex-US + S4V2 progresses",
+            events: ["\u2713 Pfizer files BLA Q3 2026","~ Lyme approved mid-2027","~ IXCHIQ ex-US niche","\u2713 S4V2 Phase 2 positive"],
+            assumptions: { vla15: { lyme: { pos: 95, apr: 60, pen: 0.8 } }, ixchiq: { chik: { pos: 40, apr: 60, pen: 0.6 } }, s4v2: { shig: { pos: 35, apr: 55, pen: 1.0 } }, zika: { zika: { pos: 15, apr: 30, pen: 0.8 } }, commercial: { travel: { pos: 100, apr: 100, pen: 1.0 } } },
+            val: { pipelineDR: 14, pipelineMult: 4, commercialMult: 2.5, commercialRevM: 170, milestones: 150, dil: 5 } },
+          bull: { wt: 25, narrative: "Lyme blockbuster + Shigella first-in-class",
+            events: ["\u2713 Lyme first in 30 years","\u2713 IXCHIQ ex-US growth","\u2713 S4V2 first-in-class","\u2713 Platform validated"],
+            assumptions: { vla15: { lyme: { pos: 95, apr: 85, pen: 1.2 } }, ixchiq: { chik: { pos: 55, apr: 70, pen: 1.2 } }, s4v2: { shig: { pos: 50, apr: 70, pen: 1.3 } }, zika: { zika: { pos: 25, apr: 45, pen: 1.0 } }, commercial: { travel: { pos: 100, apr: 100, pen: 1.2 } } },
+            val: { pipelineDR: 11, pipelineMult: 5, commercialMult: 3.5, commercialRevM: 190, milestones: 250, dil: 3 } }
+        },
+        context: { lastData: { date: "Mar 23, 2026", title: "VALOR Phase 3 Lyme (Pfizer)", points: ["73.2% efficacy (CI 15.8-93.5)","First stat criterion NOT met","Second analysis MET benchmark","Stock -38%"] },
+          nextCatalyst: { date: "Mid-2026", title: "S4V2 Shigella Phase 2", thresholds: ["Infant safety","CHIM efficacy","Positive \u2192 Valneva takes over"] },
+          risks: ["Lyme CI too wide for FDA","IXCHIQ US lost","Pfizer dependency","S4V2 early stage","Cash \u20AC110M"] }
+      },
+      BHVN: {
+        company: { ticker: "BHVN", name: "Biohaven Ltd.", subtitle: "Kv7 + MoDE/TRAP + obesity", sharesOut: 150, cash: 510, currentPrice: 9.0, cashRunway: "~12 months", yahooTicker: "BHVN" },
+        assets: [
+          { id: "bhv7000", name: "Opakalim (Kv7)", stage: "Phase 2/3 pivotal", designations: [],
+            indications: [{ id: "epilepsy", name: "Focal epilepsy", market: { tamB: 8.0, penPct: 6, peakYear: 2032 } }] },
+          { id: "bhv1300", name: "BHV-1300 (MoDE)", stage: "Phase 1b", designations: [],
+            indications: [{ id: "graves", name: "Graves' disease", market: { tamB: 3.5, penPct: 8, peakYear: 2033 } }] },
+          { id: "bhv1400", name: "BHV-1400 (TRAP)", stage: "Phase 1 exp", designations: [],
+            indications: [{ id: "igan", name: "IgA nephropathy", market: { tamB: 4.0, penPct: 5, peakYear: 2033 } }] },
+          { id: "taldef", name: "Taldefgrobep (obesity)", stage: "Phase 2", designations: [],
+            indications: [{ id: "obesity", name: "Obesity", market: { tamB: 100.0, penPct: 0.5, peakYear: 2034 } }] },
+          { id: "bhv1510", name: "BHV-1510 (Trop2 ADC)", stage: "Phase 1", designations: [],
+            indications: [{ id: "onc", name: "Solid tumors", market: { tamB: 15.0, penPct: 1, peakYear: 2035 } }] }
+        ],
+        scenarios: {
+          bear: { wt: 30, narrative: "Epilepsy misses + cash crisis",
+            events: ["\u2717 RISE 2/3 misses","\u2717 Degraders delayed","\u2717 Obesity underwhelms","\u2192 Dilutive raise"],
+            assumptions: { bhv7000: { epilepsy: { pos: 25, apr: 40, pen: 0.5 } }, bhv1300: { graves: { pos: 15, apr: 30, pen: 0.5 } }, bhv1400: { igan: { pos: 15, apr: 30, pen: 0.5 } }, taldef: { obesity: { pos: 10, apr: 25, pen: 0.3 } }, bhv1510: { onc: { pos: 5, apr: 15, pen: 0.3 } } },
+            val: { dr: 30, dil: 30, mult: 3, plat: 0, exus: 0 } },
+          base: { wt: 40, narrative: "Epilepsy succeeds + one degrader progresses",
+            events: ["\u2713 RISE hits endpoint","\u2713 BHV-1300 Graves' encouraging","~ Obesity shows signal","~ Cash managed"],
+            assumptions: { bhv7000: { epilepsy: { pos: 55, apr: 70, pen: 1.0 } }, bhv1300: { graves: { pos: 30, apr: 55, pen: 0.8 } }, bhv1400: { igan: { pos: 30, apr: 55, pen: 0.8 } }, taldef: { obesity: { pos: 25, apr: 40, pen: 0.6 } }, bhv1510: { onc: { pos: 10, apr: 30, pen: 0.5 } } },
+            val: { dr: 18, dil: 15, mult: 5, plat: 500, exus: 300 } },
+          bull: { wt: 30, narrative: "Epilepsy blockbuster + degrader platform validated",
+            events: ["\u2713 Opakalim best-in-class","\u2713 MoDE/TRAP platform works","\u2713 Obesity differentiated","\u2713 M&A interest"],
+            assumptions: { bhv7000: { epilepsy: { pos: 70, apr: 80, pen: 1.5 } }, bhv1300: { graves: { pos: 50, apr: 70, pen: 1.2 } }, bhv1400: { igan: { pos: 45, apr: 65, pen: 1.2 } }, taldef: { obesity: { pos: 40, apr: 60, pen: 1.0 } }, bhv1510: { onc: { pos: 20, apr: 45, pen: 0.8 } } },
+            val: { dr: 13, dil: 8, mult: 6, plat: 2000, exus: 800 } }
+        },
+        context: { lastData: { date: "Jan 2026", title: "Opakalim OLE epilepsy (JPM)", points: ["\u226550% seizure reduction in majority at 6mo","Low CNS AEs","MDD Phase 2 missed Dec 2025","Troriluzole CRL Nov 2025 (-40%)","BHV-1300 first Graves' patient: complete TSI suppression"] },
+          nextCatalyst: { date: "H2 2026", title: "RISE 2/3 epilepsy pivotal topline", thresholds: ["Seizure freq reduction vs placebo","CNS safety differentiation","Also H2: taldefgrobep obesity topline"] },
+          risks: ["Cash ~12 months burn","No revenue","Troriluzole+MDD credibility hit","RISE is binary survival event","Degraders unproven pivotal","GLP-1 comparison for obesity","11.6% short interest","High dilution risk"] }
+      }
+    };
+
+    // ═══════════════════════════════════════
+    // LOADER: try fetch, fallback to embedded
+    // ═══════════════════════════════════════
+
+    function useConfigs() {
+      const [configs, setConfigs] = useState(null);
+      const [loading, setLoading] = useState(true);
+      const [source, setSource] = useState(null);
+
+      useEffect(() => {
+        async function load() {
+          try {
+            const res = await fetch("configs/manifest.json");
+            if (!res.ok) throw new Error("no manifest");
+            const tickers = await res.json();
+            const entries = await Promise.all(tickers.map(async (t) => {
+              const r = await fetch("configs/" + t + ".json");
+              if (!r.ok) throw new Error("missing " + t);
+              return [t, await r.json()];
+            }));
+            const cfgs = {};
+            entries.forEach(([t, cfg]) => { cfgs[t] = cfg; });
+            setConfigs(cfgs);
+            setSource("server");
+          } catch (err) {
+            // Fallback to embedded configs
+            setConfigs(EMBEDDED_CONFIGS);
+            setSource("embedded");
+          } finally {
+            setLoading(false);
+          }
+        }
+        load();
+      }, []);
+
+      return { configs, loading, source };
+    }
+
+    // ═══════════════════════════════════════
+    // ENGINE
+    // ═══════════════════════════════════════
+
+    function computeScenario(config, scenKey, state) {
+      const co = config.company;
+      const scen = state.scenarios[scenKey];
+      const val = scen.val;
+      const isSOTP = val.pipelineDR != null;
+      let pipelineRA = 0, pipelineGross = 0, commercialRev = 0;
+      let totalRA = 0, totalGross = 0;
+      let lymeComposite = 0;
+      const assetDetails = [];
+
+      for (const asset of config.assets) {
+        for (const ind of asset.indications) {
+          const a = scen.assumptions?.[asset.id]?.[ind.id] || { pos: 0, apr: 0, pen: 1 };
+          const m = state.markets[asset.id + "_" + ind.id] || ind.market;
+          const yr = (m.peakYear || 2033) - 2026;
+          let peakRev = 0;
+          const isCommercial = asset.id === "commercial";
+
+          if (isCommercial && isSOTP) {
+            commercialRev = val.commercialRevM || 160;
+            assetDetails.push({ asset: asset.name, ind: ind.name, peakRev: commercialRev, composite: 1, ra: commercialRev, type: "commercial" });
+            continue;
+          }
+
+          if (m.patientsK) {
+            peakRev = m.patientsK * m.pricingK * (m.penPct / 100) * a.pen;
+          } else if (m.tamB) {
+            const tam = m.tamB * (m.cagrPct ? Math.pow(1 + m.cagrPct / 100, yr) : 1) * (1 + (m.expansionPct || 0) / 100);
+            peakRev = tam * (m.penPct / 100) * a.pen * 1000;
+          }
+          const composite = (a.pos / 100) * (a.apr / 100);
+          const ra = peakRev * composite;
+
+          if (isSOTP) { pipelineRA += ra; pipelineGross += peakRev; }
+          totalRA += ra; totalGross += peakRev;
+
+          if (asset.id === "vla15") lymeComposite = composite;
+          assetDetails.push({ asset: asset.name, ind: ind.name, peakRev, composite, ra, type: isCommercial ? "commercial" : "pipeline" });
+        }
+      }
+
+      const dilMult = 1 - (val.dil || 0) / 100;
+      let ev, tp, commercialEV = 0, pipelineEV = 0, milestonesEV = 0;
+
+      if (isSOTP) {
+        // SOTP: commercial at EV/Rev + pipeline rNPV + milestones
+        commercialEV = commercialRev * (val.commercialMult || 2.5);
+        const avgYr = (state.avgPeakYear || 2031) - 2026;
+        const df = Math.pow(1 + (val.pipelineDR || 14) / 100, avgYr);
+        pipelineEV = (pipelineRA * (val.pipelineMult || 4)) / df;
+        milestonesEV = (val.milestones || 0) * lymeComposite;
+        ev = commercialEV + pipelineEV + milestonesEV + state.cash;
+      } else {
+        // Flat: single DR/mult for everything
+        const cannib = val.cannib ? totalRA * (val.cannib / 100) : 0;
+        const netRA = totalRA - cannib;
+        const avgYr = (state.avgPeakYear || 2033) - 2026;
+        const df = Math.pow(1 + val.dr / 100, avgYr);
+        const platExusAdj = totalGross > 0 ? (val.plat + val.exus) * (netRA / totalGross) : 0;
+        ev = (netRA * val.mult + platExusAdj) / df + state.cash;
+      }
+
+      tp = (ev / co.sharesOut) * dilMult;
+      return { tp, ev, totalRA, totalGross, pipelineRA, pipelineGross, commercialRev, commercialEV, pipelineEV, milestonesEV, lymeComposite,
+        cannib: val.cannib ? totalRA * (val.cannib / 100) : 0, assetDetails, isSOTP,
+        dr: isSOTP ? val.pipelineDR : val.dr, dil: val.dil, mult: isSOTP ? val.pipelineMult : val.mult,
+        commercialMult: val.commercialMult, milestones: val.milestones };
+    }
+
+    // ═══════════════════════════════════════
+    // UI COMPONENTS
+    // ═══════════════════════════════════════
+
+    function Sl({ label, value, onChange, min, max, step, unit, color }) {
+      step = step || 1; unit = unit || ""; color = color || "#6b7080";
+      const pct = ((value - min) / (max - min)) * 100;
+      return e("div", { style: { marginBottom: 10 } },
+        e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 2 } },
+          e("span", { style: { fontSize: 11, color: "#6b7080" } }, label),
+          e("span", { style: { fontSize: 11, fontWeight: 700, color, fontFamily: "'JetBrains Mono'" } }, (step < 1 ? value.toFixed(1) : value) + unit)
+        ),
+        e("input", { type: "range", min, max, step, value, onChange: ev => onChange(parseFloat(ev.target.value)),
+          style: { width: "100%", height: 3, appearance: "none", WebkitAppearance: "none", background: "linear-gradient(90deg," + color + " " + pct + "%,#2a2d35 " + pct + "%)", borderRadius: 2, outline: "none", cursor: "pointer" } })
+      );
+    }
+
+    const CC = { bear: "#ef4444", base: "#f59e0b", bull: "#22c55e" };
+    const sentC = { "\u2713": "#22c55e", "\u2717": "#ef4444", "~": "#f59e0b", "\u2192": "#6b7080" };
+
+    // ═══════════════════════════════════════
+    // LIVE PRICE FETCHER (Yahoo Finance)
+    // ═══════════════════════════════════════
+
+    const CORS_PROXIES = [
+      url => "https://corsproxy.io/?" + encodeURIComponent(url),
+      url => "https://api.allorigins.win/raw?url=" + encodeURIComponent(url),
+    ];
+
+    async function fetchLivePrice(yahooTicker) {
+      if (!yahooTicker) return null;
+      const url = "https://query1.finance.yahoo.com/v8/finance/chart/" + yahooTicker + "?interval=1d&range=1d";
+
+      for (const proxy of CORS_PROXIES) {
+        try {
+          const res = await fetch(proxy(url), { signal: AbortSignal.timeout(5000) });
+          if (!res.ok) continue;
+          const data = await res.json();
+          const meta = data?.chart?.result?.[0]?.meta;
+          if (meta?.regularMarketPrice) {
+            return { price: meta.regularMarketPrice, prevClose: meta.chartPreviousClose || meta.previousClose, currency: meta.currency };
+          }
+        } catch (e) { /* try next proxy */ }
+      }
+      return null;
+    }
+
+    // ═══════════════════════════════════════
+    // MAIN APP
+    // ═══════════════════════════════════════
+
+    function App() {
+      const { configs, loading, source } = useConfigs();
+
+      if (loading) return e("div", { className: "loading" }, "Loading company configs...");
+      if (!configs) return e("div", { className: "loading" }, "No configs found");
+
+      return e(ModelView, { configs, source });
+    }
+
+    function ModelView({ configs, source }) {
+      const tickers = Object.keys(configs);
+      const [ticker, setTicker] = useState(tickers[0]);
+      const [search, setSearch] = useState("");
+      const [showDropdown, setShowDropdown] = useState(false);
+      const config = configs[ticker];
+
+      const buildState = useCallback(function(cfg) {
+        const markets = {};
+        const peakYears = [];
+        for (const a of cfg.assets) {
+          for (const ind of a.indications) {
+            markets[a.id + "_" + ind.id] = Object.assign({}, ind.market);
+            peakYears.push(ind.market.peakYear || 2033);
+          }
+        }
+        return {
+          scenarios: JSON.parse(JSON.stringify(cfg.scenarios)),
+          markets,
+          avgPeakYear: Math.round(peakYears.reduce((a, b) => a + b, 0) / peakYears.length),
+          currentPrice: cfg.company.currentPrice,
+          cash: cfg.company.cash
+        };
+      }, []);
+
+      const [state, setState] = useState(() => buildState(config));
+      const [priceStatus, setPriceStatus] = useState("loading"); // "loading" | "live" | "stale"
+
+      // Fetch live price on company switch
+      useEffect(() => {
+        setPriceStatus("loading");
+        const yt = config.company.yahooTicker || config.company.ticker;
+        fetchLivePrice(yt).then(result => {
+          if (result && result.price > 0) {
+            setState(prev => ({ ...prev, currentPrice: Math.round(result.price * 100) / 100 }));
+            setPriceStatus("live");
+          } else {
+            setPriceStatus("stale");
+          }
+        });
+      }, [ticker]);
+
+      function switchCo(t) { setTicker(t); setState(buildState(configs[t])); setSearch(""); setShowDropdown(false); }
+      function upd(path, val) {
+        setState(prev => {
+          const next = JSON.parse(JSON.stringify(prev));
+          const keys = path.split(".");
+          let obj = next;
+          for (let i = 0; i < keys.length - 1; i++) obj = obj[keys[i]];
+          obj[keys[keys.length - 1]] = val;
+          return next;
+        });
+      }
+
+      const model = useMemo(() => {
+        const co = { ...config.company, cash: state.cash, currentPrice: state.currentPrice };
+        const results = {};
+        ["bear", "base", "bull"].forEach(sk => { results[sk] = computeScenario({ ...config, company: co }, sk, state); });
+        const wts = [state.scenarios.bear.wt, state.scenarios.base.wt, state.scenarios.bull.wt];
+        const tW = wts.reduce((a, b) => a + b, 0) || 1;
+        const normW = wts.map(w => w / tW);
+        const weightedTP = ["bear", "base", "bull"].reduce((s, k, i) => s + results[k].tp * normW[i], 0);
+        const upside = ((weightedTP - state.currentPrice) / state.currentPrice) * 100;
+        return { results, normW, weightedTP, upside, cashPS: co.cash / co.sharesOut };
+      }, [state, config]);
+
+      const ccy = config.company.currency === "EUR" ? "\u20AC" : "$";
+
+      return e("div", { style: { minHeight: "100vh", background: "#0f1117", color: "#e2e4ea", padding: "28px 20px" } },
+        e("div", { style: { maxWidth: 1100, margin: "0 auto" } },
+
+          // Company search bar
+          e("div", { style: { display: "flex", gap: 10, marginBottom: 20, flexWrap: "wrap", alignItems: "center" } },
+            e("div", { style: { position: "relative", flex: 1, minWidth: 200, maxWidth: 400 } },
+              e("input", { type: "text", value: search,
+                placeholder: config.company.ticker + " \u2014 " + config.company.name + " (type to switch)",
+                onFocus: () => setShowDropdown(true),
+                onBlur: () => setTimeout(() => setShowDropdown(false), 200),
+                onChange: ev => { setSearch(ev.target.value); setShowDropdown(true); },
+                style: { width: "100%", padding: "10px 14px", borderRadius: 8, fontSize: 13, fontFamily: "'JetBrains Mono'",
+                  background: "#161920", border: "1px solid " + (showDropdown ? "#f97316" : "#ffffff18"), color: "#e2e4ea", outline: "none", transition: "border 0.2s" } }),
+              showDropdown && e("div", { style: { position: "absolute", top: "100%", left: 0, right: 0, marginTop: 4, background: "#161920", border: "1px solid #ffffff18", borderRadius: 8, overflow: "hidden", zIndex: 100, maxHeight: 240, overflowY: "auto" } },
+                tickers.filter(t => {
+                  if (!search) return true;
+                  const q = search.toLowerCase();
+                  const c = configs[t].company;
+                  return t.toLowerCase().includes(q) || c.name.toLowerCase().includes(q) || (c.subtitle || "").toLowerCase().includes(q);
+                }).map(t => {
+                  const c = configs[t].company;
+                  return e("div", { key: t, onMouseDown: () => switchCo(t),
+                    style: { padding: "10px 14px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center",
+                      background: t === ticker ? "#f9731616" : "transparent", borderBottom: "1px solid #ffffff06",
+                      transition: "background 0.15s" },
+                    onMouseEnter: ev => { ev.target.style.background = "#ffffff08"; },
+                    onMouseLeave: ev => { ev.target.style.background = t === ticker ? "#f9731616" : "transparent"; } },
+                    e("div", null,
+                      e("span", { style: { fontFamily: "'JetBrains Mono'", fontWeight: 700, fontSize: 13, color: t === ticker ? "#f97316" : "#e2e4ea", marginRight: 10 } }, t),
+                      e("span", { style: { fontSize: 12, color: "#6b7080" } }, c.name)),
+                    e("span", { style: { fontSize: 11, color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, (c.currency === "EUR" ? "\u20AC" : "$") + c.currentPrice)
+                  );
+                }),
+                tickers.filter(t => { const q = search.toLowerCase(); const c = configs[t].company; return !search || t.toLowerCase().includes(q) || c.name.toLowerCase().includes(q); }).length === 0 &&
+                  e("div", { style: { padding: "12px 14px", color: "#6b7080", fontSize: 12 } }, "No match for \"" + search + "\"")
+              )
+            ),
+            e("span", { style: { fontSize: 12, color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, tickers.length + " companies"),
+            e("button", { onClick: () => {
+              setState(buildState(config));
+              setPriceStatus("loading");
+              const yt = config.company.yahooTicker || config.company.ticker;
+              fetchLivePrice(yt).then(result => {
+                if (result && result.price > 0) {
+                  setState(prev => ({ ...prev, currentPrice: Math.round(result.price * 100) / 100 }));
+                  setPriceStatus("live");
+                } else { setPriceStatus("stale"); }
+              });
+            }, style: { padding: "8px 14px", borderRadius: 6, fontSize: 12, cursor: "pointer", background: "transparent", border: "1px solid #ffffff18", color: "#6b7080", fontWeight: 600 } }, "\u21ba Reset")
+          ),
+
+          // Header
+          e("div", { style: { marginBottom: 4 } },
+            e("span", { style: { fontSize: 28, fontWeight: 800, letterSpacing: -0.5 } }, config.company.ticker),
+            e("span", { style: { fontSize: 14, color: "#6b7080", fontWeight: 500, marginLeft: 12 } }, config.company.name + " \u00b7 " + config.company.subtitle)
+          ),
+          e("div", { style: { fontSize: 12, color: "#6b7080", marginBottom: 20 } },
+            config.assets.map(a => e("span", { key: a.id, style: { marginRight: 14 } },
+              e("strong", { style: { color: "#b0b4c0" } }, a.name), " (" + a.stage + ")" + (a.designations?.length ? " \u00b7 " + a.designations.join(", ") : "")
+            ))
+          ),
+
+          // Banner
+          e("div", { style: { background: "linear-gradient(135deg,#1a1d28,#161920)", borderRadius: 12, padding: "22px 26px", marginBottom: 22, border: "1px solid #ffffff08", display: "flex", alignItems: "center", gap: 28, flexWrap: "wrap" } },
+            e("div", null,
+              e("div", { style: { fontSize: 10, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 5 } }, "Weighted TP"),
+              e("div", { style: { fontSize: 42, fontWeight: 800, fontFamily: "'JetBrains Mono'", color: "#f97316" } }, ccy + model.weightedTP.toFixed(2))
+            ),
+            e("div", { style: { height: 50, width: 1, background: "#ffffff10" } }),
+            e("div", null,
+              e("div", { style: { fontSize: 10, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 5, display: "flex", alignItems: "center", gap: 6 } },
+                "Stock",
+                e("span", { style: { fontSize: 8, padding: "1px 5px", borderRadius: 3, fontWeight: 700, letterSpacing: 0.5,
+                  background: priceStatus === "live" ? "#22c55e18" : priceStatus === "loading" ? "#f59e0b18" : "#ef444418",
+                  color: priceStatus === "live" ? "#22c55e" : priceStatus === "loading" ? "#f59e0b" : "#ef4444" } },
+                  priceStatus === "live" ? "LIVE" : priceStatus === "loading" ? "..." : "STALE")
+              ),
+              e("div", { style: { display: "flex", alignItems: "center", gap: 3 } },
+                e("span", { style: { fontSize: 18, fontFamily: "'JetBrains Mono'", color: "#6b7080" } }, ccy),
+                e("input", { type: "number", value: state.currentPrice, step: 0.1, min: 0.1, max: 200,
+                  onChange: ev => { const v = parseFloat(ev.target.value); if (v > 0) upd("currentPrice", v); setPriceStatus("manual"); },
+                  style: { fontSize: 24, fontWeight: 700, fontFamily: "'JetBrains Mono'", background: "#0f111788", border: "1px solid #ffffff12", borderRadius: 5, color: "#e2e4ea", width: 85, padding: "2px 6px", outline: "none" } })
+              )
+            ),
+            e("div", { style: { height: 50, width: 1, background: "#ffffff10" } }),
+            e("div", null,
+              e("div", { style: { fontSize: 10, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 5 } }, "Upside"),
+              e("div", { style: { fontSize: 24, fontWeight: 700, fontFamily: "'JetBrains Mono'", color: model.upside > 0 ? "#22c55e" : "#ef4444" } }, (model.upside > 0 ? "+" : "") + model.upside.toFixed(0) + "%")
+            ),
+            e("div", { style: { height: 50, width: 1, background: "#ffffff10" } }),
+            e("div", null,
+              e("div", { style: { fontSize: 10, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 5 } }, "Cash/Shr"),
+              e("div", { style: { fontSize: 18, fontWeight: 700, fontFamily: "'JetBrains Mono'" } }, ccy + model.cashPS.toFixed(2))
+            )
+          ),
+
+          // Scenario cards
+          e("div", { style: { display: "flex", gap: 14, marginBottom: 22, flexWrap: "wrap" } },
+            ["bear", "base", "bull"].map((sk, si) => {
+              const scen = state.scenarios[sk]; const r = model.results[sk];
+              const ud = ((r.tp - state.currentPrice) / state.currentPrice) * 100;
+              return e("div", { key: sk, style: { background: "#161920", borderRadius: 10, padding: "18px", border: "1px solid " + CC[sk] + "22", position: "relative", overflow: "hidden", flex: 1, minWidth: 270 } },
+                e("div", { style: { position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(90deg," + CC[sk] + "," + CC[sk] + "44)" } }),
+                e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 12 } },
+                  e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: CC[sk] } }, sk),
+                  e("div", { style: { fontSize: 11, color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, (model.normW[si] * 100).toFixed(0) + "% wt")
+                ),
+                e("div", { style: { display: "flex", alignItems: "baseline", gap: 8, marginBottom: 4 } },
+                  e("span", { style: { fontSize: 32, fontWeight: 800, fontFamily: "'JetBrains Mono'", lineHeight: 1 } }, ccy + r.tp.toFixed(2)),
+                  e("span", { style: { fontSize: 13, fontWeight: 700, fontFamily: "'JetBrains Mono'", color: ud >= 0 ? "#22c55e" : "#ef4444" } }, (ud >= 0 ? "+" : "") + ud.toFixed(0) + "%")
+                ),
+                e("div", { style: { fontSize: 11, color: "#6b7080", marginBottom: 12 } }, scen.narrative),
+                e("div", { style: { marginBottom: 14 } }, scen.events.map((ev, i) =>
+                  e("div", { key: i, style: { display: "flex", gap: 7, marginBottom: 5 } },
+                    e("span", { style: { fontSize: 12, color: sentC[ev[0]] || "#6b7080", fontWeight: 700, minWidth: 13 } }, ev[0]),
+                    e("span", { style: { fontSize: 11, color: "#6b7080", lineHeight: 1.4 } }, ev.slice(2))
+                  )
+                )),
+                e("div", { style: { borderTop: "1px solid #ffffff0a", paddingTop: 10 } },
+                  r.assetDetails.filter(d => d.ra > 0 || d.peakRev > 0).map((d, i) => e("div", { key: i, style: { display: "flex", justifyContent: "space-between", marginBottom: 3, fontSize: 10 } },
+                    e("span", { style: { color: "#6b7080" } }, d.ind),
+                    e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } },
+                      d.type === "commercial" ? ccy + d.ra.toFixed(0) + "M rev" :
+                      d.composite > 0 ? ccy + d.ra.toFixed(0) + "M RA (" + Math.round(d.composite * 100) + "%)" : "\u2014")
+                  )),
+                  r.cannib > 0 && e("div", { style: { display: "flex", justifyContent: "space-between", fontSize: 10, color: "#fb923c" } },
+                    e("span", null, "Cannib"), e("span", { style: { fontFamily: "'JetBrains Mono'", fontWeight: 600 } }, "-" + ccy + r.cannib.toFixed(0) + "M")),
+                  r.isSOTP ? e("div", { style: { marginTop: 8, paddingTop: 8, borderTop: "1px solid #ffffff06", fontSize: 10 } },
+                    e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 2 } },
+                      e("span", { style: { color: "#6b7080" } }, "Commercial (" + ccy + r.commercialRev + "M \u00d7 " + r.commercialMult + "x)"),
+                      e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } }, ccy + r.commercialEV.toFixed(0) + "M")),
+                    e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 2 } },
+                      e("span", { style: { color: "#6b7080" } }, "Pipeline rNPV (" + r.dr + "% DR, " + r.mult + "x)"),
+                      e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } }, ccy + r.pipelineEV.toFixed(0) + "M")),
+                    r.milestonesEV > 0 && e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 2 } },
+                      e("span", { style: { color: "#60a5fa" } }, "Milestones (RA)"),
+                      e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#60a5fa", fontWeight: 600 } }, ccy + r.milestonesEV.toFixed(0) + "M")),
+                    e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 2 } },
+                      e("span", { style: { color: "#6b7080" } }, "Cash"),
+                      e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } }, ccy + state.cash + "M")),
+                    e("div", { style: { display: "flex", justifyContent: "space-between", marginTop: 4, paddingTop: 4, borderTop: "1px solid #ffffff06", fontWeight: 700 } },
+                      e("span", { style: { color: "#b0b4c0" } }, "Total EV"),
+                      e("span", { style: { fontFamily: "'JetBrains Mono'" } }, ccy + (r.ev / 1000).toFixed(2) + "B"))
+                  ) : e("div", { style: { display: "flex", justifyContent: "space-between", marginTop: 6, paddingTop: 6, borderTop: "1px solid #ffffff06", fontSize: 10 } },
+                    e("span", { style: { color: "#6b7080" } }, "EV / DR / Dil"),
+                    e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } }, ccy + (r.ev / 1000).toFixed(1) + "B \u00b7 " + r.dr + "% \u00b7 " + r.dil + "%"))
+                )
+              );
+            })
+          ),
+
+          // Context
+          config.context && e("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 22 } },
+            e("div", { style: { padding: "14px 16px", background: "#161920", borderRadius: 8, border: "1px solid #ffffff06", fontSize: 11, lineHeight: 1.6 } },
+              e("div", { style: { color: "#f97316", fontWeight: 700, marginBottom: 6, fontSize: 12 } }, "Last: " + config.context.lastData.title + " (" + config.context.lastData.date + ")"),
+              config.context.lastData.points.map((p, i) => e("div", { key: i, style: { color: "#6b7080" } }, "\u2022 " + p))
+            ),
+            e("div", { style: { padding: "14px 16px", background: "#161920", borderRadius: 8, border: "1px solid #ffffff06", fontSize: 11, lineHeight: 1.6 } },
+              e("div", { style: { color: "#22c55e", fontWeight: 700, marginBottom: 6, fontSize: 12 } }, "Next: " + config.context.nextCatalyst.title + " (" + config.context.nextCatalyst.date + ")"),
+              config.context.nextCatalyst.thresholds.map((p, i) => e("div", { key: i, style: { color: "#6b7080" } }, "\u2022 " + p))
+            )
+          ),
+
+          // Sliders
+          e("div", { style: { fontSize: 11, fontWeight: 700, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 14 } }, "Tweak Assumptions"),
+
+          // Markets — full width row
+          e("div", { style: { background: "#161920", borderRadius: 10, padding: "14px 16px", border: "1px solid #ffffff06", marginBottom: 14 } },
+            e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#f97316", marginBottom: 12 } }, "Markets (shared across scenarios)"),
+            e("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 } },
+              config.assets.filter(a => a.id !== "commercial").map(asset => asset.indications.map(ind => {
+                const mk = asset.id + "_" + ind.id; const m = state.markets[mk]; if (!m) return null;
+                return e("div", { key: mk },
+                  e("div", { style: { fontSize: 10, fontWeight: 700, color: "#b0b4c0", marginBottom: 6 } }, ind.name),
+                  m.patientsK != null && e(Sl, { label: "Patients (K)", value: m.patientsK, onChange: v => upd("markets." + mk + ".patientsK", v), min: 5, max: 80, color: "#f97316" }),
+                  m.patientsK != null && e(Sl, { label: "Pricing (" + ccy + "K)", value: m.pricingK, onChange: v => upd("markets." + mk + ".pricingK", v), min: 50, max: 600, step: 25, unit: "K", color: "#f97316" }),
+                  m.tamB != null && e(Sl, { label: "TAM (" + ccy + "B)", value: m.tamB, onChange: v => upd("markets." + mk + ".tamB", v), min: 0.05, max: 30, step: 0.05, unit: "B", color: "#f97316" }),
+                  m.penPct != null && e(Sl, { label: "Peak Pen (%)", value: m.penPct, onChange: v => upd("markets." + mk + ".penPct", v), min: 1, max: 40, unit: "%", color: "#f97316" })
+                );
+              })),
+              e("div", null,
+                e("div", { style: { fontSize: 10, fontWeight: 700, color: "#b0b4c0", marginBottom: 6 } }, "Company"),
+                e(Sl, { label: "Cash (" + ccy + "M)", value: state.cash, onChange: v => upd("cash", v), min: 50, max: 1000, unit: "M", color: "#f97316" })
+              )
+            )
+          ),
+
+          // Bear / Base / Bull — always 3 columns
+          e("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, marginBottom: 22 } },
+            ["bear", "base", "bull"].map(sk => {
+              const scen = state.scenarios[sk];
+              const isSOTP = scen.val.pipelineDR != null;
+              return e("div", { key: sk, style: { background: "#161920", borderRadius: 10, padding: "14px 16px", border: "1px solid " + CC[sk] + "22", position: "relative", overflow: "hidden" } },
+                e("div", { style: { position: "absolute", top: 0, left: 0, right: 0, height: 2, background: CC[sk] } }),
+                e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 10, marginTop: 4 } },
+                  e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: CC[sk] } }, sk),
+                  e("div", { style: { fontSize: 13, fontWeight: 800, fontFamily: "'JetBrains Mono'", color: CC[sk] } }, ccy + model.results[sk].tp.toFixed(2))
+                ),
+                // Per-asset sliders
+                config.assets.filter(a => a.id !== "commercial").map(asset => asset.indications.map(ind => {
+                  const a = scen.assumptions?.[asset.id]?.[ind.id]; if (!a) return null;
+                  const path = "scenarios." + sk + ".assumptions." + asset.id + "." + ind.id;
+                  return e("div", { key: asset.id + "_" + ind.id, style: { marginBottom: 8 } },
+                    e("div", { style: { fontSize: 10, fontWeight: 700, color: "#b0b4c0", marginBottom: 4 } }, ind.name),
+                    e(Sl, { label: "Clinical (%)", value: a.pos, onChange: v => upd(path + ".pos", v), min: 0, max: 100, unit: "%", color: CC[sk] }),
+                    e(Sl, { label: "Regulatory (%)", value: a.apr, onChange: v => upd(path + ".apr", v), min: 0, max: 100, unit: "%", color: CC[sk] }),
+                    e(Sl, { label: "Pen mult", value: a.pen, onChange: v => upd(path + ".pen", v), min: 0.1, max: 3, step: 0.1, unit: "x", color: CC[sk] })
+                  );
+                })),
+                // Valuation sliders — with spacer
+                e("div", { style: { borderTop: "1px solid #ffffff12", paddingTop: 10, marginTop: 12 } },
+                  e("div", { style: { fontSize: 9, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#ffffff22", marginBottom: 8 } }, "Valuation"),
+                  isSOTP ? [
+                    e(Sl, { key: "pdr", label: "Pipeline DR (%)", value: scen.val.pipelineDR, onChange: v => upd("scenarios." + sk + ".val.pipelineDR", v), min: 8, max: 30, unit: "%", color: CC[sk] }),
+                    e(Sl, { key: "pm", label: "Pipeline mult", value: scen.val.pipelineMult, onChange: v => upd("scenarios." + sk + ".val.pipelineMult", v), min: 2, max: 8, step: 0.5, unit: "x", color: CC[sk] }),
+                    e(Sl, { key: "cr", label: "Comm. rev (" + ccy + "M)", value: scen.val.commercialRevM, onChange: v => upd("scenarios." + sk + ".val.commercialRevM", v), min: 100, max: 250, unit: "M", color: CC[sk] }),
+                    e(Sl, { key: "cm", label: "Comm. EV/Rev", value: scen.val.commercialMult, onChange: v => upd("scenarios." + sk + ".val.commercialMult", v), min: 1, max: 5, step: 0.5, unit: "x", color: CC[sk] }),
+                    e(Sl, { key: "mi", label: "Milestones (" + ccy + "M)", value: scen.val.milestones, onChange: v => upd("scenarios." + sk + ".val.milestones", v), min: 0, max: 500, unit: "M", color: CC[sk] }),
+                    e(Sl, { key: "di", label: "Dilution (%)", value: scen.val.dil, onChange: v => upd("scenarios." + sk + ".val.dil", v), min: 0, max: 25, unit: "%", color: CC[sk] })
+                  ] : [
+                    e(Sl, { key: "dr", label: "DR (%)", value: scen.val.dr, onChange: v => upd("scenarios." + sk + ".val.dr", v), min: 8, max: 50, unit: "%", color: CC[sk] }),
+                    e(Sl, { key: "di", label: "Dilution (%)", value: scen.val.dil, onChange: v => upd("scenarios." + sk + ".val.dil", v), min: 0, max: 40, unit: "%", color: CC[sk] }),
+                    e(Sl, { key: "mu", label: "Multiple", value: scen.val.mult, onChange: v => upd("scenarios." + sk + ".val.mult", v), min: 2, max: 10, step: 0.5, unit: "x", color: CC[sk] }),
+                    e(Sl, { key: "pl", label: "Platform (" + ccy + "M)", value: scen.val.plat, onChange: v => upd("scenarios." + sk + ".val.plat", v), min: 0, max: 1500, unit: "M", color: CC[sk] }),
+                    e(Sl, { key: "ex", label: "Ex-US (" + ccy + "M)", value: scen.val.exus, onChange: v => upd("scenarios." + sk + ".val.exus", v), min: 0, max: 800, unit: "M", color: CC[sk] }),
+                    scen.val.cannib != null && e(Sl, { key: "ca", label: "Cannib (%)", value: scen.val.cannib, onChange: v => upd("scenarios." + sk + ".val.cannib", v), min: 0, max: 50, unit: "%", color: "#fb923c" })
+                  ]
+                ),
+                e("div", { style: { borderTop: "1px solid #ffffff12", paddingTop: 10, marginTop: 12 } },
+                  e(Sl, { label: "Scenario weight (%)", value: scen.wt, onChange: v => upd("scenarios." + sk + ".wt", v), min: 0, max: 100, unit: "%", color: CC[sk] })
+                )
+              );
+            })
+          ),
+
+          // Risks
+          config.context?.risks && e("div", { style: { background: "#161920", borderRadius: 10, padding: "14px 16px", border: "1px solid #ef444418", marginBottom: 22 } },
+            e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#ef4444", marginBottom: 8 } }, "Key Risks"),
+            e("div", { style: { display: "flex", gap: 16, flexWrap: "wrap" } },
+              config.context.risks.map((r, i) => e("div", { key: i, style: { fontSize: 11, color: "#6b7080" } }, "\u25cf " + r))
+            )
+          ),
+
+          // Methodology
+          e("div", { style: { background: "#161920", borderRadius: 10, padding: "18px 20px", border: "1px solid #ffffff06", fontSize: 11, color: "#6b7080", lineHeight: 1.7, marginBottom: 16 } },
+            e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10, color: "#b0b4c0" } }, "Methodology"),
+            e("strong", { style: { color: "#f97316" } }, "Valuation framework"), e("br"),
+            "Two models coexist depending on company structure:", e("br"), e("br"),
+            e("strong", { style: { color: "#b0b4c0" } }, "Standard rNPV (pure pipeline companies):"), e("br"),
+            "Scenario TP = [ \u03A3(RA\u1D62 \u00d7 Multiple) + (Platform + ExUS) \u00d7 \u03B1 ] / (1+DR)\u207F + Cash ] / Shares \u00d7 (1 \u2212 Dilution)", e("br"),
+            "Where RA\u1D62 = Peak Revenue\u1D62 \u00d7 Pen Multiplier\u1D62 \u00d7 PoS\u1D62 \u00d7 Approval\u1D62", e("br"),
+            "And \u03B1 = RA / Gross Revenue (scales platform/exUS by composite probability)", e("br"), e("br"),
+            e("strong", { style: { color: "#b0b4c0" } }, "SOTP (companies with commercial revenue + pipeline):"), e("br"),
+            "EV = Commercial EV + Pipeline rNPV + Milestones (RA) + Cash", e("br"),
+            "\u2022 Commercial EV = Steady-state Revenue \u00d7 EV/Revenue Multiple (no discount \u2014 current recurring income)", e("br"),
+            "\u2022 Pipeline rNPV = [ \u03A3(RA\u1D62 \u00d7 Pipeline Multiple) ] / (1 + Pipeline DR)\u207F", e("br"),
+            "\u2022 Milestones = Total Milestones \u00d7 Lead Asset Composite PoS (risk-adjusted by approval probability)", e("br"),
+            "\u2022 TP = EV / Shares \u00d7 (1 \u2212 Dilution)", e("br"), e("br"),
+            e("strong", { style: { color: "#f97316" } }, "Market sizing"), e("br"),
+            "Two approaches per indication:", e("br"),
+            "\u2022 Bottom-up: Addressable Patients (K) \u00d7 Annual Pricing ($K) \u00d7 Peak Penetration (%) \u00d7 Pen Multiplier = Peak Revenue ($M)", e("br"),
+            "\u2022 Top-down: TAM ($B) \u00d7 (1 + CAGR)^n \u00d7 (1 + Market Expansion) \u00d7 Peak Penetration (%) \u00d7 Pen Multiplier \u00d7 1000 = Peak Revenue ($M)", e("br"), e("br"),
+            e("strong", { style: { color: "#f97316" } }, "Risk parameters"), e("br"),
+            "\u2022 Clinical data (%): probability the asset produces approvable data. Set to ~95% for completed trials, lower for ongoing.", e("br"),
+            "\u2022 Regulatory (%): probability of regulatory approval given existing data. Independent from clinical PoS.", e("br"),
+            "\u2022 Composite PoS = Clinical \u00d7 Regulatory. This is the probability-weight applied to peak revenue.", e("br"),
+            "\u2022 Discount Rate: time-value adjustment. Higher for early-stage (25-35%), lower for near-commercial (10-15%).", e("br"),
+            "\u2022 Dilution: expected equity dilution from future financing rounds. Reduces TP proportionally.", e("br"),
+            "\u2022 Pen Multiplier: scales peak penetration by scenario conviction (bear <1x, bull >1x).", e("br"), e("br"),
+            e("strong", { style: { color: "#f97316" } }, "Weighted Target Price"), e("br"),
+            "Weighted TP = Bear TP \u00d7 P(Bear) + Base TP \u00d7 P(Base) + Bull TP \u00d7 P(Bull)", e("br"),
+            "Where P(scenario) = scenario weight / sum of all weights. Weights represent analyst conviction, not market-implied probabilities.", e("br"), e("br"),
+            e("strong", { style: { color: "#f97316" } }, "Cannibalization (multi-asset)"), e("br"),
+            "When two assets serve overlapping markets (e.g. IV + SC formulation), cannibalization reduces total RA: Net RA = Gross RA \u00d7 (1 \u2212 Cannib%). Applied before discounting.", e("br"), e("br"),
+            e("strong", { style: { color: "#f97316" } }, "Live price"), e("br"),
+            "Stock price fetched from Yahoo Finance on page load. Upside = (Weighted TP / Stock Price \u2212 1) \u00d7 100%. Price is editable for scenario analysis.", e("br"), e("br"),
+            e("span", { style: { color: "#555" } }, "Models are illustrative and for educational purposes only. Not financial advice. Do your own research.")
+          )
+        )
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(e(App));
+  </script>
+</body>
+</html>

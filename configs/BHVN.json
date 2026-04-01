@@ -1,0 +1,199 @@
+{
+  "company": {
+    "ticker": "BHVN",
+    "name": "Biohaven Ltd.",
+    "subtitle": "Pre-pivotal multi-platform — Kv7 + MoDE/TRAP degraders + obesity",
+    "sharesOut": 150,
+    "cash": 510,
+    "currentPrice": 9.0,
+    "currency": "USD",
+    "yahooTicker": "BHVN",
+    "cashRunway": "~12 months ($260M liquid + $250M debt, ~$160M/qtr burn)"
+  },
+
+  "assets": [
+    {
+      "id": "bhv7000",
+      "name": "Opakalim (BHV-7000) — Kv7 activator",
+      "stage": "Phase 2/3 (RISE pivotal)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "epilepsy",
+          "name": "Focal epilepsy",
+          "market": {
+            "tamB": 8.0,
+            "penPct": 6,
+            "peakYear": 2032,
+            "notes": "Selective Kv7.2/7.3 activator. 40x therapeutic index advantage. OLE data: majority ≥50% seizure reduction at 6 months. RISE 2/3 topline H2 2026. Differentiated safety (low CNS AEs vs other ASMs)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bhv1300",
+      "name": "BHV-1300 — IgG MoDE degrader",
+      "stage": "Phase 1b (pivotal H2 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "graves",
+          "name": "Graves' disease",
+          "market": {
+            "tamB": 3.5,
+            "penPct": 8,
+            "peakYear": 2033,
+            "notes": "First-in-class extracellular IgG degrader. First patient: complete TSI suppression + thyroid normalization within weeks. >87% IgG reduction in healthy volunteers. Pivotal planned H2 2026."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bhv1400",
+      "name": "BHV-1400 — Gd-IgA1 TRAP degrader",
+      "stage": "Phase 1 expansion (pivotal Q1 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "igan",
+          "name": "IgA nephropathy",
+          "market": {
+            "tamB": 4.0,
+            "penPct": 5,
+            "peakYear": 2033,
+            "notes": "Selective Gd-IgA1 degrader — targets pathogenic driver without broad immunosuppression. >80% Gd-IgA1 reduction. Early IgAN patient data: biomarker + clinical responses (proteinuria, hematuria improvement). Pivotal initiating Q1 2026."
+          }
+        }
+      ]
+    },
+    {
+      "id": "taldef",
+      "name": "Taldefgrobep alfa — myostatin-activin inhibitor",
+      "stage": "Phase 2 (obesity, enrolled)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "obesity",
+          "name": "Obesity",
+          "market": {
+            "tamB": 100.0,
+            "penPct": 0.5,
+            "peakYear": 2034,
+            "notes": "Differentiated mechanism: fat mass reduction + lean mass gain + bone density improvement. Prior data: >6% fat reduction, up to 4% lean mass gain. ~150 participants, 24-week blinded period. Topline H2 2026. >700 subjects treated safely across 5 prior studies."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bhv1510",
+      "name": "BHV-1510 — Trop2 ADC",
+      "stage": "Phase 1",
+      "designations": [],
+      "indications": [
+        {
+          "id": "onc",
+          "name": "Solid tumors (epithelial)",
+          "market": {
+            "tamB": 15.0,
+            "penPct": 1,
+            "peakYear": 2035,
+            "notes": "Novel Trop2 ADC with differentiated safety profile. Confirmed responses in Phase 1 as monotherapy and in combo with Regeneron's cemiplimab (anti-PD-1). Early stage — upside optionality."
+          }
+        }
+      ]
+    }
+  ],
+
+  "scenarios": {
+    "bear": {
+      "wt": 30,
+      "narrative": "Epilepsy misses + degrader platform unproven + cash crisis",
+      "events": [
+        "✗ RISE 2/3 epilepsy misses primary endpoint",
+        "✗ BHV-1300/1400 pivotal trials delayed or underpowered",
+        "✗ Taldefgrobep obesity data underwhelming vs GLP-1s",
+        "→ Dilutive raise at distressed levels, pipeline value collapses"
+      ],
+      "assumptions": {
+        "bhv7000": { "epilepsy": { "pos": 25, "apr": 40, "pen": 0.5 } },
+        "bhv1300": { "graves": { "pos": 15, "apr": 30, "pen": 0.5 } },
+        "bhv1400": { "igan": { "pos": 15, "apr": 30, "pen": 0.5 } },
+        "taldef": { "obesity": { "pos": 10, "apr": 25, "pen": 0.3 } },
+        "bhv1510": { "onc": { "pos": 5, "apr": 15, "pen": 0.3 } }
+      },
+      "val": { "dr": 30, "dil": 30, "mult": 3, "plat": 0, "exus": 0 }
+    },
+    "base": {
+      "wt": 40,
+      "narrative": "Epilepsy succeeds + one degrader progresses + obesity unclear",
+      "events": [
+        "✓ RISE 2/3 hits primary endpoint — opakalim differentiated on safety",
+        "~ BHV-1300 Graves' pivotal initiated, early data encouraging",
+        "~ BHV-1400 IgAN pivotal shows biomarker responses",
+        "~ Taldefgrobep obesity shows signal but unclear vs GLP-1 standard"
+      ],
+      "assumptions": {
+        "bhv7000": { "epilepsy": { "pos": 55, "apr": 70, "pen": 1.0 } },
+        "bhv1300": { "graves": { "pos": 30, "apr": 55, "pen": 0.8 } },
+        "bhv1400": { "igan": { "pos": 30, "apr": 55, "pen": 0.8 } },
+        "taldef": { "obesity": { "pos": 25, "apr": 40, "pen": 0.6 } },
+        "bhv1510": { "onc": { "pos": 10, "apr": 30, "pen": 0.5 } }
+      },
+      "val": { "dr": 18, "dil": 15, "mult": 5, "plat": 500, "exus": 300 }
+    },
+    "bull": {
+      "wt": 30,
+      "narrative": "Epilepsy blockbuster + degrader platform validated + obesity kicker",
+      "events": [
+        "✓ Opakalim best-in-class epilepsy — paradigm shift on safety",
+        "✓ MoDE/TRAP platform validated across Graves' + IgAN",
+        "✓ Taldefgrobep carves niche in obesity (muscle-sparing differentiation)",
+        "✓ Partnership/M&A interest on degrader platform"
+      ],
+      "assumptions": {
+        "bhv7000": { "epilepsy": { "pos": 70, "apr": 80, "pen": 1.5 } },
+        "bhv1300": { "graves": { "pos": 50, "apr": 70, "pen": 1.2 } },
+        "bhv1400": { "igan": { "pos": 45, "apr": 65, "pen": 1.2 } },
+        "taldef": { "obesity": { "pos": 40, "apr": 60, "pen": 1.0 } },
+        "bhv1510": { "onc": { "pos": 20, "apr": 45, "pen": 0.8 } }
+      },
+      "val": { "dr": 13, "dil": 8, "mult": 6, "plat": 2000, "exus": 800 }
+    }
+  },
+
+  "context": {
+    "lastData": {
+      "date": "Jan 2026",
+      "title": "Opakalim OLE epilepsy data (JPM)",
+      "points": [
+        "Majority of 6-month OLE patients: ≥50% seizure reduction",
+        "Exceptional tolerability — low CNS adverse events",
+        "75mg once-daily dose selected for pivotal",
+        "BHV-7000 MDD Phase 2 missed (Dec 2025) — deprioritized",
+        "Troriluzole CRL (Nov 2025) — stock -40%",
+        "BHV-1300 first Graves' patient: complete TSI suppression",
+        "BHV-1400 first IgAN patients: biomarker + clinical responses"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "H2 2026",
+      "title": "RISE 2/3 opakalim focal epilepsy pivotal topline",
+      "thresholds": [
+        "Primary: % reduction in seizure frequency vs placebo",
+        "Key differentiator: CNS safety profile vs existing ASMs",
+        "40x therapeutic index advantage in preclinical",
+        "Also H2 2026: taldefgrobep obesity Phase 2 topline"
+      ]
+    },
+    "risks": [
+      "Cash runway ~12 months — burn ~$160M/quarter, will need to raise",
+      "No revenue — pure pipeline play, all assets pre-pivotal",
+      "Troriluzole CRL + MDD miss eroded credibility",
+      "Epilepsy RISE 2/3 is binary survival event",
+      "Degrader platform unproven in pivotal trials",
+      "Obesity: taldefgrobep faces GLP-1 juggernaut comparison",
+      "High short interest (11.6% of float) — squeeze or collapse",
+      "Dilution risk very high (30% dilution in bear case)"
+    ]
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "company": {
+    "ticker": "PEPG",
+    "name": "PepGen",
+    "subtitle": "Post-FREEDOM2 5mg/kg",
+    "sharesOut": 69,
+    "cash": 148,
+    "currentPrice": 2.4,
+    "cashRunway": "2H 2027",
+    "yahooTicker": "PEPG"
+  },
+  "assets": [
+    {
+      "id": "edodm1",
+      "name": "PGN-EDODM1",
+      "stage": "Phase 2",
+      "designations": [
+        "Orphan",
+        "Fast Track"
+      ],
+      "indications": [
+        {
+          "id": "dm1",
+          "name": "DM1",
+          "market": {
+            "patientsK": 25,
+            "pricingK": 275,
+            "penPct": 14,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "edo51",
+      "name": "PGN-EDO51 (DMD)",
+      "stage": "Preclinical",
+      "designations": [],
+      "indications": [
+        {
+          "id": "dmd",
+          "name": "DMD",
+          "market": {
+            "patientsK": 12,
+            "pricingK": 400,
+            "penPct": 8,
+            "peakYear": 2035
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "bear": {
+      "wt": 30,
+      "narrative": "Program fails",
+      "events": [
+        "✗ FDA hold persists",
+        "✗ 10mg/kg disappoints",
+        "✗ Platform worthless",
+        "→ Cash floor"
+      ],
+      "assumptions": {
+        "edodm1": {
+          "dm1": {
+            "pos": 0,
+            "apr": 0,
+            "pen": 0.4
+          }
+        },
+        "edo51": {
+          "dmd": {
+            "pos": 0,
+            "apr": 0,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "dr": 35,
+        "dil": 20,
+        "mult": 5,
+        "plat": 20,
+        "exus": 0
+      }
+    },
+    "base": {
+      "wt": 45,
+      "narrative": "Hold lifted + mixed 10mg",
+      "events": [
+        "✓ FDA hold resolved",
+        "~ 10mg modest splicing",
+        "~ 12.5mg helps",
+        "→ Partnership talks"
+      ],
+      "assumptions": {
+        "edodm1": {
+          "dm1": {
+            "pos": 40,
+            "apr": 65,
+            "pen": 1.0
+          }
+        },
+        "edo51": {
+          "dmd": {
+            "pos": 10,
+            "apr": 40,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "dr": 28,
+        "dil": 22,
+        "mult": 5,
+        "plat": 100,
+        "exus": 75
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Everything works",
+      "events": [
+        "✓ Hold lifted fast",
+        "✓ 10mg >40% splicing",
+        "✓ Fast Ph3 + partnership",
+        "→ First-in-class DM1"
+      ],
+      "assumptions": {
+        "edodm1": {
+          "dm1": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 1.5
+          }
+        },
+        "edo51": {
+          "dmd": {
+            "pos": 25,
+            "apr": 55,
+            "pen": 1.2
+          }
+        }
+      },
+      "val": {
+        "dr": 20,
+        "dil": 18,
+        "mult": 5,
+        "plat": 400,
+        "exus": 300
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Mar 30, 2026",
+      "title": "FREEDOM2 5mg/kg MAD",
+      "points": [
+        "Splicing 7.3% vs 6.8% placebo",
+        "Ex-outlier: 22.9%",
+        "vHOT faded W16",
+        "Clean safety"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "2H 2026",
+      "title": "10mg/kg MAD data",
+      "thresholds": [
+        "Splicing >30%",
+        "Sustained vHOT",
+        "Functional signal"
+      ]
+    },
+    "risks": [
+      "FDA partial hold",
+      "Single-asset",
+      "$148M → 2H27",
+      "n=8 at 10mg/kg"
+    ]
+  }
+}

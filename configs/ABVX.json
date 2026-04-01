@@ -1,0 +1,137 @@
+{
+  "company": {
+    "ticker": "ABVX",
+    "name": "Abivax SA",
+    "subtitle": "Post-Phase 3 UC induction · Maintenance data Q2 2026 · NDA filing H2 2026",
+    "sharesOut": 80,
+    "cash": 350,
+    "currentPrice": 91.0,
+    "currency": "EUR",
+    "yahooTicker": "ABVX.PA",
+    "cashRunway": "Into Q4 2027 (post debt repayment Q4 2025)"
+  },
+
+  "assets": [
+    {
+      "id": "obef_uc",
+      "name": "Obefazimod — oral miR-124 enhancer (UC)",
+      "stage": "Phase 3 (ABTECT induction positive, maintenance Q2 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "uc",
+          "name": "Ulcerative colitis (mod-severe)",
+          "market": {
+            "tamB": 10.0,
+            "penPct": 8,
+            "peakYear": 2032,
+            "notes": "UC drug market ~$8B (2024) → $11-14B (2032). Obefazimod is oral, first-in-class miR-124 enhancer. Phase 3 ABTECT induction positive (Jul 2025): pooled 16.4% placebo-adj response (p<0.0001), 1275 patients randomized. 678/1275 entered maintenance. Favorable tolerability, no new safety signals. Competitors: Entyvio (vedolizumab), Stelara (ustekinumab), Rinvoq (upadacitinib), Zeposia (ozanimod), Velsipity (etrasimod)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "obef_cd",
+      "name": "Obefazimod (Crohn's disease)",
+      "stage": "Phase 2b (ENHANCE-CD, enrolled Q3 2024)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "cd",
+          "name": "Crohn's disease",
+          "market": {
+            "tamB": 9.0,
+            "penPct": 5,
+            "peakYear": 2034,
+            "notes": "CD drug market comparable to UC. ENHANCE-CD 12-week induction data expected Q4 2026. Anti-fibrotic activity shown preclinically (ECCO 2026: ~60-90% reduction in fibrosis score). Fibrosis is a key unmet need in CD — could be a differentiator if confirmed clinically."
+          }
+        }
+      ]
+    }
+  ],
+
+  "scenarios": {
+    "bear": {
+      "wt": 25,
+      "narrative": "Maintenance fails or underwhelms + CD disappoints",
+      "events": [
+        "✗ 44-week maintenance data shows significant efficacy loss",
+        "✗ FDA pushes back on NDA — requests additional data or longer follow-up",
+        "✗ ENHANCE-CD induction misses in Crohn's",
+        "→ Stock re-rates to pre-Phase 3 levels, pipeline credibility damaged"
+      ],
+      "assumptions": {
+        "obef_uc": { "uc": { "pos": 90, "apr": 20, "pen": 0.5 } },
+        "obef_cd": { "cd": { "pos": 15, "apr": 20, "pen": 0.4 } }
+      },
+      "val": { "dr": 18, "dil": 10, "mult": 4, "plat": 0, "exus": 0 }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "UC maintenance confirms induction + CD shows signal",
+      "events": [
+        "✓ 44-week maintenance data positive — durable remission",
+        "✓ NDA filed H2 2026, MAA in parallel",
+        "~ ENHANCE-CD 12-week data shows encouraging signal",
+        "→ UC approval mid-2027, commercial launch H2 2027"
+      ],
+      "assumptions": {
+        "obef_uc": { "uc": { "pos": 90, "apr": 70, "pen": 1.0 } },
+        "obef_cd": { "cd": { "pos": 35, "apr": 50, "pen": 0.8 } }
+      },
+      "val": { "dr": 13, "dil": 5, "mult": 5, "plat": 500, "exus": 300 }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Best-in-class UC + CD expansion + partnership/M&A",
+      "events": [
+        "✓ Maintenance shows class-leading durability + safety",
+        "✓ FDA grants Priority Review — approval H1 2027",
+        "✓ ENHANCE-CD hits, establishing IBD franchise",
+        "✓ Anti-fibrotic angle differentiates from JAK/S1P — M&A target"
+      ],
+      "assumptions": {
+        "obef_uc": { "uc": { "pos": 95, "apr": 85, "pen": 1.5 } },
+        "obef_cd": { "cd": { "pos": 50, "apr": 65, "pen": 1.3 } }
+      },
+      "val": { "dr": 11, "dil": 3, "mult": 6, "plat": 2000, "exus": 800 }
+    }
+  },
+
+  "context": {
+    "lastData": {
+      "date": "Jul 2025 (+ ECCO Feb 2026)",
+      "title": "ABTECT Phase 3 induction — UC (positive)",
+      "points": [
+        "Pooled 16.4% placebo-adjusted clinical response (p<0.0001) at 8 weeks",
+        "1,275 patients randomized — one of the largest UC Phase 3 programs ever",
+        "678 responders entered 44-week maintenance Part 1",
+        "Favorable tolerability, no new safety signals",
+        "22 abstracts at ECCO 2026 — subgroup analyses, biomarkers, anti-fibrotic data",
+        "miR-124 upregulation confirmed + IL-17A, IL-6 reduction toward homeostasis",
+        "Preclinical: 60-90% fibrosis score reduction (oral presentation ECCO 2026)",
+        "Stock went from ~€5 to €90+ on the data"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Q2 2026",
+      "title": "ABTECT 44-week maintenance data (UC)",
+      "thresholds": [
+        "Primary: durability of clinical response/remission at week 44",
+        "Key: remission rate in maintenance vs re-randomized placebo",
+        "This is THE gating event for NDA filing (planned H2 2026)",
+        "Also Q4 2026: ENHANCE-CD 12-week induction data (Crohn's)"
+      ]
+    },
+    "risks": [
+      "Maintenance data is binary — if durability fades, NDA collapses",
+      "UC market is crowded (Rinvoq, Entyvio, Stelara, Zeposia, Velsipity)",
+      "Stock ran from €5 to €90+ on induction alone — maintenance is priced in to some degree",
+      "No commercial infrastructure yet — will need to build or partner",
+      "Single-asset company (obefazimod for UC + CD, same molecule)",
+      "Crohn's disease Phase 2b data not until Q4 2026",
+      "Anti-fibrotic data is preclinical only — clinical translation uncertain",
+      "Cash runway Q4 2027 — may need to raise if NDA delayed"
+    ]
+  }
+}

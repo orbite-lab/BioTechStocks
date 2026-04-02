@@ -271,7 +271,9 @@ def apply_changes(config, changes):
 def log_changes(ticker, news_summary, source, applied_changes, timestamp):
     daily_file = CHANGELOG_DIR / f"{timestamp[:10]}.json"
     daily = json.loads(daily_file.read_text()) if daily_file.exists() else []
-    daily.append({"timestamp": timestamp, "ticker": ticker, "news": news_summary, "source": source, "changes": applied_changes})
+    # Ensure only dict changes are stored
+    clean_changes = [c for c in applied_changes if isinstance(c, dict)]
+    daily.append({"timestamp": timestamp, "ticker": ticker, "news": str(news_summary), "source": str(source or ""), "changes": clean_changes})
     daily_file.write_text(json.dumps(daily, indent=2))
     update_changelog_html()
 
@@ -435,7 +437,7 @@ def main():
         config = configs[ticker]
         print(f"\n  {ticker}: analyzing...")
         result = deep_analyze(item, ticker, config)
-        changes = result.get("changes", [])
+        changes = [c for c in result.get("changes", []) if isinstance(c, dict) and "path" in c and "new_value" in c]
 
         if changes:
             updated_config, applied = apply_changes(config, changes)

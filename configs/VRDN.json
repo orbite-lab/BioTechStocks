@@ -2,7 +2,7 @@
   "company": {
     "ticker": "VRDN",
     "name": "Viridian Therapeutics",
-    "subtitle": "Post-REVEAL-1",
+    "subtitle": "Post-REVEAL-1 · Batoclimab TED failure (Apr 2 2026) clears competitive path",
     "sharesOut": 88,
     "cash": 875,
     "currentPrice": 18.5,
@@ -53,27 +53,27 @@
   ],
   "scenarios": {
     "bear": {
-      "wt": 25,
-      "narrative": "Veli approved but Tepezza wins",
+      "wt": 20,
+      "narrative": "Veli approved but Tepezza dominates + ele SC underwhelms",
       "events": [
-        "✓ Veli approved",
-        "✗ Tepezza price war",
-        "✗ Ele weak efficacy",
-        "→ Single-product"
+        "✓ Veli approved but slow uptake",
+        "✗ Tepezza entrenched, price war",
+        "✗ Ele SC niche too small",
+        "→ Single-product, limited share gain"
       ],
       "assumptions": {
         "veli": {
           "ted_iv": {
             "pos": 90,
             "apr": 95,
-            "pen": 0.5
+            "pen": 0.6
           }
         },
         "ele": {
           "ted_sc": {
             "pos": 55,
             "apr": 80,
-            "pen": 0.4
+            "pen": 0.5
           }
         }
       },
@@ -81,75 +81,75 @@
         "dr": 15,
         "dil": 0,
         "mult": 4,
-        "plat": 0,
+        "plat": 100,
         "exus": 0,
         "cannib": 30
       }
     },
     "base": {
       "wt": 50,
-      "narrative": "Veli strong, ele SC niche",
+      "narrative": "Veli best-in-class IV + ele SC expands access — FcRn TED path dead",
       "events": [
-        "✓ Veli best-in-class IV",
-        "✓ Strong vs Tepezza",
-        "~ Ele SC niche",
-        "→ Two-product franchise"
+        "✓ Veli approved, takes share from Tepezza",
+        "✓ Batoclimab failure removes key FcRn competitor",
+        "✓ Ele SC Phase 3 positive — convenience advantage",
+        "→ Only IGF-1R franchise challenging Tepezza"
       ],
       "assumptions": {
         "veli": {
           "ted_iv": {
             "pos": 90,
             "apr": 95,
-            "pen": 1.0
+            "pen": 1.2
           }
         },
         "ele": {
           "ted_sc": {
             "pos": 70,
             "apr": 85,
-            "pen": 0.7
+            "pen": 0.9
           }
         }
       },
       "val": {
         "dr": 12,
         "dil": 0,
-        "mult": 4.5,
-        "plat": 300,
+        "mult": 5,
+        "plat": 500,
         "exus": 0,
         "cannib": 25
       }
     },
     "bull": {
-      "wt": 25,
-      "narrative": "TED dominance + FcRn",
+      "wt": 30,
+      "narrative": "TED franchise dominance — only real alternative to Tepezza, M&A target",
       "events": [
-        "✓ Veli takes IV share",
-        "✓ Ele expands market",
-        "✓ REVEAL-2 strong",
-        "✓ FcRn pipeline"
+        "✓ Veli takes majority IV share from Tepezza",
+        "✓ Ele SC expands total TED market (chronic + convenience)",
+        "✓ FcRn path dead in TED — IGF-1R validated as best approach",
+        "✓ M&A target (only pure-play TED franchise)"
       ],
       "assumptions": {
         "veli": {
           "ted_iv": {
             "pos": 90,
             "apr": 95,
-            "pen": 1.4
+            "pen": 1.6
           }
         },
         "ele": {
           "ted_sc": {
             "pos": 85,
             "apr": 90,
-            "pen": 1.2
+            "pen": 1.4
           }
         }
       },
       "val": {
         "dr": 10,
         "dil": 0,
-        "mult": 5.5,
-        "plat": 1200,
+        "mult": 6,
+        "plat": 1500,
         "exus": 0,
         "cannib": 20
       }
@@ -163,7 +163,8 @@
         "Q4W PRR: 54% vs 18%",
         "Q8W: 63% vs 18%",
         "Delta 36%/45% below veli 65%",
-        "Diplopia 51% vs 16%"
+        "Diplopia 51% vs 16%",
+        "Apr 2: Immunovant batoclimab FAILED both Ph3 TED trials — FcRn approach dead in TED"
       ]
     },
     "nextCatalyst": {
@@ -175,10 +176,12 @@
       ]
     },
     "risks": [
-      "Tepezza competition",
-      "Q4W/Q8W inversion",
-      "REVEAL-2 must confirm",
-      "First launch"
+      "Tepezza still entrenched with first-mover advantage",
+      "argenx efgartigimod Phase 3 in TED still ongoing (FcRn not fully dead)",
+      "Q4W/Q8W dosing inversion in REVEAL-1",
+      "REVEAL-2 must confirm elegrobart",
+      "First commercial launch — execution risk",
+      "Cannibalization between veli IV and ele SC"
     ]
   }
 }

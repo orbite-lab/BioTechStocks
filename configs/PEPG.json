@@ -51,14 +51,47 @@
     }
   ],
   "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "FDA hold permanent \u2014 EDO platform dead",
+      "events": [
+        "\u2717 FDA clinical hold never lifts \u2014 hepatotoxicity signal confirmed",
+        "\u2717 EDO platform deemed unsafe across all indications",
+        "\u2717 Cash burns through 2027, no partner willing to license",
+        "\u2192 Reverse merger or liquidation at cash value (~$2/share)"
+      ],
+      "assumptions": {
+        "edodm1": {
+          "dm1": {
+            "pos": 0,
+            "apr": 0,
+            "pen": 0.3
+          }
+        },
+        "edo51": {
+          "dmd": {
+            "pos": 0,
+            "apr": 0,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "dr": 40,
+        "dil": 30,
+        "mult": 3,
+        "plat": 0,
+        "exus": 0
+      }
+    },
     "bear": {
-      "wt": 30,
+      "wt": 15,
       "narrative": "Program fails",
       "events": [
-        "✗ FDA hold persists",
-        "✗ 10mg/kg disappoints",
-        "✗ Platform worthless",
-        "→ Cash floor"
+        "\u2717 FDA hold persists",
+        "\u2717 10mg/kg disappoints",
+        "\u2717 Platform worthless",
+        "\u2192 Cash floor"
       ],
       "assumptions": {
         "edodm1": {
@@ -85,13 +118,13 @@
       }
     },
     "base": {
-      "wt": 45,
+      "wt": 50,
       "narrative": "Hold lifted + mixed 10mg",
       "events": [
-        "✓ FDA hold resolved",
+        "\u2713 FDA hold resolved",
         "~ 10mg modest splicing",
         "~ 12.5mg helps",
-        "→ Partnership talks"
+        "\u2192 Partnership talks"
       ],
       "assumptions": {
         "edodm1": {
@@ -121,10 +154,10 @@
       "wt": 25,
       "narrative": "Everything works",
       "events": [
-        "✓ Hold lifted fast",
-        "✓ 10mg >40% splicing",
-        "✓ Fast Ph3 + partnership",
-        "→ First-in-class DM1"
+        "\u2713 Hold lifted fast",
+        "\u2713 10mg >40% splicing",
+        "\u2713 Fast Ph3 + partnership",
+        "\u2192 First-in-class DM1"
       ],
       "assumptions": {
         "edodm1": {
@@ -148,6 +181,39 @@
         "mult": 5,
         "plat": 400,
         "exus": 300
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "EDO platform validated across NMDs \u2014 Sarepta/Roche acquires",
+      "events": [
+        "\u2713 Hold lifted \u2192 10mg/kg shows >50% splicing correction",
+        "\u2713 FDA grants Accelerated Approval pathway for DM1",
+        "\u2713 EDO51 DMD enters Phase 1 \u2014 platform validated for exon skipping",
+        "\u2713 Sarepta or Roche acquires PepGen for $3-5B (EDO platform value)"
+      ],
+      "assumptions": {
+        "edodm1": {
+          "dm1": {
+            "pos": 80,
+            "apr": 85,
+            "pen": 1.6
+          }
+        },
+        "edo51": {
+          "dmd": {
+            "pos": 30,
+            "apr": 55,
+            "pen": 1.4
+          }
+        }
+      },
+      "val": {
+        "dr": 16,
+        "dil": 12,
+        "mult": 6,
+        "plat": 800,
+        "exus": 500
       }
     }
   },
@@ -174,7 +240,7 @@
     "risks": [
       "FDA partial hold",
       "Single-asset",
-      "$148M → 2H27",
+      "$148M \u2192 2H27",
       "n=8 at 10mg/kg"
     ]
   }

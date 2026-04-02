@@ -2,7 +2,7 @@
   "company": {
     "ticker": "LEGN",
     "name": "Legend Biotech",
-    "subtitle": "CARVYKTI $1.9B sales · Profitability 2026 · Frontline MM expansion · In vivo CAR-T",
+    "subtitle": "CARVYKTI $1.9B sales \u00b7 Profitability 2026 \u00b7 Frontline MM expansion \u00b7 In vivo CAR-T",
     "sharesOut": 185,
     "cash": 949,
     "currentPrice": 17.0,
@@ -10,15 +10,15 @@
     "yahooTicker": "LEGN",
     "cashRunway": "Self-funding (CARVYKTI franchise profitable 2025, company-wide profit 2026)"
   },
-
   "valuationType": "SOTP",
-
   "assets": [
     {
       "id": "commercial",
-      "name": "CARVYKTI — 2L+ MM (approved, commercial)",
+      "name": "CARVYKTI \u2014 2L+ MM (approved, commercial)",
       "stage": "Commercial (approved US/EU/Japan/China, OS benefit in label)",
-      "designations": ["Breakthrough"],
+      "designations": [
+        "Breakthrough"
+      ],
       "indications": [
         {
           "id": "mm_2l",
@@ -31,25 +31,25 @@
     },
     {
       "id": "carv_1l",
-      "name": "CARVYKTI — Frontline MM (CARTITUDE-5/6)",
+      "name": "CARVYKTI \u2014 Frontline MM (CARTITUDE-5/6)",
       "stage": "Phase 3 (both enrolled)",
       "designations": [],
       "indications": [
         {
           "id": "mm_1l",
-          "name": "Frontline multiple myeloma (Legend's incremental share)",
+          "name": "Frontline MM (Legend's incremental revenue)",
           "market": {
-            "tamB": 2.0,
-            "penPct": 15,
+            "tamB": 8.0,
+            "penPct": 10,
             "peakYear": 2032,
-            "notes": "CARTITUDE-5 (transplant-ineligible) + CARTITUDE-6 (transplant-eligible, enrolled Aug 2025). Frontline is 3-5x larger patient pool. CARTITUDE-4: 50.4mo median PFS."
+            "notes": "Frontline MM drug market ~$15-20B total. CAR-T addressable subset ~$8B (transplant-eligible + ineligible candidates). CARTITUDE-5 + 6 both enrolled. CARTITUDE-4 showed 50.4mo median PFS in 2L+ — strong rationale for earlier use. Legend receives mfg revenue + profit share from J&J."
           }
         }
       ]
     },
     {
       "id": "lucar",
-      "name": "LUCAR-G39D — allogeneic gamma-delta CAR-T",
+      "name": "LUCAR-G39D \u2014 allogeneic gamma-delta CAR-T",
       "stage": "Phase 1 (first-in-human data ASH 2025)",
       "designations": [],
       "indications": [
@@ -78,101 +78,254 @@
             "tamB": 20.0,
             "penPct": 1,
             "peakYear": 2035,
-            "notes": "Dual CD20/CD19 in vivo — injection, no manufacturing. First patient dosed. Data H2 2026. Multiple INDs planned. Paradigm shift if it works."
+            "notes": "Dual CD20/CD19 in vivo \u2014 injection, no manufacturing. First patient dosed. Data H2 2026. Multiple INDs planned. Paradigm shift if it works."
           }
         }
       ]
     }
   ],
-
   "scenarios": {
-    "megabear": {
+    "mega_bear": {
       "wt": 5,
       "narrative": "CAR-T class safety signal / franchise collapse",
       "events": [
-        "✗ FDA black box warning on secondary malignancies across CAR-T class",
-        "✗ CMS restricts reimbursement for CAR-T",
-        "✗ CARVYKTI revenue collapses, J&J deprioritizes",
-        "→ Stock re-rates to cash floor, pipeline worthless"
+        "\u2717 FDA black box warning on secondary malignancies across CAR-T class",
+        "\u2717 CMS restricts reimbursement for CAR-T",
+        "\u2717 CARVYKTI revenue collapses, J&J deprioritizes",
+        "\u2192 Stock re-rates to cash floor, pipeline worthless"
       ],
       "assumptions": {
-        "commercial": { "mm_2l": { "pos": 100, "apr": 100, "pen": 0.4 } },
-        "carv_1l": { "mm_1l": { "pos": 10, "apr": 15, "pen": 0.3 } },
-        "lucar": { "nhl": { "pos": 3, "apr": 10, "pen": 0.2 } },
-        "invivo": { "invivo_onc": { "pos": 2, "apr": 5, "pen": 0.2 } }
+        "commercial": {
+          "mm_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "carv_1l": {
+          "mm_1l": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        },
+        "lucar": {
+          "nhl": {
+            "pos": 3,
+            "apr": 10,
+            "pen": 0.2
+          }
+        },
+        "invivo": {
+          "invivo_onc": {
+            "pos": 2,
+            "apr": 5,
+            "pen": 0.2
+          }
+        }
       },
-      "val": { "pipelineDR": 25, "pipelineMult": 2, "commercialMult": 1.5, "commercialRevM": 800, "milestones": 0, "dil": 15 }
+      "val": {
+        "pipelineDR": 25,
+        "pipelineMult": 2,
+        "commercialMult": 1.5,
+        "commercialRevM": 800,
+        "milestones": 0,
+        "dil": 15
+      }
     },
     "bear": {
       "wt": 15,
       "narrative": "CARVYKTI growth stalls + frontline fails + competition erodes",
       "events": [
-        "✗ CARVYKTI growth decelerates — bispecifics take share",
-        "✗ CARTITUDE-5/6 underwhelm vs standard of care",
-        "✗ Arcellx anito-cel approved, takes 2L+ share",
-        "→ Revenue plateaus at ~$1.2B Legend share"
+        "\u2717 CARVYKTI growth decelerates \u2014 bispecifics take share",
+        "\u2717 CARTITUDE-5/6 underwhelm vs standard of care",
+        "\u2717 Arcellx anito-cel approved, takes 2L+ share",
+        "\u2192 Revenue plateaus at ~$1.2B Legend share"
       ],
       "assumptions": {
-        "commercial": { "mm_2l": { "pos": 100, "apr": 100, "pen": 0.8 } },
-        "carv_1l": { "mm_1l": { "pos": 30, "apr": 40, "pen": 0.5 } },
-        "lucar": { "nhl": { "pos": 10, "apr": 20, "pen": 0.3 } },
-        "invivo": { "invivo_onc": { "pos": 5, "apr": 10, "pen": 0.3 } }
+        "commercial": {
+          "mm_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "carv_1l": {
+          "mm_1l": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.5
+          }
+        },
+        "lucar": {
+          "nhl": {
+            "pos": 10,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "invivo": {
+          "invivo_onc": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.3
+          }
+        }
       },
-      "val": { "pipelineDR": 18, "pipelineMult": 3, "commercialMult": 2.5, "commercialRevM": 1100, "milestones": 0, "dil": 0 }
+      "val": {
+        "pipelineDR": 18,
+        "pipelineMult": 3,
+        "commercialMult": 2.5,
+        "commercialRevM": 1100,
+        "milestones": 0,
+        "dil": 0
+      }
     },
     "base": {
       "wt": 50,
       "narrative": "CARVYKTI grows + frontline expands TAM + platform validates",
       "events": [
-        "✓ CARVYKTI revenue grows to ~$3B+ total (Legend ~$1.5B)",
-        "✓ CARTITUDE-5 or -6 positive — frontline label expansion",
+        "\u2713 CARVYKTI revenue grows to ~$3B+ total (Legend ~$1.5B)",
+        "\u2713 CARTITUDE-5 or -6 positive \u2014 frontline label expansion",
         "~ Allogeneic shows promise, needs more data",
         "~ In vivo early data generates excitement"
       ],
       "assumptions": {
-        "commercial": { "mm_2l": { "pos": 100, "apr": 100, "pen": 1.0 } },
-        "carv_1l": { "mm_1l": { "pos": 55, "apr": 65, "pen": 1.0 } },
-        "lucar": { "nhl": { "pos": 20, "apr": 35, "pen": 0.6 } },
-        "invivo": { "invivo_onc": { "pos": 10, "apr": 20, "pen": 0.5 } }
+        "commercial": {
+          "mm_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "carv_1l": {
+          "mm_1l": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 1.0
+          }
+        },
+        "lucar": {
+          "nhl": {
+            "pos": 20,
+            "apr": 35,
+            "pen": 0.6
+          }
+        },
+        "invivo": {
+          "invivo_onc": {
+            "pos": 10,
+            "apr": 20,
+            "pen": 0.5
+          }
+        }
       },
-      "val": { "pipelineDR": 13, "pipelineMult": 5, "commercialMult": 3.5, "commercialRevM": 1400, "milestones": 300, "dil": 0 }
+      "val": {
+        "pipelineDR": 13,
+        "pipelineMult": 5,
+        "commercialMult": 3.5,
+        "commercialRevM": 1400,
+        "milestones": 300,
+        "dil": 0
+      }
     },
     "bull": {
       "wt": 25,
       "narrative": "CARVYKTI blockbuster + frontline SOC + in vivo paradigm shift",
       "events": [
-        "✓ CARVYKTI total sales >$5B (Legend >$2B)",
-        "✓ Both CARTITUDE-5 + 6 positive — frontline standard",
-        "✓ In vivo CAR-T data transformative",
-        "✓ Autoimmune CAR-T expansion (SLE, MS)"
+        "\u2713 CARVYKTI total sales >$5B (Legend >$2B)",
+        "\u2713 Both CARTITUDE-5 + 6 positive \u2014 frontline standard",
+        "\u2713 In vivo CAR-T data transformative",
+        "\u2713 Autoimmune CAR-T expansion (SLE, MS)"
       ],
       "assumptions": {
-        "commercial": { "mm_2l": { "pos": 100, "apr": 100, "pen": 1.3 } },
-        "carv_1l": { "mm_1l": { "pos": 70, "apr": 80, "pen": 1.5 } },
-        "lucar": { "nhl": { "pos": 35, "apr": 50, "pen": 1.0 } },
-        "invivo": { "invivo_onc": { "pos": 20, "apr": 35, "pen": 1.0 } }
+        "commercial": {
+          "mm_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "carv_1l": {
+          "mm_1l": {
+            "pos": 70,
+            "apr": 80,
+            "pen": 1.5
+          }
+        },
+        "lucar": {
+          "nhl": {
+            "pos": 35,
+            "apr": 50,
+            "pen": 1.0
+          }
+        },
+        "invivo": {
+          "invivo_onc": {
+            "pos": 20,
+            "apr": 35,
+            "pen": 1.0
+          }
+        }
       },
-      "val": { "pipelineDR": 10, "pipelineMult": 6, "commercialMult": 4.5, "commercialRevM": 2000, "milestones": 500, "dil": 0 }
+      "val": {
+        "pipelineDR": 10,
+        "pipelineMult": 6,
+        "commercialMult": 4.5,
+        "commercialRevM": 2000,
+        "milestones": 500,
+        "dil": 0
+      }
     },
-    "bluesky": {
+    "psychedelic_bull": {
       "wt": 5,
       "narrative": "In vivo + autoimmune = platform acquisition at massive premium",
       "events": [
-        "✓ CARVYKTI >$7B total sales, dominant in MM",
-        "✓ In vivo CAR-T works across oncology + autoimmune",
-        "✓ Autoimmune TAM unlock (SLE, MS, RA) = $50B+ opportunity",
-        "✓ J&J acquires Legend at 3-5x current price"
+        "\u2713 CARVYKTI >$7B total sales, dominant in MM",
+        "\u2713 In vivo CAR-T works across oncology + autoimmune",
+        "\u2713 Autoimmune TAM unlock (SLE, MS, RA) = $50B+ opportunity",
+        "\u2713 J&J acquires Legend at 3-5x current price"
       ],
       "assumptions": {
-        "commercial": { "mm_2l": { "pos": 100, "apr": 100, "pen": 1.6 } },
-        "carv_1l": { "mm_1l": { "pos": 85, "apr": 90, "pen": 2.0 } },
-        "lucar": { "nhl": { "pos": 50, "apr": 60, "pen": 1.5 } },
-        "invivo": { "invivo_onc": { "pos": 35, "apr": 50, "pen": 1.5 } }
+        "commercial": {
+          "mm_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.6
+          }
+        },
+        "carv_1l": {
+          "mm_1l": {
+            "pos": 85,
+            "apr": 90,
+            "pen": 2.0
+          }
+        },
+        "lucar": {
+          "nhl": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 1.5
+          }
+        },
+        "invivo": {
+          "invivo_onc": {
+            "pos": 35,
+            "apr": 50,
+            "pen": 1.5
+          }
+        }
       },
-      "val": { "pipelineDR": 8, "pipelineMult": 8, "commercialMult": 6.0, "commercialRevM": 2500, "milestones": 1000, "dil": 0 }
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 8,
+        "commercialMult": 6.0,
+        "commercialRevM": 2500,
+        "milestones": 1000,
+        "dil": 0
+      }
     }
   },
-
   "context": {
     "lastData": {
       "date": "Apr 1, 2026 (Q4 2025 earnings)",
@@ -181,7 +334,7 @@
         "Q4 CARVYKTI net trade sales: $555M (+66% YoY, +6% QoQ)",
         "FY2025 CARVYKTI sales: $1.9B total (Legend total revenue ~$1B)",
         "Q4 Legend revenue: $306M (+64% YoY), gross margin 61%",
-        "Adjusted net income: $2.5M — breakeven inflection",
+        "Adjusted net income: $2.5M \u2014 breakeven inflection",
         "10,000+ patients treated, 97% mfg success, <30 day TAT",
         "CARTITUDE-5 and CARTITUDE-6 both fully enrolled",
         "In vivo CAR-T: first patient dosed, data expected H2 2026",
@@ -201,13 +354,13 @@
       ]
     },
     "risks": [
-      "J&J collaboration — Legend gets ~50% of value, not 100%",
+      "J&J collaboration \u2014 Legend gets ~50% of value, not 100%",
       "Arcellx anito-cel gaining traction as BCMA CAR-T competitor",
       "Bispecific antibodies eroding CAR-T share in later lines",
       "Secondary malignancy class-wide concern (FDA monitoring)",
-      "Manufacturing complexity — capacity may not suffice for frontline",
-      "Stock down 60% despite strong fundamentals — what does market know?",
-      "In vivo CAR-T very early — high scientific risk",
+      "Manufacturing complexity \u2014 capacity may not suffice for frontline",
+      "Stock down 60% despite strong fundamentals \u2014 what does market know?",
+      "In vivo CAR-T very early \u2014 high scientific risk",
       "China/GenScript parent overhang (geopolitical)"
     ]
   }

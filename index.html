@@ -298,7 +298,8 @@
       );
     }
 
-    const CC = { bear: "#ef4444", base: "#f59e0b", bull: "#22c55e" };
+    const NAMED_CC = { megabear: "#991b1b", mega_bear: "#991b1b", bear: "#ef4444", base: "#f59e0b", bull: "#22c55e", bluesky: "#3b82f6", blue_sky: "#3b82f6" };
+    const FALLBACK_PAL = ["#991b1b", "#ef4444", "#f59e0b", "#22c55e", "#3b82f6", "#8b5cf6", "#ec4899"];
     const sentC = { "\u2713": "#22c55e", "\u2717": "#ef4444", "~": "#f59e0b", "\u2192": "#6b7080" };
 
     // ═══════════════════════════════════════
@@ -395,16 +396,21 @@
         });
       }
 
+      const scenarioKeys = Object.keys(state.scenarios);
+      const CC = {};
+      scenarioKeys.forEach((sk, i) => { CC[sk] = NAMED_CC[sk] || FALLBACK_PAL[i % FALLBACK_PAL.length]; });
+
       const model = useMemo(() => {
         const co = { ...config.company, cash: state.cash, currentPrice: state.currentPrice };
         const results = {};
-        ["bear", "base", "bull"].forEach(sk => { results[sk] = computeScenario({ ...config, company: co }, sk, state); });
-        const wts = [state.scenarios.bear.wt, state.scenarios.base.wt, state.scenarios.bull.wt];
+        const sks = Object.keys(state.scenarios);
+        sks.forEach(sk => { results[sk] = computeScenario({ ...config, company: co }, sk, state); });
+        const wts = sks.map(sk => state.scenarios[sk].wt);
         const tW = wts.reduce((a, b) => a + b, 0) || 1;
         const normW = wts.map(w => w / tW);
-        const weightedTP = ["bear", "base", "bull"].reduce((s, k, i) => s + results[k].tp * normW[i], 0);
+        const weightedTP = sks.reduce((s, k, i) => s + results[k].tp * normW[i], 0);
         const upside = ((weightedTP - state.currentPrice) / state.currentPrice) * 100;
-        return { results, normW, weightedTP, upside, cashPS: co.cash / co.sharesOut };
+        return { results, normW, weightedTP, upside, cashPS: co.cash / co.sharesOut, sks };
       }, [state, config]);
 
       const ccy = config.company.currency === "EUR" ? "\u20AC" : "$";
@@ -507,17 +513,17 @@
 
           // Scenario cards
           e("div", { style: { display: "flex", gap: 14, marginBottom: 22, flexWrap: "wrap" } },
-            ["bear", "base", "bull"].map((sk, si) => {
+            model.sks.map((sk, si) => {
               const scen = state.scenarios[sk]; const r = model.results[sk];
               const ud = ((r.tp - state.currentPrice) / state.currentPrice) * 100;
-              return e("div", { key: sk, style: { background: "#161920", borderRadius: 10, padding: "18px", border: "1px solid " + CC[sk] + "22", position: "relative", overflow: "hidden", flex: 1, minWidth: 270 } },
+              return e("div", { key: sk, style: { background: "#161920", borderRadius: 10, padding: scenarioKeys.length > 3 ? "14px" : "18px", border: "1px solid " + CC[sk] + "22", position: "relative", overflow: "hidden", flex: 1, minWidth: scenarioKeys.length > 3 ? 200 : 270 } },
                 e("div", { style: { position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(90deg," + CC[sk] + "," + CC[sk] + "44)" } }),
                 e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 12 } },
                   e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: CC[sk] } }, sk),
                   e("div", { style: { fontSize: 11, color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, (model.normW[si] * 100).toFixed(0) + "% wt")
                 ),
                 e("div", { style: { display: "flex", alignItems: "baseline", gap: 8, marginBottom: 4 } },
-                  e("span", { style: { fontSize: 32, fontWeight: 800, fontFamily: "'JetBrains Mono'", lineHeight: 1 } }, ccy + r.tp.toFixed(2)),
+                  e("span", { style: { fontSize: scenarioKeys.length > 3 ? 24 : 32, fontWeight: 800, fontFamily: "'JetBrains Mono'", lineHeight: 1 } }, ccy + r.tp.toFixed(2)),
                   e("span", { style: { fontSize: 13, fontWeight: 700, fontFamily: "'JetBrains Mono'", color: ud >= 0 ? "#22c55e" : "#ef4444" } }, (ud >= 0 ? "+" : "") + ud.toFixed(0) + "%")
                 ),
                 e("div", { style: { fontSize: 11, color: "#6b7080", marginBottom: 12 } }, scen.narrative),
@@ -591,14 +597,14 @@
               })),
               e("div", null,
                 e("div", { style: { fontSize: 10, fontWeight: 700, color: "#b0b4c0", marginBottom: 6 } }, "Company"),
-                e(Sl, { label: "Cash (" + ccy + "M)", value: state.cash, onChange: v => upd("cash", v), min: 50, max: 1000, unit: "M", color: "#f97316" })
+                e(Sl, { label: "Cash (" + ccy + "M)", value: state.cash, onChange: v => upd("cash", v), min: 0, max: Math.max(2000, state.cash * 2), unit: "M", color: "#f97316" })
               )
             )
           ),
 
           // Bear / Base / Bull — always 3 columns
-          e("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, marginBottom: 22 } },
-            ["bear", "base", "bull"].map(sk => {
+          e("div", { style: { display: "grid", gridTemplateColumns: "repeat(" + scenarioKeys.length + ", 1fr)", gap: scenarioKeys.length > 3 ? 8 : 14, marginBottom: 22 } },
+            scenarioKeys.map(sk => {
               const scen = state.scenarios[sk];
               const isSOTP = scen.val.pipelineDR != null;
               return e("div", { key: sk, style: { background: "#161920", borderRadius: 10, padding: "14px 16px", border: "1px solid " + CC[sk] + "22", position: "relative", overflow: "hidden" } },
@@ -624,16 +630,16 @@
                   isSOTP ? [
                     e(Sl, { key: "pdr", label: "Pipeline DR (%)", value: scen.val.pipelineDR, onChange: v => upd("scenarios." + sk + ".val.pipelineDR", v), min: 8, max: 30, unit: "%", color: CC[sk] }),
                     e(Sl, { key: "pm", label: "Pipeline mult", value: scen.val.pipelineMult, onChange: v => upd("scenarios." + sk + ".val.pipelineMult", v), min: 2, max: 8, step: 0.5, unit: "x", color: CC[sk] }),
-                    e(Sl, { key: "cr", label: "Comm. rev (" + ccy + "M)", value: scen.val.commercialRevM, onChange: v => upd("scenarios." + sk + ".val.commercialRevM", v), min: 100, max: 250, unit: "M", color: CC[sk] }),
-                    e(Sl, { key: "cm", label: "Comm. EV/Rev", value: scen.val.commercialMult, onChange: v => upd("scenarios." + sk + ".val.commercialMult", v), min: 1, max: 5, step: 0.5, unit: "x", color: CC[sk] }),
-                    e(Sl, { key: "mi", label: "Milestones (" + ccy + "M)", value: scen.val.milestones, onChange: v => upd("scenarios." + sk + ".val.milestones", v), min: 0, max: 500, unit: "M", color: CC[sk] }),
+                    e(Sl, { key: "cr", label: "Comm. rev (" + ccy + "M)", value: scen.val.commercialRevM, onChange: v => upd("scenarios." + sk + ".val.commercialRevM", v), min: 50, max: Math.max(3000, scen.val.commercialRevM * 2), unit: "M", color: CC[sk] }),
+                    e(Sl, { key: "cm", label: "Comm. EV/Rev", value: scen.val.commercialMult, onChange: v => upd("scenarios." + sk + ".val.commercialMult", v), min: 1, max: 10, step: 0.5, unit: "x", color: CC[sk] }),
+                    e(Sl, { key: "mi", label: "Milestones (" + ccy + "M)", value: scen.val.milestones, onChange: v => upd("scenarios." + sk + ".val.milestones", v), min: 0, max: 1500, unit: "M", color: CC[sk] }),
                     e(Sl, { key: "di", label: "Dilution (%)", value: scen.val.dil, onChange: v => upd("scenarios." + sk + ".val.dil", v), min: 0, max: 25, unit: "%", color: CC[sk] })
                   ] : [
                     e(Sl, { key: "dr", label: "DR (%)", value: scen.val.dr, onChange: v => upd("scenarios." + sk + ".val.dr", v), min: 8, max: 50, unit: "%", color: CC[sk] }),
                     e(Sl, { key: "di", label: "Dilution (%)", value: scen.val.dil, onChange: v => upd("scenarios." + sk + ".val.dil", v), min: 0, max: 40, unit: "%", color: CC[sk] }),
                     e(Sl, { key: "mu", label: "Multiple", value: scen.val.mult, onChange: v => upd("scenarios." + sk + ".val.mult", v), min: 2, max: 10, step: 0.5, unit: "x", color: CC[sk] }),
-                    e(Sl, { key: "pl", label: "Platform (" + ccy + "M)", value: scen.val.plat, onChange: v => upd("scenarios." + sk + ".val.plat", v), min: 0, max: 1500, unit: "M", color: CC[sk] }),
-                    e(Sl, { key: "ex", label: "Ex-US (" + ccy + "M)", value: scen.val.exus, onChange: v => upd("scenarios." + sk + ".val.exus", v), min: 0, max: 800, unit: "M", color: CC[sk] }),
+                    e(Sl, { key: "pl", label: "Platform (" + ccy + "M)", value: scen.val.plat, onChange: v => upd("scenarios." + sk + ".val.plat", v), min: 0, max: Math.max(3000, (scen.val.plat || 0) * 2), unit: "M", color: CC[sk] }),
+                    e(Sl, { key: "ex", label: "Ex-US (" + ccy + "M)", value: scen.val.exus, onChange: v => upd("scenarios." + sk + ".val.exus", v), min: 0, max: Math.max(1500, (scen.val.exus || 0) * 2), unit: "M", color: CC[sk] }),
                     scen.val.cannib != null && e(Sl, { key: "ca", label: "Cannib (%)", value: scen.val.cannib, onChange: v => upd("scenarios." + sk + ".val.cannib", v), min: 0, max: 50, unit: "%", color: "#fb923c" })
                   ]
                 ),
@@ -679,8 +685,8 @@
             "\u2022 Dilution: expected equity dilution from future financing rounds. Reduces TP proportionally.", e("br"),
             "\u2022 Pen Multiplier: scales peak penetration by scenario conviction (bear <1x, bull >1x).", e("br"), e("br"),
             e("strong", { style: { color: "#f97316" } }, "Weighted Target Price"), e("br"),
-            "Weighted TP = Bear TP \u00d7 P(Bear) + Base TP \u00d7 P(Base) + Bull TP \u00d7 P(Bull)", e("br"),
-            "Where P(scenario) = scenario weight / sum of all weights. Weights represent analyst conviction, not market-implied probabilities.", e("br"), e("br"),
+            "Weighted TP = \u03A3 (Scenario\u1D62 TP \u00d7 P(Scenario\u1D62))", e("br"),
+            "Where P(scenario) = scenario weight / sum of all weights. Supports 3-5 scenarios (megabear / bear / base / bull / bluesky). Weights represent analyst conviction, not market-implied probabilities.", e("br"), e("br"),
             e("strong", { style: { color: "#f97316" } }, "Cannibalization (multi-asset)"), e("br"),
             "When two assets serve overlapping markets (e.g. IV + SC formulation), cannibalization reduces total RA: Net RA = Gross RA \u00d7 (1 \u2212 Cannib%). Applied before discounting.", e("br"), e("br"),
             e("strong", { style: { color: "#f97316" } }, "Live price"), e("br"),

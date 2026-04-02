@@ -1,0 +1,368 @@
+{
+  "company": {
+    "ticker": "OCS",
+    "name": "Oculis Holding",
+    "subtitle": "DIAMOND DME Ph3 topline Q2 2026 \u00b7 Privosegtor BTD for ON \u00b7 3 first-in-class candidates",
+    "sharesOut": 58,
+    "cash": 269,
+    "currentPrice": 25.0,
+    "currency": "USD",
+    "yahooTicker": "OCS",
+    "cashRunway": "Into 2029 ($269M Dec 2025, covers 6 pivotal readouts)"
+  },
+  "assets": [
+    {
+      "id": "privo_on",
+      "name": "OCS-05 Privosegtor — neuroprotection (Optic Neuritis)",
+      "stage": "Registrational (PIONEER-1/2)",
+      "designations": [
+        "Breakthrough",
+        "Orphan (US+EU)"
+      ],
+      "indications": [
+        {
+          "id": "on",
+          "name": "Optic neuritis",
+          "market": {
+            "tamB": 3.0,
+            "penPct": 20,
+            "peakYear": 2032,
+            "notes": "First-in-class neuroprotective. ACUITY Ph2: +18 letters. No approved therapies. US ~30K/yr. Rare disease pricing."
+          }
+        }
+      ]
+    },
+    {
+      "id": "privo_naion",
+      "name": "OCS-05 Privosegtor (NAION)",
+      "stage": "Registrational (PIONEER-3, mid-2026)",
+      "designations": [
+        "Orphan"
+      ],
+      "indications": [
+        {
+          "id": "naion",
+          "name": "NAION",
+          "market": {
+            "tamB": 4.0,
+            "penPct": 12,
+            "peakYear": 2033,
+            "notes": "2nd cause of optic nerve blindness after glaucoma. No treatment. Combined ON+NAION US market >$7B."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ocs01",
+      "name": "OCS-01 eye drop (DME)",
+      "stage": "Phase 3 (DIAMOND-1/2, data Q2 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "dme",
+          "name": "Diabetic macular edema",
+          "market": {
+            "tamB": 9.0,
+            "penPct": 8,
+            "peakYear": 2032,
+            "notes": "First topical DME treatment. Eye drop vs monthly anti-VEGF injections. 800+ pts enrolled. Topline Q2 2026. NDA Q4 2026 if positive."
+          }
+        }
+      ]
+    },
+    {
+      "id": "licam",
+      "name": "OCS-02 Licaminlimab — topical anti-TNFα (DED)",
+      "stage": "Registrational (PREDICT-1, data Q4 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "ded",
+          "name": "Dry eye disease (precision med)",
+          "market": {
+            "tamB": 6.0,
+            "penPct": 5,
+            "peakYear": 2033,
+            "notes": "First genotype-based DED program. Topical anti-TNFa. PREDICT-1 results Q4 2026."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "All programs fail \u2014 pipeline wipeout",
+      "events": [
+        "\u2717 DIAMOND misses \u2014 topical DME doesn't work",
+        "\u2717 PIONEER can't replicate ACUITY +18 letters",
+        "\u2717 PREDICT-1 genotype approach fails",
+        "\u2192 Cash floor, needs rescue financing"
+      ],
+      "assumptions": {
+        "privo_on": {
+          "on": {
+            "pos": 15,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "privo_naion": {
+          "naion": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        },
+        "ocs01": {
+          "dme": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        },
+        "licam": {
+          "ded": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "dr": 30,
+        "dil": 25,
+        "mult": 3,
+        "plat": 0,
+        "exus": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "DME disappoints + Privosegtor narrowly works in ON only",
+      "events": [
+        "\u2717 OCS-01 modest effect, not enough vs injections",
+        "\u2713 Privosegtor works but narrow margin in ON",
+        "\u2717 Licaminlimab DED misses",
+        "\u2192 Single-indication company, limited TAM"
+      ],
+      "assumptions": {
+        "privo_on": {
+          "on": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.6
+          }
+        },
+        "privo_naion": {
+          "naion": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.4
+          }
+        },
+        "ocs01": {
+          "dme": {
+            "pos": 25,
+            "apr": 30,
+            "pen": 0.5
+          }
+        },
+        "licam": {
+          "ded": {
+            "pos": 15,
+            "apr": 25,
+            "pen": 0.4
+          }
+        }
+      },
+      "val": {
+        "dr": 20,
+        "dil": 10,
+        "mult": 5,
+        "plat": 100,
+        "exus": 50
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "DIAMOND positive + Privosegtor first-in-class + DED signal",
+      "events": [
+        "\u2713 OCS-01 DME works \u2014 NDA Q4 2026, approval 2027",
+        "\u2713 Privosegtor replicates ACUITY \u2014 filing 2028",
+        "~ Licaminlimab shows signal in genotype subset",
+        "\u2192 Two-product ophtho franchise"
+      ],
+      "assumptions": {
+        "privo_on": {
+          "on": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 1.0
+          }
+        },
+        "privo_naion": {
+          "naion": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 0.7
+          }
+        },
+        "ocs01": {
+          "dme": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 1.0
+          }
+        },
+        "licam": {
+          "ded": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "dr": 14,
+        "dil": 5,
+        "mult": 6,
+        "plat": 500,
+        "exus": 300
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "DME blockbuster + neuroprotection platform across neuro diseases",
+      "events": [
+        "\u2713 OCS-01 disrupts anti-VEGF injection paradigm",
+        "\u2713 Privosegtor approved ON + NAION \u2014 $1B+ franchise",
+        "\u2713 Licaminlimab establishes precision DED",
+        "\u2713 Privosegtor expanded into glaucoma, MS, GA"
+      ],
+      "assumptions": {
+        "privo_on": {
+          "on": {
+            "pos": 80,
+            "apr": 85,
+            "pen": 1.4
+          }
+        },
+        "privo_naion": {
+          "naion": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 1.2
+          }
+        },
+        "ocs01": {
+          "dme": {
+            "pos": 70,
+            "apr": 80,
+            "pen": 1.5
+          }
+        },
+        "licam": {
+          "ded": {
+            "pos": 45,
+            "apr": 55,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "dr": 11,
+        "dil": 3,
+        "mult": 7,
+        "plat": 1500,
+        "exus": 600
+      }
+    },
+    "blue_sky": {
+      "wt": 5,
+      "narrative": "Neuroprotection redefines neuro-ophthalmology \u2014 M&A at premium",
+      "events": [
+        "\u2713 Privosegtor proven across ON, NAION, MS, glaucoma",
+        "\u2713 OCS-01 captures 15%+ DME market",
+        "\u2713 Platform attracts Roche/Novartis at 3-5x",
+        "\u2713 Neuroprotection = new $10B+ therapeutic category"
+      ],
+      "assumptions": {
+        "privo_on": {
+          "on": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 1.8
+          }
+        },
+        "privo_naion": {
+          "naion": {
+            "pos": 75,
+            "apr": 75,
+            "pen": 1.5
+          }
+        },
+        "ocs01": {
+          "dme": {
+            "pos": 80,
+            "apr": 85,
+            "pen": 2.0
+          }
+        },
+        "licam": {
+          "ded": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 1.3
+          }
+        }
+      },
+      "val": {
+        "dr": 9,
+        "dil": 0,
+        "mult": 8,
+        "plat": 3000,
+        "exus": 1000
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Jan 6, 2026 (+ Mar 3 FY2025)",
+      "title": "Privosegtor BTD + PIONEER program launched",
+      "points": [
+        "ACUITY Phase 2: +18 ETDRS letters at 3mo (2x visual resolution)",
+        "FDA Breakthrough Therapy designation for ON (Jan 2026)",
+        "Orphan Drug designation FDA + EMA",
+        "PIONEER-1 started Q4 2025, PIONEER-2 H1 2026, PIONEER-3 mid-2026",
+        "Retinal + optic nerve structure preserved (MRI confirmed)",
+        "Clean safety: headache + acne 10.5%, no SAEs, no discontinuations",
+        "DIAMOND Ph3 (OCS-01 DME): 800+ pts, topline Q2 2026",
+        "PREDICT-1 (Licaminlimab DED): data Q4 2026",
+        "Cash: $269M (Dec 2025), runway into 2029",
+        "Stifel PT raised to $50, 10 analyst Buy ratings"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Q2 2026",
+      "title": "DIAMOND Phase 3 topline \u2014 OCS-01 eye drop in DME",
+      "thresholds": [
+        "Primary: BCVA change vs sham at Week 24",
+        "Key: can topical delivery reach retinal drug levels for DME?",
+        "THE near-term binary event \u2014 DME is largest commercial opportunity",
+        "Also mid-2026: PIONEER-3 (NAION) starts",
+        "Also Q4 2026: PREDICT-1 (Licaminlimab DED) results"
+      ]
+    },
+    "risks": [
+      "DIAMOND is binary \u2014 topical DME has very limited precedent",
+      "Privosegtor Phase 2 was small (n=19/arm) \u2014 translation risk",
+      "NAION has no proven drug precedent \u2014 uncertain regulatory path",
+      "DME competition: Eylea, Vabysmo, new anti-VEGF mechanisms",
+      "DED market crowded \u2014 genotype approach unproven at scale",
+      "Pre-revenue \u2014 valuation entirely on pipeline probability",
+      "49 employees running 3 registrational programs simultaneously",
+      "Blue sky weight (10%) reflects that Privosegtor platform value is real but early"
+    ]
+  }
+}

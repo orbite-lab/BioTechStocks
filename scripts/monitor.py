@@ -37,27 +37,29 @@ TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 def sweep_broad_news():
     """One Sonnet call: catch major headlines across all biotech/pharma."""
+    today = datetime.now(timezone.utc).strftime("%B %d, %Y")
 
     response = client.messages.create(
         model="claude-sonnet-4-20250514",
         max_tokens=4000,
         tools=[{"type": "web_search_20250305", "name": "web_search"}],
-        system="""You are a biotech/pharma news scanner. Search for ALL material biotech and pharma news from the last 24 hours.
+        system=f"""You are a biotech/pharma news scanner. Today is {today}. Search for material biotech and pharma news from TODAY ONLY — not older news.
 
-Focus on: trial data readouts, FDA actions (approvals, CRLs, holds, AdCom), financing events, partnerships, M&A, competitor approvals, regulatory precedents, significant management changes, new epidemiology data.
+Focus on: trial data readouts, FDA actions (approvals, CRLs, holds, AdCom), financing events, partnerships, M&A, competitor approvals, regulatory precedents, significant management changes.
 
-Use multiple searches:
-- "biotech pharma FDA news today"
-- "clinical trial results today"
-- "FDA approval CRL today"
-- "biotech IPO offering today"
+Use multiple searches and include today's date:
+- "biotech pharma news {today}"
+- "FDA approval {today}"
+- "clinical trial results {today}"
 
-Return a JSON array of news items. Each item:
-{"headline": "...", "tickers_mentioned": ["TICKER1"], "companies_mentioned": ["Company Name"], "disease_areas": ["GAD", "Lyme"], "event_type": "trial_data|fda_action|financing|partnership|competitor|regulatory|epidemiology", "summary": "2-3 sentences", "source": "URL"}
+IMPORTANT: Only include news published TODAY ({today}). Do NOT include news from previous days or weeks, even if it appears in search results.
 
-If no material news, return: []
+Return a JSON array. Each item:
+{{"headline": "...", "tickers_mentioned": ["TICKER1"], "companies_mentioned": ["Company Name"], "disease_areas": ["GAD", "Lyme"], "event_type": "trial_data|fda_action|financing|partnership|competitor|regulatory|epidemiology", "summary": "2-3 sentences", "source": "URL"}}
+
+If no material news today, return: []
 Return ONLY the JSON array, no other text.""",
-        messages=[{"role": "user", "content": "Scan for all material biotech/pharma news from the last 24 hours. Search broadly."}],
+        messages=[{"role": "user", "content": f"Scan for all material biotech/pharma news from TODAY ({today}). Only include news published today, not older."}],
     )
 
     text_parts = [b.text for b in response.content if hasattr(b, "text")]
@@ -75,6 +77,7 @@ Return ONLY the JSON array, no other text.""",
 
 def sweep_ticker_batches(tickers_and_names, batch_size=8):
     """Search for news on specific tickers in batches. Catches small-cap events the broad sweep misses."""
+    today = datetime.now(timezone.utc).strftime("%B %d, %Y")
 
     all_items = []
     batches = [tickers_and_names[i:i + batch_size] for i in range(0, len(tickers_and_names), batch_size)]
@@ -87,14 +90,14 @@ def sweep_ticker_batches(tickers_and_names, batch_size=8):
             model="claude-haiku-4-5-20251001",
             max_tokens=3000,
             tools=[{"type": "web_search_20250305", "name": "web_search"}],
-            system="""Search for news about the specific companies listed. Look for ANY news from the last 24 hours about these companies — trial updates, FDA interactions, financing, partnerships, management changes, conference presentations with new data.
+            system=f"""Today is {today}. Search for news about the specific companies listed. ONLY include news published TODAY ({today}) — not older news from previous days or weeks.
 
 Return a JSON array. Each item:
-{"headline": "...", "tickers_mentioned": ["TICKER"], "companies_mentioned": ["Name"], "disease_areas": ["disease"], "event_type": "trial_data|fda_action|financing|partnership|competitor|regulatory|epidemiology|other", "summary": "2-3 sentences", "source": "URL"}
+{{"headline": "...", "tickers_mentioned": ["TICKER"], "companies_mentioned": ["Name"], "disease_areas": ["disease"], "event_type": "trial_data|fda_action|financing|partnership|competitor|regulatory|epidemiology|other", "summary": "2-3 sentences", "source": "URL"}}
 
-If nothing found for this batch, return: []
+If nothing found today for this batch, return: []
 Return ONLY the JSON array.""",
-            messages=[{"role": "user", "content": f"Search for any news from the last 24 hours about these companies:\n{tickers_list}\n\nSearch for: {names_list}"}],
+            messages=[{"role": "user", "content": f"Search for news published TODAY ({today}) about these companies:\n{tickers_list}\n\nSearch for: {names_list}"}],
         )
 
         text_parts = [b.text for b in response.content if hasattr(b, "text")]

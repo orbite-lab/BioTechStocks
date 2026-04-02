@@ -283,7 +283,7 @@ def update_changelog_html():
 
     rows = ""
     for e in entries:
-        changes_html = "".join(f'<div class="change">{c["path"].split(".")[-1]}: {c.get("old_actual", c.get("old_value","?"))} &rarr; {c["new_value"]} <span class="reason">({c["reason"]})</span></div>' for c in e.get("changes", []))
+        changes_html = "".join(f'<div class="change">{c["path"].split(".")[-1]}: {c.get("old_actual", c.get("old_value","?"))} &rarr; {c["new_value"]} <span class="reason">({c.get("reason","")})</span></div>' for c in e.get("changes", []) if isinstance(c, dict))
         source_link = f'<a href="{e["source"]}" target="_blank">source</a>' if e.get("source") else ""
         rows += f'<div class="entry"><div class="meta"><span class="ticker">{e["ticker"]}</span><span class="time">{e["timestamp"][:16]}</span>{source_link}</div><div class="news">{e["news"]}</div>{changes_html}</div>'
 
@@ -308,6 +308,8 @@ def format_telegram_alert(ticker, company_name, news, changes, source):
     if changes:
         lines.append("\n<b>Changes:</b>")
         for c in changes:
+            if not isinstance(c, dict):
+                continue
             param = c["path"].split(".")[-1]
             scen = c["path"].split(".")[1] if len(c["path"].split(".")) > 1 else "?"
             old = c.get("old_actual", c.get("old_value", "?"))

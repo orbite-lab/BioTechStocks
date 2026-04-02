@@ -2,8 +2,7 @@ name: Biotech catalyst monitor
 
 on:
   schedule:
-    # Every 12 hours: 7am and 7pm CET (5:00 and 17:00 UTC)
-    - cron: '0 5,17 * * *'
+    - cron: '30 12 * * 1-5'
   workflow_dispatch: # Manual trigger button in GitHub UI
 
 permissions:

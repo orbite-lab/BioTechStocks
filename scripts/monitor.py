@@ -283,6 +283,8 @@ def update_changelog_html():
 
     rows = ""
     for e in entries:
+        if not isinstance(e, dict):
+            continue
         changes_html = "".join(f'<div class="change">{c["path"].split(".")[-1]}: {c.get("old_actual", c.get("old_value","?"))} &rarr; {c["new_value"]} <span class="reason">({c.get("reason","")})</span></div>' for c in e.get("changes", []) if isinstance(c, dict))
         source_link = f'<a href="{e["source"]}" target="_blank">source</a>' if e.get("source") else ""
         rows += f'<div class="entry"><div class="meta"><span class="ticker">{e["ticker"]}</span><span class="time">{e["timestamp"][:16]}</span>{source_link}</div><div class="news">{e["news"]}</div>{changes_html}</div>'

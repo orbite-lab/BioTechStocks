@@ -1,0 +1,215 @@
+{
+  "company": {
+    "ticker": "CRVO",
+    "name": "CervoMed",
+    "subtitle": "Neflamapimod DLB Phase 3 H2 2026 (pending financing) · Stroke + ALS expansion · $36M micro-cap",
+    "sharesOut": 9.3,
+    "cash": 27,
+    "currentPrice": 4.0,
+    "currency": "USD",
+    "yahooTicker": "CRVO",
+    "cashRunway": "Into Q3 2026 only — Phase 3 requires financing"
+  },
+
+  "assets": [
+    {
+      "id": "nef_dlb",
+      "name": "Neflamapimod — p38α inhibitor (DLB)",
+      "stage": "Phase 3 ready (FDA aligned, H2 2026 start pending financing)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "dlb",
+          "name": "Dementia with Lewy Bodies",
+          "market": {
+            "tamB": 5.0,
+            "penPct": 12,
+            "peakYear": 2034,
+            "notes": "DLB is 2nd most common progressive dementia after Alzheimer's (~1.4M US patients). No approved disease-modifying treatments. Phase 2b RewinD-LB: missed primary (bioavailability issue Batch A), BUT extension with Batch B showed 52% lower CDR-SB worsening at 16wk, 64% risk reduction in low-AD subgroup (p<0.001), 82% in pTau181<21. GFAP -16.0 (p<0.0001). FDA aligned: ~300 pts, 32wk randomized + 48wk OLE. Dose: 50mg TID stable crystal form."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nef_stroke",
+      "name": "Neflamapimod (ischemic stroke recovery)",
+      "stage": "Phase 2a (RESTORE, enrolling mid-2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "stroke",
+          "name": "Post-ischemic stroke recovery",
+          "market": {
+            "tamB": 4.0,
+            "penPct": 5,
+            "peakYear": 2035,
+            "notes": "~800K ischemic strokes/yr in US. No approved therapies for stroke recovery (only acute tPA). Neflamapimod targets synaptic dysfunction underlying recovery failure. RESTORE Phase 2a enrolling, data H2 2026. Massive unmet need."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nef_als",
+      "name": "Neflamapimod (ALS)",
+      "stage": "Phase 2 (EXPERTS-ALS, initiating H2 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "als",
+          "name": "Amyotrophic lateral sclerosis",
+          "market": {
+            "tamB": 3.0,
+            "penPct": 6,
+            "peakYear": 2035,
+            "notes": "ALS affects ~30K US patients. Desperate unmet need — median survival 3-5 years. p38α involved in motor neuron degeneration. EXPERTS-ALS trial initiation H2 2026. Competitors: Relyvrio (withdrawn), Qalsody (antisense), Radicava."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nef_ppa",
+      "name": "Neflamapimod (nfvPPA)",
+      "stage": "Phase 2a (topline H2 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "ppa",
+          "name": "Non-fluent variant primary progressive aphasia",
+          "market": {
+            "tamB": 0.5,
+            "penPct": 20,
+            "peakYear": 2034,
+            "notes": "Rare neurodegenerative disorder — progressive loss of language. No approved treatments. Small market but high pricing potential (rare disease). Phase 2a topline H2 2026."
+          }
+        }
+      ]
+    }
+  ],
+
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Cannot raise capital — Phase 3 never starts — liquidation or reverse merger",
+      "events": [
+        "✗ Capital markets shut for micro-cap biotech — no financing available",
+        "✗ Phase 3 DLB never initiates — FDA alignment wasted",
+        "✗ RESTORE stroke and ALS trials abandoned",
+        "→ Forced reverse merger or liquidation at ~$1/share (cash floor)"
+      ],
+      "assumptions": {
+        "nef_dlb": {"dlb": {"pos": 0, "apr": 0, "pen": 0.3}},
+        "nef_stroke": {"stroke": {"pos": 0, "apr": 0, "pen": 0.2}},
+        "nef_als": {"als": {"pos": 0, "apr": 0, "pen": 0.2}},
+        "nef_ppa": {"ppa": {"pos": 0, "apr": 0, "pen": 0.2}}
+      },
+      "val": {"dr": 40, "dil": 50, "mult": 2, "plat": 0, "exus": 0}
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Phase 3 funded but DLB fails — bioavailability issue was a warning, not a fix",
+      "events": [
+        "✗ Phase 3 DLB funded via dilutive raise at $3-4/share",
+        "✗ Phase 3 misses primary endpoint — Batch B efficacy doesn't replicate",
+        "✗ Stroke and ALS Phase 2a signals too weak for pivotal",
+        "→ Stock collapses post-failure, cash burn with no viable asset"
+      ],
+      "assumptions": {
+        "nef_dlb": {"dlb": {"pos": 15, "apr": 20, "pen": 0.5}},
+        "nef_stroke": {"stroke": {"pos": 10, "apr": 15, "pen": 0.4}},
+        "nef_als": {"als": {"pos": 8, "apr": 12, "pen": 0.3}},
+        "nef_ppa": {"ppa": {"pos": 10, "apr": 15, "pen": 0.4}}
+      },
+      "val": {"dr": 30, "dil": 35, "mult": 3, "plat": 0, "exus": 0}
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Phase 3 funded + DLB shows meaningful slowing + stroke/ALS generate interest",
+      "events": [
+        "✓ Phase 3 DLB funded via partnership or non-dilutive grant + small raise",
+        "✓ DLB Phase 3 enrolls on time — biomarker-enriched population",
+        "~ RESTORE stroke shows encouraging signal but needs larger trial",
+        "~ ALS and nfvPPA generate preliminary data"
+      ],
+      "assumptions": {
+        "nef_dlb": {"dlb": {"pos": 40, "apr": 55, "pen": 1.0}},
+        "nef_stroke": {"stroke": {"pos": 20, "apr": 35, "pen": 0.7}},
+        "nef_als": {"als": {"pos": 15, "apr": 25, "pen": 0.6}},
+        "nef_ppa": {"ppa": {"pos": 25, "apr": 35, "pen": 0.8}}
+      },
+      "val": {"dr": 20, "dil": 20, "mult": 5, "plat": 200, "exus": 100}
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "DLB Phase 3 hits — first disease-modifying DLB therapy + neuro platform",
+      "events": [
+        "✓ Strategic partnership funds Phase 3 — minimal dilution",
+        "✓ DLB Phase 3 meets primary endpoint — Breakthrough path to approval",
+        "✓ Stroke recovery Phase 2a positive — pivotal planned",
+        "✓ p38α platform validated across neurodegeneration — multi-indication"
+      ],
+      "assumptions": {
+        "nef_dlb": {"dlb": {"pos": 60, "apr": 70, "pen": 1.4}},
+        "nef_stroke": {"stroke": {"pos": 35, "apr": 50, "pen": 1.0}},
+        "nef_als": {"als": {"pos": 25, "apr": 40, "pen": 0.8}},
+        "nef_ppa": {"ppa": {"pos": 40, "apr": 50, "pen": 1.0}}
+      },
+      "val": {"dr": 15, "dil": 10, "mult": 6, "plat": 1000, "exus": 400}
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Neflamapimod becomes the Keytruda of neurodegeneration — Biogen/Lilly acquires",
+      "events": [
+        "✓ DLB Phase 3 best-in-class: disease modification + symptomatic benefit",
+        "✓ FDA grants Accelerated Approval in DLB — first ever",
+        "✓ Stroke + ALS data transformative — p38α validated across neurodegeneration",
+        "✓ Biogen or Lilly acquires CervoMed for $3-5B (platform value)"
+      ],
+      "assumptions": {
+        "nef_dlb": {"dlb": {"pos": 75, "apr": 85, "pen": 1.8}},
+        "nef_stroke": {"stroke": {"pos": 50, "apr": 65, "pen": 1.4}},
+        "nef_als": {"als": {"pos": 40, "apr": 55, "pen": 1.2}},
+        "nef_ppa": {"ppa": {"pos": 55, "apr": 65, "pen": 1.3}}
+      },
+      "val": {"dr": 12, "dil": 5, "mult": 7, "plat": 3000, "exus": 1000}
+    }
+  },
+
+  "context": {
+    "lastData": {
+      "date": "Mar 19, 2026 (AD/PD conference)",
+      "title": "RewinD-LB Phase 2b: missed primary but extension data compelling",
+      "points": [
+        "Primary endpoint missed — CDR-SB at 16wk (bioavailability issue Batch A)",
+        "BUT Batch B extension: 52% lower CDR-SB worsening at 16wk",
+        "64% risk reduction in clinically significant worsening (low-AD subgroup, p<0.001)",
+        "82% lower worsening in pTau181 <21 pg/mL patients",
+        "GFAP biomarker: median -16.0 (p<0.0001) — neuroprotective signal",
+        "Effects durable to 32 weeks",
+        "FDA aligned on Phase 3: ~300 pts, 32wk randomized + 48wk OLE",
+        "50mg TID stable crystal form selected (fixed bioavailability issue)",
+        "Cash: $27.3M (Sept 2025) — funds into Q3 2026 ONLY",
+        "Analyst PTs: $11-31, consensus $23 vs $4 stock"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "H2 2026",
+      "title": "Phase 3 DLB initiation (PENDING FINANCING) + stroke/ALS data",
+      "thresholds": [
+        "Phase 3 financing: partnership, offering, or grant — existential for thesis",
+        "RESTORE stroke Phase 2a topline — first expansion readout",
+        "nfvPPA Phase 2a topline",
+        "EXPERTS-ALS trial initiation"
+      ]
+    },
+    "risks": [
+      "CASH CRISIS: $27M funds only into Q3 2026 — Phase 3 requires $50-80M+",
+      "Phase 2b technically MISSED primary — all bullish data is from extension/subgroups",
+      "Bioavailability issue with original batch raises manufacturing/formulation risk",
+      "DLB trials are extremely hard to enroll (diagnosis difficulty, comorbidities)",
+      "Neurodegenerative Phase 3 trials have >80% failure rate historically",
+      "Micro-cap ($36M) — any financing will be massively dilutive at $4/share",
+      "p38α mechanism has been tried before in other neuro diseases (failures)",
+      "9.3M shares outstanding — thin float, high volatility, low institutional ownership"
+    ]
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "company": {
+    "ticker": "SLNO",
+    "name": "Soleno Therapeutics",
+    "subtitle": "VYKAT XR commercial launch · PWS first-in-class · Profitable year 1 · Genetic obesity expansion",
+    "sharesOut": 53,
+    "cash": 506,
+    "currentPrice": 35.0,
+    "currency": "USD",
+    "yahooTicker": "SLNO",
+    "cashRunway": "Self-funding (profitable 2025, $506M cash after $100M buyback)"
+  },
+
+  "valuationType": "SOTP",
+
+  "assets": [
+    {
+      "id": "vykat_pws",
+      "name": "VYKAT XR — PWS hyperphagia (commercial)",
+      "stage": "Commercial (FDA approved Mar 26, 2025, launched Q2 2025)",
+      "designations": ["Breakthrough", "Fast Track", "Orphan Drug (US+EU)", "Priority Review"],
+      "indications": [
+        {
+          "id": "pws",
+          "name": "Prader-Willi syndrome hyperphagia (US + EU)",
+          "market": {
+            "notes": "First and only approved treatment for PWS hyperphagia. 2025 revenue: $190.4M in <9 months. Q4: $91.7M (+40% QoQ). 859 active patients, 1250 start forms, 630 prescribers. ~12.5% of US addressable market (~10K patients). Pricing ~$100-150K/yr. 12% discontinuation rate (AEs). EU MAA under review (Day 120 questions answered). Guidance: ~1000 additional start forms in next 9-12 months."
+          }
+        }
+      ]
+    },
+    {
+      "id": "vykat_eu",
+      "name": "VYKAT XR — EU expansion",
+      "stage": "MAA under review (EMA)",
+      "designations": ["Orphan Drug (EU)"],
+      "indications": [
+        {
+          "id": "pws_eu",
+          "name": "PWS hyperphagia (EU/ROW)",
+          "market": {
+            "tamB": 0.3,
+            "penPct": 100,
+            "peakYear": 2030,
+            "notes": "EU PWS population ~2-3x US addressable. EMA review ongoing, Day 120 questions answered. If approved, launches 2027. Lower pricing in EU (~50-70% of US) but larger patient pool. Revenue modeled as Soleno's direct EU sales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dccr_obesity",
+      "name": "DCCR — Genetic obesities (expansion)",
+      "stage": "Phase 2 (open-label, ongoing)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "gen_obesity",
+          "name": "Genetic obesities (beyond PWS)",
+          "market": {
+            "tamB": 2.0,
+            "penPct": 8,
+            "peakYear": 2033,
+            "notes": "Phase 2 open-label study in patients with genetic obesities (BBS, POMC, LEPR, SH2B1, etc.). If diazoxide choline works in broader genetic obesity, addressable market expands 5-10x beyond PWS. Early stage — option value. Mechanism: KATP channel opener addresses hypothalamic dysfunction."
+          }
+        }
+      ]
+    }
+  ],
+
+  "scenarios": {
+    "bear": {
+      "wt": 20,
+      "narrative": "PWS launch decelerates + EU delayed + genetic obesity fails",
+      "events": [
+        "✗ PWS patient growth stalls — 12% discontinuation rate worsens",
+        "✗ Q1 2026 seasonality deeper than expected (co-pay resets)",
+        "✗ EMA requests additional data, EU approval delayed to 2028",
+        "→ Peak US revenue $250-300M, single-indication rare disease company"
+      ],
+      "assumptions": {
+        "vykat_pws": { "pws": { "pos": 100, "apr": 100, "pen": 1.0 } },
+        "vykat_eu": { "pws_eu": { "pos": 60, "apr": 50, "pen": 0.5 } },
+        "dccr_obesity": { "gen_obesity": { "pos": 10, "apr": 20, "pen": 0.3 } }
+      },
+      "val": { "pipelineDR": 15, "pipelineMult": 4, "commercialMult": 3.5, "commercialRevM": 280, "milestones": 0, "dil": 0 }
+    },
+    "base": {
+      "wt": 55,
+      "narrative": "PWS ramp continues + EU approval + genetic obesity shows signal",
+      "events": [
+        "✓ US PWS revenue reaches $350-400M run rate by end 2026",
+        "✓ EMA approves VYKAT XR — EU launch 2027",
+        "~ Genetic obesity Phase 2 shows encouraging signal",
+        "→ Peak global revenue $500-700M, expanding addressable market"
+      ],
+      "assumptions": {
+        "vykat_pws": { "pws": { "pos": 100, "apr": 100, "pen": 1.0 } },
+        "vykat_eu": { "pws_eu": { "pos": 75, "apr": 70, "pen": 0.8 } },
+        "dccr_obesity": { "gen_obesity": { "pos": 25, "apr": 40, "pen": 0.7 } }
+      },
+      "val": { "pipelineDR": 12, "pipelineMult": 5, "commercialMult": 5.0, "commercialRevM": 370, "milestones": 50, "dil": 0 }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "PWS dominant + EU blockbuster + genetic obesity franchise + M&A target",
+      "events": [
+        "✓ US PWS captures 30%+ of addressable market",
+        "✓ EU approval + rapid launch — global revenue >$800M",
+        "✓ Genetic obesity data positive — TAM expands 5-10x",
+        "✓ M&A target (only approved PWS therapy, rare disease franchise)"
+      ],
+      "assumptions": {
+        "vykat_pws": { "pws": { "pos": 100, "apr": 100, "pen": 1.3 } },
+        "vykat_eu": { "pws_eu": { "pos": 85, "apr": 80, "pen": 1.2 } },
+        "dccr_obesity": { "gen_obesity": { "pos": 40, "apr": 55, "pen": 1.0 } }
+      },
+      "val": { "pipelineDR": 10, "pipelineMult": 6, "commercialMult": 7.0, "commercialRevM": 450, "milestones": 100, "dil": 0 }
+    }
+  },
+
+  "context": {
+    "lastData": {
+      "date": "Feb 25, 2026 (Q4 2025 earnings)",
+      "title": "VYKAT XR $190M in <9 months — profitable year 1",
+      "points": [
+        "FY2025 revenue: $190.4M (launched Q2 2025, <9 months of sales)",
+        "Q4 revenue: $91.7M (+40% QoQ from $66M Q3)",
+        "Net income: $20.9M — profitable in first year",
+        "Q4 operating cash flow: $48.7M",
+        "859 active patients, 1,250 total start forms, 630 prescribers",
+        "~12.5% of US addressable market captured",
+        "12% discontinuation rate (adverse events — hypertrichosis, edema, hyperglycemia)",
+        "$506M cash after $100M accelerated share repurchase",
+        "Guidance: ~1,000 additional start forms in next 9-12 months",
+        "Stock dropped from $90 to ~$35 on launch execution concerns"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Q1/Q2 2026",
+      "title": "Q1 2026 revenue (seasonality test) + EMA decision timeline",
+      "thresholds": [
+        "Q1 revenue vs Q4 $91.7M — co-pay resets create seasonal dip",
+        "New patient start forms pace — are they hitting ~250/quarter?",
+        "EMA Day 180 response / approval timeline",
+        "Genetic obesity Phase 2 interim data updates"
+      ]
+    },
+    "risks": [
+      "Q1 2026 seasonal dip (co-pay resets, insurance plan transitions) could spook market",
+      "12% AE discontinuation rate — if it worsens, limits addressable market",
+      "COGS increasing as zero-cost pre-approval inventory depletes",
+      "PWS is small market (~10K US patients) — ceiling on US revenue",
+      "EU approval not guaranteed — EMA may have different bar than FDA",
+      "Genetic obesity expansion is Phase 2 — high scientific risk",
+      "Stock down 60% from highs — market pricing in slower ramp than expected",
+      "CFO retirement creates management transition concern",
+      "Single-product company until genetic obesity data reads out"
+    ]
+  }
+}

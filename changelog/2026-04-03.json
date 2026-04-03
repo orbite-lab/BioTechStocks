@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp": "2026-04-03T13:40:50Z",
+    "ticker": "SLNO",
+    "news": "Securities fraud class action lawsuit filed against Soleno alleging company systematically downplayed safety concerns related to excess fluid retention in DCCR clinical trials.",
+    "source": "https://www.prnewswire.com/news-releases/soleno-therapeutics-inc-class-action-lawsuit-investors-face-may-5-2026-deadline-302732997.html",
+    "changes": [
+      {
+        "path": "scenarios.bear.assumptions.commercial.pws.pen",
+        "old_value": 1.0,
+        "new_value": 0.9,
+        "reason": "Fraud lawsuit alleging downplayed fluid retention safety concerns increases risk of prescriber caution and higher discontinuation rates",
+        "old_actual": 1.0
+      },
+      {
+        "path": "scenarios.base.assumptions.commercial.pws.pen",
+        "old_value": 1.0,
+        "new_value": 0.9,
+        "reason": "Safety-related lawsuit creates overhang on commercial penetration as prescribers may become more cautious",
+        "old_actual": 1.0
+      },
+      {
+        "path": "scenarios.bear.assumptions.vykat_eu.pws_eu.pos",
+        "old_value": 60,
+        "new_value": 50,
+        "reason": "Safety allegations could negatively impact EMA review process for EU approval",
+        "old_actual": 60
+      },
+      {
+        "path": "scenarios.base.assumptions.vykat_eu.pws_eu.pos",
+        "old_value": 75,
+        "new_value": 70,
+        "reason": "Lawsuit regarding safety concerns may create regulatory headwinds for EU approval",
+        "old_actual": 75
+      }
+    ]
+  }
+]

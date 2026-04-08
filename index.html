@@ -175,9 +175,8 @@ async function main(){
     const ptfScen={};
     SK.forEach(sk=>{
       if(!ptfRows.length){ptfScen[sk]=0;return;}
-      const tM=ptfRows.reduce((s,r)=>s+r.price,0);
-      const tT=ptfRows.reduce((s,r)=>s+(r.tps[sk]||r.price),0);
-      ptfScen[sk]=((tT-tM)/tM*100);
+      const avg=ptfRows.reduce((s,r)=>{const tp=r.tps[sk]||r.price;return s+((tp-r.price)/r.price*100);},0)/ptfRows.length;
+      ptfScen[sk]=avg;
     });
 
     let h='';
@@ -189,13 +188,13 @@ async function main(){
     h+='</div>';
 
     // Chart
-    h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6)"></div>Scenario Upside Map</div>';
-    h+='<div class="card-sub">Upside/downside per scenario vs current price — sorted by weighted TP</div>';
-    h+='<div class="chart-box" style="height:420px"><canvas id="barChart"></canvas></div></div>';
+    h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6)"></div>Market Valuation Overview</div>';
+    h+='<div class="card-sub">Premium / discount to scenario targets — ranked by opportunity · Values above 400% annotated</div>';
+    h+='<div class="chart-box" style="height:500px"><canvas id="lineChart"></canvas></div></div>';
 
     // Portfolio
     h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#a855f7,#ec4899)"></div>Portfolio Scenario Simulator</div>';
-    h+='<div class="card-sub">Select stocks via checkboxes or search — equal-weight portfolio returns under each scenario</div>';
+    h+='<div class="card-sub">Select stocks via checkboxes or search — average return per stock under each scenario</div>';
     h+='<div class="ptf-bar">';
     ptfSet.forEach(tk=>{h+=`<span class="ptf-tag" onclick="window._toggle('${tk}')">${tk}<span class="x">\u00d7</span></span>`;});
     h+='<div class="dd-wrap"><input class="dd-input" id="ddIn" placeholder="+ Add ticker\u2026" onfocus="window._ddOpen()" oninput="window._ddFilter(this.value)" onblur="setTimeout(()=>window._ddClose(),200)"/>';
@@ -208,7 +207,7 @@ async function main(){
       h+=`<div class="ptf-res stat ${cls}"><div class="lbl">${SN[sk]}</div><div class="val" style="color:${v>=0?SC[sk]:'#fca5a5'}">${ptfRows.length?((v>=0?"+":"")+v.toFixed(1)+"%"):"\u2014"}</div></div>`;
     });
     h+='</div>';
-    if(ptfRows.length)h+=`<div style="margin-top:8px;font-size:.72rem;color:var(--text2)">${ptfRows.length} stocks \u00b7 Equal-weight \u00b7 Assumes each scenario applies to all positions</div>`;
+    if(ptfRows.length)h+=`<div style="margin-top:8px;font-size:.72rem;color:var(--text2)">${ptfRows.length} stocks \u00b7 Equal-share (avg of individual % returns) \u00b7 Assumes each scenario applies to all positions</div>`;
     h+='</div>';
 
     // Table
@@ -247,40 +246,110 @@ async function main(){
 
     h+=`<div style="padding:14px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;font-size:.78rem;color:var(--text2)">`;
     h+=`<strong style="color:var(--text1)">Data:</strong> ${Object.keys(configs).length} companies \u00b7 5 scenarios (mega bear 5% / bear 15% / base 50% / bull 25% / psych bull 5%) \u00b7 `;
-    h+=`Weighted TP = probability-weighted average across scenarios \u00b7 <a href="https://github.com/orbite-lab/BioTechStocks" style="color:#60a5fa">Source configs</a> \u00b7 `;
+    h+=`<strong style="color:var(--text1)">Wtd Up%</strong> = (5%\u00d7MB + 15%\u00d7Bear + 50%\u00d7Base + 25%\u00d7Bull + 5%\u00d7PB \u2212 Price) / Price \u00b7 `;
+    h+=`<strong style="color:var(--text1)">Chart:</strong> Premium/discount = (Price \u2212 TP) / TP \u00b7 Negative = undervalued vs that TP \u00b7 `;
+    h+=`<a href="https://github.com/orbite-lab/BioTechStocks" style="color:#60a5fa">Source configs</a> \u00b7 `;
     h+=`<a href="model.html" style="color:#60a5fa">Open model viewer</a></div>`;
 
     app.innerHTML=h;
 
     // Draw chart
     setTimeout(()=>{
-      const cv=document.getElementById("barChart");if(!cv)return;
+      const cv=document.getElementById("lineChart");if(!cv)return;
       if(barChart){barChart.destroy();barChart=null;}
-      const sorted=[...rows].sort((a,b)=>b.wtUp-a.wtUp);
+      // Sort: by valuation bucket then by base upside
+      const sorted=[...rows].sort((a,b)=>{
+        const cat=r=>{
+          if(r.tps.bear!=null&&r.price<r.tps.bear)return 1;
+          if(r.tps.base!=null&&r.price<r.tps.base)return 2;
+          if(r.tps.bull!=null&&r.price<r.tps.bull)return 3;
+          if(r.tps.psychedelic_bull!=null&&r.price<r.tps.psychedelic_bull)return 4;
+          return 5;
+        };
+        const ca=cat(a),cb=cat(b);
+        if(ca!==cb)return ca-cb;
+        const ua=a.tps.base?((a.price-a.tps.base)/a.tps.base*100):0;
+        const ub=b.tps.base?((b.price-b.tps.base)/b.tps.base*100):0;
+        return ua-ub;
+      });
+      // Compute premium/discount to each scenario TP (positive = overvalued vs that TP)
+      const CAP=400;
+      const lineData={};
+      SK.forEach(sk=>{lineData[sk]=sorted.map(r=>{
+        if(!r.tps[sk])return 0;
+        const v=((r.price-r.tps[sk])/r.tps[sk]*100);
+        return v;
+      });});
+      // Background colors per ticker
+      const bgColors=sorted.map(r=>{
+        if(r.tps.bear!=null&&r.price<r.tps.bear)return 'rgba(16,185,129,0.12)';
+        if(r.tps.base!=null&&r.price<r.tps.base)return 'rgba(59,130,246,0.12)';
+        if(r.tps.bull!=null&&r.price<r.tps.bull)return 'rgba(249,115,22,0.12)';
+        if(r.tps.psychedelic_bull!=null&&r.price<r.tps.psychedelic_bull)return 'rgba(168,85,247,0.12)';
+        return 'rgba(239,68,68,0.12)';
+      });
+      const lineColors={mega_bear:'#991b1b',bear:'#ef4444',base:'#f59e0b',bull:'#22c55e',psychedelic_bull:'#a855f7'};
       barChart=new Chart(cv,{
-        type:'bar',
+        type:'line',
         data:{
           labels:sorted.map(r=>r.ticker),
           datasets:SK.map(sk=>({
             label:SN[sk],
-            data:sorted.map(r=>r.tps[sk]?((r.tps[sk]-r.price)/r.price*100):0),
-            backgroundColor:SC[sk]+'55',borderColor:SC[sk],borderWidth:1,borderRadius:2,
-            barPercentage:0.7,categoryPercentage:0.85
+            data:lineData[sk].map(v=>Math.min(v,CAP)),
+            borderColor:lineColors[sk],
+            backgroundColor:lineColors[sk]+'22',
+            borderWidth:2.5,
+            pointRadius:3.5,
+            pointBackgroundColor:lineColors[sk],
+            pointHoverRadius:6,
+            tension:0.15,
+            fill:false
           }))
         },
         options:{
           responsive:true,maintainAspectRatio:false,
-          plugins:{
-            legend:{position:'top',labels:{color:'#8890a0',font:{size:10,family:'DM Sans'},boxWidth:10,padding:14}},
-            tooltip:{backgroundColor:'#1a1f2e',titleColor:'#e2e4ea',bodyColor:'#c8cdd8',borderColor:'#ffffff18',borderWidth:1,
-              callbacks:{label:ctx=>` ${ctx.dataset.label}: ${ctx.parsed.y>=0?'+':''}${ctx.parsed.y.toFixed(0)}%`}}
-          },
           scales:{
-            x:{ticks:{color:'#6b7080',font:{size:8,family:'JetBrains Mono'},maxRotation:90,minRotation:45},grid:{color:'#ffffff06'}},
-            y:{ticks:{color:'#6b7080',font:{size:10},callback:v=>v+'%'},grid:{color:'#ffffff08'},
-              title:{display:true,text:'Upside / Downside vs Current Price',color:'#6b7080',font:{size:11}}}
+            x:{ticks:{color:'#94a3b8',font:{size:9,family:'JetBrains Mono'},maxRotation:60,minRotation:45},grid:{color:'rgba(51,65,85,0.15)'}},
+            y:{min:undefined,max:CAP,ticks:{color:'#94a3b8',font:{size:10},callback:v=>v+'%'},grid:{color:'rgba(51,65,85,0.15)'},
+              title:{display:true,text:'Premium / Discount to Target (%)',color:'#94a3b8',font:{size:11}}}
+          },
+          plugins:{
+            legend:{labels:{color:'#cbd5e1',font:{size:10,family:'DM Sans'},boxWidth:10,padding:14}},
+            tooltip:{backgroundColor:'#1a1f2e',titleColor:'#e2e4ea',bodyColor:'#c8cdd8',borderColor:'#ffffff18',borderWidth:1,
+              callbacks:{
+                label:function(ctx){
+                  const realVal=lineData[SK[ctx.datasetIndex]][ctx.dataIndex];
+                  const capped=Math.abs(realVal)>CAP;
+                  return ` ${ctx.dataset.label}: ${realVal>=0?'+':''}${realVal.toFixed(0)}%${capped?' (capped)':''}`;
+                }
+              }
+            }
           }
-        }
+        },
+        plugins:[
+          {id:'bgBars',beforeDraw:chart=>{
+            const ctx=chart.ctx,xAxis=chart.scales.x,yAxis=chart.scales.y;
+            sorted.forEach((c,i)=>{const x=xAxis.getPixelForValue(i),w=xAxis.width/sorted.length;
+              ctx.save();ctx.fillStyle=bgColors[i];ctx.fillRect(x-w/2,yAxis.top,w,yAxis.height);ctx.restore();});
+          }},
+          {id:'capLabels',afterDatasetsDraw:chart=>{
+            const ctx=chart.ctx;
+            SK.forEach((sk,di)=>{
+              const ds=chart.getDatasetMeta(di);
+              lineData[sk].forEach((v,i)=>{
+                if(Math.abs(v)>CAP){
+                  const pt=ds.data[i];if(!pt)return;
+                  ctx.save();
+                  ctx.font='bold 9px JetBrains Mono';
+                  ctx.fillStyle=lineColors[sk];
+                  ctx.textAlign='center';
+                  ctx.fillText((v>=0?'+':'')+v.toFixed(0)+'%',pt.x,pt.y-8);
+                  ctx.restore();
+                }
+              });
+            });
+          }}
+        ]
       });
     },60);
   }

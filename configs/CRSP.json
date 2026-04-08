@@ -1,0 +1,411 @@
+{
+  "company": {
+    "ticker": "CRSP",
+    "name": "CRISPR Therapeutics",
+    "subtitle": "Casgevy $116M Y1 - $2B cash - In vivo gene editing CTX310/460 - Autoimmune CAR-T",
+    "sharesOut": 85,
+    "cash": 1976,
+    "currentPrice": 50.0,
+    "currency": "USD",
+    "yahooTicker": "CRSP",
+    "cashRunway": "Into 2029+ ($2B cash)"
+  },
+  "assets": [
+    {
+      "id": "casgevy",
+      "name": "Casgevy (exa-cel) - SCD + TDT",
+      "stage": "Commercial ($116M 2025, partnered w/ Vertex)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "scd_tdt",
+          "name": "SCD + beta-thalassemia gene editing cure",
+          "market": {
+            "tamB": 5.0,
+            "penPct": 8,
+            "peakYear": 2032,
+            "notes": "First CRISPR therapy approved. 2025: $116M, 64 infusions. Priced ~$2.2M. Pediatric 5-11 submissions H1 2026. Vertex partnership. Complex manufacturing limits ramp."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ctx310",
+      "name": "CTX310 - in vivo ANGPTL3 editing (CV)",
+      "stage": "Phase 1 (NEJM published)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "cv_edit",
+          "name": "Cardiovascular gene editing",
+          "market": {
+            "tamB": 15.0,
+            "penPct": 2,
+            "peakYear": 2035,
+            "notes": "In vivo CRISPR ANGPTL3 editing. Phase 1 proof-of-concept in NEJM. One-shot cure for hyperlipidemia potential."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ctx460",
+      "name": "CTX460 - in vivo AATD editing",
+      "stage": "Preclinical (clinic mid-2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "aatd",
+          "name": "Alpha-1 antitrypsin deficiency",
+          "market": {
+            "tamB": 2.0,
+            "penPct": 10,
+            "peakYear": 2034,
+            "notes": "SyNTase platform: >90% mRNA correction. Near-saturating hepatocyte editing at 0.5 mg/kg. Clinic mid-2026."
+          }
+        }
+      ]
+    },
+    {
+      "id": "zugocel",
+      "name": "CTX611 - allogeneic CAR-T (autoimmune)",
+      "stage": "Phase 1/2 (SLE remission at 9mo)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "cart_ai",
+          "name": "Autoimmune CAR-T (SLE)",
+          "market": {
+            "tamB": 20.0,
+            "penPct": 1,
+            "peakYear": 2035,
+            "notes": "Anti-CD19 allogeneic CAR-T. SLE patient drug-free DORIS remission at 9 months. Phase 2 topline H2 2026. Off-the-shelf advantage."
+          }
+        }
+      ]
+    },
+    {
+      "id": "discovery",
+      "name": "CTX340 + diabetes + discovery",
+      "stage": "Phase 1 / preclinical",
+      "designations": [],
+      "indications": [
+        {
+          "id": "other",
+          "name": "Diabetes islet cells + other",
+          "market": {
+            "tamB": 10.0,
+            "penPct": 1,
+            "peakYear": 2036,
+            "notes": "CTX340 clinic H1 2026. Diabetes: CRISPR-edited islet cells for T1D. Platform across rare + common diseases."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Casgevy stalls + in vivo editing safety issues + gene editing loses to gene therapy",
+      "events": [
+        "X Casgevy peak $500M only",
+        "X In vivo off-target edits",
+        "X Allogeneic CAR-T persistence issues",
+        "-> Stock to cash floor $23"
+      ],
+      "assumptions": {
+        "casgevy": {
+          "scd_tdt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "ctx310": {
+          "cv_edit": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.2
+          }
+        },
+        "ctx460": {
+          "aatd": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        },
+        "zugocel": {
+          "cart_ai": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        },
+        "discovery": {
+          "other": {
+            "pos": 3,
+            "apr": 5,
+            "pen": 0.1
+          }
+        }
+      },
+      "val": {
+        "dr": 25,
+        "dil": 5,
+        "mult": 3,
+        "plat": 0,
+        "exus": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Casgevy grows slowly + in vivo years away + $2B cash = paying $2B for uncertain platform",
+      "events": [
+        "V Casgevy $500-800M peak",
+        "~ CTX310 intriguing but years from revenue",
+        "X Autoimmune CAR-T mixed",
+        "-> Limited upside at $4B market cap"
+      ],
+      "assumptions": {
+        "casgevy": {
+          "scd_tdt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "ctx310": {
+          "cv_edit": {
+            "pos": 20,
+            "apr": 25,
+            "pen": 0.4
+          }
+        },
+        "ctx460": {
+          "aatd": {
+            "pos": 12,
+            "apr": 18,
+            "pen": 0.3
+          }
+        },
+        "zugocel": {
+          "cart_ai": {
+            "pos": 12,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "discovery": {
+          "other": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "dr": 20,
+        "dil": 0,
+        "mult": 4,
+        "plat": 300,
+        "exus": 100
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Casgevy $1B+ + in vivo editing validated + autoimmune CAR-T promising",
+      "events": [
+        "V Casgevy $1B+ with pediatric + global",
+        "V CTX310 confirmed in humans",
+        "V CTX611 autoimmune Phase 2 positive",
+        "~ CTX460 enters clinic"
+      ],
+      "assumptions": {
+        "casgevy": {
+          "scd_tdt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "ctx310": {
+          "cv_edit": {
+            "pos": 35,
+            "apr": 40,
+            "pen": 0.6
+          }
+        },
+        "ctx460": {
+          "aatd": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.5
+          }
+        },
+        "zugocel": {
+          "cart_ai": {
+            "pos": 25,
+            "apr": 35,
+            "pen": 0.5
+          }
+        },
+        "discovery": {
+          "other": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "dr": 15,
+        "dil": 0,
+        "mult": 5,
+        "plat": 1500,
+        "exus": 500
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "CRISPR platform validated across ex vivo + in vivo - multi-franchise gene editing",
+      "events": [
+        "V Casgevy $2B+",
+        "V In vivo one-shot CV cure + AATD",
+        "V Autoimmune allogeneic CAR-T for SLE",
+        "V Platform leader with 5+ programs"
+      ],
+      "assumptions": {
+        "casgevy": {
+          "scd_tdt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "ctx310": {
+          "cv_edit": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.8
+          }
+        },
+        "ctx460": {
+          "aatd": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 0.7
+          }
+        },
+        "zugocel": {
+          "cart_ai": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 0.7
+          }
+        },
+        "discovery": {
+          "other": {
+            "pos": 20,
+            "apr": 25,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "dr": 12,
+        "dil": 0,
+        "mult": 6,
+        "plat": 5000,
+        "exus": 1500
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Gene editing replaces chronic therapy - CRSP becomes Genentech of genomic medicine",
+      "events": [
+        "V In vivo cures hyperlipidemia single injection",
+        "V AATD + diabetes + SCD/TDT one-time cures",
+        "V Autoimmune CAR-T cures lupus off-the-shelf",
+        "V Roche acquires for $30-40B"
+      ],
+      "assumptions": {
+        "casgevy": {
+          "scd_tdt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "ctx310": {
+          "cv_edit": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 1.2
+          }
+        },
+        "ctx460": {
+          "aatd": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 1.0
+          }
+        },
+        "zugocel": {
+          "cart_ai": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 1.0
+          }
+        },
+        "discovery": {
+          "other": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "dr": 9,
+        "dil": 0,
+        "mult": 7,
+        "plat": 10000,
+        "exus": 3000
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 12, 2026",
+      "title": "Casgevy $116M 2025, 64 infusions, $2B cash",
+      "points": [
+        "Casgevy $116M (Q4 $54M), 64 infusions",
+        "Pediatric 5-11 submissions H1 2026",
+        "CTX310 ANGPTL3 Phase 1 in NEJM",
+        "CTX460 AATD >90% correction, clinic mid-2026",
+        "CTX611 SLE remission 9 months",
+        "Phase 2 CTX611 topline H2 2026",
+        "Cash $1.98B"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "H2 2026",
+      "title": "CTX611 autoimmune Phase 2 + CTX460 clinic + Casgevy ramp",
+      "thresholds": [
+        "CTX611 Phase 2 autoimmune topline",
+        "CTX460 first human dosing",
+        "Casgevy pediatric submissions",
+        "Casgevy $300M 2026 target?"
+      ]
+    },
+    "risks": [
+      "$4.2B market cap with $2B cash = $2.2B for pipeline",
+      "Casgevy ramp slow - complex manufacturing",
+      "In vivo editing very early - off-target risk",
+      "Allogeneic CAR-T persistence inferior",
+      "$2.2M pricing faces payer resistance",
+      "Vertex controls Casgevy commercialization",
+      "Competitors: Beam, Verve, Intellia"
+    ]
+  }
+}

@@ -1,0 +1,412 @@
+{
+  "company": {
+    "ticker": "UCB",
+    "name": "UCB SA",
+    "subtitle": "Bimzelx E2.2B (+267%) - 5 growth drivers E3.3B - 2026 guide HSD-LDD growth",
+    "sharesOut": 200,
+    "cash": 3000,
+    "currentPrice": 200.0,
+    "currency": "EUR",
+    "yahooTicker": "UCB.BR",
+    "cashRunway": "Cash generative (E7.7B revenue, EBITDA margin 31-34%)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "Bimzelx (bimekizumab) - IL-17A/F",
+      "stage": "Commercial (psoriasis + HS + PsA + axSpA, E2.2B 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "bimzelx",
+          "name": "Psoriasis + HS + PsA + axSpA",
+          "market": {
+            "notes": "Bimzelx 2025: E2.2B (+267%). Halfway to E4B+ peak. 45% HS patient share globally. Patent to 2037. First dual IL-17A/F inhibitor."
+          }
+        }
+      ]
+    },
+    {
+      "id": "neuro_rare",
+      "name": "Fintepla + Rystiggo + Zilbrysq",
+      "stage": "Commercial (combined E976M 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "neuro_port",
+          "name": "Epilepsy + myasthenia gravis",
+          "market": {
+            "tamB": 8.0,
+            "penPct": 100,
+            "peakYear": 2032,
+            "notes": "Fintepla E427M (+26%). Rystiggo E332M (+65%). Zilbrysq E217M (+200%). Patent: Fintepla 2033, Rystiggo 2035."
+          }
+        }
+      ]
+    },
+    {
+      "id": "evenity",
+      "name": "Evenity (romosozumab) - osteoporosis",
+      "stage": "Commercial (Amgen partnered)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "osteo",
+          "name": "Osteoporosis",
+          "market": {
+            "tamB": 5.0,
+            "penPct": 100,
+            "peakYear": 2030,
+            "notes": "Anti-sclerostin. UCB receives collaboration revenue. Strong EU expansion."
+          }
+        }
+      ]
+    },
+    {
+      "id": "pipeline",
+      "name": "Pipeline (donzakimig + dapirolizumab SLE + Staccato)",
+      "stage": "Phase 2/3",
+      "designations": [],
+      "indications": [
+        {
+          "id": "next_gen",
+          "name": "Next-gen immunology + neuro",
+          "market": {
+            "tamB": 15.0,
+            "penPct": 3,
+            "peakYear": 2034,
+            "notes": "Donzakimig bispecific IL-13/IL-22 Ph2. Dapirolizumab anti-CD40L Ph3 SLE. 6 Ph3, 5 Ph2 programs in 2026."
+          }
+        }
+      ]
+    },
+    {
+      "id": "legacy",
+      "name": "Legacy (Cimzia + Vimpat/Briviact)",
+      "stage": "Declining",
+      "designations": [],
+      "indications": [
+        {
+          "id": "legacy",
+          "name": "Cimzia + Briviact LOE 2026",
+          "market": {
+            "tamB": 3.0,
+            "penPct": 100,
+            "peakYear": 2024,
+            "notes": "Briviact LOE 2026. Cimzia declining. Legacy drag offset by growth drivers."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Bimzelx growth decelerates + Briviact LOE hits hard",
+      "events": [
+        "X Bimzelx US pricing pressure",
+        "X Briviact LOE creates revenue hole",
+        "X Pipeline delays",
+        "-> Revenue stalls"
+      ],
+      "assumptions": {
+        "commercial": {
+          "bimzelx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "neuro_rare": {
+          "neuro_port": {
+            "pos": 90,
+            "apr": 85,
+            "pen": 0.7
+          }
+        },
+        "evenity": {
+          "osteo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "pipeline": {
+          "next_gen": {
+            "pos": 15,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "legacy": {
+          "legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 16,
+        "pipelineMult": 3,
+        "commercialMult": 3.5,
+        "commercialRevM": 7000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Bimzelx E3B but competition limits peak",
+      "events": [
+        "V Bimzelx grows to E3B",
+        "~ gMG competitive with Vyvgart",
+        "X Briviact LOE drag",
+        "-> Revenue E8.5-9B by 2028"
+      ],
+      "assumptions": {
+        "commercial": {
+          "bimzelx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "neuro_rare": {
+          "neuro_port": {
+            "pos": 92,
+            "apr": 88,
+            "pen": 0.8
+          }
+        },
+        "evenity": {
+          "osteo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "pipeline": {
+          "next_gen": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.5
+          }
+        },
+        "legacy": {
+          "legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 13,
+        "pipelineMult": 4,
+        "commercialMult": 4.5,
+        "commercialRevM": 7500,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Bimzelx E4B+ + Rystiggo/Zilbrysq E1B+ gMG + pipeline delivers",
+      "events": [
+        "V Bimzelx E4B+ dominant in HS + psoriasis",
+        "V Rystiggo/Zilbrysq combined E1B+",
+        "V Pipeline refreshes post-legacy",
+        "V Revenue E10B+ by 2029"
+      ],
+      "assumptions": {
+        "commercial": {
+          "bimzelx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "neuro_rare": {
+          "neuro_port": {
+            "pos": 95,
+            "apr": 92,
+            "pen": 1.0
+          }
+        },
+        "evenity": {
+          "osteo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "pipeline": {
+          "next_gen": {
+            "pos": 45,
+            "apr": 55,
+            "pen": 0.7
+          }
+        },
+        "legacy": {
+          "legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 5,
+        "commercialMult": 5.5,
+        "commercialRevM": 8000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Bimzelx E5B+ + SLE pipeline hit + E12B+ diversified pharma",
+      "events": [
+        "V Bimzelx E5B+ best-in-class across IL-17",
+        "V Dapirolizumab SLE approved",
+        "V Revenue E12B+ by 2030, EBITDA 40%+"
+      ],
+      "assumptions": {
+        "commercial": {
+          "bimzelx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "neuro_rare": {
+          "neuro_port": {
+            "pos": 97,
+            "apr": 95,
+            "pen": 1.0
+          }
+        },
+        "evenity": {
+          "osteo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "pipeline": {
+          "next_gen": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 1.0
+          }
+        },
+        "legacy": {
+          "legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 10,
+        "pipelineMult": 6,
+        "commercialMult": 6.0,
+        "commercialRevM": 8500,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "UCB becomes Europe premier specialty pharma \u2014 acquired at E300+",
+      "events": [
+        "V Bimzelx E6B+",
+        "V SLE + gMG + epilepsy = E5B+ neuro-immunology",
+        "V J&J or Roche acquires for E60-80B"
+      ],
+      "assumptions": {
+        "commercial": {
+          "bimzelx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "neuro_rare": {
+          "neuro_port": {
+            "pos": 98,
+            "apr": 97,
+            "pen": 1.0
+          }
+        },
+        "evenity": {
+          "osteo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "pipeline": {
+          "next_gen": {
+            "pos": 65,
+            "apr": 75,
+            "pen": 1.3
+          }
+        },
+        "legacy": {
+          "legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 7,
+        "commercialMult": 7.0,
+        "commercialRevM": 9000,
+        "milestones": 0,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 26, 2026",
+      "title": "E7.7B revenue (+26%), Bimzelx E2.2B, adj EBITDA +79%",
+      "points": [
+        "Revenue E7.7B (+26%)",
+        "Bimzelx E2.2B (+267%)",
+        "Rystiggo E332M, Zilbrysq E217M, Fintepla E427M",
+        "5 growth drivers E3.3B combined",
+        "Adj EBITDA E2.64B (+79%)",
+        "2026 guide: HSD-LDD revenue growth",
+        "Briviact LOE 2026",
+        "Patent: Bimzelx 2037"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Throughout 2026",
+      "title": "Bimzelx ramp + pipeline readouts",
+      "thresholds": [
+        "Bimzelx tracking to E3B+?",
+        "Briviact LOE impact",
+        "Pipeline submission",
+        "Donzakimig Phase 2 data"
+      ]
+    },
+    "risks": [
+      "E40B market cap at ~5x revenue",
+      "Bimzelx pricing pressure in HS",
+      "Briviact LOE 2026",
+      "gMG competitive (Vyvgart)",
+      "European pharma discount",
+      "SLE pipeline high-risk"
+    ]
+  }
+}

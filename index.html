@@ -186,12 +186,15 @@
             if (!res.ok) throw new Error("no manifest");
             const tickers = await res.json();
             const entries = await Promise.all(tickers.map(async (t) => {
-              const r = await fetch("configs/" + t + ".json");
-              if (!r.ok) throw new Error("missing " + t);
-              return [t, await r.json()];
+              try {
+                const r = await fetch("configs/" + t + ".json");
+                if (!r.ok) { console.warn("skip " + t + " (404)"); return null; }
+                return [t, await r.json()];
+              } catch { console.warn("skip " + t); return null; }
             }));
             const cfgs = {};
-            entries.forEach(([t, cfg]) => { cfgs[t] = cfg; });
+            entries.filter(Boolean).forEach(([t, cfg]) => { cfgs[t] = cfg; });
+            if (Object.keys(cfgs).length === 0) throw new Error("no configs loaded");
             setConfigs(cfgs);
             setSource("server");
           } catch (err) {

@@ -215,6 +215,26 @@ function buildRangeStrip(rows){
   return h;
 }
 
+// ═══ LIVE PRICE FETCH (same as model.html) ═══
+const CORS_PROXIES=[
+  url=>"https://corsproxy.io/?"+encodeURIComponent(url),
+  url=>"https://api.allorigins.win/raw?url="+encodeURIComponent(url),
+];
+async function fetchLivePrice(yahooTicker){
+  if(!yahooTicker)return null;
+  const url="https://query1.finance.yahoo.com/v8/finance/chart/"+yahooTicker+"?interval=1d&range=1d";
+  for(const proxy of CORS_PROXIES){
+    try{
+      const res=await fetch(proxy(url),{signal:AbortSignal.timeout(5000)});
+      if(!res.ok)continue;
+      const data=await res.json();
+      const meta=data?.chart?.result?.[0]?.meta;
+      if(meta?.regularMarketPrice)return{price:meta.regularMarketPrice,prevClose:meta.chartPreviousClose||meta.previousClose};
+    }catch{}
+  }
+  return null;
+}
+
 async function main(){
   const app=document.getElementById("app");
   let configs;
@@ -226,16 +246,29 @@ async function main(){
     if(!Object.keys(configs).length)throw 0;
   }catch{app.innerHTML='<div class="loading" style="color:#ef4444">Failed to load configs. Ensure configs/ folder is deployed.</div>';return;}
 
-  const rows=[];
-  for(const[tk,cfg]of Object.entries(configs)){
-    const co=cfg.company,{results,weightedTP}=computeAll(cfg);
-    const tps={};SK.forEach(s=>{tps[s]=results[s]?results[s].tp:null;});
-    const cashPS=co.cash/co.sharesOut;
-    const ev=Math.max(0,co.currentPrice*co.sharesOut-co.cash);
-    const wtUp=((weightedTP-co.currentPrice)/co.currentPrice*100);
-    rows.push({ticker:tk,name:co.name,ccy:ccySym(co.currency),dec:ccyDec(co.currency),
-      price:co.currentPrice,cashPS,ev,tps,weightedTP,wtUp,currency:co.currency,subtitle:co.subtitle||""});
+  // Build rows with config prices initially
+  let livePrices={};
+  let pricesLoaded=false;
+
+  function buildRows(){
+    const r=[];
+    for(const[tk,cfg]of Object.entries(configs)){
+      const co=cfg.company;
+      const lp=livePrices[tk];
+      const price=lp?lp.price:co.currentPrice;
+      const prevClose=lp?lp.prevClose:null;
+      const {results,weightedTP}=computeAll(cfg);
+      const tps={};SK.forEach(s=>{tps[s]=results[s]?results[s].tp:null;});
+      const cashPS=co.cash/co.sharesOut;
+      const ev=Math.max(0,price*co.sharesOut-co.cash);
+      const wtUp=((weightedTP-price)/price*100);
+      r.push({ticker:tk,name:co.name,ccy:ccySym(co.currency),dec:ccyDec(co.currency),
+        price,prevClose,configPrice:co.currentPrice,live:!!lp,cashPS,ev,tps,weightedTP,wtUp,currency:co.currency,subtitle:co.subtitle||"",yahooTicker:co.yahooTicker||tk});
+    }
+    return r;
   }
+
+  let rows=buildRows();
 
   let sortKey="wtUp",sortDir=-1;
   const doSort=()=>{rows.sort((a,b)=>{
@@ -450,7 +483,10 @@ async function main(){
       h+=`<td><input type="checkbox" class="ptf-chk" ${ptfSet.has(r.ticker)?'checked':''} onchange="window._toggle('${r.ticker}')"/></td>`;
       h+=`<td><a class="tk" href="model.html?ticker=${r.ticker}">${r.ticker}</a></td>`;
       h+=`<td style="color:var(--text2);font-size:.75rem;max-width:200px;overflow:hidden;text-overflow:ellipsis">${r.name}</td>`;
-      h+=`<td class="r mono">${c}${r.price.toFixed(d)}</td>`;
+      h+=`<td class="r mono">${c}${r.price.toFixed(d)}`;
+      if(r.live&&r.prevClose){const chg=((r.price-r.prevClose)/r.prevClose*100);h+=`<span style="font-size:.65rem;margin-left:3px;color:${chg>=0?'#86efac':'#fca5a5'}">${chg>=0?'+':''}${chg.toFixed(1)}%</span>`;}
+      if(r.live)h+=`<span style="font-size:.55rem;color:#22c55e;margin-left:2px" title="Live price">\u25CF</span>`;
+      h+=`</td>`;
       h+=`<td class="r mono" style="color:var(--text2)">${Math.round(r.ev).toLocaleString()}</td>`;
       h+=`<td class="r mono" style="color:#c084fc">${c}${r.cashPS.toFixed(d)}</td>`;
       SK.forEach(sk=>{
@@ -466,7 +502,11 @@ async function main(){
     h+='</tbody></table></div></div>';
 
     h+=`<div style="padding:14px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;font-size:.78rem;color:var(--text2)">`;
-    h+=`<strong style="color:var(--text1)">Data:</strong> ${Object.keys(configs).length} companies \u00b7 5 scenarios (mega bear 5% / bear 15% / base 50% / bull 25% / psych bull 5%) \u00b7 `;
+    h+=`<strong style="color:var(--text1)">Data:</strong> ${Object.keys(configs).length} companies \u00b7 `;
+    const liveCount=Object.keys(livePrices).length;
+    if(liveCount>0)h+=`<span style="color:#22c55e">\u25CF ${liveCount} live prices</span> \u00b7 `;
+    else h+=`<span style="color:var(--text2)">Fetching live prices\u2026</span> \u00b7 `;
+    h+=`5 scenarios (mega bear 5% / bear 15% / base 50% / bull 25% / psych bull 5%) \u00b7 `;
     h+=`<strong style="color:var(--text1)">Wtd Up%</strong> = (5%\u00d7MB + 15%\u00d7Bear + 50%\u00d7Base + 25%\u00d7Bull + 5%\u00d7PB \u2212 Price) / Price \u00b7 `;
     h+=`<strong style="color:var(--text1)">Chart:</strong> Upside = (TP \u2212 Price) / Price \u00b7 Right of 0% = upside, left = downside \u00b7 `;
     h+=`<a href="https://github.com/orbite-lab/BioTechStocks" style="color:#60a5fa">Source configs</a> \u00b7 `;
@@ -486,6 +526,23 @@ async function main(){
     dd.querySelectorAll('.dd-item').forEach(el=>{el.style.display=el.textContent.toLowerCase().includes(q.toLowerCase())?'':'none';});};
 
   render();
+
+  // Background: fetch live prices in batches, update rows as they arrive
+  (async()=>{
+    const tickers=Object.keys(configs);
+    const BATCH=6;
+    let updated=0;
+    for(let i=0;i<tickers.length;i+=BATCH){
+      const batch=tickers.slice(i,i+BATCH);
+      const results=await Promise.all(batch.map(tk=>{
+        const yt=configs[tk].company.yahooTicker||tk;
+        return fetchLivePrice(yt).then(r=>r?[tk,r]:null);
+      }));
+      results.filter(Boolean).forEach(([tk,lp])=>{livePrices[tk]=lp;updated++;});
+      if(updated>0){rows=buildRows();doSort();render();}
+    }
+    if(updated>0){pricesLoaded=true;rows=buildRows();doSort();render();}
+  })();
 }
 main();
 </script>

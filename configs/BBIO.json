@@ -1,0 +1,418 @@
+{
+  "company": {
+    "ticker": "BBIO",
+    "name": "BridgeBio Pharma",
+    "subtitle": "Attruby $362M Y1 \u00b7 ATTR-CM first-choice therapy \u00b7 BBP-418 LGMD NDA H1 2026 \u00b7 Genetic disease platform",
+    "sharesOut": 220,
+    "cash": 588,
+    "currentPrice": 68.0,
+    "currency": "USD",
+    "yahooTicker": "BBIO",
+    "cashRunway": "Into profitability trajectory ($588M cash + growing Attruby revenue)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "Attruby (acoramidis) \u2014 ATTR-CM",
+      "stage": "Commercial (US Nov 2024, EU/Japan/UK approved)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "attr_cm",
+          "name": "Transthyretin amyloid cardiomyopathy (ATTR-CM)",
+          "market": {
+            "notes": "Attruby 2025: $362M (Y1 US). Q4: $146M ($584M annualized). 7,804 unique Rx by Feb 2026. First near-complete (\u226590%) TTR stabilizer. ATTRibute-CM: 49% hazard reduction in CVM/CVH at Month 30. 81% survival rate approaches age-matched population. Competes with tafamidis (Pfizer Vyndaqel $5B+). Differentiated: faster onset (1 month), better TTR stabilization. Global launches underway."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bbp418",
+      "name": "BBP-418 (ribitol) \u2014 LGMD2I/R9",
+      "stage": "NDA planned H1 2026 (FORTIFY Phase 3 positive)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "lgmd",
+          "name": "Limb-girdle muscular dystrophy 2I/R9",
+          "market": {
+            "tamB": 0.5,
+            "penPct": 30,
+            "peakYear": 2031,
+            "notes": "FORTIFY Phase 3: 2.6pt benefit on NSAD (p<\u03b1), broad benefit across subgroups. FDA recommended traditional full approval NDA. NDA submission H1 2026. Ultra-rare neuromuscular disease. Orphan pricing expected ($200-400K/yr)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "infig",
+      "name": "Infigratinib \u2014 achondroplasia",
+      "stage": "Phase 3 positive (low-dose)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "achon",
+          "name": "Achondroplasia",
+          "market": {
+            "tamB": 1.0,
+            "penPct": 25,
+            "peakYear": 2032,
+            "notes": "Low-dose infigratinib Phase 3 positive for achondroplasia (most common form of dwarfism). Competes with Voxzogo (BioMarin, $500M+). Differentiated on dosing convenience. NDA/MAA submissions planned."
+          }
+        }
+      ]
+    },
+    {
+      "id": "encal",
+      "name": "Encaleret \u2014 ADH1 (autosomal dominant hypocalcemia)",
+      "stage": "Phase 3 positive",
+      "designations": [],
+      "indications": [
+        {
+          "id": "adh1",
+          "name": "Autosomal dominant hypocalcemia type 1",
+          "market": {
+            "tamB": 0.3,
+            "penPct": 40,
+            "peakYear": 2031,
+            "notes": "CaSR inhibitor for ADH1. Phase 3 positive. NDA/MAA submissions planned. Ultra-rare disease \u2014 orphan pricing. Also exploring chronic hypoparathyroidism."
+          }
+        }
+      ]
+    },
+    {
+      "id": "depleter",
+      "name": "TTR amyloid depleter antibody + combo pipeline",
+      "stage": "Preclinical (clinic 2027-2028)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "attr_next",
+          "name": "ATTR-CM disease reversal (next-gen)",
+          "market": {
+            "tamB": 8.0,
+            "penPct": 5,
+            "peakYear": 2035,
+            "notes": "New depleter antibody program to reverse ATTR amyloid deposits (not just stabilize). Clinic 2027-2028. If it works: Attruby (stabilize) + depleter (reverse) = complete ATTR-CM franchise. Also oral GLP-1 combo for potential expansion."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Attruby loses to tafamidis on price/access + pipeline delivers only niche orphans",
+      "events": [
+        "\u2717 Payers restrict Attruby in favor of generic tafamidis (2030s)",
+        "\u2717 BBP-418 LGMD, infigratinib, encaleret all approved but tiny markets",
+        "\u2717 TTR depleter fails in preclinical \u2014 Attruby alone insufficient",
+        "\u2192 Attruby peak $2-3B only, pipeline adds $500M, overvalued at $15B"
+      ],
+      "assumptions": {
+        "commercial": {
+          "attr_cm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "bbp418": {
+          "lgmd": {
+            "pos": 80,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "infig": {
+          "achon": {
+            "pos": 70,
+            "apr": 60,
+            "pen": 0.4
+          }
+        },
+        "encal": {
+          "adh1": {
+            "pos": 70,
+            "apr": 60,
+            "pen": 0.4
+          }
+        },
+        "depleter": {
+          "attr_next": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 20,
+        "pipelineMult": 3,
+        "commercialMult": 3.0,
+        "commercialRevM": 500,
+        "milestones": 0,
+        "dil": 5
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Attruby grows but shares ATTR-CM with tafamidis + orphan revenue small",
+      "events": [
+        "\u2713 Attruby grows to $2B but tafamidis retains majority share",
+        "\u2713 LGMD + achondroplasia + ADH1 approved \u2014 combined $500M peak",
+        "~ Depleter program slow to advance",
+        "\u2192 Total peak $3B \u2014 $15B market cap = 5x peak, fair but no upside"
+      ],
+      "assumptions": {
+        "commercial": {
+          "attr_cm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "bbp418": {
+          "lgmd": {
+            "pos": 80,
+            "apr": 80,
+            "pen": 0.7
+          }
+        },
+        "infig": {
+          "achon": {
+            "pos": 70,
+            "apr": 70,
+            "pen": 0.6
+          }
+        },
+        "encal": {
+          "adh1": {
+            "pos": 75,
+            "apr": 70,
+            "pen": 0.6
+          }
+        },
+        "depleter": {
+          "attr_next": {
+            "pos": 10,
+            "apr": 20,
+            "pen": 0.4
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 16,
+        "pipelineMult": 4,
+        "commercialMult": 4.5,
+        "commercialRevM": 800,
+        "milestones": 50,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Attruby becomes ATTR-CM standard of care + 3 rare disease launches + depleter advances",
+      "events": [
+        "\u2713 Attruby $4B+ peak \u2014 displaces tafamidis as first-line in ATTR-CM",
+        "\u2713 BBP-418, infigratinib, encaleret all approved \u2014 rare disease franchise",
+        "\u2713 TTR depleter enters clinic \u2014 disease reversal potential",
+        "\u2192 $5B+ peak revenue across franchise, approaching profitability"
+      ],
+      "assumptions": {
+        "commercial": {
+          "attr_cm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "bbp418": {
+          "lgmd": {
+            "pos": 85,
+            "apr": 85,
+            "pen": 1.0
+          }
+        },
+        "infig": {
+          "achon": {
+            "pos": 75,
+            "apr": 75,
+            "pen": 0.8
+          }
+        },
+        "encal": {
+          "adh1": {
+            "pos": 80,
+            "apr": 78,
+            "pen": 0.8
+          }
+        },
+        "depleter": {
+          "attr_next": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.6
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 13,
+        "pipelineMult": 5,
+        "commercialMult": 5.5,
+        "commercialRevM": 1200,
+        "milestones": 100,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "ATTR franchise dominance (stabilize + deplete) + rare disease portfolio + $8B+ peak",
+      "events": [
+        "\u2713 Attruby $6B+ \u2014 dominant globally in ATTR-CM, displaces tafamidis",
+        "\u2713 Depleter antibody works \u2014 Attruby + depleter = complete disease modification",
+        "\u2713 4+ approved rare disease products \u2014 genetic disease platform validated",
+        "\u2713 Revenue $8B+, highly profitable, M&A target"
+      ],
+      "assumptions": {
+        "commercial": {
+          "attr_cm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "bbp418": {
+          "lgmd": {
+            "pos": 88,
+            "apr": 88,
+            "pen": 1.2
+          }
+        },
+        "infig": {
+          "achon": {
+            "pos": 80,
+            "apr": 80,
+            "pen": 1.0
+          }
+        },
+        "encal": {
+          "adh1": {
+            "pos": 85,
+            "apr": 82,
+            "pen": 1.0
+          }
+        },
+        "depleter": {
+          "attr_next": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 6,
+        "commercialMult": 6.5,
+        "commercialRevM": 1800,
+        "milestones": 200,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "ATTR-CM cured + rare disease franchise + Roche/Novartis acquires at $150+",
+      "events": [
+        "\u2713 Attruby + depleter = functional cure for ATTR-CM \u2014 $10B+ franchise",
+        "\u2713 5+ approved rare disease medicines \u2014 BridgeBio model validated",
+        "\u2713 Platform generates next wave of genetic disease therapies",
+        "\u2713 Roche or Novartis acquires for $30-40B to own genetic disease platform"
+      ],
+      "assumptions": {
+        "commercial": {
+          "attr_cm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "bbp418": {
+          "lgmd": {
+            "pos": 92,
+            "apr": 92,
+            "pen": 1.4
+          }
+        },
+        "infig": {
+          "achon": {
+            "pos": 85,
+            "apr": 85,
+            "pen": 1.2
+          }
+        },
+        "encal": {
+          "adh1": {
+            "pos": 88,
+            "apr": 85,
+            "pen": 1.2
+          }
+        },
+        "depleter": {
+          "attr_next": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 7,
+        "commercialMult": 7.5,
+        "commercialRevM": 2500,
+        "milestones": 400,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 20, 2026 (Q4 2025)",
+      "title": "Attruby $362M Y1 + 7,804 Rx + 3 NDA-track programs",
+      "points": [
+        "Attruby 2025: $362M net product revenue (Q4: $146M)",
+        "7,804 unique patient Rx by Feb 2026, 1,856 prescribers",
+        "ATTRibute-CM OLE: survival + disease stabilization data at ACC 2026",
+        "BBP-418 LGMD: FORTIFY positive, NDA H1 2026 (traditional approval)",
+        "Infigratinib achondroplasia: Phase 3 positive, NDA planned",
+        "Encaleret ADH1: Phase 3 positive, NDA planned",
+        "TTR depleter antibody: clinic 2027-2028",
+        "Ervogastat (DGAT-2, licensed from Pfizer): Phase 2 combo planned",
+        "MGL-2086 oral GLP-1: clinic Q2 2026",
+        "Cash: $588M, well-financed for 3 launches"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "H1 2026",
+      "title": "BBP-418 LGMD NDA submission + Attruby revenue trajectory",
+      "thresholds": [
+        "Attruby Q1-Q2 2026 revenue: tracking toward $800M-1B?",
+        "BBP-418 NDA submission H1 2026",
+        "Infigratinib + encaleret regulatory submission timelines",
+        "ACC 2026 long-term ATTRibute-CM OLE data (Mar 28-30)"
+      ]
+    },
+    "risks": [
+      "$15B market cap with $362M revenue \u2014 priced for perfection",
+      "Tafamidis (Pfizer Vyndaqel) has massive installed base + first-mover advantage",
+      "ATTR-CM market share split uncertain \u2014 will Attruby truly displace tafamidis?",
+      "BBP-418/infigratinib/encaleret are ultra-rare \u2014 small revenue individually",
+      "Still loss-making despite $362M revenue \u2014 SG&A for launch is high",
+      "Debt on balance sheet from prior years",
+      "TTR depleter is preclinical \u2014 years from clinical proof",
+      "Alnylam patisiran + Ionis eplontersen competing in ATTR space"
+    ]
+  }
+}

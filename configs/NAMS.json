@@ -1,0 +1,411 @@
+{
+  "company": {
+    "ticker": "NAMS",
+    "name": "NewAmsterdam Pharma",
+    "subtitle": "Obicetrapib CETP inhibitor | EMA approval H2 2026 | PREVAIL CVOT ongoing",
+    "sharesOut": 115,
+    "cash": 729,
+    "currentPrice": 34.0,
+    "currency": "USD",
+    "yahooTicker": "NAMS",
+    "cashRunway": "Through PREVAIL readout (~$729M cash)"
+  },
+  "assets": [
+    {
+      "id": "obi_mono",
+      "name": "Obicetrapib monotherapy",
+      "stage": "EMA approval H2 2026",
+      "designations": [],
+      "indications": [
+        {
+          "id": "ldl_mono",
+          "name": "LDL-C lowering",
+          "market": {
+            "tamB": 15.0,
+            "penPct": 5,
+            "peakYear": 2033,
+            "notes": "BROADWAY Ph3: 44.4% LDL-C reduction (NEJM). EMA H2 2026. Oral once-daily. Menarini partner."
+          }
+        }
+      ]
+    },
+    {
+      "id": "obi_fdc",
+      "name": "Obicetrapib/ezetimibe FDC",
+      "stage": "EMA approval H2 2026",
+      "designations": [],
+      "indications": [
+        {
+          "id": "ldl_fdc",
+          "name": "LDL-C FDC",
+          "market": {
+            "tamB": 20.0,
+            "penPct": 4,
+            "peakYear": 2034,
+            "notes": "TANDEM Ph3 positive (Lancet). Single pill vs PCSK9 injections."
+          }
+        }
+      ]
+    },
+    {
+      "id": "prevail",
+      "name": "PREVAIL CVOT",
+      "stage": "Phase 3 ongoing",
+      "designations": [],
+      "indications": [
+        {
+          "id": "cvot",
+          "name": "CV outcomes",
+          "market": {
+            "tamB": 30.0,
+            "penPct": 3,
+            "peakYear": 2035,
+            "notes": "Large CVOT for FDA path. Event rate tracking. THE binary event."
+          }
+        }
+      ]
+    },
+    {
+      "id": "alzheimer",
+      "name": "Obicetrapib Alzheimer",
+      "stage": "Phase 2 + trial 2026",
+      "designations": [],
+      "indications": [
+        {
+          "id": "alz",
+          "name": "Alzheimer disease",
+          "market": {
+            "tamB": 30.0,
+            "penPct": 1,
+            "peakYear": 2036,
+            "notes": "Biomarker data positive. Planned trial 2026. Massive optionality."
+          }
+        }
+      ]
+    },
+    {
+      "id": "rubens",
+      "name": "RUBENS T2D Phase 3",
+      "stage": "Phase 3 enrolling",
+      "designations": [],
+      "indications": [
+        {
+          "id": "t2d",
+          "name": "Type 2 diabetes",
+          "market": {
+            "tamB": 10.0,
+            "penPct": 2,
+            "peakYear": 2034,
+            "notes": "Topline year-end 2026."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "PREVAIL CVOT fails - CETP class dead",
+      "events": [
+        "X PREVAIL no CV benefit",
+        "X FDA impossible without outcomes",
+        "X EU-only niche",
+        "-> Cash floor ~$6"
+      ],
+      "assumptions": {
+        "obi_mono": {
+          "ldl_mono": {
+            "pos": 90,
+            "apr": 85,
+            "pen": 0.3
+          }
+        },
+        "obi_fdc": {
+          "ldl_fdc": {
+            "pos": 85,
+            "apr": 80,
+            "pen": 0.3
+          }
+        },
+        "prevail": {
+          "cvot": {
+            "pos": 15,
+            "apr": 10,
+            "pen": 0.2
+          }
+        },
+        "alzheimer": {
+          "alz": {
+            "pos": 5,
+            "apr": 5,
+            "pen": 0.1
+          }
+        },
+        "rubens": {
+          "t2d": {
+            "pos": 30,
+            "apr": 20,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "dr": 28,
+        "dil": 10,
+        "mult": 3,
+        "plat": 0,
+        "exus": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "EU approved but PREVAIL borderline",
+      "events": [
+        "V EMA approves H2 2026",
+        "X PREVAIL borderline",
+        "~ EU niche only"
+      ],
+      "assumptions": {
+        "obi_mono": {
+          "ldl_mono": {
+            "pos": 90,
+            "apr": 85,
+            "pen": 0.5
+          }
+        },
+        "obi_fdc": {
+          "ldl_fdc": {
+            "pos": 85,
+            "apr": 80,
+            "pen": 0.5
+          }
+        },
+        "prevail": {
+          "cvot": {
+            "pos": 35,
+            "apr": 40,
+            "pen": 0.4
+          }
+        },
+        "alzheimer": {
+          "alz": {
+            "pos": 8,
+            "apr": 12,
+            "pen": 0.3
+          }
+        },
+        "rubens": {
+          "t2d": {
+            "pos": 40,
+            "apr": 45,
+            "pen": 0.4
+          }
+        }
+      },
+      "val": {
+        "dr": 20,
+        "dil": 5,
+        "mult": 4,
+        "plat": 200,
+        "exus": 100
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "EU approved + PREVAIL positive - global blockbuster",
+      "events": [
+        "V EMA/UK/Swiss H2 2026",
+        "V PREVAIL positive",
+        "V Oral PCSK9 alternative",
+        "-> $3-5B peak"
+      ],
+      "assumptions": {
+        "obi_mono": {
+          "ldl_mono": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 1.0
+          }
+        },
+        "obi_fdc": {
+          "ldl_fdc": {
+            "pos": 85,
+            "apr": 85,
+            "pen": 1.0
+          }
+        },
+        "prevail": {
+          "cvot": {
+            "pos": 55,
+            "apr": 60,
+            "pen": 0.8
+          }
+        },
+        "alzheimer": {
+          "alz": {
+            "pos": 15,
+            "apr": 20,
+            "pen": 0.5
+          }
+        },
+        "rubens": {
+          "t2d": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "dr": 14,
+        "dil": 0,
+        "mult": 5,
+        "plat": 1500,
+        "exus": 500
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "CETP redeemed - $8B+ peak across CV + diabetes + Alzheimer",
+      "events": [
+        "V PREVAIL strongly positive",
+        "V Oral replaces PCSK9 injections",
+        "V Alzheimer expands TAM",
+        "V $8B+ peak"
+      ],
+      "assumptions": {
+        "obi_mono": {
+          "ldl_mono": {
+            "pos": 92,
+            "apr": 92,
+            "pen": 1.3
+          }
+        },
+        "obi_fdc": {
+          "ldl_fdc": {
+            "pos": 88,
+            "apr": 88,
+            "pen": 1.3
+          }
+        },
+        "prevail": {
+          "cvot": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 1.2
+          }
+        },
+        "alzheimer": {
+          "alz": {
+            "pos": 25,
+            "apr": 35,
+            "pen": 0.7
+          }
+        },
+        "rubens": {
+          "t2d": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "dr": 11,
+        "dil": 0,
+        "mult": 6,
+        "plat": 4000,
+        "exus": 1500
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Obicetrapib = next statin - Pfizer acquires",
+      "events": [
+        "V Standard of care with statins",
+        "V Alzheimer prevention validated",
+        "V $15B+ franchise",
+        "V Pfizer acquires $20-30B"
+      ],
+      "assumptions": {
+        "obi_mono": {
+          "ldl_mono": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.6
+          }
+        },
+        "obi_fdc": {
+          "ldl_fdc": {
+            "pos": 92,
+            "apr": 92,
+            "pen": 1.5
+          }
+        },
+        "prevail": {
+          "cvot": {
+            "pos": 80,
+            "apr": 85,
+            "pen": 1.5
+          }
+        },
+        "alzheimer": {
+          "alz": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 1.0
+          }
+        },
+        "rubens": {
+          "t2d": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 1.2
+          }
+        }
+      },
+      "val": {
+        "dr": 9,
+        "dil": 0,
+        "mult": 7,
+        "plat": 8000,
+        "exus": 3000
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 25, 2026",
+      "title": "BROADWAY+TANDEM positive, EMA H2 2026, PREVAIL tracking",
+      "points": [
+        "BROADWAY Ph3 positive (NEJM)",
+        "TANDEM FDC positive (Lancet)",
+        "EMA approval H2 2026",
+        "PREVAIL CVOT event rate tracking",
+        "RUBENS T2D enrolling, topline YE 2026",
+        "Alzheimer biomarker positive, trial 2026",
+        "Cash $729M"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "H2 2026",
+      "title": "EMA approval + RUBENS T2D + PREVAIL updates",
+      "thresholds": [
+        "EMA/UK/Swiss approval",
+        "RUBENS topline YE 2026",
+        "PREVAIL event accrual",
+        "Alzheimer trial initiation"
+      ]
+    },
+    "risks": [
+      "3 prior CETP failures",
+      "PREVAIL CVOT existential",
+      "$3.8B for pre-revenue",
+      "No US without CVOT",
+      "Oral PCSK9 competitors",
+      "HDL raising historically failed",
+      "Alzheimer speculative",
+      "May need financing"
+    ]
+  }
+}

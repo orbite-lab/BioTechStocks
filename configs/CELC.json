@@ -1,0 +1,363 @@
+{
+  "company": {
+    "ticker": "CELC",
+    "name": "Celcuity",
+    "subtitle": "Gedatolisib NDA Priority Review \u00b7 PDUFA Jul 17, 2026 \u00b7 HR+/HER2- breast cancer",
+    "sharesOut": 38,
+    "cash": 442,
+    "currentPrice": 114.0,
+    "currency": "USD",
+    "yahooTicker": "CELC",
+    "cashRunway": "Into 2027 ($442M cash + $400M ATM shelf)"
+  },
+  "assets": [
+    {
+      "id": "geda_wt",
+      "name": "Gedatolisib \u2014 pan-PI3K/mTOR (PIK3CA wild-type)",
+      "stage": "NDA filed (Priority Review, PDUFA Jul 17, 2026)",
+      "designations": [
+        "Priority Review"
+      ],
+      "indications": [
+        {
+          "id": "bc_wt",
+          "name": "HR+/HER2- breast cancer (PIK3CA WT, 2L+)",
+          "market": {
+            "tamB": 6.0,
+            "penPct": 15,
+            "peakYear": 2032,
+            "notes": "VIKTORIA-1 PIK3CA WT: triplet PFS 9.3 vs 1.9 mo (HR=0.24), doublet 7.3 vs 1.9 mo. Published in JCO. Best Phase 3 PFS improvement ever in 2L+ HR+/HER2- breast cancer. NDA Priority Review PDUFA Jul 17, 2026. Licensed from Pfizer for $5M. Patent exclusivity to 2042."
+          }
+        }
+      ]
+    },
+    {
+      "id": "geda_mt",
+      "name": "Gedatolisib (PIK3CA mutant)",
+      "stage": "Phase 3 (VIKTORIA-1 mutant cohort, topline Q2 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "bc_mt",
+          "name": "HR+/HER2- breast cancer (PIK3CA mutant, 2L+)",
+          "market": {
+            "tamB": 4.0,
+            "penPct": 18,
+            "peakYear": 2032,
+            "notes": "VIKTORIA-1 PIK3CA mutant cohort vs Piqray (alpelisib). Topline Q2 2026 \u2014 second major catalyst. Piqray mPFS 7.3mo in Bylieve. Phase 1 gedatolisib: 19.7mo mPFS in PIK3CA-mutant. If confirmed in Phase 3: gedatolisib displaces Piqray entirely."
+          }
+        }
+      ]
+    },
+    {
+      "id": "geda_1l",
+      "name": "Gedatolisib (1L advanced breast cancer)",
+      "stage": "Phase 3 (VIKTORIA-2)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "bc_1l",
+          "name": "HR+/HER2- ABC first-line",
+          "market": {
+            "tamB": 8.0,
+            "penPct": 8,
+            "peakYear": 2034,
+            "notes": "VIKTORIA-2: gedatolisib + CDK4/6i + fulvestrant as 1L treatment. If 2L is approved, 1L is the massive TAM expansion. Enrolling."
+          }
+        }
+      ]
+    },
+    {
+      "id": "geda_prost",
+      "name": "Gedatolisib (mCRPC prostate cancer)",
+      "stage": "Phase 1/2",
+      "designations": [],
+      "indications": [
+        {
+          "id": "prost",
+          "name": "Metastatic castration-resistant prostate cancer",
+          "market": {
+            "tamB": 10.0,
+            "penPct": 3,
+            "peakYear": 2034,
+            "notes": "Gedatolisib + darolutamide in mCRPC. PAM pathway activated in prostate cancer. Early stage \u2014 option value."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "FDA rejects gedatolisib \u2014 safety or open-label design concern",
+      "events": [
+        "\u2717 FDA issues CRL \u2014 concerns about open-label VIKTORIA-1 design",
+        "\u2717 PIK3CA mutant cohort disappoints vs Piqray",
+        "\u2717 Single-asset company with no backup",
+        "\u2192 Stock collapses to $15-20 (cash floor ~$12/share)"
+      ],
+      "assumptions": {
+        "geda_wt": {
+          "bc_wt": {
+            "pos": 85,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "geda_mt": {
+          "bc_mt": {
+            "pos": 30,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "geda_1l": {
+          "bc_1l": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.2
+          }
+        },
+        "geda_prost": {
+          "prost": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "dr": 25,
+        "dil": 10,
+        "mult": 3,
+        "plat": 0,
+        "exus": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Approved but narrow WT label + mutant misses Piqray bar",
+      "events": [
+        "\u2713 PIK3CA WT approved \u2014 but niche 2L+ population",
+        "\u2717 PIK3CA mutant cohort borderline vs Piqray \u2014 no label expansion",
+        "~ Slow physician adoption \u2014 open-label trial skepticism",
+        "\u2192 Peak $500M limited to WT post-CDK4/6i patients"
+      ],
+      "assumptions": {
+        "geda_wt": {
+          "bc_wt": {
+            "pos": 85,
+            "apr": 80,
+            "pen": 0.6
+          }
+        },
+        "geda_mt": {
+          "bc_mt": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 0.5
+          }
+        },
+        "geda_1l": {
+          "bc_1l": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.4
+          }
+        },
+        "geda_prost": {
+          "prost": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "dr": 18,
+        "dil": 5,
+        "mult": 4,
+        "plat": 200,
+        "exus": 100
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "WT approved Jul 2026 + mutant cohort positive \u2192 broad 2L breast cancer label",
+      "events": [
+        "\u2713 PIK3CA WT approved Jul 2026 \u2014 new 2L standard of care",
+        "\u2713 PIK3CA mutant cohort beats Piqray \u2014 label expansion filed",
+        "\u2713 Gedatolisib becomes pan-PI3K standard across WT + mutant",
+        "~ VIKTORIA-2 1L enrolling, prostate early"
+      ],
+      "assumptions": {
+        "geda_wt": {
+          "bc_wt": {
+            "pos": 85,
+            "apr": 85,
+            "pen": 1.0
+          }
+        },
+        "geda_mt": {
+          "bc_mt": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 1.0
+          }
+        },
+        "geda_1l": {
+          "bc_1l": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 0.7
+          }
+        },
+        "geda_prost": {
+          "prost": {
+            "pos": 15,
+            "apr": 25,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "dr": 14,
+        "dil": 0,
+        "mult": 5,
+        "plat": 500,
+        "exus": 300
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Pan-PI3K/mTOR franchise across breast cancer + prostate \u2014 $3B+ peak",
+      "events": [
+        "\u2713 WT + mutant both approved \u2014 all 2L+ HR+/HER2- breast cancer",
+        "\u2713 VIKTORIA-2 1L positive \u2014 doubles addressable market",
+        "\u2713 CELsignia diagnostic platform adds precision medicine angle",
+        "\u2713 Prostate cancer expands TAM further \u2014 multi-tumor franchise"
+      ],
+      "assumptions": {
+        "geda_wt": {
+          "bc_wt": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 1.3
+          }
+        },
+        "geda_mt": {
+          "bc_mt": {
+            "pos": 65,
+            "apr": 75,
+            "pen": 1.3
+          }
+        },
+        "geda_1l": {
+          "bc_1l": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 1.0
+          }
+        },
+        "geda_prost": {
+          "prost": {
+            "pos": 25,
+            "apr": 35,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "dr": 11,
+        "dil": 0,
+        "mult": 6,
+        "plat": 1500,
+        "exus": 600
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Gedatolisib replaces all PI3K inhibitors globally \u2014 Pfizer/Roche acquires at $300+",
+      "events": [
+        "\u2713 Pan-PI3K/mTOR standard of care across all breast cancer lines",
+        "\u2713 mCRPC data strong \u2014 $5B+ multi-tumor franchise",
+        "\u2713 CELsignia becomes companion diagnostic standard",
+        "\u2713 Pfizer or Roche acquires for $10-15B (they licensed it to Celcuity for $5M!)"
+      ],
+      "assumptions": {
+        "geda_wt": {
+          "bc_wt": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.6
+          }
+        },
+        "geda_mt": {
+          "bc_mt": {
+            "pos": 75,
+            "apr": 85,
+            "pen": 1.5
+          }
+        },
+        "geda_1l": {
+          "bc_1l": {
+            "pos": 60,
+            "apr": 70,
+            "pen": 1.3
+          }
+        },
+        "geda_prost": {
+          "prost": {
+            "pos": 35,
+            "apr": 50,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "dr": 9,
+        "dil": 0,
+        "mult": 7,
+        "plat": 3000,
+        "exus": 1000
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Mar 25, 2026 (Q4 2025 + VIKTORIA-1 JCO pub)",
+      "title": "NDA Priority Review PDUFA Jul 17 + PIK3CA WT PFS 16.6 vs 1.9mo in subgroup",
+      "points": [
+        "NDA accepted with Priority Review \u2014 PDUFA Jul 17, 2026",
+        "PIK3CA WT triplet: PFS 9.3 vs 1.9 mo (HR=0.24) overall",
+        "Subgroup with longer prior TTP: PFS 16.6 vs 1.9 mo (HR=0.14)",
+        "Median duration of response: 17.5 months",
+        "Safety better than Phase 1 (hyperglycemia 9-12%)",
+        "Published in Journal of Clinical Oncology (peer-reviewed)",
+        "PIK3CA mutant cohort topline expected Q2 2026",
+        "VIKTORIA-2 (1L) enrolling",
+        "Cash: $442M, $400M ATM shelf available",
+        "Stock up 1,040% in 12 months"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Q2 2026 + Jul 17, 2026",
+      "title": "PIK3CA mutant topline (Q2) + PDUFA (Jul 17)",
+      "thresholds": [
+        "PIK3CA mutant cohort: gedatolisib vs Piqray (alpelisib) \u2014 key for full label",
+        "Jul 17 PDUFA: FDA approval/CRL for PIK3CA WT",
+        "If both positive: gedatolisib covers ALL 2L+ HR+/HER2- breast cancer"
+      ]
+    },
+    "risks": [
+      "VIKTORIA-1 was open-label \u2014 FDA may have concerns about bias",
+      "Stock up 10x in 12 months \u2014 enormous expectations priced in",
+      "Single-asset company \u2014 everything depends on gedatolisib",
+      "PIK3CA mutant cohort must beat Piqray to justify full thesis",
+      "No commercial infrastructure \u2014 needs to build or partner",
+      "$4.3B market cap for a pre-revenue company \u2014 expensive even with Priority Review",
+      "Breast cancer 2L+ is competitive (inavolisib approved, capivasertib approved)",
+      "Patent exclusivity strong (2042) but commercial execution unproven"
+    ]
+  }
+}

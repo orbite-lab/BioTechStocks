@@ -1,0 +1,312 @@
+{
+  "company": {
+    "ticker": "MDGL",
+    "name": "Madrigal Pharmaceuticals",
+    "subtitle": "Rezdiffra $958M Y1 \u00b7 First & only MASH drug \u00b7 36K+ patients \u00b7 10+ pipeline programs",
+    "sharesOut": 23,
+    "cash": 989,
+    "currentPrice": 530.0,
+    "currency": "USD",
+    "yahooTicker": "MDGL",
+    "cashRunway": "Approaching profitability ($989M cash + $500M credit + accelerating Rezdiffra revenue)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "Rezdiffra (resmetirom) \u2014 MASH F2-F3",
+      "stage": "Commercial (US approved Mar 2024, EU approved 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "mash",
+          "name": "MASH with moderate-advanced fibrosis (F2-F3)",
+          "market": {
+            "notes": "Rezdiffra 2025: $958M (Q4: $321M, $1.28B annualized). 36,250+ patients on therapy. First & only FDA+EC approved MASH drug. 94% gross margin equivalent (COGS $4.5M/qtr). >90% of target population still untreated. Patent protection to 2045. Oral once-daily, liver-directed THR-\u03b2 agonist."
+          }
+        }
+      ]
+    },
+    {
+      "id": "f4c",
+      "name": "Rezdiffra \u2014 MASH F4 compensated cirrhosis",
+      "stage": "Outcomes study ongoing (first-to-market outcomes data)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "mash_f4",
+          "name": "MASH with compensated cirrhosis (F4c)",
+          "market": {
+            "tamB": 5.0,
+            "penPct": 15,
+            "peakYear": 2032,
+            "notes": "2-year F4c data presented at EASL Congress 2025 \u2014 compelling results. Outcomes study in F4c ongoing \u2014 first-to-market outcomes data. F4c label expansion would significantly expand addressable population. F4 patients have highest unmet need."
+          }
+        }
+      ]
+    },
+    {
+      "id": "combos",
+      "name": "Rezdiffra combination pipeline (GLP-1 + DGAT-2 + siRNA)",
+      "stage": "Phase 1/2 + preclinical",
+      "designations": [],
+      "indications": [
+        {
+          "id": "mash_combo",
+          "name": "MASH combination therapies",
+          "market": {
+            "tamB": 20.0,
+            "penPct": 5,
+            "peakYear": 2035,
+            "notes": "MGL-2086 (oral GLP-1, orforglipron derivative): clinic Q2 2026. Ervogastat (DGAT-2 inhibitor, licensed from Pfizer): Phase 2 combo trial planned. 6 preclinical siRNA programs: IND-enabling 2026. Strategy: Rezdiffra as foundation + combo partners for enhanced efficacy across MASH spectrum."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Rezdiffra growth stalls + GLP-1s cannibalize MASH market + F4c data disappoint",
+      "events": [
+        "\u2717 GLP-1 weight loss drugs (Zepbound, Wegovy) shown to resolve MASH",
+        "\u2717 Rezdiffra revenue plateaus at ~$1.5B as payers restrict",
+        "\u2717 F4c outcomes study mixed \u2014 no label expansion",
+        "\u2192 Single-product company in shrinking addressable market"
+      ],
+      "assumptions": {
+        "commercial": {
+          "mash": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "f4c": {
+          "mash_f4": {
+            "pos": 30,
+            "apr": 30,
+            "pen": 0.4
+          }
+        },
+        "combos": {
+          "mash_combo": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 20,
+        "pipelineMult": 3,
+        "commercialMult": 3.5,
+        "commercialRevM": 1200,
+        "milestones": 0,
+        "dil": 5
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Rezdiffra grows to $2-3B but GLP-1 competition limits long-term peak",
+      "events": [
+        "\u2713 Rezdiffra reaches $2-3B but GLP-1 combinations preferred in obese MASH",
+        "~ F4c label expansion granted but incremental",
+        "\u2717 Combo pipeline slow \u2014 Rezdiffra + GLP-1 trials take years",
+        "\u2192 Peak $3B \u2014 $12B market cap at 4x peak, limited upside"
+      ],
+      "assumptions": {
+        "commercial": {
+          "mash": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "f4c": {
+          "mash_f4": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.6
+          }
+        },
+        "combos": {
+          "mash_combo": {
+            "pos": 12,
+            "apr": 20,
+            "pen": 0.4
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 15,
+        "pipelineMult": 4,
+        "commercialMult": 4.5,
+        "commercialRevM": 1600,
+        "milestones": 50,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Rezdiffra $5B+ peak \u2014 MASH standard of care + F4c expansion + combo pipeline building",
+      "events": [
+        "\u2713 Rezdiffra continues strong uptake \u2014 $2B+ in 2026, $5B+ peak",
+        "\u2713 F4c outcomes data positive \u2014 label expansion",
+        "\u2713 Rezdiffra + GLP-1 combo enters clinic \u2014 enhanced efficacy",
+        "\u2713 MASH market grows as awareness + diagnosis increase"
+      ],
+      "assumptions": {
+        "commercial": {
+          "mash": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "f4c": {
+          "mash_f4": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 0.8
+          }
+        },
+        "combos": {
+          "mash_combo": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.6
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 12,
+        "pipelineMult": 5,
+        "commercialMult": 5.5,
+        "commercialRevM": 2000,
+        "milestones": 100,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "MASH franchise leader \u2014 Rezdiffra foundation + combos = $8B+ franchise",
+      "events": [
+        "\u2713 Rezdiffra $7B+ peak \u2014 dominant across F2-F4 MASH",
+        "\u2713 Rezdiffra + GLP-1 combo best-in-class \u2014 standard of care",
+        "\u2713 F4c + combo = addressable market 3x larger than current label",
+        "\u2713 Madrigal becomes the Vertex of liver disease"
+      ],
+      "assumptions": {
+        "commercial": {
+          "mash": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "f4c": {
+          "mash_f4": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 1.2
+          }
+        },
+        "combos": {
+          "mash_combo": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 10,
+        "pipelineMult": 6,
+        "commercialMult": 6.5,
+        "commercialRevM": 2500,
+        "milestones": 200,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "MASH becomes the next statin market \u2014 Rezdiffra foundation of $15B+ franchise \u2014 Lilly/Roche acquires",
+      "events": [
+        "\u2713 MASH recognized as cardiovascular risk factor \u2014 screening mandated",
+        "\u2713 Rezdiffra + combos treat full MASH spectrum (F1-F4) \u2014 $10B+ franchise",
+        "\u2713 MASH addressable population expands from 3M to 15M+ in US alone",
+        "\u2713 Eli Lilly or Roche acquires Madrigal for $25-35B to own MASH market"
+      ],
+      "assumptions": {
+        "commercial": {
+          "mash": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "f4c": {
+          "mash_f4": {
+            "pos": 80,
+            "apr": 85,
+            "pen": 1.5
+          }
+        },
+        "combos": {
+          "mash_combo": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 7,
+        "commercialMult": 8.0,
+        "commercialRevM": 3000,
+        "milestones": 400,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 19, 2026 (Q4 2025)",
+      "title": "$958M 2025 revenue (Y1), 36K+ patients, 10+ pipeline programs",
+      "points": [
+        "Rezdiffra 2025: $958.4M (Q4: $321M, $1.28B annualized)",
+        "36,250+ patients on therapy by year-end 2025",
+        ">90% of target population still untreated",
+        "Patent protection to 2045 (Orange Book listed)",
+        "MGL-2086 oral GLP-1: clinic Q2 2026",
+        "Ervogastat DGAT-2 (Pfizer license): Phase 2 combo planned",
+        "6 siRNA programs: IND-enabling 2026",
+        "F4c outcomes study ongoing \u2014 first-to-market outcomes data",
+        "EU approval received \u2014 EU launch preparing",
+        "Cash: $989M + $500M credit facility"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Throughout 2026",
+      "title": "Revenue trajectory + MGL-2086 GLP-1 clinic entry + F4c data updates",
+      "thresholds": [
+        "2026 revenue trajectory: tracking to $1.5-2B?",
+        "MGL-2086 oral GLP-1 Phase 1 safety/PK (Q2 2026)",
+        "Ervogastat Phase 2 combo trial design + FDA alignment",
+        "EU launch execution"
+      ]
+    },
+    "risks": [
+      "$12.2B market cap at 12.7x 2025 revenue \u2014 premium valuation",
+      "GLP-1 drugs (tirzepatide, semaglutide) showing MASH benefit \u2014 competitive risk",
+      "Rezdiffra approved via accelerated pathway \u2014 confirmatory outcomes study needed",
+      "MASH diagnosis rates still low \u2014 requires education + screening infrastructure",
+      "F4c (cirrhosis) population excluded from current label \u2014 safety not established",
+      "Competition: Akero/AZD7687, Viking NASH, 89bio \u2014 several Phase 2/3 programs",
+      "Combo pipeline (GLP-1, DGAT-2) very early \u2014 years from contribution",
+      "Rezdiffra is first MASH drug but not necessarily the last or best"
+    ]
+  }
+}

@@ -1,0 +1,406 @@
+{
+  "company": {
+    "ticker": "ONC",
+    "name": "BeOne Medicines",
+    "subtitle": "Brukinsa $3.9B global BTK leader | Tevimbra $737M | 2026 guide $6.2-6.4B",
+    "sharesOut": 113,
+    "cash": 4610,
+    "currentPrice": 308.0,
+    "currency": "USD",
+    "yahooTicker": "ONC",
+    "cashRunway": "Cash generative ($4.6B cash, $942M FCF)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "Brukinsa (zanubrutinib)",
+      "stage": "Commercial ($3.9B 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "btk",
+          "name": "CLL + MCL + WM + B-cell malignancies",
+          "market": {
+            "notes": "Brukinsa 2025: $3.9B (+49%), US $2.8B. Global BTKi leader. 75+ markets. 87% GM."
+          }
+        }
+      ]
+    },
+    {
+      "id": "tevimbra",
+      "name": "Tevimbra (tislelizumab)",
+      "stage": "Commercial ($737M 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "pd1",
+          "name": "Solid tumors + hematology",
+          "market": {
+            "tamB": 20.0,
+            "penPct": 100,
+            "peakYear": 2030,
+            "notes": "$737M (+19%). 50+ markets."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sonro",
+      "name": "Sonrotoclax - BCL2 inhibitor",
+      "stage": "Phase 3",
+      "designations": [],
+      "indications": [
+        {
+          "id": "bcl2",
+          "name": "CLL + NHL (BCL2)",
+          "market": {
+            "tamB": 8.0,
+            "penPct": 8,
+            "peakYear": 2033,
+            "notes": "Potentially best-in-class BCL2. Brukinsa+sonro fixed-duration CLL. $3-5B peak."
+          }
+        }
+      ]
+    },
+    {
+      "id": "btk_cdac",
+      "name": "BGB-16673 - BTK CDAC",
+      "stage": "Phase 2/3",
+      "designations": [],
+      "indications": [
+        {
+          "id": "btk_deg",
+          "name": "BTK-resistant B-cell malignancies",
+          "market": {
+            "tamB": 6.0,
+            "penPct": 5,
+            "peakYear": 2034,
+            "notes": "BTK degrader for resistance setting."
+          }
+        }
+      ]
+    },
+    {
+      "id": "pipeline",
+      "name": "Broader pipeline",
+      "stage": "Phase 1-3",
+      "designations": [],
+      "indications": [
+        {
+          "id": "onc_pipe",
+          "name": "HCC + gastric + other solid tumors",
+          "market": {
+            "tamB": 15.0,
+            "penPct": 2,
+            "peakYear": 2035,
+            "notes": "HCC orphan. HER2 gastric. Amgen products $486M."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Brukinsa growth decelerates + sonrotoclax fails",
+      "events": [
+        "X Brukinsa slows",
+        "X Sonrotoclax misses",
+        "X BTK class commoditized"
+      ],
+      "assumptions": {
+        "commercial": {
+          "btk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "tevimbra": {
+          "pd1": {
+            "pos": 90,
+            "apr": 85,
+            "pen": 0.7
+          }
+        },
+        "sonro": {
+          "bcl2": {
+            "pos": 20,
+            "apr": 25,
+            "pen": 0.3
+          }
+        },
+        "btk_cdac": {
+          "btk_deg": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        },
+        "pipeline": {
+          "onc_pipe": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 16,
+        "pipelineMult": 3,
+        "commercialMult": 3.5,
+        "commercialRevM": 5200,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Brukinsa $5-6B but competition limits",
+      "events": [
+        "V Brukinsa $5-6B",
+        "~ Sonrotoclax competitive not best",
+        "~ PD-1 commoditizing"
+      ],
+      "assumptions": {
+        "commercial": {
+          "btk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "tevimbra": {
+          "pd1": {
+            "pos": 92,
+            "apr": 88,
+            "pen": 0.8
+          }
+        },
+        "sonro": {
+          "bcl2": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 0.5
+          }
+        },
+        "btk_cdac": {
+          "btk_deg": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.4
+          }
+        },
+        "pipeline": {
+          "onc_pipe": {
+            "pos": 15,
+            "apr": 25,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 13,
+        "pipelineMult": 4,
+        "commercialMult": 4.0,
+        "commercialRevM": 5800,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Brukinsa $6B+ + sonrotoclax combo transforms CLL",
+      "events": [
+        "V Brukinsa $6B+",
+        "V Sonrotoclax+Brukinsa fixed-duration CLL",
+        "V Revenue $9-10B by 2028"
+      ],
+      "assumptions": {
+        "commercial": {
+          "btk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "tevimbra": {
+          "pd1": {
+            "pos": 95,
+            "apr": 92,
+            "pen": 0.9
+          }
+        },
+        "sonro": {
+          "bcl2": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 0.8
+          }
+        },
+        "btk_cdac": {
+          "btk_deg": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.6
+          }
+        },
+        "pipeline": {
+          "onc_pipe": {
+            "pos": 25,
+            "apr": 35,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 5,
+        "commercialMult": 5.0,
+        "commercialRevM": 6300,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Global oncology leader $12B+",
+      "events": [
+        "V Brukinsa $7B+",
+        "V Sonrotoclax best BCL2",
+        "V Revenue $12B+ by 2030"
+      ],
+      "assumptions": {
+        "commercial": {
+          "btk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "tevimbra": {
+          "pd1": {
+            "pos": 97,
+            "apr": 95,
+            "pen": 1.0
+          }
+        },
+        "sonro": {
+          "bcl2": {
+            "pos": 65,
+            "apr": 75,
+            "pen": 1.0
+          }
+        },
+        "btk_cdac": {
+          "btk_deg": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 0.8
+          }
+        },
+        "pipeline": {
+          "onc_pipe": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 10,
+        "pipelineMult": 6,
+        "commercialMult": 5.5,
+        "commercialRevM": 6800,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "BeOne global pharma champion $15B+",
+      "events": [
+        "V Hematology $10B+",
+        "V IO franchise $5B+",
+        "V Revenue $15B+"
+      ],
+      "assumptions": {
+        "commercial": {
+          "btk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "tevimbra": {
+          "pd1": {
+            "pos": 98,
+            "apr": 97,
+            "pen": 1.0
+          }
+        },
+        "sonro": {
+          "bcl2": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 1.2
+          }
+        },
+        "btk_cdac": {
+          "btk_deg": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 1.0
+          }
+        },
+        "pipeline": {
+          "onc_pipe": {
+            "pos": 45,
+            "apr": 55,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 7,
+        "commercialMult": 6.0,
+        "commercialRevM": 7500,
+        "milestones": 0,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 26, 2026",
+      "title": "$5.34B rev (+40%), Brukinsa $3.9B, first profit",
+      "points": [
+        "Revenue $5.34B (+40%)",
+        "Brukinsa $3.9B (+49%)",
+        "Tevimbra $737M",
+        "GAAP NI $287M (first profit)",
+        "FCF $942M, cash $4.6B",
+        "2026 guide $6.2-6.4B"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "2026",
+      "title": "Sonrotoclax Phase 3 + revenue trajectory",
+      "thresholds": [
+        "2026 guide tracking?",
+        "Sonrotoclax CLL data",
+        "BTK CDAC updates"
+      ]
+    },
+    "risks": [
+      "$34B at 6.4x rev",
+      "Generic ibrutinib competition",
+      "CLL market maturing",
+      "PD-1 commoditizing",
+      "China pricing pressure",
+      "Complex structure"
+    ]
+  }
+}

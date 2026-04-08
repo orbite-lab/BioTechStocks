@@ -1,0 +1,362 @@
+{
+  "company": {
+    "ticker": "KYMR",
+    "name": "Kymera Therapeutics",
+    "subtitle": "Oral STAT6 degrader (KT-621) Phase 2b \u00b7 IRAK4 w/ Sanofi \u00b7 CDK2 w/ Gilead \u00b7 IRF5 Phase 1",
+    "sharesOut": 72,
+    "cash": 1600,
+    "currentPrice": 52.0,
+    "currency": "USD",
+    "yahooTicker": "KYMR",
+    "cashRunway": "Into 2029 ($1.6B cash)"
+  },
+  "assets": [
+    {
+      "id": "kt621",
+      "name": "KT-621 \u2014 oral STAT6 degrader (AD + asthma)",
+      "stage": "Phase 2b (BROADEN2 AD, BREADTH asthma)",
+      "designations": [
+        "Fast Track (AD)"
+      ],
+      "indications": [
+        {
+          "id": "stat6",
+          "name": "Type 2 inflammation (AD + asthma + EoE + CRSwNP)",
+          "market": {
+            "tamB": 30.0,
+            "penPct": 4,
+            "peakYear": 2034,
+            "notes": "First oral STAT6 degrader \u2014 replicates dupilumab ($13B+ peak) in pill form. Phase 1b AD: compelling early data at AAD 2026. BROADEN2 Phase 2b AD data mid-2027. BREADTH Phase 2b asthma data late-2027. If it works: oral dupilumab replacement across AD, asthma, EoE, CRSwNP, CSU. Potentially $5B+ peak across indications."
+          }
+        }
+      ]
+    },
+    {
+      "id": "kt579",
+      "name": "KT-579 \u2014 oral IRF5 degrader (autoimmune)",
+      "stage": "Phase 1 (dosing early 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "irf5",
+          "name": "SLE, RA, IBD (autoimmune)",
+          "market": {
+            "tamB": 20.0,
+            "penPct": 2,
+            "peakYear": 2035,
+            "notes": "First-in-class oral IRF5 degrader. IRF5 is master regulator of B cell activation and autoantibody production. Preclinical: activity in lupus + RA models. Phase 1 started early 2026. Targets diseases where B cells drive pathology."
+          }
+        }
+      ]
+    },
+    {
+      "id": "irak4",
+      "name": "KT-485/SAR447971 \u2014 IRAK4 degrader (Sanofi)",
+      "stage": "Phase 1 expected 2026 (partnered)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "irak4",
+          "name": "HS, AD, psoriasis, IBD (immuno-inflammatory)",
+          "market": {
+            "tamB": 15.0,
+            "penPct": 3,
+            "peakYear": 2034,
+            "notes": "Partnered with Sanofi. KT-485 is 2nd-gen IRAK4 degrader (more potent than KT-474). Sanofi advancing. Kymera has US 50/50 profit split option + double-digit ROW royalties. Phase 1 expected 2026."
+          }
+        }
+      ]
+    },
+    {
+      "id": "cdk2",
+      "name": "CDK2 molecular glue (Gilead oncology)",
+      "stage": "Preclinical (Gilead option)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "onc",
+          "name": "Breast cancer + solid tumors",
+          "market": {
+            "tamB": 10.0,
+            "penPct": 2,
+            "peakYear": 2035,
+            "notes": "Exclusive option/license with Gilead. CDK2 molecular glue degrader for breast cancer. Gilead exercises option \u2192 option payment + Gilead takes global development/commercial. Kymera gets milestones + royalties."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "STAT6 degrader doesn't replicate biologics \u2014 TPD platform overhyped",
+      "events": [
+        "\u2717 KT-621 Phase 2b AD misses \u2014 degradation insufficient vs dupilumab",
+        "\u2717 IRF5 and IRAK4 programs hit safety hurdles",
+        "\u2717 Gilead drops CDK2 option",
+        "\u2192 TPD platform credibility damaged, stock collapses to cash ($22/share)"
+      ],
+      "assumptions": {
+        "kt621": {
+          "stat6": {
+            "pos": 15,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "kt579": {
+          "irf5": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        },
+        "irak4": {
+          "irak4": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        },
+        "cdk2": {
+          "onc": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "dr": 28,
+        "dil": 5,
+        "mult": 3,
+        "plat": 0,
+        "exus": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "KT-621 works but inferior to dupilumab \u2014 niche oral option only",
+      "events": [
+        "~ KT-621 Phase 2b shows signal but not dupilumab-equivalent",
+        "~ Oral convenience matters but efficacy gap limits adoption",
+        "\u2717 IRF5 slow to advance, IRAK4 delayed by Sanofi prioritization",
+        "\u2192 Platform validated but commercial potential limited"
+      ],
+      "assumptions": {
+        "kt621": {
+          "stat6": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 0.5
+          }
+        },
+        "kt579": {
+          "irf5": {
+            "pos": 12,
+            "apr": 20,
+            "pen": 0.4
+          }
+        },
+        "irak4": {
+          "irak4": {
+            "pos": 25,
+            "apr": 35,
+            "pen": 0.5
+          }
+        },
+        "cdk2": {
+          "onc": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "dr": 20,
+        "dil": 0,
+        "mult": 4,
+        "plat": 300,
+        "exus": 100
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "KT-621 matches dupilumab orally + IRF5 enters clinic + Sanofi advances IRAK4",
+      "events": [
+        "\u2713 BROADEN2 AD data competitive with dupilumab \u2014 oral advantage",
+        "\u2713 BREADTH asthma confirms broad Type 2 platform",
+        "\u2713 IRF5 Phase 1 shows clean safety + target engagement",
+        "~ Sanofi advances IRAK4 into larger trials \u2014 milestones flowing"
+      ],
+      "assumptions": {
+        "kt621": {
+          "stat6": {
+            "pos": 55,
+            "apr": 60,
+            "pen": 1.0
+          }
+        },
+        "kt579": {
+          "irf5": {
+            "pos": 25,
+            "apr": 35,
+            "pen": 0.7
+          }
+        },
+        "irak4": {
+          "irak4": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 0.8
+          }
+        },
+        "cdk2": {
+          "onc": {
+            "pos": 15,
+            "apr": 25,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "dr": 15,
+        "dil": 0,
+        "mult": 5,
+        "plat": 1000,
+        "exus": 400
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Oral dupilumab replacement + multi-franchise degrader platform",
+      "events": [
+        "\u2713 KT-621 best-in-class oral Type 2 therapy \u2014 $5B+ peak across AD/asthma/EoE",
+        "\u2713 IRF5 validates in lupus \u2014 first-in-class mechanism",
+        "\u2713 Sanofi IRAK4 blockbuster \u2014 50/50 US profit split to Kymera",
+        "\u2713 Gilead exercises CDK2 option \u2014 milestones + royalties"
+      ],
+      "assumptions": {
+        "kt621": {
+          "stat6": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 1.4
+          }
+        },
+        "kt579": {
+          "irf5": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 1.0
+          }
+        },
+        "irak4": {
+          "irak4": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 1.2
+          }
+        },
+        "cdk2": {
+          "onc": {
+            "pos": 25,
+            "apr": 35,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "dr": 12,
+        "dil": 0,
+        "mult": 6,
+        "plat": 3000,
+        "exus": 1000
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "TPD platform leader \u2014 oral biologics across immunology + oncology \u2014 Sanofi or Roche acquires",
+      "events": [
+        "\u2713 KT-621 replaces dupilumab globally \u2014 $8B+ oral Type 2 franchise",
+        "\u2713 IRF5 + IRAK4 create multi-target autoimmune franchise",
+        "\u2713 Platform generates 5+ clinical programs across undruggable targets",
+        "\u2713 Sanofi exercises full buyout or Roche acquires at $150+"
+      ],
+      "assumptions": {
+        "kt621": {
+          "stat6": {
+            "pos": 80,
+            "apr": 85,
+            "pen": 1.8
+          }
+        },
+        "kt579": {
+          "irf5": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 1.3
+          }
+        },
+        "irak4": {
+          "irak4": {
+            "pos": 65,
+            "apr": 75,
+            "pen": 1.5
+          }
+        },
+        "cdk2": {
+          "onc": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "dr": 9,
+        "dil": 0,
+        "mult": 7,
+        "plat": 6000,
+        "exus": 2000
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Mar 28, 2026 (AAD 2026)",
+      "title": "KT-621 Phase 1b AD late-breaking oral at AAD",
+      "points": [
+        "KT-621 Phase 1b AD data: late-breaking oral presentation AAD 2026",
+        "BROADEN2 Phase 2b AD ongoing \u2014 data mid-2027",
+        "BREADTH Phase 2b asthma first patient dosed Jan 2026 \u2014 data late-2027",
+        "KT-579 IRF5: Phase 1 dosing started early 2026",
+        "KT-485/SAR447971 IRAK4: Sanofi Phase 1 expected 2026",
+        "CDK2 molecular glue: Gilead option \u2014 preclinical ongoing",
+        "Cash: $1.6B \u2014 runway into 2029",
+        "FDA Fast Track granted for KT-621 in AD"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Mid-2027",
+      "title": "BROADEN2 Phase 2b AD data (KT-621 vs placebo)",
+      "thresholds": [
+        "Primary: EASI-75 + vIGA response in moderate-severe AD",
+        "Cross-study comparison vs dupilumab Phase 2 data",
+        "Also late-2027: BREADTH asthma Phase 2b data",
+        "2026 interim: IRF5 Phase 1 safety/PK + IRAK4 Phase 1 (Sanofi)"
+      ]
+    },
+    "risks": [
+      "Primary data readout not until mid-2027 \u2014 15+ months away",
+      "TPD (targeted protein degradation) is unproven modality at scale",
+      "Cross-study dupilumab comparisons are unreliable without head-to-head",
+      "KT-295 TYK2 program dropped \u2014 platform isn't infallible",
+      "Sanofi controls IRAK4 timeline \u2014 could deprioritize",
+      "Gilead CDK2 option may not be exercised",
+      "$3.7B market cap for a company with zero revenue and 2027+ readouts",
+      "Dupilumab patent cliff creates opportunity but also generics/biosimilars"
+    ]
+  }
+}

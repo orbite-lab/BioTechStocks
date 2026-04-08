@@ -1,0 +1,418 @@
+{
+  "company": {
+    "ticker": "RYTM",
+    "name": "Rhythm Pharmaceuticals",
+    "subtitle": "Imcivree $195M (+50%) | Acquired HO PDUFA Mar 20, 2026 | Bivamelagon oral MC4R | PWS expanding",
+    "sharesOut": 56,
+    "cash": 389,
+    "currentPrice": 102.0,
+    "currency": "USD",
+    "yahooTicker": "RYTM",
+    "cashRunway": "Approaching self-funding ($389M cash, revenue growing 50% YoY)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "Imcivree (setmelanotide) \u2014 BBS + POMC/LEPR",
+      "stage": "Commercial ($195M 2025, +50% YoY)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "rare_ob",
+          "name": "Rare MC4R pathway obesity (BBS + POMC/LEPR)",
+          "market": {
+            "notes": "Imcivree 2025: $195M (+50%). Q4 $57M ($229M annualized). US 69%, ex-US 31%. MC4R agonist for rare genetic obesity. BBS largest population."
+          }
+        }
+      ]
+    },
+    {
+      "id": "acq_ho",
+      "name": "Setmelanotide \u2014 acquired hypothalamic obesity",
+      "stage": "sNDA (PDUFA Mar 20, 2026)",
+      "designations": [
+        "Priority Review"
+      ],
+      "indications": [
+        {
+          "id": "ho",
+          "name": "Acquired hypothalamic obesity",
+          "market": {
+            "tamB": 2.0,
+            "penPct": 15,
+            "peakYear": 2032,
+            "notes": "TRANSCEND Phase 3: -18.8% placebo-adjusted BMI reduction (p<0.0001). sNDA PDUFA Mar 20, 2026. ~12K US patients with HO from brain tumors/surgery. PDUFA JUST PASSED \u2014 check result. $500M-1B peak potential."
+          }
+        }
+      ]
+    },
+    {
+      "id": "emanate",
+      "name": "Setmelanotide \u2014 EMANATE (rare MC4R diseases)",
+      "stage": "Phase 3 (topline Mar 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "mc4r_rare",
+          "name": "4 additional rare MC4R pathway diseases",
+          "market": {
+            "tamB": 1.0,
+            "penPct": 20,
+            "peakYear": 2031,
+            "notes": "EMANATE Phase 3 topline expected Mar 2026. 4 genetically defined MC4R pathway diseases. Label expansion for Imcivree franchise."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bivam",
+      "name": "Bivamelagon \u2014 oral MC4R agonist",
+      "stage": "Phase 2 OLE positive, Phase 3 planned YE 2026",
+      "designations": [],
+      "indications": [
+        {
+          "id": "oral_mc4r",
+          "name": "Acquired HO (oral formulation)",
+          "market": {
+            "tamB": 3.0,
+            "penPct": 8,
+            "peakYear": 2034,
+            "notes": "Oral MC4R agonist. Phase 2 OLE: persistent BMI reductions at 6 and 9 months. End-of-Phase 2 meeting with FDA positive. Phase 3 initiation planned by YE 2026. Oral = major convenience advantage over injectable setmelanotide."
+          }
+        }
+      ]
+    },
+    {
+      "id": "pws",
+      "name": "Setmelanotide + RM-718 \u2014 Prader-Willi syndrome",
+      "stage": "Phase 2 exploratory + Phase 1/2",
+      "designations": [],
+      "indications": [
+        {
+          "id": "pws",
+          "name": "Prader-Willi syndrome",
+          "market": {
+            "tamB": 2.0,
+            "penPct": 10,
+            "peakYear": 2034,
+            "notes": "PWS: ~20K patients in US/EU. Setmelanotide Phase 2 preliminary: BMI + hyperphagia reductions at 3-6 months. RM-718 Part C enrollment completing Q1 2026. Massive unmet need \u2014 no approved PWS therapy."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "HO rejected + rare obesity franchise hits ceiling + oral MC4R fails",
+      "events": [
+        "X FDA rejects setmelanotide for acquired HO",
+        "X Rare obesity market saturates at $250M",
+        "X Bivamelagon oral Phase 3 fails",
+        "-> Single-franchise niche rare disease company"
+      ],
+      "assumptions": {
+        "commercial": {
+          "rare_ob": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "acq_ho": {
+          "ho": {
+            "pos": 80,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "emanate": {
+          "mc4r_rare": {
+            "pos": 50,
+            "apr": 40,
+            "pen": 0.4
+          }
+        },
+        "bivam": {
+          "oral_mc4r": {
+            "pos": 15,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "pws": {
+          "pws": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 22,
+        "pipelineMult": 3,
+        "commercialMult": 3.5,
+        "commercialRevM": 220,
+        "milestones": 0,
+        "dil": 5
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "HO approved but slow uptake + bivamelagon years away + PWS uncertain",
+      "events": [
+        "V HO approved but physician adoption slow",
+        "~ Rare diseases expanding but niche",
+        "X Bivamelagon Phase 3 takes longer than expected",
+        "-> Revenue grows to $400-500M but ceiling visible"
+      ],
+      "assumptions": {
+        "commercial": {
+          "rare_ob": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "acq_ho": {
+          "ho": {
+            "pos": 80,
+            "apr": 75,
+            "pen": 0.6
+          }
+        },
+        "emanate": {
+          "mc4r_rare": {
+            "pos": 55,
+            "apr": 55,
+            "pen": 0.6
+          }
+        },
+        "bivam": {
+          "oral_mc4r": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.5
+          }
+        },
+        "pws": {
+          "pws": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.4
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 16,
+        "pipelineMult": 4,
+        "commercialMult": 4.5,
+        "commercialRevM": 300,
+        "milestones": 30,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "HO approved + franchise $500M+ + bivamelagon Phase 3 initiates + PWS advancing",
+      "events": [
+        "V Setmelanotide HO approved \u2014 launch with existing infrastructure",
+        "V EMANATE positive \u2014 4 more rare diseases added to label",
+        "V Bivamelagon Phase 3 initiated YE 2026 \u2014 oral MC4R pipeline",
+        "V Revenue trajectory: $300M 2026 -> $600M+ by 2029"
+      ],
+      "assumptions": {
+        "commercial": {
+          "rare_ob": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "acq_ho": {
+          "ho": {
+            "pos": 85,
+            "apr": 85,
+            "pen": 1.0
+          }
+        },
+        "emanate": {
+          "mc4r_rare": {
+            "pos": 65,
+            "apr": 65,
+            "pen": 0.8
+          }
+        },
+        "bivam": {
+          "oral_mc4r": {
+            "pos": 45,
+            "apr": 55,
+            "pen": 0.7
+          }
+        },
+        "pws": {
+          "pws": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.6
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 13,
+        "pipelineMult": 5,
+        "commercialMult": 5.5,
+        "commercialRevM": 350,
+        "milestones": 50,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "MC4R franchise $1B+ \u2014 HO + rare + PWS + oral bivamelagon",
+      "events": [
+        "V Imcivree $800M+ across all approved indications",
+        "V Bivamelagon oral validated \u2014 $1B+ peak for oral MC4R",
+        "V PWS breakthrough \u2014 largest rare obesity population",
+        "V Total franchise $1.5-2B peak"
+      ],
+      "assumptions": {
+        "commercial": {
+          "rare_ob": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "acq_ho": {
+          "ho": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 1.3
+          }
+        },
+        "emanate": {
+          "mc4r_rare": {
+            "pos": 75,
+            "apr": 75,
+            "pen": 1.0
+          }
+        },
+        "bivam": {
+          "oral_mc4r": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 1.0
+          }
+        },
+        "pws": {
+          "pws": {
+            "pos": 45,
+            "apr": 55,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 6,
+        "commercialMult": 6.5,
+        "commercialRevM": 450,
+        "milestones": 100,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "MC4R pathway platform dominates rare + common obesity \u2014 Novo/Lilly acquires at $200+",
+      "events": [
+        "V MC4R franchise $2B+ across all indications",
+        "V Oral bivamelagon extends into broader obesity",
+        "V PWS + congenital HO + rare MC4R = dominant franchise",
+        "V Novo Nordisk or Lilly acquires for $12-15B"
+      ],
+      "assumptions": {
+        "commercial": {
+          "rare_ob": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "acq_ho": {
+          "ho": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.5
+          }
+        },
+        "emanate": {
+          "mc4r_rare": {
+            "pos": 85,
+            "apr": 85,
+            "pen": 1.2
+          }
+        },
+        "bivam": {
+          "oral_mc4r": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 1.3
+          }
+        },
+        "pws": {
+          "pws": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "dil": 0,
+        "mult": 7,
+        "plat": 3000,
+        "exus": 1000
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 26, 2026",
+      "title": "$195M 2025 (+50%), PDUFA Mar 20, bivamelagon OLE positive",
+      "points": [
+        "Imcivree 2025: $195M (+50%), Q4 $57M",
+        "PDUFA Mar 20, 2026 for acquired HO (TRANSCEND: -18.8% BMI, p<0.0001)",
+        "EMANATE Phase 3 topline expected Mar 2026",
+        "Bivamelagon oral Phase 2 OLE: persistent BMI reductions",
+        "FDA EoP2 meeting positive for bivamelagon Phase 3",
+        "Phase 3 bivamelagon planned by YE 2026",
+        "PWS setmelanotide Phase 2 preliminary positive",
+        "RM-718 Part C completing Q1 2026",
+        "Cash $389M"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Mar 20, 2026",
+      "title": "Acquired HO PDUFA + EMANATE topline \u2014 both March 2026",
+      "thresholds": [
+        "HO PDUFA Mar 20 \u2014 approval/CRL",
+        "EMANATE topline Mar 2026 \u2014 4 rare MC4R diseases",
+        "Japanese cohort 12-patient topline Mar 2026",
+        "Bivamelagon Phase 3 initiation by YE 2026"
+      ]
+    },
+    "risks": [
+      "$5.7B market cap at 29x 2025 revenue \u2014 expensive for rare disease",
+      "Acquired HO market size uncertain \u2014 12K patients but adoption unknown",
+      "MC4R agonist class has niche TAM \u2014 will it ever be blockbuster?",
+      "Bivamelagon oral still Phase 2 \u2014 years from revenue",
+      "PWS is scientifically hard \u2014 many prior failures",
+      "Injectable setmelanotide has compliance limitations",
+      "Competition from GLP-1s in broader obesity space",
+      "Cash $389M \u2014 may need financing before profitability"
+    ]
+  }
+}

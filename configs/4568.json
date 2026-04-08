@@ -1,0 +1,417 @@
+{
+  "company": {
+    "ticker": "4568",
+    "name": "Daiichi Sankyo",
+    "subtitle": "Enhertu JPY553B | DXd ADC gold standard | 5 ADCs in development | Merck + AstraZeneca partnerships",
+    "sharesOut": 1850,
+    "cash": 500000,
+    "currentPrice": 3700.0,
+    "currency": "JPY",
+    "yahooTicker": "4568.T",
+    "cashRunway": "Highly cash generative (JPY 2T+ revenue, profitable, dividend growing)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "Enhertu (T-DXd) - HER2 ADC",
+      "stage": "Commercial (JPY 553B FY2025, growing 30%+)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "her2",
+          "name": "HER2+ breast + gastric + NSCLC + CRC (expanding)",
+          "market": {
+            "notes": "Enhertu FY2025: JPY 553B. #1 new patient share across major countries. 9 FDA BTDs. Partnered with AstraZeneca (50/50). Approved: HER2+ BC (2L+3L), HER2-low BC, HER2+ gastric, HER2-mutant NSCLC. DESTINY trials expanding: 1L BC, adjuvant, CRC, endometrial, biliary."
+          }
+        }
+      ]
+    },
+    {
+      "id": "datroway",
+      "name": "Datroway (Dato-DXd) - TROP2 ADC",
+      "stage": "Commercial (launched, exceeding forecasts)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "trop2",
+          "name": "NSCLC + TNBC + HR+/HER2- BC",
+          "market": {
+            "tamB": 15.0,
+            "penPct": 5,
+            "peakYear": 2033,
+            "notes": "TROP2 ADC partnered with AstraZeneca. Launched in NSCLC, exceeding forecasts. JPY 47B revised forecast FY2025. Phase 3 across TNBC, HR+/HER2- BC. Competes with Trodelvy (Gilead) and sac-TMT (Kelun/Merck)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "her3_dxd",
+      "name": "HER3-DXd - HER3 ADC (Merck partnership)",
+      "stage": "Phase 3",
+      "designations": [],
+      "indications": [
+        {
+          "id": "her3",
+          "name": "NSCLC + breast cancer (HER3)",
+          "market": {
+            "tamB": 10.0,
+            "penPct": 5,
+            "peakYear": 2034,
+            "notes": "HER3 ADC partnered with Merck. Phase 3 NSCLC. First-in-class HER3 targeting. Merck deal total value $22B."
+          }
+        }
+      ]
+    },
+    {
+      "id": "idxd",
+      "name": "I-DXd (B7-H3 ADC) + R-DXd (CDH6 ADC) - Merck",
+      "stage": "Phase 1-3",
+      "designations": [],
+      "indications": [
+        {
+          "id": "merck_adc",
+          "name": "B7-H3 + CDH6 solid tumors (Merck)",
+          "market": {
+            "tamB": 12.0,
+            "penPct": 3,
+            "peakYear": 2035,
+            "notes": "I-DXd (B7-H3 ADC): Phase 3 SCLC. R-DXd (CDH6 ADC): Phase 1/2. Both partnered with Merck. 3 ADC Merck deal = $22B total."
+          }
+        }
+      ]
+    },
+    {
+      "id": "japan_legacy",
+      "name": "Japan pharma + other pipeline",
+      "stage": "Commercial + pipeline",
+      "designations": [],
+      "indications": [
+        {
+          "id": "japan",
+          "name": "Japan domestic + Lixiana + Tarlige + oncology pipeline",
+          "market": {
+            "tamB": 10.0,
+            "penPct": 100,
+            "peakYear": 2028,
+            "notes": "Japan domestic business ~25% of revenue (declining share). Lixiana (edoxaban), Tarlige, Nexium. DS-6000 (CDH6 ADC), DS-7300 (B7-H3 ADC) advancing."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Enhertu growth decelerates + ADC competition intensifies + pricing pressure",
+      "events": [
+        "X Enhertu share gains slow as biosimilar Herceptin erodes",
+        "X DXd ADC platform faces generic competition earlier than expected",
+        "X Merck ADC programs disappoint in Phase 3",
+        "-> Revenue growth stalls at JPY 2T"
+      ],
+      "assumptions": {
+        "commercial": {
+          "her2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "datroway": {
+          "trop2": {
+            "pos": 80,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "her3_dxd": {
+          "her3": {
+            "pos": 25,
+            "apr": 30,
+            "pen": 0.3
+          }
+        },
+        "idxd": {
+          "merck_adc": {
+            "pos": 15,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "japan_legacy": {
+          "japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 14,
+        "pipelineMult": 3,
+        "commercialMult": 4.0,
+        "commercialRevM": 1700000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Enhertu grows but competition limits + Datroway crowded TROP2 market",
+      "events": [
+        "V Enhertu reaches JPY 800B but AZ profit split limits upside",
+        "~ Datroway grows modestly but sac-TMT/Trodelvy compete",
+        "X HER3-DXd Phase 3 mixed",
+        "-> Revenue JPY 2.3T by FY2028"
+      ],
+      "assumptions": {
+        "commercial": {
+          "her2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "datroway": {
+          "trop2": {
+            "pos": 85,
+            "apr": 80,
+            "pen": 0.7
+          }
+        },
+        "her3_dxd": {
+          "her3": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 0.5
+          }
+        },
+        "idxd": {
+          "merck_adc": {
+            "pos": 25,
+            "apr": 35,
+            "pen": 0.4
+          }
+        },
+        "japan_legacy": {
+          "japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 12,
+        "pipelineMult": 4,
+        "commercialMult": 5.0,
+        "commercialRevM": 1900000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "ADC platform dominance \u2014 Enhertu JPY 1T+ + Datroway + HER3 = JPY 3T revenue",
+      "events": [
+        "V Enhertu JPY 1T+ \u2014 dominant across HER2 indications globally",
+        "V Datroway captures significant TROP2 share",
+        "V HER3-DXd Phase 3 positive \u2014 third ADC blockbuster",
+        "V Revenue JPY 2.5-3T by FY2028"
+      ],
+      "assumptions": {
+        "commercial": {
+          "her2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "datroway": {
+          "trop2": {
+            "pos": 90,
+            "apr": 88,
+            "pen": 0.9
+          }
+        },
+        "her3_dxd": {
+          "her3": {
+            "pos": 55,
+            "apr": 60,
+            "pen": 0.7
+          }
+        },
+        "idxd": {
+          "merck_adc": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 0.6
+          }
+        },
+        "japan_legacy": {
+          "japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 10,
+        "pipelineMult": 5,
+        "commercialMult": 6.0,
+        "commercialRevM": 2100000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "DXd platform = gold standard of oncology \u2014 5 ADC blockbusters \u2014 JPY 4T+",
+      "events": [
+        "V Enhertu JPY 1.5T+ including 1L BC adjuvant",
+        "V Datroway $3B+ across NSCLC/BC",
+        "V HER3 + B7-H3 + CDH6 = 3 more ADC blockbusters from Merck deal",
+        "V Revenue JPY 4T+ by FY2030"
+      ],
+      "assumptions": {
+        "commercial": {
+          "her2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "datroway": {
+          "trop2": {
+            "pos": 95,
+            "apr": 92,
+            "pen": 1.0
+          }
+        },
+        "her3_dxd": {
+          "her3": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 1.0
+          }
+        },
+        "idxd": {
+          "merck_adc": {
+            "pos": 55,
+            "apr": 60,
+            "pen": 0.8
+          }
+        },
+        "japan_legacy": {
+          "japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 6,
+        "commercialMult": 7.0,
+        "commercialRevM": 2300000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Daiichi Sankyo becomes global top-5 pharma \u2014 DXd ADC standard across all solid tumors",
+      "events": [
+        "V 5+ ADC blockbusters across all major solid tumors",
+        "V DXd platform extends to 30+ tumor types",
+        "V Revenue JPY 5T+ \u2014 top-5 global pharma by oncology revenue",
+        "V Market cap JPY 15T+"
+      ],
+      "assumptions": {
+        "commercial": {
+          "her2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "datroway": {
+          "trop2": {
+            "pos": 98,
+            "apr": 95,
+            "pen": 1.0
+          }
+        },
+        "her3_dxd": {
+          "her3": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 1.2
+          }
+        },
+        "idxd": {
+          "merck_adc": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 1.0
+          }
+        },
+        "japan_legacy": {
+          "japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 7,
+        "commercialMult": 8.0,
+        "commercialRevM": 2500000,
+        "milestones": 0,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Jan 30, 2026 (Q3 FY2025)",
+      "title": "Revenue JPY 1.53T (+12.1%), Enhertu JPY 553B, DXd platform advancing",
+      "points": [
+        "Q3 FY2025 revenue: JPY 1,533.5B (+12.1%)",
+        "Enhertu: JPY 553B cumulative FY2025 (9M), #1 new patient share",
+        "Datroway: JPY 47B revised forecast (exceeding initial)",
+        "Core operating profit: JPY 249.2B (+8.8%)",
+        "AstraZeneca partnership: Enhertu + Datroway co-development",
+        "Merck partnership: HER3-DXd + I-DXd + R-DXd ($22B total deal)",
+        "Dividend increase to JPY 78/share (+JPY 18)",
+        "JPY 200B share buyback authorized",
+        "FY2025 target: revenue JPY 2T, core OpProfit JPY 350B"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Throughout FY2026",
+      "title": "Enhertu 1L BC + Datroway expansion + HER3-DXd Phase 3",
+      "thresholds": [
+        "DESTINY-Breast09 1L HER2+ BC regulatory submission",
+        "Datroway NSCLC + BC Phase 3 readouts",
+        "HER3-DXd Phase 3 NSCLC data",
+        "I-DXd (B7-H3) Phase 3 SCLC data"
+      ]
+    },
+    "risks": [
+      "JPY 6.8T market cap \u2014 premium oncology valuation",
+      "Enhertu profit split with AstraZeneca (50/50)",
+      "ADC manufacturing complexity at global scale",
+      "TROP2 ADC competition intensifying (Gilead, Kelun/Merck)",
+      "Merck ADC deal value depends on Phase 3 success",
+      "Japan domestic business declining as share of total",
+      "Yen depreciation/appreciation affects reported numbers",
+      "IRA pricing could impact Enhertu long-term"
+    ]
+  }
+}

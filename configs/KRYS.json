@@ -1,0 +1,479 @@
+{
+  "company": {
+    "ticker": "KRYS",
+    "name": "Krystal Biotech",
+    "subtitle": "VYJUVEK $389M 2025 \u00b7 $205M net income \u00b7 KB407 CF gene therapy \u00b7 4 products by 2030",
+    "sharesOut": 29,
+    "cash": 956,
+    "currentPrice": 262.0,
+    "currency": "USD",
+    "yahooTicker": "KRYS",
+    "cashRunway": "Self-funding (profitable, $956M cash, 94% gross margin)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "VYJUVEK \u2014 redosable gene therapy (DEB)",
+      "stage": "Commercial (US 2023, EU 2025, Japan 2025)",
+      "designations": [
+        "Platform Technology"
+      ],
+      "indications": [
+        {
+          "id": "deb",
+          "name": "Dystrophic epidermolysis bullosa (global)",
+          "market": {
+            "notes": "First-ever redosable gene therapy. 2025 revenue: $389M (+34% YoY), Q4: $107M. 94% gross margin. $730M cumulative since launch. 575+ reimbursement approvals. Launched in Germany, France, Japan. Expanding to 40+ countries in 2026. ~500K DEB patients globally."
+          }
+        }
+      ]
+    },
+    {
+      "id": "kb803",
+      "name": "KB803 \u2014 ocular DEB gene therapy",
+      "stage": "Phase 3 registrational (topline 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "ocular_deb",
+          "name": "Ocular complications of DEB",
+          "market": {
+            "tamB": 0.3,
+            "penPct": 40,
+            "peakYear": 2031,
+            "notes": "Eye drop gene therapy for DEB corneal erosions. Phase 3 registrational study ongoing. Topline data expected 2026. Same HSV-1 platform as VYJUVEK. Orphan rare disease pricing."
+          }
+        }
+      ]
+    },
+    {
+      "id": "kb801",
+      "name": "KB801 \u2014 neurotrophic keratitis",
+      "stage": "Phase 3 registrational (expanded to 60pts, topline end 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "nk",
+          "name": "Neurotrophic keratitis",
+          "market": {
+            "tamB": 0.5,
+            "penPct": 30,
+            "peakYear": 2031,
+            "notes": "NK = corneal nerve damage \u2192 loss of sensation \u2192 ulceration. Expanded enrollment from 27\u219260 patients. Topline before end of 2026. Competitor: Oxervate (cenegermin, Domp\u00e9) but limited efficacy."
+          }
+        }
+      ]
+    },
+    {
+      "id": "kb407",
+      "name": "KB407 \u2014 inhaled gene therapy (Cystic Fibrosis)",
+      "stage": "Phase 1 (CORAL-1 Cohort 3 positive, CORAL-3 repeat dose planned)",
+      "designations": [
+        "RMAT"
+      ],
+      "indications": [
+        {
+          "id": "cf",
+          "name": "Cystic fibrosis",
+          "market": {
+            "tamB": 10.0,
+            "penPct": 8,
+            "peakYear": 2034,
+            "notes": "Inhaled redosable gene therapy delivering full-length CFTR. CORAL-1 Cohort 3: 29-42% airway transduction confirmed. Works regardless of mutation type \u2014 unlike Trikafta (only ~90% of CF patients). CORAL-3 repeat dose study design submitted to FDA. If repeat dosing works: paradigm shift \u2014 gene therapy for CF that works in ALL patients."
+          }
+        }
+      ]
+    },
+    {
+      "id": "kb707",
+      "name": "KB707 \u2014 redosable immunotherapy (NSCLC)",
+      "stage": "Phase 1/2",
+      "designations": [
+        "RMAT"
+      ],
+      "indications": [
+        {
+          "id": "nsclc",
+          "name": "Non-small cell lung cancer",
+          "market": {
+            "tamB": 25.0,
+            "penPct": 1,
+            "peakYear": 2035,
+            "notes": "Redosable inhaled immunotherapy for NSCLC. RMAT designation (Oct 2025). Early stage but enormous TAM. HSV-1 vector delivers IL-12 directly to tumor microenvironment."
+          }
+        }
+      ]
+    },
+    {
+      "id": "kb111",
+      "name": "KB111 \u2014 Hailey-Hailey disease",
+      "stage": "Phase 1/2",
+      "designations": [
+        "Fast Track"
+      ],
+      "indications": [
+        {
+          "id": "hhd",
+          "name": "Hailey-Hailey disease",
+          "market": {
+            "tamB": 0.2,
+            "penPct": 35,
+            "peakYear": 2032,
+            "notes": "Rare genetic skin disease. Fast Track designation. Topical gene therapy. Orphan pricing. HSV-1 platform extension."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "VYJUVEK growth stalls + CF gene therapy fails + platform limited to skin",
+      "events": [
+        "\u2717 VYJUVEK revenue plateaus at ~$450M \u2014 DEB market ceiling hit",
+        "\u2717 KB407 CF repeat dosing shows immune response \u2014 gene therapy can't redose in lungs",
+        "\u2717 KB803 and KB801 ophthalmic programs miss",
+        "\u2192 Single-product rare disease company at $450M peak \u2014 overvalued at $7.6B"
+      ],
+      "assumptions": {
+        "commercial": {
+          "deb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "kb803": {
+          "ocular_deb": {
+            "pos": 20,
+            "apr": 25,
+            "pen": 0.3
+          }
+        },
+        "kb801": {
+          "nk": {
+            "pos": 20,
+            "apr": 25,
+            "pen": 0.3
+          }
+        },
+        "kb407": {
+          "cf": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        },
+        "kb707": {
+          "nsclc": {
+            "pos": 3,
+            "apr": 5,
+            "pen": 0.1
+          }
+        },
+        "kb111": {
+          "hhd": {
+            "pos": 15,
+            "apr": 20,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 22,
+        "pipelineMult": 3,
+        "commercialMult": 5.0,
+        "commercialRevM": 420,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "VYJUVEK grows modestly + ophthalmology approved but small + CF delayed",
+      "events": [
+        "\u2713 VYJUVEK grows to ~$550M but global penetration slower than expected",
+        "\u2713 KB803/KB801 approved \u2014 small orphan additions",
+        "\u2717 KB407 CF needs more dose optimization \u2014 CORAL-3 delayed",
+        "\u2192 3 marketed products but CF not yet contributing"
+      ],
+      "assumptions": {
+        "commercial": {
+          "deb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "kb803": {
+          "ocular_deb": {
+            "pos": 55,
+            "apr": 60,
+            "pen": 0.6
+          }
+        },
+        "kb801": {
+          "nk": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.5
+          }
+        },
+        "kb407": {
+          "cf": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.4
+          }
+        },
+        "kb707": {
+          "nsclc": {
+            "pos": 8,
+            "apr": 12,
+            "pen": 0.2
+          }
+        },
+        "kb111": {
+          "hhd": {
+            "pos": 35,
+            "apr": 40,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 16,
+        "pipelineMult": 4,
+        "commercialMult": 6.0,
+        "commercialRevM": 520,
+        "milestones": 50,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "4 marketed products by 2030 + CF gene therapy advancing + profitable growth",
+      "events": [
+        "\u2713 VYJUVEK grows to $700M+ with global expansion to 40+ countries",
+        "\u2713 KB803 + KB801 approved \u2014 rare disease franchise in derm + ophthalmology",
+        "\u2713 KB407 CF CORAL-3 repeat dosing shows durable CFTR expression",
+        "~ KB707 NSCLC early data generates oncology interest"
+      ],
+      "assumptions": {
+        "commercial": {
+          "deb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "kb803": {
+          "ocular_deb": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 1.0
+          }
+        },
+        "kb801": {
+          "nk": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 0.8
+          }
+        },
+        "kb407": {
+          "cf": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 0.8
+          }
+        },
+        "kb707": {
+          "nsclc": {
+            "pos": 12,
+            "apr": 20,
+            "pen": 0.4
+          }
+        },
+        "kb111": {
+          "hhd": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 13,
+        "pipelineMult": 5,
+        "commercialMult": 7.0,
+        "commercialRevM": 650,
+        "milestones": 100,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Gene therapy platform leader \u2014 DEB + CF + ophthalmology + oncology \u2014 $2B+ revenue by 2030",
+      "events": [
+        "\u2713 VYJUVEK >$1B global peak \u2014 dominant in DEB worldwide",
+        "\u2713 KB407 CF redosable gene therapy works \u2014 Trikafta alternative for ALL mutations",
+        "\u2713 4+ marketed products, profitable, growing 30%+ annually",
+        "\u2713 Platform technology designation enables accelerated paths for new indications"
+      ],
+      "assumptions": {
+        "commercial": {
+          "deb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "kb803": {
+          "ocular_deb": {
+            "pos": 80,
+            "apr": 85,
+            "pen": 1.3
+          }
+        },
+        "kb801": {
+          "nk": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 1.2
+          }
+        },
+        "kb407": {
+          "cf": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 1.2
+          }
+        },
+        "kb707": {
+          "nsclc": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.6
+          }
+        },
+        "kb111": {
+          "hhd": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 6,
+        "commercialMult": 8.0,
+        "commercialRevM": 850,
+        "milestones": 200,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Redosable gene therapy platform redefines genetic medicine \u2014 Vertex/Roche acquires at $500+",
+      "events": [
+        "\u2713 VYJUVEK $1.5B+ global \u2014 gene therapy standard for skin diseases",
+        "\u2713 KB407 cures CF regardless of mutation \u2014 replaces Trikafta ($10B franchise)",
+        "\u2713 KB707 NSCLC immunotherapy validated \u2014 inhaled IO new paradigm",
+        "\u2713 Vertex or Roche acquires for $15-20B to own redosable gene therapy platform"
+      ],
+      "assumptions": {
+        "commercial": {
+          "deb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "kb803": {
+          "ocular_deb": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 1.5
+          }
+        },
+        "kb801": {
+          "nk": {
+            "pos": 85,
+            "apr": 85,
+            "pen": 1.4
+          }
+        },
+        "kb407": {
+          "cf": {
+            "pos": 65,
+            "apr": 75,
+            "pen": 1.5
+          }
+        },
+        "kb707": {
+          "nsclc": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.8
+          }
+        },
+        "kb111": {
+          "hhd": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 1.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 7,
+        "commercialMult": 9.0,
+        "commercialRevM": 1100,
+        "milestones": 400,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 2026 (Q4 2025 earnings)",
+      "title": "VYJUVEK $389M 2025, $205M net income, $956M cash",
+      "points": [
+        "FY2025 VYJUVEK revenue: $389M (+34% YoY), Q4: $107M",
+        "Net income: $204.8M (2x YoY) \u2014 94% gross margin",
+        "Cumulative $730M since US launch",
+        "Launched EU (Germany, France) + Japan in 2025",
+        "KB407 CF CORAL-1 Cohort 3: 29-42% airway transduction",
+        "KB801 NK registrational study expanded 27\u219260 patients",
+        "KB707 NSCLC: RMAT designation Oct 2025",
+        "KB111 HHD: Fast Track designation",
+        "Cash: $956M \u2014 profitable + self-funding",
+        "Goal: 4 marketed rare disease products by 2030"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "H2 2026",
+      "title": "KB803 ocular DEB Phase 3 + KB801 NK topline",
+      "thresholds": [
+        "KB803 Phase 3 topline data 2026",
+        "KB801 NK registrational topline before end of 2026",
+        "KB407 CF CORAL-3 repeat dose study design/initiation",
+        "Global VYJUVEK expansion to 40+ countries"
+      ]
+    },
+    "risks": [
+      "DEB is a small market \u2014 VYJUVEK revenue ceiling may be $800M-1B",
+      "$7.6B market cap at 19x 2025 revenue \u2014 richly valued",
+      "KB407 CF: redosing in lungs is scientifically unproven \u2014 immune clearance risk",
+      "Ophthalmology (KB803, KB801) are small markets",
+      "KB707 NSCLC is very early and speculative",
+      "Gene therapy manufacturing complex and expensive",
+      "Trikafta franchise ($10B) means Vertex will compete aggressively if KB407 works",
+      "Stock has 3x'd since 2021 \u2014 expectations are high"
+    ]
+  }
+}

@@ -1,0 +1,418 @@
+{
+  "company": {
+    "ticker": "ALNY",
+    "name": "Alnylam Pharmaceuticals",
+    "subtitle": "Amvuttra $2.3B (+103%) ATTR-CM blockbuster | 2026 guide $4.9-5.3B | Alnylam 2030: 25%+ CAGR",
+    "sharesOut": 133,
+    "cash": 3500,
+    "currentPrice": 328.0,
+    "currency": "USD",
+    "yahooTicker": "ALNY",
+    "cashRunway": "Cash generative ($3B revenue, first profitable year 2025)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "TTR franchise (Amvuttra + Onpattro)",
+      "stage": "Commercial ($2.49B TTR 2025, +103%)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "ttr",
+          "name": "ATTR-CM + hATTR-PN (Amvuttra/Onpattro)",
+          "market": {
+            "notes": "Amvuttra 2025: $2.31B (+141%). ATTR-CM blockbuster after HELIOS-B (36% all-cause mortality reduction). Q4: $827M ($3.3B annualized). 2026 TTR guide: $4.4-4.7B. Onpattro declining ($173M). Total TTR 2026: 83% growth."
+          }
+        }
+      ]
+    },
+    {
+      "id": "rare",
+      "name": "Rare disease (Givlaari + Oxlumo)",
+      "stage": "Commercial ($500M 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "rare_rna",
+          "name": "AHP (Givlaari) + PH1 (Oxlumo)",
+          "market": {
+            "tamB": 2.0,
+            "penPct": 100,
+            "peakYear": 2030,
+            "notes": "Givlaari + Oxlumo: ~$500M combined. Stable rare disease revenue. Leqvio (inclisiran, Novartis) royalties growing."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nucresiran",
+      "name": "Nucresiran - next-gen TTR RNAi",
+      "stage": "Phase 3 (TRITON-CM + TRITON-PN)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "ttr_next",
+          "name": "ATTR-CM + hATTR-PN (next-gen quarterly SC)",
+          "market": {
+            "tamB": 10.0,
+            "penPct": 8,
+            "peakYear": 2034,
+            "notes": "Next-gen TTR silencer. Phase 3 TRITON-CM and TRITON-PN advancing. Potentially better knockdown + less frequent dosing. Extends TTR franchise beyond Amvuttra patents."
+          }
+        }
+      ]
+    },
+    {
+      "id": "zilebesiran",
+      "name": "Zilebesiran - hypertension (Roche partnership)",
+      "stage": "Phase 3 CVOT (ZENITH)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "htn",
+          "name": "Hypertension (twice-yearly RNAi)",
+          "market": {
+            "tamB": 30.0,
+            "penPct": 2,
+            "peakYear": 2035,
+            "notes": "Twice-yearly injection for hypertension. ZENITH Phase 3 CVOT with Roche. If positive: $5-10B+ market. RNAi into largest CV market in the world."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mivelsiran",
+      "name": "Mivelsiran - Alzheimer/CAA",
+      "stage": "Phase 1/2",
+      "designations": [],
+      "indications": [
+        {
+          "id": "alz_rna",
+          "name": "Cerebral amyloid angiopathy + Alzheimer",
+          "market": {
+            "tamB": 20.0,
+            "penPct": 1,
+            "peakYear": 2036,
+            "notes": "RNAi targeting APP for CAA and Alzheimer disease. CNS delivery. Very early but massive optionality."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "ATTR-CM growth decelerates + zilebesiran CVOT fails + acoramidis competition",
+      "events": [
+        "X Amvuttra growth slows \u2014 acoramidis (BridgeBio) takes ATTR-CM share",
+        "X Zilebesiran ZENITH CVOT negative \u2014 hypertension thesis dead",
+        "X Competition from Ionis eplontersen ATTR-CM",
+        "-> $43B market cap compresses"
+      ],
+      "assumptions": {
+        "commercial": {
+          "ttr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "rare": {
+          "rare_rna": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "nucresiran": {
+          "ttr_next": {
+            "pos": 40,
+            "apr": 45,
+            "pen": 0.4
+          }
+        },
+        "zilebesiran": {
+          "htn": {
+            "pos": 20,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "mivelsiran": {
+          "alz_rna": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 16,
+        "pipelineMult": 3,
+        "commercialMult": 5.0,
+        "commercialRevM": 3500,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "TTR franchise grows but competition limits + hypertension slow",
+      "events": [
+        "V Amvuttra grows to $5-6B but acoramidis splits market",
+        "~ Zilebesiran CVOT borderline",
+        "~ Nucresiran advances but Amvuttra dominates",
+        "-> Revenue $6-7B by 2028"
+      ],
+      "assumptions": {
+        "commercial": {
+          "ttr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "rare": {
+          "rare_rna": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "nucresiran": {
+          "ttr_next": {
+            "pos": 55,
+            "apr": 60,
+            "pen": 0.6
+          }
+        },
+        "zilebesiran": {
+          "htn": {
+            "pos": 35,
+            "apr": 40,
+            "pen": 0.5
+          }
+        },
+        "mivelsiran": {
+          "alz_rna": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 13,
+        "pipelineMult": 4,
+        "commercialMult": 6.0,
+        "commercialRevM": 4500,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Amvuttra $8B+ peak + zilebesiran validates + Alnylam 2030 on track",
+      "events": [
+        "V Amvuttra $8B+ peak \u2014 ATTR-CM standard of care",
+        "V 2026 guide $4.9-5.3B met \u2014 71% growth",
+        "V Zilebesiran CVOT advancing \u2014 hypertension optionality",
+        "V Alnylam 2030: 25%+ revenue CAGR target"
+      ],
+      "assumptions": {
+        "commercial": {
+          "ttr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "rare": {
+          "rare_rna": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "nucresiran": {
+          "ttr_next": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 0.8
+          }
+        },
+        "zilebesiran": {
+          "htn": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.7
+          }
+        },
+        "mivelsiran": {
+          "alz_rna": {
+            "pos": 15,
+            "apr": 25,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 5,
+        "commercialMult": 7.0,
+        "commercialRevM": 5100,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "RNAi platform dominance \u2014 ATTR + hypertension + Alzheimer \u2014 $15B+ revenue",
+      "events": [
+        "V Amvuttra $10B+ \u2014 dominates ATTR-CM globally",
+        "V Zilebesiran CVOT positive \u2014 hypertension blockbuster $5B+",
+        "V Platform generates 3+ more blockbusters via partnerships",
+        "V Revenue $15B+ by 2030"
+      ],
+      "assumptions": {
+        "commercial": {
+          "ttr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "rare": {
+          "rare_rna": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "nucresiran": {
+          "ttr_next": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 1.0
+          }
+        },
+        "zilebesiran": {
+          "htn": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 1.0
+          }
+        },
+        "mivelsiran": {
+          "alz_rna": {
+            "pos": 25,
+            "apr": 35,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 6,
+        "commercialMult": 8.0,
+        "commercialRevM": 5500,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "RNAi becomes the dominant therapeutic modality \u2014 Alnylam = Genentech of genetic medicine",
+      "events": [
+        "V ATTR + HTN + Alzheimer + rare = $20B+ platform",
+        "V RNAi replaces chronic small molecule therapy across CV, neuro, metabolic",
+        "V Roche/Novartis/Regeneron partnerships generate $5B+ in royalties",
+        "V Market cap $100B+"
+      ],
+      "assumptions": {
+        "commercial": {
+          "ttr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "rare": {
+          "rare_rna": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "nucresiran": {
+          "ttr_next": {
+            "pos": 85,
+            "apr": 85,
+            "pen": 1.2
+          }
+        },
+        "zilebesiran": {
+          "htn": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 1.3
+          }
+        },
+        "mivelsiran": {
+          "alz_rna": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 7,
+        "commercialMult": 9.0,
+        "commercialRevM": 6000,
+        "milestones": 0,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Jan 11 + Feb 12, 2026",
+      "title": "$2.99B 2025 rev (+81%), 2026 guide $4.9-5.3B, Alnylam 2030 launched",
+      "points": [
+        "2025 net product revenue: $2.99B (+81%)",
+        "TTR franchise: $2.49B (+103%), Amvuttra $2.31B",
+        "Q4 TTR: $859M ($3.4B annualized)",
+        "2026 guide: $4.9-5.3B (71% growth at midpoint)",
+        "TTR 2026 guide: $4.4-4.7B",
+        "First year of non-GAAP profitability achieved 2025",
+        "Alnylam 2030: 25%+ revenue CAGR, scale operations",
+        "Nucresiran TRITON Phase 3 advancing",
+        "Zilebesiran ZENITH CVOT with Roche advancing",
+        "Mivelsiran Alzheimer/CAA in Phase 1/2"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Throughout 2026",
+      "title": "Revenue trajectory + nucresiran Phase 3 + zilebesiran CVOT progress",
+      "thresholds": [
+        "Q1-Q2 2026 revenue: tracking to $4.9-5.3B guide?",
+        "Nucresiran TRITON enrollment updates",
+        "Zilebesiran ZENITH CVOT event accrual",
+        "Mivelsiran Phase 1/2 data"
+      ]
+    },
+    "risks": [
+      "$43.6B at ~15x 2025 revenue \u2014 premium",
+      "BridgeBio acoramidis competing in ATTR-CM",
+      "Ionis eplontersen CARDIO-TTRansform if positive",
+      "Zilebesiran CVOT is years away \u2014 massive investment",
+      "Amvuttra pricing pressure as ATTR-CM population expands",
+      "RNAi manufacturing at scale is complex",
+      "Leqvio (Novartis) underperforming \u2014 RNAi adoption concerns",
+      "GLP-1 weight loss may reduce CV risk indirectly"
+    ]
+  }
+}

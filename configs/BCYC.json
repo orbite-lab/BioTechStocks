@@ -1,0 +1,414 @@
+{
+  "company": {
+    "ticker": "BCYC",
+    "name": "Bicycle Therapeutics",
+    "subtitle": "Bicycle peptide platform | Zelenectide mUC approval path rejected | Pivot to nuzefatide + radioconjugates",
+    "sharesOut": 71,
+    "cash": 600,
+    "currentPrice": 5.0,
+    "currency": "USD",
+    "yahooTicker": "BCYC",
+    "cashRunway": "Into 2028 ($600M+ cash)"
+  },
+  "assets": [
+    {
+      "id": "zelenectide",
+      "name": "Zelenectide pevedotin (BT8009) - Nectin-4 BDC",
+      "stage": "Phase 2/3 (Duravelo-2 mUC approval path rejected, dose selected)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "muc",
+          "name": "Metastatic urothelial cancer + breast + NSCLC",
+          "market": {
+            "tamB": 6.0,
+            "penPct": 5,
+            "peakYear": 2033,
+            "notes": "Duravelo-2 trial design NO LONGER acceptable as approval path per FDA (Mar 2026). 6mg dose selected with strong anti-tumor activity. Pivoting: Duravelo-3 (NECTIN4-amp breast cancer H2 2026 data), Duravelo-4 (NECTIN4-amp NSCLC). BDC = smaller than ADC, better tumor penetration."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nuzefatide",
+      "name": "Nuzefatide pevedotin (BT5528) - EphA2 BDC",
+      "stage": "Phase 1/2 (mUC combo + PDAC Ph2 enrolling)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "epha2",
+          "name": "EphA2+ tumors (PDAC + mUC)",
+          "market": {
+            "tamB": 10.0,
+            "penPct": 3,
+            "peakYear": 2034,
+            "notes": "First-in-class EphA2 BDC \u2014 historically undruggable target. Phase 1 nuzefatide + nivolumab in mUC data H1 2026. Phase 2 PDAC initiated. EphA2 broadly expressed across solid tumors."
+          }
+        }
+      ]
+    },
+    {
+      "id": "brc",
+      "name": "Bicycle Radioconjugates (BRC) \u2014 radiopharmaceuticals",
+      "stage": "Preclinical/Phase 1 imaging (BT1702 MT1-MMP lead)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "radio",
+          "name": "Targeted radionuclide therapy (MT1-MMP + EphA2)",
+          "market": {
+            "tamB": 15.0,
+            "penPct": 1,
+            "peakYear": 2036,
+            "notes": "BT1702: MT1-MMP targeting BRC with lead-212. EphA2 human imaging data expected H1 2026. UK NDA/NNL/SpectronRx partnerships for 212Pb supply. Company-sponsored BRC clinical trial (BT1702) expected 2027. Bicycle peptide = ideal radiopharma targeting vehicle."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bt7480",
+      "name": "BT7480 - Bicycle TICA (Nectin-4 x CD137)",
+      "stage": "Phase 1 (to be out-partnered after H1 2026 data)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "tica",
+          "name": "Tumor-targeted immune cell agonist",
+          "market": {
+            "tamB": 5.0,
+            "penPct": 1,
+            "peakYear": 2035,
+            "notes": "Nectin-4 targeted CD137 agonist. Phase 1 combo data H1 2026. BCYC will seek partner after reporting \u2014 no longer developing internally. Platform validation but not core focus."
+          }
+        }
+      ]
+    },
+    {
+      "id": "platform",
+      "name": "Bicycle platform partnerships + discovery",
+      "stage": "Preclinical/discovery",
+      "designations": [],
+      "indications": [
+        {
+          "id": "disc",
+          "name": "Broader Bicycle applications",
+          "market": {
+            "tamB": 10.0,
+            "penPct": 1,
+            "peakYear": 2036,
+            "notes": "Bicycle peptides: fully synthetic, small molecule PK, biologic-like binding. Nobel Prize science (Sir Greg Winter). Partnerships in non-oncology. Platform optionality."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "narrative": "mUC dead + nuzefatide fails + BRC too early \u2014 Bicycle platform unproven",
+      "events": [
+        "X Zelenectide mUC completely abandoned",
+        "X Nuzefatide EphA2 shows limited efficacy",
+        "X BRC radioconjugates face competition from established players",
+        "-> Cash burn continues, stock to $2-3 or reverse split territory"
+      ],
+      "assumptions": {
+        "zelenectide": {
+          "muc": {
+            "pos": 20,
+            "apr": 15,
+            "pen": 0.3
+          }
+        },
+        "nuzefatide": {
+          "epha2": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        },
+        "brc": {
+          "radio": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        },
+        "bt7480": {
+          "tica": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        },
+        "platform": {
+          "disc": {
+            "pos": 3,
+            "apr": 5,
+            "pen": 0.1
+          }
+        }
+      },
+      "val": {
+        "dr": 30,
+        "dil": 15,
+        "mult": 3,
+        "plat": 0,
+        "exus": 0
+      }
+    },
+    "bear": {
+      "wt": 20,
+      "narrative": "Nuzefatide shows signal + BRC advancing but years from revenue",
+      "events": [
+        "~ Nuzefatide PDAC shows modest activity but not breakthrough",
+        "~ Zelenectide finds niche in NECTIN4-amplified breast cancer",
+        "~ BRC imaging data promising but clinical 2027+",
+        "-> Platform generates data but commercial path unclear"
+      ],
+      "assumptions": {
+        "zelenectide": {
+          "muc": {
+            "pos": 30,
+            "apr": 30,
+            "pen": 0.4
+          }
+        },
+        "nuzefatide": {
+          "epha2": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.4
+          }
+        },
+        "brc": {
+          "radio": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        },
+        "bt7480": {
+          "tica": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        },
+        "platform": {
+          "disc": {
+            "pos": 8,
+            "apr": 12,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "dr": 22,
+        "dil": 10,
+        "mult": 4,
+        "plat": 100,
+        "exus": 50
+      }
+    },
+    "base": {
+      "wt": 40,
+      "narrative": "Nuzefatide validates EphA2 + BRC enters clinic + platform partnerships grow",
+      "events": [
+        "V Nuzefatide Phase 2 PDAC encouraging \u2014 EphA2 validated",
+        "V Zelenectide finds path in NECTIN4-amplified tumors",
+        "V BRC radiopharma enters clinic 2027 \u2014 differentiated approach",
+        "V Platform generates 2+ new partnerships"
+      ],
+      "assumptions": {
+        "zelenectide": {
+          "muc": {
+            "pos": 40,
+            "apr": 40,
+            "pen": 0.6
+          }
+        },
+        "nuzefatide": {
+          "epha2": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 0.6
+          }
+        },
+        "brc": {
+          "radio": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.5
+          }
+        },
+        "bt7480": {
+          "tica": {
+            "pos": 15,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "platform": {
+          "disc": {
+            "pos": 12,
+            "apr": 20,
+            "pen": 0.4
+          }
+        }
+      },
+      "val": {
+        "dr": 18,
+        "dil": 5,
+        "mult": 5,
+        "plat": 300,
+        "exus": 100
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Bicycle platform vindicated \u2014 nuzefatide + BRC = new modality validated",
+      "events": [
+        "V Nuzefatide best-in-class EphA2 \u2014 first approved BDC",
+        "V BRC radiopharma validated \u2014 Bicycle = ideal radiotargeting",
+        "V Platform licensed across oncology + non-oncology",
+        "V Stock recovers 5-10x from current levels"
+      ],
+      "assumptions": {
+        "zelenectide": {
+          "muc": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.8
+          }
+        },
+        "nuzefatide": {
+          "epha2": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 0.8
+          }
+        },
+        "brc": {
+          "radio": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 0.7
+          }
+        },
+        "bt7480": {
+          "tica": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.5
+          }
+        },
+        "platform": {
+          "disc": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "dr": 14,
+        "dil": 0,
+        "mult": 6,
+        "plat": 1000,
+        "exus": 300
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Bicycle peptide = third major therapeutic modality alongside antibodies and small molecules",
+      "events": [
+        "V Multiple approved BDC + BRC products",
+        "V Nobel Prize science (Greg Winter) finally commercialized",
+        "V Platform generates $5B+ in partnerships across 10+ programs",
+        "V Major pharma acquires for $5-10B"
+      ],
+      "assumptions": {
+        "zelenectide": {
+          "muc": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 1.0
+          }
+        },
+        "nuzefatide": {
+          "epha2": {
+            "pos": 60,
+            "apr": 70,
+            "pen": 1.0
+          }
+        },
+        "brc": {
+          "radio": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 1.0
+          }
+        },
+        "bt7480": {
+          "tica": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.7
+          }
+        },
+        "platform": {
+          "disc": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "dr": 10,
+        "dil": 0,
+        "mult": 7,
+        "plat": 3000,
+        "exus": 1000
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Mar 17, 2026 (Q4 2025 + strategic pivot)",
+      "title": "Duravelo-2 approval path rejected, pivoting to nuzefatide + BRC radiopharma",
+      "points": [
+        "Zelenectide mUC: Duravelo-2 trial design no longer acceptable for approval (Mar 2026)",
+        "6mg dose selected \u2014 strong anti-tumor activity + differentiated safety",
+        "Nuzefatide (BT5528/EphA2): Phase 1 combo data mUC H1 2026, Phase 2 PDAC enrolling",
+        "BRC radioconjugates: EphA2 human imaging H1 2026, BT1702 (MT1-MMP) clinic 2027",
+        "BT7480 TICA: H1 2026 data then out-partnered",
+        "212Pb supply chain: UK NDA/NNL/SpectronRx partnerships",
+        "2025 revenue $73M (collaboration), cash ~$600M, runway to 2028",
+        "Stock crashed from $30+ to ~$5 on mUC setback",
+        "Workforce reduction + strategic reprioritization announced"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "H1 2026",
+      "title": "Nuzefatide mUC combo data + EphA2 imaging + zelenectide dose data presentation",
+      "thresholds": [
+        "Nuzefatide + nivolumab Phase 1 mUC data H1 2026",
+        "EphA2 BRC human imaging data H1 2026",
+        "Zelenectide Duravelo-2 dose selection data at conference H1 2026",
+        "Duravelo-3 breast cancer initial data H2 2026"
+      ]
+    },
+    "risks": [
+      "Stock at $5 \u2014 effectively a turnaround/restructuring story",
+      "mUC approval path rejection is major strategic setback",
+      "Nuzefatide EphA2 is entirely unvalidated in Phase 2",
+      "BRC radiopharma 2+ years from clinical proof",
+      "ADC/BDC competition intense from established players",
+      "$360M market cap with $600M cash = negative enterprise value (market pricing in failure)",
+      "Workforce reduction signals financial stress",
+      "Platform has never produced an approved product in 15+ years"
+    ]
+  }
+}

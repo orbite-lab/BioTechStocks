@@ -1,0 +1,418 @@
+{
+  "company": {
+    "ticker": "JANX",
+    "name": "Janux Therapeutics",
+    "subtitle": "TRACTr tumor-activated T cell engager platform | JANX007 PSMA mCRPC Ph1 | JANX008 EGFR Ph1 | Merck + BMS deals",
+    "sharesOut": 73,
+    "cash": 850,
+    "currentPrice": 13.0,
+    "currency": "USD",
+    "yahooTicker": "JANX",
+    "cashRunway": "Well-funded (~$850M cash, runway into 2028+)"
+  },
+  "assets": [
+    {
+      "id": "janx007",
+      "name": "JANX007 \u2014 PSMA-TRACTr (mCRPC)",
+      "stage": "Phase 1a/b (109 patients treated, expansion cohorts)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "mcrpc",
+          "name": "Metastatic castration-resistant prostate cancer",
+          "market": {
+            "tamB": 12.0,
+            "penPct": 5,
+            "peakYear": 2033,
+            "notes": "PSMA-targeted tumor-activated T cell engager. Phase 1a dose escalation complete. Phase 1b enrolling taxane-naive. 109 patients treated. Early data: 78% PSA30 decline at 0.1mg, 100% at 0.2mg. CRS low-grade (1-2) and Cycle 1 only. TRACTr masking minimizes systemic toxicity. Stock crashed 50% Feb 2026 on limited Phase 1b disclosure \u2014 market wanted more. Analysts estimate $1.5B+ peak in chemo-refractory, multi-blockbuster in earlier lines."
+          }
+        }
+      ]
+    },
+    {
+      "id": "janx008",
+      "name": "JANX008 \u2014 EGFR-TRACTr (solid tumors)",
+      "stage": "Phase 1 (dose escalation complete, expansion cohorts initiated)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "egfr_solid",
+          "name": "CRC + SCCHN + NSCLC + RCC + PDAC + TNBC (EGFR)",
+          "market": {
+            "tamB": 25.0,
+            "penPct": 2,
+            "peakYear": 2034,
+            "notes": "EGFR-targeted TRACTr across multiple solid tumors. Phase 1a complete, expansion cohorts started. EGFR is validated but historically undruggable with T cell engagers due to on-target toxicity. TRACTr masking may solve this \u2014 if so, massive TAM across CRC, NSCLC, SCCHN, PDAC, TNBC."
+          }
+        }
+      ]
+    },
+    {
+      "id": "janx011",
+      "name": "JANX011 \u2014 CD19-ARM (autoimmune)",
+      "stage": "Phase 1 (first patient dosed)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "autoimmune",
+          "name": "Autoimmune diseases (CD19 ARM platform)",
+          "market": {
+            "tamB": 20.0,
+            "penPct": 1,
+            "peakYear": 2035,
+            "notes": "Adaptive Immune Response Modulator targeting CD19 for autoimmune diseases. First patient dosed. ARM platform = T cell modulation for autoimmunity. If it works: off-the-shelf alternative to CAR-T for lupus/RA."
+          }
+        }
+      ]
+    },
+    {
+      "id": "psma_tracir",
+      "name": "PSMA-TRACIr \u2014 CD28 costimulatory",
+      "stage": "Preclinical (IND-enabling)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "tracir",
+          "name": "PSMA combination immunomodulator",
+          "market": {
+            "tamB": 8.0,
+            "penPct": 2,
+            "peakYear": 2035,
+            "notes": "TRACIr = CD28 costimulatory arm. Designed to combo with JANX007 TRACTr for enhanced T cell activation. PSMA-TRACIr + JANX007 = dual T cell activation in prostate cancer."
+          }
+        }
+      ]
+    },
+    {
+      "id": "merck_bms",
+      "name": "Merck + BMS collaboration programs",
+      "stage": "Preclinical/early clinical",
+      "designations": [],
+      "indications": [
+        {
+          "id": "partnerships",
+          "name": "Partnered TRACTr programs",
+          "market": {
+            "tamB": 15.0,
+            "penPct": 1,
+            "peakYear": 2036,
+            "notes": "Merck: strategic collaboration for TRACTr candidates \u2014 $10M milestone received 2025. BMS: exclusive worldwide license for novel program \u2014 development candidate nominated Mar 2026. TROP2-TRACTr advancing preclinically. Platform generates partnership value."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "TRACTr platform fails to differentiate \u2014 JANX007 efficacy insufficient in mCRPC",
+      "events": [
+        "X JANX007 Phase 1b mCRPC shows limited durability \u2014 responses short-lived",
+        "X JANX008 EGFR expansion fails in CRC/NSCLC \u2014 on-target toxicity despite masking",
+        "X ARM autoimmune platform unproven \u2014 CAR-T dominates",
+        "-> $950M market cap with $850M cash \u2014 platform worth nothing"
+      ],
+      "assumptions": {
+        "janx007": {
+          "mcrpc": {
+            "pos": 15,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "janx008": {
+          "egfr_solid": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.2
+          }
+        },
+        "janx011": {
+          "autoimmune": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        },
+        "psma_tracir": {
+          "tracir": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        },
+        "merck_bms": {
+          "partnerships": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "dr": 28,
+        "dil": 5,
+        "mult": 3,
+        "plat": 0,
+        "exus": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "JANX007 shows signal but modest \u2014 niche mCRPC only + JANX008 slow to mature",
+      "events": [
+        "~ JANX007 mCRPC data encouraging but not best-in-class",
+        "~ JANX008 expansion data mixed \u2014 some tumor types respond, others not",
+        "X ARM autoimmune early data underwhelms",
+        "-> Platform validated as proof of concept but commercial path uncertain"
+      ],
+      "assumptions": {
+        "janx007": {
+          "mcrpc": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.5
+          }
+        },
+        "janx008": {
+          "egfr_solid": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.4
+          }
+        },
+        "janx011": {
+          "autoimmune": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        },
+        "psma_tracir": {
+          "tracir": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        },
+        "merck_bms": {
+          "partnerships": {
+            "pos": 10,
+            "apr": 20,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "dr": 22,
+        "dil": 0,
+        "mult": 4,
+        "plat": 200,
+        "exus": 100
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "JANX007 validates TRACTr in mCRPC + JANX008 shows activity in 2+ tumor types + partnerships deliver",
+      "events": [
+        "V JANX007 Phase 1b mCRPC data strong \u2014 registrational path identified",
+        "V JANX008 EGFR expansion shows meaningful responses in CRC + SCCHN",
+        "V CD19-ARM Phase 1 autoimmune: clean safety + target engagement",
+        "V Merck + BMS programs advancing \u2014 platform validated by Big Pharma"
+      ],
+      "assumptions": {
+        "janx007": {
+          "mcrpc": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.8
+          }
+        },
+        "janx008": {
+          "egfr_solid": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 0.6
+          }
+        },
+        "janx011": {
+          "autoimmune": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.5
+          }
+        },
+        "psma_tracir": {
+          "tracir": {
+            "pos": 15,
+            "apr": 25,
+            "pen": 0.4
+          }
+        },
+        "merck_bms": {
+          "partnerships": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "dr": 16,
+        "dil": 0,
+        "mult": 5,
+        "plat": 1000,
+        "exus": 400
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "TRACTr platform breakthrough \u2014 T cell engagers finally work in solid tumors \u2014 multi-blockbuster",
+      "events": [
+        "V JANX007 mCRPC blockbuster $1.5B+ \u2014 best-in-class PSMA-TCE",
+        "V JANX008 EGFR validated across 3+ solid tumor types \u2014 $3B+ peak",
+        "V TRACTr masking solves CRS problem \u2014 paradigm shift for T cell engagers",
+        "V ARM autoimmune platform generates $1B+ in partnerships"
+      ],
+      "assumptions": {
+        "janx007": {
+          "mcrpc": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 1.0
+          }
+        },
+        "janx008": {
+          "egfr_solid": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 0.8
+          }
+        },
+        "janx011": {
+          "autoimmune": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 0.7
+          }
+        },
+        "psma_tracir": {
+          "tracir": {
+            "pos": 25,
+            "apr": 35,
+            "pen": 0.6
+          }
+        },
+        "merck_bms": {
+          "partnerships": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "dr": 12,
+        "dil": 0,
+        "mult": 6,
+        "plat": 3000,
+        "exus": 1000
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "TRACTr = the bispecific platform that finally cracks solid tumors \u2014 Merck/BMS acquires at $100+",
+      "events": [
+        "V JANX007 + JANX008 = two blockbusters, 5+ approved indications",
+        "V TRACTr/TRACIr/ARM = 3 platforms across oncology + autoimmune",
+        "V Platform generates 10+ clinical candidates",
+        "V Merck or BMS acquires for $10-15B to own tumor-activated immunotherapy"
+      ],
+      "assumptions": {
+        "janx007": {
+          "mcrpc": {
+            "pos": 80,
+            "apr": 80,
+            "pen": 1.3
+          }
+        },
+        "janx008": {
+          "egfr_solid": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 1.0
+          }
+        },
+        "janx011": {
+          "autoimmune": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 1.0
+          }
+        },
+        "psma_tracir": {
+          "tracir": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 0.8
+          }
+        },
+        "merck_bms": {
+          "partnerships": {
+            "pos": 45,
+            "apr": 55,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "dr": 9,
+        "dil": 0,
+        "mult": 7,
+        "plat": 6000,
+        "exus": 2000
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 26, 2026 (Q4 2025 + JANX007 update)",
+      "title": "109 patients treated JANX007 mCRPC, JANX008 expansion initiated, CD19-ARM dosed",
+      "points": [
+        "JANX007 mCRPC: 109 patients treated Phase 1a/b",
+        "Phase 1a: 78% PSA30 at 0.1mg, 100% at 0.2mg, 90% PSA decline observed",
+        "CRS low-grade (1-2), Cycle 1 only \u2014 TRACTr masking works",
+        "Phase 1b taxane-naive cohort enrolling",
+        "JANX008 EGFR: Phase 1a complete, expansion cohorts initiated across solid tumors",
+        "JANX011 CD19-ARM: first patient dosed for autoimmune diseases",
+        "BMS collaboration: development candidate nominated Mar 2026",
+        "Merck: $10M milestone (first patient dosed in lead collab program)",
+        "Cash: ~$850M (runway into 2028+)",
+        "Stock crashed from $36 to $13 on Feb 2026 data \u2014 limited Phase 1b disclosure",
+        "Analyst consensus: Strong Buy, median PT $53.60 (4x current price)"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "H1-H2 2026",
+      "title": "JANX007 Phase 1b mCRPC data maturation + JANX008 expansion data",
+      "thresholds": [
+        "JANX007 Phase 1b: deeper PSA data + radiographic responses in taxane-naive",
+        "JANX008: expansion cohort efficacy signals across tumor types",
+        "JANX011 CD19-ARM: Phase 1 safety/PK early data",
+        "PSMA-TRACIr IND-enabling progress",
+        "BMS collab program advancement"
+      ]
+    },
+    "risks": [
+      "Stock at $13 after 65% crash \u2014 market lost confidence in Phase 1b data",
+      "$950M market cap with $850M cash = paying ~$100M for entire platform",
+      "T cell engagers in solid tumors have historically failed (Amgen, others)",
+      "JANX007 Feb 2026 update was thin \u2014 Phase 1b durability/response rate unknown",
+      "JANX008 EGFR expansion data not yet disclosed \u2014 could disappoint",
+      "CRS masking may not hold at therapeutic doses in larger populations",
+      "ARM autoimmune platform is entirely preclinical-to-Phase 1",
+      "Competition from ADCs, bispecifics, radioligands in same indications",
+      "Merck and BMS may deprioritize collaboration programs"
+    ]
+  }
+}

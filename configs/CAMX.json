@@ -1,0 +1,424 @@
+{
+  "company": {
+    "ticker": "CAMX",
+    "name": "Camurus",
+    "subtitle": "Buvidal/Brixadi opioid dependence | Oczyesa acromegaly EU launched | Oclaiz PDUFA Jun 10, 2026 | Lilly incretin deal",
+    "sharesOut": 60,
+    "cash": 3700,
+    "currentPrice": 470.0,
+    "currency": "SEK",
+    "yahooTicker": "CAMX.ST",
+    "cashRunway": "Cash generative (SEK 3.7B cash, profitable, growing)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "Buvidal/Brixadi \u2014 long-acting buprenorphine (opioid dependence)",
+      "stage": "Commercial (SEK 1.8B+ 2025, Brixadi royalties growing)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "oud",
+          "name": "Opioid use disorder (EU Buvidal + US Brixadi royalties)",
+          "market": {
+            "notes": "Buvidal own sales in EU/Australia + Brixadi US royalties from Braeburn. Brixadi ~30% US LAI buprenorphine market share. Target: 100K Buvidal patients by 2027. UK funding issues temporary headwind. 2026 guide SEK 2.6-2.9B total revenue."
+          }
+        }
+      ]
+    },
+    {
+      "id": "oczyesa",
+      "name": "Oczyesa/Oclaiz (CAM2029) \u2014 octreotide SC depot (acromegaly)",
+      "stage": "Commercial EU (launched Nov 2025) + US PDUFA Jun 10, 2026",
+      "designations": [],
+      "indications": [
+        {
+          "id": "acro",
+          "name": "Acromegaly",
+          "market": {
+            "tamB": 2.0,
+            "penPct": 15,
+            "peakYear": 2032,
+            "notes": "Monthly SC octreotide depot. EU approved, launched Germany Nov 2025. US NDA resubmitted, PDUFA Jun 10, 2026. Superior to first-gen SRL (Sandostatin LAR). 3-5K EU acromegaly patients targetable. FluidCrystal technology."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sorento",
+      "name": "CAM2029 \u2014 GEP-NET (SORENTO Phase 3)",
+      "stage": "Phase 3 (primary readout mid-H2 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "gepnet",
+          "name": "Gastroenteropancreatic neuroendocrine tumors",
+          "market": {
+            "tamB": 3.0,
+            "penPct": 12,
+            "peakYear": 2033,
+            "notes": "SORENTO Phase 3 vs Sandostatin LAR. Primary PFS readout mid/H2 2026. Event accrual slower than expected (patients doing well). Major TAM expansion from acromegaly."
+          }
+        }
+      ]
+    },
+    {
+      "id": "pld",
+      "name": "CAM2029 \u2014 polycystic liver disease",
+      "stage": "Phase 2b positive (POSITANO) + Phase 2/3 planned",
+      "designations": [
+        "Orphan (US + EU for ADPKD)"
+      ],
+      "indications": [
+        {
+          "id": "pld",
+          "name": "Polycystic liver disease / ADPKD",
+          "market": {
+            "tamB": 2.0,
+            "penPct": 10,
+            "peakYear": 2034,
+            "notes": "POSITANO Phase 2b positive: significant liver cyst volume reduction. Orphan designation in ADPKD (US+EU). No approved therapy for PLD. 37K patients US/EU4/UK. Phase 2/3 planned."
+          }
+        }
+      ]
+    },
+    {
+      "id": "lilly",
+      "name": "Lilly FluidCrystal incretin partnership",
+      "stage": "Phase 1 (CAM2056 monthly semaglutide enrolled)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "incretin",
+          "name": "Long-acting incretins (obesity/T2D)",
+          "market": {
+            "tamB": 50.0,
+            "penPct": 1,
+            "peakYear": 2036,
+            "notes": "Lilly deal: up to $870M milestones + royalties for FluidCrystal long-acting incretins (up to 4 compounds, including dual GIP/GLP-1 and triple agonists). CAM2056 monthly semaglutide Phase 1 completed enrollment. If monthly/quarterly GLP-1 works: massive opportunity."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Buvidal stalls + Oclaiz US rejected + SORENTO fails + Lilly deprioritizes",
+      "events": [
+        "X UK funding issues persist \u2014 Buvidal growth stalls",
+        "X FDA rejects Oclaiz again \u2014 manufacturing issue",
+        "X SORENTO GEP-NET misses PFS endpoint",
+        "X Lilly incretin formulations don't meet standards",
+        "-> Revenue declines, stock to SEK 300"
+      ],
+      "assumptions": {
+        "commercial": {
+          "oud": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "oczyesa": {
+          "acro": {
+            "pos": 80,
+            "apr": 30,
+            "pen": 0.3
+          }
+        },
+        "sorento": {
+          "gepnet": {
+            "pos": 30,
+            "apr": 30,
+            "pen": 0.3
+          }
+        },
+        "pld": {
+          "pld": {
+            "pos": 20,
+            "apr": 25,
+            "pen": 0.3
+          }
+        },
+        "lilly": {
+          "incretin": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 20,
+        "pipelineMult": 3,
+        "commercialMult": 3.0,
+        "commercialRevM": 1800,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Buvidal grows modestly + Oclaiz approved but slow US launch + SORENTO borderline",
+      "events": [
+        "V Buvidal grows but UK/Germany headwinds persist",
+        "V Oclaiz approved US \u2014 but uptake slow vs entrenched Sandostatin",
+        "~ SORENTO shows PFS trend but not statistically significant",
+        "~ Lilly partnership advancing but timelines long"
+      ],
+      "assumptions": {
+        "commercial": {
+          "oud": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "oczyesa": {
+          "acro": {
+            "pos": 80,
+            "apr": 75,
+            "pen": 0.6
+          }
+        },
+        "sorento": {
+          "gepnet": {
+            "pos": 45,
+            "apr": 50,
+            "pen": 0.5
+          }
+        },
+        "pld": {
+          "pld": {
+            "pos": 30,
+            "apr": 35,
+            "pen": 0.4
+          }
+        },
+        "lilly": {
+          "incretin": {
+            "pos": 10,
+            "apr": 20,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 16,
+        "pipelineMult": 4,
+        "commercialMult": 4.0,
+        "commercialRevM": 2200,
+        "milestones": 200,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Oclaiz US approved + Buvidal/Brixadi growing + SORENTO positive + PLD advancing",
+      "events": [
+        "V Oclaiz approved Jun 2026 \u2014 US acromegaly launch",
+        "V Buvidal/Brixadi combined 80K+ patients by 2027",
+        "V SORENTO positive \u2014 GEP-NET label adds major TAM",
+        "V PLD Phase 2/3 initiates \u2014 first approved therapy potential",
+        "~ Lilly incretin partnership progressing"
+      ],
+      "assumptions": {
+        "commercial": {
+          "oud": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "oczyesa": {
+          "acro": {
+            "pos": 85,
+            "apr": 85,
+            "pen": 1.0
+          }
+        },
+        "sorento": {
+          "gepnet": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 0.8
+          }
+        },
+        "pld": {
+          "pld": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 0.6
+          }
+        },
+        "lilly": {
+          "incretin": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 13,
+        "pipelineMult": 5,
+        "commercialMult": 5.0,
+        "commercialRevM": 2600,
+        "milestones": 500,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "FluidCrystal platform delivers across OUD + rare endocrine + Lilly incretins \u2014 SEK 5B+ revenue",
+      "events": [
+        "V Buvidal 100K+ patients \u2014 global OUD standard",
+        "V CAM2029 across acromegaly + GEP-NET + PLD = SEK 2B+ franchise",
+        "V Lilly incretin milestones flowing \u2014 monthly GLP-1 validated",
+        "V Revenue SEK 5B+ by 2029, 40%+ operating margins"
+      ],
+      "assumptions": {
+        "commercial": {
+          "oud": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "oczyesa": {
+          "acro": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 1.2
+          }
+        },
+        "sorento": {
+          "gepnet": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 1.0
+          }
+        },
+        "pld": {
+          "pld": {
+            "pos": 55,
+            "apr": 60,
+            "pen": 0.8
+          }
+        },
+        "lilly": {
+          "incretin": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 6,
+        "commercialMult": 6.0,
+        "commercialRevM": 3200,
+        "milestones": 1000,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "FluidCrystal becomes the dominant long-acting drug delivery platform \u2014 Novo/Lilly acquires",
+      "events": [
+        "V CAM2029 franchise SEK 4B+ across 3+ indications",
+        "V Lilly monthly incretin becomes standard \u2014 $500M+ royalties to Camurus",
+        "V FluidCrystal platform licensed for 10+ molecules globally",
+        "V Novo Nordisk or Lilly acquires for SEK 60-80B"
+      ],
+      "assumptions": {
+        "commercial": {
+          "oud": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "oczyesa": {
+          "acro": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.4
+          }
+        },
+        "sorento": {
+          "gepnet": {
+            "pos": 80,
+            "apr": 80,
+            "pen": 1.2
+          }
+        },
+        "pld": {
+          "pld": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 1.0
+          }
+        },
+        "lilly": {
+          "incretin": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 7,
+        "commercialMult": 7.0,
+        "commercialRevM": 4000,
+        "milestones": 2000,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 12, 2026 (Q4 2025)",
+      "title": "SEK 2.3B 2025 revenue (+21%), Oczyesa EU launched, Oclaiz PDUFA Jun 10",
+      "points": [
+        "2025 revenue SEK 2.3B (+21% YoY)",
+        "Operating result SEK 874M (+86%)",
+        "Cash SEK 3.7B (+33%)",
+        "Buvidal product sales + Brixadi royalties growing",
+        "Oczyesa EU launched Germany Nov 2025",
+        "Oclaiz US NDA resubmitted, PDUFA Jun 10, 2026",
+        "SORENTO GEP-NET primary readout mid/H2 2026",
+        "POSITANO Phase 2b PLD positive \u2014 Phase 2/3 planned",
+        "Lilly FluidCrystal deal: up to $870M milestones + royalties",
+        "CAM2056 monthly semaglutide Phase 1 enrolled",
+        "2026 guide: SEK 2.6-2.9B revenue"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Jun 10, 2026",
+      "title": "Oclaiz US PDUFA + SORENTO GEP-NET primary readout H2 2026",
+      "thresholds": [
+        "Oclaiz PDUFA Jun 10, 2026 \u2014 US acromegaly approval",
+        "SORENTO Phase 3 GEP-NET primary PFS endpoint mid/H2 2026",
+        "Buvidal patient growth trajectory toward 100K",
+        "Lilly incretin Phase 1 data updates"
+      ]
+    },
+    "risks": [
+      "SEK 28B market cap at ~12x revenue \u2014 premium for specialty pharma",
+      "UK government funding issues impacting Buvidal adoption",
+      "Oclaiz US has been rejected before \u2014 resubmission risk",
+      "SORENTO event accrual slower than expected",
+      "Lilly incretin partnership is early \u2014 years from revenue contribution",
+      "Brixadi US royalties depend on Braeburn execution",
+      "Competition in acromegaly from Ipsen Somatuline + generic octreotide",
+      "Swedish-listed with limited US investor awareness",
+      "PLD is unproven market \u2014 regulatory path uncertain"
+    ]
+  }
+}

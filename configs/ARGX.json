@@ -1,0 +1,410 @@
+{
+  "company": {
+    "ticker": "ARGX",
+    "name": "argenx",
+    "subtitle": "Vyvgart $4.2B (+90%) | First OpProfit $1.05B | 19K pts | Vision 2030",
+    "sharesOut": 60,
+    "cash": 5000,
+    "currentPrice": 680.0,
+    "currency": "USD",
+    "yahooTicker": "ARGX",
+    "cashRunway": "Cash generative ($4.2B rev, $1.3B net profit)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "Vyvgart (efgartigimod) - FcRn",
+      "stage": "Commercial ($4.2B 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "fcrn_comm",
+          "name": "gMG + CIDP + expansions",
+          "market": {
+            "notes": "$4.2B (+90%), Q4 $1.29B. 19K patients. SeronegMG PDUFA May 10 2026. ADAPT OCULUS positive. ITP topline H2 2026."
+          }
+        }
+      ]
+    },
+    {
+      "id": "itp_expand",
+      "name": "Vyvgart - ITP expansion",
+      "stage": "Phase 3 (H2 2026 topline)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "itp",
+          "name": "Primary ITP",
+          "market": {
+            "tamB": 4.0,
+            "penPct": 12,
+            "peakYear": 2032,
+            "notes": "ADVANCE-NEXT Phase 3 topline H2 2026."
+          }
+        }
+      ]
+    },
+    {
+      "id": "empas",
+      "name": "Empasiprubart (anti-C2)",
+      "stage": "Phase 3 (MMN + CIDP)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "complement",
+          "name": "MMN + CIDP",
+          "market": {
+            "tamB": 5.0,
+            "penPct": 8,
+            "peakYear": 2034,
+            "notes": "EMPASSION MMN topline Q4 2026. Head-to-head vs IVIg."
+          }
+        }
+      ]
+    },
+    {
+      "id": "argx119",
+      "name": "Adimanebart (ARGX-119) - MuSK",
+      "stage": "Phase 3 entering Q3 2026",
+      "designations": [],
+      "indications": [
+        {
+          "id": "musk",
+          "name": "CMS",
+          "market": {
+            "tamB": 0.5,
+            "penPct": 30,
+            "peakYear": 2032,
+            "notes": "First-in-class MuSK agonist. Registrational Q3 2026."
+          }
+        }
+      ]
+    },
+    {
+      "id": "pipeline",
+      "name": "Broader AI pipeline",
+      "stage": "Phase 2/3 + Phase 1",
+      "designations": [],
+      "indications": [
+        {
+          "id": "ai_pipe",
+          "name": "15 autoimmune indications",
+          "market": {
+            "tamB": 25.0,
+            "penPct": 2,
+            "peakYear": 2035,
+            "notes": "AIM, Sjogren, next-gen FcRn. 4 Ph3 + 10 clinical molecules by end 2026."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Vyvgart decelerates + FcRn competition + pipeline disappoints",
+      "events": [
+        "X Growth slows",
+        "X ITP misses",
+        "X Empasiprubart fails"
+      ],
+      "assumptions": {
+        "commercial": {
+          "fcrn_comm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "itp_expand": {
+          "itp": {
+            "pos": 40,
+            "apr": 35,
+            "pen": 0.4
+          }
+        },
+        "empas": {
+          "complement": {
+            "pos": 25,
+            "apr": 30,
+            "pen": 0.3
+          }
+        },
+        "argx119": {
+          "musk": {
+            "pos": 40,
+            "apr": 35,
+            "pen": 0.4
+          }
+        },
+        "pipeline": {
+          "ai_pipe": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 14,
+        "pipelineMult": 3,
+        "commercialMult": 5.0,
+        "commercialRevM": 5000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Vyvgart $6-7B but FcRn crowding",
+      "events": [
+        "V Vyvgart $6-7B",
+        "~ Competition limits",
+        "~ Empasiprubart mixed"
+      ],
+      "assumptions": {
+        "commercial": {
+          "fcrn_comm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "itp_expand": {
+          "itp": {
+            "pos": 55,
+            "apr": 60,
+            "pen": 0.6
+          }
+        },
+        "empas": {
+          "complement": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 0.5
+          }
+        },
+        "argx119": {
+          "musk": {
+            "pos": 55,
+            "apr": 55,
+            "pen": 0.6
+          }
+        },
+        "pipeline": {
+          "ai_pipe": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.4
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 12,
+        "pipelineMult": 4,
+        "commercialMult": 6.0,
+        "commercialRevM": 5500,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Vyvgart $8B+ + ITP + empasiprubart + Vision 2030",
+      "events": [
+        "V Vyvgart $8B+ across indications",
+        "V ITP approved",
+        "V Empasiprubart validates",
+        "V 50K patients by 2030"
+      ],
+      "assumptions": {
+        "commercial": {
+          "fcrn_comm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "itp_expand": {
+          "itp": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 0.8
+          }
+        },
+        "empas": {
+          "complement": {
+            "pos": 55,
+            "apr": 60,
+            "pen": 0.7
+          }
+        },
+        "argx119": {
+          "musk": {
+            "pos": 65,
+            "apr": 65,
+            "pen": 0.8
+          }
+        },
+        "pipeline": {
+          "ai_pipe": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.6
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 10,
+        "pipelineMult": 5,
+        "commercialMult": 7.0,
+        "commercialRevM": 6000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "FcRn dominance + 3 molecules + $12B+",
+      "events": [
+        "V Vyvgart $10B+",
+        "V Empasiprubart + adimanebart blockbusters",
+        "V Revenue $12B+ by 2030"
+      ],
+      "assumptions": {
+        "commercial": {
+          "fcrn_comm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "itp_expand": {
+          "itp": {
+            "pos": 80,
+            "apr": 82,
+            "pen": 1.0
+          }
+        },
+        "empas": {
+          "complement": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 1.0
+          }
+        },
+        "argx119": {
+          "musk": {
+            "pos": 75,
+            "apr": 75,
+            "pen": 1.0
+          }
+        },
+        "pipeline": {
+          "ai_pipe": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 6,
+        "commercialMult": 8.0,
+        "commercialRevM": 7000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Regeneron of autoimmune - acquired $1000+",
+      "events": [
+        "V Vyvgart $12B+",
+        "V 3+ approved molecules",
+        "V Sanofi/Roche acquires $80-100B"
+      ],
+      "assumptions": {
+        "commercial": {
+          "fcrn_comm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "itp_expand": {
+          "itp": {
+            "pos": 88,
+            "apr": 90,
+            "pen": 1.2
+          }
+        },
+        "empas": {
+          "complement": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 1.2
+          }
+        },
+        "argx119": {
+          "musk": {
+            "pos": 82,
+            "apr": 82,
+            "pen": 1.2
+          }
+        },
+        "pipeline": {
+          "ai_pipe": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 7,
+        "commercialMult": 9.0,
+        "commercialRevM": 8000,
+        "milestones": 0,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 26, 2026",
+      "title": "$4.2B rev (+90%), first OpProfit $1.05B, 19K patients",
+      "points": [
+        "Vyvgart $4.2B (+90%), Q4 $1.29B",
+        "OpProfit $1.05B, net $1.29B",
+        "19K patients, CIDP 2500+ SC",
+        "SeronegMG PDUFA May 10 2026",
+        "ITP topline H2 2026",
+        "Empasiprubart MMN topline Q4 2026",
+        "4 Ph3 + 10 clinical by end 2026"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "May 10 + H2 2026",
+      "title": "SeronegMG PDUFA + ITP + empasiprubart",
+      "thresholds": [
+        "SeronegMG May 10",
+        "ITP H2 2026",
+        "EMPASSION Q4 2026",
+        "Adimanebart CMS Q3 2026"
+      ]
+    },
+    "risks": [
+      "$41B at 10x rev",
+      "FcRn competition",
+      "Growth must sustain 30%+",
+      "ITP competitive",
+      "Anti-C2 unproven",
+      "Vision 2030 ambitious",
+      "$2.5B R&D spend"
+    ]
+  }
+}

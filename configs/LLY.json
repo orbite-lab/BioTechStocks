@@ -1,0 +1,365 @@
+{
+  "company": {
+    "ticker": "LLY",
+    "name": "Eli Lilly",
+    "subtitle": "Mounjaro+Zepbound $40B+ run-rate \u00b7 Orforglipron oral GLP-1 \u00b7 $80-83B 2026 guide",
+    "sharesOut": 950,
+    "cash": 5200,
+    "currentPrice": 780.0,
+    "currency": "USD",
+    "yahooTicker": "LLY",
+    "cashRunway": "Highly cash generative ($63.5B 2025 revenue, profitable, growing 45%+ YoY)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "Mounjaro + Zepbound (tirzepatide franchise)",
+      "stage": "Commercial ($40B+ annualized Q4 run-rate)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "incretin",
+          "name": "Diabetes (Mounjaro) + Obesity (Zepbound)",
+          "market": {
+            "notes": "Mounjaro: $26.1B 2025, Zepbound: $13.5B 2025. Combined Q4: $11.7B ($47B annualized). 60.5% US incretin market share. Zepbound 71% new US obesity Rx. 2026 guide: $80-83B total revenue. Manufacturing capacity +60% H1 2026. Walmart LillyDirect partnership at $349/mo."
+          }
+        }
+      ]
+    },
+    {
+      "id": "orforglipron",
+      "name": "Orforglipron \u2014 oral GLP-1 (Foundayo)",
+      "stage": "FDA approved Apr 2026",
+      "designations": [],
+      "indications": [
+        {
+          "id": "oral_glp1",
+          "name": "Obesity + T2D (oral pill)",
+          "market": {
+            "tamB": 100.0,
+            "penPct": 5,
+            "peakYear": 2034,
+            "notes": "First oral non-peptide GLP-1 RA. FDA approved under National Priority Voucher program Apr 2026. Addresses needle-phobic patients + broader primary care market. Phase 3: significant weight loss. Could expand total GLP-1 market by 2-3x. Peak $10-20B."
+          }
+        }
+      ]
+    },
+    {
+      "id": "retatrutide",
+      "name": "Retatrutide \u2014 triple agonist (GLP-1/GIP/glucagon)",
+      "stage": "Phase 3",
+      "designations": [],
+      "indications": [
+        {
+          "id": "triple",
+          "name": "Obesity (next-gen triple agonist)",
+          "market": {
+            "tamB": 80.0,
+            "penPct": 3,
+            "peakYear": 2035,
+            "notes": "Triple agonist (GLP-1/GIP/glucagon). Phase 2: up to 24% weight loss at 48 weeks \u2014 best-in-class. Phase 3 ongoing. Could be the Keytruda of obesity if triple mechanism shows metabolic benefits beyond weight loss. Phase 3 for MASH + knee OA + sleep apnea."
+          }
+        }
+      ]
+    },
+    {
+      "id": "non_incretin",
+      "name": "Non-incretin portfolio (oncology, immunology, neuro)",
+      "stage": "Commercial + pipeline",
+      "designations": [],
+      "indications": [
+        {
+          "id": "other",
+          "name": "Verzenio + Taltz + Kisunla + Jaypirca + donanemab",
+          "market": {
+            "tamB": 30.0,
+            "penPct": 5,
+            "peakYear": 2032,
+            "notes": "Verzenio (breast cancer): $4.7B 2025. Taltz (psoriasis): stable. Kisunla (Alzheimer's): launched 2024. Jaypirca (MCL). Non-incretin revenue grew 20% in Q4 2023. Diversified beyond obesity."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "GLP-1 pricing collapse + competition + orforglipron disappoints",
+      "events": [
+        "\u2717 IRA/government pricing pressure collapses GLP-1 margins",
+        "\u2717 Novo Nordisk CagriSema + Amgen MariTide take major share",
+        "\u2717 Orforglipron oral efficacy gap too wide vs injectables \u2014 slow uptake",
+        "\u2192 Revenue stalls at $70-75B, PE compresses from 50x to 25x"
+      ],
+      "assumptions": {
+        "commercial": {
+          "incretin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "orforglipron": {
+          "oral_glp1": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 0.4
+          }
+        },
+        "retatrutide": {
+          "triple": {
+            "pos": 40,
+            "apr": 45,
+            "pen": 0.4
+          }
+        },
+        "non_incretin": {
+          "other": {
+            "pos": 70,
+            "apr": 70,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 12,
+        "pipelineMult": 3,
+        "commercialMult": 4.0,
+        "commercialRevM": 65000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Growth decelerates + competition intensifies + pricing headwinds",
+      "events": [
+        "~ Tirzepatide growth slows to 15-20% as market matures",
+        "~ Orforglipron approved but 12-15% weight loss (vs 22% injectable)",
+        "\u2717 Retatrutide Phase 3 delayed or mixed results in some indications",
+        "\u2192 Revenue $85-90B by 2028, still growing but below expectations"
+      ],
+      "assumptions": {
+        "commercial": {
+          "incretin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "orforglipron": {
+          "oral_glp1": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 0.7
+          }
+        },
+        "retatrutide": {
+          "triple": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.6
+          }
+        },
+        "non_incretin": {
+          "other": {
+            "pos": 75,
+            "apr": 75,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 10,
+        "pipelineMult": 4,
+        "commercialMult": 5.0,
+        "commercialRevM": 75000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "GLP-1 dominance continues + orforglipron expands TAM + retatrutide next wave",
+      "events": [
+        "\u2713 Tirzepatide franchise $50B+ by 2028 \u2014 dominant in T2D + obesity",
+        "\u2713 Orforglipron expands GLP-1 market 2x (oral access, primary care)",
+        "\u2713 Retatrutide Phase 3 best-in-class weight loss \u2014 filing 2028",
+        "\u2713 2026 guide $80-83B met \u2014 strongest growth in large pharma"
+      ],
+      "assumptions": {
+        "commercial": {
+          "incretin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "orforglipron": {
+          "oral_glp1": {
+            "pos": 92,
+            "apr": 92,
+            "pen": 1.0
+          }
+        },
+        "retatrutide": {
+          "triple": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 0.8
+          }
+        },
+        "non_incretin": {
+          "other": {
+            "pos": 80,
+            "apr": 80,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 5,
+        "commercialMult": 6.0,
+        "commercialRevM": 80000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Obesity market $150B+ by 2030 \u2014 Lilly captures 50%+ \u2014 first $2T pharma",
+      "events": [
+        "\u2713 Tirzepatide + orforglipron = $70B+ combined peak",
+        "\u2713 Retatrutide 24% weight loss \u2192 new obesity standard",
+        "\u2713 Obesity expands to MASH, CKD, sleep apnea, heart failure \u2014 all indications",
+        "\u2713 Lilly revenue $120B+ by 2030 \u2014 most valuable company in healthcare"
+      ],
+      "assumptions": {
+        "commercial": {
+          "incretin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "orforglipron": {
+          "oral_glp1": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.3
+          }
+        },
+        "retatrutide": {
+          "triple": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 1.2
+          }
+        },
+        "non_incretin": {
+          "other": {
+            "pos": 85,
+            "apr": 85,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 6,
+        "commercialMult": 7.0,
+        "commercialRevM": 85000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Obesity rewrites human health \u2014 Lilly becomes the most important healthcare company on Earth",
+      "events": [
+        "\u2713 GLP-1 class proven to reduce CV events, cancer risk, dementia",
+        "\u2713 Total incretin market reaches $200B+ by 2032",
+        "\u2713 Lilly + orforglipron + retatrutide = $100B+ combined franchise",
+        "\u2713 Lilly surpasses $2T market cap, joins Apple/NVIDIA tier"
+      ],
+      "assumptions": {
+        "commercial": {
+          "incretin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "orforglipron": {
+          "oral_glp1": {
+            "pos": 98,
+            "apr": 98,
+            "pen": 1.6
+          }
+        },
+        "retatrutide": {
+          "triple": {
+            "pos": 80,
+            "apr": 85,
+            "pen": 1.5
+          }
+        },
+        "non_incretin": {
+          "other": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 7,
+        "commercialMult": 8.0,
+        "commercialRevM": 95000,
+        "milestones": 0,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 4, 2026 (Q4 2025)",
+      "title": "$63.5B 2025 revenue (+45%), 2026 guide $80-83B",
+      "points": [
+        "Q4 revenue: $19.3B (+43%), beat by $1.4B",
+        "Mounjaro 2025: $26.1B. Zepbound 2025: $13.5B",
+        "Q4 combined tirzepatide: $11.7B ($47B annualized)",
+        "60.5% US incretin market share",
+        "Zepbound: 71% of new US obesity Rx",
+        "2026 guidance: $80-83B revenue (consensus was $77.6B)",
+        "Orforglipron (oral GLP-1): FDA approved Apr 2026",
+        "Retatrutide: Phase 3 across obesity, MASH, knee OA, sleep apnea",
+        "Manufacturing: +60% salable incretin doses H1 2026",
+        "Non-incretin revenue grew 20% \u2014 diversified portfolio"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Q1-Q2 2026",
+      "title": "Orforglipron launch + tirzepatide continued ramp + retatrutide data",
+      "thresholds": [
+        "Orforglipron commercial launch \u2014 first oral GLP-1",
+        "Q1 2026 earnings: can Lilly maintain $80B+ trajectory?",
+        "Retatrutide Phase 3 readouts across indications",
+        "Manufacturing capacity ramp \u2014 supply meeting demand?"
+      ]
+    },
+    "risks": [
+      "$740B market cap at ~50x 2025 PE \u2014 any miss devastating",
+      "GLP-1 pricing under political/IRA pressure \u2014 margins at risk",
+      "Novo Nordisk (CagriSema, oral semaglutide 2.0) + Amgen (MariTide) competition",
+      "Orforglipron efficacy gap vs injectables \u2014 will patients switch?",
+      "Retatrutide triple agonist Phase 3 \u2014 safety signals possible",
+      "Obesity as 'discretionary healthcare' \u2014 economic slowdown risk",
+      "Supply constraints despite capacity additions",
+      "Concentration risk: >60% of revenue from tirzepatide franchise"
+    ]
+  }
+}

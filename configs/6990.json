@@ -1,0 +1,416 @@
+{
+  "company": {
+    "ticker": "6990",
+    "name": "Kelun-Biotech",
+    "subtitle": "OptiDC ADC platform | Sac-TMT TROP2 ADC (4 China approvals) | Merck $10B+ deal | 30+ pipeline programs",
+    "sharesOut": 2600,
+    "cash": 8000,
+    "currentPrice": 100.0,
+    "currency": "HKD",
+    "yahooTicker": "6990.HK",
+    "cashRunway": "Funded by parent Kelun Pharma + growing product revenue + Merck milestones"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "Sac-TMT (sacituzumab tirumotecan) \u2014 TROP2 ADC",
+      "stage": "Commercial China (4 indications: TNBC, NSCLC, HR+/HER2- BC x2)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "trop2",
+          "name": "TROP2 ADC across solid tumors (China approved, global w/ Merck)",
+          "market": {
+            "notes": "Sac-TMT (SKB264/MK-2870): 4 approved indications in China. TROP2 ADC partnered with Merck globally. Phase 3 HR+/HER2- BC vs chemo ongoing. First TROP2 ADC approved for NSCLC globally. Merck deal: $10B+ total value across 3 ADC programs."
+          }
+        }
+      ]
+    },
+    {
+      "id": "a166",
+      "name": "Trastuzumab botidotin (A166) \u2014 HER2 ADC",
+      "stage": "Commercial China + global development",
+      "designations": [],
+      "indications": [
+        {
+          "id": "her2_adc",
+          "name": "HER2+ solid tumors",
+          "market": {
+            "tamB": 10.0,
+            "penPct": 5,
+            "peakYear": 2033,
+            "notes": "HER2 ADC approved in China. Competing with Enhertu but differentiated payload-linker. Global development ongoing."
+          }
+        }
+      ]
+    },
+    {
+      "id": "skb315",
+      "name": "SKB315 \u2014 CLDN18.2 ADC",
+      "stage": "Phase 2/3",
+      "designations": [],
+      "indications": [
+        {
+          "id": "cldn",
+          "name": "Claudin 18.2+ gastric/pancreatic cancer",
+          "market": {
+            "tamB": 6.0,
+            "penPct": 5,
+            "peakYear": 2034,
+            "notes": "Novel CLDN18.2 ADC. Phase 2/3 development. Hot target \u2014 Astellas Zolbetuximab approved for gastric."
+          }
+        }
+      ]
+    },
+    {
+      "id": "merck_pipe",
+      "name": "Merck-partnered ADCs (SKB410/MK-3120 Nectin-4 + SKB571/MK-2750 bsADC)",
+      "stage": "Phase 1-3 (Merck advancing globally)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "merck_adc",
+          "name": "Nectin-4 ADC + bispecific ADC (Merck collaboration)",
+          "market": {
+            "tamB": 15.0,
+            "penPct": 3,
+            "peakYear": 2035,
+            "notes": "3 Merck deals totaling $10B+. SKB410/MK-3120 (Nectin-4 ADC) + SKB571/MK-2750 (bsADC). Merck advancing globally. Milestones + royalties to Kelun-Biotech."
+          }
+        }
+      ]
+    },
+    {
+      "id": "platform",
+      "name": "OptiDC platform + early pipeline (RDC, iADC, DAC, non-onc)",
+      "stage": "Preclinical/Phase 1",
+      "designations": [],
+      "indications": [
+        {
+          "id": "next_gen",
+          "name": "Next-gen ADC modalities + non-oncology",
+          "market": {
+            "tamB": 20.0,
+            "penPct": 1,
+            "peakYear": 2036,
+            "notes": "OptiDC proprietary platform. Bispecific ADCs, RDCs, iADCs, DACs. Expanding into autoimmune (TSLP bsAb) + COPD. Crescent Biopharma partnership. One of worlds leading ADC platforms."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "China pricing pressure + Merck deprioritizes ADC programs + global competition",
+      "events": [
+        "X NRDL pricing crushes China product margins",
+        "X Merck slows ADC development \u2014 milestones delayed",
+        "X TROP2 ADC crowded \u2014 Gilead Trodelvy, Daiichi DS-1062",
+        "-> Platform value limited, stock to HKD 50-60"
+      ],
+      "assumptions": {
+        "commercial": {
+          "trop2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "a166": {
+          "her2_adc": {
+            "pos": 80,
+            "apr": 70,
+            "pen": 0.4
+          }
+        },
+        "skb315": {
+          "cldn": {
+            "pos": 20,
+            "apr": 25,
+            "pen": 0.3
+          }
+        },
+        "merck_pipe": {
+          "merck_adc": {
+            "pos": 15,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "platform": {
+          "next_gen": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 22,
+        "pipelineMult": 3,
+        "commercialMult": 3.0,
+        "commercialRevM": 3000,
+        "milestones": 500,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "China products grow but global competition limits + Merck milestones trickling",
+      "events": [
+        "V Sac-TMT grows in China but pricing headwinds",
+        "~ Merck advancing but slowly \u2014 milestones delayed",
+        "X TROP2 global market competitive with Trodelvy/DS-1062",
+        "-> Moderate revenue growth, platform undervalued"
+      ],
+      "assumptions": {
+        "commercial": {
+          "trop2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "a166": {
+          "her2_adc": {
+            "pos": 85,
+            "apr": 80,
+            "pen": 0.6
+          }
+        },
+        "skb315": {
+          "cldn": {
+            "pos": 35,
+            "apr": 40,
+            "pen": 0.5
+          }
+        },
+        "merck_pipe": {
+          "merck_adc": {
+            "pos": 25,
+            "apr": 35,
+            "pen": 0.5
+          }
+        },
+        "platform": {
+          "next_gen": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 18,
+        "pipelineMult": 4,
+        "commercialMult": 4.0,
+        "commercialRevM": 5000,
+        "milestones": 1000,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "China ADC leader + Merck partnership delivers globally + OptiDC platform validated",
+      "events": [
+        "V Sac-TMT dominant TROP2 ADC in China across 5+ indications",
+        "V Merck milestones flowing \u2014 global registrations advancing",
+        "V A166 + SKB315 building multi-ADC franchise",
+        "V Revenue RMB 5B+ by 2028, profitable"
+      ],
+      "assumptions": {
+        "commercial": {
+          "trop2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "a166": {
+          "her2_adc": {
+            "pos": 88,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "skb315": {
+          "cldn": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.7
+          }
+        },
+        "merck_pipe": {
+          "merck_adc": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 0.7
+          }
+        },
+        "platform": {
+          "next_gen": {
+            "pos": 15,
+            "apr": 25,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 14,
+        "pipelineMult": 5,
+        "commercialMult": 5.0,
+        "commercialRevM": 8000,
+        "milestones": 2000,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Global ADC powerhouse \u2014 Merck deals fully realized + platform generates $20B+ partnerships",
+      "events": [
+        "V Sac-TMT global approval via Merck \u2014 $3B+ franchise",
+        "V Nectin-4 + bsADC Merck programs succeed \u2014 additional $5B+",
+        "V OptiDC platform generates 3+ new major partnerships",
+        "V Total deal value exceeds $20B across partnerships"
+      ],
+      "assumptions": {
+        "commercial": {
+          "trop2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "a166": {
+          "her2_adc": {
+            "pos": 92,
+            "apr": 90,
+            "pen": 1.0
+          }
+        },
+        "skb315": {
+          "cldn": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 1.0
+          }
+        },
+        "merck_pipe": {
+          "merck_adc": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 1.0
+          }
+        },
+        "platform": {
+          "next_gen": {
+            "pos": 25,
+            "apr": 35,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 6,
+        "commercialMult": 6.0,
+        "commercialRevM": 12000,
+        "milestones": 4000,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Kelun-Biotech becomes global ADC leader \u2014 world-class platform rivals Daiichi/Seagen",
+      "events": [
+        "V OptiDC platform generates 5+ approved ADCs globally",
+        "V Merck + additional pharma partnerships exceed $30B total value",
+        "V Platform extends to autoimmune, CNS, metabolic \u2014 beyond oncology",
+        "V Market cap approaches HKD 500B+ \u2014 premier China biotech globally"
+      ],
+      "assumptions": {
+        "commercial": {
+          "trop2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "a166": {
+          "her2_adc": {
+            "pos": 95,
+            "apr": 93,
+            "pen": 1.2
+          }
+        },
+        "skb315": {
+          "cldn": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 1.2
+          }
+        },
+        "merck_pipe": {
+          "merck_adc": {
+            "pos": 65,
+            "apr": 75,
+            "pen": 1.2
+          }
+        },
+        "platform": {
+          "next_gen": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 7,
+        "commercialMult": 7.0,
+        "commercialRevM": 15000,
+        "milestones": 6000,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Mar 23, 2026 (FY 2025)",
+      "title": "4 products / 8 indications approved in China + Merck $10B+ partnership advancing",
+      "points": [
+        "4 products approved in China (sac-TMT, A166, tagitanlimab, cetuximab N01)",
+        "Sac-TMT: 4 indications (TNBC, NSCLC x2, HR+/HER2- BC)",
+        "Merck partnership: 3 ADC deals, $10B+ total value",
+        "OptiDC platform: 30+ innovative drug projects",
+        "Expanding into bsADC, RDC, iADC, DAC modalities",
+        "Non-oncology expansion: TSLP bsAb (AD), COPD, autoimmune",
+        "Crescent Biopharma partnership for SKB118/SKB105",
+        "Listed on HKEX (6990.HK), subsidiary of Kelun Pharma (002422.SZ)"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "2026",
+      "title": "SORENTO GEP-NET primary readout + Merck milestones + global registrations",
+      "thresholds": [
+        "Merck global regulatory submissions for sac-TMT",
+        "CLDN18.2 ADC clinical updates",
+        "Non-oncology pipeline IND filings",
+        "Additional China NRDL inclusions"
+      ]
+    },
+    "risks": [
+      "China drug pricing pressure (NRDL negotiations)",
+      "Merck controls global development timeline",
+      "TROP2 ADC space extremely competitive globally",
+      "ADC manufacturing complexity",
+      "Geopolitical risk \u2014 US-China biotech tensions",
+      "Parent company (Kelun Pharma) control structure",
+      "HK-listed with limited international investor access",
+      "Revenue primarily China-derived \u2014 currency + regulatory risk"
+    ]
+  }
+}

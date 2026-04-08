@@ -1,0 +1,420 @@
+{
+  "company": {
+    "ticker": "ARWR",
+    "name": "Arrowhead Pharmaceuticals",
+    "subtitle": "REDEMPLO launched (FCS) \u00b7 sHTG Phase 3 topline Q3 2026 \u00b7 RNAi platform + obesity",
+    "sharesOut": 162,
+    "cash": 1400,
+    "currentPrice": 55.0,
+    "currency": "USD",
+    "yahooTicker": "ARWR",
+    "cashRunway": "Into 2028+ (~$1.4B incl. convertible notes)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "REDEMPLO (plozasiran) \u2014 FCS launched",
+      "stage": "Commercial (FCS approved US/Canada/China)",
+      "designations": [
+        "Breakthrough (sHTG)"
+      ],
+      "indications": [
+        {
+          "id": "fcs",
+          "name": "FCS + sHTG pending (plozasiran franchise)",
+          "market": {
+            "notes": "REDEMPLO FCS launched US Nov 2025. sHTG Phase 3 (SHASTA-3/4, ~750pts + MUIR-3, ~1450pts) topline Q3 2026. BTD for sHTG. sNDA by year-end 2026. 2yr OLE: -83% TG reduction, 96% <500 mg/dL, zero pancreatitis. Quarterly SC dosing. Peak >$2B if sHTG approved. Direct competitor to Ionis olezarsen."
+          }
+        }
+      ]
+    },
+    {
+      "id": "zodasiran",
+      "name": "Zodasiran \u2014 ANGPTL3 (mixed hyperlipidemia)",
+      "stage": "Phase 3",
+      "designations": [],
+      "indications": [
+        {
+          "id": "lipid",
+          "name": "Mixed hyperlipidemia / ASCVD",
+          "market": {
+            "tamB": 8.0,
+            "penPct": 6,
+            "peakYear": 2033,
+            "notes": "ANGPTL3 inhibitor for mixed dyslipidemia. Phase 3 ongoing. Lowers TG + LDL + non-HDL. Complements plozasiran for broader lipid franchise. Competitor: evinacumab (Regeneron, approved for HoFH)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "aro_dimer",
+      "name": "ARO-DIMER-PA (PCSK9+APOC3 dual)",
+      "stage": "Phase 1/2a (dosing)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "ascvd",
+          "name": "ASCVD due to mixed hyperlipidemia",
+          "market": {
+            "tamB": 15.0,
+            "penPct": 3,
+            "peakYear": 2035,
+            "notes": "First dual-target RNAi: PCSK9 + APOC3 in single molecule. Phase 1/2a dosing started. If it works: one injection replaces two drugs. Interim data H2 2026."
+          }
+        }
+      ]
+    },
+    {
+      "id": "obesity",
+      "name": "ARO-INHBE + ARO-ALK7 (obesity RNAi)",
+      "stage": "Phase 1/2a",
+      "designations": [],
+      "indications": [
+        {
+          "id": "obesity",
+          "name": "Obesity (RNAi approach)",
+          "market": {
+            "tamB": 50.0,
+            "penPct": 1,
+            "peakYear": 2035,
+            "notes": "ARO-INHBE (INHBE target) + ARO-ALK7 \u2014 early obesity RNAi candidates. Phase 1/2a interim data at JPM 2026 showed encouraging signals. Massive TAM but very early. Complements GLP-1s (lean mass preservation potential)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "aro_mapt",
+      "name": "ARO-MAPT \u2014 CNS (Alzheimer's/tauopathies)",
+      "stage": "Phase 1 (TRiM platform)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "cns",
+          "name": "Tauopathies (Alzheimer's)",
+          "market": {
+            "tamB": 20.0,
+            "penPct": 1,
+            "peakYear": 2036,
+            "notes": "First RNAi to cross blood-brain barrier using TRiM platform. Targets tau protein. Phase 1 in healthy volunteers, data 2026. If TRiM BBB penetration validated: paradigm shift for CNS RNAi."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "sHTG Phase 3 fails + olezarsen wins the TG market + platform commoditized",
+      "events": [
+        "\u2717 SHASTA-3/4 miss primary or safety signal (liver)",
+        "\u2717 Olezarsen (Ionis) captures sHTG market first \u2014 ARWR late to party",
+        "\u2717 Obesity programs too early, no differentiation vs GLP-1s",
+        "\u2192 REDEMPLO FCS niche revenue only, $8.9B cap deflates to $3-4B"
+      ],
+      "assumptions": {
+        "commercial": {
+          "fcs": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "zodasiran": {
+          "lipid": {
+            "pos": 20,
+            "apr": 25,
+            "pen": 0.3
+          }
+        },
+        "aro_dimer": {
+          "ascvd": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        },
+        "obesity": {
+          "obesity": {
+            "pos": 3,
+            "apr": 5,
+            "pen": 0.1
+          }
+        },
+        "aro_mapt": {
+          "cns": {
+            "pos": 2,
+            "apr": 5,
+            "pen": 0.1
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 25,
+        "pipelineMult": 3,
+        "commercialMult": 2.0,
+        "commercialRevM": 80,
+        "milestones": 0,
+        "dil": 5
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "sHTG approved but second-to-market vs olezarsen \u2014 share split",
+      "events": [
+        "\u2713 sHTG Phase 3 positive but olezarsen already on market",
+        "\u2717 Market share split 50/50 \u2014 peak $1B not $2B+",
+        "~ Obesity and CNS too early to value",
+        "\u2192 Plozasiran franchise solid but not dominant"
+      ],
+      "assumptions": {
+        "commercial": {
+          "fcs": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "zodasiran": {
+          "lipid": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 0.5
+          }
+        },
+        "aro_dimer": {
+          "ascvd": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        },
+        "obesity": {
+          "obesity": {
+            "pos": 8,
+            "apr": 12,
+            "pen": 0.2
+          }
+        },
+        "aro_mapt": {
+          "cns": {
+            "pos": 5,
+            "apr": 8,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 18,
+        "pipelineMult": 4,
+        "commercialMult": 3.0,
+        "commercialRevM": 200,
+        "milestones": 50,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "sHTG approved + zodasiran expands lipid franchise + obesity generates excitement",
+      "events": [
+        "\u2713 SHASTA-3/4 positive \u2014 sNDA filed year-end 2026",
+        "\u2713 Plozasiran quarterly dosing differentiates vs monthly olezarsen",
+        "\u2713 Zodasiran Phase 3 on track \u2014 broad lipid franchise forming",
+        "~ Obesity/CNS early data generates partnership interest"
+      ],
+      "assumptions": {
+        "commercial": {
+          "fcs": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "zodasiran": {
+          "lipid": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 0.8
+          }
+        },
+        "aro_dimer": {
+          "ascvd": {
+            "pos": 15,
+            "apr": 25,
+            "pen": 0.5
+          }
+        },
+        "obesity": {
+          "obesity": {
+            "pos": 12,
+            "apr": 20,
+            "pen": 0.4
+          }
+        },
+        "aro_mapt": {
+          "cns": {
+            "pos": 8,
+            "apr": 12,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 14,
+        "pipelineMult": 5,
+        "commercialMult": 4.5,
+        "commercialRevM": 400,
+        "milestones": 150,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Cardiometabolic RNAi leader \u2014 TG + lipid + obesity + CNS platform",
+      "events": [
+        "\u2713 Plozasiran >$2B peak \u2014 quarterly dosing wins sHTG market",
+        "\u2713 Zodasiran + ARO-DIMER-PA build $5B+ lipid franchise",
+        "\u2713 Obesity RNAi data strong \u2014 GLP-1 combo potential",
+        "\u2713 TRiM CNS platform validated \u2014 Alzheimer's RNAi within reach"
+      ],
+      "assumptions": {
+        "commercial": {
+          "fcs": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "zodasiran": {
+          "lipid": {
+            "pos": 65,
+            "apr": 75,
+            "pen": 1.2
+          }
+        },
+        "aro_dimer": {
+          "ascvd": {
+            "pos": 25,
+            "apr": 35,
+            "pen": 0.8
+          }
+        },
+        "obesity": {
+          "obesity": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.6
+          }
+        },
+        "aro_mapt": {
+          "cns": {
+            "pos": 15,
+            "apr": 20,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 6,
+        "commercialMult": 5.5,
+        "commercialRevM": 600,
+        "milestones": 300,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "RNAi platform dominance \u2014 cardiometab + obesity + CNS \u2014 Novartis/Amgen acquires",
+      "events": [
+        "\u2713 Plozasiran $3B+ \u2014 best-in-class quarterly TG control",
+        "\u2713 ARO-DIMER-PA single injection replaces statin+fibrate \u2014 paradigm shift",
+        "\u2713 Obesity RNAi becomes standard GLP-1 combo \u2014 lean mass preservation",
+        "\u2713 Novartis or Amgen acquires for $25-30B to own cardiometab RNAi"
+      ],
+      "assumptions": {
+        "commercial": {
+          "fcs": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "zodasiran": {
+          "lipid": {
+            "pos": 75,
+            "apr": 85,
+            "pen": 1.5
+          }
+        },
+        "aro_dimer": {
+          "ascvd": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 1.0
+          }
+        },
+        "obesity": {
+          "obesity": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.8
+          }
+        },
+        "aro_mapt": {
+          "cns": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 7,
+        "commercialMult": 6.5,
+        "commercialRevM": 800,
+        "milestones": 500,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Mar 28, 2026 (ACC.26)",
+      "title": "Plozasiran 2yr OLE: -83% TG, zero pancreatitis",
+      "points": [
+        "REDEMPLO FCS approved US (Nov 2025), Canada, China",
+        "2yr OLE: median -83% TG reduction, 96% achieved <500 mg/dL",
+        "Zero adjudicated acute pancreatitis across 2yr OLE",
+        "SHASTA-3/4 (sHTG, ~750pts) + MUIR-3 (mixed, ~1450pts) fully enrolled",
+        "sHTG BTD granted Dec 2025",
+        "ARO-INHBE/ALK7 obesity Phase 1/2a encouraging signals (JPM 2026)",
+        "ARO-MAPT (tau/Alzheimer's) first subjects dosed \u2014 TRiM BBB platform",
+        "ARO-DIMER-PA (dual PCSK9+APOC3) dosing started",
+        "Revenue: $264M Q1 FY26 (mostly Sarepta/Novartis milestones)",
+        "Cash ~$1.4B incl. convertible notes"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Q3 2026",
+      "title": "SHASTA-3/4 sHTG Phase 3 topline data",
+      "thresholds": [
+        "Primary: % TG reduction vs placebo at 12 months",
+        "Head-to-head positioning vs olezarsen (Ionis) timing matters",
+        "If positive: sNDA by year-end 2026",
+        "Also H2 2026: ARO-DIMER-PA and ARO-MAPT interim data"
+      ]
+    },
+    "risks": [
+      "Direct competition with Ionis olezarsen \u2014 same market, same mechanism class",
+      "Olezarsen may get sHTG approval first (PDUFA Apr 3, 2026) \u2014 first-mover advantage",
+      "Complex revenue model (milestones + royalties + own products)",
+      "Convertible notes add dilution overhang",
+      "Obesity RNAi very early \u2014 years from commercialization",
+      "TRiM CNS platform unproven in humans \u2014 BBB penetration is hard",
+      "Sarepta collaboration revenue lumpy and declining",
+      "Stock volatile \u2014 $29 to $124 range in past 12 months"
+    ]
+  }
+}

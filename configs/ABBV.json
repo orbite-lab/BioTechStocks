@@ -1,0 +1,417 @@
+{
+  "company": {
+    "ticker": "ABBV",
+    "name": "AbbVie",
+    "subtitle": "Skyrizi $17.6B + Rinvoq $8.3B > peak Humira \u00b7 2026 guide $67B \u00b7 Vyalev Parkinson's $5B+ peak",
+    "sharesOut": 1770,
+    "cash": 9500,
+    "currentPrice": 209.0,
+    "currency": "USD",
+    "yahooTicker": "ABBV",
+    "cashRunway": "Highly cash generative ($61.2B revenue, $18.5B FCF expected 2026, dividend aristocrat)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "Immunology (Skyrizi + Rinvoq + Humira tail)",
+      "stage": "Commercial ($30.4B 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "immuno",
+          "name": "Immunology franchise (IBD, derm, rheum)",
+          "market": {
+            "notes": "Skyrizi: $17.6B 2025 (+50%), 75% of new frontline IBD starts. Rinvoq: $8.3B (+39%), expanding labels (vitiligo sNDA filed). Humira: $4.5B (declining). Combined $25.9B already >peak Humira ($21.2B). 2026 guide: Skyrizi $21.5B, Rinvoq $10.1B. No major LOE until late 2030s."
+          }
+        }
+      ]
+    },
+    {
+      "id": "neuro",
+      "name": "Neuroscience (Vraylar + Botox + migraine)",
+      "stage": "Commercial ($10.8B 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "neuro_port",
+          "name": "Psychiatry + migraine + movement",
+          "market": {
+            "tamB": 15.0,
+            "penPct": 100,
+            "peakYear": 2030,
+            "notes": "Vraylar: $3.6B. Botox Therapeutic: $3.8B. Ubrelvy+Qulipta (migraine): $2.3B. Portfolio grew 19.6% YoY. Vyalev (foslevodopa/foscarbidopa, continuous SC Parkinson's) launched \u2014 peak >$5B guided."
+          }
+        }
+      ]
+    },
+    {
+      "id": "onc",
+      "name": "Oncology (Imbruvica + Venclexta + Elahere + Teliso-V)",
+      "stage": "Commercial ($6.7B 2025) + pipeline",
+      "designations": [],
+      "indications": [
+        {
+          "id": "onc_port",
+          "name": "Hematology + solid tumors",
+          "market": {
+            "tamB": 12.0,
+            "penPct": 100,
+            "peakYear": 2030,
+            "notes": "Imbruvica: $2.9B (declining). Venclexta: $2.8B (stable). Elahere: $690M (ovarian cancer, growing). Teliso-V (cMET ADC NSCLC): Phase 3 positive, sNDA filed. Oncology flat (+1.5%) but pipeline refreshing."
+          }
+        }
+      ]
+    },
+    {
+      "id": "aesthetics",
+      "name": "Aesthetics (Botox Cosmetic + Juvederm)",
+      "stage": "Commercial ($4.9B 2025, declining -6%)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "aesth",
+          "name": "Medical aesthetics",
+          "market": {
+            "tamB": 6.0,
+            "penPct": 100,
+            "peakYear": 2027,
+            "notes": "Botox Cosmetic: $2.6B. Juvederm: $993M. Portfolio declining -6% on macro headwinds. Structural ceiling risk from GLP-1 weight loss reducing cosmetic procedure demand."
+          }
+        }
+      ]
+    },
+    {
+      "id": "pipeline",
+      "name": "Next-gen pipeline (emraclidine, ABBV-400, Cerevel assets)",
+      "stage": "Phase 2/3",
+      "designations": [],
+      "indications": [
+        {
+          "id": "next_gen",
+          "name": "Schizophrenia + oncology + neuro (Cerevel acquisition)",
+          "market": {
+            "tamB": 20.0,
+            "penPct": 3,
+            "peakYear": 2034,
+            "notes": "Emraclidine (M4 muscarinic agonist) for schizophrenia \u2014 acquired via Cerevel ($8.7B). ABBV-400 (cMET ADC) Phase 3 in CRC. ABBV-951/Vyalev (Parkinson's) ramping. Tavapadon (D1/D5 agonist, Parkinson's). Pipeline refresh after Humira LOE."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Skyrizi/Rinvoq growth decelerates + Cerevel pipeline fails + aesthetics drag",
+      "events": [
+        "\u2717 IBD competition intensifies \u2014 biosimilars + new entrants erode share",
+        "\u2717 Emraclidine (schizophrenia) Phase 3 fails \u2014 Cerevel $8.7B writedown",
+        "\u2717 Aesthetics continues declining as GLP-1 weight loss reduces procedures",
+        "\u2192 Revenue growth stalls at $65-67B, multiple compresses to 12x"
+      ],
+      "assumptions": {
+        "commercial": {
+          "immuno": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "neuro": {
+          "neuro_port": {
+            "pos": 90,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "onc": {
+          "onc_port": {
+            "pos": 80,
+            "apr": 75,
+            "pen": 0.7
+          }
+        },
+        "aesthetics": {
+          "aesth": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "pipeline": {
+          "next_gen": {
+            "pos": 15,
+            "apr": 20,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 14,
+        "pipelineMult": 3,
+        "commercialMult": 4.0,
+        "commercialRevM": 58000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Skyrizi/Rinvoq guide met but deceleration ahead + Vyalev slow ramp",
+      "events": [
+        "\u2713 2026 guide $67B met \u2014 but growth slowing to mid-single-digits",
+        "~ Vyalev Parkinson's launch slower than expected",
+        "\u2717 Emraclidine Phase 3 mixed \u2014 efficacy but tolerability issues",
+        "\u2192 Revenue grows to $72-75B by 2028 but margin expansion limited"
+      ],
+      "assumptions": {
+        "commercial": {
+          "immuno": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "neuro": {
+          "neuro_port": {
+            "pos": 92,
+            "apr": 90,
+            "pen": 0.9
+          }
+        },
+        "onc": {
+          "onc_port": {
+            "pos": 85,
+            "apr": 80,
+            "pen": 0.8
+          }
+        },
+        "aesthetics": {
+          "aesth": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "pipeline": {
+          "next_gen": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 4,
+        "commercialMult": 5.0,
+        "commercialRevM": 63000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Skyrizi/Rinvoq franchise exceeds $35B + Vyalev + Cerevel pipeline delivers",
+      "events": [
+        "\u2713 Skyrizi/Rinvoq combined >$35B by 2028 \u2014 IBD domination continues",
+        "\u2713 Vyalev Parkinson's ramping \u2014 on track for $5B+ peak",
+        "\u2713 Emraclidine Phase 3 positive \u2014 first novel schizophrenia mechanism",
+        "\u2713 2026 $67B \u2192 2029 $80B+ trajectory, EPS $14.50+ in 2026"
+      ],
+      "assumptions": {
+        "commercial": {
+          "immuno": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "neuro": {
+          "neuro_port": {
+            "pos": 95,
+            "apr": 92,
+            "pen": 1.0
+          }
+        },
+        "onc": {
+          "onc_port": {
+            "pos": 88,
+            "apr": 85,
+            "pen": 0.9
+          }
+        },
+        "aesthetics": {
+          "aesth": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "pipeline": {
+          "next_gen": {
+            "pos": 45,
+            "apr": 55,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 10,
+        "pipelineMult": 5,
+        "commercialMult": 5.5,
+        "commercialRevM": 67000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Immunology + neuroscience dual dominance \u2014 $90B+ revenue, 20x PE re-rate",
+      "events": [
+        "\u2713 Skyrizi/Rinvoq $40B+ \u2014 dominant across all autoimmune diseases",
+        "\u2713 Vyalev $5B+ + emraclidine $3B+ = neuroscience growth engine",
+        "\u2713 Teliso-V + ABBV-400 refresh oncology \u2014 $10B+ portfolio",
+        "\u2713 Revenue $90B+ by 2030, EPS $20+, multiple expands to 18-20x"
+      ],
+      "assumptions": {
+        "commercial": {
+          "immuno": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "neuro": {
+          "neuro_port": {
+            "pos": 97,
+            "apr": 95,
+            "pen": 1.0
+          }
+        },
+        "onc": {
+          "onc_port": {
+            "pos": 90,
+            "apr": 88,
+            "pen": 1.0
+          }
+        },
+        "aesthetics": {
+          "aesth": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "pipeline": {
+          "next_gen": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 6,
+        "commercialMult": 6.0,
+        "commercialRevM": 70000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "AbbVie becomes world's most diversified pharma \u2014 $100B+ revenue, approaches J&J/Lilly scale",
+      "events": [
+        "\u2713 Immunology franchise unassailable \u2014 Skyrizi/Rinvoq $45B+ combined",
+        "\u2713 Neuroscience: Vyalev + emraclidine + tavapadon = $12B+ portfolio",
+        "\u2713 Pipeline generates 3+ new blockbusters from Cerevel/Aliada acquisitions",
+        "\u2713 Revenue $100B+ by 2030, market cap approaches $500B"
+      ],
+      "assumptions": {
+        "commercial": {
+          "immuno": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "neuro": {
+          "neuro_port": {
+            "pos": 98,
+            "apr": 97,
+            "pen": 1.0
+          }
+        },
+        "onc": {
+          "onc_port": {
+            "pos": 92,
+            "apr": 90,
+            "pen": 1.0
+          }
+        },
+        "aesthetics": {
+          "aesth": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "pipeline": {
+          "next_gen": {
+            "pos": 65,
+            "apr": 75,
+            "pen": 1.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 7,
+        "commercialMult": 6.5,
+        "commercialRevM": 75000,
+        "milestones": 0,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 4, 2026 (Q4 2025)",
+      "title": "$61.2B 2025 revenue (+8.6%), Skyrizi/Rinvoq $25.9B > peak Humira",
+      "points": [
+        "Skyrizi: $17.6B (+50%), 75% of new IBD frontline starts",
+        "Rinvoq: $8.3B (+39%), vitiligo sNDA filed (first systemic)",
+        "Humira: $4.5B (declining, biosimilar erosion largely done)",
+        "Neuroscience: $10.8B (+20%), Vraylar $3.6B, Botox Therapeutic $3.8B",
+        "Oncology: $6.7B, Elahere $690M, Teliso-V sNDA filed",
+        "Aesthetics: $4.9B (-6%), macro headwinds",
+        "2026 guide: ~$67B revenue, adj EPS $14.57",
+        "FCF expected $18.5B in 2026",
+        "Dividend increased 5.5% (53 consecutive years)"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Throughout 2026",
+      "title": "Vyalev ramp + emraclidine Phase 3 + Teliso-V approval + Rinvoq vitiligo",
+      "thresholds": [
+        "Vyalev (Parkinson's) commercial ramp trajectory",
+        "Emraclidine schizophrenia Phase 3 readout",
+        "Teliso-V NSCLC FDA decision",
+        "Rinvoq vitiligo sNDA \u2014 first systemic treatment"
+      ]
+    },
+    "risks": [
+      "$370B market cap at 15x earnings \u2014 fairly valued, not cheap",
+      "Skyrizi/Rinvoq growth rate must sustain to justify multiple",
+      "Cerevel acquisition ($8.7B) \u2014 emraclidine is unproven in Phase 3",
+      "Aesthetics structurally challenged by GLP-1 weight loss trend",
+      "IRA drug pricing negotiations approaching for Imbruvica",
+      "Debt load ~$60B from Allergan/Cerevel acquisitions",
+      "Humira biosimilar erosion mostly done but tail risk remains",
+      "IBD competition: Entyvio biosimilars, new mechanisms emerging"
+    ]
+  }
+}

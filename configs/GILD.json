@@ -1,0 +1,418 @@
+{
+  "company": {
+    "ticker": "GILD",
+    "name": "Gilead Sciences",
+    "subtitle": "HIV $20.8B \u00b7 Lenacapavir franchise \u00b7 Trodelvy 1L TNBC \u00b7 No LOE until 2036",
+    "sharesOut": 1240,
+    "cash": 10600,
+    "currentPrice": 139.0,
+    "currency": "USD",
+    "yahooTicker": "GILD",
+    "cashRunway": "Cash generative ($29.4B revenue, profitable, 3.2% div yield)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "HIV franchise (Biktarvy + Descovy + Yeztugo)",
+      "stage": "Commercial ($20.8B 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "hiv",
+          "name": "HIV treatment + prevention",
+          "market": {
+            "notes": "Biktarvy: $14.3B 2025 (+7%), >52% US treatment share. Descovy: $2.8B (+31%), PrEP growth. Yeztugo (lenacapavir): $150M first year \u2014 twice-yearly injection. BIC/LEN single tablet: launching H2 2026. No major LOE until 2036. HIV portfolio: $20.8B growing 6% YoY."
+          }
+        }
+      ]
+    },
+    {
+      "id": "len_prev",
+      "name": "Lenacapavir \u2014 HIV prevention expansion",
+      "stage": "Commercial (Yeztugo) + label expansions",
+      "designations": [],
+      "indications": [
+        {
+          "id": "hiv_prev",
+          "name": "HIV PrEP (twice-yearly injection)",
+          "market": {
+            "tamB": 8.0,
+            "penPct": 10,
+            "peakYear": 2033,
+            "notes": "PURPOSE 1+2 positive \u2014 twice-yearly injection for PrEP. Game-changer for prevention. $150M first year. Peak $5-10B franchise potential. BIC/LEN combo tablet H2 2026 for treatment simplification."
+          }
+        }
+      ]
+    },
+    {
+      "id": "trodelvy",
+      "name": "Trodelvy \u2014 1L metastatic TNBC + breast cancer",
+      "stage": "sNDA (ASCENT-04 positive, PDUFA H2 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "onc_bc",
+          "name": "Breast cancer (1L TNBC + expansion)",
+          "market": {
+            "tamB": 6.0,
+            "penPct": 12,
+            "peakYear": 2032,
+            "notes": "ASCENT-04/KEYNOTE-D19: Trodelvy + Keytruda 35% reduced progression risk in 1L mTNBC. $1.4B 2025 (+6%). 1L TNBC sNDA \u2192 PDUFA H2 2026. If approved: doubles Trodelvy addressable market."
+          }
+        }
+      ]
+    },
+    {
+      "id": "anito_cel",
+      "name": "Anito-cel \u2014 CAR-T (multiple myeloma)",
+      "stage": "BLA review (Kite/Gilead, PDUFA H2 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "mm_cart",
+          "name": "Multiple myeloma (CAR-T)",
+          "market": {
+            "tamB": 8.0,
+            "penPct": 5,
+            "peakYear": 2033,
+            "notes": "Bicistronic BCMA\u00d7CD3/CD19 CAR-T. BLA under review, PDUFA H2 2026. Competes with CARVYKTI. Yescarta ($1.5B) + Tecartus ($344M) = $1.8B cell therapy franchise in 2025."
+          }
+        }
+      ]
+    },
+    {
+      "id": "liver",
+      "name": "Liver disease + Veklury",
+      "stage": "Commercial ($4.1B 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "liver_port",
+          "name": "Liver (Livdelzi + HCV + HBV) + Veklury",
+          "market": {
+            "tamB": 4.0,
+            "penPct": 100,
+            "peakYear": 2028,
+            "notes": "Livdelzi (PBC): >50% 2L US market share. HCV/HBV stable. Veklury declining ($911M, -49%). Liver total: $3.2B (+6%). Modest growth offset by Veklury decline."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Biktarvy erosion + lenacapavir disappoints + oncology fails",
+      "events": [
+        "\u2717 Generic KRAS-type erosion in HIV earlier than 2036",
+        "\u2717 Lenacapavir PrEP uptake much slower than modeled",
+        "\u2717 Trodelvy 1L TNBC rejected + anito-cel loses to CARVYKTI",
+        "\u2192 Revenue stalls at $28-29B, multiple compresses"
+      ],
+      "assumptions": {
+        "commercial": {
+          "hiv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "len_prev": {
+          "hiv_prev": {
+            "pos": 80,
+            "apr": 70,
+            "pen": 0.4
+          }
+        },
+        "trodelvy": {
+          "onc_bc": {
+            "pos": 60,
+            "apr": 40,
+            "pen": 0.4
+          }
+        },
+        "anito_cel": {
+          "mm_cart": {
+            "pos": 50,
+            "apr": 35,
+            "pen": 0.3
+          }
+        },
+        "liver": {
+          "liver_port": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 14,
+        "pipelineMult": 3,
+        "commercialMult": 4.0,
+        "commercialRevM": 25000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Lenacapavir grows modestly + 1L TNBC approved but competitive + HIV stable",
+      "events": [
+        "\u2713 Lenacapavir PrEP growing but 10-year ramp to $3B",
+        "~ Trodelvy 1L TNBC approved but competes with Keytruda combos",
+        "~ Anito-cel approved but CARVYKTI dominates",
+        "\u2192 Revenue grows to $33-35B by 2029, slow grind"
+      ],
+      "assumptions": {
+        "commercial": {
+          "hiv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "len_prev": {
+          "hiv_prev": {
+            "pos": 85,
+            "apr": 80,
+            "pen": 0.7
+          }
+        },
+        "trodelvy": {
+          "onc_bc": {
+            "pos": 70,
+            "apr": 70,
+            "pen": 0.7
+          }
+        },
+        "anito_cel": {
+          "mm_cart": {
+            "pos": 60,
+            "apr": 60,
+            "pen": 0.5
+          }
+        },
+        "liver": {
+          "liver_port": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 4,
+        "commercialMult": 5.0,
+        "commercialRevM": 28000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Lenacapavir blockbuster + Trodelvy 1L TNBC expands oncology + BIC/LEN launches",
+      "events": [
+        "\u2713 Lenacapavir PrEP reaching $5B+ peak \u2014 twice-yearly standard",
+        "\u2713 BIC/LEN single tablet launches H2 2026 \u2014 extends HIV dominance",
+        "\u2713 Trodelvy 1L TNBC approved \u2014 oncology franchise $2B+",
+        "\u2713 2026 guidance $29.6-30B met \u2014 steady 4-5% growth"
+      ],
+      "assumptions": {
+        "commercial": {
+          "hiv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "len_prev": {
+          "hiv_prev": {
+            "pos": 90,
+            "apr": 85,
+            "pen": 1.0
+          }
+        },
+        "trodelvy": {
+          "onc_bc": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 1.0
+          }
+        },
+        "anito_cel": {
+          "mm_cart": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 0.7
+          }
+        },
+        "liver": {
+          "liver_port": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 10,
+        "pipelineMult": 5,
+        "commercialMult": 5.5,
+        "commercialRevM": 30000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "HIV + oncology dual engine \u2014 $40B+ revenue by 2030, dividend aristocrat",
+      "events": [
+        "\u2713 Lenacapavir PrEP standard of care globally \u2014 $8B+ peak",
+        "\u2713 Trodelvy franchise $3B+ across breast + other solid tumors",
+        "\u2713 Anito-cel + Yescarta = $3B+ cell therapy franchise",
+        "\u2713 Revenue $40B+ by 2030, 20%+ ROIC, consistent dividend growth"
+      ],
+      "assumptions": {
+        "commercial": {
+          "hiv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "len_prev": {
+          "hiv_prev": {
+            "pos": 92,
+            "apr": 90,
+            "pen": 1.3
+          }
+        },
+        "trodelvy": {
+          "onc_bc": {
+            "pos": 80,
+            "apr": 85,
+            "pen": 1.2
+          }
+        },
+        "anito_cel": {
+          "mm_cart": {
+            "pos": 70,
+            "apr": 80,
+            "pen": 1.0
+          }
+        },
+        "liver": {
+          "liver_port": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 6,
+        "commercialMult": 6.5,
+        "commercialRevM": 32000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Lenacapavir ends HIV epidemic + oncology franchise rivals Merck \u2014 $50B+ revenue",
+      "events": [
+        "\u2713 Lenacapavir eliminates HIV as public health threat \u2014 $12B+ peak",
+        "\u2713 Trodelvy + next-gen ADCs create $5B+ oncology franchise",
+        "\u2713 Cell therapy next-gen (bicistronic) dominates post-CARVYKTI era",
+        "\u2713 Revenue $50B+ by 2030, Gilead re-rates from 12x to 18x PE"
+      ],
+      "assumptions": {
+        "commercial": {
+          "hiv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "len_prev": {
+          "hiv_prev": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.6
+          }
+        },
+        "trodelvy": {
+          "onc_bc": {
+            "pos": 85,
+            "apr": 90,
+            "pen": 1.5
+          }
+        },
+        "anito_cel": {
+          "mm_cart": {
+            "pos": 80,
+            "apr": 85,
+            "pen": 1.3
+          }
+        },
+        "liver": {
+          "liver_port": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 7,
+        "commercialMult": 7.0,
+        "commercialRevM": 35000,
+        "milestones": 0,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 10, 2026 (Q4 2025)",
+      "title": "$29.4B 2025 revenue, $8.15 non-GAAP EPS, 2026 guide $29.6-30B",
+      "points": [
+        "Biktarvy: $14.3B (+7%), >52% US HIV treatment share",
+        "Descovy: $2.8B (+31%), PrEP growth driver",
+        "Lenacapavir/Yeztugo: $150M first year \u2014 twice-yearly HIV prevention",
+        "Trodelvy: $1.4B (+6%), ASCENT-04 positive in 1L mTNBC",
+        "Cell therapy: $1.8B (Yescarta $1.5B, Tecartus $344M, -7%)",
+        "Liver: $3.2B (+6%), Livdelzi >50% 2L PBC share",
+        "Veklury: $911M (-49%) \u2014 COVID declining",
+        "2026 guide: $29.6-30B revenue, $8.45-8.85 non-GAAP EPS",
+        "No major LOE until 2036",
+        "Tubulis acquisition ($5B) to bolster oncology ADC pipeline"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "H2 2026",
+      "title": "Trodelvy 1L TNBC PDUFA + anito-cel PDUFA + BIC/LEN launch",
+      "thresholds": [
+        "Trodelvy 1L mTNBC FDA decision H2 2026",
+        "Anito-cel MM CAR-T FDA decision H2 2026",
+        "BIC/LEN single-tablet HIV regimen launch H2 2026",
+        "Lenacapavir global PrEP expansion trajectory"
+      ]
+    },
+    "risks": [
+      "$172B market cap at ~12x 2025 earnings \u2014 fair value, not cheap",
+      "HIV growth slowing (6% vs historical 8-10%)",
+      "Lenacapavir PrEP uptake depends on access/reimbursement globally",
+      "Oncology franchise faces intense competition (ADC space crowding)",
+      "Cell therapy declining (-7%) \u2014 bispecifics disrupting CAR-T",
+      "Veklury declining rapidly \u2014 $911M hole to fill",
+      "Tubulis $5B deal \u2014 integration/execution risk",
+      "Dividend yield 3.2% attractive but limits capital allocation flexibility"
+    ]
+  }
+}

@@ -1,0 +1,417 @@
+{
+  "company": {
+    "ticker": "AXSM",
+    "name": "Axsome Therapeutics",
+    "subtitle": "Auvelity $507M \u00b7 AXS-05 AD agitation PDUFA Apr 30, 2026 \u00b7 $16.5B peak sales potential",
+    "sharesOut": 49,
+    "cash": 323,
+    "currentPrice": 164.0,
+    "currency": "USD",
+    "yahooTicker": "AXSM",
+    "cashRunway": "Cash flow positive trajectory (revenue growing 66% YoY)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "Auvelity + Sunosi + Symbravo (commercial)",
+      "stage": "Commercial (3 products, $639M 2025 revenue)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "cns_comm",
+          "name": "MDD + narcolepsy/OSA + migraine",
+          "market": {
+            "notes": "Auvelity (MDD): $507M 2025, +74% YoY, 225K Rx/quarter, 86% payer coverage. Sunosi (EDS): $125M 2025, +32% YoY. Symbravo (migraine): $6.6M, launched Jun 2025. Combined Q4 run-rate: $784M annualized. Still loss-making but approaching cash flow positive."
+          }
+        }
+      ]
+    },
+    {
+      "id": "axs05_ad",
+      "name": "AXS-05 \u2014 Alzheimer's disease agitation",
+      "stage": "sNDA filed (PDUFA Apr 30, 2026, Priority Review)",
+      "designations": [
+        "Priority Review"
+      ],
+      "indications": [
+        {
+          "id": "ad_agit",
+          "name": "AD agitation",
+          "market": {
+            "tamB": 3.0,
+            "penPct": 15,
+            "peakYear": 2032,
+            "notes": "Same molecule as Auvelity (dextromethorphan-bupropion). ADVANCE-2 + ACCORD-2 Phase 3 positive. ~5.8M AD patients in US, majority experience agitation. Only other approved: Rexulti (Otsuka). PDUFA Apr 30, 2026. Expanding to 600 sales reps for launch."
+          }
+        }
+      ]
+    },
+    {
+      "id": "axs14",
+      "name": "AXS-14 \u2014 fibromyalgia",
+      "stage": "NDA submitted",
+      "designations": [],
+      "indications": [
+        {
+          "id": "fibro",
+          "name": "Fibromyalgia",
+          "market": {
+            "tamB": 4.0,
+            "penPct": 10,
+            "peakYear": 2032,
+            "notes": "Esreboxetine (selective NRI). NDA submitted Nov 2024. ~10M US patients. Current SOC limited (Lyrica, Cymbalta \u2014 modest efficacy). $1.5-3B peak potential per company guidance."
+          }
+        }
+      ]
+    },
+    {
+      "id": "solri_adhd",
+      "name": "Solriamfetol \u2014 ADHD + MDD-EDS + BED",
+      "stage": "Phase 3 (multiple)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "sol_expan",
+          "name": "ADHD + MDD with EDS + BED + SWD",
+          "market": {
+            "tamB": 15.0,
+            "penPct": 4,
+            "peakYear": 2033,
+            "notes": "Solriamfetol (Sunosi active ingredient) expanding to ADHD ($1-3B), MDD with EDS ($1-3B), BED ($0.3-0.5B), SWD ($0.5-1B). FOCUS (ADHD) + PARADIGM (MDD-EDS) Phase 3 data expected. Non-stimulant ADHD option."
+          }
+        }
+      ]
+    },
+    {
+      "id": "axs12",
+      "name": "AXS-12 \u2014 narcolepsy",
+      "stage": "NDA track (ENCORE Phase 3)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "narco",
+          "name": "Narcolepsy",
+          "market": {
+            "tamB": 2.0,
+            "penPct": 10,
+            "peakYear": 2032,
+            "notes": "Reboxetine for narcolepsy. ENCORE Phase 3 completed. NDA track. Non-stimulant approach. $0.5-1B peak per guidance."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "AXS-05 AD agitation CRL + pipeline delays + cash crunch before profitability",
+      "events": [
+        "\u2717 FDA rejects AXS-05 for AD agitation \u2014 safety or efficacy concern",
+        "\u2717 AXS-14 fibromyalgia CRL \u2014 insufficient data",
+        "\u2717 Solriamfetol ADHD Phase 3 misses",
+        "\u2192 Single-franchise (Auvelity/Sunosi) company at $700M revenue, cash tight"
+      ],
+      "assumptions": {
+        "commercial": {
+          "cns_comm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "axs05_ad": {
+          "ad_agit": {
+            "pos": 70,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "axs14": {
+          "fibro": {
+            "pos": 60,
+            "apr": 25,
+            "pen": 0.3
+          }
+        },
+        "solri_adhd": {
+          "sol_expan": {
+            "pos": 20,
+            "apr": 25,
+            "pen": 0.3
+          }
+        },
+        "axs12": {
+          "narco": {
+            "pos": 50,
+            "apr": 40,
+            "pen": 0.4
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 22,
+        "pipelineMult": 3,
+        "commercialMult": 3.5,
+        "commercialRevM": 700,
+        "milestones": 0,
+        "dil": 5
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "AXS-05 approved but slow uptake + limited pipeline conversion",
+      "events": [
+        "\u2713 AXS-05 AD agitation approved but Rexulti entrenched",
+        "~ AXS-14 fibro approved but market crowded",
+        "\u2717 Solriamfetol ADHD borderline data \u2014 competitive vs Vyvanse",
+        "\u2192 Revenue grows to ~$1.2B but pipeline peak limited"
+      ],
+      "assumptions": {
+        "commercial": {
+          "cns_comm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "axs05_ad": {
+          "ad_agit": {
+            "pos": 70,
+            "apr": 80,
+            "pen": 0.6
+          }
+        },
+        "axs14": {
+          "fibro": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 0.5
+          }
+        },
+        "solri_adhd": {
+          "sol_expan": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 0.5
+          }
+        },
+        "axs12": {
+          "narco": {
+            "pos": 55,
+            "apr": 60,
+            "pen": 0.6
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 16,
+        "pipelineMult": 4,
+        "commercialMult": 4.0,
+        "commercialRevM": 850,
+        "milestones": 50,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "AXS-05 + AXS-14 approved + solriamfetol expands Sunosi franchise \u2014 path to $3B+",
+      "events": [
+        "\u2713 AXS-05 AD agitation approved \u2014 leverages 600 rep sales force",
+        "\u2713 AXS-14 fibromyalgia approved \u2014 large patient population",
+        "\u2713 Solriamfetol ADHD Phase 3 positive \u2014 non-stimulant option",
+        "\u2192 Revenue trajectory: $1B 2026 \u2192 $2-3B by 2029"
+      ],
+      "assumptions": {
+        "commercial": {
+          "cns_comm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "axs05_ad": {
+          "ad_agit": {
+            "pos": 75,
+            "apr": 85,
+            "pen": 1.0
+          }
+        },
+        "axs14": {
+          "fibro": {
+            "pos": 65,
+            "apr": 75,
+            "pen": 0.8
+          }
+        },
+        "solri_adhd": {
+          "sol_expan": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 0.8
+          }
+        },
+        "axs12": {
+          "narco": {
+            "pos": 60,
+            "apr": 70,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 13,
+        "pipelineMult": 5,
+        "commercialMult": 5.0,
+        "commercialRevM": 1000,
+        "milestones": 100,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Multi-franchise CNS leader \u2014 7 products, $5B+ peak revenue",
+      "events": [
+        "\u2713 Auvelity + AXS-05 build $2B+ dextromethorphan franchise",
+        "\u2713 Solriamfetol ADHD blockbuster \u2014 $3B+ peak across indications",
+        "\u2713 AXS-14 fibro + AXS-12 narcolepsy fill the portfolio",
+        "\u2713 Fastest-growing CNS pure-play, M&A target"
+      ],
+      "assumptions": {
+        "commercial": {
+          "cns_comm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "axs05_ad": {
+          "ad_agit": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 1.3
+          }
+        },
+        "axs14": {
+          "fibro": {
+            "pos": 70,
+            "apr": 80,
+            "pen": 1.2
+          }
+        },
+        "solri_adhd": {
+          "sol_expan": {
+            "pos": 60,
+            "apr": 70,
+            "pen": 1.2
+          }
+        },
+        "axs12": {
+          "narco": {
+            "pos": 70,
+            "apr": 80,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 6,
+        "commercialMult": 6.0,
+        "commercialRevM": 1200,
+        "milestones": 200,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "CNS platform dominance \u2014 $10B+ peak \u2014 AbbVie/Pfizer acquires at $300+",
+      "events": [
+        "\u2713 All 7 indications approved \u2014 $5-10B peak revenue",
+        "\u2713 Solriamfetol ADHD replaces stimulants \u2014 paradigm shift",
+        "\u2713 AXS-05 smoking cessation hit \u2014 massive TAM",
+        "\u2713 AbbVie or Pfizer acquires for CNS franchise at $300+"
+      ],
+      "assumptions": {
+        "commercial": {
+          "cns_comm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "axs05_ad": {
+          "ad_agit": {
+            "pos": 90,
+            "apr": 95,
+            "pen": 1.5
+          }
+        },
+        "axs14": {
+          "fibro": {
+            "pos": 80,
+            "apr": 85,
+            "pen": 1.4
+          }
+        },
+        "solri_adhd": {
+          "sol_expan": {
+            "pos": 70,
+            "apr": 80,
+            "pen": 1.5
+          }
+        },
+        "axs12": {
+          "narco": {
+            "pos": 80,
+            "apr": 85,
+            "pen": 1.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 7,
+        "commercialMult": 7.0,
+        "commercialRevM": 1500,
+        "milestones": 400,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 23, 2026 (Q4 2025)",
+      "title": "$639M 2025 revenue (+66% YoY) + AXS-05 PDUFA Apr 30",
+      "points": [
+        "Auvelity: $507M 2025 (+74%), Q4 $155M, 225K Rx/qtr",
+        "Sunosi: $125M 2025, Symbravo: $6.6M (launched Jun 2025)",
+        "AXS-05 AD agitation: Priority Review, PDUFA Apr 30, 2026",
+        "AXS-14 fibromyalgia: NDA submitted",
+        "600 rep sales force expansion for AD agitation launch",
+        "Cash: $323M, still loss-making but narrowing",
+        "$16.5B peak sales potential across pipeline (company estimate)"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Apr 30, 2026",
+      "title": "AXS-05 PDUFA \u2014 AD agitation approval",
+      "thresholds": [
+        "FDA approval/CRL for Alzheimer's disease agitation",
+        "If approved: launch with 600 expanded sales reps",
+        "Also: AXS-14 fibromyalgia PDUFA timing",
+        "Solriamfetol ADHD + MDD-EDS Phase 3 readouts"
+      ]
+    },
+    "risks": [
+      "Still loss-making despite $639M revenue \u2014 when does it turn?",
+      "AXS-05 = same molecule as Auvelity (dextromethorphan-bupropion) \u2014 cannibalization?",
+      "Rexulti already approved for AD agitation \u2014 second-mover",
+      "Solriamfetol ADHD faces stimulant dominance",
+      "AXS-14 fibromyalgia market historically disappointing for new entrants",
+      "$8B market cap at 12x revenue for a loss-making company",
+      "CNS commercial execution is expensive \u2014 600 rep force is costly",
+      "Pipeline relies heavily on label extensions of existing molecules"
+    ]
+  }
+}

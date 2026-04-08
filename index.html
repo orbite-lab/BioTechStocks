@@ -298,7 +298,7 @@
       );
     }
 
-    const NAMED_CC = { megabear: "#991b1b", mega_bear: "#991b1b", bear: "#ef4444", base: "#f59e0b", bull: "#22c55e", bluesky: "#3b82f6", blue_sky: "#3b82f6" };
+    const NAMED_CC = { megabear: "#991b1b", mega_bear: "#991b1b", bear: "#ef4444", base: "#f59e0b", bull: "#22c55e", bluesky: "#3b82f6", blue_sky: "#3b82f6", psychedelic_bull: "#a855f7" };
     const FALLBACK_PAL = ["#991b1b", "#ef4444", "#f59e0b", "#22c55e", "#3b82f6", "#8b5cf6", "#ec4899"];
     const sentC = { "\u2713": "#22c55e", "\u2717": "#ef4444", "~": "#f59e0b", "\u2192": "#6b7080" };
 
@@ -413,7 +413,11 @@
         return { results, normW, weightedTP, upside, cashPS: co.cash / co.sharesOut, sks };
       }, [state, config]);
 
-      const ccy = config.company.currency === "EUR" ? "\u20AC" : "$";
+      const CCY_MAP = { EUR: "\u20AC", USD: "$", HKD: "HK$", SEK: "kr", JPY: "\u00A5", GBP: "\u00A3", CHF: "CHF " };
+      const ccyOf = c => CCY_MAP[c] || "$";
+      const ccyDec = c => (c === "JPY" || c === "HKD" || c === "SEK") ? 0 : 2;
+      const ccy = ccyOf(config.company.currency);
+      const dec = ccyDec(config.company.currency);
 
       return e("div", { style: { minHeight: "100vh", background: "#0f1117", color: "#e2e4ea", padding: "28px 20px" } },
         e("div", { style: { maxWidth: 1100, margin: "0 auto" } },
@@ -445,7 +449,7 @@
                     e("div", null,
                       e("span", { style: { fontFamily: "'JetBrains Mono'", fontWeight: 700, fontSize: 13, color: t === ticker ? "#f97316" : "#e2e4ea", marginRight: 10 } }, t),
                       e("span", { style: { fontSize: 12, color: "#6b7080" } }, c.name)),
-                    e("span", { style: { fontSize: 11, color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, (c.currency === "EUR" ? "\u20AC" : "$") + c.currentPrice)
+                    e("span", { style: { fontSize: 11, color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, ccyOf(c.currency) + Number(c.currentPrice).toFixed(ccyDec(c.currency)))
                   );
                 }),
                 tickers.filter(t => { const q = search.toLowerCase(); const c = configs[t].company; return !search || t.toLowerCase().includes(q) || c.name.toLowerCase().includes(q); }).length === 0 &&
@@ -481,7 +485,7 @@
           e("div", { style: { background: "linear-gradient(135deg,#1a1d28,#161920)", borderRadius: 12, padding: "22px 26px", marginBottom: 22, border: "1px solid #ffffff08", display: "flex", alignItems: "center", gap: 28, flexWrap: "wrap" } },
             e("div", null,
               e("div", { style: { fontSize: 10, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 5 } }, "Weighted TP"),
-              e("div", { style: { fontSize: 42, fontWeight: 800, fontFamily: "'JetBrains Mono'", color: "#f97316" } }, ccy + model.weightedTP.toFixed(2))
+              e("div", { style: { fontSize: 42, fontWeight: 800, fontFamily: "'JetBrains Mono'", color: "#f97316" } }, ccy + model.weightedTP.toFixed(dec))
             ),
             e("div", { style: { height: 50, width: 1, background: "#ffffff10" } }),
             e("div", null,
@@ -507,7 +511,7 @@
             e("div", { style: { height: 50, width: 1, background: "#ffffff10" } }),
             e("div", null,
               e("div", { style: { fontSize: 10, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 5 } }, "Cash/Shr"),
-              e("div", { style: { fontSize: 18, fontWeight: 700, fontFamily: "'JetBrains Mono'" } }, ccy + model.cashPS.toFixed(2))
+              e("div", { style: { fontSize: 18, fontWeight: 700, fontFamily: "'JetBrains Mono'" } }, ccy + model.cashPS.toFixed(dec))
             )
           ),
 
@@ -523,7 +527,7 @@
                   e("div", { style: { fontSize: 11, color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, (model.normW[si] * 100).toFixed(0) + "% wt")
                 ),
                 e("div", { style: { display: "flex", alignItems: "baseline", gap: 8, marginBottom: 4 } },
-                  e("span", { style: { fontSize: scenarioKeys.length > 3 ? 24 : 32, fontWeight: 800, fontFamily: "'JetBrains Mono'", lineHeight: 1 } }, ccy + r.tp.toFixed(2)),
+                  e("span", { style: { fontSize: scenarioKeys.length > 3 ? 24 : 32, fontWeight: 800, fontFamily: "'JetBrains Mono'", lineHeight: 1 } }, ccy + r.tp.toFixed(dec)),
                   e("span", { style: { fontSize: 13, fontWeight: 700, fontFamily: "'JetBrains Mono'", color: ud >= 0 ? "#22c55e" : "#ef4444" } }, (ud >= 0 ? "+" : "") + ud.toFixed(0) + "%")
                 ),
                 e("div", { style: { fontSize: 11, color: "#6b7080", marginBottom: 12 } }, scen.narrative),
@@ -611,7 +615,7 @@
                 e("div", { style: { position: "absolute", top: 0, left: 0, right: 0, height: 2, background: CC[sk] } }),
                 e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 10, marginTop: 4 } },
                   e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: CC[sk] } }, sk),
-                  e("div", { style: { fontSize: 13, fontWeight: 800, fontFamily: "'JetBrains Mono'", color: CC[sk] } }, ccy + model.results[sk].tp.toFixed(2))
+                  e("div", { style: { fontSize: 13, fontWeight: 800, fontFamily: "'JetBrains Mono'", color: CC[sk] } }, ccy + model.results[sk].tp.toFixed(dec))
                 ),
                 // Per-asset sliders
                 config.assets.filter(a => a.id !== "commercial").map(asset => asset.indications.map(ind => {

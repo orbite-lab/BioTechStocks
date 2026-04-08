@@ -64,8 +64,9 @@ tbody tr:hover{background:#ffffff06}
 .rs-legend{display:flex;gap:16px;padding:0 16px 12px;font-size:.72rem;font-weight:600;color:var(--text2);flex-wrap:wrap;border-bottom:1px solid var(--border);margin-bottom:8px}
 .rs-legend .li{display:flex;align-items:center;gap:5px}.rs-legend .bx{width:10px;height:10px;border-radius:50%}
 .rs-row{display:flex;align-items:center;padding:3px 0;transition:.15s}.rs-row:hover{background:#ffffff06}
-.rs-tk{width:60px;text-align:right;padding-right:10px;font-family:var(--mono);font-weight:700;font-size:.75rem;color:#60a5fa;flex-shrink:0;cursor:pointer;text-decoration:none}
+.rs-tk{width:54px;text-align:right;padding-right:6px;font-family:var(--mono);font-weight:700;font-size:.75rem;color:#60a5fa;flex-shrink:0;cursor:pointer;text-decoration:none}
 .rs-tk:hover{color:#93c5fd;text-decoration:underline}
+.rs-rr{width:36px;text-align:right;padding-right:8px;font-family:var(--mono);font-weight:700;font-size:.68rem;flex-shrink:0}
 .rs-track{flex:1;height:24px;position:relative;margin-right:12px}
 .rs-line{position:absolute;top:50%;height:2px;transform:translateY(-50%);border-radius:1px}
 .rs-dot{position:absolute;top:50%;width:10px;height:10px;border-radius:50%;transform:translate(-50%,-50%);border:1.5px solid var(--bg1);z-index:2;cursor:default}
@@ -74,7 +75,7 @@ tbody tr:hover{background:#ffffff06}
 .rs-dot:hover .tip{display:block}
 .rs-zero{position:absolute;top:0;bottom:0;width:1px;background:#ffffff30;z-index:1}
 .rs-zero-lbl{position:absolute;top:-14px;left:-6px;font-size:.6rem;color:var(--text2);font-family:var(--mono)}
-.rs-axis{display:flex;align-items:center;padding:0 0 0 60px;margin-top:4px;border-top:1px solid var(--border);padding-top:6px}
+.rs-axis{display:flex;align-items:center;margin-top:4px;border-top:1px solid var(--border);padding-top:6px}
 .rs-axis-track{flex:1;position:relative;height:14px;margin-right:12px}
 .rs-axis-lbl{position:absolute;top:0;transform:translateX(-50%);font-size:.6rem;color:var(--text2);font-family:var(--mono)}
 .loading{text-align:center;padding:60px;color:var(--text2);font-size:.9rem}
@@ -162,15 +163,22 @@ function buildRangeStrip(rows){
   // Legend
   h+='<div class="rs-legend">';
   SK.forEach(sk=>{h+=`<div class="li"><div class="bx" style="background:${SC[sk]}"></div>${SN[sk]}</div>`;});
-  h+='<div class="li" style="margin-left:auto;color:#ffffff40">\u25C0 Downside | Upside \u25B6</div>';
+  h+='<div class="li" style="margin-left:auto;color:#ffffff40">R/R = bull up \u00f7 bear down \u00b7 \u25C0 Downside | Upside \u25B6</div>';
   h+='</div>';
   // Rows
   data.forEach(d=>{
     const allVals=SK.map(sk=>d.vals[sk]).filter(v=>v!=null);
     if(!allVals.length)return;
     const minV=Math.min(...allVals),maxV=Math.max(...allVals);
+    // Risk/Reward: bull upside / bear downside (absolute values)
+    const bullUp=d.vals.bull!=null&&d.vals.bull>0?d.vals.bull:0;
+    const bearDn=d.vals.bear!=null&&d.vals.bear<0?Math.abs(d.vals.bear):0;
+    const rr=bearDn>0?(bullUp/bearDn):bullUp>0?99:0;
+    const rrCol=rr>=2?'#86efac':rr>=1?'#fbbf24':rr>0?'#fdba74':'#fca5a5';
+    const rrTxt=rr>=10?rr.toFixed(0)+'x':rr.toFixed(1)+'x';
     h+=`<div class="rs-row">`;
     h+=`<a class="rs-tk" href="model.html?ticker=${d.ticker}">${d.ticker}</a>`;
+    h+=`<span class="rs-rr" style="color:${rrCol}" title="R/R: bull upside / bear downside">${rrTxt}</span>`;
     h+=`<div class="rs-track">`;
     // Zero line
     h+=`<div class="rs-zero" style="left:${zeroPct}%"><div class="rs-zero-lbl"></div></div>`;
@@ -190,7 +198,7 @@ function buildRangeStrip(rows){
     h+=`</div></div>`;
   });
   // Axis labels
-  h+='<div class="rs-axis"><div class="rs-axis-track">';
+  h+='<div class="rs-axis"><div style="width:90px;flex-shrink:0"></div><div class="rs-axis-track">';
   [-100,-50,0,50,100,200,300,400,500].forEach(v=>{
     h+=`<div class="rs-axis-lbl" style="left:${pct(v)}%;${v===0?'color:#e2e4ea;font-weight:700':''}">${v>=0?'+':''}${v}%</div>`;
   });
@@ -289,7 +297,101 @@ async function main(){
       h+=`<div class="ptf-res stat ${cls}"><div class="lbl">${SN[sk]}</div><div class="val" style="color:${v>=0?SC[sk]:'#fca5a5'}">${ptfRows.length?((v>=0?"+":"")+v.toFixed(1)+"%"):"\u2014"}</div></div>`;
     });
     h+='</div>';
-    if(ptfRows.length)h+=`<div style="margin-top:8px;font-size:.72rem;color:var(--text2)">${ptfRows.length} stocks \u00b7 Equal-share (avg of individual % returns) \u00b7 Assumes each scenario applies to all positions</div>`;
+    if(ptfRows.length)h+=`<div style="margin-top:8px;font-size:.72rem;color:var(--text2)">${ptfRows.length} stocks \u00b7 Equal-share (avg of individual % returns) \u00b7 Top row = all stocks hit same scenario</div>`;
+
+    // Monte Carlo simulator
+    if(ptfRows.length>=2){
+      const SIMS=10000;
+      const corrVal=typeof window._corrVal==='number'?window._corrVal:30;
+      // Manual overrides
+      const ovr=window._manualOvr||{};
+      // Scenario weights
+      const W=[0.05,0.15,0.50,0.25,0.05];
+      const cumW=[0.05,0.20,0.70,0.95,1.00];
+      // Run Monte Carlo
+      const returns=[];
+      for(let s=0;s<SIMS;s++){
+        // Correlation: shared random factor
+        const shared=Math.random();
+        let ptfRet=0;
+        for(const r of ptfRows){
+          let si;
+          if(ovr[r.ticker]!=null){si=ovr[r.ticker];}
+          else{
+            // Blend shared + individual randomness based on correlation
+            const u=corrVal/100*shared+(1-corrVal/100)*Math.random();
+            si=0;for(let i=0;i<5;i++){if(u<=cumW[i]){si=i;break;}}
+          }
+          const sk=SK[si];
+          const tp=r.tps[sk]||r.price;
+          ptfRet+=((tp-r.price)/r.price*100);
+        }
+        returns.push(ptfRet/ptfRows.length);
+      }
+      returns.sort((a,b)=>a-b);
+      const median=returns[Math.floor(SIMS/2)];
+      const mean=returns.reduce((a,b)=>a+b,0)/SIMS;
+      const p10=returns[Math.floor(SIMS*0.1)];
+      const p90=returns[Math.floor(SIMS*0.9)];
+      const pLoss=returns.filter(r=>r<0).length/SIMS*100;
+      // Histogram: 30 bins
+      const bins=40;
+      const hMin=Math.min(returns[0],-50),hMax=Math.max(returns[SIMS-1],50);
+      const bw=(hMax-hMin)/bins;
+      const hist=new Array(bins).fill(0);
+      returns.forEach(r=>{const i=Math.min(bins-1,Math.max(0,Math.floor((r-hMin)/bw)));hist[i]++;});
+      const hPeak=Math.max(...hist);
+
+      h+=`<div style="margin-top:20px;padding-top:18px;border-top:1px solid var(--border)">`;
+      h+=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:10px">`;
+      h+=`<div style="font-weight:700;color:var(--text1);font-size:.95rem">\u{1F3B2} Monte Carlo Simulation <span style="font-weight:400;color:var(--text2);font-size:.75rem">${SIMS.toLocaleString()} runs</span></div>`;
+      h+=`<div style="display:flex;align-items:center;gap:8px;font-size:.75rem;color:var(--text2)">`;
+      h+=`<span>Correlation:</span>`;
+      h+=`<input type="range" min="0" max="100" value="${corrVal}" oninput="window._corrVal=+this.value;document.getElementById('corrLbl').textContent=this.value+'%';render()" style="width:100px;accent-color:#a855f7"/>`;
+      h+=`<span id="corrLbl" style="font-family:var(--mono);width:36px">${corrVal}%</span>`;
+      h+=`</div></div>`;
+
+      // Stats row
+      h+=`<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px">`;
+      [{l:'Median',v:median,c:'#e2e4ea'},{l:'Expected',v:mean,c:'#60a5fa'},{l:'P10 (bad)',v:p10,c:'#fca5a5'},{l:'P90 (good)',v:p90,c:'#86efac'},{l:'P(loss)',v:pLoss,c:pLoss>50?'#fca5a5':'#fbbf24',pct:true}].forEach(s=>{
+        h+=`<div style="background:var(--bg1);border-radius:8px;padding:10px;text-align:center;border:1px solid var(--border)">`;
+        h+=`<div style="font-size:.65rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px">${s.l}</div>`;
+        h+=`<div style="font-size:1.2rem;font-weight:800;font-family:var(--mono);color:${s.c}">${s.pct?s.v.toFixed(0)+'%':((s.v>=0?'+':'')+s.v.toFixed(1)+'%')}</div>`;
+        h+=`</div>`;
+      });
+      h+=`</div>`;
+
+      // Histogram
+      h+=`<div style="background:var(--bg1);border-radius:8px;padding:12px;border:1px solid var(--border)">`;
+      h+=`<div style="display:flex;align-items:flex-end;height:100px;gap:1px">`;
+      for(let i=0;i<bins;i++){
+        const bStart=hMin+i*bw;
+        const bMid=bStart+bw/2;
+        const pctH=(hist[i]/hPeak)*100;
+        const col=bMid<-20?'#ef4444':bMid<0?'#f59e0b':bMid<30?'#22c55e':'#a855f7';
+        const tt=`${bStart.toFixed(0)}% to ${(bStart+bw).toFixed(0)}%: ${hist[i]} runs`;
+        h+=`<div style="flex:1;height:${pctH}%;background:${col}88;border-radius:2px 2px 0 0;min-width:2px" title="${tt}"></div>`;
+      }
+      h+=`</div>`;
+      h+=`<div style="display:flex;justify-content:space-between;font-size:.6rem;color:var(--text2);font-family:var(--mono);margin-top:4px">`;
+      h+=`<span>${hMin.toFixed(0)}%</span><span style="color:var(--text1);font-weight:700">0%</span><span>${hMax.toFixed(0)}%</span>`;
+      h+=`</div></div>`;
+
+      // Manual override section
+      h+=`<details style="margin-top:12px"><summary style="cursor:pointer;font-size:.8rem;color:#60a5fa;font-weight:600">\u{1F527} Override individual scenarios</summary>`;
+      h+=`<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px">`;
+      ptfRows.forEach(r=>{
+        const cur=ovr[r.ticker];
+        h+=`<div style="background:var(--bg1);border:1px solid var(--border);border-radius:6px;padding:6px 8px;display:flex;align-items:center;gap:6px">`;
+        h+=`<span style="font-family:var(--mono);font-weight:700;font-size:.75rem;color:#60a5fa;width:42px">${r.ticker}</span>`;
+        h+=`<select onchange="if(!window._manualOvr)window._manualOvr={};if(this.value==='auto')delete window._manualOvr['${r.ticker}'];else window._manualOvr['${r.ticker}']=+this.value;render()" style="background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:2px 4px;color:var(--text1);font-size:.72rem;font-family:var(--mono)">`;
+        h+=`<option value="auto" ${cur==null?'selected':''}>Weighted</option>`;
+        SK.forEach((sk,i)=>{h+=`<option value="${i}" style="color:${SC[sk]}" ${cur===i?'selected':''}>${SN[sk]}</option>`;});
+        h+=`</select></div>`;
+      });
+      h+=`</div></details>`;
+      h+=`</div>`;
+    }
     h+='</div>';
 
     // Table

@@ -1,0 +1,54 @@
+{
+  "company": {
+    "ticker": "RVMD",
+    "name": "Revolution Medicines",
+    "subtitle": "RAS(ON) platform · RASolute 302 PDAC readout H1 2026 · 5 Phase 3 trials · 3 BTDs",
+    "sharesOut": 198,
+    "cash": 2200,
+    "currentPrice": 95.0,
+    "currency": "USD",
+    "yahooTicker": "RVMD",
+    "cashRunway": "Into 2028+ (~$2.2B cash, no revenue)"
+  },
+  "assets": [
+    {"id": "darax_pdac", "name": "Daraxonrasib — RAS(ON) multi-selective (PDAC)", "stage": "Phase 3 (RASolute 302 2L readout H1 2026, 303 1L dosing, 304 adjuvant)", "designations": ["Breakthrough (2L PDAC)"],
+      "indications": [{"id": "pdac", "name": "Pancreatic cancer (PDAC)", "market": {"tamB": 8.0, "penPct": 15, "peakYear": 2032, "notes": "PDAC ~$5-8B market, ~90% KRAS-driven. RASolute 302 (2L) readout H1 2026. RASolute 303 (1L) first patient dosed Apr 2026. RASolute 304 (adjuvant). BTD for 2L PDAC. Daraxonrasib is oral multi-selective RAS(ON) targeting G12X/G13X/Q61X."}}]},
+    {"id": "darax_nsclc", "name": "Daraxonrasib (NSCLC)", "stage": "Phase 3 (RASolute 301 2L+ NSCLC)", "designations": [],
+      "indications": [{"id": "nsclc", "name": "RAS-mutant NSCLC", "market": {"tamB": 12.0, "penPct": 8, "peakYear": 2033, "notes": "NSCLC largest lung cancer subtype. ~25% KRAS-mutant. Daraxonrasib Phase 3 vs docetaxel in 2L+. Competitors: sotorasib (G12C only), adagrasib (G12C only) — daraxonrasib covers ALL RAS mutations."}}]},
+    {"id": "zoldon", "name": "Zoldonrasib — G12D-selective (PDAC+NSCLC)", "stage": "Phase 3 (RASolute 305 1L PDAC) + Phase 1 NSCLC", "designations": ["Breakthrough (G12D NSCLC)"],
+      "indications": [{"id": "g12d", "name": "KRAS G12D cancers", "market": {"tamB": 6.0, "penPct": 10, "peakYear": 2033, "notes": "G12D is the most common KRAS mutation in PDAC (~40%). Zoldonrasib BTD in NSCLC. Phase 1 plenary at AACR 2026. RASolute 305: zoldon + chemo vs chemo in 1L PDAC. First G12D-specific therapy."}}]},
+    {"id": "eliron", "name": "Elironrasib — G12C-selective", "stage": "Phase 1/2", "designations": ["Breakthrough"],
+      "indications": [{"id": "g12c", "name": "KRAS G12C cancers (next-gen)", "market": {"tamB": 4.0, "penPct": 8, "peakYear": 2033, "notes": "Next-gen G12C inhibitor (RAS(ON) mechanism vs covalent). Differentiated from sotorasib/adagrasib. Phase 1/2 ongoing."}}]},
+    {"id": "pipeline", "name": "RMC-5127 (G12V) + RMC-0708 (Q61H) + RMC-8839 (G13C)", "stage": "Ph1 / Preclinical", "designations": [],
+      "indications": [{"id": "other_ras", "name": "Other RAS mutations", "market": {"tamB": 5.0, "penPct": 3, "peakYear": 2035, "notes": "Expanding to cover all oncogenic RAS variants. G12V (RMC-5127 in clinic), Q61H, G13C in preclinical. Goal: cover entire RAS-addicted cancer universe."}}]}
+  ],
+  "scenarios": {
+    "mega_bear": {"wt": 5, "narrative": "RASolute 302 fails — RAS(ON) mechanism doesn't translate to OS benefit",
+      "events": ["✗ RASolute 302 misses OS primary endpoint in 2L PDAC", "✗ RAS(ON) mechanism shows tumor response but no survival benefit", "✗ Competitive KRAS landscape crowds out (Mirati, Amgen next-gen)", "→ $19B market cap collapses to cash floor (~$11/share)"],
+      "assumptions": {"darax_pdac": {"pdac": {"pos": 15, "apr": 20, "pen": 0.3}}, "darax_nsclc": {"nsclc": {"pos": 15, "apr": 20, "pen": 0.3}}, "zoldon": {"g12d": {"pos": 10, "apr": 15, "pen": 0.3}}, "eliron": {"g12c": {"pos": 10, "apr": 15, "pen": 0.3}}, "pipeline": {"other_ras": {"pos": 5, "apr": 10, "pen": 0.2}}},
+      "val": {"dr": 25, "dil": 5, "mult": 3, "plat": 0, "exus": 0}},
+    "bear": {"wt": 15, "narrative": "RASolute 302 modest — OS improvement but narrow label + slow uptake",
+      "events": ["~ RASolute 302 shows modest OS benefit (HR 0.75-0.80)", "✗ Narrow 2L PDAC label limits commercial potential", "~ NSCLC and G12D programs advance but competitive pressure intense", "→ Platform validated but commercial execution uncertain"],
+      "assumptions": {"darax_pdac": {"pdac": {"pos": 50, "apr": 60, "pen": 0.6}}, "darax_nsclc": {"nsclc": {"pos": 40, "apr": 50, "pen": 0.5}}, "zoldon": {"g12d": {"pos": 35, "apr": 45, "pen": 0.5}}, "eliron": {"g12c": {"pos": 25, "apr": 35, "pen": 0.4}}, "pipeline": {"other_ras": {"pos": 10, "apr": 20, "pen": 0.3}}},
+      "val": {"dr": 18, "dil": 3, "mult": 4, "plat": 500, "exus": 200}},
+    "base": {"wt": 50, "narrative": "PDAC franchise established + NSCLC expands TAM + G12D first-in-class",
+      "events": ["✓ RASolute 302 positive — first targeted therapy to show OS in PDAC", "✓ Accelerated Approval in 2L PDAC, full approval after confirmatory", "✓ RASolute 303 1L PDAC enrolling well — combo data encouraging", "~ G12D and NSCLC programs on track for 2027-28 readouts"],
+      "assumptions": {"darax_pdac": {"pdac": {"pos": 65, "apr": 75, "pen": 1.0}}, "darax_nsclc": {"nsclc": {"pos": 55, "apr": 65, "pen": 0.8}}, "zoldon": {"g12d": {"pos": 50, "apr": 60, "pen": 0.8}}, "eliron": {"g12c": {"pos": 35, "apr": 45, "pen": 0.6}}, "pipeline": {"other_ras": {"pos": 15, "apr": 25, "pen": 0.5}}},
+      "val": {"dr": 14, "dil": 0, "mult": 5, "plat": 2000, "exus": 800}},
+    "bull": {"wt": 25, "narrative": "RAS franchise across PDAC + NSCLC + CRC — multi-billion blockbuster",
+      "events": ["✓ RASolute 302 strong OS — new standard of care in PDAC", "✓ 1L PDAC + adjuvant + NSCLC — $5B+ peak franchise", "✓ Zoldonrasib first G12D therapy — massive unmet need", "✓ Platform covers all major RAS mutations — competitive moat"],
+      "assumptions": {"darax_pdac": {"pdac": {"pos": 75, "apr": 85, "pen": 1.4}}, "darax_nsclc": {"nsclc": {"pos": 65, "apr": 75, "pen": 1.2}}, "zoldon": {"g12d": {"pos": 60, "apr": 70, "pen": 1.2}}, "eliron": {"g12c": {"pos": 45, "apr": 55, "pen": 0.8}}, "pipeline": {"other_ras": {"pos": 25, "apr": 35, "pen": 0.7}}},
+      "val": {"dr": 11, "dil": 0, "mult": 6, "plat": 5000, "exus": 1500}},
+    "psychedelic_bull": {"wt": 5, "narrative": "RAS(ON) = Keytruda of targeted therapy — Merck/Roche acquires at $200+",
+      "events": ["✓ PDAC OS data transformative — paradigm shift in pancreatic cancer", "✓ Pan-RAS franchise: PDAC + NSCLC + CRC + biliary = $10B+", "✓ Resistance-breaking catalytic inhibitors extend durability", "✓ Merck or Roche acquires for $40-60B to own entire RAS space"],
+      "assumptions": {"darax_pdac": {"pdac": {"pos": 85, "apr": 90, "pen": 1.8}}, "darax_nsclc": {"nsclc": {"pos": 75, "apr": 85, "pen": 1.5}}, "zoldon": {"g12d": {"pos": 70, "apr": 80, "pen": 1.5}}, "eliron": {"g12c": {"pos": 55, "apr": 65, "pen": 1.0}}, "pipeline": {"other_ras": {"pos": 35, "apr": 45, "pen": 1.0}}},
+      "val": {"dr": 9, "dil": 0, "mult": 7, "plat": 10000, "exus": 3000}}
+  },
+  "context": {
+    "lastData": {"date": "Apr 2, 2026", "title": "RASolute 303 first patient dosed + AACR 2026 upcoming",
+      "points": ["RASolute 303 (1L PDAC): first patient dosed Apr 2, 2026", "RASolute 302 (2L PDAC): readout expected H1 2026 — THE catalyst", "Zoldonrasib BTD granted for G12D NSCLC (Jan 2026)", "9 presentations at AACR 2026 (Apr 17-22) — plenary for zoldon NSCLC", "5 ongoing Phase 3 trials (302, 303, 304, 305, 301)", "RASolute 309 (darax+zoldon combo 1L PDAC) planned H2 2026", "$2.2B cash — well-funded through multiple readouts", "Stock at $95 vs peak $124 — market awaiting 302 data"]},
+    "nextCatalyst": {"date": "H1 2026", "title": "RASolute 302 — daraxonrasib Phase 3 in 2L PDAC",
+      "thresholds": ["Primary: overall survival vs chemotherapy", "This is THE most anticipated oncology readout of 2026", "If positive: first targeted therapy with OS benefit in PDAC", "AACR 2026 (Apr 17-22): zoldonrasib G12D NSCLC plenary data"]},
+    "risks": ["RASolute 302 is the binary event — failure destroys the thesis", "$19B market cap with zero revenue — entirely priced on Phase 3 hope", "PDAC is notoriously hard — many targeted therapies have failed here", "Competitive RAS landscape heating up (Mirati, BridgeBio, others)", "5 concurrent Phase 3 trials = enormous cash burn", "OS endpoint in PDAC is challenging — short baseline survival", "Resistance mechanisms may limit durability of RAS(ON) inhibitors", "Stock already 3x'd in 12 months — significant priced in"]
+  }
+}

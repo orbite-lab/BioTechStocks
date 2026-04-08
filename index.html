@@ -342,7 +342,7 @@ async function main(){
       const hist=new Array(bins).fill(0);
       returns.forEach(r=>{const i=Math.min(bins-1,Math.max(0,Math.floor((r-hMin)/bw)));hist[i]++;});
       const hPeak=Math.max(...hist);
-      const zeroPctHist=((0-hMin)/(hMax-hMin))*100;
+      const zeroPctHist=(0-hMin)/(hMax-hMin);
 
       h+=`<div style="margin-top:20px;padding-top:18px;border-top:1px solid var(--border)">`;
       h+=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:10px">`;
@@ -369,15 +369,16 @@ async function main(){
       // Histogram
       h+=`<div style="background:var(--bg1);border-radius:8px;padding:12px;border:1px solid var(--border);position:relative">`;
       // 0% marker line
-      if(zeroPctHist>0&&zeroPctHist<100){
-        h+=`<div style="position:absolute;left:calc(12px + ${zeroPctHist}% * (100% - 24px) / 100);top:12px;bottom:34px;width:2px;background:#ffffff50;z-index:2"></div>`;
-        h+=`<div style="position:absolute;left:calc(12px + ${zeroPctHist}% * (100% - 24px) / 100);bottom:20px;transform:translateX(-50%);font-size:.65rem;font-family:var(--mono);color:#e2e4ea;font-weight:700;z-index:3">0%</div>`;
+      if(zeroPctHist>0&&zeroPctHist<1){
+        const zL=zeroPctHist;
+        h+=`<div style="position:absolute;left:calc(12px + (100% - 24px) * ${zL.toFixed(4)});top:12px;bottom:34px;width:2px;background:#ffffff50;z-index:2"></div>`;
+        h+=`<div style="position:absolute;left:calc(12px + (100% - 24px) * ${zL.toFixed(4)});bottom:20px;transform:translateX(-50%);font-size:.65rem;font-family:var(--mono);color:#e2e4ea;font-weight:700;z-index:3">0%</div>`;
       }
       // Median marker line
-      const medPctHist=((median-hMin)/(hMax-hMin))*100;
-      if(medPctHist>0&&medPctHist<100){
-        h+=`<div style="position:absolute;left:calc(12px + ${medPctHist}% * (100% - 24px) / 100);top:12px;bottom:34px;width:1px;background:#60a5fa88;z-index:2;border-left:1px dashed #60a5fa"></div>`;
-        h+=`<div style="position:absolute;left:calc(12px + ${medPctHist}% * (100% - 24px) / 100);top:4px;transform:translateX(-50%);font-size:.6rem;font-family:var(--mono);color:#60a5fa;z-index:3">med</div>`;
+      const medPctHist=((median-hMin)/(hMax-hMin));
+      if(medPctHist>0&&medPctHist<1){
+        h+=`<div style="position:absolute;left:calc(12px + (100% - 24px) * ${medPctHist.toFixed(4)});top:12px;bottom:34px;width:1px;background:#60a5fa88;z-index:2;border-left:1px dashed #60a5fa"></div>`;
+        h+=`<div style="position:absolute;left:calc(12px + (100% - 24px) * ${medPctHist.toFixed(4)});top:4px;transform:translateX(-50%);font-size:.6rem;font-family:var(--mono);color:#60a5fa;z-index:3">med</div>`;
       }
       h+=`<div style="display:flex;align-items:flex-end;height:110px;gap:1px;position:relative;z-index:1">`;
       for(let i=0;i<bins;i++){

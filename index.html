@@ -232,16 +232,20 @@ async function main(){
 
   const ptfSet=new Set();
   let ddOpen=false;
+  let activeFilter=null;
+
+  function bucketOf(r){
+    if(r.tps.bear!=null&&r.price<r.tps.bear)return 'below_bear';
+    if(r.tps.base!=null&&r.price<r.tps.base)return 'bear_base';
+    if(r.tps.bull!=null&&r.price<r.tps.bull)return 'base_bull';
+    if(r.tps.psychedelic_bull!=null&&r.price<r.tps.psychedelic_bull)return 'bull_pb';
+    return 'above_pb';
+  }
 
   function buckets(){
     const b={below_bear:0,bear_base:0,base_bull:0,bull_pb:0,above_pb:0};
-    rows.forEach(r=>{
-      if(r.tps.bear!=null&&r.price<r.tps.bear)b.below_bear++;
-      else if(r.tps.base!=null&&r.price<r.tps.base)b.bear_base++;
-      else if(r.tps.bull!=null&&r.price<r.tps.bull)b.base_bull++;
-      else if(r.tps.psychedelic_bull!=null&&r.price<r.tps.psychedelic_bull)b.bull_pb++;
-      else b.above_pb++;
-    });return b;
+    rows.forEach(r=>{b[bucketOf(r)]++;});
+    return b;
   }
 
   function render(){
@@ -258,14 +262,17 @@ async function main(){
     // Stats
     h+='<div class="stats">';
     [{k:"below_bear",c:"s-mb",l:"Below Bear",d:"Deep value — price < bear TP"},{k:"bear_base",c:"s-br",l:"Bear–Base",d:"Between bear and base TP"},{k:"base_bull",c:"s-bs",l:"Base–Bull",d:"Fair value range"},{k:"bull_pb",c:"s-bl",l:"Bull–Psych",d:"Above bull, below psych bull"},{k:"above_pb",c:"s-pb",l:"Above Psych Bull",d:"Extreme premium"}].forEach(b=>{
-      h+=`<div class="stat ${b.c}"><div class="lbl">${b.l}</div><div class="val">${bk[b.k]}</div><div class="desc">${b.d}</div></div>`;
+      const isActive=activeFilter===b.k;
+      const dim=activeFilter&&!isActive;
+      h+=`<div class="stat ${b.c}" onclick="window._filter('${b.k}')" style="cursor:pointer;transition:.2s;${isActive?'box-shadow:0 0 0 2px currentColor;transform:scale(1.03);':''}${dim?'opacity:.35;':''}"><div class="lbl">${b.l}</div><div class="val">${bk[b.k]}</div><div class="desc">${isActive?'Click to clear filter':b.d}</div></div>`;
     });
     h+='</div>';
 
     // Chart
     h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6)"></div>Market Valuation Overview</div>';
     h+='<div class="card-sub">Upside / downside to scenario targets from current price — sorted by base case upside · Dots right of 0% = upside</div>';
-    h+=buildRangeStrip(rows);
+    const visibleRows=activeFilter?rows.filter(r=>bucketOf(r)===activeFilter):rows;
+    h+=buildRangeStrip(visibleRows);
 
     // Portfolio
     h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#a855f7,#ec4899)"></div>Portfolio Scenario Simulator</div>';
@@ -286,7 +293,9 @@ async function main(){
     h+='</div>';
 
     // Table
-    h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#10b981,#14b8a6)"></div>Company Analysis</div>';
+    h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#10b981,#14b8a6)"></div>Company Analysis';
+    if(activeFilter)h+=`<span style="font-size:.75rem;font-weight:500;color:var(--text2);margin-left:10px">(${visibleRows.length} of ${rows.length} — filtered)</span>`;
+    h+='</div>';
     h+='<div class="card-sub">Click ticker for full 5-scenario model \u00b7 Check box to add to portfolio \u00b7 Click headers to sort</div>';
     h+='<div class="tbl-wrap"><table><thead><tr>';
     h+='<th style="width:28px">Ptf</th>';
@@ -298,7 +307,7 @@ async function main(){
     SK.forEach(sk=>{h+=`<th class="r" style="color:${SC[sk]}" onclick="window._sort('${sk}')">${SN[sk]}</th>`;});
     h+='<th class="r" onclick="window._sort(\'wtUp\')">Wtd Up%</th>';
     h+='</tr></thead><tbody>';
-    rows.forEach(r=>{
+    visibleRows.forEach(r=>{
       const c=r.ccy,d=r.dec;
       h+='<tr>';
       h+=`<td><input type="checkbox" class="ptf-chk" ${ptfSet.has(r.ticker)?'checked':''} onchange="window._toggle('${r.ticker}')"/></td>`;
@@ -331,6 +340,7 @@ async function main(){
 
   window._sort=function(k){if(k===sortKey)sortDir*=-1;else{sortKey=k;sortDir=-1;}doSort();render();};
   window._toggle=function(tk){if(ptfSet.has(tk))ptfSet.delete(tk);else ptfSet.add(tk);render();};
+  window._filter=function(k){activeFilter=(activeFilter===k)?null:k;render();};
   window._ddOpen=function(){document.getElementById('ddList')?.classList.add('open');};
   window._ddClose=function(){document.getElementById('ddList')?.classList.remove('open');};
   window._ddFilter=function(q){const dd=document.getElementById('ddList');if(!dd)return;dd.classList.add('open');

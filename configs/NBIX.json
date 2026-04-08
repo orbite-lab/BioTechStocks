@@ -1,0 +1,476 @@
+{
+  "company": {
+    "ticker": "NBIX",
+    "name": "Neurocrine Biosciences",
+    "subtitle": "Ingrezza $2.51B + Crenessity $301M Y1 + VYKAT XR $190M (SLNO acq $2.9B) | Osavampator MDD Ph3",
+    "sharesOut": 100,
+    "cash": 500,
+    "currentPrice": 138.0,
+    "currency": "USD",
+    "yahooTicker": "NBIX",
+    "cashRunway": "Cash generative ($2.83B 2025 revenue, profitable)"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "commercial",
+      "name": "Ingrezza (valbenazine) - tardive dyskinesia",
+      "stage": "Commercial ($2.51B 2025, guide $2.7-2.8B 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "td",
+          "name": "Tardive dyskinesia + Huntington chorea",
+          "market": {
+            "notes": "Ingrezza 2025: $2.51B (+9%). Q4 $687M record. VMAT2 inhibitor dominant. Patent to 2036. 2026 guide $2.7-2.8B. Competitor: Austedo."
+          }
+        }
+      ]
+    },
+    {
+      "id": "crenessity",
+      "name": "Crenessity (crinecerfont) - CAH",
+      "stage": "Commercial (launched Dec 2024, $301M 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "cah",
+          "name": "Congenital adrenal hyperplasia",
+          "market": {
+            "tamB": 2.0,
+            "penPct": 20,
+            "peakYear": 2031,
+            "notes": "First-in-class CRF1 antagonist. 2025: $301M (Y1). Q4 $135M annualizing $540M. 80% reimbursement. ~100K CAH patients US. No competitor."
+          }
+        }
+      ]
+    },
+    {
+      "id": "osav",
+      "name": "Osavampator - AMPA receptor (MDD)",
+      "stage": "Phase 3 (initiated 2025, data early 2027)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "mdd",
+          "name": "Major depressive disorder",
+          "market": {
+            "tamB": 15.0,
+            "penPct": 5,
+            "peakYear": 2034,
+            "notes": "AMPA receptor PAM. Novel MDD mechanism. Phase 3 initiated. Data early 2027. If positive: first AMPA antidepressant. $3-5B peak."
+          }
+        }
+      ]
+    },
+    {
+      "id": "direc",
+      "name": "Direclidine - muscarinic (schizophrenia)",
+      "stage": "Phase 3 (NBI-568, data 2027)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "schizo",
+          "name": "Schizophrenia",
+          "market": {
+            "tamB": 8.0,
+            "penPct": 4,
+            "peakYear": 2034,
+            "notes": "M1/M4 muscarinic agonist. Phase 3 initiated. Competes with Cobenfy (BMS) and emraclidine (AbbVie). Non-D2 mechanism."
+          }
+        }
+      ]
+    },
+    {
+      "id": "pipeline",
+      "name": "Earlier muscarinic + neuro pipeline",
+      "stage": "Phase 1/2",
+      "designations": [],
+      "indications": [
+        {
+          "id": "neuro_pipe",
+          "name": "Broader neuro/psych pipeline",
+          "market": {
+            "tamB": 10.0,
+            "penPct": 2,
+            "peakYear": 2035,
+            "notes": "Muscarinic franchise beyond schizophrenia. Platform across movement disorders + psychiatry + rare."
+          }
+        }
+      ]
+    },
+    {
+      "id": "vykat",
+      "name": "VYKAT XR (diazoxide choline) \u2014 PWS hyperphagia (ex-SLNO)",
+      "stage": "Commercial ($190M 2025, acquired Apr 2026 for $2.9B)",
+      "designations": [
+        "Orphan"
+      ],
+      "indications": [
+        {
+          "id": "pws",
+          "name": "Prader-Willi syndrome hyperphagia",
+          "market": {
+            "tamB": 1.5,
+            "penPct": 25,
+            "peakYear": 2032,
+            "notes": "VYKAT XR: first-in-class for PWS hyperphagia. $190M 2025 revenue ($92M Q4 alone). Acquired via SLNO for $2.9B ($53/share, 34% premium). ~20K PWS patients in US/EU. Strong early adoption. NBIX global commercial infrastructure expected to double addressable market by 2027. Orphan drug exclusivity."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Ingrezza stalls + osavampator MDD fails + muscarinic competition",
+      "events": [
+        "X Ingrezza plateaus $2.8B",
+        "X Osavampator Phase 3 misses (placebo response)",
+        "X Direclidine loses to Cobenfy",
+        "-> $3.5B revenue ceiling"
+      ],
+      "assumptions": {
+        "commercial": {
+          "td": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "crenessity": {
+          "cah": {
+            "pos": 90,
+            "apr": 85,
+            "pen": 0.6
+          }
+        },
+        "osav": {
+          "mdd": {
+            "pos": 20,
+            "apr": 25,
+            "pen": 0.3
+          }
+        },
+        "direc": {
+          "schizo": {
+            "pos": 15,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "pipeline": {
+          "neuro_pipe": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 0.2
+          }
+        },
+        "vykat": {
+          "pws": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 18,
+        "pipelineMult": 3,
+        "commercialMult": 4.0,
+        "commercialRevM": 2800,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Ingrezza + Crenessity grow + 1 of 2 pipeline assets hits",
+      "events": [
+        "V Ingrezza $3B+",
+        "V Crenessity $800M-1B",
+        "~ One of osav/direc hits",
+        "-> Revenue $5B by 2029"
+      ],
+      "assumptions": {
+        "commercial": {
+          "td": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "crenessity": {
+          "cah": {
+            "pos": 92,
+            "apr": 90,
+            "pen": 0.8
+          }
+        },
+        "osav": {
+          "mdd": {
+            "pos": 40,
+            "apr": 50,
+            "pen": 0.6
+          }
+        },
+        "direc": {
+          "schizo": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.5
+          }
+        },
+        "pipeline": {
+          "neuro_pipe": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        },
+        "vykat": {
+          "pws": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 14,
+        "pipelineMult": 4,
+        "commercialMult": 5.0,
+        "commercialRevM": 3200,
+        "milestones": 50,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Ingrezza $3B + Crenessity $1B + osavampator positive - $6B+ revenue",
+      "events": [
+        "V Ingrezza $3B+",
+        "V Crenessity $1B+",
+        "V Osavampator Phase 3 MDD positive",
+        "~ Direclidine advancing"
+      ],
+      "assumptions": {
+        "commercial": {
+          "td": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "crenessity": {
+          "cah": {
+            "pos": 95,
+            "apr": 92,
+            "pen": 1.0
+          }
+        },
+        "osav": {
+          "mdd": {
+            "pos": 55,
+            "apr": 60,
+            "pen": 0.8
+          }
+        },
+        "direc": {
+          "schizo": {
+            "pos": 45,
+            "apr": 55,
+            "pen": 0.7
+          }
+        },
+        "pipeline": {
+          "neuro_pipe": {
+            "pos": 15,
+            "apr": 25,
+            "pen": 0.5
+          }
+        },
+        "vykat": {
+          "pws": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 12,
+        "pipelineMult": 5,
+        "commercialMult": 5.5,
+        "commercialRevM": 3500,
+        "milestones": 100,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Multi-franchise CNS leader - TD + CAH + MDD + schizophrenia - $10B+ peak",
+      "events": [
+        "V Ingrezza $3.5B + Crenessity $1.5B",
+        "V Osavampator MDD $3B+ peak",
+        "V Direclidine $2B+ peak",
+        "V Muscarinic franchise across psych"
+      ],
+      "assumptions": {
+        "commercial": {
+          "td": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "crenessity": {
+          "cah": {
+            "pos": 97,
+            "apr": 95,
+            "pen": 1.2
+          }
+        },
+        "osav": {
+          "mdd": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 1.2
+          }
+        },
+        "direc": {
+          "schizo": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 1.0
+          }
+        },
+        "pipeline": {
+          "neuro_pipe": {
+            "pos": 25,
+            "apr": 35,
+            "pen": 0.7
+          }
+        },
+        "vykat": {
+          "pws": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 10,
+        "pipelineMult": 6,
+        "commercialMult": 6.5,
+        "commercialRevM": 4000,
+        "milestones": 200,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Neurocrine becomes AbbVie of CNS - $15B+ revenue - acquired at $300+",
+      "events": [
+        "V 4+ blockbusters across CNS",
+        "V Muscarinic platform multiple indications",
+        "V Osavampator redefines MDD",
+        "V AbbVie or Roche acquires $30-40B"
+      ],
+      "assumptions": {
+        "commercial": {
+          "td": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "crenessity": {
+          "cah": {
+            "pos": 98,
+            "apr": 97,
+            "pen": 1.4
+          }
+        },
+        "osav": {
+          "mdd": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 1.4
+          }
+        },
+        "direc": {
+          "schizo": {
+            "pos": 65,
+            "apr": 75,
+            "pen": 1.2
+          }
+        },
+        "pipeline": {
+          "neuro_pipe": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 1.0
+          }
+        },
+        "vykat": {
+          "pws": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 7,
+        "commercialMult": 7.0,
+        "commercialRevM": 4500,
+        "milestones": 300,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 11, 2026",
+      "title": "$2.83B 2025 revenue (+22%), Ingrezza $2.51B, Crenessity $301M Y1",
+      "points": [
+        "SLNO acquisition announced Apr 6, 2026: $53/share, $2.9B total",
+        "VYKAT XR (PWS hyperphagia): $190M 2025 revenue, $92M Q4",
+        "Deal funded by cash on hand + pre-payable debt, closing within 90 days",
+        "Ingrezza $2.51B (+9%), Q4 $687M",
+        "Crenessity $301M (Y1), Q4 $135M",
+        "80% reimbursement for Crenessity",
+        "2026 Ingrezza guide $2.7-2.8B",
+        "Osavampator MDD Phase 3 initiated",
+        "Direclidine schizophrenia Phase 3 initiated",
+        "Cash ~$2.2B, profitable"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Early 2027",
+      "title": "Osavampator MDD + direclidine schizophrenia Phase 3 data",
+      "thresholds": [
+        "Osavampator AMPA efficacy in MDD",
+        "Direclidine muscarinic vs placebo in schizophrenia",
+        "Crenessity revenue trajectory 2026",
+        "Ingrezza growth sustainability"
+      ]
+    },
+    "risks": [
+      "$14B at ~5x revenue",
+      "Phase 3 data not until 2027",
+      "MDD high placebo response",
+      "Cobenfy already approved in schizophrenia",
+      "Ingrezza growth slowing (9% vs 26% prior)",
+      "CAH market size uncertain",
+      "Heavy R&D $960-1010M",
+      "AbbVie emraclidine competes with direclidine",
+      "$2.9B SLNO acquisition increases leverage \u2014 net cash to net debt",
+      "VYKAT XR integration risk \u2014 NBIX has no metabolic disease experience",
+      "PWS market smaller than CNS core \u2014 strategic fit questioned by some analysts"
+    ]
+  }
+}

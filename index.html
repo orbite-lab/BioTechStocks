@@ -142,26 +142,19 @@ function computeAll(cfg){
 function buildRangeStrip(rows){
   // Sort by bucket then base premium
   const sorted=[...rows].sort((a,b)=>{
-    const cat=r=>{
-      if(r.tps.bear!=null&&r.price<r.tps.bear)return 1;
-      if(r.tps.base!=null&&r.price<r.tps.base)return 2;
-      if(r.tps.bull!=null&&r.price<r.tps.bull)return 3;
-      if(r.tps.psychedelic_bull!=null&&r.price<r.tps.psychedelic_bull)return 4;
-      return 5;
-    };
-    const ca=cat(a),cb=cat(b);if(ca!==cb)return ca-cb;
-    const ua=a.tps.base?((a.price-a.tps.base)/a.tps.base*100):0;
-    const ub=b.tps.base?((b.price-b.tps.base)/b.tps.base*100):0;
-    return ua-ub;
+    const ua=a.tps.base?((a.tps.base-a.price)/a.price*100):0;
+    const ub=b.tps.base?((b.tps.base-b.price)/b.price*100):0;
+    return ub-ua;
   });
-  // Compute premium/discount for each stock × scenario
+  // Compute upside for each stock × scenario: (TP - Price) / Price
+  // Positive = TP above price (upside), Negative = TP below price (downside)
   const data=sorted.map(r=>{
     const vals={};
-    SK.forEach(sk=>{vals[sk]=r.tps[sk]?((r.price-r.tps[sk])/r.tps[sk]*100):null;});
+    SK.forEach(sk=>{vals[sk]=r.tps[sk]?((r.tps[sk]-r.price)/r.price*100):null;});
     return{ticker:r.ticker,name:r.name,vals,price:r.price,ccy:r.ccy,dec:r.dec};
   });
-  // Scale: use -100 to +300, cap outliers
-  const LO=-100,HI=300;
+  // Scale: -100 to +500, cap outliers
+  const LO=-100,HI=500;
   const pct=v=>{const clamped=Math.max(LO,Math.min(HI,v));return((clamped-LO)/(HI-LO))*100;};
   const zeroPct=pct(0);
 
@@ -169,7 +162,7 @@ function buildRangeStrip(rows){
   // Legend
   h+='<div class="rs-legend">';
   SK.forEach(sk=>{h+=`<div class="li"><div class="bx" style="background:${SC[sk]}"></div>${SN[sk]}</div>`;});
-  h+='<div class="li" style="margin-left:auto;color:#ffffff40">\u25C0 Undervalued | Overvalued \u25B6</div>';
+  h+='<div class="li" style="margin-left:auto;color:#ffffff40">\u25C0 Downside | Upside \u25B6</div>';
   h+='</div>';
   // Rows
   data.forEach(d=>{
@@ -183,9 +176,9 @@ function buildRangeStrip(rows){
     h+=`<div class="rs-zero" style="left:${zeroPct}%"><div class="rs-zero-lbl"></div></div>`;
     // Connecting line from leftmost to rightmost dot
     const leftPct=pct(Math.max(LO,minV)),rightPct=pct(Math.min(HI,maxV));
-    h+=`<div class="rs-line" style="left:${leftPct}%;width:${rightPct-leftPct}%;background:linear-gradient(90deg,${SC.psychedelic_bull}44,${SC.mega_bear}44)"></div>`;
+    h+=`<div class="rs-line" style="left:${leftPct}%;width:${rightPct-leftPct}%;background:linear-gradient(90deg,${SC.mega_bear}44,${SC.psychedelic_bull}44)"></div>`;
     // Dots — draw in reverse order so mega_bear (rightmost usually) is on top
-    [...SK].reverse().forEach(sk=>{
+    SK.forEach(sk=>{
       const v=d.vals[sk];if(v==null)return;
       const x=pct(v);
       const capped=v>HI||v<LO;
@@ -198,7 +191,7 @@ function buildRangeStrip(rows){
   });
   // Axis labels
   h+='<div class="rs-axis"><div class="rs-axis-track">';
-  [-100,-50,0,50,100,150,200,250,300].forEach(v=>{
+  [-100,-50,0,50,100,200,300,400,500].forEach(v=>{
     h+=`<div class="rs-axis-lbl" style="left:${pct(v)}%;${v===0?'color:#e2e4ea;font-weight:700':''}">${v>=0?'+':''}${v}%</div>`;
   });
   h+='</div></div>';
@@ -271,7 +264,7 @@ async function main(){
 
     // Chart
     h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6)"></div>Market Valuation Overview</div>';
-    h+='<div class="card-sub">Premium / discount to scenario targets — sorted by opportunity · Dots left of 0% = undervalued</div>';
+    h+='<div class="card-sub">Upside / downside to scenario targets from current price — sorted by base case upside · Dots right of 0% = upside</div>';
     h+=buildRangeStrip(rows);
 
     // Portfolio
@@ -329,7 +322,7 @@ async function main(){
     h+=`<div style="padding:14px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;font-size:.78rem;color:var(--text2)">`;
     h+=`<strong style="color:var(--text1)">Data:</strong> ${Object.keys(configs).length} companies \u00b7 5 scenarios (mega bear 5% / bear 15% / base 50% / bull 25% / psych bull 5%) \u00b7 `;
     h+=`<strong style="color:var(--text1)">Wtd Up%</strong> = (5%\u00d7MB + 15%\u00d7Bear + 50%\u00d7Base + 25%\u00d7Bull + 5%\u00d7PB \u2212 Price) / Price \u00b7 `;
-    h+=`<strong style="color:var(--text1)">Chart:</strong> Premium/discount = (Price \u2212 TP) / TP \u00b7 Negative = undervalued vs that TP \u00b7 `;
+    h+=`<strong style="color:var(--text1)">Chart:</strong> Upside = (TP \u2212 Price) / Price \u00b7 Right of 0% = upside, left = downside \u00b7 `;
     h+=`<a href="https://github.com/orbite-lab/BioTechStocks" style="color:#60a5fa">Source configs</a> \u00b7 `;
     h+=`<a href="model.html" style="color:#60a5fa">Open model viewer</a></div>`;
 

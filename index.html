@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biotech Scenario Screener</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -61,6 +60,23 @@ tbody tr:hover{background:#ffffff06}
 .mono{font-family:var(--mono);font-weight:600}
 .ptf-chk{width:14px;height:14px;accent-color:#a855f7;cursor:pointer}
 .chart-box{background:var(--bg1);border-radius:10px;padding:16px;border:1px solid var(--border)}
+.rs-wrap{background:var(--bg1);border-radius:10px;border:1px solid var(--border);padding:12px 0;overflow-x:auto}
+.rs-legend{display:flex;gap:16px;padding:0 16px 12px;font-size:.72rem;font-weight:600;color:var(--text2);flex-wrap:wrap;border-bottom:1px solid var(--border);margin-bottom:8px}
+.rs-legend .li{display:flex;align-items:center;gap:5px}.rs-legend .bx{width:10px;height:10px;border-radius:50%}
+.rs-row{display:flex;align-items:center;padding:3px 0;transition:.15s}.rs-row:hover{background:#ffffff06}
+.rs-tk{width:60px;text-align:right;padding-right:10px;font-family:var(--mono);font-weight:700;font-size:.75rem;color:#60a5fa;flex-shrink:0;cursor:pointer;text-decoration:none}
+.rs-tk:hover{color:#93c5fd;text-decoration:underline}
+.rs-track{flex:1;height:24px;position:relative;margin-right:12px}
+.rs-line{position:absolute;top:50%;height:2px;transform:translateY(-50%);border-radius:1px}
+.rs-dot{position:absolute;top:50%;width:10px;height:10px;border-radius:50%;transform:translate(-50%,-50%);border:1.5px solid var(--bg1);z-index:2;cursor:default}
+.rs-dot:hover{width:13px;height:13px;z-index:3}
+.rs-dot .tip{display:none;position:absolute;bottom:14px;left:50%;transform:translateX(-50%);background:var(--bg2);border:1px solid var(--border);border-radius:5px;padding:3px 7px;font-size:.68rem;font-family:var(--mono);white-space:nowrap;z-index:10;color:var(--text1);pointer-events:none}
+.rs-dot:hover .tip{display:block}
+.rs-zero{position:absolute;top:0;bottom:0;width:1px;background:#ffffff30;z-index:1}
+.rs-zero-lbl{position:absolute;top:-14px;left:-6px;font-size:.6rem;color:var(--text2);font-family:var(--mono)}
+.rs-axis{display:flex;align-items:center;padding:0 0 0 60px;margin-top:4px;border-top:1px solid var(--border);padding-top:6px}
+.rs-axis-track{flex:1;position:relative;height:14px;margin-right:12px}
+.rs-axis-lbl{position:absolute;top:0;transform:translateX(-50%);font-size:.6rem;color:var(--text2);font-family:var(--mono)}
 .loading{text-align:center;padding:60px;color:var(--text2);font-size:.9rem}
 @media(max-width:1000px){.stats,.ptf-results{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){.stats,.ptf-results{grid-template-columns:1fr}}
@@ -123,7 +139,73 @@ function computeAll(cfg){
   return{results:res,weightedTP:wTP};
 }
 
-let barChart=null;
+function buildRangeStrip(rows){
+  // Sort by bucket then base premium
+  const sorted=[...rows].sort((a,b)=>{
+    const cat=r=>{
+      if(r.tps.bear!=null&&r.price<r.tps.bear)return 1;
+      if(r.tps.base!=null&&r.price<r.tps.base)return 2;
+      if(r.tps.bull!=null&&r.price<r.tps.bull)return 3;
+      if(r.tps.psychedelic_bull!=null&&r.price<r.tps.psychedelic_bull)return 4;
+      return 5;
+    };
+    const ca=cat(a),cb=cat(b);if(ca!==cb)return ca-cb;
+    const ua=a.tps.base?((a.price-a.tps.base)/a.tps.base*100):0;
+    const ub=b.tps.base?((b.price-b.tps.base)/b.tps.base*100):0;
+    return ua-ub;
+  });
+  // Compute premium/discount for each stock × scenario
+  const data=sorted.map(r=>{
+    const vals={};
+    SK.forEach(sk=>{vals[sk]=r.tps[sk]?((r.price-r.tps[sk])/r.tps[sk]*100):null;});
+    return{ticker:r.ticker,name:r.name,vals,price:r.price,ccy:r.ccy,dec:r.dec};
+  });
+  // Scale: use -100 to +300, cap outliers
+  const LO=-100,HI=300;
+  const pct=v=>{const clamped=Math.max(LO,Math.min(HI,v));return((clamped-LO)/(HI-LO))*100;};
+  const zeroPct=pct(0);
+
+  let h='<div class="rs-wrap">';
+  // Legend
+  h+='<div class="rs-legend">';
+  SK.forEach(sk=>{h+=`<div class="li"><div class="bx" style="background:${SC[sk]}"></div>${SN[sk]}</div>`;});
+  h+='<div class="li" style="margin-left:auto;color:#ffffff40">\u25C0 Undervalued | Overvalued \u25B6</div>';
+  h+='</div>';
+  // Rows
+  data.forEach(d=>{
+    const allVals=SK.map(sk=>d.vals[sk]).filter(v=>v!=null);
+    if(!allVals.length)return;
+    const minV=Math.min(...allVals),maxV=Math.max(...allVals);
+    h+=`<div class="rs-row">`;
+    h+=`<a class="rs-tk" href="model.html?ticker=${d.ticker}">${d.ticker}</a>`;
+    h+=`<div class="rs-track">`;
+    // Zero line
+    h+=`<div class="rs-zero" style="left:${zeroPct}%"><div class="rs-zero-lbl"></div></div>`;
+    // Connecting line from leftmost to rightmost dot
+    const leftPct=pct(Math.max(LO,minV)),rightPct=pct(Math.min(HI,maxV));
+    h+=`<div class="rs-line" style="left:${leftPct}%;width:${rightPct-leftPct}%;background:linear-gradient(90deg,${SC.psychedelic_bull}44,${SC.mega_bear}44)"></div>`;
+    // Dots — draw in reverse order so mega_bear (rightmost usually) is on top
+    [...SK].reverse().forEach(sk=>{
+      const v=d.vals[sk];if(v==null)return;
+      const x=pct(v);
+      const capped=v>HI||v<LO;
+      const label=(v>=0?'+':'')+v.toFixed(0)+'%';
+      h+=`<div class="rs-dot" style="left:${x}%;background:${SC[sk]}" title="${SN[sk]}: ${label}">`;
+      h+=`<div class="tip"><span style="color:${SC[sk]}">${SN[sk]}</span> ${label}${capped?' \u26A0':''}</div>`;
+      h+=`</div>`;
+    });
+    h+=`</div></div>`;
+  });
+  // Axis labels
+  h+='<div class="rs-axis"><div class="rs-axis-track">';
+  [-100,-50,0,50,100,150,200,250,300].forEach(v=>{
+    h+=`<div class="rs-axis-lbl" style="left:${pct(v)}%;${v===0?'color:#e2e4ea;font-weight:700':''}">${v>=0?'+':''}${v}%</div>`;
+  });
+  h+='</div></div>';
+  h+='</div></div>';
+  return h;
+}
+
 async function main(){
   const app=document.getElementById("app");
   let configs;
@@ -189,8 +271,8 @@ async function main(){
 
     // Chart
     h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6)"></div>Market Valuation Overview</div>';
-    h+='<div class="card-sub">Premium / discount to scenario targets — ranked by opportunity · Values above 400% annotated</div>';
-    h+='<div class="chart-box" style="height:500px"><canvas id="lineChart"></canvas></div></div>';
+    h+='<div class="card-sub">Premium / discount to scenario targets — sorted by opportunity · Dots left of 0% = undervalued</div>';
+    h+=buildRangeStrip(rows);
 
     // Portfolio
     h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#a855f7,#ec4899)"></div>Portfolio Scenario Simulator</div>';
@@ -252,106 +334,6 @@ async function main(){
     h+=`<a href="model.html" style="color:#60a5fa">Open model viewer</a></div>`;
 
     app.innerHTML=h;
-
-    // Draw chart
-    setTimeout(()=>{
-      const cv=document.getElementById("lineChart");if(!cv)return;
-      if(barChart){barChart.destroy();barChart=null;}
-      // Sort: by valuation bucket then by base upside
-      const sorted=[...rows].sort((a,b)=>{
-        const cat=r=>{
-          if(r.tps.bear!=null&&r.price<r.tps.bear)return 1;
-          if(r.tps.base!=null&&r.price<r.tps.base)return 2;
-          if(r.tps.bull!=null&&r.price<r.tps.bull)return 3;
-          if(r.tps.psychedelic_bull!=null&&r.price<r.tps.psychedelic_bull)return 4;
-          return 5;
-        };
-        const ca=cat(a),cb=cat(b);
-        if(ca!==cb)return ca-cb;
-        const ua=a.tps.base?((a.price-a.tps.base)/a.tps.base*100):0;
-        const ub=b.tps.base?((b.price-b.tps.base)/b.tps.base*100):0;
-        return ua-ub;
-      });
-      // Compute premium/discount to each scenario TP (positive = overvalued vs that TP)
-      const CAP=400;
-      const lineData={};
-      SK.forEach(sk=>{lineData[sk]=sorted.map(r=>{
-        if(!r.tps[sk])return 0;
-        const v=((r.price-r.tps[sk])/r.tps[sk]*100);
-        return v;
-      });});
-      // Background colors per ticker
-      const bgColors=sorted.map(r=>{
-        if(r.tps.bear!=null&&r.price<r.tps.bear)return 'rgba(16,185,129,0.12)';
-        if(r.tps.base!=null&&r.price<r.tps.base)return 'rgba(59,130,246,0.12)';
-        if(r.tps.bull!=null&&r.price<r.tps.bull)return 'rgba(249,115,22,0.12)';
-        if(r.tps.psychedelic_bull!=null&&r.price<r.tps.psychedelic_bull)return 'rgba(168,85,247,0.12)';
-        return 'rgba(239,68,68,0.12)';
-      });
-      const lineColors={mega_bear:'#991b1b',bear:'#ef4444',base:'#f59e0b',bull:'#22c55e',psychedelic_bull:'#a855f7'};
-      barChart=new Chart(cv,{
-        type:'line',
-        data:{
-          labels:sorted.map(r=>r.ticker),
-          datasets:SK.map(sk=>({
-            label:SN[sk],
-            data:lineData[sk].map(v=>Math.min(v,CAP)),
-            borderColor:lineColors[sk],
-            backgroundColor:lineColors[sk]+'22',
-            borderWidth:2.5,
-            pointRadius:3.5,
-            pointBackgroundColor:lineColors[sk],
-            pointHoverRadius:6,
-            tension:0.15,
-            fill:false
-          }))
-        },
-        options:{
-          responsive:true,maintainAspectRatio:false,
-          scales:{
-            x:{ticks:{color:'#94a3b8',font:{size:9,family:'JetBrains Mono'},maxRotation:60,minRotation:45},grid:{color:'rgba(51,65,85,0.15)'}},
-            y:{min:undefined,max:CAP,ticks:{color:'#94a3b8',font:{size:10},callback:v=>v+'%'},grid:{color:'rgba(51,65,85,0.15)'},
-              title:{display:true,text:'Premium / Discount to Target (%)',color:'#94a3b8',font:{size:11}}}
-          },
-          plugins:{
-            legend:{labels:{color:'#cbd5e1',font:{size:10,family:'DM Sans'},boxWidth:10,padding:14}},
-            tooltip:{backgroundColor:'#1a1f2e',titleColor:'#e2e4ea',bodyColor:'#c8cdd8',borderColor:'#ffffff18',borderWidth:1,
-              callbacks:{
-                label:function(ctx){
-                  const realVal=lineData[SK[ctx.datasetIndex]][ctx.dataIndex];
-                  const capped=Math.abs(realVal)>CAP;
-                  return ` ${ctx.dataset.label}: ${realVal>=0?'+':''}${realVal.toFixed(0)}%${capped?' (capped)':''}`;
-                }
-              }
-            }
-          }
-        },
-        plugins:[
-          {id:'bgBars',beforeDraw:chart=>{
-            const ctx=chart.ctx,xAxis=chart.scales.x,yAxis=chart.scales.y;
-            sorted.forEach((c,i)=>{const x=xAxis.getPixelForValue(i),w=xAxis.width/sorted.length;
-              ctx.save();ctx.fillStyle=bgColors[i];ctx.fillRect(x-w/2,yAxis.top,w,yAxis.height);ctx.restore();});
-          }},
-          {id:'capLabels',afterDatasetsDraw:chart=>{
-            const ctx=chart.ctx;
-            SK.forEach((sk,di)=>{
-              const ds=chart.getDatasetMeta(di);
-              lineData[sk].forEach((v,i)=>{
-                if(Math.abs(v)>CAP){
-                  const pt=ds.data[i];if(!pt)return;
-                  ctx.save();
-                  ctx.font='bold 9px JetBrains Mono';
-                  ctx.fillStyle=lineColors[sk];
-                  ctx.textAlign='center';
-                  ctx.fillText((v>=0?'+':'')+v.toFixed(0)+'%',pt.x,pt.y-8);
-                  ctx.restore();
-                }
-              });
-            });
-          }}
-        ]
-      });
-    },60);
   }
 
   window._sort=function(k){if(k===sortKey)sortDir*=-1;else{sortKey=k;sortDir=-1;}doSort();render();};

@@ -66,7 +66,7 @@ tbody tr:hover{background:#ffffff06}
 .rs-row{display:flex;align-items:center;padding:3px 0;transition:.15s}.rs-row:hover{background:#ffffff06}
 .rs-tk{width:54px;text-align:right;padding-right:6px;font-family:var(--mono);font-weight:700;font-size:.75rem;color:#60a5fa;flex-shrink:0;cursor:pointer;text-decoration:none}
 .rs-tk:hover{color:#93c5fd;text-decoration:underline}
-.rs-rr{width:36px;text-align:right;padding-right:8px;font-family:var(--mono);font-weight:700;font-size:.68rem;flex-shrink:0}
+.rs-rr{width:42px;text-align:right;padding-right:8px;font-family:var(--mono);font-weight:700;font-size:.68rem;flex-shrink:0}
 .rs-track{flex:1;height:24px;position:relative;margin-right:12px}
 .rs-line{position:absolute;top:50%;height:2px;transform:translateY(-50%);border-radius:1px}
 .rs-dot{position:absolute;top:50%;width:10px;height:10px;border-radius:50%;transform:translate(-50%,-50%);border:1.5px solid var(--bg1);z-index:2;cursor:default}
@@ -163,7 +163,7 @@ function buildRangeStrip(rows){
   // Legend
   h+='<div class="rs-legend">';
   SK.forEach(sk=>{h+=`<div class="li"><div class="bx" style="background:${SC[sk]}"></div>${SN[sk]}</div>`;});
-  h+='<div class="li" style="margin-left:auto;color:#ffffff40">R/R = bull up \u00f7 bear down \u00b7 \u25C0 Downside | Upside \u25B6</div>';
+  h+='<div class="li" style="margin-left:auto;color:#ffffff40">R/R = bull up \u00f7 worst down \u00b7 \u25C0 Downside | Upside \u25B6</div>';
   h+='</div>';
   // Rows
   data.forEach(d=>{
@@ -172,13 +172,21 @@ function buildRangeStrip(rows){
     const minV=Math.min(...allVals),maxV=Math.max(...allVals);
     // Risk/Reward: bull upside / bear downside (absolute values)
     const bullUp=d.vals.bull!=null&&d.vals.bull>0?d.vals.bull:0;
-    const bearDn=d.vals.bear!=null&&d.vals.bear<0?Math.abs(d.vals.bear):0;
+    // Use bear downside, fall back to mega_bear downside if bear has no downside
+    let bearDn=d.vals.bear!=null&&d.vals.bear<0?Math.abs(d.vals.bear):0;
+    if(bearDn<1&&d.vals.mega_bear!=null&&d.vals.mega_bear<0)bearDn=Math.abs(d.vals.mega_bear);
     const rr=bearDn>1?(bullUp/bearDn):null;
-    const rrCol=rr==null?'#86efac':rr>=2?'#86efac':rr>=1?'#fbbf24':rr>0?'#fdba74':'#fca5a5';
-    const rrTxt=rr==null?(bullUp>0?'\u221E':'—'):rr>=10?rr.toFixed(0)+'x':rr.toFixed(1)+'x';
+    let rrCol,rrTxt;
+    if(rr==null){rrCol='#86efac';rrTxt=bullUp>0?'\u221E':'—';}
+    else if(rr<0.01){rrCol='#ef4444';rrTxt='\u26A0 0x';}
+    else if(rr<0.3){rrCol='#ef4444';rrTxt=rr.toFixed(2)+'x';}
+    else if(rr<1){rrCol='#fb923c';rrTxt=rr.toFixed(1)+'x';}
+    else if(rr<2){rrCol='#fbbf24';rrTxt=rr.toFixed(1)+'x';}
+    else if(rr<10){rrCol='#86efac';rrTxt=rr.toFixed(1)+'x';}
+    else{rrCol='#86efac';rrTxt=rr.toFixed(0)+'x';}
     h+=`<div class="rs-row">`;
     h+=`<a class="rs-tk" href="model.html?ticker=${d.ticker}">${d.ticker}</a>`;
-    h+=`<span class="rs-rr" style="color:${rrCol}" title="R/R: bull upside / bear downside">${rrTxt}</span>`;
+    h+=`<span class="rs-rr" style="color:${rrCol}" title="R/R: bull up ${bullUp.toFixed(0)}% \u00f7 ${d.vals.bear!=null&&d.vals.bear<-1?'bear':'mega bear'} down ${bearDn.toFixed(0)}%">${rrTxt}</span>`;
     h+=`<div class="rs-track">`;
     // Zero line
     h+=`<div class="rs-zero" style="left:${zeroPct}%"><div class="rs-zero-lbl"></div></div>`;
@@ -198,7 +206,7 @@ function buildRangeStrip(rows){
     h+=`</div></div>`;
   });
   // Axis labels
-  h+='<div class="rs-axis"><div style="width:90px;flex-shrink:0"></div><div class="rs-axis-track">';
+  h+='<div class="rs-axis"><div style="width:96px;flex-shrink:0"></div><div class="rs-axis-track">';
   [-100,-50,0,50,100,200,300,400,500].forEach(v=>{
     h+=`<div class="rs-axis-lbl" style="left:${pct(v)}%;${v===0?'color:#e2e4ea;font-weight:700':''}">${v>=0?'+':''}${v}%</div>`;
   });

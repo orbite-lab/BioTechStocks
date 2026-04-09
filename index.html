@@ -771,11 +771,18 @@ async function main(){
     if(allCats.length>0){
       const maxDays=Math.max(180,...allCats.map(c=>c.daysOut));
       const yMin=Math.min(-30,...allCats.map(c=>c.expectedReturn),-10);
-      const yMax=Math.max(60,...allCats.map(c=>c.swingPct),20);
-      const yRange=yMax-yMin;
-      const yPct=v=>Math.max(0,Math.min(100,(v-yMin)/yRange*100));
+      const BREAK=150; // Y-axis break point
+      const yMaxAbove=Math.max(BREAK+50,...allCats.map(c=>c.swingPct));
+      const BREAK_PCT=78; // break at 78% of chart height
+      // Piecewise Y mapping: linear below BREAK, compressed above
+      const yPct=v=>{
+        if(v<=BREAK) return Math.max(0,Math.min(BREAK_PCT,(v-yMin)/(BREAK-yMin)*BREAK_PCT));
+        // Above break: compressed into top 22%
+        const aboveFrac=Math.min(1,(v-BREAK)/(yMaxAbove-BREAK));
+        return BREAK_PCT+aboveFrac*(100-BREAK_PCT);
+      };
       h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#22c55e,#ef4444)"></div>Catalyst Asymmetry Map</div>';
-      h+='<div class="card-sub">Each barbell = one catalyst. Top = swing % (volatility). Bottom = expected return (is it worth it?). Color = asymmetry. Long barbell above 0% = high vol, positive EV. Short barbell below 0% = bad trade.</div>';
+      h+='<div class="card-sub">Each barbell = one catalyst. Top = swing % (volatility). Bottom = expected return (is it worth it?). Color = asymmetry. Long green barbell above 0% = best catalyst trades.</div>';
       // Chart area
       h+='<div style="position:relative;height:340px;margin:16px 0 8px;border-left:1px solid #ffffff18;border-bottom:1px solid #ffffff18;overflow:visible">';
       // Y-axis labels
@@ -789,17 +796,50 @@ async function main(){
         h+=`<div style="position:absolute;bottom:0;left:${x}%;width:1px;height:100%;background:#ffffff06"></div>`;
         h+=`<div style="position:absolute;bottom:-14px;left:${x}%;transform:translateX(-50%);font-size:.5rem;color:var(--text2);font-family:var(--mono)">${d}d</div>`;
       }
-      // Y grid
-      const yStep=yRange>100?25:10;
-      for(let v=Math.ceil(yMin/yStep)*yStep;v<=yMax;v+=yStep){
+      // Y grid — below break (normal scale)
+      for(let v=Math.ceil(yMin/25)*25;v<=BREAK;v+=25){
         const yp=yPct(v);
         const isZero=v===0;
         h+=`<div style="position:absolute;bottom:${yp}%;left:0;width:100%;height:${isZero?'1.5px':'1px'};background:${isZero?'#ffffff28':'#ffffff06'}"></div>`;
         h+=`<div style="position:absolute;bottom:${yp}%;left:-32px;font-size:.5rem;color:${isZero?'#ffffff44':'var(--text2)'};font-family:var(--mono);transform:translateY(50%)">${v>0?'+':''}${v}%</div>`;
       }
-      // Barbells
-      allCats.forEach(c=>{
-        const x=Math.min(c.daysOut/maxDays*100,98);
+      // Break indicator — zigzag at BREAK_PCT
+      const brkY=BREAK_PCT;
+      h+=`<svg style="position:absolute;bottom:${brkY-1}%;left:-2px;width:calc(100% + 4px);height:10px;z-index:5;overflow:visible" viewBox="0 0 1000 10" preserveAspectRatio="none">`;
+      h+=`<path d="M0,5 L50,2 L100,8 L150,2 L200,8 L250,2 L300,8 L350,2 L400,8 L450,2 L500,8 L550,2 L600,8 L650,2 L700,8 L750,2 L800,8 L850,2 L900,8 L950,2 L1000,5" stroke="#ffffff22" stroke-width="2" fill="none"/>`;
+      h+=`</svg>`;
+      h+=`<div style="position:absolute;bottom:${brkY}%;left:-32px;font-size:.5rem;color:#f59e0b;font-family:var(--mono);transform:translateY(50%);font-weight:700">${BREAK}%</div>`;
+      // Y grid — above break (compressed, fewer labels)
+      const aboveStep=Math.max(100,Math.ceil((yMaxAbove-BREAK)/3/100)*100);
+      for(let v=BREAK+aboveStep;v<=yMaxAbove;v+=aboveStep){
+        const yp=yPct(v);
+        h+=`<div style="position:absolute;bottom:${yp}%;left:0;width:100%;height:1px;background:#ffffff04"></div>`;
+        h+=`<div style="position:absolute;bottom:${yp}%;left:-32px;font-size:.45rem;color:var(--text2);font-family:var(--mono);transform:translateY(50%);opacity:.5">${v}%</div>`;
+      }
+      // Barbells — compute X positions with collision avoidance
+      const catPos=allCats.map(c=>({c,x:Math.min(c.daysOut/maxDays*100,98)}));
+      catPos.sort((a,b)=>a.x-b.x);
+      const MIN_GAP=3.5; // minimum % gap between barbells
+      for(let i=1;i<catPos.length;i++){
+        if(catPos[i].x-catPos[i-1].x<MIN_GAP){
+          // Find the cluster
+          let start=i-1;
+          while(start>0&&catPos[start].x-catPos[start-1].x<MIN_GAP)start--;
+          let end=i;
+          while(end<catPos.length-1&&catPos[end+1].x-catPos[end].x<MIN_GAP)end++;
+          // Spread the cluster
+          const clusterSize=end-start+1;
+          const center=catPos[Math.floor((start+end)/2)].x;
+          for(let j=start;j<=end;j++){
+            catPos[j].x=center+(j-start-(clusterSize-1)/2)*MIN_GAP;
+          }
+          i=end+1;
+        }
+      }
+      // Clamp all positions
+      catPos.forEach(p=>{p.x=Math.max(1,Math.min(98,p.x));});
+
+      catPos.forEach(({c,x})=>{
         const ySwing=yPct(c.swingPct);
         const yER=yPct(c.expectedReturn);
         const asym=c.asymmetry;
@@ -809,12 +849,13 @@ async function main(){
         const lineBot=Math.min(ySwing,yER);
         const lineH=lineTop-lineBot;
         h+=`<div style="position:absolute;left:${x}%;bottom:${lineBot}%;width:2px;height:${lineH}%;background:${col}55;transform:translateX(-50%);z-index:1" title="${c.ticker}: ${c.title}"></div>`;
-        // Top dot = Swing % (circle, orange-tinted)
+        // Top dot = Swing % (circle)
         h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing}%;transform:translate(-50%,50%);width:8px;height:8px;border-radius:50%;background:${col};opacity:.7;border:1.5px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: ${c.title}\nSwing: ${c.swingPct}% | E[R]: ${c.expectedReturn>0?'+':''}${c.expectedReturn}%\nIf win: ${c.successMove>0?'+':''}${c.successMove}% | If fail: ${c.failMove}%\nImplied: ${c.impliedPos}% | Yours: ${c.baseComposite}% | Asym: ${asym>0?'+':''}${asym}pp"></div>`;
-        // Bottom dot = E[R] (diamond shape via rotated square)
+        // Bottom dot = E[R] (diamond)
         h+=`<div style="position:absolute;left:${x}%;bottom:${yER}%;transform:translate(-50%,50%) rotate(45deg);width:7px;height:7px;background:${col};opacity:.7;border:1.5px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: E[R]=${c.expectedReturn>0?'+':''}${c.expectedReturn}%"></div>`;
-        // Ticker label above top dot
-        h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing+2}%;transform:translateX(-50%);font-size:.55rem;font-family:var(--mono);color:${col};font-weight:700;white-space:nowrap;pointer-events:none;z-index:4">${c.ticker}</div>`;
+        // Ticker label above top dot + swing value if above break
+        const aboveBreak=c.swingPct>BREAK;
+        h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing+2}%;transform:translateX(-50%);font-size:.55rem;font-family:var(--mono);color:${col};font-weight:700;white-space:nowrap;pointer-events:none;z-index:4">${c.ticker}${aboveBreak?' '+c.swingPct+'%':''}</div>`;
       });
       h+='</div>';
       // Legend

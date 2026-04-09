@@ -14,24 +14,6 @@
   "valuationType": "SOTP",
   "assets": [
     {
-      "id": "commercial",
-      "name": "HIV franchise (Biktarvy + Descovy + Yeztugo)",
-      "stage": "Commercial ($20.8B 2025)",
-      "designations": [],
-      "indications": [
-        {
-          "id": "hiv",
-          "name": "HIV treatment + prevention",
-          "market": {
-            "notes": "Biktarvy: $14.3B 2025 (+7%), >52% US treatment share. Descovy: $2.8B (+31%), PrEP growth. Yeztugo (lenacapavir): $150M first year \u2014 twice-yearly injection. BIC/LEN single tablet: launching H2 2026. No major LOE until 2036. HIV portfolio: $20.8B growing 6% YoY.",
-            "tamB": 35.0
-          },
-          "area": "infectious_disease.anti_infective.hiv_treatment"
-        }
-      ],
-      "modality": "small_molecule.enzyme_inhibitor.integrase_inhibitor"
-    },
-    {
       "id": "len_prev",
       "name": "Lenacapavir \u2014 HIV prevention expansion",
       "stage": "Commercial (Yeztugo) + label expansions",
@@ -110,6 +92,38 @@
         }
       ],
       "modality": "small_molecule.enzyme_inhibitor.integrase_inhibitor"
+    },
+    {
+      "id": "biktarvy",
+      "name": "Biktarvy (BIC/FTC/TAF)",
+      "stage": "Commercial ($14.1B 2025)",
+      "modality": "small_molecule.enzyme_inhibitor.integrase_inhibitor",
+      "indications": [
+        {
+          "id": "hiv_tx",
+          "name": "HIV treatment",
+          "area": "infectious_disease.anti_infective.hiv_treatment",
+          "market": {
+            "tamB": 25
+          }
+        }
+      ]
+    },
+    {
+      "id": "descovy",
+      "name": "Descovy + Truvada",
+      "stage": "Commercial ($2.0B 2025)",
+      "modality": "small_molecule.enzyme_inhibitor.nrti",
+      "indications": [
+        {
+          "id": "hiv_prep",
+          "name": "HIV PrEP",
+          "area": "infectious_disease.anti_infective.hiv_prevention",
+          "market": {
+            "tamB": 5
+          }
+        }
+      ]
     }
   ],
   "scenarios": {
@@ -123,13 +137,6 @@
         "\u2192 Revenue stalls at $28-29B, multiple compresses"
       ],
       "assumptions": {
-        "commercial": {
-          "hiv": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.0
-          }
-        },
         "len_prev": {
           "hiv_prev": {
             "pos": 80,
@@ -157,6 +164,20 @@
             "apr": 100,
             "pen": 0.8
           }
+        },
+        "biktarvy": {
+          "hiv_tx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "descovy": {
+          "hiv_prep": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
         }
       },
       "val": {
@@ -178,13 +199,6 @@
         "\u2192 Revenue grows to $33-35B by 2029, slow grind"
       ],
       "assumptions": {
-        "commercial": {
-          "hiv": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.0
-          }
-        },
         "len_prev": {
           "hiv_prev": {
             "pos": 85,
@@ -212,6 +226,20 @@
             "apr": 100,
             "pen": 0.9
           }
+        },
+        "biktarvy": {
+          "hiv_tx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "descovy": {
+          "hiv_prep": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
         }
       },
       "val": {
@@ -233,13 +261,6 @@
         "\u2713 2026 guidance $29.6-30B met \u2014 steady 4-5% growth"
       ],
       "assumptions": {
-        "commercial": {
-          "hiv": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.0
-          }
-        },
         "len_prev": {
           "hiv_prev": {
             "pos": 90,
@@ -267,6 +288,20 @@
             "apr": 100,
             "pen": 1.0
           }
+        },
+        "biktarvy": {
+          "hiv_tx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "descovy": {
+          "hiv_prep": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
         }
       },
       "val": {
@@ -288,13 +323,6 @@
         "\u2713 Revenue $40B+ by 2030, 20%+ ROIC, consistent dividend growth"
       ],
       "assumptions": {
-        "commercial": {
-          "hiv": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.0
-          }
-        },
         "len_prev": {
           "hiv_prev": {
             "pos": 92,
@@ -322,6 +350,20 @@
             "apr": 100,
             "pen": 1.0
           }
+        },
+        "biktarvy": {
+          "hiv_tx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "descovy": {
+          "hiv_prep": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
         }
       },
       "val": {
@@ -343,13 +385,6 @@
         "\u2713 Revenue $50B+ by 2030, Gilead re-rates from 12x to 18x PE"
       ],
       "assumptions": {
-        "commercial": {
-          "hiv": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.0
-          }
-        },
         "len_prev": {
           "hiv_prev": {
             "pos": 95,
@@ -373,6 +408,20 @@
         },
         "liver": {
           "liver_port": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "biktarvy": {
+          "hiv_tx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "descovy": {
+          "hiv_prep": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0

@@ -29,7 +29,7 @@
           "area": "cardio_metabolic.obesity.glp1_incretin"
         }
       ],
-      "modality": "small_molecule.gpcr_modulator.oral_glp1_gip_gcg"
+      "modality": "peptide.gpcr_agonist.glp1_gip_dual"
     },
     {
       "id": "orforglipron",
@@ -49,7 +49,7 @@
           "area": "cardio_metabolic.obesity.glp1_incretin"
         }
       ],
-      "modality": "small_molecule.gpcr_modulator.oral_glp1_agonist"
+      "modality": "small_molecule.gpcr_agonist.oral_glp1"
     },
     {
       "id": "retatrutide",
@@ -69,27 +69,71 @@
           "area": "cardio_metabolic.obesity.glp1_incretin"
         }
       ],
-      "modality": "small_molecule.gpcr_modulator.oral_glp1_gip_gcg"
+      "modality": "peptide.gpcr_agonist.glp1_gip_glucagon_triple"
     },
     {
-      "id": "non_incretin",
-      "name": "Non-incretin portfolio (oncology, immunology, neuro)",
-      "stage": "Commercial + pipeline",
-      "designations": [],
+      "id": "verzenio",
+      "name": "Verzenio (abemaciclib)",
+      "stage": "Commercial ($4.5B 2025)",
+      "modality": "small_molecule.kinase_inhibitor.cdk4_6_inhibitor",
       "indications": [
         {
-          "id": "other",
-          "name": "Verzenio + Taltz + Kisunla + Jaypirca + donanemab",
+          "id": "bc",
+          "name": "HR+ breast cancer",
+          "area": "oncology.breast.hr_her2_neg",
           "market": {
-            "tamB": 25,
-            "penPct": 5,
-            "peakYear": 2032,
-            "notes": "Verzenio (breast cancer): $4.7B 2025. Taltz (psoriasis): stable. Kisunla (Alzheimer's): launched 2024. Jaypirca (MCL). Non-incretin revenue grew 20% in Q4 2023. Diversified beyond obesity."
-          },
-          "area": "oncology.breast.hr_her2_neg"
+            "tamB": 10
+          }
         }
-      ],
-      "modality": "antibody.monoclonal.anti_amyloid"
+      ]
+    },
+    {
+      "id": "taltz",
+      "name": "Taltz (ixekizumab)",
+      "stage": "Commercial ($3.0B 2025)",
+      "modality": "antibody.monoclonal.anti_il17a",
+      "indications": [
+        {
+          "id": "pso_psa",
+          "name": "Psoriasis + PsA + axSpA",
+          "area": "immunology.inflammatory_systemic.psoriasis",
+          "market": {
+            "tamB": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "kisunla",
+      "name": "Kisunla (donanemab)",
+      "stage": "Commercial (launched 2024)",
+      "modality": "antibody.monoclonal.anti_amyloid",
+      "indications": [
+        {
+          "id": "alz",
+          "name": "Early Alzheimer's",
+          "area": "cns.neurodegeneration.alzheimer",
+          "market": {
+            "tamB": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "jardiance",
+      "name": "Jardiance (empagliflozin) \u2014 Lilly share",
+      "stage": "Commercial (BI partnership)",
+      "modality": "small_molecule.enzyme_inhibitor.sglt2_inhibitor",
+      "indications": [
+        {
+          "id": "t2d_hf",
+          "name": "T2D + heart failure",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "tamB": 6
+          }
+        }
+      ]
     }
   ],
   "scenarios": {
@@ -124,11 +168,32 @@
             "pen": 0.4
           }
         },
-        "non_incretin": {
-          "other": {
-            "pos": 70,
-            "apr": 70,
-            "pen": 0.7
+        "verzenio": {
+          "bc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "taltz": {
+          "pso_psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "kisunla": {
+          "alz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "jardiance": {
+          "t2d_hf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
           }
         }
       },
@@ -172,11 +237,32 @@
             "pen": 0.6
           }
         },
-        "non_incretin": {
-          "other": {
-            "pos": 75,
-            "apr": 75,
-            "pen": 0.8
+        "verzenio": {
+          "bc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "taltz": {
+          "pso_psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "kisunla": {
+          "alz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "jardiance": {
+          "t2d_hf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
           }
         }
       },
@@ -220,10 +306,31 @@
             "pen": 0.8
           }
         },
-        "non_incretin": {
-          "other": {
-            "pos": 80,
-            "apr": 80,
+        "verzenio": {
+          "bc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "taltz": {
+          "pso_psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "kisunla": {
+          "alz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "jardiance": {
+          "t2d_hf": {
+            "pos": 100,
+            "apr": 100,
             "pen": 1.0
           }
         }
@@ -268,10 +375,31 @@
             "pen": 1.2
           }
         },
-        "non_incretin": {
-          "other": {
-            "pos": 85,
-            "apr": 85,
+        "verzenio": {
+          "bc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "taltz": {
+          "pso_psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "kisunla": {
+          "alz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "jardiance": {
+          "t2d_hf": {
+            "pos": 100,
+            "apr": 100,
             "pen": 1.0
           }
         }
@@ -316,10 +444,31 @@
             "pen": 1.5
           }
         },
-        "non_incretin": {
-          "other": {
-            "pos": 90,
-            "apr": 90,
+        "verzenio": {
+          "bc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "taltz": {
+          "pso_psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "kisunla": {
+          "alz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "jardiance": {
+          "t2d_hf": {
+            "pos": 100,
+            "apr": 100,
             "pen": 1.0
           }
         }

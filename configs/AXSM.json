@@ -14,22 +14,52 @@
   "valuationType": "SOTP",
   "assets": [
     {
-      "id": "commercial",
-      "name": "Auvelity + Sunosi + Symbravo (commercial)",
-      "stage": "Commercial (3 products, $639M 2025 revenue)",
-      "designations": [],
+      "id": "auvelity",
+      "name": "Auvelity (DXM/bupropion)",
+      "stage": "Commercial ($480M 2025)",
+      "modality": "small_molecule.receptor_antagonist.nmda_sigma1",
       "indications": [
         {
-          "id": "cns_comm",
-          "name": "MDD + narcolepsy/OSA + migraine",
+          "id": "mdd",
+          "name": "MDD",
+          "area": "cns.psychiatry.depression",
           "market": {
-            "notes": "Auvelity (MDD): $507M 2025, +74% YoY, 225K Rx/quarter, 86% payer coverage. Sunosi (EDS): $125M 2025, +32% YoY. Symbravo (migraine): $6.6M, launched Jun 2025. Combined Q4 run-rate: $784M annualized. Still loss-making but approaching cash flow positive.",
-            "tamB": 25.0
-          },
-          "area": "cns.psychiatry.depression"
+            "tamB": 12
+          }
         }
-      ],
-      "modality": "small_molecule.receptor_antagonist.nmda_modulator"
+      ]
+    },
+    {
+      "id": "sunosi",
+      "name": "Sunosi (solriamfetol)",
+      "stage": "Commercial ($130M 2025)",
+      "modality": "small_molecule.reuptake_inhibitor.dat_net",
+      "indications": [
+        {
+          "id": "eds",
+          "name": "Excessive daytime sleepiness",
+          "area": "cns.sleep.narcolepsy",
+          "market": {
+            "tamB": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "symbravo",
+      "name": "Symbravo",
+      "stage": "Commercial (launched 2025)",
+      "modality": "small_molecule.ion_channel.gaba_modulator",
+      "indications": [
+        {
+          "id": "gad",
+          "name": "GAD",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "tamB": 5
+          }
+        }
+      ]
     },
     {
       "id": "axs05_ad",
@@ -125,13 +155,6 @@
         "\u2192 Single-franchise (Auvelity/Sunosi) company at $700M revenue, cash tight"
       ],
       "assumptions": {
-        "commercial": {
-          "cns_comm": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.0
-          }
-        },
         "axs05_ad": {
           "ad_agit": {
             "pos": 70,
@@ -159,6 +182,27 @@
             "apr": 40,
             "pen": 0.4
           }
+        },
+        "auvelity": {
+          "mdd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "sunosi": {
+          "eds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "symbravo": {
+          "gad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
         }
       },
       "val": {
@@ -180,13 +224,6 @@
         "\u2192 Revenue grows to ~$1.2B but pipeline peak limited"
       ],
       "assumptions": {
-        "commercial": {
-          "cns_comm": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.0
-          }
-        },
         "axs05_ad": {
           "ad_agit": {
             "pos": 70,
@@ -214,6 +251,27 @@
             "apr": 60,
             "pen": 0.6
           }
+        },
+        "auvelity": {
+          "mdd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "sunosi": {
+          "eds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "symbravo": {
+          "gad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
         }
       },
       "val": {
@@ -235,13 +293,6 @@
         "\u2192 Revenue trajectory: $1B 2026 \u2192 $2-3B by 2029"
       ],
       "assumptions": {
-        "commercial": {
-          "cns_comm": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.0
-          }
-        },
         "axs05_ad": {
           "ad_agit": {
             "pos": 75,
@@ -269,6 +320,27 @@
             "apr": 70,
             "pen": 0.8
           }
+        },
+        "auvelity": {
+          "mdd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "sunosi": {
+          "eds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "symbravo": {
+          "gad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
         }
       },
       "val": {
@@ -290,13 +362,6 @@
         "\u2713 Fastest-growing CNS pure-play, M&A target"
       ],
       "assumptions": {
-        "commercial": {
-          "cns_comm": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.0
-          }
-        },
         "axs05_ad": {
           "ad_agit": {
             "pos": 80,
@@ -324,6 +389,27 @@
             "apr": 80,
             "pen": 1.0
           }
+        },
+        "auvelity": {
+          "mdd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "sunosi": {
+          "eds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "symbravo": {
+          "gad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
         }
       },
       "val": {
@@ -345,13 +431,6 @@
         "\u2713 AbbVie or Pfizer acquires for CNS franchise at $300+"
       ],
       "assumptions": {
-        "commercial": {
-          "cns_comm": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.0
-          }
-        },
         "axs05_ad": {
           "ad_agit": {
             "pos": 90,
@@ -378,6 +457,27 @@
             "pos": 80,
             "apr": 85,
             "pen": 1.2
+          }
+        },
+        "auvelity": {
+          "mdd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "sunosi": {
+          "eds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "symbravo": {
+          "gad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
           }
         }
       },

@@ -14,102 +14,221 @@
   "valuationType": "SOTP",
   "assets": [
     {
-      "id": "commercial",
-      "name": "Immunology (Skyrizi + Rinvoq + Humira tail)",
-      "stage": "Commercial ($30.4B 2025)",
-      "designations": [],
+      "id": "skyrizi",
+      "name": "Skyrizi (risankizumab)",
+      "stage": "Commercial ($8.8B 2025, +58%)",
+      "modality": "antibody.monoclonal.anti_il23",
       "indications": [
         {
-          "id": "immuno",
-          "name": "Immunology franchise (IBD, derm, rheum)",
+          "id": "pso",
+          "name": "Psoriasis",
+          "area": "immunology.inflammatory_systemic.psoriasis",
           "market": {
-            "notes": "Skyrizi: $17.6B 2025 (+50%), 75% of new frontline IBD starts. Rinvoq: $8.3B (+39%), expanding labels (vitiligo sNDA filed). Humira: $4.5B (declining). Combined $25.9B already >peak Humira ($21.2B). 2026 guide: Skyrizi $21.5B, Rinvoq $10.1B. No major LOE until late 2030s.",
-            "tamB": 60.0
+            "tamB": 18
+          }
+        },
+        {
+          "id": "ibd",
+          "name": "Crohn's + UC",
+          "area": "immunology.inflammatory_gi.crohns",
+          "market": {
+            "tamB": 12
           },
-          "area": "immunology.inflammatory_gi.ulcerative_colitis"
+          "rare": false
         }
-      ],
-      "modality": "antibody.monoclonal.anti_il23"
+      ]
     },
     {
-      "id": "neuro",
-      "name": "Neuroscience (Vraylar + Botox + migraine)",
-      "stage": "Commercial ($10.8B 2025)",
-      "designations": [],
+      "id": "rinvoq",
+      "name": "Rinvoq (upadacitinib)",
+      "stage": "Commercial ($5.6B 2025, +52%)",
+      "modality": "small_molecule.jak_inhibitor.jak1_selective",
       "indications": [
         {
-          "id": "neuro_port",
-          "name": "Psychiatry + migraine + movement",
+          "id": "ra_ad",
+          "name": "RA + AD + UC + Crohn's",
+          "area": "immunology.inflammatory_systemic.multi_indication",
           "market": {
-            "tamB": 15.0,
-            "penPct": 100,
-            "peakYear": 2030,
-            "notes": "Vraylar: $3.6B. Botox Therapeutic: $3.8B. Ubrelvy+Qulipta (migraine): $2.3B. Portfolio grew 19.6% YoY. Vyalev (foslevodopa/foscarbidopa, continuous SC Parkinson's) launched \u2014 peak >$5B guided."
-          },
-          "area": "cns.psychiatry.depression"
+            "tamB": 20
+          }
         }
-      ],
-      "modality": "small_molecule.receptor_antagonist.nmda_modulator"
+      ]
     },
     {
-      "id": "onc",
-      "name": "Oncology (Imbruvica + Venclexta + Elahere + Teliso-V)",
-      "stage": "Commercial ($6.7B 2025) + pipeline",
-      "designations": [],
+      "id": "humira",
+      "name": "Humira (adalimumab) \u2014 tail",
+      "stage": "Commercial ($6.4B 2025, declining -36%)",
+      "modality": "antibody.monoclonal.anti_tnf",
       "indications": [
         {
-          "id": "onc_port",
-          "name": "Hematology + solid tumors",
+          "id": "legacy_imm",
+          "name": "Legacy immunology",
+          "area": "immunology.inflammatory_systemic.multi_indication",
           "market": {
-            "tamB": 12.0,
-            "penPct": 100,
-            "peakYear": 2030,
-            "notes": "Imbruvica: $2.9B (declining). Venclexta: $2.8B (stable). Elahere: $690M (ovarian cancer, growing). Teliso-V (cMET ADC NSCLC): Phase 3 positive, sNDA filed. Oncology flat (+1.5%) but pipeline refreshing."
-          },
-          "area": "oncology.hematology.cll_nhl"
+            "tamB": 10
+          }
         }
-      ],
-      "modality": "adc.dxd_linker.her2_adc"
+      ]
     },
     {
-      "id": "aesthetics",
-      "name": "Aesthetics (Botox Cosmetic + Juvederm)",
-      "stage": "Commercial ($4.9B 2025, declining -6%)",
-      "designations": [],
+      "id": "vraylar",
+      "name": "Vraylar (cariprazine)",
+      "stage": "Commercial ($4.2B 2025)",
+      "modality": "small_molecule.receptor_antagonist.d2_d3_partial_agonist",
       "indications": [
         {
-          "id": "aesth",
-          "name": "Medical aesthetics",
+          "id": "schizo_bp",
+          "name": "Schizophrenia + Bipolar + MDD adjunct",
+          "area": "cns.psychiatry.schizophrenia",
           "market": {
-            "tamB": 6.0,
-            "penPct": 100,
-            "peakYear": 2027,
-            "notes": "Botox Cosmetic: $2.6B. Juvederm: $993M. Portfolio declining -6% on macro headwinds. Structural ceiling risk from GLP-1 weight loss reducing cosmetic procedure demand."
-          },
-          "area": "dermatology.inflammatory_derm.aesthetics"
+            "tamB": 8
+          }
         }
-      ],
-      "modality": "pegylated_protein.pegylated_cytokine.botulinum_toxin"
+      ]
     },
     {
-      "id": "pipeline",
-      "name": "Next-gen pipeline (emraclidine, ABBV-400, Cerevel assets)",
+      "id": "botox_neuro",
+      "name": "Botox Therapeutic",
+      "stage": "Commercial ($3.5B 2025)",
+      "modality": "biologic.neurotoxin.botulinum_type_a",
+      "indications": [
+        {
+          "id": "migraine",
+          "name": "Chronic migraine + spasticity",
+          "area": "cns.pain.migraine",
+          "market": {
+            "tamB": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "qulipta",
+      "name": "Qulipta (atogepant)",
+      "stage": "Commercial ($1.2B 2025)",
+      "modality": "small_molecule.receptor_antagonist.cgrp_antagonist",
+      "indications": [
+        {
+          "id": "mig_prev",
+          "name": "Migraine prevention",
+          "area": "cns.pain.migraine",
+          "market": {
+            "tamB": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "imbruvica",
+      "name": "Imbruvica (ibrutinib)",
+      "stage": "Commercial ($2.8B 2025, declining)",
+      "modality": "small_molecule.kinase_inhibitor.btk_covalent",
+      "indications": [
+        {
+          "id": "cll",
+          "name": "CLL/SLL + MCL",
+          "area": "oncology.hematology.cll_nhl",
+          "market": {
+            "tamB": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "venclexta",
+      "name": "Venclexta (venetoclax)",
+      "stage": "Commercial ($2.5B 2025)",
+      "modality": "small_molecule.enzyme_inhibitor.bcl2_inhibitor",
+      "indications": [
+        {
+          "id": "aml_cll",
+          "name": "AML + CLL",
+          "area": "oncology.hematology.aml",
+          "market": {
+            "tamB": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "elahere",
+      "name": "Elahere + Teliso-V (ADC pipeline)",
+      "stage": "Commercial + Phase 3",
+      "modality": "adc.dxd_linker.folr1_adc",
+      "indications": [
+        {
+          "id": "ovarian",
+          "name": "Ovarian + NSCLC",
+          "area": "oncology.gynecologic.ovarian",
+          "market": {
+            "tamB": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "botox_cosm",
+      "name": "Botox Cosmetic",
+      "stage": "Commercial ($2.8B 2025)",
+      "modality": "biologic.neurotoxin.botulinum_cosmetic",
+      "indications": [
+        {
+          "id": "wrinkles",
+          "name": "Facial aesthetics",
+          "area": "dermatology.aesthetics.neurotoxin",
+          "market": {
+            "tamB": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "juvederm",
+      "name": "Juvederm + fillers",
+      "stage": "Commercial ($1.5B 2025, declining)",
+      "modality": "biologic.hyaluronic_acid.dermal_filler",
+      "indications": [
+        {
+          "id": "fillers",
+          "name": "Dermal fillers",
+          "area": "dermatology.aesthetics.filler",
+          "market": {
+            "tamB": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "emraclidine",
+      "name": "Emraclidine (Cerevel)",
+      "stage": "Phase 3",
+      "modality": "small_molecule.receptor_agonist.m4_muscarinic_agonist",
+      "indications": [
+        {
+          "id": "schizo_new",
+          "name": "Schizophrenia",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "tamB": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "abbv400",
+      "name": "ABBV-400 (c-Met ADC)",
       "stage": "Phase 2/3",
-      "designations": [],
+      "modality": "adc.dxd_linker.cmet_adc",
       "indications": [
         {
-          "id": "next_gen",
-          "name": "Schizophrenia + oncology + neuro (Cerevel acquisition)",
+          "id": "nsclc",
+          "name": "NSCLC",
+          "area": "oncology.lung.nsclc_driver",
           "market": {
-            "tamB": 10,
-            "penPct": 3,
-            "peakYear": 2034,
-            "notes": "Emraclidine (M4 muscarinic agonist) for schizophrenia \u2014 acquired via Cerevel ($8.7B). ABBV-400 (cMET ADC) Phase 3 in CRC. ABBV-951/Vyalev (Parkinson's) ramping. Tavapadon (D1/D5 agonist, Parkinson's). Pipeline refresh after Humira LOE."
-          },
-          "area": "cns.psychiatry.schizophrenia"
+            "tamB": 5
+          }
         }
-      ],
-      "modality": "small_molecule.receptor_antagonist.d1_agonist"
+      ]
     }
   ],
   "scenarios": {
@@ -123,39 +242,100 @@
         "\u2192 Revenue growth stalls at $65-67B, multiple compresses to 12x"
       ],
       "assumptions": {
-        "commercial": {
-          "immuno": {
+        "skyrizi": {
+          "pso": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ibd": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
-        "neuro": {
-          "neuro_port": {
-            "pos": 90,
-            "apr": 85,
-            "pen": 0.8
-          }
-        },
-        "onc": {
-          "onc_port": {
-            "pos": 80,
-            "apr": 75,
-            "pen": 0.7
-          }
-        },
-        "aesthetics": {
-          "aesth": {
+        "rinvoq": {
+          "ra_ad": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.7
+            "pen": 1.0
           }
         },
-        "pipeline": {
-          "next_gen": {
-            "pos": 15,
-            "apr": 20,
-            "pen": 0.3
+        "humira": {
+          "legacy_imm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "vraylar": {
+          "schizo_bp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "botox_neuro": {
+          "migraine": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "qulipta": {
+          "mig_prev": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "imbruvica": {
+          "cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "venclexta": {
+          "aml_cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "elahere": {
+          "ovarian": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "botox_cosm": {
+          "wrinkles": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "juvederm": {
+          "fillers": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "emraclidine": {
+          "schizo_new": {
+            "pos": 45,
+            "apr": 60,
+            "pen": 1.0
+          }
+        },
+        "abbv400": {
+          "nsclc": {
+            "pos": 35,
+            "apr": 55,
+            "pen": 1.0
           }
         }
       },
@@ -178,39 +358,100 @@
         "\u2192 Revenue grows to $72-75B by 2028 but margin expansion limited"
       ],
       "assumptions": {
-        "commercial": {
-          "immuno": {
+        "skyrizi": {
+          "pso": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ibd": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
-        "neuro": {
-          "neuro_port": {
-            "pos": 92,
-            "apr": 90,
-            "pen": 0.9
-          }
-        },
-        "onc": {
-          "onc_port": {
-            "pos": 85,
-            "apr": 80,
-            "pen": 0.8
-          }
-        },
-        "aesthetics": {
-          "aesth": {
+        "rinvoq": {
+          "ra_ad": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.8
+            "pen": 1.0
           }
         },
-        "pipeline": {
-          "next_gen": {
-            "pos": 30,
-            "apr": 40,
-            "pen": 0.5
+        "humira": {
+          "legacy_imm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "vraylar": {
+          "schizo_bp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "botox_neuro": {
+          "migraine": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "qulipta": {
+          "mig_prev": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "imbruvica": {
+          "cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "venclexta": {
+          "aml_cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "elahere": {
+          "ovarian": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "botox_cosm": {
+          "wrinkles": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "juvederm": {
+          "fillers": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "emraclidine": {
+          "schizo_new": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 1.0
+          }
+        },
+        "abbv400": {
+          "nsclc": {
+            "pos": 15,
+            "apr": 25,
+            "pen": 1.0
           }
         }
       },
@@ -233,39 +474,100 @@
         "\u2713 2026 $67B \u2192 2029 $80B+ trajectory, EPS $14.50+ in 2026"
       ],
       "assumptions": {
-        "commercial": {
-          "immuno": {
+        "skyrizi": {
+          "pso": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ibd": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
-        "neuro": {
-          "neuro_port": {
-            "pos": 95,
-            "apr": 92,
+        "rinvoq": {
+          "ra_ad": {
+            "pos": 100,
+            "apr": 100,
             "pen": 1.0
           }
         },
-        "onc": {
-          "onc_port": {
-            "pos": 88,
-            "apr": 85,
-            "pen": 0.9
-          }
-        },
-        "aesthetics": {
-          "aesth": {
+        "humira": {
+          "legacy_imm": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.9
+            "pen": 1.0
           }
         },
-        "pipeline": {
-          "next_gen": {
+        "vraylar": {
+          "schizo_bp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "botox_neuro": {
+          "migraine": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "qulipta": {
+          "mig_prev": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "imbruvica": {
+          "cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "venclexta": {
+          "aml_cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "elahere": {
+          "ovarian": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "botox_cosm": {
+          "wrinkles": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "juvederm": {
+          "fillers": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "emraclidine": {
+          "schizo_new": {
             "pos": 45,
+            "apr": 60,
+            "pen": 1.0
+          }
+        },
+        "abbv400": {
+          "nsclc": {
+            "pos": 35,
             "apr": 55,
-            "pen": 0.8
+            "pen": 1.0
           }
         }
       },
@@ -288,38 +590,99 @@
         "\u2713 Revenue $90B+ by 2030, EPS $20+, multiple expands to 18-20x"
       ],
       "assumptions": {
-        "commercial": {
-          "immuno": {
+        "skyrizi": {
+          "pso": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ibd": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
-        "neuro": {
-          "neuro_port": {
-            "pos": 97,
-            "apr": 95,
-            "pen": 1.0
-          }
-        },
-        "onc": {
-          "onc_port": {
-            "pos": 90,
-            "apr": 88,
-            "pen": 1.0
-          }
-        },
-        "aesthetics": {
-          "aesth": {
+        "rinvoq": {
+          "ra_ad": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
-        "pipeline": {
-          "next_gen": {
+        "humira": {
+          "legacy_imm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "vraylar": {
+          "schizo_bp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "botox_neuro": {
+          "migraine": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "qulipta": {
+          "mig_prev": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "imbruvica": {
+          "cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "venclexta": {
+          "aml_cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "elahere": {
+          "ovarian": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "botox_cosm": {
+          "wrinkles": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "juvederm": {
+          "fillers": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "emraclidine": {
+          "schizo_new": {
+            "pos": 65,
+            "apr": 80,
+            "pen": 1.0
+          }
+        },
+        "abbv400": {
+          "nsclc": {
             "pos": 55,
-            "apr": 65,
+            "apr": 75,
             "pen": 1.0
           }
         }
@@ -343,39 +706,100 @@
         "\u2713 Revenue $100B+ by 2030, market cap approaches $500B"
       ],
       "assumptions": {
-        "commercial": {
-          "immuno": {
+        "skyrizi": {
+          "pso": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ibd": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
-        "neuro": {
-          "neuro_port": {
-            "pos": 98,
-            "apr": 97,
-            "pen": 1.0
-          }
-        },
-        "onc": {
-          "onc_port": {
-            "pos": 92,
-            "apr": 90,
-            "pen": 1.0
-          }
-        },
-        "aesthetics": {
-          "aesth": {
+        "rinvoq": {
+          "ra_ad": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
-        "pipeline": {
-          "next_gen": {
-            "pos": 65,
-            "apr": 75,
-            "pen": 1.2
+        "humira": {
+          "legacy_imm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "vraylar": {
+          "schizo_bp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "botox_neuro": {
+          "migraine": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "qulipta": {
+          "mig_prev": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "imbruvica": {
+          "cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "venclexta": {
+          "aml_cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "elahere": {
+          "ovarian": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "botox_cosm": {
+          "wrinkles": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "juvederm": {
+          "fillers": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "emraclidine": {
+          "schizo_new": {
+            "pos": 45,
+            "apr": 60,
+            "pen": 1.0
+          }
+        },
+        "abbv400": {
+          "nsclc": {
+            "pos": 35,
+            "apr": 55,
+            "pen": 1.0
           }
         }
       },

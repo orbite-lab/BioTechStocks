@@ -33,27 +33,6 @@
       "modality": "nucleic_acid.sirna.galnac_sirna"
     },
     {
-      "id": "rare",
-      "name": "Rare disease (Givlaari + Oxlumo)",
-      "stage": "Commercial ($500M 2025)",
-      "designations": [],
-      "indications": [
-        {
-          "id": "rare_rna",
-          "name": "AHP (Givlaari) + PH1 (Oxlumo)",
-          "market": {
-            "tamB": 2.0,
-            "penPct": 100,
-            "peakYear": 2030,
-            "notes": "Givlaari + Oxlumo: ~$500M combined. Stable rare disease revenue. Leqvio (inclisiran, Novartis) royalties growing."
-          },
-          "area": "cardio_metabolic.attr.attr_pn",
-          "rare": true
-        }
-      ],
-      "modality": "nucleic_acid.sirna.galnac_sirna"
-    },
-    {
       "id": "nucresiran",
       "name": "Nucresiran - next-gen TTR RNAi",
       "stage": "Phase 3 (TRITON-CM + TRITON-PN)",
@@ -113,6 +92,40 @@
         }
       ],
       "modality": "nucleic_acid.sirna.galnac_sirna"
+    },
+    {
+      "id": "givlaari",
+      "name": "Givlaari (givosiran)",
+      "stage": "Commercial ($300M 2025)",
+      "modality": "nucleic_acid.sirna.galnac_sirna",
+      "indications": [
+        {
+          "id": "ahp",
+          "name": "Acute hepatic porphyria",
+          "area": "cardio_metabolic.rare_metabolic.porphyria",
+          "market": {
+            "tamB": 0.8
+          },
+          "rare": true
+        }
+      ]
+    },
+    {
+      "id": "oxlumo",
+      "name": "Oxlumo (lumasiran)",
+      "stage": "Commercial ($180M 2025)",
+      "modality": "nucleic_acid.sirna.galnac_sirna",
+      "indications": [
+        {
+          "id": "ph1",
+          "name": "Primary hyperoxaluria type 1",
+          "area": "cardio_metabolic.rare_metabolic.hyperoxaluria",
+          "market": {
+            "tamB": 0.5
+          },
+          "rare": true
+        }
+      ]
     }
   ],
   "scenarios": {
@@ -131,13 +144,6 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.0
-          }
-        },
-        "rare": {
-          "rare_rna": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.8
           }
         },
         "nucresiran": {
@@ -159,6 +165,20 @@
             "pos": 5,
             "apr": 10,
             "pen": 0.2
+          }
+        },
+        "givlaari": {
+          "ahp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "oxlumo": {
+          "ph1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
           }
         }
       },
@@ -188,13 +208,6 @@
             "pen": 1.0
           }
         },
-        "rare": {
-          "rare_rna": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.9
-          }
-        },
         "nucresiran": {
           "ttr_next": {
             "pos": 55,
@@ -214,6 +227,20 @@
             "pos": 10,
             "apr": 15,
             "pen": 0.3
+          }
+        },
+        "givlaari": {
+          "ahp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "oxlumo": {
+          "ph1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
           }
         }
       },
@@ -243,13 +270,6 @@
             "pen": 1.0
           }
         },
-        "rare": {
-          "rare_rna": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.0
-          }
-        },
         "nucresiran": {
           "ttr_next": {
             "pos": 65,
@@ -269,6 +289,20 @@
             "pos": 15,
             "apr": 25,
             "pen": 0.5
+          }
+        },
+        "givlaari": {
+          "ahp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "oxlumo": {
+          "ph1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
           }
         }
       },
@@ -298,13 +332,6 @@
             "pen": 1.0
           }
         },
-        "rare": {
-          "rare_rna": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.0
-          }
-        },
         "nucresiran": {
           "ttr_next": {
             "pos": 75,
@@ -324,6 +351,20 @@
             "pos": 25,
             "apr": 35,
             "pen": 0.7
+          }
+        },
+        "givlaari": {
+          "ahp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "oxlumo": {
+          "ph1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
           }
         }
       },
@@ -353,13 +394,6 @@
             "pen": 1.0
           }
         },
-        "rare": {
-          "rare_rna": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.0
-          }
-        },
         "nucresiran": {
           "ttr_next": {
             "pos": 85,
@@ -378,6 +412,20 @@
           "alz_rna": {
             "pos": 40,
             "apr": 50,
+            "pen": 1.0
+          }
+        },
+        "givlaari": {
+          "ahp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "oxlumo": {
+          "ph1": {
+            "pos": 100,
+            "apr": 100,
             "pen": 1.0
           }
         }

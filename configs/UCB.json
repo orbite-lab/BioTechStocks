@@ -72,44 +72,68 @@
       "modality": "antibody.monoclonal.anti_sclerostin"
     },
     {
-      "id": "pipeline",
-      "name": "Pipeline (donzakimig + dapirolizumab SLE + Staccato)",
-      "stage": "Phase 2/3",
-      "designations": [],
+      "id": "cimzia",
+      "name": "Cimzia (certolizumab)",
+      "stage": "Commercial (declining)",
+      "modality": "antibody.monoclonal.anti_tnf",
       "indications": [
         {
-          "id": "next_gen",
-          "name": "Next-gen immunology + neuro",
+          "id": "ra_cd",
+          "name": "RA + Crohn's + PsA",
+          "area": "immunology.inflammatory_systemic.rheumatoid_arthritis",
           "market": {
-            "tamB": 8,
-            "penPct": 3,
-            "peakYear": 2034,
-            "notes": "Donzakimig bispecific IL-13/IL-22 Ph2. Dapirolizumab anti-CD40L Ph3 SLE. 6 Ph3, 5 Ph2 programs in 2026."
-          },
-          "area": "immunology.inflammatory_systemic.psoriasis"
+            "tamB": 3
+          }
         }
-      ],
-      "modality": "antibody.bispecific.undisclosed"
+      ]
     },
     {
-      "id": "legacy",
-      "name": "Legacy (Cimzia + Vimpat/Briviact)",
-      "stage": "Declining",
-      "designations": [],
+      "id": "vimpat",
+      "name": "Vimpat + Briviact",
+      "stage": "Commercial (E976M 2025)",
+      "modality": "small_molecule.ion_channel.sv2a_modulator",
       "indications": [
         {
-          "id": "legacy",
-          "name": "Cimzia + Briviact LOE 2026",
+          "id": "epilepsy_leg",
+          "name": "Epilepsy (focal onset)",
+          "area": "cns.epilepsy.focal",
           "market": {
-            "tamB": 3.0,
-            "penPct": 100,
-            "peakYear": 2024,
-            "notes": "Briviact LOE 2026. Cimzia declining. Legacy drag offset by growth drivers."
-          },
-          "area": "immunology.inflammatory_systemic.psoriasis"
+            "tamB": 5
+          }
         }
-      ],
-      "modality": "antibody.monoclonal.anti_tnf"
+      ]
+    },
+    {
+      "id": "donzakimig",
+      "name": "Donzakimig",
+      "stage": "Phase 2/3",
+      "modality": "antibody.bispecific.nav1_7_blocker",
+      "indications": [
+        {
+          "id": "epilepsy_new",
+          "name": "Epilepsy",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "tamB": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "dapirolizumab",
+      "name": "Dapirolizumab",
+      "stage": "Phase 3",
+      "modality": "antibody.monoclonal.anti_cd40l",
+      "indications": [
+        {
+          "id": "sle",
+          "name": "SLE",
+          "area": "immunology.autoimmune.sle",
+          "market": {
+            "tamB": 5
+          }
+        }
+      ]
     }
   ],
   "scenarios": {
@@ -144,18 +168,32 @@
             "pen": 0.8
           }
         },
-        "pipeline": {
-          "next_gen": {
-            "pos": 15,
-            "apr": 20,
-            "pen": 0.3
-          }
-        },
-        "legacy": {
-          "legacy": {
+        "cimzia": {
+          "ra_cd": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.5
+            "pen": 1.0
+          }
+        },
+        "vimpat": {
+          "epilepsy_leg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "donzakimig": {
+          "epilepsy_new": {
+            "pos": 40,
+            "apr": 55,
+            "pen": 1.0
+          }
+        },
+        "dapirolizumab": {
+          "sle": {
+            "pos": 40,
+            "apr": 55,
+            "pen": 1.0
           }
         }
       },
@@ -199,18 +237,32 @@
             "pen": 0.9
           }
         },
-        "pipeline": {
-          "next_gen": {
-            "pos": 30,
-            "apr": 40,
-            "pen": 0.5
-          }
-        },
-        "legacy": {
-          "legacy": {
+        "cimzia": {
+          "ra_cd": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.6
+            "pen": 1.0
+          }
+        },
+        "vimpat": {
+          "epilepsy_leg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "donzakimig": {
+          "epilepsy_new": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 1.0
+          }
+        },
+        "dapirolizumab": {
+          "sle": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 1.0
           }
         }
       },
@@ -254,18 +306,32 @@
             "pen": 1.0
           }
         },
-        "pipeline": {
-          "next_gen": {
-            "pos": 45,
-            "apr": 55,
-            "pen": 0.7
-          }
-        },
-        "legacy": {
-          "legacy": {
+        "cimzia": {
+          "ra_cd": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.7
+            "pen": 1.0
+          }
+        },
+        "vimpat": {
+          "epilepsy_leg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "donzakimig": {
+          "epilepsy_new": {
+            "pos": 40,
+            "apr": 55,
+            "pen": 1.0
+          }
+        },
+        "dapirolizumab": {
+          "sle": {
+            "pos": 40,
+            "apr": 55,
+            "pen": 1.0
           }
         }
       },
@@ -308,18 +374,32 @@
             "pen": 1.0
           }
         },
-        "pipeline": {
-          "next_gen": {
-            "pos": 55,
-            "apr": 65,
+        "cimzia": {
+          "ra_cd": {
+            "pos": 100,
+            "apr": 100,
             "pen": 1.0
           }
         },
-        "legacy": {
-          "legacy": {
+        "vimpat": {
+          "epilepsy_leg": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.8
+            "pen": 1.0
+          }
+        },
+        "donzakimig": {
+          "epilepsy_new": {
+            "pos": 60,
+            "apr": 75,
+            "pen": 1.0
+          }
+        },
+        "dapirolizumab": {
+          "sle": {
+            "pos": 60,
+            "apr": 75,
+            "pen": 1.0
           }
         }
       },
@@ -362,18 +442,32 @@
             "pen": 1.0
           }
         },
-        "pipeline": {
-          "next_gen": {
-            "pos": 65,
-            "apr": 75,
-            "pen": 1.3
-          }
-        },
-        "legacy": {
-          "legacy": {
+        "cimzia": {
+          "ra_cd": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.8
+            "pen": 1.0
+          }
+        },
+        "vimpat": {
+          "epilepsy_leg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "donzakimig": {
+          "epilepsy_new": {
+            "pos": 40,
+            "apr": 55,
+            "pen": 1.0
+          }
+        },
+        "dapirolizumab": {
+          "sle": {
+            "pos": 40,
+            "apr": 55,
+            "pen": 1.0
           }
         }
       },

@@ -1,0 +1,26 @@
+name: Validate Configs
+on:
+  push:
+    paths: ['configs/**', 'taxonomy.json']
+  pull_request:
+    paths: ['configs/**', 'taxonomy.json']
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate configs against taxonomy
+        run: python scripts/validate.py
+      - name: Check taxonomy is up to date
+        run: |
+          python scripts/rebuild_taxonomy.py
+          if ! git diff --quiet taxonomy.json; then
+            echo "❌ taxonomy.json is stale — run: python scripts/rebuild_taxonomy.py"
+            git diff taxonomy.json | head -50
+            exit 1
+          fi
+          echo "✅ taxonomy.json is up to date"

@@ -1,0 +1,1663 @@
+{
+  "_meta": {
+    "description": "Master taxonomy for BioTechStocks screener \u2014 L1.L2.L3 hierarchical tags",
+    "generated": "2026-04-09",
+    "format": "L1.L2.L3 hierarchical tags",
+    "rules": [
+      "Every L3 term must appear under exactly ONE L1.L2 parent (no duplicates across branches)",
+      "Disease classification follows the organ/system affected, not the treatment mechanism",
+      "No 'multi_indication' catch-alls \u2014 use the lead/primary indication",
+      "Rare diseases get 'rare: true' on the indication object, not the area tag",
+      "Commercial products need penPct set to actual market share (revenue / TAM)"
+    ],
+    "area_count": 106,
+    "modality_count": 106,
+    "companies": 39
+  },
+  "therapeutic_areas": {
+    "cardio_metabolic": {
+      "attr": {
+        "attr_cm": {
+          "companies": [
+            "ALNY",
+            "BBIO"
+          ],
+          "count": 2,
+          "rare": true
+        },
+        "attr_pn": {
+          "companies": [
+            "IONS"
+          ],
+          "count": 1,
+          "rare": true
+        }
+      },
+      "diabetes": {
+        "t1d": {
+          "companies": [
+            "CRSP",
+            "NKTR"
+          ],
+          "count": 2,
+          "rare": false
+        },
+        "t2d": {
+          "companies": [
+            "LLY",
+            "NAMS"
+          ],
+          "count": 2,
+          "rare": false
+        }
+      },
+      "hypertension": {
+        "agt_knockdown": {
+          "companies": [
+            "ALNY"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "lipids": {
+        "anticoagulation": {
+          "companies": [
+            "4568"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "cv_outcomes": {
+          "companies": [
+            "NAMS"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "ldl_lowering": {
+          "companies": [
+            "ARWR",
+            "NAMS"
+          ],
+          "count": 2,
+          "rare": false
+        },
+        "lpa": {
+          "companies": [
+            "ARWR",
+            "CRSP",
+            "IONS"
+          ],
+          "count": 3,
+          "rare": false
+        },
+        "triglycerides": {
+          "companies": [
+            "ARWR",
+            "IONS"
+          ],
+          "count": 2,
+          "rare": true
+        }
+      },
+      "liver": {
+        "a1at": {
+          "companies": [
+            "CRSP"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "hbv_functional_cure": {
+          "companies": [
+            "GILD",
+            "IONS"
+          ],
+          "count": 2,
+          "rare": false
+        },
+        "mash": {
+          "companies": [
+            "MDGL"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "pld_adpkd": {
+          "companies": [
+            "CAMX"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "obesity": {
+        "glp1_incretin": {
+          "companies": [
+            "CAMX",
+            "LLY"
+          ],
+          "count": 2,
+          "rare": false
+        },
+        "kv7": {
+          "companies": [
+            "BHVN"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "mc4r": {
+          "companies": [
+            "NBIX",
+            "RYTM",
+            "SLNO"
+          ],
+          "count": 3,
+          "rare": true
+        },
+        "rnai_obesity": {
+          "companies": [
+            "ARWR"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "rare_metabolic": {
+        "hyperoxaluria": {
+          "companies": [
+            "ALNY"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "porphyria": {
+          "companies": [
+            "ALNY"
+          ],
+          "count": 1,
+          "rare": true
+        }
+      }
+    },
+    "cns": {
+      "epilepsy": {
+        "dee": {
+          "companies": [
+            "PRAX"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "focal": {
+          "companies": [
+            "BHVN",
+            "PRAX",
+            "UCB"
+          ],
+          "count": 3,
+          "rare": false
+        },
+        "generalized": {
+          "companies": [
+            "PRAX"
+          ],
+          "count": 1,
+          "rare": true
+        }
+      },
+      "movement": {
+        "essential_tremor": {
+          "companies": [
+            "PRAX"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "tardive_dyskinesia": {
+          "companies": [
+            "NBIX"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "neurodegeneration": {
+        "alexander": {
+          "companies": [
+            "IONS"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "als": {
+          "companies": [
+            "CRVO"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "alzheimer": {
+          "companies": [
+            "ARWR",
+            "AXSM",
+            "LLY",
+            "NAMS"
+          ],
+          "count": 4,
+          "rare": false
+        },
+        "caa": {
+          "companies": [
+            "ALNY"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "dlb": {
+          "companies": [
+            "CRVO"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "ppa": {
+          "companies": [
+            "CRVO"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "stroke": {
+          "companies": [
+            "CRVO"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "pain": {
+        "migraine": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "psychiatry": {
+        "adhd": {
+          "companies": [
+            "AXSM"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "anxiety": {
+          "companies": [
+            "AXSM",
+            "DFTX"
+          ],
+          "count": 2,
+          "rare": false
+        },
+        "asd": {
+          "companies": [
+            "DFTX"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "depression": {
+          "companies": [
+            "AXSM",
+            "DFTX",
+            "NBIX"
+          ],
+          "count": 3,
+          "rare": false
+        },
+        "opioid_dependence": {
+          "companies": [
+            "CAMX"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "pain_fibromyalgia": {
+          "companies": [
+            "AXSM"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "schizophrenia": {
+          "companies": [
+            "ABBV",
+            "NBIX"
+          ],
+          "count": 2,
+          "rare": false
+        }
+      },
+      "sleep": {
+        "narcolepsy": {
+          "companies": [
+            "AXSM"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      }
+    },
+    "dermatology": {
+      "aesthetics": {
+        "filler": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "neurotoxin": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "inflammatory_derm": {
+        "atopic_dermatitis_systemic": {
+          "companies": [
+            "ARQT",
+            "KYMR",
+            "NKTR"
+          ],
+          "count": 3,
+          "rare": false
+        },
+        "atopic_dermatitis_topical": {
+          "companies": [
+            "ARQT"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "psoriasis_topical": {
+          "companies": [
+            "ARQT"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "rare_skin": {
+        "alopecia_areata": {
+          "companies": [
+            "ARQT",
+            "NKTR"
+          ],
+          "count": 2,
+          "rare": false
+        },
+        "deb": {
+          "companies": [
+            "KRYS"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "hailey_hailey": {
+          "companies": [
+            "KRYS"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "vitiligo": {
+          "companies": [
+            "ARQT"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      }
+    },
+    "endocrine": {
+      "adrenal": {
+        "cah": {
+          "companies": [
+            "NBIX"
+          ],
+          "count": 1,
+          "rare": true
+        }
+      },
+      "calcium": {
+        "adh1": {
+          "companies": [
+            "BBIO"
+          ],
+          "count": 1,
+          "rare": true
+        }
+      },
+      "pituitary": {
+        "acromegaly": {
+          "companies": [
+            "CAMX"
+          ],
+          "count": 1,
+          "rare": true
+        }
+      },
+      "thyroid": {
+        "graves": {
+          "companies": [
+            "BHVN"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      }
+    },
+    "hematology": {
+      "rare_blood": {
+        "hemoglobinopathy": {
+          "companies": [
+            "CRSP"
+          ],
+          "count": 1,
+          "rare": true
+        }
+      }
+    },
+    "immunology": {
+      "autoimmune": {
+        "hereditary_angioedema": {
+          "companies": [
+            "IONS"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "iga_nephropathy": {
+          "companies": [
+            "BHVN"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "sjogrens": {
+          "companies": [
+            "ARGX"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "sle": {
+          "companies": [
+            "CRSP",
+            "JANX",
+            "KYMR",
+            "UCB"
+          ],
+          "count": 4,
+          "rare": false
+        }
+      },
+      "inflammatory_gi": {
+        "crohns": {
+          "companies": [
+            "ABBV",
+            "ABVX"
+          ],
+          "count": 2,
+          "rare": false
+        },
+        "ulcerative_colitis": {
+          "companies": [
+            "ABVX"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "inflammatory_systemic": {
+        "hs": {
+          "companies": [
+            "KYMR"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "psoriasis": {
+          "companies": [
+            "ABBV",
+            "LLY",
+            "UCB"
+          ],
+          "count": 3,
+          "rare": false
+        },
+        "rheumatoid_arthritis": {
+          "companies": [
+            "ABBV",
+            "UCB"
+          ],
+          "count": 2,
+          "rare": false
+        }
+      },
+      "neuromuscular_autoimmune": {
+        "itp": {
+          "companies": [
+            "ARGX"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "mmn": {
+          "companies": [
+            "ARGX"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "myasthenia_gravis": {
+          "companies": [
+            "ARGX"
+          ],
+          "count": 1,
+          "rare": true
+        }
+      }
+    },
+    "infectious_disease": {
+      "anti_infective": {
+        "hiv_prevention": {
+          "companies": [
+            "GILD"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "hiv_treatment": {
+          "companies": [
+            "GILD"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "vaccines": {
+        "chikungunya": {
+          "companies": [
+            "VLA"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "lyme": {
+          "companies": [
+            "VLA"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "shigella_zika": {
+          "companies": [
+            "VLA"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "travel": {
+          "companies": [
+            "VLA"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      }
+    },
+    "musculoskeletal": {
+      "bone_cartilage": {
+        "achondroplasia": {
+          "companies": [
+            "BBIO"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "osteoporosis": {
+          "companies": [
+            "UCB"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "neuromuscular": {
+        "cms": {
+          "companies": [
+            "ARGX"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "dm1": {
+          "companies": [
+            "PEPG"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "dmd": {
+          "companies": [
+            "PEPG"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "lgmd": {
+          "companies": [
+            "BBIO"
+          ],
+          "count": 1,
+          "rare": true
+        }
+      }
+    },
+    "oncology": {
+      "breast": {
+        "her2_pos": {
+          "companies": [
+            "4568",
+            "6990"
+          ],
+          "count": 2,
+          "rare": false
+        },
+        "hr_her2_neg": {
+          "companies": [
+            "CELC",
+            "KYMR",
+            "LLY"
+          ],
+          "count": 3,
+          "rare": false
+        },
+        "tnbc": {
+          "companies": [
+            "6990",
+            "GILD"
+          ],
+          "count": 2,
+          "rare": false
+        }
+      },
+      "genitourinary": {
+        "bladder": {
+          "companies": [
+            "6990",
+            "BCYC"
+          ],
+          "count": 2,
+          "rare": false
+        },
+        "prostate": {
+          "companies": [
+            "CELC",
+            "JANX"
+          ],
+          "count": 2,
+          "rare": false
+        }
+      },
+      "gi": {
+        "colorectal": {
+          "companies": [
+            "BHVN",
+            "JANX",
+            "RVMD"
+          ],
+          "count": 3,
+          "rare": false
+        },
+        "gastric_esoph": {
+          "companies": [
+            "6990",
+            "ONC"
+          ],
+          "count": 2,
+          "rare": false
+        },
+        "hcc": {
+          "companies": [
+            "ONC"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "pancreatic": {
+          "companies": [
+            "BCYC",
+            "RVMD"
+          ],
+          "count": 2,
+          "rare": false
+        }
+      },
+      "gynecologic": {
+        "ovarian": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "hematology": {
+        "aml": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "cll_nhl": {
+          "companies": [
+            "ABBV",
+            "LEGN",
+            "NKTR",
+            "ONC"
+          ],
+          "count": 4,
+          "rare": false
+        },
+        "myeloma": {
+          "companies": [
+            "GILD",
+            "LEGN"
+          ],
+          "count": 2,
+          "rare": false
+        }
+      },
+      "lung": {
+        "nsclc_driver": {
+          "companies": [
+            "4568",
+            "ABBV",
+            "KRYS",
+            "NUVL",
+            "RVMD"
+          ],
+          "count": 5,
+          "rare": false
+        },
+        "nsclc_undruggable": {
+          "companies": [
+            "BCYC",
+            "JANX"
+          ],
+          "count": 2,
+          "rare": false
+        },
+        "sclc": {
+          "companies": [
+            "4568"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "multi_tumor": {
+        "adc_platform": {
+          "companies": [
+            "6990"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "bicycle_discovery": {
+          "companies": [
+            "BCYC"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "neuroendocrine": {
+        "gepnet": {
+          "companies": [
+            "CAMX"
+          ],
+          "count": 1,
+          "rare": true
+        }
+      }
+    },
+    "ophthalmology": {
+      "anterior_neuro": {
+        "deb_ocular": {
+          "companies": [
+            "KRYS"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "dry_eye": {
+          "companies": [
+            "OCS"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "naion": {
+          "companies": [
+            "OCS"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "neurotrophic_keratitis": {
+          "companies": [
+            "KRYS"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "optic_neuritis": {
+          "companies": [
+            "OCS"
+          ],
+          "count": 1,
+          "rare": true
+        },
+        "ted": {
+          "companies": [
+            "VRDN"
+          ],
+          "count": 1,
+          "rare": true
+        }
+      },
+      "retina": {
+        "dme": {
+          "companies": [
+            "OCS"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      }
+    },
+    "respiratory": {
+      "genetic": {
+        "cystic_fibrosis": {
+          "companies": [
+            "KRYS"
+          ],
+          "count": 1,
+          "rare": true
+        }
+      }
+    }
+  },
+  "modalities": {
+    "adc": {
+      "dxd_linker": {
+        "b7h3_adc": {
+          "companies": [
+            "4568"
+          ],
+          "count": 1
+        },
+        "cldn18_adc": {
+          "companies": [
+            "6990"
+          ],
+          "count": 1
+        },
+        "cmet_adc": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1
+        },
+        "folr1_adc": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1
+        },
+        "her2_adc": {
+          "companies": [
+            "4568",
+            "6990"
+          ],
+          "count": 2
+        },
+        "her3_adc": {
+          "companies": [
+            "4568"
+          ],
+          "count": 1
+        },
+        "nectin4_adc": {
+          "companies": [
+            "6990"
+          ],
+          "count": 1
+        },
+        "trop2_adc": {
+          "companies": [
+            "4568",
+            "6990",
+            "GILD"
+          ],
+          "count": 3
+        }
+      },
+      "multi_payload": {
+        "rdc_iadc_dac": {
+          "companies": [
+            "6990"
+          ],
+          "count": 1
+        }
+      },
+      "peptide_drug_conjugate": {
+        "bdc_epha2": {
+          "companies": [
+            "BCYC"
+          ],
+          "count": 1
+        },
+        "bdc_nectin4": {
+          "companies": [
+            "BCYC"
+          ],
+          "count": 1
+        },
+        "bicycle_platform": {
+          "companies": [
+            "BCYC"
+          ],
+          "count": 1
+        }
+      },
+      "radioconjugate": {
+        "brc_lead212": {
+          "companies": [
+            "BCYC"
+          ],
+          "count": 1
+        }
+      }
+    },
+    "antibody": {
+      "agonist_antibody": {
+        "musk_agonist": {
+          "companies": [
+            "ARGX"
+          ],
+          "count": 1
+        }
+      },
+      "bispecific": {
+        "cd19_arm_modulator": {
+          "companies": [
+            "JANX"
+          ],
+          "count": 1
+        },
+        "nav1_7_blocker": {
+          "companies": [
+            "UCB"
+          ],
+          "count": 1
+        },
+        "tumor_activated_tce": {
+          "companies": [
+            "JANX"
+          ],
+          "count": 1
+        }
+      },
+      "bispecific_agonist": {
+        "nectin4_x_cd137": {
+          "companies": [
+            "BCYC"
+          ],
+          "count": 1
+        }
+      },
+      "fc_fragment": {
+        "fcrn_blocker": {
+          "companies": [
+            "ARGX",
+            "VRDN"
+          ],
+          "count": 2
+        }
+      },
+      "monoclonal": {
+        "anti_amyloid": {
+          "companies": [
+            "LLY"
+          ],
+          "count": 1
+        },
+        "anti_c2_complement": {
+          "companies": [
+            "ARGX"
+          ],
+          "count": 1
+        },
+        "anti_cd40l": {
+          "companies": [
+            "UCB"
+          ],
+          "count": 1
+        },
+        "anti_il13": {
+          "companies": [
+            "ARQT"
+          ],
+          "count": 1
+        },
+        "anti_il17a": {
+          "companies": [
+            "LLY"
+          ],
+          "count": 1
+        },
+        "anti_il17a_f": {
+          "companies": [
+            "UCB"
+          ],
+          "count": 1
+        },
+        "anti_il23": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1
+        },
+        "anti_pd1": {
+          "companies": [
+            "ONC"
+          ],
+          "count": 1
+        },
+        "anti_sclerostin": {
+          "companies": [
+            "UCB"
+          ],
+          "count": 1
+        },
+        "anti_tnf": {
+          "companies": [
+            "ABBV",
+            "UCB"
+          ],
+          "count": 2
+        },
+        "anti_ttr": {
+          "companies": [
+            "BBIO"
+          ],
+          "count": 1
+        },
+        "anti_vegf": {
+          "companies": [
+            "OCS"
+          ],
+          "count": 1
+        }
+      }
+    },
+    "biologic": {
+      "hyaluronic_acid": {
+        "dermal_filler": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1
+        }
+      },
+      "neurotoxin": {
+        "botulinum_cosmetic": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1
+        },
+        "botulinum_type_a": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1
+        }
+      }
+    },
+    "cell_therapy": {
+      "car_t_allogeneic": {
+        "cd19_allo_car_t": {
+          "companies": [
+            "LEGN"
+          ],
+          "count": 1
+        }
+      },
+      "car_t_autoimmune": {
+        "cd19_autoimmune": {
+          "companies": [
+            "CRSP"
+          ],
+          "count": 1
+        }
+      },
+      "car_t_autologous": {
+        "bcma_car_t": {
+          "companies": [
+            "GILD",
+            "LEGN"
+          ],
+          "count": 2
+        }
+      },
+      "car_t_in_vivo": {
+        "lnp_car_t": {
+          "companies": [
+            "LEGN"
+          ],
+          "count": 1
+        }
+      }
+    },
+    "formulation_platform": {
+      "long_acting_depot": {
+        "fluidcrystal_incretin": {
+          "companies": [
+            "CAMX"
+          ],
+          "count": 1
+        },
+        "fluidcrystal_sc": {
+          "companies": [
+            "CAMX"
+          ],
+          "count": 1
+        }
+      }
+    },
+    "gene_therapy": {
+      "gene_editing": {
+        "crispr_cas9_exvivo": {
+          "companies": [
+            "CRSP"
+          ],
+          "count": 1
+        },
+        "crispr_cas9_invivo": {
+          "companies": [
+            "CRSP"
+          ],
+          "count": 1
+        }
+      },
+      "gene_replacement": {
+        "hsv1_vector": {
+          "companies": [
+            "KRYS"
+          ],
+          "count": 1
+        }
+      },
+      "oligonucleotide_splice": {
+        "edon_pmo": {
+          "companies": [
+            "PEPG"
+          ],
+          "count": 1
+        }
+      }
+    },
+    "nucleic_acid": {
+      "antisense": {
+        "galnac_aso": {
+          "companies": [
+            "IONS",
+            "PRAX"
+          ],
+          "count": 2
+        }
+      },
+      "sirna": {
+        "galnac_sirna": {
+          "companies": [
+            "ALNY"
+          ],
+          "count": 1
+        },
+        "galnac_sirna_nextgen": {
+          "companies": [
+            "ALNY"
+          ],
+          "count": 1
+        }
+      },
+      "trirna": {
+        "arrow_trirna": {
+          "companies": [
+            "ARWR"
+          ],
+          "count": 1
+        },
+        "pcsk9_apoc3_dual": {
+          "companies": [
+            "ARWR"
+          ],
+          "count": 1
+        }
+      }
+    },
+    "pegylated_protein": {
+      "pegylated_cytokine": {
+        "peg_il15": {
+          "companies": [
+            "NKTR"
+          ],
+          "count": 1
+        },
+        "peg_il2": {
+          "companies": [
+            "NKTR"
+          ],
+          "count": 1
+        }
+      }
+    },
+    "peptide": {
+      "gpcr_agonist": {
+        "glp1_gip_dual": {
+          "companies": [
+            "LLY"
+          ],
+          "count": 1
+        },
+        "glp1_gip_glucagon_triple": {
+          "companies": [
+            "LLY"
+          ],
+          "count": 1
+        }
+      }
+    },
+    "small_molecule": {
+      "combination": {
+        "thr_beta_glp1_dgat2": {
+          "companies": [
+            "MDGL"
+          ],
+          "count": 1
+        }
+      },
+      "enzyme_inhibitor": {
+        "bcl2_inhibitor": {
+          "companies": [
+            "ABBV",
+            "ONC"
+          ],
+          "count": 2
+        },
+        "cetp_inhibitor": {
+          "companies": [
+            "NAMS"
+          ],
+          "count": 1
+        },
+        "cyp11b1_inhibitor": {
+          "companies": [
+            "NBIX"
+          ],
+          "count": 1
+        },
+        "diazoxide": {
+          "companies": [
+            "NBIX",
+            "SLNO"
+          ],
+          "count": 2
+        },
+        "factor_xa_inhibitor": {
+          "companies": [
+            "4568"
+          ],
+          "count": 1
+        },
+        "integrase_inhibitor": {
+          "companies": [
+            "GILD"
+          ],
+          "count": 1
+        },
+        "nrti": {
+          "companies": [
+            "GILD"
+          ],
+          "count": 1
+        },
+        "p38_mapk_inhibitor": {
+          "companies": [
+            "CRVO"
+          ],
+          "count": 1
+        },
+        "pde4_inhibitor": {
+          "companies": [
+            "ARQT",
+            "OCS"
+          ],
+          "count": 2
+        },
+        "ribitol_substrate": {
+          "companies": [
+            "BBIO"
+          ],
+          "count": 1
+        },
+        "s1p_modulator": {
+          "companies": [
+            "ABVX"
+          ],
+          "count": 1
+        },
+        "sglt2_inhibitor": {
+          "companies": [
+            "LLY"
+          ],
+          "count": 1
+        }
+      },
+      "gpcr_agonist": {
+        "oral_glp1": {
+          "companies": [
+            "LLY"
+          ],
+          "count": 1
+        }
+      },
+      "gpcr_modulator": {
+        "mc4r_agonist": {
+          "companies": [
+            "RYTM"
+          ],
+          "count": 1
+        },
+        "muscarinic_agonist": {
+          "companies": [
+            "NBIX"
+          ],
+          "count": 1
+        }
+      },
+      "ion_channel": {
+        "gaba_modulator": {
+          "companies": [
+            "AXSM"
+          ],
+          "count": 1
+        },
+        "sv2a_modulator": {
+          "companies": [
+            "UCB"
+          ],
+          "count": 1
+        }
+      },
+      "ion_channel_modulator": {
+        "kv7_opener": {
+          "companies": [
+            "BHVN"
+          ],
+          "count": 1
+        },
+        "nav_channel": {
+          "companies": [
+            "PRAX",
+            "UCB"
+          ],
+          "count": 2
+        },
+        "nav_channel_blocker": {
+          "companies": [
+            "PRAX"
+          ],
+          "count": 1
+        }
+      },
+      "jak_inhibitor": {
+        "jak1_selective": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1
+        },
+        "jak1_topical": {
+          "companies": [
+            "ARQT"
+          ],
+          "count": 1
+        }
+      },
+      "kinase_inhibitor": {
+        "alk_inhibitor": {
+          "companies": [
+            "NUVL"
+          ],
+          "count": 1
+        },
+        "bcl2_btk_next_gen": {
+          "companies": [
+            "ONC"
+          ],
+          "count": 1
+        },
+        "btk_covalent": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1
+        },
+        "btk_inhibitor": {
+          "companies": [
+            "ONC"
+          ],
+          "count": 1
+        },
+        "cdk4_6_inhibitor": {
+          "companies": [
+            "LLY"
+          ],
+          "count": 1
+        },
+        "fgfr3_inhibitor": {
+          "companies": [
+            "BBIO"
+          ],
+          "count": 1
+        },
+        "her2_kinase": {
+          "companies": [
+            "NUVL"
+          ],
+          "count": 1
+        },
+        "pi3k_inhibitor": {
+          "companies": [
+            "CELC"
+          ],
+          "count": 1
+        },
+        "ras_on_inhibitor": {
+          "companies": [
+            "RVMD"
+          ],
+          "count": 1
+        },
+        "ros1_inhibitor": {
+          "companies": [
+            "NUVL"
+          ],
+          "count": 1
+        },
+        "undisclosed": {
+          "companies": [
+            "NUVL"
+          ],
+          "count": 1
+        }
+      },
+      "nuclear_receptor": {
+        "thr_beta_agonist": {
+          "companies": [
+            "MDGL"
+          ],
+          "count": 1
+        }
+      },
+      "protein_degrader": {
+        "btk_cdac": {
+          "companies": [
+            "ONC"
+          ],
+          "count": 1
+        },
+        "mode_trap": {
+          "companies": [
+            "BHVN"
+          ],
+          "count": 1
+        },
+        "molecular_glue": {
+          "companies": [
+            "KYMR"
+          ],
+          "count": 1
+        }
+      },
+      "psychedelic_compound": {
+        "mm120_lsd": {
+          "companies": [
+            "DFTX"
+          ],
+          "count": 1
+        }
+      },
+      "receptor_agonist": {
+        "m4_muscarinic_agonist": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1
+        },
+        "muscarinic_m1_m4": {
+          "companies": [
+            "NBIX"
+          ],
+          "count": 1
+        }
+      },
+      "receptor_antagonist": {
+        "ampa_modulator": {
+          "companies": [
+            "NBIX"
+          ],
+          "count": 1
+        },
+        "capsid_inhibitor": {
+          "companies": [
+            "GILD"
+          ],
+          "count": 1
+        },
+        "casr_antagonist": {
+          "companies": [
+            "BBIO"
+          ],
+          "count": 1
+        },
+        "cgrp_antagonist": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1
+        },
+        "d2_d3_partial_agonist": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1
+        },
+        "dri_modulator": {
+          "companies": [
+            "AXSM"
+          ],
+          "count": 1
+        },
+        "nmda_modulator": {
+          "companies": [
+            "AXSM"
+          ],
+          "count": 1
+        },
+        "nmda_sigma1": {
+          "companies": [
+            "AXSM"
+          ],
+          "count": 1
+        },
+        "vmat2_inhibitor": {
+          "companies": [
+            "NBIX"
+          ],
+          "count": 1
+        }
+      },
+      "reuptake_inhibitor": {
+        "dat_net": {
+          "companies": [
+            "AXSM"
+          ],
+          "count": 1
+        }
+      },
+      "stabilizer": {
+        "ttr_stabilizer": {
+          "companies": [
+            "BBIO"
+          ],
+          "count": 1
+        }
+      }
+    },
+    "vaccine": {
+      "protein_subunit": {
+        "vlp_conjugate": {
+          "companies": [
+            "VLA"
+          ],
+          "count": 1
+        }
+      }
+    }
+  }
+}

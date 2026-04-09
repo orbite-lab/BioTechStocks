@@ -142,7 +142,7 @@ const PHASE_ORDER=["commercial","nda_filed","phase3","phase2","phase1"];
 
 function deriveCompanyMeta(cfg){
   const areas=new Set(),modalities=new Set(),areaTAM={},areaWTD={};
-  let totalTAM=0,rareTAM=0,totalWTD=0,rareWTD=0,pipeTAM=0,pipeWTD=0;
+  let totalTAM=0,rareTAM=0,totalWTD=0,rareWTD=0;
   const baseAssump=cfg.scenarios?.base?.assumptions||{};
   for(const asset of cfg.assets){
     if(asset.modality){modalities.add(asset.modality);const p=asset.modality.split(".");modalities.add(p[0]);if(p[1])modalities.add(p[0]+"."+p[1]);}
@@ -159,21 +159,20 @@ function deriveCompanyMeta(cfg){
         if(p[1]){areaTAM[p[0]+"."+p[1]]=(areaTAM[p[0]+"."+p[1]]||0)+tam;areaWTD[p[0]+"."+p[1]]=(areaWTD[p[0]+"."+p[1]]||0)+wtd;}
         areaTAM[p[0]]=(areaTAM[p[0]]||0)+tam;areaWTD[p[0]]=(areaWTD[p[0]]||0)+wtd;
         totalTAM+=tam;totalWTD+=wtd;
-        if(pos<1||apr<1){pipeTAM+=tam;pipeWTD+=wtd;}
         if(ind.rare){rareTAM+=tam;rareWTD+=wtd;}
       }
     }
   }
   const mkFocus=(tamMap,total)=>total>0?Object.entries(tamMap).filter(([k])=>k.split(".").length>=2).map(([area,t])=>({area,purity:Math.round(t/total*100)})).sort((a,b)=>b.purity-a.purity):[];
-  // Optionality = pipeline-only leverage (excludes commercial at 100% PoS)
-  const optionality=pipeWTD>0?Math.round((pipeTAM/pipeWTD-1)*100):0;
+  // Optionality = total TAM leverage (raw / risk-adjusted - 1)
+  const optionality=totalWTD>0?Math.round((totalTAM/totalWTD-1)*100):0;
   return{areas:[...areas],modalities:[...modalities],
     focus:mkFocus(areaTAM,totalTAM),focusWtd:mkFocus(areaWTD,totalWTD),
     phase:cfg.company.phase||"phase1",
     rare:cfg.assets.some(a=>a.indications.some(i=>i.rare)),
     rarePurity:totalTAM>0?Math.round(rareTAM/totalTAM*100):0,
     rarePurityWtd:totalWTD>0?Math.round(rareWTD/totalWTD*100):0,
-    optionality,totalTAM,totalWTD,pipeTAM,pipeWTD};
+    optionality,totalTAM,totalWTD};
 }
 
 function computeScenario(cfg,scenKey,state){
@@ -592,47 +591,46 @@ async function main(){
     h+='<div class="card-sub">Upside / downside to scenario targets · Dots right of 0% = upside</div>';
     h+=buildRangeStrip(visibleRows,activeArea,filterRare,stripSort,purityMode);
 
-    // Optionality card — responds to purity toggle
-    const isPipeMode=purityMode==='wtd';
-    const optCalc=r=>{const raw=isPipeMode?r.meta.pipeTAM:r.meta.totalTAM,wtd=isPipeMode?r.meta.pipeWTD:r.meta.totalWTD;return{raw,wtd,opt:wtd>0?Math.round((raw/wtd-1)*100):0};};
-    const optRows=[...visibleRows].filter(r=>{const o=optCalc(r);return o.opt>10&&o.raw>0&&!(r.evUSD>0&&r.meta.totalWTD>0&&r.evUSD>r.meta.totalWTD);}).sort((a,b)=>optCalc(b).opt-optCalc(a).opt);
+    // Optionality card — total TAM (raw vs risk-adjusted)
+    const optRows=[...visibleRows].filter(r=>r.meta.optionality>10&&r.meta.totalTAM>0&&!(r.evUSD>0&&r.meta.totalWTD>0&&r.evUSD>r.meta.totalWTD)).sort((a,b)=>b.meta.optionality-a.meta.optionality);
     if(optRows.length>0){
-      const maxRaw=Math.max(...optRows.map(r=>optCalc(r).raw));
+      const maxRaw=Math.max(...optRows.map(r=>r.meta.totalTAM));
       h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#f59e0b,#ef4444)"></div>Pipeline Optionality</div>';
-      h+=`<div class="card-sub">${isPipeMode?'Pipeline-only TAM (excludes commercial at 100% PoS)':'Total TAM (all assets incl. commercial)'} vs current EV — toggle with Purity button above</div>`;
+      h+='<div class="card-sub">Total TAM bars (all assets) · Optionality % = pipeline-only leverage (excludes commercial at 100% PoS) · EV marker = current market valuation</div>';
       h+='<div style="padding:8px 0">';
       optRows.slice(0,15).forEach(r=>{
-        const {raw,wtd,opt}=optCalc(r);
+        const raw=r.meta.totalTAM,wtd=r.meta.totalWTD;
         const evB=r.evUSD;
         const rawPct=(raw/maxRaw)*100;
         const wtdPct=(wtd/maxRaw)*100;
         const evPct=Math.min((evB/maxRaw)*100,100);
+        const opt=r.meta.optionality;
         const optCol=opt>200?'#ef4444':opt>100?'#f59e0b':'#22c55e';
-        const pricedIn=r.meta.totalWTD>0?Math.round(evB/r.meta.totalWTD*100):0;
+        const pricedIn=wtd>0?Math.round(evB/wtd*100):0;
         const piCol=pricedIn>80?'#ef4444':pricedIn>40?'#f59e0b':'#22c55e';
         h+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">`;
         h+=`<a href="model.html?ticker=${r.ticker}" style="width:48px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.75rem;color:#60a5fa;text-decoration:none">${r.ticker}</a>`;
         h+=`<span style="width:48px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.68rem;color:${optCol}">${opt>=1000?(opt/100).toFixed(0)+'x':opt+'%'}</span>`;
         h+=`<div style="flex:1;position:relative;height:32px">`;
-        h+=`<div style="position:absolute;top:0;left:0;height:14px;width:${rawPct}%;background:#f97316;opacity:.25;border-radius:4px" title="${isPipeMode?'Pipeline':'Total'} raw TAM: $${raw.toFixed(0)}B"></div>`;
+        h+=`<div style="position:absolute;top:0;left:0;height:14px;width:${rawPct}%;background:#f97316;opacity:.25;border-radius:4px" title="Raw TAM: $${raw.toFixed(0)}B"></div>`;
         h+=`<div style="position:absolute;top:0;left:0;height:14px;width:${rawPct}%;border:1.5px solid #f9731666;border-radius:4px;box-sizing:border-box"></div>`;
-        h+=`<div style="position:absolute;top:17px;left:0;height:14px;width:${wtdPct}%;background:#22c55e;opacity:.35;border-radius:4px" title="${isPipeMode?'Pipeline':'Total'} risk-adj TAM: $${wtd.toFixed(1)}B"></div>`;
+        h+=`<div style="position:absolute;top:17px;left:0;height:14px;width:${wtdPct}%;background:#22c55e;opacity:.35;border-radius:4px" title="Risk-adj TAM: $${wtd.toFixed(1)}B"></div>`;
         h+=`<div style="position:absolute;top:17px;left:0;height:14px;width:${wtdPct}%;border:1.5px solid #22c55e66;border-radius:4px;box-sizing:border-box"></div>`;
         if(evPct>0){
           h+=`<div style="position:absolute;top:-3px;left:${evPct}%;width:2.5px;height:38px;background:#fff;border-radius:1px;z-index:2;opacity:.9" title="Current EV: $${evB.toFixed(1)}B"></div>`;
           h+=`<div style="position:absolute;top:-14px;left:${evPct}%;transform:translateX(-50%);font-size:.58rem;font-family:var(--mono);color:#fff;font-weight:800;white-space:nowrap;z-index:3">$${evB>=1?evB.toFixed(0):evB.toFixed(1)}B</div>`;
         }
         h+=`<span style="position:absolute;top:0;left:${rawPct+0.5}%;font-size:.58rem;font-family:var(--mono);color:#f97316;white-space:nowrap;padding-left:4px">$${raw.toFixed(0)}B</span>`;
-        h+=`<span style="position:absolute;top:17px;left:${wtdPct+0.5}%;font-size:.58rem;font-family:var(--mono);color:#22c55e;white-space:nowrap;padding-left:4px">$${wtd.toFixed(1)}B</span>`;
+        h+=`<span style="position:absolute;top:17px;left:${wtdPct+0.5}%;font-size:.58rem;font-family:var(--mono);color:#22c55e;white-space:nowrap;padding-left:4px">$${wtd.toFixed(0)}B</span>`;
         h+=`</div>`;
         h+=`<span style="width:64px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.68rem;color:${piCol};flex-shrink:0">${pricedIn}% in</span>`;
         h+=`</div>`;
       });
       h+='<div style="display:flex;gap:16px;margin-top:10px;font-size:.65rem;color:var(--text2);flex-wrap:wrap">';
-      h+=`<span><span style="display:inline-block;width:20px;height:8px;background:#f97316;opacity:.4;border:1px solid #f9731666;border-radius:2px;vertical-align:middle;margin-right:4px"></span>${isPipeMode?'Pipeline':'Total'} raw TAM</span>`;
-      h+=`<span><span style="display:inline-block;width:20px;height:8px;background:#22c55e;opacity:.4;border:1px solid #22c55e66;border-radius:2px;vertical-align:middle;margin-right:4px"></span>${isPipeMode?'Pipeline':'Total'} risk-adj TAM</span>`;
+      h+='<span><span style="display:inline-block;width:20px;height:8px;background:#f97316;opacity:.4;border:1px solid #f9731666;border-radius:2px;vertical-align:middle;margin-right:4px"></span>Total raw TAM</span>';
+      h+='<span><span style="display:inline-block;width:20px;height:8px;background:#22c55e;opacity:.4;border:1px solid #22c55e66;border-radius:2px;vertical-align:middle;margin-right:4px"></span>Total risk-adj TAM</span>';
       h+='<span><span style="display:inline-block;width:3px;height:10px;background:#fff;border-radius:1px;vertical-align:middle;margin-right:4px"></span>Current EV</span>';
-      h+='<span>% in = EV \u00f7 total risk-adj TAM</span>';
+      h+='<span>Optionality % = pipeline only (excl. commercial at 100% PoS)</span>';
       h+='</div></div></div>';
     }
 

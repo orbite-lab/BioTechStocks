@@ -135,8 +135,8 @@ const SK=["mega_bear","bear","base","bull","psychedelic_bull"];
 const SN={mega_bear:"Mega Bear",bear:"Bear",base:"Base",bull:"Bull",psychedelic_bull:"Psych Bull"};
 const SC={mega_bear:"#991b1b",bear:"#ef4444",base:"#f59e0b",bull:"#22c55e",psychedelic_bull:"#a855f7"};
 const SS={mega_bear:"s-mb",bear:"s-br",base:"s-bs",bull:"s-bl",psychedelic_bull:"s-pb"};
-const L1_NAMES={oncology:"Oncology",cns:"CNS",immunology:"Immunology",cardio_metabolic:"Cardio-Metabolic",dermatology:"Derm",ophthalmology:"Ophtho",infectious_disease:"Infectious",musculoskeletal:"MSK",endocrine:"Endocrine"};
-const L1_ORDER=["oncology","cns","immunology","cardio_metabolic","dermatology","ophthalmology","infectious_disease","musculoskeletal","endocrine"];
+const L1_NAMES={oncology:"Oncology",cns:"CNS",immunology:"Immunology",cardio_metabolic:"Cardio-Metabolic",dermatology:"Derm",ophthalmology:"Ophtho",infectious_disease:"Infectious",musculoskeletal:"MSK",endocrine:"Endocrine",respiratory:"Respiratory",hematology:"Hematology"};
+const L1_ORDER=["oncology","cns","immunology","cardio_metabolic","dermatology","respiratory","ophthalmology","infectious_disease","musculoskeletal","endocrine","hematology"];
 const PHASE_NAMES={commercial:"Commercial",nda_filed:"NDA Filed",phase3:"Phase 3",phase2:"Phase 2",phase1:"Phase 1"};
 const PHASE_ORDER=["commercial","nda_filed","phase3","phase2","phase1"];
 
@@ -527,6 +527,11 @@ async function main(){
       const active=filterL1===l1;
       h+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')">${L1_NAMES[l1]||l1}<span class="cnt">${l1Counts[l1]}</span></span>`;
     });
+    // Fallback: show any L1 from data not in L1_ORDER
+    Object.keys(l1Counts).filter(l1=>!L1_ORDER.includes(l1)).sort().forEach(l1=>{
+      const active=filterL1===l1;
+      h+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')">${L1_NAMES[l1]||l1.replace(/_/g,' ')}<span class="cnt">${l1Counts[l1]}</span></span>`;
+    });
     h+='<span class="fsep"></span>';
     h+='<span class="fbar-lbl">Phase</span>';
     h+=`<select class="fsel" onchange="window._fPhase(this.value)"><option value="">All</option>`;
@@ -572,14 +577,19 @@ async function main(){
     }
 
     // Modality filter row
-    const MOD_NAMES={small_molecule:"Small Molecule",antibody:"Antibody",adc:"ADC",nucleic_acid:"Nucleic Acid",gene_therapy:"Gene Therapy",cell_therapy:"Cell Therapy",pegylated_protein:"Peg Protein",vaccine:"Vaccine",formulation_platform:"Formulation"};
-    const MOD_ORDER=["small_molecule","antibody","adc","nucleic_acid","gene_therapy","cell_therapy","pegylated_protein","vaccine","formulation_platform"];
+    const MOD_NAMES={small_molecule:"Small Molecule",antibody:"Antibody",adc:"ADC",nucleic_acid:"Nucleic Acid",gene_therapy:"Gene Therapy",cell_therapy:"Cell Therapy",pegylated_protein:"Peg Protein",vaccine:"Vaccine",formulation_platform:"Formulation",biologic:"Biologic",peptide:"Peptide"};
+    const MOD_ORDER=["small_molecule","antibody","adc","nucleic_acid","gene_therapy","cell_therapy","peptide","biologic","pegylated_protein","vaccine","formulation_platform"];
     h+='<div class="fbar" style="margin-top:-10px;border-top:0;border-top-left-radius:0;border-top-right-radius:0">';
     h+='<span class="fbar-lbl">Platform</span>';
     MOD_ORDER.forEach(m1=>{
       if(!m1Counts[m1])return;
       const active=filterMod1===m1;
       h+=`<span class="fchip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod1('${m1}')">${MOD_NAMES[m1]||m1}<span class="cnt">${m1Counts[m1]}</span></span>`;
+    });
+    // Fallback: show any mod L1 from data not in MOD_ORDER
+    Object.keys(m1Counts).filter(m1=>!MOD_ORDER.includes(m1)).sort().forEach(m1=>{
+      const active=filterMod1===m1;
+      h+=`<span class="fchip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod1('${m1}')">${MOD_NAMES[m1]||m1.replace(/_/g,' ')}<span class="cnt">${m1Counts[m1]}</span></span>`;
     });
     h+='</div>';
 

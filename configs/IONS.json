@@ -2,56 +2,489 @@
   "company": {
     "ticker": "IONS",
     "name": "Ionis Pharmaceuticals",
-    "subtitle": "TRYNGOLZA $108M Y1 · Olezarsen sHTG PDUFA Apr 2026 · Donidalorsen launched · RNA platform leader",
+    "subtitle": "TRYNGOLZA $108M Y1 \u00b7 Olezarsen sHTG PDUFA Apr 2026 \u00b7 Donidalorsen launched \u00b7 RNA platform leader",
     "sharesOut": 147,
     "cash": 2400,
     "currentPrice": 35.0,
     "currency": "USD",
     "yahooTicker": "IONS",
-    "cashRunway": "Cash flow breakeven target 2028 (~$2.4B cash + growing revenue)"
+    "cashRunway": "Cash flow breakeven target 2028 (~$2.4B cash + growing revenue)",
+    "phase": "commercial",
+    "rare": true
   },
   "valuationType": "SOTP",
   "assets": [
-    {"id": "commercial", "name": "TRYNGOLZA (olezarsen) — FCS + sHTG", "stage": "Commercial FCS + sHTG sNDA (PDUFA Apr 3, 2026)", "designations": ["Breakthrough (sHTG)"],
-      "indications": [{"id": "tg", "name": "Triglyceride franchise (FCS launched + sHTG pending)", "market": {"notes": "TRYNGOLZA FCS: $108M 2025 revenue (first year). sHTG sNDA PDUFA Apr 3, 2026 — peak sales guided >$2B. Phase 3 CORE/CORE2: 72% TG reduction, 85% reduction in acute pancreatitis. sHTG = ~2M US patients vs ~3K FCS. This is the blockbuster catalyst."}}]},
-    {"id": "dawnzera", "name": "DAWNZERA (donidalorsen) — HAE", "stage": "Commercial (launched Q3 2025, EU approved Jan 2026)", "designations": ["First RNA-targeted HAE therapy"],
-      "indications": [{"id": "hae", "name": "Hereditary angioedema", "market": {"tamB": 3.5, "penPct": 12, "peakYear": 2031, "notes": "First RNA-targeted HAE prophylaxis. $7M Q4 2025 (first full quarter). Early launch momentum — all patient segments. EU launched Jan 2026. Competitors: Takhzyro (lanadelumab), Orladeyo (berotralstat)."}}]},
-    {"id": "zilgan", "name": "Zilganersen — Alexander disease", "stage": "NDA submitted Q1 2026", "designations": ["Orphan"],
-      "indications": [{"id": "axd", "name": "Alexander disease", "market": {"tamB": 0.3, "penPct": 30, "peakYear": 2030, "notes": "Ultra-rare fatal neurological disease. First disease-modifying therapy. Pivotal data positive — NDA Q1 2026. Small revenue but high-margin orphan. First independent neuro launch for Ionis."}}]},
-    {"id": "eplont", "name": "Eplontersen (WAINUA) — ATTR (partnered w/ AZ)", "stage": "Commercial (ATTRv-PN) + Phase 3 ATTR-CM (CARDIO-TTRansform H2 2026)", "designations": [],
-      "indications": [{"id": "attr", "name": "ATTR polyneuropathy + cardiomyopathy (AZ royalties)", "market": {"tamB": 10.0, "penPct": 8, "peakYear": 2033, "notes": "$212M total WAINUA sales 2025 → $49M royalty to Ionis. CARDIO-TTRansform ATTR-CM Phase 3 readout H2 2026 — massive TAM expansion. Partnered with AstraZeneca ($3.6B deal). If ATTR-CM positive: $5B+ peak sales potential."}}]},
-    {"id": "bepiro", "name": "Bepirovirsen — chronic Hep B (partnered w/ GSK)", "stage": "Phase 3 positive (B-Well 1 + 2 hit primary)", "designations": [],
-      "indications": [{"id": "hbv", "name": "Chronic hepatitis B functional cure", "market": {"tamB": 5.0, "penPct": 6, "peakYear": 2033, "notes": "B-Well 1+2 Phase 3 positive — first functional cure for CHB. Partnered with GSK. ~300M people with CHB globally. If approved: milestone + royalty stream."}}]},
-    {"id": "pelac", "name": "Pelacarsen — Lp(a) (partnered w/ Novartis)", "stage": "Phase 3 (HORIZON CVOT readout mid-2026)", "designations": [],
-      "indications": [{"id": "lpa", "name": "Lp(a) cardiovascular risk", "market": {"tamB": 8.0, "penPct": 5, "peakYear": 2034, "notes": "HORIZON Phase 3 CVOT readout mid-2026. Partnered with Novartis. >20% of population has elevated Lp(a). If positive: first Lp(a)-lowering therapy with outcomes data. Multi-billion peak sales for Novartis → milestones + royalties to Ionis."}}]}
+    {
+      "id": "commercial",
+      "name": "TRYNGOLZA (olezarsen) \u2014 FCS + sHTG",
+      "stage": "Commercial FCS + sHTG sNDA (PDUFA Apr 3, 2026)",
+      "designations": [
+        "Breakthrough (sHTG)"
+      ],
+      "indications": [
+        {
+          "id": "tg",
+          "name": "Triglyceride franchise (FCS launched + sHTG pending)",
+          "market": {
+            "notes": "TRYNGOLZA FCS: $108M 2025 revenue (first year). sHTG sNDA PDUFA Apr 3, 2026 \u2014 peak sales guided >$2B. Phase 3 CORE/CORE2: 72% TG reduction, 85% reduction in acute pancreatitis. sHTG = ~2M US patients vs ~3K FCS. This is the blockbuster catalyst."
+          },
+          "area": "cardio_metabolic.lipids.triglycerides"
+        }
+      ],
+      "modality": "nucleic_acid.antisense.galnac_aso"
+    },
+    {
+      "id": "dawnzera",
+      "name": "DAWNZERA (donidalorsen) \u2014 HAE",
+      "stage": "Commercial (launched Q3 2025, EU approved Jan 2026)",
+      "designations": [
+        "First RNA-targeted HAE therapy"
+      ],
+      "indications": [
+        {
+          "id": "hae",
+          "name": "Hereditary angioedema",
+          "market": {
+            "tamB": 3.5,
+            "penPct": 12,
+            "peakYear": 2031,
+            "notes": "First RNA-targeted HAE prophylaxis. $7M Q4 2025 (first full quarter). Early launch momentum \u2014 all patient segments. EU launched Jan 2026. Competitors: Takhzyro (lanadelumab), Orladeyo (berotralstat)."
+          },
+          "area": "immunology.autoimmune.hereditary_angioedema"
+        }
+      ],
+      "modality": "nucleic_acid.antisense.galnac_aso"
+    },
+    {
+      "id": "zilgan",
+      "name": "Zilganersen \u2014 Alexander disease",
+      "stage": "NDA submitted Q1 2026",
+      "designations": [
+        "Orphan"
+      ],
+      "indications": [
+        {
+          "id": "axd",
+          "name": "Alexander disease",
+          "market": {
+            "tamB": 0.3,
+            "penPct": 30,
+            "peakYear": 2030,
+            "notes": "Ultra-rare fatal neurological disease. First disease-modifying therapy. Pivotal data positive \u2014 NDA Q1 2026. Small revenue but high-margin orphan. First independent neuro launch for Ionis."
+          },
+          "area": "cns.neurodegeneration.alexander"
+        }
+      ],
+      "modality": "nucleic_acid.antisense.galnac_aso"
+    },
+    {
+      "id": "eplont",
+      "name": "Eplontersen (WAINUA) \u2014 ATTR (partnered w/ AZ)",
+      "stage": "Commercial (ATTRv-PN) + Phase 3 ATTR-CM (CARDIO-TTRansform H2 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "attr",
+          "name": "ATTR polyneuropathy + cardiomyopathy (AZ royalties)",
+          "market": {
+            "tamB": 10.0,
+            "penPct": 8,
+            "peakYear": 2033,
+            "notes": "$212M total WAINUA sales 2025 \u2192 $49M royalty to Ionis. CARDIO-TTRansform ATTR-CM Phase 3 readout H2 2026 \u2014 massive TAM expansion. Partnered with AstraZeneca ($3.6B deal). If ATTR-CM positive: $5B+ peak sales potential."
+          },
+          "area": "cardio_metabolic.attr.attr_pn"
+        }
+      ],
+      "modality": "nucleic_acid.antisense.galnac_aso"
+    },
+    {
+      "id": "bepiro",
+      "name": "Bepirovirsen \u2014 chronic Hep B (partnered w/ GSK)",
+      "stage": "Phase 3 positive (B-Well 1 + 2 hit primary)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "hbv",
+          "name": "Chronic hepatitis B functional cure",
+          "market": {
+            "tamB": 5.0,
+            "penPct": 6,
+            "peakYear": 2033,
+            "notes": "B-Well 1+2 Phase 3 positive \u2014 first functional cure for CHB. Partnered with GSK. ~300M people with CHB globally. If approved: milestone + royalty stream."
+          },
+          "area": "cardio_metabolic.liver.hbv_functional_cure"
+        }
+      ],
+      "modality": "nucleic_acid.antisense.galnac_aso"
+    },
+    {
+      "id": "pelac",
+      "name": "Pelacarsen \u2014 Lp(a) (partnered w/ Novartis)",
+      "stage": "Phase 3 (HORIZON CVOT readout mid-2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "lpa",
+          "name": "Lp(a) cardiovascular risk",
+          "market": {
+            "tamB": 8.0,
+            "penPct": 5,
+            "peakYear": 2034,
+            "notes": "HORIZON Phase 3 CVOT readout mid-2026. Partnered with Novartis. >20% of population has elevated Lp(a). If positive: first Lp(a)-lowering therapy with outcomes data. Multi-billion peak sales for Novartis \u2192 milestones + royalties to Ionis."
+          },
+          "area": "cardio_metabolic.lipids.lpa"
+        }
+      ],
+      "modality": "nucleic_acid.antisense.galnac_aso"
+    }
   ],
   "scenarios": {
-    "mega_bear": {"wt": 5, "narrative": "Olezarsen sHTG rejected + ATTR-CM fails + Lp(a) misses CVOT",
-      "events": ["✗ FDA rejects olezarsen sHTG — safety concern or insufficient data", "✗ CARDIO-TTRansform ATTR-CM misses — AstraZeneca deal devalued", "✗ HORIZON Lp(a) CVOT misses — Novartis partnership gutted", "→ Revenue growth stalls, cash burn accelerates, stock to $15-20"],
-      "assumptions": {"commercial": {"tg": {"pos": 100, "apr": 100, "pen": 1.0}}, "dawnzera": {"hae": {"pos": 90, "apr": 90, "pen": 0.5}}, "zilgan": {"axd": {"pos": 80, "apr": 70, "pen": 0.5}}, "eplont": {"attr": {"pos": 30, "apr": 25, "pen": 0.3}}, "bepiro": {"hbv": {"pos": 60, "apr": 40, "pen": 0.3}}, "pelac": {"lpa": {"pos": 20, "apr": 20, "pen": 0.3}}},
-      "val": {"pipelineDR": 20, "pipelineMult": 3, "commercialMult": 2.0, "commercialRevM": 200, "milestones": 0, "dil": 5}},
-    "bear": {"wt": 15, "narrative": "Olezarsen sHTG approved but slow uptake + partner readouts mixed",
-      "events": ["✓ Olezarsen sHTG approved but payer pushback on pricing", "~ ATTR-CM marginal — benefit real but modest vs Alnylam", "✗ Lp(a) HORIZON borderline — no clear CV outcome benefit", "→ Revenue grows but path to breakeven pushes to 2029+"],
-      "assumptions": {"commercial": {"tg": {"pos": 100, "apr": 100, "pen": 1.0}}, "dawnzera": {"hae": {"pos": 90, "apr": 90, "pen": 0.7}}, "zilgan": {"axd": {"pos": 80, "apr": 75, "pen": 0.7}}, "eplont": {"attr": {"pos": 50, "apr": 55, "pen": 0.6}}, "bepiro": {"hbv": {"pos": 65, "apr": 50, "pen": 0.5}}, "pelac": {"lpa": {"pos": 35, "apr": 40, "pen": 0.4}}},
-      "val": {"pipelineDR": 16, "pipelineMult": 4, "commercialMult": 3.0, "commercialRevM": 350, "milestones": 100, "dil": 0}},
-    "base": {"wt": 50, "narrative": "Olezarsen sHTG blockbuster launch + ATTR-CM positive + Lp(a) shows signal",
-      "events": ["✓ Olezarsen sHTG approved Apr 2026 — rapid uptake, >$2B peak guided", "✓ CARDIO-TTRansform positive — ATTR-CM label for eplontersen", "~ HORIZON Lp(a) shows trend but formal CVOT benefit borderline", "✓ Bepirovirsen CHB filed by GSK — milestones flowing"],
-      "assumptions": {"commercial": {"tg": {"pos": 100, "apr": 100, "pen": 1.0}}, "dawnzera": {"hae": {"pos": 90, "apr": 90, "pen": 1.0}}, "zilgan": {"axd": {"pos": 85, "apr": 80, "pen": 1.0}}, "eplont": {"attr": {"pos": 65, "apr": 70, "pen": 1.0}}, "bepiro": {"hbv": {"pos": 70, "apr": 60, "pen": 0.7}}, "pelac": {"lpa": {"pos": 50, "apr": 55, "pen": 0.7}}},
-      "val": {"pipelineDR": 13, "pipelineMult": 5, "commercialMult": 4.5, "commercialRevM": 600, "milestones": 300, "dil": 0}},
-    "bull": {"wt": 25, "narrative": "Multi-blockbuster RNA platform — TG + ATTR-CM + Lp(a) all hit",
-      "events": ["✓ Olezarsen becomes $3B+ franchise (sHTG + broader TG)", "✓ ATTR-CM blockbuster — eplontersen $5B+ for AstraZeneca", "✓ Lp(a) HORIZON positive — Novartis $10B+ franchise", "✓ Platform generates $1B+ in royalties by 2028"],
-      "assumptions": {"commercial": {"tg": {"pos": 100, "apr": 100, "pen": 1.0}}, "dawnzera": {"hae": {"pos": 95, "apr": 95, "pen": 1.3}}, "zilgan": {"axd": {"pos": 90, "apr": 85, "pen": 1.2}}, "eplont": {"attr": {"pos": 75, "apr": 80, "pen": 1.3}}, "bepiro": {"hbv": {"pos": 75, "apr": 70, "pen": 1.0}}, "pelac": {"lpa": {"pos": 65, "apr": 70, "pen": 1.0}}},
-      "val": {"pipelineDR": 11, "pipelineMult": 6, "commercialMult": 6.0, "commercialRevM": 900, "milestones": 600, "dil": 0}},
-    "psychedelic_bull": {"wt": 5, "narrative": "RNA therapeutics leader — Ionis becomes the Genentech of antisense — AZ/Novartis acquires",
-      "events": ["✓ TG + ATTR-CM + Lp(a) + CHB — four blockbuster franchises simultaneously", "✓ ION775 (siRNA) extends platform into next-gen modalities", "✓ Neurology pipeline (Angelman, SMA, Huntington's) generates 3+ more drugs", "✓ AstraZeneca or Novartis acquires entire platform at $100+/share"],
-      "assumptions": {"commercial": {"tg": {"pos": 100, "apr": 100, "pen": 1.0}}, "dawnzera": {"hae": {"pos": 95, "apr": 95, "pen": 1.5}}, "zilgan": {"axd": {"pos": 90, "apr": 90, "pen": 1.3}}, "eplont": {"attr": {"pos": 85, "apr": 85, "pen": 1.5}}, "bepiro": {"hbv": {"pos": 80, "apr": 75, "pen": 1.2}}, "pelac": {"lpa": {"pos": 75, "apr": 80, "pen": 1.3}}},
-      "val": {"pipelineDR": 9, "pipelineMult": 7, "commercialMult": 7.0, "commercialRevM": 1200, "milestones": 1000, "dil": 0}}
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Olezarsen sHTG rejected + ATTR-CM fails + Lp(a) misses CVOT",
+      "events": [
+        "\u2717 FDA rejects olezarsen sHTG \u2014 safety concern or insufficient data",
+        "\u2717 CARDIO-TTRansform ATTR-CM misses \u2014 AstraZeneca deal devalued",
+        "\u2717 HORIZON Lp(a) CVOT misses \u2014 Novartis partnership gutted",
+        "\u2192 Revenue growth stalls, cash burn accelerates, stock to $15-20"
+      ],
+      "assumptions": {
+        "commercial": {
+          "tg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "dawnzera": {
+          "hae": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 0.5
+          }
+        },
+        "zilgan": {
+          "axd": {
+            "pos": 80,
+            "apr": 70,
+            "pen": 0.5
+          }
+        },
+        "eplont": {
+          "attr": {
+            "pos": 30,
+            "apr": 25,
+            "pen": 0.3
+          }
+        },
+        "bepiro": {
+          "hbv": {
+            "pos": 60,
+            "apr": 40,
+            "pen": 0.3
+          }
+        },
+        "pelac": {
+          "lpa": {
+            "pos": 20,
+            "apr": 20,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 20,
+        "pipelineMult": 3,
+        "commercialMult": 2.0,
+        "commercialRevM": 200,
+        "milestones": 0,
+        "dil": 5
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Olezarsen sHTG approved but slow uptake + partner readouts mixed",
+      "events": [
+        "\u2713 Olezarsen sHTG approved but payer pushback on pricing",
+        "~ ATTR-CM marginal \u2014 benefit real but modest vs Alnylam",
+        "\u2717 Lp(a) HORIZON borderline \u2014 no clear CV outcome benefit",
+        "\u2192 Revenue grows but path to breakeven pushes to 2029+"
+      ],
+      "assumptions": {
+        "commercial": {
+          "tg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "dawnzera": {
+          "hae": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 0.7
+          }
+        },
+        "zilgan": {
+          "axd": {
+            "pos": 80,
+            "apr": 75,
+            "pen": 0.7
+          }
+        },
+        "eplont": {
+          "attr": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.6
+          }
+        },
+        "bepiro": {
+          "hbv": {
+            "pos": 65,
+            "apr": 50,
+            "pen": 0.5
+          }
+        },
+        "pelac": {
+          "lpa": {
+            "pos": 35,
+            "apr": 40,
+            "pen": 0.4
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 16,
+        "pipelineMult": 4,
+        "commercialMult": 3.0,
+        "commercialRevM": 350,
+        "milestones": 100,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Olezarsen sHTG blockbuster launch + ATTR-CM positive + Lp(a) shows signal",
+      "events": [
+        "\u2713 Olezarsen sHTG approved Apr 2026 \u2014 rapid uptake, >$2B peak guided",
+        "\u2713 CARDIO-TTRansform positive \u2014 ATTR-CM label for eplontersen",
+        "~ HORIZON Lp(a) shows trend but formal CVOT benefit borderline",
+        "\u2713 Bepirovirsen CHB filed by GSK \u2014 milestones flowing"
+      ],
+      "assumptions": {
+        "commercial": {
+          "tg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "dawnzera": {
+          "hae": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 1.0
+          }
+        },
+        "zilgan": {
+          "axd": {
+            "pos": 85,
+            "apr": 80,
+            "pen": 1.0
+          }
+        },
+        "eplont": {
+          "attr": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 1.0
+          }
+        },
+        "bepiro": {
+          "hbv": {
+            "pos": 70,
+            "apr": 60,
+            "pen": 0.7
+          }
+        },
+        "pelac": {
+          "lpa": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 13,
+        "pipelineMult": 5,
+        "commercialMult": 4.5,
+        "commercialRevM": 600,
+        "milestones": 300,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Multi-blockbuster RNA platform \u2014 TG + ATTR-CM + Lp(a) all hit",
+      "events": [
+        "\u2713 Olezarsen becomes $3B+ franchise (sHTG + broader TG)",
+        "\u2713 ATTR-CM blockbuster \u2014 eplontersen $5B+ for AstraZeneca",
+        "\u2713 Lp(a) HORIZON positive \u2014 Novartis $10B+ franchise",
+        "\u2713 Platform generates $1B+ in royalties by 2028"
+      ],
+      "assumptions": {
+        "commercial": {
+          "tg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "dawnzera": {
+          "hae": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.3
+          }
+        },
+        "zilgan": {
+          "axd": {
+            "pos": 90,
+            "apr": 85,
+            "pen": 1.2
+          }
+        },
+        "eplont": {
+          "attr": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 1.3
+          }
+        },
+        "bepiro": {
+          "hbv": {
+            "pos": 75,
+            "apr": 70,
+            "pen": 1.0
+          }
+        },
+        "pelac": {
+          "lpa": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 6,
+        "commercialMult": 6.0,
+        "commercialRevM": 900,
+        "milestones": 600,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "RNA therapeutics leader \u2014 Ionis becomes the Genentech of antisense \u2014 AZ/Novartis acquires",
+      "events": [
+        "\u2713 TG + ATTR-CM + Lp(a) + CHB \u2014 four blockbuster franchises simultaneously",
+        "\u2713 ION775 (siRNA) extends platform into next-gen modalities",
+        "\u2713 Neurology pipeline (Angelman, SMA, Huntington's) generates 3+ more drugs",
+        "\u2713 AstraZeneca or Novartis acquires entire platform at $100+/share"
+      ],
+      "assumptions": {
+        "commercial": {
+          "tg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "dawnzera": {
+          "hae": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.5
+          }
+        },
+        "zilgan": {
+          "axd": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 1.3
+          }
+        },
+        "eplont": {
+          "attr": {
+            "pos": 85,
+            "apr": 85,
+            "pen": 1.5
+          }
+        },
+        "bepiro": {
+          "hbv": {
+            "pos": 80,
+            "apr": 75,
+            "pen": 1.2
+          }
+        },
+        "pelac": {
+          "lpa": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 1.3
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 7,
+        "commercialMult": 7.0,
+        "commercialRevM": 1200,
+        "milestones": 1000,
+        "dil": 0
+      }
+    }
   },
   "context": {
-    "lastData": {"date": "Feb 25, 2026 (Q4 2025 earnings)", "title": "TRYNGOLZA $108M Y1 + olezarsen sHTG peak guided >$2B",
-      "points": ["TRYNGOLZA FCS: $108M 2025 revenue ($50M Q4, +56% QoQ)", "Olezarsen sHTG: sNDA submitted, PDUFA Apr 3, 2026", "Peak sales guidance raised to >$2B (from >$1B)", "DAWNZERA (donidalorsen HAE): $7M Q4, first full quarter, EU approved", "WAINUA (eplontersen): $212M total 2025 sales → $49M royalty to Ionis", "Bepirovirsen CHB: B-Well 1+2 Phase 3 positive — first functional cure", "Zilganersen Alexander disease: NDA submitted Q1 2026", "Cash ~$2.4B, breakeven target 2028"]},
-    "nextCatalyst": {"date": "Apr 3, 2026", "title": "Olezarsen sHTG PDUFA — biggest near-term catalyst",
-      "thresholds": ["FDA approval for severe hypertriglyceridemia", "sHTG = ~2M US patients (vs 3K FCS) — 600x TAM expansion", "72% TG reduction + 85% reduction in acute pancreatitis in Phase 3", "Also mid-2026: HORIZON Lp(a) CVOT readout (Novartis)", "Also H2 2026: CARDIO-TTRansform ATTR-CM readout (AstraZeneca)"]},
-    "risks": ["Olezarsen sHTG pricing/reimbursement risk — payer pushback in large population", "HORIZON Lp(a) CVOT is high-risk — Lp(a) lowering may not translate to CV outcomes", "ATTR-CM competitive with Alnylam's vutrisiran (HELIOS-B positive)", "Cash burn ~$500M/yr — breakeven 2028 target depends on sHTG launch success", "Complex business model — mix of own products, co-commercialization, royalties", "RNA therapeutics face delivery challenges in some tissues", "Ionis has historically overpromised on pipeline timelines", "Stock underperformed peers despite strong pipeline — market skepticism on execution"]
+    "lastData": {
+      "date": "Feb 25, 2026 (Q4 2025 earnings)",
+      "title": "TRYNGOLZA $108M Y1 + olezarsen sHTG peak guided >$2B",
+      "points": [
+        "TRYNGOLZA FCS: $108M 2025 revenue ($50M Q4, +56% QoQ)",
+        "Olezarsen sHTG: sNDA submitted, PDUFA Apr 3, 2026",
+        "Peak sales guidance raised to >$2B (from >$1B)",
+        "DAWNZERA (donidalorsen HAE): $7M Q4, first full quarter, EU approved",
+        "WAINUA (eplontersen): $212M total 2025 sales \u2192 $49M royalty to Ionis",
+        "Bepirovirsen CHB: B-Well 1+2 Phase 3 positive \u2014 first functional cure",
+        "Zilganersen Alexander disease: NDA submitted Q1 2026",
+        "Cash ~$2.4B, breakeven target 2028"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Apr 3, 2026",
+      "title": "Olezarsen sHTG PDUFA \u2014 biggest near-term catalyst",
+      "thresholds": [
+        "FDA approval for severe hypertriglyceridemia",
+        "sHTG = ~2M US patients (vs 3K FCS) \u2014 600x TAM expansion",
+        "72% TG reduction + 85% reduction in acute pancreatitis in Phase 3",
+        "Also mid-2026: HORIZON Lp(a) CVOT readout (Novartis)",
+        "Also H2 2026: CARDIO-TTRansform ATTR-CM readout (AstraZeneca)"
+      ]
+    },
+    "risks": [
+      "Olezarsen sHTG pricing/reimbursement risk \u2014 payer pushback in large population",
+      "HORIZON Lp(a) CVOT is high-risk \u2014 Lp(a) lowering may not translate to CV outcomes",
+      "ATTR-CM competitive with Alnylam's vutrisiran (HELIOS-B positive)",
+      "Cash burn ~$500M/yr \u2014 breakeven 2028 target depends on sHTG launch success",
+      "Complex business model \u2014 mix of own products, co-commercialization, royalties",
+      "RNA therapeutics face delivery challenges in some tissues",
+      "Ionis has historically overpromised on pipeline timelines",
+      "Stock underperformed peers despite strong pipeline \u2014 market skepticism on execution"
+    ]
   }
 }

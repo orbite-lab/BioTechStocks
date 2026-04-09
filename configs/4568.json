@@ -8,7 +8,9 @@
     "currentPrice": 3700.0,
     "currency": "JPY",
     "yahooTicker": "4568.T",
-    "cashRunway": "Highly cash generative (JPY 2T+ revenue, profitable, dividend growing)"
+    "cashRunway": "Highly cash generative (JPY 2T+ revenue, profitable, dividend growing)",
+    "phase": "commercial",
+    "rare": false
   },
   "valuationType": "SOTP",
   "assets": [
@@ -23,9 +25,11 @@
           "name": "HER2+ breast + gastric + NSCLC + CRC (expanding)",
           "market": {
             "notes": "Enhertu FY2025: JPY 553B. #1 new patient share across major countries. 9 FDA BTDs. Partnered with AstraZeneca (50/50). Approved: HER2+ BC (2L+3L), HER2-low BC, HER2+ gastric, HER2-mutant NSCLC. DESTINY trials expanding: 1L BC, adjuvant, CRC, endometrial, biliary."
-          }
+          },
+          "area": "oncology.breast.her2_pos"
         }
-      ]
+      ],
+      "modality": "adc.dxd_linker.her2_adc"
     },
     {
       "id": "datroway",
@@ -41,9 +45,11 @@
             "penPct": 5,
             "peakYear": 2033,
             "notes": "TROP2 ADC partnered with AstraZeneca. Launched in NSCLC, exceeding forecasts. JPY 47B revised forecast FY2025. Phase 3 across TNBC, HR+/HER2- BC. Competes with Trodelvy (Gilead) and sac-TMT (Kelun/Merck)."
-          }
+          },
+          "area": "oncology.lung.nsclc_driver"
         }
-      ]
+      ],
+      "modality": "adc.dxd_linker.trop2_adc"
     },
     {
       "id": "her3_dxd",
@@ -59,9 +65,11 @@
             "penPct": 5,
             "peakYear": 2034,
             "notes": "HER3 ADC partnered with Merck. Phase 3 NSCLC. First-in-class HER3 targeting. Merck deal total value $22B."
-          }
+          },
+          "area": "oncology.lung.nsclc_driver"
         }
-      ]
+      ],
+      "modality": "adc.dxd_linker.her3_adc"
     },
     {
       "id": "idxd",
@@ -77,9 +85,11 @@
             "penPct": 3,
             "peakYear": 2035,
             "notes": "I-DXd (B7-H3 ADC): Phase 3 SCLC. R-DXd (CDH6 ADC): Phase 1/2. Both partnered with Merck. 3 ADC Merck deal = $22B total."
-          }
+          },
+          "area": "oncology.lung.sclc"
         }
-      ]
+      ],
+      "modality": "adc.dxd_linker.b7h3_adc"
     },
     {
       "id": "japan_legacy",
@@ -95,9 +105,11 @@
             "penPct": 100,
             "peakYear": 2028,
             "notes": "Japan domestic business ~25% of revenue (declining share). Lixiana (edoxaban), Tarlige, Nexium. DS-6000 (CDH6 ADC), DS-7300 (B7-H3 ADC) advancing."
-          }
+          },
+          "area": "cardio_metabolic.lipids.anticoagulation"
         }
-      ]
+      ],
+      "modality": "small_molecule.enzyme_inhibitor.factor_xa_inhibitor"
     }
   ],
   "scenarios": {

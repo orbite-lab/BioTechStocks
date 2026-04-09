@@ -8,7 +8,9 @@
     "currentPrice": 4.0,
     "currency": "USD",
     "yahooTicker": "CRVO",
-    "cashRunway": "Into Q3 2026 only \u2014 Phase 3 requires financing"
+    "cashRunway": "Into Q3 2026 only \u2014 Phase 3 requires financing",
+    "phase": "phase1",
+    "rare": true
   },
   "assets": [
     {
@@ -25,9 +27,11 @@
             "penPct": 12,
             "peakYear": 2034,
             "notes": "DLB is 2nd most common progressive dementia after Alzheimer's (~1.4M US patients). No approved disease-modifying treatments. Phase 2b RewinD-LB: missed primary (bioavailability issue Batch A), BUT extension with Batch B showed 52% lower CDR-SB worsening at 16wk, 64% risk reduction in low-AD subgroup (p<0.001), 82% in pTau181<21. GFAP -16.0 (p<0.0001). FDA aligned: ~300 pts, 32wk randomized + 48wk OLE. Dose: 50mg TID stable crystal form."
-          }
+          },
+          "area": "cns.neurodegeneration.dlb"
         }
-      ]
+      ],
+      "modality": "small_molecule.enzyme_inhibitor.p38_mapk_inhibitor"
     },
     {
       "id": "nef_stroke",
@@ -43,9 +47,11 @@
             "penPct": 5,
             "peakYear": 2035,
             "notes": "~800K ischemic strokes/yr in US. No approved therapies for stroke recovery (only acute tPA). Neflamapimod targets synaptic dysfunction underlying recovery failure. RESTORE Phase 2a enrolling, data H2 2026. Massive unmet need."
-          }
+          },
+          "area": "cns.neurodegeneration.stroke"
         }
-      ]
+      ],
+      "modality": "small_molecule.enzyme_inhibitor.p38_mapk_inhibitor"
     },
     {
       "id": "nef_als",
@@ -61,9 +67,11 @@
             "penPct": 6,
             "peakYear": 2035,
             "notes": "ALS affects ~30K US patients. Desperate unmet need \u2014 median survival 3-5 years. p38\u03b1 involved in motor neuron degeneration. EXPERTS-ALS trial initiation H2 2026. Competitors: Relyvrio (withdrawn), Qalsody (antisense), Radicava."
-          }
+          },
+          "area": "cns.neurodegeneration.als"
         }
-      ]
+      ],
+      "modality": "small_molecule.enzyme_inhibitor.p38_mapk_inhibitor"
     },
     {
       "id": "nef_ppa",
@@ -79,9 +87,11 @@
             "penPct": 20,
             "peakYear": 2034,
             "notes": "Rare neurodegenerative disorder \u2014 progressive loss of language. No approved treatments. Small market but high pricing potential (rare disease). Phase 2a topline H2 2026."
-          }
+          },
+          "area": "cns.neurodegeneration.ppa"
         }
-      ]
+      ],
+      "modality": "small_molecule.enzyme_inhibitor.p38_mapk_inhibitor"
     }
   ],
   "scenarios": {
@@ -191,7 +201,7 @@
       "assumptions": {
         "nef_dlb": {
           "dlb": {
-            "pos": 45,
+            "pos": 40,
             "apr": 55,
             "pen": 1.0
           }
@@ -238,7 +248,7 @@
       "assumptions": {
         "nef_dlb": {
           "dlb": {
-            "pos": 65,
+            "pos": 60,
             "apr": 70,
             "pen": 1.4
           }

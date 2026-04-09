@@ -8,7 +8,9 @@
     "currentPrice": 30.0,
     "currency": "USD",
     "yahooTicker": "ARQT",
-    "cashRunway": "Self-funding (profitable, growing 30%+ YoY)"
+    "cashRunway": "Self-funding (profitable, growing 30%+ YoY)",
+    "phase": "commercial",
+    "rare": false
   },
   "valuationType": "SOTP",
   "assets": [
@@ -23,9 +25,11 @@
           "name": "Psoriasis + atopic dermatitis + seborrheic dermatitis",
           "market": {
             "notes": "ZORYVE: $376M 2025 revenue, turned profitable. Approved for plaque psoriasis (cream), AD (cream 0.05%), scalp/body psoriasis (foam), seborrheic dermatitis (foam). Non-steroidal topical \u2014 addresses steroid phobia/fatigue. 2026 guide: $480-495M. Infant AD data positive (INTEGUMENT-INFANT). sNDA for infant AD planned."
-          }
+          },
+          "area": "dermatology.inflammatory_derm.psoriasis_topical"
         }
-      ]
+      ],
+      "modality": "small_molecule.enzyme_inhibitor.pde4_inhibitor"
     },
     {
       "id": "zoryve_exp",
@@ -41,9 +45,11 @@
             "penPct": 10,
             "peakYear": 2031,
             "notes": "INTEGUMENT-INFANT Phase 2 positive in 3-24 month infants. sNDA planned. Broadens addressable population across all age groups. Additional sensitive-area and formulation expansions possible."
-          }
+          },
+          "area": "dermatology.inflammatory_derm.atopic_dermatitis_topical"
         }
-      ]
+      ],
+      "modality": "small_molecule.enzyme_inhibitor.pde4_inhibitor"
     },
     {
       "id": "arq234",
@@ -59,9 +65,11 @@
             "penPct": 4,
             "peakYear": 2034,
             "notes": "CD200R agonist fusion protein \u2014 novel mechanism for moderate-severe AD. First-in-human Phase 1a/1b enrolling. If it works: systemic AD therapy beyond dupilumab. Very early but diversifies beyond topicals."
-          }
+          },
+          "area": "dermatology.inflammatory_derm.atopic_dermatitis_systemic"
         }
-      ]
+      ],
+      "modality": "antibody.monoclonal.anti_il13"
     },
     {
       "id": "arq255",
@@ -77,9 +85,11 @@
             "penPct": 8,
             "peakYear": 2033,
             "notes": "Topical JAK1 for alopecia areata. Avoids systemic JAK risks. Competitors: Olumiant, Litfulo (oral). If topical JAK works: safety advantage over oral. Phase 2 ongoing."
-          }
+          },
+          "area": "dermatology.rare_skin.alopecia_areata"
         }
-      ]
+      ],
+      "modality": "small_molecule.jak_inhibitor.jak1_topical"
     },
     {
       "id": "arq252",
@@ -95,9 +105,11 @@
             "penPct": 5,
             "peakYear": 2033,
             "notes": "Topical JAK1 cream for hand eczema and vitiligo. Addresses unmet needs in difficult-to-treat areas. Phase 2/3 level data."
-          }
+          },
+          "area": "dermatology.rare_skin.vitiligo"
         }
-      ]
+      ],
+      "modality": "small_molecule.jak_inhibitor.jak1_topical"
     }
   ],
   "scenarios": {

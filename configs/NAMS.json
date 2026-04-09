@@ -8,7 +8,9 @@
     "currentPrice": 34.0,
     "currency": "USD",
     "yahooTicker": "NAMS",
-    "cashRunway": "Through PREVAIL readout (~$729M cash)"
+    "cashRunway": "Through PREVAIL readout (~$729M cash)",
+    "phase": "phase3",
+    "rare": false
   },
   "assets": [
     {
@@ -25,9 +27,11 @@
             "penPct": 5,
             "peakYear": 2033,
             "notes": "BROADWAY Ph3: 44.4% LDL-C reduction (NEJM). EMA H2 2026. Oral once-daily. Menarini partner."
-          }
+          },
+          "area": "cardio_metabolic.lipids.ldl_lowering"
         }
-      ]
+      ],
+      "modality": "small_molecule.enzyme_inhibitor.cetp_inhibitor"
     },
     {
       "id": "obi_fdc",
@@ -43,9 +47,11 @@
             "penPct": 4,
             "peakYear": 2034,
             "notes": "TANDEM Ph3 positive (Lancet). Single pill vs PCSK9 injections."
-          }
+          },
+          "area": "cardio_metabolic.lipids.ldl_lowering"
         }
-      ]
+      ],
+      "modality": "small_molecule.enzyme_inhibitor.cetp_inhibitor"
     },
     {
       "id": "prevail",
@@ -61,9 +67,11 @@
             "penPct": 3,
             "peakYear": 2035,
             "notes": "Large CVOT for FDA path. Event rate tracking. THE binary event."
-          }
+          },
+          "area": "cardio_metabolic.lipids.cv_outcomes"
         }
-      ]
+      ],
+      "modality": "small_molecule.enzyme_inhibitor.cetp_inhibitor"
     },
     {
       "id": "alzheimer",
@@ -79,9 +87,11 @@
             "penPct": 1,
             "peakYear": 2036,
             "notes": "Biomarker data positive. Planned trial 2026. Massive optionality."
-          }
+          },
+          "area": "cns.neurodegeneration.alzheimer"
         }
-      ]
+      ],
+      "modality": "small_molecule.enzyme_inhibitor.cetp_inhibitor"
     },
     {
       "id": "rubens",
@@ -97,9 +107,11 @@
             "penPct": 2,
             "peakYear": 2034,
             "notes": "Topline year-end 2026."
-          }
+          },
+          "area": "cardio_metabolic.diabetes.t2d"
         }
-      ]
+      ],
+      "modality": "small_molecule.enzyme_inhibitor.cetp_inhibitor"
     }
   ],
   "scenarios": {

@@ -8,7 +8,9 @@
     "currentPrice": 139.0,
     "currency": "USD",
     "yahooTicker": "GILD",
-    "cashRunway": "Cash generative ($29.4B revenue, profitable, 3.2% div yield)"
+    "cashRunway": "Cash generative ($29.4B revenue, profitable, 3.2% div yield)",
+    "phase": "commercial",
+    "rare": false
   },
   "valuationType": "SOTP",
   "assets": [
@@ -23,9 +25,11 @@
           "name": "HIV treatment + prevention",
           "market": {
             "notes": "Biktarvy: $14.3B 2025 (+7%), >52% US treatment share. Descovy: $2.8B (+31%), PrEP growth. Yeztugo (lenacapavir): $150M first year \u2014 twice-yearly injection. BIC/LEN single tablet: launching H2 2026. No major LOE until 2036. HIV portfolio: $20.8B growing 6% YoY."
-          }
+          },
+          "area": "infectious_disease.anti_infective.hiv_treatment"
         }
-      ]
+      ],
+      "modality": "small_molecule.enzyme_inhibitor.integrase_inhibitor"
     },
     {
       "id": "len_prev",
@@ -41,9 +45,11 @@
             "penPct": 10,
             "peakYear": 2033,
             "notes": "PURPOSE 1+2 positive \u2014 twice-yearly injection for PrEP. Game-changer for prevention. $150M first year. Peak $5-10B franchise potential. BIC/LEN combo tablet H2 2026 for treatment simplification."
-          }
+          },
+          "area": "infectious_disease.anti_infective.hiv_prevention"
         }
-      ]
+      ],
+      "modality": "small_molecule.receptor_antagonist.capsid_inhibitor"
     },
     {
       "id": "trodelvy",
@@ -59,9 +65,11 @@
             "penPct": 12,
             "peakYear": 2032,
             "notes": "ASCENT-04/KEYNOTE-D19: Trodelvy + Keytruda 35% reduced progression risk in 1L mTNBC. $1.4B 2025 (+6%). 1L TNBC sNDA \u2192 PDUFA H2 2026. If approved: doubles Trodelvy addressable market."
-          }
+          },
+          "area": "oncology.breast.tnbc"
         }
-      ]
+      ],
+      "modality": "adc.dxd_linker.trop2_adc"
     },
     {
       "id": "anito_cel",
@@ -77,9 +85,11 @@
             "penPct": 5,
             "peakYear": 2033,
             "notes": "Bicistronic BCMA\u00d7CD3/CD19 CAR-T. BLA under review, PDUFA H2 2026. Competes with CARVYKTI. Yescarta ($1.5B) + Tecartus ($344M) = $1.8B cell therapy franchise in 2025."
-          }
+          },
+          "area": "oncology.hematology.myeloma"
         }
-      ]
+      ],
+      "modality": "cell_therapy.car_t_autologous.bcma_car_t"
     },
     {
       "id": "liver",
@@ -95,9 +105,11 @@
             "penPct": 100,
             "peakYear": 2028,
             "notes": "Livdelzi (PBC): >50% 2L US market share. HCV/HBV stable. Veklury declining ($911M, -49%). Liver total: $3.2B (+6%). Modest growth offset by Veklury decline."
-          }
+          },
+          "area": "cardio_metabolic.liver.hbv_functional_cure"
         }
-      ]
+      ],
+      "modality": "small_molecule.enzyme_inhibitor.integrase_inhibitor"
     }
   ],
   "scenarios": {

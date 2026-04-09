@@ -9,7 +9,9 @@
     "currency": "EUR",
     "exchange": "Euronext Paris / Nasdaq: VALN",
     "cashRunway": "Funded (\u20ac155-170M 2026 guided revenue + \u20ac500M debt facility)",
-    "yahooTicker": "VLA.PA"
+    "yahooTicker": "VLA.PA",
+    "phase": "phase3",
+    "rare": false
   },
   "valuationType": "SOTP",
   "assets": [
@@ -32,9 +34,11 @@
             "peakYear": 2031,
             "cagrPct": 5,
             "notes": "\u20ac150M = Valneva peak annual royalties assuming Pfizer does ~\u20ac800M in Lyme sales at ~19% blended royalty. penPct=100 means Valneva gets its full royalty; penMult scales Pfizer launch speed."
-          }
+          },
+          "area": "infectious_disease.vaccines.lyme"
         }
-      ]
+      ],
+      "modality": "vaccine.protein_subunit.vlp_conjugate"
     },
     {
       "id": "ixchiq",
@@ -51,9 +55,11 @@
             "penPct": 30,
             "peakYear": 2029,
             "notes": "US permanently lost. Ex-US includes EU/Canada/UK/Brazil + outbreak response. Competitor: Bavarian Nordic's Vimkunya (VLP-based, FDA approved Feb 2025). Ex-US contributed ~\u20ac7.5M in H1 2025."
-          }
+          },
+          "area": "infectious_disease.vaccines.chikungunya"
         }
-      ]
+      ],
+      "modality": "vaccine.protein_subunit.vlp_conjugate"
     },
     {
       "id": "s4v2",
@@ -73,9 +79,11 @@
             "penPct": 18,
             "peakYear": 2033,
             "notes": "WHO priority. No approved multivalent Shigella vaccine outside Russia/China. Global market estimated >$500M/yr. Second leading cause of fatal diarrhea worldwide."
-          }
+          },
+          "area": "infectious_disease.vaccines.shigella_zika"
         }
-      ]
+      ],
+      "modality": "vaccine.protein_subunit.vlp_conjugate"
     },
     {
       "id": "zika",
@@ -92,9 +100,11 @@
             "penPct": 10,
             "peakYear": 2034,
             "notes": "Valneva will only advance if private/public funding materializes. Regulatory pathway and market opportunity remain uncertain."
-          }
+          },
+          "area": "infectious_disease.vaccines.shigella_zika"
         }
-      ]
+      ],
+      "modality": "vaccine.protein_subunit.vlp_conjugate"
     },
     {
       "id": "commercial",
@@ -108,9 +118,11 @@
           "name": "Travel vaccines (steady-state revenue)",
           "market": {
             "notes": "IXIARO (Japanese encephalitis) + DUKORAL (cholera/ETEC). \u20ac157.9M total product sales 2025. 2026 guided \u20ac145-160M product sales. New CSL Seqirus distribution deal in Germany from Jan 2026. Third-party sales winding down to <5% by 2027."
-          }
+          },
+          "area": "infectious_disease.vaccines.travel"
         }
-      ]
+      ],
+      "modality": "vaccine.protein_subunit.vlp_conjugate"
     }
   ],
   "scenarios": {

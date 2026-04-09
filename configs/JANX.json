@@ -8,7 +8,9 @@
     "currentPrice": 13.0,
     "currency": "USD",
     "yahooTicker": "JANX",
-    "cashRunway": "Well-funded (~$850M cash, runway into 2028+)"
+    "cashRunway": "Well-funded (~$850M cash, runway into 2028+)",
+    "phase": "phase1",
+    "rare": false
   },
   "assets": [
     {
@@ -25,9 +27,11 @@
             "penPct": 5,
             "peakYear": 2033,
             "notes": "PSMA-targeted tumor-activated T cell engager. Phase 1a dose escalation complete. Phase 1b enrolling taxane-naive. 109 patients treated. Early data: 78% PSA30 decline at 0.1mg, 100% at 0.2mg. CRS low-grade (1-2) and Cycle 1 only. TRACTr masking minimizes systemic toxicity. Stock crashed 50% Feb 2026 on limited Phase 1b disclosure \u2014 market wanted more. Analysts estimate $1.5B+ peak in chemo-refractory, multi-blockbuster in earlier lines."
-          }
+          },
+          "area": "oncology.genitourinary.prostate"
         }
-      ]
+      ],
+      "modality": "antibody.bispecific.tumor_activated_tce"
     },
     {
       "id": "janx008",
@@ -43,9 +47,11 @@
             "penPct": 2,
             "peakYear": 2034,
             "notes": "EGFR-targeted TRACTr across multiple solid tumors. Phase 1a complete, expansion cohorts started. EGFR is validated but historically undruggable with T cell engagers due to on-target toxicity. TRACTr masking may solve this \u2014 if so, massive TAM across CRC, NSCLC, SCCHN, PDAC, TNBC."
-          }
+          },
+          "area": "oncology.gi.colorectal"
         }
-      ]
+      ],
+      "modality": "antibody.bispecific.tumor_activated_tce"
     },
     {
       "id": "janx011",
@@ -61,9 +67,11 @@
             "penPct": 1,
             "peakYear": 2035,
             "notes": "Adaptive Immune Response Modulator targeting CD19 for autoimmune diseases. First patient dosed. ARM platform = T cell modulation for autoimmunity. If it works: off-the-shelf alternative to CAR-T for lupus/RA."
-          }
+          },
+          "area": "immunology.autoimmune.sle"
         }
-      ]
+      ],
+      "modality": "antibody.bispecific.cd19_arm_modulator"
     },
     {
       "id": "psma_tracir",
@@ -79,9 +87,11 @@
             "penPct": 2,
             "peakYear": 2035,
             "notes": "TRACIr = CD28 costimulatory arm. Designed to combo with JANX007 TRACTr for enhanced T cell activation. PSMA-TRACIr + JANX007 = dual T cell activation in prostate cancer."
-          }
+          },
+          "area": "oncology.genitourinary.prostate"
         }
-      ]
+      ],
+      "modality": "antibody.bispecific.tumor_activated_tce"
     },
     {
       "id": "merck_bms",
@@ -97,9 +107,11 @@
             "penPct": 1,
             "peakYear": 2036,
             "notes": "Merck: strategic collaboration for TRACTr candidates \u2014 $10M milestone received 2025. BMS: exclusive worldwide license for novel program \u2014 development candidate nominated Mar 2026. TROP2-TRACTr advancing preclinically. Platform generates partnership value."
-          }
+          },
+          "area": "oncology.lung.nsclc_undruggable"
         }
-      ]
+      ],
+      "modality": "antibody.bispecific.tumor_activated_tce"
     }
   ],
   "scenarios": {

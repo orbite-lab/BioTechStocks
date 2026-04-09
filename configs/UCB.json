@@ -8,7 +8,9 @@
     "currentPrice": 200.0,
     "currency": "EUR",
     "yahooTicker": "UCB.BR",
-    "cashRunway": "Cash generative (E7.7B revenue, EBITDA margin 31-34%)"
+    "cashRunway": "Cash generative (E7.7B revenue, EBITDA margin 31-34%)",
+    "phase": "commercial",
+    "rare": false
   },
   "valuationType": "SOTP",
   "assets": [
@@ -23,9 +25,11 @@
           "name": "Psoriasis + HS + PsA + axSpA",
           "market": {
             "notes": "Bimzelx 2025: E2.2B (+267%). Halfway to E4B+ peak. 45% HS patient share globally. Patent to 2037. First dual IL-17A/F inhibitor."
-          }
+          },
+          "area": "immunology.inflammatory_systemic.psoriasis"
         }
-      ]
+      ],
+      "modality": "antibody.monoclonal.anti_il17a_f"
     },
     {
       "id": "neuro_rare",
@@ -41,9 +45,11 @@
             "penPct": 100,
             "peakYear": 2032,
             "notes": "Fintepla E427M (+26%). Rystiggo E332M (+65%). Zilbrysq E217M (+200%). Patent: Fintepla 2033, Rystiggo 2035."
-          }
+          },
+          "area": "cns.epilepsy.focal"
         }
-      ]
+      ],
+      "modality": "small_molecule.ion_channel_modulator.nav_channel"
     },
     {
       "id": "evenity",
@@ -59,9 +65,11 @@
             "penPct": 100,
             "peakYear": 2030,
             "notes": "Anti-sclerostin. UCB receives collaboration revenue. Strong EU expansion."
-          }
+          },
+          "area": "musculoskeletal.bone_cartilage.osteoporosis"
         }
-      ]
+      ],
+      "modality": "antibody.monoclonal.anti_sclerostin"
     },
     {
       "id": "pipeline",
@@ -77,9 +85,11 @@
             "penPct": 3,
             "peakYear": 2034,
             "notes": "Donzakimig bispecific IL-13/IL-22 Ph2. Dapirolizumab anti-CD40L Ph3 SLE. 6 Ph3, 5 Ph2 programs in 2026."
-          }
+          },
+          "area": "immunology.inflammatory_systemic.psoriasis"
         }
-      ]
+      ],
+      "modality": "antibody.bispecific.undisclosed"
     },
     {
       "id": "legacy",
@@ -95,9 +105,11 @@
             "penPct": 100,
             "peakYear": 2024,
             "notes": "Briviact LOE 2026. Cimzia declining. Legacy drag offset by growth drivers."
-          }
+          },
+          "area": "immunology.inflammatory_systemic.psoriasis"
         }
-      ]
+      ],
+      "modality": "antibody.monoclonal.anti_tnf"
     }
   ],
   "scenarios": {

@@ -8,7 +8,9 @@
     "currentPrice": 5.0,
     "currency": "USD",
     "yahooTicker": "BCYC",
-    "cashRunway": "Into 2028 ($600M+ cash)"
+    "cashRunway": "Into 2028 ($600M+ cash)",
+    "phase": "phase1",
+    "rare": false
   },
   "assets": [
     {
@@ -25,9 +27,11 @@
             "penPct": 5,
             "peakYear": 2033,
             "notes": "Duravelo-2 trial design NO LONGER acceptable as approval path per FDA (Mar 2026). 6mg dose selected with strong anti-tumor activity. Pivoting: Duravelo-3 (NECTIN4-amp breast cancer H2 2026 data), Duravelo-4 (NECTIN4-amp NSCLC). BDC = smaller than ADC, better tumor penetration."
-          }
+          },
+          "area": "oncology.genitourinary.bladder"
         }
-      ]
+      ],
+      "modality": "adc.peptide_drug_conjugate.bdc_nectin4"
     },
     {
       "id": "nuzefatide",
@@ -43,9 +47,11 @@
             "penPct": 3,
             "peakYear": 2034,
             "notes": "First-in-class EphA2 BDC \u2014 historically undruggable target. Phase 1 nuzefatide + nivolumab in mUC data H1 2026. Phase 2 PDAC initiated. EphA2 broadly expressed across solid tumors."
-          }
+          },
+          "area": "oncology.gi.pancreatic"
         }
-      ]
+      ],
+      "modality": "adc.peptide_drug_conjugate.bdc_epha2"
     },
     {
       "id": "brc",
@@ -61,9 +67,11 @@
             "penPct": 1,
             "peakYear": 2036,
             "notes": "BT1702: MT1-MMP targeting BRC with lead-212. EphA2 human imaging data expected H1 2026. UK NDA/NNL/SpectronRx partnerships for 212Pb supply. Company-sponsored BRC clinical trial (BT1702) expected 2027. Bicycle peptide = ideal radiopharma targeting vehicle."
-          }
+          },
+          "area": "oncology.lung.nsclc_undruggable"
         }
-      ]
+      ],
+      "modality": "adc.radioconjugate.brc_lead212"
     },
     {
       "id": "bt7480",
@@ -79,9 +87,11 @@
             "penPct": 1,
             "peakYear": 2035,
             "notes": "Nectin-4 targeted CD137 agonist. Phase 1 combo data H1 2026. BCYC will seek partner after reporting \u2014 no longer developing internally. Platform validation but not core focus."
-          }
+          },
+          "area": "oncology.genitourinary.bladder"
         }
-      ]
+      ],
+      "modality": "antibody.agonist_antibody.cd137_agonist"
     },
     {
       "id": "platform",
@@ -97,9 +107,11 @@
             "penPct": 1,
             "peakYear": 2036,
             "notes": "Bicycle peptides: fully synthetic, small molecule PK, biologic-like binding. Nobel Prize science (Sir Greg Winter). Partnerships in non-oncology. Platform optionality."
-          }
+          },
+          "area": "oncology.lung.nsclc_driver"
         }
-      ]
+      ],
+      "modality": "adc.peptide_drug_conjugate.bdc_nectin4"
     }
   ],
   "scenarios": {

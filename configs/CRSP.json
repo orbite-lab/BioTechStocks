@@ -8,7 +8,9 @@
     "currentPrice": 50.0,
     "currency": "USD",
     "yahooTicker": "CRSP",
-    "cashRunway": "Into 2029+ ($2B cash)"
+    "cashRunway": "Into 2029+ ($2B cash)",
+    "phase": "phase1",
+    "rare": true
   },
   "assets": [
     {
@@ -25,9 +27,11 @@
             "penPct": 8,
             "peakYear": 2032,
             "notes": "First CRISPR therapy approved. 2025: $116M, 64 infusions. Priced ~$2.2M. Pediatric 5-11 submissions H1 2026. Vertex partnership. Complex manufacturing limits ramp."
-          }
+          },
+          "area": "oncology.hematology.hemoglobinopathy"
         }
-      ]
+      ],
+      "modality": "gene_therapy.gene_editing.crispr_cas9_exvivo"
     },
     {
       "id": "ctx310",
@@ -43,9 +47,11 @@
             "penPct": 2,
             "peakYear": 2035,
             "notes": "In vivo CRISPR ANGPTL3 editing. Phase 1 proof-of-concept in NEJM. One-shot cure for hyperlipidemia potential."
-          }
+          },
+          "area": "cardio_metabolic.lipids.lpa"
         }
-      ]
+      ],
+      "modality": "gene_therapy.gene_editing.crispr_cas9_invivo"
     },
     {
       "id": "ctx460",
@@ -61,9 +67,11 @@
             "penPct": 10,
             "peakYear": 2034,
             "notes": "SyNTase platform: >90% mRNA correction. Near-saturating hepatocyte editing at 0.5 mg/kg. Clinic mid-2026."
-          }
+          },
+          "area": "cardio_metabolic.liver.a1at"
         }
-      ]
+      ],
+      "modality": "gene_therapy.gene_editing.crispr_cas9_invivo"
     },
     {
       "id": "zugocel",
@@ -79,9 +87,11 @@
             "penPct": 1,
             "peakYear": 2035,
             "notes": "Anti-CD19 allogeneic CAR-T. SLE patient drug-free DORIS remission at 9 months. Phase 2 topline H2 2026. Off-the-shelf advantage."
-          }
+          },
+          "area": "immunology.autoimmune.sle"
         }
-      ]
+      ],
+      "modality": "cell_therapy.car_t_autoimmune.cd19_autoimmune"
     },
     {
       "id": "discovery",
@@ -97,9 +107,11 @@
             "penPct": 1,
             "peakYear": 2036,
             "notes": "CTX340 clinic H1 2026. Diabetes: CRISPR-edited islet cells for T1D. Platform across rare + common diseases."
-          }
+          },
+          "area": "cardio_metabolic.diabetes.t1d"
         }
-      ]
+      ],
+      "modality": "cell_therapy.islet_cell.esc_beta_cell"
     }
   ],
   "scenarios": {

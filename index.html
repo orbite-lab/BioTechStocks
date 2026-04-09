@@ -93,6 +93,24 @@ tbody tr:hover{background:#ffffff06}
 .topbar-count{font-size:.75rem;color:var(--text2);font-family:var(--mono);white-space:nowrap}
 @media(max-width:1000px){.stats,.ptf-results{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){.stats,.ptf-results{grid-template-columns:1fr}}
+.fbar{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;margin-bottom:16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.fbar-lbl{font-size:.68rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-right:4px;font-weight:600}
+.fchip{padding:4px 10px;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--bg3);color:var(--text2);transition:.15s;white-space:nowrap}
+.fchip:hover{border-color:#60a5fa;color:var(--text1)}
+.fchip.active{background:#3b82f622;border-color:#3b82f6;color:#93c5fd}
+.fchip .cnt{font-size:.6rem;opacity:.6;margin-left:3px}
+.fchip-rare{padding:4px 10px;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--bg3);color:var(--text2);transition:.15s}
+.fchip-rare:hover{border-color:#f59e0b;color:var(--text1)}
+.fchip-rare.active{background:#f59e0b22;border-color:#f59e0b;color:#fbbf24}
+.fsep{width:1px;height:20px;background:var(--border);margin:0 4px}
+.fsel{padding:4px 8px;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--bg3);color:var(--text2);outline:none;font-family:var(--mono)}
+.fsel:focus{border-color:#3b82f6}
+.fl2-row{display:flex;flex-wrap:wrap;gap:5px;padding:4px 14px 8px;margin-bottom:12px}
+.fl2chip{padding:3px 8px;border-radius:5px;font-size:.67rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--bg1);color:var(--text2);transition:.15s}
+.fl2chip:hover{border-color:#a855f7;color:var(--text1)}
+.fl2chip.active{background:#a855f722;border-color:#a855f7;color:#d8b4fe}
+.fl2chip .cnt{font-size:.58rem;opacity:.5;margin-left:2px}
+.purity-badge{display:inline-block;font-size:.58rem;font-family:var(--mono);padding:1px 4px;border-radius:3px;background:#ffffff08;color:var(--text2);margin-left:4px;font-weight:600}
 </style>
 </head>
 <body>
@@ -115,6 +133,31 @@ const SK=["mega_bear","bear","base","bull","psychedelic_bull"];
 const SN={mega_bear:"Mega Bear",bear:"Bear",base:"Base",bull:"Bull",psychedelic_bull:"Psych Bull"};
 const SC={mega_bear:"#991b1b",bear:"#ef4444",base:"#f59e0b",bull:"#22c55e",psychedelic_bull:"#a855f7"};
 const SS={mega_bear:"s-mb",bear:"s-br",base:"s-bs",bull:"s-bl",psychedelic_bull:"s-pb"};
+const L1_NAMES={oncology:"Oncology",cns:"CNS",immunology:"Immunology",cardio_metabolic:"Cardio-Metabolic",dermatology:"Derm",ophthalmology:"Ophtho",infectious_disease:"Infectious",musculoskeletal:"MSK",endocrine:"Endocrine"};
+const L1_ORDER=["oncology","cns","immunology","cardio_metabolic","dermatology","ophthalmology","infectious_disease","musculoskeletal","endocrine"];
+const PHASE_NAMES={commercial:"Commercial",nda_filed:"NDA Filed",phase3:"Phase 3",phase2:"Phase 2",phase1:"Phase 1"};
+const PHASE_ORDER=["commercial","nda_filed","phase3","phase2","phase1"];
+
+function deriveCompanyMeta(cfg){
+  const areas=new Set(),modalities=new Set(),areaTAM={};
+  let totalTAM=0;
+  for(const asset of cfg.assets){
+    if(asset.modality){modalities.add(asset.modality);const p=asset.modality.split(".");modalities.add(p[0]);if(p[1])modalities.add(p[0]+"."+p[1]);}
+    for(const ind of asset.indications){
+      if(ind.area){
+        areas.add(ind.area);
+        const p=ind.area.split(".");areas.add(p[0]);if(p[1])areas.add(p[0]+"."+p[1]);
+        const tam=ind.market?.tamB||0;
+        areaTAM[ind.area]=(areaTAM[ind.area]||0)+tam;
+        if(p[1])areaTAM[p[0]+"."+p[1]]=(areaTAM[p[0]+"."+p[1]]||0)+tam;
+        areaTAM[p[0]]=(areaTAM[p[0]]||0)+tam;
+        totalTAM+=tam;
+      }
+    }
+  }
+  const focus=totalTAM>0?Object.entries(areaTAM).filter(([k])=>k.split(".").length>=2).map(([area,tam])=>({area,purity:Math.round(tam/totalTAM*100)})).sort((a,b)=>b.purity-a.purity):[];
+  return{areas:[...areas],modalities:[...modalities],focus,phase:cfg.company.phase||"phase1",rare:!!cfg.company.rare};
+}
 
 function computeScenario(cfg,scenKey,state){
   const co=cfg.company,scen=state.scenarios[scenKey],val=scen.val;
@@ -280,8 +323,9 @@ async function main(){
       const cashPS=co.cash/co.sharesOut;
       const ev=Math.max(0,price*co.sharesOut-co.cash);
       const wtUp=((weightedTP-price)/price*100);
+      const meta=deriveCompanyMeta(cfg);
       r.push({ticker:tk,name:co.name,ccy:ccySym(co.currency),dec:ccyDec(co.currency),
-        price,prevClose,configPrice:co.currentPrice,live:!!lp,cashPS,ev,tps,weightedTP,wtUp,currency:co.currency,subtitle:co.subtitle||"",yahooTicker:co.yahooTicker||tk});
+        price,prevClose,configPrice:co.currentPrice,live:!!lp,cashPS,ev,tps,weightedTP,wtUp,currency:co.currency,subtitle:co.subtitle||"",yahooTicker:co.yahooTicker||tk,meta});
     }
     return r;
   }
@@ -322,6 +366,7 @@ async function main(){
   const ptfSet=new Set();
   let ddOpen=false;
   let activeFilter=null;
+  let filterL1=null, filterL2=null, filterPhase=null, filterRare=null;
 
   function bucketOf(r){
     if(r.tps.bear!=null&&r.price<r.tps.bear)return 'below_bear';
@@ -338,7 +383,26 @@ async function main(){
   }
 
   function render(){
-    const bk=buckets();
+    // Compute L1/L2 counts for filter chips
+    const l1Counts={},l2Counts={},phaseCounts={};let rareCount=0;
+    rows.forEach(r=>{
+      const seen1=new Set(),seen2=new Set();
+      r.meta.areas.forEach(a=>{const p=a.split(".");if(p.length===1&&!seen1.has(a)){l1Counts[a]=(l1Counts[a]||0)+1;seen1.add(a);}
+        if(p.length===2){const k=p[0]+"."+p[1];if(!seen2.has(k)){l2Counts[k]=(l2Counts[k]||0)+1;seen2.add(k);}}});
+      phaseCounts[r.meta.phase]=(phaseCounts[r.meta.phase]||0)+1;
+      if(r.meta.rare)rareCount++;
+    });
+
+    // Apply all filters
+    let filtered=rows;
+    if(filterL1) filtered=filtered.filter(r=>r.meta.areas.some(a=>a===filterL1||a.startsWith(filterL1+".")));
+    if(filterL2) filtered=filtered.filter(r=>r.meta.areas.some(a=>a===filterL2||a.startsWith(filterL2+".")));
+    if(filterPhase) filtered=filtered.filter(r=>r.meta.phase===filterPhase);
+    if(filterRare!==null) filtered=filtered.filter(r=>r.meta.rare===filterRare);
+    if(activeFilter) filtered=filtered.filter(r=>bucketOf(r)===activeFilter);
+
+    const bk={below_bear:0,bear_base:0,base_bull:0,bull_pb:0,above_pb:0};
+    filtered.forEach(r=>{bk[bucketOf(r)]++;});
     const ptfRows=rows.filter(r=>ptfSet.has(r.ticker));
     const ptfScen={};
     SK.forEach(sk=>{
@@ -348,6 +412,42 @@ async function main(){
     });
 
     let h='';
+
+    // Filter bar
+    h+='<div class="fbar">';
+    h+='<span class="fbar-lbl">Area</span>';
+    L1_ORDER.forEach(l1=>{
+      if(!l1Counts[l1])return;
+      const active=filterL1===l1;
+      h+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')">${L1_NAMES[l1]||l1}<span class="cnt">${l1Counts[l1]}</span></span>`;
+    });
+    h+='<span class="fsep"></span>';
+    h+='<span class="fbar-lbl">Phase</span>';
+    h+=`<select class="fsel" onchange="window._fPhase(this.value)"><option value="">All</option>`;
+    PHASE_ORDER.forEach(p=>{if(phaseCounts[p])h+=`<option value="${p}" ${filterPhase===p?'selected':''}>${PHASE_NAMES[p]} (${phaseCounts[p]})</option>`;});
+    h+='</select>';
+    h+='<span class="fsep"></span>';
+    h+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()">Rare<span class="cnt">${rareCount}</span></span>`;
+    // Clear all
+    if(filterL1||filterL2||filterPhase||filterRare!==null||activeFilter)
+      h+=`<span class="fchip" style="border-color:#ef444444;color:#fca5a5" onclick="window._fClear()">\u2715 Clear</span>`;
+    h+=`<span style="margin-left:auto;font-size:.7rem;color:var(--text2);font-family:var(--mono)">${filtered.length}/${rows.length}</span>`;
+    h+='</div>';
+
+    // L2 sub-chips (show when L1 is active)
+    if(filterL1){
+      const l2s=Object.keys(l2Counts).filter(k=>k.startsWith(filterL1+".")).sort((a,b)=>(l2Counts[b]||0)-(l2Counts[a]||0));
+      if(l2s.length>1){
+        h+='<div class="fl2-row">';
+        h+=`<span class="fl2chip ${!filterL2?'active':''}" onclick="window._fL2(null)">All ${L1_NAMES[filterL1]}</span>`;
+        l2s.forEach(l2=>{
+          const label=l2.split(".").pop().replace(/_/g," ");
+          const active=filterL2===l2;
+          h+=`<span class="fl2chip ${active?'active':''}" onclick="window._fL2('${l2}')">${label}<span class="cnt">${l2Counts[l2]}</span></span>`;
+        });
+        h+='</div>';
+      }
+    }
     // Stats
     h+='<div class="stats">';
     [{k:"below_bear",c:"s-mb",l:"Below Bear",d:"Deep value — price < bear TP"},{k:"bear_base",c:"s-br",l:"Bear–Base",d:"Between bear and base TP"},{k:"base_bull",c:"s-bs",l:"Base–Bull",d:"Fair value range"},{k:"bull_pb",c:"s-bl",l:"Bull–Psych",d:"Above bull, below psych bull"},{k:"above_pb",c:"s-pb",l:"Above Psych Bull",d:"Extreme premium"}].forEach(b=>{
@@ -360,7 +460,7 @@ async function main(){
     // Chart
     h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6)"></div>Market Valuation Overview</div>';
     h+='<div class="card-sub">Upside / downside to scenario targets from current price — sorted by base case upside · Dots right of 0% = upside</div>';
-    const visibleRows=activeFilter?rows.filter(r=>bucketOf(r)===activeFilter):rows;
+    const visibleRows=filtered;
     h+=buildRangeStrip(visibleRows);
 
     // Portfolio
@@ -522,7 +622,13 @@ async function main(){
       h+='<tr>';
       h+=`<td><input type="checkbox" class="ptf-chk" ${ptfSet.has(r.ticker)?'checked':''} onchange="window._toggle('${r.ticker}')"/></td>`;
       h+=`<td><a class="tk" href="model.html?ticker=${r.ticker}">${r.ticker}</a></td>`;
-      h+=`<td style="color:var(--text2);font-size:.75rem;max-width:200px;overflow:hidden;text-overflow:ellipsis">${r.name}</td>`;
+      let nameExtra='';
+      if(filterL1||filterL2){
+        const fArea=filterL2||filterL1;
+        const match=r.meta.focus.find(f=>f.area===fArea||f.area.startsWith(fArea+"."));
+        if(match)nameExtra=`<span class="purity-badge">${match.purity}%</span>`;
+      }
+      h+=`<td style="color:var(--text2);font-size:.75rem;max-width:220px;overflow:hidden;text-overflow:ellipsis">${r.name}${nameExtra}</td>`;
       h+=`<td class="r mono">${c}${r.price.toFixed(d)}`;
       if(r.live&&r.prevClose){const chg=((r.price-r.prevClose)/r.prevClose*100);h+=`<span style="font-size:.65rem;margin-left:3px;color:${chg>=0?'#86efac':'#fca5a5'}">${chg>=0?'+':''}${chg.toFixed(1)}%</span>`;}
       if(r.live)h+=`<span style="font-size:.55rem;color:#22c55e;margin-left:2px" title="Live price">\u25CF</span>`;
@@ -558,6 +664,11 @@ async function main(){
   window._sort=function(k){if(k===sortKey)sortDir*=-1;else{sortKey=k;sortDir=-1;}doSort();render();};
   window._toggle=function(tk){if(ptfSet.has(tk))ptfSet.delete(tk);else ptfSet.add(tk);render();};
   window._filter=function(k){activeFilter=(activeFilter===k)?null:k;render();};
+  window._fL1=function(l1){if(filterL1===l1){filterL1=null;filterL2=null;}else{filterL1=l1;filterL2=null;}render();};
+  window._fL2=function(l2){filterL2=l2;render();};
+  window._fPhase=function(p){filterPhase=p||null;render();};
+  window._fRare=function(){filterRare=filterRare===true?null:true;render();};
+  window._fClear=function(){filterL1=null;filterL2=null;filterPhase=null;filterRare=null;activeFilter=null;render();};
   window._setCorr=function(v){window._corrVal=+v;render();};
   window._setOvr=function(tk,v){if(!window._manualOvr)window._manualOvr={};if(v==='auto')delete window._manualOvr[tk];else window._manualOvr[tk]=+v;render();};
   window._ddOpen=function(){document.getElementById('ddList')?.classList.add('open');};

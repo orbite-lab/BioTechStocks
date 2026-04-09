@@ -8,7 +8,9 @@
     "currentPrice": 95.0,
     "currency": "USD",
     "yahooTicker": "RVMD",
-    "cashRunway": "Into 2028+ (~$2.2B cash, no revenue)"
+    "cashRunway": "Into 2028+ (~$2.2B cash, no revenue)",
+    "phase": "phase3",
+    "rare": false
   },
   "assets": [
     {
@@ -27,9 +29,11 @@
             "penPct": 20,
             "peakYear": 2032,
             "notes": "PDAC ~$5-8B market, ~90% KRAS-driven. RASolute 302 (2L) readout H1 2026. RASolute 303 (1L) first patient dosed Apr 2026. RASolute 304 (adjuvant). BTD for 2L PDAC. Daraxonrasib is oral multi-selective RAS(ON) targeting G12X/G13X/Q61X."
-          }
+          },
+          "area": "oncology.gi.pancreatic"
         }
-      ]
+      ],
+      "modality": "small_molecule.kinase_inhibitor.ras_on_inhibitor"
     },
     {
       "id": "darax_nsclc",
@@ -45,9 +49,11 @@
             "penPct": 12,
             "peakYear": 2033,
             "notes": "NSCLC largest lung cancer subtype. ~25% KRAS-mutant. Daraxonrasib Phase 3 vs docetaxel in 2L+. Competitors: sotorasib (G12C only), adagrasib (G12C only) \u2014 daraxonrasib covers ALL RAS mutations."
-          }
+          },
+          "area": "oncology.lung.nsclc_driver"
         }
-      ]
+      ],
+      "modality": "small_molecule.kinase_inhibitor.ras_on_inhibitor"
     },
     {
       "id": "zoldon",
@@ -65,9 +71,11 @@
             "penPct": 12,
             "peakYear": 2033,
             "notes": "G12D is the most common KRAS mutation in PDAC (~40%). Zoldonrasib BTD in NSCLC. Phase 1 plenary at AACR 2026. RASolute 305: zoldon + chemo vs chemo in 1L PDAC. First G12D-specific therapy."
-          }
+          },
+          "area": "oncology.gi.colorectal"
         }
-      ]
+      ],
+      "modality": "small_molecule.kinase_inhibitor.ras_on_inhibitor"
     },
     {
       "id": "eliron",
@@ -85,9 +93,11 @@
             "penPct": 10,
             "peakYear": 2033,
             "notes": "Next-gen G12C inhibitor (RAS(ON) mechanism vs covalent). Differentiated from sotorasib/adagrasib. Phase 1/2 ongoing."
-          }
+          },
+          "area": "oncology.lung.nsclc_driver"
         }
-      ]
+      ],
+      "modality": "small_molecule.kinase_inhibitor.ras_on_inhibitor"
     },
     {
       "id": "pipeline",
@@ -103,9 +113,11 @@
             "penPct": 5,
             "peakYear": 2035,
             "notes": "Expanding to cover all oncogenic RAS variants. G12V (RMC-5127 in clinic), Q61H, G13C in preclinical. Goal: cover entire RAS-addicted cancer universe."
-          }
+          },
+          "area": "oncology.gi.pancreatic"
         }
-      ]
+      ],
+      "modality": "small_molecule.kinase_inhibitor.ras_on_inhibitor"
     }
   ],
   "scenarios": {

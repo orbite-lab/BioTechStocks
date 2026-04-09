@@ -8,7 +8,9 @@
     "currentPrice": 17.0,
     "currency": "USD",
     "yahooTicker": "LEGN",
-    "cashRunway": "Self-funding (CARVYKTI franchise profitable 2025, company-wide profit 2026)"
+    "cashRunway": "Self-funding (CARVYKTI franchise profitable 2025, company-wide profit 2026)",
+    "phase": "commercial",
+    "rare": false
   },
   "valuationType": "SOTP",
   "assets": [
@@ -25,9 +27,11 @@
           "name": "Multiple myeloma 2L+ (Legend's revenue share)",
           "market": {
             "notes": "Legend 2025 revenue ~$1B ($1.9B CARVYKTI net trade sales by J&J). Q4: $306M (+64% YoY). 10K+ patients treated. 97% mfg success. <30 day TAT. 10K annualized capacity. 279 global sites."
-          }
+          },
+          "area": "oncology.hematology.myeloma"
         }
-      ]
+      ],
+      "modality": "cell_therapy.car_t_autologous.bcma_car_t"
     },
     {
       "id": "carv_1l",
@@ -42,10 +46,12 @@
             "tamB": 8.0,
             "penPct": 10,
             "peakYear": 2032,
-            "notes": "Frontline MM drug market ~$15-20B total. CAR-T addressable subset ~$8B (transplant-eligible + ineligible candidates). CARTITUDE-5 + 6 both enrolled. CARTITUDE-4 showed 50.4mo median PFS in 2L+ — strong rationale for earlier use. Legend receives mfg revenue + profit share from J&J."
-          }
+            "notes": "Frontline MM drug market ~$15-20B total. CAR-T addressable subset ~$8B (transplant-eligible + ineligible candidates). CARTITUDE-5 + 6 both enrolled. CARTITUDE-4 showed 50.4mo median PFS in 2L+ \u2014 strong rationale for earlier use. Legend receives mfg revenue + profit share from J&J."
+          },
+          "area": "oncology.hematology.myeloma"
         }
-      ]
+      ],
+      "modality": "cell_therapy.car_t_autologous.bcma_car_t"
     },
     {
       "id": "lucar",
@@ -61,9 +67,11 @@
             "penPct": 3,
             "peakYear": 2034,
             "notes": "Dual CD19/CD20. Allogeneic = off-the-shelf. If validated, transforms CAR-T economics."
-          }
+          },
+          "area": "oncology.hematology.cll_nhl"
         }
-      ]
+      ],
+      "modality": "cell_therapy.car_t_allogeneic.cd19_allo_car_t"
     },
     {
       "id": "invivo",
@@ -79,9 +87,11 @@
             "penPct": 1,
             "peakYear": 2035,
             "notes": "Dual CD20/CD19 in vivo \u2014 injection, no manufacturing. First patient dosed. Data H2 2026. Multiple INDs planned. Paradigm shift if it works."
-          }
+          },
+          "area": "oncology.hematology.myeloma"
         }
-      ]
+      ],
+      "modality": "cell_therapy.car_t_in_vivo.lnp_car_t"
     }
   ],
   "scenarios": {

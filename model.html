@@ -520,7 +520,7 @@
             // Compute rare purity
             let totalTAM = 0, rareTAM = 0;
             for (const a of config.assets) for (const ind of a.indications) {
-              const tam = ind.market?.tamB || 0; totalTAM += tam; if (ind.rare) rareTAM += tam;
+              const tam = ind.market?.tamB || (ind.market?.patientsK && ind.market?.pricingK ? ind.market.patientsK * ind.market.pricingK / 1000 : 0); totalTAM += tam; if (ind.rare) rareTAM += tam;
             }
             const rarePct = totalTAM > 0 ? Math.round(rareTAM / totalTAM * 100) : 0;
             const hasRare = config.assets.some(a => a.indications.some(i => i.rare));

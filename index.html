@@ -140,7 +140,7 @@ const PHASE_ORDER=["commercial","nda_filed","phase3","phase2","phase1"];
 
 function deriveCompanyMeta(cfg){
   const areas=new Set(),modalities=new Set(),areaTAM={};
-  let totalTAM=0;
+  let totalTAM=0,rareTAM=0;
   for(const asset of cfg.assets){
     if(asset.modality){modalities.add(asset.modality);const p=asset.modality.split(".");modalities.add(p[0]);if(p[1])modalities.add(p[0]+"."+p[1]);}
     for(const ind of asset.indications){
@@ -152,11 +152,14 @@ function deriveCompanyMeta(cfg){
         if(p[1])areaTAM[p[0]+"."+p[1]]=(areaTAM[p[0]+"."+p[1]]||0)+tam;
         areaTAM[p[0]]=(areaTAM[p[0]]||0)+tam;
         totalTAM+=tam;
+        if(ind.rare)rareTAM+=tam;
       }
     }
   }
   const focus=totalTAM>0?Object.entries(areaTAM).filter(([k])=>k.split(".").length>=2).map(([area,tam])=>({area,purity:Math.round(tam/totalTAM*100)})).sort((a,b)=>b.purity-a.purity):[];
-  return{areas:[...areas],modalities:[...modalities],focus,phase:cfg.company.phase||"phase1",rare:!!cfg.company.rare};
+  const rarePurity=totalTAM>0?Math.round(rareTAM/totalTAM*100):0;
+  const hasRare=cfg.assets.some(a=>a.indications.some(i=>i.rare));
+  return{areas:[...areas],modalities:[...modalities],focus,phase:cfg.company.phase||"phase1",rare:hasRare,rarePurity};
 }
 
 function computeScenario(cfg,scenKey,state){
@@ -201,7 +204,7 @@ function computeAll(cfg){
   return{results:res,weightedTP:wTP};
 }
 
-function buildRangeStrip(rows,activeArea){
+function buildRangeStrip(rows,activeArea,filterRare){
   // Sort by bucket then base premium
   const sorted=[...rows].sort((a,b)=>{
     const ua=a.tps.base?((a.tps.base-a.price)/a.price*100):0;
@@ -248,13 +251,15 @@ function buildRangeStrip(rows,activeArea){
     h+=`<div class="rs-row">`;
     h+=`<a class="rs-tk" href="model.html?ticker=${d.ticker}">${d.ticker}</a>`;
     // Purity when area filter active
-    let pStr='';
+    let pStr='',pCol='#c084fc';
     if(activeArea&&d.meta&&d.meta.focus){
       const isL1=activeArea.split(".").length===1;
       if(isL1){const t=d.meta.focus.filter(f=>f.area.startsWith(activeArea+".")&&f.area.split(".").length===2).reduce((s,f)=>s+f.purity,0);if(t>0)pStr=Math.min(t,100)+'';}
       else{const m=d.meta.focus.find(f=>f.area===activeArea);if(m)pStr=m.purity+'';}
+    }else if(filterRare===true&&d.meta&&d.meta.rarePurity>0){
+      pStr=d.meta.rarePurity+'';pCol='#fbbf24';
     }
-    if(pStr)h+=`<span style="width:28px;text-align:right;padding-right:2px;font-family:var(--mono);font-weight:700;font-size:.58rem;color:#c084fc;flex-shrink:0">${pStr}%</span>`;
+    if(pStr)h+=`<span style="width:28px;text-align:right;padding-right:2px;font-family:var(--mono);font-weight:700;font-size:.58rem;color:${pCol};flex-shrink:0">${pStr}%</span>`;
     else h+=`<span style="width:28px;flex-shrink:0"></span>`;
     h+=`<span class="rs-rr" style="color:${rrCol}" title="R/R: bull up ${bullUp.toFixed(0)}% \u00f7 ${d.vals.bear!=null&&d.vals.bear<-1?'bear':'mega bear'} down ${bearDn.toFixed(0)}%">${rrTxt}</span>`;
     h+=`<div class="rs-track">`;
@@ -447,7 +452,7 @@ async function main(){
     PHASE_ORDER.forEach(p=>{if(phaseCounts[p])h+=`<option value="${p}" ${filterPhase===p?'selected':''}>${PHASE_NAMES[p]} (${phaseCounts[p]})</option>`;});
     h+='</select>';
     h+='<span class="fsep"></span>';
-    h+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()">Rare<span class="cnt">${rareCount}</span></span>`;
+    h+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()" title="Filter companies with rare disease indications">Rare<span class="cnt">${rareCount}</span></span>`;
     if(filterL1||filterL2||filterL3||filterPhase||filterRare!==null||activeFilter||filterMod1||filterMod2||filterMod3)
       h+=`<span class="fchip" style="border-color:#ef444444;color:#fca5a5" onclick="window._fClear()">\u2715 Clear</span>`;
     h+=`<span style="margin-left:auto;font-size:.7rem;color:var(--text2);font-family:var(--mono)">${filtered.length}/${rows.length}</span>`;
@@ -538,7 +543,7 @@ async function main(){
     h+='<div class="card-sub">Upside / downside to scenario targets from current price — sorted by base case upside · Dots right of 0% = upside</div>';
     const visibleRows=filtered;
     const activeArea=filterL3||filterL2||filterL1||null;
-    h+=buildRangeStrip(visibleRows,activeArea);
+    h+=buildRangeStrip(visibleRows,activeArea,filterRare);
 
     // Portfolio
     h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#a855f7,#ec4899)"></div>Portfolio Scenario Simulator</div>';
@@ -710,6 +715,8 @@ async function main(){
           const match=r.meta.focus.find(f=>f.area===fArea);
           if(match)nameExtra=`<span class="purity-badge">${match.purity}%</span>`;
         }
+      }else if(filterRare===true&&r.meta.rarePurity>0){
+        nameExtra=`<span class="purity-badge" style="background:#f59e0b22;color:#fbbf24;border-color:#f59e0b33">${r.meta.rarePurity}%</span>`;
       }
       h+=`<td style="color:var(--text2);font-size:.75rem;max-width:220px;overflow:hidden;text-overflow:ellipsis">${r.name}${nameExtra}</td>`;
       h+=`<td class="r mono">${c}${r.price.toFixed(d)}`;

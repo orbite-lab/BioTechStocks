@@ -435,21 +435,65 @@ async function main(){
   }
 
   function render(){
-    // Compute L1/L2/L3 counts for filter chips
-    const l1Counts={},l2Counts={},l3Counts={},phaseCounts={},m1Counts={},m2Counts={},m3Counts={};let rareCount=0;
-    rows.forEach(r=>{
-      const seen1=new Set(),seen2=new Set(),seen3=new Set(),seenM1=new Set(),seenM2=new Set(),seenM3=new Set();
-      r.meta.areas.forEach(a=>{const p=a.split(".");
-        if(p.length===1&&!seen1.has(a)){l1Counts[a]=(l1Counts[a]||0)+1;seen1.add(a);}
-        if(p.length===2){const k=p[0]+"."+p[1];if(!seen2.has(k)){l2Counts[k]=(l2Counts[k]||0)+1;seen2.add(k);}}
-        if(p.length===3){if(!seen3.has(a)){l3Counts[a]=(l3Counts[a]||0)+1;seen3.add(a);}}});
+    // Compute L1/L2/L3 counts using cross-filtering
+    // Each dimension's counts reflect all OTHER filters, not its own
+    function applyFiltersExcept(src, skipArea, skipMod, skipPhase, skipRare, skipBucket){
+      let f=src;
+      if(!skipArea){
+        if(filterL1) f=f.filter(r=>r.meta.areas.some(a=>a===filterL1||a.startsWith(filterL1+".")));
+        if(filterL2) f=f.filter(r=>r.meta.areas.some(a=>a===filterL2||a.startsWith(filterL2+".")));
+        if(filterL3) f=f.filter(r=>r.meta.areas.some(a=>a===filterL3));
+      }
+      if(!skipMod){
+        if(filterMod1) f=f.filter(r=>r.meta.modalities.some(m=>m===filterMod1||m.startsWith(filterMod1+".")));
+        if(filterMod2) f=f.filter(r=>r.meta.modalities.some(m=>m===filterMod2||m.startsWith(filterMod2+".")));
+        if(filterMod3) f=f.filter(r=>r.meta.modalities.some(m=>m===filterMod3));
+      }
+      if(!skipPhase&&filterPhase) f=f.filter(r=>r.meta.phase===filterPhase);
+      if(!skipRare&&filterRare!==null) f=f.filter(r=>r.meta.rare===filterRare);
+      if(!skipBucket&&activeFilter) f=f.filter(r=>bucketOf(r)===activeFilter);
+      return f;
+    }
+    const forArea=applyFiltersExcept(rows,true,false,false,false,false);
+    const forMod=applyFiltersExcept(rows,false,true,false,false,false);
+    const forPhase=applyFiltersExcept(rows,false,false,true,false,false);
+    const forRare=applyFiltersExcept(rows,false,false,false,true,false);
+    function countAreas(src){
+      const c1={},c2={},c3={};let rc=0;
+      src.forEach(r=>{
+        const s1=new Set(),s2=new Set(),s3=new Set();
+        r.meta.areas.forEach(a=>{const p=a.split(".");
+          if(p.length===1&&!s1.has(a)){c1[a]=(c1[a]||0)+1;s1.add(a);}
+          if(p.length===2){const k=p[0]+"."+p[1];if(!s2.has(k)){c2[k]=(c2[k]||0)+1;s2.add(k);}}
+          if(p.length===3&&!s3.has(a)){c3[a]=(c3[a]||0)+1;s3.add(a);}});
+        if(r.meta.rare)rc++;
+      });
+      return{c1,c2,c3,rc};
+    }
+    function countMods(src){
+      const c1={},c2={},c3={};
+      src.forEach(r=>{
+        const s1=new Set(),s2=new Set(),s3=new Set();
+        r.meta.modalities.forEach(m=>{const p=m.split(".");
+          if(p.length===1&&!s1.has(m)){c1[m]=(c1[m]||0)+1;s1.add(m);}
+          if(p.length===2){const k=p[0]+"."+p[1];if(!s2.has(k)){c2[k]=(c2[k]||0)+1;s2.add(k);}}
+          if(p.length===3&&!s3.has(m)){c3[m]=(c3[m]||0)+1;s3.add(m);}});
+      });
+      return c1;
+    }
+    const {c1:l1Counts,c2:l2Counts,c3:l3Counts,rc:rareCount}=countAreas(forArea);
+    const phaseCounts={};forPhase.forEach(r=>{phaseCounts[r.meta.phase]=(phaseCounts[r.meta.phase]||0)+1;});
+    const m1Counts=countMods(forMod);
+    // Mod L2/L3 counts from forMod (cross-filtered: all except modality)
+    const m2Counts={},m3Counts={};
+    forMod.forEach(r=>{
+      const s2=new Set(),s3=new Set();
       r.meta.modalities.forEach(m=>{const p=m.split(".");
-        if(p.length===1&&!seenM1.has(m)){m1Counts[m]=(m1Counts[m]||0)+1;seenM1.add(m);}
-        if(p.length===2){const k=p[0]+"."+p[1];if(!seenM2.has(k)){m2Counts[k]=(m2Counts[k]||0)+1;seenM2.add(k);}}
-        if(p.length===3){if(!seenM3.has(m)){m3Counts[m]=(m3Counts[m]||0)+1;seenM3.add(m);}}});
-      phaseCounts[r.meta.phase]=(phaseCounts[r.meta.phase]||0)+1;
-      if(r.meta.rare)rareCount++;
+        if(p.length===2){const k=p[0]+"."+p[1];if(!s2.has(k)){m2Counts[k]=(m2Counts[k]||0)+1;s2.add(k);}}
+        if(p.length===3&&!s3.has(m)){m3Counts[m]=(m3Counts[m]||0)+1;s3.add(m);}});
     });
+    // Rare count from forRare (all filters except rare)
+    const rareCountCross=forRare.filter(r=>r.meta.rare).length;
 
     // Apply all filters
     let filtered=rows;
@@ -489,7 +533,7 @@ async function main(){
     PHASE_ORDER.forEach(p=>{if(phaseCounts[p])h+=`<option value="${p}" ${filterPhase===p?'selected':''}>${PHASE_NAMES[p]} (${phaseCounts[p]})</option>`;});
     h+='</select>';
     h+='<span class="fsep"></span>';
-    h+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()" title="Filter companies with rare disease indications">\u2605 Rare<span class="cnt">${rareCount}</span></span>`;
+    h+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()" title="Filter companies with rare disease indications">\u2605 Rare<span class="cnt">${rareCountCross}</span></span>`;
     h+='<span class="fsep"></span>';
     h+=`<span class="fchip ${purityMode==='wtd'?'active':''}" onclick="window._purityMode()" style="padding:2px 8px;font-size:.62rem" title="Toggle: Raw TAM vs Risk-Adjusted (PoS×Apr weighted)">Purity: ${purityMode==='wtd'?'Risk-Adj':'Raw TAM'}</span>`;
     if(filterL1||filterL2||filterL3||filterPhase||filterRare!==null||activeFilter||filterMod1||filterMod2||filterMod3)

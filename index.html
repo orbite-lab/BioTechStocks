@@ -216,6 +216,37 @@ function computeAll(cfg){
   const wTP=sks.reduce((s,k,i)=>s+res[k].tp*nw[i],0);
   return{results:res,weightedTP:wTP};
 }
+// Compute weighted TP with overridden PoS/Apr for a specific asset.indication
+function computeTPOverride(cfg,assetId,indId,pos,apr){
+  const mod=JSON.parse(JSON.stringify(cfg));
+  for(const sk in mod.scenarios){
+    const a=mod.scenarios[sk].assumptions;
+    if(!a[assetId])a[assetId]={};
+    if(!a[assetId][indId])a[assetId][indId]={pos:0,apr:0,pen:1};
+    a[assetId][indId].pos=pos;
+    a[assetId][indId].apr=apr;
+  }
+  return computeAll(mod).weightedTP;
+}
+// Compute catalyst asymmetry metrics for a company
+function computeCatalysts(cfg,currentPrice){
+  if(!cfg.catalysts||!cfg.catalysts.length)return[];
+  const baseA=cfg.scenarios?.base?.assumptions||{};
+  const today=new Date('2026-04-09');
+  return cfg.catalysts.map(cat=>{
+    const failTP=computeTPOverride(cfg,cat.asset,cat.indication,cat.fail_pos,cat.fail_apr);
+    const successTP=computeTPOverride(cfg,cat.asset,cat.indication,cat.success_pos,cat.success_apr);
+    const swing=successTP-failTP;
+    const swingPct=currentPrice>0?Math.round(swing/currentPrice*100):0;
+    const impliedPos=swing>0?Math.max(0,Math.min(100,Math.round((currentPrice-failTP)/swing*100))):50;
+    const ba=baseA[cat.asset]?.[cat.indication]||{};
+    const baseComposite=Math.round((ba.pos||0)/100*(ba.apr||0)/100*100);
+    const asymmetry=baseComposite-impliedPos;
+    const catDate=new Date(cat.dateSort);
+    const daysOut=Math.max(0,Math.round((catDate-today)/(1000*60*60*24)));
+    return{...cat,failTP,successTP,swing,swingPct,impliedPos,baseComposite,asymmetry,daysOut};
+  }).sort((a,b)=>a.daysOut-b.daysOut);
+}
 
 function buildRangeStrip(rows,activeArea,filterRare,sortMode,purityMode){
   // Helper: compute purity for a row given active filters and mode
@@ -373,8 +404,9 @@ async function main(){
       const evUSD=toUSD(ev,co.currency||'USD')/1000; // in $B USD
       const wtUp=((weightedTP-price)/price*100);
       const meta=deriveCompanyMeta(cfg);
+      const catalysts=computeCatalysts(cfg,price);
       r.push({ticker:tk,name:co.name,ccy:ccySym(co.currency),dec:ccyDec(co.currency),
-        price,prevClose,configPrice:co.currentPrice,live:!!lp,cashPS,ev,evUSD,tps,weightedTP,wtUp,currency:co.currency,subtitle:co.subtitle||"",yahooTicker:co.yahooTicker||tk,meta});
+        price,prevClose,configPrice:co.currentPrice,live:!!lp,cashPS,ev,evUSD,tps,weightedTP,wtUp,currency:co.currency,subtitle:co.subtitle||"",yahooTicker:co.yahooTicker||tk,meta,catalysts});
     }
     return r;
   }
@@ -718,6 +750,88 @@ async function main(){
       h+='<span style="display:inline-block;width:14px;height:8px;background:#22c55e44;border-right:2px solid #22c55e88;border-radius:2px;vertical-align:middle;margin-right:4px"></span>TAM-justified ';
       h+='<span style="display:inline-block;width:14px;height:8px;background:#ef444418;border:1px solid #ef444433;border-radius:2px;vertical-align:middle;margin-left:12px;margin-right:4px"></span>Premium over risk-adj TAM ';
       h+='</div></div></div>';
+    }
+
+    // Catalyst Asymmetry card
+    const allCats=[];
+    visibleRows.forEach(r=>{if(r.catalysts)r.catalysts.forEach(c=>{allCats.push({...c,ticker:r.ticker,ccy:r.ccy,dec:r.dec,price:r.price});});});
+    if(allCats.length>0){
+      const maxDays=Math.max(180,...allCats.map(c=>c.daysOut));
+      const maxSwing=Math.max(50,...allCats.map(c=>Math.abs(c.swingPct)));
+      h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#22c55e,#ef4444)"></div>Catalyst Asymmetry Map</div>';
+      h+='<div class="card-sub">Each dot = a binary catalyst. Position: when (X) x how much it moves the stock (Y). Color: green = market underprices your PoS (buy before), red = market already priced in (sell the news).</div>';
+      // Scatter plot
+      h+='<div style="position:relative;height:280px;margin:16px 0 8px;border-left:1px solid #ffffff18;border-bottom:1px solid #ffffff18;overflow:visible">';
+      // Y-axis label
+      h+='<div style="position:absolute;top:-8px;left:-4px;font-size:.55rem;color:var(--text2);font-family:var(--mono)">Swing %</div>';
+      // X-axis label
+      h+='<div style="position:absolute;bottom:-18px;right:0;font-size:.55rem;color:var(--text2);font-family:var(--mono)">Days to catalyst</div>';
+      // Grid lines
+      for(let d=30;d<=maxDays;d+=30){
+        const x=d/maxDays*100;
+        h+=`<div style="position:absolute;bottom:0;left:${x}%;width:1px;height:100%;background:#ffffff08"></div>`;
+        h+=`<div style="position:absolute;bottom:-14px;left:${x}%;transform:translateX(-50%);font-size:.5rem;color:var(--text2);font-family:var(--mono)">${d}d</div>`;
+      }
+      for(let s=25;s<=maxSwing;s+=25){
+        const y=s/maxSwing*100;
+        h+=`<div style="position:absolute;bottom:${y}%;left:0;width:100%;height:1px;background:#ffffff08"></div>`;
+        h+=`<div style="position:absolute;bottom:${y}%;left:-28px;font-size:.5rem;color:var(--text2);font-family:var(--mono);transform:translateY(50%)">${s}%</div>`;
+      }
+      // Dots
+      allCats.forEach(c=>{
+        const x=Math.min(c.daysOut/maxDays*100,99);
+        const y=Math.min(Math.abs(c.swingPct)/maxSwing*100,98);
+        const asym=c.asymmetry;
+        const col=asym>15?'#22c55e':asym>5?'#4ade80':asym>-5?'#6b7080':asym>-15?'#f97316':'#ef4444';
+        const sz=c.binary?10:7;
+        const border=c.binary?'2px solid '+col:'1px solid '+col+'88';
+        h+=`<div style="position:absolute;left:${x}%;bottom:${y}%;transform:translate(-50%,50%);width:${sz}px;height:${sz}px;border-radius:50%;background:${col}44;border:${border};cursor:pointer;z-index:2" title="${c.ticker}: ${c.title}\nSwing: ${c.swingPct}% | Implied PoS: ${c.impliedPos}% | Your PoS: ${c.baseComposite}%\nAsymmetry: ${asym>0?'+':''}${asym}pp | ${c.daysOut} days"></div>`;
+        // Label
+        h+=`<div style="position:absolute;left:${x}%;bottom:${y+2.5}%;transform:translateX(-50%);font-size:.55rem;font-family:var(--mono);color:${col};font-weight:700;white-space:nowrap;pointer-events:none">${c.ticker}</div>`;
+      });
+      h+='</div>';
+      // Legend
+      h+='<div style="display:flex;gap:14px;margin:20px 0 10px;font-size:.6rem;color:var(--text2);flex-wrap:wrap">';
+      h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e44;border:2px solid #22c55e;vertical-align:middle;margin-right:3px"></span>Positive asymmetry (market skeptical, you bullish)</span>';
+      h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#6b708044;border:2px solid #6b7080;vertical-align:middle;margin-right:3px"></span>Neutral (fairly priced)</span>';
+      h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef444444;border:2px solid #ef4444;vertical-align:middle;margin-right:3px"></span>Negative asymmetry (sell the news risk)</span>';
+      h+='<span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;border:2px solid #6b7080;vertical-align:middle;margin-right:3px"></span>Binary</span>';
+      h+='<span><span style="display:inline-block;width:7px;height:7px;border-radius:50%;border:1px solid #6b7080;vertical-align:middle;margin-right:3px"></span>Incremental</span>';
+      h+='</div>';
+      // Table
+      h+='<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.65rem;font-family:var(--mono)">';
+      h+='<tr style="border-bottom:1px solid #ffffff12;color:var(--text2)">';
+      h+='<th style="text-align:left;padding:6px 8px">Ticker</th>';
+      h+='<th style="text-align:left;padding:6px 4px">Catalyst</th>';
+      h+='<th style="text-align:center;padding:6px 4px">When</th>';
+      h+='<th style="text-align:center;padding:6px 4px">Days</th>';
+      h+='<th style="text-align:center;padding:6px 4px">Fail TP</th>';
+      h+='<th style="text-align:center;padding:6px 4px">Win TP</th>';
+      h+='<th style="text-align:center;padding:6px 4px">Swing</th>';
+      h+='<th style="text-align:center;padding:6px 4px">Mkt Implied</th>';
+      h+='<th style="text-align:center;padding:6px 4px">Your PoS</th>';
+      h+='<th style="text-align:center;padding:6px 4px;min-width:70px">Asymmetry</th>';
+      h+='</tr>';
+      [...allCats].sort((a,b)=>b.asymmetry-a.asymmetry).forEach(c=>{
+        const asym=c.asymmetry;
+        const col=asym>15?'#22c55e':asym>5?'#4ade80':asym>-5?'#6b7080':asym>-15?'#f97316':'#ef4444';
+        const urgency=c.daysOut<30?'#ef4444':c.daysOut<90?'#f59e0b':'var(--text2)';
+        h+=`<tr style="border-bottom:1px solid #ffffff06">`;
+        h+=`<td style="padding:5px 8px;font-weight:700"><a href="model.html?ticker=${c.ticker}" style="color:#60a5fa;text-decoration:none">${c.ticker}</a></td>`;
+        h+=`<td style="padding:5px 4px;color:var(--text2);max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.title}</td>`;
+        h+=`<td style="padding:5px 4px;text-align:center;color:${urgency}">${c.date}</td>`;
+        h+=`<td style="padding:5px 4px;text-align:center;color:${urgency};font-weight:700">${c.daysOut}d</td>`;
+        h+=`<td style="padding:5px 4px;text-align:center;color:#ef4444">${c.ccy}${c.failTP.toFixed(c.dec)}</td>`;
+        h+=`<td style="padding:5px 4px;text-align:center;color:#22c55e">${c.ccy}${c.successTP.toFixed(c.dec)}</td>`;
+        h+=`<td style="padding:5px 4px;text-align:center;font-weight:700">${c.swingPct}%</td>`;
+        h+=`<td style="padding:5px 4px;text-align:center">${c.impliedPos}%</td>`;
+        h+=`<td style="padding:5px 4px;text-align:center">${c.baseComposite}%</td>`;
+        h+=`<td style="padding:5px 4px;text-align:center;font-weight:800;color:${col}">${asym>0?'+':''}${asym}pp</td>`;
+        h+=`</tr>`;
+      });
+      h+='</table></div>';
+      h+='<div style="margin-top:8px;font-size:.58rem;color:var(--text2)">Asymmetry = Your base PoS - Market implied PoS. Positive = market underprices the catalyst. Negative = priced in. Implied PoS = (Price - Fail TP) / (Win TP - Fail TP).</div>';
+      h+='</div>';
     }
 
     // Portfolio

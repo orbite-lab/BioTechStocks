@@ -1,18 +1,18 @@
 {
   "_meta": {
-    "description": "Master taxonomy for BioTechStocks screener \u2014 L1.L2.L3 hierarchical tags",
+    "description": "Master taxonomy for BioTechStocks screener -- L1.L2.L3 hierarchical tags",
     "generated": "2026-04-09",
     "format": "L1.L2.L3 hierarchical tags",
     "rules": [
       "Every L3 term must appear under exactly ONE L1.L2 parent (no duplicates across branches)",
       "Disease classification follows the organ/system affected, not the treatment mechanism",
-      "No 'multi_indication' catch-alls \u2014 use the lead/primary indication",
+      "No 'multi_indication' catch-alls -- use the lead/primary indication",
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
     "area_count": 106,
     "modality_count": 106,
-    "companies": 38
+    "companies": 39
   },
   "therapeutic_areas": {
     "cardio_metabolic": {
@@ -151,9 +151,10 @@
         "mc4r": {
           "companies": [
             "NBIX",
-            "RYTM"
+            "RYTM",
+            "SLNO"
           ],
-          "count": 2,
+          "count": 3,
           "rare": true
         },
         "rnai_obesity": {
@@ -1331,9 +1332,10 @@
         },
         "diazoxide": {
           "companies": [
-            "NBIX"
+            "NBIX",
+            "SLNO"
           ],
-          "count": 1
+          "count": 2
         },
         "factor_xa_inhibitor": {
           "companies": [

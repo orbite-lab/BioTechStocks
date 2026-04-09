@@ -147,7 +147,7 @@ function deriveCompanyMeta(cfg){
       if(ind.area){
         areas.add(ind.area);
         const p=ind.area.split(".");areas.add(p[0]);if(p[1])areas.add(p[0]+"."+p[1]);
-        const tam=ind.market?.tamB||0;
+        const tam=ind.market?.tamB||(ind.market?.patientsK&&ind.market?.pricingK?ind.market.patientsK*ind.market.pricingK/1000:0);
         areaTAM[ind.area]=(areaTAM[ind.area]||0)+tam;
         if(p[1])areaTAM[p[0]+"."+p[1]]=(areaTAM[p[0]+"."+p[1]]||0)+tam;
         areaTAM[p[0]]=(areaTAM[p[0]]||0)+tam;

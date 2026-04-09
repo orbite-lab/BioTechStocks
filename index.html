@@ -639,38 +639,32 @@ async function main(){
     // Overpriced vs TAM card — companies where EV > total risk-adj TAM
     const overRows=[...visibleRows].filter(r=>r.evUSD>0&&r.meta.totalWTD>0&&r.evUSD>r.meta.totalWTD).sort((a,b)=>(b.evUSD/b.meta.totalWTD)-(a.evUSD/a.meta.totalWTD));
     if(overRows.length>0){
-      const maxEV=Math.max(...overRows.map(r=>r.evUSD));
       h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#ef4444,#991b1b)"></div>EV &gt; Risk-Adj TAM — Priced Beyond Fundamentals</div>';
-      h+='<div class="card-sub">Companies where current EV exceeds total risk-adjusted TAM. Market is pricing in pipeline success above base-case probabilities, or TAM estimates need revisiting.</div>';
+      h+='<div class="card-sub">Market prices in pipeline success above base-case probabilities, or TAM estimates need revisiting.</div>';
       h+='<div style="padding:8px 0">';
       overRows.forEach(r=>{
         const evB=r.evUSD,wtd=r.meta.totalWTD,raw=r.meta.totalTAM;
         const ratio=Math.round(evB/wtd*100);
-        const excess=evB-wtd;
-        const evPct=Math.min((evB/maxEV)*100,100);
-        const wtdPct=(wtd/maxEV)*100;
-        const rawPct=(raw/maxEV)*100;
+        const tamPct=Math.round(wtd/evB*100); // how much of EV is justified
+        const premium=ratio-100;
         const ratioCol=ratio>300?'#991b1b':ratio>200?'#ef4444':'#f59e0b';
-        h+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">`;
+        h+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">`;
         h+=`<a href="model.html?ticker=${r.ticker}" style="width:48px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.75rem;color:#60a5fa;text-decoration:none">${r.ticker}</a>`;
-        h+=`<span style="width:48px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.68rem;color:${ratioCol}">${ratio}%</span>`;
-        h+=`<div style="flex:1;position:relative;height:22px">`;
-        // EV bar (red)
-        h+=`<div style="position:absolute;top:0;left:0;height:22px;width:${evPct}%;background:#ef4444;opacity:.2;border-radius:4px"></div>`;
-        h+=`<div style="position:absolute;top:0;left:0;height:22px;width:${evPct}%;border:1.5px solid #ef444466;border-radius:4px;box-sizing:border-box"></div>`;
-        // Risk-adj TAM overlay (green, shorter)
-        h+=`<div style="position:absolute;top:4px;left:0;height:14px;width:${wtdPct}%;background:#22c55e;opacity:.4;border-radius:3px"></div>`;
-        // Labels
-        h+=`<span style="position:absolute;top:3px;left:${evPct+0.5}%;font-size:.58rem;font-family:var(--mono);color:#ef4444;white-space:nowrap;padding-left:4px">EV $${evB.toFixed(0)}B</span>`;
-        h+=`<span style="position:absolute;top:3px;left:${Math.max(wtdPct-1,0)}%;font-size:.55rem;font-family:var(--mono);color:#22c55e;white-space:nowrap;text-align:right;transform:translateX(-100%);padding-right:4px">$${wtd.toFixed(0)}B adj</span>`;
+        // Bar: each company normalized to its own EV = 100%
+        h+=`<div style="flex:1;height:20px;position:relative;background:#ef444418;border-radius:4px;border:1px solid #ef444433;overflow:hidden">`;
+        // Green fill = TAM-justified portion
+        h+=`<div style="position:absolute;top:0;left:0;height:100%;width:${tamPct}%;background:#22c55e44;border-right:2px solid #22c55e88"></div>`;
+        // Labels inside bar
+        h+=`<span style="position:absolute;top:2px;left:8px;font-size:.62rem;font-family:var(--mono);color:#22c55e;font-weight:700">$${wtd.toFixed(0)}B adj</span>`;
+        h+=`<span style="position:absolute;top:2px;right:8px;font-size:.62rem;font-family:var(--mono);color:#ef4444;font-weight:700">EV $${evB.toFixed(0)}B</span>`;
         h+=`</div>`;
-        h+=`<span style="width:80px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.65rem;color:${ratioCol};flex-shrink:0">+$${excess.toFixed(0)}B over</span>`;
+        // Premium badge
+        h+=`<span style="width:72px;text-align:right;font-family:var(--mono);font-weight:800;font-size:.72rem;color:${ratioCol};flex-shrink:0">+${premium}%</span>`;
         h+=`</div>`;
       });
-      h+='<div style="display:flex;gap:16px;margin-top:10px;font-size:.65rem;color:var(--text2);flex-wrap:wrap">';
-      h+='<span><span style="display:inline-block;width:20px;height:8px;background:#ef4444;opacity:.3;border:1px solid #ef444466;border-radius:2px;vertical-align:middle;margin-right:4px"></span>Current EV</span>';
-      h+='<span><span style="display:inline-block;width:20px;height:8px;background:#22c55e;opacity:.4;border-radius:2px;vertical-align:middle;margin-right:4px"></span>Total risk-adj TAM</span>';
-      h+='<span>% = EV \u00f7 risk-adj TAM \u00b7 &gt;100% = market prices in above-base probability</span>';
+      h+='<div style="margin-top:8px;font-size:.62rem;color:var(--text2)">';
+      h+='<span style="display:inline-block;width:14px;height:8px;background:#22c55e44;border-right:2px solid #22c55e88;border-radius:2px;vertical-align:middle;margin-right:4px"></span>TAM-justified ';
+      h+='<span style="display:inline-block;width:14px;height:8px;background:#ef444418;border:1px solid #ef444433;border-radius:2px;vertical-align:middle;margin-left:12px;margin-right:4px"></span>Premium over risk-adj TAM ';
       h+='</div></div></div>';
     }
 

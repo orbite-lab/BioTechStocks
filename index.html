@@ -110,7 +110,7 @@ tbody tr:hover{background:#ffffff06}
 .fl2chip:hover{border-color:#a855f7;color:var(--text1)}
 .fl2chip.active{background:#a855f722;border-color:#a855f7;color:#d8b4fe}
 .fl2chip .cnt{font-size:.58rem;opacity:.5;margin-left:2px}
-.purity-badge{display:inline-block;font-size:.58rem;font-family:var(--mono);padding:1px 4px;border-radius:3px;background:#ffffff08;color:var(--text2);margin-left:4px;font-weight:600}
+.purity-badge{display:inline-block;font-size:.62rem;font-family:var(--mono);padding:2px 5px;border-radius:3px;background:#a855f722;color:#c084fc;margin-left:5px;font-weight:700;border:1px solid #a855f733}
 </style>
 </head>
 <body>
@@ -201,7 +201,7 @@ function computeAll(cfg){
   return{results:res,weightedTP:wTP};
 }
 
-function buildRangeStrip(rows){
+function buildRangeStrip(rows,activeArea){
   // Sort by bucket then base premium
   const sorted=[...rows].sort((a,b)=>{
     const ua=a.tps.base?((a.tps.base-a.price)/a.price*100):0;
@@ -213,7 +213,7 @@ function buildRangeStrip(rows){
   const data=sorted.map(r=>{
     const vals={};
     SK.forEach(sk=>{vals[sk]=r.tps[sk]?((r.tps[sk]-r.price)/r.price*100):null;});
-    return{ticker:r.ticker,name:r.name,vals,price:r.price,ccy:r.ccy,dec:r.dec};
+    return{ticker:r.ticker,name:r.name,vals,price:r.price,ccy:r.ccy,dec:r.dec,meta:r.meta};
   });
   // Scale: -100 to +500, cap outliers
   const LO=-100,HI=500;
@@ -247,6 +247,15 @@ function buildRangeStrip(rows){
     else{rrCol='#86efac';rrTxt=rr.toFixed(0)+'x';}
     h+=`<div class="rs-row">`;
     h+=`<a class="rs-tk" href="model.html?ticker=${d.ticker}">${d.ticker}</a>`;
+    // Purity when area filter active
+    let pStr='';
+    if(activeArea&&d.meta&&d.meta.focus){
+      const isL1=activeArea.split(".").length===1;
+      if(isL1){const t=d.meta.focus.filter(f=>f.area.startsWith(activeArea+".")&&f.area.split(".").length===2).reduce((s,f)=>s+f.purity,0);if(t>0)pStr=Math.min(t,100)+'';}
+      else{const m=d.meta.focus.find(f=>f.area===activeArea);if(m)pStr=m.purity+'';}
+    }
+    if(pStr)h+=`<span style="width:28px;text-align:right;padding-right:2px;font-family:var(--mono);font-weight:700;font-size:.58rem;color:#c084fc;flex-shrink:0">${pStr}%</span>`;
+    else h+=`<span style="width:28px;flex-shrink:0"></span>`;
     h+=`<span class="rs-rr" style="color:${rrCol}" title="R/R: bull up ${bullUp.toFixed(0)}% \u00f7 ${d.vals.bear!=null&&d.vals.bear<-1?'bear':'mega bear'} down ${bearDn.toFixed(0)}%">${rrTxt}</span>`;
     h+=`<div class="rs-track">`;
     // Zero line
@@ -267,7 +276,7 @@ function buildRangeStrip(rows){
     h+=`</div></div>`;
   });
   // Axis labels
-  h+='<div class="rs-axis"><div style="width:96px;flex-shrink:0"></div><div class="rs-axis-track">';
+  h+='<div class="rs-axis"><div style="width:124px;flex-shrink:0"></div><div class="rs-axis-track">';
   [-100,-50,0,50,100,200,300,400,500].forEach(v=>{
     h+=`<div class="rs-axis-lbl" style="left:${pct(v)}%;${v===0?'color:#e2e4ea;font-weight:700':''}">${v>=0?'+':''}${v}%</div>`;
   });
@@ -366,7 +375,8 @@ async function main(){
   const ptfSet=new Set();
   let ddOpen=false;
   let activeFilter=null;
-  let filterL1=null, filterL2=null, filterPhase=null, filterRare=null;
+  let filterL1=null, filterL2=null, filterL3=null, filterPhase=null, filterRare=null;
+  let filterMod1=null, filterMod2=null, filterMod3=null;
 
   function bucketOf(r){
     if(r.tps.bear!=null&&r.price<r.tps.bear)return 'below_bear';
@@ -383,12 +393,18 @@ async function main(){
   }
 
   function render(){
-    // Compute L1/L2 counts for filter chips
-    const l1Counts={},l2Counts={},phaseCounts={};let rareCount=0;
+    // Compute L1/L2/L3 counts for filter chips
+    const l1Counts={},l2Counts={},l3Counts={},phaseCounts={},m1Counts={},m2Counts={},m3Counts={};let rareCount=0;
     rows.forEach(r=>{
-      const seen1=new Set(),seen2=new Set();
-      r.meta.areas.forEach(a=>{const p=a.split(".");if(p.length===1&&!seen1.has(a)){l1Counts[a]=(l1Counts[a]||0)+1;seen1.add(a);}
-        if(p.length===2){const k=p[0]+"."+p[1];if(!seen2.has(k)){l2Counts[k]=(l2Counts[k]||0)+1;seen2.add(k);}}});
+      const seen1=new Set(),seen2=new Set(),seen3=new Set(),seenM1=new Set(),seenM2=new Set(),seenM3=new Set();
+      r.meta.areas.forEach(a=>{const p=a.split(".");
+        if(p.length===1&&!seen1.has(a)){l1Counts[a]=(l1Counts[a]||0)+1;seen1.add(a);}
+        if(p.length===2){const k=p[0]+"."+p[1];if(!seen2.has(k)){l2Counts[k]=(l2Counts[k]||0)+1;seen2.add(k);}}
+        if(p.length===3){if(!seen3.has(a)){l3Counts[a]=(l3Counts[a]||0)+1;seen3.add(a);}}});
+      r.meta.modalities.forEach(m=>{const p=m.split(".");
+        if(p.length===1&&!seenM1.has(m)){m1Counts[m]=(m1Counts[m]||0)+1;seenM1.add(m);}
+        if(p.length===2){const k=p[0]+"."+p[1];if(!seenM2.has(k)){m2Counts[k]=(m2Counts[k]||0)+1;seenM2.add(k);}}
+        if(p.length===3){if(!seenM3.has(m)){m3Counts[m]=(m3Counts[m]||0)+1;seenM3.add(m);}}});
       phaseCounts[r.meta.phase]=(phaseCounts[r.meta.phase]||0)+1;
       if(r.meta.rare)rareCount++;
     });
@@ -397,6 +413,10 @@ async function main(){
     let filtered=rows;
     if(filterL1) filtered=filtered.filter(r=>r.meta.areas.some(a=>a===filterL1||a.startsWith(filterL1+".")));
     if(filterL2) filtered=filtered.filter(r=>r.meta.areas.some(a=>a===filterL2||a.startsWith(filterL2+".")));
+    if(filterL3) filtered=filtered.filter(r=>r.meta.areas.some(a=>a===filterL3));
+    if(filterMod1) filtered=filtered.filter(r=>r.meta.modalities.some(m=>m===filterMod1||m.startsWith(filterMod1+".")));
+    if(filterMod2) filtered=filtered.filter(r=>r.meta.modalities.some(m=>m===filterMod2||m.startsWith(filterMod2+".")));
+    if(filterMod3) filtered=filtered.filter(r=>r.meta.modalities.some(m=>m===filterMod3));
     if(filterPhase) filtered=filtered.filter(r=>r.meta.phase===filterPhase);
     if(filterRare!==null) filtered=filtered.filter(r=>r.meta.rare===filterRare);
     if(activeFilter) filtered=filtered.filter(r=>bucketOf(r)===activeFilter);
@@ -413,7 +433,7 @@ async function main(){
 
     let h='';
 
-    // Filter bar
+    // Filter bar — Area
     h+='<div class="fbar">';
     h+='<span class="fbar-lbl">Area</span>';
     L1_ORDER.forEach(l1=>{
@@ -428,8 +448,7 @@ async function main(){
     h+='</select>';
     h+='<span class="fsep"></span>';
     h+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()">Rare<span class="cnt">${rareCount}</span></span>`;
-    // Clear all
-    if(filterL1||filterL2||filterPhase||filterRare!==null||activeFilter)
+    if(filterL1||filterL2||filterL3||filterPhase||filterRare!==null||activeFilter||filterMod1||filterMod2||filterMod3)
       h+=`<span class="fchip" style="border-color:#ef444444;color:#fca5a5" onclick="window._fClear()">\u2715 Clear</span>`;
     h+=`<span style="margin-left:auto;font-size:.7rem;color:var(--text2);font-family:var(--mono)">${filtered.length}/${rows.length}</span>`;
     h+='</div>';
@@ -448,6 +467,63 @@ async function main(){
         h+='</div>';
       }
     }
+
+    // L3 sub-chips (show when L2 is active)
+    if(filterL2){
+      const l3s=Object.keys(l3Counts).filter(k=>k.startsWith(filterL2+".")).sort((a,b)=>(l3Counts[b]||0)-(l3Counts[a]||0));
+      if(l3s.length>1){
+        h+='<div class="fl2-row" style="padding-left:28px">';
+        h+=`<span class="fl2chip ${!filterL3?'active':''}" onclick="window._fL3(null)">All ${filterL2.split('.').pop().replace(/_/g,' ')}</span>`;
+        l3s.forEach(l3=>{
+          const label=l3.split(".").pop().replace(/_/g," ");
+          const active=filterL3===l3;
+          h+=`<span class="fl2chip ${active?'active':''}" onclick="window._fL3('${l3}')">${label}<span class="cnt">${l3Counts[l3]}</span></span>`;
+        });
+        h+='</div>';
+      }
+    }
+
+    // Modality filter row
+    const MOD_NAMES={small_molecule:"Small Molecule",antibody:"Antibody",adc:"ADC",nucleic_acid:"Nucleic Acid",gene_therapy:"Gene Therapy",cell_therapy:"Cell Therapy",pegylated_protein:"Peg Protein",vaccine:"Vaccine",formulation_platform:"Formulation"};
+    const MOD_ORDER=["small_molecule","antibody","adc","nucleic_acid","gene_therapy","cell_therapy","pegylated_protein","vaccine","formulation_platform"];
+    h+='<div class="fbar" style="margin-top:-10px;border-top:0;border-top-left-radius:0;border-top-right-radius:0">';
+    h+='<span class="fbar-lbl">Platform</span>';
+    MOD_ORDER.forEach(m1=>{
+      if(!m1Counts[m1])return;
+      const active=filterMod1===m1;
+      h+=`<span class="fchip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod1('${m1}')">${MOD_NAMES[m1]||m1}<span class="cnt">${m1Counts[m1]}</span></span>`;
+    });
+    h+='</div>';
+
+    // Mod L2 sub-chips
+    if(filterMod1){
+      const m2s=Object.keys(m2Counts).filter(k=>k.startsWith(filterMod1+".")).sort((a,b)=>(m2Counts[b]||0)-(m2Counts[a]||0));
+      if(m2s.length>1){
+        h+='<div class="fl2-row">';
+        h+=`<span class="fl2chip ${!filterMod2?'active':''}" style="${!filterMod2?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod2(null)">All ${MOD_NAMES[filterMod1]}</span>`;
+        m2s.forEach(m2=>{
+          const label=m2.split(".").pop().replace(/_/g," ");
+          const active=filterMod2===m2;
+          h+=`<span class="fl2chip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod2('${m2}')">${label}<span class="cnt">${m2Counts[m2]}</span></span>`;
+        });
+        h+='</div>';
+      }
+    }
+
+    // Mod L3 sub-chips
+    if(filterMod2){
+      const m3s=Object.keys(m3Counts).filter(k=>k.startsWith(filterMod2+".")).sort((a,b)=>(m3Counts[b]||0)-(m3Counts[a]||0));
+      if(m3s.length>1){
+        h+='<div class="fl2-row" style="padding-left:28px">';
+        h+=`<span class="fl2chip ${!filterMod3?'active':''}" style="${!filterMod3?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod3(null)">All ${filterMod2.split('.').pop().replace(/_/g,' ')}</span>`;
+        m3s.forEach(m3=>{
+          const label=m3.split(".").pop().replace(/_/g," ");
+          const active=filterMod3===m3;
+          h+=`<span class="fl2chip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod3('${m3}')">${label}<span class="cnt">${m3Counts[m3]}</span></span>`;
+        });
+        h+='</div>';
+      }
+    }
     // Stats
     h+='<div class="stats">';
     [{k:"below_bear",c:"s-mb",l:"Below Bear",d:"Deep value — price < bear TP"},{k:"bear_base",c:"s-br",l:"Bear–Base",d:"Between bear and base TP"},{k:"base_bull",c:"s-bs",l:"Base–Bull",d:"Fair value range"},{k:"bull_pb",c:"s-bl",l:"Bull–Psych",d:"Above bull, below psych bull"},{k:"above_pb",c:"s-pb",l:"Above Psych Bull",d:"Extreme premium"}].forEach(b=>{
@@ -461,7 +537,8 @@ async function main(){
     h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6)"></div>Market Valuation Overview</div>';
     h+='<div class="card-sub">Upside / downside to scenario targets from current price — sorted by base case upside · Dots right of 0% = upside</div>';
     const visibleRows=filtered;
-    h+=buildRangeStrip(visibleRows);
+    const activeArea=filterL3||filterL2||filterL1||null;
+    h+=buildRangeStrip(visibleRows,activeArea);
 
     // Portfolio
     h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#a855f7,#ec4899)"></div>Portfolio Scenario Simulator</div>';
@@ -623,11 +700,10 @@ async function main(){
       h+=`<td><input type="checkbox" class="ptf-chk" ${ptfSet.has(r.ticker)?'checked':''} onchange="window._toggle('${r.ticker}')"/></td>`;
       h+=`<td><a class="tk" href="model.html?ticker=${r.ticker}">${r.ticker}</a></td>`;
       let nameExtra='';
-      if(filterL1||filterL2){
-        const fArea=filterL2||filterL1;
-        const isL1=fArea.split(".").length===1;
-        if(isL1){
-          // Sum all L2 purities under this L1
+      if(filterL1||filterL2||filterL3){
+        const fArea=filterL3||filterL2||filterL1;
+        const depth=fArea.split(".").length;
+        if(depth===1){
           const total=r.meta.focus.filter(f=>f.area.startsWith(fArea+".")&&f.area.split(".").length===2).reduce((s,f)=>s+f.purity,0);
           if(total>0)nameExtra=`<span class="purity-badge">${Math.min(total,100)}%</span>`;
         }else{
@@ -671,11 +747,15 @@ async function main(){
   window._sort=function(k){if(k===sortKey)sortDir*=-1;else{sortKey=k;sortDir=-1;}doSort();render();};
   window._toggle=function(tk){if(ptfSet.has(tk))ptfSet.delete(tk);else ptfSet.add(tk);render();};
   window._filter=function(k){activeFilter=(activeFilter===k)?null:k;render();};
-  window._fL1=function(l1){if(filterL1===l1){filterL1=null;filterL2=null;}else{filterL1=l1;filterL2=null;}render();};
-  window._fL2=function(l2){filterL2=l2;render();};
+  window._fL1=function(l1){if(filterL1===l1){filterL1=null;filterL2=null;filterL3=null;}else{filterL1=l1;filterL2=null;filterL3=null;}render();};
+  window._fL2=function(l2){filterL2=l2;filterL3=null;render();};
+  window._fL3=function(l3){filterL3=l3;render();};
   window._fPhase=function(p){filterPhase=p||null;render();};
   window._fRare=function(){filterRare=filterRare===true?null:true;render();};
-  window._fClear=function(){filterL1=null;filterL2=null;filterPhase=null;filterRare=null;activeFilter=null;render();};
+  window._fMod1=function(m1){if(filterMod1===m1){filterMod1=null;filterMod2=null;filterMod3=null;}else{filterMod1=m1;filterMod2=null;filterMod3=null;}render();};
+  window._fMod2=function(m2){filterMod2=m2;filterMod3=null;render();};
+  window._fMod3=function(m3){filterMod3=m3;render();};
+  window._fClear=function(){filterL1=null;filterL2=null;filterL3=null;filterPhase=null;filterRare=null;filterMod1=null;filterMod2=null;filterMod3=null;activeFilter=null;render();};
   window._setCorr=function(v){window._corrVal=+v;render();};
   window._setOvr=function(tk,v){if(!window._manualOvr)window._manualOvr={};if(v==='auto')delete window._manualOvr[tk];else window._manualOvr[tk]=+v;render();};
   window._ddOpen=function(){document.getElementById('ddList')?.classList.add('open');};

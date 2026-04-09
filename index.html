@@ -139,8 +139,9 @@ const PHASE_NAMES={commercial:"Commercial",nda_filed:"NDA Filed",phase3:"Phase 3
 const PHASE_ORDER=["commercial","nda_filed","phase3","phase2","phase1"];
 
 function deriveCompanyMeta(cfg){
-  const areas=new Set(),modalities=new Set(),areaTAM={};
-  let totalTAM=0,rareTAM=0;
+  const areas=new Set(),modalities=new Set(),areaTAM={},areaWTD={};
+  let totalTAM=0,rareTAM=0,totalWTD=0,rareWTD=0;
+  const baseAssump=cfg.scenarios?.base?.assumptions||{};
   for(const asset of cfg.assets){
     if(asset.modality){modalities.add(asset.modality);const p=asset.modality.split(".");modalities.add(p[0]);if(p[1])modalities.add(p[0]+"."+p[1]);}
     for(const ind of asset.indications){
@@ -148,18 +149,25 @@ function deriveCompanyMeta(cfg){
         areas.add(ind.area);
         const p=ind.area.split(".");areas.add(p[0]);if(p[1])areas.add(p[0]+"."+p[1]);
         const tam=ind.market?.tamB||(ind.market?.patientsK&&ind.market?.pricingK?ind.market.patientsK*ind.market.pricingK/1000:0);
+        const a=baseAssump[asset.id]?.[ind.id]||{};
+        const pos=(a.pos??100)/100,apr=(a.apr??100)/100;
+        const wtd=tam*pos*apr;
         areaTAM[ind.area]=(areaTAM[ind.area]||0)+tam;
-        if(p[1])areaTAM[p[0]+"."+p[1]]=(areaTAM[p[0]+"."+p[1]]||0)+tam;
-        areaTAM[p[0]]=(areaTAM[p[0]]||0)+tam;
-        totalTAM+=tam;
-        if(ind.rare)rareTAM+=tam;
+        areaWTD[ind.area]=(areaWTD[ind.area]||0)+wtd;
+        if(p[1]){areaTAM[p[0]+"."+p[1]]=(areaTAM[p[0]+"."+p[1]]||0)+tam;areaWTD[p[0]+"."+p[1]]=(areaWTD[p[0]+"."+p[1]]||0)+wtd;}
+        areaTAM[p[0]]=(areaTAM[p[0]]||0)+tam;areaWTD[p[0]]=(areaWTD[p[0]]||0)+wtd;
+        totalTAM+=tam;totalWTD+=wtd;
+        if(ind.rare){rareTAM+=tam;rareWTD+=wtd;}
       }
     }
   }
-  const focus=totalTAM>0?Object.entries(areaTAM).filter(([k])=>k.split(".").length>=2).map(([area,tam])=>({area,purity:Math.round(tam/totalTAM*100)})).sort((a,b)=>b.purity-a.purity):[];
-  const rarePurity=totalTAM>0?Math.round(rareTAM/totalTAM*100):0;
-  const hasRare=cfg.assets.some(a=>a.indications.some(i=>i.rare));
-  return{areas:[...areas],modalities:[...modalities],focus,phase:cfg.company.phase||"phase1",rare:hasRare,rarePurity};
+  const mkFocus=(tamMap,total)=>total>0?Object.entries(tamMap).filter(([k])=>k.split(".").length>=2).map(([area,t])=>({area,purity:Math.round(t/total*100)})).sort((a,b)=>b.purity-a.purity):[];
+  return{areas:[...areas],modalities:[...modalities],
+    focus:mkFocus(areaTAM,totalTAM),focusWtd:mkFocus(areaWTD,totalWTD),
+    phase:cfg.company.phase||"phase1",
+    rare:cfg.assets.some(a=>a.indications.some(i=>i.rare)),
+    rarePurity:totalTAM>0?Math.round(rareTAM/totalTAM*100):0,
+    rarePurityWtd:totalWTD>0?Math.round(rareWTD/totalWTD*100):0};
 }
 
 function computeScenario(cfg,scenKey,state){
@@ -204,7 +212,19 @@ function computeAll(cfg){
   return{results:res,weightedTP:wTP};
 }
 
-function buildRangeStrip(rows,activeArea,filterRare,sortMode){
+function buildRangeStrip(rows,activeArea,filterRare,sortMode,purityMode){
+  // Helper: compute purity for a row given active filters and mode
+  function getPurity(r){
+    const foc=purityMode==='wtd'?r.meta.focusWtd:r.meta.focus;
+    const rp=purityMode==='wtd'?r.meta.rarePurityWtd:r.meta.rarePurity;
+    if(activeArea&&foc){
+      const depth=activeArea.split(".").length;
+      if(depth===1)return foc.filter(f=>f.area.startsWith(activeArea+".")&&f.area.split(".").length===2).reduce((s,f)=>s+f.purity,0);
+      const m=foc.find(f=>f.area===activeArea);return m?m.purity:0;
+    }
+    if(filterRare===true)return rp||0;
+    return 0;
+  }
   // Compute per-row metrics for sorting
   const enriched=rows.map(r=>{
     const baseUp=r.tps.base?((r.tps.base-r.price)/r.price*100):0;
@@ -214,12 +234,7 @@ function buildRangeStrip(rows,activeArea,filterRare,sortMode){
     if(bearDn<1&&r.tps.mega_bear!=null&&r.tps.mega_bear<r.price)bearDn=((r.price-r.tps.mega_bear)/r.price*100);
     const rr=bearDn>1?(bullUp/bearDn):(bullUp>0?999:0);
     // Purity
-    let purity=0;
-    if(activeArea&&r.meta&&r.meta.focus){
-      const depth=activeArea.split(".").length;
-      if(depth===1){purity=r.meta.focus.filter(f=>f.area.startsWith(activeArea+".")&&f.area.split(".").length===2).reduce((s,f)=>s+f.purity,0);}
-      else{const m=r.meta.focus.find(f=>f.area===activeArea);if(m)purity=m.purity;}
-    }else if(filterRare===true&&r.meta){purity=r.meta.rarePurity||0;}
+    let purity=getPurity(r);
     return{...r,baseUp,rr,purity};
   });
 
@@ -269,15 +284,10 @@ function buildRangeStrip(rows,activeArea,filterRare,sortMode){
     h+=`<div class="rs-row">`;
     h+=`<a class="rs-tk" href="model.html?ticker=${d.ticker}">${d.ticker}</a>`;
     // Purity when area filter active
-    let pStr='',pCol='#c084fc';
-    if(activeArea&&d.meta&&d.meta.focus){
-      const isL1=activeArea.split(".").length===1;
-      if(isL1){const t=d.meta.focus.filter(f=>f.area.startsWith(activeArea+".")&&f.area.split(".").length===2).reduce((s,f)=>s+f.purity,0);if(t>0)pStr=Math.min(t,100)+'';}
-      else{const m=d.meta.focus.find(f=>f.area===activeArea);if(m)pStr=m.purity+'';}
-    }else if(filterRare===true&&d.meta&&d.meta.rarePurity>0){
-      pStr=d.meta.rarePurity+'';pCol='#fbbf24';
-    }
-    if(pStr)h+=`<span style="width:28px;text-align:right;padding-right:2px;font-family:var(--mono);font-weight:700;font-size:.58rem;color:${pCol};flex-shrink:0">${pStr}%</span>`;
+    // Purity badge
+    const pVal=d.purity||0;
+    const pCol2=filterRare===true?'#fbbf24':'#c084fc';
+    if(pVal>0)h+=`<span style="width:28px;text-align:right;padding-right:2px;font-family:var(--mono);font-weight:700;font-size:.58rem;color:${pCol2};flex-shrink:0">${Math.min(pVal,100)}%</span>`;
     else h+=`<span style="width:28px;flex-shrink:0"></span>`;
     h+=`<span class="rs-rr" style="color:${rrCol}" title="R/R: bull up ${bullUp.toFixed(0)}% \u00f7 ${d.vals.bear!=null&&d.vals.bear<-1?'bear':'mega bear'} down ${bearDn.toFixed(0)}%">${rrTxt}</span>`;
     h+=`<div class="rs-track">`;
@@ -401,6 +411,7 @@ async function main(){
   let filterL1=null, filterL2=null, filterL3=null, filterPhase=null, filterRare=null;
   let filterMod1=null, filterMod2=null, filterMod3=null;
   let stripSort="base";
+  let purityMode="wtd";
 
   function bucketOf(r){
     if(r.tps.bear!=null&&r.price<r.tps.bear)return 'below_bear';
@@ -472,6 +483,8 @@ async function main(){
     h+='</select>';
     h+='<span class="fsep"></span>';
     h+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()" title="Filter companies with rare disease indications">\u2605 Rare<span class="cnt">${rareCount}</span></span>`;
+    h+='<span class="fsep"></span>';
+    h+=`<span class="fchip ${purityMode==='wtd'?'active':''}" onclick="window._purityMode()" style="padding:2px 8px;font-size:.62rem" title="Toggle: Raw TAM vs Risk-Adjusted (PoS×Apr weighted)">Purity: ${purityMode==='wtd'?'Risk-Adj':'Raw TAM'}</span>`;
     if(filterL1||filterL2||filterL3||filterPhase||filterRare!==null||activeFilter||filterMod1||filterMod2||filterMod3)
       h+=`<span class="fchip" style="border-color:#ef444444;color:#fca5a5" onclick="window._fClear()">\u2715 Clear</span>`;
     h+=`<span style="margin-left:auto;font-size:.7rem;color:var(--text2);font-family:var(--mono)">${filtered.length}/${rows.length}</span>`;
@@ -568,7 +581,7 @@ async function main(){
     if(hasPurity)h+=`<span class="fchip ${stripSort==='purity'?'active':''}" onclick="window._stripSort('purity')" style="padding:2px 8px;font-size:.65rem;${stripSort==='purity'?'background:#a855f722;border-color:#a855f7;color:#d8b4fe':''}">Purity</span>`;
     h+='</div></div>';
     h+='<div class="card-sub">Upside / downside to scenario targets · Dots right of 0% = upside</div>';
-    h+=buildRangeStrip(visibleRows,activeArea,filterRare,stripSort);
+    h+=buildRangeStrip(visibleRows,activeArea,filterRare,stripSort,purityMode);
 
     // Portfolio
     h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#a855f7,#ec4899)"></div>Portfolio Scenario Simulator</div>';
@@ -730,18 +743,17 @@ async function main(){
       h+=`<td><input type="checkbox" class="ptf-chk" ${ptfSet.has(r.ticker)?'checked':''} onchange="window._toggle('${r.ticker}')"/></td>`;
       h+=`<td><a class="tk" href="model.html?ticker=${r.ticker}">${r.ticker}</a></td>`;
       let nameExtra='';
+      const foc=purityMode==='wtd'?r.meta.focusWtd:r.meta.focus;
+      const rp=purityMode==='wtd'?r.meta.rarePurityWtd:r.meta.rarePurity;
       if(filterL1||filterL2||filterL3){
         const fArea=filterL3||filterL2||filterL1;
         const depth=fArea.split(".").length;
-        if(depth===1){
-          const total=r.meta.focus.filter(f=>f.area.startsWith(fArea+".")&&f.area.split(".").length===2).reduce((s,f)=>s+f.purity,0);
-          if(total>0)nameExtra=`<span class="purity-badge">${Math.min(total,100)}%</span>`;
-        }else{
-          const match=r.meta.focus.find(f=>f.area===fArea);
-          if(match)nameExtra=`<span class="purity-badge">${match.purity}%</span>`;
-        }
-      }else if(filterRare===true&&r.meta.rarePurity>0){
-        nameExtra=`<span class="purity-badge" style="background:#f59e0b22;color:#fbbf24;border-color:#f59e0b33">${r.meta.rarePurity}%</span>`;
+        let pct=0;
+        if(depth===1){pct=foc.filter(f=>f.area.startsWith(fArea+".")&&f.area.split(".").length===2).reduce((s,f)=>s+f.purity,0);}
+        else{const m=foc.find(f=>f.area===fArea);if(m)pct=m.purity;}
+        if(pct>0)nameExtra=`<span class="purity-badge">${Math.min(pct,100)}%</span>`;
+      }else if(filterRare===true&&rp>0){
+        nameExtra=`<span class="purity-badge" style="background:#f59e0b22;color:#fbbf24;border-color:#f59e0b33">${rp}%</span>`;
       }
       h+=`<td style="color:var(--text2);font-size:.75rem;max-width:220px;overflow:hidden;text-overflow:ellipsis">${r.name}${nameExtra}</td>`;
       h+=`<td class="r mono">${c}${r.price.toFixed(d)}`;
@@ -788,6 +800,7 @@ async function main(){
   window._fMod2=function(m2){filterMod2=m2;filterMod3=null;render();};
   window._fMod3=function(m3){filterMod3=m3;render();};
   window._stripSort=function(s){stripSort=s;render();};
+  window._purityMode=function(){purityMode=purityMode==='wtd'?'raw':'wtd';render();};
   window._fClear=function(){filterL1=null;filterL2=null;filterL3=null;filterPhase=null;filterRare=null;filterMod1=null;filterMod2=null;filterMod3=null;activeFilter=null;stripSort='base';render();};
   window._setCorr=function(v){window._corrVal=+v;render();};
   window._setOvr=function(tk,v){if(!window._manualOvr)window._manualOvr={};if(v==='auto')delete window._manualOvr[tk];else window._manualOvr[tk]=+v;render();};

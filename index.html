@@ -204,13 +204,31 @@ function computeAll(cfg){
   return{results:res,weightedTP:wTP};
 }
 
-function buildRangeStrip(rows,activeArea,filterRare){
-  // Sort by bucket then base premium
-  const sorted=[...rows].sort((a,b)=>{
-    const ua=a.tps.base?((a.tps.base-a.price)/a.price*100):0;
-    const ub=b.tps.base?((b.tps.base-b.price)/b.price*100):0;
-    return ub-ua;
+function buildRangeStrip(rows,activeArea,filterRare,sortMode){
+  // Compute per-row metrics for sorting
+  const enriched=rows.map(r=>{
+    const baseUp=r.tps.base?((r.tps.base-r.price)/r.price*100):0;
+    // R/R
+    const bullUp=r.tps.bull!=null&&r.tps.bull>r.price?((r.tps.bull-r.price)/r.price*100):0;
+    let bearDn=r.tps.bear!=null&&r.tps.bear<r.price?((r.price-r.tps.bear)/r.price*100):0;
+    if(bearDn<1&&r.tps.mega_bear!=null&&r.tps.mega_bear<r.price)bearDn=((r.price-r.tps.mega_bear)/r.price*100);
+    const rr=bearDn>1?(bullUp/bearDn):(bullUp>0?999:0);
+    // Purity
+    let purity=0;
+    if(activeArea&&r.meta&&r.meta.focus){
+      const depth=activeArea.split(".").length;
+      if(depth===1){purity=r.meta.focus.filter(f=>f.area.startsWith(activeArea+".")&&f.area.split(".").length===2).reduce((s,f)=>s+f.purity,0);}
+      else{const m=r.meta.focus.find(f=>f.area===activeArea);if(m)purity=m.purity;}
+    }else if(filterRare===true&&r.meta){purity=r.meta.rarePurity||0;}
+    return{...r,baseUp,rr,purity};
   });
+
+  // Sort
+  if(sortMode==='rr') enriched.sort((a,b)=>b.rr-a.rr);
+  else if(sortMode==='purity') enriched.sort((a,b)=>b.purity-a.purity||b.baseUp-a.baseUp);
+  else enriched.sort((a,b)=>b.baseUp-a.baseUp);
+
+  const sorted=enriched;
   // Compute upside for each stock × scenario: (TP - Price) / Price
   // Positive = TP above price (upside), Negative = TP below price (downside)
   const data=sorted.map(r=>{
@@ -382,6 +400,7 @@ async function main(){
   let activeFilter=null;
   let filterL1=null, filterL2=null, filterL3=null, filterPhase=null, filterRare=null;
   let filterMod1=null, filterMod2=null, filterMod3=null;
+  let stripSort="base";
 
   function bucketOf(r){
     if(r.tps.bear!=null&&r.price<r.tps.bear)return 'below_bear';
@@ -539,11 +558,17 @@ async function main(){
     h+='</div>';
 
     // Chart
-    h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6)"></div>Market Valuation Overview</div>';
-    h+='<div class="card-sub">Upside / downside to scenario targets from current price — sorted by base case upside · Dots right of 0% = upside</div>';
     const visibleRows=filtered;
     const activeArea=filterL3||filterL2||filterL1||null;
-    h+=buildRangeStrip(visibleRows,activeArea,filterRare);
+    const hasPurity=!!(activeArea||filterRare===true);
+    h+='<div class="card"><div class="card-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div><div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6);display:inline-block;vertical-align:middle;margin-right:8px"></div>Market Valuation Overview</div>';
+    h+='<div style="display:flex;gap:4px">';
+    h+=`<span class="fchip ${stripSort==='base'?'active':''}" onclick="window._stripSort('base')" style="padding:2px 8px;font-size:.65rem">Base Upside</span>`;
+    h+=`<span class="fchip ${stripSort==='rr'?'active':''}" onclick="window._stripSort('rr')" style="padding:2px 8px;font-size:.65rem">R/R Ratio</span>`;
+    if(hasPurity)h+=`<span class="fchip ${stripSort==='purity'?'active':''}" onclick="window._stripSort('purity')" style="padding:2px 8px;font-size:.65rem;${stripSort==='purity'?'background:#a855f722;border-color:#a855f7;color:#d8b4fe':''}">Purity</span>`;
+    h+='</div></div>';
+    h+='<div class="card-sub">Upside / downside to scenario targets · Dots right of 0% = upside</div>';
+    h+=buildRangeStrip(visibleRows,activeArea,filterRare,stripSort);
 
     // Portfolio
     h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#a855f7,#ec4899)"></div>Portfolio Scenario Simulator</div>';
@@ -762,7 +787,8 @@ async function main(){
   window._fMod1=function(m1){if(filterMod1===m1){filterMod1=null;filterMod2=null;filterMod3=null;}else{filterMod1=m1;filterMod2=null;filterMod3=null;}render();};
   window._fMod2=function(m2){filterMod2=m2;filterMod3=null;render();};
   window._fMod3=function(m3){filterMod3=m3;render();};
-  window._fClear=function(){filterL1=null;filterL2=null;filterL3=null;filterPhase=null;filterRare=null;filterMod1=null;filterMod2=null;filterMod3=null;activeFilter=null;render();};
+  window._stripSort=function(s){stripSort=s;render();};
+  window._fClear=function(){filterL1=null;filterL2=null;filterL3=null;filterPhase=null;filterRare=null;filterMod1=null;filterMod2=null;filterMod3=null;activeFilter=null;stripSort='base';render();};
   window._setCorr=function(v){window._corrVal=+v;render();};
   window._setOvr=function(tk,v){if(!window._manualOvr)window._manualOvr={};if(v==='auto')delete window._manualOvr[tk];else window._manualOvr[tk]=+v;render();};
   window._ddOpen=function(){document.getElementById('ddList')?.classList.add('open');};

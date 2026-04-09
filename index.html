@@ -253,19 +253,26 @@ function computeCatalysts(cfg,currentPrice){
     const successMove=currentPrice>0?Math.round(successDelta/currentPrice*100):0;
     const failMove=currentPrice>0?Math.max(-100,Math.round(failDelta/currentPrice*100)):0;
     const swingPct=successMove-failMove;
-    // Base composite PoS for this asset.indication
+    // Your PoS: use the probability relevant to THIS catalyst type
+    // Clinical readout → resolves pos (does the drug work?)
+    // PDUFA/approval → resolves apr (will FDA approve?)
+    // Mixed/other → composite pos×apr
     const ba=baseA[cat.asset]?.[cat.indication]||{};
-    const baseComposite=Math.round((ba.pos||0)/100*(ba.apr||0)/100*100);
+    const CLINICAL_TYPES=new Set(['phase1_data','phase2_data','phase3_data','phase3_start','phase2_start']);
+    const REGULATORY_TYPES=new Set(['pdufa','ema_approval','label_expansion']);
+    const yourPoS=CLINICAL_TYPES.has(cat.type)?Math.round(ba.pos||0)
+      :REGULATORY_TYPES.has(cat.type)?Math.round(ba.apr||0)
+      :Math.round((ba.pos||0)/100*(ba.apr||0)/100*100);
     // Expected return FROM the catalyst (using capped moves)
-    const expectedReturn=Math.round(baseComposite/100*successMove+(1-baseComposite/100)*failMove);
+    const expectedReturn=Math.round(yourPoS/100*successMove+(1-yourPoS/100)*failMove);
     // Breakeven PoS — the probability at which E[R]=0 (using capped moves)
     const breakevenPos=swingPct>0?Math.round(-failMove/swingPct*100):50;
     // Asymmetry = your PoS vs breakeven (positive = you're above breakeven = positive EV)
-    const asymmetry=baseComposite-breakevenPos;
+    const asymmetry=yourPoS-breakevenPos;
     const catDate=new Date(cat.dateSort);
     const daysOut=Math.max(0,Math.round((catDate-today)/(1000*60*60*24)));
     return{...cat,failTP,successTP,baseWTP,swing,swingPct,successMove,failMove,
-      baseComposite,expectedReturn,breakevenPos,impliedPos:breakevenPos,asymmetry,daysOut};
+      yourPoS,expectedReturn,breakevenPos,impliedPos:breakevenPos,asymmetry,daysOut};
   }).sort((a,b)=>a.daysOut-b.daysOut);
 }
 
@@ -859,7 +866,7 @@ async function main(){
         const lineH=lineTop-lineBot;
         h+=`<div style="position:absolute;left:${x}%;bottom:${lineBot}%;width:2px;height:${lineH}%;background:${col}55;transform:translateX(-50%);z-index:1" title="${c.ticker}: ${c.title}"></div>`;
         // Top dot = Swing % (circle)
-        h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing}%;transform:translate(-50%,50%);width:8px;height:8px;border-radius:50%;background:${col};opacity:.7;border:1.5px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: ${c.title}\nSwing: ${c.swingPct}% | E[R]: ${c.expectedReturn>0?'+':''}${c.expectedReturn}%\nIf win: ${c.successMove>0?'+':''}${c.successMove}% | If fail: ${c.failMove}%\nBreakeven: ${c.breakevenPos}% | Your PoS: ${c.baseComposite}% | Asym: ${asym>0?'+':''}${asym}pp"></div>`;
+        h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing}%;transform:translate(-50%,50%);width:8px;height:8px;border-radius:50%;background:${col};opacity:.7;border:1.5px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: ${c.title}\nSwing: ${c.swingPct}% | E[R]: ${c.expectedReturn>0?'+':''}${c.expectedReturn}%\nIf win: ${c.successMove>0?'+':''}${c.successMove}% | If fail: ${c.failMove}%\nBreakeven: ${c.breakevenPos}% | Your PoS: ${c.yourPoS}% | Asym: ${asym>0?'+':''}${asym}pp"></div>`;
         // Bottom dot = E[R] (diamond)
         h+=`<div style="position:absolute;left:${x}%;bottom:${yER}%;transform:translate(-50%,50%) rotate(45deg);width:7px;height:7px;background:${col};opacity:.7;border:1.5px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: E[R]=${c.expectedReturn>0?'+':''}${c.expectedReturn}%"></div>`;
         // Ticker label above top dot + swing value if above break
@@ -904,7 +911,7 @@ async function main(){
         h+=`<td style="padding:5px 4px;text-align:center">${c.swingPct}%</td>`;
         h+=`<td style="padding:5px 4px;text-align:center;font-weight:700;color:${erCol}">${c.expectedReturn>0?'+':''}${c.expectedReturn}%</td>`;
         h+=`<td style="padding:5px 4px;text-align:center">${c.impliedPos}%</td>`;
-        h+=`<td style="padding:5px 4px;text-align:center">${c.baseComposite}%</td>`;
+        h+=`<td style="padding:5px 4px;text-align:center">${c.yourPoS}%</td>`;
         h+=`<td style="padding:5px 4px;text-align:center;font-weight:800;color:${col}">${asym>0?'+':''}${asym}pp</td>`;
         h+=`</tr>`;
       });

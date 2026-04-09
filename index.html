@@ -253,7 +253,7 @@ function buildRangeStrip(rows,activeArea,filterRare,sortMode,purityMode){
   const data=sorted.map(r=>{
     const vals={};
     SK.forEach(sk=>{vals[sk]=r.tps[sk]?((r.tps[sk]-r.price)/r.price*100):null;});
-    return{ticker:r.ticker,name:r.name,vals,price:r.price,ccy:r.ccy,dec:r.dec,meta:r.meta};
+    return{ticker:r.ticker,name:r.name,vals,price:r.price,ccy:r.ccy,dec:r.dec,meta:r.meta,purity:r.purity};
   });
   // Scale: -100 to +500, cap outliers
   const LO=-100,HI=500;
@@ -597,36 +597,41 @@ async function main(){
       h+='<div style="padding:8px 0">';
       optRows.slice(0,15).forEach(r=>{
         const raw=r.meta.totalTAM,wtd=r.meta.totalWTD;
-        const evB=r.ev/1000; // EV in $B
+        const evB=r.ev/1000;
         const rawPct=(raw/maxRaw)*100;
         const wtdPct=(wtd/maxRaw)*100;
         const evPct=Math.min((evB/maxRaw)*100,100);
         const opt=r.meta.optionality;
         const optCol=opt>200?'#ef4444':opt>100?'#f59e0b':'#22c55e';
-        // How much of risk-adj TAM is priced in
         const pricedIn=wtd>0?Math.round(evB/wtd*100):0;
         const piCol=pricedIn>80?'#ef4444':pricedIn>40?'#f59e0b':'#22c55e';
-        h+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">`;
+        h+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">`;
         h+=`<a href="model.html?ticker=${r.ticker}" style="width:48px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.75rem;color:#60a5fa;text-decoration:none">${r.ticker}</a>`;
         h+=`<span style="width:42px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.68rem;color:${optCol}">${opt>999?'>999':opt}%</span>`;
-        h+=`<div style="flex:1;height:26px;position:relative;background:var(--bg1);border-radius:4px;overflow:visible">`;
-        // Raw TAM bar (full extent, dashed border)
-        h+=`<div style="position:absolute;top:0;left:0;height:100%;width:${rawPct}%;background:#f59e0b08;border-right:2px dashed #f59e0b44;border-radius:4px" title="Raw TAM: $${raw.toFixed(0)}B"></div>`;
-        // Weighted TAM bar (solid gradient)
-        h+=`<div style="position:absolute;top:4px;left:0;height:18px;width:${wtdPct}%;background:linear-gradient(90deg,#3b82f6,#8b5cf6);border-radius:3px;min-width:2px" title="Risk-adj TAM: $${wtd.toFixed(0)}B"></div>`;
-        // EV marker (white line)
-        if(evPct>0)h+=`<div style="position:absolute;top:-2px;left:${evPct}%;width:2px;height:30px;background:#e2e4ea;border-radius:1px;z-index:2" title="Current EV: $${evB.toFixed(1)}B"></div>`;
-        if(evPct>0)h+=`<div style="position:absolute;top:-12px;left:${evPct}%;transform:translateX(-50%);font-size:.55rem;font-family:var(--mono);color:#e2e4ea;font-weight:700;white-space:nowrap;z-index:3">$${evB>=1?evB.toFixed(0):evB.toFixed(1)}B</div>`;
-        // Labels right side
-        h+=`<span style="position:absolute;top:5px;right:6px;font-size:.58rem;font-family:var(--mono);color:var(--text2);white-space:nowrap">$${raw.toFixed(0)}B raw · $${wtd.toFixed(0)}B adj · <span style="color:${piCol}">${pricedIn}% priced in</span></span>`;
+        h+=`<div style="flex:1;position:relative;height:32px">`;
+        // Raw TAM bar (orange, solid background)
+        h+=`<div style="position:absolute;top:0;left:0;height:14px;width:${rawPct}%;background:#f97316;opacity:.25;border-radius:4px" title="Raw TAM: $${raw.toFixed(0)}B"></div>`;
+        h+=`<div style="position:absolute;top:0;left:0;height:14px;width:${rawPct}%;border:1.5px solid #f9731666;border-radius:4px;box-sizing:border-box"></div>`;
+        // Risk-adj TAM bar (teal, solid)
+        h+=`<div style="position:absolute;top:17px;left:0;height:14px;width:${wtdPct}%;background:#22c55e;opacity:.35;border-radius:4px" title="Risk-adj TAM: $${wtd.toFixed(0)}B"></div>`;
+        h+=`<div style="position:absolute;top:17px;left:0;height:14px;width:${wtdPct}%;border:1.5px solid #22c55e66;border-radius:4px;box-sizing:border-box"></div>`;
+        // EV marker (bright white line spanning both bars)
+        if(evPct>0){
+          h+=`<div style="position:absolute;top:-3px;left:${evPct}%;width:2.5px;height:38px;background:#fff;border-radius:1px;z-index:2;opacity:.9" title="Current EV: $${evB.toFixed(1)}B"></div>`;
+          h+=`<div style="position:absolute;top:-14px;left:${evPct}%;transform:translateX(-50%);font-size:.58rem;font-family:var(--mono);color:#fff;font-weight:800;white-space:nowrap;z-index:3">$${evB>=1?evB.toFixed(0):evB.toFixed(1)}B</div>`;
+        }
+        // Labels at end of each bar
+        h+=`<span style="position:absolute;top:0;left:${rawPct+0.5}%;font-size:.58rem;font-family:var(--mono);color:#f97316;white-space:nowrap;padding-left:4px">$${raw.toFixed(0)}B</span>`;
+        h+=`<span style="position:absolute;top:17px;left:${wtdPct+0.5}%;font-size:.58rem;font-family:var(--mono);color:#22c55e;white-space:nowrap;padding-left:4px">$${wtd.toFixed(0)}B</span>`;
         h+=`</div>`;
+        h+=`<span style="width:64px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.68rem;color:${piCol};flex-shrink:0">${pricedIn}% in</span>`;
         h+=`</div>`;
       });
-      h+='<div style="display:flex;gap:16px;margin-top:8px;font-size:.65rem;color:var(--text2);flex-wrap:wrap">';
-      h+='<span><span style="display:inline-block;width:24px;height:8px;background:linear-gradient(90deg,#3b82f6,#8b5cf6);border-radius:2px;vertical-align:middle;margin-right:4px"></span>Risk-adj TAM (PoS \u00d7 Apr)</span>';
-      h+='<span><span style="display:inline-block;width:24px;height:8px;background:#f59e0b08;border:1px dashed #f59e0b44;border-radius:2px;vertical-align:middle;margin-right:4px"></span>Raw TAM (if everything works)</span>';
-      h+='<span><span style="display:inline-block;width:2px;height:10px;background:#e2e4ea;vertical-align:middle;margin-right:4px"></span>Current EV</span>';
-      h+='<span>% priced in = EV \u00f7 risk-adj TAM</span>';
+      h+='<div style="display:flex;gap:16px;margin-top:10px;font-size:.65rem;color:var(--text2);flex-wrap:wrap">';
+      h+='<span><span style="display:inline-block;width:20px;height:8px;background:#f97316;opacity:.4;border:1px solid #f9731666;border-radius:2px;vertical-align:middle;margin-right:4px"></span>Raw TAM (if everything works)</span>';
+      h+='<span><span style="display:inline-block;width:20px;height:8px;background:#22c55e;opacity:.4;border:1px solid #22c55e66;border-radius:2px;vertical-align:middle;margin-right:4px"></span>Risk-adj TAM (PoS \u00d7 Apr)</span>';
+      h+='<span><span style="display:inline-block;width:3px;height:10px;background:#fff;border-radius:1px;vertical-align:middle;margin-right:4px"></span>Current EV</span>';
+      h+='<span>% in = EV \u00f7 risk-adj TAM</span>';
       h+='</div></div></div>';
     }
 

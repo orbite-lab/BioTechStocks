@@ -162,12 +162,15 @@ function deriveCompanyMeta(cfg){
     }
   }
   const mkFocus=(tamMap,total)=>total>0?Object.entries(tamMap).filter(([k])=>k.split(".").length>=2).map(([area,t])=>({area,purity:Math.round(t/total*100)})).sort((a,b)=>b.purity-a.purity):[];
+  // Optionality = how much bigger is the raw TAM vs risk-adjusted? (pipeline leverage)
+  const optionality=totalWTD>0?Math.round((totalTAM/totalWTD-1)*100):0;
   return{areas:[...areas],modalities:[...modalities],
     focus:mkFocus(areaTAM,totalTAM),focusWtd:mkFocus(areaWTD,totalWTD),
     phase:cfg.company.phase||"phase1",
     rare:cfg.assets.some(a=>a.indications.some(i=>i.rare)),
     rarePurity:totalTAM>0?Math.round(rareTAM/totalTAM*100):0,
-    rarePurityWtd:totalWTD>0?Math.round(rareWTD/totalWTD*100):0};
+    rarePurityWtd:totalWTD>0?Math.round(rareWTD/totalWTD*100):0,
+    optionality,totalTAM,totalWTD};
 }
 
 function computeScenario(cfg,scenKey,state){
@@ -235,12 +238,13 @@ function buildRangeStrip(rows,activeArea,filterRare,sortMode,purityMode){
     const rr=bearDn>1?(bullUp/bearDn):(bullUp>0?999:0);
     // Purity
     let purity=getPurity(r);
-    return{...r,baseUp,rr,purity};
+    return{...r,baseUp,rr,purity,optionality:r.meta.optionality||0};
   });
 
   // Sort
   if(sortMode==='rr') enriched.sort((a,b)=>b.rr-a.rr);
   else if(sortMode==='purity') enriched.sort((a,b)=>b.purity-a.purity||b.baseUp-a.baseUp);
+  else if(sortMode==='optionality') enriched.sort((a,b)=>b.optionality-a.optionality||b.baseUp-a.baseUp);
   else enriched.sort((a,b)=>b.baseUp-a.baseUp);
 
   const sorted=enriched;
@@ -578,10 +582,53 @@ async function main(){
     h+='<div style="display:flex;gap:4px">';
     h+=`<span class="fchip ${stripSort==='base'?'active':''}" onclick="window._stripSort('base')" style="padding:2px 8px;font-size:.65rem">Base Upside</span>`;
     h+=`<span class="fchip ${stripSort==='rr'?'active':''}" onclick="window._stripSort('rr')" style="padding:2px 8px;font-size:.65rem">R/R Ratio</span>`;
+    h+=`<span class="fchip ${stripSort==='optionality'?'active':''}" onclick="window._stripSort('optionality')" style="padding:2px 8px;font-size:.65rem">Optionality</span>`;
     if(hasPurity)h+=`<span class="fchip ${stripSort==='purity'?'active':''}" onclick="window._stripSort('purity')" style="padding:2px 8px;font-size:.65rem;${stripSort==='purity'?'background:#a855f722;border-color:#a855f7;color:#d8b4fe':''}">Purity</span>`;
     h+='</div></div>';
     h+='<div class="card-sub">Upside / downside to scenario targets · Dots right of 0% = upside</div>';
     h+=buildRangeStrip(visibleRows,activeArea,filterRare,stripSort,purityMode);
+
+    // Optionality card
+    const optRows=[...visibleRows].filter(r=>r.meta.optionality>10).sort((a,b)=>b.meta.optionality-a.meta.optionality);
+    if(optRows.length>0){
+      const maxRaw=Math.max(...optRows.map(r=>r.meta.totalTAM));
+      h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#f59e0b,#ef4444)"></div>Pipeline Optionality</div>';
+      h+='<div class="card-sub">Raw TAM vs risk-adjusted TAM vs current EV — how much upside is the market NOT pricing in?</div>';
+      h+='<div style="padding:8px 0">';
+      optRows.slice(0,15).forEach(r=>{
+        const raw=r.meta.totalTAM,wtd=r.meta.totalWTD;
+        const evB=r.ev/1000; // EV in $B
+        const rawPct=(raw/maxRaw)*100;
+        const wtdPct=(wtd/maxRaw)*100;
+        const evPct=Math.min((evB/maxRaw)*100,100);
+        const opt=r.meta.optionality;
+        const optCol=opt>200?'#ef4444':opt>100?'#f59e0b':'#22c55e';
+        // How much of risk-adj TAM is priced in
+        const pricedIn=wtd>0?Math.round(evB/wtd*100):0;
+        const piCol=pricedIn>80?'#ef4444':pricedIn>40?'#f59e0b':'#22c55e';
+        h+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">`;
+        h+=`<a href="model.html?ticker=${r.ticker}" style="width:48px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.75rem;color:#60a5fa;text-decoration:none">${r.ticker}</a>`;
+        h+=`<span style="width:42px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.68rem;color:${optCol}">${opt>999?'>999':opt}%</span>`;
+        h+=`<div style="flex:1;height:26px;position:relative;background:var(--bg1);border-radius:4px;overflow:visible">`;
+        // Raw TAM bar (full extent, dashed border)
+        h+=`<div style="position:absolute;top:0;left:0;height:100%;width:${rawPct}%;background:#f59e0b08;border-right:2px dashed #f59e0b44;border-radius:4px" title="Raw TAM: $${raw.toFixed(0)}B"></div>`;
+        // Weighted TAM bar (solid gradient)
+        h+=`<div style="position:absolute;top:4px;left:0;height:18px;width:${wtdPct}%;background:linear-gradient(90deg,#3b82f6,#8b5cf6);border-radius:3px;min-width:2px" title="Risk-adj TAM: $${wtd.toFixed(0)}B"></div>`;
+        // EV marker (white line)
+        if(evPct>0)h+=`<div style="position:absolute;top:-2px;left:${evPct}%;width:2px;height:30px;background:#e2e4ea;border-radius:1px;z-index:2" title="Current EV: $${evB.toFixed(1)}B"></div>`;
+        if(evPct>0)h+=`<div style="position:absolute;top:-12px;left:${evPct}%;transform:translateX(-50%);font-size:.55rem;font-family:var(--mono);color:#e2e4ea;font-weight:700;white-space:nowrap;z-index:3">$${evB>=1?evB.toFixed(0):evB.toFixed(1)}B</div>`;
+        // Labels right side
+        h+=`<span style="position:absolute;top:5px;right:6px;font-size:.58rem;font-family:var(--mono);color:var(--text2);white-space:nowrap">$${raw.toFixed(0)}B raw · $${wtd.toFixed(0)}B adj · <span style="color:${piCol}">${pricedIn}% priced in</span></span>`;
+        h+=`</div>`;
+        h+=`</div>`;
+      });
+      h+='<div style="display:flex;gap:16px;margin-top:8px;font-size:.65rem;color:var(--text2);flex-wrap:wrap">';
+      h+='<span><span style="display:inline-block;width:24px;height:8px;background:linear-gradient(90deg,#3b82f6,#8b5cf6);border-radius:2px;vertical-align:middle;margin-right:4px"></span>Risk-adj TAM (PoS \u00d7 Apr)</span>';
+      h+='<span><span style="display:inline-block;width:24px;height:8px;background:#f59e0b08;border:1px dashed #f59e0b44;border-radius:2px;vertical-align:middle;margin-right:4px"></span>Raw TAM (if everything works)</span>';
+      h+='<span><span style="display:inline-block;width:2px;height:10px;background:#e2e4ea;vertical-align:middle;margin-right:4px"></span>Current EV</span>';
+      h+='<span>% priced in = EV \u00f7 risk-adj TAM</span>';
+      h+='</div></div></div>';
+    }
 
     // Portfolio
     h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#a855f7,#ec4899)"></div>Portfolio Scenario Simulator</div>';

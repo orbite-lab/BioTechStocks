@@ -625,8 +625,15 @@ async function main(){
       let nameExtra='';
       if(filterL1||filterL2){
         const fArea=filterL2||filterL1;
-        const match=r.meta.focus.find(f=>f.area===fArea||f.area.startsWith(fArea+"."));
-        if(match)nameExtra=`<span class="purity-badge">${match.purity}%</span>`;
+        const isL1=fArea.split(".").length===1;
+        if(isL1){
+          // Sum all L2 purities under this L1
+          const total=r.meta.focus.filter(f=>f.area.startsWith(fArea+".")&&f.area.split(".").length===2).reduce((s,f)=>s+f.purity,0);
+          if(total>0)nameExtra=`<span class="purity-badge">${Math.min(total,100)}%</span>`;
+        }else{
+          const match=r.meta.focus.find(f=>f.area===fArea);
+          if(match)nameExtra=`<span class="purity-badge">${match.purity}%</span>`;
+        }
       }
       h+=`<td style="color:var(--text2);font-size:.75rem;max-width:220px;overflow:hidden;text-overflow:ellipsis">${r.name}${nameExtra}</td>`;
       h+=`<td class="r mono">${c}${r.price.toFixed(d)}`;

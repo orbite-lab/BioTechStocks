@@ -483,6 +483,27 @@
             e("span", { style: { fontSize: 28, fontWeight: 800, letterSpacing: -0.5 } }, config.company.ticker),
             e("span", { style: { fontSize: 14, color: "#6b7080", fontWeight: 500, marginLeft: 12 } }, config.company.name + " \u00b7 " + config.company.subtitle)
           ),
+          // Metadata tags
+          (() => {
+            const co = config.company;
+            const phaseColors = {commercial:"#22c55e",nda_filed:"#3b82f6",phase3:"#f59e0b",phase2:"#fb923c",phase1:"#ef4444"};
+            const phaseNames = {commercial:"Commercial",nda_filed:"NDA Filed",phase3:"Phase 3",phase2:"Phase 2",phase1:"Phase 1"};
+            const areas = new Set(), mods = new Set();
+            for (const a of config.assets) {
+              if (a.modality) { const p = a.modality.split("."); mods.add(p.slice(0,2).join(".")); }
+              for (const ind of a.indications) {
+                if (ind.area) { const p = ind.area.split("."); if (p.length >= 2) areas.add(p[0]+"."+p[1]); }
+              }
+            }
+            const chipStyle = (bg,col) => ({display:"inline-block",padding:"2px 8px",borderRadius:4,fontSize:10,fontWeight:600,fontFamily:"'JetBrains Mono'",marginRight:5,marginBottom:3,background:bg,color:col,border:"1px solid "+col+"33"});
+            const pCol = phaseColors[co.phase] || "#6b7080";
+            return e("div", { style: { marginBottom: 10, lineHeight: 2 } },
+              co.phase && e("span", { style: chipStyle(pCol+"18",pCol) }, phaseNames[co.phase] || co.phase),
+              co.rare && e("span", { style: chipStyle("#f59e0b18","#fbbf24") }, "Rare"),
+              [...areas].map(a => e("span", { key: a, style: chipStyle("#a855f718","#c084fc") }, a.split(".").map(s=>s.replace(/_/g," ")).join(" \u203a "))),
+              [...mods].map(m => e("span", { key: m, style: chipStyle("#3b82f618","#60a5fa") }, m.split(".").map(s=>s.replace(/_/g," ")).join(" \u203a ")))
+            );
+          })(),
           e("div", { style: { fontSize: 12, color: "#6b7080", marginBottom: 20 } },
             config.assets.map(a => e("span", { key: a.id, style: { marginRight: 14 } },
               e("strong", { style: { color: "#b0b4c0" } }, a.name), " (" + a.stage + ")" + (a.designations?.length ? " \u00b7 " + a.designations.join(", ") : "")

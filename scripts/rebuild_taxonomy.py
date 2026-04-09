@@ -44,13 +44,13 @@ def rebuild():
     
     taxonomy = {
         "_meta": {
-            "description": "Master taxonomy for BioTechStocks screener — L1.L2.L3 hierarchical tags",
+            "description": "Master taxonomy for BioTechStocks screener -- L1.L2.L3 hierarchical tags",
             "generated": str(date.today()),
             "format": "L1.L2.L3 hierarchical tags",
             "rules": [
                 "Every L3 term must appear under exactly ONE L1.L2 parent (no duplicates across branches)",
                 "Disease classification follows the organ/system affected, not the treatment mechanism",
-                "No 'multi_indication' catch-alls — use the lead/primary indication",
+                "No 'multi_indication' catch-alls -- use the lead/primary indication",
                 "Rare diseases get 'rare: true' on the indication object, not the area tag",
                 "Commercial products need penPct set to actual market share (revenue / TAM)"
             ],
@@ -66,9 +66,9 @@ def rebuild():
     
     a_tree = taxonomy["therapeutic_areas"]
     m_tree = taxonomy["modalities"]
-    print(f"✅ taxonomy.json rebuilt")
-    print(f"   Areas:      {len(a_tree)} L1 → {sum(len(v) for v in a_tree.values())} L2 → {taxonomy['_meta']['area_count']} L3")
-    print(f"   Modalities: {len(m_tree)} L1 → {sum(len(v) for v in m_tree.values())} L2 → {taxonomy['_meta']['modality_count']} L3")
+    print(f"[OK] taxonomy.json rebuilt")
+    print(f"   Areas:      {len(a_tree)} L1 -> {sum(len(v) for v in a_tree.values())} L2 -> {taxonomy['_meta']['area_count']} L3")
+    print(f"   Modalities: {len(m_tree)} L1 -> {sum(len(v) for v in m_tree.values())} L2 -> {taxonomy['_meta']['modality_count']} L3")
     print(f"   Rare L3s:   {sum(1 for k,v in areas.items() if v['rare'] and len(k.split('.'))==3)}")
     print(f"   Companies:  {len(manifest)}")
 

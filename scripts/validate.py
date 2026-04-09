@@ -14,7 +14,7 @@ TAXONOMY = ROOT / "taxonomy.json"
 
 def load_taxonomy():
     if not TAXONOMY.exists():
-        print("⚠  taxonomy.json not found — generating from configs (first run)")
+        print("[WARN]  taxonomy.json not found -- generating from configs (first run)")
         return None, None
     t = json.loads(TAXONOMY.read_text())
     areas = set()
@@ -36,7 +36,7 @@ def validate():
     
     manifest = json.loads((CONFIGS / "manifest.json").read_text())
     
-    # Track L3 → parent mapping for duplicate detection
+    # Track L3 -> parent mapping for duplicate detection
     l3_area_parents = defaultdict(set)
     l3_mod_parents = defaultdict(set)
     
@@ -49,7 +49,7 @@ def validate():
         try:
             d = json.loads(cfg_path.read_text())
         except json.JSONDecodeError as e:
-            errors.append(f"{tk}: invalid JSON — {e}")
+            errors.append(f"{tk}: invalid JSON -- {e}")
             continue
         
         co = d.get("company", {})
@@ -84,7 +84,7 @@ def validate():
                 if len(parts) != 3:
                     errors.append(f"{tk}.{a['id']}: modality '{mod}' is not L1.L2.L3 (depth={len(parts)})")
                 elif known_mods is not None and mod not in known_mods:
-                    warnings.append(f"{tk}.{a['id']}: NEW modality '{mod}' not in taxonomy.json — add it or check spelling")
+                    warnings.append(f"{tk}.{a['id']}: NEW modality '{mod}' not in taxonomy.json -- add it or check spelling")
                 if len(parts) == 3:
                     l3_mod_parents[parts[2]].add(f"{parts[0]}.{parts[1]}")
             else:
@@ -100,7 +100,7 @@ def validate():
                     if len(parts) != 3:
                         errors.append(f"{tk}.{a['id']}.{ind['id']}: area '{area}' is not L1.L2.L3 (depth={len(parts)})")
                     elif known_areas is not None and area not in known_areas:
-                        warnings.append(f"{tk}.{a['id']}.{ind['id']}: NEW area '{area}' not in taxonomy.json — add it or check spelling")
+                        warnings.append(f"{tk}.{a['id']}.{ind['id']}: NEW area '{area}' not in taxonomy.json -- add it or check spelling")
                     if len(parts) == 3:
                         l3_area_parents[parts[2]].add(f"{parts[0]}.{parts[1]}")
                 else:
@@ -110,10 +110,10 @@ def validate():
                 has_tam = market.get("tamB", 0) > 0
                 has_patients = market.get("patientsK", 0) > 0 and market.get("pricingK", 0) > 0
                 if not has_tam and not has_patients and a["id"] != "commercial":
-                    warnings.append(f"{tk}.{a['id']}.{ind['id']}: no TAM data (tamB or patientsK×pricingK)")
+                    warnings.append(f"{tk}.{a['id']}.{ind['id']}: no TAM data (tamB or patientsKxpricingK)")
                 
                 if has_tam and "penPct" not in market and "patientsK" not in market:
-                    errors.append(f"{tk}.{a['id']}.{ind['id']}: has tamB but missing penPct — will cause NaN")
+                    errors.append(f"{tk}.{a['id']}.{ind['id']}: has tamB but missing penPct -- will cause NaN")
                 
                 # Check assumptions exist in base scenario
                 base_a = scenarios.get("base", {}).get("assumptions", {}).get(a["id"], {}).get(ind["id"])
@@ -122,7 +122,7 @@ def validate():
                 
                 # Multi-indication catch-all check
                 if "multi_indication" in area or "multi_therapeutic" in area:
-                    errors.append(f"{tk}.{a['id']}.{ind['id']}: catch-all tag '{area}' — use lead indication instead")
+                    errors.append(f"{tk}.{a['id']}.{ind['id']}: catch-all tag '{area}' -- use lead indication instead")
     
     # Cross-config duplicate L3 check
     for l3, parents in l3_area_parents.items():
@@ -132,7 +132,7 @@ def validate():
     for l3, parents in l3_mod_parents.items():
         if len(parents) > 1:
             # Allow some legitimate duplicates (e.g., same mechanism in different modality classes)
-            warnings.append(f"Modality L3 '{l3}' under multiple parents: {sorted(parents)} — verify intentional")
+            warnings.append(f"Modality L3 '{l3}' under multiple parents: {sorted(parents)} -- verify intentional")
     
     # Print results
     print(f"\n{'='*60}")
@@ -141,19 +141,19 @@ def validate():
     print(f"{'='*60}\n")
     
     if errors:
-        print("❌ ERRORS (must fix):\n")
+        print("[ERROR] ERRORS (must fix):\n")
         for e in sorted(errors):
             print(f"  {e}")
         print()
     
     if warnings:
-        print("⚠  WARNINGS (review):\n")
+        print("[WARN]  WARNINGS (review):\n")
         for w in sorted(warnings):
             print(f"  {w}")
         print()
     
     if not errors and not warnings:
-        print("✅ All configs consistent with taxonomy!\n")
+        print("[OK] All configs consistent with taxonomy!\n")
     
     return 1 if errors else 0
 

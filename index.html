@@ -9,7 +9,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#080b12;min-height:100vh;font-family:'DM Sans',system-ui,sans-serif;color:#c8cdd8}
 :root{--mb:#991b1b;--bear:#ef4444;--base:#f59e0b;--bull:#22c55e;--pb:#a855f7;--bg1:#0d1019;--bg2:#131722;--bg3:#1a1f2e;--border:#ffffff12;--text1:#e2e4ea;--text2:#8890a0;--mono:'JetBrains Mono',monospace}
-.wrap{max-width:1800px;margin:0 auto;padding:24px 20px}
+.wrap{max-width:1800px;margin:0 auto;padding:12px 20px 24px}
 .hdr{display:flex;align-items:center;gap:14px;margin-bottom:6px}
 .hdr h1{font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,#60a5fa,#a78bfa,#f472b6);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hdr .bar{width:4px;height:36px;border-radius:99px;background:linear-gradient(180deg,#3b82f6,#8b5cf6);box-shadow:0 0 16px #3b82f644}
@@ -79,11 +79,31 @@ tbody tr:hover{background:#ffffff06}
 .rs-axis-track{flex:1;position:relative;height:14px;margin-right:12px}
 .rs-axis-lbl{position:absolute;top:0;transform:translateX(-50%);font-size:.6rem;color:var(--text2);font-family:var(--mono)}
 .loading{text-align:center;padding:60px;color:var(--text2);font-size:.9rem}
+.topbar{position:sticky;top:0;z-index:200;background:#080b12ee;backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:10px 20px;display:flex;align-items:center;gap:12px}
+.topbar-title{font-weight:800;font-size:1rem;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.topbar-dd{position:relative;flex:1;max-width:400px}
+.topbar-input{width:100%;padding:7px 12px;border-radius:7px;font-size:.82rem;font-family:var(--mono);background:var(--bg2);border:1px solid var(--border);color:var(--text1);outline:none}
+.topbar-input:focus{border-color:#3b82f6}
+.topbar-list{position:absolute;top:100%;left:0;right:0;margin-top:4px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;max-height:320px;overflow-y:auto;z-index:300;display:none}
+.topbar-list.open{display:block}
+.topbar-item{padding:8px 12px;cursor:pointer;font-size:.8rem;border-bottom:1px solid #ffffff04;display:flex;justify-content:space-between;align-items:center}
+.topbar-item:hover{background:#ffffff08}
+.topbar-item .t{font-family:var(--mono);font-weight:700;color:#60a5fa;margin-right:8px}
+.topbar-item .n{color:var(--text2);font-size:.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.topbar-count{font-size:.75rem;color:var(--text2);font-family:var(--mono);white-space:nowrap}
 @media(max-width:1000px){.stats,.ptf-results{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){.stats,.ptf-results{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<div id="topbar" class="topbar" style="display:none">
+  <span class="topbar-title">Biotech Screener</span>
+  <div class="topbar-dd">
+    <input class="topbar-input" id="topSearch" placeholder="Search company → open model..." onfocus="document.getElementById('topList').classList.add('open')" onblur="setTimeout(()=>document.getElementById('topList').classList.remove('open'),200)" oninput="window._topFilter(this.value)"/>
+    <div class="topbar-list" id="topList"></div>
+  </div>
+  <span class="topbar-count" id="topCount"></span>
+</div>
 <div class="wrap">
 <div class="hdr"><div class="bar"></div><h1>Biotech Scenario Screener</h1></div>
 <p class="sub">5-scenario rNPV/SOTP models · <a href="https://github.com/orbite-lab/BioTechStocks">orbite-lab/BioTechStocks</a> · Click any ticker to open full model</p>
@@ -269,6 +289,28 @@ async function main(){
   }
 
   let rows=buildRows();
+
+  // Populate sticky topbar
+  function populateTopbar(){
+    const tb=document.getElementById('topbar');
+    const tl=document.getElementById('topList');
+    const tc=document.getElementById('topCount');
+    if(!tb||!tl)return;
+    tb.style.display='flex';
+    tc.textContent=Object.keys(configs).length+' companies';
+    let items='';
+    for(const[tk,cfg]of Object.entries(configs)){
+      const co=cfg.company;
+      items+=`<a class="topbar-item" href="model.html?ticker=${tk}" style="text-decoration:none;color:inherit"><span><span class="t">${tk}</span><span class="n">${co.name}</span></span><span style="font-family:var(--mono);font-size:.7rem;color:var(--text2)">${ccySym(co.currency)}${co.currentPrice}</span></a>`;
+    }
+    tl.innerHTML=items;
+  }
+  populateTopbar();
+  window._topFilter=function(q){
+    const tl=document.getElementById('topList');if(!tl)return;
+    tl.classList.add('open');
+    tl.querySelectorAll('.topbar-item').forEach(el=>{el.style.display=el.textContent.toLowerCase().includes(q.toLowerCase())?'':'none';});
+  };
 
   let sortKey="wtUp",sortDir=-1;
   const doSort=()=>{rows.sort((a,b)=>{

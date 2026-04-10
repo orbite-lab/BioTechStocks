@@ -453,6 +453,20 @@ async function main(){
     const ents=await Promise.all(tks.map(async t=>{try{const r=await fetch("configs/"+t+".json");if(!r.ok)return null;return[t,await r.json()];}catch{return null;}}));
     configs={};ents.filter(Boolean).forEach(([t,c])=>{configs[t]=c;});
     if(!Object.keys(configs).length)throw 0;
+    // Load options cache and merge into catalysts
+    try{
+      const or2=await fetch("options_cache.json");
+      if(or2.ok){
+        const oc=await or2.json();
+        for(const[tk,catOpts]of Object.entries(oc)){
+          if(tk==="_meta"||!configs[tk]||!configs[tk].catalysts)continue;
+          for(const cat of configs[tk].catalysts){
+            const key=cat.asset+"."+cat.indication;
+            if(catOpts[key])cat.options=catOpts[key];
+          }
+        }
+      }
+    }catch{/* options cache not available — fine */}
   }catch{app.innerHTML='<div class="loading" style="color:#ef4444">Failed to load configs. Ensure configs/ folder is deployed.</div>';return;}
 
   // Build rows with config prices initially

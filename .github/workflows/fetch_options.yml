@@ -1,0 +1,31 @@
+name: Fetch Options Data
+on:
+  schedule:
+    - cron: '30 14 * * 1-5'  # Mon-Fri at 14:30 UTC (market hours)
+  workflow_dispatch: {}       # Manual trigger from GitHub UI
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install yfinance
+        run: pip install yfinance
+      - name: Fetch options data
+        run: python scripts/fetch_options.py
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add options_cache.json
+          if git diff --cached --quiet; then
+            echo "No changes to options data"
+          else
+            git commit -m "auto: refresh options_cache.json [skip ci]"
+            git push
+          fi

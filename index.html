@@ -15,7 +15,7 @@ body{background:#080b12;min-height:100vh;font-family:'DM Sans',system-ui,sans-se
 .hdr .bar{width:4px;height:36px;border-radius:99px;background:linear-gradient(180deg,#3b82f6,#8b5cf6);box-shadow:0 0 16px #3b82f644}
 .sub{color:var(--text2);font-size:.95rem;margin-bottom:28px;margin-left:18px}
 .sub a{color:#60a5fa;text-decoration:none}.sub a:hover{text-decoration:underline}
-.card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:22px;margin-bottom:22px;scroll-margin-top:60px}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:22px;margin-bottom:22px;scroll-margin-top:180px}
 .card-title{font-size:1.15rem;font-weight:700;color:var(--text1);margin-bottom:4px;display:flex;align-items:center;gap:10px}
 .card-title .dot{width:8px;height:22px;border-radius:99px}
 .card-sub{font-size:.82rem;color:var(--text2);margin-bottom:18px}
@@ -95,6 +95,10 @@ tbody tr:hover{background:#ffffff06}
 .topbar-nav button{background:transparent;border:1px solid transparent;border-radius:5px;padding:4px 10px;font-size:.68rem;font-family:var(--mono);color:var(--text2);cursor:pointer;white-space:nowrap;transition:.15s}
 .topbar-nav button:hover{background:#ffffff08;color:var(--text1)}
 .topbar-nav button.active{background:#3b82f622;border-color:#3b82f644;color:#60a5fa}
+.sticky-filters{position:sticky;top:46px;z-index:190;background:#080b12ee;backdrop-filter:blur(12px);padding:6px 20px 0;border-bottom:1px solid var(--border);display:none}
+.sticky-filters .fbar{margin-bottom:6px;padding:6px 10px}
+.sticky-filters .fl2-row{margin-bottom:6px;padding:2px 10px 4px}
+.sticky-filters .stats{margin-bottom:6px}
 @media(max-width:1000px){.stats,.ptf-results{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){.stats,.ptf-results{grid-template-columns:1fr}}
 .fbar{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;margin-bottom:16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
@@ -133,6 +137,7 @@ tbody tr:hover{background:#ffffff06}
     <button onclick="document.getElementById('sec-table').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-table">Table</button>
   </nav>
 </div>
+<div id="stickyFilters" class="sticky-filters"></div>
 <div class="wrap">
 <div id="app"><div class="loading">Loading configs&hellip;</div></div>
 </div>
@@ -637,46 +642,47 @@ async function main(){
     });
 
     let h='';
+    let fh=''; // filter HTML → goes into sticky bar
 
     // Filter bar — Area
-    h+='<div class="fbar">';
-    h+='<span class="fbar-lbl">Area</span>';
+    fh+='<div class="fbar">';
+    fh+='<span class="fbar-lbl">Area</span>';
     L1_ORDER.forEach(l1=>{
       if(!l1Counts[l1])return;
       const active=filterL1===l1;
-      h+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')">${L1_NAMES[l1]||l1}<span class="cnt">${l1Counts[l1]}</span></span>`;
+      fh+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')">${L1_NAMES[l1]||l1}<span class="cnt">${l1Counts[l1]}</span></span>`;
     });
     // Fallback: show any L1 from data not in L1_ORDER
     Object.keys(l1Counts).filter(l1=>!L1_ORDER.includes(l1)).sort().forEach(l1=>{
       const active=filterL1===l1;
-      h+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')">${L1_NAMES[l1]||l1.replace(/_/g,' ')}<span class="cnt">${l1Counts[l1]}</span></span>`;
+      fh+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')">${L1_NAMES[l1]||l1.replace(/_/g,' ')}<span class="cnt">${l1Counts[l1]}</span></span>`;
     });
-    h+='<span class="fsep"></span>';
-    h+='<span class="fbar-lbl">Phase</span>';
-    h+=`<select class="fsel" onchange="window._fPhase(this.value)"><option value="">All</option>`;
-    PHASE_ORDER.forEach(p=>{if(phaseCounts[p])h+=`<option value="${p}" ${filterPhase===p?'selected':''}>${PHASE_NAMES[p]} (${phaseCounts[p]})</option>`;});
-    h+='</select>';
-    h+='<span class="fsep"></span>';
-    h+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()" title="Filter companies with rare disease indications">\u2605 Rare<span class="cnt">${rareCountCross}</span></span>`;
-    h+='<span class="fsep"></span>';
-    h+=`<span class="fchip ${purityMode==='wtd'?'active':''}" onclick="window._purityMode()" style="padding:2px 8px;font-size:.62rem" title="Toggle: Raw TAM vs Risk-Adjusted (PoS×Apr weighted)">Purity: ${purityMode==='wtd'?'Risk-Adj':'Raw TAM'}</span>`;
+    fh+='<span class="fsep"></span>';
+    fh+='<span class="fbar-lbl">Phase</span>';
+    fh+=`<select class="fsel" onchange="window._fPhase(this.value)"><option value="">All</option>`;
+    PHASE_ORDER.forEach(p=>{if(phaseCounts[p])fh+=`<option value="${p}" ${filterPhase===p?'selected':''}>${PHASE_NAMES[p]} (${phaseCounts[p]})</option>`;});
+    fh+='</select>';
+    fh+='<span class="fsep"></span>';
+    fh+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()" title="Filter companies with rare disease indications">\u2605 Rare<span class="cnt">${rareCountCross}</span></span>`;
+    fh+='<span class="fsep"></span>';
+    fh+=`<span class="fchip ${purityMode==='wtd'?'active':''}" onclick="window._purityMode()" style="padding:2px 8px;font-size:.62rem" title="Toggle: Raw TAM vs Risk-Adjusted (PoS×Apr weighted)">Purity: ${purityMode==='wtd'?'Risk-Adj':'Raw TAM'}</span>`;
     if(filterL1||filterL2||filterL3||filterPhase||filterRare!==null||activeFilter||filterMod1||filterMod2||filterMod3)
-      h+=`<span class="fchip" style="border-color:#ef444444;color:#fca5a5" onclick="window._fClear()">\u2715 Clear</span>`;
-    h+=`<span style="margin-left:auto;font-size:.7rem;color:var(--text2);font-family:var(--mono)">${filtered.length}/${rows.length}</span>`;
-    h+='</div>';
+      fh+=`<span class="fchip" style="border-color:#ef444444;color:#fca5a5" onclick="window._fClear()">\u2715 Clear</span>`;
+    fh+=`<span style="margin-left:auto;font-size:.7rem;color:var(--text2);font-family:var(--mono)">${filtered.length}/${rows.length}</span>`;
+    fh+='</div>';
 
     // L2 sub-chips (show when L1 is active)
     if(filterL1){
       const l2s=Object.keys(l2Counts).filter(k=>k.startsWith(filterL1+".")).sort((a,b)=>(l2Counts[b]||0)-(l2Counts[a]||0));
       if(l2s.length>0){
-        h+='<div class="fl2-row">';
-        h+=`<span class="fl2chip ${!filterL2?'active':''}" onclick="window._fL2(null)">All ${L1_NAMES[filterL1]}</span>`;
+        fh+='<div class="fl2-row">';
+        fh+=`<span class="fl2chip ${!filterL2?'active':''}" onclick="window._fL2(null)">All ${L1_NAMES[filterL1]}</span>`;
         l2s.forEach(l2=>{
           const label=l2.split(".").pop().replace(/_/g," ");
           const active=filterL2===l2;
-          h+=`<span class="fl2chip ${active?'active':''}" onclick="window._fL2('${l2}')">${label}<span class="cnt">${l2Counts[l2]}</span></span>`;
+          fh+=`<span class="fl2chip ${active?'active':''}" onclick="window._fL2('${l2}')">${label}<span class="cnt">${l2Counts[l2]}</span></span>`;
         });
-        h+='</div>';
+        fh+='</div>';
       }
     }
 
@@ -684,46 +690,45 @@ async function main(){
     if(filterL2){
       const l3s=Object.keys(l3Counts).filter(k=>k.startsWith(filterL2+".")).sort((a,b)=>(l3Counts[b]||0)-(l3Counts[a]||0));
       if(l3s.length>0){
-        h+='<div class="fl2-row" style="padding-left:28px">';
-        h+=`<span class="fl2chip ${!filterL3?'active':''}" onclick="window._fL3(null)">All ${filterL2.split('.').pop().replace(/_/g,' ')}</span>`;
+        fh+='<div class="fl2-row" style="padding-left:28px">';
+        fh+=`<span class="fl2chip ${!filterL3?'active':''}" onclick="window._fL3(null)">All ${filterL2.split('.').pop().replace(/_/g,' ')}</span>`;
         l3s.forEach(l3=>{
           const label=l3.split(".").pop().replace(/_/g," ");
           const active=filterL3===l3;
-          h+=`<span class="fl2chip ${active?'active':''}" onclick="window._fL3('${l3}')">${label}<span class="cnt">${l3Counts[l3]}</span></span>`;
+          fh+=`<span class="fl2chip ${active?'active':''}" onclick="window._fL3('${l3}')">${label}<span class="cnt">${l3Counts[l3]}</span></span>`;
         });
-        h+='</div>';
+        fh+='</div>';
       }
     }
 
     // Modality filter row
     const MOD_NAMES={small_molecule:"Small Molecule",antibody:"Antibody",adc:"ADC",nucleic_acid:"Nucleic Acid",gene_therapy:"Gene Therapy",cell_therapy:"Cell Therapy",pegylated_protein:"Peg Protein",vaccine:"Vaccine",formulation_platform:"Formulation",biologic:"Biologic",peptide:"Peptide"};
     const MOD_ORDER=["small_molecule","antibody","adc","nucleic_acid","gene_therapy","cell_therapy","peptide","biologic","pegylated_protein","vaccine","formulation_platform"];
-    h+='<div class="fbar" style="margin-top:-10px;border-top:0;border-top-left-radius:0;border-top-right-radius:0">';
-    h+='<span class="fbar-lbl">Platform</span>';
+    fh+='<div class="fbar" style="margin-top:-2px;border-top:0;border-top-left-radius:0;border-top-right-radius:0">';
+    fh+='<span class="fbar-lbl">Platform</span>';
     MOD_ORDER.forEach(m1=>{
       if(!m1Counts[m1])return;
       const active=filterMod1===m1;
-      h+=`<span class="fchip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod1('${m1}')">${MOD_NAMES[m1]||m1}<span class="cnt">${m1Counts[m1]}</span></span>`;
+      fh+=`<span class="fchip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod1('${m1}')">${MOD_NAMES[m1]||m1}<span class="cnt">${m1Counts[m1]}</span></span>`;
     });
-    // Fallback: show any mod L1 from data not in MOD_ORDER
     Object.keys(m1Counts).filter(m1=>!MOD_ORDER.includes(m1)).sort().forEach(m1=>{
       const active=filterMod1===m1;
-      h+=`<span class="fchip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod1('${m1}')">${MOD_NAMES[m1]||m1.replace(/_/g,' ')}<span class="cnt">${m1Counts[m1]}</span></span>`;
+      fh+=`<span class="fchip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod1('${m1}')">${MOD_NAMES[m1]||m1.replace(/_/g,' ')}<span class="cnt">${m1Counts[m1]}</span></span>`;
     });
-    h+='</div>';
+    fh+='</div>';
 
     // Mod L2 sub-chips
     if(filterMod1){
       const m2s=Object.keys(m2Counts).filter(k=>k.startsWith(filterMod1+".")).sort((a,b)=>(m2Counts[b]||0)-(m2Counts[a]||0));
       if(m2s.length>0){
-        h+='<div class="fl2-row">';
-        h+=`<span class="fl2chip ${!filterMod2?'active':''}" style="${!filterMod2?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod2(null)">All ${MOD_NAMES[filterMod1]}</span>`;
+        fh+='<div class="fl2-row">';
+        fh+=`<span class="fl2chip ${!filterMod2?'active':''}" style="${!filterMod2?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod2(null)">All ${MOD_NAMES[filterMod1]}</span>`;
         m2s.forEach(m2=>{
           const label=m2.split(".").pop().replace(/_/g," ");
           const active=filterMod2===m2;
-          h+=`<span class="fl2chip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod2('${m2}')">${label}<span class="cnt">${m2Counts[m2]}</span></span>`;
+          fh+=`<span class="fl2chip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod2('${m2}')">${label}<span class="cnt">${m2Counts[m2]}</span></span>`;
         });
-        h+='</div>';
+        fh+='</div>';
       }
     }
 
@@ -731,14 +736,14 @@ async function main(){
     if(filterMod2){
       const m3s=Object.keys(m3Counts).filter(k=>k.startsWith(filterMod2+".")).sort((a,b)=>(m3Counts[b]||0)-(m3Counts[a]||0));
       if(m3s.length>0){
-        h+='<div class="fl2-row" style="padding-left:28px">';
-        h+=`<span class="fl2chip ${!filterMod3?'active':''}" style="${!filterMod3?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod3(null)">All ${filterMod2.split('.').pop().replace(/_/g,' ')}</span>`;
+        fh+='<div class="fl2-row" style="padding-left:28px">';
+        fh+=`<span class="fl2chip ${!filterMod3?'active':''}" style="${!filterMod3?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod3(null)">All ${filterMod2.split('.').pop().replace(/_/g,' ')}</span>`;
         m3s.forEach(m3=>{
           const label=m3.split(".").pop().replace(/_/g," ");
           const active=filterMod3===m3;
-          h+=`<span class="fl2chip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod3('${m3}')">${label}<span class="cnt">${m3Counts[m3]}</span></span>`;
+          fh+=`<span class="fl2chip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod3('${m3}')">${label}<span class="cnt">${m3Counts[m3]}</span></span>`;
         });
-        h+='</div>';
+        fh+='</div>';
       }
     }
     // Stats
@@ -1227,6 +1232,8 @@ async function main(){
     h+=`<a href="https://github.com/orbite-lab/BioTechStocks" style="color:#60a5fa">Source configs</a> \u00b7 `;
     h+=`<a href="model.html" style="color:#60a5fa">Open model viewer</a></div>`;
 
+    document.getElementById('stickyFilters').innerHTML=fh;
+    document.getElementById('stickyFilters').style.display='block';
     app.innerHTML=h;
   }
 
@@ -1285,7 +1292,7 @@ main();
         if(btn)btn.classList.add('active');
       }
     });
-  },{rootMargin:'-20% 0px -60% 0px',threshold:0});
+  },{rootMargin:'-30% 0px -50% 0px',threshold:0});
   // Observe once sections exist (after first render)
   setTimeout(()=>{secs.forEach(id=>{const el=document.getElementById(id);if(el)obs.observe(el);});},2000);
 })();

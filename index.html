@@ -887,30 +887,35 @@ async function main(){
         h+=`<div style="position:absolute;bottom:${yp}%;left:0;width:100%;height:1px;background:#ffffff04"></div>`;
         h+=`<div style="position:absolute;bottom:${yp}%;left:-32px;font-size:.45rem;color:var(--text2);font-family:var(--mono);transform:translateY(50%);opacity:.5">${v}%</div>`;
       }
-      // Barbells — compute X positions with collision avoidance (skip <5% swing)
+      // Barbells — compute X positions with multi-pass collision avoidance
       const catPos=allCats.map(c=>({c,x:Math.min(c.daysOut/maxDays*100,98)}));
       catPos.sort((a,b)=>a.x-b.x);
-      const MIN_GAP=3.5; // minimum % gap between barbells
-      for(let i=1;i<catPos.length;i++){
-        if(catPos[i].x-catPos[i-1].x<MIN_GAP){
-          // Find the cluster
-          let start=i-1;
-          while(start>0&&catPos[start].x-catPos[start-1].x<MIN_GAP)start--;
-          let end=i;
-          while(end<catPos.length-1&&catPos[end+1].x-catPos[end].x<MIN_GAP)end++;
-          // Spread the cluster
-          const clusterSize=end-start+1;
-          const center=catPos[Math.floor((start+end)/2)].x;
-          for(let j=start;j<=end;j++){
-            catPos[j].x=center+(j-start-(clusterSize-1)/2)*MIN_GAP;
+      const MIN_GAP=Math.max(2.5,Math.min(5,95/catPos.length)); // adaptive: wider when fewer catalysts
+      // Multi-pass: spread clusters until stable (max 5 passes)
+      for(let pass=0;pass<5;pass++){
+        let moved=false;
+        for(let i=1;i<catPos.length;i++){
+          if(catPos[i].x-catPos[i-1].x<MIN_GAP){
+            let start=i-1;
+            while(start>0&&catPos[start].x-catPos[start-1].x<MIN_GAP)start--;
+            let end=i;
+            while(end<catPos.length-1&&catPos[end+1].x-catPos[end].x<MIN_GAP)end++;
+            const clusterSize=end-start+1;
+            const center=(catPos[start].x+catPos[end].x)/2;
+            for(let j=start;j<=end;j++){
+              const newX=center+(j-start-(clusterSize-1)/2)*MIN_GAP;
+              if(Math.abs(newX-catPos[j].x)>0.1)moved=true;
+              catPos[j].x=newX;
+            }
+            i=end+1;
           }
-          i=end+1;
         }
+        if(!moved)break;
       }
       // Clamp all positions
       catPos.forEach(p=>{p.x=Math.max(1,Math.min(98,p.x));});
 
-      catPos.forEach(({c,x})=>{
+      catPos.forEach(({c,x},idx)=>{
         const ySwing=yPct(c.swingPct);
         const yER=yPct(c.expectedReturn);
         const asym=c.asymmetry;
@@ -922,18 +927,24 @@ async function main(){
         const lineTop=Math.max(ySwing,yER);
         const lineBot=Math.min(ySwing,yER);
         const lineH=lineTop-lineBot;
-        h+=`<div style="position:absolute;left:${x}%;bottom:${lineBot}%;width:2px;height:${lineH}%;background:${col}55;transform:translateX(-50%);z-index:1" title="${c.ticker}: ${c.title}"></div>`;
-        // Top dot = Swing % (circle)
-        h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing}%;transform:translate(-50%,50%);width:8px;height:8px;border-radius:50%;background:${col};opacity:.7;border:1.5px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: ${c.title}${regimeTag}\nSwing: ${c.swingPct}% | E[R]: ${c.expectedReturn>0?'+':''}${c.expectedReturn}%\nIf win: ${c.successMove>0?'+':''}${c.successMove}% | If fail: ${c.failMove>0?'+':''}${c.failMove}%\nImplied PoS: ${c.impliedPos}% | Your PoS: ${c.yourPoS}% | Asym: ${asym>0?'+':''}${asym}pp"></div>`;
-        // Bottom dot = E[R] (diamond)
-        h+=`<div style="position:absolute;left:${x}%;bottom:${yER}%;transform:translate(-50%,50%) rotate(45deg);width:7px;height:7px;background:${col};opacity:.7;border:1.5px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: E[R]=${c.expectedReturn>0?'+':''}${c.expectedReturn}%"></div>`;
-        // Ticker label above top dot + swing value if above break
+        h+=`<div style="position:absolute;left:${x}%;bottom:${lineBot}%;width:1.5px;height:${lineH}%;background:${col}44;transform:translateX(-50%);z-index:1" title="${c.ticker}: ${c.title}"></div>`;
+        // Top dot = Swing % (circle) — smaller
+        h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing}%;transform:translate(-50%,50%);width:6px;height:6px;border-radius:50%;background:${col};opacity:.7;border:1px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: ${c.title}${regimeTag}\nSwing: ${c.swingPct}% | E[R]: ${c.expectedReturn>0?'+':''}${c.expectedReturn}%\nIf win: ${c.successMove>0?'+':''}${c.successMove}% | If fail: ${c.failMove>0?'+':''}${c.failMove}%\nImplied PoS: ${c.impliedPos}% | Your PoS: ${c.yourPoS}% | Asym: ${asym>0?'+':''}${asym}pp"></div>`;
+        // Bottom dot = E[R] (diamond) — smaller
+        h+=`<div style="position:absolute;left:${x}%;bottom:${yER}%;transform:translate(-50%,50%) rotate(45deg);width:5px;height:5px;background:${col};opacity:.7;border:1px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: E[R]=${c.expectedReturn>0?'+':''}${c.expectedReturn}%"></div>`;
+        // Ticker label — alternate above swing dot vs below E[R] diamond for adjacent barbells
         const aboveBreak=c.swingPct>BREAK;
-        h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing+2}%;transform:translateX(-50%);font-size:.55rem;font-family:var(--mono);color:${col};font-weight:700;white-space:nowrap;pointer-events:none;z-index:4">${c.ticker}${aboveBreak?' '+c.swingPct+'%':''}</div>`;
+        const labelAbove=idx%2===0;
+        if(labelAbove){
+          h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing+2}%;transform:translateX(-50%);font-size:.5rem;font-family:var(--mono);color:${col};font-weight:700;white-space:nowrap;pointer-events:none;z-index:4">${c.ticker}${aboveBreak?' '+c.swingPct+'%':''}</div>`;
+        }else{
+          h+=`<div style="position:absolute;left:${x}%;bottom:${yER-3.5}%;transform:translateX(-50%);font-size:.5rem;font-family:var(--mono);color:${col};font-weight:700;white-space:nowrap;pointer-events:none;z-index:4">${c.ticker}${aboveBreak?' '+c.swingPct+'%':''}</div>`;
+        }
         // Options implied move marker (yellow horizontal dash)
-        if(c.options&&c.options.impliedMovePct){
-          const optY=yPct(c.options.impliedMovePct*2); // straddle = one-sided, swing = 2x
-          h+=`<div style="position:absolute;left:${x}%;bottom:${optY}%;transform:translate(-50%,50%);width:14px;height:2px;background:#eab308;z-index:5;opacity:.9" title="Options implied: +-${c.options.impliedMovePct}% (full swing ${c.options.impliedMovePct*2}%)\nStraddle: $${c.options.straddle} at ${c.options.atmStrike} strike\nExpiry: ${c.options.expiryDate} | Call IV: ${(c.options.callIV*100).toFixed(0)}% | Put IV: ${(c.options.putIV*100).toFixed(0)}%\nSkew: ${c.options.skew>0?'+':''}${(c.options.skew*100).toFixed(1)}pp"></div>`;
+        if(c.options&&c.options.impliedMove){
+          const optSwing=c.options.impliedMove*2;
+          const yOpt=yPct(optSwing);
+          h+=`<div style="position:absolute;left:${x}%;bottom:${yOpt}%;transform:translate(-50%,50%);width:14px;height:2px;background:#eab308;z-index:5;opacity:.9" title="Options implied swing: +-${c.options.impliedMove}% (${optSwing}% total)\nStraddle: $${c.options.straddleCost} at $${c.options.atmStrike}\nExpiry: ${c.options.expiryUsed} | Call IV: ${c.options.callIV}% | Put IV: ${c.options.putIV}%"></div>`;
         }
       });
       h+='</div>';

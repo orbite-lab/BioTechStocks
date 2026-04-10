@@ -15,7 +15,7 @@ body{background:#080b12;min-height:100vh;font-family:'DM Sans',system-ui,sans-se
 .hdr .bar{width:4px;height:36px;border-radius:99px;background:linear-gradient(180deg,#3b82f6,#8b5cf6);box-shadow:0 0 16px #3b82f644}
 .sub{color:var(--text2);font-size:.95rem;margin-bottom:28px;margin-left:18px}
 .sub a{color:#60a5fa;text-decoration:none}.sub a:hover{text-decoration:underline}
-.card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:22px;margin-bottom:22px}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:22px;margin-bottom:22px;scroll-margin-top:60px}
 .card-title{font-size:1.15rem;font-weight:700;color:var(--text1);margin-bottom:4px;display:flex;align-items:center;gap:10px}
 .card-title .dot{width:8px;height:22px;border-radius:99px}
 .card-sub{font-size:.82rem;color:var(--text2);margin-bottom:18px}
@@ -91,6 +91,10 @@ tbody tr:hover{background:#ffffff06}
 .topbar-item .t{font-family:var(--mono);font-weight:700;color:#60a5fa;margin-right:8px}
 .topbar-item .n{color:var(--text2);font-size:.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .topbar-count{font-size:.75rem;color:var(--text2);font-family:var(--mono);white-space:nowrap}
+.topbar-nav{display:flex;gap:2px;margin-left:auto}
+.topbar-nav button{background:transparent;border:1px solid transparent;border-radius:5px;padding:4px 10px;font-size:.68rem;font-family:var(--mono);color:var(--text2);cursor:pointer;white-space:nowrap;transition:.15s}
+.topbar-nav button:hover{background:#ffffff08;color:var(--text1)}
+.topbar-nav button.active{background:#3b82f622;border-color:#3b82f644;color:#60a5fa}
 @media(max-width:1000px){.stats,.ptf-results{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){.stats,.ptf-results{grid-template-columns:1fr}}
 .fbar{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;margin-bottom:16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
@@ -121,6 +125,13 @@ tbody tr:hover{background:#ffffff06}
     <div class="topbar-list" id="topList"></div>
   </div>
   <span class="topbar-count" id="topCount"></span>
+  <nav class="topbar-nav" id="topNav">
+    <button onclick="document.getElementById('sec-range').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-range">Range</button>
+    <button onclick="document.getElementById('sec-pipeline').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-pipeline">Pipeline</button>
+    <button onclick="document.getElementById('sec-catalyst').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-catalyst">Catalysts</button>
+    <button onclick="document.getElementById('sec-portfolio').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-portfolio">Portfolio</button>
+    <button onclick="document.getElementById('sec-table').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-table">Table</button>
+  </nav>
 </div>
 <div class="wrap">
 <div id="app"><div class="loading">Loading configs&hellip;</div></div>
@@ -743,7 +754,7 @@ async function main(){
     const visibleRows=filtered;
     const activeArea=filterL3||filterL2||filterL1||null;
     const hasPurity=!!(activeArea||filterRare===true);
-    h+='<div class="card"><div class="card-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div><div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6);display:inline-block;vertical-align:middle;margin-right:8px"></div>Market Valuation Overview</div>';
+    h+='<div class="card" id="sec-range"><div class="card-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div><div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6);display:inline-block;vertical-align:middle;margin-right:8px"></div>Market Valuation Overview</div>';
     h+='<div style="display:flex;gap:4px">';
     h+=`<span class="fchip ${stripSort==='base'?'active':''}" onclick="window._stripSort('base')" style="padding:2px 8px;font-size:.65rem">Base Upside</span>`;
     h+=`<span class="fchip ${stripSort==='rr'?'active':''}" onclick="window._stripSort('rr')" style="padding:2px 8px;font-size:.65rem">R/R Ratio</span>`;
@@ -757,7 +768,7 @@ async function main(){
     const optRows=[...visibleRows].filter(r=>r.meta.optionality>10&&r.meta.totalTAM>0&&!(r.evUSD>0&&r.meta.totalWTD>0&&r.evUSD>r.meta.totalWTD)).sort((a,b)=>b.meta.optionality-a.meta.optionality);
     if(optRows.length>0){
       const maxRaw=Math.max(...optRows.map(r=>r.meta.totalTAM));
-      h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#f59e0b,#ef4444)"></div>Pipeline Optionality</div>';
+      h+='<div class="card" id="sec-pipeline"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#f59e0b,#ef4444)"></div>Pipeline Optionality</div>';
       h+='<div class="card-sub">Total TAM bars (all assets) · Optionality % = pipeline-only leverage (excludes commercial at 100% PoS) · EV marker = current market valuation</div>';
       h+='<div style="padding:8px 0">';
       optRows.slice(0,15).forEach(r=>{
@@ -844,7 +855,7 @@ async function main(){
         const aboveFrac=Math.min(1,(v-BREAK)/(yMaxAbove-BREAK));
         return BREAK_PCT+aboveFrac*(100-BREAK_PCT);
       };
-      h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#22c55e,#ef4444)"></div>Catalyst Asymmetry Map</div>';
+      h+='<div class="card" id="sec-catalyst"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#22c55e,#ef4444)"></div>Catalyst Asymmetry Map</div>';
       h+='<div class="card-sub">Each barbell = one catalyst. Top = swing % (model TP change). Bottom = E[R] (probability-weighted). Yellow dash = options-implied swing. Color = E[R] direction.</div>';
       // Chart area
       h+='<div style="position:relative;height:340px;margin:16px 0 8px;border-left:1px solid #ffffff18;border-bottom:1px solid #ffffff18;overflow:visible">';
@@ -1015,7 +1026,7 @@ async function main(){
     }
 
     // Portfolio
-    h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#a855f7,#ec4899)"></div>Portfolio Scenario Simulator</div>';
+    h+='<div class="card" id="sec-portfolio"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#a855f7,#ec4899)"></div>Portfolio Scenario Simulator</div>';
     h+='<div class="card-sub">Select stocks via checkboxes or search — average return per stock under each scenario</div>';
     h+='<div class="ptf-bar">';
     ptfSet.forEach(tk=>{h+=`<span class="ptf-tag" onclick="window._toggle('${tk}')">${tk}<span class="x">\u00d7</span></span>`;});
@@ -1154,7 +1165,7 @@ async function main(){
     h+='</div>';
 
     // Table
-    h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#10b981,#14b8a6)"></div>Company Analysis';
+    h+='<div class="card" id="sec-table"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#10b981,#14b8a6)"></div>Company Analysis';
     if(activeFilter)h+=`<span style="font-size:.75rem;font-weight:500;color:var(--text2);margin-left:10px">(${visibleRows.length} of ${rows.length} — filtered)</span>`;
     h+='</div>';
     h+='<div class="card-sub">Click ticker for full 5-scenario model \u00b7 Check box to add to portfolio \u00b7 Click headers to sort</div>';
@@ -1261,6 +1272,23 @@ async function main(){
   })();
 }
 main();
+// Scroll observer for nav button highlighting
+(function(){
+  const secs=['sec-range','sec-pipeline','sec-catalyst','sec-portfolio','sec-table'];
+  const btns=document.querySelectorAll('#topNav button');
+  if(!btns.length)return;
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        btns.forEach(b=>b.classList.remove('active'));
+        const btn=[...btns].find(b=>b.dataset.sec===en.target.id);
+        if(btn)btn.classList.add('active');
+      }
+    });
+  },{rootMargin:'-20% 0px -60% 0px',threshold:0});
+  // Observe once sections exist (after first render)
+  setTimeout(()=>{secs.forEach(id=>{const el=document.getElementById(id);if(el)obs.observe(el);});},2000);
+})();
 </script>
 </body>
 </html>

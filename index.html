@@ -455,7 +455,7 @@ async function main(){
     if(!Object.keys(configs).length)throw 0;
     // Load options cache and merge into catalysts
     try{
-      const or2=await fetch("options_cache.json");
+      const or2=await fetch("options_cache.json?v="+Date.now());
       if(or2.ok){
         const oc=await or2.json();
         for(const[tk,catOpts]of Object.entries(oc)){

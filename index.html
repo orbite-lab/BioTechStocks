@@ -250,14 +250,17 @@ function computeCatalysts(cfg,currentPrice){
       :Math.round((ba.pos||0)/100*(ba.apr||0)/100*100);
     // Expected return = probability-weighted move from stock price
     const expectedReturn=Math.round(yourPoS/100*successMove+(1-yourPoS/100)*failMove);
-    // Implied PoS = where stock sits in the fail-to-success range
-    const impliedPos=swingPct>0?Math.round((0-failMove)/swingPct*100):50;
+    // Implied PoS = where stock sits in the fail-to-success range, clamped 0-100
+    const rawImplied=swingPct>0?Math.round((0-failMove)/swingPct*100):50;
+    const impliedPos=Math.max(0,Math.min(100,rawImplied));
+    // Regime: both_up = stock below fail TP (broadly cheap), both_down = stock above success TP (broadly rich)
+    const regime=failMove>0&&successMove>0?'both_up':failMove<0&&successMove<0?'both_down':'normal';
     // Asymmetry = your PoS vs implied (positive = market underprices you)
     const asymmetry=yourPoS-impliedPos;
     const catDate=new Date(cat.dateSort);
     const daysOut=Math.max(0,Math.round((catDate-today)/(1000*60*60*24)));
     return{...cat,failTP,successTP,swingPct,successMove,failMove,
-      yourPoS,expectedReturn,impliedPos,asymmetry,daysOut};
+      yourPoS,expectedReturn,impliedPos,asymmetry,daysOut,regime};
   }).sort((a,b)=>a.daysOut-b.daysOut);
 }
 
@@ -844,14 +847,17 @@ async function main(){
         const ySwing=yPct(c.swingPct);
         const yER=yPct(c.expectedReturn);
         const asym=c.asymmetry;
-        const col=asym>15?'#22c55e':asym>5?'#4ade80':asym>-5?'#6b7080':asym>-15?'#f97316':'#ef4444';
+        // Color: both_up=cyan (broadly cheap), both_down=purple (broadly rich), normal=green/grey/red by asymmetry
+        const col=c.regime==='both_up'?'#22d3ee':c.regime==='both_down'?'#a855f7'
+          :asym>15?'#22c55e':asym>5?'#4ade80':asym>-5?'#6b7080':asym>-15?'#f97316':'#ef4444';
+        const regimeTag=c.regime==='both_up'?' [cheap]':c.regime==='both_down'?' [rich]':'';
         // Vertical line connecting the two dots
         const lineTop=Math.max(ySwing,yER);
         const lineBot=Math.min(ySwing,yER);
         const lineH=lineTop-lineBot;
         h+=`<div style="position:absolute;left:${x}%;bottom:${lineBot}%;width:2px;height:${lineH}%;background:${col}55;transform:translateX(-50%);z-index:1" title="${c.ticker}: ${c.title}"></div>`;
         // Top dot = Swing % (circle)
-        h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing}%;transform:translate(-50%,50%);width:8px;height:8px;border-radius:50%;background:${col};opacity:.7;border:1.5px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: ${c.title}\nSwing: ${c.swingPct}% | E[R]: ${c.expectedReturn>0?'+':''}${c.expectedReturn}%\nIf win: ${c.successMove>0?'+':''}${c.successMove}% | If fail: ${c.failMove}%\nImplied PoS: ${c.impliedPos}% | Your PoS: ${c.yourPoS}% | Asym: ${asym>0?'+':''}${asym}pp"></div>`;
+        h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing}%;transform:translate(-50%,50%);width:8px;height:8px;border-radius:50%;background:${col};opacity:.7;border:1.5px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: ${c.title}${regimeTag}\nSwing: ${c.swingPct}% | E[R]: ${c.expectedReturn>0?'+':''}${c.expectedReturn}%\nIf win: ${c.successMove>0?'+':''}${c.successMove}% | If fail: ${c.failMove>0?'+':''}${c.failMove}%\nImplied PoS: ${c.impliedPos}% | Your PoS: ${c.yourPoS}% | Asym: ${asym>0?'+':''}${asym}pp"></div>`;
         // Bottom dot = E[R] (diamond)
         h+=`<div style="position:absolute;left:${x}%;bottom:${yER}%;transform:translate(-50%,50%) rotate(45deg);width:7px;height:7px;background:${col};opacity:.7;border:1.5px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: E[R]=${c.expectedReturn>0?'+':''}${c.expectedReturn}%"></div>`;
         // Ticker label above top dot + swing value if above break
@@ -860,12 +866,13 @@ async function main(){
       });
       h+='</div>';
       // Legend
-      h+='<div style="display:flex;gap:16px;margin:22px 0 10px;font-size:.6rem;color:var(--text2);flex-wrap:wrap;align-items:center">';
+      h+='<div style="display:flex;gap:14px;margin:22px 0 10px;font-size:.6rem;color:var(--text2);flex-wrap:wrap;align-items:center">';
       h+='<span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#6b7080;vertical-align:middle"></span>Swing % (volatility)</span>';
       h+='<span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:7px;height:7px;background:#6b7080;transform:rotate(45deg);vertical-align:middle"></span>Expected return</span>';
-      h+='<span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:2px;height:14px;background:#6b708055;vertical-align:middle"></span>Barbell (connects both)</span>';
       h+='<span style="margin-left:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e88;vertical-align:middle;margin-right:3px"></span>Buy before</span>';
       h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef444488;vertical-align:middle;margin-right:3px"></span>Sell the news</span>';
+      h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#22d3ee88;vertical-align:middle;margin-right:3px"></span>Broadly cheap (both up)</span>';
+      h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#a855f788;vertical-align:middle;margin-right:3px"></span>Broadly rich (both down)</span>';
       h+='<span style="color:#ffffff33">--- 0% = breakeven</span>';
       h+='</div>';
       // Table
@@ -884,15 +891,19 @@ async function main(){
       h+='</tr>';
       [...allCats].sort((a,b)=>b.asymmetry-a.asymmetry).forEach(c=>{
         const asym=c.asymmetry;
-        const col=asym>15?'#22c55e':asym>5?'#4ade80':asym>-5?'#6b7080':asym>-15?'#f97316':'#ef4444';
+        const col=c.regime==='both_up'?'#22d3ee':c.regime==='both_down'?'#a855f7'
+          :asym>15?'#22c55e':asym>5?'#4ade80':asym>-5?'#6b7080':asym>-15?'#f97316':'#ef4444';
         const urgency=c.daysOut<30?'#ef4444':c.daysOut<90?'#f59e0b':'var(--text2)';
         const erCol=c.expectedReturn>5?'#22c55e':c.expectedReturn>-5?'#6b7080':'#ef4444';
-        h+=`<tr style="border-bottom:1px solid #ffffff06">`;
-        h+=`<td style="padding:5px 8px;font-weight:700"><a href="model.html?ticker=${c.ticker}" style="color:#60a5fa;text-decoration:none">${c.ticker}</a></td>`;
+        const winCol=c.successMove>=0?'#22c55e':'#ef4444';
+        const failCol=c.failMove>=0?'#22c55e':'#ef4444';
+        const regimeTag=c.regime==='both_up'?' <span style="color:#22d3ee;font-size:.5rem">CHEAP</span>':c.regime==='both_down'?' <span style="color:#a855f7;font-size:.5rem">RICH</span>':'';
+        h+=`<tr style="border-bottom:1px solid #ffffff06${c.regime!=='normal'?';background:'+col+'08':''}">`;
+        h+=`<td style="padding:5px 8px;font-weight:700"><a href="model.html?ticker=${c.ticker}" style="color:#60a5fa;text-decoration:none">${c.ticker}</a>${regimeTag}</td>`;
         h+=`<td style="padding:5px 4px;color:var(--text2);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.title}</td>`;
         h+=`<td style="padding:5px 4px;text-align:center;color:${urgency};font-weight:700">${c.daysOut}d</td>`;
-        h+=`<td style="padding:5px 4px;text-align:center;color:#22c55e">${c.successMove>0?'+':''}${c.successMove}%</td>`;
-        h+=`<td style="padding:5px 4px;text-align:center;color:#ef4444">${c.failMove}%</td>`;
+        h+=`<td style="padding:5px 4px;text-align:center;color:${winCol}">${c.successMove>0?'+':''}${c.successMove}%</td>`;
+        h+=`<td style="padding:5px 4px;text-align:center;color:${failCol}">${c.failMove>0?'+':''}${c.failMove}%</td>`;
         h+=`<td style="padding:5px 4px;text-align:center">${c.swingPct}%</td>`;
         h+=`<td style="padding:5px 4px;text-align:center;font-weight:700;color:${erCol}">${c.expectedReturn>0?'+':''}${c.expectedReturn}%</td>`;
         h+=`<td style="padding:5px 4px;text-align:center">${c.impliedPos}%</td>`;
@@ -901,7 +912,7 @@ async function main(){
         h+=`</tr>`;
       });
       h+='</table></div>';
-      h+='<div style="margin-top:8px;font-size:.58rem;color:var(--text2)">If Win/Fail = stock move from current price. E[R] = (Your PoS x If Win) + ((1-PoS) x If Fail). Implied = where stock sits between fail & success TP. Asymmetry = Your PoS - Implied. Positive = market underprices your view.</div>';
+      h+='<div style="margin-top:8px;font-size:.58rem;color:var(--text2)">If Win/Fail = stock move from current price. E[R] = probability-weighted return. Implied = where stock sits between fail & success TP (clamped 0-100%). <span style="color:#22d3ee">Cyan = broadly cheap</span> (stock below even fail TP). <span style="color:#a855f7">Purple = broadly rich</span> (stock above even success TP).</div>';
       h+='</div>';
     }
 

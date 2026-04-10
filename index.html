@@ -251,29 +251,25 @@ function computeTPShifted(cfg,assetId,indId,pos,apr,weights,mode){
   }
   return computeAll(mod).weightedTP;
 }
-// Compute catalyst asymmetry metrics with auto weight-shift
+// Compute catalyst impact as % change in model TP (not vs stock price)
 function computeCatalysts(cfg,currentPrice){
   if(!cfg.catalysts||!cfg.catalysts.length)return[];
   const baseA=cfg.scenarios?.base?.assumptions||{};
   const {results:baseResults,weightedTP:baseWTP}=computeAll(cfg);
-  const today=new Date('2026-04-09');
+  const today=new Date('2026-04-10');
   const SKS=Object.keys(cfg.scenarios);
-  // Sort scenarios by TP ascending → assign optimism scores
   const sorted=SKS.slice().sort((a,b)=>baseResults[a].tp-baseResults[b].tp);
   const optimism={};
-  const mid=(sorted.length-1)/2; // midpoint (e.g., 2.0 for 5 scenarios)
+  const mid=(sorted.length-1)/2;
   sorted.forEach((sk,i)=>{optimism[sk]=i;});
-  // Original weights
   const origWts={};SKS.forEach(sk=>{origWts[sk]=cfg.scenarios[sk].wt;});
 
   return cfg.catalysts.map(cat=>{
-    // Step 1: Materiality — what fraction of weighted TP comes from this asset?
+    // Materiality — what fraction of weighted TP comes from this asset?
     const zeroTP=computeTPOverride(cfg,cat.asset,cat.indication,0,0);
     const m=baseWTP>0?Math.min(1,Math.max(0,(baseWTP-zeroTP)/baseWTP)):0;
 
-    // Step 2: Shift scenario weights proportional to materiality
-    // Success → boost bullish scenarios, shrink bearish (proportional to m)
-    // Fail → boost bearish scenarios, shrink bullish
+    // Shift scenario weights proportional to materiality
     function shiftWeights(direction){
       const raw={};
       SKS.forEach(sk=>{
@@ -285,15 +281,15 @@ function computeCatalysts(cfg,currentPrice){
       return raw;
     }
 
-    // Step 3: Compute TPs with shifted weights + flat PoS override
+    // Compute TPs with shifted weights + floor/ceiling PoS override
     const successWts=shiftWeights('success');
     const failWts=shiftWeights('fail');
     const successTP=computeTPShifted(cfg,cat.asset,cat.indication,cat.success_pos,cat.success_apr,successWts,'floor');
     const failTP=computeTPShifted(cfg,cat.asset,cat.indication,cat.fail_pos,cat.fail_apr,failWts,'ceil');
 
-    // Step 4: Moves from stock price
-    const successMove=currentPrice>0?Math.round((successTP-currentPrice)/currentPrice*100):0;
-    const failMove=currentPrice>0?Math.max(-100,Math.round((failTP-currentPrice)/currentPrice*100)):0;
+    // NEW: Moves as % change in model TP (not vs stock price)
+    const successMove=baseWTP>0?Math.round((successTP-baseWTP)/baseWTP*100):0;
+    const failMove=baseWTP>0?Math.max(-100,Math.round((failTP-baseWTP)/baseWTP*100)):0;
     const swingPct=successMove-failMove;
 
     // Your PoS by catalyst type
@@ -304,16 +300,12 @@ function computeCatalysts(cfg,currentPrice){
       :REGULATORY_TYPES.has(cat.type)?Math.round(ba.apr||0)
       :Math.round((ba.pos||0)/100*(ba.apr||0)/100*100);
 
-    // Expected return, implied PoS, regime, asymmetry
+    // Expected return
     const expectedReturn=Math.round(yourPoS/100*successMove+(1-yourPoS/100)*failMove);
-    const rawImplied=swingPct>0?Math.round((0-failMove)/swingPct*100):50;
-    const impliedPos=Math.max(0,Math.min(100,rawImplied));
-    const regime=failMove>0&&successMove>0?'both_up':failMove<0&&successMove<0?'both_down':'normal';
-    const asymmetry=yourPoS-impliedPos;
     const catDate=new Date(cat.dateSort);
     const daysOut=Math.max(0,Math.round((catDate-today)/(1000*60*60*24)));
-    return{...cat,failTP,successTP,swingPct,successMove,failMove,
-      yourPoS,expectedReturn,impliedPos,asymmetry,daysOut,regime,materiality:Math.round(m*100)};
+    return{...cat,failTP,successTP,baseTP:baseWTP,swingPct,successMove,failMove,
+      yourPoS,expectedReturn,daysOut,materiality:Math.round(m*100)};
   }).sort((a,b)=>a.daysOut-b.daysOut);
 }
 
@@ -853,7 +845,7 @@ async function main(){
         return BREAK_PCT+aboveFrac*(100-BREAK_PCT);
       };
       h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#22c55e,#ef4444)"></div>Catalyst Asymmetry Map</div>';
-      h+='<div class="card-sub">Each barbell = one catalyst. Top = swing % (volatility). Bottom = expected return (is it worth it?). Color = E[R] (green = positive EV, red = negative). Yellow dash = options-implied swing.</div>';
+      h+='<div class="card-sub">Each barbell = one catalyst. Top = swing % (model TP change). Bottom = E[R] (probability-weighted). Yellow dash = options-implied swing. Color = E[R] direction.</div>';
       // Chart area
       h+='<div style="position:relative;height:340px;margin:16px 0 8px;border-left:1px solid #ffffff18;border-bottom:1px solid #ffffff18;overflow:visible">';
       // Y-axis labels
@@ -918,12 +910,9 @@ async function main(){
       catPos.forEach(({c,x},idx)=>{
         const ySwing=yPct(c.swingPct);
         const yER=yPct(c.expectedReturn);
-        const asym=c.asymmetry;
-        // Color: both_up=cyan, both_down=purple, normal=green/grey/red by E[R]
+        // Color by E[R]: green = positive, red = negative, grey = neutral
         const er=c.expectedReturn;
-        const col=c.regime==='both_up'?'#22d3ee':c.regime==='both_down'?'#a855f7'
-          :er>20?'#22c55e':er>5?'#4ade80':er>-5?'#6b7080':er>-20?'#f97316':'#ef4444';
-        const regimeTag=c.regime==='both_up'?' [cheap]':c.regime==='both_down'?' [rich]':'';
+        const col=er>20?'#22c55e':er>5?'#4ade80':er>-5?'#6b7080':er>-20?'#f97316':'#ef4444';
         const optSwingTT=c.options&&c.options.impliedMove?(c.options.impliedMove*2)+'%':'n/a';
         const volEdgeTT=c.options&&c.options.impliedMove&&c.swingPct?(c.swingPct/(c.options.impliedMove*2)).toFixed(1)+'x':'n/a';
         // Vertical line connecting the two dots
@@ -932,7 +921,7 @@ async function main(){
         const lineH=lineTop-lineBot;
         h+=`<div style="position:absolute;left:${x}%;bottom:${lineBot}%;width:1.5px;height:${lineH}%;background:${col}44;transform:translateX(-50%);z-index:1" title="${c.ticker}: ${c.title}"></div>`;
         // Top dot = Swing % (circle) — smaller
-        h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing}%;transform:translate(-50%,50%);width:6px;height:6px;border-radius:50%;background:${col};opacity:.7;border:1px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: ${c.title}${regimeTag}\nSwing: ${c.swingPct}% | Mkt: ${optSwingTT} | Vol Edge: ${volEdgeTT}\nE[R]: ${c.expectedReturn>0?'+':''}${c.expectedReturn}% | PoS: ${c.yourPoS}%\nIf win: ${c.successMove>0?'+':''}${c.successMove}% | If fail: ${c.failMove>0?'+':''}${c.failMove}%"></div>`;
+        h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing}%;transform:translate(-50%,50%);width:6px;height:6px;border-radius:50%;background:${col};opacity:.7;border:1px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: ${c.title}\nSwing: ${c.swingPct}% | Mkt: ${optSwingTT} | Vol Edge: ${volEdgeTT}\nE[R]: ${c.expectedReturn>0?'+':''}${c.expectedReturn}% | PoS: ${c.yourPoS}%\nIf win: ${c.successMove>0?'+':''}${c.successMove}% | If fail: ${c.failMove>0?'+':''}${c.failMove}%\nMateriality: ${c.materiality}%"></div>`;
         // Bottom dot = E[R] (diamond) — smaller
         h+=`<div style="position:absolute;left:${x}%;bottom:${yER}%;transform:translate(-50%,50%) rotate(45deg);width:5px;height:5px;background:${col};opacity:.7;border:1px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: E[R]=${c.expectedReturn>0?'+':''}${c.expectedReturn}%"></div>`;
         // Ticker label — alternate above swing dot vs below E[R] diamond for adjacent barbells
@@ -961,8 +950,6 @@ async function main(){
       h+='<span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:14px;height:2px;background:#eab308;vertical-align:middle"></span>Options implied swing</span>';
       h+='<span style="margin-left:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e88;vertical-align:middle;margin-right:3px"></span>Positive E[R]</span>';
       h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef444488;vertical-align:middle;margin-right:3px"></span>Negative E[R]</span>';
-      h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#22d3ee88;vertical-align:middle;margin-right:3px"></span>Broadly cheap (both up)</span>';
-      h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#a855f788;vertical-align:middle;margin-right:3px"></span>Broadly rich (both down)</span>';
       h+='<span style="color:#ffffff33">--- 0% = breakeven</span>';
       h+='</div>';
       // Table
@@ -985,10 +972,8 @@ async function main(){
         const urgency=c.daysOut<30?'#ef4444':c.daysOut<90?'#f59e0b':'var(--text2)';
         const winCol=c.successMove>=0?'#22c55e':'#ef4444';
         const failCol=c.failMove>=0?'#22c55e':'#ef4444';
-        const regimeTag=c.regime==='both_up'?' <span style="color:#22d3ee;font-size:.5rem">CHEAP</span>':c.regime==='both_down'?' <span style="color:#a855f7;font-size:.5rem">RICH</span>':'';
-        const rowBg=c.regime==='both_up'?'#22d3ee08':c.regime==='both_down'?'#a855f708':'';
-        h+=`<tr style="border-bottom:1px solid #ffffff06${rowBg?';background:'+rowBg:''}">`;
-        h+=`<td style="padding:5px 8px;font-weight:700"><a href="model.html?ticker=${c.ticker}" style="color:#60a5fa;text-decoration:none">${c.ticker}</a>${regimeTag}</td>`;
+        h+=`<tr style="border-bottom:1px solid #ffffff06">`;
+        h+=`<td style="padding:5px 8px;font-weight:700"><a href="model.html?ticker=${c.ticker}" style="color:#60a5fa;text-decoration:none">${c.ticker}</a></td>`;
         h+=`<td style="padding:5px 4px;color:var(--text2);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.title}</td>`;
         h+=`<td style="padding:5px 4px;text-align:center;color:${urgency};font-weight:700">${c.daysOut}d</td>`;
         h+=`<td style="padding:5px 4px;text-align:center;color:${winCol}">${c.successMove>0?'+':''}${c.successMove}%</td>`;
@@ -1022,7 +1007,7 @@ async function main(){
         h+=`</tr>`;
       });
       h+='</table></div>';
-      h+='<div style="margin-top:8px;font-size:.58rem;color:var(--text2)">Sorted by E[R]. Vol Edge = swing / options swing. Flow = composite of 25-delta skew + P/C OI + P/C volume (<span style="color:#22c55e">\u25B2 B</span> = bullish, <span style="color:#ef4444">\u25BC B</span> = bearish, <span style="color:#6b7080">\u25C6 N</span> = neutral). <span style="color:#22d3ee">Cyan = broadly cheap</span>. <span style="color:#a855f7">Purple = broadly rich</span>.</div>';
+      h+='<div style="margin-top:8px;font-size:.58rem;color:var(--text2)">Sorted by E[R]. If Win/Fail = % change in model TP (not vs stock price). Vol Edge = your swing / options swing (green >1.5x = options cheap). Flow = 25-delta skew + P/C OI + volume.</div>';
       h+='</div>';
     }
 

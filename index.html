@@ -217,22 +217,15 @@ function computeAll(cfg){
   return{results:res,weightedTP:wTP};
 }
 // Compute weighted TP with overridden PoS/Apr for a specific asset.indication
-// mode='floor': use MAX(current, override) — raises bear scenarios (catalyst success)
-// mode='ceil':  use MIN(current, override) — lowers bull scenarios (catalyst fail)
-function computeTPOverride(cfg,assetId,indId,pos,apr,mode){
+// Flat override: force asset.indication to specific pos/apr across ALL scenarios
+function computeTPOverride(cfg,assetId,indId,pos,apr){
   const mod=JSON.parse(JSON.stringify(cfg));
   for(const sk in mod.scenarios){
     const a=mod.scenarios[sk].assumptions;
     if(!a[assetId])a[assetId]={};
     if(!a[assetId][indId])a[assetId][indId]={pos:0,apr:0,pen:1};
-    const cur=a[assetId][indId];
-    if(mode==='floor'){
-      cur.pos=Math.max(cur.pos,pos);
-      cur.apr=Math.max(cur.apr,apr);
-    }else{
-      cur.pos=Math.min(cur.pos,pos);
-      cur.apr=Math.min(cur.apr,apr);
-    }
+    a[assetId][indId].pos=pos;
+    a[assetId][indId].apr=apr;
   }
   return computeAll(mod).weightedTP;
 }
@@ -240,39 +233,31 @@ function computeTPOverride(cfg,assetId,indId,pos,apr,mode){
 function computeCatalysts(cfg,currentPrice){
   if(!cfg.catalysts||!cfg.catalysts.length)return[];
   const baseA=cfg.scenarios?.base?.assumptions||{};
-  const baseWTP=computeAll(cfg).weightedTP; // baseline weighted TP (no override)
   const today=new Date('2026-04-09');
   return cfg.catalysts.map(cat=>{
-    const failTP=computeTPOverride(cfg,cat.asset,cat.indication,cat.fail_pos,cat.fail_apr,'ceil');
-    const successTP=computeTPOverride(cfg,cat.asset,cat.indication,cat.success_pos,cat.success_apr,'floor');
-    // Deltas from base weighted TP — isolates what the catalyst alone changes
-    const successDelta=successTP-baseWTP;
-    const failDelta=failTP-baseWTP;
-    const swing=successDelta-failDelta; // always positive (success > fail by construction)
-    // Success/fail moves as % of stock price, capped: can't lose more than -100%
-    const successMove=currentPrice>0?Math.round(successDelta/currentPrice*100):0;
-    const failMove=currentPrice>0?Math.max(-100,Math.round(failDelta/currentPrice*100)):0;
+    const failTP=computeTPOverride(cfg,cat.asset,cat.indication,cat.fail_pos,cat.fail_apr);
+    const successTP=computeTPOverride(cfg,cat.asset,cat.indication,cat.success_pos,cat.success_apr);
+    // Moves from STOCK PRICE — what you actually experience
+    const successMove=currentPrice>0?Math.round((successTP-currentPrice)/currentPrice*100):0;
+    const failMove=currentPrice>0?Math.max(-100,Math.round((failTP-currentPrice)/currentPrice*100)):0;
     const swingPct=successMove-failMove;
-    // Your PoS: use the probability relevant to THIS catalyst type
-    // Clinical readout → resolves pos (does the drug work?)
-    // PDUFA/approval → resolves apr (will FDA approve?)
-    // Mixed/other → composite pos×apr
+    // Your PoS: clinical readout → pos, PDUFA → apr, other → composite
     const ba=baseA[cat.asset]?.[cat.indication]||{};
     const CLINICAL_TYPES=new Set(['phase1_data','phase2_data','phase3_data','phase3_start','phase2_start']);
     const REGULATORY_TYPES=new Set(['pdufa','ema_approval','label_expansion']);
     const yourPoS=CLINICAL_TYPES.has(cat.type)?Math.round(ba.pos||0)
       :REGULATORY_TYPES.has(cat.type)?Math.round(ba.apr||0)
       :Math.round((ba.pos||0)/100*(ba.apr||0)/100*100);
-    // Expected return FROM the catalyst (using capped moves)
+    // Expected return = probability-weighted move from stock price
     const expectedReturn=Math.round(yourPoS/100*successMove+(1-yourPoS/100)*failMove);
-    // Breakeven PoS — the probability at which E[R]=0 (using capped moves)
-    const breakevenPos=swingPct>0?Math.round(-failMove/swingPct*100):50;
-    // Asymmetry = your PoS vs breakeven (positive = you're above breakeven = positive EV)
-    const asymmetry=yourPoS-breakevenPos;
+    // Implied PoS = where stock sits in the fail-to-success range
+    const impliedPos=swingPct>0?Math.round((0-failMove)/swingPct*100):50;
+    // Asymmetry = your PoS vs implied (positive = market underprices you)
+    const asymmetry=yourPoS-impliedPos;
     const catDate=new Date(cat.dateSort);
     const daysOut=Math.max(0,Math.round((catDate-today)/(1000*60*60*24)));
-    return{...cat,failTP,successTP,baseWTP,swing,swingPct,successMove,failMove,
-      yourPoS,expectedReturn,breakevenPos,impliedPos:breakevenPos,asymmetry,daysOut};
+    return{...cat,failTP,successTP,swingPct,successMove,failMove,
+      yourPoS,expectedReturn,impliedPos,asymmetry,daysOut};
   }).sort((a,b)=>a.daysOut-b.daysOut);
 }
 
@@ -866,7 +851,7 @@ async function main(){
         const lineH=lineTop-lineBot;
         h+=`<div style="position:absolute;left:${x}%;bottom:${lineBot}%;width:2px;height:${lineH}%;background:${col}55;transform:translateX(-50%);z-index:1" title="${c.ticker}: ${c.title}"></div>`;
         // Top dot = Swing % (circle)
-        h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing}%;transform:translate(-50%,50%);width:8px;height:8px;border-radius:50%;background:${col};opacity:.7;border:1.5px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: ${c.title}\nSwing: ${c.swingPct}% | E[R]: ${c.expectedReturn>0?'+':''}${c.expectedReturn}%\nIf win: ${c.successMove>0?'+':''}${c.successMove}% | If fail: ${c.failMove}%\nBreakeven: ${c.breakevenPos}% | Your PoS: ${c.yourPoS}% | Asym: ${asym>0?'+':''}${asym}pp"></div>`;
+        h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing}%;transform:translate(-50%,50%);width:8px;height:8px;border-radius:50%;background:${col};opacity:.7;border:1.5px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: ${c.title}\nSwing: ${c.swingPct}% | E[R]: ${c.expectedReturn>0?'+':''}${c.expectedReturn}%\nIf win: ${c.successMove>0?'+':''}${c.successMove}% | If fail: ${c.failMove}%\nImplied PoS: ${c.impliedPos}% | Your PoS: ${c.yourPoS}% | Asym: ${asym>0?'+':''}${asym}pp"></div>`;
         // Bottom dot = E[R] (diamond)
         h+=`<div style="position:absolute;left:${x}%;bottom:${yER}%;transform:translate(-50%,50%) rotate(45deg);width:7px;height:7px;background:${col};opacity:.7;border:1.5px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: E[R]=${c.expectedReturn>0?'+':''}${c.expectedReturn}%"></div>`;
         // Ticker label above top dot + swing value if above break
@@ -893,7 +878,7 @@ async function main(){
       h+='<th style="text-align:center;padding:6px 4px">If Fail</th>';
       h+='<th style="text-align:center;padding:6px 4px">Swing</th>';
       h+='<th style="text-align:center;padding:6px 4px">E[R]</th>';
-      h+='<th style="text-align:center;padding:6px 4px">Breakeven</th>';
+      h+='<th style="text-align:center;padding:6px 4px">Mkt Implied</th>';
       h+='<th style="text-align:center;padding:6px 4px">Your PoS</th>';
       h+='<th style="text-align:center;padding:6px 4px;min-width:70px">Asymmetry</th>';
       h+='</tr>';
@@ -916,7 +901,7 @@ async function main(){
         h+=`</tr>`;
       });
       h+='</table></div>';
-      h+='<div style="margin-top:8px;font-size:.58rem;color:var(--text2)">If Win/Fail = catalyst delta vs base TP (not vs stock price). E[R] = probability-weighted catalyst delta. Breakeven = PoS needed for E[R]=0. Asymmetry = Your PoS - Breakeven. Positive = positive expected value.</div>';
+      h+='<div style="margin-top:8px;font-size:.58rem;color:var(--text2)">If Win/Fail = stock move from current price. E[R] = (Your PoS x If Win) + ((1-PoS) x If Fail). Implied = where stock sits between fail & success TP. Asymmetry = Your PoS - Implied. Positive = market underprices your view.</div>';
       h+='</div>';
     }
 

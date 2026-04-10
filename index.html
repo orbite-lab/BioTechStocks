@@ -963,6 +963,7 @@ async function main(){
       h+='<th style="text-align:center;padding:6px 4px">Swing</th>';
       h+='<th style="text-align:center;padding:6px 4px;color:#eab308">Mkt Swing</th>';
       h+='<th style="text-align:center;padding:6px 4px">E[R]</th>';
+      h+='<th style="text-align:center;padding:6px 4px" title="% of model value from this asset. High = catalyst IS the company.">Mat</th>';
       h+='<th style="text-align:center;padding:6px 4px">Your PoS</th>';
       h+='<th style="text-align:center;padding:6px 4px;color:#eab308;min-width:60px" title="Your Swing / Options Swing. >1.5x = options cheap vs your model. <0.7x = options expensive.">Vol Edge</th>';
       h+='<th style="text-align:center;padding:6px 4px;min-width:50px" title="Options flow direction: Put/Call OI, volume, and 25-delta IV skew">Flow</th>';
@@ -984,6 +985,8 @@ async function main(){
         const mktCol=!optSwing?'var(--text2)':swingRatio>1.5?'#f97316':swingRatio<0.7?'#60a5fa':'var(--text2)';
         h+=`<td style="padding:5px 4px;text-align:center;color:${mktCol}">${optSwing?optSwing+'%':'--'}</td>`;
         h+=`<td style="padding:5px 4px;text-align:center;font-weight:700;color:${erCol}">${c.expectedReturn>0?'+':''}${c.expectedReturn}%</td>`;
+        const matCol=c.materiality>50?'#22c55e':c.materiality>20?'#4ade80':c.materiality>5?'#6b7080':'#ffffff22';
+        h+=`<td style="padding:5px 4px;text-align:center;color:${matCol}">${c.materiality}%</td>`;
         h+=`<td style="padding:5px 4px;text-align:center">${c.yourPoS}%</td>`;
         // Vol Edge: ratio of your swing to options swing
         if(optSwing&&optSwing>0){

@@ -853,7 +853,7 @@ async function main(){
         return BREAK_PCT+aboveFrac*(100-BREAK_PCT);
       };
       h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#22c55e,#ef4444)"></div>Catalyst Asymmetry Map</div>';
-      h+='<div class="card-sub">Each barbell = one catalyst. Top = swing % (volatility). Bottom = expected return (is it worth it?). Color = asymmetry. Long green barbell above 0% = best catalyst trades.</div>';
+      h+='<div class="card-sub">Each barbell = one catalyst. Top = swing % (volatility). Bottom = expected return (is it worth it?). Color = E[R] (green = positive EV, red = negative). Yellow dash = options-implied swing.</div>';
       // Chart area
       h+='<div style="position:relative;height:340px;margin:16px 0 8px;border-left:1px solid #ffffff18;border-bottom:1px solid #ffffff18;overflow:visible">';
       // Y-axis labels
@@ -919,17 +919,20 @@ async function main(){
         const ySwing=yPct(c.swingPct);
         const yER=yPct(c.expectedReturn);
         const asym=c.asymmetry;
-        // Color: both_up=cyan (broadly cheap), both_down=purple (broadly rich), normal=green/grey/red by asymmetry
+        // Color: both_up=cyan, both_down=purple, normal=green/grey/red by E[R]
+        const er=c.expectedReturn;
         const col=c.regime==='both_up'?'#22d3ee':c.regime==='both_down'?'#a855f7'
-          :asym>15?'#22c55e':asym>5?'#4ade80':asym>-5?'#6b7080':asym>-15?'#f97316':'#ef4444';
+          :er>20?'#22c55e':er>5?'#4ade80':er>-5?'#6b7080':er>-20?'#f97316':'#ef4444';
         const regimeTag=c.regime==='both_up'?' [cheap]':c.regime==='both_down'?' [rich]':'';
+        const optSwingTT=c.options&&c.options.impliedMove?(c.options.impliedMove*2)+'%':'n/a';
+        const volEdgeTT=c.options&&c.options.impliedMove&&c.swingPct?(c.swingPct/(c.options.impliedMove*2)).toFixed(1)+'x':'n/a';
         // Vertical line connecting the two dots
         const lineTop=Math.max(ySwing,yER);
         const lineBot=Math.min(ySwing,yER);
         const lineH=lineTop-lineBot;
         h+=`<div style="position:absolute;left:${x}%;bottom:${lineBot}%;width:1.5px;height:${lineH}%;background:${col}44;transform:translateX(-50%);z-index:1" title="${c.ticker}: ${c.title}"></div>`;
         // Top dot = Swing % (circle) — smaller
-        h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing}%;transform:translate(-50%,50%);width:6px;height:6px;border-radius:50%;background:${col};opacity:.7;border:1px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: ${c.title}${regimeTag}\nSwing: ${c.swingPct}% | E[R]: ${c.expectedReturn>0?'+':''}${c.expectedReturn}%\nIf win: ${c.successMove>0?'+':''}${c.successMove}% | If fail: ${c.failMove>0?'+':''}${c.failMove}%\nImplied PoS: ${c.impliedPos}% | Your PoS: ${c.yourPoS}% | Asym: ${asym>0?'+':''}${asym}pp"></div>`;
+        h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing}%;transform:translate(-50%,50%);width:6px;height:6px;border-radius:50%;background:${col};opacity:.7;border:1px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: ${c.title}${regimeTag}\nSwing: ${c.swingPct}% | Mkt: ${optSwingTT} | Vol Edge: ${volEdgeTT}\nE[R]: ${c.expectedReturn>0?'+':''}${c.expectedReturn}% | PoS: ${c.yourPoS}%\nIf win: ${c.successMove>0?'+':''}${c.successMove}% | If fail: ${c.failMove>0?'+':''}${c.failMove}%"></div>`;
         // Bottom dot = E[R] (diamond) — smaller
         h+=`<div style="position:absolute;left:${x}%;bottom:${yER}%;transform:translate(-50%,50%) rotate(45deg);width:5px;height:5px;background:${col};opacity:.7;border:1px solid ${col};cursor:pointer;z-index:3" title="${c.ticker}: E[R]=${c.expectedReturn>0?'+':''}${c.expectedReturn}%"></div>`;
         // Ticker label — alternate above swing dot vs below E[R] diamond for adjacent barbells
@@ -953,8 +956,8 @@ async function main(){
       h+='<span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#6b7080;vertical-align:middle"></span>Swing % (volatility)</span>';
       h+='<span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:7px;height:7px;background:#6b7080;transform:rotate(45deg);vertical-align:middle"></span>Expected return</span>';
       h+='<span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:14px;height:2px;background:#eab308;vertical-align:middle"></span>Options implied swing</span>';
-      h+='<span style="margin-left:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e88;vertical-align:middle;margin-right:3px"></span>Buy before</span>';
-      h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef444488;vertical-align:middle;margin-right:3px"></span>Sell the news</span>';
+      h+='<span style="margin-left:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e88;vertical-align:middle;margin-right:3px"></span>Positive E[R]</span>';
+      h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef444488;vertical-align:middle;margin-right:3px"></span>Negative E[R]</span>';
       h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#22d3ee88;vertical-align:middle;margin-right:3px"></span>Broadly cheap (both up)</span>';
       h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#a855f788;vertical-align:middle;margin-right:3px"></span>Broadly rich (both down)</span>';
       h+='<span style="color:#ffffff33">--- 0% = breakeven</span>';
@@ -970,20 +973,17 @@ async function main(){
       h+='<th style="text-align:center;padding:6px 4px">Swing</th>';
       h+='<th style="text-align:center;padding:6px 4px;color:#eab308">Mkt Swing</th>';
       h+='<th style="text-align:center;padding:6px 4px">E[R]</th>';
-      h+='<th style="text-align:center;padding:6px 4px">Mkt Implied</th>';
       h+='<th style="text-align:center;padding:6px 4px">Your PoS</th>';
-      h+='<th style="text-align:center;padding:6px 4px;min-width:70px">Asymmetry</th>';
+      h+='<th style="text-align:center;padding:6px 4px;color:#eab308;min-width:60px" title="Your Swing / Options Swing. >1.5x = options cheap vs your model. <0.7x = options expensive.">Vol Edge</th>';
       h+='</tr>';
-      [...allCats].sort((a,b)=>b.asymmetry-a.asymmetry).forEach(c=>{
-        const asym=c.asymmetry;
-        const col=c.regime==='both_up'?'#22d3ee':c.regime==='both_down'?'#a855f7'
-          :asym>15?'#22c55e':asym>5?'#4ade80':asym>-5?'#6b7080':asym>-15?'#f97316':'#ef4444';
+      [...allCats].sort((a,b)=>b.expectedReturn-a.expectedReturn).forEach(c=>{
+        const erCol=c.expectedReturn>10?'#22c55e':c.expectedReturn>0?'#4ade80':c.expectedReturn>-10?'#6b7080':c.expectedReturn>-30?'#f97316':'#ef4444';
         const urgency=c.daysOut<30?'#ef4444':c.daysOut<90?'#f59e0b':'var(--text2)';
-        const erCol=c.expectedReturn>5?'#22c55e':c.expectedReturn>-5?'#6b7080':'#ef4444';
         const winCol=c.successMove>=0?'#22c55e':'#ef4444';
         const failCol=c.failMove>=0?'#22c55e':'#ef4444';
         const regimeTag=c.regime==='both_up'?' <span style="color:#22d3ee;font-size:.5rem">CHEAP</span>':c.regime==='both_down'?' <span style="color:#a855f7;font-size:.5rem">RICH</span>':'';
-        h+=`<tr style="border-bottom:1px solid #ffffff06${c.regime!=='normal'?';background:'+col+'08':''}">`;
+        const rowBg=c.regime==='both_up'?'#22d3ee08':c.regime==='both_down'?'#a855f708':'';
+        h+=`<tr style="border-bottom:1px solid #ffffff06${rowBg?';background:'+rowBg:''}">`;
         h+=`<td style="padding:5px 8px;font-weight:700"><a href="model.html?ticker=${c.ticker}" style="color:#60a5fa;text-decoration:none">${c.ticker}</a>${regimeTag}</td>`;
         h+=`<td style="padding:5px 4px;color:var(--text2);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.title}</td>`;
         h+=`<td style="padding:5px 4px;text-align:center;color:${urgency};font-weight:700">${c.daysOut}d</td>`;
@@ -992,16 +992,22 @@ async function main(){
         h+=`<td style="padding:5px 4px;text-align:center">${c.swingPct}%</td>`;
         const optSwing=c.options&&c.options.impliedMove?c.options.impliedMove*2:null;
         const swingRatio=optSwing&&c.swingPct?c.swingPct/optSwing:null;
-        const swingCol=!optSwing?'var(--text2)':swingRatio>1.5?'#f97316':swingRatio<0.7?'#60a5fa':'var(--text2)';
-        h+=`<td style="padding:5px 4px;text-align:center;color:${swingCol}">${optSwing?optSwing+'%':'--'}</td>`;
+        const mktCol=!optSwing?'var(--text2)':swingRatio>1.5?'#f97316':swingRatio<0.7?'#60a5fa':'var(--text2)';
+        h+=`<td style="padding:5px 4px;text-align:center;color:${mktCol}">${optSwing?optSwing+'%':'--'}</td>`;
         h+=`<td style="padding:5px 4px;text-align:center;font-weight:700;color:${erCol}">${c.expectedReturn>0?'+':''}${c.expectedReturn}%</td>`;
-        h+=`<td style="padding:5px 4px;text-align:center">${c.impliedPos}%</td>`;
         h+=`<td style="padding:5px 4px;text-align:center">${c.yourPoS}%</td>`;
-        h+=`<td style="padding:5px 4px;text-align:center;font-weight:800;color:${col}">${asym>0?'+':''}${asym}pp</td>`;
+        // Vol Edge: ratio of your swing to options swing
+        if(optSwing&&optSwing>0){
+          const ratio=(c.swingPct/optSwing).toFixed(1);
+          const edgeCol=ratio>1.5?'#22c55e':ratio>0.9?'#eab308':ratio>0.5?'#f97316':'#ef4444';
+          h+=`<td style="padding:5px 4px;text-align:center;font-weight:700;color:${edgeCol}" title="Your swing ${c.swingPct}% / Options ${optSwing}% = ${ratio}x\n>1.5x = options cheap | <0.7x = options expensive">${ratio}x</td>`;
+        }else{
+          h+=`<td style="padding:5px 4px;text-align:center;color:var(--text2);opacity:.3">--</td>`;
+        }
         h+=`</tr>`;
       });
       h+='</table></div>';
-      h+='<div style="margin-top:8px;font-size:.58rem;color:var(--text2)">If Win/Fail = stock move from current price. E[R] = probability-weighted return. Implied = where stock sits between fail & success TP (clamped 0-100%). <span style="color:#22d3ee">Cyan = broadly cheap</span> (stock below even fail TP). <span style="color:#a855f7">Purple = broadly rich</span> (stock above even success TP).</div>';
+      h+='<div style="margin-top:8px;font-size:.58rem;color:var(--text2)">Sorted by E[R]. If Win/Fail = stock move from current price. E[R] = probability-weighted return. Vol Edge = your swing / options swing (green >1.5x = options cheap, orange <0.7x = options expensive). <span style="color:#22d3ee">Cyan = broadly cheap</span>. <span style="color:#a855f7">Purple = broadly rich</span>.</div>';
       h+='</div>';
     }
 

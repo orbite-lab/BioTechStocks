@@ -229,38 +229,91 @@ function computeTPOverride(cfg,assetId,indId,pos,apr){
   }
   return computeAll(mod).weightedTP;
 }
-// Compute catalyst asymmetry metrics for a company
+// Compute weighted TP with floor/ceiling PoS override + custom scenario weights
+// mode='floor': MAX(current, override) — for success (lift pessimists, keep optimists)
+// mode='ceil':  MIN(current, override) — for fail (lower optimists, keep pessimists)
+function computeTPShifted(cfg,assetId,indId,pos,apr,weights,mode){
+  const mod=JSON.parse(JSON.stringify(cfg));
+  const sks=Object.keys(mod.scenarios);
+  for(const sk of sks){
+    const a=mod.scenarios[sk].assumptions;
+    if(!a[assetId])a[assetId]={};
+    if(!a[assetId][indId])a[assetId][indId]={pos:0,apr:0,pen:1};
+    const cur=a[assetId][indId];
+    if(mode==='floor'){
+      cur.pos=Math.max(cur.pos,pos);
+      cur.apr=Math.max(cur.apr,apr);
+    }else{
+      cur.pos=Math.min(cur.pos,pos);
+      cur.apr=Math.min(cur.apr,apr);
+    }
+    mod.scenarios[sk].wt=weights[sk];
+  }
+  return computeAll(mod).weightedTP;
+}
+// Compute catalyst asymmetry metrics with auto weight-shift
 function computeCatalysts(cfg,currentPrice){
   if(!cfg.catalysts||!cfg.catalysts.length)return[];
   const baseA=cfg.scenarios?.base?.assumptions||{};
+  const {results:baseResults,weightedTP:baseWTP}=computeAll(cfg);
   const today=new Date('2026-04-09');
+  const SKS=Object.keys(cfg.scenarios);
+  // Sort scenarios by TP ascending → assign optimism scores
+  const sorted=SKS.slice().sort((a,b)=>baseResults[a].tp-baseResults[b].tp);
+  const optimism={};
+  const mid=(sorted.length-1)/2; // midpoint (e.g., 2.0 for 5 scenarios)
+  sorted.forEach((sk,i)=>{optimism[sk]=i;});
+  // Original weights
+  const origWts={};SKS.forEach(sk=>{origWts[sk]=cfg.scenarios[sk].wt;});
+
   return cfg.catalysts.map(cat=>{
-    const failTP=computeTPOverride(cfg,cat.asset,cat.indication,cat.fail_pos,cat.fail_apr);
-    const successTP=computeTPOverride(cfg,cat.asset,cat.indication,cat.success_pos,cat.success_apr);
-    // Moves from STOCK PRICE — what you actually experience
+    // Step 1: Materiality — what fraction of weighted TP comes from this asset?
+    const zeroTP=computeTPOverride(cfg,cat.asset,cat.indication,0,0);
+    const m=baseWTP>0?Math.min(1,Math.max(0,(baseWTP-zeroTP)/baseWTP)):0;
+
+    // Step 2: Shift scenario weights proportional to materiality
+    // Success → boost bullish scenarios, shrink bearish (proportional to m)
+    // Fail → boost bearish scenarios, shrink bullish
+    function shiftWeights(direction){
+      const raw={};
+      SKS.forEach(sk=>{
+        const shift=direction==='success'?(optimism[sk]-mid):(mid-optimism[sk]);
+        raw[sk]=Math.max(0.001,origWts[sk]*(1+m*shift));
+      });
+      const total=Object.values(raw).reduce((s,v)=>s+v,0);
+      SKS.forEach(sk=>{raw[sk]=raw[sk]/total*100;});
+      return raw;
+    }
+
+    // Step 3: Compute TPs with shifted weights + flat PoS override
+    const successWts=shiftWeights('success');
+    const failWts=shiftWeights('fail');
+    const successTP=computeTPShifted(cfg,cat.asset,cat.indication,cat.success_pos,cat.success_apr,successWts,'floor');
+    const failTP=computeTPShifted(cfg,cat.asset,cat.indication,cat.fail_pos,cat.fail_apr,failWts,'ceil');
+
+    // Step 4: Moves from stock price
     const successMove=currentPrice>0?Math.round((successTP-currentPrice)/currentPrice*100):0;
     const failMove=currentPrice>0?Math.max(-100,Math.round((failTP-currentPrice)/currentPrice*100)):0;
     const swingPct=successMove-failMove;
-    // Your PoS: clinical readout → pos, PDUFA → apr, other → composite
+
+    // Your PoS by catalyst type
     const ba=baseA[cat.asset]?.[cat.indication]||{};
     const CLINICAL_TYPES=new Set(['phase1_data','phase2_data','phase3_data','phase3_start','phase2_start']);
     const REGULATORY_TYPES=new Set(['pdufa','ema_approval','label_expansion']);
     const yourPoS=CLINICAL_TYPES.has(cat.type)?Math.round(ba.pos||0)
       :REGULATORY_TYPES.has(cat.type)?Math.round(ba.apr||0)
       :Math.round((ba.pos||0)/100*(ba.apr||0)/100*100);
-    // Expected return = probability-weighted move from stock price
+
+    // Expected return, implied PoS, regime, asymmetry
     const expectedReturn=Math.round(yourPoS/100*successMove+(1-yourPoS/100)*failMove);
-    // Implied PoS = where stock sits in the fail-to-success range, clamped 0-100
     const rawImplied=swingPct>0?Math.round((0-failMove)/swingPct*100):50;
     const impliedPos=Math.max(0,Math.min(100,rawImplied));
-    // Regime: both_up = stock below fail TP (broadly cheap), both_down = stock above success TP (broadly rich)
     const regime=failMove>0&&successMove>0?'both_up':failMove<0&&successMove<0?'both_down':'normal';
-    // Asymmetry = your PoS vs implied (positive = market underprices you)
     const asymmetry=yourPoS-impliedPos;
     const catDate=new Date(cat.dateSort);
     const daysOut=Math.max(0,Math.round((catDate-today)/(1000*60*60*24)));
     return{...cat,failTP,successTP,swingPct,successMove,failMove,
-      yourPoS,expectedReturn,impliedPos,asymmetry,daysOut,regime};
+      yourPoS,expectedReturn,impliedPos,asymmetry,daysOut,regime,materiality:Math.round(m*100)};
   }).sort((a,b)=>a.daysOut-b.daysOut);
 }
 
@@ -821,7 +874,7 @@ async function main(){
         h+=`<div style="position:absolute;bottom:${yp}%;left:-32px;font-size:.45rem;color:var(--text2);font-family:var(--mono);transform:translateY(50%);opacity:.5">${v}%</div>`;
       }
       // Barbells — compute X positions with collision avoidance (skip <5% swing)
-      const catPos=allCats.filter(c=>Math.abs(c.swingPct)>=5).map(c=>({c,x:Math.min(c.daysOut/maxDays*100,98)}));
+      const catPos=allCats.map(c=>({c,x:Math.min(c.daysOut/maxDays*100,98)}));
       catPos.sort((a,b)=>a.x-b.x);
       const MIN_GAP=3.5; // minimum % gap between barbells
       for(let i=1;i<catPos.length;i++){
@@ -863,12 +916,18 @@ async function main(){
         // Ticker label above top dot + swing value if above break
         const aboveBreak=c.swingPct>BREAK;
         h+=`<div style="position:absolute;left:${x}%;bottom:${ySwing+2}%;transform:translateX(-50%);font-size:.55rem;font-family:var(--mono);color:${col};font-weight:700;white-space:nowrap;pointer-events:none;z-index:4">${c.ticker}${aboveBreak?' '+c.swingPct+'%':''}</div>`;
+        // Options implied move marker (yellow horizontal dash)
+        if(c.options&&c.options.impliedMovePct){
+          const optY=yPct(c.options.impliedMovePct*2); // straddle = one-sided, swing = 2x
+          h+=`<div style="position:absolute;left:${x}%;bottom:${optY}%;transform:translate(-50%,50%);width:14px;height:2px;background:#eab308;z-index:5;opacity:.9" title="Options implied: +-${c.options.impliedMovePct}% (full swing ${c.options.impliedMovePct*2}%)\nStraddle: $${c.options.straddle} at ${c.options.atmStrike} strike\nExpiry: ${c.options.expiryDate} | Call IV: ${(c.options.callIV*100).toFixed(0)}% | Put IV: ${(c.options.putIV*100).toFixed(0)}%\nSkew: ${c.options.skew>0?'+':''}${(c.options.skew*100).toFixed(1)}pp"></div>`;
+        }
       });
       h+='</div>';
       // Legend
       h+='<div style="display:flex;gap:14px;margin:22px 0 10px;font-size:.6rem;color:var(--text2);flex-wrap:wrap;align-items:center">';
       h+='<span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#6b7080;vertical-align:middle"></span>Swing % (volatility)</span>';
       h+='<span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:7px;height:7px;background:#6b7080;transform:rotate(45deg);vertical-align:middle"></span>Expected return</span>';
+      h+='<span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:14px;height:2px;background:#eab308;vertical-align:middle"></span>Options implied swing</span>';
       h+='<span style="margin-left:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e88;vertical-align:middle;margin-right:3px"></span>Buy before</span>';
       h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef444488;vertical-align:middle;margin-right:3px"></span>Sell the news</span>';
       h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#22d3ee88;vertical-align:middle;margin-right:3px"></span>Broadly cheap (both up)</span>';
@@ -884,10 +943,12 @@ async function main(){
       h+='<th style="text-align:center;padding:6px 4px">If Win</th>';
       h+='<th style="text-align:center;padding:6px 4px">If Fail</th>';
       h+='<th style="text-align:center;padding:6px 4px">Swing</th>';
+      h+='<th style="text-align:center;padding:6px 4px;color:#eab308">Mkt Swing</th>';
       h+='<th style="text-align:center;padding:6px 4px">E[R]</th>';
       h+='<th style="text-align:center;padding:6px 4px">Mkt Implied</th>';
       h+='<th style="text-align:center;padding:6px 4px">Your PoS</th>';
       h+='<th style="text-align:center;padding:6px 4px;min-width:70px">Asymmetry</th>';
+      h+='<th style="text-align:center;padding:6px 4px;color:#eab308" title="Options-implied move (ATM straddle). Run fetch_options.py to populate.">Opts +-</th>';
       h+='</tr>';
       [...allCats].sort((a,b)=>b.asymmetry-a.asymmetry).forEach(c=>{
         const asym=c.asymmetry;
@@ -905,10 +966,22 @@ async function main(){
         h+=`<td style="padding:5px 4px;text-align:center;color:${winCol}">${c.successMove>0?'+':''}${c.successMove}%</td>`;
         h+=`<td style="padding:5px 4px;text-align:center;color:${failCol}">${c.failMove>0?'+':''}${c.failMove}%</td>`;
         h+=`<td style="padding:5px 4px;text-align:center">${c.swingPct}%</td>`;
+        const optSwing=c.options&&c.options.impliedMove?c.options.impliedMove*2:null;
+        const swingRatio=optSwing&&c.swingPct?c.swingPct/optSwing:null;
+        const swingCol=!optSwing?'var(--text2)':swingRatio>1.5?'#f97316':swingRatio<0.7?'#60a5fa':'var(--text2)';
+        h+=`<td style="padding:5px 4px;text-align:center;color:${swingCol}">${optSwing?optSwing+'%':'--'}</td>`;
         h+=`<td style="padding:5px 4px;text-align:center;font-weight:700;color:${erCol}">${c.expectedReturn>0?'+':''}${c.expectedReturn}%</td>`;
         h+=`<td style="padding:5px 4px;text-align:center">${c.impliedPos}%</td>`;
         h+=`<td style="padding:5px 4px;text-align:center">${c.yourPoS}%</td>`;
         h+=`<td style="padding:5px 4px;text-align:center;font-weight:800;color:${col}">${asym>0?'+':''}${asym}pp</td>`;
+        const opts=c.options;
+        if(opts&&opts.impliedMovePct){
+          const ratio=c.swingPct>0?(opts.impliedMovePct*2/c.swingPct).toFixed(1):'?';
+          const oCol=ratio>1.3?'#ef4444':ratio<0.7?'#22c55e':'#eab308';
+          h+=`<td style="padding:5px 4px;text-align:center;color:${oCol}" title="Straddle: $${opts.straddle} | Ratio: ${ratio}x vs model swing\nCall IV: ${(opts.callIV*100).toFixed(0)}% | Put IV: ${(opts.putIV*100).toFixed(0)}% | Skew: ${opts.skew>0?'+':''}${(opts.skew*100).toFixed(1)}pp">+-${opts.impliedMovePct}%</td>`;
+        }else{
+          h+=`<td style="padding:5px 4px;text-align:center;color:var(--text2);opacity:.3">--</td>`;
+        }
         h+=`</tr>`;
       });
       h+='</table></div>';

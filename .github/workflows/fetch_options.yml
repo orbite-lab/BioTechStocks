@@ -26,6 +26,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to options data"
           else
-            git commit -m "auto: refresh options_cache.json [skip ci]"
+            git commit -m "auto: refresh options_cache.json"
             git push
           fi

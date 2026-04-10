@@ -374,6 +374,8 @@
 
       const [state, setState] = useState(() => buildState(config));
       const [priceStatus, setPriceStatus] = useState("loading"); // "loading" | "live" | "stale"
+      const [showMarkets, setShowMarkets] = useState(false);
+      const [showSliders, setShowSliders] = useState(false);
 
       // Fetch live price on company switch
       useEffect(() => {
@@ -520,7 +522,7 @@
             // Compute rare purity
             let totalTAM = 0, rareTAM = 0;
             for (const a of config.assets) for (const ind of a.indications) {
-              const tam = ind.market?.tamB || (ind.market?.patientsK && ind.market?.pricingK ? ind.market.patientsK * ind.market.pricingK / 1000 : 0); totalTAM += tam; if (ind.rare) rareTAM += tam;
+              const tam = ind.market?.tamB || 0; totalTAM += tam; if (ind.rare) rareTAM += tam;
             }
             const rarePct = totalTAM > 0 ? Math.round(rareTAM / totalTAM * 100) : 0;
             const hasRare = config.assets.some(a => a.indications.some(i => i.rare));
@@ -634,32 +636,58 @@
             )
           ),
 
-          // Sliders
+          // Sticky TP bar — stays visible while tweaking assumptions
+          e("div", { style: { position: "sticky", top: 0, zIndex: 50, background: "#0f1117ee", backdropFilter: "blur(8px)", borderBottom: "1px solid #ffffff08", padding: "8px 16px", marginBottom: 14, borderRadius: 8, display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" } },
+            e("div", { style: { fontSize: 11, fontWeight: 800, fontFamily: "'JetBrains Mono'", color: "#f97316" } }, "TP " + ccy + model.weightedTP.toFixed(dec)),
+            e("div", { style: { height: 16, width: 1, background: "#ffffff10" } }),
+            scenarioKeys.map(sk => e("span", { key: sk, style: { fontSize: 10, fontFamily: "'JetBrains Mono'", fontWeight: 600, color: CC[sk], marginRight: 8 } },
+              sk.substring(0, 4) + " " + ccy + model.results[sk].tp.toFixed(dec)
+            )),
+            e("div", { style: { height: 16, width: 1, background: "#ffffff10" } }),
+            e("div", { style: { fontSize: 11, fontWeight: 700, fontFamily: "'JetBrains Mono'", color: model.upside > 0 ? "#22c55e" : "#ef4444" } }, (model.upside > 0 ? "+" : "") + model.upside.toFixed(0) + "%"),
+            e("div", { style: { fontSize: 10, color: "#6b7080" } }, ccy + state.currentPrice)
+          ),
+
+          // Tweak header
           e("div", { style: { fontSize: 11, fontWeight: 700, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 14 } }, "Tweak Assumptions"),
 
-          // Markets — full width row
-          e("div", { style: { background: "#161920", borderRadius: 10, padding: "14px 16px", border: "1px solid #ffffff06", marginBottom: 14 } },
-            e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#f97316", marginBottom: 12 } }, "Markets (shared across scenarios)"),
-            e("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 } },
-              config.assets.filter(a => a.id !== "commercial").map(asset => asset.indications.map(ind => {
-                const mk = asset.id + "_" + ind.id; const m = state.markets[mk]; if (!m) return null;
-                return e("div", { key: mk },
-                  e("div", { style: { fontSize: 10, fontWeight: 700, color: "#b0b4c0", marginBottom: 6 } }, ind.name),
-                  m.patientsK != null && e(Sl, { label: "Patients (K)", value: m.patientsK, onChange: v => upd("markets." + mk + ".patientsK", v), min: 5, max: 80, color: "#f97316" }),
-                  m.patientsK != null && e(Sl, { label: "Pricing (" + ccy + "K)", value: m.pricingK, onChange: v => upd("markets." + mk + ".pricingK", v), min: 50, max: 600, step: 25, unit: "K", color: "#f97316" }),
-                  m.tamB != null && e(Sl, { label: "TAM (" + ccy + "B)", value: m.tamB, onChange: v => upd("markets." + mk + ".tamB", v), min: 0.05, max: 30, step: 0.05, unit: "B", color: "#f97316" }),
-                  m.penPct != null && e(Sl, { label: "Peak Pen (%)", value: m.penPct, onChange: v => upd("markets." + mk + ".penPct", v), min: 1, max: 40, unit: "%", color: "#f97316" })
-                );
-              })),
-              e("div", null,
-                e("div", { style: { fontSize: 10, fontWeight: 700, color: "#b0b4c0", marginBottom: 6 } }, "Company"),
-                e(Sl, { label: "Cash (" + ccy + "M)", value: state.cash, onChange: v => upd("cash", v), min: 0, max: Math.max(2000, state.cash * 2), unit: "M", color: "#f97316" })
+          // Markets — collapsible
+          e("div", { style: { marginBottom: 14 } },
+            e("div", { onClick: () => setShowMarkets(!showMarkets), style: { background: "#161920", borderRadius: showMarkets ? "10px 10px 0 0" : 10, padding: "10px 16px", border: "1px solid #ffffff06", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", userSelect: "none" } },
+              e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#f97316" } }, "Markets (shared across scenarios)"),
+              e("div", { style: { fontSize: 10, color: "#6b7080", transition: "transform 0.2s", transform: showMarkets ? "rotate(180deg)" : "rotate(0deg)" } }, "\u25BC")
+            ),
+            showMarkets && e("div", { style: { background: "#161920", borderRadius: "0 0 10px 10px", padding: "10px 16px", borderLeft: "1px solid #ffffff06", borderRight: "1px solid #ffffff06", borderBottom: "1px solid #ffffff06" } },
+              e("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 } },
+                config.assets.filter(a => a.id !== "commercial").map(asset => asset.indications.map(ind => {
+                  const mk = asset.id + "_" + ind.id; const m = state.markets[mk]; if (!m) return null;
+                  return e("div", { key: mk },
+                    e("div", { style: { fontSize: 10, fontWeight: 700, color: "#b0b4c0", marginBottom: 6 } }, ind.name),
+                    m.patientsK != null && e(Sl, { label: "Patients (K)", value: m.patientsK, onChange: v => upd("markets." + mk + ".patientsK", v), min: 5, max: 80, color: "#f97316" }),
+                    m.patientsK != null && e(Sl, { label: "Pricing (" + ccy + "K)", value: m.pricingK, onChange: v => upd("markets." + mk + ".pricingK", v), min: 50, max: 600, step: 25, unit: "K", color: "#f97316" }),
+                    m.tamB != null && e(Sl, { label: "TAM (" + ccy + "B)", value: m.tamB, onChange: v => upd("markets." + mk + ".tamB", v), min: 0.05, max: 30, step: 0.05, unit: "B", color: "#f97316" }),
+                    m.penPct != null && e(Sl, { label: "Peak Pen (%)", value: m.penPct, onChange: v => upd("markets." + mk + ".penPct", v), min: 1, max: 40, unit: "%", color: "#f97316" })
+                  );
+                })),
+                e("div", null,
+                  e("div", { style: { fontSize: 10, fontWeight: 700, color: "#b0b4c0", marginBottom: 6 } }, "Company"),
+                  e(Sl, { label: "Cash (" + ccy + "M)", value: state.cash, onChange: v => upd("cash", v), min: 0, max: Math.max(2000, state.cash * 2), unit: "M", color: "#f97316" })
+                )
               )
             )
           ),
 
-          // Bear / Base / Bull — always 3 columns
-          e("div", { style: { display: "grid", gridTemplateColumns: "repeat(" + scenarioKeys.length + ", 1fr)", gap: scenarioKeys.length > 3 ? 8 : 14, marginBottom: 22 } },
+          // Scenario assumptions — collapsible
+          e("div", { style: { marginBottom: 22 } },
+            e("div", { onClick: () => setShowSliders(!showSliders), style: { background: "#161920", borderRadius: showSliders ? "10px 10px 0 0" : 10, padding: "10px 16px", border: "1px solid #ffffff06", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", userSelect: "none" } },
+              e("div", { style: { display: "flex", gap: 12, alignItems: "center" } },
+                e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#b0b4c0" } }, "Per-Scenario Assumptions"),
+                scenarioKeys.map(sk => e("span", { key: sk, style: { fontSize: 10, fontFamily: "'JetBrains Mono'", fontWeight: 700, color: CC[sk] } }, ccy + model.results[sk].tp.toFixed(dec)))
+              ),
+              e("div", { style: { fontSize: 10, color: "#6b7080", transition: "transform 0.2s", transform: showSliders ? "rotate(180deg)" : "rotate(0deg)" } }, "\u25BC")
+            ),
+            showSliders && e("div", { style: { background: "#161920", borderRadius: "0 0 10px 10px", padding: "14px 16px", borderLeft: "1px solid #ffffff06", borderRight: "1px solid #ffffff06", borderBottom: "1px solid #ffffff06" } },
+              e("div", { style: { display: "grid", gridTemplateColumns: "repeat(" + scenarioKeys.length + ", 1fr)", gap: scenarioKeys.length > 3 ? 8 : 14 } },
             scenarioKeys.map(sk => {
               const scen = state.scenarios[sk];
               const isSOTP = scen.val.pipelineDR != null;
@@ -704,6 +732,8 @@
                 )
               );
             })
+          )
+          )
           ),
 
           // Risks

@@ -6,7 +6,6 @@ Run after adding/modifying configs: python scripts/rebuild_taxonomy.py
 import json
 from collections import defaultdict
 from pathlib import Path
-from datetime import date
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIGS = ROOT / "configs"
@@ -45,7 +44,6 @@ def rebuild():
     taxonomy = {
         "_meta": {
             "description": "Master taxonomy for BioTechStocks screener -- L1.L2.L3 hierarchical tags",
-            "generated": str(date.today()),
             "format": "L1.L2.L3 hierarchical tags",
             "rules": [
                 "Every L3 term must appear under exactly ONE L1.L2 parent (no duplicates across branches)",

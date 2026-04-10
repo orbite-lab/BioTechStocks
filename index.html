@@ -962,7 +962,6 @@ async function main(){
       h+='<th style="text-align:center;padding:6px 4px">Mkt Implied</th>';
       h+='<th style="text-align:center;padding:6px 4px">Your PoS</th>';
       h+='<th style="text-align:center;padding:6px 4px;min-width:70px">Asymmetry</th>';
-      h+='<th style="text-align:center;padding:6px 4px;color:#eab308" title="Options-implied move (ATM straddle). Run fetch_options.py to populate.">Opts +-</th>';
       h+='</tr>';
       [...allCats].sort((a,b)=>b.asymmetry-a.asymmetry).forEach(c=>{
         const asym=c.asymmetry;
@@ -988,14 +987,6 @@ async function main(){
         h+=`<td style="padding:5px 4px;text-align:center">${c.impliedPos}%</td>`;
         h+=`<td style="padding:5px 4px;text-align:center">${c.yourPoS}%</td>`;
         h+=`<td style="padding:5px 4px;text-align:center;font-weight:800;color:${col}">${asym>0?'+':''}${asym}pp</td>`;
-        const opts=c.options;
-        if(opts&&opts.impliedMovePct){
-          const ratio=c.swingPct>0?(opts.impliedMovePct*2/c.swingPct).toFixed(1):'?';
-          const oCol=ratio>1.3?'#ef4444':ratio<0.7?'#22c55e':'#eab308';
-          h+=`<td style="padding:5px 4px;text-align:center;color:${oCol}" title="Straddle: $${opts.straddle} | Ratio: ${ratio}x vs model swing\nCall IV: ${(opts.callIV*100).toFixed(0)}% | Put IV: ${(opts.putIV*100).toFixed(0)}% | Skew: ${opts.skew>0?'+':''}${(opts.skew*100).toFixed(1)}pp">+-${opts.impliedMovePct}%</td>`;
-        }else{
-          h+=`<td style="padding:5px 4px;text-align:center;color:var(--text2);opacity:.3">--</td>`;
-        }
         h+=`</tr>`;
       });
       h+='</table></div>';

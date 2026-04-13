@@ -643,18 +643,6 @@
             )
           ),
 
-          // Sticky TP bar — stays visible while tweaking assumptions
-          e("div", { style: { position: "sticky", top: 0, zIndex: 50, background: "#0f1117ee", backdropFilter: "blur(8px)", borderBottom: "1px solid #ffffff08", padding: "8px 16px", marginBottom: 14, borderRadius: 8, display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" } },
-            e("div", { style: { fontSize: 11, fontWeight: 800, fontFamily: "'JetBrains Mono'", color: "#f97316" } }, "TP " + ccy + model.weightedTP.toFixed(dec)),
-            e("div", { style: { height: 16, width: 1, background: "#ffffff10" } }),
-            scenarioKeys.map(sk => e("span", { key: sk, style: { fontSize: 10, fontFamily: "'JetBrains Mono'", fontWeight: 600, color: CC[sk], marginRight: 8 } },
-              sk.substring(0, 4) + " " + ccy + model.results[sk].tp.toFixed(dec)
-            )),
-            e("div", { style: { height: 16, width: 1, background: "#ffffff10" } }),
-            e("div", { style: { fontSize: 11, fontWeight: 700, fontFamily: "'JetBrains Mono'", color: model.upside > 0 ? "#22c55e" : "#ef4444" } }, (model.upside > 0 ? "+" : "") + model.upside.toFixed(0) + "%"),
-            e("div", { style: { fontSize: 10, color: "#6b7080" } }, ccy + state.currentPrice)
-          ),
-
           // Tweak header
           e("div", { style: { fontSize: 11, fontWeight: 700, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 14 } }, "Tweak Assumptions"),
 

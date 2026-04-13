@@ -176,6 +176,7 @@
 
     function useConfigs() {
       const [configs, setConfigs] = useState(null);
+      const [initialPrices, setInitialPrices] = useState({});
       const [loading, setLoading] = useState(true);
       const [source, setSource] = useState(null);
 
@@ -197,6 +198,21 @@
             if (Object.keys(cfgs).length === 0) throw new Error("no configs loaded");
             setConfigs(cfgs);
             setSource("server");
+            // Seed cached prices from prices.json (GitHub Actions, ~30 min cadence)
+            try {
+              const pr = await fetch("prices.json?v=" + Date.now());
+              if (pr.ok) {
+                const pj = await pr.json();
+                const seeded = {};
+                for (const [tk, rec] of Object.entries(pj)) {
+                  if (tk === "_meta" || !cfgs[tk]) continue;
+                  if (rec && typeof rec.price === "number" && rec.price > 0) {
+                    seeded[tk] = { price: rec.price, prevClose: rec.prevClose || null };
+                  }
+                }
+                setInitialPrices(seeded);
+              }
+            } catch { /* prices cache not available — live fetch will handle it */ }
           } catch (err) {
             // Fallback to embedded configs
             setConfigs(EMBEDDED_CONFIGS);
@@ -208,7 +224,7 @@
         load();
       }, []);
 
-      return { configs, loading, source };
+      return { configs, initialPrices, loading, source };
     }
 
     // ═══════════════════════════════════════
@@ -337,15 +353,15 @@
     // ═══════════════════════════════════════
 
     function App() {
-      const { configs, loading, source } = useConfigs();
+      const { configs, initialPrices, loading, source } = useConfigs();
 
       if (loading) return e("div", { className: "loading" }, "Loading company configs...");
       if (!configs) return e("div", { className: "loading" }, "No configs found");
 
-      return e(ModelView, { configs, source });
+      return e(ModelView, { configs, initialPrices, source });
     }
 
-    function ModelView({ configs, source }) {
+    function ModelView({ configs, initialPrices, source }) {
       const tickers = Object.keys(configs);
       const urlTicker = new URLSearchParams(window.location.search).get("ticker");
       const initTicker = (urlTicker && tickers.includes(urlTicker)) ? urlTicker : tickers[0];
@@ -378,15 +394,21 @@
       const [showSliders, setShowSliders] = useState(false);
       const [showPipeline, setShowPipeline] = useState(false);
 
-      // Fetch live price on company switch
+      // On company switch: use cached price from prices.json immediately, then refresh from Yahoo in background
       useEffect(() => {
-        setPriceStatus("loading");
+        const cached = initialPrices && initialPrices[ticker];
+        if (cached && cached.price > 0) {
+          setState(prev => ({ ...prev, currentPrice: Math.round(cached.price * 100) / 100 }));
+          setPriceStatus("live");
+        } else {
+          setPriceStatus("loading");
+        }
         const yt = config.company.yahooTicker || config.company.ticker;
         fetchLivePrice(yt).then(result => {
           if (result && result.price > 0) {
             setState(prev => ({ ...prev, currentPrice: Math.round(result.price * 100) / 100 }));
             setPriceStatus("live");
-          } else {
+          } else if (!cached) {
             setPriceStatus("stale");
           }
         });

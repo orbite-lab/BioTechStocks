@@ -1,0 +1,43 @@
+name: Fetch Prices
+
+on:
+  schedule:
+    # Every 30 min, 1pm–9pm UTC, Mon–Fri.
+    # Covers US market hours 9:30–16:00 ET with buffer for both EST (UTC-5) and EDT (UTC-4).
+    - cron: '0,30 13-21 * * 1-5'
+  workflow_dispatch: {}
+
+# Prevent overlapping runs — if a run is in progress, the next one waits (or cancels).
+concurrency:
+  group: fetch-prices
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install yfinance
+        run: pip install yfinance
+
+      - name: Fetch prices
+        run: python scripts/fetch_prices.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add prices.json
+          if git diff --cached --quiet; then
+            echo "No price changes"
+          else
+            git commit -m "auto: refresh prices.json"
+            git push
+          fi

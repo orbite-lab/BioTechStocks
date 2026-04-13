@@ -1,0 +1,195 @@
+{
+  "company": {
+    "ticker": "ALLO",
+    "name": "Allogene Therapeutics",
+    "subtitle": "Off-the-shelf allogeneic CAR-T \u2014 ALPHA3 futility CLEARED (58% vs 16% MRD)",
+    "yahooTicker": "ALLO",
+    "sharesOut": 195,
+    "cash": 258,
+    "currentPrice": 2.72,
+    "currency": "USD",
+    "phase": "phase3",
+    "cashRunway": "Q1 2028"
+  },
+  "assets": [
+    {
+      "id": "cema_cel",
+      "name": "cema-cel (ALLO-501A)",
+      "stage": "Phase 2 pivotal",
+      "designations": ["RMAT", "Fast Track"],
+      "modality": "cell_therapy.car_t_allogeneic.cd19_allo_car_t",
+      "indications": [
+        {
+          "id": "lbcl_1l",
+          "name": "1L LBCL MRD+ consolidation",
+          "area": "oncology.hematology.dlbcl",
+          "rare": false,
+          "market": {
+            "tamB": 5.0,
+            "cagrPct": 5,
+            "expansionPct": 0,
+            "penPct": 35,
+            "peakYear": 2032,
+            "notes": "1L LBCL ~25K US + 15K EU per year. MRD+ rate ~20-30% after R-CHOP. Addressable ~8-10K patients/yr at $400K/dose. Post-interim futility (58% vs 16% MRD) validates MRD-guided consolidation paradigm."
+          }
+        }
+      ]
+    },
+    {
+      "id": "allo329",
+      "name": "ALLO-329 (dual CD19/CD70 Dagger)",
+      "stage": "Phase 1 RESOLUTION",
+      "designations": [],
+      "modality": "cell_therapy.car_t_allogeneic.dual_cd19_cd70_allo_car_t",
+      "indications": [
+        {
+          "id": "sle_basket",
+          "name": "SLE / IIM / SSc basket",
+          "area": "immunology.autoimmune.sle",
+          "rare": false,
+          "market": {
+            "tamB": 10.0,
+            "cagrPct": 8,
+            "expansionPct": 25,
+            "penPct": 15,
+            "peakYear": 2034,
+            "notes": "SLE severe refractory ~30K US. Dagger technology reduces/eliminates lymphodepletion \u2014 major safety differentiator. PoC data June 2026. Platform halo from ALPHA3 futility success."
+          }
+        }
+      ]
+    },
+    {
+      "id": "allo316",
+      "name": "ALLO-316 (CD70)",
+      "stage": "Phase 1 TRAVERSE",
+      "designations": ["Fast Track"],
+      "modality": "cell_therapy.car_t_allogeneic.cd70_allo_car_t",
+      "indications": [
+        {
+          "id": "ccrcc",
+          "name": "ccRCC 2L+ (high CD70)",
+          "area": "oncology.genitourinary.rcc",
+          "rare": false,
+          "market": {
+            "tamB": 5.0,
+            "cagrPct": 4,
+            "expansionPct": 0,
+            "penPct": 10,
+            "peakYear": 2033,
+            "notes": "31% confirmed ORR in high-CD70 ccRCC patients. Phase 1b enrollment complete. Partnership candidate. Upside optionality."
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 3,
+      "narrative": "Final ALPHA3 PFS/OS fails to confirm, platform concerns return",
+      "events": [
+        "\u2717 Final readout fails to confirm MRD benefit",
+        "\u2717 Safety signals emerge",
+        "\u2717 Autoimmune PoC negative",
+        "\u2192 Financing pressure"
+      ],
+      "assumptions": {
+        "cema_cel": {"lbcl_1l": {"pos": 25, "apr": 45, "pen": 0.5}},
+        "allo329": {"sle_basket": {"pos": 10, "apr": 25, "pen": 0.3}},
+        "allo316": {"ccrcc": {"pos": 5, "apr": 15, "pen": 0.4}}
+      },
+      "val": {"dr": 25, "dil": 20, "mult": 4, "plat": 100, "exus": 0, "cannib": 0}
+    },
+    "bear": {
+      "wt": 12,
+      "narrative": "MRD benefit holds but durability questioned",
+      "events": [
+        "~ MRD benefit confirmed but PFS durability modest",
+        "~ Autoimmune PoC mixed",
+        "\u2717 RCC partnering delayed",
+        "\u2192 Needs additional financing"
+      ],
+      "assumptions": {
+        "cema_cel": {"lbcl_1l": {"pos": 50, "apr": 70, "pen": 0.8}},
+        "allo329": {"sle_basket": {"pos": 20, "apr": 40, "pen": 0.6}},
+        "allo316": {"ccrcc": {"pos": 10, "apr": 30, "pen": 0.5}}
+      },
+      "val": {"dr": 20, "dil": 15, "mult": 5, "plat": 150, "exus": 75, "cannib": 0}
+    },
+    "base": {
+      "wt": 40,
+      "narrative": "Futility blowout confirmed, platform validated",
+      "events": [
+        "\u2713 MRD 58% vs 16% \u2014 blowout interim",
+        "\u2713 Final PFS confirms benefit",
+        "\u2713 Autoimmune PoC positive",
+        "\u2192 BLA path clear, M&A interest"
+      ],
+      "assumptions": {
+        "cema_cel": {"lbcl_1l": {"pos": 75, "apr": 85, "pen": 1.2}},
+        "allo329": {"sle_basket": {"pos": 35, "apr": 65, "pen": 1.2}},
+        "allo316": {"ccrcc": {"pos": 20, "apr": 50, "pen": 0.9}}
+      },
+      "val": {"dr": 15, "dil": 10, "mult": 6, "plat": 250, "exus": 125, "cannib": 0}
+    },
+    "bull": {
+      "wt": 30,
+      "narrative": "Best-in-class 1L LBCL + autoimmune breakthrough",
+      "events": [
+        "\u2713 Full PFS/OS data class-leading",
+        "\u2713 Autoimmune breakthrough (Dagger wins)",
+        "\u2713 RCC partnered favorably",
+        "\u2192 Multi-billion franchise, M&A candidate"
+      ],
+      "assumptions": {
+        "cema_cel": {"lbcl_1l": {"pos": 85, "apr": 92, "pen": 1.5}},
+        "allo329": {"sle_basket": {"pos": 50, "apr": 75, "pen": 1.6}},
+        "allo316": {"ccrcc": {"pos": 30, "apr": 60, "pen": 1.1}}
+      },
+      "val": {"dr": 13, "dil": 8, "mult": 7, "plat": 400, "exus": 200, "cannib": 0}
+    },
+    "psychedelic_bull": {
+      "wt": 15,
+      "narrative": "First scaled off-the-shelf CAR-T, category leader",
+      "events": [
+        "\u2713 Paradigm-shifting 1L LBCL SOC",
+        "\u2713 Autoimmune game-changer",
+        "\u2713 Big pharma M&A",
+        "\u2192 Defines scaled allo-CAR-T category"
+      ],
+      "assumptions": {
+        "cema_cel": {"lbcl_1l": {"pos": 92, "apr": 95, "pen": 1.8}},
+        "allo329": {"sle_basket": {"pos": 65, "apr": 85, "pen": 2.0}},
+        "allo316": {"ccrcc": {"pos": 40, "apr": 70, "pen": 1.3}}
+      },
+      "val": {"dr": 11, "dil": 6, "mult": 8, "plat": 600, "exus": 300, "cannib": 0}
+    }
+  },
+  "catalysts": [
+    {
+      "title": "RESOLUTION ALLO-329 autoimmune PoC",
+      "date": "2026-06-30",
+      "dateSort": "2026-06-30",
+      "asset": "allo329",
+      "indication": "sle_basket",
+      "type": "phase1_data",
+      "binary": false,
+      "fail_pos": 15,
+      "fail_apr": 35,
+      "success_pos": 55,
+      "success_apr": 75
+    },
+    {
+      "title": "ALPHA3 full PFS/OS readout",
+      "date": "2026-12-15",
+      "dateSort": "2026-12-15",
+      "asset": "cema_cel",
+      "indication": "lbcl_1l",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 50,
+      "success_pos": 90,
+      "success_apr": 90
+    }
+  ]
+}

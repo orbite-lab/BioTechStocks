@@ -473,6 +473,9 @@
                   return t.toLowerCase().includes(q) || c.name.toLowerCase().includes(q) || (c.subtitle || "").toLowerCase().includes(q);
                 }).map(t => {
                   const c = configs[t].company;
+                  const cached = initialPrices && initialPrices[t];
+                  const displayPrice = (cached && cached.price > 0) ? cached.price : c.currentPrice;
+                  const isLive = !!(cached && cached.price > 0);
                   return e("div", { key: t, onMouseDown: () => switchCo(t),
                     style: { padding: "10px 14px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center",
                       background: t === ticker ? "#f9731616" : "transparent", borderBottom: "1px solid #ffffff06",
@@ -482,7 +485,7 @@
                     e("div", null,
                       e("span", { style: { fontFamily: "'JetBrains Mono'", fontWeight: 700, fontSize: 13, color: t === ticker ? "#f97316" : "#e2e4ea", marginRight: 10 } }, t),
                       e("span", { style: { fontSize: 12, color: "#6b7080" } }, c.name)),
-                    e("span", { style: { fontSize: 11, color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, ccyOf(c.currency) + Number(c.currentPrice).toFixed(ccyDec(c.currency)))
+                    e("span", { style: { fontSize: 11, color: isLive ? "#e2e4ea" : "#6b7080", fontFamily: "'JetBrains Mono'", opacity: isLive ? 1 : 0.6 }, title: isLive ? "live (prices.json)" : "stale (config default — no cache)" }, ccyOf(c.currency) + Number(displayPrice).toFixed(ccyDec(c.currency)))
                   );
                 }),
                 tickers.filter(t => { const q = search.toLowerCase(); const c = configs[t].company; return !search || t.toLowerCase().includes(q) || c.name.toLowerCase().includes(q); }).length === 0 &&

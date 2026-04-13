@@ -532,7 +532,13 @@ async function main(){
     let items='';
     for(const[tk,cfg]of Object.entries(configs)){
       const co=cfg.company;
-      items+=`<a class="topbar-item" href="model.html?ticker=${tk}" style="text-decoration:none;color:inherit"><span><span class="t">${tk}</span><span class="n">${co.name}</span></span><span style="font-family:var(--mono);font-size:.7rem;color:var(--text2)">${ccySym(co.currency)}${co.currentPrice}</span></a>`;
+      const lp=livePrices[tk];
+      const displayPrice=(lp&&lp.price>0)?lp.price:co.currentPrice;
+      const isLive=!!(lp&&lp.price>0);
+      const priceColor=isLive?'var(--text)':'var(--text2)';
+      const priceOpacity=isLive?'1':'0.6';
+      const priceTitle=isLive?'live (prices.json)':'stale (config default)';
+      items+=`<a class="topbar-item" href="model.html?ticker=${tk}" style="text-decoration:none;color:inherit"><span><span class="t">${tk}</span><span class="n">${co.name}</span></span><span title="${priceTitle}" style="font-family:var(--mono);font-size:.7rem;color:${priceColor};opacity:${priceOpacity}">${ccySym(co.currency)}${Number(displayPrice).toFixed(2)}</span></a>`;
     }
     tl.innerHTML=items;
   }
@@ -1419,9 +1425,9 @@ async function main(){
         return fetchLivePrice(yt).then(r=>r?[tk,r]:null);
       }));
       results.filter(Boolean).forEach(([tk,lp])=>{livePrices[tk]=lp;updated++;});
-      if(updated>0){rows=buildRows();doSort();render();}
+      if(updated>0){rows=buildRows();doSort();render();populateTopbar();}
     }
-    if(updated>0){pricesLoaded=true;rows=buildRows();doSort();render();}
+    if(updated>0){pricesLoaded=true;rows=buildRows();doSort();render();populateTopbar();}
   })();
 }
 main();

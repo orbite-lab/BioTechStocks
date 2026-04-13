@@ -272,7 +272,7 @@ function computeCatalysts(cfg,currentPrice){
   if(!cfg.catalysts||!cfg.catalysts.length)return[];
   const baseA=cfg.scenarios?.base?.assumptions||{};
   const {results:baseResults,weightedTP:baseWTP}=computeAll(cfg);
-  const today=new Date('2026-04-10');
+  const today=new Date();
   const SKS=Object.keys(cfg.scenarios);
   const sorted=SKS.slice().sort((a,b)=>baseResults[a].tp-baseResults[b].tp);
   const optimism={};
@@ -867,7 +867,7 @@ async function main(){
     visibleRows.forEach(r=>{if(r.catalysts)r.catalysts.forEach(c=>{allCatsRaw.push({...c,ticker:r.ticker,ccy:r.ccy,dec:r.dec,price:r.price});});});
     if(allCatsRaw.length>0){
       // Apply zoom filter
-      const allCats=catZoom>=9999?allCatsRaw:allCatsRaw.filter(c=>c.daysOut<=catZoom&&c.daysOut>=0);
+      const allCats=catZoom>=9999?allCatsRaw.filter(c=>c.daysOut>0):allCatsRaw.filter(c=>c.daysOut<=catZoom&&c.daysOut>0);
       const hiddenCount=allCatsRaw.length-allCats.length;
       const maxDays=catZoom>=9999?Math.max(30,...allCatsRaw.map(c=>c.daysOut)):catZoom;
       const yMin=allCats.length>0?Math.min(-30,...allCats.map(c=>c.expectedReturn),-10):-30;

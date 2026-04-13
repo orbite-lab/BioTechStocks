@@ -19,9 +19,12 @@ Cost model:
 import anthropic
 import json
 import os
+import hashlib
 import requests
+from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from urllib.parse import urlparse
 
 CONFIGS_DIR = Path("configs")
 CHANGELOG_DIR = Path("changelog")
@@ -348,9 +351,167 @@ def save_processed(processed):
     PROCESSED_FILE.write_text(json.dumps(processed, indent=2))
 
 def news_fingerprint(item, ticker):
-    """Generate a unique fingerprint for a news+ticker pair."""
-    headline = item.get("headline", item.get("summary", ""))[:80].lower().strip()
-    return f"{ticker}:{hash(headline) & 0xFFFFFFFF:08x}"
+    """Generate a deterministic fingerprint for a news+ticker pair.
+
+    Prefers the source URL (normalized) over the headline, because the same
+    press release gets syndicated across multiple outlets with slightly
+    different wording. Uses sha1 instead of Python's built-in hash() which
+    is salted per-process and therefore non-deterministic across runs.
+    """
+    source = (item.get("source") or "").strip().lower()
+    if source.startswith("http"):
+        p = urlparse(source)
+        key = f"{p.netloc}{p.path}".rstrip("/")
+    else:
+        key = item.get("headline", item.get("summary", ""))[:80].lower().strip()
+    h = hashlib.sha1(key.encode("utf-8")).hexdigest()[:8]
+    return f"{ticker}:{h}"
+
+
+# ─── Stacking guard: prevent compounding updates to the same field ────
+#
+# Design note: this is NOT a magnitude cap. A single news event CAN and
+# SHOULD move a probability 30+ points if the data warrants it (e.g. a
+# Phase 3 OS readout with HR 0.40 in PDAC). What we're protecting against
+# is the SAME event being processed twice in the same day and having its
+# effect double-counted.
+#
+# Rules:
+#   1. The FIRST update per field per day is uncapped — trust the model.
+#   2. The SECOND+ update per field per day must be SMALLER in magnitude
+#      than the cumulative prior move, on the logic that if the big news
+#      already landed, follow-ups carry diminishing new signal. Fresh news
+#      that genuinely warrants another big move is rare and should be
+#      caught by human review, not auto-applied.
+#   3. If the follow-up would reverse direction (good news, then bad news
+#      same day), it's allowed — that's new information, not stacking.
+
+def _field_kind(path):
+    """Extract the leaf field name from a dotted path."""
+    return path.rsplit(".", 1)[-1]
+
+CAPPED_FIELDS = {"pos", "apr", "pen", "wt", "dr", "mult"}
+
+def load_todays_cumulative_deltas(ticker, timestamp):
+    """Load prior changes applied to this ticker today, keyed by path.
+
+    Returns dict of path -> cumulative signed delta applied earlier today.
+    """
+    daily_file = CHANGELOG_DIR / f"{timestamp[:10]}.json"
+    if not daily_file.exists():
+        return {}
+    try:
+        daily = json.loads(daily_file.read_text())
+    except (json.JSONDecodeError, Exception):
+        return {}
+    cumulative = defaultdict(float)
+    for entry in daily:
+        if entry.get("ticker") != ticker:
+            continue
+        for c in entry.get("changes", []):
+            if not isinstance(c, dict):
+                continue
+            try:
+                old = float(c.get("old_actual", c.get("old_value", 0)))
+                new = float(c.get("new_value", 0))
+                cumulative[c["path"]] += (new - old)
+            except (ValueError, TypeError):
+                continue
+    return dict(cumulative)
+
+def enforce_stacking_guard(ticker, changes, timestamp):
+    """Prevent compounding updates to the same field on the same day.
+
+    First update per field per day: pass through uncapped.
+    Subsequent same-direction updates: clip to |prior_delta| (diminishing).
+    Reversal updates (opposite sign): pass through uncapped (real new info).
+
+    Returns (allowed_changes, rejection_notes).
+    """
+    prior = load_todays_cumulative_deltas(ticker, timestamp)
+    allowed = []
+    rejected = []
+    for c in changes:
+        path = c.get("path", "")
+        kind = _field_kind(path)
+        if kind not in CAPPED_FIELDS:
+            allowed.append(c)
+            continue
+        try:
+            old = float(c.get("old_value", 0))
+            new = float(c.get("new_value", 0))
+        except (ValueError, TypeError):
+            allowed.append(c)
+            continue
+        prior_delta = prior.get(path, 0.0)
+        proposed_delta = new - old
+        if abs(prior_delta) < 1e-9:
+            # First update of the day on this field — uncapped, trust the model
+            allowed.append(c)
+            continue
+        # Reversal (direction change) — allow, this is new information
+        if prior_delta * proposed_delta < 0:
+            allowed.append(c)
+            continue
+        # Same-direction follow-up — must be smaller than prior cumulative move
+        max_follow_up = abs(prior_delta)
+        if abs(proposed_delta) <= max_follow_up + 1e-9:
+            allowed.append(c)
+            continue
+        # Clip follow-up to diminishing envelope
+        direction = 1 if proposed_delta > 0 else -1
+        clipped_delta = direction * max_follow_up
+        clipped_new = old + clipped_delta
+        clipped = dict(c)
+        clipped["new_value"] = clipped_new
+        clipped["_clipped_from"] = new
+        clipped["_clip_reason"] = (
+            f"stacking guard: follow-up on same field (prior {prior_delta:+.2f}), "
+            f"clipped proposed {proposed_delta:+.2f} to {clipped_delta:+.2f}"
+        )
+        allowed.append(clipped)
+        rejected.append((path, prior_delta, proposed_delta, f"clipped to {clipped_new}"))
+    return allowed, rejected
+
+
+# ─── Per-ticker merge: collapse multi-source syndication ─────
+
+def merge_material_items_by_ticker(material_items):
+    """Collapse multiple material items about the same ticker into one call.
+
+    The same press release often surfaces from 2-3 outlets with different
+    wording (gurufocus + stocktitan + biospace etc.). Running Tier 4 on each
+    of them independently causes compounding updates to the same fields.
+    Merge them into a single synthetic item and let the Sonnet call reason
+    over the combined picture once.
+    """
+    by_ticker = defaultdict(list)
+    order = []
+    for item, ticker in material_items:
+        if ticker not in by_ticker:
+            order.append(ticker)
+        by_ticker[ticker].append(item)
+
+    merged = []
+    for ticker in order:
+        items = by_ticker[ticker]
+        if len(items) == 1:
+            merged.append((items[0], ticker))
+            continue
+        combined_summary = "\n\n---\n\n".join(
+            f"[source {i+1}: {it.get('source', 'N/A')}]\n{it.get('summary', '')}"
+            for i, it in enumerate(items)
+        )
+        synthetic = {
+            "headline": f"{len(items)} related items merged",
+            "summary": combined_summary,
+            "source": items[0].get("source", ""),
+            "_merged_count": len(items),
+            "_merged_sources": [it.get("source", "") for it in items],
+        }
+        merged.append((synthetic, ticker))
+        print(f"  \u229b merged {len(items)} items for {ticker} into one Tier 4 call")
+    return merged
 
 
 # ─── Main ─────────────────────────────────────────────────────
@@ -430,6 +591,10 @@ def main():
 
     # Tier 4
     print("\u2500\u2500 Tier 4: Sonnet deep analysis \u2500\u2500")
+
+    # Collapse multi-source syndication before firing Tier 4 — one call per ticker
+    material_items = merge_material_items_by_ticker(material_items)
+
     any_changes = False
     summaries = []
 
@@ -438,6 +603,12 @@ def main():
         print(f"\n  {ticker}: analyzing...")
         result = deep_analyze(item, ticker, config)
         changes = [c for c in result.get("changes", []) if isinstance(c, dict) and "path" in c and "new_value" in c]
+
+        # Stacking guard: clip follow-up updates to the same field (NOT a magnitude cap)
+        if changes:
+            changes, rejected = enforce_stacking_guard(ticker, changes, timestamp)
+            for path, prior, proposed, note in rejected:
+                print(f"  \u26a0 stacking guard: {path} (prior {prior:+.2f}, proposed {proposed:+.2f}) — {note}")
 
         if changes:
             updated_config, applied = apply_changes(config, changes)

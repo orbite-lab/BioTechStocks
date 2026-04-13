@@ -561,6 +561,8 @@ async function main(){
   let purityMode="wtd";
   let catYAxis="expected"; // "swing" or "expected"
   let catZoom=180; // days window for catalyst chart; can be 30/60/90/180/365/9999
+  let catSortKey="expectedReturn"; // column key to sort catalyst table by
+  let catSortDir="desc"; // "asc" | "desc"
 
   function bucketOf(r){
     if(r.tps.bear!=null&&r.price<r.tps.bear)return 'below_bear';
@@ -1068,21 +1070,55 @@ async function main(){
       h+='</div>';
       // Table
       h+='<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.65rem;font-family:var(--mono)">';
-      h+='<tr style="border-bottom:1px solid #ffffff12;color:var(--text2)">';
-      h+='<th style="text-align:left;padding:6px 8px">Ticker</th>';
-      h+='<th style="text-align:left;padding:6px 4px">Catalyst</th>';
-      h+='<th style="text-align:center;padding:6px 4px">Days</th>';
-      h+='<th style="text-align:center;padding:6px 4px">If Win</th>';
-      h+='<th style="text-align:center;padding:6px 4px">If Fail</th>';
-      h+='<th style="text-align:center;padding:6px 4px">Swing</th>';
-      h+='<th style="text-align:center;padding:6px 4px;color:#eab308">Mkt Swing</th>';
-      h+='<th style="text-align:center;padding:6px 4px">E[R]</th>';
-      h+='<th style="text-align:center;padding:6px 4px" title="% of model value from this asset. High = catalyst IS the company.">Mat</th>';
-      h+='<th style="text-align:center;padding:6px 4px">Your PoS</th>';
-      h+='<th style="text-align:center;padding:6px 4px;color:#eab308;min-width:60px" title="Your Swing / Options Swing. >1.5x = options cheap vs your model. <0.7x = options expensive.">Vol Edge</th>';
-      h+='<th style="text-align:center;padding:6px 4px;min-width:50px" title="Options flow direction: Put/Call OI, volume, and 25-delta IV skew">Flow</th>';
+      // Sortable header builder
+      function catSortValue(c,key){
+        switch(key){
+          case 'ticker': return c.ticker||'';
+          case 'title': return c.title||'';
+          case 'mktSwing': return (c.options&&c.options.impliedMove)?c.options.impliedMove*2:-Infinity;
+          case 'volEdge': {
+            const o=(c.options&&c.options.impliedMove)?c.options.impliedMove*2:null;
+            return o?c.swingPct/o:-Infinity;
+          }
+          case 'flow': {
+            const d=c.options&&c.options.direction;
+            return d==='bullish'?1:d==='bearish'?-1:-Infinity;
+          }
+          default: return (c[key]!=null&&!isNaN(c[key]))?c[key]:-Infinity;
+        }
+      }
+      function th(label,key,align,extraStyle,tip){
+        const active=catSortKey===key;
+        const arrow=active?(catSortDir==='desc'?' \u25BE':' \u25B4'):'';
+        const baseColor=active?'#60a5fa':'var(--text2)';
+        const titleAttr=tip?` title="${tip}"`:'';
+        return `<th style="text-align:${align};padding:6px 8px;cursor:pointer;user-select:none;color:${baseColor};${extraStyle||''}" onclick="window._setCatSort('${key}')"${titleAttr}>${label}${arrow}</th>`;
+      }
+      h+='<tr style="border-bottom:1px solid #ffffff12">';
+      h+=th('Ticker','ticker','left','');
+      h+=th('Catalyst','title','left','');
+      h+=th('Days','daysOut','center','');
+      h+=th('If Win','successMove','center','');
+      h+=th('If Fail','failMove','center','');
+      h+=th('Swing','swingPct','center','');
+      h+=th('Mkt Swing','mktSwing','center','color:#eab308;');
+      h+=th('E[R]','expectedReturn','center','');
+      h+=th('Mat','materiality','center','','% of model value from this asset. High = catalyst IS the company.');
+      h+=th('Your PoS','yourPoS','center','');
+      h+=th('Vol Edge','volEdge','center','color:#eab308;min-width:60px;','Your Swing / Options Swing. >1.5x = options cheap vs your model. <0.7x = options expensive.');
+      h+=th('Flow','flow','center','min-width:50px;','Options flow direction: Put/Call OI, volume, and 25-delta IV skew');
       h+='</tr>';
-      [...allCats].sort((a,b)=>b.expectedReturn-a.expectedReturn).forEach(c=>{
+      // Apply sort
+      const sortedCats=[...allCats].sort((a,b)=>{
+        const va=catSortValue(a,catSortKey);
+        const vb=catSortValue(b,catSortKey);
+        if(typeof va==='string'||typeof vb==='string'){
+          const sa=String(va),sb=String(vb);
+          return catSortDir==='asc'?sa.localeCompare(sb):sb.localeCompare(sa);
+        }
+        return catSortDir==='asc'?va-vb:vb-va;
+      });
+      sortedCats.forEach(c=>{
         const erCol=c.expectedReturn>10?'#22c55e':c.expectedReturn>0?'#4ade80':c.expectedReturn>-10?'#6b7080':c.expectedReturn>-30?'#f97316':'#ef4444';
         const urgency=c.daysOut<30?'#ef4444':c.daysOut<90?'#f59e0b':'var(--text2)';
         const winCol=c.successMove>=0?'#22c55e':'#ef4444';
@@ -1124,7 +1160,7 @@ async function main(){
         h+=`</tr>`;
       });
       h+='</table></div>';
-      h+='<div style="margin-top:8px;font-size:.58rem;color:var(--text2)">Sorted by E[R]. If Win/Fail = % change in model TP (not vs stock price). Vol Edge = your swing / options swing (green >1.5x = options cheap). Flow = 25-delta skew + P/C OI + volume.</div>';
+      h+='<div style="margin-top:8px;font-size:.58rem;color:var(--text2)">Click any column header to sort. If Win/Fail = % change in model TP (not vs stock price). Vol Edge = your swing / options swing (green >1.5x = options cheap). Flow = 25-delta skew + P/C OI + volume.</div>';
       h+='</div>';
     }
 
@@ -1348,6 +1384,16 @@ async function main(){
   window._fMod3=function(m3){filterMod3=m3;render();};
   window._stripSort=function(s){stripSort=s;render();};
   window._setCatZoom=function(d){catZoom=d;render();};
+  window._setCatSort=function(key){
+    if(catSortKey===key){
+      catSortDir=catSortDir==='desc'?'asc':'desc';
+    }else{
+      catSortKey=key;
+      // Default direction: ascending for text columns, descending for numeric
+      catSortDir=(key==='ticker'||key==='title')?'asc':'desc';
+    }
+    render();
+  };
   window._purityMode=function(){purityMode=purityMode==='wtd'?'raw':'wtd';render();};
   window._catY=function(m){catYAxis=m;render();};
   window._fClear=function(){filterL1=null;filterL2=null;filterL3=null;filterPhase=null;filterRare=null;filterMod1=null;filterMod2=null;filterMod3=null;activeFilter=null;stripSort='base';render();};

@@ -19,12 +19,9 @@ Cost model:
 import anthropic
 import json
 import os
-import hashlib
 import requests
-from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from urllib.parse import urlparse
 
 CONFIGS_DIR = Path("configs")
 CHANGELOG_DIR = Path("changelog")
@@ -211,40 +208,15 @@ Respond ONLY with: {"material": true/false, "reason": "one sentence"}""",
 # ─── Tier 4: Sonnet deep analysis ────────────────────────────
 
 def deep_analyze(item, ticker, config):
-    # Build compact catalyst summary so the model can match resolutions
-    pending_catalysts = []
-    for i, cat in enumerate(config.get("catalysts", [])):
-        if cat.get("resolved"):
-            continue
-        pending_catalysts.append({
-            "index": i,
-            "title": cat.get("title", ""),
-            "asset": cat.get("asset", ""),
-            "indication": cat.get("indication", ""),
-            "type": cat.get("type", ""),
-            "date": cat.get("date", ""),
-        })
-
     response = client.messages.create(
         model="claude-sonnet-4-20250514",
-        max_tokens=2000,
-        system="""You are a biotech equity analyst. Given material news and a company config, determine exact assumption changes AND identify if this news resolves any pending catalyst.
+        max_tokens=1500,
+        system="""You are a biotech equity analyst. Given material news and a company config, determine exact assumption changes.
 
 Be conservative — typical changes: 5-15pts for PoS/approval, 1-3pts for DR, 0.1-0.3 for pen mult.
 
-A catalyst is RESOLVED when the actual event has occurred: trial readout released, PDUFA date reached with FDA decision, label expansion approved/denied, AdCom voted. NOT resolved by: analyst commentary, preview articles, recruitment updates, pipeline mentions.
-
-Match catalyst resolution by asset+indication+type. For outcome, use exactly: "success" | "fail" | "mixed".
-
 Respond ONLY with JSON:
-{
-  "news_summary": "one sentence",
-  "source": "URL",
-  "changes": [{"path": "scenarios.base.assumptions.asset_id.ind_id.pos", "old_value": 40, "new_value": 50, "reason": "why"}],
-  "resolved_catalysts": [{"index": 0, "outcome": "success", "notes": "HR 0.40, median OS 13.2 vs 6.7 mo"}]
-}
-
-If no catalyst is resolved, return "resolved_catalysts": [].
+{"news_summary": "one sentence", "source": "URL", "changes": [{"path": "scenarios.base.assumptions.asset_id.ind_id.pos", "old_value": 40, "new_value": 50, "reason": "why"}]}
 
 Path rules:
 - scenarios.{bear|base|bull}.assumptions.{asset_id}.{ind_id}.{pos|apr|pen}
@@ -252,7 +224,7 @@ Path rules:
 - scenarios.{bear|base|bull}.wt
 - assets.0.indications.0.market.tamB (numeric indices for arrays)
 - company.currentPrice, company.cash""",
-        messages=[{"role": "user", "content": f"Material news for {ticker} ({config['company']['name']}):\n{item['summary']}\nSource: {item.get('source', 'N/A')}\n\nPending catalysts:\n{json.dumps(pending_catalysts, indent=2)}\n\nConfig:\n{json.dumps(config, indent=2)}\n\nWhat changes and does this resolve any catalyst?"}],
+        messages=[{"role": "user", "content": f"Material news for {ticker} ({config['company']['name']}):\n{item['summary']}\nSource: {item.get('source', 'N/A')}\n\nConfig:\n{json.dumps(config, indent=2)}\n\nWhat changes?"}],
     )
 
     text_parts = [b.text for b in response.content if hasattr(b, "text")]
@@ -260,7 +232,7 @@ Path rules:
     try:
         return json.loads(full_text[full_text.index("{"):full_text.rindex("}") + 1])
     except (ValueError, json.JSONDecodeError):
-        return {"news_summary": item.get("summary", ""), "source": "", "changes": [], "resolved_catalysts": []}
+        return {"news_summary": item.get("summary", ""), "source": "", "changes": []}
 
 
 # ─── Apply changes ────────────────────────────────────────────
@@ -294,45 +266,6 @@ def apply_changes(config, changes):
     return updated, applied
 
 
-def apply_catalyst_resolutions(config, resolutions, news_summary, source, timestamp):
-    """Flip `resolved: {...}` on catalyst entries matched by index.
-
-    Returns (updated_config, applied_list). Silently skips out-of-range
-    indices or catalysts that are already resolved.
-    """
-    if not resolutions:
-        return config, []
-    updated = json.loads(json.dumps(config))
-    cats = updated.get("catalysts", [])
-    applied = []
-    for r in resolutions:
-        if not isinstance(r, dict):
-            continue
-        idx = r.get("index")
-        if not isinstance(idx, int) or idx < 0 or idx >= len(cats):
-            print(f"  ⚠ Invalid catalyst index {idx} — skipped")
-            continue
-        cat = cats[idx]
-        if cat.get("resolved"):
-            print(f"  · Catalyst #{idx} already resolved — skipped")
-            continue
-        outcome = r.get("outcome", "mixed")
-        if outcome not in ("success", "fail", "mixed"):
-            outcome = "mixed"
-        current_price = updated.get("company", {}).get("currentPrice")
-        cat["resolved"] = {
-            "outcome": outcome,
-            "resolvedDate": timestamp[:10],
-            "resolvedAt": timestamp,
-            "notes": r.get("notes", news_summary),
-            "sourceUrl": source,
-            "priceBefore": current_price,
-        }
-        applied.append({"index": idx, "title": cat.get("title", ""), "outcome": outcome})
-        print(f"  \u2713 Resolved catalyst #{idx}: {cat.get('title', '')} → {outcome}")
-    return updated, applied
-
-
 # ─── Logging ──────────────────────────────────────────────────
 
 def log_changes(ticker, news_summary, source, applied_changes, timestamp):
@@ -357,9 +290,15 @@ def update_changelog_html():
     for e in entries:
         if not isinstance(e, dict):
             continue
-        changes_html = "".join(f'<div class="change">{c["path"].split(".")[-1]}: {c.get("old_actual", c.get("old_value","?"))} &rarr; {c["new_value"]} <span class="reason">({c.get("reason","")})</span></div>' for c in e.get("changes", []) if isinstance(c, dict))
+        # Skip any legacy/malformed entry missing core keys rather than crashing the render
+        ticker = e.get("ticker")
+        timestamp = e.get("timestamp")
+        if not ticker or not timestamp:
+            continue
+        news = e.get("news", "")
+        changes_html = "".join(f'<div class="change">{c["path"].split(".")[-1]}: {c.get("old_actual", c.get("old_value","?"))} &rarr; {c["new_value"]} <span class="reason">({c.get("reason","")})</span></div>' for c in e.get("changes", []) if isinstance(c, dict) and c.get("path") and "new_value" in c)
         source_link = f'<a href="{e["source"]}" target="_blank">source</a>' if e.get("source") else ""
-        rows += f'<div class="entry"><div class="meta"><span class="ticker">{e["ticker"]}</span><span class="time">{e["timestamp"][:16]}</span>{source_link}</div><div class="news">{e["news"]}</div>{changes_html}</div>'
+        rows += f'<div class="entry"><div class="meta"><span class="ticker">{ticker}</span><span class="time">{str(timestamp)[:16]}</span>{source_link}</div><div class="news">{news}</div>{changes_html}</div>'
 
     html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Catalyst Changelog</title><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>*{{box-sizing:border-box;margin:0;padding:0}}body{{background:#0f1117;color:#e2e4ea;font-family:'Inter',sans-serif;padding:32px 24px}}.container{{max-width:800px;margin:0 auto}}h1{{font-size:22px;font-weight:700;margin-bottom:24px;color:#f97316}}.entry{{background:#161920;border-radius:10px;padding:16px 20px;margin-bottom:12px;border:1px solid #ffffff06}}.meta{{display:flex;gap:12px;align-items:center;margin-bottom:8px;font-size:12px}}.ticker{{font-family:'JetBrains Mono';font-weight:700;color:#f97316;background:#f9731616;padding:2px 8px;border-radius:4px}}.time{{color:#6b7080;font-family:'JetBrains Mono'}}a{{color:#60a5fa;text-decoration:none;font-size:11px}}.news{{font-size:14px;color:#b0b4c0;margin-bottom:8px;line-height:1.5}}.change{{font-size:12px;font-family:'JetBrains Mono';color:#22c55e;margin-bottom:3px}}.reason{{color:#6b7080;font-weight:400}}.empty{{text-align:center;color:#6b7080;padding:60px 20px}}</style></head><body><div class="container"><h1>Catalyst changelog</h1><div style="font-size:12px;color:#6b7080;margin-bottom:20px">Auto-updated by Claude. Changes reflect material news impacting rNPV assumptions.</div>{rows if rows else '<div class="empty">No changes logged yet.</div>'}</div></body></html>"""
     Path("changelog.html").write_text(html)
@@ -415,167 +354,9 @@ def save_processed(processed):
     PROCESSED_FILE.write_text(json.dumps(processed, indent=2))
 
 def news_fingerprint(item, ticker):
-    """Generate a deterministic fingerprint for a news+ticker pair.
-
-    Prefers the source URL (normalized) over the headline, because the same
-    press release gets syndicated across multiple outlets with slightly
-    different wording. Uses sha1 instead of Python's built-in hash() which
-    is salted per-process and therefore non-deterministic across runs.
-    """
-    source = (item.get("source") or "").strip().lower()
-    if source.startswith("http"):
-        p = urlparse(source)
-        key = f"{p.netloc}{p.path}".rstrip("/")
-    else:
-        key = item.get("headline", item.get("summary", ""))[:80].lower().strip()
-    h = hashlib.sha1(key.encode("utf-8")).hexdigest()[:8]
-    return f"{ticker}:{h}"
-
-
-# ─── Stacking guard: prevent compounding updates to the same field ────
-#
-# Design note: this is NOT a magnitude cap. A single news event CAN and
-# SHOULD move a probability 30+ points if the data warrants it (e.g. a
-# Phase 3 OS readout with HR 0.40 in PDAC). What we're protecting against
-# is the SAME event being processed twice in the same day and having its
-# effect double-counted.
-#
-# Rules:
-#   1. The FIRST update per field per day is uncapped — trust the model.
-#   2. The SECOND+ update per field per day must be SMALLER in magnitude
-#      than the cumulative prior move, on the logic that if the big news
-#      already landed, follow-ups carry diminishing new signal. Fresh news
-#      that genuinely warrants another big move is rare and should be
-#      caught by human review, not auto-applied.
-#   3. If the follow-up would reverse direction (good news, then bad news
-#      same day), it's allowed — that's new information, not stacking.
-
-def _field_kind(path):
-    """Extract the leaf field name from a dotted path."""
-    return path.rsplit(".", 1)[-1]
-
-CAPPED_FIELDS = {"pos", "apr", "pen", "wt", "dr", "mult"}
-
-def load_todays_cumulative_deltas(ticker, timestamp):
-    """Load prior changes applied to this ticker today, keyed by path.
-
-    Returns dict of path -> cumulative signed delta applied earlier today.
-    """
-    daily_file = CHANGELOG_DIR / f"{timestamp[:10]}.json"
-    if not daily_file.exists():
-        return {}
-    try:
-        daily = json.loads(daily_file.read_text())
-    except (json.JSONDecodeError, Exception):
-        return {}
-    cumulative = defaultdict(float)
-    for entry in daily:
-        if entry.get("ticker") != ticker:
-            continue
-        for c in entry.get("changes", []):
-            if not isinstance(c, dict):
-                continue
-            try:
-                old = float(c.get("old_actual", c.get("old_value", 0)))
-                new = float(c.get("new_value", 0))
-                cumulative[c["path"]] += (new - old)
-            except (ValueError, TypeError):
-                continue
-    return dict(cumulative)
-
-def enforce_stacking_guard(ticker, changes, timestamp):
-    """Prevent compounding updates to the same field on the same day.
-
-    First update per field per day: pass through uncapped.
-    Subsequent same-direction updates: clip to |prior_delta| (diminishing).
-    Reversal updates (opposite sign): pass through uncapped (real new info).
-
-    Returns (allowed_changes, rejection_notes).
-    """
-    prior = load_todays_cumulative_deltas(ticker, timestamp)
-    allowed = []
-    rejected = []
-    for c in changes:
-        path = c.get("path", "")
-        kind = _field_kind(path)
-        if kind not in CAPPED_FIELDS:
-            allowed.append(c)
-            continue
-        try:
-            old = float(c.get("old_value", 0))
-            new = float(c.get("new_value", 0))
-        except (ValueError, TypeError):
-            allowed.append(c)
-            continue
-        prior_delta = prior.get(path, 0.0)
-        proposed_delta = new - old
-        if abs(prior_delta) < 1e-9:
-            # First update of the day on this field — uncapped, trust the model
-            allowed.append(c)
-            continue
-        # Reversal (direction change) — allow, this is new information
-        if prior_delta * proposed_delta < 0:
-            allowed.append(c)
-            continue
-        # Same-direction follow-up — must be smaller than prior cumulative move
-        max_follow_up = abs(prior_delta)
-        if abs(proposed_delta) <= max_follow_up + 1e-9:
-            allowed.append(c)
-            continue
-        # Clip follow-up to diminishing envelope
-        direction = 1 if proposed_delta > 0 else -1
-        clipped_delta = direction * max_follow_up
-        clipped_new = old + clipped_delta
-        clipped = dict(c)
-        clipped["new_value"] = clipped_new
-        clipped["_clipped_from"] = new
-        clipped["_clip_reason"] = (
-            f"stacking guard: follow-up on same field (prior {prior_delta:+.2f}), "
-            f"clipped proposed {proposed_delta:+.2f} to {clipped_delta:+.2f}"
-        )
-        allowed.append(clipped)
-        rejected.append((path, prior_delta, proposed_delta, f"clipped to {clipped_new}"))
-    return allowed, rejected
-
-
-# ─── Per-ticker merge: collapse multi-source syndication ─────
-
-def merge_material_items_by_ticker(material_items):
-    """Collapse multiple material items about the same ticker into one call.
-
-    The same press release often surfaces from 2-3 outlets with different
-    wording (gurufocus + stocktitan + biospace etc.). Running Tier 4 on each
-    of them independently causes compounding updates to the same fields.
-    Merge them into a single synthetic item and let the Sonnet call reason
-    over the combined picture once.
-    """
-    by_ticker = defaultdict(list)
-    order = []
-    for item, ticker in material_items:
-        if ticker not in by_ticker:
-            order.append(ticker)
-        by_ticker[ticker].append(item)
-
-    merged = []
-    for ticker in order:
-        items = by_ticker[ticker]
-        if len(items) == 1:
-            merged.append((items[0], ticker))
-            continue
-        combined_summary = "\n\n---\n\n".join(
-            f"[source {i+1}: {it.get('source', 'N/A')}]\n{it.get('summary', '')}"
-            for i, it in enumerate(items)
-        )
-        synthetic = {
-            "headline": f"{len(items)} related items merged",
-            "summary": combined_summary,
-            "source": items[0].get("source", ""),
-            "_merged_count": len(items),
-            "_merged_sources": [it.get("source", "") for it in items],
-        }
-        merged.append((synthetic, ticker))
-        print(f"  \u229b merged {len(items)} items for {ticker} into one Tier 4 call")
-    return merged
+    """Generate a unique fingerprint for a news+ticker pair."""
+    headline = item.get("headline", item.get("summary", ""))[:80].lower().strip()
+    return f"{ticker}:{hash(headline) & 0xFFFFFFFF:08x}"
 
 
 # ─── Main ─────────────────────────────────────────────────────
@@ -655,10 +436,6 @@ def main():
 
     # Tier 4
     print("\u2500\u2500 Tier 4: Sonnet deep analysis \u2500\u2500")
-
-    # Collapse multi-source syndication before firing Tier 4 — one call per ticker
-    material_items = merge_material_items_by_ticker(material_items)
-
     any_changes = False
     summaries = []
 
@@ -667,12 +444,6 @@ def main():
         print(f"\n  {ticker}: analyzing...")
         result = deep_analyze(item, ticker, config)
         changes = [c for c in result.get("changes", []) if isinstance(c, dict) and "path" in c and "new_value" in c]
-
-        # Stacking guard: clip follow-up updates to the same field (NOT a magnitude cap)
-        if changes:
-            changes, rejected = enforce_stacking_guard(ticker, changes, timestamp)
-            for path, prior, proposed, note in rejected:
-                print(f"  \u26a0 stacking guard: {path} (prior {prior:+.2f}, proposed {proposed:+.2f}) — {note}")
 
         if changes:
             updated_config, applied = apply_changes(config, changes)
@@ -690,21 +461,6 @@ def main():
                 print(f"  \u2713 Applied {len(applied)} changes:")
                 for c in applied:
                     print(f"    {c['path']}: {c.get('old_actual','?')} \u2192 {c['new_value']}")
-
-        # Catalyst resolution — independent of assumption changes
-        resolutions = [r for r in result.get("resolved_catalysts", []) if isinstance(r, dict)]
-        if resolutions:
-            news_summary = result.get("news_summary", item.get("summary", ""))
-            source = result.get("source", item.get("source", ""))
-            current_cfg = configs[ticker]  # may have been updated above
-            resolved_cfg, resolved_applied = apply_catalyst_resolutions(
-                current_cfg, resolutions, news_summary, source, timestamp
-            )
-            if resolved_applied:
-                cfg_path = CONFIGS_DIR / f"{ticker}.json"
-                cfg_path.write_text(json.dumps(resolved_cfg, indent=2))
-                configs[ticker] = resolved_cfg
-                any_changes = True
 
     print(f"\n{'─' * 40}")
     if summaries:

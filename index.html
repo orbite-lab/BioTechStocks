@@ -569,6 +569,9 @@ async function main(){
   let catZoom=180; // days window for catalyst chart; can be 30/60/90/180/365/9999
   let catSortKey="expectedReturn"; // column key to sort catalyst table by
   let catSortDir="desc"; // "asc" | "desc"
+  let catMatMin=0; // materiality threshold (0-100), only show catalysts >= this
+  let catERMin=null; // expected return min filter; null = use computed bound
+  let catERMax=null; // expected return max filter; null = use computed bound
 
   function bucketOf(r){
     if(r.tps.bear!=null&&r.price<r.tps.bear)return 'below_bear';
@@ -874,8 +877,23 @@ async function main(){
     const allCatsRaw=[];
     visibleRows.forEach(r=>{if(r.catalysts)r.catalysts.forEach(c=>{allCatsRaw.push({...c,ticker:r.ticker,ccy:r.ccy,dec:r.dec,price:r.price});});});
     if(allCatsRaw.length>0){
-      // Apply zoom filter
-      const allCats=catZoom>=9999?allCatsRaw.filter(c=>c.daysOut>0&&!c.resolved):allCatsRaw.filter(c=>c.daysOut<=catZoom&&c.daysOut>0&&!c.resolved);
+      // Stage 1: time window + valid + unresolved (this defines the "universe" the sliders see)
+      const timeFiltered=catZoom>=9999
+        ?allCatsRaw.filter(c=>c.daysOut>0&&!c.resolved)
+        :allCatsRaw.filter(c=>c.daysOut<=catZoom&&c.daysOut>0&&!c.resolved);
+      // Compute ER bounds from time-filtered set so the slider range is stable
+      // as you move the materiality slider
+      const erValues=timeFiltered.map(c=>c.expectedReturn).filter(v=>typeof v==='number');
+      const erMinBound=erValues.length?Math.floor(Math.min(...erValues)):-50;
+      const erMaxBound=erValues.length?Math.ceil(Math.max(...erValues)):100;
+      const effectiveERMin=catERMin!=null?Math.max(catERMin,erMinBound):erMinBound;
+      const effectiveERMax=catERMax!=null?Math.min(catERMax,erMaxBound):erMaxBound;
+      // Stage 2: materiality + expected return
+      const allCats=timeFiltered.filter(c=>
+        (c.materiality||0)>=catMatMin
+        &&c.expectedReturn>=effectiveERMin
+        &&c.expectedReturn<=effectiveERMax
+      );
       const hiddenCount=allCatsRaw.length-allCats.length;
       const maxDays=catZoom>=9999?Math.max(30,...allCatsRaw.map(c=>c.daysOut)):catZoom;
       const yMin=allCats.length>0?Math.min(-30,...allCats.map(c=>c.expectedReturn),-10):-30;
@@ -897,6 +915,27 @@ async function main(){
       });
       h+='</div></div>';
       h+='<div class="card-sub">Barbell = one catalyst. Top dot = swing %. Bottom dot = E[R] (size by materiality). Yellow dash = options-implied swing. Color = E[R] direction.</div>';
+      // Filter row: materiality + expected return sliders
+      h+='<div style="display:flex;gap:18px;align-items:center;margin:10px 0 6px;flex-wrap:wrap;font-size:.6rem;font-family:var(--mono);color:var(--text2)">';
+      h+='<div style="display:flex;align-items:center;gap:6px">';
+      h+='<span>Mat &ge;</span>';
+      h+=`<input type="range" min="0" max="100" step="5" value="${catMatMin}" oninput="window._setCatMatMin(this.value)" style="width:90px;accent-color:#60a5fa;cursor:pointer">`;
+      h+=`<span style="color:#60a5fa;min-width:32px;font-weight:700">${catMatMin}%</span>`;
+      h+='</div>';
+      h+='<div style="display:flex;align-items:center;gap:6px">';
+      h+='<span>E[R]</span>';
+      h+=`<input type="range" min="${erMinBound}" max="${erMaxBound}" step="1" value="${effectiveERMin}" oninput="window._setCatERMin(this.value)" style="width:80px;accent-color:#60a5fa;cursor:pointer">`;
+      h+=`<span style="color:#60a5fa;min-width:38px;font-weight:700">${effectiveERMin>0?'+':''}${effectiveERMin}%</span>`;
+      h+='<span style="opacity:.6">to</span>';
+      h+=`<input type="range" min="${erMinBound}" max="${erMaxBound}" step="1" value="${effectiveERMax}" oninput="window._setCatERMax(this.value)" style="width:80px;accent-color:#60a5fa;cursor:pointer">`;
+      h+=`<span style="color:#60a5fa;min-width:38px;font-weight:700">${effectiveERMax>0?'+':''}${effectiveERMax}%</span>`;
+      h+='</div>';
+      const filtersActive=catMatMin>0||catERMin!=null||catERMax!=null;
+      if(filtersActive){
+        h+=`<span class="fchip" onclick="window._resetCatFilters()" style="padding:2px 10px;font-size:.62rem;cursor:pointer">reset filters</span>`;
+      }
+      h+=`<span style="margin-left:auto;opacity:.7">${allCats.length} of ${timeFiltered.length} shown</span>`;
+      h+='</div>';
       // Chart area
       h+='<div style="position:relative;height:340px;margin:16px 0 8px;border-left:1px solid #ffffff18;border-bottom:1px solid #ffffff18;overflow:visible">';
       // Axis labels
@@ -1072,7 +1111,7 @@ async function main(){
       h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;vertical-align:middle;margin-right:3px"></span>E[R] &gt; +10%</span>';
       h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#6b7080;vertical-align:middle;margin-right:3px"></span>flat</span>';
       h+='<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef4444;vertical-align:middle;margin-right:3px"></span>E[R] &lt; -10%</span>';
-      if(hiddenCount>0)h+=`<span style="margin-left:auto;color:#f59e0b;font-family:var(--mono)">${hiddenCount} outside window</span>`;
+      // Note: filter row above already shows "X of Y shown" so we don't repeat it here
       h+='</div>';
       // Table
       h+='<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.65rem;font-family:var(--mono)">';
@@ -1389,7 +1428,36 @@ async function main(){
   window._fMod2=function(m2){filterMod2=m2;filterMod3=null;render();};
   window._fMod3=function(m3){filterMod3=m3;render();};
   window._stripSort=function(s){stripSort=s;render();};
-  window._setCatZoom=function(d){catZoom=d;render();};
+  window._setCatZoom=function(d){
+    catZoom=d;
+    // Zoom changes the universe → reset ER bounds so they snap to new range
+    catERMin=null;
+    catERMax=null;
+    render();
+  };
+  window._setCatMatMin=function(v){
+    catMatMin=parseInt(v)||0;
+    render();
+  };
+  window._setCatERMin=function(v){
+    const n=parseInt(v);
+    catERMin=isNaN(n)?null:n;
+    // Don't allow min to cross max
+    if(catERMax!=null&&catERMin!=null&&catERMin>catERMax)catERMin=catERMax;
+    render();
+  };
+  window._setCatERMax=function(v){
+    const n=parseInt(v);
+    catERMax=isNaN(n)?null:n;
+    if(catERMin!=null&&catERMax!=null&&catERMax<catERMin)catERMax=catERMin;
+    render();
+  };
+  window._resetCatFilters=function(){
+    catMatMin=0;
+    catERMin=null;
+    catERMax=null;
+    render();
+  };
   window._setCatSort=function(key){
     if(catSortKey===key){
       catSortDir=catSortDir==='desc'?'asc':'desc';

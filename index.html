@@ -572,6 +572,7 @@ async function main(){
   let catMatMin=0; // materiality threshold (0-100), only show catalysts >= this
   let catERMin=null; // expected return min filter; null = use computed bound
   let catERMax=null; // expected return max filter; null = use computed bound
+  let catTickerFilter=null; // ticker to isolate on the chart; null = show all
 
   function bucketOf(r){
     if(r.tps.bear!=null&&r.price<r.tps.bear)return 'below_bear';
@@ -888,12 +889,33 @@ async function main(){
       const erMaxBound=erValues.length?Math.ceil(Math.max(...erValues)):100;
       const effectiveERMin=catERMin!=null?Math.max(catERMin,erMinBound):erMinBound;
       const effectiveERMax=catERMax!=null?Math.min(catERMax,erMaxBound):erMaxBound;
-      // Stage 2: materiality + expected return
+      // Ticker list for dropdown (computed from time-filtered set so options are always relevant)
+      const tickerOptions=[...new Set(timeFiltered.map(c=>c.ticker))].sort();
+      // Stage 2: materiality + expected return + optional ticker isolation
       const allCats=timeFiltered.filter(c=>
         (c.materiality||0)>=catMatMin
         &&c.expectedReturn>=effectiveERMin
         &&c.expectedReturn<=effectiveERMax
+        &&(catTickerFilter==null||c.ticker===catTickerFilter)
       );
+      // Cluster-overlap detection: flag catalysts whose options expiry window likely
+      // contains another catalyst for the same ticker. Uses ±45-day window which
+      // covers the same monthly/weekly options expiry. Operates on allCatsRaw (not
+      // filtered) because what matters is the real market, not what's visible.
+      const OVERLAP_WINDOW_DAYS=45;
+      const overlapSet=new Set();
+      for(const c of allCatsRaw){
+        if(!c.options||!c.options.impliedMove)continue;
+        if(c.resolved||c.daysOut<=0)continue;
+        const hasNeighbor=allCatsRaw.some(other=>
+          other!==c
+          &&other.ticker===c.ticker
+          &&!other.resolved
+          &&other.daysOut>0
+          &&Math.abs(other.daysOut-c.daysOut)<=OVERLAP_WINDOW_DAYS
+        );
+        if(hasNeighbor)overlapSet.add(c);
+      }
       const hiddenCount=allCatsRaw.length-allCats.length;
       const maxDays=catZoom>=9999?Math.max(30,...allCatsRaw.map(c=>c.daysOut)):catZoom;
       const yMin=allCats.length>0?Math.min(-30,...allCats.map(c=>c.expectedReturn),-10):-30;
@@ -915,8 +937,19 @@ async function main(){
       });
       h+='</div></div>';
       h+='<div class="card-sub">Barbell = one catalyst. Top dot = swing %. Bottom dot = E[R] (size by materiality). Yellow dash = options-implied swing. Color = E[R] direction.</div>';
-      // Filter row: materiality + expected return sliders
+      // Filter row: ticker + materiality + expected return sliders
       h+='<div style="display:flex;gap:18px;align-items:center;margin:10px 0 6px;flex-wrap:wrap;font-size:.6rem;font-family:var(--mono);color:var(--text2)">';
+      // Ticker isolation dropdown
+      h+='<div style="display:flex;align-items:center;gap:6px">';
+      h+='<span>Ticker</span>';
+      h+=`<select onchange="window._setCatTicker(this.value)" style="background:#0c0d10;color:#e2e4ea;border:1px solid #ffffff18;padding:2px 6px;font-size:.62rem;font-family:var(--mono);cursor:pointer;border-radius:3px">`;
+      h+=`<option value="__all__"${catTickerFilter==null?' selected':''}>all (${tickerOptions.length})</option>`;
+      for(const tk of tickerOptions){
+        const sel=catTickerFilter===tk?' selected':'';
+        h+=`<option value="${tk}"${sel}>${tk}</option>`;
+      }
+      h+='</select>';
+      h+='</div>';
       h+='<div style="display:flex;align-items:center;gap:6px">';
       h+='<span>Mat &ge;</span>';
       h+=`<input type="range" min="0" max="100" step="5" value="${catMatMin}" oninput="window._setCatMatMin(this.value)" style="width:90px;accent-color:#60a5fa;cursor:pointer">`;
@@ -930,7 +963,7 @@ async function main(){
       h+=`<input type="range" min="${erMinBound}" max="${erMaxBound}" step="1" value="${effectiveERMax}" oninput="window._setCatERMax(this.value)" style="width:80px;accent-color:#60a5fa;cursor:pointer">`;
       h+=`<span style="color:#60a5fa;min-width:38px;font-weight:700">${effectiveERMax>0?'+':''}${effectiveERMax}%</span>`;
       h+='</div>';
-      const filtersActive=catMatMin>0||catERMin!=null||catERMax!=null;
+      const filtersActive=catMatMin>0||catERMin!=null||catERMax!=null||catTickerFilter!=null;
       if(filtersActive){
         h+=`<span class="fchip" onclick="window._resetCatFilters()" style="padding:2px 10px;font-size:.62rem;cursor:pointer">reset filters</span>`;
       }
@@ -1090,11 +1123,16 @@ async function main(){
           h+=`<div style="position:absolute;left:${x}%;bottom:${lLow}%;width:1px;height:${lHi-lLow}%;background:${col};opacity:${op*0.25};transform:translateX(-50%);z-index:2;border-left:1px dashed ${col}"></div>`;
         }
         h+=`<div style="position:absolute;left:${x}%;bottom:${lp.y}%;transform:translateX(-50%);font-size:.5rem;font-family:var(--mono);color:${col};opacity:${labelOp};font-weight:700;white-space:nowrap;pointer-events:none;z-index:4">${c.ticker}${flowArrow}${aboveBreak?' '+c.swingPct+'%':''}</div>`;
-        // Options implied swing — yellow dash
+        // Options implied swing — yellow dash (with ⚠ if expiry window overlaps another catalyst)
         if(c.options&&c.options.impliedMove){
           const optSwing=c.options.impliedMove*2;
           const yOpt=yPct(optSwing);
-          h+=`<div style="position:absolute;left:${x}%;bottom:${yOpt}%;transform:translate(-50%,50%);width:14px;height:2px;background:#eab308;z-index:5;opacity:.9" title="Options implied swing: +-${c.options.impliedMove}% (${optSwing}% total)\nStraddle: $${c.options.straddleCost} at $${c.options.atmStrike}\nExpiry: ${c.options.expiryUsed} | Call IV: ${c.options.callIV}% | Put IV: ${c.options.putIV}%"></div>`;
+          const hasOverlap=overlapSet.has(c);
+          h+=`<div style="position:absolute;left:${x}%;bottom:${yOpt}%;transform:translate(-50%,50%);width:14px;height:2px;background:#eab308;z-index:5;opacity:.9" title="Options implied swing: +-${c.options.impliedMove}% (${optSwing}% total)\nStraddle: $${c.options.straddleCost} at $${c.options.atmStrike}\nExpiry: ${c.options.expiryUsed} | Call IV: ${c.options.callIV}% | Put IV: ${c.options.putIV}%${hasOverlap?'\n\n⚠ Options expiry likely contains another catalyst for '+c.ticker+' — implied move reflects multiple events, Vol Edge may be noisy':''}"></div>`;
+          if(hasOverlap){
+            // Small warning glyph offset to the right of the dash
+            h+=`<div style="position:absolute;left:${x}%;bottom:${yOpt}%;transform:translate(6px,50%);font-size:.65rem;color:#f59e0b;z-index:6;pointer-events:none;line-height:1;text-shadow:0 0 3px #000" title="Options expiry window overlaps another ${c.ticker} catalyst — implied move reflects multiple events">⚠</div>`;
+          }
         }
       });
       // Empty state
@@ -1435,6 +1473,10 @@ async function main(){
     catERMax=null;
     render();
   };
+  window._setCatTicker=function(v){
+    catTickerFilter=(v==null||v==='__all__'||v==='')?null:v;
+    render();
+  };
   window._setCatMatMin=function(v){
     catMatMin=parseInt(v)||0;
     render();
@@ -1456,6 +1498,7 @@ async function main(){
     catMatMin=0;
     catERMin=null;
     catERMax=null;
+    catTickerFilter=null;
     render();
   };
   window._setCatSort=function(key){

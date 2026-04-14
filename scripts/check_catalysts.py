@@ -134,6 +134,27 @@ NOT MATERIAL — do not propose
 - Earnings calls (the events themselves)
 - Investor day generic presentations
 - Patent filings, hires, board changes
+- Events that have ALREADY occurred (see VERIFICATION below)
+
+VERIFICATION — events already occurred
+This is critical: company press releases and earnings filings are often DATED BEFORE an event but say "expected H1 2026" or "anticipated mid-year." If you read this language verbatim WITHOUT checking for follow-up news, you will propose catalysts for events that have already happened.
+
+For EVERY catalyst you are about to propose, run an additional web_search of the form:
+  "<COMPANY> <TRIAL OR EVENT NAME> results"
+  "<COMPANY> <DRUG NAME> readout 2026"
+  "<COMPANY> <PDUFA DRUG> approved OR CRL"
+
+Look specifically for news dated AFTER the source you originally found. If the search returns:
+- A press release announcing the readout (positive, negative, or mixed) — the event HAPPENED, do NOT propose
+- An FDA approval / CRL / AdCom vote announcement — the event HAPPENED, do NOT propose
+- A stock price reaction post-event (e.g. "shares fell 38%", "stock surged on data") — the event HAPPENED, do NOT propose
+- Coverage describing the trial as "completed" or "read out" — the event HAPPENED, do NOT propose
+
+A company saying "expected H1 2026" in a January earnings release is NOT proof the event is still pending in April 2026. The release is stale guidance, not current state. Always cross-check.
+
+If you find conflicting signals (some sources call the event "upcoming," others describe results), TRUST THE MORE RECENT SOURCE. Recent dated news always overrides older guidance.
+
+When in doubt — if you cannot find clear post-event news AND you cannot confirm the event is still future-dated — skip the proposal. False negatives (missing a catalyst) are recoverable on the next bi-monthly run. False positives (proposing already-occurred catalysts) corrupt the source-of-truth config and require manual cleanup.
 
 ASSET MATCHING
 Match each catalyst to one of the company's existing asset.id and indication.id from their assets list. NEVER invent new asset ids. If you cannot match cleanly, skip the proposal — do not return it with empty asset.
@@ -277,7 +298,10 @@ def check_batch(batch_configs, window_days):
     )
     user_content = (
         f"Find missing catalysts for these {len(briefs)} companies in the next {window_days} days. "
-        f"Use web_search to verify. Use the heuristic formulas to fill success/fail values:\n\n"
+        f"Today is {today_str}. "
+        f"For EVERY candidate catalyst, run a follow-up web_search with the trial/drug name + 'results' or 'readout' to confirm the event has NOT already occurred. "
+        f"If you find post-event news (positive, negative, or mixed outcome), DO NOT propose that catalyst. "
+        f"Trust recent dated news over older company guidance. Use the heuristic formulas to fill success/fail values:\n\n"
         + json.dumps(briefs, indent=2)
     )
 
@@ -285,7 +309,7 @@ def check_batch(batch_configs, window_days):
     try:
         response = client.messages.create(
             model="claude-sonnet-4-20250514",
-            max_tokens=6000,
+            max_tokens=8000,
             tools=[{"type": "web_search_20250305", "name": "web_search"}],
             system=system,
             messages=[{"role": "user", "content": user_content}],

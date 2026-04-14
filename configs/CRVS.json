@@ -1,0 +1,444 @@
+{
+  "company": {
+    "ticker": "CRVS",
+    "name": "Corvus Pharmaceuticals",
+    "subtitle": "ITK inhibitor (soquelitinib) · Phase 3 PTCL interim YE2026 · Phase 2 AD starting H1 2026 · ~$235M cash post-offering",
+    "sharesOut": 84,
+    "cash": 235,
+    "currentPrice": 15.10,
+    "currency": "USD",
+    "yahooTicker": "CRVS",
+    "cashRunway": "Into 2028 (~$235M post Jan 2026 $201M raise; ~$60M annual burn)",
+    "phase": "phase3"
+  },
+  "assets": [
+    {
+      "id": "soq_ptcl",
+      "name": "Soquelitinib — Peripheral T-Cell Lymphoma (PTCL)",
+      "stage": "Phase 3 registrational (interim YE2026, completion 2027)",
+      "designations": [
+        "Orphan Drug (T-cell lymphoma)",
+        "Fast Track (R/R PTCL after 2L+)"
+      ],
+      "indications": [
+        {
+          "id": "ptcl",
+          "name": "Relapsed/refractory PTCL",
+          "market": {
+            "tamB": 0.8,
+            "penPct": 25,
+            "peakYear": 2031,
+            "notes": "PTCL is small (~$0.5-1B TAM), highly underserved — no fully FDA-approved agents in R/R setting. Phase 3 randomized vs physician's choice (belinostat or pralatrexate), 150 patients, primary = PFS. Final Phase 1/1b ASH Dec 2025 supports activity in PTCL-NOS, CTCL, AITL, ALCL. Interim analysis YE2026 is THE binary catalyst. First-in-class ITK inhibition mechanism."
+          },
+          "area": "oncology.hematology.tcell_lymphoma",
+          "rare": true
+        }
+      ],
+      "modality": "small_molecule.kinase_inhibitor.itk_inhibitor"
+    },
+    {
+      "id": "soq_ad",
+      "name": "Soquelitinib — Atopic Dermatitis (oral)",
+      "stage": "Phase 2 starting Q1/Q2 2026 (~200 patients, 12-week)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "ad",
+          "name": "Moderate-severe atopic dermatitis",
+          "market": {
+            "tamB": 15,
+            "penPct": 4,
+            "peakYear": 2034,
+            "notes": "AD market $15-20B (Dupixent ~$13B, Rinvoq, Cibinqo, Adbry, Ebglyss). Phase 1 cohort 4 (Jan 2026): 200mg BID over 56 days, deepening responses, activity in dupilumab- and JAKi-failed patients, favorable safety. Stock 10x'd on data. ITK MOA may differentiate vs JAKi safety. Oral but BID dosing may limit adoption vs Dupixent SC q2w. Phase 2 designed as pivotal-enabling."
+          },
+          "area": "dermatology.inflammatory_derm.atopic_dermatitis_systemic"
+        }
+      ],
+      "modality": "small_molecule.kinase_inhibitor.itk_inhibitor"
+    },
+    {
+      "id": "soq_asthma",
+      "name": "Soquelitinib — Severe Asthma (Phase 2 PoC)",
+      "stage": "Phase 2 PoC starting 2026",
+      "designations": [],
+      "indications": [
+        {
+          "id": "severe_asthma",
+          "name": "Severe biologic-eligible asthma (Th2-high)",
+          "market": {
+            "tamB": 12,
+            "penPct": 3,
+            "peakYear": 2035,
+            "notes": "Severe biologic asthma ~$10-15B (Dupixent asthma ~$5B, Xolair ~$2B, Nucala ~$2B, Tezspire ramping). ITK mechanism blocks Th2 cytokines upstream — rationale for biologic-resistant / Th2-high severe asthma. Oral convenience vs SC biologics is major differentiation if efficacy holds. 4th-line setting realistic initial position."
+          },
+          "area": "respiratory.inflammatory.severe_asthma"
+        }
+      ],
+      "modality": "small_molecule.kinase_inhibitor.itk_inhibitor"
+    },
+    {
+      "id": "soq_hs",
+      "name": "Soquelitinib — Hidradenitis Suppurativa (Phase 2 PoC)",
+      "stage": "Phase 2 PoC starting 2026",
+      "designations": [],
+      "indications": [
+        {
+          "id": "hs",
+          "name": "Moderate-severe hidradenitis suppurativa",
+          "market": {
+            "tamB": 2,
+            "penPct": 6,
+            "peakYear": 2035,
+            "notes": "HS market ~$1-2B growing — Humira, Cosentyx, Adbry approved. Severely underserved — most patients on multi-line failure. Th17-driven disease, ITK blocks Th17 development upstream. Oral for a disease treated primarily with injectables is strong differentiator. Small but high unmet need."
+          },
+          "area": "dermatology.inflammatory_derm.hidradenitis_suppurativa"
+        }
+      ],
+      "modality": "small_molecule.kinase_inhibitor.itk_inhibitor"
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "narrative": "PTCL Phase 3 fails AND AD Phase 2 disappoints — soquelitinib platform invalidated",
+      "events": [
+        "✗ PTCL Phase 3 interim shows insufficient PFS benefit vs belinostat/pralatrexate",
+        "✗ AD Phase 2 fails to replicate Phase 1 cohort 4 efficacy",
+        "✗ Asthma + HS programs shelved",
+        "→ Stock collapses to cash floor (~$2.80/share — 52w low territory)"
+      ],
+      "assumptions": {
+        "soq_ptcl": {
+          "ptcl": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.2
+          }
+        },
+        "soq_ad": {
+          "ad": {
+            "pos": 8,
+            "apr": 15,
+            "pen": 0.2
+          }
+        },
+        "soq_asthma": {
+          "severe_asthma": {
+            "pos": 3,
+            "apr": 10,
+            "pen": 0.1
+          }
+        },
+        "soq_hs": {
+          "hs": {
+            "pos": 3,
+            "apr": 10,
+            "pen": 0.1
+          }
+        }
+      },
+      "val": {
+        "dr": 25,
+        "dil": 30,
+        "mult": 2,
+        "plat": 0,
+        "exus": 0
+      }
+    },
+    "bear": {
+      "wt": 20,
+      "narrative": "PTCL hits but AD Phase 2 modest — small oncology launch + uncertain inflam franchise",
+      "events": [
+        "~ PTCL Phase 3 modestly positive — small label, limited commercial",
+        "✗ AD Phase 2 efficacy below Dupixent benchmark",
+        "✗ Oral BID dosing fails to displace SC biologics",
+        "→ R/R PTCL launch ~$200-400M peak, AD shelved, cash + small onc"
+      ],
+      "assumptions": {
+        "soq_ptcl": {
+          "ptcl": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 0.5
+          }
+        },
+        "soq_ad": {
+          "ad": {
+            "pos": 25,
+            "apr": 35,
+            "pen": 0.4
+          }
+        },
+        "soq_asthma": {
+          "severe_asthma": {
+            "pos": 8,
+            "apr": 20,
+            "pen": 0.3
+          }
+        },
+        "soq_hs": {
+          "hs": {
+            "pos": 10,
+            "apr": 22,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "dr": 18,
+        "dil": 20,
+        "mult": 4,
+        "plat": 200,
+        "exus": 100
+      }
+    },
+    "base": {
+      "wt": 45,
+      "narrative": "PTCL Phase 3 positive + AD Phase 2 confirms — first-in-class ITK platform validated",
+      "events": [
+        "✓ PTCL Phase 3 interim hits PFS — first targeted therapy with OS-supportive data in R/R PTCL",
+        "✓ AD Phase 2 replicates cohort 4 — competitive efficacy + clean safety vs JAKi",
+        "~ Asthma + HS Phase 2 reads out 2027 with positive signals",
+        "→ Onc launch 2028, AD pivotal start 2027, BLA ~2030"
+      ],
+      "assumptions": {
+        "soq_ptcl": {
+          "ptcl": {
+            "pos": 75,
+            "apr": 85,
+            "pen": 1.0
+          }
+        },
+        "soq_ad": {
+          "ad": {
+            "pos": 50,
+            "apr": 65,
+            "pen": 1.0
+          }
+        },
+        "soq_asthma": {
+          "severe_asthma": {
+            "pos": 25,
+            "apr": 40,
+            "pen": 0.5
+          }
+        },
+        "soq_hs": {
+          "hs": {
+            "pos": 30,
+            "apr": 45,
+            "pen": 0.6
+          }
+        }
+      },
+      "val": {
+        "dr": 13,
+        "dil": 15,
+        "mult": 6,
+        "plat": 1500,
+        "exus": 600
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "narrative": "ITK mechanism validated across onc + multiple inflammatory diseases — first-in-class platform",
+      "events": [
+        "✓ PTCL Phase 3 strong — best-in-class for R/R PTCL, label expansion to CTCL",
+        "✓ AD Phase 2 best-in-class oral — Phase 3 starts 2027",
+        "✓ Asthma + HS PoC positive — multi-indication platform",
+        "✓ M&A target: Pfizer / Sanofi for derm/inflammation franchise"
+      ],
+      "assumptions": {
+        "soq_ptcl": {
+          "ptcl": {
+            "pos": 85,
+            "apr": 90,
+            "pen": 1.5
+          }
+        },
+        "soq_ad": {
+          "ad": {
+            "pos": 70,
+            "apr": 80,
+            "pen": 1.5
+          }
+        },
+        "soq_asthma": {
+          "severe_asthma": {
+            "pos": 45,
+            "apr": 60,
+            "pen": 0.8
+          }
+        },
+        "soq_hs": {
+          "hs": {
+            "pos": 50,
+            "apr": 65,
+            "pen": 0.9
+          }
+        }
+      },
+      "val": {
+        "dr": 11,
+        "dil": 10,
+        "mult": 7,
+        "plat": 4000,
+        "exus": 1500
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "ITK = new immunology pillar — soquelitinib becomes platform across onc + multiple Th2/Th17 diseases — Big Pharma acquires",
+      "events": [
+        "✓ PTCL Phase 3 best-in-class — establishes ITK as oncology mechanism",
+        "✓ AD Phase 3 differentiates as best oral — Dupixent share gain",
+        "✓ Asthma + HS both positive — first multi-indication ITK franchise",
+        "✓ Pfizer or Sanofi acquires for $40-60/share to own ITK class"
+      ],
+      "assumptions": {
+        "soq_ptcl": {
+          "ptcl": {
+            "pos": 90,
+            "apr": 95,
+            "pen": 1.8
+          }
+        },
+        "soq_ad": {
+          "ad": {
+            "pos": 80,
+            "apr": 85,
+            "pen": 2.0
+          }
+        },
+        "soq_asthma": {
+          "severe_asthma": {
+            "pos": 60,
+            "apr": 70,
+            "pen": 1.3
+          }
+        },
+        "soq_hs": {
+          "hs": {
+            "pos": 65,
+            "apr": 75,
+            "pen": 1.4
+          }
+        }
+      },
+      "val": {
+        "dr": 9,
+        "dil": 5,
+        "mult": 8,
+        "plat": 7000,
+        "exus": 2500
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Jan 20, 2026 + ASH Dec 2025",
+      "title": "AD Phase 1 cohort 4 + final PTCL Phase 1/1b ASH data",
+      "points": [
+        "AD cohort 4 (Jan 2026): 200mg BID × 56 days, deepening response, activity in Dupixent and JAKi failures",
+        "Cohort 4 designed prospectively to extend cohorts 1-3 — favorable safety/efficacy consistent",
+        "Stock 10x'd on data (~$2.50 → $22+) Jan 20, 2026",
+        "$201M upsized public offering closed Jan 23, 2026 at ~$22 — fully funds through interim",
+        "Final Phase 1/1b PTCL data ASH Dec 2025: activity across PTCL-NOS, CTCL, AITL, ALCL",
+        "Phase 3 PTCL registrational: 150 pts, vs belinostat/pralatrexate, primary PFS, ongoing",
+        "Phase 2 AD planned ~200 pts, 12-week treatment, multiple dose arms — starts Q1/Q2 2026",
+        "Q4 2025 cash $65.7M + $190M net raise = ~$235M cash, runway into 2028",
+        "March 2026: $200M shelf filed (Jefferies ATM) for additional financing capacity"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Late 2026 (Q4)",
+      "title": "PTCL Phase 3 interim analysis",
+      "thresholds": [
+        "Primary endpoint: progression-free survival vs physician's choice",
+        "First registrational data for ITK inhibition in oncology",
+        "Interim hit → file BLA 2027, launch 2028",
+        "Also 2026: AAD/SID biomarker presentations, Phase 2 AD initiation, asthma/HS PoC starts"
+      ]
+    },
+    "risks": [
+      "PTCL Phase 3 is binary — Phase 1/1b N=23 is thin Phase 3 predictor",
+      "Single asset (soquelitinib) — diversification is across indications, not molecules",
+      "AD Phase 1 was N=~20 per cohort — Phase 2 (200pt) translation risk",
+      "Oral BID dosing harder to compete vs Dupixent SC q2w if efficacy parity",
+      "23.5% short interest — high conviction bears",
+      "$200M ATM filed — additional dilution likely as multiple Ph2 trials run in parallel",
+      "ITK inhibition is unproven mechanism — no precedent for class effects",
+      "PTCL is small (~$0.5-1B) — Phase 3 success doesn't justify $1.3B mcap alone, AD must work",
+      "Stock 10x'd YTD — significant momentum unwind risk on any stumble",
+      "Insider concentration: Thompson 10.5%, Miller 3.1%, insiders 39% total — low float dynamics",
+      "Platform optionality (lupus, MS, T1D exploratory) not modeled — upside beyond current assets"
+    ]
+  },
+  "catalysts": [
+    {
+      "date": "Q2 2026",
+      "dateSort": "2026-05-15",
+      "asset": "soq_ad",
+      "indication": "ad",
+      "title": "Phase 2 atopic dermatitis trial initiation (~200 pts)",
+      "type": "phase2_start",
+      "binary": false,
+      "fail_pos": 40,
+      "fail_apr": 55,
+      "success_pos": 55,
+      "success_apr": 70
+    },
+    {
+      "date": "AAD/SID 2026",
+      "dateSort": "2026-05-20",
+      "asset": "soq_ad",
+      "indication": "ad",
+      "title": "AAD/SID biomarker data presentations (Phase 1 AD)",
+      "type": "conference_data",
+      "binary": false,
+      "fail_pos": 42,
+      "fail_apr": 60,
+      "success_pos": 58,
+      "success_apr": 70
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-15",
+      "asset": "soq_asthma",
+      "indication": "severe_asthma",
+      "title": "Severe asthma Phase 2 PoC trial initiation",
+      "type": "phase2_start",
+      "binary": false,
+      "fail_pos": 20,
+      "fail_apr": 35,
+      "success_pos": 30,
+      "success_apr": 40
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "soq_hs",
+      "indication": "hs",
+      "title": "Hidradenitis suppurativa Phase 2 PoC trial initiation",
+      "type": "phase2_start",
+      "binary": false,
+      "fail_pos": 25,
+      "fail_apr": 40,
+      "success_pos": 35,
+      "success_apr": 50
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-01",
+      "asset": "soq_ptcl",
+      "indication": "ptcl",
+      "title": "PTCL Phase 3 registrational interim analysis",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 5,
+      "fail_apr": 5,
+      "success_pos": 85,
+      "success_apr": 90
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "company": {
+    "ticker": "TVTX",
+    "name": "Travere Therapeutics",
+    "subtitle": "FILSPARI full FDA approval in FSGS Apr 13 2026 · IgAN commercial · pegtibatinase Phase 3 HARMONY restarted Q1 2026",
+    "sharesOut": 91,
+    "cash": 320,
+    "currentPrice": 27.82,
+    "currency": "USD",
+    "yahooTicker": "TVTX",
+    "cashRunway": "Self-funding (FILSPARI growing 100%+ YoY, $410M FY25 sales, no near-term raise expected)",
+    "phase": "commercial"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "filspari_igan",
+      "name": "FILSPARI (sparsentan) — IgA Nephropathy",
+      "stage": "Commercial (full approval, growing rapidly)",
+      "designations": [
+        "Orphan Drug (IgAN)"
+      ],
+      "indications": [
+        {
+          "id": "igan",
+          "name": "IgA Nephropathy",
+          "market": {
+            "tamB": 4.0,
+            "penPct": 25,
+            "peakYear": 2031,
+            "notes": "FILSPARI is first non-immunosuppressive IgAN therapy. Q4 2025 ~$103M US sales (+108% YoY), 908 new patient starts in Q4. FY2025 ~$410M total US sales. Patient population ~150K US IgAN, ~30K patients addressable in moderate-severe segment. Competitors: Tarpeyo (Calliditas/Stellantis), Vanrafia (Novartis). Sparsentan dual ETA/AT1 mechanism = unique among orals. Class IIb pricing. Travere expects continued growth as guideline adoption builds."
+          },
+          "area": "immunology.autoimmune.iga_nephropathy",
+          "rare": true
+        }
+      ],
+      "modality": "small_molecule.receptor_antagonist.eta_at1_dual"
+    },
+    {
+      "id": "filspari_fsgs",
+      "name": "FILSPARI (sparsentan) — FSGS",
+      "stage": "Commercial (full approval Apr 13 2026 — first ever FSGS therapy)",
+      "designations": [
+        "Orphan Drug (FSGS)",
+        "Breakthrough Therapy (FSGS)"
+      ],
+      "indications": [
+        {
+          "id": "fsgs",
+          "name": "Focal Segmental Glomerulosclerosis (without nephrotic syndrome)",
+          "market": {
+            "tamB": 3.5,
+            "penPct": 20,
+            "peakYear": 2032,
+            "notes": "First and only FDA-approved FSGS therapy as of April 13, 2026. ~40K US FSGS patients, ~30K addressable in non-nephrotic moderate-severe segment. Combined IgAN+FSGS patient pool now >100K US. Sparsentan was already used off-label in FSGS pre-approval — formal label removes payor barriers. PROTECT-style proteinuria reduction data drove approval after FDA extended PDUFA from Jan 13 to Apr 13 2026 for additional clinical benefit characterization. Pediatric label includes patients age 8+."
+          },
+          "area": "immunology.autoimmune.fsgs",
+          "rare": true
+        }
+      ],
+      "modality": "small_molecule.receptor_antagonist.eta_at1_dual"
+    },
+    {
+      "id": "pegtibatinase",
+      "name": "Pegtibatinase (TVT-058) — Classical Homocystinuria",
+      "stage": "Phase 3 HARMONY restarted Q1 2026 (~70 patients enrolling)",
+      "designations": [
+        "Orphan Drug (HCU)",
+        "Rare Pediatric Disease",
+        "Fast Track"
+      ],
+      "indications": [
+        {
+          "id": "hcu",
+          "name": "Classical homocystinuria (CBS deficiency)",
+          "market": {
+            "tamB": 1.5,
+            "penPct": 35,
+            "peakYear": 2032,
+            "notes": "Pegylated cystathionine beta-synthase (CBS) enzyme replacement for classical HCU — genetic CBS deficiency causing toxic homocysteine accumulation, thrombotic events, vision/skeletal abnormalities, developmental delays. ~5-10K diagnosed US patients, no disease-modifying therapy exists. COMPOSE Phase 1/2 OLE: sustained homocysteine and methionine reductions, normalized in one patient. HARMONY Phase 3: 70 pts age 12-65, randomized 1:1 vs placebo, 2.5 mg/kg SC twice weekly, 24-week double-blind. Primary: change in plasma tHcy weeks 6-12. Manufacturing previously delayed program — commercial-scale batches now produced. ENSEMBLE long-term extension also enrolling."
+          },
+          "area": "cardio_metabolic.rare_metabolic.homocystinuria",
+          "rare": true
+        }
+      ],
+      "modality": "pegylated_protein.pegylated_enzyme.peg_cbs"
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "FILSPARI growth stalls + pegtibatinase fails Phase 3 — single-product commercial company at premium",
+      "events": [
+        "✗ FILSPARI growth decelerates as Tarpeyo + Vanrafia take share in IgAN",
+        "✗ FSGS launch underwhelms — proteinuria reduction not viewed as meaningful by payors",
+        "✗ HARMONY Phase 3 fails to replicate Phase 1/2 homocysteine reductions",
+        "→ Re-rates to ~$15 as single-product franchise without pipeline"
+      ],
+      "assumptions": {
+        "filspari_igan": {
+          "igan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "filspari_fsgs": {
+          "fsgs": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "pegtibatinase": {
+          "hcu": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 22,
+        "pipelineMult": 3,
+        "commercialMult": 4.0,
+        "commercialRevM": 500,
+        "milestones": 25,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "FILSPARI grows but FSGS launch slow + HARMONY mixed",
+      "events": [
+        "~ FILSPARI IgAN reaches ~$700M but plateaus 2028-29",
+        "~ FSGS launch: $200-300M peak, slower than IgAN ramp",
+        "~ HARMONY: stat sig but modest effect, BLA delayed",
+        "→ Stable mid-cap, profitable, pipeline-light"
+      ],
+      "assumptions": {
+        "filspari_igan": {
+          "igan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "filspari_fsgs": {
+          "fsgs": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "pegtibatinase": {
+          "hcu": {
+            "pos": 35,
+            "apr": 55,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 16,
+        "pipelineMult": 4,
+        "commercialMult": 5.5,
+        "commercialRevM": 700,
+        "milestones": 50,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "FILSPARI dual-indication franchise builds toward $1B + HARMONY positive",
+      "events": [
+        "✓ FILSPARI combined IgAN+FSGS franchise reaches $900M-1.1B by 2028",
+        "✓ FSGS launch follows IgAN ramp pattern — first-mover advantage",
+        "✓ HARMONY Phase 3 hits primary endpoint (homocysteine reduction)",
+        "✓ Pegtibatinase BLA filed 2027, launch 2028 — first HCU disease-modifying therapy"
+      ],
+      "assumptions": {
+        "filspari_igan": {
+          "igan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "filspari_fsgs": {
+          "fsgs": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "pegtibatinase": {
+          "hcu": {
+            "pos": 60,
+            "apr": 75,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 13,
+        "pipelineMult": 5,
+        "commercialMult": 6.5,
+        "commercialRevM": 950,
+        "milestones": 100,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "FILSPARI dominant in rare nephrology + pegtibatinase first HCU therapy + M&A talk",
+      "events": [
+        "✓ FILSPARI franchise $1.3B+ — best-in-class non-immunosuppressive nephrology",
+        "✓ Pegtibatinase HARMONY positive — first disease-modifying HCU treatment",
+        "✓ Pediatric IgAN/FSGS expansion + ex-US partnerships add upside",
+        "✓ M&A target for kidney/rare disease focused buyers (Otsuka, Vertex, BMS)"
+      ],
+      "assumptions": {
+        "filspari_igan": {
+          "igan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "filspari_fsgs": {
+          "fsgs": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "pegtibatinase": {
+          "hcu": {
+            "pos": 75,
+            "apr": 85,
+            "pen": 1.3
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 6,
+        "commercialMult": 7.5,
+        "commercialRevM": 1300,
+        "milestones": 175,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Rare nephrology platform — dual blockbuster + pegtibatinase franchise — Otsuka/Astellas acquires at $50+",
+      "events": [
+        "✓ FILSPARI $1.8B+ peak across IgAN + FSGS globally",
+        "✓ Pegtibatinase $400M+ peak as first HCU disease-modifier",
+        "✓ Pipeline expansion: additional rare kidney + metabolic indications",
+        "✓ Strategic acquirer pays $5-7B for rare disease franchise"
+      ],
+      "assumptions": {
+        "filspari_igan": {
+          "igan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.6
+          }
+        },
+        "filspari_fsgs": {
+          "fsgs": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.6
+          }
+        },
+        "pegtibatinase": {
+          "hcu": {
+            "pos": 85,
+            "apr": 90,
+            "pen": 1.6
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 7,
+        "commercialMult": 9.0,
+        "commercialRevM": 1800,
+        "milestones": 250,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "April 13, 2026",
+      "title": "FILSPARI full FDA approval in FSGS — first ever therapy for the indication",
+      "points": [
+        "Apr 13 2026: FDA approved FILSPARI for FSGS in adults + pediatric pts age 8+",
+        "First and only FDA-approved therapy for FSGS — historic milestone in rare nephrology",
+        "Approval expands US addressable population from ~30K (IgAN) to >100K (IgAN+FSGS)",
+        "Original PDUFA Jan 13 2026 was extended 3 months for additional benefit characterization",
+        "FY2025 US net product sales ~$410M (Q4 2025 ~$127M)",
+        "Q4 2025 FILSPARI sales ~$103M (+108% YoY), 908 new patient start forms",
+        "$322.8M cash at YE2025, no near-term raise expected",
+        "Pegtibatinase HARMONY Phase 3 restarted Q1 2026 after manufacturing optimization",
+        "$25M Mirum sales-based milestone expected H1 2026",
+        "91M shares outstanding (Dec 2025)"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Q2-Q3 2026",
+      "title": "FSGS launch trajectory + HARMONY enrollment progress",
+      "thresholds": [
+        "Q1 2026 FILSPARI sales — IgAN momentum into FSGS approval",
+        "Q2 2026 reported FSGS new patient starts (first quarter post-approval)",
+        "HARMONY Phase 3 enrollment update (~70 patients age 12-65)",
+        "FILSPARI ex-US milestones (CSL Vifor licensing partner)",
+        "Potential label expansion to nephrotic FSGS population"
+      ]
+    },
+    "risks": [
+      "Single-molecule franchise — sparsentan (FILSPARI) is everything until pegtibatinase reads out",
+      "FSGS approval was already widely expected — limited upside surprise from approval itself",
+      "FSGS is smaller patient population than IgAN — incremental revenue may underwhelm bulls",
+      "Tarpeyo (Calliditas) and Vanrafia (Novartis) are active IgAN competitors with growing share",
+      "HARMONY restart adds Phase 3 execution risk — manufacturing problems caused prior delay",
+      "HCU is small market (~5-10K diagnosed) — even success caps pegtibatinase peak at ~$300-400M",
+      "Hepatotoxicity REMS on FILSPARI label limits prescriber base vs unrestricted competitors",
+      "No expanded pipeline beyond FILSPARI + pegtibatinase — third asset not visible",
+      "Stock at $27.82 / $2.5B mcap = ~6x 2025 sales — premium for single-franchise commercial biotech",
+      "FDA extending PDUFA 3 months in Jan 2026 created uncertainty — some bulls had exited"
+    ]
+  },
+  "catalysts": [
+    {
+      "date": "April 13, 2026",
+      "dateSort": "2026-04-13",
+      "asset": "filspari_fsgs",
+      "indication": "fsgs",
+      "title": "FILSPARI sNDA PDUFA decision — FSGS",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 100,
+      "fail_apr": 5,
+      "success_pos": 100,
+      "success_apr": 100,
+      "resolved": {
+        "outcome": "success",
+        "resolvedDate": "2026-04-13",
+        "resolvedAt": "2026-04-13T20:00:00Z",
+        "notes": "FDA approved FILSPARI (sparsentan) for FSGS in adults and pediatric patients age 8+ without nephrotic syndrome. First and only FDA-approved therapy for FSGS. Approval came on the extended PDUFA date (originally Jan 13, extended 3 months). Travere held conference call same day at 6:45pm ET. Expands addressable patient population from ~30K IgAN to >100K combined IgAN+FSGS.",
+        "sourceUrl": "https://www.businesswire.com/news/home/20260413/travere-therapeutics-announces-full-fda-approval-of-filspari-sparsentan",
+        "priceBefore": 27.82
+      }
+    },
+    {
+      "date": "Q2-Q3 2026",
+      "dateSort": "2026-08-07",
+      "asset": "filspari_fsgs",
+      "indication": "fsgs",
+      "title": "Q2 2026 first quarter of FSGS commercial launch (earnings)",
+      "type": "conference_data",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-11-15",
+      "asset": "pegtibatinase",
+      "indication": "hcu",
+      "title": "HARMONY Phase 3 enrollment milestone update",
+      "type": "phase3_start",
+      "binary": false,
+      "fail_pos": 50,
+      "fail_apr": 70,
+      "success_pos": 65,
+      "success_apr": 78
+    }
+  ]
+}

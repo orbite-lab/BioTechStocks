@@ -9,9 +9,9 @@
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
-    "area_count": 111,
-    "modality_count": 110,
-    "companies": 41
+    "area_count": 113,
+    "modality_count": 112,
+    "companies": 42
   },
   "therapeutic_areas": {
     "cardio_metabolic": {
@@ -164,6 +164,13 @@
         }
       },
       "rare_metabolic": {
+        "homocystinuria": {
+          "companies": [
+            "TVTX"
+          ],
+          "count": 1,
+          "rare": true
+        },
         "hyperoxaluria": {
           "companies": [
             "ALNY"
@@ -483,6 +490,13 @@
     },
     "immunology": {
       "autoimmune": {
+        "fsgs": {
+          "companies": [
+            "TVTX"
+          ],
+          "count": 1,
+          "rare": true
+        },
         "hereditary_angioedema": {
           "companies": [
             "IONS"
@@ -492,10 +506,11 @@
         },
         "iga_nephropathy": {
           "companies": [
-            "BHVN"
+            "BHVN",
+            "TVTX"
           ],
-          "count": 1,
-          "rare": false
+          "count": 2,
+          "rare": true
         },
         "sjogrens": {
           "companies": [
@@ -1335,6 +1350,14 @@
           ],
           "count": 1
         }
+      },
+      "pegylated_enzyme": {
+        "peg_cbs": {
+          "companies": [
+            "TVTX"
+          ],
+          "count": 1
+        }
       }
     },
     "peptide": {
@@ -1673,6 +1696,12 @@
         "dri_modulator": {
           "companies": [
             "AXSM"
+          ],
+          "count": 1
+        },
+        "eta_at1_dual": {
+          "companies": [
+            "TVTX"
           ],
           "count": 1
         },

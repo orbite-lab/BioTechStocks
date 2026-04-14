@@ -1,0 +1,297 @@
+{
+  "company": {
+    "ticker": "BOLD",
+    "name": "Boundless Bio",
+    "subtitle": "Post pipeline reshape · BBI-940 kinesin degrader KOMODO-1 Phase 1 starting H1 2026 · Trading below cash ($1.08 vs $4.46 CPS)",
+    "sharesOut": 22.4,
+    "cash": 100,
+    "currentPrice": 1.08,
+    "currency": "USD",
+    "yahooTicker": "BOLD",
+    "cashRunway": "Into 2H 2028 (~$100M cash, ~$5M monthly burn post POTENTIATE discontinuation)",
+    "phase": "phase1"
+  },
+  "assets": [
+    {
+      "id": "bbi940_er",
+      "name": "BBI-940 — Kinesin degrader (ER+/HER2- breast cancer)",
+      "stage": "IND accepted Jan 2026 · Phase 1 KOMODO-1 starting H1 2026",
+      "designations": [],
+      "indications": [
+        {
+          "id": "er_her2_neg_amp",
+          "name": "ER+/HER2- mBC with oncogene amplifications",
+          "market": {
+            "tamB": 5.0,
+            "penPct": 3,
+            "peakYear": 2034,
+            "notes": "ER+/HER2- metastatic breast cancer is largest BC subtype (~60% of mBC). Oncogene-amplified subset (MYC, CCND1, FGFR1, CDK6) = ~20-30% of cases. Post-CDK4/6 + endocrine resistant 3L+ setting. BBI-940 is oral kinesin degrader targeting ecDNA segregation during mitosis — novel mechanism with preclinical single-agent xenograft regressions. First ecDNA-directed therapy to reach clinic. KOMODO-1 enrolls ER+/HER2- AND TNBC LAR subtype in parallel. Initial PoC data expected within runway (into 2H 2028)."
+          },
+          "area": "oncology.breast.hr_her2_neg",
+          "rare": false
+        }
+      ],
+      "modality": "small_molecule.protein_degrader.kinesin_degrader"
+    },
+    {
+      "id": "bbi940_tnbc",
+      "name": "BBI-940 — Kinesin degrader (TNBC LAR subtype)",
+      "stage": "IND accepted Jan 2026 · Phase 1 KOMODO-1 starting H1 2026",
+      "designations": [],
+      "indications": [
+        {
+          "id": "tnbc_lar_amp",
+          "name": "TNBC luminal androgen receptor subtype with oncogene amplifications",
+          "market": {
+            "tamB": 2.0,
+            "penPct": 4,
+            "peakYear": 2034,
+            "notes": "TNBC LAR is ~10-15% of TNBC — androgen-receptor-driven subtype with distinct biology from basal-like TNBC. Oncogene-amplified subset of LAR = smaller population but very high unmet need given ADC/CPI limited benefit in this segment. BBI-940 preclinical regressions in xenografts with ecDNA amplifications. KOMODO-1 dose escalation enrolls LAR arm in parallel with ER+/HER2-."
+          },
+          "area": "oncology.breast.tnbc",
+          "rare": true
+        }
+      ],
+      "modality": "small_molecule.protein_degrader.kinesin_degrader"
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 15,
+      "narrative": "BBI-940 fails Phase 1 — kinesin mechanism doesn't translate — company winds down or reverse merger",
+      "events": [
+        "✗ KOMODO-1 Phase 1 safety/tolerability issue halts escalation",
+        "✗ No single-agent activity signal in either breast cancer subtype",
+        "✗ Kinesin degrader mechanism invalidated — ecDNA thesis broken",
+        "→ Board elects wind-down or reverse merger, residual cash returned at ~$3/share"
+      ],
+      "assumptions": {
+        "bbi940_er": {
+          "er_her2_neg_amp": {
+            "pos": 3,
+            "apr": 8,
+            "pen": 0.1
+          }
+        },
+        "bbi940_tnbc": {
+          "tnbc_lar_amp": {
+            "pos": 2,
+            "apr": 8,
+            "pen": 0.1
+          }
+        }
+      },
+      "val": {
+        "dr": 30,
+        "dil": 20,
+        "mult": 2,
+        "plat": 0,
+        "exus": 0
+      }
+    },
+    "bear": {
+      "wt": 30,
+      "narrative": "BBI-940 shows limited signal — company muddles through cash, dilutes at bad terms",
+      "events": [
+        "~ KOMODO-1 shows safety but minimal single-agent activity",
+        "✗ ER+/HER2- arm shows no objective responses",
+        "~ TNBC LAR arm shows modest signal — subset biomarker emerges",
+        "→ Forced dilution at $0.50-1 to extend runway to Phase 2"
+      ],
+      "assumptions": {
+        "bbi940_er": {
+          "er_her2_neg_amp": {
+            "pos": 12,
+            "apr": 18,
+            "pen": 0.2
+          }
+        },
+        "bbi940_tnbc": {
+          "tnbc_lar_amp": {
+            "pos": 15,
+            "apr": 22,
+            "pen": 0.25
+          }
+        }
+      },
+      "val": {
+        "dr": 22,
+        "dil": 40,
+        "mult": 3,
+        "plat": 0,
+        "exus": 0
+      }
+    },
+    "base": {
+      "wt": 35,
+      "narrative": "KOMODO-1 Phase 1 shows PoC signal — stock re-rates from below-cash to pipeline value",
+      "events": [
+        "✓ BBI-940 Phase 1 dose escalation completes, RP2D identified",
+        "✓ Single-agent partial responses in oncogene-amplified patients (ORR ~15-25%)",
+        "~ ecDNA mechanism validated in humans — biomarker enrichment works",
+        "→ Stock re-rates to $4-5 (cash + modest pipeline NPV)"
+      ],
+      "assumptions": {
+        "bbi940_er": {
+          "er_her2_neg_amp": {
+            "pos": 25,
+            "apr": 40,
+            "pen": 0.4
+          }
+        },
+        "bbi940_tnbc": {
+          "tnbc_lar_amp": {
+            "pos": 30,
+            "apr": 45,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "dr": 18,
+        "dil": 15,
+        "mult": 4,
+        "plat": 100,
+        "exus": 0
+      }
+    },
+    "bull": {
+      "wt": 15,
+      "narrative": "BBI-940 shows strong PoC — ecDNA platform validated — partnership or expansion trial",
+      "events": [
+        "✓ KOMODO-1 ORR >25% in oncogene-amplified patients across both subtypes",
+        "✓ ECHO companion diagnostic validated — clean biomarker strategy",
+        "✓ Partnership announced with major oncology player for platform expansion",
+        "✓ Spyglass platform spawns second clinical program"
+      ],
+      "assumptions": {
+        "bbi940_er": {
+          "er_her2_neg_amp": {
+            "pos": 45,
+            "apr": 55,
+            "pen": 0.8
+          }
+        },
+        "bbi940_tnbc": {
+          "tnbc_lar_amp": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "dr": 14,
+        "dil": 5,
+        "mult": 5,
+        "plat": 400,
+        "exus": 150
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "ecDNA-directed therapy becomes a new oncology pillar — BBI-940 transformative — Big Pharma acquires",
+      "events": [
+        "✓ KOMODO-1 shows deep responses including CRs in heavily pretreated patients",
+        "✓ ecDNA amplification becomes validated target class — 17% of all solid tumors",
+        "✓ Platform extends to colorectal, gastric, NSCLC amplified tumors",
+        "✓ AstraZeneca or Daiichi acquires for $500M-1B to own ecDNA franchise"
+      ],
+      "assumptions": {
+        "bbi940_er": {
+          "er_her2_neg_amp": {
+            "pos": 60,
+            "apr": 70,
+            "pen": 1.2
+          }
+        },
+        "bbi940_tnbc": {
+          "tnbc_lar_amp": {
+            "pos": 65,
+            "apr": 75,
+            "pen": 1.4
+          }
+        }
+      },
+      "val": {
+        "dr": 11,
+        "dil": 0,
+        "mult": 7,
+        "plat": 1500,
+        "exus": 500
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Jan 20, 2026 + Mar 2026 Q4",
+      "title": "Pipeline reshape — BBI-940 IND accepted, POTENTIATE terminated",
+      "points": [
+        "Jan 20, 2026: FDA accepted IND for BBI-940 (novel Kinesin oral degrader)",
+        "Jan 20, 2026: Discontinued POTENTIATE Phase 1/2 trial (BBI-355 CHK1 + BBI-825 RNR combo)",
+        "Pipeline now single-asset on BBI-940 — both legacy molecules shelved",
+        "KOMODO-1 Phase 1 in metastatic breast cancer expected H1 2026 start",
+        "Enrolls ER+/HER2- AND TNBC LAR subtype in parallel dose escalation",
+        "Preclinical single-agent tumor regressions in xenograft models",
+        "Q3 2025 cash: $117.6M; runway extended into 2H 2028 post reshape",
+        "22.4M shares out (Q3 2025 10-Q) — small float, microcap",
+        "Q4 2025 EPS ($0.58); Q1 2026 earnings May 18, 2026",
+        "Stock trading at ~$1.08 vs ~$4.46 cash per share — 76% discount to cash"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "H1 2026",
+      "title": "KOMODO-1 Phase 1 first patient dosed (BBI-940 in mBC)",
+      "thresholds": [
+        "Trial initiation in metastatic breast cancer",
+        "Two subtypes in parallel: ER+/HER2- and TNBC LAR",
+        "ECHO diagnostic used for patient selection (ecDNA amplification)",
+        "Preclinical xenograft regressions set efficacy bar",
+        "First clinical validation of kinesin degrader mechanism and ecDNA thesis"
+      ]
+    },
+    "risks": [
+      "Trading below cash ($1.08 vs $4.46 CPS) — market prices pipeline at negative value",
+      "Single-asset company after POTENTIATE termination — BBI-940 is everything",
+      "Kinesin degrader mechanism is unprecedented — no clinical validation of class",
+      "Preclinical xenograft activity is weak Phase 1 predictor in oncology",
+      "Phase 1 in heavily pretreated mBC — hard patient population for any signal",
+      "KOMODO-1 PoC data not expected until late 2027-2028 — long wait",
+      "Microcap liquidity — 22M shares, ~$150K daily volume, high slippage",
+      "BBI-355 and BBI-825 termination signals prior program failures — management credibility questioned",
+      "ATM capacity $14.5M available — dilution likely at sub-$1 prices would be catastrophic",
+      "Guggenheim moved to Hold (Mar 2026) — analyst coverage deteriorating",
+      "Shares at $1.08 near 52-week low — institutional delisting risk if below $1 for 30+ days",
+      "ecDNA thesis requires companion diagnostic adoption — complex commercial path",
+      "No upcoming binary catalyst in 2026 — pure waiting game on trial enrollment"
+    ]
+  },
+  "catalysts": [
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-01",
+      "asset": "bbi940_er",
+      "indication": "er_her2_neg_amp",
+      "title": "KOMODO-1 Phase 1 first patient dosed (ER+/HER2- mBC)",
+      "type": "phase1_start",
+      "binary": false,
+      "fail_pos": 20,
+      "fail_apr": 35,
+      "success_pos": 30,
+      "success_apr": 45
+    },
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-01",
+      "asset": "bbi940_tnbc",
+      "indication": "tnbc_lar_amp",
+      "title": "KOMODO-1 Phase 1 first patient dosed (TNBC LAR)",
+      "type": "phase1_start",
+      "binary": false,
+      "fail_pos": 25,
+      "fail_apr": 40,
+      "success_pos": 35,
+      "success_apr": 50
+    }
+  ]
+}

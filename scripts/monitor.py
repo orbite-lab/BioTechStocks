@@ -211,15 +211,40 @@ Respond ONLY with: {"material": true/false, "reason": "one sentence"}""",
 # ─── Tier 4: Sonnet deep analysis ────────────────────────────
 
 def deep_analyze(item, ticker, config):
+    # Build compact catalyst summary so the model can match resolutions
+    pending_catalysts = []
+    for i, cat in enumerate(config.get("catalysts", [])):
+        if cat.get("resolved"):
+            continue
+        pending_catalysts.append({
+            "index": i,
+            "title": cat.get("title", ""),
+            "asset": cat.get("asset", ""),
+            "indication": cat.get("indication", ""),
+            "type": cat.get("type", ""),
+            "date": cat.get("date", ""),
+        })
+
     response = client.messages.create(
         model="claude-sonnet-4-20250514",
-        max_tokens=1500,
-        system="""You are a biotech equity analyst. Given material news and a company config, determine exact assumption changes.
+        max_tokens=2000,
+        system="""You are a biotech equity analyst. Given material news and a company config, determine exact assumption changes AND identify if this news resolves any pending catalyst.
 
 Be conservative — typical changes: 5-15pts for PoS/approval, 1-3pts for DR, 0.1-0.3 for pen mult.
 
+A catalyst is RESOLVED when the actual event has occurred: trial readout released, PDUFA date reached with FDA decision, label expansion approved/denied, AdCom voted. NOT resolved by: analyst commentary, preview articles, recruitment updates, pipeline mentions.
+
+Match catalyst resolution by asset+indication+type. For outcome, use exactly: "success" | "fail" | "mixed".
+
 Respond ONLY with JSON:
-{"news_summary": "one sentence", "source": "URL", "changes": [{"path": "scenarios.base.assumptions.asset_id.ind_id.pos", "old_value": 40, "new_value": 50, "reason": "why"}]}
+{
+  "news_summary": "one sentence",
+  "source": "URL",
+  "changes": [{"path": "scenarios.base.assumptions.asset_id.ind_id.pos", "old_value": 40, "new_value": 50, "reason": "why"}],
+  "resolved_catalysts": [{"index": 0, "outcome": "success", "notes": "HR 0.40, median OS 13.2 vs 6.7 mo"}]
+}
+
+If no catalyst is resolved, return "resolved_catalysts": [].
 
 Path rules:
 - scenarios.{bear|base|bull}.assumptions.{asset_id}.{ind_id}.{pos|apr|pen}
@@ -227,7 +252,7 @@ Path rules:
 - scenarios.{bear|base|bull}.wt
 - assets.0.indications.0.market.tamB (numeric indices for arrays)
 - company.currentPrice, company.cash""",
-        messages=[{"role": "user", "content": f"Material news for {ticker} ({config['company']['name']}):\n{item['summary']}\nSource: {item.get('source', 'N/A')}\n\nConfig:\n{json.dumps(config, indent=2)}\n\nWhat changes?"}],
+        messages=[{"role": "user", "content": f"Material news for {ticker} ({config['company']['name']}):\n{item['summary']}\nSource: {item.get('source', 'N/A')}\n\nPending catalysts:\n{json.dumps(pending_catalysts, indent=2)}\n\nConfig:\n{json.dumps(config, indent=2)}\n\nWhat changes and does this resolve any catalyst?"}],
     )
 
     text_parts = [b.text for b in response.content if hasattr(b, "text")]
@@ -235,7 +260,7 @@ Path rules:
     try:
         return json.loads(full_text[full_text.index("{"):full_text.rindex("}") + 1])
     except (ValueError, json.JSONDecodeError):
-        return {"news_summary": item.get("summary", ""), "source": "", "changes": []}
+        return {"news_summary": item.get("summary", ""), "source": "", "changes": [], "resolved_catalysts": []}
 
 
 # ─── Apply changes ────────────────────────────────────────────
@@ -266,6 +291,45 @@ def apply_changes(config, changes):
             applied.append({**change, "old_actual": old_actual})
         except (KeyError, TypeError, IndexError, ValueError) as e:
             print(f"  ⚠ Could not apply change at {path}: {e}")
+    return updated, applied
+
+
+def apply_catalyst_resolutions(config, resolutions, news_summary, source, timestamp):
+    """Flip `resolved: {...}` on catalyst entries matched by index.
+
+    Returns (updated_config, applied_list). Silently skips out-of-range
+    indices or catalysts that are already resolved.
+    """
+    if not resolutions:
+        return config, []
+    updated = json.loads(json.dumps(config))
+    cats = updated.get("catalysts", [])
+    applied = []
+    for r in resolutions:
+        if not isinstance(r, dict):
+            continue
+        idx = r.get("index")
+        if not isinstance(idx, int) or idx < 0 or idx >= len(cats):
+            print(f"  ⚠ Invalid catalyst index {idx} — skipped")
+            continue
+        cat = cats[idx]
+        if cat.get("resolved"):
+            print(f"  · Catalyst #{idx} already resolved — skipped")
+            continue
+        outcome = r.get("outcome", "mixed")
+        if outcome not in ("success", "fail", "mixed"):
+            outcome = "mixed"
+        current_price = updated.get("company", {}).get("currentPrice")
+        cat["resolved"] = {
+            "outcome": outcome,
+            "resolvedDate": timestamp[:10],
+            "resolvedAt": timestamp,
+            "notes": r.get("notes", news_summary),
+            "sourceUrl": source,
+            "priceBefore": current_price,
+        }
+        applied.append({"index": idx, "title": cat.get("title", ""), "outcome": outcome})
+        print(f"  \u2713 Resolved catalyst #{idx}: {cat.get('title', '')} → {outcome}")
     return updated, applied
 
 
@@ -626,6 +690,21 @@ def main():
                 print(f"  \u2713 Applied {len(applied)} changes:")
                 for c in applied:
                     print(f"    {c['path']}: {c.get('old_actual','?')} \u2192 {c['new_value']}")
+
+        # Catalyst resolution — independent of assumption changes
+        resolutions = [r for r in result.get("resolved_catalysts", []) if isinstance(r, dict)]
+        if resolutions:
+            news_summary = result.get("news_summary", item.get("summary", ""))
+            source = result.get("source", item.get("source", ""))
+            current_cfg = configs[ticker]  # may have been updated above
+            resolved_cfg, resolved_applied = apply_catalyst_resolutions(
+                current_cfg, resolutions, news_summary, source, timestamp
+            )
+            if resolved_applied:
+                cfg_path = CONFIGS_DIR / f"{ticker}.json"
+                cfg_path.write_text(json.dumps(resolved_cfg, indent=2))
+                configs[ticker] = resolved_cfg
+                any_changes = True
 
     print(f"\n{'─' * 40}")
     if summaries:

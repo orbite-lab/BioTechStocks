@@ -1558,5 +1558,157 @@
       "_rationale": "VRDN-008 healthy volunteer data expected H2 2026"
     },
     "source": "https://investors.viridiantherapeutics.com/news/news-details/2026/Viridian-Therapeutics-Prepares-for-Transformational-2026/default.aspx"
+  },
+  {
+    "timestamp": "2026-04-14T14:40:04Z",
+    "ticker": "KYMR",
+    "news": "FDA granted Fast Track designation to KT-621 for moderate to severe eosinophilic asthma, adding to existing AD Fast Track designation.",
+    "source": "https://www.globenewswire.com/news-release/2026/04/13/3272365/0/en/Kymera-Therapeutics-Announces-U-S-FDA-Fast-Track-Designation-for-KT-621-a-First-in-Class-Oral-STAT6-Degrader-for-the-Treatment-of-Moderate-to-Severe-Asthma.html",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.kt621.stat6.pos",
+        "old_value": 55,
+        "new_value": 60,
+        "reason": "Fast Track designation for asthma validates FDA's view of KT-621's potential across Type 2 inflammation, reducing regulatory risk",
+        "old_actual": 55
+      },
+      {
+        "path": "scenarios.base.assumptions.kt621.stat6.apr",
+        "old_value": 60,
+        "new_value": 65,
+        "reason": "Fast Track designation typically accelerates review timeline and provides more regulatory guidance, improving approval probability",
+        "old_actual": 60
+      },
+      {
+        "path": "scenarios.bull.assumptions.kt621.stat6.pos",
+        "old_value": 70,
+        "new_value": 75,
+        "reason": "Dual Fast Track designations (AD + asthma) strengthen conviction in regulatory pathway for broad Type 2 inflammation franchise",
+        "old_actual": 70
+      },
+      {
+        "path": "scenarios.bear.assumptions.kt621.stat6.pos",
+        "old_value": 35,
+        "new_value": 40,
+        "reason": "Even in bear case, Fast Track designation reduces regulatory execution risk for asthma indication",
+        "old_actual": 35
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-14T14:40:04Z",
+    "ticker": "RVMD",
+    "news": "Revolution Medicines announces $1 billion financing ($750M equity + $250M convertibles) following positive Phase 3 RASolute 302 data showing daraxonrasib nearly doubled overall survival in metastatic pancreatic cancer.",
+    "source": "https://www.manilatimes.net/2026/04/14/tmt-newswire/globenewswire/revolution-medicines-inc-announces-proposed-offerings-of-common-stock-and-convertible-senior-notes/2319387",
+    "changes": [
+      {
+        "path": "company.cash",
+        "old_value": 2200,
+        "new_value": 3200,
+        "reason": "$1B financing adds to existing $2.2B cash position",
+        "old_actual": 2200
+      },
+      {
+        "path": "scenarios.base.val.dil",
+        "old_value": 0,
+        "new_value": 15,
+        "reason": "$750M equity offering at current price creates ~15% dilution",
+        "old_actual": 0
+      },
+      {
+        "path": "scenarios.bear.val.dil",
+        "old_value": 5,
+        "new_value": 20,
+        "reason": "Equity dilution compounds existing bear case concerns",
+        "old_actual": 0
+      },
+      {
+        "path": "scenarios.bull.val.dil",
+        "old_value": 0,
+        "new_value": 15,
+        "reason": "Even in bull case, equity dilution impacts per-share value",
+        "old_actual": 0
+      },
+      {
+        "path": "scenarios.psychedelic_bull.val.dil",
+        "old_value": 0,
+        "new_value": 15,
+        "reason": "Equity dilution affects all scenarios with share issuance",
+        "old_actual": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-14T14:40:04Z",
+    "ticker": "CRSP",
+    "news": "CRISPR Therapeutics gained 7% in a day and 12.5% over the month with strong Casgevy launch momentum showing over $100M in sales and six upcoming data readouts planned.",
+    "source": "https://simplywall.st/stocks/us/pharmaceuticals-biotech/nasdaq-crsp/crispr-therapeutics/news/assessing-crispr-therapeutics-crsp-valuation-after-recent-sh-4",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.casgevy.scd_tdt.pen",
+        "old_value": 0.8,
+        "new_value": 0.85,
+        "reason": "Strong Casgevy sales momentum above $100M confirms improved market penetration trajectory",
+        "old_actual": 0.8
+      },
+      {
+        "path": "scenarios.bull.assumptions.casgevy.scd_tdt.pen",
+        "old_value": 1.0,
+        "new_value": 1.05,
+        "reason": "Outperforming commercial launch validates higher penetration potential in bull case",
+        "old_actual": 1.0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-14T14:40:04Z",
+    "ticker": "6990",
+    "news": "Kelun-Biotech reported Phase II data on sac-TMT as maintenance treatment in BRCA wild-type, second-line platinum-sensitive recurrent ovarian cancer at the 2026 Society of Gynecologic Oncology Annual Meeting.",
+    "source": "https://www.prnewswire.com/apac/news-releases/kelun-biotech-announces-results-from-the-skb264-ii-06mk-2870-002-study-of-sacituzumab-tirumotecan-sac-tmt-in-gynecologic-oncology-presented-at-2026-sgo-302740295.html",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.commercial.trop2.pen",
+        "old_value": 1.0,
+        "new_value": 1.1,
+        "reason": "New ovarian cancer data expands sac-TMT addressable market beyond currently approved indications",
+        "old_actual": 1.0
+      },
+      {
+        "path": "scenarios.bull.assumptions.commercial.trop2.pen",
+        "old_value": 1.0,
+        "new_value": 1.1,
+        "reason": "Strong ovarian cancer data supports expanded label potential for sac-TMT globally",
+        "old_actual": 1.0
+      },
+      {
+        "path": "scenarios.psychedelic_bull.assumptions.commercial.trop2.pen",
+        "old_value": 1.0,
+        "new_value": 1.1,
+        "reason": "Ovarian cancer maintenance setting represents significant additional market opportunity for TROP2 ADC",
+        "old_actual": 1.0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-14T14:40:04Z",
+    "ticker": "TVTX",
+    "news": "FILSPARI received full FDA approval for FSGS on April 14, 2026, making it the first FDA-approved medicine for this condition and expanding beyond IgA nephropathy into a second rare kidney disease.",
+    "source": "https://www.investing.com/news/company-news/travere-therapeutics-stock-hits-52week-high-at-422-usd-93CH-4613043",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.filspari_fsgs.fsgs.pos",
+        "old_value": 100,
+        "new_value": 100,
+        "reason": "FDA approval already achieved - probability of success remains at 100%",
+        "old_actual": 100
+      },
+      {
+        "path": "scenarios.base.assumptions.filspari_fsgs.fsgs.apr",
+        "old_value": 100,
+        "new_value": 100,
+        "reason": "Full FDA approval confirmed - approval probability remains at 100%",
+        "old_actual": 100
+      }
+    ]
   }
 ]

@@ -15,7 +15,7 @@
   "assets": [
     {
       "id": "commercial",
-      "name": "Imcivree (setmelanotide) \u2014 BBS + POMC/LEPR",
+      "name": "Imcivree (setmelanotide) — BBS + POMC/LEPR",
       "stage": "Commercial ($195M 2025, +50% YoY)",
       "designations": [],
       "indications": [
@@ -35,7 +35,7 @@
     },
     {
       "id": "acq_ho",
-      "name": "Setmelanotide \u2014 acquired hypothalamic obesity",
+      "name": "Setmelanotide — acquired hypothalamic obesity",
       "stage": "sNDA (PDUFA Mar 20, 2026)",
       "designations": [
         "Priority Review"
@@ -48,7 +48,56 @@
             "tamB": 2.0,
             "penPct": 15,
             "peakYear": 2032,
-            "notes": "TRANSCEND Phase 3: -18.8% placebo-adjusted BMI reduction (p<0.0001). sNDA PDUFA Mar 20, 2026. ~12K US patients with HO from brain tumors/surgery. PDUFA JUST PASSED \u2014 check result. $500M-1B peak potential."
+            "notes": "TRANSCEND Phase 3: -18.8% placebo-adjusted BMI reduction (p<0.0001). sNDA PDUFA Mar 20, 2026. ~12K US patients with HO from brain tumors/surgery. PDUFA JUST PASSED — check result. $500M-1B peak potential.",
+            "regions": {
+              "us": {
+                "patientsK": 7.5,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 8.8,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 8.8,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.obesity.mc4r",
           "rare": true
@@ -58,7 +107,7 @@
     },
     {
       "id": "emanate",
-      "name": "Setmelanotide \u2014 EMANATE (rare MC4R diseases)",
+      "name": "Setmelanotide — EMANATE (rare MC4R diseases)",
       "stage": "Phase 3 (topline Mar 2026)",
       "designations": [],
       "indications": [
@@ -69,7 +118,56 @@
             "tamB": 1.0,
             "penPct": 20,
             "peakYear": 2031,
-            "notes": "EMANATE Phase 3 topline expected Mar 2026. 4 genetically defined MC4R pathway diseases. Label expansion for Imcivree franchise."
+            "notes": "EMANATE Phase 3 topline expected Mar 2026. 4 genetically defined MC4R pathway diseases. Label expansion for Imcivree franchise.",
+            "regions": {
+              "us": {
+                "patientsK": 3.8,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 4.4,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 4.4,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.obesity.mc4r",
           "rare": true
@@ -79,7 +177,7 @@
     },
     {
       "id": "bivam",
-      "name": "Bivamelagon \u2014 oral MC4R agonist",
+      "name": "Bivamelagon — oral MC4R agonist",
       "stage": "Phase 2 OLE positive, Phase 3 planned YE 2026",
       "designations": [],
       "indications": [
@@ -90,7 +188,56 @@
             "tamB": 3.0,
             "penPct": 8,
             "peakYear": 2034,
-            "notes": "Oral MC4R agonist. Phase 2 OLE: persistent BMI reductions at 6 and 9 months. End-of-Phase 2 meeting with FDA positive. Phase 3 initiation planned by YE 2026. Oral = major convenience advantage over injectable setmelanotide."
+            "notes": "Oral MC4R agonist. Phase 2 OLE: persistent BMI reductions at 6 and 9 months. End-of-Phase 2 meeting with FDA positive. Phase 3 initiation planned by YE 2026. Oral = major convenience advantage over injectable setmelanotide.",
+            "regions": {
+              "us": {
+                "patientsK": 11.3,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 13.2,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 13.2,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.obesity.mc4r",
           "rare": true
@@ -100,7 +247,7 @@
     },
     {
       "id": "pws",
-      "name": "Setmelanotide + RM-718 \u2014 Prader-Willi syndrome",
+      "name": "Setmelanotide + RM-718 — Prader-Willi syndrome",
       "stage": "Phase 2 exploratory + Phase 1/2",
       "designations": [],
       "indications": [
@@ -111,7 +258,56 @@
             "tamB": 2.0,
             "penPct": 10,
             "peakYear": 2034,
-            "notes": "PWS: ~20K patients in US/EU. Setmelanotide Phase 2 preliminary: BMI + hyperphagia reductions at 3-6 months. RM-718 Part C enrollment completing Q1 2026. Massive unmet need \u2014 no approved PWS therapy."
+            "notes": "PWS: ~20K patients in US/EU. Setmelanotide Phase 2 preliminary: BMI + hyperphagia reductions at 3-6 months. RM-718 Part C enrollment completing Q1 2026. Massive unmet need — no approved PWS therapy.",
+            "regions": {
+              "us": {
+                "patientsK": 7.5,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 8.8,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 8.8,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.obesity.mc4r",
           "rare": true
@@ -235,9 +431,9 @@
       "wt": 50,
       "narrative": "HO approved + franchise $500M+ + bivamelagon Phase 3 initiates + PWS advancing",
       "events": [
-        "V Setmelanotide HO approved \u2014 launch with existing infrastructure",
-        "V EMANATE positive \u2014 4 more rare diseases added to label",
-        "V Bivamelagon Phase 3 initiated YE 2026 \u2014 oral MC4R pipeline",
+        "V Setmelanotide HO approved — launch with existing infrastructure",
+        "V EMANATE positive — 4 more rare diseases added to label",
+        "V Bivamelagon Phase 3 initiated YE 2026 — oral MC4R pipeline",
         "V Revenue trajectory: $300M 2026 -> $600M+ by 2029"
       ],
       "assumptions": {
@@ -288,11 +484,11 @@
     },
     "bull": {
       "wt": 25,
-      "narrative": "MC4R franchise $1B+ \u2014 HO + rare + PWS + oral bivamelagon",
+      "narrative": "MC4R franchise $1B+ — HO + rare + PWS + oral bivamelagon",
       "events": [
         "V Imcivree $800M+ across all approved indications",
-        "V Bivamelagon oral validated \u2014 $1B+ peak for oral MC4R",
-        "V PWS breakthrough \u2014 largest rare obesity population",
+        "V Bivamelagon oral validated — $1B+ peak for oral MC4R",
+        "V PWS breakthrough — largest rare obesity population",
         "V Total franchise $1.5-2B peak"
       ],
       "assumptions": {
@@ -343,7 +539,7 @@
     },
     "psychedelic_bull": {
       "wt": 5,
-      "narrative": "MC4R pathway platform dominates rare + common obesity \u2014 Novo/Lilly acquires at $200+",
+      "narrative": "MC4R pathway platform dominates rare + common obesity — Novo/Lilly acquires at $200+",
       "events": [
         "V MC4R franchise $2B+ across all indications",
         "V Oral bivamelagon extends into broader obesity",
@@ -415,23 +611,23 @@
     },
     "nextCatalyst": {
       "date": "Mar 20, 2026",
-      "title": "Acquired HO PDUFA + EMANATE topline \u2014 both March 2026",
+      "title": "Acquired HO PDUFA + EMANATE topline — both March 2026",
       "thresholds": [
-        "HO PDUFA Mar 20 \u2014 approval/CRL",
-        "EMANATE topline Mar 2026 \u2014 4 rare MC4R diseases",
+        "HO PDUFA Mar 20 — approval/CRL",
+        "EMANATE topline Mar 2026 — 4 rare MC4R diseases",
         "Japanese cohort 12-patient topline Mar 2026",
         "Bivamelagon Phase 3 initiation by YE 2026"
       ]
     },
     "risks": [
-      "$5.7B market cap at 29x 2025 revenue \u2014 expensive for rare disease",
-      "Acquired HO market size uncertain \u2014 12K patients but adoption unknown",
-      "MC4R agonist class has niche TAM \u2014 will it ever be blockbuster?",
-      "Bivamelagon oral still Phase 2 \u2014 years from revenue",
-      "PWS is scientifically hard \u2014 many prior failures",
+      "$5.7B market cap at 29x 2025 revenue — expensive for rare disease",
+      "Acquired HO market size uncertain — 12K patients but adoption unknown",
+      "MC4R agonist class has niche TAM — will it ever be blockbuster?",
+      "Bivamelagon oral still Phase 2 — years from revenue",
+      "PWS is scientifically hard — many prior failures",
       "Injectable setmelanotide has compliance limitations",
       "Competition from GLP-1s in broader obesity space",
-      "Cash $389M \u2014 may need financing before profitability"
+      "Cash $389M — may need financing before profitability"
     ]
   },
   "catalysts": [

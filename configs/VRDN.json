@@ -2,7 +2,7 @@
   "company": {
     "ticker": "VRDN",
     "name": "Viridian Therapeutics",
-    "subtitle": "Post-REVEAL-1 \u00b7 Batoclimab TED failure (Apr 2 2026) clears competitive path",
+    "subtitle": "Post-REVEAL-1 · Batoclimab TED failure (Apr 2 2026) clears competitive path",
     "sharesOut": 88,
     "cash": 875,
     "currentPrice": 18.5,
@@ -27,7 +27,56 @@
             "tamB": 2.0,
             "cagrPct": 12,
             "penPct": 28,
-            "peakYear": 2031
+            "peakYear": 2031,
+            "regions": {
+              "us": {
+                "patientsK": 7.5,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 8.8,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 8.8,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "ophthalmology.anterior_neuro.ted",
           "rare": true
@@ -49,7 +98,56 @@
             "cagrPct": 12,
             "penPct": 14,
             "peakYear": 2032,
-            "expansionPct": 20
+            "expansionPct": 20,
+            "regions": {
+              "us": {
+                "patientsK": 9.1,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 10.6,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 10.6,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "ophthalmology.anterior_neuro.ted",
           "rare": true
@@ -61,12 +159,12 @@
   "scenarios": {
     "mega_bear": {
       "wt": 5,
-      "narrative": "Veli CRL + ele fails \u2014 argenx takes TED",
+      "narrative": "Veli CRL + ele fails — argenx takes TED",
       "events": [
-        "\u2717 FDA issues CRL for veligrotug \u2014 manufacturing or safety concern",
-        "\u2717 argenx efgartigimod Phase 3 in TED succeeds \u2014 FcRn not dead after all",
-        "\u2717 Elegrobart REVEAL-2 fails to replicate",
-        "\u2192 No approved product, franchise collapses to cash floor"
+        "✗ FDA issues CRL for veligrotug — manufacturing or safety concern",
+        "✗ argenx efgartigimod Phase 3 in TED succeeds — FcRn not dead after all",
+        "✗ Elegrobart REVEAL-2 fails to replicate",
+        "→ No approved product, franchise collapses to cash floor"
       ],
       "assumptions": {
         "veli": {
@@ -97,10 +195,10 @@
       "wt": 15,
       "narrative": "Veli approved but Tepezza dominates + ele SC underwhelms",
       "events": [
-        "\u2713 Veli approved but slow uptake",
-        "\u2717 Tepezza entrenched, price war",
-        "\u2717 Ele SC niche too small",
-        "\u2192 Single-product, limited share gain"
+        "✓ Veli approved but slow uptake",
+        "✗ Tepezza entrenched, price war",
+        "✗ Ele SC niche too small",
+        "→ Single-product, limited share gain"
       ],
       "assumptions": {
         "veli": {
@@ -129,12 +227,12 @@
     },
     "base": {
       "wt": 45,
-      "narrative": "Veli best-in-class IV + ele SC expands access \u2014 FcRn TED path dead",
+      "narrative": "Veli best-in-class IV + ele SC expands access — FcRn TED path dead",
       "events": [
-        "\u2713 Veli approved, takes share from Tepezza",
-        "\u2713 Batoclimab failure removes key FcRn competitor",
-        "\u2713 Ele SC Phase 3 positive \u2014 convenience advantage",
-        "\u2192 Only IGF-1R franchise challenging Tepezza"
+        "✓ Veli approved, takes share from Tepezza",
+        "✓ Batoclimab failure removes key FcRn competitor",
+        "✓ Ele SC Phase 3 positive — convenience advantage",
+        "→ Only IGF-1R franchise challenging Tepezza"
       ],
       "assumptions": {
         "veli": {
@@ -163,12 +261,12 @@
     },
     "bull": {
       "wt": 30,
-      "narrative": "TED franchise dominance \u2014 only real alternative to Tepezza, M&A target",
+      "narrative": "TED franchise dominance — only real alternative to Tepezza, M&A target",
       "events": [
-        "\u2713 Veli takes majority IV share from Tepezza",
-        "\u2713 Ele SC expands total TED market (chronic + convenience)",
-        "\u2713 FcRn path dead in TED \u2014 IGF-1R validated as best approach",
-        "\u2713 M&A target (only pure-play TED franchise)"
+        "✓ Veli takes majority IV share from Tepezza",
+        "✓ Ele SC expands total TED market (chronic + convenience)",
+        "✓ FcRn path dead in TED — IGF-1R validated as best approach",
+        "✓ M&A target (only pure-play TED franchise)"
       ],
       "assumptions": {
         "veli": {
@@ -197,12 +295,12 @@
     },
     "psychedelic_bull": {
       "wt": 5,
-      "narrative": "IGF-1R franchise monopoly in TED + Graves' expansion \u2014 Amgen acquires",
+      "narrative": "IGF-1R franchise monopoly in TED + Graves' expansion — Amgen acquires",
       "events": [
-        "\u2713 Veli approved Jun 2026 \u2014 rapid Tepezza share capture",
-        "\u2713 Ele SC approved \u2014 only SC option for TED, expands chronic market",
-        "\u2713 Viridian expands IGF-1R into Graves' disease (massive TAM)",
-        "\u2713 Amgen/Horizon acquires Viridian to own entire TED franchise"
+        "✓ Veli approved Jun 2026 — rapid Tepezza share capture",
+        "✓ Ele SC approved — only SC option for TED, expands chronic market",
+        "✓ Viridian expands IGF-1R into Graves' disease (massive TAM)",
+        "✓ Amgen/Horizon acquires Viridian to own entire TED franchise"
       ],
       "assumptions": {
         "veli": {
@@ -239,7 +337,7 @@
         "Q8W: 63% vs 18%",
         "Delta 36%/45% below veli 65%",
         "Diplopia 51% vs 16%",
-        "Apr 2: Immunovant batoclimab FAILED both Ph3 TED trials \u2014 FcRn approach dead in TED"
+        "Apr 2: Immunovant batoclimab FAILED both Ph3 TED trials — FcRn approach dead in TED"
       ]
     },
     "nextCatalyst": {
@@ -255,7 +353,7 @@
       "argenx efgartigimod Phase 3 in TED still ongoing (FcRn not fully dead)",
       "Q4W/Q8W dosing inversion in REVEAL-1",
       "REVEAL-2 must confirm elegrobart",
-      "First commercial launch \u2014 execution risk",
+      "First commercial launch — execution risk",
       "Cannibalization between veli IV and ele SC"
     ]
   },

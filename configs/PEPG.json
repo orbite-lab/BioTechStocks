@@ -27,7 +27,56 @@
             "patientsK": 25,
             "pricingK": 275,
             "penPct": 14,
-            "peakYear": 2033
+            "peakYear": 2033,
+            "regions": {
+              "us": {
+                "patientsK": 7.5,
+                "wtpPct": 75,
+                "priceK": 344
+              },
+              "eu": {
+                "patientsK": 8.8,
+                "wtpPct": 55,
+                "priceK": 151
+              },
+              "row": {
+                "patientsK": 8.8,
+                "wtpPct": 15,
+                "priceK": 55
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "musculoskeletal.neuromuscular.dm1",
           "rare": true
@@ -48,7 +97,56 @@
             "patientsK": 12,
             "pricingK": 400,
             "penPct": 8,
-            "peakYear": 2035
+            "peakYear": 2035,
+            "regions": {
+              "us": {
+                "patientsK": 3.6,
+                "wtpPct": 75,
+                "priceK": 500
+              },
+              "eu": {
+                "patientsK": 4.2,
+                "wtpPct": 55,
+                "priceK": 220
+              },
+              "row": {
+                "patientsK": 4.2,
+                "wtpPct": 15,
+                "priceK": 80
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "musculoskeletal.neuromuscular.dmd",
           "rare": true
@@ -60,12 +158,12 @@
   "scenarios": {
     "mega_bear": {
       "wt": 5,
-      "narrative": "FDA hold permanent \u2014 EDO platform dead",
+      "narrative": "FDA hold permanent — EDO platform dead",
       "events": [
-        "\u2717 FDA clinical hold never lifts \u2014 hepatotoxicity signal confirmed",
-        "\u2717 EDO platform deemed unsafe across all indications",
-        "\u2717 Cash burns through 2027, no partner willing to license",
-        "\u2192 Reverse merger or liquidation at cash value (~$2/share)"
+        "✗ FDA clinical hold never lifts — hepatotoxicity signal confirmed",
+        "✗ EDO platform deemed unsafe across all indications",
+        "✗ Cash burns through 2027, no partner willing to license",
+        "→ Reverse merger or liquidation at cash value (~$2/share)"
       ],
       "assumptions": {
         "edodm1": {
@@ -95,10 +193,10 @@
       "wt": 15,
       "narrative": "Program fails",
       "events": [
-        "\u2717 FDA hold persists",
-        "\u2717 10mg/kg disappoints",
-        "\u2717 Platform worthless",
-        "\u2192 Cash floor"
+        "✗ FDA hold persists",
+        "✗ 10mg/kg disappoints",
+        "✗ Platform worthless",
+        "→ Cash floor"
       ],
       "assumptions": {
         "edodm1": {
@@ -128,10 +226,10 @@
       "wt": 50,
       "narrative": "Hold lifted + mixed 10mg",
       "events": [
-        "\u2713 FDA hold resolved",
+        "✓ FDA hold resolved",
         "~ 10mg modest splicing",
         "~ 12.5mg helps",
-        "\u2192 Partnership talks"
+        "→ Partnership talks"
       ],
       "assumptions": {
         "edodm1": {
@@ -161,10 +259,10 @@
       "wt": 25,
       "narrative": "Everything works",
       "events": [
-        "\u2713 Hold lifted fast",
-        "\u2713 10mg >40% splicing",
-        "\u2713 Fast Ph3 + partnership",
-        "\u2192 First-in-class DM1"
+        "✓ Hold lifted fast",
+        "✓ 10mg >40% splicing",
+        "✓ Fast Ph3 + partnership",
+        "→ First-in-class DM1"
       ],
       "assumptions": {
         "edodm1": {
@@ -192,12 +290,12 @@
     },
     "psychedelic_bull": {
       "wt": 5,
-      "narrative": "EDO platform validated across NMDs \u2014 Sarepta/Roche acquires",
+      "narrative": "EDO platform validated across NMDs — Sarepta/Roche acquires",
       "events": [
-        "\u2713 Hold lifted \u2192 10mg/kg shows >50% splicing correction",
-        "\u2713 FDA grants Accelerated Approval pathway for DM1",
-        "\u2713 EDO51 DMD enters Phase 1 \u2014 platform validated for exon skipping",
-        "\u2713 Sarepta or Roche acquires PepGen for $3-5B (EDO platform value)"
+        "✓ Hold lifted → 10mg/kg shows >50% splicing correction",
+        "✓ FDA grants Accelerated Approval pathway for DM1",
+        "✓ EDO51 DMD enters Phase 1 — platform validated for exon skipping",
+        "✓ Sarepta or Roche acquires PepGen for $3-5B (EDO platform value)"
       ],
       "assumptions": {
         "edodm1": {
@@ -247,7 +345,7 @@
     "risks": [
       "FDA partial hold",
       "Single-asset",
-      "$148M \u2192 2H27",
+      "$148M → 2H27",
       "n=8 at 10mg/kg"
     ]
   },

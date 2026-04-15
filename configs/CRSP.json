@@ -25,7 +25,56 @@
             "tamB": 5.0,
             "penPct": 8,
             "peakYear": 2032,
-            "notes": "First CRISPR therapy approved. 2025: $116M, 64 infusions. Priced ~$2.2M. Pediatric 5-11 submissions H1 2026. Vertex partnership. Complex manufacturing limits ramp."
+            "notes": "First CRISPR therapy approved. 2025: $116M, 64 infusions. Priced ~$2.2M. Pediatric 5-11 submissions H1 2026. Vertex partnership. Complex manufacturing limits ramp.",
+            "regions": {
+              "us": {
+                "patientsK": 18.9,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 22.0,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 22.0,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "hematology.rare_blood.hemoglobinopathy",
           "rare": true
@@ -46,7 +95,56 @@
             "tamB": 8,
             "penPct": 2,
             "peakYear": 2035,
-            "notes": "In vivo CRISPR ANGPTL3 editing. Phase 1 proof-of-concept in NEJM. One-shot cure for hyperlipidemia potential."
+            "notes": "In vivo CRISPR ANGPTL3 editing. Phase 1 proof-of-concept in NEJM. One-shot cure for hyperlipidemia potential.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.lipids.lpa"
         }
@@ -66,7 +164,56 @@
             "tamB": 2.0,
             "penPct": 10,
             "peakYear": 2034,
-            "notes": "SyNTase platform: >90% mRNA correction. Near-saturating hepatocyte editing at 0.5 mg/kg. Clinic mid-2026."
+            "notes": "SyNTase platform: >90% mRNA correction. Near-saturating hepatocyte editing at 0.5 mg/kg. Clinic mid-2026.",
+            "regions": {
+              "us": {
+                "patientsK": 7.5,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 8.8,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 8.8,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.liver.a1at",
           "rare": true
@@ -87,7 +234,56 @@
             "tamB": 8,
             "penPct": 1,
             "peakYear": 2035,
-            "notes": "Anti-CD19 allogeneic CAR-T. SLE patient drug-free DORIS remission at 9 months. Phase 2 topline H2 2026. Off-the-shelf advantage."
+            "notes": "Anti-CD19 allogeneic CAR-T. SLE patient drug-free DORIS remission at 9 months. Phase 2 topline H2 2026. Off-the-shelf advantage.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "immunology.autoimmune.sle"
         }
@@ -107,7 +303,56 @@
             "tamB": 5,
             "penPct": 1,
             "peakYear": 2036,
-            "notes": "CTX340 clinic H1 2026. Diabetes: CRISPR-edited islet cells for T1D. Platform across rare + common diseases."
+            "notes": "CTX340 clinic H1 2026. Diabetes: CRISPR-edited islet cells for T1D. Platform across rare + common diseases.",
+            "regions": {
+              "us": {
+                "patientsK": 554.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 594.4,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 832.1,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.diabetes.t1d"
         }

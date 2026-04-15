@@ -2,7 +2,7 @@
   "company": {
     "ticker": "RVMD",
     "name": "Revolution Medicines",
-    "subtitle": "RAS(ON) platform \u00b7 RASolute 302 PDAC readout H1 2026 \u00b7 5 Phase 3 trials \u00b7 3 BTDs",
+    "subtitle": "RAS(ON) platform · RASolute 302 PDAC readout H1 2026 · 5 Phase 3 trials · 3 BTDs",
     "sharesOut": 198,
     "cash": 3200,
     "currentPrice": 95.0,
@@ -14,7 +14,7 @@
   "assets": [
     {
       "id": "darax_pdac",
-      "name": "Daraxonrasib \u2014 RAS(ON) multi-selective (PDAC)",
+      "name": "Daraxonrasib — RAS(ON) multi-selective (PDAC)",
       "stage": "Phase 3 (RASolute 302 2L readout H1 2026, 303 1L dosing, 304 adjuvant)",
       "designations": [
         "Breakthrough (2L PDAC)"
@@ -27,7 +27,56 @@
             "tamB": 12.0,
             "penPct": 20,
             "peakYear": 2032,
-            "notes": "PDAC ~$5-8B market, ~90% KRAS-driven. RASolute 302 (2L) readout H1 2026. RASolute 303 (1L) first patient dosed Apr 2026. RASolute 304 (adjuvant). BTD for 2L PDAC. Daraxonrasib is oral multi-selective RAS(ON) targeting G12X/G13X/Q61X."
+            "notes": "PDAC ~$5-8B market, ~90% KRAS-driven. RASolute 302 (2L) readout H1 2026. RASolute 303 (1L) first patient dosed Apr 2026. RASolute 304 (adjuvant). BTD for 2L PDAC. Daraxonrasib is oral multi-selective RAS(ON) targeting G12X/G13X/Q61X.",
+            "regions": {
+              "us": {
+                "patientsK": 1331.4,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1426.5,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1997.1,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.gi.pancreatic"
         }
@@ -47,7 +96,56 @@
             "tamB": 18.0,
             "penPct": 12,
             "peakYear": 2033,
-            "notes": "NSCLC largest lung cancer subtype. ~25% KRAS-mutant. Daraxonrasib Phase 3 vs docetaxel in 2L+. Competitors: sotorasib (G12C only), adagrasib (G12C only) \u2014 daraxonrasib covers ALL RAS mutations."
+            "notes": "NSCLC largest lung cancer subtype. ~25% KRAS-mutant. Daraxonrasib Phase 3 vs docetaxel in 2L+. Competitors: sotorasib (G12C only), adagrasib (G12C only) — daraxonrasib covers ALL RAS mutations.",
+            "regions": {
+              "us": {
+                "patientsK": 1997.1,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 2139.8,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 2995.7,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.lung.nsclc_driver"
         }
@@ -56,7 +154,7 @@
     },
     {
       "id": "zoldon",
-      "name": "Zoldonrasib \u2014 G12D-selective (PDAC+NSCLC)",
+      "name": "Zoldonrasib — G12D-selective (PDAC+NSCLC)",
       "stage": "Phase 3 (RASolute 305 1L PDAC) + Phase 1 NSCLC",
       "designations": [
         "Breakthrough (G12D NSCLC)"
@@ -69,7 +167,56 @@
             "tamB": 8.0,
             "penPct": 12,
             "peakYear": 2033,
-            "notes": "G12D is the most common KRAS mutation in PDAC (~40%). Zoldonrasib BTD in NSCLC. Phase 1 plenary at AACR 2026. RASolute 305: zoldon + chemo vs chemo in 1L PDAC. First G12D-specific therapy."
+            "notes": "G12D is the most common KRAS mutation in PDAC (~40%). Zoldonrasib BTD in NSCLC. Phase 1 plenary at AACR 2026. RASolute 305: zoldon + chemo vs chemo in 1L PDAC. First G12D-specific therapy.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.gi.colorectal"
         }
@@ -78,7 +225,7 @@
     },
     {
       "id": "eliron",
-      "name": "Elironrasib \u2014 G12C-selective",
+      "name": "Elironrasib — G12C-selective",
       "stage": "Phase 1/2",
       "designations": [
         "Breakthrough"
@@ -91,7 +238,56 @@
             "tamB": 5.0,
             "penPct": 10,
             "peakYear": 2033,
-            "notes": "Next-gen G12C inhibitor (RAS(ON) mechanism vs covalent). Differentiated from sotorasib/adagrasib. Phase 1/2 ongoing."
+            "notes": "Next-gen G12C inhibitor (RAS(ON) mechanism vs covalent). Differentiated from sotorasib/adagrasib. Phase 1/2 ongoing.",
+            "regions": {
+              "us": {
+                "patientsK": 554.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 594.4,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 832.1,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.lung.nsclc_driver"
         }
@@ -111,7 +307,56 @@
             "tamB": 8.0,
             "penPct": 5,
             "peakYear": 2035,
-            "notes": "Expanding to cover all oncogenic RAS variants. G12V (RMC-5127 in clinic), Q61H, G13C in preclinical. Goal: cover entire RAS-addicted cancer universe."
+            "notes": "Expanding to cover all oncogenic RAS variants. G12V (RMC-5127 in clinic), Q61H, G13C in preclinical. Goal: cover entire RAS-addicted cancer universe.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.gi.pancreatic"
         }
@@ -122,12 +367,12 @@
   "scenarios": {
     "mega_bear": {
       "wt": 5,
-      "narrative": "RASolute 302 fails \u2014 RAS(ON) mechanism doesn't translate to OS benefit",
+      "narrative": "RASolute 302 fails — RAS(ON) mechanism doesn't translate to OS benefit",
       "events": [
-        "\u2717 RASolute 302 misses OS primary endpoint in 2L PDAC",
-        "\u2717 RAS(ON) mechanism shows tumor response but no survival benefit",
-        "\u2717 Competitive KRAS landscape crowds out (Mirati, Amgen next-gen)",
-        "\u2192 $19B market cap collapses to cash floor (~$11/share)"
+        "✗ RASolute 302 misses OS primary endpoint in 2L PDAC",
+        "✗ RAS(ON) mechanism shows tumor response but no survival benefit",
+        "✗ Competitive KRAS landscape crowds out (Mirati, Amgen next-gen)",
+        "→ $19B market cap collapses to cash floor (~$11/share)"
       ],
       "assumptions": {
         "darax_pdac": {
@@ -176,12 +421,12 @@
     },
     "bear": {
       "wt": 15,
-      "narrative": "RASolute 302 modest \u2014 OS improvement but narrow label + slow uptake",
+      "narrative": "RASolute 302 modest — OS improvement but narrow label + slow uptake",
       "events": [
         "~ RASolute 302 shows modest OS benefit (HR 0.75-0.80)",
-        "\u2717 Narrow 2L PDAC label limits commercial potential",
+        "✗ Narrow 2L PDAC label limits commercial potential",
         "~ NSCLC and G12D programs advance but competitive pressure intense",
-        "\u2192 Platform validated but commercial execution uncertain"
+        "→ Platform validated but commercial execution uncertain"
       ],
       "assumptions": {
         "darax_pdac": {
@@ -232,9 +477,9 @@
       "wt": 50,
       "narrative": "PDAC franchise established + NSCLC expands TAM + G12D first-in-class",
       "events": [
-        "\u2713 RASolute 302 positive \u2014 first targeted therapy to show OS in PDAC",
-        "\u2713 Accelerated Approval in 2L PDAC, full approval after confirmatory",
-        "\u2713 RASolute 303 1L PDAC enrolling well \u2014 combo data encouraging",
+        "✓ RASolute 302 positive — first targeted therapy to show OS in PDAC",
+        "✓ Accelerated Approval in 2L PDAC, full approval after confirmatory",
+        "✓ RASolute 303 1L PDAC enrolling well — combo data encouraging",
         "~ G12D and NSCLC programs on track for 2027-28 readouts"
       ],
       "assumptions": {
@@ -284,12 +529,12 @@
     },
     "bull": {
       "wt": 25,
-      "narrative": "RAS franchise across PDAC + NSCLC + CRC \u2014 multi-billion blockbuster",
+      "narrative": "RAS franchise across PDAC + NSCLC + CRC — multi-billion blockbuster",
       "events": [
-        "\u2713 RASolute 302 strong OS \u2014 new standard of care in PDAC",
-        "\u2713 1L PDAC + adjuvant + NSCLC \u2014 $5B+ peak franchise",
-        "\u2713 Zoldonrasib first G12D therapy \u2014 massive unmet need",
-        "\u2713 Platform covers all major RAS mutations \u2014 competitive moat"
+        "✓ RASolute 302 strong OS — new standard of care in PDAC",
+        "✓ 1L PDAC + adjuvant + NSCLC — $5B+ peak franchise",
+        "✓ Zoldonrasib first G12D therapy — massive unmet need",
+        "✓ Platform covers all major RAS mutations — competitive moat"
       ],
       "assumptions": {
         "darax_pdac": {
@@ -338,12 +583,12 @@
     },
     "psychedelic_bull": {
       "wt": 5,
-      "narrative": "RAS(ON) = Keytruda of targeted therapy \u2014 Merck/Roche acquires at $200+",
+      "narrative": "RAS(ON) = Keytruda of targeted therapy — Merck/Roche acquires at $200+",
       "events": [
-        "\u2713 PDAC OS data transformative \u2014 paradigm shift in pancreatic cancer",
-        "\u2713 Pan-RAS franchise: PDAC + NSCLC + CRC + biliary = $10B+",
-        "\u2713 Resistance-breaking catalytic inhibitors extend durability",
-        "\u2713 Merck or Roche acquires for $40-60B to own entire RAS space"
+        "✓ PDAC OS data transformative — paradigm shift in pancreatic cancer",
+        "✓ Pan-RAS franchise: PDAC + NSCLC + CRC + biliary = $10B+",
+        "✓ Resistance-breaking catalytic inhibitors extend durability",
+        "✓ Merck or Roche acquires for $40-60B to own entire RAS space"
       ],
       "assumptions": {
         "darax_pdac": {
@@ -397,18 +642,18 @@
       "title": "RASolute 303 first patient dosed + AACR 2026 upcoming",
       "points": [
         "RASolute 303 (1L PDAC): first patient dosed Apr 2, 2026",
-        "RASolute 302 (2L PDAC): readout expected H1 2026 \u2014 THE catalyst",
+        "RASolute 302 (2L PDAC): readout expected H1 2026 — THE catalyst",
         "Zoldonrasib BTD granted for G12D NSCLC (Jan 2026)",
-        "9 presentations at AACR 2026 (Apr 17-22) \u2014 plenary for zoldon NSCLC",
+        "9 presentations at AACR 2026 (Apr 17-22) — plenary for zoldon NSCLC",
         "5 ongoing Phase 3 trials (302, 303, 304, 305, 301)",
         "RASolute 309 (darax+zoldon combo 1L PDAC) planned H2 2026",
-        "$2.2B cash \u2014 well-funded through multiple readouts",
-        "Stock at $95 vs peak $124 \u2014 market awaiting 302 data"
+        "$2.2B cash — well-funded through multiple readouts",
+        "Stock at $95 vs peak $124 — market awaiting 302 data"
       ]
     },
     "nextCatalyst": {
       "date": "H1 2026",
-      "title": "RASolute 302 \u2014 daraxonrasib Phase 3 in 2L PDAC",
+      "title": "RASolute 302 — daraxonrasib Phase 3 in 2L PDAC",
       "thresholds": [
         "Primary: overall survival vs chemotherapy",
         "This is THE most anticipated oncology readout of 2026",
@@ -417,14 +662,14 @@
       ]
     },
     "risks": [
-      "RASolute 302 is the binary event \u2014 failure destroys the thesis",
-      "$19B market cap with zero revenue \u2014 entirely priced on Phase 3 hope",
-      "PDAC is notoriously hard \u2014 many targeted therapies have failed here",
+      "RASolute 302 is the binary event — failure destroys the thesis",
+      "$19B market cap with zero revenue — entirely priced on Phase 3 hope",
+      "PDAC is notoriously hard — many targeted therapies have failed here",
       "Competitive RAS landscape heating up (Mirati, BridgeBio, others)",
       "5 concurrent Phase 3 trials = enormous cash burn",
-      "OS endpoint in PDAC is challenging \u2014 short baseline survival",
+      "OS endpoint in PDAC is challenging — short baseline survival",
       "Resistance mechanisms may limit durability of RAS(ON) inhibitors",
-      "Stock already 3x'd in 12 months \u2014 significant priced in"
+      "Stock already 3x'd in 12 months — significant priced in"
     ]
   },
   "catalysts": [
@@ -444,7 +689,7 @@
         "outcome": "success",
         "resolvedDate": "2026-04-13",
         "resolvedAt": "2026-04-13T14:12:50Z",
-        "notes": "Phase 3 RASolute 302 positive: median OS 13.2 vs 6.7 mo, HR 0.40 \u2014 unprecedented OS benefit in 2L PDAC",
+        "notes": "Phase 3 RASolute 302 positive: median OS 13.2 vs 6.7 mo, HR 0.40 — unprecedented OS benefit in 2L PDAC",
         "sourceUrl": "https://www.stocktitan.net/news/RVMD/daraxonrasib-demonstrates-unprecedented-overall-survival-benefit-in-0gvppuunntx4.html",
         "priceBefore": 95.0
       }

@@ -2,19 +2,19 @@
   "company": {
     "ticker": "CRVO",
     "name": "CervoMed",
-    "subtitle": "Neflamapimod DLB Phase 3 H2 2026 (pending financing) \u00b7 Stroke + ALS expansion \u00b7 $36M micro-cap",
+    "subtitle": "Neflamapimod DLB Phase 3 H2 2026 (pending financing) · Stroke + ALS expansion · $36M micro-cap",
     "sharesOut": 9.3,
     "cash": 27,
     "currentPrice": 4.0,
     "currency": "USD",
     "yahooTicker": "CRVO",
-    "cashRunway": "Into Q3 2026 only \u2014 Phase 3 requires financing",
+    "cashRunway": "Into Q3 2026 only — Phase 3 requires financing",
     "phase": "phase3"
   },
   "assets": [
     {
       "id": "nef_dlb",
-      "name": "Neflamapimod \u2014 p38\u03b1 inhibitor (DLB)",
+      "name": "Neflamapimod — p38α inhibitor (DLB)",
       "stage": "Phase 3 ready (FDA aligned, H2 2026 start pending financing)",
       "designations": [],
       "indications": [
@@ -25,7 +25,56 @@
             "tamB": 5.0,
             "penPct": 12,
             "peakYear": 2034,
-            "notes": "DLB is 2nd most common progressive dementia after Alzheimer's (~1.4M US patients). No approved disease-modifying treatments. Phase 2b RewinD-LB: missed primary (bioavailability issue Batch A), BUT extension with Batch B showed 52% lower CDR-SB worsening at 16wk, 64% risk reduction in low-AD subgroup (p<0.001), 82% in pTau181<21. GFAP -16.0 (p<0.0001). FDA aligned: ~300 pts, 32wk randomized + 48wk OLE. Dose: 50mg TID stable crystal form."
+            "notes": "DLB is 2nd most common progressive dementia after Alzheimer's (~1.4M US patients). No approved disease-modifying treatments. Phase 2b RewinD-LB: missed primary (bioavailability issue Batch A), BUT extension with Batch B showed 52% lower CDR-SB worsening at 16wk, 64% risk reduction in low-AD subgroup (p<0.001), 82% in pTau181<21. GFAP -16.0 (p<0.0001). FDA aligned: ~300 pts, 32wk randomized + 48wk OLE. Dose: 50mg TID stable crystal form.",
+            "regions": {
+              "us": {
+                "patientsK": 554.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 594.4,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 832.1,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cns.neurodegeneration.dlb"
         }
@@ -45,7 +94,56 @@
             "tamB": 4.0,
             "penPct": 5,
             "peakYear": 2035,
-            "notes": "~800K ischemic strokes/yr in US. No approved therapies for stroke recovery (only acute tPA). Neflamapimod targets synaptic dysfunction underlying recovery failure. RESTORE Phase 2a enrolling, data H2 2026. Massive unmet need."
+            "notes": "~800K ischemic strokes/yr in US. No approved therapies for stroke recovery (only acute tPA). Neflamapimod targets synaptic dysfunction underlying recovery failure. RESTORE Phase 2a enrolling, data H2 2026. Massive unmet need.",
+            "regions": {
+              "us": {
+                "patientsK": 443.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 475.5,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 665.7,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cns.neurodegeneration.stroke"
         }
@@ -65,7 +163,56 @@
             "tamB": 3.0,
             "penPct": 6,
             "peakYear": 2035,
-            "notes": "ALS affects ~30K US patients. Desperate unmet need \u2014 median survival 3-5 years. p38\u03b1 involved in motor neuron degeneration. EXPERTS-ALS trial initiation H2 2026. Competitors: Relyvrio (withdrawn), Qalsody (antisense), Radicava."
+            "notes": "ALS affects ~30K US patients. Desperate unmet need — median survival 3-5 years. p38α involved in motor neuron degeneration. EXPERTS-ALS trial initiation H2 2026. Competitors: Relyvrio (withdrawn), Qalsody (antisense), Radicava.",
+            "regions": {
+              "us": {
+                "patientsK": 11.3,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 13.2,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 13.2,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cns.neurodegeneration.als",
           "rare": true
@@ -86,7 +233,56 @@
             "tamB": 0.5,
             "penPct": 20,
             "peakYear": 2034,
-            "notes": "Rare neurodegenerative disorder \u2014 progressive loss of language. No approved treatments. Small market but high pricing potential (rare disease). Phase 2a topline H2 2026."
+            "notes": "Rare neurodegenerative disorder — progressive loss of language. No approved treatments. Small market but high pricing potential (rare disease). Phase 2a topline H2 2026.",
+            "regions": {
+              "us": {
+                "patientsK": 1.9,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 2.2,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 2.2,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cns.neurodegeneration.ppa",
           "rare": true
@@ -98,12 +294,12 @@
   "scenarios": {
     "mega_bear": {
       "wt": 5,
-      "narrative": "Cannot raise capital \u2014 Phase 3 never starts \u2014 liquidation or reverse merger",
+      "narrative": "Cannot raise capital — Phase 3 never starts — liquidation or reverse merger",
       "events": [
-        "\u2717 Capital markets shut for micro-cap biotech \u2014 no financing available",
-        "\u2717 Phase 3 DLB never initiates \u2014 FDA alignment wasted",
-        "\u2717 RESTORE stroke and ALS trials abandoned",
-        "\u2192 Forced reverse merger or liquidation at ~$1/share (cash floor)"
+        "✗ Capital markets shut for micro-cap biotech — no financing available",
+        "✗ Phase 3 DLB never initiates — FDA alignment wasted",
+        "✗ RESTORE stroke and ALS trials abandoned",
+        "→ Forced reverse merger or liquidation at ~$1/share (cash floor)"
       ],
       "assumptions": {
         "nef_dlb": {
@@ -145,12 +341,12 @@
     },
     "bear": {
       "wt": 15,
-      "narrative": "Phase 3 funded but DLB fails \u2014 bioavailability issue was a warning, not a fix",
+      "narrative": "Phase 3 funded but DLB fails — bioavailability issue was a warning, not a fix",
       "events": [
-        "\u2717 Phase 3 DLB funded via dilutive raise at $3-4/share",
-        "\u2717 Phase 3 misses primary endpoint \u2014 Batch B efficacy doesn't replicate",
-        "\u2717 Stroke and ALS Phase 2a signals too weak for pivotal",
-        "\u2192 Stock collapses post-failure, cash burn with no viable asset"
+        "✗ Phase 3 DLB funded via dilutive raise at $3-4/share",
+        "✗ Phase 3 misses primary endpoint — Batch B efficacy doesn't replicate",
+        "✗ Stroke and ALS Phase 2a signals too weak for pivotal",
+        "→ Stock collapses post-failure, cash burn with no viable asset"
       ],
       "assumptions": {
         "nef_dlb": {
@@ -194,8 +390,8 @@
       "wt": 50,
       "narrative": "Phase 3 funded + DLB shows meaningful slowing + stroke/ALS generate interest",
       "events": [
-        "\u2713 Phase 3 DLB funded via partnership or non-dilutive grant + small raise",
-        "\u2713 DLB Phase 3 enrolls on time \u2014 biomarker-enriched population",
+        "✓ Phase 3 DLB funded via partnership or non-dilutive grant + small raise",
+        "✓ DLB Phase 3 enrolls on time — biomarker-enriched population",
         "~ RESTORE stroke shows encouraging signal but needs larger trial",
         "~ ALS and nfvPPA generate preliminary data"
       ],
@@ -239,12 +435,12 @@
     },
     "bull": {
       "wt": 25,
-      "narrative": "DLB Phase 3 hits \u2014 first disease-modifying DLB therapy + neuro platform",
+      "narrative": "DLB Phase 3 hits — first disease-modifying DLB therapy + neuro platform",
       "events": [
-        "\u2713 Strategic partnership funds Phase 3 \u2014 minimal dilution",
-        "\u2713 DLB Phase 3 meets primary endpoint \u2014 Breakthrough path to approval",
-        "\u2713 Stroke recovery Phase 2a positive \u2014 pivotal planned",
-        "\u2713 p38\u03b1 platform validated across neurodegeneration \u2014 multi-indication"
+        "✓ Strategic partnership funds Phase 3 — minimal dilution",
+        "✓ DLB Phase 3 meets primary endpoint — Breakthrough path to approval",
+        "✓ Stroke recovery Phase 2a positive — pivotal planned",
+        "✓ p38α platform validated across neurodegeneration — multi-indication"
       ],
       "assumptions": {
         "nef_dlb": {
@@ -286,12 +482,12 @@
     },
     "psychedelic_bull": {
       "wt": 5,
-      "narrative": "Neflamapimod becomes the Keytruda of neurodegeneration \u2014 Biogen/Lilly acquires",
+      "narrative": "Neflamapimod becomes the Keytruda of neurodegeneration — Biogen/Lilly acquires",
       "events": [
-        "\u2713 DLB Phase 3 best-in-class: disease modification + symptomatic benefit",
-        "\u2713 FDA grants Accelerated Approval in DLB \u2014 first ever",
-        "\u2713 Stroke + ALS data transformative \u2014 p38\u03b1 validated across neurodegeneration",
-        "\u2713 Biogen or Lilly acquires CervoMed for $3-5B (platform value)"
+        "✓ DLB Phase 3 best-in-class: disease modification + symptomatic benefit",
+        "✓ FDA grants Accelerated Approval in DLB — first ever",
+        "✓ Stroke + ALS data transformative — p38α validated across neurodegeneration",
+        "✓ Biogen or Lilly acquires CervoMed for $3-5B (platform value)"
       ],
       "assumptions": {
         "nef_dlb": {
@@ -337,15 +533,15 @@
       "date": "Mar 19, 2026 (AD/PD conference)",
       "title": "RewinD-LB Phase 2b: missed primary but extension data compelling",
       "points": [
-        "Primary endpoint missed \u2014 CDR-SB at 16wk (bioavailability issue Batch A)",
+        "Primary endpoint missed — CDR-SB at 16wk (bioavailability issue Batch A)",
         "BUT Batch B extension: 52% lower CDR-SB worsening at 16wk",
         "64% risk reduction in clinically significant worsening (low-AD subgroup, p<0.001)",
         "82% lower worsening in pTau181 <21 pg/mL patients",
-        "GFAP biomarker: median -16.0 (p<0.0001) \u2014 neuroprotective signal",
+        "GFAP biomarker: median -16.0 (p<0.0001) — neuroprotective signal",
         "Effects durable to 32 weeks",
         "FDA aligned on Phase 3: ~300 pts, 32wk randomized + 48wk OLE",
         "50mg TID stable crystal form selected (fixed bioavailability issue)",
-        "Cash: $27.3M (Sept 2025) \u2014 funds into Q3 2026 ONLY",
+        "Cash: $27.3M (Sept 2025) — funds into Q3 2026 ONLY",
         "Analyst PTs: $11-31, consensus $23 vs $4 stock"
       ]
     },
@@ -353,21 +549,21 @@
       "date": "H2 2026",
       "title": "Phase 3 DLB initiation (PENDING FINANCING) + stroke/ALS data",
       "thresholds": [
-        "Phase 3 financing: partnership, offering, or grant \u2014 existential for thesis",
-        "RESTORE stroke Phase 2a topline \u2014 first expansion readout",
+        "Phase 3 financing: partnership, offering, or grant — existential for thesis",
+        "RESTORE stroke Phase 2a topline — first expansion readout",
         "nfvPPA Phase 2a topline",
         "EXPERTS-ALS trial initiation"
       ]
     },
     "risks": [
-      "CASH CRISIS: $27M funds only into Q3 2026 \u2014 Phase 3 requires $50-80M+",
-      "Phase 2b technically MISSED primary \u2014 all bullish data is from extension/subgroups",
+      "CASH CRISIS: $27M funds only into Q3 2026 — Phase 3 requires $50-80M+",
+      "Phase 2b technically MISSED primary — all bullish data is from extension/subgroups",
       "Bioavailability issue with original batch raises manufacturing/formulation risk",
       "DLB trials are extremely hard to enroll (diagnosis difficulty, comorbidities)",
       "Neurodegenerative Phase 3 trials have >80% failure rate historically",
-      "Micro-cap ($36M) \u2014 any financing will be massively dilutive at $4/share",
-      "p38\u03b1 mechanism has been tried before in other neuro diseases (failures)",
-      "9.3M shares outstanding \u2014 thin float, high volatility, low institutional ownership"
+      "Micro-cap ($36M) — any financing will be massively dilutive at $4/share",
+      "p38α mechanism has been tried before in other neuro diseases (failures)",
+      "9.3M shares outstanding — thin float, high volatility, low institutional ownership"
     ]
   },
   "catalysts": [

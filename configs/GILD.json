@@ -2,7 +2,7 @@
   "company": {
     "ticker": "GILD",
     "name": "Gilead Sciences",
-    "subtitle": "HIV $20.8B \u00b7 Lenacapavir franchise \u00b7 Trodelvy 1L TNBC \u00b7 No LOE until 2036",
+    "subtitle": "HIV $20.8B · Lenacapavir franchise · Trodelvy 1L TNBC · No LOE until 2036",
     "sharesOut": 1240,
     "cash": 10600,
     "currentPrice": 139.0,
@@ -15,7 +15,7 @@
   "assets": [
     {
       "id": "len_prev",
-      "name": "Lenacapavir \u2014 HIV prevention expansion",
+      "name": "Lenacapavir — HIV prevention expansion",
       "stage": "Commercial (Yeztugo) + label expansions",
       "designations": [],
       "indications": [
@@ -26,7 +26,56 @@
             "tamB": 8.0,
             "penPct": 10,
             "peakYear": 2033,
-            "notes": "PURPOSE 1+2 positive \u2014 twice-yearly injection for PrEP. Game-changer for prevention. $150M first year. Peak $5-10B franchise potential. BIC/LEN combo tablet H2 2026 for treatment simplification."
+            "notes": "PURPOSE 1+2 positive — twice-yearly injection for PrEP. Game-changer for prevention. $150M first year. Peak $5-10B franchise potential. BIC/LEN combo tablet H2 2026 for treatment simplification.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "infectious_disease.anti_infective.hiv_prevention"
         }
@@ -35,7 +84,7 @@
     },
     {
       "id": "trodelvy",
-      "name": "Trodelvy \u2014 1L metastatic TNBC + breast cancer",
+      "name": "Trodelvy — 1L metastatic TNBC + breast cancer",
       "stage": "sNDA (ASCENT-04 positive, PDUFA H2 2026)",
       "designations": [],
       "indications": [
@@ -46,7 +95,56 @@
             "tamB": 6.0,
             "penPct": 12,
             "peakYear": 2032,
-            "notes": "ASCENT-04/KEYNOTE-D19: Trodelvy + Keytruda 35% reduced progression risk in 1L mTNBC. $1.4B 2025 (+6%). 1L TNBC sNDA \u2192 PDUFA H2 2026. If approved: doubles Trodelvy addressable market."
+            "notes": "ASCENT-04/KEYNOTE-D19: Trodelvy + Keytruda 35% reduced progression risk in 1L mTNBC. $1.4B 2025 (+6%). 1L TNBC sNDA → PDUFA H2 2026. If approved: doubles Trodelvy addressable market.",
+            "regions": {
+              "us": {
+                "patientsK": 665.7,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 713.3,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 998.6,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.breast.tnbc"
         }
@@ -55,7 +153,7 @@
     },
     {
       "id": "anito_cel",
-      "name": "Anito-cel \u2014 CAR-T (multiple myeloma)",
+      "name": "Anito-cel — CAR-T (multiple myeloma)",
       "stage": "BLA review (Kite/Gilead, PDUFA H2 2026)",
       "designations": [],
       "indications": [
@@ -66,7 +164,56 @@
             "tamB": 8.0,
             "penPct": 5,
             "peakYear": 2033,
-            "notes": "Bicistronic BCMA\u00d7CD3/CD19 CAR-T. BLA under review, PDUFA H2 2026. Competes with CARVYKTI. Yescarta ($1.5B) + Tecartus ($344M) = $1.8B cell therapy franchise in 2025."
+            "notes": "Bicistronic BCMA×CD3/CD19 CAR-T. BLA under review, PDUFA H2 2026. Competes with CARVYKTI. Yescarta ($1.5B) + Tecartus ($344M) = $1.8B cell therapy franchise in 2025.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.hematology.myeloma"
         }
@@ -86,7 +233,56 @@
             "tamB": 4.0,
             "penPct": 100,
             "peakYear": 2028,
-            "notes": "Livdelzi (PBC): >50% 2L US market share. HCV/HBV stable. Veklury declining ($911M, -49%). Liver total: $3.2B (+6%). Modest growth offset by Veklury decline."
+            "notes": "Livdelzi (PBC): >50% 2L US market share. HCV/HBV stable. Veklury declining ($911M, -49%). Liver total: $3.2B (+6%). Modest growth offset by Veklury decline.",
+            "regions": {
+              "us": {
+                "patientsK": 443.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 475.5,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 665.7,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.liver.hbv_functional_cure"
         }
@@ -105,7 +301,56 @@
           "area": "infectious_disease.anti_infective.hiv_treatment",
           "market": {
             "tamB": 25,
-            "penPct": 56
+            "penPct": 56,
+            "regions": {
+              "us": {
+                "patientsK": 2773.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 2971.9,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 4160.7,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           }
         }
       ]
@@ -122,7 +367,56 @@
           "area": "infectious_disease.anti_infective.hiv_prevention",
           "market": {
             "tamB": 5,
-            "penPct": 40
+            "penPct": 40,
+            "regions": {
+              "us": {
+                "patientsK": 554.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 594.4,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 832.1,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           }
         }
       ]
@@ -133,10 +427,10 @@
       "wt": 5,
       "narrative": "Biktarvy erosion + lenacapavir disappoints + oncology fails",
       "events": [
-        "\u2717 Generic KRAS-type erosion in HIV earlier than 2036",
-        "\u2717 Lenacapavir PrEP uptake much slower than modeled",
-        "\u2717 Trodelvy 1L TNBC rejected + anito-cel loses to CARVYKTI",
-        "\u2192 Revenue stalls at $28-29B, multiple compresses"
+        "✗ Generic KRAS-type erosion in HIV earlier than 2036",
+        "✗ Lenacapavir PrEP uptake much slower than modeled",
+        "✗ Trodelvy 1L TNBC rejected + anito-cel loses to CARVYKTI",
+        "→ Revenue stalls at $28-29B, multiple compresses"
       ],
       "assumptions": {
         "len_prev": {
@@ -195,10 +489,10 @@
       "wt": 15,
       "narrative": "Lenacapavir grows modestly + 1L TNBC approved but competitive + HIV stable",
       "events": [
-        "\u2713 Lenacapavir PrEP growing but 10-year ramp to $3B",
+        "✓ Lenacapavir PrEP growing but 10-year ramp to $3B",
         "~ Trodelvy 1L TNBC approved but competes with Keytruda combos",
         "~ Anito-cel approved but CARVYKTI dominates",
-        "\u2192 Revenue grows to $33-35B by 2029, slow grind"
+        "→ Revenue grows to $33-35B by 2029, slow grind"
       ],
       "assumptions": {
         "len_prev": {
@@ -257,10 +551,10 @@
       "wt": 50,
       "narrative": "Lenacapavir blockbuster + Trodelvy 1L TNBC expands oncology + BIC/LEN launches",
       "events": [
-        "\u2713 Lenacapavir PrEP reaching $5B+ peak \u2014 twice-yearly standard",
-        "\u2713 BIC/LEN single tablet launches H2 2026 \u2014 extends HIV dominance",
-        "\u2713 Trodelvy 1L TNBC approved \u2014 oncology franchise $2B+",
-        "\u2713 2026 guidance $29.6-30B met \u2014 steady 4-5% growth"
+        "✓ Lenacapavir PrEP reaching $5B+ peak — twice-yearly standard",
+        "✓ BIC/LEN single tablet launches H2 2026 — extends HIV dominance",
+        "✓ Trodelvy 1L TNBC approved — oncology franchise $2B+",
+        "✓ 2026 guidance $29.6-30B met — steady 4-5% growth"
       ],
       "assumptions": {
         "len_prev": {
@@ -317,12 +611,12 @@
     },
     "bull": {
       "wt": 25,
-      "narrative": "HIV + oncology dual engine \u2014 $40B+ revenue by 2030, dividend aristocrat",
+      "narrative": "HIV + oncology dual engine — $40B+ revenue by 2030, dividend aristocrat",
       "events": [
-        "\u2713 Lenacapavir PrEP standard of care globally \u2014 $8B+ peak",
-        "\u2713 Trodelvy franchise $3B+ across breast + other solid tumors",
-        "\u2713 Anito-cel + Yescarta = $3B+ cell therapy franchise",
-        "\u2713 Revenue $40B+ by 2030, 20%+ ROIC, consistent dividend growth"
+        "✓ Lenacapavir PrEP standard of care globally — $8B+ peak",
+        "✓ Trodelvy franchise $3B+ across breast + other solid tumors",
+        "✓ Anito-cel + Yescarta = $3B+ cell therapy franchise",
+        "✓ Revenue $40B+ by 2030, 20%+ ROIC, consistent dividend growth"
       ],
       "assumptions": {
         "len_prev": {
@@ -379,12 +673,12 @@
     },
     "psychedelic_bull": {
       "wt": 5,
-      "narrative": "Lenacapavir ends HIV epidemic + oncology franchise rivals Merck \u2014 $50B+ revenue",
+      "narrative": "Lenacapavir ends HIV epidemic + oncology franchise rivals Merck — $50B+ revenue",
       "events": [
-        "\u2713 Lenacapavir eliminates HIV as public health threat \u2014 $12B+ peak",
-        "\u2713 Trodelvy + next-gen ADCs create $5B+ oncology franchise",
-        "\u2713 Cell therapy next-gen (bicistronic) dominates post-CARVYKTI era",
-        "\u2713 Revenue $50B+ by 2030, Gilead re-rates from 12x to 18x PE"
+        "✓ Lenacapavir eliminates HIV as public health threat — $12B+ peak",
+        "✓ Trodelvy + next-gen ADCs create $5B+ oncology franchise",
+        "✓ Cell therapy next-gen (bicistronic) dominates post-CARVYKTI era",
+        "✓ Revenue $50B+ by 2030, Gilead re-rates from 12x to 18x PE"
       ],
       "assumptions": {
         "len_prev": {
@@ -447,11 +741,11 @@
       "points": [
         "Biktarvy: $14.3B (+7%), >52% US HIV treatment share",
         "Descovy: $2.8B (+31%), PrEP growth driver",
-        "Lenacapavir/Yeztugo: $150M first year \u2014 twice-yearly HIV prevention",
+        "Lenacapavir/Yeztugo: $150M first year — twice-yearly HIV prevention",
         "Trodelvy: $1.4B (+6%), ASCENT-04 positive in 1L mTNBC",
         "Cell therapy: $1.8B (Yescarta $1.5B, Tecartus $344M, -7%)",
         "Liver: $3.2B (+6%), Livdelzi >50% 2L PBC share",
-        "Veklury: $911M (-49%) \u2014 COVID declining",
+        "Veklury: $911M (-49%) — COVID declining",
         "2026 guide: $29.6-30B revenue, $8.45-8.85 non-GAAP EPS",
         "No major LOE until 2036",
         "Tubulis acquisition ($5B) to bolster oncology ADC pipeline"
@@ -468,13 +762,13 @@
       ]
     },
     "risks": [
-      "$172B market cap at ~12x 2025 earnings \u2014 fair value, not cheap",
+      "$172B market cap at ~12x 2025 earnings — fair value, not cheap",
       "HIV growth slowing (6% vs historical 8-10%)",
       "Lenacapavir PrEP uptake depends on access/reimbursement globally",
       "Oncology franchise faces intense competition (ADC space crowding)",
-      "Cell therapy declining (-7%) \u2014 bispecifics disrupting CAR-T",
-      "Veklury declining rapidly \u2014 $911M hole to fill",
-      "Tubulis $5B deal \u2014 integration/execution risk",
+      "Cell therapy declining (-7%) — bispecifics disrupting CAR-T",
+      "Veklury declining rapidly — $911M hole to fill",
+      "Tubulis $5B deal — integration/execution risk",
       "Dividend yield 3.2% attractive but limits capital allocation flexibility"
     ]
   },

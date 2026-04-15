@@ -2,7 +2,7 @@
   "company": {
     "ticker": "ABVX",
     "name": "Abivax SA",
-    "subtitle": "Post-Phase 3 UC induction \u00b7 Maintenance data Q2 2026 \u00b7 NDA filing H2 2026",
+    "subtitle": "Post-Phase 3 UC induction · Maintenance data Q2 2026 · NDA filing H2 2026",
     "sharesOut": 80,
     "cash": 350,
     "currentPrice": 91.0,
@@ -14,7 +14,7 @@
   "assets": [
     {
       "id": "obef_uc",
-      "name": "Obefazimod \u2014 oral miR-124 enhancer (UC)",
+      "name": "Obefazimod — oral miR-124 enhancer (UC)",
       "stage": "Phase 3 (ABTECT induction positive, maintenance Q2 2026)",
       "designations": [],
       "indications": [
@@ -25,7 +25,56 @@
             "tamB": 10.0,
             "penPct": 14,
             "peakYear": 2031,
-            "notes": "UC drug market ~$8B (2024) \u2192 $11-14B (2032). Obefazimod is oral, first-in-class miR-124 enhancer. Phase 3 ABTECT induction positive (Jul 2025): pooled 16.4% placebo-adj response (p<0.0001), 1275 patients randomized. 678/1275 entered maintenance. Favorable tolerability, no new safety signals. Competitors: Entyvio (vedolizumab), Stelara (ustekinumab), Rinvoq (upadacitinib), Zeposia (ozanimod), Velsipity (etrasimod)."
+            "notes": "UC drug market ~$8B (2024) → $11-14B (2032). Obefazimod is oral, first-in-class miR-124 enhancer. Phase 3 ABTECT induction positive (Jul 2025): pooled 16.4% placebo-adj response (p<0.0001), 1275 patients randomized. 678/1275 entered maintenance. Favorable tolerability, no new safety signals. Competitors: Entyvio (vedolizumab), Stelara (ustekinumab), Rinvoq (upadacitinib), Zeposia (ozanimod), Velsipity (etrasimod).",
+            "regions": {
+              "us": {
+                "patientsK": 1109.5,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1188.8,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1664.3,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "immunology.inflammatory_gi.ulcerative_colitis"
         }
@@ -45,7 +94,56 @@
             "tamB": 9.0,
             "penPct": 7,
             "peakYear": 2034,
-            "notes": "CD drug market comparable to UC. ENHANCE-CD 12-week induction data expected Q4 2026. Anti-fibrotic activity shown preclinically (ECCO 2026: ~60-90% reduction in fibrosis score). Fibrosis is a key unmet need in CD \u2014 could be a differentiator if confirmed clinically."
+            "notes": "CD drug market comparable to UC. ENHANCE-CD 12-week induction data expected Q4 2026. Anti-fibrotic activity shown preclinically (ECCO 2026: ~60-90% reduction in fibrosis score). Fibrosis is a key unmet need in CD — could be a differentiator if confirmed clinically.",
+            "regions": {
+              "us": {
+                "patientsK": 998.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1069.9,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1497.9,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "immunology.inflammatory_gi.crohns"
         }
@@ -56,12 +154,12 @@
   "scenarios": {
     "mega_bear": {
       "wt": 5,
-      "narrative": "Maintenance data fails \u2014 NDA collapses \u2014 back to \u20ac5",
+      "narrative": "Maintenance data fails — NDA collapses — back to €5",
       "events": [
-        "\u2717 44-week maintenance shows complete loss of response",
-        "\u2717 NDA cannot be filed \u2014 back to square one",
-        "\u2717 miR-124 mechanism questioned \u2014 no durability",
-        "\u2192 Stock reverts to pre-Phase 3 levels (\u20ac5-10), needs to raise capital"
+        "✗ 44-week maintenance shows complete loss of response",
+        "✗ NDA cannot be filed — back to square one",
+        "✗ miR-124 mechanism questioned — no durability",
+        "→ Stock reverts to pre-Phase 3 levels (€5-10), needs to raise capital"
       ],
       "assumptions": {
         "obef_uc": {
@@ -91,10 +189,10 @@
       "wt": 15,
       "narrative": "Maintenance fails or underwhelms + CD disappoints",
       "events": [
-        "\u2717 44-week maintenance data shows significant efficacy loss",
-        "\u2717 FDA pushes back on NDA \u2014 requests additional data or longer follow-up",
-        "\u2717 ENHANCE-CD induction misses in Crohn's",
-        "\u2192 Stock re-rates to pre-Phase 3 levels, pipeline credibility damaged"
+        "✗ 44-week maintenance data shows significant efficacy loss",
+        "✗ FDA pushes back on NDA — requests additional data or longer follow-up",
+        "✗ ENHANCE-CD induction misses in Crohn's",
+        "→ Stock re-rates to pre-Phase 3 levels, pipeline credibility damaged"
       ],
       "assumptions": {
         "obef_uc": {
@@ -124,10 +222,10 @@
       "wt": 50,
       "narrative": "UC maintenance confirms induction + CD shows signal",
       "events": [
-        "\u2713 44-week maintenance data positive \u2014 durable remission",
-        "\u2713 NDA filed H2 2026, MAA in parallel",
+        "✓ 44-week maintenance data positive — durable remission",
+        "✓ NDA filed H2 2026, MAA in parallel",
         "~ ENHANCE-CD 12-week data shows encouraging signal",
-        "\u2192 UC approval mid-2027, commercial launch H2 2027"
+        "→ UC approval mid-2027, commercial launch H2 2027"
       ],
       "assumptions": {
         "obef_uc": {
@@ -157,10 +255,10 @@
       "wt": 25,
       "narrative": "Best-in-class UC + CD expansion + partnership/M&A",
       "events": [
-        "\u2713 Maintenance shows class-leading durability + safety",
-        "\u2713 FDA grants Priority Review \u2014 approval H1 2027",
-        "\u2713 ENHANCE-CD hits, establishing IBD franchise",
-        "\u2713 Anti-fibrotic angle differentiates from JAK/S1P \u2014 M&A target"
+        "✓ Maintenance shows class-leading durability + safety",
+        "✓ FDA grants Priority Review — approval H1 2027",
+        "✓ ENHANCE-CD hits, establishing IBD franchise",
+        "✓ Anti-fibrotic angle differentiates from JAK/S1P — M&A target"
       ],
       "assumptions": {
         "obef_uc": {
@@ -188,12 +286,12 @@
     },
     "psychedelic_bull": {
       "wt": 5,
-      "narrative": "Best-in-class IBD franchise \u2014 UC + CD + anti-fibrotic platform \u2014 AbbVie/Roche acquires",
+      "narrative": "Best-in-class IBD franchise — UC + CD + anti-fibrotic platform — AbbVie/Roche acquires",
       "events": [
-        "\u2713 Maintenance shows deepening response + class-leading safety",
-        "\u2713 FDA grants Priority Review \u2014 approval H1 2027",
-        "\u2713 ENHANCE-CD hits \u2014 oral IBD franchise across UC + CD",
-        "\u2713 Anti-fibrotic mechanism validated clinically \u2014 AbbVie/Roche acquires at \u20ac200+"
+        "✓ Maintenance shows deepening response + class-leading safety",
+        "✓ FDA grants Priority Review — approval H1 2027",
+        "✓ ENHANCE-CD hits — oral IBD franchise across UC + CD",
+        "✓ Anti-fibrotic mechanism validated clinically — AbbVie/Roche acquires at €200+"
       ],
       "assumptions": {
         "obef_uc": {
@@ -223,16 +321,16 @@
   "context": {
     "lastData": {
       "date": "Jul 2025 (+ ECCO Feb 2026)",
-      "title": "ABTECT Phase 3 induction \u2014 UC (positive)",
+      "title": "ABTECT Phase 3 induction — UC (positive)",
       "points": [
         "Pooled 16.4% placebo-adjusted clinical response (p<0.0001) at 8 weeks",
-        "1,275 patients randomized \u2014 one of the largest UC Phase 3 programs ever",
+        "1,275 patients randomized — one of the largest UC Phase 3 programs ever",
         "678 responders entered 44-week maintenance Part 1",
         "Favorable tolerability, no new safety signals",
-        "22 abstracts at ECCO 2026 \u2014 subgroup analyses, biomarkers, anti-fibrotic data",
+        "22 abstracts at ECCO 2026 — subgroup analyses, biomarkers, anti-fibrotic data",
         "miR-124 upregulation confirmed + IL-17A, IL-6 reduction toward homeostasis",
         "Preclinical: 60-90% fibrosis score reduction (oral presentation ECCO 2026)",
-        "Stock went from ~\u20ac5 to \u20ac90+ on the data"
+        "Stock went from ~€5 to €90+ on the data"
       ]
     },
     "nextCatalyst": {
@@ -246,14 +344,14 @@
       ]
     },
     "risks": [
-      "Maintenance data is binary \u2014 if durability fades, NDA collapses",
+      "Maintenance data is binary — if durability fades, NDA collapses",
       "UC market is crowded (Rinvoq, Entyvio, Stelara, Zeposia, Velsipity)",
-      "Stock ran from \u20ac5 to \u20ac90+ on induction alone \u2014 maintenance is priced in to some degree",
-      "No commercial infrastructure yet \u2014 will need to build or partner",
+      "Stock ran from €5 to €90+ on induction alone — maintenance is priced in to some degree",
+      "No commercial infrastructure yet — will need to build or partner",
       "Single-asset company (obefazimod for UC + CD, same molecule)",
       "Crohn's disease Phase 2b data not until Q4 2026",
-      "Anti-fibrotic data is preclinical only \u2014 clinical translation uncertain",
-      "Cash runway Q4 2027 \u2014 may need to raise if NDA delayed"
+      "Anti-fibrotic data is preclinical only — clinical translation uncertain",
+      "Cash runway Q4 2027 — may need to raise if NDA delayed"
     ]
   },
   "catalysts": [

@@ -2,7 +2,7 @@
   "company": {
     "ticker": "LEGN",
     "name": "Legend Biotech",
-    "subtitle": "CARVYKTI $1.9B sales \u00b7 Profitability 2026 \u00b7 Frontline MM expansion \u00b7 In vivo CAR-T",
+    "subtitle": "CARVYKTI $1.9B sales · Profitability 2026 · Frontline MM expansion · In vivo CAR-T",
     "sharesOut": 185,
     "cash": 949,
     "currentPrice": 17.0,
@@ -15,7 +15,7 @@
   "assets": [
     {
       "id": "commercial",
-      "name": "CARVYKTI \u2014 2L+ MM (approved, commercial)",
+      "name": "CARVYKTI — 2L+ MM (approved, commercial)",
       "stage": "Commercial (approved US/EU/Japan/China, OS benefit in label)",
       "designations": [
         "Breakthrough"
@@ -36,7 +36,7 @@
     },
     {
       "id": "carv_1l",
-      "name": "CARVYKTI \u2014 Frontline MM (CARTITUDE-5/6)",
+      "name": "CARVYKTI — Frontline MM (CARTITUDE-5/6)",
       "stage": "Phase 3 (both enrolled)",
       "designations": [],
       "indications": [
@@ -47,7 +47,56 @@
             "tamB": 8.0,
             "penPct": 10,
             "peakYear": 2032,
-            "notes": "Frontline MM drug market ~$15-20B total. CAR-T addressable subset ~$8B (transplant-eligible + ineligible candidates). CARTITUDE-5 + 6 both enrolled. CARTITUDE-4 showed 50.4mo median PFS in 2L+ \u2014 strong rationale for earlier use. Legend receives mfg revenue + profit share from J&J."
+            "notes": "Frontline MM drug market ~$15-20B total. CAR-T addressable subset ~$8B (transplant-eligible + ineligible candidates). CARTITUDE-5 + 6 both enrolled. CARTITUDE-4 showed 50.4mo median PFS in 2L+ — strong rationale for earlier use. Legend receives mfg revenue + profit share from J&J.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.hematology.myeloma"
         }
@@ -56,7 +105,7 @@
     },
     {
       "id": "lucar",
-      "name": "LUCAR-G39D \u2014 allogeneic gamma-delta CAR-T",
+      "name": "LUCAR-G39D — allogeneic gamma-delta CAR-T",
       "stage": "Phase 1 (first-in-human data ASH 2025)",
       "designations": [],
       "indications": [
@@ -67,7 +116,56 @@
             "tamB": 8.0,
             "penPct": 3,
             "peakYear": 2034,
-            "notes": "Dual CD19/CD20. Allogeneic = off-the-shelf. If validated, transforms CAR-T economics."
+            "notes": "Dual CD19/CD20. Allogeneic = off-the-shelf. If validated, transforms CAR-T economics.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.hematology.cll_nhl"
         }
@@ -87,7 +185,56 @@
             "tamB": 8,
             "penPct": 1,
             "peakYear": 2035,
-            "notes": "Dual CD20/CD19 in vivo \u2014 injection, no manufacturing. First patient dosed. Data H2 2026. Multiple INDs planned. Paradigm shift if it works."
+            "notes": "Dual CD20/CD19 in vivo — injection, no manufacturing. First patient dosed. Data H2 2026. Multiple INDs planned. Paradigm shift if it works.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.hematology.myeloma"
         }
@@ -100,10 +247,10 @@
       "wt": 5,
       "narrative": "CAR-T class safety signal / franchise collapse",
       "events": [
-        "\u2717 FDA black box warning on secondary malignancies across CAR-T class",
-        "\u2717 CMS restricts reimbursement for CAR-T",
-        "\u2717 CARVYKTI revenue collapses, J&J deprioritizes",
-        "\u2192 Stock re-rates to cash floor, pipeline worthless"
+        "✗ FDA black box warning on secondary malignancies across CAR-T class",
+        "✗ CMS restricts reimbursement for CAR-T",
+        "✗ CARVYKTI revenue collapses, J&J deprioritizes",
+        "→ Stock re-rates to cash floor, pipeline worthless"
       ],
       "assumptions": {
         "commercial": {
@@ -148,10 +295,10 @@
       "wt": 15,
       "narrative": "CARVYKTI growth stalls + frontline fails + competition erodes",
       "events": [
-        "\u2717 CARVYKTI growth decelerates \u2014 bispecifics take share",
-        "\u2717 CARTITUDE-5/6 underwhelm vs standard of care",
-        "\u2717 Arcellx anito-cel approved, takes 2L+ share",
-        "\u2192 Revenue plateaus at ~$1.2B Legend share"
+        "✗ CARVYKTI growth decelerates — bispecifics take share",
+        "✗ CARTITUDE-5/6 underwhelm vs standard of care",
+        "✗ Arcellx anito-cel approved, takes 2L+ share",
+        "→ Revenue plateaus at ~$1.2B Legend share"
       ],
       "assumptions": {
         "commercial": {
@@ -196,8 +343,8 @@
       "wt": 50,
       "narrative": "CARVYKTI grows + frontline expands TAM + platform validates",
       "events": [
-        "\u2713 CARVYKTI revenue grows to ~$3B+ total (Legend ~$1.5B)",
-        "\u2713 CARTITUDE-5 or -6 positive \u2014 frontline label expansion",
+        "✓ CARVYKTI revenue grows to ~$3B+ total (Legend ~$1.5B)",
+        "✓ CARTITUDE-5 or -6 positive — frontline label expansion",
         "~ Allogeneic shows promise, needs more data",
         "~ In vivo early data generates excitement"
       ],
@@ -244,10 +391,10 @@
       "wt": 25,
       "narrative": "CARVYKTI blockbuster + frontline SOC + in vivo paradigm shift",
       "events": [
-        "\u2713 CARVYKTI total sales >$5B (Legend >$2B)",
-        "\u2713 Both CARTITUDE-5 + 6 positive \u2014 frontline standard",
-        "\u2713 In vivo CAR-T data transformative",
-        "\u2713 Autoimmune CAR-T expansion (SLE, MS)"
+        "✓ CARVYKTI total sales >$5B (Legend >$2B)",
+        "✓ Both CARTITUDE-5 + 6 positive — frontline standard",
+        "✓ In vivo CAR-T data transformative",
+        "✓ Autoimmune CAR-T expansion (SLE, MS)"
       ],
       "assumptions": {
         "commercial": {
@@ -292,10 +439,10 @@
       "wt": 5,
       "narrative": "In vivo + autoimmune = platform acquisition at massive premium",
       "events": [
-        "\u2713 CARVYKTI >$7B total sales, dominant in MM",
-        "\u2713 In vivo CAR-T works across oncology + autoimmune",
-        "\u2713 Autoimmune TAM unlock (SLE, MS, RA) = $50B+ opportunity",
-        "\u2713 J&J acquires Legend at 3-5x current price"
+        "✓ CARVYKTI >$7B total sales, dominant in MM",
+        "✓ In vivo CAR-T works across oncology + autoimmune",
+        "✓ Autoimmune TAM unlock (SLE, MS, RA) = $50B+ opportunity",
+        "✓ J&J acquires Legend at 3-5x current price"
       ],
       "assumptions": {
         "commercial": {
@@ -345,7 +492,7 @@
         "Q4 CARVYKTI net trade sales: $555M (+66% YoY, +6% QoQ)",
         "FY2025 CARVYKTI sales: $1.9B total (Legend total revenue ~$1B)",
         "Q4 Legend revenue: $306M (+64% YoY), gross margin 61%",
-        "Adjusted net income: $2.5M \u2014 breakeven inflection",
+        "Adjusted net income: $2.5M — breakeven inflection",
         "10,000+ patients treated, 97% mfg success, <30 day TAT",
         "CARTITUDE-5 and CARTITUDE-6 both fully enrolled",
         "In vivo CAR-T: first patient dosed, data expected H2 2026",
@@ -365,13 +512,13 @@
       ]
     },
     "risks": [
-      "J&J collaboration \u2014 Legend gets ~50% of value, not 100%",
+      "J&J collaboration — Legend gets ~50% of value, not 100%",
       "Arcellx anito-cel gaining traction as BCMA CAR-T competitor",
       "Bispecific antibodies eroding CAR-T share in later lines",
       "Secondary malignancy class-wide concern (FDA monitoring)",
-      "Manufacturing complexity \u2014 capacity may not suffice for frontline",
-      "Stock down 60% despite strong fundamentals \u2014 what does market know?",
-      "In vivo CAR-T very early \u2014 high scientific risk",
+      "Manufacturing complexity — capacity may not suffice for frontline",
+      "Stock down 60% despite strong fundamentals — what does market know?",
+      "In vivo CAR-T very early — high scientific risk",
       "China/GenScript parent overhang (geopolitical)"
     ]
   },

@@ -2,7 +2,7 @@
   "company": {
     "ticker": "BHVN",
     "name": "Biohaven Ltd.",
-    "subtitle": "Pre-pivotal multi-platform \u2014 Kv7 + MoDE/TRAP degraders + obesity",
+    "subtitle": "Pre-pivotal multi-platform — Kv7 + MoDE/TRAP degraders + obesity",
     "sharesOut": 150,
     "cash": 510,
     "currentPrice": 9.0,
@@ -14,7 +14,7 @@
   "assets": [
     {
       "id": "bhv7000",
-      "name": "Opakalim (BHV-7000) \u2014 Kv7 activator",
+      "name": "Opakalim (BHV-7000) — Kv7 activator",
       "stage": "Phase 2/3 (RISE pivotal)",
       "designations": [],
       "indications": [
@@ -25,7 +25,56 @@
             "tamB": 8.0,
             "penPct": 6,
             "peakYear": 2032,
-            "notes": "Selective Kv7.2/7.3 activator. 40x therapeutic index advantage. OLE data: majority \u226550% seizure reduction at 6 months. RISE 2/3 topline H2 2026. Differentiated safety (low CNS AEs vs other ASMs)."
+            "notes": "Selective Kv7.2/7.3 activator. 40x therapeutic index advantage. OLE data: majority ≥50% seizure reduction at 6 months. RISE 2/3 topline H2 2026. Differentiated safety (low CNS AEs vs other ASMs).",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cns.epilepsy.focal"
         }
@@ -34,7 +83,7 @@
     },
     {
       "id": "bhv1300",
-      "name": "BHV-1300 \u2014 IgG MoDE degrader",
+      "name": "BHV-1300 — IgG MoDE degrader",
       "stage": "Phase 1b (pivotal H2 2026)",
       "designations": [],
       "indications": [
@@ -45,7 +94,56 @@
             "tamB": 3.5,
             "penPct": 8,
             "peakYear": 2033,
-            "notes": "First-in-class extracellular IgG degrader. First patient: complete TSI suppression + thyroid normalization within weeks. >87% IgG reduction in healthy volunteers. Pivotal planned H2 2026."
+            "notes": "First-in-class extracellular IgG degrader. First patient: complete TSI suppression + thyroid normalization within weeks. >87% IgG reduction in healthy volunteers. Pivotal planned H2 2026.",
+            "regions": {
+              "us": {
+                "patientsK": 388.3,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 416.1,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 582.5,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "endocrine.thyroid.graves"
         }
@@ -54,7 +152,7 @@
     },
     {
       "id": "bhv1400",
-      "name": "BHV-1400 \u2014 Gd-IgA1 TRAP degrader",
+      "name": "BHV-1400 — Gd-IgA1 TRAP degrader",
       "stage": "Phase 1 expansion (pivotal Q1 2026)",
       "designations": [],
       "indications": [
@@ -65,7 +163,56 @@
             "tamB": 4.0,
             "penPct": 5,
             "peakYear": 2033,
-            "notes": "Selective Gd-IgA1 degrader \u2014 targets pathogenic driver without broad immunosuppression. >80% Gd-IgA1 reduction. Early IgAN patient data: biomarker + clinical responses (proteinuria, hematuria improvement). Pivotal initiating Q1 2026."
+            "notes": "Selective Gd-IgA1 degrader — targets pathogenic driver without broad immunosuppression. >80% Gd-IgA1 reduction. Early IgAN patient data: biomarker + clinical responses (proteinuria, hematuria improvement). Pivotal initiating Q1 2026.",
+            "regions": {
+              "us": {
+                "patientsK": 443.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 475.5,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 665.7,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "immunology.autoimmune.iga_nephropathy"
         }
@@ -74,7 +221,7 @@
     },
     {
       "id": "taldef",
-      "name": "Taldefgrobep alfa \u2014 myostatin-activin inhibitor",
+      "name": "Taldefgrobep alfa — myostatin-activin inhibitor",
       "stage": "Phase 2 (obesity, enrolled)",
       "designations": [],
       "indications": [
@@ -85,7 +232,56 @@
             "tamB": 20,
             "penPct": 0.5,
             "peakYear": 2034,
-            "notes": "Differentiated mechanism: fat mass reduction + lean mass gain + bone density improvement. Prior data: >6% fat reduction, up to 4% lean mass gain. ~150 participants, 24-week blinded period. Topline H2 2026. >700 subjects treated safely across 5 prior studies."
+            "notes": "Differentiated mechanism: fat mass reduction + lean mass gain + bone density improvement. Prior data: >6% fat reduction, up to 4% lean mass gain. ~150 participants, 24-week blinded period. Topline H2 2026. >700 subjects treated safely across 5 prior studies.",
+            "regions": {
+              "us": {
+                "patientsK": 2219.1,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 2377.6,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 3328.6,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.obesity.kv7"
         }
@@ -94,7 +290,7 @@
     },
     {
       "id": "bhv1510",
-      "name": "BHV-1510 \u2014 Trop2 ADC",
+      "name": "BHV-1510 — Trop2 ADC",
       "stage": "Phase 1",
       "designations": [],
       "indications": [
@@ -105,7 +301,56 @@
             "tamB": 8,
             "penPct": 1,
             "peakYear": 2035,
-            "notes": "Novel Trop2 ADC with differentiated safety profile. Confirmed responses in Phase 1 as monotherapy and in combo with Regeneron's cemiplimab (anti-PD-1). Early stage \u2014 upside optionality."
+            "notes": "Novel Trop2 ADC with differentiated safety profile. Confirmed responses in Phase 1 as monotherapy and in combo with Regeneron's cemiplimab (anti-PD-1). Early stage — upside optionality.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.gi.colorectal"
         }
@@ -118,10 +363,10 @@
       "wt": 5,
       "narrative": "RISE epilepsy fails + degrader platform unvalidated + massive dilution",
       "events": [
-        "\u2717 RISE Phase 2 epilepsy misses \u2014 no efficacy signal",
-        "\u2717 Graves' and IgAN degrader programs show off-target toxicity",
-        "\u2717 Taldefgrobep obesity data underwhelms vs GLP-1s",
-        "\u2192 Serial dilution at declining prices, sub-$5 stock"
+        "✗ RISE Phase 2 epilepsy misses — no efficacy signal",
+        "✗ Graves' and IgAN degrader programs show off-target toxicity",
+        "✗ Taldefgrobep obesity data underwhelms vs GLP-1s",
+        "→ Serial dilution at declining prices, sub-$5 stock"
       ],
       "assumptions": {
         "bhv7000": {
@@ -172,10 +417,10 @@
       "wt": 15,
       "narrative": "Epilepsy misses + degrader platform unproven + cash crisis",
       "events": [
-        "\u2717 RISE 2/3 epilepsy misses primary endpoint",
-        "\u2717 BHV-1300/1400 pivotal trials delayed or underpowered",
-        "\u2717 Taldefgrobep obesity data underwhelming vs GLP-1s",
-        "\u2192 Dilutive raise at distressed levels, pipeline value collapses"
+        "✗ RISE 2/3 epilepsy misses primary endpoint",
+        "✗ BHV-1300/1400 pivotal trials delayed or underpowered",
+        "✗ Taldefgrobep obesity data underwhelming vs GLP-1s",
+        "→ Dilutive raise at distressed levels, pipeline value collapses"
       ],
       "assumptions": {
         "bhv7000": {
@@ -226,7 +471,7 @@
       "wt": 45,
       "narrative": "Epilepsy succeeds + one degrader progresses + obesity unclear",
       "events": [
-        "\u2713 RISE 2/3 hits primary endpoint \u2014 opakalim differentiated on safety",
+        "✓ RISE 2/3 hits primary endpoint — opakalim differentiated on safety",
         "~ BHV-1300 Graves' pivotal initiated, early data encouraging",
         "~ BHV-1400 IgAN pivotal shows biomarker responses",
         "~ Taldefgrobep obesity shows signal but unclear vs GLP-1 standard"
@@ -280,10 +525,10 @@
       "wt": 30,
       "narrative": "Epilepsy blockbuster + degrader platform validated + obesity kicker",
       "events": [
-        "\u2713 Opakalim best-in-class epilepsy \u2014 paradigm shift on safety",
-        "\u2713 MoDE/TRAP platform validated across Graves' + IgAN",
-        "\u2713 Taldefgrobep carves niche in obesity (muscle-sparing differentiation)",
-        "\u2713 Partnership/M&A interest on degrader platform"
+        "✓ Opakalim best-in-class epilepsy — paradigm shift on safety",
+        "✓ MoDE/TRAP platform validated across Graves' + IgAN",
+        "✓ Taldefgrobep carves niche in obesity (muscle-sparing differentiation)",
+        "✓ Partnership/M&A interest on degrader platform"
       ],
       "assumptions": {
         "bhv7000": {
@@ -332,12 +577,12 @@
     },
     "psychedelic_bull": {
       "wt": 5,
-      "narrative": "Multi-franchise biotech \u2014 epilepsy + Graves' + obesity + degrader platform",
+      "narrative": "Multi-franchise biotech — epilepsy + Graves' + obesity + degrader platform",
       "events": [
-        "\u2713 RISE epilepsy blockbuster \u2014 first novel mechanism in 15 years",
-        "\u2713 Graves' degrader first-in-class \u2014 replaces antithyroid drugs",
-        "\u2713 Taldefgrobep adds lean mass to GLP-1 weight loss \u2014 combo blockbuster",
-        "\u2713 Platform valued at $5B+ standalone \u2014 J&J/AbbVie acquisition target"
+        "✓ RISE epilepsy blockbuster — first novel mechanism in 15 years",
+        "✓ Graves' degrader first-in-class — replaces antithyroid drugs",
+        "✓ Taldefgrobep adds lean mass to GLP-1 weight loss — combo blockbuster",
+        "✓ Platform valued at $5B+ standalone — J&J/AbbVie acquisition target"
       ],
       "assumptions": {
         "bhv7000": {
@@ -390,11 +635,11 @@
       "date": "Jan 2026",
       "title": "Opakalim OLE epilepsy data (JPM)",
       "points": [
-        "Majority of 6-month OLE patients: \u226550% seizure reduction",
-        "Exceptional tolerability \u2014 low CNS adverse events",
+        "Majority of 6-month OLE patients: ≥50% seizure reduction",
+        "Exceptional tolerability — low CNS adverse events",
         "75mg once-daily dose selected for pivotal",
-        "BHV-7000 MDD Phase 2 missed (Dec 2025) \u2014 deprioritized",
-        "Troriluzole CRL (Nov 2025) \u2014 stock -40%",
+        "BHV-7000 MDD Phase 2 missed (Dec 2025) — deprioritized",
+        "Troriluzole CRL (Nov 2025) — stock -40%",
         "BHV-1300 first Graves' patient: complete TSI suppression",
         "BHV-1400 first IgAN patients: biomarker + clinical responses"
       ]
@@ -410,13 +655,13 @@
       ]
     },
     "risks": [
-      "Cash runway ~12 months \u2014 burn ~$160M/quarter, will need to raise",
-      "No revenue \u2014 pure pipeline play, all assets pre-pivotal",
+      "Cash runway ~12 months — burn ~$160M/quarter, will need to raise",
+      "No revenue — pure pipeline play, all assets pre-pivotal",
       "Troriluzole CRL + MDD miss eroded credibility",
       "Epilepsy RISE 2/3 is binary survival event",
       "Degrader platform unproven in pivotal trials",
       "Obesity: taldefgrobep faces GLP-1 juggernaut comparison",
-      "High short interest (11.6% of float) \u2014 squeeze or collapse",
+      "High short interest (11.6% of float) — squeeze or collapse",
       "Dilution risk very high (30% dilution in bear case)"
     ]
   },

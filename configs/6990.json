@@ -15,7 +15,7 @@
   "assets": [
     {
       "id": "commercial",
-      "name": "Sac-TMT (sacituzumab tirumotecan) \u2014 TROP2 ADC",
+      "name": "Sac-TMT (sacituzumab tirumotecan) — TROP2 ADC",
       "stage": "Commercial China (4 indications: TNBC, NSCLC, HR+/HER2- BC x2)",
       "designations": [],
       "indications": [
@@ -34,7 +34,7 @@
     },
     {
       "id": "a166",
-      "name": "Trastuzumab botidotin (A166) \u2014 HER2 ADC",
+      "name": "Trastuzumab botidotin (A166) — HER2 ADC",
       "stage": "Commercial China + global development",
       "designations": [],
       "indications": [
@@ -45,7 +45,56 @@
             "tamB": 10.0,
             "penPct": 5,
             "peakYear": 2033,
-            "notes": "HER2 ADC approved in China. Competing with Enhertu but differentiated payload-linker. Global development ongoing."
+            "notes": "HER2 ADC approved in China. Competing with Enhertu but differentiated payload-linker. Global development ongoing.",
+            "regions": {
+              "us": {
+                "patientsK": 1109.5,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1188.8,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1664.3,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.breast.her2_pos"
         }
@@ -54,7 +103,7 @@
     },
     {
       "id": "skb315",
-      "name": "SKB315 \u2014 CLDN18.2 ADC",
+      "name": "SKB315 — CLDN18.2 ADC",
       "stage": "Phase 2/3",
       "designations": [],
       "indications": [
@@ -65,7 +114,56 @@
             "tamB": 6.0,
             "penPct": 5,
             "peakYear": 2034,
-            "notes": "Novel CLDN18.2 ADC. Phase 2/3 development. Hot target \u2014 Astellas Zolbetuximab approved for gastric."
+            "notes": "Novel CLDN18.2 ADC. Phase 2/3 development. Hot target — Astellas Zolbetuximab approved for gastric.",
+            "regions": {
+              "us": {
+                "patientsK": 665.7,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 713.3,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 998.6,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.gi.gastric_esoph"
         }
@@ -85,7 +183,56 @@
             "tamB": 15.0,
             "penPct": 3,
             "peakYear": 2035,
-            "notes": "3 Merck deals totaling $10B+. SKB410/MK-3120 (Nectin-4 ADC) + SKB571/MK-2750 (bsADC). Merck advancing globally. Milestones + royalties to Kelun-Biotech."
+            "notes": "3 Merck deals totaling $10B+. SKB410/MK-3120 (Nectin-4 ADC) + SKB571/MK-2750 (bsADC). Merck advancing globally. Milestones + royalties to Kelun-Biotech.",
+            "regions": {
+              "us": {
+                "patientsK": 1664.3,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1783.2,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 2496.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.genitourinary.bladder"
         }
@@ -105,7 +252,56 @@
             "tamB": 8,
             "penPct": 1,
             "peakYear": 2036,
-            "notes": "OptiDC proprietary platform. Bispecific ADCs, RDCs, iADCs, DACs. Expanding into autoimmune (TSLP bsAb) + COPD. Crescent Biopharma partnership. One of worlds leading ADC platforms."
+            "notes": "OptiDC proprietary platform. Bispecific ADCs, RDCs, iADCs, DACs. Expanding into autoimmune (TSLP bsAb) + COPD. Crescent Biopharma partnership. One of worlds leading ADC platforms.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.multi_tumor.adc_platform"
         }
@@ -119,8 +315,8 @@
       "narrative": "China pricing pressure + Merck deprioritizes ADC programs + global competition",
       "events": [
         "X NRDL pricing crushes China product margins",
-        "X Merck slows ADC development \u2014 milestones delayed",
-        "X TROP2 ADC crowded \u2014 Gilead Trodelvy, Daiichi DS-1062",
+        "X Merck slows ADC development — milestones delayed",
+        "X TROP2 ADC crowded — Gilead Trodelvy, Daiichi DS-1062",
         "-> Platform value limited, stock to HKD 50-60"
       ],
       "assumptions": {
@@ -174,7 +370,7 @@
       "narrative": "China products grow but global competition limits + Merck milestones trickling",
       "events": [
         "V Sac-TMT grows in China but pricing headwinds",
-        "~ Merck advancing but slowly \u2014 milestones delayed",
+        "~ Merck advancing but slowly — milestones delayed",
         "X TROP2 global market competitive with Trodelvy/DS-1062",
         "-> Moderate revenue growth, platform undervalued"
       ],
@@ -229,7 +425,7 @@
       "narrative": "China ADC leader + Merck partnership delivers globally + OptiDC platform validated",
       "events": [
         "V Sac-TMT dominant TROP2 ADC in China across 5+ indications",
-        "V Merck milestones flowing \u2014 global registrations advancing",
+        "V Merck milestones flowing — global registrations advancing",
         "V A166 + SKB315 building multi-ADC franchise",
         "V Revenue RMB 5B+ by 2028, profitable"
       ],
@@ -281,10 +477,10 @@
     },
     "bull": {
       "wt": 25,
-      "narrative": "Global ADC powerhouse \u2014 Merck deals fully realized + platform generates $20B+ partnerships",
+      "narrative": "Global ADC powerhouse — Merck deals fully realized + platform generates $20B+ partnerships",
       "events": [
-        "V Sac-TMT global approval via Merck \u2014 $3B+ franchise",
-        "V Nectin-4 + bsADC Merck programs succeed \u2014 additional $5B+",
+        "V Sac-TMT global approval via Merck — $3B+ franchise",
+        "V Nectin-4 + bsADC Merck programs succeed — additional $5B+",
         "V OptiDC platform generates 3+ new major partnerships",
         "V Total deal value exceeds $20B across partnerships"
       ],
@@ -336,12 +532,12 @@
     },
     "psychedelic_bull": {
       "wt": 5,
-      "narrative": "Kelun-Biotech becomes global ADC leader \u2014 world-class platform rivals Daiichi/Seagen",
+      "narrative": "Kelun-Biotech becomes global ADC leader — world-class platform rivals Daiichi/Seagen",
       "events": [
         "V OptiDC platform generates 5+ approved ADCs globally",
         "V Merck + additional pharma partnerships exceed $30B total value",
-        "V Platform extends to autoimmune, CNS, metabolic \u2014 beyond oncology",
-        "V Market cap approaches HKD 500B+ \u2014 premier China biotech globally"
+        "V Platform extends to autoimmune, CNS, metabolic — beyond oncology",
+        "V Market cap approaches HKD 500B+ — premier China biotech globally"
       ],
       "assumptions": {
         "commercial": {
@@ -420,10 +616,10 @@
       "Merck controls global development timeline",
       "TROP2 ADC space extremely competitive globally",
       "ADC manufacturing complexity",
-      "Geopolitical risk \u2014 US-China biotech tensions",
+      "Geopolitical risk — US-China biotech tensions",
       "Parent company (Kelun Pharma) control structure",
       "HK-listed with limited international investor access",
-      "Revenue primarily China-derived \u2014 currency + regulatory risk"
+      "Revenue primarily China-derived — currency + regulatory risk"
     ]
   },
   "catalysts": [

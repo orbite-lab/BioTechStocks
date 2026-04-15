@@ -46,7 +46,56 @@
             "tamB": 10.0,
             "penPct": 8,
             "peakYear": 2034,
-            "notes": "Next-gen TTR silencer. Phase 3 TRITON-CM and TRITON-PN advancing. Potentially better knockdown + less frequent dosing. Extends TTR franchise beyond Amvuttra patents."
+            "notes": "Next-gen TTR silencer. Phase 3 TRITON-CM and TRITON-PN advancing. Potentially better knockdown + less frequent dosing. Extends TTR franchise beyond Amvuttra patents.",
+            "regions": {
+              "us": {
+                "patientsK": 37.7,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 44.0,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 44.0,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.attr.attr_cm",
           "rare": true
@@ -67,7 +116,56 @@
             "tamB": 15,
             "penPct": 2,
             "peakYear": 2035,
-            "notes": "Twice-yearly injection for hypertension. ZENITH Phase 3 CVOT with Roche. If positive: $5-10B+ market. RNAi into largest CV market in the world."
+            "notes": "Twice-yearly injection for hypertension. ZENITH Phase 3 CVOT with Roche. If positive: $5-10B+ market. RNAi into largest CV market in the world.",
+            "regions": {
+              "us": {
+                "patientsK": 1664.3,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1783.2,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 2496.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.hypertension.agt_knockdown"
         }
@@ -87,7 +185,56 @@
             "tamB": 8,
             "penPct": 1,
             "peakYear": 2036,
-            "notes": "RNAi targeting APP for CAA and Alzheimer disease. CNS delivery. Very early but massive optionality."
+            "notes": "RNAi targeting APP for CAA and Alzheimer disease. CNS delivery. Very early but massive optionality.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cns.neurodegeneration.caa"
         }
@@ -106,7 +253,56 @@
           "area": "cardio_metabolic.rare_metabolic.porphyria",
           "market": {
             "tamB": 0.8,
-            "penPct": 38
+            "penPct": 38,
+            "regions": {
+              "us": {
+                "patientsK": 3.0,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 3.5,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 3.5,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "rare": true
         }
@@ -124,7 +320,56 @@
           "area": "cardio_metabolic.rare_metabolic.hyperoxaluria",
           "market": {
             "tamB": 0.5,
-            "penPct": 36
+            "penPct": 36,
+            "regions": {
+              "us": {
+                "patientsK": 1.9,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 2.2,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 2.2,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "rare": true
         }
@@ -136,8 +381,8 @@
       "wt": 5,
       "narrative": "ATTR-CM growth decelerates + zilebesiran CVOT fails + acoramidis competition",
       "events": [
-        "X Amvuttra growth slows \u2014 acoramidis (BridgeBio) takes ATTR-CM share",
-        "X Zilebesiran ZENITH CVOT negative \u2014 hypertension thesis dead",
+        "X Amvuttra growth slows — acoramidis (BridgeBio) takes ATTR-CM share",
+        "X Zilebesiran ZENITH CVOT negative — hypertension thesis dead",
         "X Competition from Ionis eplontersen ATTR-CM",
         "-> $43B market cap compresses"
       ],
@@ -260,9 +505,9 @@
       "wt": 50,
       "narrative": "Amvuttra $8B+ peak + zilebesiran validates + Alnylam 2030 on track",
       "events": [
-        "V Amvuttra $8B+ peak \u2014 ATTR-CM standard of care",
-        "V 2026 guide $4.9-5.3B met \u2014 71% growth",
-        "V Zilebesiran CVOT advancing \u2014 hypertension optionality",
+        "V Amvuttra $8B+ peak — ATTR-CM standard of care",
+        "V 2026 guide $4.9-5.3B met — 71% growth",
+        "V Zilebesiran CVOT advancing — hypertension optionality",
         "V Alnylam 2030: 25%+ revenue CAGR target"
       ],
       "assumptions": {
@@ -320,10 +565,10 @@
     },
     "bull": {
       "wt": 25,
-      "narrative": "RNAi platform dominance \u2014 ATTR + hypertension + Alzheimer \u2014 $15B+ revenue",
+      "narrative": "RNAi platform dominance — ATTR + hypertension + Alzheimer — $15B+ revenue",
       "events": [
-        "V Amvuttra $10B+ \u2014 dominates ATTR-CM globally",
-        "V Zilebesiran CVOT positive \u2014 hypertension blockbuster $5B+",
+        "V Amvuttra $10B+ — dominates ATTR-CM globally",
+        "V Zilebesiran CVOT positive — hypertension blockbuster $5B+",
         "V Platform generates 3+ more blockbusters via partnerships",
         "V Revenue $15B+ by 2030"
       ],
@@ -382,7 +627,7 @@
     },
     "psychedelic_bull": {
       "wt": 5,
-      "narrative": "RNAi becomes the dominant therapeutic modality \u2014 Alnylam = Genentech of genetic medicine",
+      "narrative": "RNAi becomes the dominant therapeutic modality — Alnylam = Genentech of genetic medicine",
       "events": [
         "V ATTR + HTN + Alzheimer + rare = $20B+ platform",
         "V RNAi replaces chronic small molecule therapy across CV, neuro, metabolic",
@@ -471,13 +716,13 @@
       ]
     },
     "risks": [
-      "$43.6B at ~15x 2025 revenue \u2014 premium",
+      "$43.6B at ~15x 2025 revenue — premium",
       "BridgeBio acoramidis competing in ATTR-CM",
       "Ionis eplontersen CARDIO-TTRansform if positive",
-      "Zilebesiran CVOT is years away \u2014 massive investment",
+      "Zilebesiran CVOT is years away — massive investment",
       "Amvuttra pricing pressure as ATTR-CM population expands",
       "RNAi manufacturing at scale is complex",
-      "Leqvio (Novartis) underperforming \u2014 RNAi adoption concerns",
+      "Leqvio (Novartis) underperforming — RNAi adoption concerns",
       "GLP-1 weight loss may reduce CV risk indirectly"
     ]
   },

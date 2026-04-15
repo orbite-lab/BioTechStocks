@@ -14,7 +14,7 @@
   "assets": [
     {
       "id": "janx007",
-      "name": "JANX007 \u2014 PSMA-TRACTr (mCRPC)",
+      "name": "JANX007 — PSMA-TRACTr (mCRPC)",
       "stage": "Phase 1a/b (109 patients treated, expansion cohorts)",
       "designations": [],
       "indications": [
@@ -25,7 +25,56 @@
             "tamB": 12.0,
             "penPct": 5,
             "peakYear": 2033,
-            "notes": "PSMA-targeted tumor-activated T cell engager. Phase 1a dose escalation complete. Phase 1b enrolling taxane-naive. 109 patients treated. Early data: 78% PSA30 decline at 0.1mg, 100% at 0.2mg. CRS low-grade (1-2) and Cycle 1 only. TRACTr masking minimizes systemic toxicity. Stock crashed 50% Feb 2026 on limited Phase 1b disclosure \u2014 market wanted more. Analysts estimate $1.5B+ peak in chemo-refractory, multi-blockbuster in earlier lines."
+            "notes": "PSMA-targeted tumor-activated T cell engager. Phase 1a dose escalation complete. Phase 1b enrolling taxane-naive. 109 patients treated. Early data: 78% PSA30 decline at 0.1mg, 100% at 0.2mg. CRS low-grade (1-2) and Cycle 1 only. TRACTr masking minimizes systemic toxicity. Stock crashed 50% Feb 2026 on limited Phase 1b disclosure — market wanted more. Analysts estimate $1.5B+ peak in chemo-refractory, multi-blockbuster in earlier lines.",
+            "regions": {
+              "us": {
+                "patientsK": 1331.4,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1426.5,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1997.1,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.genitourinary.prostate"
         }
@@ -34,7 +83,7 @@
     },
     {
       "id": "janx008",
-      "name": "JANX008 \u2014 EGFR-TRACTr (solid tumors)",
+      "name": "JANX008 — EGFR-TRACTr (solid tumors)",
       "stage": "Phase 1 (dose escalation complete, expansion cohorts initiated)",
       "designations": [],
       "indications": [
@@ -45,7 +94,56 @@
             "tamB": 12,
             "penPct": 2,
             "peakYear": 2034,
-            "notes": "EGFR-targeted TRACTr across multiple solid tumors. Phase 1a complete, expansion cohorts started. EGFR is validated but historically undruggable with T cell engagers due to on-target toxicity. TRACTr masking may solve this \u2014 if so, massive TAM across CRC, NSCLC, SCCHN, PDAC, TNBC."
+            "notes": "EGFR-targeted TRACTr across multiple solid tumors. Phase 1a complete, expansion cohorts started. EGFR is validated but historically undruggable with T cell engagers due to on-target toxicity. TRACTr masking may solve this — if so, massive TAM across CRC, NSCLC, SCCHN, PDAC, TNBC.",
+            "regions": {
+              "us": {
+                "patientsK": 1331.4,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1426.5,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1997.1,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.gi.colorectal"
         }
@@ -54,7 +152,7 @@
     },
     {
       "id": "janx011",
-      "name": "JANX011 \u2014 CD19-ARM (autoimmune)",
+      "name": "JANX011 — CD19-ARM (autoimmune)",
       "stage": "Phase 1 (first patient dosed)",
       "designations": [],
       "indications": [
@@ -65,7 +163,56 @@
             "tamB": 8,
             "penPct": 1,
             "peakYear": 2035,
-            "notes": "Adaptive Immune Response Modulator targeting CD19 for autoimmune diseases. First patient dosed. ARM platform = T cell modulation for autoimmunity. If it works: off-the-shelf alternative to CAR-T for lupus/RA."
+            "notes": "Adaptive Immune Response Modulator targeting CD19 for autoimmune diseases. First patient dosed. ARM platform = T cell modulation for autoimmunity. If it works: off-the-shelf alternative to CAR-T for lupus/RA.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "immunology.autoimmune.sle"
         }
@@ -74,7 +221,7 @@
     },
     {
       "id": "psma_tracir",
-      "name": "PSMA-TRACIr \u2014 CD28 costimulatory",
+      "name": "PSMA-TRACIr — CD28 costimulatory",
       "stage": "Preclinical (IND-enabling)",
       "designations": [],
       "indications": [
@@ -85,7 +232,56 @@
             "tamB": 8.0,
             "penPct": 2,
             "peakYear": 2035,
-            "notes": "TRACIr = CD28 costimulatory arm. Designed to combo with JANX007 TRACTr for enhanced T cell activation. PSMA-TRACIr + JANX007 = dual T cell activation in prostate cancer."
+            "notes": "TRACIr = CD28 costimulatory arm. Designed to combo with JANX007 TRACTr for enhanced T cell activation. PSMA-TRACIr + JANX007 = dual T cell activation in prostate cancer.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.genitourinary.prostate"
         }
@@ -105,7 +301,56 @@
             "tamB": 6,
             "penPct": 1,
             "peakYear": 2036,
-            "notes": "Merck: strategic collaboration for TRACTr candidates \u2014 $10M milestone received 2025. BMS: exclusive worldwide license for novel program \u2014 development candidate nominated Mar 2026. TROP2-TRACTr advancing preclinically. Platform generates partnership value."
+            "notes": "Merck: strategic collaboration for TRACTr candidates — $10M milestone received 2025. BMS: exclusive worldwide license for novel program — development candidate nominated Mar 2026. TROP2-TRACTr advancing preclinically. Platform generates partnership value.",
+            "regions": {
+              "us": {
+                "patientsK": 665.7,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 713.3,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 998.6,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.lung.nsclc_undruggable"
         }
@@ -116,12 +361,12 @@
   "scenarios": {
     "mega_bear": {
       "wt": 5,
-      "narrative": "TRACTr platform fails to differentiate \u2014 JANX007 efficacy insufficient in mCRPC",
+      "narrative": "TRACTr platform fails to differentiate — JANX007 efficacy insufficient in mCRPC",
       "events": [
-        "X JANX007 Phase 1b mCRPC shows limited durability \u2014 responses short-lived",
-        "X JANX008 EGFR expansion fails in CRC/NSCLC \u2014 on-target toxicity despite masking",
-        "X ARM autoimmune platform unproven \u2014 CAR-T dominates",
-        "-> $950M market cap with $850M cash \u2014 platform worth nothing"
+        "X JANX007 Phase 1b mCRPC shows limited durability — responses short-lived",
+        "X JANX008 EGFR expansion fails in CRC/NSCLC — on-target toxicity despite masking",
+        "X ARM autoimmune platform unproven — CAR-T dominates",
+        "-> $950M market cap with $850M cash — platform worth nothing"
       ],
       "assumptions": {
         "janx007": {
@@ -170,10 +415,10 @@
     },
     "bear": {
       "wt": 15,
-      "narrative": "JANX007 shows signal but modest \u2014 niche mCRPC only + JANX008 slow to mature",
+      "narrative": "JANX007 shows signal but modest — niche mCRPC only + JANX008 slow to mature",
       "events": [
         "~ JANX007 mCRPC data encouraging but not best-in-class",
-        "~ JANX008 expansion data mixed \u2014 some tumor types respond, others not",
+        "~ JANX008 expansion data mixed — some tumor types respond, others not",
         "X ARM autoimmune early data underwhelms",
         "-> Platform validated as proof of concept but commercial path uncertain"
       ],
@@ -226,10 +471,10 @@
       "wt": 50,
       "narrative": "JANX007 validates TRACTr in mCRPC + JANX008 shows activity in 2+ tumor types + partnerships deliver",
       "events": [
-        "V JANX007 Phase 1b mCRPC data strong \u2014 registrational path identified",
+        "V JANX007 Phase 1b mCRPC data strong — registrational path identified",
         "V JANX008 EGFR expansion shows meaningful responses in CRC + SCCHN",
         "V CD19-ARM Phase 1 autoimmune: clean safety + target engagement",
-        "V Merck + BMS programs advancing \u2014 platform validated by Big Pharma"
+        "V Merck + BMS programs advancing — platform validated by Big Pharma"
       ],
       "assumptions": {
         "janx007": {
@@ -278,11 +523,11 @@
     },
     "bull": {
       "wt": 25,
-      "narrative": "TRACTr platform breakthrough \u2014 T cell engagers finally work in solid tumors \u2014 multi-blockbuster",
+      "narrative": "TRACTr platform breakthrough — T cell engagers finally work in solid tumors — multi-blockbuster",
       "events": [
-        "V JANX007 mCRPC blockbuster $1.5B+ \u2014 best-in-class PSMA-TCE",
-        "V JANX008 EGFR validated across 3+ solid tumor types \u2014 $3B+ peak",
-        "V TRACTr masking solves CRS problem \u2014 paradigm shift for T cell engagers",
+        "V JANX007 mCRPC blockbuster $1.5B+ — best-in-class PSMA-TCE",
+        "V JANX008 EGFR validated across 3+ solid tumor types — $3B+ peak",
+        "V TRACTr masking solves CRS problem — paradigm shift for T cell engagers",
         "V ARM autoimmune platform generates $1B+ in partnerships"
       ],
       "assumptions": {
@@ -332,7 +577,7 @@
     },
     "psychedelic_bull": {
       "wt": 5,
-      "narrative": "TRACTr = the bispecific platform that finally cracks solid tumors \u2014 Merck/BMS acquires at $100+",
+      "narrative": "TRACTr = the bispecific platform that finally cracks solid tumors — Merck/BMS acquires at $100+",
       "events": [
         "V JANX007 + JANX008 = two blockbusters, 5+ approved indications",
         "V TRACTr/TRACIr/ARM = 3 platforms across oncology + autoimmune",
@@ -392,14 +637,14 @@
       "points": [
         "JANX007 mCRPC: 109 patients treated Phase 1a/b",
         "Phase 1a: 78% PSA30 at 0.1mg, 100% at 0.2mg, 90% PSA decline observed",
-        "CRS low-grade (1-2), Cycle 1 only \u2014 TRACTr masking works",
+        "CRS low-grade (1-2), Cycle 1 only — TRACTr masking works",
         "Phase 1b taxane-naive cohort enrolling",
         "JANX008 EGFR: Phase 1a complete, expansion cohorts initiated across solid tumors",
         "JANX011 CD19-ARM: first patient dosed for autoimmune diseases",
         "BMS collaboration: development candidate nominated Mar 2026",
         "Merck: $10M milestone (first patient dosed in lead collab program)",
         "Cash: ~$850M (runway into 2028+)",
-        "Stock crashed from $36 to $13 on Feb 2026 data \u2014 limited Phase 1b disclosure",
+        "Stock crashed from $36 to $13 on Feb 2026 data — limited Phase 1b disclosure",
         "Analyst consensus: Strong Buy, median PT $53.60 (4x current price)"
       ]
     },
@@ -415,11 +660,11 @@
       ]
     },
     "risks": [
-      "Stock at $13 after 65% crash \u2014 market lost confidence in Phase 1b data",
+      "Stock at $13 after 65% crash — market lost confidence in Phase 1b data",
       "$950M market cap with $850M cash = paying ~$100M for entire platform",
       "T cell engagers in solid tumors have historically failed (Amgen, others)",
-      "JANX007 Feb 2026 update was thin \u2014 Phase 1b durability/response rate unknown",
-      "JANX008 EGFR expansion data not yet disclosed \u2014 could disappoint",
+      "JANX007 Feb 2026 update was thin — Phase 1b durability/response rate unknown",
+      "JANX008 EGFR expansion data not yet disclosed — could disappoint",
       "CRS masking may not hold at therapeutic doses in larger populations",
       "ARM autoimmune platform is entirely preclinical-to-Phase 1",
       "Competition from ADCs, bispecifics, radioligands in same indications",

@@ -2,7 +2,7 @@
   "company": {
     "ticker": "NUVL",
     "name": "Nuvalent",
-    "subtitle": "Zidesamtinib NDA PDUFA Sep 18, 2026 \u00b7 Neladalkib NDA H1 2026 \u00b7 Precision NSCLC kinase platform",
+    "subtitle": "Zidesamtinib NDA PDUFA Sep 18, 2026 · Neladalkib NDA H1 2026 · Precision NSCLC kinase platform",
     "sharesOut": 72,
     "cash": 1400,
     "currentPrice": 102.0,
@@ -14,7 +14,7 @@
   "assets": [
     {
       "id": "zides",
-      "name": "Zidesamtinib \u2014 ROS1-selective (NSCLC)",
+      "name": "Zidesamtinib — ROS1-selective (NSCLC)",
       "stage": "NDA filed (PDUFA Sep 18, 2026)",
       "designations": [
         "Breakthrough",
@@ -23,12 +23,61 @@
       "indications": [
         {
           "id": "ros1",
-          "name": "ROS1-positive NSCLC (TKI pre-treated + TKI-na\u00efve expansion)",
+          "name": "ROS1-positive NSCLC (TKI pre-treated + TKI-naïve expansion)",
           "market": {
             "tamB": 2.5,
             "penPct": 40,
             "peakYear": 2031,
-            "notes": "ROS1+ NSCLC: ~3% of NSCLC (~6K US patients). Best-in-class ROS1 inhibitor \u2014 brain-penetrant, overcomes G2032R resistance, ROS1-selective (avoids TRK toxicity). ARROS-1 Phase 1/2 pivotal data strong. NDA PDUFA Sep 18, 2026. TKI-na\u00efve label expansion submission H2 2026. Competitor: crizotinib, entrectinib, repotrectinib."
+            "notes": "ROS1+ NSCLC: ~3% of NSCLC (~6K US patients). Best-in-class ROS1 inhibitor — brain-penetrant, overcomes G2032R resistance, ROS1-selective (avoids TRK toxicity). ARROS-1 Phase 1/2 pivotal data strong. NDA PDUFA Sep 18, 2026. TKI-naïve label expansion submission H2 2026. Competitor: crizotinib, entrectinib, repotrectinib.",
+            "regions": {
+              "us": {
+                "patientsK": 277.4,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 297.2,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 416.1,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.lung.nsclc_driver"
         }
@@ -37,7 +86,7 @@
     },
     {
       "id": "nelad",
-      "name": "Neladalkib \u2014 ALK-selective (NSCLC)",
+      "name": "Neladalkib — ALK-selective (NSCLC)",
       "stage": "NDA planned H1 2026 (TKI pre-treated)",
       "designations": [
         "Breakthrough"
@@ -50,7 +99,56 @@
             "tamB": 4.0,
             "penPct": 25,
             "peakYear": 2032,
-            "notes": "ALK+ NSCLC: ~5% of NSCLC (~12K US patients). Brain-penetrant, overcomes compound ALK resistance mutations incl. G1202R. ALKOVE-1 pivotal data. NDA submission H1 2026. ALKAZAR Phase 3 (frontline vs lorlatinib) enrolling. Competitor: lorlatinib (Pfizer) \u2014 lorlatinib dominant but CNS toxicity limits."
+            "notes": "ALK+ NSCLC: ~5% of NSCLC (~12K US patients). Brain-penetrant, overcomes compound ALK resistance mutations incl. G1202R. ALKOVE-1 pivotal data. NDA submission H1 2026. ALKAZAR Phase 3 (frontline vs lorlatinib) enrolling. Competitor: lorlatinib (Pfizer) — lorlatinib dominant but CNS toxicity limits.",
+            "regions": {
+              "us": {
+                "patientsK": 443.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 475.5,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 665.7,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.lung.nsclc_driver"
         }
@@ -59,7 +157,7 @@
     },
     {
       "id": "nvl330",
-      "name": "NVL-330 \u2014 HER2-selective (NSCLC)",
+      "name": "NVL-330 — HER2-selective (NSCLC)",
       "stage": "Phase 1a/1b (HEROEX-1)",
       "designations": [],
       "indications": [
@@ -70,7 +168,56 @@
             "tamB": 3.0,
             "penPct": 12,
             "peakYear": 2034,
-            "notes": "HER2-selective, brain-penetrant. Phase 1a/1b HEROEX-1 ongoing. HER2-altered NSCLC ~2-4% of cases. Addresses resistance + brain mets. Early stage but extends kinase platform."
+            "notes": "HER2-selective, brain-penetrant. Phase 1a/1b HEROEX-1 ongoing. HER2-altered NSCLC ~2-4% of cases. Addresses resistance + brain mets. Early stage but extends kinase platform.",
+            "regions": {
+              "us": {
+                "patientsK": 332.9,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 356.6,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 499.3,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.lung.nsclc_driver"
         }
@@ -90,7 +237,56 @@
             "tamB": 5.0,
             "penPct": 8,
             "peakYear": 2035,
-            "notes": "Nuvalent plans to disclose a new development candidate by year-end 2026. Platform validated across ROS1, ALK, HER2 \u2014 next target likely another oncology kinase."
+            "notes": "Nuvalent plans to disclose a new development candidate by year-end 2026. Platform validated across ROS1, ALK, HER2 — next target likely another oncology kinase.",
+            "regions": {
+              "us": {
+                "patientsK": 554.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 594.4,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 832.1,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.lung.nsclc_driver"
         }
@@ -101,12 +297,12 @@
   "scenarios": {
     "mega_bear": {
       "wt": 5,
-      "narrative": "FDA rejects zidesamtinib \u2014 Phase 1/2 data insufficient for approval",
+      "narrative": "FDA rejects zidesamtinib — Phase 1/2 data insufficient for approval",
       "events": [
-        "\u2717 FDA issues CRL for zidesamtinib \u2014 requests randomized confirmatory trial",
-        "\u2717 Neladalkib NDA delayed \u2014 safety signal in ALKOVE-1",
-        "\u2717 ROS1/ALK are niche markets \u2014 commercial viability questioned",
-        "\u2192 $7.3B market cap deflates to cash floor (~$19/share)"
+        "✗ FDA issues CRL for zidesamtinib — requests randomized confirmatory trial",
+        "✗ Neladalkib NDA delayed — safety signal in ALKOVE-1",
+        "✗ ROS1/ALK are niche markets — commercial viability questioned",
+        "→ $7.3B market cap deflates to cash floor (~$19/share)"
       ],
       "assumptions": {
         "zides": {
@@ -148,12 +344,12 @@
     },
     "bear": {
       "wt": 15,
-      "narrative": "Zidesamtinib approved but ROS1 market is tiny \u2014 neladalkib faces lorlatinib dominance",
+      "narrative": "Zidesamtinib approved but ROS1 market is tiny — neladalkib faces lorlatinib dominance",
       "events": [
-        "\u2713 Zidesamtinib approved Sep 2026 \u2014 but ~6K US patients (niche)",
+        "✓ Zidesamtinib approved Sep 2026 — but ~6K US patients (niche)",
         "~ Neladalkib approved but lorlatinib entrenched in frontline",
-        "\u2717 Commercial infrastructure expensive relative to small TAMs",
-        "\u2192 Two approved products but combined peak $800M \u2014 overvalued at $7B+"
+        "✗ Commercial infrastructure expensive relative to small TAMs",
+        "→ Two approved products but combined peak $800M — overvalued at $7B+"
       ],
       "assumptions": {
         "zides": {
@@ -195,11 +391,11 @@
     },
     "base": {
       "wt": 50,
-      "narrative": "Dual launch ROS1 + ALK \u2014 precision NSCLC franchise + frontline expansion",
+      "narrative": "Dual launch ROS1 + ALK — precision NSCLC franchise + frontline expansion",
       "events": [
-        "\u2713 Zidesamtinib approved \u2014 best-in-class ROS1, rapid uptake",
-        "\u2713 Neladalkib approved \u2014 captures ALK resistance market",
-        "\u2713 Both expand to TKI-na\u00efve patients \u2014 doubles addressable population",
+        "✓ Zidesamtinib approved — best-in-class ROS1, rapid uptake",
+        "✓ Neladalkib approved — captures ALK resistance market",
+        "✓ Both expand to TKI-naïve patients — doubles addressable population",
         "~ NVL-330 HER2 and new candidate advancing"
       ],
       "assumptions": {
@@ -242,12 +438,12 @@
     },
     "bull": {
       "wt": 25,
-      "narrative": "Precision kinase platform leader \u2014 3+ products across NSCLC \u2014 $3B+ peak",
+      "narrative": "Precision kinase platform leader — 3+ products across NSCLC — $3B+ peak",
       "events": [
-        "\u2713 Zidesamtinib dominant in all ROS1+ NSCLC (pre-treated + na\u00efve)",
-        "\u2713 Neladalkib takes lorlatinib frontline share via ALKAZAR Phase 3 win",
-        "\u2713 NVL-330 first-in-class HER2 NSCLC \u2014 third launched product",
-        "\u2713 Platform extends beyond NSCLC \u2014 other solid tumors"
+        "✓ Zidesamtinib dominant in all ROS1+ NSCLC (pre-treated + naïve)",
+        "✓ Neladalkib takes lorlatinib frontline share via ALKAZAR Phase 3 win",
+        "✓ NVL-330 first-in-class HER2 NSCLC — third launched product",
+        "✓ Platform extends beyond NSCLC — other solid tumors"
       ],
       "assumptions": {
         "zides": {
@@ -289,12 +485,12 @@
     },
     "psychedelic_bull": {
       "wt": 5,
-      "narrative": "Nuvalent becomes the Genentech of precision kinase inhibitors \u2014 Pfizer/Roche acquires",
+      "narrative": "Nuvalent becomes the Genentech of precision kinase inhibitors — Pfizer/Roche acquires",
       "events": [
-        "\u2713 Three launched products dominate ROS1 + ALK + HER2 NSCLC",
-        "\u2713 ALKAZAR Phase 3 displaces lorlatinib frontline \u2014 $2B+ ALK franchise",
-        "\u2713 Platform generates 5+ kinase programs across oncology",
-        "\u2713 Pfizer or Roche acquires for $15-20B to own precision lung cancer"
+        "✓ Three launched products dominate ROS1 + ALK + HER2 NSCLC",
+        "✓ ALKAZAR Phase 3 displaces lorlatinib frontline — $2B+ ALK franchise",
+        "✓ Platform generates 5+ kinase programs across oncology",
+        "✓ Pfizer or Roche acquires for $15-20B to own precision lung cancer"
       ],
       "assumptions": {
         "zides": {
@@ -340,34 +536,34 @@
       "date": "Feb 26, 2026 (Q4 2025 + OnTarget update)",
       "title": "Zidesamtinib NDA accepted PDUFA Sep 18 + neladalkib NDA H1 2026",
       "points": [
-        "Zidesamtinib NDA accepted \u2014 PDUFA Sep 18, 2026 (BTD + Orphan)",
+        "Zidesamtinib NDA accepted — PDUFA Sep 18, 2026 (BTD + Orphan)",
         "Neladalkib NDA submission planned H1 2026 (BTD)",
         "ALKAZAR Phase 3 frontline ALK ongoing",
         "NVL-330 HER2 Phase 1a/1b HEROEX-1 enrolling",
         "New development candidate to be disclosed by year-end 2026",
-        "Cash: $1.4B \u2014 runway into 2029",
+        "Cash: $1.4B — runway into 2029",
         "Commercial preparation underway for zidesamtinib launch",
         "AACR 2026: zidesamtinib clinical + preclinical posters Apr 21"
       ]
     },
     "nextCatalyst": {
       "date": "Sep 18, 2026",
-      "title": "Zidesamtinib PDUFA \u2014 first potential approval",
+      "title": "Zidesamtinib PDUFA — first potential approval",
       "thresholds": [
         "FDA approval/CRL for ROS1+ NSCLC (TKI pre-treated)",
         "If approved: immediate US commercial launch",
         "Also H1 2026: neladalkib NDA submission",
-        "Also H2 2026: zidesamtinib TKI-na\u00efve expansion submission"
+        "Also H2 2026: zidesamtinib TKI-naïve expansion submission"
       ]
     },
     "risks": [
       "ROS1+ NSCLC is tiny (~3% of NSCLC, ~6K US patients)",
-      "ALK+ is also niche (~5%, ~12K) \u2014 combined still small vs solid tumor platforms",
+      "ALK+ is also niche (~5%, ~12K) — combined still small vs solid tumor platforms",
       "$7.3B market cap for pre-revenue precision oncology company",
-      "Phase 1/2 single-arm data as basis for NDA \u2014 CRL risk higher than Phase 3",
-      "Lorlatinib (Pfizer) dominance in ALK frontline \u2014 ALKAZAR must beat it",
+      "Phase 1/2 single-arm data as basis for NDA — CRL risk higher than Phase 3",
+      "Lorlatinib (Pfizer) dominance in ALK frontline — ALKAZAR must beat it",
       "Commercial infrastructure for niche oncology is expensive relative to revenue",
-      "Stock was $30 in 2024, now $102 \u2014 significant expectations priced in",
+      "Stock was $30 in 2024, now $102 — significant expectations priced in",
       "New candidate disclosure could underwhelm if target is minor"
     ]
   },
@@ -426,7 +622,7 @@
       "dateSort": "2026-09-30",
       "asset": "zides",
       "indication": "ros1",
-      "title": "Zidesamtinib label expansion submission (TKI-na\u00efve ROS1)",
+      "title": "Zidesamtinib label expansion submission (TKI-naïve ROS1)",
       "type": "label_expansion",
       "binary": false,
       "fail_pos": 85,
@@ -437,7 +633,7 @@
       "_sourceUrl": "https://investors.nuvalent.com/2026-01-12-Nuvalent-Announces-OnTarget-2026-Operating-Plan-Progress-and-Outlines-Key-Anticipated-2026-Milestones",
       "_addedAt": "2026-04-14T07:58:57Z",
       "_confidence": "high",
-      "_rationale": "Company plans to submit data to FDA for potential label expansion in TKI-na\u00efve ROS1-positive NSCLC in H2 2026"
+      "_rationale": "Company plans to submit data to FDA for potential label expansion in TKI-naïve ROS1-positive NSCLC in H2 2026"
     },
     {
       "date": "Year-end 2026",

@@ -45,7 +45,56 @@
             "tamB": 2.0,
             "penPct": 20,
             "peakYear": 2031,
-            "notes": "First-in-class CRF1 antagonist. 2025: $301M (Y1). Q4 $135M annualizing $540M. 80% reimbursement. ~100K CAH patients US. No competitor."
+            "notes": "First-in-class CRF1 antagonist. 2025: $301M (Y1). Q4 $135M annualizing $540M. 80% reimbursement. ~100K CAH patients US. No competitor.",
+            "regions": {
+              "us": {
+                "patientsK": 7.5,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 8.8,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 8.8,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "endocrine.adrenal.cah",
           "rare": true
@@ -66,7 +115,56 @@
             "tamB": 15.0,
             "penPct": 5,
             "peakYear": 2034,
-            "notes": "AMPA receptor PAM. Novel MDD mechanism. Phase 3 initiated. Data early 2027. If positive: first AMPA antidepressant. $3-5B peak."
+            "notes": "AMPA receptor PAM. Novel MDD mechanism. Phase 3 initiated. Data early 2027. If positive: first AMPA antidepressant. $3-5B peak.",
+            "regions": {
+              "us": {
+                "patientsK": 1664.3,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1783.2,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 2496.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cns.psychiatry.depression"
         }
@@ -86,7 +184,56 @@
             "tamB": 8.0,
             "penPct": 4,
             "peakYear": 2034,
-            "notes": "M1/M4 muscarinic agonist. Phase 3 initiated. Competes with Cobenfy (BMS) and emraclidine (AbbVie). Non-D2 mechanism."
+            "notes": "M1/M4 muscarinic agonist. Phase 3 initiated. Competes with Cobenfy (BMS) and emraclidine (AbbVie). Non-D2 mechanism.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cns.psychiatry.schizophrenia"
         }
@@ -106,7 +253,56 @@
             "tamB": 5,
             "penPct": 2,
             "peakYear": 2035,
-            "notes": "Muscarinic franchise beyond schizophrenia. Platform across movement disorders + psychiatry + rare."
+            "notes": "Muscarinic franchise beyond schizophrenia. Platform across movement disorders + psychiatry + rare.",
+            "regions": {
+              "us": {
+                "patientsK": 554.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 594.4,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 832.1,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cns.psychiatry.schizophrenia"
         }
@@ -115,7 +311,7 @@
     },
     {
       "id": "vykat",
-      "name": "VYKAT XR (diazoxide choline) \u2014 PWS hyperphagia (ex-SLNO)",
+      "name": "VYKAT XR (diazoxide choline) — PWS hyperphagia (ex-SLNO)",
       "stage": "Commercial ($190M 2025, acquired Apr 2026 for $2.9B)",
       "designations": [
         "Orphan"
@@ -128,7 +324,56 @@
             "tamB": 1.5,
             "penPct": 25,
             "peakYear": 2032,
-            "notes": "VYKAT XR: first-in-class for PWS hyperphagia. $190M 2025 revenue ($92M Q4 alone). Acquired via SLNO for $2.9B ($53/share, 34% premium). ~20K PWS patients in US/EU. Strong early adoption. NBIX global commercial infrastructure expected to double addressable market by 2027. Orphan drug exclusivity."
+            "notes": "VYKAT XR: first-in-class for PWS hyperphagia. $190M 2025 revenue ($92M Q4 alone). Acquired via SLNO for $2.9B ($53/share, 34% premium). ~20K PWS patients in US/EU. Strong early adoption. NBIX global commercial infrastructure expected to double addressable market by 2027. Orphan drug exclusivity.",
+            "regions": {
+              "us": {
+                "patientsK": 5.7,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 6.6,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 6.6,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.obesity.mc4r",
           "rare": true
@@ -485,9 +730,9 @@
       "CAH market size uncertain",
       "Heavy R&D $960-1010M",
       "AbbVie emraclidine competes with direclidine",
-      "$2.9B SLNO acquisition increases leverage \u2014 net cash to net debt",
-      "VYKAT XR integration risk \u2014 NBIX has no metabolic disease experience",
-      "PWS market smaller than CNS core \u2014 strategic fit questioned by some analysts"
+      "$2.9B SLNO acquisition increases leverage — net cash to net debt",
+      "VYKAT XR integration risk — NBIX has no metabolic disease experience",
+      "PWS market smaller than CNS core — strategic fit questioned by some analysts"
     ]
   },
   "catalysts": [

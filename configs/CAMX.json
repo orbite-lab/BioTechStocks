@@ -15,7 +15,7 @@
   "assets": [
     {
       "id": "commercial",
-      "name": "Buvidal/Brixadi \u2014 long-acting buprenorphine (opioid dependence)",
+      "name": "Buvidal/Brixadi — long-acting buprenorphine (opioid dependence)",
       "stage": "Commercial (SEK 1.8B+ 2025, Brixadi royalties growing)",
       "designations": [],
       "indications": [
@@ -34,7 +34,7 @@
     },
     {
       "id": "oczyesa",
-      "name": "Oczyesa/Oclaiz (CAM2029) \u2014 octreotide SC depot (acromegaly)",
+      "name": "Oczyesa/Oclaiz (CAM2029) — octreotide SC depot (acromegaly)",
       "stage": "Commercial EU (launched Nov 2025) + US PDUFA Jun 10, 2026",
       "designations": [],
       "indications": [
@@ -45,7 +45,56 @@
             "tamB": 2.0,
             "penPct": 15,
             "peakYear": 2032,
-            "notes": "Monthly SC octreotide depot. EU approved, launched Germany Nov 2025. US NDA resubmitted, PDUFA Jun 10, 2026. Superior to first-gen SRL (Sandostatin LAR). 3-5K EU acromegaly patients targetable. FluidCrystal technology."
+            "notes": "Monthly SC octreotide depot. EU approved, launched Germany Nov 2025. US NDA resubmitted, PDUFA Jun 10, 2026. Superior to first-gen SRL (Sandostatin LAR). 3-5K EU acromegaly patients targetable. FluidCrystal technology.",
+            "regions": {
+              "us": {
+                "patientsK": 7.5,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 8.8,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 8.8,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "endocrine.pituitary.acromegaly",
           "rare": true
@@ -55,7 +104,7 @@
     },
     {
       "id": "sorento",
-      "name": "CAM2029 \u2014 GEP-NET (SORENTO Phase 3)",
+      "name": "CAM2029 — GEP-NET (SORENTO Phase 3)",
       "stage": "Phase 3 (primary readout mid-H2 2026)",
       "designations": [],
       "indications": [
@@ -66,7 +115,56 @@
             "tamB": 3.0,
             "penPct": 12,
             "peakYear": 2033,
-            "notes": "SORENTO Phase 3 vs Sandostatin LAR. Primary PFS readout mid/H2 2026. Event accrual slower than expected (patients doing well). Major TAM expansion from acromegaly."
+            "notes": "SORENTO Phase 3 vs Sandostatin LAR. Primary PFS readout mid/H2 2026. Event accrual slower than expected (patients doing well). Major TAM expansion from acromegaly.",
+            "regions": {
+              "us": {
+                "patientsK": 11.3,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 13.2,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 13.2,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+              },
+              "us.wtpPct": {
+                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+              },
+              "eu.wtpPct": {
+                "note": "Rare disease default -- HTA-gated uptake (55%)."
+              },
+              "row.wtpPct": {
+                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+              },
+              "us.priceK": {
+                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+              },
+              "eu.priceK": {
+                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+              },
+              "row.priceK": {
+                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.neuroendocrine.gepnet",
           "rare": true
@@ -76,7 +174,7 @@
     },
     {
       "id": "pld",
-      "name": "CAM2029 \u2014 polycystic liver disease",
+      "name": "CAM2029 — polycystic liver disease",
       "stage": "Phase 2b positive (POSITANO) + Phase 2/3 planned",
       "designations": [
         "Orphan (US + EU for ADPKD)"
@@ -89,7 +187,56 @@
             "tamB": 2.0,
             "penPct": 10,
             "peakYear": 2034,
-            "notes": "POSITANO Phase 2b positive: significant liver cyst volume reduction. Orphan designation in ADPKD (US+EU). No approved therapy for PLD. 37K patients US/EU4/UK. Phase 2/3 planned."
+            "notes": "POSITANO Phase 2b positive: significant liver cyst volume reduction. Orphan designation in ADPKD (US+EU). No approved therapy for PLD. 37K patients US/EU4/UK. Phase 2/3 planned.",
+            "regions": {
+              "us": {
+                "patientsK": 221.9,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 237.8,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 332.9,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.liver.pld_adpkd"
         }
@@ -109,7 +256,56 @@
             "tamB": 10,
             "penPct": 1,
             "peakYear": 2036,
-            "notes": "Lilly deal: up to $870M milestones + royalties for FluidCrystal long-acting incretins (up to 4 compounds, including dual GIP/GLP-1 and triple agonists). CAM2056 monthly semaglutide Phase 1 completed enrollment. If monthly/quarterly GLP-1 works: massive opportunity."
+            "notes": "Lilly deal: up to $870M milestones + royalties for FluidCrystal long-acting incretins (up to 4 compounds, including dual GIP/GLP-1 and triple agonists). CAM2056 monthly semaglutide Phase 1 completed enrollment. If monthly/quarterly GLP-1 works: massive opportunity.",
+            "regions": {
+              "us": {
+                "patientsK": 1109.5,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1188.8,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1664.3,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.obesity.glp1_incretin"
         }
@@ -122,8 +318,8 @@
       "wt": 5,
       "narrative": "Buvidal stalls + Oclaiz US rejected + SORENTO fails + Lilly deprioritizes",
       "events": [
-        "X UK funding issues persist \u2014 Buvidal growth stalls",
-        "X FDA rejects Oclaiz again \u2014 manufacturing issue",
+        "X UK funding issues persist — Buvidal growth stalls",
+        "X FDA rejects Oclaiz again — manufacturing issue",
         "X SORENTO GEP-NET misses PFS endpoint",
         "X Lilly incretin formulations don't meet standards",
         "-> Revenue declines, stock to SEK 300"
@@ -179,7 +375,7 @@
       "narrative": "Buvidal grows modestly + Oclaiz approved but slow US launch + SORENTO borderline",
       "events": [
         "V Buvidal grows but UK/Germany headwinds persist",
-        "V Oclaiz approved US \u2014 but uptake slow vs entrenched Sandostatin",
+        "V Oclaiz approved US — but uptake slow vs entrenched Sandostatin",
         "~ SORENTO shows PFS trend but not statistically significant",
         "~ Lilly partnership advancing but timelines long"
       ],
@@ -233,10 +429,10 @@
       "wt": 50,
       "narrative": "Oclaiz US approved + Buvidal/Brixadi growing + SORENTO positive + PLD advancing",
       "events": [
-        "V Oclaiz approved Jun 2026 \u2014 US acromegaly launch",
+        "V Oclaiz approved Jun 2026 — US acromegaly launch",
         "V Buvidal/Brixadi combined 80K+ patients by 2027",
-        "V SORENTO positive \u2014 GEP-NET label adds major TAM",
-        "V PLD Phase 2/3 initiates \u2014 first approved therapy potential",
+        "V SORENTO positive — GEP-NET label adds major TAM",
+        "V PLD Phase 2/3 initiates — first approved therapy potential",
         "~ Lilly incretin partnership progressing"
       ],
       "assumptions": {
@@ -287,11 +483,11 @@
     },
     "bull": {
       "wt": 25,
-      "narrative": "FluidCrystal platform delivers across OUD + rare endocrine + Lilly incretins \u2014 SEK 5B+ revenue",
+      "narrative": "FluidCrystal platform delivers across OUD + rare endocrine + Lilly incretins — SEK 5B+ revenue",
       "events": [
-        "V Buvidal 100K+ patients \u2014 global OUD standard",
+        "V Buvidal 100K+ patients — global OUD standard",
         "V CAM2029 across acromegaly + GEP-NET + PLD = SEK 2B+ franchise",
-        "V Lilly incretin milestones flowing \u2014 monthly GLP-1 validated",
+        "V Lilly incretin milestones flowing — monthly GLP-1 validated",
         "V Revenue SEK 5B+ by 2029, 40%+ operating margins"
       ],
       "assumptions": {
@@ -342,10 +538,10 @@
     },
     "psychedelic_bull": {
       "wt": 5,
-      "narrative": "FluidCrystal becomes the dominant long-acting drug delivery platform \u2014 Novo/Lilly acquires",
+      "narrative": "FluidCrystal becomes the dominant long-acting drug delivery platform — Novo/Lilly acquires",
       "events": [
         "V CAM2029 franchise SEK 4B+ across 3+ indications",
-        "V Lilly monthly incretin becomes standard \u2014 $500M+ royalties to Camurus",
+        "V Lilly monthly incretin becomes standard — $500M+ royalties to Camurus",
         "V FluidCrystal platform licensed for 10+ molecules globally",
         "V Novo Nordisk or Lilly acquires for SEK 60-80B"
       ],
@@ -408,7 +604,7 @@
         "Oczyesa EU launched Germany Nov 2025",
         "Oclaiz US NDA resubmitted, PDUFA Jun 10, 2026",
         "SORENTO GEP-NET primary readout mid/H2 2026",
-        "POSITANO Phase 2b PLD positive \u2014 Phase 2/3 planned",
+        "POSITANO Phase 2b PLD positive — Phase 2/3 planned",
         "Lilly FluidCrystal deal: up to $870M milestones + royalties",
         "CAM2056 monthly semaglutide Phase 1 enrolled",
         "2026 guide: SEK 2.6-2.9B revenue"
@@ -418,22 +614,22 @@
       "date": "Jun 10, 2026",
       "title": "Oclaiz US PDUFA + SORENTO GEP-NET primary readout H2 2026",
       "thresholds": [
-        "Oclaiz PDUFA Jun 10, 2026 \u2014 US acromegaly approval",
+        "Oclaiz PDUFA Jun 10, 2026 — US acromegaly approval",
         "SORENTO Phase 3 GEP-NET primary PFS endpoint mid/H2 2026",
         "Buvidal patient growth trajectory toward 100K",
         "Lilly incretin Phase 1 data updates"
       ]
     },
     "risks": [
-      "SEK 28B market cap at ~12x revenue \u2014 premium for specialty pharma",
+      "SEK 28B market cap at ~12x revenue — premium for specialty pharma",
       "UK government funding issues impacting Buvidal adoption",
-      "Oclaiz US has been rejected before \u2014 resubmission risk",
+      "Oclaiz US has been rejected before — resubmission risk",
       "SORENTO event accrual slower than expected",
-      "Lilly incretin partnership is early \u2014 years from revenue contribution",
+      "Lilly incretin partnership is early — years from revenue contribution",
       "Brixadi US royalties depend on Braeburn execution",
       "Competition in acromegaly from Ipsen Somatuline + generic octreotide",
       "Swedish-listed with limited US investor awareness",
-      "PLD is unproven market \u2014 regulatory path uncertain"
+      "PLD is unproven market — regulatory path uncertain"
     ]
   },
   "catalysts": [

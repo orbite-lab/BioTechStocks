@@ -2,7 +2,7 @@
   "company": {
     "ticker": "ABBV",
     "name": "AbbVie",
-    "subtitle": "Skyrizi $17.6B + Rinvoq $8.3B > peak Humira \u00b7 2026 guide $67B \u00b7 Vyalev Parkinson's $5B+ peak",
+    "subtitle": "Skyrizi $17.6B + Rinvoq $8.3B > peak Humira · 2026 guide $67B · Vyalev Parkinson's $5B+ peak",
     "sharesOut": 1770,
     "cash": 9500,
     "currentPrice": 209.0,
@@ -25,7 +25,56 @@
           "area": "dermatology.inflammatory_derm.psoriasis_systemic",
           "market": {
             "tamB": 18,
-            "penPct": 49
+            "penPct": 49,
+            "regions": {
+              "us": {
+                "patientsK": 1997.1,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 2139.8,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 2995.7,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           }
         },
         {
@@ -34,7 +83,56 @@
           "area": "immunology.inflammatory_gi.crohns",
           "market": {
             "tamB": 12,
-            "penPct": 15
+            "penPct": 15,
+            "regions": {
+              "us": {
+                "patientsK": 1331.4,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1426.5,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1997.1,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "rare": false
         }
@@ -52,14 +150,63 @@
           "area": "immunology.inflammatory_systemic.rheumatoid_arthritis",
           "market": {
             "tamB": 20,
-            "penPct": 28
+            "penPct": 28,
+            "regions": {
+              "us": {
+                "patientsK": 2219.1,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 2377.6,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 3328.6,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           }
         }
       ]
     },
     {
       "id": "humira",
-      "name": "Humira (adalimumab) \u2014 tail",
+      "name": "Humira (adalimumab) — tail",
       "stage": "Commercial ($6.4B 2025, declining -36%)",
       "modality": "antibody.monoclonal.anti_tnf",
       "indications": [
@@ -69,7 +216,56 @@
           "area": "immunology.inflammatory_systemic.rheumatoid_arthritis",
           "market": {
             "tamB": 10,
-            "penPct": 64
+            "penPct": 64,
+            "regions": {
+              "us": {
+                "patientsK": 1109.5,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1188.8,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1664.3,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           }
         }
       ]
@@ -86,7 +282,56 @@
           "area": "cns.psychiatry.schizophrenia",
           "market": {
             "tamB": 8,
-            "penPct": 53
+            "penPct": 53,
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           }
         }
       ]
@@ -103,7 +348,56 @@
           "area": "cns.pain.migraine",
           "market": {
             "tamB": 6,
-            "penPct": 58
+            "penPct": 58,
+            "regions": {
+              "us": {
+                "patientsK": 665.7,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 713.3,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 998.6,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           }
         }
       ]
@@ -120,7 +414,56 @@
           "area": "cns.pain.migraine",
           "market": {
             "tamB": 4,
-            "penPct": 30
+            "penPct": 30,
+            "regions": {
+              "us": {
+                "patientsK": 443.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 475.5,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 665.7,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           }
         }
       ]
@@ -137,7 +480,56 @@
           "area": "oncology.hematology.cll_nhl",
           "market": {
             "tamB": 6,
-            "penPct": 47
+            "penPct": 47,
+            "regions": {
+              "us": {
+                "patientsK": 665.7,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 713.3,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 998.6,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           }
         }
       ]
@@ -154,7 +546,56 @@
           "area": "oncology.hematology.aml",
           "market": {
             "tamB": 5,
-            "penPct": 50
+            "penPct": 50,
+            "regions": {
+              "us": {
+                "patientsK": 554.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 594.4,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 832.1,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           }
         }
       ]
@@ -171,7 +612,56 @@
           "area": "oncology.gynecologic.ovarian",
           "market": {
             "tamB": 4,
-            "penPct": 8
+            "penPct": 8,
+            "regions": {
+              "us": {
+                "patientsK": 443.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 475.5,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 665.7,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           }
         }
       ]
@@ -188,7 +678,56 @@
           "area": "dermatology.aesthetics.neurotoxin",
           "market": {
             "tamB": 5,
-            "penPct": 56
+            "penPct": 56,
+            "regions": {
+              "us": {
+                "patientsK": 554.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 594.4,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 832.1,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           }
         }
       ]
@@ -205,7 +744,56 @@
           "area": "dermatology.aesthetics.filler",
           "market": {
             "tamB": 3,
-            "penPct": 50
+            "penPct": 50,
+            "regions": {
+              "us": {
+                "patientsK": 332.9,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 356.6,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 499.3,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           }
         }
       ]
@@ -222,7 +810,56 @@
           "area": "cns.psychiatry.schizophrenia",
           "market": {
             "tamB": 8,
-            "penPct": 5
+            "penPct": 5,
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           }
         }
       ]
@@ -239,7 +876,56 @@
           "area": "oncology.lung.nsclc_driver",
           "market": {
             "tamB": 5,
-            "penPct": 3
+            "penPct": 3,
+            "regions": {
+              "us": {
+                "patientsK": 554.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 594.4,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 832.1,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           }
         }
       ]
@@ -250,10 +936,10 @@
       "wt": 5,
       "narrative": "Skyrizi/Rinvoq growth decelerates + Cerevel pipeline fails + aesthetics drag",
       "events": [
-        "\u2717 IBD competition intensifies \u2014 biosimilars + new entrants erode share",
-        "\u2717 Emraclidine (schizophrenia) Phase 3 fails \u2014 Cerevel $8.7B writedown",
-        "\u2717 Aesthetics continues declining as GLP-1 weight loss reduces procedures",
-        "\u2192 Revenue growth stalls at $65-67B, multiple compresses to 12x"
+        "✗ IBD competition intensifies — biosimilars + new entrants erode share",
+        "✗ Emraclidine (schizophrenia) Phase 3 fails — Cerevel $8.7B writedown",
+        "✗ Aesthetics continues declining as GLP-1 weight loss reduces procedures",
+        "→ Revenue growth stalls at $65-67B, multiple compresses to 12x"
       ],
       "assumptions": {
         "skyrizi": {
@@ -366,10 +1052,10 @@
       "wt": 15,
       "narrative": "Skyrizi/Rinvoq guide met but deceleration ahead + Vyalev slow ramp",
       "events": [
-        "\u2713 2026 guide $67B met \u2014 but growth slowing to mid-single-digits",
+        "✓ 2026 guide $67B met — but growth slowing to mid-single-digits",
         "~ Vyalev Parkinson's launch slower than expected",
-        "\u2717 Emraclidine Phase 3 mixed \u2014 efficacy but tolerability issues",
-        "\u2192 Revenue grows to $72-75B by 2028 but margin expansion limited"
+        "✗ Emraclidine Phase 3 mixed — efficacy but tolerability issues",
+        "→ Revenue grows to $72-75B by 2028 but margin expansion limited"
       ],
       "assumptions": {
         "skyrizi": {
@@ -482,10 +1168,10 @@
       "wt": 50,
       "narrative": "Skyrizi/Rinvoq franchise exceeds $35B + Vyalev + Cerevel pipeline delivers",
       "events": [
-        "\u2713 Skyrizi/Rinvoq combined >$35B by 2028 \u2014 IBD domination continues",
-        "\u2713 Vyalev Parkinson's ramping \u2014 on track for $5B+ peak",
-        "\u2713 Emraclidine Phase 3 positive \u2014 first novel schizophrenia mechanism",
-        "\u2713 2026 $67B \u2192 2029 $80B+ trajectory, EPS $14.50+ in 2026"
+        "✓ Skyrizi/Rinvoq combined >$35B by 2028 — IBD domination continues",
+        "✓ Vyalev Parkinson's ramping — on track for $5B+ peak",
+        "✓ Emraclidine Phase 3 positive — first novel schizophrenia mechanism",
+        "✓ 2026 $67B → 2029 $80B+ trajectory, EPS $14.50+ in 2026"
       ],
       "assumptions": {
         "skyrizi": {
@@ -596,12 +1282,12 @@
     },
     "bull": {
       "wt": 25,
-      "narrative": "Immunology + neuroscience dual dominance \u2014 $90B+ revenue, 20x PE re-rate",
+      "narrative": "Immunology + neuroscience dual dominance — $90B+ revenue, 20x PE re-rate",
       "events": [
-        "\u2713 Skyrizi/Rinvoq $40B+ \u2014 dominant across all autoimmune diseases",
-        "\u2713 Vyalev $5B+ + emraclidine $3B+ = neuroscience growth engine",
-        "\u2713 Teliso-V + ABBV-400 refresh oncology \u2014 $10B+ portfolio",
-        "\u2713 Revenue $90B+ by 2030, EPS $20+, multiple expands to 18-20x"
+        "✓ Skyrizi/Rinvoq $40B+ — dominant across all autoimmune diseases",
+        "✓ Vyalev $5B+ + emraclidine $3B+ = neuroscience growth engine",
+        "✓ Teliso-V + ABBV-400 refresh oncology — $10B+ portfolio",
+        "✓ Revenue $90B+ by 2030, EPS $20+, multiple expands to 18-20x"
       ],
       "assumptions": {
         "skyrizi": {
@@ -712,12 +1398,12 @@
     },
     "psychedelic_bull": {
       "wt": 5,
-      "narrative": "AbbVie becomes world's most diversified pharma \u2014 $100B+ revenue, approaches J&J/Lilly scale",
+      "narrative": "AbbVie becomes world's most diversified pharma — $100B+ revenue, approaches J&J/Lilly scale",
       "events": [
-        "\u2713 Immunology franchise unassailable \u2014 Skyrizi/Rinvoq $45B+ combined",
-        "\u2713 Neuroscience: Vyalev + emraclidine + tavapadon = $12B+ portfolio",
-        "\u2713 Pipeline generates 3+ new blockbusters from Cerevel/Aliada acquisitions",
-        "\u2713 Revenue $100B+ by 2030, market cap approaches $500B"
+        "✓ Immunology franchise unassailable — Skyrizi/Rinvoq $45B+ combined",
+        "✓ Neuroscience: Vyalev + emraclidine + tavapadon = $12B+ portfolio",
+        "✓ Pipeline generates 3+ new blockbusters from Cerevel/Aliada acquisitions",
+        "✓ Revenue $100B+ by 2030, market cap approaches $500B"
       ],
       "assumptions": {
         "skyrizi": {
@@ -850,13 +1536,13 @@
         "Vyalev (Parkinson's) commercial ramp trajectory",
         "Emraclidine schizophrenia Phase 3 readout",
         "Teliso-V NSCLC FDA decision",
-        "Rinvoq vitiligo sNDA \u2014 first systemic treatment"
+        "Rinvoq vitiligo sNDA — first systemic treatment"
       ]
     },
     "risks": [
-      "$370B market cap at 15x earnings \u2014 fairly valued, not cheap",
+      "$370B market cap at 15x earnings — fairly valued, not cheap",
       "Skyrizi/Rinvoq growth rate must sustain to justify multiple",
-      "Cerevel acquisition ($8.7B) \u2014 emraclidine is unproven in Phase 3",
+      "Cerevel acquisition ($8.7B) — emraclidine is unproven in Phase 3",
       "Aesthetics structurally challenged by GLP-1 weight loss trend",
       "IRA drug pricing negotiations approaching for Imbruvica",
       "Debt load ~$60B from Allergan/Cerevel acquisitions",

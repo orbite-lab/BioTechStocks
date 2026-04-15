@@ -2,7 +2,7 @@
   "company": {
     "ticker": "ARWR",
     "name": "Arrowhead Pharmaceuticals",
-    "subtitle": "REDEMPLO launched (FCS) \u00b7 sHTG Phase 3 topline Q3 2026 \u00b7 RNAi platform + obesity",
+    "subtitle": "REDEMPLO launched (FCS) · sHTG Phase 3 topline Q3 2026 · RNAi platform + obesity",
     "sharesOut": 162,
     "cash": 1400,
     "currentPrice": 55.0,
@@ -15,7 +15,7 @@
   "assets": [
     {
       "id": "commercial",
-      "name": "REDEMPLO (plozasiran) \u2014 FCS launched",
+      "name": "REDEMPLO (plozasiran) — FCS launched",
       "stage": "Commercial (FCS approved US/Canada/China)",
       "designations": [
         "Breakthrough (sHTG)"
@@ -36,7 +36,7 @@
     },
     {
       "id": "zodasiran",
-      "name": "Zodasiran \u2014 ANGPTL3 (mixed hyperlipidemia)",
+      "name": "Zodasiran — ANGPTL3 (mixed hyperlipidemia)",
       "stage": "Phase 3",
       "designations": [],
       "indications": [
@@ -47,7 +47,56 @@
             "tamB": 8.0,
             "penPct": 6,
             "peakYear": 2033,
-            "notes": "ANGPTL3 inhibitor for mixed dyslipidemia. Phase 3 ongoing. Lowers TG + LDL + non-HDL. Complements plozasiran for broader lipid franchise. Competitor: evinacumab (Regeneron, approved for HoFH)."
+            "notes": "ANGPTL3 inhibitor for mixed dyslipidemia. Phase 3 ongoing. Lowers TG + LDL + non-HDL. Complements plozasiran for broader lipid franchise. Competitor: evinacumab (Regeneron, approved for HoFH).",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.lipids.ldl_lowering"
         }
@@ -67,7 +116,56 @@
             "tamB": 10,
             "penPct": 3,
             "peakYear": 2035,
-            "notes": "First dual-target RNAi: PCSK9 + APOC3 in single molecule. Phase 1/2a dosing started. If it works: one injection replaces two drugs. Interim data H2 2026."
+            "notes": "First dual-target RNAi: PCSK9 + APOC3 in single molecule. Phase 1/2a dosing started. If it works: one injection replaces two drugs. Interim data H2 2026.",
+            "regions": {
+              "us": {
+                "patientsK": 1109.5,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1188.8,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1664.3,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.lipids.lpa"
         }
@@ -87,7 +185,56 @@
             "tamB": 15,
             "penPct": 1,
             "peakYear": 2035,
-            "notes": "ARO-INHBE (INHBE target) + ARO-ALK7 \u2014 early obesity RNAi candidates. Phase 1/2a interim data at JPM 2026 showed encouraging signals. Massive TAM but very early. Complements GLP-1s (lean mass preservation potential)."
+            "notes": "ARO-INHBE (INHBE target) + ARO-ALK7 — early obesity RNAi candidates. Phase 1/2a interim data at JPM 2026 showed encouraging signals. Massive TAM but very early. Complements GLP-1s (lean mass preservation potential).",
+            "regions": {
+              "us": {
+                "patientsK": 1664.3,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1783.2,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 2496.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.obesity.rnai_obesity"
         }
@@ -96,7 +243,7 @@
     },
     {
       "id": "aro_mapt",
-      "name": "ARO-MAPT \u2014 CNS (Alzheimer's/tauopathies)",
+      "name": "ARO-MAPT — CNS (Alzheimer's/tauopathies)",
       "stage": "Phase 1 (TRiM platform)",
       "designations": [],
       "indications": [
@@ -107,7 +254,56 @@
             "tamB": 8,
             "penPct": 1,
             "peakYear": 2036,
-            "notes": "First RNAi to cross blood-brain barrier using TRiM platform. Targets tau protein. Phase 1 in healthy volunteers, data 2026. If TRiM BBB penetration validated: paradigm shift for CNS RNAi."
+            "notes": "First RNAi to cross blood-brain barrier using TRiM platform. Targets tau protein. Phase 1 in healthy volunteers, data 2026. If TRiM BBB penetration validated: paradigm shift for CNS RNAi.",
+            "regions": {
+              "us": {
+                "patientsK": 887.6,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 951.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 1331.4,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+              },
+              "eu.patientsK": {
+                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+              },
+              "row.patientsK": {
+                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+              },
+              "us.wtpPct": {
+                "note": "Non-rare default -- commercial formulary gating (~55%)."
+              },
+              "eu.wtpPct": {
+                "note": "Non-rare default -- HTA + budget impact (~40%)."
+              },
+              "row.wtpPct": {
+                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+              },
+              "us.priceK": {
+                "note": "US price anchor -- ~1.20x global avg."
+              },
+              "eu.priceK": {
+                "note": "EU net ~50% of US list."
+              },
+              "row.priceK": {
+                "note": "ROW blended ~15% of US list."
+              },
+              "penPct": {
+                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cns.neurodegeneration.alzheimer"
         }
@@ -120,10 +316,10 @@
       "wt": 5,
       "narrative": "sHTG Phase 3 fails + olezarsen wins the TG market + platform commoditized",
       "events": [
-        "\u2717 SHASTA-3/4 miss primary or safety signal (liver)",
-        "\u2717 Olezarsen (Ionis) captures sHTG market first \u2014 ARWR late to party",
-        "\u2717 Obesity programs too early, no differentiation vs GLP-1s",
-        "\u2192 REDEMPLO FCS niche revenue only, $8.9B cap deflates to $3-4B"
+        "✗ SHASTA-3/4 miss primary or safety signal (liver)",
+        "✗ Olezarsen (Ionis) captures sHTG market first — ARWR late to party",
+        "✗ Obesity programs too early, no differentiation vs GLP-1s",
+        "→ REDEMPLO FCS niche revenue only, $8.9B cap deflates to $3-4B"
       ],
       "assumptions": {
         "commercial": {
@@ -173,12 +369,12 @@
     },
     "bear": {
       "wt": 15,
-      "narrative": "sHTG approved but second-to-market vs olezarsen \u2014 share split",
+      "narrative": "sHTG approved but second-to-market vs olezarsen — share split",
       "events": [
-        "\u2713 sHTG Phase 3 positive but olezarsen already on market",
-        "\u2717 Market share split 50/50 \u2014 peak $1B not $2B+",
+        "✓ sHTG Phase 3 positive but olezarsen already on market",
+        "✗ Market share split 50/50 — peak $1B not $2B+",
         "~ Obesity and CNS too early to value",
-        "\u2192 Plozasiran franchise solid but not dominant"
+        "→ Plozasiran franchise solid but not dominant"
       ],
       "assumptions": {
         "commercial": {
@@ -230,9 +426,9 @@
       "wt": 50,
       "narrative": "sHTG approved + zodasiran expands lipid franchise + obesity generates excitement",
       "events": [
-        "\u2713 SHASTA-3/4 positive \u2014 sNDA filed year-end 2026",
-        "\u2713 Plozasiran quarterly dosing differentiates vs monthly olezarsen",
-        "\u2713 Zodasiran Phase 3 on track \u2014 broad lipid franchise forming",
+        "✓ SHASTA-3/4 positive — sNDA filed year-end 2026",
+        "✓ Plozasiran quarterly dosing differentiates vs monthly olezarsen",
+        "✓ Zodasiran Phase 3 on track — broad lipid franchise forming",
         "~ Obesity/CNS early data generates partnership interest"
       ],
       "assumptions": {
@@ -283,12 +479,12 @@
     },
     "bull": {
       "wt": 25,
-      "narrative": "Cardiometabolic RNAi leader \u2014 TG + lipid + obesity + CNS platform",
+      "narrative": "Cardiometabolic RNAi leader — TG + lipid + obesity + CNS platform",
       "events": [
-        "\u2713 Plozasiran >$2B peak \u2014 quarterly dosing wins sHTG market",
-        "\u2713 Zodasiran + ARO-DIMER-PA build $5B+ lipid franchise",
-        "\u2713 Obesity RNAi data strong \u2014 GLP-1 combo potential",
-        "\u2713 TRiM CNS platform validated \u2014 Alzheimer's RNAi within reach"
+        "✓ Plozasiran >$2B peak — quarterly dosing wins sHTG market",
+        "✓ Zodasiran + ARO-DIMER-PA build $5B+ lipid franchise",
+        "✓ Obesity RNAi data strong — GLP-1 combo potential",
+        "✓ TRiM CNS platform validated — Alzheimer's RNAi within reach"
       ],
       "assumptions": {
         "commercial": {
@@ -338,12 +534,12 @@
     },
     "psychedelic_bull": {
       "wt": 5,
-      "narrative": "RNAi platform dominance \u2014 cardiometab + obesity + CNS \u2014 Novartis/Amgen acquires",
+      "narrative": "RNAi platform dominance — cardiometab + obesity + CNS — Novartis/Amgen acquires",
       "events": [
-        "\u2713 Plozasiran $3B+ \u2014 best-in-class quarterly TG control",
-        "\u2713 ARO-DIMER-PA single injection replaces statin+fibrate \u2014 paradigm shift",
-        "\u2713 Obesity RNAi becomes standard GLP-1 combo \u2014 lean mass preservation",
-        "\u2713 Novartis or Amgen acquires for $25-30B to own cardiometab RNAi"
+        "✓ Plozasiran $3B+ — best-in-class quarterly TG control",
+        "✓ ARO-DIMER-PA single injection replaces statin+fibrate — paradigm shift",
+        "✓ Obesity RNAi becomes standard GLP-1 combo — lean mass preservation",
+        "✓ Novartis or Amgen acquires for $25-30B to own cardiometab RNAi"
       ],
       "assumptions": {
         "commercial": {
@@ -403,7 +599,7 @@
         "SHASTA-3/4 (sHTG, ~750pts) + MUIR-3 (mixed, ~1450pts) fully enrolled",
         "sHTG BTD granted Dec 2025",
         "ARO-INHBE/ALK7 obesity Phase 1/2a encouraging signals (JPM 2026)",
-        "ARO-MAPT (tau/Alzheimer's) first subjects dosed \u2014 TRiM BBB platform",
+        "ARO-MAPT (tau/Alzheimer's) first subjects dosed — TRiM BBB platform",
         "ARO-DIMER-PA (dual PCSK9+APOC3) dosing started",
         "Revenue: $264M Q1 FY26 (mostly Sarepta/Novartis milestones)",
         "Cash ~$1.4B incl. convertible notes"
@@ -420,14 +616,14 @@
       ]
     },
     "risks": [
-      "Direct competition with Ionis olezarsen \u2014 same market, same mechanism class",
-      "Olezarsen may get sHTG approval first (PDUFA Apr 3, 2026) \u2014 first-mover advantage",
+      "Direct competition with Ionis olezarsen — same market, same mechanism class",
+      "Olezarsen may get sHTG approval first (PDUFA Apr 3, 2026) — first-mover advantage",
       "Complex revenue model (milestones + royalties + own products)",
       "Convertible notes add dilution overhang",
-      "Obesity RNAi very early \u2014 years from commercialization",
-      "TRiM CNS platform unproven in humans \u2014 BBB penetration is hard",
+      "Obesity RNAi very early — years from commercialization",
+      "TRiM CNS platform unproven in humans — BBB penetration is hard",
       "Sarepta collaboration revenue lumpy and declining",
-      "Stock volatile \u2014 $29 to $124 range in past 12 months"
+      "Stock volatile — $29 to $124 range in past 12 months"
     ]
   },
   "catalysts": [

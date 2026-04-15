@@ -36,9 +36,23 @@
         company: { ticker: "PEPG", name: "PepGen", subtitle: "Post-FREEDOM2 5mg/kg", sharesOut: 69, cash: 148, currentPrice: 2.4, cashRunway: "2H 2027", yahooTicker: "PEPG" },
         assets: [
           { id: "edodm1", name: "PGN-EDODM1", stage: "Phase 2", designations: ["Orphan", "Fast Track"],
-            indications: [{ id: "dm1", name: "DM1", market: { patientsK: 25, pricingK: 275, penPct: 14, peakYear: 2033 } }] },
+            indications: [{ id: "dm1", name: "DM1", area: "musculoskeletal.neuromuscular.dm1", rare: true,
+              market: { regions: { us: { patientsK: 15, wtpPct: 65, priceK: 400 }, eu: { patientsK: 18, wtpPct: 50, priceK: 250 }, row: { patientsK: 25, wtpPct: 15, priceK: 200 } }, penPct: 14, peakYear: 2033,
+                sources: {
+                  "us.patientsK":  { url: "https://www.myotonic.org/toolkits-publications", note: "MDA/MDF US prevalence ~1:8,000; diagnosed ~15K" },
+                  "eu.patientsK":  { url: "https://www.orpha.net/en/disease/detail/273", note: "Orphanet EU5 diagnosed prevalence" },
+                  "row.patientsK": { note: "Rough ROW — Japan higher (~1:5K), LatAm/APAC diagnosed much lower" },
+                  "us.wtpPct":     { note: "Analog to Spinraza/Evrysdi SMA uptake" },
+                  "eu.wtpPct":     { note: "HTA gating yields lower reimbursed share than US" },
+                  "row.wtpPct":    { note: "Limited reimbursement outside Japan" },
+                  "us.priceK":     { url: "https://www.biogen.com/en_us/spinraza-pricing.html", note: "Anchored to Spinraza (~$375K/yr)" },
+                  "eu.priceK":     { note: "Typical EU rare-disease discount vs US list (~40–50%)" },
+                  "row.priceK":    { note: "Blended ROW — Japan closer to EU" },
+                  "penPct":        { note: "Peak pen assumes first-in-class DM1 splice-correction; Avidity AOC-1001 competitive" }
+                } } }] },
           { id: "edo51", name: "PGN-EDO51 (DMD)", stage: "Preclinical", designations: [],
-            indications: [{ id: "dmd", name: "DMD", market: { patientsK: 12, pricingK: 400, penPct: 8, peakYear: 2035 } }] }
+            indications: [{ id: "dmd", name: "DMD", area: "musculoskeletal.neuromuscular.dmd", rare: true,
+              market: { regions: { us: { patientsK: 6, wtpPct: 70, priceK: 700 }, eu: { patientsK: 7, wtpPct: 50, priceK: 400 }, row: { patientsK: 10, wtpPct: 15, priceK: 300 } }, penPct: 8, peakYear: 2035 } }] }
         ],
         scenarios: {
           bear: { wt: 30, narrative: "Program fails", events: ["\u2717 FDA hold persists","\u2717 10mg/kg disappoints","\u2717 Platform worthless","\u2192 Cash floor"],
@@ -176,6 +190,7 @@
 
     function useConfigs() {
       const [configs, setConfigs] = useState(null);
+      const [taxonomy, setTaxonomy] = useState(null);
       const [initialPrices, setInitialPrices] = useState({});
       const [loading, setLoading] = useState(true);
       const [source, setSource] = useState(null);
@@ -198,6 +213,10 @@
             if (Object.keys(cfgs).length === 0) throw new Error("no configs loaded");
             setConfigs(cfgs);
             setSource("server");
+            try {
+              const tr = await fetch("taxonomy.json");
+              if (tr.ok) setTaxonomy(await tr.json());
+            } catch { /* taxonomy optional */ }
             // Seed cached prices from prices.json (GitHub Actions, ~30 min cadence)
             try {
               const pr = await fetch("prices.json?v=" + Date.now());
@@ -224,7 +243,86 @@
         load();
       }, []);
 
-      return { configs, initialPrices, loading, source };
+      return { configs, taxonomy, initialPrices, loading, source };
+    }
+
+    // ═══════════════════════════════════════
+    // TAXONOMY / COMPETITOR LOOKUP
+    // ═══════════════════════════════════════
+
+    function lookupTaxonomyNode(tax, areaPath) {
+      if (!tax || !areaPath || !tax.therapeutic_areas) return null;
+      const parts = areaPath.split(".");
+      let node = tax.therapeutic_areas;
+      for (const p of parts) {
+        if (!node || typeof node !== "object") return null;
+        node = node[p];
+      }
+      return node;
+    }
+
+    function indicationTAM(ind) {
+      const m = ind.market || {};
+      if (m.regions) {
+        let addr = 0;
+        for (const r of Object.values(m.regions)) {
+          if (!r) continue;
+          addr += (r.patientsK || 0) * ((r.wtpPct || 0) / 100) * (r.priceK || 0);
+        }
+        return addr / 1000; // $B
+      }
+      if (m.tamB) return m.tamB;
+      if (m.patientsK && m.pricingK) return (m.patientsK * m.pricingK) / 1000;
+      return 0;
+    }
+
+    function findCompetitors(areaPath, configs, taxonomy, excludeTicker) {
+      const node = lookupTaxonomyNode(taxonomy, areaPath);
+      if (!node || !Array.isArray(node.companies)) return { marketed: [], development: [] };
+      const marketed = [], development = [];
+      for (const tk of node.companies) {
+        if (tk === excludeTicker) continue;
+        const cfg = configs[tk];
+        if (!cfg) continue;
+        let match = null, totalTAM = 0, matchTAM = 0;
+        for (const a of cfg.assets) {
+          for (const ind of a.indications) {
+            const tam = indicationTAM(ind);
+            totalTAM += tam;
+            if (ind.area === areaPath) {
+              matchTAM += tam;
+              if (!match) match = { asset: a, ind, tam };
+            }
+          }
+        }
+        if (!match) continue;
+        const purityPct = totalTAM > 0 ? Math.round((matchTAM / totalTAM) * 100) : 0;
+        const stg = (match.asset.stage || "").toLowerCase();
+        const isMarketed = match.asset.id === "commercial" || stg.includes("commercial") || stg.includes("approved") || stg.includes("launched") || stg.includes("marketed");
+        let sales = null;
+        if (isMarketed) {
+          const baseVal = cfg.scenarios?.base?.val;
+          if (baseVal?.commercialRevM) sales = baseVal.commercialRevM;
+          else {
+            const m = match.ind.market || {};
+            if (m.patientsK) sales = m.patientsK * m.pricingK * ((m.penPct || 0) / 100);
+            else if (m.tamB) sales = m.tamB * ((m.penPct || 0) / 100) * 1000;
+            else if (m.regions) sales = indicationTAM(match.ind) * ((m.penPct || 0) / 100) * 1000;
+          }
+        }
+        let nextCatalyst = null;
+        if (Array.isArray(cfg.catalysts)) {
+          const matching = cfg.catalysts.filter(c => c.asset === match.asset.id && c.indication === match.ind.id);
+          matching.sort((a, b) => (a.dateSort || "").localeCompare(b.dateSort || ""));
+          nextCatalyst = matching.find(c => !c.dateSort || c.dateSort >= "2026-04-15") || matching[matching.length - 1] || null;
+        }
+        const entry = { ticker: tk, name: cfg.company.name, assetName: match.asset.name, stage: match.asset.stage, purityPct, sales, nextCatalyst, tam: match.tam };
+        if (isMarketed) marketed.push(entry); else development.push(entry);
+      }
+      marketed.sort((a, b) => (b.sales || 0) - (a.sales || 0));
+      const stageOrder = { "nda filed": 1, "bla filed": 1, "phase 3": 2, "phase 2/3 pivotal": 2.5, "phase 2b": 3, "phase 2a": 3.5, "phase 2": 4, "phase 1b": 5, "phase 1 exp": 5.5, "phase 1": 6, "preclinical": 7 };
+      development.sort((a, b) => (stageOrder[(a.stage || "").toLowerCase()] || 99) - (stageOrder[(b.stage || "").toLowerCase()] || 99));
+      return { marketed, development };
     }
 
     // ═══════════════════════════════════════
@@ -255,7 +353,14 @@
             continue;
           }
 
-          if (m.patientsK) {
+          if (m.regions) {
+            let addr = 0;
+            for (const r of Object.values(m.regions)) {
+              if (!r) continue;
+              addr += (r.patientsK || 0) * ((r.wtpPct || 0) / 100) * (r.priceK || 0);
+            }
+            peakRev = addr * ((m.penPct || 0) / 100) * a.pen;
+          } else if (m.patientsK) {
             peakRev = m.patientsK * m.pricingK * (m.penPct / 100) * a.pen;
           } else if (m.tamB) {
             const tam = m.tamB * (m.cagrPct ? Math.pow(1 + m.cagrPct / 100, yr) : 1) * (1 + (m.expansionPct || 0) / 100);
@@ -304,12 +409,19 @@
     // UI COMPONENTS
     // ═══════════════════════════════════════
 
-    function Sl({ label, value, onChange, min, max, step, unit, color }) {
+    function Sl({ label, value, onChange, min, max, step, unit, color, source }) {
       step = step || 1; unit = unit || ""; color = color || "#6b7080";
       const pct = ((value - min) / (max - min)) * 100;
+      let srcEl = null;
+      if (source && (source.url || source.note)) {
+        const title = [source.note, source.url].filter(Boolean).join(" — ");
+        srcEl = source.url
+          ? e("a", { href: source.url, target: "_blank", rel: "noopener noreferrer", title, style: { fontSize: 10, color: "#60a5fa", textDecoration: "none", marginLeft: 4, cursor: "help" } }, "\u24D8")
+          : e("span", { title, style: { fontSize: 10, color: "#6b7080", marginLeft: 4, cursor: "help" } }, "\u24D8");
+      }
       return e("div", { style: { marginBottom: 10 } },
         e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 2 } },
-          e("span", { style: { fontSize: 11, color: "#6b7080" } }, label),
+          e("span", { style: { fontSize: 11, color: "#6b7080" } }, label, srcEl),
           e("span", { style: { fontSize: 11, fontWeight: 700, color, fontFamily: "'JetBrains Mono'" } }, (step < 1 ? value.toFixed(1) : value) + unit)
         ),
         e("input", { type: "range", min, max, step, value, onChange: ev => onChange(parseFloat(ev.target.value)),
@@ -353,15 +465,15 @@
     // ═══════════════════════════════════════
 
     function App() {
-      const { configs, initialPrices, loading, source } = useConfigs();
+      const { configs, taxonomy, initialPrices, loading, source } = useConfigs();
 
       if (loading) return e("div", { className: "loading" }, "Loading company configs...");
       if (!configs) return e("div", { className: "loading" }, "No configs found");
 
-      return e(ModelView, { configs, initialPrices, source });
+      return e(ModelView, { configs, taxonomy, initialPrices, source });
     }
 
-    function ModelView({ configs, initialPrices, source }) {
+    function ModelView({ configs, taxonomy, initialPrices, source }) {
       const tickers = Object.keys(configs);
       const urlTicker = new URLSearchParams(window.location.search).get("ticker");
       const initTicker = (urlTicker && tickers.includes(urlTicker)) ? urlTicker : tickers[0];
@@ -375,7 +487,7 @@
         const peakYears = [];
         for (const a of cfg.assets) {
           for (const ind of a.indications) {
-            markets[a.id + "_" + ind.id] = Object.assign({}, ind.market);
+            markets[a.id + "_" + ind.id] = JSON.parse(JSON.stringify(ind.market));
             peakYears.push(ind.market.peakYear || 2033);
           }
         }
@@ -672,21 +784,120 @@
           e("div", { style: { fontSize: 11, fontWeight: 700, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 14 } }, "Tweak Assumptions"),
 
           // Markets — collapsible
-          e("div", { style: { marginBottom: 14 } },
-            e("div", { onClick: () => setShowMarkets(!showMarkets), style: { background: "#161920", borderRadius: showMarkets ? "10px 10px 0 0" : 10, padding: "10px 16px", border: "1px solid #ffffff06", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", userSelect: "none" } },
+          (() => {
+            let totalTAM = 0, totalAtPen = 0;
+            for (const a of config.assets) {
+              if (a.id === "commercial") continue;
+              for (const ind of a.indications) {
+                const mk = a.id + "_" + ind.id;
+                const m = state.markets[mk]; if (!m) continue;
+                let addrM = 0;
+                if (m.regions) {
+                  for (const r of Object.values(m.regions)) {
+                    if (!r) continue;
+                    addrM += (r.patientsK || 0) * ((r.wtpPct || 0) / 100) * (r.priceK || 0);
+                  }
+                } else if (m.patientsK) {
+                  addrM = m.patientsK * (m.pricingK || 0);
+                } else if (m.tamB) {
+                  addrM = m.tamB * 1000;
+                }
+                totalTAM += addrM;
+                totalAtPen += addrM * ((m.penPct || 0) / 100);
+              }
+            }
+            const fmtM = v => v >= 1000 ? (ccy + (v / 1000).toFixed(2) + "B") : (ccy + v.toFixed(0) + "M");
+            return e("div", { style: { marginBottom: 14 } },
+            e("div", { onClick: () => setShowMarkets(!showMarkets), style: { background: "#161920", borderRadius: showMarkets ? "10px 10px 0 0" : 10, padding: "10px 16px", border: "1px solid #ffffff06", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", userSelect: "none", gap: 12, flexWrap: "wrap" } },
               e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#f97316" } }, "Markets (shared across scenarios)"),
-              e("div", { style: { fontSize: 10, color: "#6b7080", transition: "transform 0.2s", transform: showMarkets ? "rotate(180deg)" : "rotate(0deg)" } }, "\u25BC")
+              e("div", { style: { display: "flex", gap: 14, alignItems: "center", marginLeft: "auto" } },
+                e("div", { style: { display: "flex", flexDirection: "column", alignItems: "flex-end" } },
+                  e("span", { style: { fontSize: 9, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1 } }, "All TAM"),
+                  e("span", { style: { fontSize: 12, fontWeight: 700, fontFamily: "'JetBrains Mono'", color: "#f97316" } }, fmtM(totalTAM))
+                ),
+                e("div", { style: { display: "flex", flexDirection: "column", alignItems: "flex-end" } },
+                  e("span", { style: { fontSize: 9, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1 } }, "All TAM × Pen"),
+                  e("span", { style: { fontSize: 12, fontWeight: 700, fontFamily: "'JetBrains Mono'", color: "#fbbf24" } }, fmtM(totalAtPen))
+                ),
+                e("div", { style: { fontSize: 10, color: "#6b7080", transition: "transform 0.2s", transform: showMarkets ? "rotate(180deg)" : "rotate(0deg)" } }, "\u25BC")
+              )
             ),
             showMarkets && e("div", { style: { background: "#161920", borderRadius: "0 0 10px 10px", padding: "10px 16px", borderLeft: "1px solid #ffffff06", borderRight: "1px solid #ffffff06", borderBottom: "1px solid #ffffff06" } },
-              e("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 } },
+              e("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 20 } },
                 config.assets.filter(a => a.id !== "commercial").map(asset => asset.indications.map(ind => {
                   const mk = asset.id + "_" + ind.id; const m = state.markets[mk]; if (!m) return null;
-                  return e("div", { key: mk },
-                    e("div", { style: { fontSize: 10, fontWeight: 700, color: "#b0b4c0", marginBottom: 6 } }, ind.name),
-                    m.patientsK != null && e(Sl, { label: "Patients (K)", value: m.patientsK, onChange: v => upd("markets." + mk + ".patientsK", v), min: 5, max: 80, color: "#f97316" }),
-                    m.patientsK != null && e(Sl, { label: "Pricing (" + ccy + "K)", value: m.pricingK, onChange: v => upd("markets." + mk + ".pricingK", v), min: 50, max: 600, step: 25, unit: "K", color: "#f97316" }),
-                    m.tamB != null && e(Sl, { label: "TAM (" + ccy + "B)", value: m.tamB, onChange: v => upd("markets." + mk + ".tamB", v), min: 0.05, max: 30, step: 0.05, unit: "B", color: "#f97316" }),
-                    m.penPct != null && e(Sl, { label: "Peak Pen (%)", value: m.penPct, onChange: v => upd("markets." + mk + ".penPct", v), min: 1, max: 40, unit: "%", color: "#f97316" })
+                  const REGIONS = [["us","US"],["eu","EU"],["row","ROW"]];
+                  const hasRegions = !!m.regions;
+                  let addressableM = 0;
+                  if (hasRegions) {
+                    for (const [rk] of REGIONS) {
+                      const r = m.regions[rk] || {};
+                      addressableM += (r.patientsK || 0) * ((r.wtpPct || 0) / 100) * (r.priceK || 0);
+                    }
+                  }
+                  const comp = hasRegions && ind.area ? findCompetitors(ind.area, configs, taxonomy, config.company.ticker) : { marketed: [], development: [] };
+                  const stagePill = s => {
+                    const sl = (s || "").toLowerCase();
+                    const col = sl.includes("commercial") ? "#22c55e" : sl.includes("3") ? "#f59e0b" : sl.includes("2") ? "#fb923c" : sl.includes("1") ? "#ef4444" : "#6b7080";
+                    return e("span", { style: { fontSize: 9, fontWeight: 700, padding: "1px 5px", borderRadius: 3, background: col + "22", color: col, fontFamily: "'JetBrains Mono'" } }, s || "—");
+                  };
+                  return e("div", { key: mk, style: { background: "#0f1117", borderRadius: 8, padding: 12, border: "1px solid #ffffff08" } },
+                    e("div", { style: { fontSize: 11, fontWeight: 700, color: "#e2e4ea", marginBottom: 8, display: "flex", justifyContent: "space-between", alignItems: "center" } },
+                      e("span", null, ind.name),
+                      ind.area && e("span", { style: { fontSize: 9, color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, ind.area)
+                    ),
+                    // Regional inputs
+                    hasRegions && REGIONS.map(([rk, rLabel]) => {
+                      const r = m.regions[rk] || {};
+                      const regionAddr = (r.patientsK || 0) * ((r.wtpPct || 0) / 100) * (r.priceK || 0);
+                      return e("div", { key: rk, style: { marginBottom: 10, padding: "6px 8px", background: "#161920", borderRadius: 6 } },
+                        e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 4 } },
+                          e("span", { style: { fontSize: 10, fontWeight: 700, color: "#60a5fa", letterSpacing: 1 } }, rLabel),
+                          e("span", { style: { fontSize: 10, color: "#b0b4c0", fontFamily: "'JetBrains Mono'" } }, ccy + regionAddr.toFixed(0) + "M")
+                        ),
+                        e(Sl, { label: "Patients (K)", value: r.patientsK || 0, onChange: v => upd("markets." + mk + ".regions." + rk + ".patientsK", v), min: 0, max: 200, step: 0.5, color: "#60a5fa", source: m.sources && m.sources[rk + ".patientsK"] }),
+                        e(Sl, { label: "Willingness-to-treat (%)", value: r.wtpPct || 0, onChange: v => upd("markets." + mk + ".regions." + rk + ".wtpPct", v), min: 0, max: 100, unit: "%", color: "#60a5fa", source: m.sources && m.sources[rk + ".wtpPct"] }),
+                        e(Sl, { label: "Price (" + ccy + "K)", value: r.priceK || 0, onChange: v => upd("markets." + mk + ".regions." + rk + ".priceK", v), min: 0, max: 1000, step: 5, unit: "K", color: "#60a5fa", source: m.sources && m.sources[rk + ".priceK"] })
+                      );
+                    }),
+                    // Addressable sum at today+5 (2031)
+                    hasRegions && e("div", { style: { padding: "8px 10px", background: "#f9731614", borderRadius: 6, marginBottom: 10, display: "flex", justifyContent: "space-between", alignItems: "center", border: "1px solid #f9731633" } },
+                      e("span", { style: { fontSize: 10, fontWeight: 700, color: "#f97316", textTransform: "uppercase", letterSpacing: 1 } }, "Addressable 2031"),
+                      e("span", { style: { fontSize: 14, fontWeight: 800, color: "#f97316", fontFamily: "'JetBrains Mono'" } }, ccy + addressableM.toFixed(0) + "M")
+                    ),
+                    // Competitive landscape
+                    hasRegions && e("div", { style: { marginBottom: 10 } },
+                      e("div", { style: { fontSize: 10, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 } }, "Marketed (" + comp.marketed.length + ")"),
+                      comp.marketed.length === 0 && e("div", { style: { fontSize: 10, color: "#6b7080", fontStyle: "italic", marginBottom: 6 } }, "—"),
+                      comp.marketed.map(c => e("div", { key: c.ticker, style: { fontSize: 10, padding: "4px 6px", background: "#161920", borderRadius: 4, marginBottom: 3, display: "flex", justifyContent: "space-between", gap: 6 } },
+                        e("div", { style: { display: "flex", gap: 6, alignItems: "center", minWidth: 0, flex: 1 } },
+                          e("span", { style: { fontFamily: "'JetBrains Mono'", fontWeight: 700, color: "#22c55e" } }, c.ticker),
+                          e("span", { style: { color: "#b0b4c0", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" } }, c.assetName),
+                          e("span", { style: { fontSize: 9, color: "#6b7080" } }, "pur " + c.purityPct + "%")
+                        ),
+                        e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#e2e4ea", fontWeight: 600 } }, c.sales ? ccy + Math.round(c.sales) + "M" : "—")
+                      )),
+                      e("div", { style: { fontSize: 10, fontWeight: 700, color: "#fb923c", textTransform: "uppercase", letterSpacing: 1, marginTop: 8, marginBottom: 4 } }, "In development (" + comp.development.length + ")"),
+                      comp.development.length === 0 && e("div", { style: { fontSize: 10, color: "#6b7080", fontStyle: "italic" } }, "—"),
+                      comp.development.map(c => e("div", { key: c.ticker, style: { fontSize: 10, padding: "4px 6px", background: "#161920", borderRadius: 4, marginBottom: 3 } },
+                        e("div", { style: { display: "flex", justifyContent: "space-between", gap: 6, marginBottom: 2 } },
+                          e("div", { style: { display: "flex", gap: 6, alignItems: "center", minWidth: 0, flex: 1 } },
+                            e("span", { style: { fontFamily: "'JetBrains Mono'", fontWeight: 700, color: "#fb923c" } }, c.ticker),
+                            e("span", { style: { color: "#b0b4c0", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" } }, c.assetName),
+                            e("span", { style: { fontSize: 9, color: "#6b7080" } }, "pur " + c.purityPct + "%")
+                          ),
+                          stagePill(c.stage)
+                        ),
+                        c.nextCatalyst && e("div", { style: { fontSize: 9, color: "#6b7080", marginLeft: 2 } },
+                          "▸ " + (c.nextCatalyst.date || "") + " — " + (c.nextCatalyst.title || ""))
+                      ))
+                    ),
+                    // Peak Pen slider (after competitive context)
+                    m.penPct != null && e(Sl, { label: "Peak Pen (%)", value: m.penPct, onChange: v => upd("markets." + mk + ".penPct", v), min: 1, max: 40, unit: "%", color: "#f97316", source: m.sources && m.sources["penPct"] }),
+                    // Legacy fallbacks when regions not configured
+                    !hasRegions && m.patientsK != null && e(Sl, { label: "Patients (K)", value: m.patientsK, onChange: v => upd("markets." + mk + ".patientsK", v), min: 5, max: 80, color: "#f97316" }),
+                    !hasRegions && m.patientsK != null && e(Sl, { label: "Pricing (" + ccy + "K)", value: m.pricingK, onChange: v => upd("markets." + mk + ".pricingK", v), min: 50, max: 600, step: 25, unit: "K", color: "#f97316" }),
+                    !hasRegions && m.tamB != null && e(Sl, { label: "TAM (" + ccy + "B)", value: m.tamB, onChange: v => upd("markets." + mk + ".tamB", v), min: 0.05, max: 30, step: 0.05, unit: "B", color: "#f97316" })
                   );
                 })),
                 e("div", null,
@@ -695,7 +906,8 @@
                 )
               )
             )
-          ),
+          );
+          })(),
 
           // Scenario assumptions — collapsible
           e("div", { style: { marginBottom: 22 } },

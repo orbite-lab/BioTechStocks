@@ -646,5 +646,48 @@
       "_rationale": "Pfizer executing field efficacy study, vaccinations complete, data expected first half 2026"
     },
     "source": "https://www.biospace.com/press-releases/valneva-reports-nine-month-2025-financial-results-and-provides-corporate-updates"
+  },
+  {
+    "timestamp": "2026-04-15T14:09:01Z",
+    "ticker": "ALLO",
+    "news": "Allogene priced a public offering of 87.5 million shares at $2.00 per share for $175 million gross proceeds.",
+    "source": "https://www.manilatimes.net/2026/04/15/tmt-newswire/globenewswire/allogene-therapeutics-announces-pricing-of-public-offering-of-common-stock/2320565",
+    "changes": [
+      {
+        "path": "company.sharesOut",
+        "old_value": 195,
+        "new_value": 282.5,
+        "reason": "Adding 87.5M new shares to existing 195M shares outstanding",
+        "old_actual": 195
+      },
+      {
+        "path": "company.cash",
+        "old_value": 258,
+        "new_value": 433,
+        "reason": "Adding $175M gross proceeds to existing $258M cash position",
+        "old_actual": 258
+      },
+      {
+        "path": "scenarios.bear.val.dil",
+        "old_value": 18,
+        "new_value": 20,
+        "reason": "Increased dilution from 45% share count increase at discount to market price",
+        "old_actual": 18
+      },
+      {
+        "path": "scenarios.base.val.dil",
+        "old_value": 12,
+        "new_value": 14,
+        "reason": "Increased dilution from 45% share count increase at discount to market price",
+        "old_actual": 12
+      },
+      {
+        "path": "scenarios.bull.val.dil",
+        "old_value": 10,
+        "new_value": 12,
+        "reason": "Increased dilution from 45% share count increase at discount to market price",
+        "old_actual": 10
+      }
+    ]
   }
 ]

@@ -867,7 +867,14 @@
                     ),
                     // Competitive landscape
                     hasRegions && e("div", { style: { marginBottom: 10 } },
-                      e("div", { style: { fontSize: 10, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 } }, "Marketed (" + comp.marketed.length + ")"),
+                      (() => {
+                        const mktSales = comp.marketed.reduce((s, c) => s + (c.sales || 0), 0);
+                        const fmt = v => v >= 1000 ? (ccy + (v / 1000).toFixed(1) + "B") : (ccy + Math.round(v) + "M");
+                        return e("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 4 } },
+                          e("span", { style: { fontSize: 10, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 1 } }, "Marketed (" + comp.marketed.length + ")"),
+                          mktSales > 0 && e("span", { style: { fontSize: 10, fontWeight: 700, color: "#22c55e", fontFamily: "'JetBrains Mono'" } }, "\u03A3 " + fmt(mktSales))
+                        );
+                      })(),
                       comp.marketed.length === 0 && e("div", { style: { fontSize: 10, color: "#6b7080", fontStyle: "italic", marginBottom: 6 } }, "—"),
                       comp.marketed.map(c => e("div", { key: c.ticker, style: { fontSize: 10, padding: "4px 6px", background: "#161920", borderRadius: 4, marginBottom: 3, display: "flex", justifyContent: "space-between", gap: 6 } },
                         e("div", { style: { display: "flex", gap: 6, alignItems: "center", minWidth: 0, flex: 1 } },

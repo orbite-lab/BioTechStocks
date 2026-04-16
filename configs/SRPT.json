@@ -1,0 +1,433 @@
+{
+  "company": {
+    "ticker": "SRPT",
+    "name": "Sarepta Therapeutics",
+    "subtitle": "DMD gene therapy + PMO franchise + siRNA pipeline",
+    "sharesOut": 105,
+    "cash": 954,
+    "currentPrice": 22.15,
+    "currency": "USD",
+    "yahooTicker": "SRPT",
+    "cashRunway": "Profitable / cash-flow positive",
+    "phase": "commercial"
+  },
+  "assets": [
+    {
+      "id": "elevidys",
+      "name": "Elevidys (delandistrogene moxeparvovec)",
+      "stage": "Commercial ($899M 2025)",
+      "designations": ["Orphan", "Breakthrough", "Fast Track", "Rare Pediatric Disease"],
+      "indications": [
+        {
+          "id": "dmd_gt",
+          "name": "DMD gene therapy (ambulatory)",
+          "market": {
+            "regions": {
+              "us":  { "patientsK": 5.5, "wtpPct": 60, "priceK": 2600 },
+              "eu":  { "patientsK": 6.0, "wtpPct": 35, "priceK": 1800 },
+              "row": { "patientsK": 10.0, "wtpPct": 10, "priceK": 800 }
+            },
+            "penPct": 12,
+            "peakYear": 2029,
+            "salesM": 899,
+            "salesYear": 2025,
+            "sources": {
+              "us.patientsK":  { "note": "~8K ambulatory DMD; ~5.5K eligible after exon 8/9 exclusion" },
+              "eu.patientsK":  { "note": "EU5 ambulatory DMD; Roche holds ex-US rights" },
+              "row.patientsK": { "note": "ROW ambulatory DMD via Roche license" },
+              "us.wtpPct":     { "note": "Post-safety events (3 deaths) reduced physician willingness; boxed warning" },
+              "eu.wtpPct":     { "note": "Roche ex-US launch ongoing; HTA gating + safety perception" },
+              "row.wtpPct":    { "note": "Japan launched 2025; limited elsewhere" },
+              "us.priceK":     { "url": "https://www.biopharmadive.com/news/sarepta-duchenne-elevidys-price-million-gene-therapy/653720/", "note": "$3.2M list, ~$2.6M net one-time; amortized ~$520K/yr over 5yr" },
+              "eu.priceK":     { "note": "Estimated EU net price for one-time gene therapy" },
+              "row.priceK":    { "note": "Blended ROW; Japan near EU pricing" },
+              "penPct":        { "note": "Non-ambulatory label removed; safety headwinds limit uptake" }
+            }
+          },
+          "area": "musculoskeletal.neuromuscular.dmd",
+          "rare": true
+        }
+      ],
+      "modality": "gene_therapy.aav.micro_dystrophin"
+    },
+    {
+      "id": "exondys",
+      "name": "Exondys 51 (eteplirsen)",
+      "stage": "Commercial ($575M 2025)",
+      "designations": ["Orphan", "Fast Track", "Rare Pediatric Disease"],
+      "indications": [
+        {
+          "id": "dmd_ex51",
+          "name": "DMD exon 51 skipping",
+          "market": {
+            "regions": {
+              "us":  { "patientsK": 1.7, "wtpPct": 80, "priceK": 320 },
+              "eu":  { "patientsK": 2.2, "wtpPct": 45, "priceK": 180 },
+              "row": { "patientsK": 5.0, "wtpPct": 10, "priceK": 80 }
+            },
+            "penPct": 35,
+            "peakYear": 2027,
+            "salesM": 575,
+            "salesYear": 2025,
+            "sources": {
+              "us.patientsK":  { "note": "~13% of DMD amenable to exon 51 skipping; ~1.5-2K US patients" },
+              "eu.patientsK":  { "note": "Orphanet DMD exon 51 eligible EU5" },
+              "row.patientsK": { "note": "Global exon 51 pool; limited access outside US" },
+              "us.wtpPct":     { "note": "First approved DMD therapy (2016); well-established" },
+              "us.priceK":     { "note": "~$300-320K/yr WAC" },
+              "penPct":        { "note": "At plateau; still under accelerated approval" }
+            }
+          },
+          "area": "musculoskeletal.neuromuscular.dmd",
+          "rare": true
+        }
+      ],
+      "modality": "gene_therapy.oligonucleotide_splice.exon_skipping_pmo"
+    },
+    {
+      "id": "amondys",
+      "name": "Amondys 45 (casimersen)",
+      "stage": "Commercial ($245M 2025)",
+      "designations": ["Orphan", "Fast Track"],
+      "indications": [
+        {
+          "id": "dmd_ex45",
+          "name": "DMD exon 45 skipping",
+          "market": {
+            "regions": {
+              "us":  { "patientsK": 1.0, "wtpPct": 75, "priceK": 320 },
+              "eu":  { "patientsK": 1.3, "wtpPct": 40, "priceK": 180 },
+              "row": { "patientsK": 3.0, "wtpPct": 8, "priceK": 80 }
+            },
+            "penPct": 30,
+            "peakYear": 2027,
+            "salesM": 245,
+            "salesYear": 2025,
+            "sources": {
+              "us.patientsK":  { "note": "~9% of DMD amenable to exon 45 skipping" },
+              "us.priceK":     { "note": "~$300K/yr WAC" },
+              "penPct":        { "note": "Still accelerated approval; ESSENCE failed; sNDA filed Apr 2026" }
+            }
+          },
+          "area": "musculoskeletal.neuromuscular.dmd",
+          "rare": true
+        }
+      ],
+      "modality": "gene_therapy.oligonucleotide_splice.exon_skipping_pmo"
+    },
+    {
+      "id": "vyondys",
+      "name": "Vyondys 53 (golodirsen)",
+      "stage": "Commercial ($125M 2025)",
+      "designations": ["Orphan", "Fast Track"],
+      "indications": [
+        {
+          "id": "dmd_ex53",
+          "name": "DMD exon 53 skipping",
+          "market": {
+            "regions": {
+              "us":  { "patientsK": 0.9, "wtpPct": 70, "priceK": 320 },
+              "eu":  { "patientsK": 1.2, "wtpPct": 35, "priceK": 180 },
+              "row": { "patientsK": 3.0, "wtpPct": 8, "priceK": 80 }
+            },
+            "penPct": 25,
+            "peakYear": 2027,
+            "salesM": 125,
+            "salesYear": 2025,
+            "sources": {
+              "us.patientsK":  { "note": "~8% of DMD amenable to exon 53 skipping" },
+              "us.priceK":     { "note": "~$300K/yr WAC" },
+              "penPct":        { "note": "Smallest PMO; ESSENCE failed; sNDA filed Apr 2026. Viltolarsen competes" }
+            }
+          },
+          "area": "musculoskeletal.neuromuscular.dmd",
+          "rare": true
+        }
+      ],
+      "modality": "gene_therapy.oligonucleotide_splice.exon_skipping_pmo"
+    },
+    {
+      "id": "srp9003",
+      "name": "SRP-9003 (bidridistrogene)",
+      "stage": "Phase 3 (BLA track)",
+      "designations": ["Orphan", "Fast Track"],
+      "indications": [
+        {
+          "id": "lgmd2e",
+          "name": "LGMD type 2E (beta-sarcoglycanopathy)",
+          "market": {
+            "regions": {
+              "us":  { "patientsK": 0.4, "wtpPct": 70, "priceK": 3000 },
+              "eu":  { "patientsK": 0.5, "wtpPct": 45, "priceK": 2000 },
+              "row": { "patientsK": 1.0, "wtpPct": 10, "priceK": 800 }
+            },
+            "penPct": 20,
+            "peakYear": 2030,
+            "sources": {
+              "us.patientsK":  { "note": "Ultra-rare ~0.86/million prevalence; ~300-500 diagnosed US" },
+              "eu.patientsK":  { "note": "Orphanet LGMD2E prevalence EU5" },
+              "us.priceK":     { "note": "One-time gene therapy; Elevidys pricing analog ~$3M" },
+              "penPct":        { "note": "AAVrh74 clinical hold complicates BLA; EMERGENE Phase 3 met endpoint" }
+            }
+          },
+          "area": "musculoskeletal.neuromuscular.lgmd",
+          "rare": true
+        }
+      ],
+      "modality": "gene_therapy.aav.beta_sarcoglycan"
+    },
+    {
+      "id": "srp1001",
+      "name": "SRP-1001 (siRNA FSHD)",
+      "stage": "Phase 1/2",
+      "designations": [],
+      "indications": [
+        {
+          "id": "fshd",
+          "name": "FSHD type 1",
+          "market": {
+            "regions": {
+              "us":  { "patientsK": 17, "wtpPct": 55, "priceK": 250 },
+              "eu":  { "patientsK": 20, "wtpPct": 40, "priceK": 140 },
+              "row": { "patientsK": 25, "wtpPct": 10, "priceK": 60 }
+            },
+            "penPct": 10,
+            "peakYear": 2033,
+            "sources": {
+              "us.patientsK":  { "note": "FSHD prevalence ~1:15,000-1:20,000; ~15-20K US patients" },
+              "us.priceK":     { "note": "No approved therapy; rare NMD pricing analog" },
+              "penPct":        { "note": "Phase 1 biomarker only (90-93% DUX4 reduction); first-in-class if successful" }
+            }
+          },
+          "area": "musculoskeletal.neuromuscular.fshd",
+          "rare": true
+        }
+      ],
+      "modality": "rna_interference.sirna.dux4"
+    },
+    {
+      "id": "srp1003",
+      "name": "SRP-1003 (siRNA DM1)",
+      "stage": "Phase 1/2",
+      "designations": [],
+      "indications": [
+        {
+          "id": "dm1",
+          "name": "Myotonic dystrophy type 1 (DM1)",
+          "market": {
+            "regions": {
+              "us":  { "patientsK": 15, "wtpPct": 55, "priceK": 350 },
+              "eu":  { "patientsK": 18, "wtpPct": 40, "priceK": 200 },
+              "row": { "patientsK": 25, "wtpPct": 12, "priceK": 100 }
+            },
+            "penPct": 10,
+            "peakYear": 2034,
+            "sources": {
+              "us.patientsK":  { "note": "DM1 prevalence ~4.76/10K births; ~30-40K US but diagnosed ~15K" },
+              "us.priceK":     { "note": "No approved therapy; rare NMD pricing analog" },
+              "penPct":        { "note": "Phase 1 dose escalation; competes with PEPG EDO-DM1 splice correction" }
+            }
+          },
+          "area": "musculoskeletal.neuromuscular.dm1",
+          "rare": true
+        }
+      ],
+      "modality": "rna_interference.sirna.dmpk"
+    }
+  ],
+  "scenarios": {
+    "bear": {
+      "wt": 25,
+      "narrative": "ESSENCE fallout + Elevidys safety permanently impairs franchise",
+      "events": [
+        "\u2717 FDA forces Vyondys 53 + Amondys 45 withdrawal after sNDA review",
+        "\u2717 Elevidys stays ambulatory-only; safety perception caps at $500M/yr",
+        "\u2717 AAVrh74 hold delays SRP-9003 BLA beyond 2027",
+        "\u2192 PMO erosion + gene therapy ceiling = declining revenue"
+      ],
+      "assumptions": {
+        "elevidys": { "dmd_gt": { "pos": 85, "apr": 70, "pen": 0.6 } },
+        "exondys":  { "dmd_ex51": { "pos": 90, "apr": 80, "pen": 0.8 } },
+        "amondys":  { "dmd_ex45": { "pos": 60, "apr": 25, "pen": 0.6 } },
+        "vyondys":  { "dmd_ex53": { "pos": 50, "apr": 20, "pen": 0.5 } },
+        "srp9003":  { "lgmd2e": { "pos": 50, "apr": 35, "pen": 0.5 } },
+        "srp1001":  { "fshd": { "pos": 20, "apr": 30, "pen": 0.4 } },
+        "srp1003":  { "dm1": { "pos": 15, "apr": 25, "pen": 0.4 } }
+      },
+      "val": {
+        "pipelineDR": 20,
+        "pipelineMult": 3,
+        "commercialMult": 2.5,
+        "commercialRevM": 1400,
+        "milestones": 200,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "PMO franchise preserved + Elevidys recovers + pipeline advances",
+      "events": [
+        "\u2713 Amondys 45 + Vyondys 53 convert to traditional approval",
+        "\u2713 Elevidys ambulatory recovers to $600-700M; non-ambulatory restored 2027",
+        "~ SRP-9003 BLA filed and approved 2027 for LGMD2E",
+        "~ siRNA programs advance to Phase 2 with encouraging data"
+      ],
+      "assumptions": {
+        "elevidys": { "dmd_gt": { "pos": 90, "apr": 80, "pen": 1.0 } },
+        "exondys":  { "dmd_ex51": { "pos": 95, "apr": 90, "pen": 1.0 } },
+        "amondys":  { "dmd_ex45": { "pos": 70, "apr": 55, "pen": 0.9 } },
+        "vyondys":  { "dmd_ex53": { "pos": 65, "apr": 50, "pen": 0.8 } },
+        "srp9003":  { "lgmd2e": { "pos": 65, "apr": 60, "pen": 0.8 } },
+        "srp1001":  { "fshd": { "pos": 35, "apr": 45, "pen": 0.7 } },
+        "srp1003":  { "dm1": { "pos": 30, "apr": 40, "pen": 0.6 } }
+      },
+      "val": {
+        "pipelineDR": 14,
+        "pipelineMult": 4.5,
+        "commercialMult": 3.5,
+        "commercialRevM": 1850,
+        "milestones": 500,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Full DMD franchise restored + siRNA platform validated",
+      "events": [
+        "\u2713 PMO franchise durable at ~$950M/yr with traditional approvals",
+        "\u2713 Elevidys non-ambulatory label restored; US peak $1.2B+",
+        "\u2713 SRP-9003 approved 2027; Roche milestones $300M+",
+        "\u2713 siRNA FSHD + DM1 both advance to Phase 3 — multi-B platform"
+      ],
+      "assumptions": {
+        "elevidys": { "dmd_gt": { "pos": 95, "apr": 90, "pen": 1.5 } },
+        "exondys":  { "dmd_ex51": { "pos": 95, "apr": 95, "pen": 1.1 } },
+        "amondys":  { "dmd_ex45": { "pos": 80, "apr": 75, "pen": 1.1 } },
+        "vyondys":  { "dmd_ex53": { "pos": 75, "apr": 70, "pen": 1.0 } },
+        "srp9003":  { "lgmd2e": { "pos": 75, "apr": 75, "pen": 1.2 } },
+        "srp1001":  { "fshd": { "pos": 50, "apr": 60, "pen": 1.0 } },
+        "srp1003":  { "dm1": { "pos": 45, "apr": 55, "pen": 0.9 } }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 5.5,
+        "commercialMult": 4.5,
+        "commercialRevM": 2200,
+        "milestones": 800,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Mar 2026",
+      "title": "SRP-1001/1003 first Phase 1 siRNA data",
+      "points": [
+        "SRP-1001 (FSHD): 90-93% DUX4-activated gene expression reduction",
+        "SRP-1003 (DM1): dose-dependent muscle exposure + early biomarker signal",
+        "ESSENCE confirmatory trial failed primary endpoint (p=0.309) Q3 2025",
+        "Elevidys FY2025: $899M (impacted by safety pause H2 2025)",
+        "PMO franchise FY2025: $966M (Exondys $575M, Amondys $245M, Vyondys $125M)"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Q4 2026 - Q1 2027",
+      "title": "FDA decision on Amondys 45 + Vyondys 53 sNDA (traditional approval)",
+      "thresholds": [
+        "Approval: PMO franchise preserved (~$370M/yr at risk)",
+        "CRL/withdrawal: ~$370M annual revenue loss",
+        "Also H2 2026: Elevidys non-ambulatory Cohort 8 data",
+        "Also 2026: SRP-9003 BLA submission (post-hold resolution)"
+      ]
+    },
+    "risks": [
+      "Vyondys 53 / Amondys 45 forced withdrawal — ~$370M annual revenue at risk",
+      "Elevidys label permanently restricted to ambulatory (~40% DMD pop lost)",
+      "AAVrh74 platform safety (3 deaths) — affects SRP-9003 and future GT",
+      "CEO transition (Doug Ingram retiring) during recovery period",
+      "Viltolarsen competition for exon 53 skipping",
+      "$3.2M gene therapy price under payer scrutiny post-label narrowing",
+      "Stock -66% from 2024 highs — reputational damage"
+    ]
+  },
+  "catalysts": [
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-01",
+      "asset": "elevidys",
+      "indication": "dmd_gt",
+      "title": "Elevidys non-ambulatory Cohort 8 (enhanced sirolimus) data",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 85,
+      "fail_apr": 50,
+      "success_pos": 95,
+      "success_apr": 90
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-01",
+      "asset": "amondys",
+      "indication": "dmd_ex45",
+      "title": "FDA decision on Amondys 45 sNDA (traditional approval conversion)",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 60,
+      "fail_apr": 5,
+      "success_pos": 80,
+      "success_apr": 85
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-01",
+      "asset": "vyondys",
+      "indication": "dmd_ex53",
+      "title": "FDA decision on Vyondys 53 sNDA (traditional approval conversion)",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 50,
+      "fail_apr": 5,
+      "success_pos": 75,
+      "success_apr": 80
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-10-01",
+      "asset": "srp9003",
+      "indication": "lgmd2e",
+      "title": "SRP-9003 BLA submission (post AAVrh74 hold resolution)",
+      "type": "partnership",
+      "binary": false,
+      "fail_pos": 50,
+      "fail_apr": 35,
+      "success_pos": 70,
+      "success_apr": 65
+    },
+    {
+      "date": "Mid-2026",
+      "dateSort": "2026-07-01",
+      "asset": "srp1003",
+      "indication": "dm1",
+      "title": "SRP-1003 Phase 1/2 higher-dose (12 mg/kg) DM1 data",
+      "type": "phase2_data",
+      "binary": false,
+      "fail_pos": 15,
+      "fail_apr": 25,
+      "success_pos": 40,
+      "success_apr": 50
+    },
+    {
+      "date": "2026",
+      "dateSort": "2026-09-15",
+      "asset": "srp1001",
+      "indication": "fshd",
+      "title": "SRP-1001 Phase 2 FSHD dose escalation data",
+      "type": "phase2_data",
+      "binary": false,
+      "fail_pos": 20,
+      "fail_apr": 30,
+      "success_pos": 45,
+      "success_apr": 55
+    }
+  ]
+}

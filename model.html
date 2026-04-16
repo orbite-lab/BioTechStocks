@@ -345,11 +345,13 @@
           const m = state.markets[asset.id + "_" + ind.id] || ind.market;
           const yr = (m.peakYear || 2033) - 2026;
           let peakRev = 0;
-          const isCommercial = asset.id === "commercial";
+          const stgLower = (asset.stage || "").toLowerCase();
+          const isCommercial = asset.id === "commercial" || (isSOTP && (stgLower.includes("commercial") || stgLower.includes("launched") || stgLower.includes("marketed")));
 
           if (isCommercial && isSOTP) {
-            commercialRev = val.commercialRevM || 160;
-            assetDetails.push({ asset: asset.name, ind: ind.name, peakRev: commercialRev, composite: 1, ra: commercialRev, type: "commercial" });
+            // Commercial assets are valued via the commercialRevM slider, not per-indication
+            // Just tag them in details — the actual EV comes from commercialRevM × commercialMult
+            assetDetails.push({ asset: asset.name, ind: ind.name, peakRev: 0, composite: 1, ra: 0, type: "commercial" });
             continue;
           }
 
@@ -385,6 +387,7 @@
 
       if (isSOTP) {
         // SOTP: commercial at EV/Rev + pipeline rNPV + milestones
+        commercialRev = val.commercialRevM || commercialRev || 0;
         commercialEV = commercialRev * (val.commercialMult || 2.5);
         const avgYr = (state.avgPeakYear || 2031) - 2026;
         const df = Math.pow(1 + (val.pipelineDR || 14) / 100, avgYr);
@@ -739,10 +742,9 @@
                   )
                 )),
                 e("div", { style: { borderTop: "1px solid #ffffff0a", paddingTop: 10 } },
-                  r.assetDetails.filter(d => d.ra > 0 || d.peakRev > 0).map((d, i) => e("div", { key: i, style: { display: "flex", justifyContent: "space-between", marginBottom: 3, fontSize: 10 } },
+                  r.assetDetails.filter(d => d.type !== "commercial" && (d.ra > 0 || d.peakRev > 0)).map((d, i) => e("div", { key: i, style: { display: "flex", justifyContent: "space-between", marginBottom: 3, fontSize: 10 } },
                     e("span", { style: { color: "#6b7080" } }, d.ind),
                     e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } },
-                      d.type === "commercial" ? ccy + d.ra.toFixed(0) + "M rev" :
                       d.composite > 0 ? ccy + d.ra.toFixed(0) + "M RA (" + Math.round(d.composite * 100) + "%)" : "\u2014")
                   )),
                   r.cannib > 0 && e("div", { style: { display: "flex", justifyContent: "space-between", fontSize: 10, color: "#fb923c" } },

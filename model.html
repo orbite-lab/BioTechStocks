@@ -299,10 +299,14 @@
         const purityPct = totalTAM > 0 ? Math.round((matchTAM / totalTAM) * 100) : 0;
         const stg = (match.asset.stage || "").toLowerCase();
         const isMarketed = match.asset.id === "commercial" || stg.includes("commercial") || stg.includes("approved") || stg.includes("launched") || stg.includes("marketed");
-        // Estimate per-indication revenue: addressable × penPct (peak rev proxy)
+        // Per-indication sales: prefer reported salesM, fallback to TAM × penPct estimate
         let sales = null;
+        let salesIsReported = false;
         const mkt = match.ind.market || {};
-        if (mkt.regions) {
+        if (mkt.salesM != null && mkt.salesM > 0) {
+          sales = mkt.salesM;
+          salesIsReported = true;
+        } else if (mkt.regions) {
           sales = indicationTAM(match.ind) * ((mkt.penPct || 0) / 100) * 1000;
         } else if (mkt.patientsK && mkt.pricingK) {
           sales = mkt.patientsK * mkt.pricingK * ((mkt.penPct || 0) / 100);
@@ -315,7 +319,8 @@
           matching.sort((a, b) => (a.dateSort || "").localeCompare(b.dateSort || ""));
           nextCatalyst = matching.find(c => !c.dateSort || c.dateSort >= "2026-04-15") || matching[matching.length - 1] || null;
         }
-        const entry = { ticker: tk, name: cfg.company.name, assetName: match.asset.name, stage: match.asset.stage, purityPct, sales, nextCatalyst, tam: match.tam };
+        const salesYear = mkt.salesYear || null;
+        const entry = { ticker: tk, name: cfg.company.name, assetName: match.asset.name, stage: match.asset.stage, purityPct, sales, salesIsReported, salesYear, nextCatalyst, tam: match.tam };
         if (isMarketed) marketed.push(entry); else development.push(entry);
       }
       marketed.sort((a, b) => (b.sales || 0) - (a.sales || 0));
@@ -886,7 +891,9 @@
                           e("span", { style: { color: "#b0b4c0", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" } }, c.assetName),
                           e("span", { style: { fontSize: 9, color: "#6b7080" } }, "pur " + c.purityPct + "%")
                         ),
-                        e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#e2e4ea", fontWeight: 600 }, title: "Est. peak rev (TAM x pen)" }, c.sales ? ccy + (c.sales >= 1000 ? (c.sales / 1000).toFixed(1) + "B" : Math.round(c.sales) + "M") : "—")
+                        e("span", { style: { fontFamily: "'JetBrains Mono'", color: c.salesIsReported ? "#e2e4ea" : "#6b7080", fontWeight: 600 },
+                          title: c.salesIsReported ? ("Reported" + (c.salesYear ? " " + c.salesYear : "") + " revenue") : "Est. peak rev (TAM x pen)" },
+                          c.sales ? ccy + (c.sales >= 1000 ? (c.sales / 1000).toFixed(1) + "B" : Math.round(c.sales) + "M") + (c.salesIsReported ? "" : "e") : "—")
                       )),
                       e("div", { style: { fontSize: 10, fontWeight: 700, color: "#fb923c", textTransform: "uppercase", letterSpacing: 1, marginTop: 8, marginBottom: 4 } }, "In development (" + comp.development.length + ")"),
                       comp.development.length === 0 && e("div", { style: { fontSize: 10, color: "#6b7080", fontStyle: "italic" } }, "—"),

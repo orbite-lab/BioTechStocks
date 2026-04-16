@@ -166,7 +166,11 @@ function deriveCompanyMeta(cfg){
       if(ind.area){
         areas.add(ind.area);
         const p=ind.area.split(".");areas.add(p[0]);if(p[1])areas.add(p[0]+"."+p[1]);
-        const tam=ind.market?.tamB||(ind.market?.patientsK&&ind.market?.pricingK?ind.market.patientsK*ind.market.pricingK/1000:0);
+        let tam=0;
+        const _m=ind.market||{};
+        if(_m.regions){for(const _r of Object.values(_m.regions)){if(_r)tam+=(_r.patientsK||0)*((_r.wtpPct||0)/100)*(_r.priceK||0);}tam/=1000;}
+        else if(_m.tamB)tam=_m.tamB;
+        else if(_m.patientsK&&_m.pricingK)tam=_m.patientsK*_m.pricingK/1000;
         const a=baseAssump[asset.id]?.[ind.id]||{};
         const pos=(a.pos??100)/100,apr=(a.apr??100)/100;
         const wtd=tam*pos*apr;
@@ -197,11 +201,13 @@ function computeScenario(cfg,scenKey,state){
   let pipeRA=0,pipeGross=0,commRev=0,totalRA=0,totalGross=0,lymeC=0;
   for(const asset of cfg.assets){for(const ind of asset.indications){
     const a=scen.assumptions?.[asset.id]?.[ind.id]||{pos:0,apr:0,pen:1};
-    const m=ind.market;const isComm=asset.id==="commercial";
-    if(isComm&&isSOTP){commRev=val.commercialRevM||0;continue;}
+    const m=ind.market;const stgL=(asset.stage||"").toLowerCase();
+    const isComm=asset.id==="commercial"||(isSOTP&&(stgL.includes("commercial")||stgL.includes("launched")||stgL.includes("marketed")));
+    if(isComm&&isSOTP){continue;}
     let pk=0;
-    if(m.patientsK)pk=m.patientsK*m.pricingK*(m.penPct/100)*a.pen;
-    else if(m.tamB){const tam=m.tamB*(1+(m.expansionPct||0)/100);pk=tam*(m.penPct/100)*a.pen*1000;}
+    if(m.regions){let addr=0;for(const _r of Object.values(m.regions)){if(_r)addr+=(_r.patientsK||0)*((_r.wtpPct||0)/100)*(_r.priceK||0);}if(m.cagrPct){const yr=(m.peakYear||2033)-2026;addr*=Math.pow(1+m.cagrPct/100,yr);}if(m.expansionPct)addr*=(1+m.expansionPct/100);pk=addr*((m.penPct||0)/100)*a.pen;}
+    else if(m.patientsK)pk=m.patientsK*m.pricingK*(m.penPct/100)*a.pen;
+    else if(m.tamB){const yr=(m.peakYear||2033)-2026;const tam=m.tamB*(m.cagrPct?Math.pow(1+m.cagrPct/100,yr):1)*(1+(m.expansionPct||0)/100);pk=tam*(m.penPct/100)*a.pen*1000;}
     const comp=(a.pos/100)*(a.apr/100),ra=pk*comp;
     if(isSOTP){pipeRA+=ra;pipeGross+=pk;}
     totalRA+=ra;totalGross+=pk;
@@ -209,6 +215,7 @@ function computeScenario(cfg,scenKey,state){
   }}
   const dM=1-(val.dil||0)/100;let ev;
   if(isSOTP){
+    commRev=val.commercialRevM||commRev||0;
     const cEV=commRev*(val.commercialMult||2.5);
     const yr=(2031)-2026,df=Math.pow(1+(val.pipelineDR||14)/100,yr);
     const pEV=(pipeRA*(val.pipelineMult||4))/df;

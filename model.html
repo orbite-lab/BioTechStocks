@@ -299,16 +299,15 @@
         const purityPct = totalTAM > 0 ? Math.round((matchTAM / totalTAM) * 100) : 0;
         const stg = (match.asset.stage || "").toLowerCase();
         const isMarketed = match.asset.id === "commercial" || stg.includes("commercial") || stg.includes("approved") || stg.includes("launched") || stg.includes("marketed");
+        // Estimate per-indication revenue: addressable × penPct (peak rev proxy)
         let sales = null;
-        if (isMarketed) {
-          const baseVal = cfg.scenarios?.base?.val;
-          if (baseVal?.commercialRevM) sales = baseVal.commercialRevM;
-          else {
-            const m = match.ind.market || {};
-            if (m.patientsK) sales = m.patientsK * m.pricingK * ((m.penPct || 0) / 100);
-            else if (m.tamB) sales = m.tamB * ((m.penPct || 0) / 100) * 1000;
-            else if (m.regions) sales = indicationTAM(match.ind) * ((m.penPct || 0) / 100) * 1000;
-          }
+        const mkt = match.ind.market || {};
+        if (mkt.regions) {
+          sales = indicationTAM(match.ind) * ((mkt.penPct || 0) / 100) * 1000;
+        } else if (mkt.patientsK && mkt.pricingK) {
+          sales = mkt.patientsK * mkt.pricingK * ((mkt.penPct || 0) / 100);
+        } else if (mkt.tamB) {
+          sales = mkt.tamB * ((mkt.penPct || 0) / 100) * 1000;
         }
         let nextCatalyst = null;
         if (Array.isArray(cfg.catalysts)) {
@@ -887,7 +886,7 @@
                           e("span", { style: { color: "#b0b4c0", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" } }, c.assetName),
                           e("span", { style: { fontSize: 9, color: "#6b7080" } }, "pur " + c.purityPct + "%")
                         ),
-                        e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#e2e4ea", fontWeight: 600 } }, c.sales ? ccy + Math.round(c.sales) + "M" : "—")
+                        e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#e2e4ea", fontWeight: 600 }, title: "Est. peak rev (TAM x pen)" }, c.sales ? ccy + (c.sales >= 1000 ? (c.sales / 1000).toFixed(1) + "B" : Math.round(c.sales) + "M") : "—")
                       )),
                       e("div", { style: { fontSize: 10, fontWeight: 700, color: "#fb923c", textTransform: "uppercase", letterSpacing: 1, marginTop: 8, marginBottom: 4 } }, "In development (" + comp.development.length + ")"),
                       comp.development.length === 0 && e("div", { style: { fontSize: 10, color: "#6b7080", fontStyle: "italic" } }, "—"),

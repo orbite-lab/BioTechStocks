@@ -1,0 +1,74 @@
+[
+  {
+    "timestamp": "2026-04-16T14:18:47Z",
+    "ticker": "LLY",
+    "news": "Eli Lilly announced positive topline results from Phase 3 ACHIEVE-4 trial showing Foundayo (orforglipron) was non-inferior to insulin glargine in preventing cardiovascular events in patients with type 2 diabetes and obesity, with plans for label expansion by end of Q2.",
+    "source": "https://www.prnewswire.com/news-releases/achieve-4-the-longest-phase-3-study-of-lillys-foundayo-orforglipron-to-date-reaffirmed-its-cardiovascular-and-overall-safety-profile-as-well-as-consistent-improvements-across-key-measures-of-cardiometabolic-health-302744289.html",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.orforglipron.oral_glp1.pos",
+        "old_value": 92,
+        "new_value": 97,
+        "reason": "Positive CV safety data and non-inferiority to insulin glargine significantly de-risks orforglipron and increases approval probability",
+        "old_actual": 92
+      },
+      {
+        "path": "scenarios.bear.assumptions.orforglipron.oral_glp1.pos",
+        "old_value": 90,
+        "new_value": 95,
+        "reason": "Even in bear case, positive Phase 3 CV safety data substantially increases regulatory approval confidence",
+        "old_actual": 90
+      },
+      {
+        "path": "scenarios.bull.assumptions.orforglipron.oral_glp1.pos",
+        "old_value": 95,
+        "new_value": 98,
+        "reason": "CV safety profile and planned label expansion filing by Q2 makes approval highly likely in bull scenario",
+        "old_actual": 95
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-16T14:18:47Z",
+    "ticker": "ALLO",
+    "news": "Allogene priced 87.5M shares at $2.00 per share for $175M gross proceeds to fund clinical trials and R&D",
+    "source": "https://www.biospace.com/press-releases/allogene-therapeutics-announces-pricing-of-public-offering-of-common-stock-april-14-2026",
+    "changes": [
+      {
+        "path": "company.cash",
+        "old_value": 433,
+        "new_value": 608,
+        "reason": "Adding $175M gross proceeds from equity offering",
+        "old_actual": 433
+      },
+      {
+        "path": "scenarios.bear.val.dil",
+        "old_value": 20,
+        "new_value": 23,
+        "reason": "87.5M new shares increase dilution from current 282.5M shares outstanding",
+        "old_actual": 20
+      },
+      {
+        "path": "scenarios.base.val.dil",
+        "old_value": 14,
+        "new_value": 17,
+        "reason": "87.5M new shares increase dilution from current 282.5M shares outstanding",
+        "old_actual": 14
+      },
+      {
+        "path": "scenarios.bull.val.dil",
+        "old_value": 12,
+        "new_value": 15,
+        "reason": "87.5M new shares increase dilution from current 282.5M shares outstanding",
+        "old_actual": 12
+      },
+      {
+        "path": "scenarios.psychedelic_bull.val.dil",
+        "old_value": 8,
+        "new_value": 11,
+        "reason": "87.5M new shares increase dilution from current 282.5M shares outstanding",
+        "old_actual": 8
+      }
+    ]
+  }
+]

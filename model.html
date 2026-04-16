@@ -359,6 +359,9 @@
               if (!r) continue;
               addr += (r.patientsK || 0) * ((r.wtpPct || 0) / 100) * (r.priceK || 0);
             }
+            // Apply CAGR + expansion if present (preserved from tamB-based markets)
+            if (m.cagrPct) addr *= Math.pow(1 + m.cagrPct / 100, yr);
+            if (m.expansionPct) addr *= (1 + m.expansionPct / 100);
             peakRev = addr * ((m.penPct || 0) / 100) * a.pen;
           } else if (m.patientsK) {
             peakRev = m.patientsK * m.pricingK * (m.penPct / 100) * a.pen;

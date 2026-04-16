@@ -236,8 +236,35 @@
     }
   ],
   "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "narrative": "PMO franchise collapses + Elevidys pulled from market + AAV platform dead",
+      "events": [
+        "\u2717 FDA withdraws Vyondys 53 + Amondys 45 — PMO drops to Exondys only (~$575M)",
+        "\u2717 Additional Elevidys death triggers full market withdrawal — $0 GT revenue",
+        "\u2717 AAVrh74 clinical hold permanent — SRP-9003 abandoned",
+        "\u2192 Exondys-only company at $500-600M/yr; siRNA too early to save; stock <$10"
+      ],
+      "assumptions": {
+        "elevidys": { "dmd_gt": { "pos": 0, "apr": 0, "pen": 0.3 } },
+        "exondys":  { "dmd_ex51": { "pos": 85, "apr": 70, "pen": 0.7 } },
+        "amondys":  { "dmd_ex45": { "pos": 40, "apr": 0, "pen": 0.3 } },
+        "vyondys":  { "dmd_ex53": { "pos": 30, "apr": 0, "pen": 0.3 } },
+        "srp9003":  { "lgmd2e": { "pos": 0, "apr": 0, "pen": 0.3 } },
+        "srp1001":  { "fshd": { "pos": 10, "apr": 15, "pen": 0.3 } },
+        "srp1003":  { "dm1": { "pos": 10, "apr": 15, "pen": 0.3 } }
+      },
+      "val": {
+        "pipelineDR": 30,
+        "pipelineMult": 2,
+        "commercialMult": 1.5,
+        "commercialRevM": 575,
+        "milestones": 0,
+        "dil": 5
+      }
+    },
     "bear": {
-      "wt": 25,
+      "wt": 20,
       "narrative": "ESSENCE fallout + Elevidys safety permanently impairs franchise",
       "events": [
         "\u2717 FDA forces Vyondys 53 + Amondys 45 withdrawal after sNDA review",
@@ -264,7 +291,7 @@
       }
     },
     "base": {
-      "wt": 50,
+      "wt": 40,
       "narrative": "PMO franchise preserved + Elevidys recovers + pipeline advances",
       "events": [
         "\u2713 Amondys 45 + Vyondys 53 convert to traditional approval",
@@ -291,7 +318,7 @@
       }
     },
     "bull": {
-      "wt": 25,
+      "wt": 20,
       "narrative": "Full DMD franchise restored + siRNA platform validated",
       "events": [
         "\u2713 PMO franchise durable at ~$950M/yr with traditional approvals",
@@ -314,6 +341,33 @@
         "commercialMult": 4.5,
         "commercialRevM": 2200,
         "milestones": 800,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 10,
+      "narrative": "NMD platform company — Roche acquires for DMD + siRNA franchise",
+      "events": [
+        "\u2713 Full PMO franchise preserved + Elevidys label fully restored including non-ambulatory",
+        "\u2713 Elevidys US peak $1.5B+ with expanded population; Roche ex-US adds $500M+ royalties",
+        "\u2713 siRNA FSHD + DM1 both hit Phase 3 — first-in-class for both; $5B+ combined TAM",
+        "\u2713 Roche acquires SRPT for $15-20B to own end-to-end NMD platform (GT + RNA + PMO)"
+      ],
+      "assumptions": {
+        "elevidys": { "dmd_gt": { "pos": 95, "apr": 95, "pen": 2.0 } },
+        "exondys":  { "dmd_ex51": { "pos": 95, "apr": 95, "pen": 1.2 } },
+        "amondys":  { "dmd_ex45": { "pos": 85, "apr": 85, "pen": 1.2 } },
+        "vyondys":  { "dmd_ex53": { "pos": 80, "apr": 80, "pen": 1.1 } },
+        "srp9003":  { "lgmd2e": { "pos": 80, "apr": 80, "pen": 1.5 } },
+        "srp1001":  { "fshd": { "pos": 65, "apr": 70, "pen": 1.3 } },
+        "srp1003":  { "dm1": { "pos": 60, "apr": 65, "pen": 1.2 } }
+      },
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 7,
+        "commercialMult": 6,
+        "commercialRevM": 2800,
+        "milestones": 1500,
         "dil": 0
       }
     }

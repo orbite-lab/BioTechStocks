@@ -679,10 +679,10 @@
                 a.modality && e("span", { style: chipStyle("#3b82f610","#60a5fa") }, fmt(a.modality))
               );
             });
-            // Compute rare purity
+            // Compute rare purity (using indicationTAM helper for regions/tamB/patientsK)
             let totalTAM = 0, rareTAM = 0;
             for (const a of config.assets) for (const ind of a.indications) {
-              const tam = ind.market?.tamB || 0; totalTAM += tam; if (ind.rare) rareTAM += tam;
+              const tam = indicationTAM(ind); totalTAM += tam; if (ind.rare) rareTAM += tam;
             }
             const rarePct = totalTAM > 0 ? Math.round(rareTAM / totalTAM * 100) : 0;
             const hasRare = config.assets.some(a => a.indications.some(i => i.rare));

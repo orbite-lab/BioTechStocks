@@ -281,7 +281,7 @@
       if (!node || !Array.isArray(node.companies)) return { marketed: [], development: [] };
       const marketed = [], development = [];
       for (const tk of node.companies) {
-        if (tk === excludeTicker) continue;
+        // Don't exclude current company — own marketed drugs should appear
         const cfg = configs[tk];
         if (!cfg) continue;
         let match = null, totalTAM = 0, matchTAM = 0;
@@ -320,7 +320,8 @@
           nextCatalyst = matching.find(c => !c.dateSort || c.dateSort >= "2026-04-15") || matching[matching.length - 1] || null;
         }
         const salesYear = mkt.salesYear || null;
-        const entry = { ticker: tk, name: cfg.company.name, assetName: match.asset.name, stage: match.asset.stage, purityPct, sales, salesIsReported, salesYear, nextCatalyst, tam: match.tam };
+        const isSelf = tk === excludeTicker;
+        const entry = { ticker: tk, name: cfg.company.name, assetName: match.asset.name, stage: match.asset.stage, purityPct, sales, salesIsReported, salesYear, nextCatalyst, tam: match.tam, isSelf };
         if (isMarketed) marketed.push(entry); else development.push(entry);
       }
       marketed.sort((a, b) => (b.sales || 0) - (a.sales || 0));
@@ -361,12 +362,15 @@
 
           if (m.company_slice && m.regions) {
             // SOM path: peakRev = Σ TAM_patients × reachPct × companyWtp × companyPrice
-            let som = 0;
+            let som = 0, tamAddr = 0;
             for (const [rk, cs] of Object.entries(m.company_slice)) {
               const tr = m.regions[rk];
               if (!tr || !cs) continue;
               som += (tr.patientsK || 0) * ((cs.reachPct || 0) / 100) * ((cs.wtpPct || 0) / 100) * (cs.priceK || 0);
+              tamAddr += (tr.patientsK || 0) * ((tr.wtpPct || 0) / 100) * (tr.priceK || 0);
             }
+            // Cap SOM at TAM — drug can't capture more than the whole market
+            if (tamAddr > 0 && som > tamAddr) som = tamAddr;
             if (m.cagrPct) som *= Math.pow(1 + m.cagrPct / 100, yr);
             if (m.expansionPct) som *= (1 + m.expansionPct / 100);
             peakRev = som * a.pen;
@@ -862,7 +866,7 @@
                   let addressableM = 0;
                   if (hasRegions) { for (const [rk] of REGIONS) { const r = m.regions[rk] || {}; addressableM += (r.patientsK || 0) * ((r.wtpPct || 0) / 100) * (r.priceK || 0); } }
                   let somM = 0, hasSOM = !!(m.company_slice && hasRegions);
-                  if (hasSOM) { for (const [rk] of REGIONS) { const tr = m.regions[rk] || {}; const cs = m.company_slice[rk] || {}; somM += (tr.patientsK || 0) * ((cs.reachPct || 0) / 100) * ((cs.wtpPct || 0) / 100) * (cs.priceK || 0); } }
+                  if (hasSOM) { for (const [rk] of REGIONS) { const tr = m.regions[rk] || {}; const cs = m.company_slice[rk] || {}; somM += (tr.patientsK || 0) * ((cs.reachPct || 0) / 100) * ((cs.wtpPct || 0) / 100) * (cs.priceK || 0); } if (addressableM > 0 && somM > addressableM) somM = addressableM; }
                   const comp = hasRegions && ind.area ? findCompetitors(ind.area, configs, taxonomy, config.company.ticker) : { marketed: [], development: [] };
                   const mktSales = comp.marketed.reduce((s, c) => s + (c.sales || 0), 0);
                   const fmtV = v => v >= 1000 ? (ccy + (v / 1000).toFixed(1) + "B") : (ccy + Math.round(v) + "M");
@@ -922,7 +926,7 @@
                         comp.marketed.length === 0 && e("div", { style: { fontSize: 10, color: "#6b7080", fontStyle: "italic", marginBottom: 6 } }, "--"),
                         comp.marketed.map(c => e("div", { key: c.ticker, style: { fontSize: 10, padding: "4px 6px", background: "#161920", borderRadius: 4, marginBottom: 3, display: "flex", justifyContent: "space-between", gap: 6 } },
                           e("div", { style: { display: "flex", gap: 6, alignItems: "center", minWidth: 0, flex: 1 } },
-                            e("span", { style: { fontFamily: "'JetBrains Mono'", fontWeight: 700, color: "#22c55e" } }, c.ticker),
+                            e("span", { style: { fontFamily: "'JetBrains Mono'", fontWeight: 700, color: c.isSelf ? "#60a5fa" : "#22c55e" } }, c.isSelf ? "\u25C6 " + c.ticker : c.ticker),
                             e("span", { style: { color: "#b0b4c0", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" } }, c.assetName),
                             e("span", { style: { fontSize: 9, color: "#6b7080" } }, "pur " + c.purityPct + "%")
                           ),

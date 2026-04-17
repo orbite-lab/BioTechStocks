@@ -284,45 +284,45 @@
         // Don't exclude current company — own marketed drugs should appear
         const cfg = configs[tk];
         if (!cfg) continue;
-        let match = null, totalTAM = 0, matchTAM = 0;
+        let totalTAM = 0, matchTAM = 0;
+        const matches = [];
         for (const a of cfg.assets) {
           for (const ind of a.indications) {
             const tam = indicationTAM(ind);
             totalTAM += tam;
             if (ind.area === areaPath) {
               matchTAM += tam;
-              if (!match) match = { asset: a, ind, tam };
+              matches.push({ asset: a, ind, tam });
             }
           }
         }
-        if (!match) continue;
+        if (matches.length === 0) continue;
         const purityPct = totalTAM > 0 ? Math.round((matchTAM / totalTAM) * 100) : 0;
-        const stg = (match.asset.stage || "").toLowerCase();
-        const isMarketed = match.asset.id === "commercial" || stg.includes("commercial") || stg.includes("approved") || stg.includes("launched") || stg.includes("marketed");
-        // Per-indication sales: prefer reported salesM, fallback to TAM × penPct estimate
-        let sales = null;
-        let salesIsReported = false;
-        const mkt = match.ind.market || {};
-        if (mkt.salesM != null && mkt.salesM > 0) {
-          sales = mkt.salesM;
-          salesIsReported = true;
-        } else if (mkt.regions) {
-          sales = indicationTAM(match.ind) * ((mkt.penPct || 0) / 100) * 1000;
-        } else if (mkt.patientsK && mkt.pricingK) {
-          sales = mkt.patientsK * mkt.pricingK * ((mkt.penPct || 0) / 100);
-        } else if (mkt.tamB) {
-          sales = mkt.tamB * ((mkt.penPct || 0) / 100) * 1000;
-        }
-        let nextCatalyst = null;
-        if (Array.isArray(cfg.catalysts)) {
-          const matching = cfg.catalysts.filter(c => c.asset === match.asset.id && c.indication === match.ind.id);
-          matching.sort((a, b) => (a.dateSort || "").localeCompare(b.dateSort || ""));
-          nextCatalyst = matching.find(c => !c.dateSort || c.dateSort >= "2026-04-15") || matching[matching.length - 1] || null;
-        }
-        const salesYear = mkt.salesYear || null;
         const isSelf = tk === excludeTicker;
-        const entry = { ticker: tk, name: cfg.company.name, assetName: match.asset.name, stage: match.asset.stage, purityPct, sales, salesIsReported, salesYear, nextCatalyst, tam: match.tam, isSelf };
-        if (isMarketed) marketed.push(entry); else development.push(entry);
+        for (const match of matches) {
+          const stg = (match.asset.stage || "").toLowerCase();
+          const isMarketed = match.asset.id === "commercial" || stg.includes("commercial") || stg.includes("approved") || stg.includes("launched") || stg.includes("marketed");
+          let sales = null, salesIsReported = false;
+          const mkt = match.ind.market || {};
+          if (mkt.salesM != null && mkt.salesM > 0) {
+            sales = mkt.salesM; salesIsReported = true;
+          } else if (mkt.regions) {
+            sales = indicationTAM(match.ind) * ((mkt.penPct || 0) / 100) * 1000;
+          } else if (mkt.patientsK && mkt.pricingK) {
+            sales = mkt.patientsK * mkt.pricingK * ((mkt.penPct || 0) / 100);
+          } else if (mkt.tamB) {
+            sales = mkt.tamB * ((mkt.penPct || 0) / 100) * 1000;
+          }
+          let nextCatalyst = null;
+          if (Array.isArray(cfg.catalysts)) {
+            const catMatches = cfg.catalysts.filter(c => c.asset === match.asset.id && c.indication === match.ind.id);
+            catMatches.sort((a, b) => (a.dateSort || "").localeCompare(b.dateSort || ""));
+            nextCatalyst = catMatches.find(c => !c.dateSort || c.dateSort >= "2026-04-15") || catMatches[catMatches.length - 1] || null;
+          }
+          const salesYear = mkt.salesYear || null;
+          const entry = { ticker: tk, name: cfg.company.name, assetName: match.asset.name, stage: match.asset.stage, purityPct, sales, salesIsReported, salesYear, nextCatalyst, tam: match.tam, isSelf };
+          if (isMarketed) marketed.push(entry); else development.push(entry);
+        }
       }
       marketed.sort((a, b) => (b.sales || 0) - (a.sales || 0));
       const stageOrder = { "nda filed": 1, "bla filed": 1, "phase 3": 2, "phase 2/3 pivotal": 2.5, "phase 2b": 3, "phase 2a": 3.5, "phase 2": 4, "phase 1b": 5, "phase 1 exp": 5.5, "phase 1": 6, "preclinical": 7 };

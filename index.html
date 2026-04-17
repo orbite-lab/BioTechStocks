@@ -132,6 +132,7 @@ tbody tr:hover{background:#ffffff06}
   <nav class="topbar-nav" id="topNav">
     <button onclick="document.getElementById('sec-range').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-range">Range</button>
     <button onclick="document.getElementById('sec-pipeline').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-pipeline">Pipeline</button>
+    <button onclick="document.getElementById('sec-markets').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-markets">Markets</button>
     <button onclick="document.getElementById('sec-catalyst').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-catalyst">Catalysts</button>
     <button onclick="document.getElementById('sec-portfolio').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-portfolio">Portfolio</button>
     <button onclick="document.getElementById('sec-table').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-table">Table</button>
@@ -574,6 +575,8 @@ async function main(){
   let filterMod1=null, filterMod2=null, filterMod3=null;
   let stripSort="base";
   let purityMode="wtd";
+  let mktNavPath=[]; // Market explorer drill-down path (e.g. ["oncology","hematology","cll_nhl"])
+  let mktSortMode="tam"; // tam | som | sales | pen
   let catYAxis="expected"; // "swing" or "expected"
   let catZoom=180; // days window for catalyst chart; can be 30/60/90/180/365/9999
   let catSortKey="expectedReturn"; // column key to sort catalyst table by
@@ -902,6 +905,157 @@ async function main(){
       h+='<span style="display:inline-block;width:14px;height:8px;background:#ef444418;border:1px solid #ef444433;border-radius:2px;vertical-align:middle;margin-left:12px;margin-right:4px"></span>Premium over risk-adj TAM ';
       h+='</div></div></div>';
     }
+
+    // Market Explorer — drill-down through therapeutic areas L1 -> L4 -> companies
+    (() => {
+      // Build aggregated market data from all configs (not just visibleRows, so the explorer is complete)
+      // {areaPath: {tam, som, sales, companies: [{ticker, name, asset, ind, area, som, sales, stage}]}}
+      const areaData = {};
+      for (const [tk, cfg] of Object.entries(configs)) {
+        const coName = cfg.company.name || tk;
+        for (const a of cfg.assets) {
+          for (const ind of a.indications) {
+            const area = ind.area || 'unclassified';
+            const m = ind.market || {};
+            const reg = m.regions || {};
+            const cs = m.company_slice || {};
+            let tam = 0, som = 0;
+            for (const rk of ['us','eu','row']) {
+              const pr = reg[rk] || {};
+              tam += (pr.patientsK||0) * ((pr.wtpPct||0)/100) * (pr.priceK||0);
+              if (cs[rk]) {
+                som += (pr.patientsK||0) * ((cs[rk].reachPct||0)/100) * ((cs[rk].wtpPct||0)/100) * (cs[rk].priceK||0);
+              }
+            }
+            const sales = m.salesM || 0;
+            const parts = area.split('.');
+            // Register at every level: L1, L1.L2, L1.L2.L3, L1.L2.L3.L4
+            for (let depth = 1; depth <= parts.length; depth++) {
+              const path = parts.slice(0, depth).join('.');
+              if (!areaData[path]) areaData[path] = { tamByLeaf: {}, som: 0, sales: 0, companies: [] };
+              // TAM deduped per leaf area (so rolling up doesn't double-count)
+              areaData[path].tamByLeaf[area] = tam;
+              areaData[path].som += som;
+              areaData[path].sales += sales;
+              if (depth === parts.length) {
+                // At leaf level, register the company entry
+                areaData[path].companies.push({
+                  ticker: tk, name: coName, asset: a.name, assetId: a.id,
+                  ind: ind.name, indId: ind.id, area, som, sales, tam, stage: a.stage || ''
+                });
+              }
+            }
+          }
+        }
+      }
+      // Compute final TAM per path (sum of unique leaf TAMs under it)
+      Object.keys(areaData).forEach(p => {
+        areaData[p].tam = Object.values(areaData[p].tamByLeaf).reduce((s,v)=>s+v, 0);
+      });
+
+      // Determine current level children
+      const currentPath = mktNavPath.join('.');
+      const currentData = currentPath ? areaData[currentPath] : null;
+      const childPrefix = currentPath ? currentPath + '.' : '';
+      const childDepth = mktNavPath.length + 1;
+      const children = Object.keys(areaData)
+        .filter(k => k.startsWith(childPrefix) && k.split('.').length === childDepth)
+        .map(k => ({ path: k, name: k.slice(childPrefix.length), ...areaData[k] }));
+      children.sort((a,b) => {
+        if (mktSortMode === 'tam') return b.tam - a.tam;
+        if (mktSortMode === 'som') return b.som - a.som;
+        if (mktSortMode === 'sales') return b.sales - a.sales;
+        if (mktSortMode === 'pen') return (b.tam>0?b.sales/b.tam:0) - (a.tam>0?a.sales/a.tam:0);
+        return 0;
+      });
+      const isLeaf = children.length === 0 && currentData;
+
+      const fmtB = v => v >= 1000 ? '$'+(v/1000).toFixed(1)+'B' : '$'+Math.round(v)+'M';
+      const nice = s => s.replace(/_/g,' ');
+
+      h+='<div class="card" id="sec-markets"><div class="card-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div><div class="dot" style="background:linear-gradient(180deg,#f97316,#a855f7);display:inline-block;vertical-align:middle;margin-right:8px"></div>Market Explorer</div>';
+      // Sort chips
+      h+='<div style="display:flex;gap:4px">';
+      [['tam','TAM'],['som','SOM'],['sales','Sales'],['pen','Penetration']].forEach(([k,lbl])=>{
+        const active = mktSortMode===k;
+        h+=`<span class="fchip ${active?'active':''}" onclick="window._mktSort('${k}')" style="padding:2px 8px;font-size:.65rem">${lbl}</span>`;
+      });
+      h+='</div></div>';
+
+      // Breadcrumb
+      h+='<div style="display:flex;flex-wrap:wrap;align-items:center;gap:4px;padding:10px 0;font-size:.75rem;font-family:var(--mono)">';
+      h+=`<span onclick="window._mktGo([])" style="cursor:pointer;color:${mktNavPath.length===0?'#f97316':'#60a5fa'};font-weight:${mktNavPath.length===0?'700':'500'}">🏠 All Markets</span>`;
+      mktNavPath.forEach((p, i) => {
+        h+=`<span style="color:#6b7080">›</span>`;
+        const isLast = i === mktNavPath.length - 1;
+        h+=`<span onclick="window._mktGo(${i+1})" style="cursor:pointer;color:${isLast?'#f97316':'#60a5fa'};font-weight:${isLast?'700':'500'}">${nice(p)}</span>`;
+      });
+      h+='</div>';
+
+      // Current level stats
+      if (currentData) {
+        const totalTam = currentData.tam;
+        const totalSom = currentData.som;
+        const totalSales = currentData.sales;
+        const penOfTam = totalTam > 0 ? (totalSales/totalTam*100).toFixed(1) : 0;
+        h+='<div style="display:flex;gap:16px;padding:8px 12px;background:#0f1117;border-radius:6px;margin-bottom:12px;flex-wrap:wrap">';
+        h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">TAM (unique leaves)</div><div style="font-size:1rem;font-weight:700;color:#f97316;font-family:var(--mono)">${fmtB(totalTam)}</div></div>`;
+        h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">SOM</div><div style="font-size:1rem;font-weight:700;color:#a855f7;font-family:var(--mono)">${fmtB(totalSom)}</div></div>`;
+        h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">2025 Sales</div><div style="font-size:1rem;font-weight:700;color:#22c55e;font-family:var(--mono)">${fmtB(totalSales)}</div></div>`;
+        h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">Market penetration</div><div style="font-size:1rem;font-weight:700;color:#fbbf24;font-family:var(--mono)">${penOfTam}%</div></div>`;
+        h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">${isLeaf?'Drugs':'Sub-markets'}</div><div style="font-size:1rem;font-weight:700;color:#e2e4ea;font-family:var(--mono)">${isLeaf?currentData.companies.length:children.length}</div></div>`;
+        h+='</div>';
+      }
+
+      if (!isLeaf) {
+        // Child cards grid
+        const maxTam = Math.max(...children.map(c => c.tam || 1), 1);
+        h+='<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px">';
+        children.forEach(c => {
+          const pct = (c.tam / maxTam) * 100;
+          const penOfTam = c.tam > 0 ? (c.sales/c.tam*100).toFixed(1) : 0;
+          const coCount = areaData[c.path]?.companies?.length || 0;
+          const level = c.path.split('.').length;
+          // Count subAreas at next level
+          const subAreas = Object.keys(areaData).filter(k => k.startsWith(c.path + '.') && k.split('.').length === level+1).length;
+          h+=`<div onclick="window._mktDrill('${c.path}')" style="background:#0f1117;border:1px solid #ffffff12;border-radius:8px;padding:12px;cursor:pointer;transition:border-color 0.15s" onmouseover="this.style.borderColor='#f97316'" onmouseout="this.style.borderColor='#ffffff12'">`;
+          h+=`<div style="font-size:.85rem;font-weight:700;margin-bottom:6px;color:#e2e4ea">${nice(c.name)}</div>`;
+          h+=`<div style="font-size:.6rem;color:var(--text2);font-family:var(--mono);margin-bottom:8px">${subAreas>0?subAreas+' sub-markets':coCount+' drugs'}</div>`;
+          // TAM bar
+          h+=`<div style="position:relative;height:8px;background:#161920;border-radius:2px;margin-bottom:4px;overflow:hidden"><div style="position:absolute;top:0;left:0;height:100%;width:${pct}%;background:linear-gradient(90deg,#f97316,#fb923c);border-radius:2px"></div></div>`;
+          h+=`<div style="display:flex;justify-content:space-between;font-size:.65rem;font-family:var(--mono);margin-bottom:6px"><span style="color:#f97316">TAM ${fmtB(c.tam)}</span><span style="color:#a855f7">SOM ${fmtB(c.som)}</span></div>`;
+          h+=`<div style="display:flex;justify-content:space-between;font-size:.6rem;font-family:var(--mono);color:var(--text2)"><span>Sales ${fmtB(c.sales)}</span><span>Pen ${penOfTam}%</span></div>`;
+          h+='</div>';
+        });
+        h+='</div>';
+      } else if (isLeaf && currentData) {
+        // Company list at leaf
+        const cos = [...currentData.companies];
+        cos.sort((a,b) => {
+          if (mktSortMode === 'som') return b.som - a.som;
+          if (mktSortMode === 'sales') return b.sales - a.sales;
+          if (mktSortMode === 'pen') return (b.tam>0?b.sales/b.tam:0) - (a.tam>0?a.sales/a.tam:0);
+          return b.som - a.som;  // default by SOM at leaf
+        });
+        const maxSom = Math.max(...cos.map(c=>c.som), 1);
+        h+='<div style="display:flex;flex-direction:column;gap:6px">';
+        cos.forEach(c => {
+          const pct = (c.som / maxSom) * 100;
+          const stageCol = c.stage.toLowerCase().includes('commercial') ? '#22c55e' : c.stage.toLowerCase().includes('3')?'#f59e0b':c.stage.toLowerCase().includes('2')?'#fb923c':c.stage.toLowerCase().includes('1')?'#ef4444':'#6b7080';
+          h+=`<div style="display:grid;grid-template-columns:60px 1fr 90px 90px 90px 70px;gap:8px;align-items:center;padding:8px 12px;background:#0f1117;border-radius:6px;border:1px solid #ffffff08;font-size:.7rem">`;
+          h+=`<a href="model.html?ticker=${c.ticker}" style="font-family:var(--mono);font-weight:700;color:#60a5fa;text-decoration:none">${c.ticker}</a>`;
+          h+=`<div><div style="color:#e2e4ea;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.asset}</div><div style="color:var(--text2);font-size:.6rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.ind}</div></div>`;
+          h+=`<div style="position:relative;height:6px;background:#161920;border-radius:2px;overflow:hidden" title="SOM $${Math.round(c.som)}M / max $${Math.round(maxSom)}M"><div style="position:absolute;top:0;left:0;height:100%;width:${pct}%;background:#a855f7"></div></div>`;
+          h+=`<div style="text-align:right;font-family:var(--mono);color:#a855f7;font-weight:600" title="SOM">${fmtB(c.som)}</div>`;
+          h+=`<div style="text-align:right;font-family:var(--mono);color:${c.sales>0?'#22c55e':'#6b7080'};font-weight:600" title="2025 reported sales">${c.sales>0?fmtB(c.sales):'—'}</div>`;
+          h+=`<div style="text-align:right"><span style="font-size:.58rem;font-weight:700;padding:2px 5px;border-radius:3px;background:${stageCol}22;color:${stageCol};font-family:var(--mono)">${c.stage.split('(')[0].trim().slice(0,14)||'—'}</span></div>`;
+          h+='</div>';
+        });
+        h+='</div>';
+      }
+
+      h+='</div>';  // close card
+    })();
 
     // Catalyst Asymmetry card — timeline barbell chart
     const allCatsRaw=[];
@@ -1510,6 +1664,9 @@ async function main(){
   window._fMod2=function(m2){filterMod2=m2;filterMod3=null;render();};
   window._fMod3=function(m3){filterMod3=m3;render();};
   window._stripSort=function(s){stripSort=s;render();};
+  window._mktSort=function(s){mktSortMode=s;render();};
+  window._mktDrill=function(path){mktNavPath=path.split('.');render();document.getElementById('sec-markets')?.scrollIntoView({behavior:'smooth',block:'start'});};
+  window._mktGo=function(depth){mktNavPath=typeof depth==='number'?mktNavPath.slice(0,depth):depth;render();};
   window._setCatZoom=function(d){
     catZoom=d;
     // Zoom changes the universe → reset ER bounds so they snap to new range
@@ -1588,7 +1745,7 @@ async function main(){
 main();
 // Scroll observer for nav button highlighting
 (function(){
-  const secs=['sec-range','sec-pipeline','sec-catalyst','sec-portfolio','sec-table'];
+  const secs=['sec-range','sec-pipeline','sec-markets','sec-catalyst','sec-portfolio','sec-table'];
   const btns=document.querySelectorAll('#topNav button');
   if(!btns.length)return;
   const obs=new IntersectionObserver(entries=>{

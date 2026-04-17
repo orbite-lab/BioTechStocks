@@ -254,9 +254,16 @@
       if (!tax || !areaPath || !tax.therapeutic_areas) return null;
       const parts = areaPath.split(".");
       let node = tax.therapeutic_areas;
-      for (const p of parts) {
+      for (let i = 0; i < parts.length; i++) {
         if (!node || typeof node !== "object") return null;
-        node = node[p];
+        // For L4: after reaching L3 node, look inside "sub" for the L4 key
+        if (node[parts[i]]) {
+          node = node[parts[i]];
+        } else if (node.sub && node.sub[parts[i]]) {
+          node = node.sub[parts[i]];
+        } else {
+          return null;
+        }
       }
       return node;
     }
@@ -277,11 +284,26 @@
     }
 
     function findCompetitors(areaPath, configs, taxonomy, excludeTicker) {
-      const node = lookupTaxonomyNode(taxonomy, areaPath);
-      if (!node || !Array.isArray(node.companies)) return { marketed: [], development: [] };
+      // Try exact L4 match first, then fall back to L3 parent for broader competitors
+      let node = lookupTaxonomyNode(taxonomy, areaPath);
+      const parts = areaPath.split(".");
+      let companySet = new Set();
+      if (node && Array.isArray(node.companies)) node.companies.forEach(c => companySet.add(c));
+      // If L4, also include L3 parent companies (broader market competitors)
+      if (parts.length === 4) {
+        const l3Path = parts.slice(0, 3).join(".");
+        const l3Node = lookupTaxonomyNode(taxonomy, l3Path);
+        if (l3Node && Array.isArray(l3Node.companies)) l3Node.companies.forEach(c => companySet.add(c));
+        // Also include sibling L4 companies
+        if (l3Node && l3Node.sub) {
+          for (const sub of Object.values(l3Node.sub)) {
+            if (Array.isArray(sub.companies)) sub.companies.forEach(c => companySet.add(c));
+          }
+        }
+      }
+      if (companySet.size === 0) return { marketed: [], development: [] };
       const marketed = [], development = [];
-      for (const tk of node.companies) {
-        // Don't exclude current company — own marketed drugs should appear
+      for (const tk of companySet) {
         const cfg = configs[tk];
         if (!cfg) continue;
         let totalTAM = 0, matchTAM = 0;
@@ -290,7 +312,7 @@
           for (const ind of a.indications) {
             const tam = indicationTAM(ind);
             totalTAM += tam;
-            if (ind.area === areaPath) {
+            if (ind.area === areaPath || (parts.length === 4 && ind.area === parts.slice(0,3).join(".")) || (ind.area && ind.area.startsWith(areaPath + ".")) || (areaPath.startsWith(ind.area + "."))) {
               matchTAM += tam;
               matches.push({ asset: a, ind, tam });
             }

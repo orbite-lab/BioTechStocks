@@ -2,9 +2,9 @@
 
 All 45 companies, 222 indications. Generated from configs/ via scripts/tam_report.py.
 
-**Total TAM (unique markets)**: $2806.0B across 132 distinct disease areas
-**Total TAM (sum per-drug, with double-counting)**: $8051.8B
-**Total SOM**: $849.8B (summed per-drug; company slices don't overlap)
+**Total TAM (unique markets)**: $2806.0B across 131 distinct disease areas
+**Total TAM (sum per-drug, with double-counting)**: $8053.5B
+**Total SOM**: $850.6B (summed per-drug; company slices don't overlap)
 **Total 2025 reported sales**: $146.2B
 
 _Note: Multiple companies target the same disease area (e.g. 4 companies in obesity/GLP-1 each_
@@ -16,7 +16,7 @@ _see the same $396B TAM). The 'unique markets' total avoids double-counting._
 
 | L1 Area | Indications | TAM | SOM | 2025 Sales |
 |---|---:|---:|---:|---:|
-| cardio metabolic | 45 | $1259.49B | $492.25B | $54.30B |
+| cardio metabolic | 45 | $1259.53B | $492.98B | $54.30B |
 | cns | 40 | $525.52B | $101.04B | $15.15B |
 | oncology | 60 | $281.97B | $111.70B | $21.12B |
 | dermatology | 20 | $248.54B | $42.52B | $18.50B |
@@ -100,8 +100,8 @@ _see the same $396B TAM). The 'unique markets' total avoids double-counting._
 | LLY | Retatrutide — triple agon | Obesity (next-gen triple agoni | Phase 3 | 40000K | $396.00B | $22.57B | $0M |  |
 | RYTM | Setmelanotide — acquired  | Acquired hypothalamic obesity | sNDA (PDUFA Mar 20, 2026) | 10K | $3.73B | $1.00B | $0M | ★ |
 | RYTM | Bivamelagon — oral MC4R a | Acquired HO (oral formulation) | Phase 2 OLE positive, Phase 3  | 10K | $3.73B | $139M | $0M | ★ |
-| RYTM | Imcivree (setmelanotide)  | Rare MC4R pathway obesity (BBS | Commercial ($195M 2025, +50% Y | 1.8K | $814M | $372M | $195M | ★ |
-| RYTM | Setmelanotide — EMANATE ( | 4 additional rare MC4R pathway | Phase 3 (topline Mar 2026) | 2.5K | $818M | $294M | $0M | ★ |
+| RYTM | Imcivree (setmelanotide)  | Rare MC4R pathway obesity (BBS | Commercial ($195M 2025, +50% Y | 4.3K | $1.68B | $885M | $195M | ★ |
+| RYTM | Setmelanotide — EMANATE ( | 4 additional rare MC4R pathway | Phase 3 (topline Mar 2026) | 4.3K | $1.68B | $507M | $0M | ★ |
 | NBIX | VYKAT XR (diazoxide choli | Prader-Willi syndrome hyperpha | Commercial ($190M 2025, acquir | 15K | $1.33B | $292M | $190M | ★ |
 | RYTM | Setmelanotide + RM-718 —  | Prader-Willi syndrome | Phase 2 exploratory + Phase 1/ | 15K | $1.33B | $679M | $0M | ★ |
 

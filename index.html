@@ -949,8 +949,15 @@ async function main(){
         }
       }
       // Compute final TAM per path (sum of unique leaf TAMs under it)
+      // Cap SOM at TAM: when multiple drugs target the same market, their SOMs
+      // overlap (can't all capture same patients) so raw sum > TAM is impossible.
       Object.keys(areaData).forEach(p => {
         areaData[p].tam = Object.values(areaData[p].tamByLeaf).reduce((s,v)=>s+v, 0);
+        areaData[p].somRaw = areaData[p].som;  // preserve raw sum for flagging
+        if (areaData[p].tam > 0 && areaData[p].som > areaData[p].tam) {
+          areaData[p].som = areaData[p].tam;
+          areaData[p].somCapped = true;
+        }
       });
 
       // Determine current level children
@@ -1000,7 +1007,9 @@ async function main(){
         const penOfTam = totalTam > 0 ? (totalSales/totalTam*100).toFixed(1) : 0;
         h+='<div style="display:flex;gap:16px;padding:8px 12px;background:#0f1117;border-radius:6px;margin-bottom:12px;flex-wrap:wrap">';
         h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">TAM (unique leaves)</div><div style="font-size:1rem;font-weight:700;color:#f97316;font-family:var(--mono)">${fmtB(totalTam)}</div></div>`;
-        h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">SOM</div><div style="font-size:1rem;font-weight:700;color:#a855f7;font-family:var(--mono)">${fmtB(totalSom)}</div></div>`;
+        const somCapNote = currentData.somCapped ? ` title="Drug SOMs overlap -- capped at TAM (raw sum was ${fmtB(currentData.somRaw)})"` : '';
+        const somFlag = currentData.somCapped ? ' *' : '';
+        h+=`<div${somCapNote}><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">SOM${somFlag}</div><div style="font-size:1rem;font-weight:700;color:#a855f7;font-family:var(--mono)">${fmtB(totalSom)}</div></div>`;
         h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">2025 Sales</div><div style="font-size:1rem;font-weight:700;color:#22c55e;font-family:var(--mono)">${fmtB(totalSales)}</div></div>`;
         h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">Market penetration</div><div style="font-size:1rem;font-weight:700;color:#fbbf24;font-family:var(--mono)">${penOfTam}%</div></div>`;
         h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">${isLeaf?'Drugs':'Sub-markets'}</div><div style="font-size:1rem;font-weight:700;color:#e2e4ea;font-family:var(--mono)">${isLeaf?currentData.companies.length:children.length}</div></div>`;
@@ -1023,7 +1032,9 @@ async function main(){
           h+=`<div style="font-size:.6rem;color:var(--text2);font-family:var(--mono);margin-bottom:8px">${subAreas>0?subAreas+' sub-markets':coCount+' drugs'}</div>`;
           // TAM bar
           h+=`<div style="position:relative;height:8px;background:#161920;border-radius:2px;margin-bottom:4px;overflow:hidden"><div style="position:absolute;top:0;left:0;height:100%;width:${pct}%;background:linear-gradient(90deg,#f97316,#fb923c);border-radius:2px"></div></div>`;
-          h+=`<div style="display:flex;justify-content:space-between;font-size:.65rem;font-family:var(--mono);margin-bottom:6px"><span style="color:#f97316">TAM ${fmtB(c.tam)}</span><span style="color:#a855f7">SOM ${fmtB(c.som)}</span></div>`;
+          const cardFlag = c.somCapped ? '*' : '';
+          const cardTitle = c.somCapped ? `title="Drug SOMs overlap -- capped at TAM (raw sum was ${fmtB(c.somRaw)})"` : '';
+          h+=`<div style="display:flex;justify-content:space-between;font-size:.65rem;font-family:var(--mono);margin-bottom:6px"><span style="color:#f97316">TAM ${fmtB(c.tam)}</span><span style="color:#a855f7" ${cardTitle}>SOM${cardFlag} ${fmtB(c.som)}</span></div>`;
           h+=`<div style="display:flex;justify-content:space-between;font-size:.6rem;font-family:var(--mono);color:var(--text2)"><span>Sales ${fmtB(c.sales)}</span><span>Pen ${penOfTam}%</span></div>`;
           h+='</div>';
         });
@@ -1054,6 +1065,13 @@ async function main(){
         h+='</div>';
       }
 
+      // Legend when any SOM is capped
+      const anyCapped = (isLeaf ? currentData?.somCapped : children.some(c => c.somCapped)) || currentData?.somCapped;
+      if (anyCapped) {
+        h+='<div style="margin-top:12px;padding:8px 10px;background:#a855f714;border:1px solid #a855f733;border-radius:6px;font-size:.65rem;color:#d8b4fe">';
+        h+='<span style="font-weight:700">*</span> SOM capped at TAM: multiple drugs target the same patients, so raw sum of drug-specific SOMs exceeds the total market. Hover for the uncapped value.';
+        h+='</div>';
+      }
       h+='</div>';  // close card
     })();
 

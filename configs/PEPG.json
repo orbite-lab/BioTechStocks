@@ -76,6 +76,18 @@
               "penPct": {
                 "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
               }
+            },
+            "company_slice": {
+              "us":  { "reachPct": 40, "wtpPct": 70, "priceK": 350 },
+              "eu":  { "reachPct": 30, "wtpPct": 50, "priceK": 220 },
+              "row": { "reachPct": 10, "wtpPct": 20, "priceK": 150 }
+            },
+            "company_slice_sources": {
+              "us.reachPct": { "note": "Phase 2; first-in-class EDO splice-correction; moderate-severe DM1" },
+              "us.wtpPct": { "note": "High unmet need but early data -- physician adoption depends on 10mg/kg results" },
+              "us.priceK": { "url": "https://www.biogen.com/en_us/spinraza-pricing.html", "note": "Anchored to Spinraza (~$375K); EDO delivery may command premium" },
+              "eu.reachPct": { "note": "HTA gating; fewer DM1 specialist centers" },
+              "row.reachPct": { "note": "Japan feasible; limited elsewhere" }
             }
           },
           "area": "musculoskeletal.neuromuscular.dm1",
@@ -146,6 +158,16 @@
               "penPct": {
                 "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
               }
+            },
+            "company_slice": {
+              "us":  { "reachPct": 25, "wtpPct": 55, "priceK": 500 },
+              "eu":  { "reachPct": 15, "wtpPct": 35, "priceK": 300 },
+              "row": { "reachPct": 5, "wtpPct": 10, "priceK": 150 }
+            },
+            "company_slice_sources": {
+              "us.reachPct": { "note": "Preclinical; EDO51 targets exon 51 (~13% DMD); competes with Exondys 51" },
+              "us.priceK": { "note": "EDO platform premium vs legacy PMO; but must justify vs Elevidys gene therapy" },
+              "eu.reachPct": { "note": "Preclinical; earliest EU access ~2032+" }
             }
           },
           "area": "musculoskeletal.neuromuscular.dmd",

@@ -359,13 +359,23 @@
             continue;
           }
 
-          if (m.regions) {
+          if (m.company_slice && m.regions) {
+            // SOM path: peakRev = Σ TAM_patients × reachPct × companyWtp × companyPrice
+            let som = 0;
+            for (const [rk, cs] of Object.entries(m.company_slice)) {
+              const tr = m.regions[rk];
+              if (!tr || !cs) continue;
+              som += (tr.patientsK || 0) * ((cs.reachPct || 0) / 100) * ((cs.wtpPct || 0) / 100) * (cs.priceK || 0);
+            }
+            if (m.cagrPct) som *= Math.pow(1 + m.cagrPct / 100, yr);
+            if (m.expansionPct) som *= (1 + m.expansionPct / 100);
+            peakRev = som * a.pen;
+          } else if (m.regions) {
             let addr = 0;
             for (const r of Object.values(m.regions)) {
               if (!r) continue;
               addr += (r.patientsK || 0) * ((r.wtpPct || 0) / 100) * (r.priceK || 0);
             }
-            // Apply CAGR + expansion if present (preserved from tamB-based markets)
             if (m.cagrPct) addr *= Math.pow(1 + m.cagrPct / 100, yr);
             if (m.expansionPct) addr *= (1 + m.expansionPct / 100);
             peakRev = addr * ((m.penPct || 0) / 100) * a.pen;
@@ -812,7 +822,17 @@
                   addrM = m.tamB * 1000;
                 }
                 totalTAM += addrM;
-                totalAtPen += addrM * ((m.penPct || 0) / 100);
+                if (m.company_slice && m.regions) {
+                  let somM = 0;
+                  for (const [rk, cs] of Object.entries(m.company_slice)) {
+                    const tr = m.regions[rk];
+                    if (!tr || !cs) continue;
+                    somM += (tr.patientsK || 0) * ((cs.reachPct || 0) / 100) * ((cs.wtpPct || 0) / 100) * (cs.priceK || 0);
+                  }
+                  totalAtPen += somM;
+                } else {
+                  totalAtPen += addrM * ((m.penPct || 0) / 100);
+                }
               }
             }
             const fmtM = v => v >= 1000 ? (ccy + (v / 1000).toFixed(2) + "B") : (ccy + v.toFixed(0) + "M");
@@ -825,7 +845,7 @@
                   e("span", { style: { fontSize: 12, fontWeight: 700, fontFamily: "'JetBrains Mono'", color: "#f97316" } }, fmtM(totalTAM))
                 ),
                 e("div", { style: { display: "flex", flexDirection: "column", alignItems: "flex-end" } },
-                  e("span", { style: { fontSize: 9, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1 } }, "All TAM × Pen"),
+                  e("span", { style: { fontSize: 9, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1 } }, "All SOM"),
                   e("span", { style: { fontSize: 12, fontWeight: 700, fontFamily: "'JetBrains Mono'", color: "#fbbf24" } }, fmtM(totalAtPen))
                 ),
                 e("div", { style: { fontSize: 10, color: "#6b7080", transition: "transform 0.2s", transform: showMarkets ? "rotate(180deg)" : "rotate(0deg)" } }, "\u25BC")
@@ -910,8 +930,44 @@
                           "▸ " + (c.nextCatalyst.date || "") + " — " + (c.nextCatalyst.title || ""))
                       ))
                     ),
-                    // Peak Pen slider (after competitive context)
-                    m.penPct != null && e(Sl, { label: "Peak Pen (%)", value: m.penPct, onChange: v => upd("markets." + mk + ".penPct", v), min: 1, max: 40, unit: "%", color: "#f97316", source: m.sources && m.sources["penPct"] }),
+                    // YOUR SLICE (SOM) — when company_slice is configured
+                    hasRegions && m.company_slice && (() => {
+                      let somM = 0;
+                      const csROWS = [["us","US"],["eu","EU"],["row","ROW"]];
+                      for (const [rk] of csROWS) {
+                        const tr = m.regions[rk] || {};
+                        const cs = m.company_slice[rk] || {};
+                        somM += (tr.patientsK || 0) * ((cs.reachPct || 0) / 100) * ((cs.wtpPct || 0) / 100) * (cs.priceK || 0);
+                      }
+                      const derivedPen = addressableM > 0 ? (somM / addressableM * 100) : 0;
+                      const csSources = m.company_slice_sources || {};
+                      return e("div", { style: { marginBottom: 10 } },
+                        e("div", { style: { fontSize: 10, fontWeight: 700, color: "#a855f7", textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 } }, "YOUR SLICE (SOM)"),
+                        csROWS.map(([rk, rLabel]) => {
+                          const tr = m.regions[rk] || {};
+                          const cs = m.company_slice[rk] || {};
+                          const rSOM = (tr.patientsK || 0) * ((cs.reachPct || 0) / 100) * ((cs.wtpPct || 0) / 100) * (cs.priceK || 0);
+                          return e("div", { key: rk, style: { marginBottom: 8, padding: "6px 8px", background: "#161920", borderRadius: 6 } },
+                            e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 4 } },
+                              e("span", { style: { fontSize: 10, fontWeight: 700, color: "#a855f7", letterSpacing: 1 } }, rLabel),
+                              e("span", { style: { fontSize: 10, color: "#d8b4fe", fontFamily: "'JetBrains Mono'" } }, ccy + rSOM.toFixed(0) + "M")
+                            ),
+                            e(Sl, { label: "Reach (%)", value: cs.reachPct || 0, onChange: v => upd("markets." + mk + ".company_slice." + rk + ".reachPct", v), min: 0, max: 100, step: 0.1, unit: "%", color: "#a855f7", source: csSources[rk + ".reachPct"] }),
+                            e(Sl, { label: "WTP (%)", value: cs.wtpPct || 0, onChange: v => upd("markets." + mk + ".company_slice." + rk + ".wtpPct", v), min: 0, max: 100, unit: "%", color: "#a855f7", source: csSources[rk + ".wtpPct"] }),
+                            e(Sl, { label: "Price (" + ccy + "K)", value: cs.priceK || 0, onChange: v => upd("markets." + mk + ".company_slice." + rk + ".priceK", v), min: 0, max: 3000, step: 5, unit: "K", color: "#a855f7", source: csSources[rk + ".priceK"] })
+                          );
+                        }),
+                        e("div", { style: { padding: "8px 10px", background: "#a855f714", borderRadius: 6, display: "flex", justifyContent: "space-between", alignItems: "center", border: "1px solid #a855f733" } },
+                          e("div", null,
+                            e("div", { style: { fontSize: 10, fontWeight: 700, color: "#a855f7", textTransform: "uppercase", letterSpacing: 1 } }, "SOM 2031"),
+                            e("div", { style: { fontSize: 9, color: "#6b7080", marginTop: 2 } }, "Implied pen: " + derivedPen.toFixed(1) + "%")
+                          ),
+                          e("span", { style: { fontSize: 14, fontWeight: 800, color: "#a855f7", fontFamily: "'JetBrains Mono'" } }, ccy + somM.toFixed(0) + "M")
+                        )
+                      );
+                    })(),
+                    // Peak Pen slider — only when no company_slice (otherwise pen is derived from SOM)
+                    !m.company_slice && m.penPct != null && e(Sl, { label: "Peak Pen (%)", value: m.penPct, onChange: v => upd("markets." + mk + ".penPct", v), min: 1, max: 40, unit: "%", color: "#f97316", source: m.sources && m.sources["penPct"] }),
                     // Legacy fallbacks when regions not configured
                     !hasRegions && m.patientsK != null && e(Sl, { label: "Patients (K)", value: m.patientsK, onChange: v => upd("markets." + mk + ".patientsK", v), min: 5, max: 80, color: "#f97316" }),
                     !hasRegions && m.patientsK != null && e(Sl, { label: "Pricing (" + ccy + "K)", value: m.pricingK, onChange: v => upd("markets." + mk + ".pricingK", v), min: 50, max: 600, step: 25, unit: "K", color: "#f97316" }),

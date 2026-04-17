@@ -96,6 +96,53 @@
               "penPct": {
                 "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
               }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.2,
+                "wtpPct": 50,
+                "priceK": 465
+              },
+              "eu": {
+                "reachPct": 0.1,
+                "wtpPct": 35,
+                "priceK": 320
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 15,
+                "priceK": 200
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "CARTITUDE-5/6 frontline eligible; limited by apheresis/mfg capacity"
+              },
+              "us.wtpPct": {
+                "note": "Cell therapy adoption among community oncologists still early"
+              },
+              "us.priceK": {
+                "url": "https://www.drugs.com/price-guide/carvykti",
+                "note": "Carvykti WAC ~$465K one-time infusion"
+              },
+              "eu.reachPct": {
+                "note": "EMA access slower; fewer treatment centers certified"
+              },
+              "eu.wtpPct": {
+                "note": "HTA-gated; NICE/G-BA cost-effectiveness hurdle"
+              },
+              "eu.priceK": {
+                "note": "EU net price ~70% of US list for cell therapy"
+              },
+              "row.reachPct": {
+                "note": "Japan + select APAC only; minimal LatAm/Africa access"
+              },
+              "row.wtpPct": {
+                "note": "Very limited infrastructure for CAR-T outside US/EU/Japan"
+              },
+              "row.priceK": {
+                "note": "Blended ROW; Japan near EU, rest minimal"
+              }
             }
           },
           "area": "oncology.hematology.myeloma"
@@ -165,6 +212,34 @@
               "penPct": {
                 "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
               }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.1,
+                "wtpPct": 30,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 0.1,
+                "wtpPct": 20,
+                "priceK": 250
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 10,
+                "priceK": 150
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Allogeneic = off-the-shelf but Phase 1; only R/R DLBCL initially"
+              },
+              "us.priceK": {
+                "note": "Allo CAR-T pricing target ~$350K (lower than autologous ~$410K)"
+              },
+              "eu.reachPct": {
+                "note": "Phase 1 -- no EU access expected before 2030"
+              }
             }
           },
           "area": "oncology.hematology.cll_nhl"
@@ -233,6 +308,31 @@
               },
               "penPct": {
                 "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.1,
+                "wtpPct": 20,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 0.1,
+                "wtpPct": 12,
+                "priceK": 140
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 5,
+                "priceK": 80
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Preclinical in vivo CAR-T; earliest market ~2032; initial niche R/R"
+              },
+              "us.priceK": {
+                "note": "In vivo could be much cheaper than ex vivo (~$200K target)"
               }
             }
           },

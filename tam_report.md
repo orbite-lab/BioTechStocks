@@ -2,9 +2,9 @@
 
 All 45 companies, 222 indications. Generated from configs/ via scripts/tam_report.py.
 
-**Total TAM (unique markets)**: $2836.2B across 129 distinct disease areas
-**Total TAM (sum per-drug, with double-counting)**: $8261.4B
-**Total SOM**: $953.5B (summed per-drug; company slices don't overlap)
+**Total TAM (unique markets)**: $2806.0B across 132 distinct disease areas
+**Total TAM (sum per-drug, with double-counting)**: $8051.8B
+**Total SOM**: $849.8B (summed per-drug; company slices don't overlap)
 **Total 2025 reported sales**: $146.2B
 
 _Note: Multiple companies target the same disease area (e.g. 4 companies in obesity/GLP-1 each_
@@ -16,7 +16,7 @@ _see the same $396B TAM). The 'unique markets' total avoids double-counting._
 
 | L1 Area | Indications | TAM | SOM | 2025 Sales |
 |---|---:|---:|---:|---:|
-| cardio metabolic | 45 | $1289.70B | $595.97B | $54.30B |
+| cardio metabolic | 45 | $1259.49B | $492.25B | $54.30B |
 | cns | 40 | $525.52B | $101.04B | $15.15B |
 | oncology | 60 | $281.97B | $111.70B | $21.12B |
 | dermatology | 20 | $248.54B | $42.52B | $18.50B |
@@ -98,12 +98,12 @@ _see the same $396B TAM). The 'unique markets' total avoids double-counting._
 | LLY | Mounjaro + Zepbound (tirz | Diabetes (Mounjaro) + Obesity  | Commercial ($40B+ annualized Q | 40000K | $396.00B | $57.36B | $40.00B |  |
 | LLY | Orforglipron — oral GLP-1 | Obesity + T2D (oral pill) | FDA approved Apr 2026 | 40000K | $396.00B | $25.13B | $0M |  |
 | LLY | Retatrutide — triple agon | Obesity (next-gen triple agoni | Phase 3 | 40000K | $396.00B | $22.57B | $0M |  |
-| NBIX | VYKAT XR (diazoxide choli | Prader-Willi syndrome hyperpha | Commercial ($190M 2025, acquir | 500K | $36.90B | $4.58B | $190M | ★ |
-| RYTM | Imcivree (setmelanotide)  | Rare MC4R pathway obesity (BBS | Commercial ($195M 2025, +50% Y | 500K | $36.90B | $20.26B | $195M | ★ |
-| RYTM | Setmelanotide — acquired  | Acquired hypothalamic obesity | sNDA (PDUFA Mar 20, 2026) | 500K | $36.90B | $24.72B | $0M | ★ |
-| RYTM | Setmelanotide — EMANATE ( | 4 additional rare MC4R pathway | Phase 3 (topline Mar 2026) | 500K | $36.90B | $36.94B | $0M | ★ |
-| RYTM | Bivamelagon — oral MC4R a | Acquired HO (oral formulation) | Phase 2 OLE positive, Phase 3  | 500K | $36.90B | $4.92B | $0M | ★ |
-| RYTM | Setmelanotide + RM-718 —  | Prader-Willi syndrome | Phase 2 exploratory + Phase 1/ | 500K | $36.90B | $15.10B | $0M | ★ |
+| RYTM | Setmelanotide — acquired  | Acquired hypothalamic obesity | sNDA (PDUFA Mar 20, 2026) | 10K | $3.73B | $1.00B | $0M | ★ |
+| RYTM | Bivamelagon — oral MC4R a | Acquired HO (oral formulation) | Phase 2 OLE positive, Phase 3  | 10K | $3.73B | $139M | $0M | ★ |
+| RYTM | Imcivree (setmelanotide)  | Rare MC4R pathway obesity (BBS | Commercial ($195M 2025, +50% Y | 1.8K | $814M | $372M | $195M | ★ |
+| RYTM | Setmelanotide — EMANATE ( | 4 additional rare MC4R pathway | Phase 3 (topline Mar 2026) | 2.5K | $818M | $294M | $0M | ★ |
+| NBIX | VYKAT XR (diazoxide choli | Prader-Willi syndrome hyperpha | Commercial ($190M 2025, acquir | 15K | $1.33B | $292M | $190M | ★ |
+| RYTM | Setmelanotide + RM-718 —  | Prader-Willi syndrome | Phase 2 exploratory + Phase 1/ | 15K | $1.33B | $679M | $0M | ★ |
 
 #### cardio metabolic.rare metabolic
 

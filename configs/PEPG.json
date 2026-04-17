@@ -47,34 +47,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 15K US treated/diagnosed; source: consensus epi (musculoskeletal)."
+                "note": "US 15K diagnosed/treated patients."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 18K EU treated/diagnosed."
+                "note": "EU 18K diagnosed/treated patients."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 20K ROW treated/diagnosed."
+                "note": "ROW 20K diagnosed/treated patients."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 70% (payor access + formulary)."
+                "note": "US WTP 70% -- commercial payor access + formulary coverage."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 52% (HTA-gated uptake)."
+                "note": "EU WTP 52% -- HTA-gated uptake (NICE/G-BA/ASMR)."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+                "note": "ROW WTP 12% -- limited reimbursement outside US/EU/Japan."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $250K/yr (musculoskeletal drug-class avg)."
+                "note": "US avg treatment cost $250K/yr (market blended across modalities)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $130K/yr."
+                "note": "EU avg treatment cost $130K/yr (market blended across modalities)."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $50K/yr."
+                "note": "ROW avg treatment cost $50K/yr (market blended across modalities)."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "Peak penetration 14% -- refine per competitive landscape."
               }
             },
             "company_slice": {
@@ -110,6 +110,18 @@
               },
               "row.reachPct": {
                 "note": "Japan feasible; limited elsewhere"
+              },
+              "eu.wtpPct": {
+                "note": "EU drug-specific WTP 50%."
+              },
+              "eu.priceK": {
+                "note": "EU drug price $220K/yr."
+              },
+              "row.wtpPct": {
+                "note": "ROW drug-specific WTP 20%."
+              },
+              "row.priceK": {
+                "note": "ROW drug price $150K/yr."
               }
             }
           },
@@ -152,34 +164,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 12K US treated/diagnosed; source: consensus epi (musculoskeletal)."
+                "note": "US 1.6K diagnosed/treated patients."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 14K EU treated/diagnosed."
+                "note": "EU 2.0K diagnosed/treated patients."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 18K ROW treated/diagnosed."
+                "note": "ROW 2.6K diagnosed/treated patients."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 78% (payor access + formulary)."
+                "note": "US WTP 75% -- commercial payor access + formulary coverage."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 58% (HTA-gated uptake)."
+                "note": "EU WTP 50% -- HTA-gated uptake (NICE/G-BA/ASMR)."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+                "note": "ROW WTP 12% -- limited reimbursement outside US/EU/Japan."
               },
               "us.priceK": {
-                "note": "Blended: PMOs ~$300K/yr (40% pts) + gene therapy ~$650K/yr amortized (10%) + steroids/supportive ~$20K (50%). Weighted avg ~$500K."
+                "note": "US market blended avg $320K/yr across treatment modalities."
               },
               "eu.priceK": {
-                "note": "Blended EU: PMOs ~$170K + gene therapy ~$450K amort + supportive. Weighted avg ~$300K."
+                "note": "EU market blended avg $180K/yr across treatment modalities."
               },
               "row.priceK": {
-                "note": "Blended ROW: Japan near EU pricing; limited gene therapy access elsewhere. ~$120K weighted."
+                "note": "ROW market blended avg $80K/yr across treatment modalities."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "Peak penetration 8% -- refine per competitive landscape."
               }
             },
             "company_slice": {
@@ -208,6 +220,24 @@
               },
               "eu.reachPct": {
                 "note": "Preclinical; earliest EU access ~2032+"
+              },
+              "us.wtpPct": {
+                "note": "US drug-specific WTP 55%."
+              },
+              "eu.wtpPct": {
+                "note": "EU drug-specific WTP 35%."
+              },
+              "eu.priceK": {
+                "note": "EU drug price $300K/yr."
+              },
+              "row.reachPct": {
+                "note": "ROW reach 7.4% of 2.6K pts = 0.2K addressable."
+              },
+              "row.wtpPct": {
+                "note": "ROW drug-specific WTP 10%."
+              },
+              "row.priceK": {
+                "note": "ROW drug price $150K/yr."
               }
             }
           },

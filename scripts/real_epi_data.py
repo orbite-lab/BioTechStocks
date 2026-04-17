@@ -233,27 +233,17 @@ REAL_MARKETS = {
         "eu":  {"patientsK": 120,  "wtpPct": 48, "priceK": 40},
         "row": {"patientsK": 150,  "wtpPct": 10, "priceK": 15},
     },
-    "cardio_metabolic.obesity.glp1_incretin": {
+    "cardio_metabolic.obesity.general": {
+        # Mass-market obesity (all mechanisms compete here: GLP-1, RNAi, myostatin, kv7, etc.)
         "us":  {"patientsK": 40000, "wtpPct": 50, "priceK": 15},
         "eu":  {"patientsK": 30000, "wtpPct": 35, "priceK": 8},
         "row": {"patientsK": 50000, "wtpPct": 8,  "priceK": 3},
     },
-    "cardio_metabolic.obesity.kv7": {
-        # Same TAM as GLP-1/incretin obesity market (novel MOA competing)
-        "us":  {"patientsK": 40000, "wtpPct": 50, "priceK": 15},
-        "eu":  {"patientsK": 30000, "wtpPct": 35, "priceK": 8},
-        "row": {"patientsK": 50000, "wtpPct": 8,  "priceK": 3},
-    },
-    "cardio_metabolic.obesity.mc4r": {
+    "cardio_metabolic.obesity.rare_genetic": {
+        # Rare genetic obesity (MC4R pathway: BBS, POMC/LEPR, Prader-Willi, acquired hypothalamic)
         "us":  {"patientsK": 500,  "wtpPct": 70, "priceK": 80},
         "eu":  {"patientsK": 400,  "wtpPct": 50, "priceK": 40},
         "row": {"patientsK": 600,  "wtpPct": 10, "priceK": 15},
-    },
-    "cardio_metabolic.obesity.rnai_obesity": {
-        # Same TAM as GLP-1/incretin obesity market (RNAi approach)
-        "us":  {"patientsK": 40000, "wtpPct": 50, "priceK": 15},
-        "eu":  {"patientsK": 30000, "wtpPct": 35, "priceK": 8},
-        "row": {"patientsK": 50000, "wtpPct": 8,  "priceK": 3},
     },
     "cardio_metabolic.rare_metabolic.homocystinuria": {
         "us":  {"patientsK": 1,    "wtpPct": 75, "priceK": 350},

@@ -2,9 +2,13 @@
 
 All 45 companies, 222 indications. Generated from configs/ via scripts/tam_report.py.
 
-**Total TAM**: $7909.8B
-**Total SOM**: $947.9B
+**Total TAM (unique markets)**: $3677.3B across 132 distinct disease areas
+**Total TAM (sum per-drug, with double-counting)**: $7909.8B
+**Total SOM**: $947.9B (summed per-drug; company slices don't overlap)
 **Total 2025 reported sales**: $146.2B
+
+_Note: Multiple companies target the same disease area (e.g. 4 companies in obesity/GLP-1 each_
+_see the same $396B TAM). The 'unique markets' total avoids double-counting._
 
 ---
 
@@ -12,14 +16,14 @@ All 45 companies, 222 indications. Generated from configs/ via scripts/tam_repor
 
 | L1 Area | Indications | TAM | SOM | 2025 Sales |
 |---|---:|---:|---:|---:|
-| cardio metabolic | 45 | $4385.16B | $590.48B | $54.30B |
-| cns | 40 | $1337.08B | $100.90B | $15.15B |
-| dermatology | 20 | $707.41B | $42.50B | $18.50B |
-| oncology | 60 | $599.77B | $111.70B | $21.12B |
-| immunology | 23 | $559.41B | $51.46B | $16.78B |
-| infectious disease | 8 | $119.82B | $28.85B | $16.79B |
-| musculoskeletal | 13 | $103.93B | $14.62B | $3.04B |
-| ophthalmology | 8 | $42.08B | $4.12B | $0M |
+| cardio metabolic | 45 | $2153.50B | $590.48B | $54.30B |
+| cns | 40 | $521.16B | $100.90B | $15.15B |
+| oncology | 60 | $289.46B | $111.70B | $21.12B |
+| immunology | 23 | $234.14B | $51.46B | $16.78B |
+| dermatology | 20 | $218.35B | $42.50B | $18.50B |
+| musculoskeletal | 13 | $90.68B | $14.62B | $3.04B |
+| infectious disease | 8 | $81.78B | $28.85B | $16.79B |
+| ophthalmology | 8 | $33.18B | $4.12B | $0M |
 | respiratory | 2 | $22.11B | $383M | $0M |
 | hematology | 1 | $16.72B | $886M | $116M |
 | endocrine | 4 | $16.26B | $2.01B | $381M |

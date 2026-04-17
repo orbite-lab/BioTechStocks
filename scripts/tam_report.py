@@ -104,17 +104,32 @@ def write_md(rows, path):
         l2 = ".".join(parts[:2]) if len(parts) > 1 else l1
         by_area[(l1, l2, area)].append(r)
 
+    # Dedupe TAM by area (each disease market counted once, not per-drug)
+    unique_tam_by_area = {}
+    for r in rows:
+        area = r["area"] or "unclassified"
+        if area not in unique_tam_by_area:
+            unique_tam_by_area[area] = r["tam_total_M"]
+    total_tam_unique = sum(unique_tam_by_area.values())
+    total_tam_raw = sum(r["tam_total_M"] for r in rows)
+
     lines = ["# Consolidated TAM & SOM Report", "",
              "All 45 companies, 222 indications. Generated from configs/ via scripts/tam_report.py.", "",
-             f"**Total TAM**: ${sum(r['tam_total_M'] for r in rows)/1000:.1f}B",
-             f"**Total SOM**: ${sum(r['som_total_M'] for r in rows)/1000:.1f}B",
-             f"**Total 2025 reported sales**: ${sum(r['salesM'] for r in rows)/1000:.1f}B", "", "---", ""]
+             f"**Total TAM (unique markets)**: ${total_tam_unique/1000:.1f}B across {len(unique_tam_by_area)} distinct disease areas",
+             f"**Total TAM (sum per-drug, with double-counting)**: ${total_tam_raw/1000:.1f}B",
+             f"**Total SOM**: ${sum(r['som_total_M'] for r in rows)/1000:.1f}B (summed per-drug; company slices don't overlap)",
+             f"**Total 2025 reported sales**: ${sum(r['salesM'] for r in rows)/1000:.1f}B", "",
+             "_Note: Multiple companies target the same disease area (e.g. 4 companies in obesity/GLP-1 each_",
+             "_see the same $396B TAM). The 'unique markets' total avoids double-counting._", "", "---", ""]
 
-    # Summary by L1
-    l1_totals = defaultdict(lambda: {"tam": 0, "som": 0, "sales": 0, "count": 0})
+    # Summary by L1 - dedupe TAM per area
+    l1_totals = defaultdict(lambda: {"tam": 0, "som": 0, "sales": 0, "count": 0, "areas": set()})
     for r in rows:
         l1 = (r["area"] or "unclassified").split(".")[0]
-        l1_totals[l1]["tam"] += r["tam_total_M"]
+        area = r["area"] or "unclassified"
+        if area not in l1_totals[l1]["areas"]:
+            l1_totals[l1]["tam"] += r["tam_total_M"]
+            l1_totals[l1]["areas"].add(area)
         l1_totals[l1]["som"] += r["som_total_M"]
         l1_totals[l1]["sales"] += r["salesM"]
         l1_totals[l1]["count"] += 1

@@ -205,7 +205,7 @@ function computeScenario(cfg,scenKey,state){
     const isComm=asset.id==="commercial"||(isSOTP&&(stgL.includes("commercial")||stgL.includes("launched")||stgL.includes("marketed")));
     if(isComm&&isSOTP){continue;}
     let pk=0;
-    if(m.company_slice&&m.regions){let som=0,tamA=0;for(const[rk,cs]of Object.entries(m.company_slice)){const tr=m.regions[rk];if(!tr||!cs)continue;som+=(tr.patientsK||0)*((cs.reachPct||0)/100)*((cs.wtpPct||0)/100)*(cs.priceK||0);tamA+=(tr.patientsK||0)*((tr.wtpPct||0)/100)*(tr.priceK||0);}if(tamA>0&&som>tamA)som=tamA;if(m.cagrPct){const yr=(m.peakYear||2033)-2026;som*=Math.pow(1+m.cagrPct/100,yr);}if(m.expansionPct)som*=(1+m.expansionPct/100);pk=som*a.pen;}
+    if(m.company_slice&&m.regions){let som=0;for(const[rk,cs]of Object.entries(m.company_slice)){const tr=m.regions[rk];if(!tr||!cs)continue;som+=(tr.patientsK||0)*((cs.reachPct||0)/100)*((cs.wtpPct||0)/100)*(cs.priceK||0);}if(m.cagrPct){const yr=(m.peakYear||2033)-2026;som*=Math.pow(1+m.cagrPct/100,yr);}if(m.expansionPct)som*=(1+m.expansionPct/100);pk=som*a.pen;}
     else if(m.regions){let addr=0;for(const _r of Object.values(m.regions)){if(_r)addr+=(_r.patientsK||0)*((_r.wtpPct||0)/100)*(_r.priceK||0);}if(m.cagrPct){const yr=(m.peakYear||2033)-2026;addr*=Math.pow(1+m.cagrPct/100,yr);}if(m.expansionPct)addr*=(1+m.expansionPct/100);pk=addr*((m.penPct||0)/100)*a.pen;}
     else if(m.patientsK)pk=m.patientsK*m.pricingK*(m.penPct/100)*a.pen;
     else if(m.tamB){const yr=(m.peakYear||2033)-2026;const tam=m.tamB*(m.cagrPct?Math.pow(1+m.cagrPct/100,yr):1)*(1+(m.expansionPct||0)/100);pk=tam*(m.penPct/100)*a.pen*1000;}

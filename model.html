@@ -362,15 +362,12 @@
 
           if (m.company_slice && m.regions) {
             // SOM path: peakRev = Σ TAM_patients × reachPct × companyWtp × companyPrice
-            let som = 0, tamAddr = 0;
+            let som = 0;
             for (const [rk, cs] of Object.entries(m.company_slice)) {
               const tr = m.regions[rk];
               if (!tr || !cs) continue;
               som += (tr.patientsK || 0) * ((cs.reachPct || 0) / 100) * ((cs.wtpPct || 0) / 100) * (cs.priceK || 0);
-              tamAddr += (tr.patientsK || 0) * ((tr.wtpPct || 0) / 100) * (tr.priceK || 0);
             }
-            // Cap SOM at TAM — drug can't capture more than the whole market
-            if (tamAddr > 0 && som > tamAddr) som = tamAddr;
             if (m.cagrPct) som *= Math.pow(1 + m.cagrPct / 100, yr);
             if (m.expansionPct) som *= (1 + m.expansionPct / 100);
             peakRev = som * a.pen;
@@ -866,7 +863,7 @@
                   let addressableM = 0;
                   if (hasRegions) { for (const [rk] of REGIONS) { const r = m.regions[rk] || {}; addressableM += (r.patientsK || 0) * ((r.wtpPct || 0) / 100) * (r.priceK || 0); } }
                   let somM = 0, hasSOM = !!(m.company_slice && hasRegions);
-                  if (hasSOM) { for (const [rk] of REGIONS) { const tr = m.regions[rk] || {}; const cs = m.company_slice[rk] || {}; somM += (tr.patientsK || 0) * ((cs.reachPct || 0) / 100) * ((cs.wtpPct || 0) / 100) * (cs.priceK || 0); } if (addressableM > 0 && somM > addressableM) somM = addressableM; }
+                  if (hasSOM) { for (const [rk] of REGIONS) { const tr = m.regions[rk] || {}; const cs = m.company_slice[rk] || {}; somM += (tr.patientsK || 0) * ((cs.reachPct || 0) / 100) * ((cs.wtpPct || 0) / 100) * (cs.priceK || 0); } }
                   const comp = hasRegions && ind.area ? findCompetitors(ind.area, configs, taxonomy, config.company.ticker) : { marketed: [], development: [] };
                   const mktSales = comp.marketed.reduce((s, c) => s + (c.sales || 0), 0);
                   const fmtV = v => v >= 1000 ? (ccy + (v / 1000).toFixed(1) + "B") : (ccy + Math.round(v) + "M");

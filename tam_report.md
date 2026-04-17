@@ -2,9 +2,9 @@
 
 All 45 companies, 222 indications. Generated from configs/ via scripts/tam_report.py.
 
-**Total TAM (unique markets)**: $2885.3B across 130 distinct disease areas
-**Total TAM (sum per-drug, with double-counting)**: $7909.8B
-**Total SOM**: $947.9B (summed per-drug; company slices don't overlap)
+**Total TAM (unique markets)**: $2836.2B across 129 distinct disease areas
+**Total TAM (sum per-drug, with double-counting)**: $8261.4B
+**Total SOM**: $953.5B (summed per-drug; company slices don't overlap)
 **Total 2025 reported sales**: $146.2B
 
 _Note: Multiple companies target the same disease area (e.g. 4 companies in obesity/GLP-1 each_
@@ -16,12 +16,12 @@ _see the same $396B TAM). The 'unique markets' total avoids double-counting._
 
 | L1 Area | Indications | TAM | SOM | 2025 Sales |
 |---|---:|---:|---:|---:|
-| cardio metabolic | 45 | $1361.50B | $590.48B | $54.30B |
-| cns | 40 | $521.16B | $100.90B | $15.15B |
-| oncology | 60 | $289.46B | $111.70B | $21.12B |
-| immunology | 23 | $234.14B | $51.46B | $16.78B |
-| dermatology | 20 | $218.35B | $42.50B | $18.50B |
-| musculoskeletal | 13 | $90.68B | $14.62B | $3.04B |
+| cardio metabolic | 45 | $1289.70B | $595.97B | $54.30B |
+| cns | 40 | $525.52B | $101.04B | $15.15B |
+| oncology | 60 | $281.97B | $111.70B | $21.12B |
+| dermatology | 20 | $248.54B | $42.52B | $18.50B |
+| immunology | 23 | $236.61B | $51.46B | $16.78B |
+| musculoskeletal | 13 | $83.79B | $14.62B | $3.04B |
 | infectious disease | 8 | $81.78B | $28.85B | $16.79B |
 | ophthalmology | 8 | $33.18B | $4.12B | $0M |
 | respiratory | 2 | $22.11B | $383M | $0M |
@@ -65,13 +65,12 @@ _see the same $396B TAM). The 'unique markets' total avoids double-counting._
 
 | Ticker | Asset | Indication | Stage | US pts | TAM | SOM | Sales | Rare |
 |---|---|---|---|---:|---:|---:|---:|---|
-| 4568 | Japan pharma + other pipe | Japan domestic + Lixiana + Tar | Commercial + pipeline | 6000K | $54.60B | $2.65B | $2.00B |  |
-| NAMS | PREVAIL CVOT | CV outcomes | Phase 3 ongoing | 15000K | $102.20B | $437M | $0M |  |
-| ARWR | Zodasiran — ANGPTL3 (mixe | Mixed hyperlipidemia / ASCVD | Phase 3 | 20000K | $110.40B | $1.48B | $0M |  |
-| NAMS | Obicetrapib monotherapy | LDL-C lowering | EMA approval H2 2026 | 20000K | $110.40B | $785M | $0M |  |
-| NAMS | Obicetrapib/ezetimibe FDC | LDL-C FDC | EMA approval H2 2026 | 20000K | $110.40B | $789M | $0M |  |
-| ARWR | ARO-DIMER-PA (PCSK9+APOC3 | ASCVD due to mixed hyperlipide | Phase 1/2a (dosing) | 5000K | $33.88B | $280M | $0M |  |
-| CRSP | CTX310 - in vivo ANGPTL3  | Cardiovascular gene editing | Phase 1 (NEJM published) | 5000K | $33.88B | $1.50B | $0M |  |
+| ARWR | Zodasiran — ANGPTL3 (mixe | Mixed hyperlipidemia / ASCVD | Phase 3 | 20000K | $140.80B | $1.48B | $0M |  |
+| ARWR | ARO-DIMER-PA (PCSK9+APOC3 | ASCVD due to mixed hyperlipide | Phase 1/2a (dosing) | 20000K | $140.80B | $1.12B | $0M |  |
+| CRSP | CTX310 - in vivo ANGPTL3  | Cardiovascular gene editing | Phase 1 (NEJM published) | 20000K | $140.80B | $6.01B | $0M |  |
+| NAMS | Obicetrapib monotherapy | LDL-C lowering | EMA approval H2 2026 | 20000K | $140.80B | $785M | $0M |  |
+| NAMS | Obicetrapib/ezetimibe FDC | LDL-C FDC | EMA approval H2 2026 | 20000K | $140.80B | $789M | $0M |  |
+| NAMS | PREVAIL CVOT | CV outcomes | Phase 3 ongoing | 20000K | $140.80B | $583M | $0M |  |
 | IONS | Pelacarsen — Lp(a) (partn | Lp(a) cardiovascular risk | Phase 3 (HORIZON CVOT readout  | 5000K | $33.88B | $438M | $0M |  |
 | ARWR | REDEMPLO (plozasiran) — F | FCS + sHTG pending (plozasiran | Commercial (FCS approved US/Ca | 4000K | $26.50B | $267.40B | $200M |  |
 | IONS | TRYNGOLZA (olezarsen) — F | Triglyceride franchise (FCS la | Commercial FCS + sHTG sNDA (PD | 4000K | $26.50B | $35.84B | $150M | ★ |
@@ -113,6 +112,12 @@ _see the same $396B TAM). The 'unique markets' total avoids double-counting._
 | TVTX | Pegtibatinase (TVT-058) — | Classical homocystinuria (CBS  | Phase 3 HARMONY restarted Q1 2 | 1K | $402M | $219M | $0M | ★ |
 | ALNY | Oxlumo (lumasiran) | Primary hyperoxaluria type 1 | Commercial ($180M 2025) | 3K | $1.34B | $700M | $180M | ★ |
 | ALNY | Givlaari (givosiran) | Acute hepatic porphyria | Commercial ($300M 2025) | 5K | $2.00B | $647M | $300M | ★ |
+
+#### cardio metabolic.thrombosis
+
+| Ticker | Asset | Indication | Stage | US pts | TAM | SOM | Sales | Rare |
+|---|---|---|---|---:|---:|---:|---:|---|
+| 4568 | Japan pharma + other pipe | Japan domestic + Lixiana + Tar | Commercial + pipeline | 6000K | $54.60B | $2.65B | $2.00B |  |
 
 ### Cns
 
@@ -157,8 +162,8 @@ _see the same $396B TAM). The 'unique markets' total avoids double-counting._
 
 | Ticker | Asset | Indication | Stage | US pts | TAM | SOM | Sales | Rare |
 |---|---|---|---|---:|---:|---:|---:|---|
-| ABBV | Botox Therapeutic | Chronic migraine + spasticity | Commercial ($3.5B 2025) | 4000K | $26.02B | $5.74B | $3.50B |  |
-| ABBV | Qulipta (atogepant) | Migraine prevention | Commercial ($1.2B 2025) | 4000K | $26.02B | $2.18B | $1.20B |  |
+| ABBV | Botox Therapeutic | Chronic migraine + spasticity | Commercial ($3.5B 2025) | 4000K | $26.50B | $5.77B | $3.50B |  |
+| ABBV | Qulipta (atogepant) | Migraine prevention | Commercial ($1.2B 2025) | 4000K | $26.50B | $2.18B | $1.20B |  |
 
 #### cns.psychiatry
 
@@ -168,15 +173,15 @@ _see the same $396B TAM). The 'unique markets' total avoids double-counting._
 | AXSM | Symbravo | GAD | Commercial (launched 2025) | 6000K | $38.40B | $249M | $50M |  |
 | DFTX | DT120 ODT (lysergide) | GAD | Phase 3 | 6000K | $38.40B | $1.11B | $0M |  |
 | DFTX | DT402 (R-MDMA) | ASD | Phase 2a | 2000K | $17.88B | $97M | $0M |  |
-| ABBV | Vraylar (cariprazine) | MDD adjunctive | Commercial ($4.2B 2025) | 8000K | $65.52B | $3.86B | $1.00B |  |
+| ABBV | Vraylar (cariprazine) | MDD adjunctive | Commercial ($4.2B 2025) | 8000K | $69.60B | $3.97B | $1.00B |  |
 | AXSM | Auvelity (DXM/bupropion) | MDD | Commercial ($480M 2025) | 8000K | $69.60B | $1.94B | $480M |  |
 | DFTX | DT120 ODT (lysergide) | MDD | Phase 3 | 8000K | $69.60B | $1.03B | $0M |  |
 | NBIX | Osavampator - AMPA recept | Major depressive disorder | Phase 3 (initiated 2025, data  | 8000K | $69.60B | $933M | $0M |  |
 | CAMX | Buvidal/Brixadi — long-ac | Opioid use disorder (EU Buvida | Commercial (SEK 1.8B+ 2025, Br | 0K | $0M | $0M | $400M |  |
 | AXSM | AXS-14 — fibromyalgia | Fibromyalgia | NDA submitted | 4000K | $25.89B | $438M | $0M |  |
-| ABBV | Vraylar (cariprazine) | Schizophrenia | Commercial ($4.2B 2025) | 1500K | $27.86B | $4.58B | $2.00B |  |
-| ABBV | Vraylar (cariprazine) | Bipolar disorder | Commercial ($4.2B 2025) | 1500K | $27.86B | $2.80B | $1.20B |  |
-| ABBV | Emraclidine (Cerevel) | Schizophrenia | Phase 3 | 1500K | $27.86B | $1.45B | $0M |  |
+| ABBV | Vraylar (cariprazine) | Schizophrenia | Commercial ($4.2B 2025) | 1500K | $27.67B | $4.57B | $2.00B |  |
+| ABBV | Vraylar (cariprazine) | Bipolar disorder | Commercial ($4.2B 2025) | 1500K | $27.67B | $2.80B | $1.20B |  |
+| ABBV | Emraclidine (Cerevel) | Schizophrenia | Phase 3 | 1500K | $27.67B | $1.45B | $0M |  |
 | NBIX | Direclidine - muscarinic  | Schizophrenia | Phase 3 (NBI-568, data 2027) | 1500K | $27.67B | $1.62B | $0M |  |
 | NBIX | Earlier muscarinic + neur | Broader neuro/psych pipeline | Phase 1/2 | 1500K | $27.67B | $250M | $0M |  |
 
@@ -201,7 +206,7 @@ _see the same $396B TAM). The 'unique markets' total avoids double-counting._
 
 | Ticker | Asset | Indication | Stage | US pts | TAM | SOM | Sales | Rare |
 |---|---|---|---|---:|---:|---:|---:|---|
-| ABBV | Rinvoq (upadacitinib) | Atopic dermatitis | Commercial ($5.6B 2025, +52%) | 1500K | $36.83B | $7.29B | $1.50B |  |
+| ABBV | Rinvoq (upadacitinib) | Atopic dermatitis | Commercial ($5.6B 2025, +52%) | 1500K | $67.02B | $7.31B | $1.50B |  |
 | ARQT | ARQ-234 — CD200R agonist  | Moderate-severe atopic dermati | Phase 1a/1b (first-in-human, e | 1500K | $67.02B | $677M | $0M |  |
 | CRVS | Soquelitinib — Atopic Der | Moderate-severe atopic dermati | Phase 2 starting Q1/Q2 2026 (~ | 1500K | $67.02B | $540M | $0M |  |
 | KYMR | KT-621 — oral STAT6 degra | Type 2 inflammation (AD + asth | Phase 2b (BROADEN2 AD, BREADTH | 1500K | $67.02B | $880M | $0M |  |
@@ -288,7 +293,7 @@ _see the same $396B TAM). The 'unique markets' total avoids double-counting._
 | ABBV | Rinvoq (upadacitinib) | Crohn's disease | Commercial ($5.6B 2025, +52%) | 800K | $35.19B | $2.78B | $900M |  |
 | ABBV | Humira (adalimumab) — tai | IBD legacy (Crohn's + UC) | Commercial ($6.4B 2025, declin | 800K | $35.19B | $2.09B | $1.80B |  |
 | ABVX | Obefazimod (Crohn's disea | Crohn's disease | Phase 2b (ENHANCE-CD, enrolled | 800K | $35.19B | $651M | $0M |  |
-| ABBV | Rinvoq (upadacitinib) | Ulcerative colitis | Commercial ($5.6B 2025, +52%) | 700K | $28.04B | $3.08B | $1.00B |  |
+| ABBV | Rinvoq (upadacitinib) | Ulcerative colitis | Commercial ($5.6B 2025, +52%) | 700K | $30.51B | $3.08B | $1.00B |  |
 | ABVX | Obefazimod — oral miR-124 | Ulcerative colitis (mod-severe | Phase 3 (ABTECT induction posi | 700K | $30.51B | $1.73B | $0M |  |
 
 #### immunology.inflammatory systemic
@@ -351,8 +356,8 @@ _see the same $396B TAM). The 'unique markets' total avoids double-counting._
 | SRPT | Vyondys 53 (golodirsen) | DMD exon 53 skipping | Commercial ($125M 2025) | 1.2K | $349M | $230M | $125M | ★ |
 | SRPT | Elevidys (delandistrogene | DMD gene therapy (ambulatory) | Commercial ($899M 2025) | 7K | $16.64B | $6.32B | $899M | ★ |
 | SRPT | SRP-1001 (siRNA FSHD) | FSHD type 1 | Phase 1/2 | 17K | $4.48B | $301M | $0M | ★ |
-| BBIO | BBP-418 (ribitol) — LGMD2 | Limb-girdle muscular dystrophy | NDA planned H1 2026 (FORTIFY P | 5K | $8.55B | $778M | $0M | ★ |
-| SRPT | SRP-9003 (bidridistrogene | LGMD type 2E (beta-sarcoglycan | Phase 3 (BLA track) | 5K | $8.55B | $196M | $0M | ★ |
+| BBIO | BBP-418 (ribitol) — LGMD2 | Limb-girdle muscular dystrophy | NDA planned H1 2026 (FORTIFY P | 5K | $1.67B | $778M | $0M | ★ |
+| SRPT | SRP-9003 (bidridistrogene | LGMD type 2E (beta-sarcoglycan | Phase 3 (BLA track) | 5K | $1.67B | $196M | $0M | ★ |
 
 ### Oncology
 
@@ -412,16 +417,16 @@ _see the same $396B TAM). The 'unique markets' total avoids double-counting._
 
 | Ticker | Asset | Indication | Stage | US pts | TAM | SOM | Sales | Rare |
 |---|---|---|---|---:|---:|---:|---:|---|
-| ABBV | Venclexta (venetoclax) | AML (venetoclax combos) | Commercial ($2.5B 2025) | 22K | $4.13B | $1.39B | $1.00B |  |
-| ABBV | Imbruvica (ibrutinib) | CLL/SLL + MCL | Commercial ($2.8B 2025, declin | 180K | $37.74B | $3.27B | $2.80B |  |
-| ONC | Brukinsa (zanubrutinib) | CLL + MCL + WM + B-cell malign | Commercial ($3.9B 2025) | 180K | $39.72B | $7.26B | $3.90B |  |
+| ABBV | Venclexta (venetoclax) | AML (venetoclax combos) | Commercial ($2.5B 2025) | 22K | $4.86B | $1.39B | $1.00B |  |
+| ABBV | Imbruvica (ibrutinib) | CLL/SLL + MCL | Commercial ($2.8B 2025, declin | 180K | $31.86B | $3.27B | $2.80B |  |
+| ONC | Brukinsa (zanubrutinib) | CLL + MCL + WM + B-cell malign | Commercial ($3.9B 2025) | 180K | $31.86B | $7.26B | $3.90B |  |
 | ABBV | Venclexta (venetoclax) | CLL/SLL (venetoclax) | Commercial ($2.5B 2025) | 80K | $13.88B | $3.05B | $1.50B |  |
 | ONC | Sonrotoclax - BCL2 inhibi | CLL + NHL (BCL2) | Phase 3 | 80K | $13.88B | $1.07B | $0M |  |
 | ONC | BGB-16673 - BTK CDAC | BTK-resistant B-cell malignanc | Phase 2/3 | 15K | $3.86B | $254M | $0M |  |
 | NKTR | NKTR-255 — IL-15 receptor | Oncology (CAR-T/CPI combos) | Phase 1/2 (multiple combos) | 5K | $1.66B | $13M | $0M |  |
 | LEGN | LUCAR-G39D — allogeneic g | B-cell NHL (allogeneic off-the | Phase 1 (first-in-human data A | 30K | $7.92B | $100M | $0M |  |
 | ALLO | cema-cel (ALLO-501A) | 1L LBCL MRD+ consolidation | Phase 2 pivotal | 277.4K | $2.52B | $2.40B | $0M |  |
-| LEGN | CARVYKTI — 2L+ MM (approv | Multiple myeloma 2L+ (Legend's | Commercial (approved US/EU/Jap | 35K | $10.42B | $3.10B | $1.06B |  |
+| LEGN | CARVYKTI — 2L+ MM (approv | Multiple myeloma 2L+ (Legend's | Commercial (approved US/EU/Jap | 35K | $8.09B | $3.10B | $1.06B |  |
 | GILD | Anito-cel — CAR-T (multip | Multiple myeloma (CAR-T) | BLA review (Kite/Gilead, PDUFA | 3K | $1.34B | $71M | $0M |  |
 | LEGN | In vivo CAR-T platform | In vivo CAR-T (oncology + auto | Phase 1 (first patient dosed) | 20K | $2.51B | $68M | $0M |  |
 | LEGN | CARVYKTI — Frontline MM ( | Frontline MM (Legend's increme | Phase 3 (both enrolled) | 20K | $5.52B | $903M | $0M |  |

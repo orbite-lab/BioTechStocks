@@ -47,34 +47,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 4000K diagnosed/treated patients."
+                "note": "real_epi_data.py -- 4000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
               },
               "eu.patientsK": {
-                "note": "EU 3000K diagnosed/treated patients."
+                "note": "real_epi_data.py -- 3000K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "ROW 5000K diagnosed/treated patients."
+                "note": "real_epi_data.py -- 5000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "US WTP 50% -- commercial payor access + formulary coverage."
+                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 38% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "real_epi_data.py -- EU WTP 38% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 8% -- limited reimbursement outside US/EU/Japan."
+                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US avg treatment cost $10K/yr (market blended across modalities)."
+                "note": "real_epi_data.py -- US avg $10K/yr (cardio_metabolic drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU avg treatment cost $5K/yr (market blended across modalities)."
+                "note": "real_epi_data.py -- EU avg $5K/yr."
               },
               "row.priceK": {
-                "note": "ROW avg treatment cost $2K/yr (market blended across modalities)."
+                "note": "real_epi_data.py -- ROW avg $2K/yr."
               },
               "penPct": {
-                "note": "Peak penetration 10% -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             },
             "salesM": 200,
@@ -127,13 +127,13 @@
             "regions": {
               "us": {
                 "patientsK": 20000,
-                "wtpPct": 50,
-                "priceK": 8
+                "wtpPct": 52,
+                "priceK": 10
               },
               "eu": {
                 "patientsK": 16000,
                 "wtpPct": 40,
-                "priceK": 4
+                "priceK": 5
               },
               "row": {
                 "patientsK": 30000,
@@ -143,34 +143,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 20000K diagnosed/treated patients."
+                "note": "real_epi_data.py -- 20000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
               },
               "eu.patientsK": {
-                "note": "EU 16000K diagnosed/treated patients."
+                "note": "real_epi_data.py -- 16000K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "ROW 30000K diagnosed/treated patients."
+                "note": "real_epi_data.py -- 30000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "US WTP 50% -- commercial payor access + formulary coverage."
+                "note": "real_epi_data.py -- US WTP 52% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 40% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "real_epi_data.py -- EU WTP 40% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 8% -- limited reimbursement outside US/EU/Japan."
+                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US avg treatment cost $8K/yr (market blended across modalities)."
+                "note": "real_epi_data.py -- US avg $10K/yr (cardio_metabolic drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU avg treatment cost $4K/yr (market blended across modalities)."
+                "note": "real_epi_data.py -- EU avg $5K/yr."
               },
               "row.priceK": {
-                "note": "ROW avg treatment cost $2K/yr (market blended across modalities)."
+                "note": "real_epi_data.py -- ROW avg $2K/yr."
               },
               "penPct": {
-                "note": "Peak penetration 6% -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             },
             "company_slice": {
@@ -199,7 +199,7 @@
               }
             }
           },
-          "area": "cardio_metabolic.lipids.ldl_lowering"
+          "area": "cardio_metabolic.lipids.ldl_cv_risk"
         }
       ],
       "modality": "nucleic_acid.trirna.arrow_trirna"
@@ -220,51 +220,51 @@
             "notes": "First dual-target RNAi: PCSK9 + APOC3 in single molecule. Phase 1/2a dosing started. If it works: one injection replaces two drugs. Interim data H2 2026.",
             "regions": {
               "us": {
-                "patientsK": 5000,
-                "wtpPct": 50,
+                "patientsK": 20000,
+                "wtpPct": 52,
                 "priceK": 10
               },
               "eu": {
-                "patientsK": 4000,
-                "wtpPct": 38,
+                "patientsK": 16000,
+                "wtpPct": 40,
                 "priceK": 5
               },
               "row": {
-                "patientsK": 8000,
+                "patientsK": 30000,
                 "wtpPct": 8,
                 "priceK": 2
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 5000K diagnosed/treated patients."
+                "note": "real_epi_data.py -- 20000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
               },
               "eu.patientsK": {
-                "note": "EU 4000K diagnosed/treated patients."
+                "note": "real_epi_data.py -- 16000K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "ROW 8000K diagnosed/treated patients."
+                "note": "real_epi_data.py -- 30000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "US WTP 50% -- commercial payor access + formulary coverage."
+                "note": "real_epi_data.py -- US WTP 52% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 38% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "real_epi_data.py -- EU WTP 40% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 8% -- limited reimbursement outside US/EU/Japan."
+                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US avg treatment cost $10K/yr (market blended across modalities)."
+                "note": "real_epi_data.py -- US avg $10K/yr (cardio_metabolic drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU avg treatment cost $5K/yr (market blended across modalities)."
+                "note": "real_epi_data.py -- EU avg $5K/yr."
               },
               "row.priceK": {
-                "note": "ROW avg treatment cost $2K/yr (market blended across modalities)."
+                "note": "real_epi_data.py -- ROW avg $2K/yr."
               },
               "penPct": {
-                "note": "Peak penetration 3% -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             },
             "company_slice": {
@@ -293,7 +293,7 @@
               }
             }
           },
-          "area": "cardio_metabolic.lipids.lpa"
+          "area": "cardio_metabolic.lipids.ldl_cv_risk"
         }
       ],
       "modality": "nucleic_acid.trirna.pcsk9_apoc3_dual"
@@ -331,34 +331,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 40000K diagnosed/treated patients."
+                "note": "real_epi_data.py -- 40000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
               },
               "eu.patientsK": {
-                "note": "EU 30000K diagnosed/treated patients."
+                "note": "real_epi_data.py -- 30000K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "ROW 50000K diagnosed/treated patients."
+                "note": "real_epi_data.py -- 50000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "US WTP 50% -- commercial payor access + formulary coverage."
+                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 35% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "real_epi_data.py -- EU WTP 35% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 8% -- limited reimbursement outside US/EU/Japan."
+                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US avg treatment cost $15K/yr (market blended across modalities)."
+                "note": "real_epi_data.py -- US avg $15K/yr (cardio_metabolic drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU avg treatment cost $8K/yr (market blended across modalities)."
+                "note": "real_epi_data.py -- EU avg $8K/yr."
               },
               "row.priceK": {
-                "note": "ROW avg treatment cost $3K/yr (market blended across modalities)."
+                "note": "real_epi_data.py -- ROW avg $3K/yr."
               },
               "penPct": {
-                "note": "Peak penetration 1% -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             },
             "company_slice": {
@@ -425,34 +425,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 6000K diagnosed/treated patients."
+                "note": "real_epi_data.py -- 6000K US treated/diagnosed; source: consensus epi (cns)."
               },
               "eu.patientsK": {
-                "note": "EU 5000K diagnosed/treated patients."
+                "note": "real_epi_data.py -- 5000K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "ROW 10000K diagnosed/treated patients."
+                "note": "real_epi_data.py -- 10000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "US WTP 50% -- commercial payor access + formulary coverage."
+                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 35% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "real_epi_data.py -- EU WTP 35% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 8% -- limited reimbursement outside US/EU/Japan."
+                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US avg treatment cost $28K/yr (market blended across modalities)."
+                "note": "real_epi_data.py -- US avg $28K/yr (cns drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU avg treatment cost $15K/yr (market blended across modalities)."
+                "note": "real_epi_data.py -- EU avg $15K/yr."
               },
               "row.priceK": {
-                "note": "ROW avg treatment cost $5K/yr (market blended across modalities)."
+                "note": "real_epi_data.py -- ROW avg $5K/yr."
               },
               "penPct": {
-                "note": "Peak penetration 1% -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             },
             "company_slice": {

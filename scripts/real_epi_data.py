@@ -188,19 +188,17 @@ REAL_MARKETS = {
         "eu":  {"patientsK": 40000, "wtpPct": 35, "priceK": 4},
         "row": {"patientsK": 80000, "wtpPct": 8,  "priceK": 2},
     },
-    "cardio_metabolic.lipids.anticoagulation": {
+    "cardio_metabolic.thrombosis.anticoagulation": {
+        # Patients on anticoagulants (AFib, VTE, mechanical valves) -- not a lipid disease
         "us":  {"patientsK": 6000, "wtpPct": 55, "priceK": 12},
         "eu":  {"patientsK": 5000, "wtpPct": 42, "priceK": 6},
         "row": {"patientsK": 8000, "wtpPct": 10, "priceK": 3},
     },
-    "cardio_metabolic.lipids.cv_outcomes": {
-        "us":  {"patientsK": 15000, "wtpPct": 50, "priceK": 10},
-        "eu":  {"patientsK": 12000, "wtpPct": 40, "priceK": 5},
-        "row": {"patientsK": 20000, "wtpPct": 8,  "priceK": 2},
-    },
-    "cardio_metabolic.lipids.ldl_lowering": {
-        "us":  {"patientsK": 20000, "wtpPct": 50, "priceK": 8},
-        "eu":  {"patientsK": 16000, "wtpPct": 40, "priceK": 4},
+    "cardio_metabolic.lipids.ldl_cv_risk": {
+        # ASCVD risk reduction: LDL-lowering + CV outcomes = same patient pool
+        # (statins, PCSK9i, CETPi, ANGPTL3, oral PCSK9 all compete for these patients)
+        "us":  {"patientsK": 20000, "wtpPct": 52, "priceK": 10},
+        "eu":  {"patientsK": 16000, "wtpPct": 40, "priceK": 5},
         "row": {"patientsK": 30000, "wtpPct": 8,  "priceK": 2},
     },
     "cardio_metabolic.lipids.lpa": {

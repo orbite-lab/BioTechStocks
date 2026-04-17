@@ -20,8 +20,12 @@ def load_taxonomy():
     areas = set()
     for l1, l2s in t["therapeutic_areas"].items():
         for l2, l3s in l2s.items():
-            for l3 in l3s:
+            for l3, l3_val in l3s.items():
                 areas.add(f"{l1}.{l2}.{l3}")
+                # L4 sub-segments
+                if isinstance(l3_val, dict) and "sub" in l3_val:
+                    for l4 in l3_val["sub"]:
+                        areas.add(f"{l1}.{l2}.{l3}.{l4}")
     mods = set()
     for l1, l2s in t["modalities"].items():
         for l2, l3s in l2s.items():
@@ -97,11 +101,11 @@ def validate():
                 # Area depth check
                 if area:
                     parts = area.split(".")
-                    if len(parts) != 3:
-                        errors.append(f"{tk}.{a['id']}.{ind['id']}: area '{area}' is not L1.L2.L3 (depth={len(parts)})")
+                    if len(parts) not in (3, 4):
+                        errors.append(f"{tk}.{a['id']}.{ind['id']}: area '{area}' must be L1.L2.L3 or L1.L2.L3.L4 (depth={len(parts)})")
                     elif known_areas is not None and area not in known_areas:
                         warnings.append(f"{tk}.{a['id']}.{ind['id']}: NEW area '{area}' not in taxonomy.json -- add it or check spelling")
-                    if len(parts) == 3:
+                    if len(parts) >= 3:
                         l3_area_parents[parts[2]].add(f"{parts[0]}.{parts[1]}")
                 else:
                     errors.append(f"{tk}.{a['id']}.{ind['id']}: missing area tag")
@@ -109,8 +113,9 @@ def validate():
                 # Market data checks
                 has_tam = market.get("tamB", 0) > 0
                 has_patients = market.get("patientsK", 0) > 0 and market.get("pricingK", 0) > 0
-                if not has_tam and not has_patients and a["id"] != "commercial":
-                    warnings.append(f"{tk}.{a['id']}.{ind['id']}: no TAM data (tamB or patientsKxpricingK)")
+                has_regions = isinstance(market.get("regions"), dict) and len(market.get("regions", {})) > 0
+                if not has_tam and not has_patients and not has_regions and a["id"] != "commercial":
+                    warnings.append(f"{tk}.{a['id']}.{ind['id']}: no TAM data (tamB, patientsKxpricingK, or regions)")
                 
                 if has_tam and "penPct" not in market and "patientsK" not in market:
                     errors.append(f"{tk}.{a['id']}.{ind['id']}: has tamB but missing penPct -- will cause NaN")

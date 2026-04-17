@@ -911,7 +911,10 @@
                     e("div", { onClick: () => setExpandedMkt(prev => ({ ...prev, [mk]: !prev[mk] })),
                       style: { display: "grid", gridTemplateColumns: "1fr 80px 80px 80px 80px 16px", gap: 4, alignItems: "center", padding: "8px 12px", cursor: "pointer", userSelect: "none", transition: "background 0.15s" },
                       onMouseEnter: ev => { ev.currentTarget.style.background = "#ffffff06"; }, onMouseLeave: ev => { ev.currentTarget.style.background = "transparent"; } },
-                      e("span", { style: { fontSize: 11, fontWeight: 700, color: "#e2e4ea", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }, title: ind.area || "" }, ind.name),
+                      e("div", { style: { overflow: "hidden", minWidth: 0 } },
+                        e("div", { style: { fontSize: 11, fontWeight: 700, color: "#e2e4ea", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" } }, ind.name),
+                        ind.area && e("div", { style: { fontSize: 8, color: "#6b7080", fontFamily: "'JetBrains Mono'", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", marginTop: 1 } }, ind.area.split(".").map(p => p.replace(/_/g, " ")).join(" \u203A "))
+                      ),
                       e("div", { style: { textAlign: "right" }, title: tamTip },
                         e("div", { style: { fontSize: 8, color: "#6b7080", textTransform: "uppercase", letterSpacing: 0.8, lineHeight: 1 } }, "TAM"),
                         e("div", { style: { fontSize: 10, fontWeight: 700, color: "#f97316", fontFamily: "'JetBrains Mono'" } }, fmtV(addressableM))

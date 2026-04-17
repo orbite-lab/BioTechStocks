@@ -28,51 +28,51 @@
             "notes": "Phase 1b Aramchol + Stivarga (regorafenib) in refractory mCRC, starting VCU Massey early 2026. Expansion cohort with metformin. Preclinical: 3-drug combo showed synergistic tumor killing in vitro + in vivo. Competes in 3L+ setting where Stivarga is standard (modest benefit). Galmed filed new combo patents US 63/786,370 and 63/915,832. Aramchol is SCD1 inhibitor — hypothesis is that SCD1 blockade reshapes tumor lipid metabolism to sensitize cells to kinase inhibitor + metformin. Highly speculative — no human data yet.",
             "regions": {
               "us": {
-                "patientsK": 887.6,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 150,
+                "wtpPct": 60,
+                "priceK": 180
               },
               "eu": {
-                "patientsK": 951.0,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 170,
+                "wtpPct": 45,
+                "priceK": 100
               },
               "row": {
-                "patientsK": 1331.4,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 350,
+                "wtpPct": 10,
+                "priceK": 40
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 150K US treated/diagnosed; source: consensus epi (oncology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 170K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 350K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $180K/yr (oncology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $100K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $40K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -98,51 +98,51 @@
             "notes": "Part of same Phase 1b basket trial at VCU Massey. HCC is historically high-unmet-need setting; Aramchol's liver biology is theoretically favorable vs other tumor types. SCD1 high in HCC per preclinical. Regorafenib approved in 2L HCC post-sorafenib.",
             "regions": {
               "us": {
-                "patientsK": 443.8,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 35,
+                "wtpPct": 60,
+                "priceK": 200
               },
               "eu": {
-                "patientsK": 475.5,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 40,
+                "wtpPct": 45,
+                "priceK": 110
               },
               "row": {
-                "patientsK": 665.7,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 400,
+                "wtpPct": 7,
+                "priceK": 40
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 35K US treated/diagnosed; source: consensus epi (oncology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 40K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 400K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 7% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $200K/yr (oncology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $110K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $40K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -168,51 +168,51 @@
             "notes": "Rare biliary tract cancer, ~8K US cases/year. Part of same VCU Massey Phase 1b basket. Small population but high unmet need — limited 2L+ options. Orphan drug potential if signal seen. Most speculative arm of the trial.",
             "regions": {
               "us": {
-                "patientsK": 5.7,
-                "wtpPct": 75,
-                "priceK": 250
+                "patientsK": 12,
+                "wtpPct": 65,
+                "priceK": 200
               },
               "eu": {
-                "patientsK": 6.6,
-                "wtpPct": 55,
+                "patientsK": 14,
+                "wtpPct": 50,
                 "priceK": 110
               },
               "row": {
-                "patientsK": 6.6,
-                "wtpPct": 15,
-                "priceK": 40
+                "patientsK": 25,
+                "wtpPct": 10,
+                "priceK": 45
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+                "note": "real_epi_data.py -- 12K US treated/diagnosed; source: consensus epi (oncology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+                "note": "real_epi_data.py -- 14K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+                "note": "real_epi_data.py -- 25K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+                "note": "real_epi_data.py -- US WTP 65% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Rare disease default -- HTA-gated uptake (55%)."
+                "note": "real_epi_data.py -- EU WTP 50% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+                "note": "real_epi_data.py -- US avg $200K/yr (oncology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+                "note": "real_epi_data.py -- EU avg $110K/yr."
               },
               "row.priceK": {
-                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+                "note": "real_epi_data.py -- ROW avg $45K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -238,51 +238,51 @@
             "notes": "New brain-penetrant LNP formulation co-developed with Barcode Nanotech announced April 9 2026. Subcutaneous delivery, crosses BBB, targets α-synuclein aggregation. In vitro: dose-dependent reduction of α-synuclein aggregation. Planned Phase 1b/2 PoC in Parkinson disease patients H2 2026, subject to regulatory advice (material caveat — not FDA-approved yet). Also theoretically applicable to MSA, DLB, PAF. First-in-class MoA for synucleinopathies — the entire thesis depends on whether SCD1 blockade actually disrupts α-synuclein pathology in humans.",
             "regions": {
               "us": {
-                "patientsK": 1331.4,
+                "patientsK": 1000,
                 "wtpPct": 55,
-                "priceK": 12
+                "priceK": 25
               },
               "eu": {
-                "patientsK": 1426.5,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 800,
+                "wtpPct": 42,
+                "priceK": 12
               },
               "row": {
-                "patientsK": 1997.1,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 1500,
+                "wtpPct": 10,
+                "priceK": 5
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 1000K US treated/diagnosed; source: consensus epi (cns)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 800K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 1500K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $25K/yr (cns drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $12K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $5K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -310,51 +310,51 @@
             "notes": "Galmed's historical flagship. Aramchol monotherapy Phase 3 ARMOR failed to meet primary endpoints. Company now positions Aramchol as COMBINATION therapy for NASH — pairing with Gannex ASC41 (THR-beta agonist) and other mechanisms. Given Rezdiffra (Madrigal) is approved FDA 2024 and dominates the MASH market, Aramchol's NASH future is marginal at best. Research collaboration with MyBiotics for microbiome-response biomarker. Patent extension granted to 2039. Optionality only — effectively written off.",
             "regions": {
               "us": {
-                "patientsK": 2219.1,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 3000,
+                "wtpPct": 50,
+                "priceK": 30
               },
               "eu": {
-                "patientsK": 2377.6,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 2500,
+                "wtpPct": 38,
+                "priceK": 15
               },
               "row": {
-                "patientsK": 3328.6,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 4000,
+                "wtpPct": 8,
+                "priceK": 6
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 3000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 2500K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 4000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 38% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $30K/yr (cardio_metabolic drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $15K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $6K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },

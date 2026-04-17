@@ -48,51 +48,51 @@
             "notes": "Monthly SC octreotide depot. EU approved, launched Germany Nov 2025. US NDA resubmitted, PDUFA Jun 10, 2026. Superior to first-gen SRL (Sandostatin LAR). 3-5K EU acromegaly patients targetable. FluidCrystal technology.",
             "regions": {
               "us": {
-                "patientsK": 7.5,
-                "wtpPct": 75,
-                "priceK": 250
+                "patientsK": 15,
+                "wtpPct": 72,
+                "priceK": 120
               },
               "eu": {
-                "patientsK": 8.8,
+                "patientsK": 18,
                 "wtpPct": 55,
-                "priceK": 110
+                "priceK": 60
               },
               "row": {
-                "patientsK": 8.8,
-                "wtpPct": 15,
-                "priceK": 40
+                "patientsK": 20,
+                "wtpPct": 12,
+                "priceK": 25
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+                "note": "real_epi_data.py -- 15K US treated/diagnosed; source: consensus epi (endocrine)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+                "note": "real_epi_data.py -- 18K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+                "note": "real_epi_data.py -- 20K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+                "note": "real_epi_data.py -- US WTP 72% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Rare disease default -- HTA-gated uptake (55%)."
+                "note": "real_epi_data.py -- EU WTP 55% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+                "note": "real_epi_data.py -- US avg $120K/yr (endocrine drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+                "note": "real_epi_data.py -- EU avg $60K/yr."
               },
               "row.priceK": {
-                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+                "note": "real_epi_data.py -- ROW avg $25K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -190,51 +190,51 @@
             "notes": "POSITANO Phase 2b positive: significant liver cyst volume reduction. Orphan designation in ADPKD (US+EU). No approved therapy for PLD. 37K patients US/EU4/UK. Phase 2/3 planned.",
             "regions": {
               "us": {
-                "patientsK": 221.9,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 140,
+                "wtpPct": 65,
+                "priceK": 80
               },
               "eu": {
-                "patientsK": 237.8,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 120,
+                "wtpPct": 48,
+                "priceK": 40
               },
               "row": {
-                "patientsK": 332.9,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 150,
+                "wtpPct": 10,
+                "priceK": 15
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 140K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 120K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 150K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 65% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 48% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $80K/yr (cardio_metabolic drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $40K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $15K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -259,51 +259,51 @@
             "notes": "Lilly deal: up to $870M milestones + royalties for FluidCrystal long-acting incretins (up to 4 compounds, including dual GIP/GLP-1 and triple agonists). CAM2056 monthly semaglutide Phase 1 completed enrollment. If monthly/quarterly GLP-1 works: massive opportunity.",
             "regions": {
               "us": {
-                "patientsK": 1109.5,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 40000,
+                "wtpPct": 50,
+                "priceK": 15
               },
               "eu": {
-                "patientsK": 1188.8,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 30000,
+                "wtpPct": 35,
+                "priceK": 8
               },
               "row": {
-                "patientsK": 1664.3,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 50000,
+                "wtpPct": 8,
+                "priceK": 3
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 40000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 30000K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 50000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 35% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $15K/yr (cardio_metabolic drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $8K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $3K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },

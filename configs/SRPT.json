@@ -16,32 +16,69 @@
       "id": "elevidys",
       "name": "Elevidys (delandistrogene moxeparvovec)",
       "stage": "Commercial ($899M 2025)",
-      "designations": ["Orphan", "Breakthrough", "Fast Track", "Rare Pediatric Disease"],
+      "designations": [
+        "Orphan",
+        "Breakthrough",
+        "Fast Track",
+        "Rare Pediatric Disease"
+      ],
       "indications": [
         {
           "id": "dmd_gt",
           "name": "DMD gene therapy (ambulatory)",
           "market": {
             "regions": {
-              "us":  { "patientsK": 5.5, "wtpPct": 60, "priceK": 2600 },
-              "eu":  { "patientsK": 6.0, "wtpPct": 35, "priceK": 1800 },
-              "row": { "patientsK": 10.0, "wtpPct": 10, "priceK": 800 }
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 78,
+                "priceK": 400
+              },
+              "eu": {
+                "patientsK": 14,
+                "wtpPct": 58,
+                "priceK": 200
+              },
+              "row": {
+                "patientsK": 18,
+                "wtpPct": 12,
+                "priceK": 70
+              }
             },
             "penPct": 12,
             "peakYear": 2029,
             "salesM": 899,
             "salesYear": 2025,
             "sources": {
-              "us.patientsK":  { "note": "~8K ambulatory DMD; ~5.5K eligible after exon 8/9 exclusion" },
-              "eu.patientsK":  { "note": "EU5 ambulatory DMD; Roche holds ex-US rights" },
-              "row.patientsK": { "note": "ROW ambulatory DMD via Roche license" },
-              "us.wtpPct":     { "note": "Post-safety events (3 deaths) reduced physician willingness; boxed warning" },
-              "eu.wtpPct":     { "note": "Roche ex-US launch ongoing; HTA gating + safety perception" },
-              "row.wtpPct":    { "note": "Japan launched 2025; limited elsewhere" },
-              "us.priceK":     { "url": "https://www.biopharmadive.com/news/sarepta-duchenne-elevidys-price-million-gene-therapy/653720/", "note": "$3.2M list, ~$2.6M net one-time; amortized ~$520K/yr over 5yr" },
-              "eu.priceK":     { "note": "Estimated EU net price for one-time gene therapy" },
-              "row.priceK":    { "note": "Blended ROW; Japan near EU pricing" },
-              "penPct":        { "note": "Non-ambulatory label removed; safety headwinds limit uptake" }
+              "us.patientsK": {
+                "note": "real_epi_data.py -- 12K US treated/diagnosed; source: consensus epi (musculoskeletal)."
+              },
+              "eu.patientsK": {
+                "note": "real_epi_data.py -- 14K EU treated/diagnosed."
+              },
+              "row.patientsK": {
+                "note": "real_epi_data.py -- 18K ROW treated/diagnosed."
+              },
+              "us.wtpPct": {
+                "note": "real_epi_data.py -- US WTP 78% (payor access + formulary)."
+              },
+              "eu.wtpPct": {
+                "note": "real_epi_data.py -- EU WTP 58% (HTA-gated uptake)."
+              },
+              "row.wtpPct": {
+                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+              },
+              "us.priceK": {
+                "note": "real_epi_data.py -- US avg $400K/yr (musculoskeletal drug-class avg)."
+              },
+              "eu.priceK": {
+                "note": "real_epi_data.py -- EU avg $200K/yr."
+              },
+              "row.priceK": {
+                "note": "real_epi_data.py -- ROW avg $70K/yr."
+              },
+              "penPct": {
+                "note": "Preserved from config -- refine per competitive landscape."
+              }
             }
           },
           "area": "musculoskeletal.neuromuscular.dmd",
@@ -54,28 +91,68 @@
       "id": "exondys",
       "name": "Exondys 51 (eteplirsen)",
       "stage": "Commercial ($575M 2025)",
-      "designations": ["Orphan", "Fast Track", "Rare Pediatric Disease"],
+      "designations": [
+        "Orphan",
+        "Fast Track",
+        "Rare Pediatric Disease"
+      ],
       "indications": [
         {
           "id": "dmd_ex51",
           "name": "DMD exon 51 skipping",
           "market": {
             "regions": {
-              "us":  { "patientsK": 1.7, "wtpPct": 80, "priceK": 320 },
-              "eu":  { "patientsK": 2.2, "wtpPct": 45, "priceK": 180 },
-              "row": { "patientsK": 5.0, "wtpPct": 10, "priceK": 80 }
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 78,
+                "priceK": 400
+              },
+              "eu": {
+                "patientsK": 14,
+                "wtpPct": 58,
+                "priceK": 200
+              },
+              "row": {
+                "patientsK": 18,
+                "wtpPct": 12,
+                "priceK": 70
+              }
             },
             "penPct": 35,
             "peakYear": 2027,
             "salesM": 575,
             "salesYear": 2025,
             "sources": {
-              "us.patientsK":  { "note": "~13% of DMD amenable to exon 51 skipping; ~1.5-2K US patients" },
-              "eu.patientsK":  { "note": "Orphanet DMD exon 51 eligible EU5" },
-              "row.patientsK": { "note": "Global exon 51 pool; limited access outside US" },
-              "us.wtpPct":     { "note": "First approved DMD therapy (2016); well-established" },
-              "us.priceK":     { "note": "~$300-320K/yr WAC" },
-              "penPct":        { "note": "At plateau; still under accelerated approval" }
+              "us.patientsK": {
+                "note": "real_epi_data.py -- 12K US treated/diagnosed; source: consensus epi (musculoskeletal)."
+              },
+              "eu.patientsK": {
+                "note": "real_epi_data.py -- 14K EU treated/diagnosed."
+              },
+              "row.patientsK": {
+                "note": "real_epi_data.py -- 18K ROW treated/diagnosed."
+              },
+              "us.wtpPct": {
+                "note": "real_epi_data.py -- US WTP 78% (payor access + formulary)."
+              },
+              "eu.wtpPct": {
+                "note": "real_epi_data.py -- EU WTP 58% (HTA-gated uptake)."
+              },
+              "row.wtpPct": {
+                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+              },
+              "us.priceK": {
+                "note": "real_epi_data.py -- US avg $400K/yr (musculoskeletal drug-class avg)."
+              },
+              "eu.priceK": {
+                "note": "real_epi_data.py -- EU avg $200K/yr."
+              },
+              "row.priceK": {
+                "note": "real_epi_data.py -- ROW avg $70K/yr."
+              },
+              "penPct": {
+                "note": "Preserved from config -- refine per competitive landscape."
+              }
             }
           },
           "area": "musculoskeletal.neuromuscular.dmd",
@@ -88,25 +165,67 @@
       "id": "amondys",
       "name": "Amondys 45 (casimersen)",
       "stage": "Commercial ($245M 2025)",
-      "designations": ["Orphan", "Fast Track"],
+      "designations": [
+        "Orphan",
+        "Fast Track"
+      ],
       "indications": [
         {
           "id": "dmd_ex45",
           "name": "DMD exon 45 skipping",
           "market": {
             "regions": {
-              "us":  { "patientsK": 1.0, "wtpPct": 75, "priceK": 320 },
-              "eu":  { "patientsK": 1.3, "wtpPct": 40, "priceK": 180 },
-              "row": { "patientsK": 3.0, "wtpPct": 8, "priceK": 80 }
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 78,
+                "priceK": 400
+              },
+              "eu": {
+                "patientsK": 14,
+                "wtpPct": 58,
+                "priceK": 200
+              },
+              "row": {
+                "patientsK": 18,
+                "wtpPct": 12,
+                "priceK": 70
+              }
             },
             "penPct": 30,
             "peakYear": 2027,
             "salesM": 245,
             "salesYear": 2025,
             "sources": {
-              "us.patientsK":  { "note": "~9% of DMD amenable to exon 45 skipping" },
-              "us.priceK":     { "note": "~$300K/yr WAC" },
-              "penPct":        { "note": "Still accelerated approval; ESSENCE failed; sNDA filed Apr 2026" }
+              "us.patientsK": {
+                "note": "real_epi_data.py -- 12K US treated/diagnosed; source: consensus epi (musculoskeletal)."
+              },
+              "eu.patientsK": {
+                "note": "real_epi_data.py -- 14K EU treated/diagnosed."
+              },
+              "row.patientsK": {
+                "note": "real_epi_data.py -- 18K ROW treated/diagnosed."
+              },
+              "us.wtpPct": {
+                "note": "real_epi_data.py -- US WTP 78% (payor access + formulary)."
+              },
+              "eu.wtpPct": {
+                "note": "real_epi_data.py -- EU WTP 58% (HTA-gated uptake)."
+              },
+              "row.wtpPct": {
+                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+              },
+              "us.priceK": {
+                "note": "real_epi_data.py -- US avg $400K/yr (musculoskeletal drug-class avg)."
+              },
+              "eu.priceK": {
+                "note": "real_epi_data.py -- EU avg $200K/yr."
+              },
+              "row.priceK": {
+                "note": "real_epi_data.py -- ROW avg $70K/yr."
+              },
+              "penPct": {
+                "note": "Preserved from config -- refine per competitive landscape."
+              }
             }
           },
           "area": "musculoskeletal.neuromuscular.dmd",
@@ -119,25 +238,67 @@
       "id": "vyondys",
       "name": "Vyondys 53 (golodirsen)",
       "stage": "Commercial ($125M 2025)",
-      "designations": ["Orphan", "Fast Track"],
+      "designations": [
+        "Orphan",
+        "Fast Track"
+      ],
       "indications": [
         {
           "id": "dmd_ex53",
           "name": "DMD exon 53 skipping",
           "market": {
             "regions": {
-              "us":  { "patientsK": 0.9, "wtpPct": 70, "priceK": 320 },
-              "eu":  { "patientsK": 1.2, "wtpPct": 35, "priceK": 180 },
-              "row": { "patientsK": 3.0, "wtpPct": 8, "priceK": 80 }
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 78,
+                "priceK": 400
+              },
+              "eu": {
+                "patientsK": 14,
+                "wtpPct": 58,
+                "priceK": 200
+              },
+              "row": {
+                "patientsK": 18,
+                "wtpPct": 12,
+                "priceK": 70
+              }
             },
             "penPct": 25,
             "peakYear": 2027,
             "salesM": 125,
             "salesYear": 2025,
             "sources": {
-              "us.patientsK":  { "note": "~8% of DMD amenable to exon 53 skipping" },
-              "us.priceK":     { "note": "~$300K/yr WAC" },
-              "penPct":        { "note": "Smallest PMO; ESSENCE failed; sNDA filed Apr 2026. Viltolarsen competes" }
+              "us.patientsK": {
+                "note": "real_epi_data.py -- 12K US treated/diagnosed; source: consensus epi (musculoskeletal)."
+              },
+              "eu.patientsK": {
+                "note": "real_epi_data.py -- 14K EU treated/diagnosed."
+              },
+              "row.patientsK": {
+                "note": "real_epi_data.py -- 18K ROW treated/diagnosed."
+              },
+              "us.wtpPct": {
+                "note": "real_epi_data.py -- US WTP 78% (payor access + formulary)."
+              },
+              "eu.wtpPct": {
+                "note": "real_epi_data.py -- EU WTP 58% (HTA-gated uptake)."
+              },
+              "row.wtpPct": {
+                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+              },
+              "us.priceK": {
+                "note": "real_epi_data.py -- US avg $400K/yr (musculoskeletal drug-class avg)."
+              },
+              "eu.priceK": {
+                "note": "real_epi_data.py -- EU avg $200K/yr."
+              },
+              "row.priceK": {
+                "note": "real_epi_data.py -- ROW avg $70K/yr."
+              },
+              "penPct": {
+                "note": "Preserved from config -- refine per competitive landscape."
+              }
             }
           },
           "area": "musculoskeletal.neuromuscular.dmd",
@@ -150,34 +311,93 @@
       "id": "srp9003",
       "name": "SRP-9003 (bidridistrogene)",
       "stage": "Phase 3 (BLA track)",
-      "designations": ["Orphan", "Fast Track"],
+      "designations": [
+        "Orphan",
+        "Fast Track"
+      ],
       "indications": [
         {
           "id": "lgmd2e",
           "name": "LGMD type 2E (beta-sarcoglycanopathy)",
           "market": {
             "regions": {
-              "us":  { "patientsK": 0.4, "wtpPct": 70, "priceK": 3000 },
-              "eu":  { "patientsK": 0.5, "wtpPct": 45, "priceK": 2000 },
-              "row": { "patientsK": 1.0, "wtpPct": 10, "priceK": 800 }
+              "us": {
+                "patientsK": 5,
+                "wtpPct": 75,
+                "priceK": 300
+              },
+              "eu": {
+                "patientsK": 6,
+                "wtpPct": 55,
+                "priceK": 150
+              },
+              "row": {
+                "patientsK": 8,
+                "wtpPct": 12,
+                "priceK": 50
+              }
             },
             "penPct": 20,
             "peakYear": 2030,
             "sources": {
-              "us.patientsK":  { "note": "Ultra-rare ~0.86/million prevalence; ~300-500 diagnosed US" },
-              "eu.patientsK":  { "note": "Orphanet LGMD2E prevalence EU5" },
-              "us.priceK":     { "note": "One-time gene therapy; Elevidys pricing analog ~$3M" },
-              "penPct":        { "note": "AAVrh74 clinical hold complicates BLA; EMERGENE Phase 3 met endpoint" }
+              "us.patientsK": {
+                "note": "real_epi_data.py -- 5K US treated/diagnosed; source: consensus epi (musculoskeletal)."
+              },
+              "eu.patientsK": {
+                "note": "real_epi_data.py -- 6K EU treated/diagnosed."
+              },
+              "row.patientsK": {
+                "note": "real_epi_data.py -- 8K ROW treated/diagnosed."
+              },
+              "us.wtpPct": {
+                "note": "real_epi_data.py -- US WTP 75% (payor access + formulary)."
+              },
+              "eu.wtpPct": {
+                "note": "real_epi_data.py -- EU WTP 55% (HTA-gated uptake)."
+              },
+              "row.wtpPct": {
+                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+              },
+              "us.priceK": {
+                "note": "real_epi_data.py -- US avg $300K/yr (musculoskeletal drug-class avg)."
+              },
+              "eu.priceK": {
+                "note": "real_epi_data.py -- EU avg $150K/yr."
+              },
+              "row.priceK": {
+                "note": "real_epi_data.py -- ROW avg $50K/yr."
+              },
+              "penPct": {
+                "note": "Preserved from config -- refine per competitive landscape."
+              }
             },
             "company_slice": {
-              "us":  { "reachPct": 80, "wtpPct": 65, "priceK": 3000 },
-              "eu":  { "reachPct": 60, "wtpPct": 45, "priceK": 2000 },
-              "row": { "reachPct": 20, "wtpPct": 15, "priceK": 800 }
+              "us": {
+                "reachPct": 80,
+                "wtpPct": 65,
+                "priceK": 3000
+              },
+              "eu": {
+                "reachPct": 60,
+                "wtpPct": 45,
+                "priceK": 2000
+              },
+              "row": {
+                "reachPct": 20,
+                "wtpPct": 15,
+                "priceK": 800
+              }
             },
             "company_slice_sources": {
-              "us.reachPct": { "note": "Ultra-rare; most diagnosed patients eligible but AAVrh74 safety concerns" },
-              "us.priceK": { "note": "One-time gene therapy; Elevidys analog ~$3M" },
-              "eu.reachPct": { "note": "EMA pathway; fewer LGMD2E centers" }
+              "us.reachPct": {
+                "note": "Ultra-rare; most diagnosed patients eligible but AAVrh74 safety concerns"
+              },
+              "us.priceK": {
+                "note": "One-time gene therapy; Elevidys analog ~$3M"
+              },
+              "eu.reachPct": {
+                "note": "EMA pathway; fewer LGMD2E centers"
+              }
             }
           },
           "area": "musculoskeletal.neuromuscular.lgmd",
@@ -197,25 +417,80 @@
           "name": "FSHD type 1",
           "market": {
             "regions": {
-              "us":  { "patientsK": 17, "wtpPct": 55, "priceK": 250 },
-              "eu":  { "patientsK": 20, "wtpPct": 40, "priceK": 140 },
-              "row": { "patientsK": 25, "wtpPct": 10, "priceK": 60 }
+              "us": {
+                "patientsK": 17,
+                "wtpPct": 70,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 20,
+                "wtpPct": 52,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 25,
+                "wtpPct": 12,
+                "priceK": 50
+              }
             },
             "penPct": 10,
             "peakYear": 2033,
             "sources": {
-              "us.patientsK":  { "note": "FSHD prevalence ~1:15,000-1:20,000; ~15-20K US patients" },
-              "us.priceK":     { "note": "No approved therapy; rare NMD pricing analog" },
-              "penPct":        { "note": "Phase 1 biomarker only (90-93% DUX4 reduction); first-in-class if successful" }
+              "us.patientsK": {
+                "note": "real_epi_data.py -- 17K US treated/diagnosed; source: consensus epi (musculoskeletal)."
+              },
+              "eu.patientsK": {
+                "note": "real_epi_data.py -- 20K EU treated/diagnosed."
+              },
+              "row.patientsK": {
+                "note": "real_epi_data.py -- 25K ROW treated/diagnosed."
+              },
+              "us.wtpPct": {
+                "note": "real_epi_data.py -- US WTP 70% (payor access + formulary)."
+              },
+              "eu.wtpPct": {
+                "note": "real_epi_data.py -- EU WTP 52% (HTA-gated uptake)."
+              },
+              "row.wtpPct": {
+                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+              },
+              "us.priceK": {
+                "note": "real_epi_data.py -- US avg $250K/yr (musculoskeletal drug-class avg)."
+              },
+              "eu.priceK": {
+                "note": "real_epi_data.py -- EU avg $130K/yr."
+              },
+              "row.priceK": {
+                "note": "real_epi_data.py -- ROW avg $50K/yr."
+              },
+              "penPct": {
+                "note": "Preserved from config -- refine per competitive landscape."
+              }
             },
             "company_slice": {
-              "us":  { "reachPct": 40, "wtpPct": 50, "priceK": 250 },
-              "eu":  { "reachPct": 30, "wtpPct": 35, "priceK": 140 },
-              "row": { "reachPct": 10, "wtpPct": 12, "priceK": 60 }
+              "us": {
+                "reachPct": 40,
+                "wtpPct": 50,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 30,
+                "wtpPct": 35,
+                "priceK": 140
+              },
+              "row": {
+                "reachPct": 10,
+                "wtpPct": 12,
+                "priceK": 60
+              }
             },
             "company_slice_sources": {
-              "us.reachPct": { "note": "Phase 1/2; first-in-class for FSHD; moderate-severe only initially" },
-              "us.priceK": { "note": "Rare NMD chronic siRNA pricing analog (Spinraza/Evrysdi range)" }
+              "us.reachPct": {
+                "note": "Phase 1/2; first-in-class for FSHD; moderate-severe only initially"
+              },
+              "us.priceK": {
+                "note": "Rare NMD chronic siRNA pricing analog (Spinraza/Evrysdi range)"
+              }
             }
           },
           "area": "musculoskeletal.neuromuscular.fshd",
@@ -235,25 +510,80 @@
           "name": "Myotonic dystrophy type 1 (DM1)",
           "market": {
             "regions": {
-              "us":  { "patientsK": 15, "wtpPct": 55, "priceK": 350 },
-              "eu":  { "patientsK": 18, "wtpPct": 40, "priceK": 200 },
-              "row": { "patientsK": 25, "wtpPct": 12, "priceK": 100 }
+              "us": {
+                "patientsK": 15,
+                "wtpPct": 70,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 18,
+                "wtpPct": 52,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 20,
+                "wtpPct": 12,
+                "priceK": 50
+              }
             },
             "penPct": 10,
             "peakYear": 2034,
             "sources": {
-              "us.patientsK":  { "note": "DM1 prevalence ~4.76/10K births; ~30-40K US but diagnosed ~15K" },
-              "us.priceK":     { "note": "No approved therapy; rare NMD pricing analog" },
-              "penPct":        { "note": "Phase 1 dose escalation; competes with PEPG EDO-DM1 splice correction" }
+              "us.patientsK": {
+                "note": "real_epi_data.py -- 15K US treated/diagnosed; source: consensus epi (musculoskeletal)."
+              },
+              "eu.patientsK": {
+                "note": "real_epi_data.py -- 18K EU treated/diagnosed."
+              },
+              "row.patientsK": {
+                "note": "real_epi_data.py -- 20K ROW treated/diagnosed."
+              },
+              "us.wtpPct": {
+                "note": "real_epi_data.py -- US WTP 70% (payor access + formulary)."
+              },
+              "eu.wtpPct": {
+                "note": "real_epi_data.py -- EU WTP 52% (HTA-gated uptake)."
+              },
+              "row.wtpPct": {
+                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+              },
+              "us.priceK": {
+                "note": "real_epi_data.py -- US avg $250K/yr (musculoskeletal drug-class avg)."
+              },
+              "eu.priceK": {
+                "note": "real_epi_data.py -- EU avg $130K/yr."
+              },
+              "row.priceK": {
+                "note": "real_epi_data.py -- ROW avg $50K/yr."
+              },
+              "penPct": {
+                "note": "Preserved from config -- refine per competitive landscape."
+              }
             },
             "company_slice": {
-              "us":  { "reachPct": 30, "wtpPct": 45, "priceK": 350 },
-              "eu":  { "reachPct": 20, "wtpPct": 30, "priceK": 200 },
-              "row": { "reachPct": 8, "wtpPct": 10, "priceK": 100 }
+              "us": {
+                "reachPct": 30,
+                "wtpPct": 45,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 20,
+                "wtpPct": 30,
+                "priceK": 200
+              },
+              "row": {
+                "reachPct": 8,
+                "wtpPct": 10,
+                "priceK": 100
+              }
             },
             "company_slice_sources": {
-              "us.reachPct": { "note": "Phase 1; competes with PEPG EDO-DM1; moderate-severe DM1 initially" },
-              "us.priceK": { "note": "Rare NMD chronic siRNA; DM1 has larger patient pool so slightly lower pricing possible" }
+              "us.reachPct": {
+                "note": "Phase 1; competes with PEPG EDO-DM1; moderate-severe DM1 initially"
+              },
+              "us.priceK": {
+                "note": "Rare NMD chronic siRNA; DM1 has larger patient pool so slightly lower pricing possible"
+              }
             }
           },
           "area": "musculoskeletal.neuromuscular.dm1",
@@ -268,19 +598,61 @@
       "wt": 10,
       "narrative": "PMO franchise collapses + Elevidys pulled from market + AAV platform dead",
       "events": [
-        "\u2717 FDA withdraws Vyondys 53 + Amondys 45 — PMO drops to Exondys only (~$575M)",
-        "\u2717 Additional Elevidys death triggers full market withdrawal — $0 GT revenue",
-        "\u2717 AAVrh74 clinical hold permanent — SRP-9003 abandoned",
-        "\u2192 Exondys-only company at $500-600M/yr; siRNA too early to save; stock <$10"
+        "✗ FDA withdraws Vyondys 53 + Amondys 45 — PMO drops to Exondys only (~$575M)",
+        "✗ Additional Elevidys death triggers full market withdrawal — $0 GT revenue",
+        "✗ AAVrh74 clinical hold permanent — SRP-9003 abandoned",
+        "→ Exondys-only company at $500-600M/yr; siRNA too early to save; stock <$10"
       ],
       "assumptions": {
-        "elevidys": { "dmd_gt": { "pos": 0, "apr": 0, "pen": 0.3 } },
-        "exondys":  { "dmd_ex51": { "pos": 85, "apr": 70, "pen": 0.7 } },
-        "amondys":  { "dmd_ex45": { "pos": 40, "apr": 0, "pen": 0.3 } },
-        "vyondys":  { "dmd_ex53": { "pos": 30, "apr": 0, "pen": 0.3 } },
-        "srp9003":  { "lgmd2e": { "pos": 0, "apr": 0, "pen": 0.3 } },
-        "srp1001":  { "fshd": { "pos": 10, "apr": 15, "pen": 0.3 } },
-        "srp1003":  { "dm1": { "pos": 10, "apr": 15, "pen": 0.3 } }
+        "elevidys": {
+          "dmd_gt": {
+            "pos": 0,
+            "apr": 0,
+            "pen": 0.3
+          }
+        },
+        "exondys": {
+          "dmd_ex51": {
+            "pos": 85,
+            "apr": 70,
+            "pen": 0.7
+          }
+        },
+        "amondys": {
+          "dmd_ex45": {
+            "pos": 40,
+            "apr": 0,
+            "pen": 0.3
+          }
+        },
+        "vyondys": {
+          "dmd_ex53": {
+            "pos": 30,
+            "apr": 0,
+            "pen": 0.3
+          }
+        },
+        "srp9003": {
+          "lgmd2e": {
+            "pos": 0,
+            "apr": 0,
+            "pen": 0.3
+          }
+        },
+        "srp1001": {
+          "fshd": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        },
+        "srp1003": {
+          "dm1": {
+            "pos": 10,
+            "apr": 15,
+            "pen": 0.3
+          }
+        }
       },
       "val": {
         "pipelineDR": 30,
@@ -295,19 +667,61 @@
       "wt": 20,
       "narrative": "ESSENCE fallout + Elevidys safety permanently impairs franchise",
       "events": [
-        "\u2717 FDA forces Vyondys 53 + Amondys 45 withdrawal after sNDA review",
-        "\u2717 Elevidys stays ambulatory-only; safety perception caps at $500M/yr",
-        "\u2717 AAVrh74 hold delays SRP-9003 BLA beyond 2027",
-        "\u2192 PMO erosion + gene therapy ceiling = declining revenue"
+        "✗ FDA forces Vyondys 53 + Amondys 45 withdrawal after sNDA review",
+        "✗ Elevidys stays ambulatory-only; safety perception caps at $500M/yr",
+        "✗ AAVrh74 hold delays SRP-9003 BLA beyond 2027",
+        "→ PMO erosion + gene therapy ceiling = declining revenue"
       ],
       "assumptions": {
-        "elevidys": { "dmd_gt": { "pos": 85, "apr": 70, "pen": 0.6 } },
-        "exondys":  { "dmd_ex51": { "pos": 90, "apr": 80, "pen": 0.8 } },
-        "amondys":  { "dmd_ex45": { "pos": 60, "apr": 25, "pen": 0.6 } },
-        "vyondys":  { "dmd_ex53": { "pos": 50, "apr": 20, "pen": 0.5 } },
-        "srp9003":  { "lgmd2e": { "pos": 50, "apr": 35, "pen": 0.5 } },
-        "srp1001":  { "fshd": { "pos": 20, "apr": 30, "pen": 0.4 } },
-        "srp1003":  { "dm1": { "pos": 15, "apr": 25, "pen": 0.4 } }
+        "elevidys": {
+          "dmd_gt": {
+            "pos": 85,
+            "apr": 70,
+            "pen": 0.6
+          }
+        },
+        "exondys": {
+          "dmd_ex51": {
+            "pos": 90,
+            "apr": 80,
+            "pen": 0.8
+          }
+        },
+        "amondys": {
+          "dmd_ex45": {
+            "pos": 60,
+            "apr": 25,
+            "pen": 0.6
+          }
+        },
+        "vyondys": {
+          "dmd_ex53": {
+            "pos": 50,
+            "apr": 20,
+            "pen": 0.5
+          }
+        },
+        "srp9003": {
+          "lgmd2e": {
+            "pos": 50,
+            "apr": 35,
+            "pen": 0.5
+          }
+        },
+        "srp1001": {
+          "fshd": {
+            "pos": 20,
+            "apr": 30,
+            "pen": 0.4
+          }
+        },
+        "srp1003": {
+          "dm1": {
+            "pos": 15,
+            "apr": 25,
+            "pen": 0.4
+          }
+        }
       },
       "val": {
         "pipelineDR": 20,
@@ -322,19 +736,61 @@
       "wt": 40,
       "narrative": "PMO franchise preserved + Elevidys recovers + pipeline advances",
       "events": [
-        "\u2713 Amondys 45 + Vyondys 53 convert to traditional approval",
-        "\u2713 Elevidys ambulatory recovers to $600-700M; non-ambulatory restored 2027",
+        "✓ Amondys 45 + Vyondys 53 convert to traditional approval",
+        "✓ Elevidys ambulatory recovers to $600-700M; non-ambulatory restored 2027",
         "~ SRP-9003 BLA filed and approved 2027 for LGMD2E",
         "~ siRNA programs advance to Phase 2 with encouraging data"
       ],
       "assumptions": {
-        "elevidys": { "dmd_gt": { "pos": 90, "apr": 80, "pen": 1.0 } },
-        "exondys":  { "dmd_ex51": { "pos": 95, "apr": 90, "pen": 1.0 } },
-        "amondys":  { "dmd_ex45": { "pos": 70, "apr": 55, "pen": 0.9 } },
-        "vyondys":  { "dmd_ex53": { "pos": 65, "apr": 50, "pen": 0.8 } },
-        "srp9003":  { "lgmd2e": { "pos": 65, "apr": 60, "pen": 0.8 } },
-        "srp1001":  { "fshd": { "pos": 35, "apr": 45, "pen": 0.7 } },
-        "srp1003":  { "dm1": { "pos": 30, "apr": 40, "pen": 0.6 } }
+        "elevidys": {
+          "dmd_gt": {
+            "pos": 90,
+            "apr": 80,
+            "pen": 1.0
+          }
+        },
+        "exondys": {
+          "dmd_ex51": {
+            "pos": 95,
+            "apr": 90,
+            "pen": 1.0
+          }
+        },
+        "amondys": {
+          "dmd_ex45": {
+            "pos": 70,
+            "apr": 55,
+            "pen": 0.9
+          }
+        },
+        "vyondys": {
+          "dmd_ex53": {
+            "pos": 65,
+            "apr": 50,
+            "pen": 0.8
+          }
+        },
+        "srp9003": {
+          "lgmd2e": {
+            "pos": 65,
+            "apr": 60,
+            "pen": 0.8
+          }
+        },
+        "srp1001": {
+          "fshd": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 0.7
+          }
+        },
+        "srp1003": {
+          "dm1": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.6
+          }
+        }
       },
       "val": {
         "pipelineDR": 14,
@@ -349,19 +805,61 @@
       "wt": 20,
       "narrative": "Full DMD franchise restored + siRNA platform validated",
       "events": [
-        "\u2713 PMO franchise durable at ~$950M/yr with traditional approvals",
-        "\u2713 Elevidys non-ambulatory label restored; US peak $1.2B+",
-        "\u2713 SRP-9003 approved 2027; Roche milestones $300M+",
-        "\u2713 siRNA FSHD + DM1 both advance to Phase 3 — multi-B platform"
+        "✓ PMO franchise durable at ~$950M/yr with traditional approvals",
+        "✓ Elevidys non-ambulatory label restored; US peak $1.2B+",
+        "✓ SRP-9003 approved 2027; Roche milestones $300M+",
+        "✓ siRNA FSHD + DM1 both advance to Phase 3 — multi-B platform"
       ],
       "assumptions": {
-        "elevidys": { "dmd_gt": { "pos": 95, "apr": 90, "pen": 1.5 } },
-        "exondys":  { "dmd_ex51": { "pos": 95, "apr": 95, "pen": 1.1 } },
-        "amondys":  { "dmd_ex45": { "pos": 80, "apr": 75, "pen": 1.1 } },
-        "vyondys":  { "dmd_ex53": { "pos": 75, "apr": 70, "pen": 1.0 } },
-        "srp9003":  { "lgmd2e": { "pos": 75, "apr": 75, "pen": 1.2 } },
-        "srp1001":  { "fshd": { "pos": 50, "apr": 60, "pen": 1.0 } },
-        "srp1003":  { "dm1": { "pos": 45, "apr": 55, "pen": 0.9 } }
+        "elevidys": {
+          "dmd_gt": {
+            "pos": 95,
+            "apr": 90,
+            "pen": 1.5
+          }
+        },
+        "exondys": {
+          "dmd_ex51": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.1
+          }
+        },
+        "amondys": {
+          "dmd_ex45": {
+            "pos": 80,
+            "apr": 75,
+            "pen": 1.1
+          }
+        },
+        "vyondys": {
+          "dmd_ex53": {
+            "pos": 75,
+            "apr": 70,
+            "pen": 1.0
+          }
+        },
+        "srp9003": {
+          "lgmd2e": {
+            "pos": 75,
+            "apr": 75,
+            "pen": 1.2
+          }
+        },
+        "srp1001": {
+          "fshd": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 1.0
+          }
+        },
+        "srp1003": {
+          "dm1": {
+            "pos": 45,
+            "apr": 55,
+            "pen": 0.9
+          }
+        }
       },
       "val": {
         "pipelineDR": 11,
@@ -376,19 +874,61 @@
       "wt": 10,
       "narrative": "NMD platform company — Roche acquires for DMD + siRNA franchise",
       "events": [
-        "\u2713 Full PMO franchise preserved + Elevidys label fully restored including non-ambulatory",
-        "\u2713 Elevidys US peak $1.5B+ with expanded population; Roche ex-US adds $500M+ royalties",
-        "\u2713 siRNA FSHD + DM1 both hit Phase 3 — first-in-class for both; $5B+ combined TAM",
-        "\u2713 Roche acquires SRPT for $15-20B to own end-to-end NMD platform (GT + RNA + PMO)"
+        "✓ Full PMO franchise preserved + Elevidys label fully restored including non-ambulatory",
+        "✓ Elevidys US peak $1.5B+ with expanded population; Roche ex-US adds $500M+ royalties",
+        "✓ siRNA FSHD + DM1 both hit Phase 3 — first-in-class for both; $5B+ combined TAM",
+        "✓ Roche acquires SRPT for $15-20B to own end-to-end NMD platform (GT + RNA + PMO)"
       ],
       "assumptions": {
-        "elevidys": { "dmd_gt": { "pos": 95, "apr": 95, "pen": 2.0 } },
-        "exondys":  { "dmd_ex51": { "pos": 95, "apr": 95, "pen": 1.2 } },
-        "amondys":  { "dmd_ex45": { "pos": 85, "apr": 85, "pen": 1.2 } },
-        "vyondys":  { "dmd_ex53": { "pos": 80, "apr": 80, "pen": 1.1 } },
-        "srp9003":  { "lgmd2e": { "pos": 80, "apr": 80, "pen": 1.5 } },
-        "srp1001":  { "fshd": { "pos": 65, "apr": 70, "pen": 1.3 } },
-        "srp1003":  { "dm1": { "pos": 60, "apr": 65, "pen": 1.2 } }
+        "elevidys": {
+          "dmd_gt": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 2.0
+          }
+        },
+        "exondys": {
+          "dmd_ex51": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.2
+          }
+        },
+        "amondys": {
+          "dmd_ex45": {
+            "pos": 85,
+            "apr": 85,
+            "pen": 1.2
+          }
+        },
+        "vyondys": {
+          "dmd_ex53": {
+            "pos": 80,
+            "apr": 80,
+            "pen": 1.1
+          }
+        },
+        "srp9003": {
+          "lgmd2e": {
+            "pos": 80,
+            "apr": 80,
+            "pen": 1.5
+          }
+        },
+        "srp1001": {
+          "fshd": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 1.3
+          }
+        },
+        "srp1003": {
+          "dm1": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 1.2
+          }
+        }
       },
       "val": {
         "pipelineDR": 8,

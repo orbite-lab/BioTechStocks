@@ -25,7 +25,56 @@
           "market": {
             "notes": "Rezdiffra 2025: $958M (Q4: $321M, $1.28B annualized). 36,250+ patients on therapy. First & only FDA+EC approved MASH drug. 94% gross margin equivalent (COGS $4.5M/qtr). >90% of target population still untreated. Patent protection to 2045. Oral once-daily, liver-directed THR-β agonist.",
             "tamB": 20.0,
-            "penPct": 5
+            "penPct": 5,
+            "regions": {
+              "us": {
+                "patientsK": 3000,
+                "wtpPct": 50,
+                "priceK": 30
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 38,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 4000,
+                "wtpPct": 8,
+                "priceK": 6
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "real_epi_data.py -- 3000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
+              },
+              "eu.patientsK": {
+                "note": "real_epi_data.py -- 2500K EU treated/diagnosed."
+              },
+              "row.patientsK": {
+                "note": "real_epi_data.py -- 4000K ROW treated/diagnosed."
+              },
+              "us.wtpPct": {
+                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
+              },
+              "eu.wtpPct": {
+                "note": "real_epi_data.py -- EU WTP 38% (HTA-gated uptake)."
+              },
+              "row.wtpPct": {
+                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+              },
+              "us.priceK": {
+                "note": "real_epi_data.py -- US avg $30K/yr (cardio_metabolic drug-class avg)."
+              },
+              "eu.priceK": {
+                "note": "real_epi_data.py -- EU avg $15K/yr."
+              },
+              "row.priceK": {
+                "note": "real_epi_data.py -- ROW avg $6K/yr."
+              },
+              "penPct": {
+                "note": "Preserved from config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.liver.mash"
         }
@@ -48,51 +97,51 @@
             "notes": "2-year F4c data presented at EASL Congress 2025 — compelling results. Outcomes study in F4c ongoing — first-to-market outcomes data. F4c label expansion would significantly expand addressable population. F4 patients have highest unmet need.",
             "regions": {
               "us": {
-                "patientsK": 554.8,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 3000,
+                "wtpPct": 50,
+                "priceK": 30
               },
               "eu": {
-                "patientsK": 594.4,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 2500,
+                "wtpPct": 38,
+                "priceK": 15
               },
               "row": {
-                "patientsK": 832.1,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 4000,
+                "wtpPct": 8,
+                "priceK": 6
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 3000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 2500K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 4000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 38% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $30K/yr (cardio_metabolic drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $15K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $6K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -117,51 +166,51 @@
             "notes": "MGL-2086 (oral GLP-1, orforglipron derivative): clinic Q2 2026. Ervogastat (DGAT-2 inhibitor, licensed from Pfizer): Phase 2 combo trial planned. 6 preclinical siRNA programs: IND-enabling 2026. Strategy: Rezdiffra as foundation + combo partners for enhanced efficacy across MASH spectrum.",
             "regions": {
               "us": {
-                "patientsK": 887.6,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 3000,
+                "wtpPct": 50,
+                "priceK": 30
               },
               "eu": {
-                "patientsK": 951.0,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 2500,
+                "wtpPct": 38,
+                "priceK": 15
               },
               "row": {
-                "patientsK": 1331.4,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 4000,
+                "wtpPct": 8,
+                "priceK": 6
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 3000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 2500K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 4000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 38% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $30K/yr (cardio_metabolic drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $15K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $6K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },

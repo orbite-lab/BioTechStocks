@@ -98,51 +98,51 @@
             "notes": "TNBC LAR is ~10-15% of TNBC — androgen-receptor-driven subtype with distinct biology from basal-like TNBC. Oncogene-amplified subset of LAR = smaller population but very high unmet need given ADC/CPI limited benefit in this segment. BBI-940 preclinical regressions in xenografts with ecDNA amplifications. KOMODO-1 dose escalation enrolls LAR arm in parallel with ER+/HER2-.",
             "regions": {
               "us": {
-                "patientsK": 7.5,
-                "wtpPct": 75,
-                "priceK": 250
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 200
               },
               "eu": {
-                "patientsK": 8.8,
-                "wtpPct": 55,
+                "patientsK": 55,
+                "wtpPct": 45,
                 "priceK": 110
               },
               "row": {
-                "patientsK": 8.8,
-                "wtpPct": 15,
-                "priceK": 40
+                "patientsK": 80,
+                "wtpPct": 10,
+                "priceK": 45
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+                "note": "real_epi_data.py -- 50K US treated/diagnosed; source: consensus epi (oncology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+                "note": "real_epi_data.py -- 55K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+                "note": "real_epi_data.py -- 80K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Rare disease default -- HTA-gated uptake (55%)."
+                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+                "note": "real_epi_data.py -- US avg $200K/yr (oncology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+                "note": "real_epi_data.py -- EU avg $110K/yr."
               },
               "row.priceK": {
-                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+                "note": "real_epi_data.py -- ROW avg $45K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },

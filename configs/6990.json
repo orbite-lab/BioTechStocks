@@ -25,7 +25,56 @@
           "market": {
             "notes": "Sac-TMT (SKB264/MK-2870): 4 approved indications in China. TROP2 ADC partnered with Merck globally. Phase 3 HR+/HER2- BC vs chemo ongoing. First TROP2 ADC approved for NSCLC globally. Merck deal: $10B+ total value across 3 ADC programs.",
             "tamB": 12.0,
-            "penPct": 10
+            "penPct": 10,
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 55,
+                "wtpPct": 45,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 10,
+                "priceK": 45
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "real_epi_data.py -- 50K US treated/diagnosed; source: consensus epi (oncology)."
+              },
+              "eu.patientsK": {
+                "note": "real_epi_data.py -- 55K EU treated/diagnosed."
+              },
+              "row.patientsK": {
+                "note": "real_epi_data.py -- 80K ROW treated/diagnosed."
+              },
+              "us.wtpPct": {
+                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
+              },
+              "eu.wtpPct": {
+                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
+              },
+              "row.wtpPct": {
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+              },
+              "us.priceK": {
+                "note": "real_epi_data.py -- US avg $200K/yr (oncology drug-class avg)."
+              },
+              "eu.priceK": {
+                "note": "real_epi_data.py -- EU avg $110K/yr."
+              },
+              "row.priceK": {
+                "note": "real_epi_data.py -- ROW avg $45K/yr."
+              },
+              "penPct": {
+                "note": "Preserved from config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "oncology.breast.tnbc"
         }
@@ -48,51 +97,51 @@
             "notes": "HER2 ADC approved in China. Competing with Enhertu but differentiated payload-linker. Global development ongoing.",
             "regions": {
               "us": {
-                "patientsK": 1109.5,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 300,
+                "wtpPct": 65,
+                "priceK": 180
               },
               "eu": {
-                "patientsK": 1188.8,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 350,
+                "wtpPct": 50,
+                "priceK": 100
               },
               "row": {
-                "patientsK": 1664.3,
+                "patientsK": 500,
                 "wtpPct": 12,
-                "priceK": 2
+                "priceK": 45
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 300K US treated/diagnosed; source: consensus epi (oncology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 350K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 500K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 65% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 50% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $180K/yr (oncology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $100K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $45K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -117,51 +166,51 @@
             "notes": "Novel CLDN18.2 ADC. Phase 2/3 development. Hot target — Astellas Zolbetuximab approved for gastric.",
             "regions": {
               "us": {
-                "patientsK": 665.7,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 45,
+                "wtpPct": 60,
+                "priceK": 190
               },
               "eu": {
-                "patientsK": 713.3,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 55,
+                "wtpPct": 45,
+                "priceK": 105
               },
               "row": {
-                "patientsK": 998.6,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 300,
+                "wtpPct": 8,
+                "priceK": 40
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 45K US treated/diagnosed; source: consensus epi (oncology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 55K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 300K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $190K/yr (oncology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $105K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $40K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },

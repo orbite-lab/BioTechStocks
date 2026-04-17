@@ -30,64 +30,87 @@
             "peakYear": 2033,
             "regions": {
               "us": {
-                "patientsK": 7.5,
-                "wtpPct": 75,
-                "priceK": 344
+                "patientsK": 15,
+                "wtpPct": 70,
+                "priceK": 250
               },
               "eu": {
-                "patientsK": 8.8,
-                "wtpPct": 55,
-                "priceK": 151
+                "patientsK": 18,
+                "wtpPct": 52,
+                "priceK": 130
               },
               "row": {
-                "patientsK": 8.8,
-                "wtpPct": 15,
-                "priceK": 55
+                "patientsK": 20,
+                "wtpPct": 12,
+                "priceK": 50
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+                "note": "real_epi_data.py -- 15K US treated/diagnosed; source: consensus epi (musculoskeletal)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+                "note": "real_epi_data.py -- 18K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+                "note": "real_epi_data.py -- 20K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+                "note": "real_epi_data.py -- US WTP 70% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Rare disease default -- HTA-gated uptake (55%)."
+                "note": "real_epi_data.py -- EU WTP 52% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+                "note": "real_epi_data.py -- US avg $250K/yr (musculoskeletal drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+                "note": "real_epi_data.py -- EU avg $130K/yr."
               },
               "row.priceK": {
-                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+                "note": "real_epi_data.py -- ROW avg $50K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             },
             "company_slice": {
-              "us":  { "reachPct": 40, "wtpPct": 70, "priceK": 350 },
-              "eu":  { "reachPct": 30, "wtpPct": 50, "priceK": 220 },
-              "row": { "reachPct": 10, "wtpPct": 20, "priceK": 150 }
+              "us": {
+                "reachPct": 40,
+                "wtpPct": 70,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 30,
+                "wtpPct": 50,
+                "priceK": 220
+              },
+              "row": {
+                "reachPct": 10,
+                "wtpPct": 20,
+                "priceK": 150
+              }
             },
             "company_slice_sources": {
-              "us.reachPct": { "note": "Phase 2; first-in-class EDO splice-correction; moderate-severe DM1" },
-              "us.wtpPct": { "note": "High unmet need but early data -- physician adoption depends on 10mg/kg results" },
-              "us.priceK": { "url": "https://www.biogen.com/en_us/spinraza-pricing.html", "note": "Anchored to Spinraza (~$375K); EDO delivery may command premium" },
-              "eu.reachPct": { "note": "HTA gating; fewer DM1 specialist centers" },
-              "row.reachPct": { "note": "Japan feasible; limited elsewhere" }
+              "us.reachPct": {
+                "note": "Phase 2; first-in-class EDO splice-correction; moderate-severe DM1"
+              },
+              "us.wtpPct": {
+                "note": "High unmet need but early data -- physician adoption depends on 10mg/kg results"
+              },
+              "us.priceK": {
+                "url": "https://www.biogen.com/en_us/spinraza-pricing.html",
+                "note": "Anchored to Spinraza (~$375K); EDO delivery may command premium"
+              },
+              "eu.reachPct": {
+                "note": "HTA gating; fewer DM1 specialist centers"
+              },
+              "row.reachPct": {
+                "note": "Japan feasible; limited elsewhere"
+              }
             }
           },
           "area": "musculoskeletal.neuromuscular.dm1",
@@ -112,62 +135,80 @@
             "peakYear": 2035,
             "regions": {
               "us": {
-                "patientsK": 3.6,
-                "wtpPct": 75,
-                "priceK": 500
+                "patientsK": 12,
+                "wtpPct": 78,
+                "priceK": 400
               },
               "eu": {
-                "patientsK": 4.2,
-                "wtpPct": 55,
-                "priceK": 220
+                "patientsK": 14,
+                "wtpPct": 58,
+                "priceK": 200
               },
               "row": {
-                "patientsK": 4.2,
-                "wtpPct": 15,
-                "priceK": 80
+                "patientsK": 18,
+                "wtpPct": 12,
+                "priceK": 70
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+                "note": "real_epi_data.py -- 12K US treated/diagnosed; source: consensus epi (musculoskeletal)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+                "note": "real_epi_data.py -- 14K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+                "note": "real_epi_data.py -- 18K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+                "note": "real_epi_data.py -- US WTP 78% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Rare disease default -- HTA-gated uptake (55%)."
+                "note": "real_epi_data.py -- EU WTP 58% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+                "note": "real_epi_data.py -- US avg $400K/yr (musculoskeletal drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+                "note": "real_epi_data.py -- EU avg $200K/yr."
               },
               "row.priceK": {
-                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+                "note": "real_epi_data.py -- ROW avg $70K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             },
             "company_slice": {
-              "us":  { "reachPct": 25, "wtpPct": 55, "priceK": 500 },
-              "eu":  { "reachPct": 15, "wtpPct": 35, "priceK": 300 },
-              "row": { "reachPct": 5, "wtpPct": 10, "priceK": 150 }
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 55,
+                "priceK": 500
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 35,
+                "priceK": 300
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 10,
+                "priceK": 150
+              }
             },
             "company_slice_sources": {
-              "us.reachPct": { "note": "Preclinical; EDO51 targets exon 51 (~13% DMD); competes with Exondys 51" },
-              "us.priceK": { "note": "EDO platform premium vs legacy PMO; but must justify vs Elevidys gene therapy" },
-              "eu.reachPct": { "note": "Preclinical; earliest EU access ~2032+" }
+              "us.reachPct": {
+                "note": "Preclinical; EDO51 targets exon 51 (~13% DMD); competes with Exondys 51"
+              },
+              "us.priceK": {
+                "note": "EDO platform premium vs legacy PMO; but must justify vs Elevidys gene therapy"
+              },
+              "eu.reachPct": {
+                "note": "Preclinical; earliest EU access ~2032+"
+              }
             }
           },
           "area": "musculoskeletal.neuromuscular.dmd",

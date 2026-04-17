@@ -25,7 +25,56 @@
           "market": {
             "notes": "Bimzelx 2025: E2.2B (+267%). Halfway to E4B+ peak. 45% HS patient share globally. Patent to 2037. First dual IL-17A/F inhibitor.",
             "tamB": 30.0,
-            "penPct": 10
+            "penPct": 10,
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 60
+              },
+              "eu": {
+                "patientsK": 1200,
+                "wtpPct": 42,
+                "priceK": 30
+              },
+              "row": {
+                "patientsK": 2000,
+                "wtpPct": 10,
+                "priceK": 12
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "real_epi_data.py -- 1500K US treated/diagnosed; source: consensus epi (dermatology)."
+              },
+              "eu.patientsK": {
+                "note": "real_epi_data.py -- 1200K EU treated/diagnosed."
+              },
+              "row.patientsK": {
+                "note": "real_epi_data.py -- 2000K ROW treated/diagnosed."
+              },
+              "us.wtpPct": {
+                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+              },
+              "eu.wtpPct": {
+                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+              },
+              "row.wtpPct": {
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+              },
+              "us.priceK": {
+                "note": "real_epi_data.py -- US avg $60K/yr (dermatology drug-class avg)."
+              },
+              "eu.priceK": {
+                "note": "real_epi_data.py -- EU avg $30K/yr."
+              },
+              "row.priceK": {
+                "note": "real_epi_data.py -- ROW avg $12K/yr."
+              },
+              "penPct": {
+                "note": "Preserved from config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "dermatology.inflammatory_derm.psoriasis_systemic"
         }
@@ -48,51 +97,51 @@
             "notes": "Fintepla E427M (+26%). Rystiggo E332M (+65%). Zilbrysq E217M (+200%). Patent: Fintepla 2033, Rystiggo 2035.",
             "regions": {
               "us": {
-                "patientsK": 887.6,
+                "patientsK": 1200,
                 "wtpPct": 55,
-                "priceK": 12
+                "priceK": 20
               },
               "eu": {
-                "patientsK": 951.0,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 1000,
+                "wtpPct": 42,
+                "priceK": 10
               },
               "row": {
-                "patientsK": 1331.4,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 2000,
+                "wtpPct": 10,
+                "priceK": 4
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 1200K US treated/diagnosed; source: consensus epi (cns)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 1000K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 2000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $20K/yr (cns drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $10K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $4K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -117,51 +166,51 @@
             "notes": "Anti-sclerostin. UCB receives collaboration revenue. Strong EU expansion.",
             "regions": {
               "us": {
-                "patientsK": 554.8,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 10000,
+                "wtpPct": 45,
+                "priceK": 8
               },
               "eu": {
-                "patientsK": 594.4,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 8000,
+                "wtpPct": 38,
+                "priceK": 4
               },
               "row": {
-                "patientsK": 832.1,
-                "wtpPct": 12,
+                "patientsK": 15000,
+                "wtpPct": 8,
                 "priceK": 2
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 10000K US treated/diagnosed; source: consensus epi (musculoskeletal)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 8000K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 15000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 45% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 38% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $8K/yr (musculoskeletal drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $4K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $2K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -185,51 +234,51 @@
             "penPct": 20,
             "regions": {
               "us": {
-                "patientsK": 332.9,
+                "patientsK": 1500,
                 "wtpPct": 55,
-                "priceK": 12
+                "priceK": 55
               },
               "eu": {
-                "patientsK": 356.6,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 1200,
+                "wtpPct": 42,
+                "priceK": 28
               },
               "row": {
-                "patientsK": 499.3,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 2000,
+                "wtpPct": 10,
+                "priceK": 10
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 1500K US treated/diagnosed; source: consensus epi (immunology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 1200K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 2000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $55K/yr (immunology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $28K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $10K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           }
@@ -251,51 +300,51 @@
             "penPct": 50,
             "regions": {
               "us": {
-                "patientsK": 554.8,
+                "patientsK": 1200,
                 "wtpPct": 55,
-                "priceK": 12
+                "priceK": 20
               },
               "eu": {
-                "patientsK": 594.4,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 1000,
+                "wtpPct": 42,
+                "priceK": 10
               },
               "row": {
-                "patientsK": 832.1,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 2000,
+                "wtpPct": 10,
+                "priceK": 4
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 1200K US treated/diagnosed; source: consensus epi (cns)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 1000K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 2000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $20K/yr (cns drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $10K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $4K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           }
@@ -317,51 +366,51 @@
             "penPct": 5,
             "regions": {
               "us": {
-                "patientsK": 554.8,
+                "patientsK": 1200,
                 "wtpPct": 55,
-                "priceK": 12
+                "priceK": 20
               },
               "eu": {
-                "patientsK": 594.4,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 1000,
+                "wtpPct": 42,
+                "priceK": 10
               },
               "row": {
-                "patientsK": 832.1,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 2000,
+                "wtpPct": 10,
+                "priceK": 4
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 1200K US treated/diagnosed; source: consensus epi (cns)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 1000K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 2000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $20K/yr (cns drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $10K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $4K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           }
@@ -383,51 +432,51 @@
             "penPct": 4,
             "regions": {
               "us": {
-                "patientsK": 554.8,
+                "patientsK": 300,
                 "wtpPct": 55,
-                "priceK": 12
+                "priceK": 60
               },
               "eu": {
-                "patientsK": 594.4,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 250,
+                "wtpPct": 42,
+                "priceK": 30
               },
               "row": {
-                "patientsK": 832.1,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 400,
+                "wtpPct": 10,
+                "priceK": 12
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 300K US treated/diagnosed; source: consensus epi (immunology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 250K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 400K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $60K/yr (immunology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $30K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $12K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           }

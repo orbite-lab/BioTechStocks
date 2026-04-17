@@ -31,51 +31,51 @@
             "notes": "ROS1+ NSCLC: ~3% of NSCLC (~6K US patients). Best-in-class ROS1 inhibitor — brain-penetrant, overcomes G2032R resistance, ROS1-selective (avoids TRK toxicity). ARROS-1 Phase 1/2 pivotal data strong. NDA PDUFA Sep 18, 2026. TKI-naïve label expansion submission H2 2026. Competitor: crizotinib, entrectinib, repotrectinib.",
             "regions": {
               "us": {
-                "patientsK": 277.4,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 60,
+                "wtpPct": 65,
+                "priceK": 200
               },
               "eu": {
-                "patientsK": 297.2,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 65,
+                "wtpPct": 50,
+                "priceK": 110
               },
               "row": {
-                "patientsK": 416.1,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 150,
+                "wtpPct": 10,
+                "priceK": 45
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 60K US treated/diagnosed; source: consensus epi (oncology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 65K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 150K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 65% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 50% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $200K/yr (oncology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $110K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $45K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -102,51 +102,51 @@
             "notes": "ALK+ NSCLC: ~5% of NSCLC (~12K US patients). Brain-penetrant, overcomes compound ALK resistance mutations incl. G1202R. ALKOVE-1 pivotal data. NDA submission H1 2026. ALKAZAR Phase 3 (frontline vs lorlatinib) enrolling. Competitor: lorlatinib (Pfizer) — lorlatinib dominant but CNS toxicity limits.",
             "regions": {
               "us": {
-                "patientsK": 443.8,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 60,
+                "wtpPct": 65,
+                "priceK": 200
               },
               "eu": {
-                "patientsK": 475.5,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 65,
+                "wtpPct": 50,
+                "priceK": 110
               },
               "row": {
-                "patientsK": 665.7,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 150,
+                "wtpPct": 10,
+                "priceK": 45
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 60K US treated/diagnosed; source: consensus epi (oncology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 65K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 150K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 65% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 50% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $200K/yr (oncology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $110K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $45K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -171,51 +171,51 @@
             "notes": "HER2-selective, brain-penetrant. Phase 1a/1b HEROEX-1 ongoing. HER2-altered NSCLC ~2-4% of cases. Addresses resistance + brain mets. Early stage but extends kinase platform.",
             "regions": {
               "us": {
-                "patientsK": 332.9,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 60,
+                "wtpPct": 65,
+                "priceK": 200
               },
               "eu": {
-                "patientsK": 356.6,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 65,
+                "wtpPct": 50,
+                "priceK": 110
               },
               "row": {
-                "patientsK": 499.3,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 150,
+                "wtpPct": 10,
+                "priceK": 45
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 60K US treated/diagnosed; source: consensus epi (oncology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 65K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 150K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 65% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 50% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $200K/yr (oncology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $110K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $45K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },

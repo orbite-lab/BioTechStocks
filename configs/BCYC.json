@@ -97,51 +97,51 @@
             "notes": "First-in-class EphA2 BDC — historically undruggable target. Phase 1 nuzefatide + nivolumab in mUC data H1 2026. Phase 2 PDAC initiated. EphA2 broadly expressed across solid tumors.",
             "regions": {
               "us": {
-                "patientsK": 1109.5,
+                "patientsK": 60,
                 "wtpPct": 55,
-                "priceK": 12
+                "priceK": 180
               },
               "eu": {
-                "patientsK": 1188.8,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 65,
+                "wtpPct": 42,
+                "priceK": 100
               },
               "row": {
-                "patientsK": 1664.3,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 120,
+                "wtpPct": 8,
+                "priceK": 40
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 60K US treated/diagnosed; source: consensus epi (oncology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 65K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 120K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $180K/yr (oncology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $100K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $40K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },

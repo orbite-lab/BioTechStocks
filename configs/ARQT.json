@@ -48,51 +48,51 @@
             "notes": "INTEGUMENT-INFANT Phase 2 positive in 3-24 month infants. sNDA planned. Broadens addressable population across all age groups. Additional sensitive-area and formulation expansions possible.",
             "regions": {
               "us": {
-                "patientsK": 332.9,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 8000,
+                "wtpPct": 50,
+                "priceK": 8
               },
               "eu": {
-                "patientsK": 356.6,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 6000,
+                "wtpPct": 38,
+                "priceK": 4
               },
               "row": {
-                "patientsK": 499.3,
-                "wtpPct": 12,
+                "patientsK": 10000,
+                "wtpPct": 10,
                 "priceK": 2
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 8000K US treated/diagnosed; source: consensus epi (dermatology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 6000K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 10000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 38% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $8K/yr (dermatology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $4K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $2K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -117,51 +117,51 @@
             "notes": "CD200R agonist fusion protein — novel mechanism for moderate-severe AD. First-in-human Phase 1a/1b enrolling. If it works: systemic AD therapy beyond dupilumab. Very early but diversifies beyond topicals.",
             "regions": {
               "us": {
-                "patientsK": 665.7,
+                "patientsK": 1500,
                 "wtpPct": 55,
-                "priceK": 12
+                "priceK": 60
               },
               "eu": {
-                "patientsK": 713.3,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 1200,
+                "wtpPct": 42,
+                "priceK": 30
               },
               "row": {
-                "patientsK": 998.6,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 2000,
+                "wtpPct": 10,
+                "priceK": 12
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 1500K US treated/diagnosed; source: consensus epi (dermatology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 1200K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 2000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $60K/yr (dermatology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $30K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $12K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -186,51 +186,51 @@
             "notes": "Topical JAK1 for alopecia areata. Avoids systemic JAK risks. Competitors: Olumiant, Litfulo (oral). If topical JAK works: safety advantage over oral. Phase 2 ongoing.",
             "regions": {
               "us": {
-                "patientsK": 332.9,
+                "patientsK": 300,
                 "wtpPct": 55,
-                "priceK": 12
+                "priceK": 50
               },
               "eu": {
-                "patientsK": 356.6,
+                "patientsK": 250,
                 "wtpPct": 40,
-                "priceK": 5
+                "priceK": 25
               },
               "row": {
-                "patientsK": 499.3,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 400,
+                "wtpPct": 8,
+                "priceK": 10
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 300K US treated/diagnosed; source: consensus epi (dermatology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 250K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 400K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 40% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $50K/yr (dermatology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $25K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $10K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -255,51 +255,51 @@
             "notes": "Topical JAK1 cream for hand eczema and vitiligo. Addresses unmet needs in difficult-to-treat areas. Phase 2/3 level data.",
             "regions": {
               "us": {
-                "patientsK": 443.8,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 1500,
+                "wtpPct": 45,
+                "priceK": 40
               },
               "eu": {
-                "patientsK": 475.5,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 1200,
+                "wtpPct": 32,
+                "priceK": 20
               },
               "row": {
-                "patientsK": 665.7,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 2000,
+                "wtpPct": 8,
+                "priceK": 8
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 1500K US treated/diagnosed; source: consensus epi (dermatology)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 1200K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 2000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 45% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 32% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $40K/yr (dermatology drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $20K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $8K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },

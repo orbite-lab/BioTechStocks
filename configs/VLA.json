@@ -35,51 +35,51 @@
             "notes": "€150M = Valneva peak annual royalties assuming Pfizer does ~€800M in Lyme sales at ~19% blended royalty. penPct=100 means Valneva gets its full royalty; penMult scales Pfizer launch speed.",
             "regions": {
               "us": {
-                "patientsK": 16.6,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 20000,
+                "wtpPct": 35,
+                "priceK": 0.2
               },
               "eu": {
-                "patientsK": 17.8,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 15000,
+                "wtpPct": 30,
+                "priceK": 0.15
               },
               "row": {
-                "patientsK": 25.0,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 5000,
+                "wtpPct": 10,
+                "priceK": 0.05
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 20000K US treated/diagnosed; source: consensus epi (infectious_disease)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 15000K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 5000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 35% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 30% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $0.2K/yr (infectious_disease drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $0.15K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $0.05K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -105,51 +105,51 @@
             "notes": "US permanently lost. Ex-US includes EU/Canada/UK/Brazil + outbreak response. Competitor: Bavarian Nordic's Vimkunya (VLP-based, FDA approved Feb 2025). Ex-US contributed ~€7.5M in H1 2025.",
             "regions": {
               "us": {
-                "patientsK": 55.5,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 200,
+                "wtpPct": 40,
+                "priceK": 0.2
               },
               "eu": {
-                "patientsK": 59.4,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 150,
+                "wtpPct": 35,
+                "priceK": 0.15
               },
               "row": {
-                "patientsK": 83.2,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 500,
+                "wtpPct": 15,
+                "priceK": 0.05
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 200K US treated/diagnosed; source: consensus epi (infectious_disease)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 150K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 500K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 40% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 35% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 15% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $0.2K/yr (infectious_disease drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $0.15K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $0.05K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -178,51 +178,51 @@
             "notes": "WHO priority. No approved multivalent Shigella vaccine outside Russia/China. Global market estimated >$500M/yr. Second leading cause of fatal diarrhea worldwide.",
             "regions": {
               "us": {
-                "patientsK": 66.6,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 1000,
+                "wtpPct": 30,
+                "priceK": 0.2
               },
               "eu": {
-                "patientsK": 71.3,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 800,
+                "wtpPct": 25,
+                "priceK": 0.15
               },
               "row": {
-                "patientsK": 99.9,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 5000,
+                "wtpPct": 15,
+                "priceK": 0.05
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 1000K US treated/diagnosed; source: consensus epi (infectious_disease)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 800K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 5000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 30% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 25% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 15% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $0.2K/yr (infectious_disease drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $0.15K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $0.05K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -248,51 +248,51 @@
             "notes": "Valneva will only advance if private/public funding materializes. Regulatory pathway and market opportunity remain uncertain.",
             "regions": {
               "us": {
-                "patientsK": 44.4,
-                "wtpPct": 55,
-                "priceK": 12
+                "patientsK": 1000,
+                "wtpPct": 30,
+                "priceK": 0.2
               },
               "eu": {
-                "patientsK": 47.6,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 800,
+                "wtpPct": 25,
+                "priceK": 0.15
               },
               "row": {
-                "patientsK": 66.6,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 5000,
+                "wtpPct": 15,
+                "priceK": 0.05
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed. US ~28% of diagnosed (non-rare)."
+                "note": "real_epi_data.py -- 1000K US treated/diagnosed; source: consensus epi (infectious_disease)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~30% of diagnosed."
+                "note": "real_epi_data.py -- 800K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~42% -- dominant in large-market diseases."
+                "note": "real_epi_data.py -- 5000K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "real_epi_data.py -- US WTP 30% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "real_epi_data.py -- EU WTP 25% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "real_epi_data.py -- ROW WTP 15% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "real_epi_data.py -- US avg $0.2K/yr (infectious_disease drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "real_epi_data.py -- EU avg $0.15K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "real_epi_data.py -- ROW avg $0.05K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },

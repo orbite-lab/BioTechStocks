@@ -25,7 +25,56 @@
           "market": {
             "notes": "Attruby 2025: $362M (Y1 US). Q4: $146M ($584M annualized). 7,804 unique Rx by Feb 2026. First near-complete (≥90%) TTR stabilizer. ATTRibute-CM: 49% hazard reduction in CVM/CVH at Month 30. 81% survival rate approaches age-matched population. Competes with tafamidis (Pfizer Vyndaqel $5B+). Differentiated: faster onset (1 month), better TTR stabilization. Global launches underway.",
             "tamB": 15.0,
-            "penPct": 10
+            "penPct": 10,
+            "regions": {
+              "us": {
+                "patientsK": 120,
+                "wtpPct": 70,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 100,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 15,
+                "priceK": 50
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "real_epi_data.py -- 120K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
+              },
+              "eu.patientsK": {
+                "note": "real_epi_data.py -- 100K EU treated/diagnosed."
+              },
+              "row.patientsK": {
+                "note": "real_epi_data.py -- 80K ROW treated/diagnosed."
+              },
+              "us.wtpPct": {
+                "note": "real_epi_data.py -- US WTP 70% (payor access + formulary)."
+              },
+              "eu.wtpPct": {
+                "note": "real_epi_data.py -- EU WTP 50% (HTA-gated uptake)."
+              },
+              "row.wtpPct": {
+                "note": "real_epi_data.py -- ROW WTP 15% (limited reimbursement ex-Japan)."
+              },
+              "us.priceK": {
+                "note": "real_epi_data.py -- US avg $250K/yr (cardio_metabolic drug-class avg)."
+              },
+              "eu.priceK": {
+                "note": "real_epi_data.py -- EU avg $130K/yr."
+              },
+              "row.priceK": {
+                "note": "real_epi_data.py -- ROW avg $50K/yr."
+              },
+              "penPct": {
+                "note": "Preserved from config -- refine per competitive landscape."
+              }
+            }
           },
           "area": "cardio_metabolic.attr.attr_cm",
           "rare": true
@@ -49,51 +98,51 @@
             "notes": "FORTIFY Phase 3: 2.6pt benefit on NSAD (p<α), broad benefit across subgroups. FDA recommended traditional full approval NDA. NDA submission H1 2026. Ultra-rare neuromuscular disease. Orphan pricing expected ($200-400K/yr).",
             "regions": {
               "us": {
-                "patientsK": 1.9,
+                "patientsK": 5,
                 "wtpPct": 75,
-                "priceK": 250
+                "priceK": 300
               },
               "eu": {
-                "patientsK": 2.2,
+                "patientsK": 6,
                 "wtpPct": 55,
-                "priceK": 110
+                "priceK": 150
               },
               "row": {
-                "patientsK": 2.2,
-                "wtpPct": 15,
-                "priceK": 40
+                "patientsK": 8,
+                "wtpPct": 12,
+                "priceK": 50
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+                "note": "real_epi_data.py -- 5K US treated/diagnosed; source: consensus epi (musculoskeletal)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+                "note": "real_epi_data.py -- 6K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+                "note": "real_epi_data.py -- 8K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+                "note": "real_epi_data.py -- US WTP 75% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Rare disease default -- HTA-gated uptake (55%)."
+                "note": "real_epi_data.py -- EU WTP 55% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+                "note": "real_epi_data.py -- US avg $300K/yr (musculoskeletal drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+                "note": "real_epi_data.py -- EU avg $150K/yr."
               },
               "row.priceK": {
-                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+                "note": "real_epi_data.py -- ROW avg $50K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -119,51 +168,51 @@
             "notes": "Low-dose infigratinib Phase 3 positive for achondroplasia (most common form of dwarfism). Competes with Voxzogo (BioMarin, $500M+). Differentiated on dosing convenience. NDA/MAA submissions planned.",
             "regions": {
               "us": {
-                "patientsK": 3.8,
+                "patientsK": 10,
                 "wtpPct": 75,
-                "priceK": 250
+                "priceK": 350
               },
               "eu": {
-                "patientsK": 4.4,
+                "patientsK": 12,
                 "wtpPct": 55,
-                "priceK": 110
+                "priceK": 180
               },
               "row": {
-                "patientsK": 4.4,
-                "wtpPct": 15,
-                "priceK": 40
+                "patientsK": 15,
+                "wtpPct": 12,
+                "priceK": 60
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+                "note": "real_epi_data.py -- 10K US treated/diagnosed; source: consensus epi (musculoskeletal)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+                "note": "real_epi_data.py -- 12K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+                "note": "real_epi_data.py -- 15K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+                "note": "real_epi_data.py -- US WTP 75% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Rare disease default -- HTA-gated uptake (55%)."
+                "note": "real_epi_data.py -- EU WTP 55% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+                "note": "real_epi_data.py -- US avg $350K/yr (musculoskeletal drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+                "note": "real_epi_data.py -- EU avg $180K/yr."
               },
               "row.priceK": {
-                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+                "note": "real_epi_data.py -- ROW avg $60K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -189,51 +238,51 @@
             "notes": "CaSR inhibitor for ADH1. Phase 3 positive. NDA/MAA submissions planned. Ultra-rare disease — orphan pricing. Also exploring chronic hypoparathyroidism.",
             "regions": {
               "us": {
-                "patientsK": 1.1,
-                "wtpPct": 75,
-                "priceK": 250
+                "patientsK": 1,
+                "wtpPct": 78,
+                "priceK": 350
               },
               "eu": {
-                "patientsK": 1.3,
-                "wtpPct": 55,
-                "priceK": 110
+                "patientsK": 1.2,
+                "wtpPct": 58,
+                "priceK": 180
               },
               "row": {
-                "patientsK": 1.3,
-                "wtpPct": 15,
-                "priceK": 40
+                "patientsK": 1.5,
+                "wtpPct": 10,
+                "priceK": 60
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+                "note": "real_epi_data.py -- 1K US treated/diagnosed; source: consensus epi (endocrine)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+                "note": "real_epi_data.py -- 1.2K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+                "note": "real_epi_data.py -- 1.5K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+                "note": "real_epi_data.py -- US WTP 78% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Rare disease default -- HTA-gated uptake (55%)."
+                "note": "real_epi_data.py -- EU WTP 58% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+                "note": "real_epi_data.py -- US avg $350K/yr (endocrine drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+                "note": "real_epi_data.py -- EU avg $180K/yr."
               },
               "row.priceK": {
-                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+                "note": "real_epi_data.py -- ROW avg $60K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },
@@ -259,51 +308,51 @@
             "notes": "New depleter antibody program to reverse ATTR amyloid deposits (not just stabilize). Clinic 2027-2028. If it works: Attruby (stabilize) + depleter (reverse) = complete ATTR-CM franchise. Also oral GLP-1 combo for potential expansion.",
             "regions": {
               "us": {
-                "patientsK": 30.2,
-                "wtpPct": 75,
+                "patientsK": 120,
+                "wtpPct": 70,
                 "priceK": 250
               },
               "eu": {
-                "patientsK": 35.2,
-                "wtpPct": 55,
-                "priceK": 110
+                "patientsK": 100,
+                "wtpPct": 50,
+                "priceK": 130
               },
               "row": {
-                "patientsK": 35.2,
+                "patientsK": 80,
                 "wtpPct": 15,
-                "priceK": 40
+                "priceK": 50
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "Auto-decomposed from legacy config. US ~30% of global diagnosed (rare); refine with Orphanet/NORD/company epi deck."
+                "note": "real_epi_data.py -- 120K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
               },
               "eu.patientsK": {
-                "note": "Auto-decomposed. EU5 ~35% of diagnosed (rare); refine with Orphanet."
+                "note": "real_epi_data.py -- 100K EU treated/diagnosed."
               },
               "row.patientsK": {
-                "note": "Auto-decomposed. ROW ~35% -- Japan higher, LatAm/APAC diagnosis much lower."
+                "note": "real_epi_data.py -- 80K ROW treated/diagnosed."
               },
               "us.wtpPct": {
-                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+                "note": "real_epi_data.py -- US WTP 70% (payor access + formulary)."
               },
               "eu.wtpPct": {
-                "note": "Rare disease default -- HTA-gated uptake (55%)."
+                "note": "real_epi_data.py -- EU WTP 50% (HTA-gated uptake)."
               },
               "row.wtpPct": {
-                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+                "note": "real_epi_data.py -- ROW WTP 15% (limited reimbursement ex-Japan)."
               },
               "us.priceK": {
-                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+                "note": "real_epi_data.py -- US avg $250K/yr (cardio_metabolic drug-class avg)."
               },
               "eu.priceK": {
-                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+                "note": "real_epi_data.py -- EU avg $130K/yr."
               },
               "row.priceK": {
-                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+                "note": "real_epi_data.py -- ROW avg $50K/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Preserved from config -- refine per competitive landscape."
               }
             }
           },

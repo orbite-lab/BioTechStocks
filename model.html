@@ -892,25 +892,39 @@
                   const penDisplay = hasSOM ? (addressableM > 0 ? (somM / addressableM * 100).toFixed(1) + "%" : "0%") : ((m.penPct || 0) + "%");
                   const stagePill = s => { const sl = (s || "").toLowerCase(); const col = sl.includes("commercial") ? "#22c55e" : sl.includes("3") ? "#f59e0b" : sl.includes("2") ? "#fb923c" : sl.includes("1") ? "#ef4444" : "#6b7080"; return e("span", { style: { fontSize: 9, fontWeight: 700, padding: "1px 5px", borderRadius: 3, background: col + "22", color: col, fontFamily: "'JetBrains Mono'" } }, s || "--"); };
 
+                  // Build TAM tooltip: per-region breakdown
+                  let tamTip = "TAM = Total Addressable Market\n";
+                  if (hasRegions) { for (const [rk, rLabel] of REGIONS) { const r = m.regions[rk] || {}; const rv = (r.patientsK || 0) * ((r.wtpPct || 0) / 100) * (r.priceK || 0); tamTip += rLabel + ": " + (r.patientsK||0) + "K pts x " + (r.wtpPct||0) + "% WTP x $" + (r.priceK||0) + "K = $" + Math.round(rv) + "M\n"; } tamTip += "Total: " + fmtV(addressableM); }
+                  // Build SOM tooltip: per-region breakdown
+                  let somTip = "";
+                  if (hasSOM) { somTip = "SOM = Serviceable Obtainable Market\n"; for (const [rk, rLabel] of REGIONS) { const tr = m.regions[rk] || {}; const cs = m.company_slice[rk] || {}; const rv = (tr.patientsK || 0) * ((cs.reachPct || 0) / 100) * ((cs.wtpPct || 0) / 100) * (cs.priceK || 0); somTip += rLabel + ": " + (tr.patientsK||0) + "K pts x " + (cs.reachPct||0) + "% reach x " + (cs.wtpPct||0) + "% WTP x $" + (cs.priceK||0) + "K = $" + Math.round(rv) + "M\n"; } somTip += "Total: " + fmtV(somM) + " (implied pen: " + penDisplay + ")"; const csSrc = m.company_slice_sources || {}; const notes = Object.values(csSrc).map(s => s.note).filter(Boolean); if (notes.length) somTip += "\n---\n" + notes.join("\n"); }
+                  // Build Marketed tooltip
+                  let mktTip = "Marketed competitors (" + comp.marketed.length + ")\n";
+                  comp.marketed.forEach(c => { mktTip += (c.isSelf ? "* " : "") + c.ticker + " " + c.assetName + ": " + (c.sales ? fmtV(c.sales) + (c.salesIsReported ? " (reported" + (c.salesYear ? " " + c.salesYear : "") + ")" : " (est.)") : "--") + "\n"; });
+                  if (mktSales > 0) mktTip += "Total: " + fmtV(mktSales);
+                  // Build In Dev tooltip
+                  let devTip = "In development (" + comp.development.length + ")\n";
+                  comp.development.forEach(c => { devTip += c.ticker + " " + c.assetName + " [" + (c.stage || "?") + "]" + (c.nextCatalyst ? " -- " + c.nextCatalyst.date + ": " + c.nextCatalyst.title : "") + "\n"; });
+
                   return e("div", { key: mk, style: { background: "#0f1117", borderRadius: 8, border: "1px solid #ffffff08", overflow: "hidden" } },
-                    // SUMMARY LINE — always visible, click to expand
+                    // SUMMARY LINE -- always visible, click to expand
                     e("div", { onClick: () => setExpandedMkt(prev => ({ ...prev, [mk]: !prev[mk] })),
                       style: { display: "grid", gridTemplateColumns: "1fr 80px 80px 80px 80px 16px", gap: 4, alignItems: "center", padding: "8px 12px", cursor: "pointer", userSelect: "none", transition: "background 0.15s" },
                       onMouseEnter: ev => { ev.currentTarget.style.background = "#ffffff06"; }, onMouseLeave: ev => { ev.currentTarget.style.background = "transparent"; } },
-                      e("span", { style: { fontSize: 11, fontWeight: 700, color: "#e2e4ea", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" } }, ind.name),
-                      e("div", { style: { textAlign: "right" } },
+                      e("span", { style: { fontSize: 11, fontWeight: 700, color: "#e2e4ea", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }, title: ind.area || "" }, ind.name),
+                      e("div", { style: { textAlign: "right" }, title: tamTip },
                         e("div", { style: { fontSize: 8, color: "#6b7080", textTransform: "uppercase", letterSpacing: 0.8, lineHeight: 1 } }, "TAM"),
                         e("div", { style: { fontSize: 10, fontWeight: 700, color: "#f97316", fontFamily: "'JetBrains Mono'" } }, fmtV(addressableM))
                       ),
-                      e("div", { style: { textAlign: "right" } },
+                      e("div", { style: { textAlign: "right" }, title: mktTip },
                         e("div", { style: { fontSize: 8, color: "#6b7080", textTransform: "uppercase", letterSpacing: 0.8, lineHeight: 1 } }, "Marketed"),
                         e("div", { style: { fontSize: 10, fontWeight: 700, color: "#22c55e", fontFamily: "'JetBrains Mono'" } }, mktSales > 0 ? fmtV(mktSales) : "--")
                       ),
-                      e("div", { style: { textAlign: "right" } },
+                      e("div", { style: { textAlign: "right" }, title: devTip },
                         e("div", { style: { fontSize: 8, color: "#6b7080", textTransform: "uppercase", letterSpacing: 0.8, lineHeight: 1 } }, "In dev"),
                         e("div", { style: { fontSize: 10, fontWeight: 700, color: "#fb923c", fontFamily: "'JetBrains Mono'" } }, comp.development.length > 0 ? comp.development.length + "" : "--")
                       ),
-                      e("div", { style: { textAlign: "right" } },
+                      e("div", { style: { textAlign: "right" }, title: hasSOM ? somTip : "Peak penetration: " + (m.penPct || 0) + "%" },
                         e("div", { style: { fontSize: 8, color: "#6b7080", textTransform: "uppercase", letterSpacing: 0.8, lineHeight: 1 } }, hasSOM ? "SOM" : "Pen"),
                         e("div", { style: { fontSize: 10, fontWeight: 700, color: hasSOM ? "#a855f7" : "#fbbf24", fontFamily: "'JetBrains Mono'" } }, hasSOM ? fmtV(somM) : penDisplay)
                       ),

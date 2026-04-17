@@ -76,7 +76,41 @@
               }
             },
             "salesM": 6000.0,
-            "salesYear": 2025
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 15,
+                "wtpPct": 65,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 10,
+                "wtpPct": 50,
+                "priceK": 35
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 12,
+                "priceK": 15
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 15,
+              "wtpPct": 65,
+              "priceK": 70
+            },
+            "eu": {
+              "reachPct": 10,
+              "wtpPct": 50,
+              "priceK": 35
+            },
+            "row": {
+              "reachPct": 3,
+              "wtpPct": 12,
+              "priceK": 15
+            }
           }
         },
         {
@@ -136,7 +170,41 @@
               }
             },
             "salesM": 2800.0,
-            "salesYear": 2025
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 60,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 7,
+                "wtpPct": 45,
+                "priceK": 35
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 10,
+                "priceK": 15
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 10,
+              "wtpPct": 60,
+              "priceK": 70
+            },
+            "eu": {
+              "reachPct": 7,
+              "wtpPct": 45,
+              "priceK": 35
+            },
+            "row": {
+              "reachPct": 2,
+              "wtpPct": 10,
+              "priceK": 15
+            }
           },
           "rare": false
         }
@@ -149,8 +217,8 @@
       "modality": "small_molecule.jak_inhibitor.jak1_selective",
       "indications": [
         {
-          "id": "ra_ad",
-          "name": "RA + AD + UC + Crohn's",
+          "id": "ra",
+          "name": "Rheumatoid arthritis",
           "area": "immunology.inflammatory_systemic.rheumatoid_arthritis",
           "market": {
             "tamB": 20,
@@ -174,13 +242,13 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 1500K diagnosed/treated patients."
+                "note": "US 1500K diagnosed/treated RA patients."
               },
               "eu.patientsK": {
-                "note": "EU 1200K diagnosed/treated patients."
+                "note": "EU 1200K diagnosed/treated RA patients."
               },
               "row.patientsK": {
-                "note": "ROW 2000K diagnosed/treated patients."
+                "note": "ROW 2000K diagnosed/treated RA patients."
               },
               "us.wtpPct": {
                 "note": "US WTP 55% -- commercial payor access + formulary coverage."
@@ -192,20 +260,342 @@
                 "note": "ROW WTP 10% -- limited reimbursement outside US/EU/Japan."
               },
               "us.priceK": {
-                "note": "US avg treatment cost $55K/yr (market blended across modalities)."
+                "note": "US avg treatment cost $55K/yr for RA."
               },
               "eu.priceK": {
-                "note": "EU avg treatment cost $28K/yr (market blended across modalities)."
+                "note": "EU avg treatment cost $28K/yr for RA."
               },
               "row.priceK": {
-                "note": "ROW avg treatment cost $10K/yr (market blended across modalities)."
+                "note": "ROW avg treatment cost $10K/yr for RA."
               },
               "penPct": {
                 "note": "Peak penetration 28% -- refine per competitive landscape."
               }
             },
-            "salesM": 5600.0,
-            "salesYear": 2025
+            "salesM": 2200.0,
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 65,
+                "priceK": 65
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 50,
+                "priceK": 35
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 12,
+                "priceK": 15
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 8,
+              "wtpPct": 65,
+              "priceK": 65
+            },
+            "eu": {
+              "reachPct": 6,
+              "wtpPct": 50,
+              "priceK": 35
+            },
+            "row": {
+              "reachPct": 2,
+              "wtpPct": 12,
+              "priceK": 15
+            }
+          },
+          "company_slice_sources": {
+            "us.reachPct": "JAKi class ~8% of RA market; competing vs Humira biosimilars + Skyrizi/Rinvoq overlap"
+          }
+        },
+        {
+          "id": "ad",
+          "name": "Atopic dermatitis",
+          "area": "dermatology.inflammatory_derm.atopic_dermatitis_systemic",
+          "market": {
+            "tamB": 10,
+            "penPct": 20,
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 33
+              },
+              "eu": {
+                "patientsK": 1200,
+                "wtpPct": 40,
+                "priceK": 18
+              },
+              "row": {
+                "patientsK": 1500,
+                "wtpPct": 8,
+                "priceK": 8
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "US 1500K diagnosed/treated AD patients."
+              },
+              "eu.patientsK": {
+                "note": "EU 1200K diagnosed/treated AD patients."
+              },
+              "row.patientsK": {
+                "note": "ROW 1500K diagnosed/treated AD patients."
+              },
+              "us.wtpPct": {
+                "note": "US WTP 55% -- commercial payor access + formulary coverage."
+              },
+              "eu.wtpPct": {
+                "note": "EU WTP 40% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+              },
+              "row.wtpPct": {
+                "note": "ROW WTP 8% -- limited reimbursement outside US/EU/Japan."
+              },
+              "us.priceK": {
+                "note": "US avg treatment cost $33K/yr for AD systemic."
+              },
+              "eu.priceK": {
+                "note": "EU avg treatment cost $18K/yr for AD systemic."
+              },
+              "row.priceK": {
+                "note": "ROW avg treatment cost $8K/yr for AD systemic."
+              },
+              "penPct": {
+                "note": "Peak penetration 20% -- refine per competitive landscape."
+              }
+            },
+            "salesM": 1500.0,
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 60,
+                "priceK": 55
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 45,
+                "priceK": 30
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 10,
+                "priceK": 12
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 12,
+              "wtpPct": 60,
+              "priceK": 55
+            },
+            "eu": {
+              "reachPct": 8,
+              "wtpPct": 45,
+              "priceK": 30
+            },
+            "row": {
+              "reachPct": 3,
+              "wtpPct": 10,
+              "priceK": 12
+            }
+          },
+          "company_slice_sources": {
+            "us.reachPct": "Growing fastest AD indication; Dupixent dominant but Rinvoq oral convenience advantage"
+          }
+        },
+        {
+          "id": "uc_rinvoq",
+          "name": "Ulcerative colitis",
+          "area": "immunology.inflammatory_gi.ulcerative_colitis",
+          "market": {
+            "tamB": 6,
+            "penPct": 18,
+            "regions": {
+              "us": {
+                "patientsK": 700,
+                "wtpPct": 55,
+                "priceK": 55
+              },
+              "eu": {
+                "patientsK": 550,
+                "wtpPct": 42,
+                "priceK": 28
+              },
+              "row": {
+                "patientsK": 400,
+                "wtpPct": 10,
+                "priceK": 10
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "US 700K diagnosed/treated UC patients."
+              },
+              "eu.patientsK": {
+                "note": "EU 550K diagnosed/treated UC patients."
+              },
+              "row.patientsK": {
+                "note": "ROW 400K diagnosed/treated UC patients."
+              },
+              "us.wtpPct": {
+                "note": "US WTP 55% -- commercial payor access + formulary coverage."
+              },
+              "eu.wtpPct": {
+                "note": "EU WTP 42% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+              },
+              "row.wtpPct": {
+                "note": "ROW WTP 10% -- limited reimbursement outside US/EU/Japan."
+              },
+              "us.priceK": {
+                "note": "US avg treatment cost $55K/yr for UC."
+              },
+              "eu.priceK": {
+                "note": "EU avg treatment cost $28K/yr for UC."
+              },
+              "row.priceK": {
+                "note": "ROW avg treatment cost $10K/yr for UC."
+              },
+              "penPct": {
+                "note": "Peak penetration 18% -- refine per competitive landscape."
+              }
+            },
+            "salesM": 1000.0,
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 55,
+                "priceK": 65
+              },
+              "eu": {
+                "reachPct": 7,
+                "wtpPct": 42,
+                "priceK": 35
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 10,
+                "priceK": 12
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 10,
+              "wtpPct": 55,
+              "priceK": 65
+            },
+            "eu": {
+              "reachPct": 7,
+              "wtpPct": 42,
+              "priceK": 35
+            },
+            "row": {
+              "reachPct": 2,
+              "wtpPct": 10,
+              "priceK": 12
+            }
+          }
+        },
+        {
+          "id": "crohns_rinvoq",
+          "name": "Crohn's disease",
+          "area": "immunology.inflammatory_gi.crohns",
+          "market": {
+            "tamB": 8,
+            "penPct": 15,
+            "regions": {
+              "us": {
+                "patientsK": 800,
+                "wtpPct": 55,
+                "priceK": 60
+              },
+              "eu": {
+                "patientsK": 650,
+                "wtpPct": 42,
+                "priceK": 30
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 10,
+                "priceK": 12
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "US 800K diagnosed/treated Crohn's patients."
+              },
+              "eu.patientsK": {
+                "note": "EU 650K diagnosed/treated Crohn's patients."
+              },
+              "row.patientsK": {
+                "note": "ROW 500K diagnosed/treated Crohn's patients."
+              },
+              "us.wtpPct": {
+                "note": "US WTP 55% -- commercial payor access + formulary coverage."
+              },
+              "eu.wtpPct": {
+                "note": "EU WTP 42% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+              },
+              "row.wtpPct": {
+                "note": "ROW WTP 10% -- limited reimbursement outside US/EU/Japan."
+              },
+              "us.priceK": {
+                "note": "US avg treatment cost $60K/yr for Crohn's."
+              },
+              "eu.priceK": {
+                "note": "EU avg treatment cost $30K/yr for Crohn's."
+              },
+              "row.priceK": {
+                "note": "ROW avg treatment cost $12K/yr for Crohn's."
+              },
+              "penPct": {
+                "note": "Peak penetration 15% -- refine per competitive landscape."
+              }
+            },
+            "salesM": 900.0,
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 55,
+                "priceK": 65
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 42,
+                "priceK": 35
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 10,
+                "priceK": 12
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 8,
+              "wtpPct": 55,
+              "priceK": 65
+            },
+            "eu": {
+              "reachPct": 5,
+              "wtpPct": 42,
+              "priceK": 35
+            },
+            "row": {
+              "reachPct": 2,
+              "wtpPct": 10,
+              "priceK": 12
+            }
           }
         }
       ]
@@ -217,12 +607,12 @@
       "modality": "antibody.monoclonal.anti_tnf",
       "indications": [
         {
-          "id": "legacy_imm",
-          "name": "Legacy immunology",
+          "id": "ra_humira",
+          "name": "RA legacy (declining)",
           "area": "immunology.inflammatory_systemic.rheumatoid_arthritis",
           "market": {
-            "tamB": 10,
-            "penPct": 64,
+            "tamB": 20,
+            "penPct": 10,
             "regions": {
               "us": {
                 "patientsK": 1500,
@@ -242,13 +632,13 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 1500K diagnosed/treated patients."
+                "note": "US 1500K diagnosed/treated RA patients."
               },
               "eu.patientsK": {
-                "note": "EU 1200K diagnosed/treated patients."
+                "note": "EU 1200K diagnosed/treated RA patients."
               },
               "row.patientsK": {
-                "note": "ROW 2000K diagnosed/treated patients."
+                "note": "ROW 2000K diagnosed/treated RA patients."
               },
               "us.wtpPct": {
                 "note": "US WTP 55% -- commercial payor access + formulary coverage."
@@ -260,20 +650,245 @@
                 "note": "ROW WTP 10% -- limited reimbursement outside US/EU/Japan."
               },
               "us.priceK": {
-                "note": "US avg treatment cost $55K/yr (market blended across modalities)."
+                "note": "US avg treatment cost $55K/yr for RA."
               },
               "eu.priceK": {
-                "note": "EU avg treatment cost $28K/yr (market blended across modalities)."
+                "note": "EU avg treatment cost $28K/yr for RA."
               },
               "row.priceK": {
-                "note": "ROW avg treatment cost $10K/yr (market blended across modalities)."
+                "note": "ROW avg treatment cost $10K/yr for RA."
               },
               "penPct": {
-                "note": "Peak penetration 64% -- refine per competitive landscape."
+                "note": "Peak penetration 10% -- declining due to biosimilar erosion."
               }
             },
-            "salesM": 6400.0,
-            "salesYear": 2025
+            "salesM": 3000.0,
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 45,
+                "priceK": 55
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 35,
+                "priceK": 25
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 15,
+                "priceK": 10
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 5,
+              "wtpPct": 40,
+              "priceK": 55
+            },
+            "eu": {
+              "reachPct": 3,
+              "wtpPct": 30,
+              "priceK": 25
+            },
+            "row": {
+              "reachPct": 2,
+              "wtpPct": 10,
+              "priceK": 10
+            }
+          },
+          "company_slice_sources": {
+            "us.reachPct": "Rapidly declining due to biosimilar erosion; ~5% residual loyal patients"
+          }
+        },
+        {
+          "id": "ibd_humira",
+          "name": "IBD legacy (Crohn's + UC)",
+          "area": "immunology.inflammatory_gi.crohns",
+          "market": {
+            "tamB": 8,
+            "penPct": 12,
+            "regions": {
+              "us": {
+                "patientsK": 800,
+                "wtpPct": 55,
+                "priceK": 60
+              },
+              "eu": {
+                "patientsK": 650,
+                "wtpPct": 42,
+                "priceK": 30
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 10,
+                "priceK": 12
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "US 800K diagnosed/treated Crohn's patients (IBD combined bucket)."
+              },
+              "eu.patientsK": {
+                "note": "EU 650K diagnosed/treated Crohn's patients."
+              },
+              "row.patientsK": {
+                "note": "ROW 500K diagnosed/treated Crohn's patients."
+              },
+              "us.wtpPct": {
+                "note": "US WTP 55% -- commercial payor access + formulary coverage."
+              },
+              "eu.wtpPct": {
+                "note": "EU WTP 42% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+              },
+              "row.wtpPct": {
+                "note": "ROW WTP 10% -- limited reimbursement outside US/EU/Japan."
+              },
+              "us.priceK": {
+                "note": "US avg treatment cost $60K/yr for Crohn's."
+              },
+              "eu.priceK": {
+                "note": "EU avg treatment cost $30K/yr for Crohn's."
+              },
+              "row.priceK": {
+                "note": "ROW avg treatment cost $12K/yr for Crohn's."
+              },
+              "penPct": {
+                "note": "Peak penetration 12% -- declining legacy share."
+              }
+            },
+            "salesM": 1800.0,
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 40,
+                "priceK": 55
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 32,
+                "priceK": 25
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 12,
+                "priceK": 10
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 5,
+              "wtpPct": 35,
+              "priceK": 55
+            },
+            "eu": {
+              "reachPct": 3,
+              "wtpPct": 28,
+              "priceK": 25
+            },
+            "row": {
+              "reachPct": 1,
+              "wtpPct": 8,
+              "priceK": 10
+            }
+          }
+        },
+        {
+          "id": "pso_humira",
+          "name": "Psoriasis legacy",
+          "area": "dermatology.inflammatory_derm.psoriasis_systemic",
+          "market": {
+            "tamB": 18,
+            "penPct": 5,
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 60
+              },
+              "eu": {
+                "patientsK": 1200,
+                "wtpPct": 42,
+                "priceK": 30
+              },
+              "row": {
+                "patientsK": 2000,
+                "wtpPct": 10,
+                "priceK": 12
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "US 1500K diagnosed/treated psoriasis patients."
+              },
+              "eu.patientsK": {
+                "note": "EU 1200K diagnosed/treated psoriasis patients."
+              },
+              "row.patientsK": {
+                "note": "ROW 2000K diagnosed/treated psoriasis patients."
+              },
+              "us.wtpPct": {
+                "note": "US WTP 55% -- commercial payor access + formulary coverage."
+              },
+              "eu.wtpPct": {
+                "note": "EU WTP 42% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+              },
+              "row.wtpPct": {
+                "note": "ROW WTP 10% -- limited reimbursement outside US/EU/Japan."
+              },
+              "us.priceK": {
+                "note": "US avg treatment cost $60K/yr for psoriasis systemic."
+              },
+              "eu.priceK": {
+                "note": "EU avg treatment cost $30K/yr for psoriasis systemic."
+              },
+              "row.priceK": {
+                "note": "ROW avg treatment cost $12K/yr for psoriasis systemic."
+              },
+              "penPct": {
+                "note": "Peak penetration 5% -- declining legacy share."
+              }
+            },
+            "salesM": 1600.0,
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 35,
+                "priceK": 55
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 30,
+                "priceK": 25
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 12,
+                "priceK": 10
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 3,
+              "wtpPct": 30,
+              "priceK": 55
+            },
+            "eu": {
+              "reachPct": 2,
+              "wtpPct": 25,
+              "priceK": 25
+            },
+            "row": {
+              "reachPct": 1,
+              "wtpPct": 8,
+              "priceK": 10
+            }
           }
         }
       ]
@@ -285,12 +900,12 @@
       "modality": "small_molecule.receptor_antagonist.d2_d3_partial_agonist",
       "indications": [
         {
-          "id": "schizo_bp",
-          "name": "Schizophrenia + Bipolar + MDD adjunct",
+          "id": "schizo_vraylar",
+          "name": "Schizophrenia",
           "area": "cns.psychiatry.schizophrenia",
           "market": {
             "tamB": 8,
-            "penPct": 53,
+            "penPct": 25,
             "regions": {
               "us": {
                 "patientsK": 1500,
@@ -299,49 +914,271 @@
               },
               "eu": {
                 "patientsK": 1200,
-                "wtpPct": 42,
-                "priceK": 12
+                "wtpPct": 40,
+                "priceK": 13
               },
               "row": {
-                "patientsK": 2000,
-                "wtpPct": 10,
+                "patientsK": 2500,
+                "wtpPct": 8,
                 "priceK": 5
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 1500K diagnosed/treated patients."
+                "note": "US 1500K diagnosed/treated schizophrenia patients."
               },
               "eu.patientsK": {
-                "note": "EU 1200K diagnosed/treated patients."
+                "note": "EU 1200K diagnosed/treated schizophrenia patients."
               },
               "row.patientsK": {
-                "note": "ROW 2000K diagnosed/treated patients."
+                "note": "ROW 2500K diagnosed/treated schizophrenia patients."
               },
               "us.wtpPct": {
                 "note": "US WTP 55% -- commercial payor access + formulary coverage."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 42% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "EU WTP 40% -- HTA-gated uptake (NICE/G-BA/ASMR)."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 10% -- limited reimbursement outside US/EU/Japan."
+                "note": "ROW WTP 8% -- limited reimbursement outside US/EU/Japan."
               },
               "us.priceK": {
-                "note": "US avg treatment cost $25K/yr (market blended across modalities)."
+                "note": "US avg treatment cost $25K/yr for schizophrenia."
               },
               "eu.priceK": {
-                "note": "EU avg treatment cost $12K/yr (market blended across modalities)."
+                "note": "EU avg treatment cost $13K/yr for schizophrenia."
               },
               "row.priceK": {
-                "note": "ROW avg treatment cost $5K/yr (market blended across modalities)."
+                "note": "ROW avg treatment cost $5K/yr for schizophrenia."
               },
               "penPct": {
-                "note": "Peak penetration 53% -- refine per competitive landscape."
+                "note": "Peak penetration 25% -- refine per competitive landscape."
               }
             },
-            "salesM": 4200.0,
-            "salesYear": 2025
+            "salesM": 2000.0,
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 15,
+                "wtpPct": 60,
+                "priceK": 28
+              },
+              "eu": {
+                "reachPct": 10,
+                "wtpPct": 45,
+                "priceK": 14
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 10,
+                "priceK": 6
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 15,
+              "wtpPct": 60,
+              "priceK": 28
+            },
+            "eu": {
+              "reachPct": 10,
+              "wtpPct": 45,
+              "priceK": 14
+            },
+            "row": {
+              "reachPct": 3,
+              "wtpPct": 10,
+              "priceK": 6
+            }
+          }
+        },
+        {
+          "id": "bipolar_vraylar",
+          "name": "Bipolar disorder",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "tamB": 5,
+            "penPct": 20,
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 1200,
+                "wtpPct": 40,
+                "priceK": 13
+              },
+              "row": {
+                "patientsK": 2500,
+                "wtpPct": 8,
+                "priceK": 5
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "US 1500K -- using schizophrenia area (no separate bipolar L3)."
+              },
+              "eu.patientsK": {
+                "note": "EU 1200K -- using schizophrenia area (no separate bipolar L3)."
+              },
+              "row.patientsK": {
+                "note": "ROW 2500K -- using schizophrenia area (no separate bipolar L3)."
+              },
+              "us.wtpPct": {
+                "note": "US WTP 55% -- commercial payor access."
+              },
+              "eu.wtpPct": {
+                "note": "EU WTP 40% -- HTA-gated uptake."
+              },
+              "row.wtpPct": {
+                "note": "ROW WTP 8% -- limited reimbursement."
+              },
+              "us.priceK": {
+                "note": "US avg treatment cost $25K/yr."
+              },
+              "eu.priceK": {
+                "note": "EU avg treatment cost $13K/yr."
+              },
+              "row.priceK": {
+                "note": "ROW avg treatment cost $5K/yr."
+              },
+              "penPct": {
+                "note": "Peak penetration 20% -- refine per competitive landscape."
+              }
+            },
+            "salesM": 1200.0,
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 55,
+                "priceK": 28
+              },
+              "eu": {
+                "reachPct": 7,
+                "wtpPct": 40,
+                "priceK": 14
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 8,
+                "priceK": 6
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 10,
+              "wtpPct": 55,
+              "priceK": 28
+            },
+            "eu": {
+              "reachPct": 7,
+              "wtpPct": 40,
+              "priceK": 14
+            },
+            "row": {
+              "reachPct": 2,
+              "wtpPct": 8,
+              "priceK": 6
+            }
+          }
+        },
+        {
+          "id": "mdd_adj_vraylar",
+          "name": "MDD adjunctive",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "tamB": 12,
+            "penPct": 8,
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 5000,
+                "wtpPct": 40,
+                "priceK": 6
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 8,
+                "priceK": 3
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "US 8000K diagnosed/treated MDD patients."
+              },
+              "eu.patientsK": {
+                "note": "EU 5000K diagnosed/treated MDD patients."
+              },
+              "row.patientsK": {
+                "note": "ROW 3000K diagnosed/treated MDD patients."
+              },
+              "us.wtpPct": {
+                "note": "US WTP 55% -- commercial payor access + formulary coverage."
+              },
+              "eu.wtpPct": {
+                "note": "EU WTP 40% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+              },
+              "row.wtpPct": {
+                "note": "ROW WTP 8% -- limited reimbursement outside US/EU/Japan."
+              },
+              "us.priceK": {
+                "note": "US avg treatment cost $12K/yr for MDD."
+              },
+              "eu.priceK": {
+                "note": "EU avg treatment cost $6K/yr for MDD."
+              },
+              "row.priceK": {
+                "note": "ROW avg treatment cost $3K/yr for MDD."
+              },
+              "penPct": {
+                "note": "Peak penetration 8% -- refine per competitive landscape."
+              }
+            },
+            "salesM": 1000.0,
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 50,
+                "priceK": 28
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 35,
+                "priceK": 14
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 8,
+                "priceK": 6
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 3,
+              "wtpPct": 50,
+              "priceK": 28
+            },
+            "eu": {
+              "reachPct": 2,
+              "wtpPct": 35,
+              "priceK": 14
+            },
+            "row": {
+              "reachPct": 0.5,
+              "wtpPct": 8,
+              "priceK": 6
+            }
           }
         }
       ]
@@ -371,7 +1208,7 @@
                 "priceK": 5
               },
               "row": {
-                "patientsK": 5000,
+                "patientsK": 2000,
                 "wtpPct": 8,
                 "priceK": 2
               }
@@ -384,7 +1221,7 @@
                 "note": "EU 3000K diagnosed/treated patients."
               },
               "row.patientsK": {
-                "note": "ROW 5000K diagnosed/treated patients."
+                "note": "ROW 2000K diagnosed/treated patients."
               },
               "us.wtpPct": {
                 "note": "US WTP 50% -- commercial payor access + formulary coverage."
@@ -409,7 +1246,44 @@
               }
             },
             "salesM": 3500.0,
-            "salesYear": 2025
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 55,
+                "priceK": 18
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 40,
+                "priceK": 10
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 10,
+                "priceK": 4
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 12,
+              "wtpPct": 55,
+              "priceK": 18
+            },
+            "eu": {
+              "reachPct": 8,
+              "wtpPct": 40,
+              "priceK": 10
+            },
+            "row": {
+              "reachPct": 3,
+              "wtpPct": 10,
+              "priceK": 4
+            }
+          },
+          "company_slice_sources": {
+            "us.reachPct": "Botox migraine + spasticity combined; migraine ~70% of revenue"
           }
         }
       ]
@@ -439,7 +1313,7 @@
                 "priceK": 5
               },
               "row": {
-                "patientsK": 5000,
+                "patientsK": 2000,
                 "wtpPct": 8,
                 "priceK": 2
               }
@@ -452,7 +1326,7 @@
                 "note": "EU 3000K diagnosed/treated patients."
               },
               "row.patientsK": {
-                "note": "ROW 5000K diagnosed/treated patients."
+                "note": "ROW 2000K diagnosed/treated patients."
               },
               "us.wtpPct": {
                 "note": "US WTP 50% -- commercial payor access + formulary coverage."
@@ -477,7 +1351,41 @@
               }
             },
             "salesM": 1200.0,
-            "salesYear": 2025
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 50,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 35,
+                "priceK": 6
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 8,
+                "priceK": 3
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 8,
+              "wtpPct": 50,
+              "priceK": 12
+            },
+            "eu": {
+              "reachPct": 4,
+              "wtpPct": 35,
+              "priceK": 6
+            },
+            "row": {
+              "reachPct": 1,
+              "wtpPct": 8,
+              "priceK": 3
+            }
           }
         }
       ]
@@ -498,7 +1406,7 @@
             "regions": {
               "us": {
                 "patientsK": 180,
-                "wtpPct": 65,
+                "wtpPct": 60,
                 "priceK": 220
               },
               "eu": {
@@ -523,7 +1431,7 @@
                 "note": "ROW 250K diagnosed/treated patients."
               },
               "us.wtpPct": {
-                "note": "US WTP 65% -- commercial payor access + formulary coverage."
+                "note": "US WTP 60% -- commercial payor access + formulary coverage."
               },
               "eu.wtpPct": {
                 "note": "EU WTP 48% -- HTA-gated uptake (NICE/G-BA/ASMR)."
@@ -545,7 +1453,44 @@
               }
             },
             "salesM": 2800.0,
-            "salesYear": 2025
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 55,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 45,
+                "priceK": 120
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 10,
+                "priceK": 45
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 12,
+              "wtpPct": 55,
+              "priceK": 200
+            },
+            "eu": {
+              "reachPct": 8,
+              "wtpPct": 45,
+              "priceK": 120
+            },
+            "row": {
+              "reachPct": 3,
+              "wtpPct": 10,
+              "priceK": 45
+            }
+          },
+          "company_slice_sources": {
+            "us.reachPct": "Declining vs Brukinsa/Calquence; ~12% CLL/NHL share eroding"
           }
         }
       ]
@@ -557,63 +1502,191 @@
       "modality": "small_molecule.enzyme_inhibitor.bcl2_inhibitor",
       "indications": [
         {
-          "id": "aml_cll",
-          "name": "AML + CLL",
-          "area": "oncology.hematology.aml",
+          "id": "cll_ven",
+          "name": "CLL/SLL (venetoclax)",
+          "area": "oncology.hematology.cll_nhl.bcl2",
           "market": {
             "tamB": 5,
-            "penPct": 50,
+            "penPct": 30,
             "regions": {
               "us": {
-                "patientsK": 22,
-                "wtpPct": 65,
-                "priceK": 220
+                "patientsK": 80,
+                "wtpPct": 55,
+                "priceK": 200
               },
               "eu": {
-                "patientsK": 25,
-                "wtpPct": 50,
+                "patientsK": 90,
+                "wtpPct": 42,
                 "priceK": 120
               },
               "row": {
-                "patientsK": 35,
-                "wtpPct": 12,
-                "priceK": 50
+                "patientsK": 120,
+                "wtpPct": 10,
+                "priceK": 45
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 22K diagnosed/treated patients."
+                "note": "US 80K BCL2-eligible CLL/SLL patients."
               },
               "eu.patientsK": {
-                "note": "EU 25K diagnosed/treated patients."
+                "note": "EU 90K BCL2-eligible CLL/SLL patients."
               },
               "row.patientsK": {
-                "note": "ROW 35K diagnosed/treated patients."
+                "note": "ROW 120K BCL2-eligible CLL/SLL patients."
               },
               "us.wtpPct": {
-                "note": "US WTP 65% -- commercial payor access + formulary coverage."
+                "note": "US WTP 55% -- commercial payor access."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 50% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "EU WTP 42% -- HTA-gated uptake."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 12% -- limited reimbursement outside US/EU/Japan."
+                "note": "ROW WTP 10% -- limited reimbursement."
               },
               "us.priceK": {
-                "note": "US avg treatment cost $220K/yr (market blended across modalities)."
+                "note": "US avg treatment cost $200K/yr for BCL2-targeted CLL."
               },
               "eu.priceK": {
-                "note": "EU avg treatment cost $120K/yr (market blended across modalities)."
+                "note": "EU avg treatment cost $120K/yr."
               },
               "row.priceK": {
-                "note": "ROW avg treatment cost $50K/yr (market blended across modalities)."
+                "note": "ROW avg treatment cost $45K/yr."
               },
               "penPct": {
-                "note": "Peak penetration 50% -- refine per competitive landscape."
+                "note": "Peak penetration 30% -- refine per competitive landscape."
               }
             },
-            "salesM": 2500.0,
-            "salesYear": 2025
+            "salesM": 1500.0,
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 60,
+                "priceK": 180
+              },
+              "eu": {
+                "reachPct": 18,
+                "wtpPct": 48,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 25,
+              "wtpPct": 60,
+              "priceK": 180
+            },
+            "eu": {
+              "reachPct": 18,
+              "wtpPct": 48,
+              "priceK": 110
+            },
+            "row": {
+              "reachPct": 5,
+              "wtpPct": 12,
+              "priceK": 50
+            }
+          }
+        },
+        {
+          "id": "aml_ven",
+          "name": "AML (venetoclax combos)",
+          "area": "oncology.hematology.aml",
+          "market": {
+            "tamB": 3,
+            "penPct": 45,
+            "regions": {
+              "us": {
+                "patientsK": 22,
+                "wtpPct": 60,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 50,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 30,
+                "wtpPct": 10,
+                "priceK": 40
+              }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "US 22K diagnosed/treated AML patients."
+              },
+              "eu.patientsK": {
+                "note": "EU 25K diagnosed/treated AML patients."
+              },
+              "row.patientsK": {
+                "note": "ROW 30K diagnosed/treated AML patients."
+              },
+              "us.wtpPct": {
+                "note": "US WTP 60% -- commercial payor access."
+              },
+              "eu.wtpPct": {
+                "note": "EU WTP 50% -- HTA-gated uptake."
+              },
+              "row.wtpPct": {
+                "note": "ROW WTP 10% -- limited reimbursement."
+              },
+              "us.priceK": {
+                "note": "US avg treatment cost $200K/yr for AML."
+              },
+              "eu.priceK": {
+                "note": "EU avg treatment cost $110K/yr for AML."
+              },
+              "row.priceK": {
+                "note": "ROW avg treatment cost $40K/yr for AML."
+              },
+              "penPct": {
+                "note": "Peak penetration 45% -- refine per competitive landscape."
+              }
+            },
+            "salesM": 1000.0,
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 45,
+                "wtpPct": 65,
+                "priceK": 150
+              },
+              "eu": {
+                "reachPct": 35,
+                "wtpPct": 52,
+                "priceK": 90
+              },
+              "row": {
+                "reachPct": 8,
+                "wtpPct": 15,
+                "priceK": 35
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 45,
+              "wtpPct": 65,
+              "priceK": 150
+            },
+            "eu": {
+              "reachPct": 35,
+              "wtpPct": 52,
+              "priceK": 90
+            },
+            "row": {
+              "reachPct": 8,
+              "wtpPct": 15,
+              "priceK": 35
+            }
           }
         }
       ]
@@ -633,52 +1706,86 @@
             "penPct": 8,
             "regions": {
               "us": {
-                "patientsK": 443.8,
+                "patientsK": 15,
                 "wtpPct": 55,
-                "priceK": 12
+                "priceK": 180
               },
               "eu": {
-                "patientsK": 475.5,
-                "wtpPct": 40,
-                "priceK": 5
+                "patientsK": 18,
+                "wtpPct": 42,
+                "priceK": 100
               },
               "row": {
-                "patientsK": 665.7,
-                "wtpPct": 12,
-                "priceK": 2
+                "patientsK": 20,
+                "wtpPct": 8,
+                "priceK": 40
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 443.8K diagnosed/treated patients."
+                "note": "US 15K ovarian resistant patients."
               },
               "eu.patientsK": {
-                "note": "EU 475.5K diagnosed/treated patients."
+                "note": "EU 18K ovarian resistant patients."
               },
               "row.patientsK": {
-                "note": "ROW 665.7K diagnosed/treated patients."
+                "note": "ROW 20K ovarian resistant patients."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "US WTP 55% -- commercial payor access."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "EU WTP 42% -- HTA-gated uptake."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "ROW WTP 8% -- limited reimbursement."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "US avg treatment cost $180K/yr for ovarian."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "EU avg treatment cost $100K/yr for ovarian."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "ROW avg treatment cost $40K/yr for ovarian."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "Peak penetration 8% -- refine per competitive landscape."
               }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 15,
+                "wtpPct": 50,
+                "priceK": 180
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 35,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 8,
+                "priceK": 40
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 15,
+              "wtpPct": 50,
+              "priceK": 180
+            },
+            "eu": {
+              "reachPct": 8,
+              "wtpPct": 35,
+              "priceK": 100
+            },
+            "row": {
+              "reachPct": 2,
+              "wtpPct": 8,
+              "priceK": 40
             }
           }
         }
@@ -747,7 +1854,41 @@
               }
             },
             "salesM": 2800.0,
-            "salesYear": 2025
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 55,
+                "wtpPct": 90,
+                "priceK": 1.0
+              },
+              "eu": {
+                "reachPct": 40,
+                "wtpPct": 80,
+                "priceK": 0.7
+              },
+              "row": {
+                "reachPct": 25,
+                "wtpPct": 60,
+                "priceK": 0.3
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 30,
+              "wtpPct": 80,
+              "priceK": 0.7
+            },
+            "eu": {
+              "reachPct": 25,
+              "wtpPct": 70,
+              "priceK": 0.5
+            },
+            "row": {
+              "reachPct": 15,
+              "wtpPct": 50,
+              "priceK": 0.4
+            }
           }
         }
       ]
@@ -815,7 +1956,41 @@
               }
             },
             "salesM": 1500.0,
-            "salesYear": 2025
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 45,
+                "wtpPct": 85,
+                "priceK": 1.2
+              },
+              "eu": {
+                "reachPct": 35,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "row": {
+                "reachPct": 18,
+                "wtpPct": 55,
+                "priceK": 0.4
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 25,
+              "wtpPct": 75,
+              "priceK": 0.6
+            },
+            "eu": {
+              "reachPct": 20,
+              "wtpPct": 65,
+              "priceK": 0.4
+            },
+            "row": {
+              "reachPct": 10,
+              "wtpPct": 45,
+              "priceK": 0.3
+            }
           }
         }
       ]
@@ -841,46 +2016,80 @@
               },
               "eu": {
                 "patientsK": 1200,
-                "wtpPct": 42,
-                "priceK": 12
+                "wtpPct": 40,
+                "priceK": 13
               },
               "row": {
-                "patientsK": 2000,
-                "wtpPct": 10,
+                "patientsK": 2500,
+                "wtpPct": 8,
                 "priceK": 5
               }
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 1500K diagnosed/treated patients."
+                "note": "US 1500K diagnosed/treated schizophrenia patients."
               },
               "eu.patientsK": {
-                "note": "EU 1200K diagnosed/treated patients."
+                "note": "EU 1200K diagnosed/treated schizophrenia patients."
               },
               "row.patientsK": {
-                "note": "ROW 2000K diagnosed/treated patients."
+                "note": "ROW 2500K diagnosed/treated schizophrenia patients."
               },
               "us.wtpPct": {
                 "note": "US WTP 55% -- commercial payor access + formulary coverage."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 42% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "EU WTP 40% -- HTA-gated uptake (NICE/G-BA/ASMR)."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 10% -- limited reimbursement outside US/EU/Japan."
+                "note": "ROW WTP 8% -- limited reimbursement outside US/EU/Japan."
               },
               "us.priceK": {
-                "note": "US avg treatment cost $25K/yr (market blended across modalities)."
+                "note": "US avg treatment cost $25K/yr for schizophrenia."
               },
               "eu.priceK": {
-                "note": "EU avg treatment cost $12K/yr (market blended across modalities)."
+                "note": "EU avg treatment cost $13K/yr for schizophrenia."
               },
               "row.priceK": {
-                "note": "ROW avg treatment cost $5K/yr (market blended across modalities)."
+                "note": "ROW avg treatment cost $5K/yr for schizophrenia."
               },
               "penPct": {
                 "note": "Peak penetration 5% -- refine per competitive landscape."
               }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 40,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 30,
+                "priceK": 13
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 8,
+                "priceK": 5
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 8,
+              "wtpPct": 40,
+              "priceK": 25
+            },
+            "eu": {
+              "reachPct": 5,
+              "wtpPct": 30,
+              "priceK": 13
+            },
+            "row": {
+              "reachPct": 2,
+              "wtpPct": 8,
+              "priceK": 5
             }
           }
         }
@@ -947,6 +2156,40 @@
               "penPct": {
                 "note": "Peak penetration 3% -- refine per competitive landscape."
               }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 20,
+                "wtpPct": 45,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 35,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 8,
+                "priceK": 45
+              }
+            }
+          },
+          "company_slice": {
+            "us": {
+              "reachPct": 20,
+              "wtpPct": 45,
+              "priceK": 200
+            },
+            "eu": {
+              "reachPct": 12,
+              "wtpPct": 35,
+              "priceK": 110
+            },
+            "row": {
+              "reachPct": 3,
+              "wtpPct": 8,
+              "priceK": 45
             }
           }
         }
@@ -977,21 +2220,56 @@
           }
         },
         "rinvoq": {
-          "ra_ad": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "uc_rinvoq": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "crohns_rinvoq": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
         "humira": {
-          "legacy_imm": {
+          "ra_humira": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ibd_humira": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "pso_humira": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
         "vraylar": {
-          "schizo_bp": {
+          "schizo_vraylar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bipolar_vraylar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mdd_adj_vraylar": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1019,7 +2297,12 @@
           }
         },
         "venclexta": {
-          "aml_cll": {
+          "cll_ven": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "aml_ven": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1093,21 +2376,56 @@
           }
         },
         "rinvoq": {
-          "ra_ad": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "uc_rinvoq": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "crohns_rinvoq": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
         "humira": {
-          "legacy_imm": {
+          "ra_humira": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ibd_humira": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "pso_humira": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
         "vraylar": {
-          "schizo_bp": {
+          "schizo_vraylar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bipolar_vraylar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mdd_adj_vraylar": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1135,7 +2453,12 @@
           }
         },
         "venclexta": {
-          "aml_cll": {
+          "cll_ven": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "aml_ven": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1209,21 +2532,56 @@
           }
         },
         "rinvoq": {
-          "ra_ad": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "uc_rinvoq": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "crohns_rinvoq": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
         "humira": {
-          "legacy_imm": {
+          "ra_humira": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ibd_humira": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "pso_humira": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
         "vraylar": {
-          "schizo_bp": {
+          "schizo_vraylar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bipolar_vraylar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mdd_adj_vraylar": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1251,7 +2609,12 @@
           }
         },
         "venclexta": {
-          "aml_cll": {
+          "cll_ven": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "aml_ven": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1325,21 +2688,56 @@
           }
         },
         "rinvoq": {
-          "ra_ad": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "uc_rinvoq": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "crohns_rinvoq": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
         "humira": {
-          "legacy_imm": {
+          "ra_humira": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ibd_humira": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "pso_humira": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
         "vraylar": {
-          "schizo_bp": {
+          "schizo_vraylar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bipolar_vraylar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mdd_adj_vraylar": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1367,7 +2765,12 @@
           }
         },
         "venclexta": {
-          "aml_cll": {
+          "cll_ven": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "aml_ven": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1441,21 +2844,56 @@
           }
         },
         "rinvoq": {
-          "ra_ad": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "uc_rinvoq": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "crohns_rinvoq": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
         "humira": {
-          "legacy_imm": {
+          "ra_humira": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ibd_humira": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "pso_humira": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
           }
         },
         "vraylar": {
-          "schizo_bp": {
+          "schizo_vraylar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bipolar_vraylar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mdd_adj_vraylar": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1483,7 +2921,12 @@
           }
         },
         "venclexta": {
-          "aml_cll": {
+          "cll_ven": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "aml_ven": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1621,7 +3064,7 @@
       "date": "End 2026",
       "dateSort": "2026-12-31",
       "asset": "rinvoq",
-      "indication": "ra_ad",
+      "indication": "ra",
       "title": "Rinvoq alopecia areata regulatory filing",
       "type": "partnership",
       "binary": false,

@@ -161,11 +161,11 @@ function deriveCompanyMeta(cfg){
   let totalTAM=0,rareTAM=0,totalWTD=0,rareWTD=0;
   const baseAssump=cfg.scenarios?.base?.assumptions||{};
   for(const asset of cfg.assets){
-    if(asset.modality){modalities.add(asset.modality);const p=asset.modality.split(".");modalities.add(p[0]);if(p[1])modalities.add(p[0]+"."+p[1]);}
+    if(asset.modality){modalities.add(asset.modality);const p=asset.modality.split(".");modalities.add(p[0]);if(p[1])modalities.add(p[0]+"."+p[1]);if(p[2])modalities.add(p[0]+"."+p[1]+"."+p[2]);}
     for(const ind of asset.indications){
       if(ind.area){
         areas.add(ind.area);
-        const p=ind.area.split(".");areas.add(p[0]);if(p[1])areas.add(p[0]+"."+p[1]);
+        const p=ind.area.split(".");areas.add(p[0]);if(p[1])areas.add(p[0]+"."+p[1]);if(p[2])areas.add(p[0]+"."+p[1]+"."+p[2]);
         let tam=0;
         const _m=ind.market||{};
         if(_m.regions){for(const _r of Object.values(_m.regions)){if(_r)tam+=(_r.patientsK||0)*((_r.wtpPct||0)/100)*(_r.priceK||0);}tam/=1000;}
@@ -177,6 +177,7 @@ function deriveCompanyMeta(cfg){
         areaTAM[ind.area]=(areaTAM[ind.area]||0)+tam;
         areaWTD[ind.area]=(areaWTD[ind.area]||0)+wtd;
         if(p[1]){areaTAM[p[0]+"."+p[1]]=(areaTAM[p[0]+"."+p[1]]||0)+tam;areaWTD[p[0]+"."+p[1]]=(areaWTD[p[0]+"."+p[1]]||0)+wtd;}
+        if(p[2]){const l3=p[0]+"."+p[1]+"."+p[2];areaTAM[l3]=(areaTAM[l3]||0)+tam;areaWTD[l3]=(areaWTD[l3]||0)+wtd;}
         areaTAM[p[0]]=(areaTAM[p[0]]||0)+tam;areaWTD[p[0]]=(areaWTD[p[0]]||0)+wtd;
         totalTAM+=tam;totalWTD+=wtd;
         if(ind.rare){rareTAM+=tam;rareWTD+=wtd;}
@@ -569,7 +570,7 @@ async function main(){
   const ptfSet=new Set();
   let ddOpen=false;
   let activeFilter=null;
-  let filterL1=null, filterL2=null, filterL3=null, filterPhase=null, filterRare=null;
+  let filterL1=new Set(), filterL2=new Set(), filterL3=new Set(), filterL4=new Set(), filterPhase=null, filterRare=null;
   let filterMod1=null, filterMod2=null, filterMod3=null;
   let stripSort="base";
   let purityMode="wtd";
@@ -602,9 +603,10 @@ async function main(){
     function applyFiltersExcept(src, skipArea, skipMod, skipPhase, skipRare, skipBucket){
       let f=src;
       if(!skipArea){
-        if(filterL1) f=f.filter(r=>r.meta.areas.some(a=>a===filterL1||a.startsWith(filterL1+".")));
-        if(filterL2) f=f.filter(r=>r.meta.areas.some(a=>a===filterL2||a.startsWith(filterL2+".")));
-        if(filterL3) f=f.filter(r=>r.meta.areas.some(a=>a===filterL3));
+        if(filterL1.size) f=f.filter(r=>r.meta.areas.some(a=>[...filterL1].some(fl=>a===fl||a.startsWith(fl+"."))));
+        if(filterL2.size) f=f.filter(r=>r.meta.areas.some(a=>[...filterL2].some(fl=>a===fl||a.startsWith(fl+"."))));
+        if(filterL3.size) f=f.filter(r=>r.meta.areas.some(a=>filterL3.has(a)||[...filterL4].some(fl=>a===fl)));
+        if(filterL4.size) f=f.filter(r=>r.meta.areas.some(a=>filterL4.has(a)));
       }
       if(!skipMod){
         if(filterMod1) f=f.filter(r=>r.meta.modalities.some(m=>m===filterMod1||m.startsWith(filterMod1+".")));
@@ -627,7 +629,7 @@ async function main(){
         r.meta.areas.forEach(a=>{const p=a.split(".");
           if(p.length===1&&!s1.has(a)){c1[a]=(c1[a]||0)+1;s1.add(a);}
           if(p.length===2){const k=p[0]+"."+p[1];if(!s2.has(k)){c2[k]=(c2[k]||0)+1;s2.add(k);}}
-          if(p.length===3&&!s3.has(a)){c3[a]=(c3[a]||0)+1;s3.add(a);}});
+          if(p.length>=3){const k3=p.slice(0,3).join(".");if(!s3.has(k3)){c3[k3]=(c3[k3]||0)+1;s3.add(k3);}}});
         if(r.meta.rare)rc++;
       });
       return{c1,c2,c3,rc};
@@ -659,9 +661,10 @@ async function main(){
 
     // Apply all filters
     let filtered=rows;
-    if(filterL1) filtered=filtered.filter(r=>r.meta.areas.some(a=>a===filterL1||a.startsWith(filterL1+".")));
-    if(filterL2) filtered=filtered.filter(r=>r.meta.areas.some(a=>a===filterL2||a.startsWith(filterL2+".")));
-    if(filterL3) filtered=filtered.filter(r=>r.meta.areas.some(a=>a===filterL3));
+    if(filterL1.size) filtered=filtered.filter(r=>r.meta.areas.some(a=>[...filterL1].some(fl=>a===fl||a.startsWith(fl+"."))));
+    if(filterL2.size) filtered=filtered.filter(r=>r.meta.areas.some(a=>[...filterL2].some(fl=>a===fl||a.startsWith(fl+"."))));
+    if(filterL3.size) filtered=filtered.filter(r=>r.meta.areas.some(a=>filterL3.has(a)||[...filterL4].some(fl=>a===fl)));
+    if(filterL4.size) filtered=filtered.filter(r=>r.meta.areas.some(a=>filterL4.has(a)));
     if(filterMod1) filtered=filtered.filter(r=>r.meta.modalities.some(m=>m===filterMod1||m.startsWith(filterMod1+".")));
     if(filterMod2) filtered=filtered.filter(r=>r.meta.modalities.some(m=>m===filterMod2||m.startsWith(filterMod2+".")));
     if(filterMod3) filtered=filtered.filter(r=>r.meta.modalities.some(m=>m===filterMod3));
@@ -687,12 +690,12 @@ async function main(){
     fh+='<span class="fbar-lbl">Area</span>';
     L1_ORDER.forEach(l1=>{
       if(!l1Counts[l1])return;
-      const active=filterL1===l1;
+      const active=filterL1.has(l1);
       fh+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')">${L1_NAMES[l1]||l1}<span class="cnt">${l1Counts[l1]}</span></span>`;
     });
     // Fallback: show any L1 from data not in L1_ORDER
     Object.keys(l1Counts).filter(l1=>!L1_ORDER.includes(l1)).sort().forEach(l1=>{
-      const active=filterL1===l1;
+      const active=filterL1.has(l1);
       fh+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')">${L1_NAMES[l1]||l1.replace(/_/g,' ')}<span class="cnt">${l1Counts[l1]}</span></span>`;
     });
     fh+='<span class="fsep"></span>';
@@ -703,24 +706,24 @@ async function main(){
     fh+='<span class="fsep"></span>';
     fh+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()" title="Filter companies with rare disease indications">\u2605 Rare<span class="cnt">${rareCountCross}</span></span>`;
     // Purity toggle — only meaningful when an area or rare filter is active (otherwise no badges render)
-    if(filterL1||filterL2||filterL3||filterRare===true){
+    if(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterRare===true){
       fh+='<span class="fsep"></span>';
       fh+=`<span class="fchip ${purityMode==='wtd'?'active':''}" onclick="window._purityMode()" style="padding:2px 8px;font-size:.62rem" title="Toggle: Raw TAM vs Risk-Adjusted (PoS\u00d7Apr weighted)">Purity: ${purityMode==='wtd'?'Risk-Adj':'Raw TAM'}</span>`;
     }
-    if(filterL1||filterL2||filterL3||filterPhase||filterRare!==null||activeFilter||filterMod1||filterMod2||filterMod3)
+    if(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterPhase||filterRare!==null||activeFilter||filterMod1||filterMod2||filterMod3)
       fh+=`<span class="fchip" style="border-color:#ef444444;color:#fca5a5" onclick="window._fClear()">\u2715 Clear</span>`;
     fh+=`<span style="margin-left:auto;font-size:.7rem;color:var(--text2);font-family:var(--mono)">${filtered.length}/${rows.length}</span>`;
     fh+='</div>';
 
     // L2 sub-chips (show when L1 is active)
-    if(filterL1){
-      const l2s=Object.keys(l2Counts).filter(k=>k.startsWith(filterL1+".")).sort((a,b)=>(l2Counts[b]||0)-(l2Counts[a]||0));
+    if(filterL1.size){
+      const l2s=Object.keys(l2Counts).filter(k=>[...filterL1].some(fl=>k.startsWith(fl+"."))).sort((a,b)=>(l2Counts[b]||0)-(l2Counts[a]||0));
       if(l2s.length>0){
         fh+='<div class="fl2-row">';
-        fh+=`<span class="fl2chip ${!filterL2?'active':''}" onclick="window._fL2(null)">All ${L1_NAMES[filterL1]}</span>`;
+        fh+=`<span class="fl2chip ${!filterL2.size?'active':''}" onclick="window._fL2(null)">All</span>`;
         l2s.forEach(l2=>{
           const label=l2.split(".").pop().replace(/_/g," ");
-          const active=filterL2===l2;
+          const active=filterL2.has(l2);
           fh+=`<span class="fl2chip ${active?'active':''}" onclick="window._fL2('${l2}')">${label}<span class="cnt">${l2Counts[l2]}</span></span>`;
         });
         fh+='</div>';
@@ -728,15 +731,30 @@ async function main(){
     }
 
     // L3 sub-chips (show when L2 is active)
-    if(filterL2){
-      const l3s=Object.keys(l3Counts).filter(k=>k.startsWith(filterL2+".")).sort((a,b)=>(l3Counts[b]||0)-(l3Counts[a]||0));
+    if(filterL2.size){
+      const l3s=Object.keys(l3Counts).filter(k=>[...filterL2].some(fl=>k.startsWith(fl+"."))).sort((a,b)=>(l3Counts[b]||0)-(l3Counts[a]||0));
       if(l3s.length>0){
         fh+='<div class="fl2-row" style="padding-left:28px">';
-        fh+=`<span class="fl2chip ${!filterL3?'active':''}" onclick="window._fL3(null)">All ${filterL2.split('.').pop().replace(/_/g,' ')}</span>`;
+        fh+=`<span class="fl2chip ${!filterL3.size?'active':''}" onclick="window._fL3(null)">All</span>`;
         l3s.forEach(l3=>{
           const label=l3.split(".").pop().replace(/_/g," ");
-          const active=filterL3===l3;
+          const active=filterL3.has(l3);
           fh+=`<span class="fl2chip ${active?'active':''}" onclick="window._fL3('${l3}')">${label}<span class="cnt">${l3Counts[l3]}</span></span>`;
+        });
+        fh+='</div>';
+      }
+    }
+    if(filterL3.size){
+      const l4Counts={};
+      rows.forEach(r=>{r.meta.areas.forEach(a=>{const p=a.split(".");if(p.length>=4){const l4k=p.slice(0,4).join(".");if([...filterL3].some(fl=>l4k.startsWith(fl+"."))){l4Counts[l4k]=(l4Counts[l4k]||0)+1;}}});});
+      const l4s=Object.keys(l4Counts).sort((a,b)=>(l4Counts[b]||0)-(l4Counts[a]||0));
+      if(l4s.length>0){
+        fh+='<div class="fl2-row" style="padding-left:42px">';
+        fh+=`<span class="fl2chip ${!filterL4.size?'active':''}" onclick="window._fL4(null)">All</span>`;
+        l4s.forEach(l4=>{
+          const label=l4.split(".").pop().replace(/_/g," ");
+          const active=filterL4.has(l4);
+          fh+=`<span class="fl2chip ${active?'active':''}" onclick="window._fL4('${l4}')">${label}<span class="cnt">${l4Counts[l4]}</span></span>`;
         });
         fh+='</div>';
       }
@@ -798,7 +816,7 @@ async function main(){
 
     // Chart
     const visibleRows=filtered;
-    const activeArea=filterL3||filterL2||filterL1||null;
+    const activeArea=filterL4.size?[...filterL4][0]:filterL3.size?[...filterL3][0]:filterL2.size?[...filterL2][0]:filterL1.size?[...filterL1][0]:null;
     const hasPurity=!!(activeArea||filterRare===true);
     h+='<div class="card" id="sec-range"><div class="card-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div><div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6);display:inline-block;vertical-align:middle;margin-right:8px"></div>Market Valuation Overview</div>';
     h+='<div style="display:flex;gap:4px">';
@@ -1434,8 +1452,8 @@ async function main(){
       let nameExtra='';
       const foc=purityMode==='wtd'?r.meta.focusWtd:r.meta.focus;
       const rp=purityMode==='wtd'?r.meta.rarePurityWtd:r.meta.rarePurity;
-      if(filterL1||filterL2||filterL3){
-        const fArea=filterL3||filterL2||filterL1;
+      if(filterL1.size||filterL2.size||filterL3.size||filterL4.size){
+        const fArea=filterL4.size?[...filterL4][0]:filterL3.size?[...filterL3][0]:filterL2.size?[...filterL2][0]:filterL1.size?[...filterL1][0]:null;
         const depth=fArea.split(".").length;
         let pct=0;
         if(depth===1){pct=foc.filter(f=>f.area.startsWith(fArea+".")&&f.area.split(".").length===2).reduce((s,f)=>s+f.purity,0);}
@@ -1482,9 +1500,10 @@ async function main(){
   window._sort=function(k){if(k===sortKey)sortDir*=-1;else{sortKey=k;sortDir=-1;}doSort();render();};
   window._toggle=function(tk){if(ptfSet.has(tk))ptfSet.delete(tk);else ptfSet.add(tk);render();};
   window._filter=function(k){activeFilter=(activeFilter===k)?null:k;render();};
-  window._fL1=function(l1){if(filterL1===l1){filterL1=null;filterL2=null;filterL3=null;}else{filterL1=l1;filterL2=null;filterL3=null;}render();};
-  window._fL2=function(l2){filterL2=l2;filterL3=null;render();};
-  window._fL3=function(l3){filterL3=l3;render();};
+  window._fL1=function(l1){if(l1===null){filterL1.clear();}else if(filterL1.has(l1)){filterL1.delete(l1);}else{filterL1.add(l1);}filterL2.clear();filterL3.clear();filterL4.clear();render();};
+  window._fL2=function(l2){if(l2===null){filterL2.clear();}else if(filterL2.has(l2)){filterL2.delete(l2);}else{filterL2.add(l2);}filterL3.clear();filterL4.clear();render();};
+  window._fL3=function(l3){if(l3===null){filterL3.clear();}else if(filterL3.has(l3)){filterL3.delete(l3);}else{filterL3.add(l3);}filterL4.clear();render();};
+  window._fL4=function(l4){if(l4===null){filterL4.clear();}else if(filterL4.has(l4)){filterL4.delete(l4);}else{filterL4.add(l4);}render();};
   window._fPhase=function(p){filterPhase=p||null;render();};
   window._fRare=function(){filterRare=filterRare===true?null:true;render();};
   window._fMod1=function(m1){if(filterMod1===m1){filterMod1=null;filterMod2=null;filterMod3=null;}else{filterMod1=m1;filterMod2=null;filterMod3=null;}render();};
@@ -1538,7 +1557,7 @@ async function main(){
   };
   window._purityMode=function(){purityMode=purityMode==='wtd'?'raw':'wtd';render();};
   window._catY=function(m){catYAxis=m;render();};
-  window._fClear=function(){filterL1=null;filterL2=null;filterL3=null;filterPhase=null;filterRare=null;filterMod1=null;filterMod2=null;filterMod3=null;activeFilter=null;stripSort='base';render();};
+  window._fClear=function(){filterL1.clear();filterL2.clear();filterL3.clear();filterL4.clear();filterPhase=null;filterRare=null;filterMod1=null;filterMod2=null;filterMod3=null;activeFilter=null;stripSort='base';render();};
   window._setCorr=function(v){window._corrVal=+v;render();};
   window._setOvr=function(tk,v){if(!window._manualOvr)window._manualOvr={};if(v==='auto')delete window._manualOvr[tk];else window._manualOvr[tk]=+v;render();};
   window._ddOpen=function(){document.getElementById('ddList')?.classList.add('open');};

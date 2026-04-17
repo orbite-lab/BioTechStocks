@@ -1,15 +1,17 @@
 {
   "_meta": {
-    "description": "Master taxonomy for BioTechStocks screener -- L1.L2.L3 hierarchical tags",
-    "format": "L1.L2.L3 hierarchical tags",
+    "description": "Master taxonomy for BioTechStocks screener -- L1.L2.L3(.L4) hierarchical tags",
+    "format": "L1.L2.L3 with optional L4 sub-segments",
     "rules": [
       "Every L3 term must appear under exactly ONE L1.L2 parent (no duplicates across branches)",
+      "L4 sub-segments nest under L3 when a market has distinct drug niches (e.g. dmd.gene_therapy, dmd.exon51)",
       "Disease classification follows the organ/system affected, not the treatment mechanism",
       "No 'multi_indication' catch-alls -- use the lead/primary indication",
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
-    "area_count": 115,
+    "area_count_l3": 115,
+    "area_count_l4": 19,
     "modality_count": 117,
     "companies": 45
   },
@@ -690,7 +692,38 @@
             "SRPT"
           ],
           "count": 2,
-          "rare": true
+          "rare": true,
+          "sub": {
+            "exon45": {
+              "companies": [
+                "SRPT"
+              ],
+              "count": 1,
+              "rare": true
+            },
+            "exon51": {
+              "companies": [
+                "PEPG",
+                "SRPT"
+              ],
+              "count": 2,
+              "rare": true
+            },
+            "exon53": {
+              "companies": [
+                "SRPT"
+              ],
+              "count": 1,
+              "rare": true
+            },
+            "gene_therapy": {
+              "companies": [
+                "SRPT"
+              ],
+              "count": 1,
+              "rare": true
+            }
+          }
         },
         "fshd": {
           "companies": [
@@ -832,7 +865,37 @@
             "ONC"
           ],
           "count": 4,
-          "rare": false
+          "rare": false,
+          "sub": {
+            "bcl2": {
+              "companies": [
+                "ONC"
+              ],
+              "count": 1,
+              "rare": false
+            },
+            "btk_resistant": {
+              "companies": [
+                "ONC"
+              ],
+              "count": 1,
+              "rare": false
+            },
+            "car_t_combo": {
+              "companies": [
+                "NKTR"
+              ],
+              "count": 1,
+              "rare": false
+            },
+            "dlbcl": {
+              "companies": [
+                "LEGN"
+              ],
+              "count": 1,
+              "rare": false
+            }
+          }
         },
         "dlbcl": {
           "companies": [
@@ -847,7 +910,30 @@
             "LEGN"
           ],
           "count": 2,
-          "rare": false
+          "rare": false,
+          "sub": {
+            "car_t": {
+              "companies": [
+                "GILD"
+              ],
+              "count": 1,
+              "rare": false
+            },
+            "car_t_invivo": {
+              "companies": [
+                "LEGN"
+              ],
+              "count": 1,
+              "rare": false
+            },
+            "frontline": {
+              "companies": [
+                "LEGN"
+              ],
+              "count": 1,
+              "rare": false
+            }
+          }
         },
         "tcell_lymphoma": {
           "companies": [
@@ -867,7 +953,65 @@
             "RVMD"
           ],
           "count": 5,
-          "rare": false
+          "rare": false,
+          "sub": {
+            "alk": {
+              "companies": [
+                "NUVL"
+              ],
+              "count": 1,
+              "rare": false
+            },
+            "cmet": {
+              "companies": [
+                "ABBV"
+              ],
+              "count": 1,
+              "rare": false
+            },
+            "her2": {
+              "companies": [
+                "NUVL"
+              ],
+              "count": 1,
+              "rare": false
+            },
+            "her3": {
+              "companies": [
+                "4568"
+              ],
+              "count": 1,
+              "rare": false
+            },
+            "kras": {
+              "companies": [
+                "RVMD"
+              ],
+              "count": 1,
+              "rare": false
+            },
+            "other": {
+              "companies": [
+                "KRYS"
+              ],
+              "count": 1,
+              "rare": false
+            },
+            "ros1": {
+              "companies": [
+                "NUVL"
+              ],
+              "count": 1,
+              "rare": false
+            },
+            "trop2": {
+              "companies": [
+                "4568"
+              ],
+              "count": 1,
+              "rare": false
+            }
+          }
         },
         "nsclc_undruggable": {
           "companies": [

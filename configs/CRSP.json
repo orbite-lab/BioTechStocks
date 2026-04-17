@@ -76,7 +76,32 @@
               }
             },
             "salesM": 116.0,
-            "salesYear": 2025
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 60,
+                "priceK": 440
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 45,
+                "priceK": 220
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 8,
+                "priceK": 70
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Commercial gene therapy but manufacturing-constrained; 64 infusions in Year 1; 3% of 100K US SCD/TDT patients reflects manufacturing bottleneck"
+              },
+              "us.priceK": {
+                "note": "One-time gene therapy priced $2.2M; amortized to ~$440K/yr over 5yr for SOM calculation"
+              }
+            }
           },
           "area": "hematology.rare_blood.hemoglobinopathy",
           "rare": true
@@ -146,6 +171,31 @@
               "penPct": {
                 "note": "Peak penetration 2% -- refine per competitive landscape."
               }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 20,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 0.3,
+                "wtpPct": 15,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 5,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Ph1 in vivo CRISPR gene edit for 5M US CV patients; 0.5% reach reflects early Ph1 + gene editing safety concerns in large population"
+              },
+              "us.priceK": {
+                "note": "One-time CV gene edit priced ~$500K; amortized to ~$250K/yr; large-pop discount vs rare disease gene therapy"
+              }
             }
           },
           "area": "cardio_metabolic.lipids.lpa"
@@ -214,6 +264,31 @@
               },
               "penPct": {
                 "note": "Peak penetration 10% -- refine per competitive landscape."
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 15,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 10,
+                "priceK": 180
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 5,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Preclinical ultra-rare AATD (3K US pts); 8% reach reflects small diagnosed population + orphan positioning"
+              },
+              "us.priceK": {
+                "note": "Ultra-rare gene edit priced at $350K/yr (chronic equivalent); A1AT augmentation therapy benchmark ~$100K, gene edit premium"
               }
             }
           },
@@ -285,6 +360,31 @@
               "penPct": {
                 "note": "Peak penetration 1% -- refine per competitive landscape."
               }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 25,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 18,
+                "priceK": 180
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 5,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Ph1/2 allogeneic CAR-T for SLE; 2% of 300K US patients reflects early off-the-shelf CAR-T for autoimmune"
+              },
+              "us.priceK": {
+                "note": "Allogeneic CAR-T for autoimmune ~$350K one-time; less than autologous CAR-T ($400-500K) due to off-the-shelf manufacturing"
+              }
             }
           },
           "area": "immunology.autoimmune.sle"
@@ -353,6 +453,31 @@
               },
               "penPct": {
                 "note": "Peak penetration 1% -- refine per competitive landscape."
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.3,
+                "wtpPct": 12,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 8,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 3,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Preclinical discovery (diabetes islets + other); 0.3% reach in 1.6M T1D reflects very early stage"
+              },
+              "us.priceK": {
+                "note": "Gene-edited islet cells for T1D -- one-time therapy priced ~$200K amortized; novel but preclinical"
               }
             }
           },

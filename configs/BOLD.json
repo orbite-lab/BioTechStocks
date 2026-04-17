@@ -74,6 +74,31 @@
               "penPct": {
                 "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
               }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 150
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 8,
+                "priceK": 80
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 3,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Ph1 kinesin degrader for ER+/HER2- with oncogene amplification (20-30% of mBC); 1% reach in 555K reflects IND-stage"
+              },
+              "us.priceK": {
+                "note": "Oral oncology specialty ~$150K/yr (CDK4/6i resistance setting pricing)"
+              }
             }
           },
           "area": "oncology.breast.hr_her2_neg",
@@ -143,6 +168,31 @@
               },
               "penPct": {
                 "note": "Peak penetration 4% -- refine per competitive landscape."
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 15,
+                "priceK": 150
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 10,
+                "priceK": 80
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 4,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Ph1 TNBC LAR subtype with oncogene amp; 3% reach in 50K reflects higher need in TNBC but still Ph1"
+              },
+              "us.priceK": {
+                "note": "TNBC oral specialty ~$150K/yr"
               }
             }
           },

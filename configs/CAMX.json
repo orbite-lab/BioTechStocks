@@ -27,7 +27,32 @@
             "tamB": 5.0,
             "penPct": 8,
             "salesM": 400,
-            "salesYear": 2025
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 60,
+                "priceK": 15
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 50,
+                "priceK": 8
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 12,
+                "priceK": 3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Brixadi ~30% US LAI buprenorphine share (royalties) + Buvidal EU own sales; 25% combined reach of addressable OUD patients"
+              },
+              "us.priceK": {
+                "note": "LAI buprenorphine ~$15K/yr US (Sublocade/Brixadi benchmark); specialty addiction medicine pricing"
+              }
+            }
           },
           "area": "cns.psychiatry.opioid_dependence"
         }
@@ -98,7 +123,32 @@
               }
             },
             "salesM": 80,
-            "salesYear": 2025
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 65,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 50,
+                "priceK": 55
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Commercial EU + US PDUFA Jun 2026; 25% reach in 15K US acromegaly patients reflects superior SC depot vs Sandostatin LAR IM"
+              },
+              "us.priceK": {
+                "note": "Acromegaly SRL pricing ~$100K/yr US (Sandostatin LAR ~$120K, Oczyesa may price ~$100K)"
+              }
+            }
           },
           "area": "endocrine.pituitary.acromegaly",
           "rare": true
@@ -167,6 +217,31 @@
               },
               "penPct": {
                 "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 50,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 40,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Ph3 GEP-NET vs Sandostatin LAR; 18% reach in 11.3K US NET patients reflects rare disease high-need setting"
+              },
+              "us.priceK": {
+                "note": "Rare neuroendocrine tumor pricing ~$200K/yr US (lutathera $200K+, SRL $120K); premium for novel SC depot"
               }
             }
           },
@@ -240,6 +315,31 @@
               "penPct": {
                 "note": "Peak penetration 10% -- refine per competitive landscape."
               }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 35,
+                "priceK": 60
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 25,
+                "priceK": 30
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 8,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Ph2b positive PLD/ADPKD; 5% reach in 140K reflects no approved therapy but orphan positioning needed"
+              },
+              "us.priceK": {
+                "note": "Rare liver/kidney disease ~$60K/yr; octreotide-based pricing but chronic use premium"
+              }
             }
           },
           "area": "cardio_metabolic.liver.pld_adpkd"
@@ -308,6 +408,31 @@
               },
               "penPct": {
                 "note": "Peak penetration 1% -- refine per competitive landscape."
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.2,
+                "wtpPct": 18,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 0.1,
+                "wtpPct": 12,
+                "priceK": 6
+              },
+              "row": {
+                "reachPct": 0.03,
+                "wtpPct": 5,
+                "priceK": 2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Ph1 monthly semaglutide; 0.2% reach in 40M obesity reflects very early stage + Camurus is royalty recipient not developer"
+              },
+              "us.priceK": {
+                "note": "GLP-1 obesity class ~$12K/yr net US (Wegovy/Zepbound benchmark)"
               }
             }
           },

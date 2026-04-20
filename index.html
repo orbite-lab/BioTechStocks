@@ -130,9 +130,9 @@ tbody tr:hover{background:#ffffff06}
   </div>
   <span class="topbar-count" id="topCount"></span>
   <nav class="topbar-nav" id="topNav">
+    <button onclick="document.getElementById('sec-markets').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-markets">Markets</button>
     <button onclick="document.getElementById('sec-range').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-range">Range</button>
     <button onclick="document.getElementById('sec-pipeline').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-pipeline">Pipeline</button>
-    <button onclick="document.getElementById('sec-markets').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-markets">Markets</button>
     <button onclick="document.getElementById('sec-catalyst').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-catalyst">Catalysts</button>
     <button onclick="document.getElementById('sec-portfolio').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-portfolio">Portfolio</button>
     <button onclick="document.getElementById('sec-table').scrollIntoView({behavior:'smooth',block:'start'})" data-sec="sec-table">Table</button>
@@ -821,90 +821,6 @@ async function main(){
     const visibleRows=filtered;
     const activeArea=filterL4.size?[...filterL4][0]:filterL3.size?[...filterL3][0]:filterL2.size?[...filterL2][0]:filterL1.size?[...filterL1][0]:null;
     const hasPurity=!!(activeArea||filterRare===true);
-    h+='<div class="card" id="sec-range"><div class="card-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div><div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6);display:inline-block;vertical-align:middle;margin-right:8px"></div>Market Valuation Overview</div>';
-    h+='<div style="display:flex;gap:4px">';
-    h+=`<span class="fchip ${stripSort==='base'?'active':''}" onclick="window._stripSort('base')" style="padding:2px 8px;font-size:.65rem">Base Upside</span>`;
-    h+=`<span class="fchip ${stripSort==='rr'?'active':''}" onclick="window._stripSort('rr')" style="padding:2px 8px;font-size:.65rem">R/R Ratio</span>`;
-    h+=`<span class="fchip ${stripSort==='optionality'?'active':''}" onclick="window._stripSort('optionality')" style="padding:2px 8px;font-size:.65rem">Optionality</span>`;
-    if(hasPurity)h+=`<span class="fchip ${stripSort==='purity'?'active':''}" onclick="window._stripSort('purity')" style="padding:2px 8px;font-size:.65rem;${stripSort==='purity'?'background:#a855f722;border-color:#a855f7;color:#d8b4fe':''}">Purity</span>`;
-    h+='</div></div>';
-    h+='<div class="card-sub">Upside / downside to scenario targets · Dots right of 0% = upside</div>';
-    h+=buildRangeStrip(visibleRows,activeArea,filterRare,stripSort,purityMode);
-
-    // Optionality card — total TAM (raw vs risk-adjusted)
-    const optRows=[...visibleRows].filter(r=>r.meta.optionality>10&&r.meta.totalTAM>0&&!(r.evUSD>0&&r.meta.totalWTD>0&&r.evUSD>r.meta.totalWTD)).sort((a,b)=>b.meta.optionality-a.meta.optionality);
-    if(optRows.length>0){
-      const maxRaw=Math.max(...optRows.map(r=>r.meta.totalTAM));
-      h+='<div class="card" id="sec-pipeline"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#f59e0b,#ef4444)"></div>Pipeline Optionality</div>';
-      h+='<div class="card-sub">Total TAM bars (all assets) · Optionality % = pipeline-only leverage (excludes commercial at 100% PoS) · EV marker = current market valuation</div>';
-      h+='<div style="padding:8px 0">';
-      optRows.slice(0,15).forEach(r=>{
-        const raw=r.meta.totalTAM,wtd=r.meta.totalWTD;
-        const evB=r.evUSD;
-        const rawPct=(raw/maxRaw)*100;
-        const wtdPct=(wtd/maxRaw)*100;
-        const evPct=Math.min((evB/maxRaw)*100,100);
-        const opt=r.meta.optionality;
-        const optCol=opt>200?'#ef4444':opt>100?'#f59e0b':'#22c55e';
-        const pricedIn=wtd>0?Math.round(evB/wtd*100):0;
-        const piCol=pricedIn>80?'#ef4444':pricedIn>40?'#f59e0b':'#22c55e';
-        h+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">`;
-        h+=`<a href="model.html?ticker=${r.ticker}" style="width:48px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.75rem;color:#60a5fa;text-decoration:none">${r.ticker}</a>`;
-        h+=`<span style="width:48px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.68rem;color:${optCol}">${opt>=1000?(opt/100).toFixed(0)+'x':opt+'%'}</span>`;
-        h+=`<div style="flex:1;position:relative;height:32px">`;
-        h+=`<div style="position:absolute;top:0;left:0;height:14px;width:${rawPct}%;background:#f97316;opacity:.25;border-radius:4px" title="Raw TAM: $${raw.toFixed(0)}B"></div>`;
-        h+=`<div style="position:absolute;top:0;left:0;height:14px;width:${rawPct}%;border:1.5px solid #f9731666;border-radius:4px;box-sizing:border-box"></div>`;
-        h+=`<div style="position:absolute;top:17px;left:0;height:14px;width:${wtdPct}%;background:#22c55e;opacity:.35;border-radius:4px" title="Risk-adj TAM: $${wtd.toFixed(1)}B"></div>`;
-        h+=`<div style="position:absolute;top:17px;left:0;height:14px;width:${wtdPct}%;border:1.5px solid #22c55e66;border-radius:4px;box-sizing:border-box"></div>`;
-        if(evPct>0){
-          h+=`<div style="position:absolute;top:-3px;left:${evPct}%;width:2.5px;height:38px;background:#fff;border-radius:1px;z-index:2;opacity:.9" title="Current EV: $${evB.toFixed(1)}B"></div>`;
-          h+=`<div style="position:absolute;top:-14px;left:${evPct}%;transform:translateX(-50%);font-size:.58rem;font-family:var(--mono);color:#fff;font-weight:800;white-space:nowrap;z-index:3">$${evB>=1?evB.toFixed(0):evB.toFixed(1)}B</div>`;
-        }
-        h+=`<span style="position:absolute;top:0;left:${rawPct+0.5}%;font-size:.58rem;font-family:var(--mono);color:#f97316;white-space:nowrap;padding-left:4px">$${raw.toFixed(0)}B</span>`;
-        h+=`<span style="position:absolute;top:17px;left:${wtdPct+0.5}%;font-size:.58rem;font-family:var(--mono);color:#22c55e;white-space:nowrap;padding-left:4px">$${wtd.toFixed(0)}B</span>`;
-        h+=`</div>`;
-        h+=`<span style="width:64px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.68rem;color:${piCol};flex-shrink:0">${pricedIn}% in</span>`;
-        h+=`</div>`;
-      });
-      h+='<div style="display:flex;gap:16px;margin-top:10px;font-size:.65rem;color:var(--text2);flex-wrap:wrap">';
-      h+='<span><span style="display:inline-block;width:20px;height:8px;background:#f97316;opacity:.4;border:1px solid #f9731666;border-radius:2px;vertical-align:middle;margin-right:4px"></span>Total raw TAM</span>';
-      h+='<span><span style="display:inline-block;width:20px;height:8px;background:#22c55e;opacity:.4;border:1px solid #22c55e66;border-radius:2px;vertical-align:middle;margin-right:4px"></span>Total risk-adj TAM</span>';
-      h+='<span><span style="display:inline-block;width:3px;height:10px;background:#fff;border-radius:1px;vertical-align:middle;margin-right:4px"></span>Current EV</span>';
-      h+='<span>Optionality % = pipeline only (excl. commercial at 100% PoS)</span>';
-      h+='</div></div></div>';
-    }
-
-    // Overpriced vs TAM card — companies where EV > total risk-adj TAM
-    const overRows=[...visibleRows].filter(r=>r.evUSD>0&&r.meta.totalWTD>0&&r.evUSD>r.meta.totalWTD).sort((a,b)=>(b.evUSD/b.meta.totalWTD)-(a.evUSD/a.meta.totalWTD));
-    if(overRows.length>0){
-      h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#ef4444,#991b1b)"></div>EV &gt; Risk-Adj TAM — Priced Beyond Fundamentals</div>';
-      h+='<div class="card-sub">Market prices in pipeline success above base-case probabilities, or TAM estimates need revisiting.</div>';
-      h+='<div style="padding:8px 0">';
-      overRows.forEach(r=>{
-        const evB=r.evUSD,wtd=r.meta.totalWTD,raw=r.meta.totalTAM;
-        const ratio=Math.round(evB/wtd*100);
-        const tamPct=Math.round(wtd/evB*100); // how much of EV is justified
-        const premium=ratio-100;
-        const ratioCol=ratio>300?'#991b1b':ratio>200?'#ef4444':'#f59e0b';
-        h+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">`;
-        h+=`<a href="model.html?ticker=${r.ticker}" style="width:48px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.75rem;color:#60a5fa;text-decoration:none">${r.ticker}</a>`;
-        // Bar: each company normalized to its own EV = 100%
-        h+=`<div style="flex:1;height:20px;position:relative;background:#ef444418;border-radius:4px;border:1px solid #ef444433;overflow:hidden">`;
-        // Green fill = TAM-justified portion
-        h+=`<div style="position:absolute;top:0;left:0;height:100%;width:${tamPct}%;background:#22c55e44;border-right:2px solid #22c55e88"></div>`;
-        // Labels inside bar
-        h+=`<span style="position:absolute;top:2px;left:8px;font-size:.62rem;font-family:var(--mono);color:#22c55e;font-weight:700">$${wtd.toFixed(0)}B adj</span>`;
-        h+=`<span style="position:absolute;top:2px;right:8px;font-size:.62rem;font-family:var(--mono);color:#ef4444;font-weight:700">EV $${evB.toFixed(0)}B</span>`;
-        h+=`</div>`;
-        // Premium badge
-        h+=`<span style="width:72px;text-align:right;font-family:var(--mono);font-weight:800;font-size:.72rem;color:${ratioCol};flex-shrink:0">+${premium}%</span>`;
-        h+=`</div>`;
-      });
-      h+='<div style="margin-top:8px;font-size:.62rem;color:var(--text2)">';
-      h+='<span style="display:inline-block;width:14px;height:8px;background:#22c55e44;border-right:2px solid #22c55e88;border-radius:2px;vertical-align:middle;margin-right:4px"></span>TAM-justified ';
-      h+='<span style="display:inline-block;width:14px;height:8px;background:#ef444418;border:1px solid #ef444433;border-radius:2px;vertical-align:middle;margin-left:12px;margin-right:4px"></span>Premium over risk-adj TAM ';
-      h+='</div></div></div>';
-    }
 
     // Market Explorer — drill-down through therapeutic areas L1 -> L4 -> companies
     (() => {
@@ -1083,6 +999,91 @@ async function main(){
       }
       h+='</div>';  // close card
     })();
+
+    h+='<div class="card" id="sec-range"><div class="card-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div><div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6);display:inline-block;vertical-align:middle;margin-right:8px"></div>Market Valuation Overview</div>';
+    h+='<div style="display:flex;gap:4px">';
+    h+=`<span class="fchip ${stripSort==='base'?'active':''}" onclick="window._stripSort('base')" style="padding:2px 8px;font-size:.65rem">Base Upside</span>`;
+    h+=`<span class="fchip ${stripSort==='rr'?'active':''}" onclick="window._stripSort('rr')" style="padding:2px 8px;font-size:.65rem">R/R Ratio</span>`;
+    h+=`<span class="fchip ${stripSort==='optionality'?'active':''}" onclick="window._stripSort('optionality')" style="padding:2px 8px;font-size:.65rem">Optionality</span>`;
+    if(hasPurity)h+=`<span class="fchip ${stripSort==='purity'?'active':''}" onclick="window._stripSort('purity')" style="padding:2px 8px;font-size:.65rem;${stripSort==='purity'?'background:#a855f722;border-color:#a855f7;color:#d8b4fe':''}">Purity</span>`;
+    h+='</div></div>';
+    h+='<div class="card-sub">Upside / downside to scenario targets · Dots right of 0% = upside</div>';
+    h+=buildRangeStrip(visibleRows,activeArea,filterRare,stripSort,purityMode);
+
+    // Optionality card — total TAM (raw vs risk-adjusted)
+    const optRows=[...visibleRows].filter(r=>r.meta.optionality>10&&r.meta.totalTAM>0&&!(r.evUSD>0&&r.meta.totalWTD>0&&r.evUSD>r.meta.totalWTD)).sort((a,b)=>b.meta.optionality-a.meta.optionality);
+    if(optRows.length>0){
+      const maxRaw=Math.max(...optRows.map(r=>r.meta.totalTAM));
+      h+='<div class="card" id="sec-pipeline"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#f59e0b,#ef4444)"></div>Pipeline Optionality</div>';
+      h+='<div class="card-sub">Total TAM bars (all assets) · Optionality % = pipeline-only leverage (excludes commercial at 100% PoS) · EV marker = current market valuation</div>';
+      h+='<div style="padding:8px 0">';
+      optRows.slice(0,15).forEach(r=>{
+        const raw=r.meta.totalTAM,wtd=r.meta.totalWTD;
+        const evB=r.evUSD;
+        const rawPct=(raw/maxRaw)*100;
+        const wtdPct=(wtd/maxRaw)*100;
+        const evPct=Math.min((evB/maxRaw)*100,100);
+        const opt=r.meta.optionality;
+        const optCol=opt>200?'#ef4444':opt>100?'#f59e0b':'#22c55e';
+        const pricedIn=wtd>0?Math.round(evB/wtd*100):0;
+        const piCol=pricedIn>80?'#ef4444':pricedIn>40?'#f59e0b':'#22c55e';
+        h+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">`;
+        h+=`<a href="model.html?ticker=${r.ticker}" style="width:48px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.75rem;color:#60a5fa;text-decoration:none">${r.ticker}</a>`;
+        h+=`<span style="width:48px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.68rem;color:${optCol}">${opt>=1000?(opt/100).toFixed(0)+'x':opt+'%'}</span>`;
+        h+=`<div style="flex:1;position:relative;height:32px">`;
+        h+=`<div style="position:absolute;top:0;left:0;height:14px;width:${rawPct}%;background:#f97316;opacity:.25;border-radius:4px" title="Raw TAM: $${raw.toFixed(0)}B"></div>`;
+        h+=`<div style="position:absolute;top:0;left:0;height:14px;width:${rawPct}%;border:1.5px solid #f9731666;border-radius:4px;box-sizing:border-box"></div>`;
+        h+=`<div style="position:absolute;top:17px;left:0;height:14px;width:${wtdPct}%;background:#22c55e;opacity:.35;border-radius:4px" title="Risk-adj TAM: $${wtd.toFixed(1)}B"></div>`;
+        h+=`<div style="position:absolute;top:17px;left:0;height:14px;width:${wtdPct}%;border:1.5px solid #22c55e66;border-radius:4px;box-sizing:border-box"></div>`;
+        if(evPct>0){
+          h+=`<div style="position:absolute;top:-3px;left:${evPct}%;width:2.5px;height:38px;background:#fff;border-radius:1px;z-index:2;opacity:.9" title="Current EV: $${evB.toFixed(1)}B"></div>`;
+          h+=`<div style="position:absolute;top:-14px;left:${evPct}%;transform:translateX(-50%);font-size:.58rem;font-family:var(--mono);color:#fff;font-weight:800;white-space:nowrap;z-index:3">$${evB>=1?evB.toFixed(0):evB.toFixed(1)}B</div>`;
+        }
+        h+=`<span style="position:absolute;top:0;left:${rawPct+0.5}%;font-size:.58rem;font-family:var(--mono);color:#f97316;white-space:nowrap;padding-left:4px">$${raw.toFixed(0)}B</span>`;
+        h+=`<span style="position:absolute;top:17px;left:${wtdPct+0.5}%;font-size:.58rem;font-family:var(--mono);color:#22c55e;white-space:nowrap;padding-left:4px">$${wtd.toFixed(0)}B</span>`;
+        h+=`</div>`;
+        h+=`<span style="width:64px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.68rem;color:${piCol};flex-shrink:0">${pricedIn}% in</span>`;
+        h+=`</div>`;
+      });
+      h+='<div style="display:flex;gap:16px;margin-top:10px;font-size:.65rem;color:var(--text2);flex-wrap:wrap">';
+      h+='<span><span style="display:inline-block;width:20px;height:8px;background:#f97316;opacity:.4;border:1px solid #f9731666;border-radius:2px;vertical-align:middle;margin-right:4px"></span>Total raw TAM</span>';
+      h+='<span><span style="display:inline-block;width:20px;height:8px;background:#22c55e;opacity:.4;border:1px solid #22c55e66;border-radius:2px;vertical-align:middle;margin-right:4px"></span>Total risk-adj TAM</span>';
+      h+='<span><span style="display:inline-block;width:3px;height:10px;background:#fff;border-radius:1px;vertical-align:middle;margin-right:4px"></span>Current EV</span>';
+      h+='<span>Optionality % = pipeline only (excl. commercial at 100% PoS)</span>';
+      h+='</div></div></div>';
+    }
+
+    // Overpriced vs TAM card — companies where EV > total risk-adj TAM
+    const overRows=[...visibleRows].filter(r=>r.evUSD>0&&r.meta.totalWTD>0&&r.evUSD>r.meta.totalWTD).sort((a,b)=>(b.evUSD/b.meta.totalWTD)-(a.evUSD/a.meta.totalWTD));
+    if(overRows.length>0){
+      h+='<div class="card"><div class="card-title"><div class="dot" style="background:linear-gradient(180deg,#ef4444,#991b1b)"></div>EV &gt; Risk-Adj TAM — Priced Beyond Fundamentals</div>';
+      h+='<div class="card-sub">Market prices in pipeline success above base-case probabilities, or TAM estimates need revisiting.</div>';
+      h+='<div style="padding:8px 0">';
+      overRows.forEach(r=>{
+        const evB=r.evUSD,wtd=r.meta.totalWTD,raw=r.meta.totalTAM;
+        const ratio=Math.round(evB/wtd*100);
+        const tamPct=Math.round(wtd/evB*100); // how much of EV is justified
+        const premium=ratio-100;
+        const ratioCol=ratio>300?'#991b1b':ratio>200?'#ef4444':'#f59e0b';
+        h+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">`;
+        h+=`<a href="model.html?ticker=${r.ticker}" style="width:48px;text-align:right;font-family:var(--mono);font-weight:700;font-size:.75rem;color:#60a5fa;text-decoration:none">${r.ticker}</a>`;
+        // Bar: each company normalized to its own EV = 100%
+        h+=`<div style="flex:1;height:20px;position:relative;background:#ef444418;border-radius:4px;border:1px solid #ef444433;overflow:hidden">`;
+        // Green fill = TAM-justified portion
+        h+=`<div style="position:absolute;top:0;left:0;height:100%;width:${tamPct}%;background:#22c55e44;border-right:2px solid #22c55e88"></div>`;
+        // Labels inside bar
+        h+=`<span style="position:absolute;top:2px;left:8px;font-size:.62rem;font-family:var(--mono);color:#22c55e;font-weight:700">$${wtd.toFixed(0)}B adj</span>`;
+        h+=`<span style="position:absolute;top:2px;right:8px;font-size:.62rem;font-family:var(--mono);color:#ef4444;font-weight:700">EV $${evB.toFixed(0)}B</span>`;
+        h+=`</div>`;
+        // Premium badge
+        h+=`<span style="width:72px;text-align:right;font-family:var(--mono);font-weight:800;font-size:.72rem;color:${ratioCol};flex-shrink:0">+${premium}%</span>`;
+        h+=`</div>`;
+      });
+      h+='<div style="margin-top:8px;font-size:.62rem;color:var(--text2)">';
+      h+='<span style="display:inline-block;width:14px;height:8px;background:#22c55e44;border-right:2px solid #22c55e88;border-radius:2px;vertical-align:middle;margin-right:4px"></span>TAM-justified ';
+      h+='<span style="display:inline-block;width:14px;height:8px;background:#ef444418;border:1px solid #ef444433;border-radius:2px;vertical-align:middle;margin-left:12px;margin-right:4px"></span>Premium over risk-adj TAM ';
+      h+='</div></div></div>';
+    }
 
     // Catalyst Asymmetry card — timeline barbell chart
     const allCatsRaw=[];
@@ -1772,7 +1773,7 @@ async function main(){
 main();
 // Scroll observer for nav button highlighting
 (function(){
-  const secs=['sec-range','sec-pipeline','sec-markets','sec-catalyst','sec-portfolio','sec-table'];
+  const secs=['sec-markets','sec-range','sec-pipeline','sec-catalyst','sec-portfolio','sec-table'];
   const btns=document.querySelectorAll('#topNav button');
   if(!btns.length)return;
   const obs=new IntersectionObserver(entries=>{

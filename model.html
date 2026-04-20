@@ -548,6 +548,8 @@
       const [showMarkets, setShowMarkets] = useState(false);
       const [showSliders, setShowSliders] = useState(false);
       const [showPipeline, setShowPipeline] = useState(false);
+      const [showContext, setShowContext] = useState(false);
+      const [showMethodology, setShowMethodology] = useState(false);
       const [expandedMkt, setExpandedMkt] = useState({});
 
       // On company switch: use cached price from prices.json immediately, then refresh from Yahoo in background
@@ -809,18 +811,6 @@
                 )
               );
             })
-          ),
-
-          // Context
-          config.context && e("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 22 } },
-            e("div", { style: { padding: "14px 16px", background: "#161920", borderRadius: 8, border: "1px solid #ffffff06", fontSize: 11, lineHeight: 1.6 } },
-              e("div", { style: { color: "#f97316", fontWeight: 700, marginBottom: 6, fontSize: 12 } }, "Last: " + config.context.lastData.title + " (" + config.context.lastData.date + ")"),
-              config.context.lastData.points.map((p, i) => e("div", { key: i, style: { color: "#6b7080" } }, "\u2022 " + p))
-            ),
-            e("div", { style: { padding: "14px 16px", background: "#161920", borderRadius: 8, border: "1px solid #ffffff06", fontSize: 11, lineHeight: 1.6 } },
-              e("div", { style: { color: "#22c55e", fontWeight: 700, marginBottom: 6, fontSize: 12 } }, "Next: " + config.context.nextCatalyst.title + " (" + config.context.nextCatalyst.date + ")"),
-              config.context.nextCatalyst.thresholds.map((p, i) => e("div", { key: i, style: { color: "#6b7080" } }, "\u2022 " + p))
-            )
           ),
 
           // Tweak header
@@ -1086,6 +1076,29 @@
           )
           ),
 
+          // Context (Last + Next) -- collapsible, placed after assumption sliders
+          config.context && e("div", { style: { marginBottom: 14 } },
+            e("div", { onClick: () => setShowContext(!showContext), style: { background: "#161920", borderRadius: showContext ? "10px 10px 0 0" : 10, padding: "10px 16px", border: "1px solid #ffffff06", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", userSelect: "none" } },
+              e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#b0b4c0" } },
+                "Last & Next catalyst \u00b7 ",
+                e("span", { style: { color: "#f97316", fontWeight: 600 } }, config.context.lastData.title),
+                e("span", { style: { color: "#6b7080" } }, " \u2192 "),
+                e("span", { style: { color: "#22c55e", fontWeight: 600 } }, config.context.nextCatalyst.title)
+              ),
+              e("div", { style: { fontSize: 10, color: "#6b7080", transition: "transform 0.2s", transform: showContext ? "rotate(180deg)" : "rotate(0deg)" } }, "\u25BC")
+            ),
+            showContext && e("div", { style: { background: "#161920", borderRadius: "0 0 10px 10px", padding: "14px 16px", borderLeft: "1px solid #ffffff06", borderRight: "1px solid #ffffff06", borderBottom: "1px solid #ffffff06", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 } },
+              e("div", { style: { fontSize: 11, lineHeight: 1.6 } },
+                e("div", { style: { color: "#f97316", fontWeight: 700, marginBottom: 6, fontSize: 12 } }, "Last: " + config.context.lastData.title + " (" + config.context.lastData.date + ")"),
+                config.context.lastData.points.map((p, i) => e("div", { key: i, style: { color: "#6b7080" } }, "\u2022 " + p))
+              ),
+              e("div", { style: { fontSize: 11, lineHeight: 1.6 } },
+                e("div", { style: { color: "#22c55e", fontWeight: 700, marginBottom: 6, fontSize: 12 } }, "Next: " + config.context.nextCatalyst.title + " (" + config.context.nextCatalyst.date + ")"),
+                config.context.nextCatalyst.thresholds.map((p, i) => e("div", { key: i, style: { color: "#6b7080" } }, "\u2022 " + p))
+              )
+            )
+          ),
+
           // Risks
           config.context?.risks && e("div", { style: { background: "#161920", borderRadius: 10, padding: "14px 16px", border: "1px solid #ef444418", marginBottom: 22 } },
             e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#ef4444", marginBottom: 8 } }, "Key Risks"),
@@ -1094,9 +1107,13 @@
             )
           ),
 
-          // Methodology
-          e("div", { style: { background: "#161920", borderRadius: 10, padding: "18px 20px", border: "1px solid #ffffff06", fontSize: 11, color: "#6b7080", lineHeight: 1.7, marginBottom: 16 } },
-            e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10, color: "#b0b4c0" } }, "Methodology"),
+          // Methodology (collapsible)
+          e("div", { style: { marginBottom: 16 } },
+            e("div", { onClick: () => setShowMethodology(!showMethodology), style: { background: "#161920", borderRadius: showMethodology ? "10px 10px 0 0" : 10, padding: "10px 16px", border: "1px solid #ffffff06", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", userSelect: "none" } },
+              e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#b0b4c0" } }, "Methodology & Explanation"),
+              e("div", { style: { fontSize: 10, color: "#6b7080", transition: "transform 0.2s", transform: showMethodology ? "rotate(180deg)" : "rotate(0deg)" } }, "\u25BC")
+            ),
+            showMethodology && e("div", { style: { background: "#161920", borderRadius: "0 0 10px 10px", padding: "18px 20px", borderLeft: "1px solid #ffffff06", borderRight: "1px solid #ffffff06", borderBottom: "1px solid #ffffff06", fontSize: 11, color: "#6b7080", lineHeight: 1.7 } },
             e("strong", { style: { color: "#f97316" } }, "Valuation framework"), e("br"),
             "Two models coexist depending on company structure:", e("br"), e("br"),
             e("strong", { style: { color: "#b0b4c0" } }, "Standard rNPV (pure pipeline companies):"), e("br"),
@@ -1128,6 +1145,7 @@
             e("strong", { style: { color: "#f97316" } }, "Live price"), e("br"),
             "Stock price fetched from Yahoo Finance on page load. Upside = (Weighted TP / Stock Price \u2212 1) \u00d7 100%. Price is editable for scenario analysis.", e("br"), e("br"),
             e("span", { style: { color: "#555" } }, "Models are illustrative and for educational purposes only. Not financial advice. Do your own research.")
+            )
           )
         )
       );

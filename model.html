@@ -1026,26 +1026,50 @@
             const livePE = median(livePeers.map(([t,f]) => f.pe_ttm).filter(v => v != null && v > 0));
             const liveEVS = median(livePeers.map(([t,f]) => f.ev_sales_ttm).filter(v => v != null && v > 0));
             const liveN = livePeers.length;
-            // Peers from Market Explorer: companies sharing the highest-TAM L3 area
-            const peerAreas = {};
+            // Peers: iterate through ALL of the company's areas (not just top-TAM) and collect overlapping peers
+            // Count how many areas each peer shares with us -- rank by overlap
+            const peerOverlap = {};  // ticker -> {count, areas: Set, bestArea: {area, tam}}
+            const ownAreas = new Set();
+            const areaTAM = {};
             for (const a of config.assets) for (const ind of a.indications) {
               const area = ind.area || ""; if (!area) continue;
-              const tam = indicationTAM(ind);
-              peerAreas[area] = (peerAreas[area] || 0) + tam;
+              ownAreas.add(area);
+              areaTAM[area] = (areaTAM[area] || 0) + indicationTAM(ind);
             }
-            const topArea = Object.entries(peerAreas).sort((x,y)=>y[1]-x[1])[0]?.[0];
-            const peerTickers = new Set();
-            if (topArea && taxonomy) {
-              const parts = topArea.split(".");
-              for (let depth = Math.min(parts.length, 3); depth >= 2; depth--) {
-                const node = lookupTaxonomyNode(taxonomy, parts.slice(0, depth).join("."));
-                if (node?.companies) node.companies.forEach(t => peerTickers.add(t));
-                if (node?.sub) for (const s of Object.values(node.sub)) if (s.companies) s.companies.forEach(t => peerTickers.add(t));
-                if (peerTickers.size >= 3) break;
+            if (taxonomy) {
+              for (const area of ownAreas) {
+                const parts = area.split(".");
+                // Walk L3 and L4 (if present) nodes to get companies
+                const collectAt = (path) => {
+                  const node = lookupTaxonomyNode(taxonomy, path);
+                  if (node?.companies) node.companies.forEach(t => {
+                    if (t === tk) return;
+                    if (!peerOverlap[t]) peerOverlap[t] = { count: 0, areas: new Set(), bestArea: null, bestTam: 0 };
+                    peerOverlap[t].areas.add(area);
+                    peerOverlap[t].count = peerOverlap[t].areas.size;
+                    if ((areaTAM[area] || 0) > peerOverlap[t].bestTam) { peerOverlap[t].bestTam = areaTAM[area]; peerOverlap[t].bestArea = area; }
+                  });
+                  if (node?.sub) for (const s of Object.values(node.sub)) if (s.companies) s.companies.forEach(t => {
+                    if (t === tk) return;
+                    if (!peerOverlap[t]) peerOverlap[t] = { count: 0, areas: new Set(), bestArea: null, bestTam: 0 };
+                    peerOverlap[t].areas.add(area);
+                    peerOverlap[t].count = peerOverlap[t].areas.size;
+                    if ((areaTAM[area] || 0) > peerOverlap[t].bestTam) { peerOverlap[t].bestTam = areaTAM[area]; peerOverlap[t].bestArea = area; }
+                  });
+                };
+                collectAt(area);
+                // Also walk up one level (L3 parent of L4)
+                if (parts.length === 4) collectAt(parts.slice(0,3).join("."));
               }
             }
-            peerTickers.delete(tk);
-            const peers = [...peerTickers].slice(0, 8).map(pt => ({ tk: pt, fin: financials[pt] })).filter(p => p.fin && !p.fin.external);
+            // Sort by overlap count desc, then by biggest shared area's TAM desc
+            const rankedPeers = Object.entries(peerOverlap)
+              .sort((a, b) => b[1].count - a[1].count || b[1].bestTam - a[1].bestTam);
+            const peers = rankedPeers.slice(0, 8)
+              .map(([pt, info]) => ({ tk: pt, fin: financials[pt], overlap: info }))
+              .filter(p => p.fin && !p.fin.external);
+            // Use the highest-overlap peer's best shared area as the display area for the peers table header
+            const topArea = peers[0]?.overlap?.bestArea || Object.entries(areaTAM).sort((a,b)=>b[1]-a[1])[0]?.[0] || "";
 
             const pctlBar = (pctl, color) => {
               if (pctl == null) return null;
@@ -1124,10 +1148,12 @@
               ),
               // Peers table
               peers.length > 0 && e("div", null,
-                e("div", { style: { fontSize: 10, fontWeight: 700, color: "#fb923c", textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 } }, "Peers in " + topArea.split(".").pop().replace(/_/g, " ")),
+                e("div", { style: { fontSize: 10, fontWeight: 700, color: "#fb923c", textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 } }, "Peers sharing therapeutic areas with " + tk),
                 e("table", { style: { width: "100%", fontSize: 11, borderCollapse: "collapse" } },
                   e("thead", null, e("tr", { style: { color: "#6b7080", textAlign: "left" } },
                     e("th", { style: { padding: "4px 8px", fontWeight: 600 } }, "Ticker"),
+                    e("th", { style: { padding: "4px 8px", fontWeight: 600, textAlign: "right" } }, "Overlap"),
+                    e("th", { style: { padding: "4px 8px", fontWeight: 600 } }, "Top shared area"),
                     e("th", { style: { padding: "4px 8px", fontWeight: 600, textAlign: "right" } }, "P/E"),
                     e("th", { style: { padding: "4px 8px", fontWeight: 600, textAlign: "right" } }, "EV/S"),
                     e("th", { style: { padding: "4px 8px", fontWeight: 600, textAlign: "right" } }, "Revenue"),
@@ -1135,6 +1161,8 @@
                   )),
                   e("tbody", null, peers.map(p => e("tr", { key: p.tk, style: { borderTop: "1px solid #ffffff0a" } },
                     e("td", { style: { padding: "6px 8px" } }, e("a", { href: "model.html?ticker=" + p.tk, style: { color: "#60a5fa", textDecoration: "none", fontFamily: "'JetBrains Mono'", fontWeight: 700 } }, p.tk)),
+                    e("td", { style: { padding: "6px 8px", textAlign: "right", color: "#fb923c", fontFamily: "'JetBrains Mono'", fontWeight: 600 }, title: "Shared areas: " + [...p.overlap.areas].join(", ") }, p.overlap.count + " area" + (p.overlap.count === 1 ? "" : "s")),
+                    e("td", { style: { padding: "6px 8px", color: "#8b8f99", fontSize: 10, fontFamily: "'JetBrains Mono'" } }, (p.overlap.bestArea || "").split(".").slice(-2).join(".")),
                     e("td", { style: { padding: "6px 8px", textAlign: "right", fontFamily: "'JetBrains Mono'", color: "#b0b4c0" } }, p.fin.pe_ttm == null ? "n/m" : p.fin.pe_ttm.toFixed(0) + "x"),
                     e("td", { style: { padding: "6px 8px", textAlign: "right", fontFamily: "'JetBrains Mono'", color: "#b0b4c0" } }, p.fin.ev_sales_ttm == null ? "--" : p.fin.ev_sales_ttm.toFixed(1) + "x"),
                     e("td", { style: { padding: "6px 8px", textAlign: "right", fontFamily: "'JetBrains Mono'", color: "#6b7080" } }, p.fin.revenue_ttm_M == null ? "--" : ("$" + (p.fin.revenue_ttm_M >= 1000 ? (p.fin.revenue_ttm_M/1000).toFixed(1) + "B" : Math.round(p.fin.revenue_ttm_M) + "M"))),

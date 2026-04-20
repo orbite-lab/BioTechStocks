@@ -45,34 +45,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 100K US treated/diagnosed; source: consensus epi (hematology)."
+                "note": "~100K US SCD + ~3K TDT; ~20K SCD severe (2+ VOCs/yr) eligible for gene tx. Source: CDC SCDC, NORD, CRISPR/Vertex 10-K."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 60K EU treated/diagnosed."
+                "note": "EU5 ~60K SCD + ~15K TDT; higher TDT in Southern EU (Mediterranean)."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 300K ROW treated/diagnosed."
+                "note": "ROW ~5M SCD (sub-Saharan Africa dominant); ~200K TDT APAC/Med; gene tx access extremely limited."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 65% (payor access + formulary)."
+                "note": "~45% -- Casgevy (exa-cel) + Lyfgenia (lovo-cel) approved Dec 2023; Medicaid (where most SCD pts are) limited; CMS outcomes-based."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 50% (HTA-gated uptake)."
+                "note": "~32% -- NICE CDF Casgevy 2024; Italy + Germany early access; single-payer negotiation in progress."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~6% -- Japan + AU limited; sub-Saharan access near-zero; GCC bilateral deals emerging."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $200K/yr (hematology drug-class avg)."
+                "note": "Blended $2200K: Casgevy $2200K (50% pts) + Lyfgenia $3100K (40%) + Oxbryta/Adakveo (delisted) / hydroxyurea $5K (10%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $100K/yr."
+                "note": "~$1600K blended; EU net ~72% US list for gene tx; annuity payment models under negotiation."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $30K/yr."
+                "note": "~$200K blended; gene tx near-zero access outside GCC; hydroxyurea + transfusions dominate globally."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~18% peak -- capacity (myeloablation beds) + payer friction limit; 5-7yr ramp; in-vivo gene editing (Beam, Editas) could expand."
               }
             },
             "salesM": 116.0,
@@ -142,34 +142,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 20000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
+                "note": "AHA 2024 + IQVIA: ~20M US on lipid-lowering therapy (statins ~17M, PCSK9i/ezetimibe ~3M); FH ~1.3M, ASCVD high-risk ~8M."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 16000K EU treated/diagnosed."
+                "note": "ESC/EAS 2023: ~25M EU on LLT; ~2M on PCSK9i (Repatha/Praluent) + inclisiran (Leqvio)."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 30000K ROW treated/diagnosed."
+                "note": "Global ROW: ~40M on LLT; Japan 8M, China rising statin + PCSK9i access."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 52% (payor access + formulary)."
+                "note": "~70% -- Medicare Part D covers Leqvio (Part B buy-and-bill), Repatha, Praluent post-FOURIER/ODYSSEY CV outcomes."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 40% (HTA-gated uptake)."
+                "note": "~60% -- NICE/G-BA reimburse PCSK9i/inclisiran for FH and secondary prevention per LDL thresholds."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~30% -- Japan NHI covers PCSK9i; emerging markets statin-dominant."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $10K/yr (cardio_metabolic drug-class avg)."
+                "note": "$5K blended: statins generic ($100), ezetimibe generic ($200), Repatha/Praluent $6K, Leqvio $6.5K biannual, Nexletol $4K."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $5K/yr."
+                "note": "EU net ~$2.5K: PCSK9i post-AMNOG ~$3K, Leqvio ~$3.5K, statins near-zero."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $2K/yr."
+                "note": "$800 blended: statin generics dominant, branded PCSK9i niche."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~6% peak -- novel CETPi (obicetrapib) + ANGPTL3 (Evkeeza) layer on top of saturated statin/PCSK9i pool."
               }
             },
             "company_slice": {
@@ -236,34 +236,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 3K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
+                "note": "Alpha-1 Foundation + Takeda 10-K 2024: ~100K US A1AT deficiency (PiZZ homozygotes); ~30K diagnosed, ~10K on augmentation therapy."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 4K EU treated/diagnosed."
+                "note": "Orphanet A1AT: ~125K EU PiZZ (Scandinavia highest); ~20K on Prolastin/Zemaira/Glassia augmentation."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 3K ROW treated/diagnosed."
+                "note": "Global PiZZ ~1M prevalence; treated pool ex-US/EU ~8K (augmentation access limited)."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 75% (payor access + formulary)."
+                "note": "~70% -- Medicare Part B covers IV augmentation; commercial reimburses per FDA label for moderate-severe emphysema."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 55% (HTA-gated uptake)."
+                "note": "~55% -- Augmentation reimbursed in Germany/France; NICE rejected on cost-effectiveness."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+                "note": "~30% -- Japan/AU limited; emerging markets minimal augmentation access."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $350K/yr (cardio_metabolic drug-class avg)."
+                "note": "$150K/yr blended: Prolastin-C, Zemaira, Glassia IV augmentation WAC; novel siRNA (fazirsiran, Arrowhead/Takeda) Ph3 pricing TBD."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $180K/yr."
+                "note": "EU net ~$90K: augmentation post tender pricing Germany ~$100K."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $60K/yr."
+                "note": "$50K blended -- limited augmentation access outside Japan."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~15% peak -- fazirsiran liver-directed siRNA (Ph3 readout 2025) expands addressable beyond lung augmentation."
               }
             },
             "company_slice": {
@@ -331,34 +331,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 300K US treated/diagnosed; source: consensus epi (immunology)."
+                "note": "Lupus Foundation of America: ~300K US SLE; 90% female; African American 3x risk; CDC 2018 registry data."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 250K EU treated/diagnosed."
+                "note": "EULAR SLE registry: ~350K EU27+UK; SLEDAI/BILAG severity scoring; ~30% lupus nephritis subset."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 400K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~4M; Asia Pacific highest age-standardized prevalence; lupus nephritis more aggressive."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~55% -- Benlysta (IV + SC) Medicare Part B/D; Saphnelo (anifrolumab) commercial; Lupkynis LN covered."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+                "note": "~38% -- EMA approved Benlysta/Saphnelo/Lupkynis; NICE restrictive; HCQ + MMF backbone standard."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~10% -- HCQ + steroids + MMF/AZA generics dominate; Japan Benlysta reimbursed."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $60K/yr (immunology drug-class avg)."
+                "note": "Blended $45K: Benlysta $40K + Saphnelo $65K + Lupkynis $90K (LN) + HCQ/MMF generic $3K backbone; rituximab off-label."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $30K/yr."
+                "note": "~$22K blended -- Benlysta net ~$25K + generic backbone; anifrolumab ~$40K net."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $12K/yr."
+                "note": "~$5K -- HCQ + generic immunosuppressants; biologics <10% penetration."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~25% peak -- biologic cycle-through (Benlysta -> Saphnelo -> CAR-T pipeline); steroid-sparing driver."
               }
             },
             "company_slice": {
@@ -425,34 +425,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 1600K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
+                "note": "CDC 2023 + JDRF: ~1.9M US T1D (adults + pediatric); ~200K newly diagnosed annually, auto-antibody positive."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 1200K EU treated/diagnosed."
+                "note": "IDF Atlas 2023: ~1.5M EU5+UK T1D; Nordic/Finland highest incidence globally (60/100K)."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 2500K ROW treated/diagnosed."
+                "note": "IDF global: ~8M T1D ex-US/EU (India, China rising; historically under-diagnosed)."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~85% -- Medicare, Medicaid, commercial cover insulin + CGM; Inflation Reduction Act $35/mo insulin cap."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
+                "note": "~80% -- Universal coverage for insulin analogs, CGM reimbursed in UK/Germany/France for T1D."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~40% -- Japan/AU covered; emerging markets basal-bolus access limited, CGM mostly self-pay."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $12K/yr (cardio_metabolic drug-class avg)."
+                "note": "$5K/yr blended: insulin ($1-3K post-IRA cap), CGM Dexcom/Libre ($2-3K), pump $4-6K amortized; Lantidra cell therapy $500K one-time."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $6K/yr."
+                "note": "EU net ~$2.5K: insulin generics ~$500, CGM ~$1.5K reimbursed tier."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $3K/yr."
+                "note": "$1K blended: biosimilar insulin dominant, CGM penetration growing in China/Japan."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~12% peak -- Tzield (teplizumab) delays onset in Stage 2; Vertex VX-880 islet cell pipeline limited near-term."
               }
             },
             "company_slice": {

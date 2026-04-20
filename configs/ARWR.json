@@ -47,34 +47,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 4000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
+                "note": "NIH/FCS registry: ~4K US FCS (familial chylomicronemia, LPL deficiency); ~4M sHTG (severe TG >500 mg/dL) per NHANES."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 3000K EU treated/diagnosed."
+                "note": "Orphanet FCS: ~5K EU5+UK; sHTG ~3M per ESC 2023 European epi."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 5000K ROW treated/diagnosed."
+                "note": "Global FCS ~15K (Ionis/Arrowhead 10-Ks); sHTG ~20M ex-US/EU."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
+                "note": "~60% -- Medicare/commercial cover Waylivra (volanesorsen) + emerging plozasiran/olezarsen for FCS; sHTG access tighter."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 38% (HTA-gated uptake)."
+                "note": "~50% -- EMA approved Waylivra 2019 for FCS; NICE/G-BA gated on pancreatitis history."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~20% -- Japan NHI FCS coverage emerging; sHTG largely statin/fibrate generics."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $10K/yr (cardio_metabolic drug-class avg)."
+                "note": "$300K/yr anchored to Waylivra/olezarsen (Ionis) FCS pricing; sHTG launch 2025-2026 at lower price ~$15K for broader pool."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $5K/yr."
+                "note": "EU net ~$180K FCS post HTA; sHTG net ~$8K."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $2K/yr."
+                "note": "$100K blended for FCS, ~$4K sHTG."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~25% peak for FCS (small captive market); sHTG penetration capped ~2% given massive pool."
               }
             },
             "salesM": 200,
@@ -143,34 +143,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 20000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
+                "note": "AHA 2024 + IQVIA: ~20M US on lipid-lowering therapy (statins ~17M, PCSK9i/ezetimibe ~3M); FH ~1.3M, ASCVD high-risk ~8M."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 16000K EU treated/diagnosed."
+                "note": "ESC/EAS 2023: ~25M EU on LLT; ~2M on PCSK9i (Repatha/Praluent) + inclisiran (Leqvio)."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 30000K ROW treated/diagnosed."
+                "note": "Global ROW: ~40M on LLT; Japan 8M, China rising statin + PCSK9i access."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 52% (payor access + formulary)."
+                "note": "~70% -- Medicare Part D covers Leqvio (Part B buy-and-bill), Repatha, Praluent post-FOURIER/ODYSSEY CV outcomes."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 40% (HTA-gated uptake)."
+                "note": "~60% -- NICE/G-BA reimburse PCSK9i/inclisiran for FH and secondary prevention per LDL thresholds."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~30% -- Japan NHI covers PCSK9i; emerging markets statin-dominant."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $10K/yr (cardio_metabolic drug-class avg)."
+                "note": "$5K blended: statins generic ($100), ezetimibe generic ($200), Repatha/Praluent $6K, Leqvio $6.5K biannual, Nexletol $4K."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $5K/yr."
+                "note": "EU net ~$2.5K: PCSK9i post-AMNOG ~$3K, Leqvio ~$3.5K, statins near-zero."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $2K/yr."
+                "note": "$800 blended: statin generics dominant, branded PCSK9i niche."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~6% peak -- novel CETPi (obicetrapib) + ANGPTL3 (Evkeeza) layer on top of saturated statin/PCSK9i pool."
               }
             },
             "company_slice": {
@@ -237,34 +237,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 20000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
+                "note": "AHA 2024 + IQVIA: ~20M US on lipid-lowering therapy (statins ~17M, PCSK9i/ezetimibe ~3M); FH ~1.3M, ASCVD high-risk ~8M."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 16000K EU treated/diagnosed."
+                "note": "ESC/EAS 2023: ~25M EU on LLT; ~2M on PCSK9i (Repatha/Praluent) + inclisiran (Leqvio)."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 30000K ROW treated/diagnosed."
+                "note": "Global ROW: ~40M on LLT; Japan 8M, China rising statin + PCSK9i access."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 52% (payor access + formulary)."
+                "note": "~70% -- Medicare Part D covers Leqvio (Part B buy-and-bill), Repatha, Praluent post-FOURIER/ODYSSEY CV outcomes."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 40% (HTA-gated uptake)."
+                "note": "~60% -- NICE/G-BA reimburse PCSK9i/inclisiran for FH and secondary prevention per LDL thresholds."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~30% -- Japan NHI covers PCSK9i; emerging markets statin-dominant."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $10K/yr (cardio_metabolic drug-class avg)."
+                "note": "$5K blended: statins generic ($100), ezetimibe generic ($200), Repatha/Praluent $6K, Leqvio $6.5K biannual, Nexletol $4K."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $5K/yr."
+                "note": "EU net ~$2.5K: PCSK9i post-AMNOG ~$3K, Leqvio ~$3.5K, statins near-zero."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $2K/yr."
+                "note": "$800 blended: statin generics dominant, branded PCSK9i niche."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~6% peak -- novel CETPi (obicetrapib) + ANGPTL3 (Evkeeza) layer on top of saturated statin/PCSK9i pool."
               }
             },
             "company_slice": {
@@ -331,34 +331,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 40000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
+                "note": "CDC NHANES 2023: 42% US adults BMI>=30 = ~110M; ~40M eligible for anti-obesity medications (AOMs) post-insurance criteria."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 30000K EU treated/diagnosed."
+                "note": "WHO Europe 2023: ~150M obese in EU+UK; ~30M eligible for AOMs given stricter HTA BMI/comorbidity gates."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 50000K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~450M obese; ~50M eligible (China, Japan, AU have growing GLP-1 reimbursement)."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
+                "note": "~50% -- Medicare excludes weight-loss indication (Part D statute); commercial coverage expanding post-SELECT CV outcomes."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 35% (HTA-gated uptake)."
+                "note": "~35% -- NICE/G-BA limited to BMI>=35 + comorbidities; most purchase out-of-pocket."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~8% -- Japan PMDA approved, Medicare-equivalent coverage; emerging markets mostly self-pay."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $15K/yr (cardio_metabolic drug-class avg)."
+                "note": "$15K/yr avg across Mounjaro ($13K), Zepbound ($12K), Wegovy ($16K), Saxenda ($15K); oral GLP-1 pending."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $8K/yr."
+                "note": "EU net ~$8K; post-G-BA negotiation Zepbound/Wegovy in UK, Germany ~50% of US list."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $3K/yr."
+                "note": "$3K blended; Japan PMDA pricing ~$9K, emerging markets ~$1-2K via rebates/tiered pricing."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~5% peak reflects capacity-constrained launch curve; supply expansion through 2028 unlocks more."
               }
             },
             "company_slice": {
@@ -425,34 +425,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 6000K US treated/diagnosed; source: consensus epi (cns)."
+                "note": "Alzheimer's Association 2024: ~6.9M Americans age 65+ with AD; ~2M early-stage eligible for anti-amyloid."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 5000K EU treated/diagnosed."
+                "note": "Alzheimer Europe: ~7.8M prevalent AD EU27+UK; ~1.5M mild-to-moderate amyloid-positive per PET criteria."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 10000K ROW treated/diagnosed."
+                "note": "WHO 2023: ~39M global AD; ex-US/EU ~25M, Japan PMDA approved lecanemab (~1M Japan AD)."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
+                "note": "~50% - Medicare Part B covers Leqembi/Kisunla post-CMS 2024 decision with CED monitoring; PET/MRI infrastructure limits access."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 35% (HTA-gated uptake)."
+                "note": "~35% - EMA approved Leqembi July 2024 (excl APOE4 homozygotes); NICE rejected, G-BA under review."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~8% - Japan PMDA covered; China/emerging markets minimal anti-amyloid access, donepezil generics dominate."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $28K/yr (cns drug-class avg)."
+                "note": "Blended $28K: Leqembi $26.5K + Kisunla $32K + donepezil/memantine generics ($2K avg, 70% of treated pts)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $15K/yr."
+                "note": "~$15K blended; EU anti-amyloid net ~55% of US list, generics widely used."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $5K/yr."
+                "note": "~$5K blended; Japan near EU pricing, rest generics."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~12% peak through 2030 - infusion capacity, PET access, and ARIA monitoring cap near-term reach of amyloid-targeting."
               }
             },
             "company_slice": {

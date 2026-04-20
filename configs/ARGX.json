@@ -72,10 +72,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "gMG ~100K + CIDP ~20K combined FcRn-eligible US; expanding with ITP/MMN/other AI"
+                "note": "MGFA: ~60-80K US prevalent gMG; ~100K treated including ocular + undiagnosed; AChR+ 85%, MuSK+ 6%."
               },
               "us.priceK": {
-                "note": "Vyvgart ~$375-400K/yr weighted across indications"
+                "note": "Blended $280K: Vyvgart $400K + Ultomiris $450K + Soliris $500K + rituximab off-label $25K; pyridostigmine $1K."
+              },
+              "eu.patientsK": {
+                "note": "EAN/EFNS: ~130K EU27+UK gMG; acetylcholinesterase inhibitors + steroids + MMF/AZA standard."
+              },
+              "row.patientsK": {
+                "note": "Global ex-US/EU ~800K gMG; Japan MHLW registry detailed; China rising diagnosis rates."
+              },
+              "us.wtpPct": {
+                "note": "~65% -- Soliris/Ultomiris (C5) + Vyvgart/Rystiggo (FcRn) Medicare Part B covered; pyridostigmine generic backbone."
+              },
+              "eu.wtpPct": {
+                "note": "~48% -- NICE/G-BA approved Vyvgart/Ultomiris/Rystiggo; AChEi + steroids + MMF first-line."
+              },
+              "row.wtpPct": {
+                "note": "~12% -- pyridostigmine + steroids + AZA/MMF generic; Japan covers FcRn + C5; China limited."
+              },
+              "eu.priceK": {
+                "note": "~$150K blended -- Vyvgart net ~$180K + Ultomiris ~$220K + generic backbone."
+              },
+              "row.priceK": {
+                "note": "~$25K -- pyridostigmine + steroids + generic immunosuppressants dominate."
+              },
+              "penPct": {
+                "note": "~40% peak -- FcRn (efgartigimod, rozanolixizumab) + C5 + pipeline CAR-T/nipocalimab driving advanced therapy shift."
               }
             }
           },
@@ -118,34 +142,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 60K US treated/diagnosed; source: consensus epi (immunology)."
+                "note": "PDSA/ASH: ~60K US chronic ITP adults; ~125K total including pediatric acute; platelet <100K dx threshold."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 50K EU treated/diagnosed."
+                "note": "EHA registry: ~80K EU27+UK chronic ITP; TPO-RA + rituximab + splenectomy tiered algorithm."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 70K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~500K chronic ITP; Japan J-Registry detailed; China TPO-RA access expanding."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 65% (payor access + formulary)."
+                "note": "~60% -- Promacta/Doptelet/Nplate (TPO-RA) Medicare Part B/D; Tavneos emerging; rituximab biosim 2L+."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 48% (HTA-gated uptake)."
+                "note": "~45% -- NICE approved TPO-RA post-splenectomy; eltrombopag/romiplostim standard; rituximab biosim."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+                "note": "~12% -- steroids + IVIG first-line; TPO-RA access growing; Japan reimburses full ladder."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $100K/yr (immunology drug-class avg)."
+                "note": "Blended $80K: Promacta $90K + Nplate $110K + Doptelet $95K + rituximab biosim $25K (20%); steroids/IVIG baseline."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $50K/yr."
+                "note": "~$45K blended -- TPO-RA net ~$55K + biosim rituximab ~$10K."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $20K/yr."
+                "note": "~$12K -- steroids/IVIG + eltrombopag generic entry in some markets."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~35% peak -- rilzabrutinib (BTKi) + efgartigimod (FcRn) pipeline expanding beyond TPO-RA."
               }
             },
             "company_slice": {
@@ -212,34 +236,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 5K US treated/diagnosed; source: consensus epi (immunology)."
+                "note": "GBS/CIDP Foundation: ~5K US MMN (multifocal motor neuropathy); ~1-2:100K prevalence; anti-GM1 antibodies common."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 6K EU treated/diagnosed."
+                "note": "EAN: ~7K EU27+UK MMN; IVIG mainstay; PNS diagnostic criteria; often misdiagnosed as ALS early."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 8K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~20K MMN; underdiagnosed; Japan MHLW intractable disease registry."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 75% (payor access + formulary)."
+                "note": "~70% -- Medicare Part B IVIG (Gamunex/Privigen) covered; SCIG (Hizentra) home admin; rituximab off-label."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 55% (HTA-gated uptake)."
+                "note": "~55% -- IVIG/SCIG covered; limited novel therapy; efgartigimod/nipocalimab trials ongoing."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+                "note": "~20% -- IVIG access limited by cost; steroids ineffective in MMN unlike CIDP."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $200K/yr (immunology drug-class avg)."
+                "note": "Blended $150K: IVIG ~$150K/yr (maintenance dosing) + SCIG $140K; no approved targeted therapy; rituximab $25K off-label."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $100K/yr."
+                "note": "~$80K blended -- IVIG/SCIG net ~$80K; tender-based pricing."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $40K/yr."
+                "note": "~$30K -- IVIG access-constrained; plasma-derived supply limits."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~65% peak -- IVIG is standard of care; FcRn antagonists (efgartigimod) potential alternative in trials."
               }
             },
             "company_slice": {
@@ -307,34 +331,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 3K US treated/diagnosed; source: consensus epi (musculoskeletal)."
+                "note": "NORD/MDA: ~3K US congenital myasthenic syndrome (~1:100K); genetic dx (CHRNE, DOK7, RAPSN most common)."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 3.5K EU treated/diagnosed."
+                "note": "Orphanet: ~4K EU-5 CMS; TREAT-NMD registry growing; salbutamol/pyridostigmine symptom mgmt standard."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 5K ROW treated/diagnosed."
+                "note": "Global ~50K CMS; ex-US/EU ~3K diagnosed -- underdx in most markets absent genetic testing."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 78% (payor access + formulary)."
+                "note": "~55% -- ultra-rare; pyridostigmine/albuterol off-label free; novel therapy WTP high given unmet need."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 58% (HTA-gated uptake)."
+                "note": "~40% -- orphan pathway, HTA challenging for ultra-rare; named-patient access common."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~15% -- diagnosis gap limits access; Japan/select APAC via orphan import programs."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $300K/yr (musculoskeletal drug-class avg)."
+                "note": "Novel CMS therapy (e.g., DYN-101) modeled ~$400K/yr -- ultra-rare orphan premium pricing."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $150K/yr."
+                "note": "~$280K/yr post-HTA (~30% discount); managed access agreements likely for ultra-rare."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $50K/yr."
+                "note": "~$150K/yr blended; Japan orphan drug premium, LatAm/APAC limited."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~20% peak -- genetic subtype specificity (subtype-matched Rx) narrows addressable slice."
               }
             },
             "company_slice": {
@@ -402,34 +426,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 1000K US treated/diagnosed; source: consensus epi (immunology)."
+                "note": "Sjogren's Foundation: ~1M US diagnosed; ~4M including undiagnosed; 90% female; ASSAY/CLASSIC criteria."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 800K EU treated/diagnosed."
+                "note": "EULAR Sjogren's registry: ~2M EU27+UK; ESSDAI scoring for systemic disease; ~25% have systemic involvement."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 1000K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~15M prevalence extrapolated; Asia significantly underdiagnosed; no novel approved therapies."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
+                "note": "~25% -- no FDA-approved systemic therapy; off-label HCQ/rituximab + symptomatic (Restasis/Xiidra for sicca)."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 38% (HTA-gated uptake)."
+                "note": "~18% -- no EMA systemic approval; HCQ first-line per EULAR; pilocarpine/cevimeline for symptoms."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~5% -- symptomatic care only; HCQ generic widely available."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $50K/yr (immunology drug-class avg)."
+                "note": "Blended $8K: HCQ generic $1K + rituximab biosim $20K (10% pts) + symptomatic eye/mouth $3K; ianalumab/dazodalibep pipeline."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $25K/yr."
+                "note": "~$4K blended -- HCQ + biosim rituximab dominant; Ruconest/symptomatic."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $10K/yr."
+                "note": "~$1K -- HCQ generic + basic symptomatic care."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~15% peak -- awaiting novel approvals (ianalumab, dazodalibep, remibrutinib); current pen reflects off-label biologics."
               }
             },
             "company_slice": {

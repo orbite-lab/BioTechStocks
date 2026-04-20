@@ -45,34 +45,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 665.7K diagnosed/treated patients."
+                "note": "SEER: ~83K new bladder/yr US; ~25K muscle-invasive/metastatic on systemic tx. Source: NCI SEER 2024, BCAN."
               },
               "eu.patientsK": {
-                "note": "EU 713.3K diagnosed/treated patients."
+                "note": "EU5 ~95K new bladder/yr (GLOBOCAN); ~28K on systemic therapy."
               },
               "row.patientsK": {
-                "note": "ROW 998.6K diagnosed/treated patients."
+                "note": "ROW ~80K on-tx; high incidence in smoking-heavy APAC + aniline dye regions."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "~62% -- Padcev+Keytruda (EV-302) 1L SOC 2024; Medicare + commercial NCCN Cat 1; BCG shortage drives intravesical alternatives."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "~45% -- NICE approved Padcev+pembro 2024; G-BA betraechtlich; gem/cis remains cost-effective comparator."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "~14% -- Japan J-DPC covers Padcev; China NRDL tislelizumab; EM rely on gem/cis + BCG."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "Blended $185K: Padcev+pembro $310K (35% pts) + nivo adj $165K (15%) + gem/cis+IO $95K (30%) + chemo alone $20K (20%)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "~$105K blended; EU net ~57% US; Padcev combo priced ~EUR 195K/course."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "~$35K blended; gem/cis generic dominates ex-Japan."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~50% peak -- EV+pembro displacing chemo 1L over 5yr; FGFR3 Balversa + HER2 ADCs (disitamab) expand 2L."
               }
             },
             "company_slice": {
@@ -139,34 +139,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 60K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "SEER: ~66K new PDAC/yr US; ~45K on systemic (mostly metastatic). Source: NCI SEER 2024, PanCAN."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 65K EU treated/diagnosed."
+                "note": "EU5 ~95K PDAC/yr; ~60K on systemic per EUROCARE."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 120K ROW treated/diagnosed."
+                "note": "ROW ~250K on-tx; rising incidence globally per GLOBOCAN 2022."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~55% -- FOLFIRINOX + gem/nab-pac SOC; Lynparza BRCA+ 8%; KRAS G12C/D pipeline covered; Medicare broad."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+                "note": "~42% -- NICE approved FOLFIRINOX + gem/nabpac; olaparib BRCA+ maintenance via ASMR IV."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~14% -- Japan J-DPC + China NRDL; EM rely on gemcitabine mono."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $180K/yr (oncology drug-class avg)."
+                "note": "Blended $70K: FOLFIRINOX $45K (50% pts) + gem/nabpac $85K (35%) + PARPi BRCA+ $180K (5%) + Onivyde 2L $95K (10%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $100K/yr."
+                "note": "~$40K blended; EU net ~57% US; chemo backbones generic."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $40K/yr."
+                "note": "~$15K blended; gemcitabine generic <$2K dominant."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~40% peak -- poor OS limits prevalence buildup; KRAS inhibitors (G12D, pan-RAS) + NALIRIFOX reshape 5yr."
               }
             },
             "company_slice": {
@@ -233,34 +233,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 554.8K diagnosed/treated patients."
+                "note": "~30K US NSCLC w/o targetable driver (wild-type); IO+chemo SOC 1L. Source: NCI SEER + KEYNOTE-189 enrollment."
               },
               "eu.patientsK": {
-                "note": "EU 594.4K diagnosed/treated patients."
+                "note": "EU5 ~45K driver-negative NSCLC; ESMO NGS reflex excludes drivers."
               },
               "row.patientsK": {
-                "note": "ROW 832.1K diagnosed/treated patients."
+                "note": "ROW ~180K driver-negative; smoking-associated heavy in APAC/EM."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "~65% -- Keytruda+chemo 1L (KN-189/407), Tecentriq+chemo, Libtayo; NCCN Cat 1; Medicare + commercial broad."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "~48% -- NICE + G-BA approved pembro+chemo + atezo+chemo 1L; France ASMR III."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "~18% -- Japan PMDA full; China NRDL tislelizumab/sintilimab + chemo."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "Blended $135K: pembro+chemo $175K (50% pts) + atezo/cemi+chemo $165K (15%) + IO+CTLA4 $210K (10%) + chemo alone $30K (25%)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "~$80K blended; EU net ~59% US."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "~$30K blended; China NRDL IO <$30K drives mix."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~55% peak -- IO+chemo saturated 1L; LAG3 + TIGIT + PD1xVEGF (ivonescimab) 1L combos extend 5yr."
               }
             },
             "company_slice": {
@@ -327,34 +327,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 554.8K diagnosed/treated patients."
+                "note": "SEER: ~83K new bladder/yr US; ~25K muscle-invasive/metastatic on systemic tx. Source: NCI SEER 2024, BCAN."
               },
               "eu.patientsK": {
-                "note": "EU 594.4K diagnosed/treated patients."
+                "note": "EU5 ~95K new bladder/yr (GLOBOCAN); ~28K on systemic therapy."
               },
               "row.patientsK": {
-                "note": "ROW 832.1K diagnosed/treated patients."
+                "note": "ROW ~80K on-tx; high incidence in smoking-heavy APAC + aniline dye regions."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "~62% -- Padcev+Keytruda (EV-302) 1L SOC 2024; Medicare + commercial NCCN Cat 1; BCG shortage drives intravesical alternatives."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "~45% -- NICE approved Padcev+pembro 2024; G-BA betraechtlich; gem/cis remains cost-effective comparator."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "~14% -- Japan J-DPC covers Padcev; China NRDL tislelizumab; EM rely on gem/cis + BCG."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "Blended $185K: Padcev+pembro $310K (35% pts) + nivo adj $165K (15%) + gem/cis+IO $95K (30%) + chemo alone $20K (20%)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "~$105K blended; EU net ~57% US; Padcev combo priced ~EUR 195K/course."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "~$35K blended; gem/cis generic dominates ex-Japan."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~50% peak -- EV+pembro displacing chemo 1L over 5yr; FGFR3 Balversa + HER2 ADCs (disitamab) expand 2L."
               }
             },
             "company_slice": {
@@ -421,34 +421,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 332.9K diagnosed/treated patients."
+                "note": "~80K US across BT8009 (Nectin4+ bladder/other) + BT5528 (EphA2+) + BT7480 (Nectin4xCD137) targets. Source: Bicycle 10-K."
               },
               "eu.patientsK": {
-                "note": "EU 356.6K diagnosed/treated patients."
+                "note": "EU5 ~100K Bicycle-addressable across Nectin4 + EphA2 + MT1-MMP."
               },
               "row.patientsK": {
-                "note": "ROW 499.3K diagnosed/treated patients."
+                "note": "ROW ~250K addressable."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "~52% -- pre-commercial; model assumes Medicare + commercial at Padcev-like pricing given Nectin4 precedent."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "~38% -- EMA pathway; NICE CDF for novel modality."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "~12% -- Japan PMDA + selective APAC."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "Blended $225K: Bicycle Toxin Conjugate (BTC) $240K (70% pts) + Bicycle TICA/CD137 $200K (30%); Padcev-benchmarked."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "~$135K blended; EU net ~60% US."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "~$55K blended; launch Japan + China."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~30% peak -- Phase 1/2 assets; BT8009 Phase 2/3 Duravelo; 5-7yr ramp from first approval ~2027+."
               }
             },
             "company_slice": {

@@ -52,6 +52,38 @@
               "us.priceK": {
                 "note": "LAI buprenorphine ~$15K/yr US (Sublocade/Brixadi benchmark); specialty addiction medicine pricing"
               }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "SAMHSA/NIDA 2024: ~2M US OUD; ~500K on MAT (buprenorphine, methadone, naltrexone)."
+              },
+              "eu.patientsK": {
+                "note": "EMCDDA 2024: ~1.3M EU27+UK OUD; ~700K on OAT."
+              },
+              "row.patientsK": {
+                "note": "WHO: ~40M global OUD; treatment access highly variable."
+              },
+              "us.wtpPct": {
+                "note": "~70% - Medicare/Medicaid cover buprenorphine (Suboxone), Sublocade, Vivitrol; X-waiver eliminated 2023 expanding access."
+              },
+              "eu.wtpPct": {
+                "note": "~60% - EU methadone/buprenorphine OAT programs; Sublocade LAI expanding."
+              },
+              "row.wtpPct": {
+                "note": "~15% - LMICs minimal MAT access; stigma and regulation barriers."
+              },
+              "us.priceK": {
+                "note": "Blended $5K: buprenorphine generic (Suboxone) $2K (70%), Sublocade LAI $22K, Vivitrol $15K, methadone clinic $5K."
+              },
+              "eu.priceK": {
+                "note": "~$2.5K blended; EU methadone cheap, buprenorphine generic."
+              },
+              "row.priceK": {
+                "note": "~$0.8K; generics where available."
+              },
+              "penPct": {
+                "note": "~25% peak branded - generic buprenorphine dominates; LAI (Sublocade, Brixadi) growth in treatment retention."
+              }
             }
           },
           "area": "cns.psychiatry.opioid_dependence"
@@ -92,34 +124,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 15K US treated/diagnosed; source: consensus epi (endocrine)."
+                "note": "Ipsen/Crinetics 10-Ks + Acromegaly Community: ~25K US acromegaly prevalence; ~8K on somatostatin analogs (Sandostatin, Somatuline, Mycapssa)."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 18K EU treated/diagnosed."
+                "note": "Orphanet acromegaly: ~30K EU; ESE registry; ~10K treated with SSA/pegvisomant."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 20K ROW treated/diagnosed."
+                "note": "Global acromegaly ~90K prevalence; treatable ex-US/EU ~15K (Japan/AU registries)."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 72% (payor access + formulary)."
+                "note": "~75% -- Medicare/commercial cover Sandostatin LAR, Somatuline Depot, Mycapssa oral, pegvisomant (Somavert); Crinetics paltusotine Ph3."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 55% (HTA-gated uptake)."
+                "note": "~65% -- NICE/G-BA reimburse SSAs + pegvisomant second-line; oral Mycapssa growing."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+                "note": "~35% -- Japan NHI SSA/pegvisomant covered."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $120K/yr (endocrine drug-class avg)."
+                "note": "$80K/yr blended: Sandostatin LAR ($45K), Somatuline Depot ($55K), Mycapssa oral ($70K), Somavert ($120K); paltusotine (Crinetics) Ph3 pricing TBD."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $60K/yr."
+                "note": "EU net ~$45K post AMNOG/NICE SSA pricing."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $25K/yr."
+                "note": "$20K blended -- Japan NHI branded, emerging octreotide generic."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~20% peak -- oral paltusotine (Crinetics Ph3) + Mycapssa shift drives SSA switch pool expansion."
               }
             },
             "salesM": 80,
@@ -189,34 +221,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 11.3K diagnosed/treated patients."
+                "note": "~12K US GEP-NET prevalent on-tx; ~4K incident/yr. Source: NCI SEER 2024, NET Research Foundation."
               },
               "eu.patientsK": {
-                "note": "EU 13.2K diagnosed/treated patients."
+                "note": "EU5 ~15K GEP-NET prevalent; ENETS registry."
               },
               "row.patientsK": {
-                "note": "ROW 13.2K diagnosed/treated patients."
+                "note": "ROW ~40K; Japan JNETS registry + China."
               },
               "us.wtpPct": {
-                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+                "note": "~62% -- Sandostatin/Somatuline SSA 1L; Lutathera (Lu-177-DOTATATE) PRRT NETTER-1/2; Afinitor/Sutent mid-grade; Medicare broad."
               },
               "eu.wtpPct": {
-                "note": "Rare disease default -- HTA-gated uptake (55%)."
+                "note": "~48% -- NICE + G-BA approved lanreotide + Lutathera; ESMO + ENETS guidelines."
               },
               "row.wtpPct": {
-                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+                "note": "~16% -- Japan PMDA full; China NRDL octreotide biosim."
               },
               "us.priceK": {
-                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+                "note": "Blended $110K: SSA $45K (55% pts) + Lutathera $190K (25%) + Afinitor/Sutent $165K (15%) + chemo $30K (5%)."
               },
               "eu.priceK": {
-                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+                "note": "~$65K blended; EU net ~59% US; octreotide LAR generic lowers."
               },
               "row.priceK": {
-                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+                "note": "~$22K blended; octreotide biosim/generic."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~50% peak -- SSA + Lutathera saturated grade-dependent; next-gen PRRT (Ac-225) + combos (Lutathera+nivo) extend."
               }
             },
             "company_slice": {
@@ -286,34 +318,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 140K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
+                "note": "Otsuka Jynarque 10-K + NIH: ~140K US ADPKD; ~20K PLD (polycystic liver disease) with significant hepatomegaly treatment-eligible."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 120K EU treated/diagnosed."
+                "note": "Orphanet ADPKD: ~160K EU; PLD treatable ~25K per ERA-EDTA registry."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 150K ROW treated/diagnosed."
+                "note": "Global ADPKD ~12M prevalence; treatable pool ROW ~30K PLD."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 65% (payor access + formulary)."
+                "note": "~65% -- Medicare/commercial cover Jynarque (tolvaptan) for ADPKD progression; PLD novel agents (somatostatin analogs) step-edited."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 48% (HTA-gated uptake)."
+                "note": "~55% -- NICE/G-BA reimburse tolvaptan for rapid progression ADPKD Mayo Class 1C-1E."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~25% -- Japan NHI covers tolvaptan; emerging markets octreotide/lanreotide off-label."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $80K/yr (cardio_metabolic drug-class avg)."
+                "note": "$13K/yr anchored to Otsuka Jynarque WAC + octreotide/lanreotide (~$20K) for PLD off-label."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $40K/yr."
+                "note": "EU net ~$7K post HTA negotiation; Jynarque ~$8K, somatostatin ~$12K."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $15K/yr."
+                "note": "$4K blended -- Japan tolvaptan reimbursed, emerging generic/biosimilar."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~15% peak -- PLD-specific pipeline limited; tolvaptan mature for ADPKD."
               }
             },
             "company_slice": {
@@ -380,34 +412,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 40000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
+                "note": "CDC NHANES 2023: 42% US adults BMI>=30 = ~110M; ~40M eligible for anti-obesity medications (AOMs) post-insurance criteria."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 30000K EU treated/diagnosed."
+                "note": "WHO Europe 2023: ~150M obese in EU+UK; ~30M eligible for AOMs given stricter HTA BMI/comorbidity gates."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 50000K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~450M obese; ~50M eligible (China, Japan, AU have growing GLP-1 reimbursement)."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
+                "note": "~50% -- Medicare excludes weight-loss indication (Part D statute); commercial coverage expanding post-SELECT CV outcomes."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 35% (HTA-gated uptake)."
+                "note": "~35% -- NICE/G-BA limited to BMI>=35 + comorbidities; most purchase out-of-pocket."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~8% -- Japan PMDA approved, Medicare-equivalent coverage; emerging markets mostly self-pay."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $15K/yr (cardio_metabolic drug-class avg)."
+                "note": "$15K/yr avg across Mounjaro ($13K), Zepbound ($12K), Wegovy ($16K), Saxenda ($15K); oral GLP-1 pending."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $8K/yr."
+                "note": "EU net ~$8K; post-G-BA negotiation Zepbound/Wegovy in UK, Germany ~50% of US list."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $3K/yr."
+                "note": "$3K blended; Japan PMDA pricing ~$9K, emerging markets ~$1-2K via rebates/tiered pricing."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~5% peak reflects capacity-constrained launch curve; supply expansion through 2028 unlocks more."
               }
             },
             "company_slice": {

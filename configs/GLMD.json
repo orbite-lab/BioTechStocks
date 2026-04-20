@@ -45,34 +45,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 150K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "SEER: ~155K new CRC/yr US; ~55K metastatic/advanced on systemic tx. Source: NCI SEER 2024, ACS."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 170K EU treated/diagnosed."
+                "note": "EU5 ~215K new CRC/yr; ~70K on systemic per EUROCARE-6."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 350K ROW treated/diagnosed."
+                "note": "ROW ~320K on-tx; China NCC reports ~560K new CRC/yr (highest globally)."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
+                "note": "~65% -- FOLFOX/FOLFIRI + bev/cetux/pani SOC; Krazati/Lumakras KRAS G12C; Keytruda MSI-H 1L; Medicare + commercial broad."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
+                "note": "~48% -- NICE + G-BA approved all tgt rx; France ASMR III-IV; bevacizumab biosim widely used."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~16% -- Japan J-DPC full coverage; China NRDL cetux + bev; EM chemo backbone."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $180K/yr (oncology drug-class avg)."
+                "note": "Blended $95K: bev/cetux+chemo $125K (50% pts) + KRAS G12Ci $195K (5%) + pembro MSI-H $180K (5%) + chemo alone $30K (40%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $100K/yr."
+                "note": "~$55K blended; EU net ~58% US; bev biosim ~50% off list."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $40K/yr."
+                "note": "~$22K blended; 5-FU/oxali/irino generic <$3K."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~50% peak -- tgt rx tied to biomarkers (KRAS G12C 4%, MSI-H 5%, BRAF V600E 8%, HER2 3%); broad chemo base."
               }
             },
             "company_slice": {
@@ -140,34 +140,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 35K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "NCI: ~42K new liver/yr US; ~20K advanced HCC on systemic. Source: NCI SEER 2024, AASLD."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 40K EU treated/diagnosed."
+                "note": "EU5 ~60K HCC/yr; ~25K on systemic per EASL registry."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 400K ROW treated/diagnosed."
+                "note": "ROW ~650K on-tx; China ~400K HCC/yr (HBV-driven), Japan ~40K."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
+                "note": "~60% -- atezo+bev (IMbrave150) + durva+treme (HIMALAYA) 1L SOC; NCCN Cat 1; Medicare broad."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
+                "note": "~46% -- NICE approved atezo+bev 2022; G-BA betraechtlich; sorafenib/lenvatinib generic fallback."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 7% (limited reimbursement ex-Japan)."
+                "note": "~22% -- Japan J-DPC + China NRDL cover IO+VEGF; high HCC volume drives TKI generic use."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $200K/yr (oncology drug-class avg)."
+                "note": "Blended $135K: atezo+bev $180K (35% pts) + durva+treme $195K (15%) + lenva/sora $95K (30%) + nivo+ipi 2L $175K (20%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $110K/yr."
+                "note": "~$78K blended; EU net ~58% US; lenvatinib/sorafenib generic <$20K."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $40K/yr."
+                "note": "~$28K blended; sorafenib generic ~$5K China/EM dominates."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~45% peak -- IO-VEGF 1L penetrated 55% eligible; Child-Pugh A only limits; FGF19 + GPC3 ADCs emerging."
               }
             },
             "company_slice": {
@@ -235,34 +235,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 12K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "NCI: ~8K intrahepatic + ~4K extrahepatic CCA/yr US; ~10K prevalent on systemic. Source: NCI, Cholangiocarcinoma Foundation."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 14K EU treated/diagnosed."
+                "note": "EU5 ~14K CCA/yr; ~12K on systemic. Rising intrahepatic incidence per ENS-CCA registry."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 25K ROW treated/diagnosed."
+                "note": "ROW ~60K on-tx; APAC high due to fluke-endemic (Thailand) + HBV-driven iCCA."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 65% (payor access + formulary)."
+                "note": "~55% -- FGFR2 (Pemazyre/Truseltiq) + IDH1 (Tibsovo) tgt rx covered; gem/cis+IO (durvalumab) 1L SOC post-TOPAZ-1."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 50% (HTA-gated uptake)."
+                "note": "~42% -- NICE approved pemigatinib + durva+chemo; EMA orphan designation supports ASMR III."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~12% -- Japan PMDA covers tgt rx; EM limited to gem/cis."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $200K/yr (oncology drug-class avg)."
+                "note": "Blended $155K: FGFR2i $185K (15% pts) + IDH1i $165K (5%) + durva+gemcis $125K (50%) + gemcis alone $25K (30%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $110K/yr."
+                "note": "~$90K blended; EU net ~58% US."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $45K/yr."
+                "note": "~$30K blended; gem/cis generic dominant."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~42% peak -- FGFR2 fusion ~10-15% + IDH1 ~15% + HER2 + KRAS G12C cumulative tgt pop; IO+chemo 1L backbone."
               }
             },
             "company_slice": {
@@ -330,34 +330,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 1000K US treated/diagnosed; source: consensus epi (cns)."
+                "note": "Parkinson's Foundation/NINDS: ~1M US PD (~60K new/yr); levodopa 50+ years cornerstone."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 800K EU treated/diagnosed."
+                "note": "EU PD registries: ~1.2M PD EU27+UK; ~100K incident/year."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 1500K ROW treated/diagnosed."
+                "note": "WHO 2023: ~10M global PD; Japan ~250K PD with DUOPA/Vyalev access."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~80% - Medicare Part D broad PD coverage; Vyalev (foslevodopa), DUOPA, MAO-B inhibitors, Nourianz."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+                "note": "~65% - EU broad PD formulary; device-aided (DUOPA, DBS) per NICE/G-BA."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~30% - Japan broad; emerging markets levodopa/carbidopa generic only."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $25K/yr (cns drug-class avg)."
+                "note": "Blended $8K: levodopa/carbidopa generics $1K (70% of pts), Vyalev $95K, Nourianz $20K, DBS $75K amortized."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $12K/yr."
+                "note": "~$4K blended; EU device-aided per access criteria."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $5K/yr."
+                "note": "~$1.5K blended; generics dominant."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~50% peak - levodopa generic saturates; branded share in advanced PD (Vyalev, DUOPA) and GBA1/LRRK2 pipeline."
               }
             },
             "company_slice": {
@@ -427,34 +427,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 3000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
+                "note": "Madrigal 10-K 2024 + AASLD: ~14M US MASH (F2-F3 fibrosis); ~6M biopsy-confirmed/FibroScan-qualified treatment-eligible."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 2500K EU treated/diagnosed."
+                "note": "EASL 2023: ~10M EU MASH F2-F3; ~4M eligible post Rezdiffra/Wegovy MASH label expansion."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 4000K ROW treated/diagnosed."
+                "note": "Global MASH ~115M F2-F3; treated pool ex-US/EU ~15M (Japan NHI early mover, China growing)."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
+                "note": "~45% -- Medicare/commercial cover Rezdiffra (resmetirom, Madrigal) post-MAESTRO-NASH; prior-auth requires F2-F3 confirmation."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 38% (HTA-gated uptake)."
+                "note": "~30% -- EMA approved resmetirom 2024; HTA negotiation ongoing G-BA/NICE through 2025."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~10% -- Japan PMDA approved 2024; emerging MASH access minimal near-term."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $30K/yr (cardio_metabolic drug-class avg)."
+                "note": "$47K/yr anchored to Madrigal Rezdiffra WAC 2024; GLP-1 adjacent (Wegovy MASH-expanded) ~$16K."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $15K/yr."
+                "note": "EU net ~$25K Rezdiffra post AMNOG/NICE; GLP-1 ~$8K."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $6K/yr."
+                "note": "$12K blended -- Japan NHI Rezdiffra ~$20K, emerging tiered."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~8% peak -- capacity + diagnosis bottleneck (FibroScan access) limits uptake despite large pool."
               }
             },
             "company_slice": {

@@ -47,34 +47,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 180K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "SEER 2024: ~21K new CLL + ~80K new NHL/yr; ~180K prevalent on active tx. Source: NCI SEER, LLS."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 200K EU treated/diagnosed."
+                "note": "EU5 prevalence ~200K CLL/NHL on tx; HMRN + EUROCARE registries."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 250K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~250K; China NMPA CLL registry + APAC hematology estimates."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 65% (payor access + formulary)."
+                "note": "~60% -- Medicare + commercial coverage for BTKi/CAR-T strong; CAR-T access gated by accredited centers."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 48% (HTA-gated uptake)."
+                "note": "~45% -- HTA (NICE, G-BA) approved BTKi/bispecifics; CAR-T reimbursement varies by country."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+                "note": "~12% -- Japan + AU well-covered; EM rely on rituximab biosimilars + CHOP chemo."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $180K/yr (oncology drug-class avg)."
+                "note": "Blended $220K: BTKi $200K (45% pts) + CAR-T $410K (5%) + bispecific $250K (10%) + anti-CD20 $80K (25%) + chemo $30K (15%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $100K/yr."
+                "note": "~$130K blended; EU net ~60% of US list across modalities."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $40K/yr."
+                "note": "~$50K blended; generics (rituximab biosim, CHOP) dominant outside Japan."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~47% peak -- BTKi + CAR-T + bispecifics combined capture of eligible CLL/NHL over 5yr."
               }
             },
             "company_slice": {
@@ -141,34 +141,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 45K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "SEER: ~27K gastric + ~22K esophageal/yr US; ~25K on systemic. Source: NCI SEER 2024."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 55K EU treated/diagnosed."
+                "note": "EU5 ~75K gastric+GEJ+esoph/yr; ~35K on systemic."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 300K ROW treated/diagnosed."
+                "note": "ROW ~800K on-tx; China + Japan + Korea >60% global gastric burden (GLOBOCAN 2022)."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
+                "note": "~58% -- Keytruda+chemo 1L (KEYNOTE-859), Enhertu HER2+ 2L, Vyloy CLDN18.2 covered; NCCN Cat 1."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
+                "note": "~44% -- NICE approved pembro+chemo + Enhertu + zolbetuximab; G-BA betraechtlich for HER2+."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~20% -- Japan PMDA + China NRDL cover IO+chemo; high volume market."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $190K/yr (oncology drug-class avg)."
+                "note": "Blended $135K: pembro+chemo $175K (40% pts) + Enhertu HER2+ $185K (15%) + Vyloy CLDN18.2 $140K (20%) + chemo alone $25K (25%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $105K/yr."
+                "note": "~$78K blended; EU net ~58% US."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $40K/yr."
+                "note": "~$32K blended; China/Japan mix with trastuzumab biosim + tislelizumab NRDL price."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~48% peak -- IO+chemo 1L saturated; CLDN18.2 (Vyloy) ~38% + HER2+ 20% + FGFR2b (bemarituzumab) extend."
               }
             },
             "salesM": 737.0,
@@ -237,34 +237,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 80K diagnosed/treated patients."
+                "note": "~80K US CLL + FL prevalent on BCL2-directed tx (Venclexta label). Source: AbbVie 10-K, CLL Society."
               },
               "eu.patientsK": {
-                "note": "EU 90K diagnosed/treated patients."
+                "note": "EU5 ~90K BCL2-eligible CLL/FL; NICE CLL guidance + CLL14 regimen."
               },
               "row.patientsK": {
-                "note": "ROW 120K diagnosed/treated patients."
+                "note": "ROW ~110K; Japan CLL ~7K + China ~40K CLL+FL on ven-based regimens."
               },
               "us.wtpPct": {
-                "note": "US WTP 55% -- commercial payor access + formulary coverage."
+                "note": "~65% -- Venclexta+obinutuzumab 1L CLL NCCN Cat 1; Medicare Part B+D; ramp-up TLS monitoring in outpatient."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 42% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "~48% -- NICE TA approved ven+obi CLL 2019; G-BA betraechtlich; HTA favors fixed-duration vs continuous BTKi."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 10% -- limited reimbursement outside US/EU/Japan."
+                "note": "~14% -- Japan PMDA full; China NRDL 2020; EM chlorambucil+rituximab biosim."
               },
               "us.priceK": {
-                "note": "US market blended avg $200K/yr across treatment modalities."
+                "note": "Blended $165K: ven+obi fixed 12mo $180K (70% pts) + ven+R 2L $150K (20%) + ven mono $120K (10%)."
               },
               "eu.priceK": {
-                "note": "EU CLL/NHL blended: ~55-60% of US across modalities."
+                "note": "~$95K blended; fixed-duration reduces EU cost vs continuous BTKi."
               },
               "row.priceK": {
-                "note": "ROW: chemo/generic rituximab dominant; ~$50K weighted."
+                "note": "~$35K blended; obi biosim + ven priced lower in China/EM."
               },
               "penPct": {
-                "note": "Peak penetration 8% -- refine per competitive landscape."
+                "note": "~40% peak -- BCL2-dependent subset (CLL + FL); next-gen BCL2 (sonrotoclax) + BCL2+BTKi doublets extend."
               }
             },
             "company_slice": {
@@ -331,34 +331,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 15K diagnosed/treated patients."
+                "note": "~15K US post-covalent-BTKi failure (C481S mut + intolerance); ~12K eligible for Jaypirca/pirto. Source: Lilly 10-K, MDACC."
               },
               "eu.patientsK": {
-                "note": "EU 18K diagnosed/treated patients."
+                "note": "EU5 ~18K post-BTKi resistant/intolerant; ERIC registry."
               },
               "row.patientsK": {
-                "note": "ROW 25K diagnosed/treated patients."
+                "note": "ROW ~25K on 2nd-gen non-covalent BTKi or CAR-T salvage."
               },
               "us.wtpPct": {
-                "note": "US WTP 65% -- commercial payor access + formulary coverage."
+                "note": "~60% -- Jaypirca (pirtobrutinib) post-BTKi accel approval 2023; Medicare + commercial NCCN Cat 2A R/R CLL."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 50% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "~42% -- EMA approved pirto 2023; NICE TA in progress; reimbursement via CDF."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 12% -- limited reimbursement outside US/EU/Japan."
+                "note": "~10% -- Japan PMDA review pending; limited access elsewhere."
               },
               "us.priceK": {
-                "note": "US market blended avg $250K/yr across treatment modalities."
+                "note": "Blended $215K: pirto $225K (60% pts) + CAR-T salvage $420K (10%) + bispecific (epco/mosu) $260K (20%) + allo-SCT $150K (10%)."
               },
               "eu.priceK": {
-                "note": "EU CLL/NHL blended: ~55-60% of US across modalities."
+                "note": "~$125K blended; EU net ~58% US for non-covalent BTKi."
               },
               "row.priceK": {
-                "note": "ROW: chemo/generic rituximab dominant; ~$50K weighted."
+                "note": "~$45K blended; limited 2G BTKi access."
               },
               "penPct": {
-                "note": "Peak penetration 5% -- refine per competitive landscape."
+                "note": "~35% peak -- ncBTKi + BCL2 retreatment + CAR-T stack; BTK degraders (BGB-16673, NX-5948) next wave."
               }
             },
             "company_slice": {
@@ -425,34 +425,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 35K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "NCI: ~42K new liver/yr US; ~20K advanced HCC on systemic. Source: NCI SEER 2024, AASLD."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 40K EU treated/diagnosed."
+                "note": "EU5 ~60K HCC/yr; ~25K on systemic per EASL registry."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 400K ROW treated/diagnosed."
+                "note": "ROW ~650K on-tx; China ~400K HCC/yr (HBV-driven), Japan ~40K."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
+                "note": "~60% -- atezo+bev (IMbrave150) + durva+treme (HIMALAYA) 1L SOC; NCCN Cat 1; Medicare broad."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
+                "note": "~46% -- NICE approved atezo+bev 2022; G-BA betraechtlich; sorafenib/lenvatinib generic fallback."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 7% (limited reimbursement ex-Japan)."
+                "note": "~22% -- Japan J-DPC + China NRDL cover IO+VEGF; high HCC volume drives TKI generic use."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $200K/yr (oncology drug-class avg)."
+                "note": "Blended $135K: atezo+bev $180K (35% pts) + durva+treme $195K (15%) + lenva/sora $95K (30%) + nivo+ipi 2L $175K (20%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $110K/yr."
+                "note": "~$78K blended; EU net ~58% US; lenvatinib/sorafenib generic <$20K."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $40K/yr."
+                "note": "~$28K blended; sorafenib generic ~$5K China/EM dominates."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~45% peak -- IO-VEGF 1L penetrated 55% eligible; Child-Pugh A only limits; FGF19 + GPC3 ADCs emerging."
               }
             },
             "company_slice": {

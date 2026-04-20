@@ -47,34 +47,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 60K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "SEER: ~66K new PDAC/yr US; ~45K on systemic (mostly metastatic). Source: NCI SEER 2024, PanCAN."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 65K EU treated/diagnosed."
+                "note": "EU5 ~95K PDAC/yr; ~60K on systemic per EUROCARE."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 120K ROW treated/diagnosed."
+                "note": "ROW ~250K on-tx; rising incidence globally per GLOBOCAN 2022."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~55% -- FOLFIRINOX + gem/nab-pac SOC; Lynparza BRCA+ 8%; KRAS G12C/D pipeline covered; Medicare broad."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+                "note": "~42% -- NICE approved FOLFIRINOX + gem/nabpac; olaparib BRCA+ maintenance via ASMR IV."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~14% -- Japan J-DPC + China NRDL; EM rely on gemcitabine mono."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $180K/yr (oncology drug-class avg)."
+                "note": "Blended $70K: FOLFIRINOX $45K (50% pts) + gem/nabpac $85K (35%) + PARPi BRCA+ $180K (5%) + Onivyde 2L $95K (10%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $100K/yr."
+                "note": "~$40K blended; EU net ~57% US; chemo backbones generic."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $40K/yr."
+                "note": "~$15K blended; gemcitabine generic <$2K dominant."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~40% peak -- poor OS limits prevalence buildup; KRAS inhibitors (G12D, pan-RAS) + NALIRIFOX reshape 5yr."
               }
             },
             "company_slice": {
@@ -141,34 +141,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 20K diagnosed/treated patients."
+                "note": "~20K US KRAS-mut NSCLC/yr (25% of NSCLC); G12C ~13%, G12D ~4%, G12V ~6%. Source: NCI SEER, AMG/MRTX trials."
               },
               "eu.patientsK": {
-                "note": "EU 22K diagnosed/treated patients."
+                "note": "EU5 ~28K KRAS-mut NSCLC; ESMO testing guidelines drive NGS."
               },
               "row.patientsK": {
-                "note": "ROW 50K diagnosed/treated patients."
+                "note": "ROW ~60K; KRAS G12C lower in East Asian (~7%) than Western (~13%) NSCLC."
               },
               "us.wtpPct": {
-                "note": "US WTP 60% -- commercial payor access + formulary coverage."
+                "note": "~62% -- Lumakras + Krazati 2L KRAS G12C+ NCCN Cat 1; Medicare + commercial broad; NGS reflex."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 45% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "~46% -- NICE + G-BA approved sotorasib + adagrasib; France ASMR IV."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 10% -- limited reimbursement outside US/EU/Japan."
+                "note": "~15% -- Japan PMDA full; China NRDL sotorasib 2023."
               },
               "us.priceK": {
-                "note": "US avg treatment cost $200K/yr (market blended across modalities)."
+                "note": "Blended $185K: KRAS G12Ci $205K (50% pts G12C+) + pan-KRAS/G12D (RMC-6236, MRTX1133) $220K (15%) + chemo $30K (35%)."
               },
               "eu.priceK": {
-                "note": "EU avg treatment cost $110K/yr (market blended across modalities)."
+                "note": "~$110K blended; EU net ~59% US."
               },
               "row.priceK": {
-                "note": "ROW avg treatment cost $45K/yr (market blended across modalities)."
+                "note": "~$45K blended; China NRDL negotiation."
               },
               "penPct": {
-                "note": "Peak penetration 12% -- refine per competitive landscape."
+                "note": "~50% peak -- G12C saturated 2L; 1L CodeBreaK-202 + pan-KRAS (divarasib, glecirasib) + KRAS+SHP2 combos extend."
               }
             },
             "company_slice": {
@@ -237,34 +237,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 150K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "SEER: ~155K new CRC/yr US; ~55K metastatic/advanced on systemic tx. Source: NCI SEER 2024, ACS."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 170K EU treated/diagnosed."
+                "note": "EU5 ~215K new CRC/yr; ~70K on systemic per EUROCARE-6."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 350K ROW treated/diagnosed."
+                "note": "ROW ~320K on-tx; China NCC reports ~560K new CRC/yr (highest globally)."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
+                "note": "~65% -- FOLFOX/FOLFIRI + bev/cetux/pani SOC; Krazati/Lumakras KRAS G12C; Keytruda MSI-H 1L; Medicare + commercial broad."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
+                "note": "~48% -- NICE + G-BA approved all tgt rx; France ASMR III-IV; bevacizumab biosim widely used."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~16% -- Japan J-DPC full coverage; China NRDL cetux + bev; EM chemo backbone."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $180K/yr (oncology drug-class avg)."
+                "note": "Blended $95K: bev/cetux+chemo $125K (50% pts) + KRAS G12Ci $195K (5%) + pembro MSI-H $180K (5%) + chemo alone $30K (40%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $100K/yr."
+                "note": "~$55K blended; EU net ~58% US; bev biosim ~50% off list."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $40K/yr."
+                "note": "~$22K blended; 5-FU/oxali/irino generic <$3K."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~50% peak -- tgt rx tied to biomarkers (KRAS G12C 4%, MSI-H 5%, BRAF V600E 8%, HER2 3%); broad chemo base."
               }
             },
             "company_slice": {
@@ -333,34 +333,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 20K diagnosed/treated patients."
+                "note": "~20K US KRAS-mut NSCLC/yr (25% of NSCLC); G12C ~13%, G12D ~4%, G12V ~6%. Source: NCI SEER, AMG/MRTX trials."
               },
               "eu.patientsK": {
-                "note": "EU 22K diagnosed/treated patients."
+                "note": "EU5 ~28K KRAS-mut NSCLC; ESMO testing guidelines drive NGS."
               },
               "row.patientsK": {
-                "note": "ROW 50K diagnosed/treated patients."
+                "note": "ROW ~60K; KRAS G12C lower in East Asian (~7%) than Western (~13%) NSCLC."
               },
               "us.wtpPct": {
-                "note": "US WTP 60% -- commercial payor access + formulary coverage."
+                "note": "~62% -- Lumakras + Krazati 2L KRAS G12C+ NCCN Cat 1; Medicare + commercial broad; NGS reflex."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 45% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "~46% -- NICE + G-BA approved sotorasib + adagrasib; France ASMR IV."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 10% -- limited reimbursement outside US/EU/Japan."
+                "note": "~15% -- Japan PMDA full; China NRDL sotorasib 2023."
               },
               "us.priceK": {
-                "note": "US avg treatment cost $200K/yr (market blended across modalities)."
+                "note": "Blended $185K: KRAS G12Ci $205K (50% pts G12C+) + pan-KRAS/G12D (RMC-6236, MRTX1133) $220K (15%) + chemo $30K (35%)."
               },
               "eu.priceK": {
-                "note": "EU avg treatment cost $110K/yr (market blended across modalities)."
+                "note": "~$110K blended; EU net ~59% US."
               },
               "row.priceK": {
-                "note": "ROW avg treatment cost $45K/yr (market blended across modalities)."
+                "note": "~$45K blended; China NRDL negotiation."
               },
               "penPct": {
-                "note": "Peak penetration 10% -- refine per competitive landscape."
+                "note": "~50% peak -- G12C saturated 2L; 1L CodeBreaK-202 + pan-KRAS (divarasib, glecirasib) + KRAS+SHP2 combos extend."
               }
             },
             "company_slice": {
@@ -427,34 +427,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 60K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "SEER: ~66K new PDAC/yr US; ~45K on systemic (mostly metastatic). Source: NCI SEER 2024, PanCAN."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 65K EU treated/diagnosed."
+                "note": "EU5 ~95K PDAC/yr; ~60K on systemic per EUROCARE."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 120K ROW treated/diagnosed."
+                "note": "ROW ~250K on-tx; rising incidence globally per GLOBOCAN 2022."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~55% -- FOLFIRINOX + gem/nab-pac SOC; Lynparza BRCA+ 8%; KRAS G12C/D pipeline covered; Medicare broad."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+                "note": "~42% -- NICE approved FOLFIRINOX + gem/nabpac; olaparib BRCA+ maintenance via ASMR IV."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~14% -- Japan J-DPC + China NRDL; EM rely on gemcitabine mono."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $180K/yr (oncology drug-class avg)."
+                "note": "Blended $70K: FOLFIRINOX $45K (50% pts) + gem/nabpac $85K (35%) + PARPi BRCA+ $180K (5%) + Onivyde 2L $95K (10%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $100K/yr."
+                "note": "~$40K blended; EU net ~57% US; chemo backbones generic."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $40K/yr."
+                "note": "~$15K blended; gemcitabine generic <$2K dominant."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~40% peak -- poor OS limits prevalence buildup; KRAS inhibitors (G12D, pan-RAS) + NALIRIFOX reshape 5yr."
               }
             },
             "company_slice": {

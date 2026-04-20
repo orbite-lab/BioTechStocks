@@ -45,34 +45,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 300K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "SEER 2024: ~310K new breast/yr; ~15-20% HER2+ = ~50K incident + ~120K prevalent on-tx. Source: NCI SEER, ACS Facts 2024."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 350K EU treated/diagnosed."
+                "note": "EU5 ~355K new breast/yr (GLOBOCAN 2022); HER2+ ~55K incident, ~140K prevalent on HER2-directed tx."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 500K ROW treated/diagnosed."
+                "note": "ROW HER2+ ~200K on-tx; China NCC registry ~420K breast/yr, Japan NCR ~95K, HER2+ ~18%."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 65% (payor access + formulary)."
+                "note": "~70% -- Medicare + commercial full coverage for Enhertu/Herceptin; NCCN Cat 1. 340B uptake strong at academic centers."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 50% (HTA-gated uptake)."
+                "note": "~50% -- NICE TA approved Enhertu 2023; G-BA Zusatznutzen betraechtlich; trastuzumab biosim dominant in 1L adj."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+                "note": "~18% -- Japan PMDA/C2H full reimb, China NRDL added Enhertu 2023; EM rely on trastuzumab biosim."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $180K/yr (oncology drug-class avg)."
+                "note": "Blended $165K: Enhertu $165K (35% pts) + Kadcyla $185K (15%) + Herceptin+pertuzumab $130K (30%) + trastuzumab biosim $45K (20%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $100K/yr."
+                "note": "~$95K blended; EU net ~58% of US list. Biosim trastuzumab 1L standard, Enhertu reserved 2L+."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $45K/yr."
+                "note": "~$35K blended; biosim trastuzumab <$15K drives mix outside Japan/Korea."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~65% peak -- Enhertu displacing Kadcyla in 2L (DESTINY-Breast03), 5yr ramp vs standing Herceptin base."
               }
             },
             "salesM": 4600,
@@ -141,34 +141,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 40K diagnosed/treated patients."
+                "note": "~40K US NSCLC with TROP2 expression (broad, ~80% tumors); actionable via ADC. Source: DS/AZ TROPION-Lung filings."
               },
               "eu.patientsK": {
-                "note": "EU 45K diagnosed/treated patients."
+                "note": "EU5 ~55K; broad TROP2 NSCLC expression."
               },
               "row.patientsK": {
-                "note": "ROW 100K diagnosed/treated patients."
+                "note": "ROW ~180K; broad biomarker pool."
               },
               "us.wtpPct": {
-                "note": "US WTP 55% -- commercial payor access + formulary coverage."
+                "note": "~58% -- Datroway (Dato-DXd) BLA filed post-TROPION-Lung01; Medicare NCCN pending full approval; Trodelvy ex-lung."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 40% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "~42% -- EMA filing 2024; NICE CDF likely."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 8% -- limited reimbursement outside US/EU/Japan."
+                "note": "~14% -- Japan first launch (DS-origin)."
               },
               "us.priceK": {
-                "note": "US avg treatment cost $200K/yr (market blended across modalities)."
+                "note": "Blended $175K: Dato-DXd $200K (50% pts) + sacituzumab tirumotecan $205K (15%) + next-gen TROP2 ADC $215K (5%) + chemo $30K (30%)."
               },
               "eu.priceK": {
-                "note": "EU avg treatment cost $110K/yr (market blended across modalities)."
+                "note": "~$105K blended; EU net ~60% US."
               },
               "row.priceK": {
-                "note": "ROW avg treatment cost $45K/yr (market blended across modalities)."
+                "note": "~$40K blended."
               },
               "penPct": {
-                "note": "Peak penetration 5% -- refine per competitive landscape."
+                "note": "~45% peak -- TROP2 ADC 2L+ nonsq NSCLC; combos w/IO (AVANZAR) + 1L could expand if EGFR/KRAS agnostic data holds."
               }
             },
             "salesM": 350,
@@ -237,34 +237,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 15K diagnosed/treated patients."
+                "note": "~15K US HER3-expressing NSCLC/yr (broad expression, EGFR-mut post-TKI enriched). Source: Daiichi HERTHENA-Lung."
               },
               "eu.patientsK": {
-                "note": "EU 17K diagnosed/treated patients."
+                "note": "EU5 ~20K HER3+ NSCLC; broad expression in EGFR-mut post-progression."
               },
               "row.patientsK": {
-                "note": "ROW 40K diagnosed/treated patients."
+                "note": "ROW ~60K; EGFR-mut APAC high enriches HER3 target."
               },
               "us.wtpPct": {
-                "note": "US WTP 55% -- commercial payor access + formulary coverage."
+                "note": "~55% -- patritumab deruxtecan (HER3-DXd) BLA filed post-HERTHENA-Lung02; pre-launch model."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 40% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "~40% -- EMA filing 2024; NICE CDF likely pathway."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 8% -- limited reimbursement outside US/EU/Japan."
+                "note": "~14% -- Japan first approval expected (DS-origin)."
               },
               "us.priceK": {
-                "note": "US avg treatment cost $250K/yr (market blended across modalities)."
+                "note": "Blended $195K: HER3-DXd $220K (60% pts) + HER3 bispecifics (izalontamab) $190K (10%) + chemo $30K (30%)."
               },
               "eu.priceK": {
-                "note": "EU avg treatment cost $140K/yr (market blended across modalities)."
+                "note": "~$115K blended; EU net ~59% US."
               },
               "row.priceK": {
-                "note": "ROW avg treatment cost $55K/yr (market blended across modalities)."
+                "note": "~$45K blended; Japan J-DPC first."
               },
               "penPct": {
-                "note": "Peak penetration 5% -- refine per competitive landscape."
+                "note": "~42% peak -- HER3-DXd 2L+ EGFR-mut post-Tagrisso; broader NSCLC and other tumors extend 5yr."
               }
             },
             "company_slice": {
@@ -331,34 +331,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 1331.4K diagnosed/treated patients."
+                "note": "SEER: ~30K new SCLC/yr US (~13% of lung); ~22K on systemic. Source: NCI SEER 2024, LCFA."
               },
               "eu.patientsK": {
-                "note": "EU 1426.5K diagnosed/treated patients."
+                "note": "EU5 ~40K SCLC/yr; ~28K on systemic per EUROCARE."
               },
               "row.patientsK": {
-                "note": "ROW 1997.1K diagnosed/treated patients."
+                "note": "ROW ~180K; smoking-heavy China/EM dominant."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "~60% -- Imfinzi+EP + Tecentriq+EP 1L ES-SCLC (CASPIAN/IMpower133); Imdelltra (tarlatamab) DLL3 2L; Medicare broad."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "~44% -- NICE + G-BA approved durva/atezo+EP 1L; tarlatamab EMA 2024."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "~14% -- Japan PMDA full; China NRDL durvalumab + EP."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "Blended $125K: durva/atezo+EP $145K (55% pts) + Imdelltra DLL3 $165K (15%) + lurbinectedin 2L $120K (10%) + EP alone $25K (20%)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "~$72K blended; EU net ~58% US."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "~$28K blended; etoposide/platinum generic."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~48% peak -- IO+chemo 1L saturated ES; tarlatamab DLL3 2L + ADCs (ifinatamab DXd) + DLL3 CAR-T emerge."
               }
             },
             "company_slice": {
@@ -425,34 +425,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 6000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
+                "note": "CDC 2023 + DOAC analytics: ~8M US on anticoagulation (AFib ~6M, VTE ~1.5M, mechanical valves ~0.5M); dominated by Eliquis/Xarelto DOACs."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 5000K EU treated/diagnosed."
+                "note": "ESC 2023: ~7M EU on anticoagulation; DOAC penetration ~70% post-ARISTOTLE/ROCKET-AF."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 8000K ROW treated/diagnosed."
+                "note": "Global anticoagulation pool ~40M; Japan NHI DOAC-dominant, China warfarin-transitioning."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~85% -- Medicare/commercial cover Eliquis/Xarelto/Pradaxa; IRA negotiation Eliquis 2026 pricing."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+                "note": "~75% -- NICE/G-BA reimburse DOACs first-line for AFib/VTE; warfarin legacy."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~40% -- Japan NHI DOAC covered; emerging markets warfarin-dominant."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $12K/yr (cardio_metabolic drug-class avg)."
+                "note": "$5K/yr blended: Eliquis ($6K WAC pre-IRA), Xarelto ($6K), Pradaxa ($5K), warfarin generic ($100); factor XI (abelacimab Ph3) pending."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $6K/yr."
+                "note": "EU net ~$2.5K post AMNOG DOAC; warfarin near-zero."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $3K/yr."
+                "note": "$800 blended: warfarin generics dominant, Japan DOAC branded."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~4% peak -- factor XI inhibitors (abelacimab, asundexian) incremental to saturated DOAC pool."
               }
             },
             "salesM": 2000,

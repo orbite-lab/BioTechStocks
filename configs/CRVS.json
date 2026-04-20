@@ -48,34 +48,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 3.0K diagnosed/treated patients."
+                "note": "SEER: ~6K new PTCL + ~3K CTCL/yr US; ~12K prevalent on-tx. Source: NCI SEER 2024, Cutaneous Lymphoma Foundation."
               },
               "eu.patientsK": {
-                "note": "EU 3.5K diagnosed/treated patients."
+                "note": "EU5 ~9K T-cell lymphoma/yr; T-cell Project registry (Italy + EU)."
               },
               "row.patientsK": {
-                "note": "ROW 3.5K diagnosed/treated patients."
+                "note": "ROW ~40K on-tx; higher PTCL-NOS + ATLL in APAC (HTLV-1)."
               },
               "us.wtpPct": {
-                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+                "note": "~58% -- Adcetris CD30+ (ALCL) NCCN Cat 1; Poteligeo CCR4+ CTCL; Istodax/Folotyn 2L; Medicare broad."
               },
               "eu.wtpPct": {
-                "note": "Rare disease default -- HTA-gated uptake (55%)."
+                "note": "~42% -- NICE + G-BA approved Adcetris frontline PTCL; ESMO guidelines."
               },
               "row.wtpPct": {
-                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+                "note": "~14% -- Japan PMDA (mogamulizumab Japan-origin); China NRDL cHHP + CHOEP."
               },
               "us.priceK": {
-                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+                "note": "Blended $155K: Adcetris+CHP $175K (40% pts) + Poteligeo $165K (15%) + HDAC/folotyn $125K (15%) + CHOP alone $35K (30%)."
               },
               "eu.priceK": {
-                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+                "note": "~$90K blended; EU net ~58% US."
               },
               "row.priceK": {
-                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+                "note": "~$32K blended; CHOP generic + mogamulizumab Japan NHI."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~42% peak -- CD30+ Adcetris saturated ALCL; CCR4 Poteligeo CTCL; CD7 CAR-T + JAK/STAT emerging."
               }
             },
             "company_slice": {
@@ -143,34 +143,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 1500K US treated/diagnosed; source: consensus epi (dermatology)."
+                "note": "NEA: ~1.5M US moderate-severe AD on systemic therapy; ~16.5M US adults have AD symptoms total."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 1200K EU treated/diagnosed."
+                "note": "ETFAD: ~2.5M EU27+UK moderate-severe AD systemic-eligible; EASI/IGA severity scoring."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 2000K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~20M mod-severe; Japan high prevalence + strong Dupixent uptake; China rapid growth."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~65% -- Dupixent commercial/Medicare Part D; Rinvoq/Cibinqo JAKi; Adbry (tralokinumab); Ebglyss (lebrikizumab) new."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+                "note": "~48% -- NICE/G-BA cover Dupixent + JAKi restricted use (BBW); Adbry/Ebglyss rolling out."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~15% -- Japan J-DPS + China NRDL added Dupixent; cyclosporine generic + steroids baseline elsewhere."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $60K/yr (dermatology drug-class avg)."
+                "note": "Blended $38K: Dupixent $40K + Rinvoq $65K + Cibinqo $60K + Adbry $40K + Ebglyss $40K; cyclosporine generic $3K."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $30K/yr."
+                "note": "~$22K blended -- Dupixent net ~$25K + JAKi ~$30K; cyclosporine/MTX generic backbone."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $12K/yr."
+                "note": "~$8K -- cyclosporine generic + phototherapy; biologics <15% penetration ex-Japan."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~35% peak -- rapid biologic/JAKi expansion; OX40 (rocatinlimab, amlitelimab) pipeline adding options."
               }
             },
             "company_slice": {
@@ -331,34 +331,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 200K US treated/diagnosed; source: consensus epi (dermatology)."
+                "note": "HS Foundation: ~200K US moderate-severe HS; ~1% US prevalence estimated; underdiagnosed by 7-10yr delay."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 160K EU treated/diagnosed."
+                "note": "EADV HS registry: ~300K EU27+UK mod-severe HS; Hurley staging + IHS4 severity."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 200K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~2M mod-severe HS; massively underdiagnosed globally; emerging awareness programs."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~55% -- Humira (adalimumab) + Cosentyx (secukinumab, 2023 FDA) + Bimzelx (bimekizumab, 2024) Medicare/commercial."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+                "note": "~40% -- adalimumab biosim first-line (EMA HS approval) + Cosentyx + Bimzelx; clindamycin/rifampin combos baseline."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~10% -- antibiotics + surgery; biologics minimal ex-Japan; Humira biosim entry expanding access."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $60K/yr (dermatology drug-class avg)."
+                "note": "Blended $45K: Humira biosim $18K + Cosentyx $60K + Bimzelx $75K + clindamycin/rifampin $2K baseline."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $30K/yr."
+                "note": "~$22K blended -- adalimumab biosim ~$8K net + Cosentyx ~$30K + Bimzelx ~$35K."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $12K/yr."
+                "note": "~$5K -- antibiotics + surgical excision; biologics <5% penetration."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~25% peak -- IL-17 (Cosentyx/Bimzelx) expanded ladder; povorcitinib/sonelokimab pipeline accelerating."
               }
             },
             "company_slice": {

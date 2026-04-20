@@ -45,34 +45,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 1200K US treated/diagnosed; source: consensus epi (cns)."
+                "note": "NIH/CDC: ~1.2M US treated focal (partial-onset) epilepsy; ~60% of ~3.4M total epilepsy prevalence."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 1000K EU treated/diagnosed."
+                "note": "ILAE EU: ~2.5M treated focal epilepsy EU27+UK; ~6M total epilepsy prevalence."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 2000K ROW treated/diagnosed."
+                "note": "WHO 2023: ~30M global epilepsy; ~18M focal; 80% treatment gap in LMICs."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~85% - Medicare Part D and commercial cover Vimpat/Briviact/Xcopri; 30% refractory drive branded AED use."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+                "note": "~70% - EMA approved all modern AEDs; generics dominate first-line, branded for refractory."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~35% - Japan broad coverage; emerging markets heavy generic (levetiracetam/carbamazepine)."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $20K/yr (cns drug-class avg)."
+                "note": "Blended $4K: levetiracetam generic $0.5K (70% of pts), Xcopri $12K, Briviact $14K, Vimpat generic $2K."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $10K/yr."
+                "note": "~$2K blended; EU net ~50% of US, generic levetiracetam backbone."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $4K/yr."
+                "note": "~$0.8K blended; mostly generics globally."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~70% peak - large treated pool but branded share limited by generic levetiracetam first-line."
               }
             },
             "company_slice": {
@@ -139,34 +139,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 500K US treated/diagnosed; source: consensus epi (endocrine)."
+                "note": "ATA 2024 + Amgen Tepezza context: ~1.2M US Graves disease; ~100K Thyroid Eye Disease (TED) moderate-severe subset (Tepezza-addressable)."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 400K EU treated/diagnosed."
+                "note": "Orphanet/EUGOGO: ~1M EU Graves; ~80K TED moderate-severe eligible for teprotumumab."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 600K ROW treated/diagnosed."
+                "note": "Global Graves ~50M prevalence; treatable pool ROW ~150K TED."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~70% -- Medicare/commercial cover Tepezza (teprotumumab) for TED post OPTIC Ph3; methimazole/PTU generic for Graves hyperthyroidism."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+                "note": "~50% -- EMA approved Tepezza 2025; HTA negotiation G-BA/NICE ongoing."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~20% -- Japan PMDA Tepezza review; emerging methimazole generic-dominant."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $30K/yr (endocrine drug-class avg)."
+                "note": "$350K/course anchored to Amgen/Horizon Tepezza (teprotumumab) 8-infusion course WAC 2024; methimazole generic ($200)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $15K/yr."
+                "note": "EU net ~$200K/course Tepezza post HTA; methimazole near-zero."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $5K/yr."
+                "note": "$100K/course blended -- Japan PMDA pricing emerging."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~15% peak -- TED moderate-severe captive subset; Viridian VRDN-001/003 Ph3 competition 2025+."
               }
             },
             "company_slice": {
@@ -233,34 +233,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 130K US treated/diagnosed; source: consensus epi (immunology)."
+                "note": "NKF: ~130K US IgAN prevalent; ~40% progress to ESRD within 20yr; most common primary GN globally."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 120K EU treated/diagnosed."
+                "note": "ERA registry: ~150K EU27+UK IgAN; Italy/France highest biopsy rates; MEST-C scoring standard."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 300K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~1.5M (Asia Pacific 40-50% of primary GN biopsies); Japan screening program drives detection."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
+                "note": "~50% -- Tarpeyo (budesonide) + Filspari covered post-2023 FDA approvals; Medicare + commercial strong."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
+                "note": "~35% -- EMA approved Kinpeygo/Filspari; NICE positive; RAASi + SGLT2i baseline therapy."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~10% -- Japan JSN guidelines tonsillectomy + steroids; China TCM + supportive care common."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $80K/yr (immunology drug-class avg)."
+                "note": "Blended $65K: Tarpeyo $15K/9mo course (30%) + Filspari $120K (20%) + RAASi/SGLT2i generic $2K baseline."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $40K/yr."
+                "note": "~$32K blended -- Kinpeygo ~$25K course + Filspari ~$70K net + generic backbone."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $15K/yr."
+                "note": "~$6K -- generics dominate; novel agents <5% penetration."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~30% peak -- novel agents stacking (Tarpeyo + Filspari + SGLT2i); sibeprenlimab/atrasentan pipeline."
               }
             },
             "company_slice": {
@@ -327,34 +327,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 40000K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
+                "note": "CDC NHANES 2023: 42% US adults BMI>=30 = ~110M; ~40M eligible for anti-obesity medications (AOMs) post-insurance criteria."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 30000K EU treated/diagnosed."
+                "note": "WHO Europe 2023: ~150M obese in EU+UK; ~30M eligible for AOMs given stricter HTA BMI/comorbidity gates."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 50000K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~450M obese; ~50M eligible (China, Japan, AU have growing GLP-1 reimbursement)."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
+                "note": "~50% -- Medicare excludes weight-loss indication (Part D statute); commercial coverage expanding post-SELECT CV outcomes."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 35% (HTA-gated uptake)."
+                "note": "~35% -- NICE/G-BA limited to BMI>=35 + comorbidities; most purchase out-of-pocket."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~8% -- Japan PMDA approved, Medicare-equivalent coverage; emerging markets mostly self-pay."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $15K/yr (cardio_metabolic drug-class avg)."
+                "note": "$15K/yr avg across Mounjaro ($13K), Zepbound ($12K), Wegovy ($16K), Saxenda ($15K); oral GLP-1 pending."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $8K/yr."
+                "note": "EU net ~$8K; post-G-BA negotiation Zepbound/Wegovy in UK, Germany ~50% of US list."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $3K/yr."
+                "note": "$3K blended; Japan PMDA pricing ~$9K, emerging markets ~$1-2K via rebates/tiered pricing."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~5% peak reflects capacity-constrained launch curve; supply expansion through 2028 unlocks more."
               }
             },
             "company_slice": {
@@ -421,34 +421,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 150K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "SEER: ~155K new CRC/yr US; ~55K metastatic/advanced on systemic tx. Source: NCI SEER 2024, ACS."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 170K EU treated/diagnosed."
+                "note": "EU5 ~215K new CRC/yr; ~70K on systemic per EUROCARE-6."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 350K ROW treated/diagnosed."
+                "note": "ROW ~320K on-tx; China NCC reports ~560K new CRC/yr (highest globally)."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
+                "note": "~65% -- FOLFOX/FOLFIRI + bev/cetux/pani SOC; Krazati/Lumakras KRAS G12C; Keytruda MSI-H 1L; Medicare + commercial broad."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
+                "note": "~48% -- NICE + G-BA approved all tgt rx; France ASMR III-IV; bevacizumab biosim widely used."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~16% -- Japan J-DPC full coverage; China NRDL cetux + bev; EM chemo backbone."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $180K/yr (oncology drug-class avg)."
+                "note": "Blended $95K: bev/cetux+chemo $125K (50% pts) + KRAS G12Ci $195K (5%) + pembro MSI-H $180K (5%) + chemo alone $30K (40%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $100K/yr."
+                "note": "~$55K blended; EU net ~58% US; bev biosim ~50% off list."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $40K/yr."
+                "note": "~$22K blended; 5-FU/oxali/irino generic <$3K."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~50% peak -- tgt rx tied to biomarkers (KRAS G12C 4%, MSI-H 5%, BRAF V600E 8%, HER2 3%); broad chemo base."
               }
             },
             "company_slice": {

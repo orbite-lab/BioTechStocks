@@ -72,10 +72,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "TD ~500-700K US diagnosed + Huntington's chorea ~30K"
+                "note": "NAMI/APA: ~600K US TD eligible for VMAT2 inhibitors (Ingrezza, Austedo); ~20% of chronic antipsychotic users."
               },
               "us.priceK": {
-                "note": "Ingrezza ~$100K/yr"
+                "note": "Blended $70K: Ingrezza $85K, Austedo $80K, older benzodiazepines/clonazepam $0.5K (30% off-label)."
+              },
+              "eu.patientsK": {
+                "note": "EU TD prevalence: ~400K eligible; EMA approved Austedo, Ingrezza in select markets."
+              },
+              "row.patientsK": {
+                "note": "Global: ~2M TD with growing antipsychotic use; Japan PMDA approved Ingrezza 2022."
+              },
+              "us.wtpPct": {
+                "note": "~65% - Medicare Part D and commercial cover Ingrezza/Austedo with PA; Medicaid variability in psych carve-outs."
+              },
+              "eu.wtpPct": {
+                "note": "~35% - EMA/NICE slow uptake; Austedo reimbursed Germany/France, restricted elsewhere."
+              },
+              "row.wtpPct": {
+                "note": "~15% - Japan covered; LMICs rely on dose adjustment of antipsychotics."
+              },
+              "eu.priceK": {
+                "note": "~$40K blended; EU net ~55% of US list."
+              },
+              "row.priceK": {
+                "note": "~$15K blended; Japan near EU, rest generics."
+              },
+              "penPct": {
+                "note": "~30% peak - VMAT2 branded uptake constrained by neuro/psych prescriber comfort and step edits."
               }
             }
           },
@@ -117,34 +141,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 30K US treated/diagnosed; source: consensus epi (endocrine)."
+                "note": "Neurocrine Crenessity 10-K 2025 + CARES Foundation: ~20K US classical CAH (21-hydroxylase deficiency); ~15K treatment-eligible adults/peds."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 25K EU treated/diagnosed."
+                "note": "Orphanet CAH: ~25K EU classical CAH; newborn screen confirmed 1:15K births."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 35K ROW treated/diagnosed."
+                "note": "Global CAH ~75K prevalence; treatable ROW ~40K (Japan, AU NBS programs)."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 70% (payor access + formulary)."
+                "note": "~75% -- Neurocrine Crenessity (crinecerfont) FDA approved Dec 2024; Medicare/commercial cover + legacy glucocorticoids."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 52% (HTA-gated uptake)."
+                "note": "~60% -- EMA crinecerfont approved 2025; HTA negotiation ongoing; Spruce CAH pipeline."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+                "note": "~30% -- Japan PMDA review; generic hydrocortisone globally dominant."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $100K/yr (endocrine drug-class avg)."
+                "note": "$160K/yr anchored to Neurocrine Crenessity (crinecerfont) WAC 2025 + legacy hydrocortisone ($2K)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $50K/yr."
+                "note": "EU net ~$90K post HTA negotiation."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $20K/yr."
+                "note": "$40K blended -- Japan NHI orphan pathway."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~35% peak -- crinecerfont steroid-sparing, captive orphan pool."
               }
             },
             "salesM": 301.0,
@@ -214,34 +238,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 8000K US treated/diagnosed; source: consensus epi (cns)."
+                "note": "NAMI/NIMH 2024: ~8M US MDD on treatment; ~21M any depressive episode; SSRIs/SNRIs first-line."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 6000K EU treated/diagnosed."
+                "note": "EU depression registries: ~12M MDD on treatment EU27+UK."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 10000K ROW treated/diagnosed."
+                "note": "WHO 2023: ~280M global depression; treatment gap >60% in LMICs."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~80% - Medicare Part D broad SSRI/SNRI; Spravato (esketamine) with REMS; Auvelity/Exxua newer branded with PA."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 40% (HTA-gated uptake)."
+                "note": "~65% - EU broad SSRI/SNRI; Spravato approved, NICE/G-BA conditional."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~25% - Japan broad; LMICs minimal branded access."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $12K/yr (cns drug-class avg)."
+                "note": "Blended $1.5K: sertraline/fluoxetine/venlafaxine generics $0.3K (85%), Auvelity $8K, Spravato $32K, Exxua $7K."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $6K/yr."
+                "note": "~$0.7K blended; EU generic-heavy, Spravato ~60% of US."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $3K/yr."
+                "note": "~$0.3K; generics dominant."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~60% peak - generics saturate; branded growth in TRD (Spravato, Auvelity) and rapid-onset pipeline (psilocybin, zuranolone)."
               }
             },
             "company_slice": {
@@ -308,34 +332,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 1500K US treated/diagnosed; source: consensus epi (cns)."
+                "note": "NAMI/NIMH 2024: ~1.5M US treated schizophrenia; ~2.8M prevalent (~1% adults)."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 1200K EU treated/diagnosed."
+                "note": "EU schizophrenia registries: ~2.5M treated EU27+UK."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 2000K ROW treated/diagnosed."
+                "note": "WHO 2023: ~24M global schizophrenia; large treatment gap in LMICs."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~75% - Medicaid (65% of schizophrenia pts) broad atypical coverage; Cobenfy (KarXT) Sept 2024 under PA; LAIs growing."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+                "note": "~60% - EU broad atypical generic coverage; LAIs per NICE/G-BA; KarXT EMA pending."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~25% - Japan broad; LMICs haloperidol/chlorpromazine generics."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $25K/yr (cns drug-class avg)."
+                "note": "Blended $10K: atypicals generic $5K (50%), LAIs (Invega Sustenna/Trinza) $25K (25%), KarXT/emraclidine $25K (10%), Vraylar $28K (15%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $12K/yr."
+                "note": "~$5K blended; EU generics dominate, LAI ~55% of US."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $5K/yr."
+                "note": "~$1.5K; generics."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~60% peak - LAI penetration (~25%) growing; muscarinic agonists (Cobenfy, emraclidine) expand non-D2 addressable."
               }
             },
             "company_slice": {
@@ -402,34 +426,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 1500K US treated/diagnosed; source: consensus epi (cns)."
+                "note": "NAMI/NIMH 2024: ~1.5M US treated schizophrenia; ~2.8M prevalent (~1% adults)."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 1200K EU treated/diagnosed."
+                "note": "EU schizophrenia registries: ~2.5M treated EU27+UK."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 2000K ROW treated/diagnosed."
+                "note": "WHO 2023: ~24M global schizophrenia; large treatment gap in LMICs."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~75% - Medicaid (65% of schizophrenia pts) broad atypical coverage; Cobenfy (KarXT) Sept 2024 under PA; LAIs growing."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+                "note": "~60% - EU broad atypical generic coverage; LAIs per NICE/G-BA; KarXT EMA pending."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~25% - Japan broad; LMICs haloperidol/chlorpromazine generics."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $25K/yr (cns drug-class avg)."
+                "note": "Blended $10K: atypicals generic $5K (50%), LAIs (Invega Sustenna/Trinza) $25K (25%), KarXT/emraclidine $25K (10%), Vraylar $28K (15%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $12K/yr."
+                "note": "~$5K blended; EU generics dominate, LAI ~55% of US."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $5K/yr."
+                "note": "~$1.5K; generics."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~60% peak - LAI penetration (~25%) growing; muscarinic agonists (Cobenfy, emraclidine) expand non-D2 addressable."
               }
             },
             "company_slice": {
@@ -498,34 +522,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 500K US treated/diagnosed; source: consensus epi (cardio_metabolic)."
+                "note": "FPWR + PWSA 2024: ~15K US genetically confirmed Prader-Willi Syndrome (SNRPN/SNORD116 deletion or maternal UPD 15q11-q13)."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 400K EU treated/diagnosed."
+                "note": "Orphanet PWS: ~15K EU confirmed; registry-tracked via EPWGC."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 600K ROW treated/diagnosed."
+                "note": "Global PWS ~30K confirmed; Japan/AU registries + emerging markets under-diagnosed."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 70% (payor access + formulary)."
+                "note": "~75% -- orphan; Soleno DCCR (diazoxide) approved Mar 2025; Medicare/commercial reimburse + somatropin legacy coverage."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 50% (HTA-gated uptake)."
+                "note": "~60% -- EMA pathway for DCCR pending; somatropin reimbursed in EU5."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~30% -- Japan PMDA somatropin reimbursed; DCCR global rollout 2025+."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $80K/yr (cardio_metabolic drug-class avg)."
+                "note": "$300K/yr blended: Soleno DCCR (diazoxide choline) WAC 2025 + somatropin legacy ($30K) for short stature in PWS."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $40K/yr."
+                "note": "EU net ~$180K: DCCR HTA pending, somatropin ~$20K."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $15K/yr."
+                "note": "$80K blended -- Japan NHI somatropin, DCCR emerging."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~40% peak -- DCCR hyperphagia-specific targets core symptom, captive orphan pool."
               }
             },
             "salesM": 190.0,

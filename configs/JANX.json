@@ -45,34 +45,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 1331.4K diagnosed/treated patients."
+                "note": "SEER: ~300K new prostate/yr; ~55K mCSPC + ~45K mCRPC on systemic tx. Source: NCI SEER 2024, PCF."
               },
               "eu.patientsK": {
-                "note": "EU 1426.5K diagnosed/treated patients."
+                "note": "EU5 ~345K new prostate/yr; ~110K on ARPi/chemo/PARPi per EUROCARE."
               },
               "row.patientsK": {
-                "note": "ROW 1997.1K diagnosed/treated patients."
+                "note": "ROW ~200K on-tx; Japan high incidence post-PSA screening expansion."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "~70% -- ARPi (Xtandi/Erleada/Nubeqa) mCSPC SOC; Medicare Part D + VA cover; 340B strong at academic."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "~52% -- NICE + G-BA approved all ARPi; France ASMR III; ADT generic baseline."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "~18% -- Japan full reimb, China NRDL enza/apa; EM use ADT + docetaxel."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "Blended $95K: ARPi $180K (45% pts) + Pluvicto $240K (8%) + Lynparza/Talzenna $175K (7%) + ADT+chemo $25K (40%)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "~$55K blended; EU net ~58% US; ADT leuprolide generic <$3K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "~$18K blended; ADT generic dominates; bicalutamide <$200/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~60% peak -- ARPi intensification 1L mCSPC reached 75% eligible; Pluvicto + PARPi (HRR+) extend 5yr."
               }
             },
             "company_slice": {
@@ -139,34 +139,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 150K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "SEER: ~155K new CRC/yr US; ~55K metastatic/advanced on systemic tx. Source: NCI SEER 2024, ACS."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 170K EU treated/diagnosed."
+                "note": "EU5 ~215K new CRC/yr; ~70K on systemic per EUROCARE-6."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 350K ROW treated/diagnosed."
+                "note": "ROW ~320K on-tx; China NCC reports ~560K new CRC/yr (highest globally)."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
+                "note": "~65% -- FOLFOX/FOLFIRI + bev/cetux/pani SOC; Krazati/Lumakras KRAS G12C; Keytruda MSI-H 1L; Medicare + commercial broad."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
+                "note": "~48% -- NICE + G-BA approved all tgt rx; France ASMR III-IV; bevacizumab biosim widely used."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~16% -- Japan J-DPC full coverage; China NRDL cetux + bev; EM chemo backbone."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $180K/yr (oncology drug-class avg)."
+                "note": "Blended $95K: bev/cetux+chemo $125K (50% pts) + KRAS G12Ci $195K (5%) + pembro MSI-H $180K (5%) + chemo alone $30K (40%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $100K/yr."
+                "note": "~$55K blended; EU net ~58% US; bev biosim ~50% off list."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $40K/yr."
+                "note": "~$22K blended; 5-FU/oxali/irino generic <$3K."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~50% peak -- tgt rx tied to biomarkers (KRAS G12C 4%, MSI-H 5%, BRAF V600E 8%, HER2 3%); broad chemo base."
               }
             },
             "company_slice": {
@@ -233,34 +233,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 300K US treated/diagnosed; source: consensus epi (immunology)."
+                "note": "Lupus Foundation of America: ~300K US SLE; 90% female; African American 3x risk; CDC 2018 registry data."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 250K EU treated/diagnosed."
+                "note": "EULAR SLE registry: ~350K EU27+UK; SLEDAI/BILAG severity scoring; ~30% lupus nephritis subset."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 400K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~4M; Asia Pacific highest age-standardized prevalence; lupus nephritis more aggressive."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~55% -- Benlysta (IV + SC) Medicare Part B/D; Saphnelo (anifrolumab) commercial; Lupkynis LN covered."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+                "note": "~38% -- EMA approved Benlysta/Saphnelo/Lupkynis; NICE restrictive; HCQ + MMF backbone standard."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~10% -- HCQ + steroids + MMF/AZA generics dominate; Japan Benlysta reimbursed."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $60K/yr (immunology drug-class avg)."
+                "note": "Blended $45K: Benlysta $40K + Saphnelo $65K + Lupkynis $90K (LN) + HCQ/MMF generic $3K backbone; rituximab off-label."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $30K/yr."
+                "note": "~$22K blended -- Benlysta net ~$25K + generic backbone; anifrolumab ~$40K net."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $12K/yr."
+                "note": "~$5K -- HCQ + generic immunosuppressants; biologics <10% penetration."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~25% peak -- biologic cycle-through (Benlysta -> Saphnelo -> CAR-T pipeline); steroid-sparing driver."
               }
             },
             "company_slice": {
@@ -327,34 +327,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 887.6K diagnosed/treated patients."
+                "note": "SEER: ~300K new prostate/yr; ~55K mCSPC + ~45K mCRPC on systemic tx. Source: NCI SEER 2024, PCF."
               },
               "eu.patientsK": {
-                "note": "EU 951.0K diagnosed/treated patients."
+                "note": "EU5 ~345K new prostate/yr; ~110K on ARPi/chemo/PARPi per EUROCARE."
               },
               "row.patientsK": {
-                "note": "ROW 1331.4K diagnosed/treated patients."
+                "note": "ROW ~200K on-tx; Japan high incidence post-PSA screening expansion."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "~70% -- ARPi (Xtandi/Erleada/Nubeqa) mCSPC SOC; Medicare Part D + VA cover; 340B strong at academic."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "~52% -- NICE + G-BA approved all ARPi; France ASMR III; ADT generic baseline."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "~18% -- Japan full reimb, China NRDL enza/apa; EM use ADT + docetaxel."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "Blended $95K: ARPi $180K (45% pts) + Pluvicto $240K (8%) + Lynparza/Talzenna $175K (7%) + ADT+chemo $25K (40%)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "~$55K blended; EU net ~58% US; ADT leuprolide generic <$3K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "~$18K blended; ADT generic dominates; bicalutamide <$200/yr."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~60% peak -- ARPi intensification 1L mCSPC reached 75% eligible; Pluvicto + PARPi (HRR+) extend 5yr."
               }
             },
             "company_slice": {
@@ -421,34 +421,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 665.7K diagnosed/treated patients."
+                "note": "~30K US NSCLC w/o targetable driver (wild-type); IO+chemo SOC 1L. Source: NCI SEER + KEYNOTE-189 enrollment."
               },
               "eu.patientsK": {
-                "note": "EU 713.3K diagnosed/treated patients."
+                "note": "EU5 ~45K driver-negative NSCLC; ESMO NGS reflex excludes drivers."
               },
               "row.patientsK": {
-                "note": "ROW 998.6K diagnosed/treated patients."
+                "note": "ROW ~180K driver-negative; smoking-associated heavy in APAC/EM."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "~65% -- Keytruda+chemo 1L (KN-189/407), Tecentriq+chemo, Libtayo; NCCN Cat 1; Medicare + commercial broad."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "~48% -- NICE + G-BA approved pembro+chemo + atezo+chemo 1L; France ASMR III."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "~18% -- Japan PMDA full; China NRDL tislelizumab/sintilimab + chemo."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "Blended $135K: pembro+chemo $175K (50% pts) + atezo/cemi+chemo $165K (15%) + IO+CTLA4 $210K (10%) + chemo alone $30K (25%)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "~$80K blended; EU net ~59% US."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "~$30K blended; China NRDL IO <$30K drives mix."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~55% peak -- IO+chemo saturated 1L; LAG3 + TIGIT + PD1xVEGF (ivonescimab) 1L combos extend 5yr."
               }
             },
             "company_slice": {

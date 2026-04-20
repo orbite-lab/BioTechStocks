@@ -45,34 +45,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 50K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "SEER: TNBC ~15% of breast = ~45K incident/yr, ~60K prevalent on-tx (short OS limits prevalence). Source: NCI SEER, TNBC Foundation."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 55K EU treated/diagnosed."
+                "note": "EU5 TNBC ~52K incident; ~65K prevalent. EUROCARE + ESMO TNBC consortium."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 80K ROW treated/diagnosed."
+                "note": "ROW ~120K on-tx; TNBC over-represented in AA/African and younger cohorts per GLOBOCAN."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
+                "note": "~65% -- Keytruda+chemo (KEYNOTE-522) neoadj SOC; Trodelvy 2L+ NCCN Cat 1; Medicare + commercial broad."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
+                "note": "~48% -- NICE approved Keytruda neoadj 2022, Trodelvy 2L 2023; G-BA betraechtlich for both."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~15% -- Japan PMDA full reimb; China NRDL pembro 2023; EM rely on chemo (AC-T)."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $200K/yr (oncology drug-class avg)."
+                "note": "Blended $140K: Keytruda+chemo $180K (40% pts) + Trodelvy $155K (25%) + chemo alone $25K (30%) + Talzenna/PARPi $180K (5%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $110K/yr."
+                "note": "~$80K blended; EU net ~57% US list; neoadj pembro course-limited lowers cost vs metastatic."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $45K/yr."
+                "note": "~$30K blended; chemo (docetaxel, carbo) generic <$5K dominates."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~55% peak -- IO+chemo neoadj penetrated 70%+ eligible; Trodelvy 2L standard; Datroway (TROP2) + PARPi extend."
               }
             },
             "salesM": 200,
@@ -141,34 +141,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 300K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "SEER 2024: ~310K new breast/yr; ~15-20% HER2+ = ~50K incident + ~120K prevalent on-tx. Source: NCI SEER, ACS Facts 2024."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 350K EU treated/diagnosed."
+                "note": "EU5 ~355K new breast/yr (GLOBOCAN 2022); HER2+ ~55K incident, ~140K prevalent on HER2-directed tx."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 500K ROW treated/diagnosed."
+                "note": "ROW HER2+ ~200K on-tx; China NCC registry ~420K breast/yr, Japan NCR ~95K, HER2+ ~18%."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 65% (payor access + formulary)."
+                "note": "~70% -- Medicare + commercial full coverage for Enhertu/Herceptin; NCCN Cat 1. 340B uptake strong at academic centers."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 50% (HTA-gated uptake)."
+                "note": "~50% -- NICE TA approved Enhertu 2023; G-BA Zusatznutzen betraechtlich; trastuzumab biosim dominant in 1L adj."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+                "note": "~18% -- Japan PMDA/C2H full reimb, China NRDL added Enhertu 2023; EM rely on trastuzumab biosim."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $180K/yr (oncology drug-class avg)."
+                "note": "Blended $165K: Enhertu $165K (35% pts) + Kadcyla $185K (15%) + Herceptin+pertuzumab $130K (30%) + trastuzumab biosim $45K (20%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $100K/yr."
+                "note": "~$95K blended; EU net ~58% of US list. Biosim trastuzumab 1L standard, Enhertu reserved 2L+."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $45K/yr."
+                "note": "~$35K blended; biosim trastuzumab <$15K drives mix outside Japan/Korea."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~65% peak -- Enhertu displacing Kadcyla in 2L (DESTINY-Breast03), 5yr ramp vs standing Herceptin base."
               }
             },
             "salesM": 150,
@@ -237,34 +237,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 45K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "SEER: ~27K gastric + ~22K esophageal/yr US; ~25K on systemic. Source: NCI SEER 2024."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 55K EU treated/diagnosed."
+                "note": "EU5 ~75K gastric+GEJ+esoph/yr; ~35K on systemic."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 300K ROW treated/diagnosed."
+                "note": "ROW ~800K on-tx; China + Japan + Korea >60% global gastric burden (GLOBOCAN 2022)."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
+                "note": "~58% -- Keytruda+chemo 1L (KEYNOTE-859), Enhertu HER2+ 2L, Vyloy CLDN18.2 covered; NCCN Cat 1."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
+                "note": "~44% -- NICE approved pembro+chemo + Enhertu + zolbetuximab; G-BA betraechtlich for HER2+."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~20% -- Japan PMDA + China NRDL cover IO+chemo; high volume market."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $190K/yr (oncology drug-class avg)."
+                "note": "Blended $135K: pembro+chemo $175K (40% pts) + Enhertu HER2+ $185K (15%) + Vyloy CLDN18.2 $140K (20%) + chemo alone $25K (25%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $105K/yr."
+                "note": "~$78K blended; EU net ~58% US."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $40K/yr."
+                "note": "~$32K blended; China/Japan mix with trastuzumab biosim + tislelizumab NRDL price."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~48% peak -- IO+chemo 1L saturated; CLDN18.2 (Vyloy) ~38% + HER2+ 20% + FGFR2b (bemarituzumab) extend."
               }
             },
             "company_slice": {
@@ -331,34 +331,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 1664.3K diagnosed/treated patients."
+                "note": "SEER: ~83K new bladder/yr US; ~25K muscle-invasive/metastatic on systemic tx. Source: NCI SEER 2024, BCAN."
               },
               "eu.patientsK": {
-                "note": "EU 1783.2K diagnosed/treated patients."
+                "note": "EU5 ~95K new bladder/yr (GLOBOCAN); ~28K on systemic therapy."
               },
               "row.patientsK": {
-                "note": "ROW 2496.4K diagnosed/treated patients."
+                "note": "ROW ~80K on-tx; high incidence in smoking-heavy APAC + aniline dye regions."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "~62% -- Padcev+Keytruda (EV-302) 1L SOC 2024; Medicare + commercial NCCN Cat 1; BCG shortage drives intravesical alternatives."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "~45% -- NICE approved Padcev+pembro 2024; G-BA betraechtlich; gem/cis remains cost-effective comparator."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "~14% -- Japan J-DPC covers Padcev; China NRDL tislelizumab; EM rely on gem/cis + BCG."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "Blended $185K: Padcev+pembro $310K (35% pts) + nivo adj $165K (15%) + gem/cis+IO $95K (30%) + chemo alone $20K (20%)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "~$105K blended; EU net ~57% US; Padcev combo priced ~EUR 195K/course."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "~$35K blended; gem/cis generic dominates ex-Japan."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~50% peak -- EV+pembro displacing chemo 1L over 5yr; FGFR3 Balversa + HER2 ADCs (disitamab) expand 2L."
               }
             },
             "company_slice": {
@@ -425,34 +425,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 887.6K diagnosed/treated patients."
+                "note": "~250K US addressable across HER2/TROP2/HER3/CEACAM5/B7-H3 ADCs; sum of biomarker-positive solid tumors. Source: company 10-Ks."
               },
               "eu.patientsK": {
-                "note": "EU 951.0K diagnosed/treated patients."
+                "note": "EU5 ~320K ADC-addressable solid tumors; ESMO testing expansion."
               },
               "row.patientsK": {
-                "note": "ROW 1331.4K diagnosed/treated patients."
+                "note": "ROW ~900K; broad solid tumor ADC potential in APAC/EM."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "~55% -- approved ADCs (Enhertu, Trodelvy, Padcev, Elahere) across HER2/TROP2/Nectin4/FRa; Medicare + commercial broad."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "~42% -- NICE + G-BA approved major ADCs; France ASMR II-III."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "~14% -- Japan PMDA (DS-origin Enhertu); China NRDL disitamab vedotin + RC48."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "Blended $195K: HER2 ADC $205K (30% pts) + TROP2 ADC $200K (25%) + Nectin4 ADC $310K (8%) + FRa ADC $220K (10%) + others $180K (27%)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "~$115K blended; EU net ~59% US."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "~$45K blended; China domestic ADCs lower."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~40% peak -- platform addresses broad range; launch curves staggered by asset; 5-7yr ramp across targets."
               }
             },
             "company_slice": {

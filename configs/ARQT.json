@@ -52,6 +52,38 @@
               "us.priceK": {
                 "note": "Topical dermatology ~$18K/yr US (ZORYVE net pricing ~$18K/yr per treated patient)"
               }
+            },
+            "sources": {
+              "us.patientsK": {
+                "note": "NPF: ~6M US psoriasis on topical-only therapy; mild-moderate 70% of PsO population."
+              },
+              "eu.patientsK": {
+                "note": "EADV: ~10M EU27+UK topical-managed psoriasis; Dovobet/Enstilar vit-D + steroid combos standard."
+              },
+              "row.patientsK": {
+                "note": "Global ex-US/EU ~80M topical PsO; calcipotriol + betamethasone generics widespread."
+              },
+              "us.wtpPct": {
+                "note": "~50% -- commercial/Medicare cover Vtama (tapinarof) + Zoryve (roflumilast) + generic calcipotriol/steroids."
+              },
+              "eu.wtpPct": {
+                "note": "~40% -- NICE approved Vtama/Zoryve; generic vit-D analog + steroid combos dominant."
+              },
+              "row.wtpPct": {
+                "note": "~18% -- TCS generics + coal tar; novel topicals minimal; Japan maxacalcitol standard."
+              },
+              "us.priceK": {
+                "note": "Blended $1.5K: Vtama ~$1.5K/tube + Zoryve $1K + Dovobet/Enstilar $400 + generic calcipotriol/steroid $50."
+              },
+              "eu.priceK": {
+                "note": "~$0.5K blended -- generic calcipotriol + steroid combos dominate; Vtama/Zoryve net ~$800."
+              },
+              "row.priceK": {
+                "note": "~$0.1K -- calcipotriol/betamethasone generics; coal tar preparations."
+              },
+              "penPct": {
+                "note": "~10% peak -- non-steroidal novel topicals (Vtama, Zoryve) shift from chronic TCS use concerns."
+              }
             }
           },
           "area": "dermatology.inflammatory_derm.psoriasis_topical"
@@ -92,34 +124,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 8000K US treated/diagnosed; source: consensus epi (dermatology)."
+                "note": "NEA: ~8M US AD on topicals; ~16% US adults had AD symptoms per NEA 2024; pediatric cohort large."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 6000K EU treated/diagnosed."
+                "note": "ETFAD: ~12M EU27+UK AD topical-managed; emollients + TCS + TCI stepwise."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 10000K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~100M topical AD; emollients + TCS standard; Japan tacrolimus ointment widely used."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 50% (payor access + formulary)."
+                "note": "~55% -- commercial/Medicaid cover Opzelura (ruxolitinib) + Eucrisa (crisaborole) + TCS generics; Zoryve emerging."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 38% (HTA-gated uptake)."
+                "note": "~45% -- NICE restrictive on Opzelura; generic TCS + TCI (Protopic/Elidel) mainstay."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~20% -- TCS generics widely accessible; novel topicals minimal ex-Japan."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $8K/yr (dermatology drug-class avg)."
+                "note": "Blended $2K: Opzelura $2.5K/tube (~$15K/yr if chronic use) + Eucrisa $600/tube + TCS/TCI generics $50-200."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $4K/yr."
+                "note": "~$0.8K blended -- generic TCS/TCI dominant + selective Opzelura/Eucrisa net ~$8K."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $2K/yr."
+                "note": "~$0.2K -- TCS/emollient generics; novel topicals negligible."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~12% peak -- novel non-steroidal topicals (Opzelura, Zoryve-AD, roflumilast) expanding long-term use."
               }
             },
             "company_slice": {
@@ -186,34 +218,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 1500K US treated/diagnosed; source: consensus epi (dermatology)."
+                "note": "NEA: ~1.5M US moderate-severe AD on systemic therapy; ~16.5M US adults have AD symptoms total."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 1200K EU treated/diagnosed."
+                "note": "ETFAD: ~2.5M EU27+UK moderate-severe AD systemic-eligible; EASI/IGA severity scoring."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 2000K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~20M mod-severe; Japan high prevalence + strong Dupixent uptake; China rapid growth."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~65% -- Dupixent commercial/Medicare Part D; Rinvoq/Cibinqo JAKi; Adbry (tralokinumab); Ebglyss (lebrikizumab) new."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+                "note": "~48% -- NICE/G-BA cover Dupixent + JAKi restricted use (BBW); Adbry/Ebglyss rolling out."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~15% -- Japan J-DPS + China NRDL added Dupixent; cyclosporine generic + steroids baseline elsewhere."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $60K/yr (dermatology drug-class avg)."
+                "note": "Blended $38K: Dupixent $40K + Rinvoq $65K + Cibinqo $60K + Adbry $40K + Ebglyss $40K; cyclosporine generic $3K."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $30K/yr."
+                "note": "~$22K blended -- Dupixent net ~$25K + JAKi ~$30K; cyclosporine/MTX generic backbone."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $12K/yr."
+                "note": "~$8K -- cyclosporine generic + phototherapy; biologics <15% penetration ex-Japan."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~35% peak -- rapid biologic/JAKi expansion; OX40 (rocatinlimab, amlitelimab) pipeline adding options."
               }
             },
             "company_slice": {
@@ -280,34 +312,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 300K US treated/diagnosed; source: consensus epi (dermatology)."
+                "note": "National Alopecia Areata Foundation: ~300K US AA active; ~700K lifetime risk; ~20% severe (AT/AU)."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 250K EU treated/diagnosed."
+                "note": "EADV: ~450K EU27+UK AA active; SALT severity scale; autoimmune comorbidity common."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 400K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~4M AA; Japan JAK inhibitor early adopter; China limited novel access."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~45% -- Olumiant (baricitinib, 2022) + Litfulo (ritlecitinib, 2023) Medicare/commercial; intralesional steroids off-label."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 40% (HTA-gated uptake)."
+                "note": "~32% -- NICE/G-BA approved Olumiant/Litfulo severe AA; topical/intralesional steroids standard baseline."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~10% -- Japan approved baricitinib/ritlecitinib; topical minoxidil + steroids elsewhere."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $50K/yr (dermatology drug-class avg)."
+                "note": "Blended $42K: Olumiant $30K + Litfulo $50K (severe AA SALT>=50); topical minoxidil + steroids $500 baseline."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $25K/yr."
+                "note": "~$22K blended -- Olumiant net ~$18K + Litfulo ~$30K; restricted to severe."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $10K/yr."
+                "note": "~$4K -- minoxidil + steroids + limited JAKi access in Japan."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~20% peak -- JAKi class expanding (Rinvoq, deuruxolitinib pipeline); severe AA first, moderate expansion next."
               }
             },
             "company_slice": {
@@ -374,34 +406,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 1500K US treated/diagnosed; source: consensus epi (dermatology)."
+                "note": "American Vitiligo Research Foundation: ~1.5M US vitiligo; ~1% prevalence; non-segmental most common."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 1200K EU treated/diagnosed."
+                "note": "EADV VETF: ~2M EU27+UK vitiligo; VES/VASI severity; facial/hand involvement drives treatment demand."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 2000K ROW treated/diagnosed."
+                "note": "Global ex-US/EU ~60M vitiligo; India highest prevalence + disease burden; stigma drives treatment demand."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 45% (payor access + formulary)."
+                "note": "~50% -- Opzelura (ruxolitinib, 2022 first FDA vitiligo approval) commercial/Medicare; NB-UVB phototherapy covered."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 32% (HTA-gated uptake)."
+                "note": "~35% -- NICE approved Opzelura nonsegmental; phototherapy + topical steroids/TCI standard baseline."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~12% -- topical steroids + NB-UVB; Opzelura access limited; India extensive phototherapy network."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $40K/yr (dermatology drug-class avg)."
+                "note": "Blended $8K: Opzelura $2.5K/tube chronic use ~$15K/yr (30% pts) + NB-UVB $3K/yr + TCS/TCI generic $200."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $20K/yr."
+                "note": "~$3K blended -- Opzelura net ~$10K + generic TCS/TCI + phototherapy."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $8K/yr."
+                "note": "~$0.5K -- TCS/TCI generics + phototherapy; novel topicals minimal."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~15% peak -- Opzelura first-in-class; upadacitinib + povorcitinib oral JAKi pipeline expanding severe cohort."
               }
             },
             "company_slice": {

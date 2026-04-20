@@ -47,34 +47,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 35K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "SEER: ~35K new MM/yr US; ~160K prevalent on active tx (long OS in era of quadruplets). Source: NCI SEER, IMF."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 40K EU treated/diagnosed."
+                "note": "EU5 ~40K MM/yr; ~180K prevalent on-tx; EMN registry."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 50K ROW treated/diagnosed."
+                "note": "ROW ~300K on-tx; China + Japan major APAC volumes."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 70% (payor access + formulary)."
+                "note": "~65% -- DaraRVd quadruplet 1L NCCN Cat 1; CAR-T (Carvykti, Abecma) 2L post-CARTITUDE-4; bispecifics 4L+."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 50% (HTA-gated uptake)."
+                "note": "~48% -- NICE + G-BA approved DaraRVd + CAR-T + bispecifics; IMWG guidelines."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 12% (limited reimbursement ex-Japan)."
+                "note": "~16% -- Japan PMDA full; China NRDL daratumumab + lenalidomide generic; EM Vel/Dex/Len."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $220K/yr (oncology drug-class avg)."
+                "note": "Blended $235K: DaraRVd $220K (45% pts) + CAR-T $470K (10%) + bispecific (Tecvayli/Elrexfio/Talvey) $280K (15%) + Vd/Rd $95K (30%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $120K/yr."
+                "note": "~$140K blended; EU net ~60% US list."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $50K/yr."
+                "note": "~$50K blended; lenalidomide generic 2022 reshapes mix."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~58% peak -- quadruplet 1L + CAR-T 2L + bispecifics 4L fill ladder; GPRC5D + FcRH5 extend; long OS grows prevalence."
               }
             },
             "salesM": 1060,
@@ -164,34 +164,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 20K diagnosed/treated patients."
+                "note": "~20K US newly dx MM/yr starting systemic tx (transplant-eligible + ineligible). Source: NCI SEER 2024, ASH."
               },
               "eu.patientsK": {
-                "note": "EU 22K diagnosed/treated patients."
+                "note": "EU5 ~24K new MM/yr; ~75% receive triplet/quadruplet 1L per EMN."
               },
               "row.patientsK": {
-                "note": "ROW 30K diagnosed/treated patients."
+                "note": "ROW ~80K starting 1L; VRd + daratumumab global standard."
               },
               "us.wtpPct": {
-                "note": "US WTP 60% -- commercial payor access + formulary coverage."
+                "note": "~72% -- DaraRVd PERSEUS + IsaKRd IMROZ TE + DaraVMP non-TE; NCCN Cat 1; Medicare Part B+D."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 45% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "~55% -- NICE TA approved DaraVMP + DaraRVd; France ASMR III; HTA values MRD-negativity."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 12% -- limited reimbursement outside US/EU/Japan."
+                "note": "~18% -- Japan PMDA full dara-based; China NRDL dara 2021; EM VRd."
               },
               "us.priceK": {
-                "note": "US market blended avg $300K/yr across treatment modalities."
+                "note": "Blended $225K: DaraRVd $220K (60% pts) + IsaKRd $240K (15%) + DaraVMP non-TE $195K (15%) + VRd alone $145K (10%)."
               },
               "eu.priceK": {
-                "note": "EU myeloma blended: ~55-60% of US list across modalities."
+                "note": "~$135K blended; EU net ~60% US; len generic reduces triplet cost."
               },
               "row.priceK": {
-                "note": "ROW blended: generics dominant outside US/EU; ~$60K weighted."
+                "note": "~$55K blended; len generic + biosim dara lower APAC/EM."
               },
               "penPct": {
-                "note": "Peak penetration 10% -- refine per competitive landscape."
+                "note": "~68% peak -- quadruplet 1L saturated TE; non-TE DaraVMP/VRd-lite standard; MRD-guided de-escalation emerging."
               }
             },
             "company_slice": {
@@ -267,34 +267,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 30K diagnosed/treated patients."
+                "note": "SEER: ~30K new DLBCL/yr US (most aggressive NHL subtype); ~40K prevalent on-tx. Source: NCI SEER, LLS."
               },
               "eu.patientsK": {
-                "note": "EU 35K diagnosed/treated patients."
+                "note": "EU5 ~38K DLBCL/yr; HMRN + GELA registries."
               },
               "row.patientsK": {
-                "note": "ROW 50K diagnosed/treated patients."
+                "note": "ROW ~120K on-tx; China NHL registry + Japan NCR."
               },
               "us.wtpPct": {
-                "note": "US WTP 60% -- commercial payor access + formulary coverage."
+                "note": "~68% -- Polivy+R-CHP 1L (POLARIX) NCCN Cat 1; CAR-T 2L (Yescarta/Breyanzi ZUMA-7/TRANSFORM); bispecifics 3L."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 45% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "~50% -- NICE approved Polivy 1L + CAR-T 2L; G-BA betraechtlich; rituximab biosim baseline."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 12% -- limited reimbursement outside US/EU/Japan."
+                "note": "~15% -- Japan PMDA full; China NRDL R-CHOP + domestic CAR-T; EM R-CHOP biosim."
               },
               "us.priceK": {
-                "note": "US market blended avg $280K/yr across treatment modalities."
+                "note": "Blended $195K: Polivy+R-CHP $175K (45% pts) + CAR-T 2L $460K (15%) + bispecific (Epkinly/Columvi) $250K (15%) + R-CHOP $40K (25%)."
               },
               "eu.priceK": {
-                "note": "EU CLL/NHL blended: ~55-60% of US across modalities."
+                "note": "~$115K blended; EU net ~59% US."
               },
               "row.priceK": {
-                "note": "ROW: chemo/generic rituximab dominant; ~$50K weighted."
+                "note": "~$40K blended; R-CHOP biosim <$20K dominates ex-Japan."
               },
               "penPct": {
-                "note": "Peak penetration 3% -- refine per competitive landscape."
+                "note": "~52% peak -- Polivy 1L penetrated 50%+; CAR-T 2L growing; bispecifics 3L fixed-duration; ADCs (ZW191) emerge."
               }
             },
             "company_slice": {
@@ -382,34 +382,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 20K diagnosed/treated patients."
+                "note": "~20K US potential if in-vivo CAR-T broadens to non-eligible (unfit, rural); frontier modality. Source: Capstan/Umoja pipeline."
               },
               "eu.patientsK": {
-                "note": "EU 22K diagnosed/treated patients."
+                "note": "EU5 ~22K potential; decentralization + no-apheresis model bypasses center bottleneck."
               },
               "row.patientsK": {
-                "note": "ROW 30K diagnosed/treated patients."
+                "note": "ROW ~50K if in-vivo reaches EM; mRNA/LNP-CAR or AAV-CAR lowers CoGS."
               },
               "us.wtpPct": {
-                "note": "US WTP 40% -- commercial payor access + formulary coverage."
+                "note": "~50% -- pre-commercial; model assumes Medicare + commercial if outpatient-compatible lower-toxicity profile."
               },
               "eu.wtpPct": {
-                "note": "EU WTP 25% -- HTA-gated uptake (NICE/G-BA/ASMR)."
+                "note": "~40% -- HTA likely to value access expansion; EMA ATMP pathway."
               },
               "row.wtpPct": {
-                "note": "ROW WTP 8% -- limited reimbursement outside US/EU/Japan."
+                "note": "~15% -- decentralization opens APAC/EM markets currently excluded from ex-vivo."
               },
               "us.priceK": {
-                "note": "US market blended avg $200K/yr across treatment modalities."
+                "note": "Blended $220K: in-vivo CAR-T est $220K target (vs $500K ex-vivo); lower CoGS + infusion-only delivery."
               },
               "eu.priceK": {
-                "note": "EU myeloma blended: ~55-60% of US list across modalities."
+                "note": "~$140K blended; EU HTA likely more favorable to cost-effective in-vivo."
               },
               "row.priceK": {
-                "note": "ROW blended: generics dominant outside US/EU; ~$60K weighted."
+                "note": "~$55K blended; EM-accessible pricing key to broad launch."
               },
               "penPct": {
-                "note": "Peak penetration 1% -- refine per competitive landscape."
+                "note": "~38% peak -- transformational if clinical delivers; 2028+ timeline assumes Capstan/Umoja POC; 5yr ramp post launch."
               }
             },
             "company_slice": {

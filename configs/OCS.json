@@ -48,34 +48,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 11.3K diagnosed/treated patients."
+                "note": "AAO/NANOS: ~15K US optic neuritis/yr (MS-associated dominant); acute demyelinating episode."
               },
               "eu.patientsK": {
-                "note": "EU 13.2K diagnosed/treated patients."
+                "note": "ECTRIMS: ~20K EU-5 ON/yr; IV methylprednisolone standard acute; remyelination agents in trials."
               },
               "row.patientsK": {
-                "note": "ROW 13.2K diagnosed/treated patients."
+                "note": "Global ON ~150K/yr; MS prevalence-driven; ex-US/EU ~12K accessible in MS specialty centers."
               },
               "us.wtpPct": {
-                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+                "note": "~45% -- acute IV steroid standard; novel remyelinating agents (e.g., Clene CNM-Au8) late-stage trials."
               },
               "eu.wtpPct": {
-                "note": "Rare disease default -- HTA-gated uptake (55%)."
+                "note": "~30% -- EMA orphan/fast-track pathways; HTA will require OCT RNFL + visual acuity endpoints."
               },
               "row.wtpPct": {
-                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+                "note": "~15% -- MS specialty care limited outside OECD; acute steroid universal."
               },
               "us.priceK": {
-                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+                "note": "Remyelinating agent modeled ~$50K acute course; one-time/short-course pricing."
               },
               "eu.priceK": {
-                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+                "note": "~$30K post-HTA."
               },
               "row.priceK": {
-                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+                "note": "~$15K blended."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~20% peak -- acute window + MS workflow integration; background steroid still SOC."
               }
             },
             "company_slice": {
@@ -145,34 +145,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 15.1K diagnosed/treated patients."
+                "note": "AAO/NANOS: ~6K US non-arteritic AION/yr incidence; acute onset optic nerve ischemia, typically >50yr."
               },
               "eu.patientsK": {
-                "note": "EU 17.6K diagnosed/treated patients."
+                "note": "ESAO: ~8K EU-5 NAION/yr incidence; no approved Rx, supportive care only (aspirin, BP control)."
               },
               "row.patientsK": {
-                "note": "ROW 17.6K diagnosed/treated patients."
+                "note": "Global NAION ~60K/yr; ex-US/EU ~10K accessible in specialty ophthalmology centers."
               },
               "us.wtpPct": {
-                "note": "Rare disease default -- strong commercial payor coverage analog (75%)."
+                "note": "~50% -- zero approved Rx; Quark QPI-1007 P3 failed; Stoke STK-002 P1 early; high unmet need."
               },
               "eu.wtpPct": {
-                "note": "Rare disease default -- HTA-gated uptake (55%)."
+                "note": "~30% -- EMA orphan pathway; HTA will require visual acuity endpoint (ETDRS letters gain)."
               },
               "row.wtpPct": {
-                "note": "Rare disease default -- limited reimbursement ex-Japan (15%)."
+                "note": "~10% -- acute care specialty access limited outside US/EU-5/Japan."
               },
               "us.priceK": {
-                "note": "US list price anchor -- typically ~1.25x global avg for rare."
+                "note": "NAION Rx modeled ~$40K acute course (single/short course IVT); premium for approved agent."
               },
               "eu.priceK": {
-                "note": "EU rare-disease net price -- ~55% of US list after HTA discount."
+                "note": "~$25K acute course post-HTA."
               },
               "row.priceK": {
-                "note": "Blended ROW -- Japan near EU, emerging far lower (~20% of US)."
+                "note": "~$12K acute course blended."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~15% peak -- narrow 14-day acute window limits addressable; late presentation common."
               }
             },
             "company_slice": {
@@ -240,34 +240,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 750K US treated/diagnosed; source: consensus epi (ophthalmology)."
+                "note": "CDC DiRECT + NEI: ~750K US diabetic macular edema; anti-VEGF (Eylea/Vabysmo/Lucentis) standard IVT Rx."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 600K EU treated/diagnosed."
+                "note": "EU DME ~1M; anti-VEGF + dexamethasone implant (Ozurdex); biosimilar ranibizumab eroding originator."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 2000K ROW treated/diagnosed."
+                "note": "Global DME ~21M (IDF diabetes-driven); ex-US/EU ~500K on IVT therapy in specialty retina centers."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 55% (payor access + formulary)."
+                "note": "~70% -- Medicare Part B coverage; anti-VEGF workhorse; Vabysmo Q16W durability advantage vs Eylea Q8W."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 42% (HTA-gated uptake)."
+                "note": "~55% -- national health coverage; biosimilar ranibizumab cost pressure; Vabysmo HTA ongoing."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 8% (limited reimbursement ex-Japan)."
+                "note": "~30% -- Japan/Korea strong anti-VEGF use; emerging markets bevacizumab off-label compounded."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $18K/yr (ophthalmology drug-class avg)."
+                "note": "Eylea HD ~$11K/yr (Q8-16W IVT); Vabysmo ~$12K/yr; Lucentis ~$14K/yr; biosimilars ~$5K/yr."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $10K/yr."
+                "note": "Eylea ~$6K/yr post-HTA; biosimilar ranibizumab ~$2K/yr dominant in several markets."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $3K/yr."
+                "note": "~$2K/yr blended; compounded bevacizumab <$0.2K/dose common in emerging markets."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~35% peak of diagnosed DME on IVT therapy; suboptimal adherence + undertreatment limits ceiling."
               }
             },
             "company_slice": {
@@ -334,34 +334,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 665.7K diagnosed/treated patients."
+                "note": "AAO/NEI: ~16M US dry eye disease diagnosed; ~4M moderate-severe Rx-treated; Restasis/Xiidra/Miebo/Tyrvaya."
               },
               "eu.patientsK": {
-                "note": "EU 713.3K diagnosed/treated patients."
+                "note": "EU dry eye ~30M; ~5M Rx-treated; Ikervis (ciclosporin) + generics dominate; newer agents EMA pending."
               },
               "row.patientsK": {
-                "note": "ROW 998.6K diagnosed/treated patients."
+                "note": "Global dry eye ~300M; ~15M ex-US/EU Rx-treated; Japan rebamipide (Mucosta) widely used."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "~40% -- crowded class Restasis generic, Xiidra (Bausch), Miebo (Bausch 2023), Tyrvaya (Viatris nasal spray)."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "~30% -- Ikervis reimbursed; HTA strict on incremental benefit; generic ciclosporin pressure."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "~20% -- Japan rebamipide standard; emerging markets mostly artificial tears OTC."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "Xiidra ~$7K/yr WAC; Miebo ~$6K/yr; Tyrvaya ~$7K/yr; Restasis generic <$1K/yr."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "Ikervis ~$2K/yr post-HTA; generic ciclosporin ~$0.3K/yr."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "Blended ~$0.5K/yr; Japan rebamipide ~$0.3K, emerging markets OTC tears dominate."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~15% peak for branded Rx within diagnosed pool; high OTC artificial tear use caps Rx share."
               }
             },
             "company_slice": {

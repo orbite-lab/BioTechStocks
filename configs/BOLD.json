@@ -45,34 +45,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "US 554.8K diagnosed/treated patients."
+                "note": "SEER: ~310K breast/yr; HR+/HER2- ~68% = ~210K incident, ~400K prevalent on-tx including adjuvant ET. Source: NCI SEER 2024."
               },
               "eu.patientsK": {
-                "note": "EU 594.4K diagnosed/treated patients."
+                "note": "EU5 ~240K HR+/HER2- incident; ~450K prevalent on ET +/- CDK4/6. EUROCARE-6 + ESMO 2024 data."
               },
               "row.patientsK": {
-                "note": "ROW 832.1K diagnosed/treated patients."
+                "note": "ROW ~550K on-tx; China NCC + Japan NCR report HR+/HER2- ~70% of breast mix."
               },
               "us.wtpPct": {
-                "note": "Non-rare default -- commercial formulary gating (~55%)."
+                "note": "~75% -- CDK4/6i (Ibrance/Verzenio/Kisqali) NCCN Cat 1 1L; Medicare Part D + commercial broad; adj Verzenio approved 2021."
               },
               "eu.wtpPct": {
-                "note": "Non-rare default -- HTA + budget impact (~40%)."
+                "note": "~55% -- NICE + G-BA approved all 3 CDK4/6i; France ASMR III-IV; AI/fulvestrant generic baseline."
               },
               "row.wtpPct": {
-                "note": "Non-rare default -- mostly self-pay ex-Japan (~12%)."
+                "note": "~20% -- Japan J-DPC + China NRDL cover CDK4/6i; EM AI generics dominant (letrozole, anastrozole)."
               },
               "us.priceK": {
-                "note": "US price anchor -- ~1.20x global avg."
+                "note": "Blended $95K: CDK4/6i $160K (40% pts) + Trodelvy/Enhertu-low $180K (8%) + AI+fulvestrant $15K (40%) + Orserdu $220K (5%)."
               },
               "eu.priceK": {
-                "note": "EU net ~50% of US list."
+                "note": "~$55K blended; EU net ~58% of US list; generic AI floor keeps blend low."
               },
               "row.priceK": {
-                "note": "ROW blended ~15% of US list."
+                "note": "~$20K blended; AI generics <$2K/yr dominate outside developed APAC."
               },
               "penPct": {
-                "note": "Peak penetration inherited from legacy config -- refine per competitive landscape."
+                "note": "~58% peak -- CDK4/6i saturated 1L MBC; adj penetration growing 5yr; ESR1-mut Orserdu + ADCs expand late line."
               }
             },
             "company_slice": {
@@ -140,34 +140,34 @@
             },
             "sources": {
               "us.patientsK": {
-                "note": "real_epi_data.py -- 50K US treated/diagnosed; source: consensus epi (oncology)."
+                "note": "SEER: TNBC ~15% of breast = ~45K incident/yr, ~60K prevalent on-tx (short OS limits prevalence). Source: NCI SEER, TNBC Foundation."
               },
               "eu.patientsK": {
-                "note": "real_epi_data.py -- 55K EU treated/diagnosed."
+                "note": "EU5 TNBC ~52K incident; ~65K prevalent. EUROCARE + ESMO TNBC consortium."
               },
               "row.patientsK": {
-                "note": "real_epi_data.py -- 80K ROW treated/diagnosed."
+                "note": "ROW ~120K on-tx; TNBC over-represented in AA/African and younger cohorts per GLOBOCAN."
               },
               "us.wtpPct": {
-                "note": "real_epi_data.py -- US WTP 60% (payor access + formulary)."
+                "note": "~65% -- Keytruda+chemo (KEYNOTE-522) neoadj SOC; Trodelvy 2L+ NCCN Cat 1; Medicare + commercial broad."
               },
               "eu.wtpPct": {
-                "note": "real_epi_data.py -- EU WTP 45% (HTA-gated uptake)."
+                "note": "~48% -- NICE approved Keytruda neoadj 2022, Trodelvy 2L 2023; G-BA betraechtlich for both."
               },
               "row.wtpPct": {
-                "note": "real_epi_data.py -- ROW WTP 10% (limited reimbursement ex-Japan)."
+                "note": "~15% -- Japan PMDA full reimb; China NRDL pembro 2023; EM rely on chemo (AC-T)."
               },
               "us.priceK": {
-                "note": "real_epi_data.py -- US avg $200K/yr (oncology drug-class avg)."
+                "note": "Blended $140K: Keytruda+chemo $180K (40% pts) + Trodelvy $155K (25%) + chemo alone $25K (30%) + Talzenna/PARPi $180K (5%)."
               },
               "eu.priceK": {
-                "note": "real_epi_data.py -- EU avg $110K/yr."
+                "note": "~$80K blended; EU net ~57% US list; neoadj pembro course-limited lowers cost vs metastatic."
               },
               "row.priceK": {
-                "note": "real_epi_data.py -- ROW avg $45K/yr."
+                "note": "~$30K blended; chemo (docetaxel, carbo) generic <$5K dominates."
               },
               "penPct": {
-                "note": "Preserved from config -- refine per competitive landscape."
+                "note": "~55% peak -- IO+chemo neoadj penetrated 70%+ eligible; Trodelvy 2L standard; Datroway (TROP2) + PARPi extend."
               }
             },
             "company_slice": {

@@ -37,7 +37,16 @@ jobs:
           git add prices.json
           if git diff --cached --quiet; then
             echo "No price changes"
-          else
-            git commit -m "auto: refresh prices.json"
-            git push
+            exit 0
           fi
+          git commit -m "auto: refresh prices.json"
+          for i in 1 2 3; do
+            if git push; then
+              echo "Push succeeded on attempt $i"
+              exit 0
+            fi
+            echo "Push attempt $i failed; rebasing..."
+            git pull --rebase origin main
+          done
+          echo "Push failed after 3 retries"
+          exit 1

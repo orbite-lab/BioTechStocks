@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "description": "Biotech sector valuation benchmarks for P/E and EV/Sales ratios",
+    "source": "SPDR XBI + iShares IBB + individual large-cap biotech 5y rolling medians",
+    "as_of": "2026-04",
+    "notes": "Large-cap biotech = >$20B market cap (LLY, ABBV, GILD, MRK, PFE, BMY, AMGN, REGN, VRTX). Mid-cap = $2-20B. Small-cap = <$2B."
+  },
+  "large_cap": {
+    "pe_ttm": {"median_5y": 22, "p25_5y": 15, "p75_5y": 30, "current_2025": 24},
+    "ev_sales_ttm": {"median_5y": 6, "p25_5y": 4, "p75_5y": 9, "current_2025": 7}
+  },
+  "mid_cap": {
+    "pe_ttm": {"median_5y": 35, "p25_5y": 20, "p75_5y": 55, "current_2025": 38},
+    "ev_sales_ttm": {"median_5y": 9, "p25_5y": 5, "p75_5y": 14, "current_2025": 10}
+  },
+  "small_cap_commercial": {
+    "pe_ttm": {"median_5y": null, "note": "Most small-cap commercial biotechs unprofitable; use EV/Sales"},
+    "ev_sales_ttm": {"median_5y": 8, "p25_5y": 4, "p75_5y": 15, "current_2025": 9}
+  },
+  "subsector_medians": {
+    "gene_therapy": {"ev_sales_5y": 12, "note": "SRPT, KRYS, BMRN, CRSP"},
+    "rare_disease": {"pe_5y": 30, "ev_sales_5y": 10, "note": "ALNY, ARGX, RYTM, BBIO"},
+    "oncology": {"pe_5y": 28, "ev_sales_5y": 9, "note": "LEGN, ONC, NUVL, RVMD"},
+    "obesity_glp1": {"pe_5y": 55, "ev_sales_5y": 18, "note": "LLY, NVO -- premium growth multiples"},
+    "neurology_psych": {"pe_5y": 25, "ev_sales_5y": 7, "note": "NBIX, AXSM, BHVN"},
+    "immunology": {"pe_5y": 18, "ev_sales_5y": 5, "note": "ABBV, JNJ, UCB -- mature"},
+    "liver_mash": {"ev_sales_5y": 15, "note": "MDGL -- early ramp premium"}
+  }
+}

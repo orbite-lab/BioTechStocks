@@ -191,6 +191,8 @@
     function useConfigs() {
       const [configs, setConfigs] = useState(null);
       const [taxonomy, setTaxonomy] = useState(null);
+      const [financials, setFinancials] = useState({});
+      const [sectorBenchmarks, setSectorBenchmarks] = useState(null);
       const [initialPrices, setInitialPrices] = useState({});
       const [loading, setLoading] = useState(true);
       const [source, setSource] = useState(null);
@@ -217,6 +219,14 @@
               const tr = await fetch("taxonomy.json");
               if (tr.ok) setTaxonomy(await tr.json());
             } catch { /* taxonomy optional */ }
+            try {
+              const fr = await fetch("financials.json");
+              if (fr.ok) setFinancials(await fr.json());
+            } catch { /* financials optional */ }
+            try {
+              const sb = await fetch("sector_benchmarks.json");
+              if (sb.ok) setSectorBenchmarks(await sb.json());
+            } catch { /* benchmarks optional */ }
             // Seed cached prices from prices.json (GitHub Actions, ~30 min cadence)
             try {
               const pr = await fetch("prices.json?v=" + Date.now());
@@ -243,7 +253,7 @@
         load();
       }, []);
 
-      return { configs, taxonomy, initialPrices, loading, source };
+      return { configs, taxonomy, financials, sectorBenchmarks, initialPrices, loading, source };
     }
 
     // ═══════════════════════════════════════
@@ -508,15 +518,15 @@
     // ═══════════════════════════════════════
 
     function App() {
-      const { configs, taxonomy, initialPrices, loading, source } = useConfigs();
+      const { configs, taxonomy, financials, sectorBenchmarks, initialPrices, loading, source } = useConfigs();
 
       if (loading) return e("div", { className: "loading" }, "Loading company configs...");
       if (!configs) return e("div", { className: "loading" }, "No configs found");
 
-      return e(ModelView, { configs, taxonomy, initialPrices, source });
+      return e(ModelView, { configs, taxonomy, financials, sectorBenchmarks, initialPrices, source });
     }
 
-    function ModelView({ configs, taxonomy, initialPrices, source }) {
+    function ModelView({ configs, taxonomy, financials, sectorBenchmarks, initialPrices, source }) {
       const tickers = Object.keys(configs);
       const urlTicker = new URLSearchParams(window.location.search).get("ticker");
       const initTicker = (urlTicker && tickers.includes(urlTicker)) ? urlTicker : tickers[0];
@@ -947,6 +957,121 @@
               });
             })()
           ),
+
+          // Valuation vs Peers & History — only for commercial companies with financial data
+          (() => {
+            const tk = config.company.ticker;
+            const fin = financials?.[tk];
+            if (!fin || !sectorBenchmarks) return null;
+            // Compute live EV/S from current stock
+            const totalSalesM = (() => { let s = 0; for (const a of config.assets) for (const ind of a.indications) s += (ind.market?.salesM || 0); return s; })();
+            const shares = config.company.sharesOut;
+            const cash = state.cash;
+            const liveEV = Math.max(0, state.currentPrice * shares - cash);
+            const liveEVSales = totalSalesM > 0 ? liveEV / totalSalesM : null;
+            // Use config-baked pe_ttm (can't compute net income from model)
+            const pe = fin.pe_ttm;
+            const evs = liveEVSales || fin.ev_sales_ttm;
+            const sub = fin.subsector;
+            const subBench = sectorBenchmarks.subsector_medians?.[sub];
+            const capBench = config.company.sharesOut * state.currentPrice > 20000 ? sectorBenchmarks.large_cap : (shares * state.currentPrice > 2000 ? sectorBenchmarks.mid_cap : sectorBenchmarks.small_cap_commercial);
+            // Peers from Market Explorer: companies sharing the highest-TAM L3 area
+            const peerAreas = {};
+            for (const a of config.assets) for (const ind of a.indications) {
+              const area = ind.area || ""; if (!area) continue;
+              const tam = indicationTAM(ind);
+              peerAreas[area] = (peerAreas[area] || 0) + tam;
+            }
+            const topArea = Object.entries(peerAreas).sort((x,y)=>y[1]-x[1])[0]?.[0];
+            const peerTickers = new Set();
+            if (topArea && taxonomy) {
+              const parts = topArea.split(".");
+              for (let depth = Math.min(parts.length, 3); depth >= 2; depth--) {
+                const node = lookupTaxonomyNode(taxonomy, parts.slice(0, depth).join("."));
+                if (node?.companies) node.companies.forEach(t => peerTickers.add(t));
+                if (node?.sub) for (const s of Object.values(node.sub)) if (s.companies) s.companies.forEach(t => peerTickers.add(t));
+                if (peerTickers.size >= 3) break;
+              }
+            }
+            peerTickers.delete(tk);
+            const peers = [...peerTickers].slice(0, 8).map(pt => ({ tk: pt, fin: financials[pt] })).filter(p => p.fin);
+
+            const pctlBar = (pctl, color) => {
+              if (pctl == null) return null;
+              return e("div", { style: { position: "relative", height: 6, background: "#161920", borderRadius: 3, width: 80 } },
+                e("div", { style: { position: "absolute", left: 0, top: 0, height: "100%", width: Math.max(2, pctl) + "%", background: color, borderRadius: 3 } }),
+                e("div", { style: { position: "absolute", left: "50%", top: -1, height: 8, width: 1, background: "#ffffff44" } })
+              );
+            };
+            const fmtX = v => v == null ? "--" : v.toFixed(1) + "x";
+            const fmtRange = r => r && r.min != null ? fmtX(r.min) + " - " + fmtX(r.max) + " (med " + fmtX(r.median) + ")" : "n/a";
+
+            return e("div", { style: { background: "#161920", borderRadius: 10, padding: "14px 18px", border: "1px solid #ffffff08", marginBottom: 14 } },
+              e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#60a5fa", marginBottom: 4 } }, "Valuation vs Peers & History"),
+              e("div", { style: { fontSize: 10, color: "#6b7080", marginBottom: 12 } }, "Subsector: " + (sub || "large_cap") + " \u00b7 Peers: " + (peers.length ? peers.map(p => p.tk).join(", ") : "no financial peers in coverage")),
+              // Own metrics table
+              e("table", { style: { width: "100%", fontSize: 11, borderCollapse: "collapse", marginBottom: 14 } },
+                e("thead", null, e("tr", { style: { color: "#6b7080", textAlign: "left" } },
+                  e("th", { style: { padding: "4px 8px", fontWeight: 600 } }, "Metric"),
+                  e("th", { style: { padding: "4px 8px", fontWeight: 600, textAlign: "right" } }, "Today"),
+                  e("th", { style: { padding: "4px 8px", fontWeight: 600 } }, "5Y Range (min-max, median)"),
+                  e("th", { style: { padding: "4px 8px", fontWeight: 600 } }, "5Y Pctl"),
+                  e("th", { style: { padding: "4px 8px", fontWeight: 600, textAlign: "right" } }, "Sector"),
+                  e("th", { style: { padding: "4px 8px", fontWeight: 600 } }, "Signal")
+                )),
+                e("tbody", null,
+                  // P/E row
+                  e("tr", { style: { borderTop: "1px solid #ffffff0a" } },
+                    e("td", { style: { padding: "6px 8px", color: "#b0b4c0", fontWeight: 600 } }, "P/E TTM"),
+                    e("td", { style: { padding: "6px 8px", textAlign: "right", fontFamily: "'JetBrains Mono'", fontWeight: 700, color: "#e2e4ea" } }, pe == null ? "n/m" : pe.toFixed(0) + "x"),
+                    e("td", { style: { padding: "6px 8px", color: "#6b7080", fontFamily: "'JetBrains Mono'", fontSize: 10 } }, fmtRange(fin.pe_5y)),
+                    e("td", { style: { padding: "6px 8px" } }, pctlBar(fin.pe_5y?.current_pctl, pe == null ? "#6b7080" : pe > (fin.pe_5y?.median || 999) ? "#ef4444" : "#22c55e")),
+                    e("td", { style: { padding: "6px 8px", textAlign: "right", color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, (subBench?.pe_5y != null ? subBench.pe_5y + "x" : (capBench?.pe_ttm?.median_5y ? capBench.pe_ttm.median_5y + "x" : "--")),
+                    ),
+                    e("td", { style: { padding: "6px 8px", fontSize: 10, color: pe == null ? "#6b7080" : (pe > (subBench?.pe_5y || capBench?.pe_ttm?.median_5y || 999) * 1.3 ? "#ef4444" : pe < (subBench?.pe_5y || capBench?.pe_ttm?.median_5y || 0) * 0.7 ? "#22c55e" : "#fbbf24") } },
+                      pe == null ? "unprofitable" :
+                      (() => { const bm = subBench?.pe_5y || capBench?.pe_ttm?.median_5y; if (!bm) return "--"; const r = pe/bm; return r > 1.3 ? "Premium " + r.toFixed(1) + "x" : r < 0.7 ? "Discount " + r.toFixed(1) + "x" : "In-line"; })()
+                    )
+                  ),
+                  // EV/S row
+                  e("tr", { style: { borderTop: "1px solid #ffffff0a" } },
+                    e("td", { style: { padding: "6px 8px", color: "#b0b4c0", fontWeight: 600 } }, "EV/Sales TTM"),
+                    e("td", { style: { padding: "6px 8px", textAlign: "right", fontFamily: "'JetBrains Mono'", fontWeight: 700, color: "#e2e4ea" } }, evs == null ? "--" : evs.toFixed(1) + "x"),
+                    e("td", { style: { padding: "6px 8px", color: "#6b7080", fontFamily: "'JetBrains Mono'", fontSize: 10 } }, fmtRange(fin.ev_sales_5y)),
+                    e("td", { style: { padding: "6px 8px" } }, pctlBar(fin.ev_sales_5y?.current_pctl, evs == null ? "#6b7080" : evs > (fin.ev_sales_5y?.median || 999) ? "#ef4444" : "#22c55e")),
+                    e("td", { style: { padding: "6px 8px", textAlign: "right", color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, (subBench?.ev_sales_5y != null ? subBench.ev_sales_5y + "x" : (capBench?.ev_sales_ttm?.median_5y ? capBench.ev_sales_ttm.median_5y + "x" : "--"))),
+                    e("td", { style: { padding: "6px 8px", fontSize: 10, color: evs == null ? "#6b7080" : (evs > (subBench?.ev_sales_5y || capBench?.ev_sales_ttm?.median_5y || 999) * 1.3 ? "#ef4444" : evs < (subBench?.ev_sales_5y || capBench?.ev_sales_ttm?.median_5y || 0) * 0.7 ? "#22c55e" : "#fbbf24") } },
+                      evs == null ? "--" :
+                      (() => { const bm = subBench?.ev_sales_5y || capBench?.ev_sales_ttm?.median_5y; if (!bm) return "--"; const r = evs/bm; return r > 1.3 ? "Premium " + r.toFixed(1) + "x" : r < 0.7 ? "Discount " + r.toFixed(1) + "x" : "In-line"; })()
+                    )
+                  )
+                )
+              ),
+              // Peers table
+              peers.length > 0 && e("div", null,
+                e("div", { style: { fontSize: 10, fontWeight: 700, color: "#fb923c", textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 } }, "Peers in " + topArea.split(".").pop().replace(/_/g, " ")),
+                e("table", { style: { width: "100%", fontSize: 11, borderCollapse: "collapse" } },
+                  e("thead", null, e("tr", { style: { color: "#6b7080", textAlign: "left" } },
+                    e("th", { style: { padding: "4px 8px", fontWeight: 600 } }, "Ticker"),
+                    e("th", { style: { padding: "4px 8px", fontWeight: 600, textAlign: "right" } }, "P/E"),
+                    e("th", { style: { padding: "4px 8px", fontWeight: 600, textAlign: "right" } }, "EV/S"),
+                    e("th", { style: { padding: "4px 8px", fontWeight: 600, textAlign: "right" } }, "Revenue"),
+                    e("th", { style: { padding: "4px 8px", fontWeight: 600 } }, "Subsector")
+                  )),
+                  e("tbody", null, peers.map(p => e("tr", { key: p.tk, style: { borderTop: "1px solid #ffffff0a" } },
+                    e("td", { style: { padding: "6px 8px" } }, e("a", { href: "model.html?ticker=" + p.tk, style: { color: "#60a5fa", textDecoration: "none", fontFamily: "'JetBrains Mono'", fontWeight: 700 } }, p.tk)),
+                    e("td", { style: { padding: "6px 8px", textAlign: "right", fontFamily: "'JetBrains Mono'", color: "#b0b4c0" } }, p.fin.pe_ttm == null ? "n/m" : p.fin.pe_ttm.toFixed(0) + "x"),
+                    e("td", { style: { padding: "6px 8px", textAlign: "right", fontFamily: "'JetBrains Mono'", color: "#b0b4c0" } }, p.fin.ev_sales_ttm == null ? "--" : p.fin.ev_sales_ttm.toFixed(1) + "x"),
+                    e("td", { style: { padding: "6px 8px", textAlign: "right", fontFamily: "'JetBrains Mono'", color: "#6b7080" } }, p.fin.revenue_ttm_M == null ? "--" : ("$" + (p.fin.revenue_ttm_M >= 1000 ? (p.fin.revenue_ttm_M/1000).toFixed(1) + "B" : Math.round(p.fin.revenue_ttm_M) + "M"))),
+                    e("td", { style: { padding: "6px 8px", color: "#6b7080", fontSize: 10 } }, p.fin.subsector || "")
+                  )))
+                ),
+                fin.peer_group && fin.peer_group.length && e("div", { style: { marginTop: 8, fontSize: 10, color: "#6b7080" } },
+                  "External peers (not in coverage): " + fin.peer_group.join(", ")
+                )
+              )
+            );
+          })(),
 
           // Tweak header
           e("div", { style: { fontSize: 11, fontWeight: 700, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 14 } }, "Tweak Assumptions"),

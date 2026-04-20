@@ -963,13 +963,17 @@
             const tk = config.company.ticker;
             const fin = financials?.[tk];
             if (!fin || !sectorBenchmarks) return null;
-            // Compute live EV/S from current stock
-            const totalSalesM = (() => { let s = 0; for (const a of config.assets) for (const ind of a.indications) s += (ind.market?.salesM || 0); return s; })();
+            // Live EV/S: convert EV to USD using approximate FX, divide by company-level revenue (from financials.json,
+            // which captures ALL revenue incl. products not broken out in config salesM like Daiichi Japan legacy).
+            const FX_TO_USD = { USD: 1, EUR: 1.08, JPY: 1/150, HKD: 1/7.8, SEK: 1/10.5, GBP: 1.28, CHF: 1.12 };
+            const fx = FX_TO_USD[config.company.currency] || 1;
             const shares = config.company.sharesOut;
             const cash = state.cash;
-            const liveEV = Math.max(0, state.currentPrice * shares - cash);
-            const liveEVSales = totalSalesM > 0 ? liveEV / totalSalesM : null;
-            // Use config-baked pe_ttm (can't compute net income from model)
+            const liveEV_local = Math.max(0, state.currentPrice * shares - cash);
+            const liveEV_usdM = liveEV_local * fx;
+            // Revenue basis: use financials.json revenue_ttm_M (full company TTM in USD) if available; else fall back to summed salesM
+            const revenueM = fin.revenue_ttm_M || (() => { let s = 0; for (const a of config.assets) for (const ind of a.indications) s += (ind.market?.salesM || 0); return s; })();
+            const liveEVSales = revenueM > 0 ? liveEV_usdM / revenueM : null;
             const pe = fin.pe_ttm;
             const evs = liveEVSales || fin.ev_sales_ttm;
             const sub = fin.subsector;

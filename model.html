@@ -621,9 +621,9 @@
               if (!aA || !aB) continue;
               assumptions[asset.id] = assumptions[asset.id] || {};
               assumptions[asset.id][ind.id] = {
-                pos: alpha * aA.pos + (1 - alpha) * aB.pos,
-                apr: alpha * aA.apr + (1 - alpha) * aB.apr,
-                pen: alpha * aA.pen + (1 - alpha) * aB.pen,
+                pos: Math.round(alpha * aA.pos + (1 - alpha) * aB.pos),
+                apr: Math.round(alpha * aA.apr + (1 - alpha) * aB.apr),
+                pen: Math.round((alpha * aA.pen + (1 - alpha) * aB.pen) * 10) / 10,
               };
             }
           }
@@ -633,7 +633,11 @@
           for (const f of fields) {
             const vA = scA.val?.[f] ?? 0;
             const vB = scB.val?.[f] ?? 0;
-            if (typeof vA === "number" && typeof vB === "number") val[f] = alpha * vA + (1 - alpha) * vB;
+            if (typeof vA === "number" && typeof vB === "number") {
+              const raw = alpha * vA + (1 - alpha) * vB;
+              // Round: % fields and whole-dollar $M to integer; multipliers to 1 decimal
+              val[f] = (f === "mult" || f === "pipelineMult" || f === "commercialMult") ? Math.round(raw * 10) / 10 : Math.round(raw);
+            }
           }
           todayImplied = { a: a.sk, b: b.sk, alpha, edge, assumptions, val, price };
         }
@@ -805,16 +809,16 @@
             const scens = model.sks.map(sk => ({ sk, tp: model.results[sk].tp, r: model.results[sk] })).filter(s => typeof s.tp === "number" && !isNaN(s.tp)).sort((a,b) => a.tp - b.tp);
             if (scens.length < 2) return null;
             const evImplied = Math.max(0, price * config.company.sharesOut - state.cash);
-            let narrative, breakdown, col = "#60a5fa";
+            let narrative, breakdown, col;
             if (price <= scens[0].tp) {
               narrative = "Below " + scens[0].sk + " target -- market pricing deeper pessimism than modeled";
               breakdown = "100% " + scens[0].sk + " (+ " + (((scens[0].tp - price) / scens[0].tp) * 100).toFixed(0) + "% discount below)";
-              col = "#ef4444";
+              col = CC[scens[0].sk] || "#ef4444";
             } else if (price >= scens[scens.length-1].tp) {
               const top = scens[scens.length-1];
               narrative = "Above " + top.sk + " target -- market pricing extreme optimism";
               breakdown = "100% " + top.sk + " (+ " + (((price - top.tp) / top.tp) * 100).toFixed(0) + "% premium above)";
-              col = "#22c55e";
+              col = CC[top.sk] || "#22c55e";
             } else {
               let a, b, alpha;
               for (let i = 0; i < scens.length - 1; i++) {
@@ -824,7 +828,8 @@
               const wB = ((1 - alpha) * 100).toFixed(0);
               narrative = "Market prices in a blend of " + a.sk + " and " + b.sk + " scenarios";
               breakdown = wA + "% " + a.sk + " + " + wB + "% " + b.sk;
-              col = alpha > 0.5 ? "#f59e0b" : "#3b82f6";
+              // Color: use dominant bracketing scenario's color
+              col = (alpha >= 0.5 ? CC[a.sk] : CC[b.sk]) || "#f59e0b";
             }
             // Extract key implied assumption averages across assets
             const ti = model.todayImplied;
@@ -1151,52 +1156,72 @@
               e("div", { style: { fontSize: 10, color: "#6b7080", transition: "transform 0.2s", transform: showSliders ? "rotate(180deg)" : "rotate(0deg)" } }, "\u25BC")
             ),
             showSliders && e("div", { style: { background: "#161920", borderRadius: "0 0 10px 10px", padding: "14px 16px", borderLeft: "1px solid #ffffff06", borderRight: "1px solid #ffffff06", borderBottom: "1px solid #ffffff06" } },
-              e("div", { style: { display: "grid", gridTemplateColumns: "repeat(" + (scenarioKeys.length + (model.todayImplied ? 1 : 0)) + ", 1fr)", gap: scenarioKeys.length > 3 ? 8 : 14 } },
-            // "Today" implied column -- read-only interpolated values
-            model.todayImplied && (() => {
-              const ti = model.todayImplied;
-              const todayCol = "#60a5fa";
-              const isSOTP = ti.val.pipelineDR != null;
-              return e("div", { key: "_today", style: { background: "#0a0c12", borderRadius: 10, padding: "14px 16px", border: "2px dashed " + todayCol + "44", position: "relative", overflow: "hidden" } },
-                e("div", { style: { position: "absolute", top: 0, left: 0, right: 0, height: 2, background: todayCol } }),
-                e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 10, marginTop: 4 } },
-                  e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: todayCol } }, "TODAY"),
-                  e("div", { style: { fontSize: 13, fontWeight: 800, fontFamily: "'JetBrains Mono'", color: todayCol } }, ccy + ti.price.toFixed(dec))
-                ),
-                e("div", { style: { fontSize: 9, color: "#6b7080", marginBottom: 8, fontFamily: "'JetBrains Mono'" } },
-                  ti.edge === "below" ? "< " + ti.a : ti.edge === "above" ? "> " + ti.b : (ti.alpha*100).toFixed(0) + "% " + ti.a + " + " + ((1-ti.alpha)*100).toFixed(0) + "% " + ti.b
-                ),
-                config.assets.filter(a => a.id !== "commercial").map(asset => asset.indications.map(ind => {
-                  const a = ti.assumptions?.[asset.id]?.[ind.id]; if (!a) return null;
-                  return e("div", { key: asset.id + "_" + ind.id, style: { marginBottom: 8, opacity: 0.85 } },
-                    e("div", { style: { fontSize: 10, fontWeight: 700, color: "#b0b4c0", marginBottom: 4 } }, ind.name),
-                    e(Sl, { label: "Clinical (%)", value: a.pos, onChange: () => {}, min: 0, max: 100, unit: "%", color: todayCol }),
-                    e(Sl, { label: "Regulatory (%)", value: a.apr, onChange: () => {}, min: 0, max: 100, unit: "%", color: todayCol }),
-                    e(Sl, { label: "Pen mult", value: a.pen, onChange: () => {}, min: 0.1, max: 3, step: 0.1, unit: "x", color: todayCol })
-                  );
-                })),
-                e("div", { style: { borderTop: "1px solid #ffffff12", paddingTop: 10, marginTop: 12, opacity: 0.85 } },
-                  e("div", { style: { fontSize: 9, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#ffffff22", marginBottom: 8 } }, "Valuation"),
-                  isSOTP ? [
-                    ti.val.pipelineDR != null && e(Sl, { key: "pdr", label: "Pipeline DR (%)", value: ti.val.pipelineDR, onChange: () => {}, min: 8, max: 30, unit: "%", color: todayCol }),
-                    ti.val.pipelineMult != null && e(Sl, { key: "pm", label: "Pipeline mult", value: ti.val.pipelineMult, onChange: () => {}, min: 2, max: 8, step: 0.5, unit: "x", color: todayCol }),
-                    ti.val.commercialRevM != null && e(Sl, { key: "cr", label: "Comm. rev (" + ccy + "M)", value: ti.val.commercialRevM, onChange: () => {}, min: 0, max: Math.max(3000, ti.val.commercialRevM * 2), unit: "M", color: todayCol }),
-                    ti.val.commercialMult != null && e(Sl, { key: "cm", label: "Comm. EV/Rev", value: ti.val.commercialMult, onChange: () => {}, min: 1, max: 10, step: 0.5, unit: "x", color: todayCol }),
-                    ti.val.milestones != null && e(Sl, { key: "mi", label: "Milestones (" + ccy + "M)", value: ti.val.milestones, onChange: () => {}, min: 0, max: 1500, unit: "M", color: todayCol }),
-                    ti.val.dil != null && e(Sl, { key: "di", label: "Dilution (%)", value: ti.val.dil, onChange: () => {}, min: 0, max: 25, unit: "%", color: todayCol })
-                  ] : [
-                    ti.val.dr != null && e(Sl, { key: "dr", label: "DR (%)", value: ti.val.dr, onChange: () => {}, min: 8, max: 50, unit: "%", color: todayCol }),
-                    ti.val.dil != null && e(Sl, { key: "di", label: "Dilution (%)", value: ti.val.dil, onChange: () => {}, min: 0, max: 40, unit: "%", color: todayCol }),
-                    ti.val.mult != null && e(Sl, { key: "mu", label: "Multiple", value: ti.val.mult, onChange: () => {}, min: 2, max: 10, step: 0.5, unit: "x", color: todayCol }),
-                    ti.val.plat != null && e(Sl, { key: "pl", label: "Platform (" + ccy + "M)", value: ti.val.plat, onChange: () => {}, min: 0, max: Math.max(3000, (ti.val.plat || 0) * 2), unit: "M", color: todayCol }),
-                    ti.val.exus != null && e(Sl, { key: "ex", label: "Ex-US (" + ccy + "M)", value: ti.val.exus, onChange: () => {}, min: 0, max: Math.max(1500, (ti.val.exus || 0) * 2), unit: "M", color: todayCol }),
-                    ti.val.cannib != null && e(Sl, { key: "ca", label: "Cannib (%)", value: ti.val.cannib, onChange: () => {}, min: 0, max: 50, unit: "%", color: todayCol })
-                  ]
-                ),
-                e("div", { style: { borderTop: "1px solid #ffffff12", paddingTop: 10, marginTop: 12, fontSize: 9, color: "#6b7080", fontStyle: "italic" } }, "Read-only: interpolated from bracketing scenarios")
-              );
-            })(),
-            scenarioKeys.map(sk => {
+              (() => {
+                // Build an ordered list of columns (scenarios + today inserted at correct position)
+                const ti = model.todayImplied;
+                const cols = scenarioKeys.map(sk => ({ type: "scen", key: sk }));
+                if (ti) {
+                  // Insert 'today' right after the lower-TP bracketing scenario (ti.a) in the rendered order
+                  // But keep scenario order stable; find the original index of ti.a and ti.b
+                  if (ti.edge === "below") {
+                    // price is below cheapest; put today BEFORE the first scenario
+                    cols.unshift({ type: "today" });
+                  } else if (ti.edge === "above") {
+                    cols.push({ type: "today" });
+                  } else {
+                    const ia = scenarioKeys.indexOf(ti.a);
+                    const ib = scenarioKeys.indexOf(ti.b);
+                    const insertAt = Math.min(ia, ib) + 1;  // between a and b
+                    cols.splice(insertAt, 0, { type: "today" });
+                  }
+                }
+                const gridCols = cols.length;
+                const todayCol = ti ? ((ti.alpha >= 0.5 ? CC[ti.a] : CC[ti.b]) || "#60a5fa") : "#60a5fa";
+                return e("div", { style: { display: "grid", gridTemplateColumns: "repeat(" + gridCols + ", 1fr)", gap: scenarioKeys.length > 3 ? 8 : 14 } },
+                  cols.map((col, ci) => {
+                    if (col.type === "today" && ti) {
+                      const isSOTP = ti.val.pipelineDR != null;
+                      return e("div", { key: "_today", style: { background: "#0f1117", borderRadius: 10, padding: "14px 16px", border: "1px dashed " + todayCol + "66", position: "relative", overflow: "hidden" } },
+                        e("div", { style: { position: "absolute", top: 0, left: 0, right: 0, height: 2, background: todayCol, opacity: 0.6 } }),
+                        e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 6, marginTop: 4 } },
+                          e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: todayCol } }, "TODAY"),
+                          e("div", { style: { fontSize: 13, fontWeight: 800, fontFamily: "'JetBrains Mono'", color: todayCol } }, ccy + Math.round(ti.price).toLocaleString())
+                        ),
+                        e("div", { style: { fontSize: 9, color: "#6b7080", marginBottom: 10, fontFamily: "'JetBrains Mono'" } },
+                          ti.edge === "below" ? "< " + ti.a : ti.edge === "above" ? "> " + ti.b : Math.round(ti.alpha*100) + "% " + ti.a + " + " + Math.round((1-ti.alpha)*100) + "% " + ti.b
+                        ),
+                        config.assets.filter(a => a.id !== "commercial").map(asset => asset.indications.map(ind => {
+                          const a = ti.assumptions?.[asset.id]?.[ind.id]; if (!a) return null;
+                          return e("div", { key: asset.id + "_" + ind.id, style: { marginBottom: 8, opacity: 0.9 } },
+                            e("div", { style: { fontSize: 10, fontWeight: 700, color: "#b0b4c0", marginBottom: 4 } }, ind.name),
+                            e(Sl, { label: "Clinical (%)", value: a.pos, onChange: () => {}, min: 0, max: 100, unit: "%", color: todayCol }),
+                            e(Sl, { label: "Regulatory (%)", value: a.apr, onChange: () => {}, min: 0, max: 100, unit: "%", color: todayCol }),
+                            e(Sl, { label: "Pen mult", value: a.pen, onChange: () => {}, min: 0.1, max: 3, step: 0.1, unit: "x", color: todayCol })
+                          );
+                        })),
+                        e("div", { style: { borderTop: "1px solid #ffffff12", paddingTop: 10, marginTop: 12, opacity: 0.9 } },
+                          e("div", { style: { fontSize: 9, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#ffffff22", marginBottom: 8 } }, "Valuation"),
+                          isSOTP ? [
+                            ti.val.pipelineDR != null && e(Sl, { key: "pdr", label: "Pipeline DR (%)", value: ti.val.pipelineDR, onChange: () => {}, min: 8, max: 30, unit: "%", color: todayCol }),
+                            ti.val.pipelineMult != null && e(Sl, { key: "pm", label: "Pipeline mult", value: ti.val.pipelineMult, onChange: () => {}, min: 2, max: 8, step: 0.5, unit: "x", color: todayCol }),
+                            ti.val.commercialRevM != null && e(Sl, { key: "cr", label: "Comm. rev (" + ccy + "M)", value: ti.val.commercialRevM, onChange: () => {}, min: 0, max: Math.max(3000, ti.val.commercialRevM * 2), unit: "M", color: todayCol }),
+                            ti.val.commercialMult != null && e(Sl, { key: "cm", label: "Comm. EV/Rev", value: ti.val.commercialMult, onChange: () => {}, min: 1, max: 10, step: 0.5, unit: "x", color: todayCol }),
+                            ti.val.milestones != null && e(Sl, { key: "mi", label: "Milestones (" + ccy + "M)", value: ti.val.milestones, onChange: () => {}, min: 0, max: 1500, unit: "M", color: todayCol }),
+                            ti.val.dil != null && e(Sl, { key: "di", label: "Dilution (%)", value: ti.val.dil, onChange: () => {}, min: 0, max: 25, unit: "%", color: todayCol })
+                          ] : [
+                            ti.val.dr != null && e(Sl, { key: "dr", label: "DR (%)", value: ti.val.dr, onChange: () => {}, min: 8, max: 50, unit: "%", color: todayCol }),
+                            ti.val.dil != null && e(Sl, { key: "di", label: "Dilution (%)", value: ti.val.dil, onChange: () => {}, min: 0, max: 40, unit: "%", color: todayCol }),
+                            ti.val.mult != null && e(Sl, { key: "mu", label: "Multiple", value: ti.val.mult, onChange: () => {}, min: 2, max: 10, step: 0.5, unit: "x", color: todayCol }),
+                            ti.val.plat != null && e(Sl, { key: "pl", label: "Platform (" + ccy + "M)", value: ti.val.plat, onChange: () => {}, min: 0, max: Math.max(3000, (ti.val.plat || 0) * 2), unit: "M", color: todayCol }),
+                            ti.val.exus != null && e(Sl, { key: "ex", label: "Ex-US (" + ccy + "M)", value: ti.val.exus, onChange: () => {}, min: 0, max: Math.max(1500, (ti.val.exus || 0) * 2), unit: "M", color: todayCol }),
+                            ti.val.cannib != null && e(Sl, { key: "ca", label: "Cannib (%)", value: ti.val.cannib, onChange: () => {}, min: 0, max: 50, unit: "%", color: todayCol })
+                          ]
+                        ),
+                        e("div", { style: { borderTop: "1px solid #ffffff12", paddingTop: 10, marginTop: 12, fontSize: 9, color: "#6b7080", fontStyle: "italic" } }, "Read-only: market-implied interpolation")
+                      );
+                    }
+                    // Regular scenario column
+                    const sk = col.key;
               const scen = state.scenarios[sk];
               const isSOTP = scen.val.pipelineDR != null;
               return e("div", { key: sk, style: { background: "#161920", borderRadius: 10, padding: "14px 16px", border: "1px solid " + CC[sk] + "22", position: "relative", overflow: "hidden" } },
@@ -1239,9 +1264,10 @@
                   e(Sl, { label: "Scenario weight (%)", value: scen.wt, onChange: v => upd("scenarios." + sk + ".wt", v), min: 0, max: 100, unit: "%", color: CC[sk] })
                 )
               );
-            })
-          )
-          )
+                  })
+                );
+              })()
+            )
           ),
 
           // Context (Last + Next) -- collapsible, placed after assumption sliders

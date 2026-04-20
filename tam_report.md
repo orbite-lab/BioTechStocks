@@ -5,7 +5,7 @@ All 45 companies, 222 indications. Generated from configs/ via scripts/tam_repor
 **Total TAM (unique markets)**: $2856.3B across 131 distinct disease areas
 **Total TAM (sum per-drug, with double-counting)**: $8357.0B
 **Total SOM**: $568.0B (summed per-drug; company slices don't overlap)
-**Total 2025 reported sales**: $146.2B
+**Total 2025 reported sales**: $146.9B
 
 _Note: Multiple companies target the same disease area (e.g. 4 companies in obesity/GLP-1 each_
 _see the same $396B TAM). The 'unique markets' total avoids double-counting._
@@ -16,7 +16,7 @@ _see the same $396B TAM). The 'unique markets' total avoids double-counting._
 
 | L1 Area | Indications | TAM | SOM | 2025 Sales |
 |---|---:|---:|---:|---:|
-| cardio metabolic | 45 | $1030.63B | $198.04B | $54.30B |
+| cardio metabolic | 45 | $1030.63B | $198.04B | $54.99B |
 | oncology | 60 | $347.14B | $73.17B | $21.12B |
 | cns | 40 | $323.97B | $124.00B | $15.15B |
 | dermatology | 20 | $266.69B | $60.78B | $18.50B |
@@ -83,7 +83,7 @@ _see the same $396B TAM). The 'unique markets' total avoids double-counting._
 | GILD | Liver disease + Veklury | Liver (Livdelzi + HCV + HBV) + | Commercial ($4.1B 2025) | 800K | $15.45B | $9.29B | $4.10B |  |
 | IONS | Bepirovirsen — chronic He | Chronic hepatitis B functional | Phase 3 positive (B-Well 1 + 2 | 800K | $15.45B | $16.23B | $0M |  |
 | GLMD | Aramchol — NASH/MASH (leg | NASH/MASH combination therapy | ARMOR Phase 3 program — essent | 6000K | $174.90B | $32M | $0M |  |
-| MDGL | Rezdiffra (resmetirom) —  | MASH with moderate-advanced fi | Commercial (US approved Mar 20 | 6000K | $174.90B | $3.20B | $300M |  |
+| MDGL | Rezdiffra (resmetirom) —  | MASH with moderate-advanced fi | Commercial (US approved Mar 20 | 6000K | $174.90B | $3.20B | $984M |  |
 | MDGL | Rezdiffra — MASH F4 compe | MASH with compensated cirrhosi | Outcomes study ongoing (first- | 6000K | $174.90B | $4.33B | $0M |  |
 | MDGL | Rezdiffra combination pip | MASH combination therapies | Phase 1/2 + preclinical | 6000K | $174.90B | $856M | $0M |  |
 | CAMX | CAM2029 — polycystic live | Polycystic liver disease / ADP | Phase 2b positive (POSITANO) + | 20K | $295M | $27M | $0M |  |

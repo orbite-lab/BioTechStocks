@@ -25,7 +25,7 @@
           "market": {
             "notes": "Buvidal own sales in EU/Australia + Brixadi US royalties from Braeburn. Brixadi ~30% US LAI buprenorphine market share. Target: 100K Buvidal patients by 2027. UK funding issues temporary headwind. 2026 guide SEK 2.6-2.9B total revenue.",
             "tamB": 5.0,
-            "penPct": 8,
+            "penPct": 25,
             "salesM": 400,
             "salesYear": 2025,
             "company_slice": {
@@ -84,6 +84,23 @@
               "penPct": {
                 "note": "~25% peak branded - generic buprenorphine dominates; LAI (Sublocade, Brixadi) growth in treatment retention."
               }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 2000,
+                "wtpPct": 70,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 1300,
+                "wtpPct": 60,
+                "priceK": 2.5
+              },
+              "row": {
+                "patientsK": 40000,
+                "wtpPct": 15,
+                "priceK": 0.8
+              }
             }
           },
           "area": "cns.psychiatry.opioid_dependence"
@@ -102,24 +119,24 @@
           "name": "Acromegaly",
           "market": {
             "tamB": 2.0,
-            "penPct": 15,
+            "penPct": 20,
             "peakYear": 2032,
             "notes": "Monthly SC octreotide depot. EU approved, launched Germany Nov 2025. US NDA resubmitted, PDUFA Jun 10, 2026. Superior to first-gen SRL (Sandostatin LAR). 3-5K EU acromegaly patients targetable. FluidCrystal technology.",
             "regions": {
               "us": {
-                "patientsK": 15,
-                "wtpPct": 72,
-                "priceK": 120
+                "patientsK": 8,
+                "wtpPct": 75,
+                "priceK": 80
               },
               "eu": {
-                "patientsK": 18,
-                "wtpPct": 55,
-                "priceK": 60
+                "patientsK": 10,
+                "wtpPct": 65,
+                "priceK": 45
               },
               "row": {
-                "patientsK": 20,
-                "wtpPct": 12,
-                "priceK": 25
+                "patientsK": 15,
+                "wtpPct": 35,
+                "priceK": 20
               }
             },
             "sources": {
@@ -199,24 +216,24 @@
           "name": "Gastroenteropancreatic neuroendocrine tumors",
           "market": {
             "tamB": 3.0,
-            "penPct": 12,
+            "penPct": 50,
             "peakYear": 2033,
             "notes": "SORENTO Phase 3 vs Sandostatin LAR. Primary PFS readout mid/H2 2026. Event accrual slower than expected (patients doing well). Major TAM expansion from acromegaly.",
             "regions": {
               "us": {
-                "patientsK": 11.3,
-                "wtpPct": 75,
-                "priceK": 250
-              },
-              "eu": {
-                "patientsK": 13.2,
-                "wtpPct": 55,
+                "patientsK": 12,
+                "wtpPct": 62,
                 "priceK": 110
               },
+              "eu": {
+                "patientsK": 15,
+                "wtpPct": 48,
+                "priceK": 65
+              },
               "row": {
-                "patientsK": 13.2,
-                "wtpPct": 15,
-                "priceK": 40
+                "patientsK": 40,
+                "wtpPct": 16,
+                "priceK": 22
               }
             },
             "sources": {
@@ -296,24 +313,24 @@
           "name": "Polycystic liver disease / ADPKD",
           "market": {
             "tamB": 2.0,
-            "penPct": 10,
+            "penPct": 15,
             "peakYear": 2034,
             "notes": "POSITANO Phase 2b positive: significant liver cyst volume reduction. Orphan designation in ADPKD (US+EU). No approved therapy for PLD. 37K patients US/EU4/UK. Phase 2/3 planned.",
             "regions": {
               "us": {
-                "patientsK": 140,
+                "patientsK": 20,
                 "wtpPct": 65,
-                "priceK": 80
+                "priceK": 13
               },
               "eu": {
-                "patientsK": 120,
-                "wtpPct": 48,
-                "priceK": 40
+                "patientsK": 25,
+                "wtpPct": 55,
+                "priceK": 7
               },
               "row": {
-                "patientsK": 150,
-                "wtpPct": 10,
-                "priceK": 15
+                "patientsK": 30,
+                "wtpPct": 25,
+                "priceK": 4
               }
             },
             "sources": {
@@ -390,7 +407,7 @@
           "name": "Long-acting incretins (obesity/T2D)",
           "market": {
             "tamB": 10,
-            "penPct": 1,
+            "penPct": 5,
             "peakYear": 2036,
             "notes": "Lilly deal: up to $870M milestones + royalties for FluidCrystal long-acting incretins (up to 4 compounds, including dual GIP/GLP-1 and triple agonists). CAM2056 monthly semaglutide Phase 1 completed enrollment. If monthly/quarterly GLP-1 works: massive opportunity.",
             "regions": {

@@ -599,7 +599,46 @@
         const normW = wts.map(w => w / tW);
         const weightedTP = sks.reduce((s, k, i) => s + results[k].tp * normW[i], 0);
         const upside = ((weightedTP - state.currentPrice) / state.currentPrice) * 100;
-        return { results, normW, weightedTP, upside, cashPS: co.cash / co.sharesOut, sks };
+
+        // "Today" implied scenario: interpolate assumptions between the two scenarios bracketing the stock price
+        const price = state.currentPrice;
+        const sortedScens = sks.map(sk => ({ sk, tp: results[sk].tp }))
+          .filter(s => typeof s.tp === "number" && !isNaN(s.tp))
+          .sort((a,b) => a.tp - b.tp);
+        let todayImplied = null;
+        if (sortedScens.length >= 2) {
+          let a, b, alpha, edge = null;
+          if (price <= sortedScens[0].tp) { a = sortedScens[0]; b = sortedScens[1]; alpha = 1; edge = "below"; }
+          else if (price >= sortedScens[sortedScens.length-1].tp) { const n = sortedScens.length; a = sortedScens[n-2]; b = sortedScens[n-1]; alpha = 0; edge = "above"; }
+          else { for (let i = 0; i < sortedScens.length - 1; i++) { if (price >= sortedScens[i].tp && price <= sortedScens[i+1].tp) { a = sortedScens[i]; b = sortedScens[i+1]; alpha = (b.tp - price) / (b.tp - a.tp); break; } } }
+          const scA = state.scenarios[a.sk], scB = state.scenarios[b.sk];
+          // Interpolate assumptions per asset/indication
+          const assumptions = {};
+          for (const asset of config.assets) {
+            for (const ind of asset.indications) {
+              const aA = scA.assumptions?.[asset.id]?.[ind.id];
+              const aB = scB.assumptions?.[asset.id]?.[ind.id];
+              if (!aA || !aB) continue;
+              assumptions[asset.id] = assumptions[asset.id] || {};
+              assumptions[asset.id][ind.id] = {
+                pos: alpha * aA.pos + (1 - alpha) * aB.pos,
+                apr: alpha * aA.apr + (1 - alpha) * aB.apr,
+                pen: alpha * aA.pen + (1 - alpha) * aB.pen,
+              };
+            }
+          }
+          // Interpolate val fields
+          const val = {};
+          const fields = new Set([...Object.keys(scA.val || {}), ...Object.keys(scB.val || {})]);
+          for (const f of fields) {
+            const vA = scA.val?.[f] ?? 0;
+            const vB = scB.val?.[f] ?? 0;
+            if (typeof vA === "number" && typeof vB === "number") val[f] = alpha * vA + (1 - alpha) * vB;
+          }
+          todayImplied = { a: a.sk, b: b.sk, alpha, edge, assumptions, val, price };
+        }
+
+        return { results, normW, weightedTP, upside, cashPS: co.cash / co.sharesOut, sks, todayImplied };
       }, [state, config]);
 
       const CCY_MAP = { EUR: "\u20AC", USD: "$", HKD: "HK$", SEK: "kr", JPY: "\u00A5", GBP: "\u00A3", CHF: "CHF " };
@@ -787,13 +826,35 @@
               breakdown = wA + "% " + a.sk + " + " + wB + "% " + b.sk;
               col = alpha > 0.5 ? "#f59e0b" : "#3b82f6";
             }
+            // Extract key implied assumption averages across assets
+            const ti = model.todayImplied;
+            let impliedSummary = "";
+            if (ti) {
+              const aVals = [];
+              for (const aid in ti.assumptions) for (const iid in ti.assumptions[aid]) aVals.push(ti.assumptions[aid][iid]);
+              if (aVals.length) {
+                const avgPos = aVals.reduce((s, a) => s + a.pos, 0) / aVals.length;
+                const avgApr = aVals.reduce((s, a) => s + a.apr, 0) / aVals.length;
+                const avgPen = aVals.reduce((s, a) => s + a.pen, 0) / aVals.length;
+                const valBits = [];
+                valBits.push("Clinical " + avgPos.toFixed(0) + "%");
+                valBits.push("Reg " + avgApr.toFixed(0) + "%");
+                valBits.push("Pen " + avgPen.toFixed(1) + "x");
+                if (ti.val.dr != null) valBits.push("DR " + ti.val.dr.toFixed(0) + "%");
+                if (ti.val.pipelineDR != null) valBits.push("pDR " + ti.val.pipelineDR.toFixed(0) + "%");
+                if (ti.val.mult != null) valBits.push(ti.val.mult.toFixed(1) + "x mult");
+                if (ti.val.dil != null) valBits.push("Dil " + ti.val.dil.toFixed(0) + "%");
+                impliedSummary = valBits.join(" \u00b7 ");
+              }
+            }
             return e("div", { style: { background: "#0f1117", borderRadius: 10, padding: "14px 18px", marginBottom: 14, border: "2px solid " + col + "44", position: "relative", overflow: "hidden" } },
               e("div", { style: { position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(90deg," + col + "," + col + "44)" } }),
               e("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 } },
-                e("div", null,
+                e("div", { style: { flex: 1, minWidth: 240 } },
                   e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: col, marginBottom: 4 } }, "Today \u00b7 Market Implied"),
                   e("div", { style: { fontSize: 11, color: "#6b7080", marginBottom: 4 } }, narrative),
-                  e("div", { style: { fontSize: 11, fontFamily: "'JetBrains Mono'", color: col, fontWeight: 700 } }, breakdown)
+                  e("div", { style: { fontSize: 11, fontFamily: "'JetBrains Mono'", color: col, fontWeight: 700, marginBottom: impliedSummary ? 6 : 0 } }, breakdown),
+                  impliedSummary && e("div", { style: { fontSize: 10, fontFamily: "'JetBrains Mono'", color: "#b0b4c0" } }, "Implied: " + impliedSummary)
                 ),
                 e("div", { style: { display: "flex", gap: 24, alignItems: "center" } },
                   e("div", { style: { textAlign: "right" } },
@@ -1090,7 +1151,51 @@
               e("div", { style: { fontSize: 10, color: "#6b7080", transition: "transform 0.2s", transform: showSliders ? "rotate(180deg)" : "rotate(0deg)" } }, "\u25BC")
             ),
             showSliders && e("div", { style: { background: "#161920", borderRadius: "0 0 10px 10px", padding: "14px 16px", borderLeft: "1px solid #ffffff06", borderRight: "1px solid #ffffff06", borderBottom: "1px solid #ffffff06" } },
-              e("div", { style: { display: "grid", gridTemplateColumns: "repeat(" + scenarioKeys.length + ", 1fr)", gap: scenarioKeys.length > 3 ? 8 : 14 } },
+              e("div", { style: { display: "grid", gridTemplateColumns: "repeat(" + (scenarioKeys.length + (model.todayImplied ? 1 : 0)) + ", 1fr)", gap: scenarioKeys.length > 3 ? 8 : 14 } },
+            // "Today" implied column -- read-only interpolated values
+            model.todayImplied && (() => {
+              const ti = model.todayImplied;
+              const todayCol = "#60a5fa";
+              const isSOTP = ti.val.pipelineDR != null;
+              return e("div", { key: "_today", style: { background: "#0a0c12", borderRadius: 10, padding: "14px 16px", border: "2px dashed " + todayCol + "44", position: "relative", overflow: "hidden" } },
+                e("div", { style: { position: "absolute", top: 0, left: 0, right: 0, height: 2, background: todayCol } }),
+                e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 10, marginTop: 4 } },
+                  e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: todayCol } }, "TODAY"),
+                  e("div", { style: { fontSize: 13, fontWeight: 800, fontFamily: "'JetBrains Mono'", color: todayCol } }, ccy + ti.price.toFixed(dec))
+                ),
+                e("div", { style: { fontSize: 9, color: "#6b7080", marginBottom: 8, fontFamily: "'JetBrains Mono'" } },
+                  ti.edge === "below" ? "< " + ti.a : ti.edge === "above" ? "> " + ti.b : (ti.alpha*100).toFixed(0) + "% " + ti.a + " + " + ((1-ti.alpha)*100).toFixed(0) + "% " + ti.b
+                ),
+                config.assets.filter(a => a.id !== "commercial").map(asset => asset.indications.map(ind => {
+                  const a = ti.assumptions?.[asset.id]?.[ind.id]; if (!a) return null;
+                  return e("div", { key: asset.id + "_" + ind.id, style: { marginBottom: 8, opacity: 0.85 } },
+                    e("div", { style: { fontSize: 10, fontWeight: 700, color: "#b0b4c0", marginBottom: 4 } }, ind.name),
+                    e(Sl, { label: "Clinical (%)", value: a.pos, onChange: () => {}, min: 0, max: 100, unit: "%", color: todayCol }),
+                    e(Sl, { label: "Regulatory (%)", value: a.apr, onChange: () => {}, min: 0, max: 100, unit: "%", color: todayCol }),
+                    e(Sl, { label: "Pen mult", value: a.pen, onChange: () => {}, min: 0.1, max: 3, step: 0.1, unit: "x", color: todayCol })
+                  );
+                })),
+                e("div", { style: { borderTop: "1px solid #ffffff12", paddingTop: 10, marginTop: 12, opacity: 0.85 } },
+                  e("div", { style: { fontSize: 9, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#ffffff22", marginBottom: 8 } }, "Valuation"),
+                  isSOTP ? [
+                    ti.val.pipelineDR != null && e(Sl, { key: "pdr", label: "Pipeline DR (%)", value: ti.val.pipelineDR, onChange: () => {}, min: 8, max: 30, unit: "%", color: todayCol }),
+                    ti.val.pipelineMult != null && e(Sl, { key: "pm", label: "Pipeline mult", value: ti.val.pipelineMult, onChange: () => {}, min: 2, max: 8, step: 0.5, unit: "x", color: todayCol }),
+                    ti.val.commercialRevM != null && e(Sl, { key: "cr", label: "Comm. rev (" + ccy + "M)", value: ti.val.commercialRevM, onChange: () => {}, min: 0, max: Math.max(3000, ti.val.commercialRevM * 2), unit: "M", color: todayCol }),
+                    ti.val.commercialMult != null && e(Sl, { key: "cm", label: "Comm. EV/Rev", value: ti.val.commercialMult, onChange: () => {}, min: 1, max: 10, step: 0.5, unit: "x", color: todayCol }),
+                    ti.val.milestones != null && e(Sl, { key: "mi", label: "Milestones (" + ccy + "M)", value: ti.val.milestones, onChange: () => {}, min: 0, max: 1500, unit: "M", color: todayCol }),
+                    ti.val.dil != null && e(Sl, { key: "di", label: "Dilution (%)", value: ti.val.dil, onChange: () => {}, min: 0, max: 25, unit: "%", color: todayCol })
+                  ] : [
+                    ti.val.dr != null && e(Sl, { key: "dr", label: "DR (%)", value: ti.val.dr, onChange: () => {}, min: 8, max: 50, unit: "%", color: todayCol }),
+                    ti.val.dil != null && e(Sl, { key: "di", label: "Dilution (%)", value: ti.val.dil, onChange: () => {}, min: 0, max: 40, unit: "%", color: todayCol }),
+                    ti.val.mult != null && e(Sl, { key: "mu", label: "Multiple", value: ti.val.mult, onChange: () => {}, min: 2, max: 10, step: 0.5, unit: "x", color: todayCol }),
+                    ti.val.plat != null && e(Sl, { key: "pl", label: "Platform (" + ccy + "M)", value: ti.val.plat, onChange: () => {}, min: 0, max: Math.max(3000, (ti.val.plat || 0) * 2), unit: "M", color: todayCol }),
+                    ti.val.exus != null && e(Sl, { key: "ex", label: "Ex-US (" + ccy + "M)", value: ti.val.exus, onChange: () => {}, min: 0, max: Math.max(1500, (ti.val.exus || 0) * 2), unit: "M", color: todayCol }),
+                    ti.val.cannib != null && e(Sl, { key: "ca", label: "Cannib (%)", value: ti.val.cannib, onChange: () => {}, min: 0, max: 50, unit: "%", color: todayCol })
+                  ]
+                ),
+                e("div", { style: { borderTop: "1px solid #ffffff12", paddingTop: 10, marginTop: 12, fontSize: 9, color: "#6b7080", fontStyle: "italic" } }, "Read-only: interpolated from bracketing scenarios")
+              );
+            })(),
             scenarioKeys.map(sk => {
               const scen = state.scenarios[sk];
               const isSOTP = scen.val.pipelineDR != null;

@@ -1084,7 +1084,6 @@
           (() => {
             let totalTAM = 0, totalAtPen = 0;
             for (const a of config.assets) {
-              if (a.id === "commercial") continue;
               for (const ind of a.indications) {
                 const mk = a.id + "_" + ind.id;
                 const m = state.markets[mk]; if (!m) continue;
@@ -1131,7 +1130,7 @@
             ),
             showMarkets && e("div", { style: { background: "#161920", borderRadius: "0 0 10px 10px", padding: "10px 16px", borderLeft: "1px solid #ffffff06", borderRight: "1px solid #ffffff06", borderBottom: "1px solid #ffffff06" } },
               e("div", { style: { display: "flex", flexDirection: "column", gap: 6 } },
-                config.assets.filter(a => a.id !== "commercial").map(asset => asset.indications.map(ind => {
+                config.assets.map(asset => asset.indications.map(ind => {
                   const mk = asset.id + "_" + ind.id; const m = state.markets[mk]; if (!m) return null;
                   const REGIONS = [["us","US"],["eu","EU"],["row","ROW"]];
                   const hasRegions = !!m.regions;

@@ -818,26 +818,66 @@
                   items.splice(Math.min(ia, ib) + 1, 0, { type: "today" });
                 }
               }
+              const colCount = items.length;
+              const compact = colCount > 3;
               return items.map((it, si) => {
                 if (it.type === "today") {
                   const price = state.currentPrice;
-                  const scens = model.sks.map(sk => ({ sk, tp: model.results[sk].tp })).filter(s => typeof s.tp === "number" && !isNaN(s.tp)).sort((a,b) => a.tp - b.tp);
                   const evImplied = Math.max(0, price * config.company.sharesOut - state.cash);
                   let breakdown, col;
                   if (ti.edge === "below") { breakdown = "100% " + ti.a; col = CC[ti.a] || "#ef4444"; }
                   else if (ti.edge === "above") { breakdown = "100% " + ti.b; col = CC[ti.b] || "#22c55e"; }
                   else { breakdown = Math.round(ti.alpha * 100) + "% " + ti.a + " + " + Math.round((1-ti.alpha) * 100) + "% " + ti.b; col = (ti.alpha >= 0.5 ? CC[ti.a] : CC[ti.b]) || "#f59e0b"; }
-                  const ud = ((price - state.currentPrice) / state.currentPrice) * 100;  // always 0 for today
-                  return e("div", { key: "_today", style: { background: "#161920", borderRadius: 10, padding: scenarioKeys.length > 3 ? "14px" : "18px", border: "1px dashed " + col + "66", position: "relative", overflow: "hidden", flex: 1, minWidth: scenarioKeys.length > 3 ? 200 : 270 } },
+                  const expanded = scenExpanded;
+                  // Compute implied assumption averages
+                  const aVals = [];
+                  for (const aid in ti.assumptions) for (const iid in ti.assumptions[aid]) aVals.push(ti.assumptions[aid][iid]);
+                  const avgPos = aVals.length ? aVals.reduce((s, a) => s + a.pos, 0) / aVals.length : 0;
+                  const avgApr = aVals.length ? aVals.reduce((s, a) => s + a.apr, 0) / aVals.length : 0;
+                  const avgPen = aVals.length ? aVals.reduce((s, a) => s + a.pen, 0) / aVals.length : 0;
+                  return e("div", { key: "_today", style: { background: "#161920", borderRadius: 10, padding: compact ? "14px" : "18px", border: "1px dashed " + col + "66", position: "relative", overflow: "hidden", flex: 1, minWidth: compact ? 170 : 230 } },
                     e("div", { style: { position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(90deg," + col + "," + col + "44)" } }),
-                    e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 12, alignItems: "center" } },
-                      e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: col } }, "TODAY"),
-                      e("div", { style: { fontSize: 10, color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, "market-implied")
-                    ),
-                    e("div", { style: { display: "flex", alignItems: "baseline", gap: 8, marginBottom: 8 } },
-                      e("span", { style: { fontSize: scenarioKeys.length > 3 ? 24 : 32, fontWeight: 800, fontFamily: "'JetBrains Mono'", lineHeight: 1 } }, ccy + Math.round(price).toLocaleString())
+                    e("div", { onClick: () => setScenExpanded(prev => !prev), style: { cursor: "pointer", userSelect: "none" } },
+                      e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 12, alignItems: "center" } },
+                        e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: col } }, "TODAY"),
+                        e("div", { style: { display: "flex", gap: 6, alignItems: "center" } },
+                          e("div", { style: { fontSize: 10, color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, "market-implied"),
+                          e("div", { style: { fontSize: 10, color: "#6b7080", transition: "transform 0.2s", transform: expanded ? "rotate(180deg)" : "rotate(0deg)" } }, "\u25BC")
+                        )
+                      ),
+                      e("div", { style: { display: "flex", alignItems: "baseline", gap: 8, marginBottom: expanded ? 4 : 8 } },
+                        e("span", { style: { fontSize: compact ? 24 : 32, fontWeight: 800, fontFamily: "'JetBrains Mono'", lineHeight: 1 } }, ccy + Math.round(price).toLocaleString())
+                      )
                     ),
                     e("div", { style: { fontSize: 10, color: col, fontWeight: 700, fontFamily: "'JetBrains Mono'", marginBottom: 8 } }, breakdown),
+                    // Expanded detail for Today
+                    expanded && e("div", null,
+                      e("div", { style: { fontSize: 11, color: "#6b7080", marginBottom: 10, lineHeight: 1.4 } }, "Market blends the bracketing scenarios to imply what assumptions justify the current price."),
+                      e("div", { style: { borderTop: "1px solid #ffffff0a", paddingTop: 10, marginBottom: 10 } },
+                        e("div", { style: { fontSize: 9, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 } }, "Implied avg assumptions"),
+                        e("div", { style: { display: "flex", justifyContent: "space-between", fontSize: 10, marginBottom: 3 } },
+                          e("span", { style: { color: "#6b7080" } }, "Clinical"),
+                          e("span", { style: { fontFamily: "'JetBrains Mono'", color: col, fontWeight: 600 } }, Math.round(avgPos) + "%")),
+                        e("div", { style: { display: "flex", justifyContent: "space-between", fontSize: 10, marginBottom: 3 } },
+                          e("span", { style: { color: "#6b7080" } }, "Regulatory"),
+                          e("span", { style: { fontFamily: "'JetBrains Mono'", color: col, fontWeight: 600 } }, Math.round(avgApr) + "%")),
+                        e("div", { style: { display: "flex", justifyContent: "space-between", fontSize: 10, marginBottom: 3 } },
+                          e("span", { style: { color: "#6b7080" } }, "Pen mult"),
+                          e("span", { style: { fontFamily: "'JetBrains Mono'", color: col, fontWeight: 600 } }, avgPen.toFixed(1) + "x")),
+                        ti.val.dr != null && e("div", { style: { display: "flex", justifyContent: "space-between", fontSize: 10, marginBottom: 3 } },
+                          e("span", { style: { color: "#6b7080" } }, "Discount rate"),
+                          e("span", { style: { fontFamily: "'JetBrains Mono'", color: col, fontWeight: 600 } }, Math.round(ti.val.dr) + "%")),
+                        ti.val.pipelineDR != null && e("div", { style: { display: "flex", justifyContent: "space-between", fontSize: 10, marginBottom: 3 } },
+                          e("span", { style: { color: "#6b7080" } }, "Pipeline DR"),
+                          e("span", { style: { fontFamily: "'JetBrains Mono'", color: col, fontWeight: 600 } }, Math.round(ti.val.pipelineDR) + "%")),
+                        ti.val.mult != null && e("div", { style: { display: "flex", justifyContent: "space-between", fontSize: 10, marginBottom: 3 } },
+                          e("span", { style: { color: "#6b7080" } }, "Multiple"),
+                          e("span", { style: { fontFamily: "'JetBrains Mono'", color: col, fontWeight: 600 } }, (ti.val.mult || 0).toFixed(1) + "x")),
+                        ti.val.dil != null && e("div", { style: { display: "flex", justifyContent: "space-between", fontSize: 10, marginBottom: 3 } },
+                          e("span", { style: { color: "#6b7080" } }, "Dilution"),
+                          e("span", { style: { fontFamily: "'JetBrains Mono'", color: col, fontWeight: 600 } }, Math.round(ti.val.dil) + "%"))
+                      )
+                    ),
                     e("div", { style: { display: "flex", justifyContent: "space-between", marginTop: 6, paddingTop: 6, borderTop: "1px solid #ffffff06", fontSize: 10 } },
                       e("span", { style: { color: "#6b7080" } }, "EV implied"),
                       e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } }, ccy + (evImplied / 1000).toFixed(1) + "B")
@@ -850,7 +890,7 @@
                 const ud = ((r.tp - state.currentPrice) / state.currentPrice) * 100;
                 const expanded = scenExpanded;
                 const origSi = model.sks.indexOf(sk);
-                return e("div", { key: sk, style: { background: "#161920", borderRadius: 10, padding: scenarioKeys.length > 3 ? "14px" : "18px", border: "1px solid " + CC[sk] + "22", position: "relative", overflow: "hidden", flex: 1, minWidth: scenarioKeys.length > 3 ? 200 : 270 } },
+                return e("div", { key: sk, style: { background: "#161920", borderRadius: 10, padding: compact ? "14px" : "18px", border: "1px solid " + CC[sk] + "22", position: "relative", overflow: "hidden", flex: 1, minWidth: compact ? 170 : 230 } },
                 e("div", { style: { position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(90deg," + CC[sk] + "," + CC[sk] + "44)" } }),
                 e("div", { onClick: () => setScenExpanded(prev => !prev), style: { cursor: "pointer", userSelect: "none" } },
                   e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 12, alignItems: "center" } },
@@ -861,7 +901,7 @@
                     )
                   ),
                   e("div", { style: { display: "flex", alignItems: "baseline", gap: 8, marginBottom: expanded ? 4 : 8 } },
-                    e("span", { style: { fontSize: scenarioKeys.length > 3 ? 24 : 32, fontWeight: 800, fontFamily: "'JetBrains Mono'", lineHeight: 1 } }, ccy + r.tp.toFixed(dec)),
+                    e("span", { style: { fontSize: compact ? 24 : 32, fontWeight: 800, fontFamily: "'JetBrains Mono'", lineHeight: 1 } }, ccy + r.tp.toFixed(dec)),
                     e("span", { style: { fontSize: 13, fontWeight: 700, fontFamily: "'JetBrains Mono'", color: ud >= 0 ? "#22c55e" : "#ef4444" } }, (ud >= 0 ? "+" : "") + ud.toFixed(0) + "%")
                   )
                 ),

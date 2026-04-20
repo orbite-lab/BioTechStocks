@@ -982,11 +982,17 @@
             const mcapUSD_M = shares * state.currentPrice * fx;
             const capTierKey = mcapUSD_M > 100000 ? "mega_cap" : mcapUSD_M > 20000 ? "large_cap" : mcapUSD_M > 5000 ? "mid_cap" : mcapUSD_M > 1000 ? "small_cap" : "micro_cap";
             const capTierLabel = { mega_cap: "mega (>$100B)", large_cap: "large ($20-100B)", mid_cap: "mid ($5-20B)", small_cap: "small ($1-5B)", micro_cap: "micro (<$1B)" }[capTierKey];
-            // Classify every covered company by tier (using its own FX + live price if known, otherwise baked revenue/price in financials is USD-normalized)
+            // Classify every peer (covered + external) by tier. For internal configs use live price * shares * FX;
+            // for external peers (no config) use baked mcap_usd_M from financials.json.
             const FX = { USD: 1, EUR: 1.08, JPY: 1/150, HKD: 1/7.8, SEK: 1/10.5, GBP: 1.28, CHF: 1.12 };
             const tierOf = (cfgT) => {
-              const c = configs[cfgT]?.company; if (!c) return null;
-              const mc = (c.sharesOut || 0) * (c.currentPrice || 0) * (FX[c.currency] || 1);
+              let mc;
+              if (configs[cfgT]?.company) {
+                const c = configs[cfgT].company;
+                mc = (c.sharesOut || 0) * (c.currentPrice || 0) * (FX[c.currency] || 1);
+              } else {
+                mc = financials[cfgT]?.mcap_usd_M || 0;
+              }
               if (mc > 100000) return "mega_cap"; if (mc > 20000) return "large_cap"; if (mc > 5000) return "mid_cap"; if (mc > 1000) return "small_cap"; return "micro_cap";
             };
             // Live cap-tier median + live all-biotech median
@@ -1022,7 +1028,7 @@
               }
             }
             peerTickers.delete(tk);
-            const peers = [...peerTickers].slice(0, 8).map(pt => ({ tk: pt, fin: financials[pt] })).filter(p => p.fin);
+            const peers = [...peerTickers].slice(0, 8).map(pt => ({ tk: pt, fin: financials[pt] })).filter(p => p.fin && !p.fin.external);
 
             const pctlBar = (pctl, color) => {
               if (pctl == null) return null;

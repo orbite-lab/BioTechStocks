@@ -550,6 +550,7 @@
       const [showPipeline, setShowPipeline] = useState(false);
       const [showContext, setShowContext] = useState(false);
       const [showMethodology, setShowMethodology] = useState(false);
+      const [scenExpanded, setScenExpanded] = useState({});
       const [expandedMkt, setExpandedMkt] = useState({});
 
       // On company switch: use cached price from prices.json immediately, then refresh from Yahoo in background
@@ -764,50 +765,59 @@
             model.sks.map((sk, si) => {
               const scen = state.scenarios[sk]; const r = model.results[sk];
               const ud = ((r.tp - state.currentPrice) / state.currentPrice) * 100;
+              const expanded = !!scenExpanded[sk];
               return e("div", { key: sk, style: { background: "#161920", borderRadius: 10, padding: scenarioKeys.length > 3 ? "14px" : "18px", border: "1px solid " + CC[sk] + "22", position: "relative", overflow: "hidden", flex: 1, minWidth: scenarioKeys.length > 3 ? 200 : 270 } },
                 e("div", { style: { position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(90deg," + CC[sk] + "," + CC[sk] + "44)" } }),
-                e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 12 } },
-                  e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: CC[sk] } }, sk),
-                  e("div", { style: { fontSize: 11, color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, (model.normW[si] * 100).toFixed(0) + "% wt")
-                ),
-                e("div", { style: { display: "flex", alignItems: "baseline", gap: 8, marginBottom: 4 } },
-                  e("span", { style: { fontSize: scenarioKeys.length > 3 ? 24 : 32, fontWeight: 800, fontFamily: "'JetBrains Mono'", lineHeight: 1 } }, ccy + r.tp.toFixed(dec)),
-                  e("span", { style: { fontSize: 13, fontWeight: 700, fontFamily: "'JetBrains Mono'", color: ud >= 0 ? "#22c55e" : "#ef4444" } }, (ud >= 0 ? "+" : "") + ud.toFixed(0) + "%")
-                ),
-                e("div", { style: { fontSize: 11, color: "#6b7080", marginBottom: 12 } }, scen.narrative),
-                e("div", { style: { marginBottom: 14 } }, scen.events.map((ev, i) =>
-                  e("div", { key: i, style: { display: "flex", gap: 7, marginBottom: 5 } },
-                    e("span", { style: { fontSize: 12, color: sentC[ev[0]] || "#6b7080", fontWeight: 700, minWidth: 13 } }, ev[0]),
-                    e("span", { style: { fontSize: 11, color: "#6b7080", lineHeight: 1.4 } }, ev.slice(2))
+                e("div", { onClick: () => setScenExpanded(prev => ({ ...prev, [sk]: !prev[sk] })), style: { cursor: "pointer", userSelect: "none" } },
+                  e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 12, alignItems: "center" } },
+                    e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: CC[sk] } }, sk),
+                    e("div", { style: { display: "flex", gap: 8, alignItems: "center" } },
+                      e("div", { style: { fontSize: 11, color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, (model.normW[si] * 100).toFixed(0) + "% wt"),
+                      e("div", { style: { fontSize: 10, color: "#6b7080", transition: "transform 0.2s", transform: expanded ? "rotate(180deg)" : "rotate(0deg)" } }, "\u25BC")
+                    )
+                  ),
+                  e("div", { style: { display: "flex", alignItems: "baseline", gap: 8, marginBottom: expanded ? 4 : 8 } },
+                    e("span", { style: { fontSize: scenarioKeys.length > 3 ? 24 : 32, fontWeight: 800, fontFamily: "'JetBrains Mono'", lineHeight: 1 } }, ccy + r.tp.toFixed(dec)),
+                    e("span", { style: { fontSize: 13, fontWeight: 700, fontFamily: "'JetBrains Mono'", color: ud >= 0 ? "#22c55e" : "#ef4444" } }, (ud >= 0 ? "+" : "") + ud.toFixed(0) + "%")
                   )
-                )),
-                e("div", { style: { borderTop: "1px solid #ffffff0a", paddingTop: 10 } },
-                  r.assetDetails.filter(d => d.type !== "commercial" && (d.ra > 0 || d.peakRev > 0)).map((d, i) => e("div", { key: i, style: { display: "flex", justifyContent: "space-between", marginBottom: 3, fontSize: 10 } },
-                    e("span", { style: { color: "#6b7080" } }, d.ind),
-                    e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } },
-                      d.composite > 0 ? ccy + d.ra.toFixed(0) + "M RA (" + Math.round(d.composite * 100) + "%)" : "\u2014")
+                ),
+                // Expanded detail -- narrative, events, per-indication RA breakdown
+                expanded && e("div", null,
+                  e("div", { style: { fontSize: 11, color: "#6b7080", marginBottom: 12 } }, scen.narrative),
+                  e("div", { style: { marginBottom: 14 } }, scen.events.map((ev, i) =>
+                    e("div", { key: i, style: { display: "flex", gap: 7, marginBottom: 5 } },
+                      e("span", { style: { fontSize: 12, color: sentC[ev[0]] || "#6b7080", fontWeight: 700, minWidth: 13 } }, ev[0]),
+                      e("span", { style: { fontSize: 11, color: "#6b7080", lineHeight: 1.4 } }, ev.slice(2))
+                    )
                   )),
-                  r.cannib > 0 && e("div", { style: { display: "flex", justifyContent: "space-between", fontSize: 10, color: "#fb923c" } },
-                    e("span", null, "Cannib"), e("span", { style: { fontFamily: "'JetBrains Mono'", fontWeight: 600 } }, "-" + ccy + r.cannib.toFixed(0) + "M")),
-                  r.isSOTP ? e("div", { style: { marginTop: 8, paddingTop: 8, borderTop: "1px solid #ffffff06", fontSize: 10 } },
-                    e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 2 } },
-                      e("span", { style: { color: "#6b7080" } }, "Commercial (" + ccy + r.commercialRev + "M \u00d7 " + r.commercialMult + "x)"),
-                      e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } }, ccy + r.commercialEV.toFixed(0) + "M")),
-                    e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 2 } },
-                      e("span", { style: { color: "#6b7080" } }, "Pipeline rNPV (" + r.dr + "% DR, " + r.mult + "x)"),
-                      e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } }, ccy + r.pipelineEV.toFixed(0) + "M")),
-                    r.milestonesEV > 0 && e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 2 } },
-                      e("span", { style: { color: "#60a5fa" } }, "Milestones (RA)"),
-                      e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#60a5fa", fontWeight: 600 } }, ccy + r.milestonesEV.toFixed(0) + "M")),
-                    e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 2 } },
-                      e("span", { style: { color: "#6b7080" } }, "Cash"),
-                      e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } }, ccy + state.cash + "M")),
-                    e("div", { style: { display: "flex", justifyContent: "space-between", marginTop: 4, paddingTop: 4, borderTop: "1px solid #ffffff06", fontWeight: 700 } },
-                      e("span", { style: { color: "#b0b4c0" } }, "Total EV"),
-                      e("span", { style: { fontFamily: "'JetBrains Mono'" } }, ccy + (r.ev / 1000).toFixed(2) + "B"))
-                  ) : e("div", { style: { display: "flex", justifyContent: "space-between", marginTop: 6, paddingTop: 6, borderTop: "1px solid #ffffff06", fontSize: 10 } },
-                    e("span", { style: { color: "#6b7080" } }, "EV / DR / Dil"),
-                    e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } }, ccy + (r.ev / 1000).toFixed(1) + "B \u00b7 " + r.dr + "% \u00b7 " + r.dil + "%"))
+                  e("div", { style: { borderTop: "1px solid #ffffff0a", paddingTop: 10 } },
+                    r.assetDetails.filter(d => d.type !== "commercial" && (d.ra > 0 || d.peakRev > 0)).map((d, i) => e("div", { key: i, style: { display: "flex", justifyContent: "space-between", marginBottom: 3, fontSize: 10 } },
+                      e("span", { style: { color: "#6b7080" } }, d.ind),
+                      e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } },
+                        d.composite > 0 ? ccy + d.ra.toFixed(0) + "M RA (" + Math.round(d.composite * 100) + "%)" : "\u2014")
+                    )),
+                    r.cannib > 0 && e("div", { style: { display: "flex", justifyContent: "space-between", fontSize: 10, color: "#fb923c" } },
+                      e("span", null, "Cannib"), e("span", { style: { fontFamily: "'JetBrains Mono'", fontWeight: 600 } }, "-" + ccy + r.cannib.toFixed(0) + "M")),
+                    r.isSOTP && e("div", { style: { marginTop: 8, paddingTop: 8, borderTop: "1px solid #ffffff06", fontSize: 10 } },
+                      e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 2 } },
+                        e("span", { style: { color: "#6b7080" } }, "Commercial (" + ccy + r.commercialRev + "M \u00d7 " + r.commercialMult + "x)"),
+                        e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } }, ccy + r.commercialEV.toFixed(0) + "M")),
+                      e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 2 } },
+                        e("span", { style: { color: "#6b7080" } }, "Pipeline rNPV (" + r.dr + "% DR, " + r.mult + "x)"),
+                        e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } }, ccy + r.pipelineEV.toFixed(0) + "M")),
+                      r.milestonesEV > 0 && e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 2 } },
+                        e("span", { style: { color: "#60a5fa" } }, "Milestones (RA)"),
+                        e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#60a5fa", fontWeight: 600 } }, ccy + r.milestonesEV.toFixed(0) + "M")),
+                      e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 2 } },
+                        e("span", { style: { color: "#6b7080" } }, "Cash"),
+                        e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } }, ccy + state.cash + "M"))
+                    )
+                  )
+                ),
+                // Always-visible footer line: EV / Cash / DR / Dil
+                e("div", { style: { display: "flex", justifyContent: "space-between", marginTop: 6, paddingTop: 6, borderTop: "1px solid #ffffff06", fontSize: 10 } },
+                  e("span", { style: { color: "#6b7080" } }, "EV / Cash / DR / Dil"),
+                  e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } }, ccy + (r.ev / 1000).toFixed(1) + "B \u00b7 " + ccy + state.cash + "M \u00b7 " + r.dr + "% \u00b7 " + r.dil + "%")
                 )
               );
             })

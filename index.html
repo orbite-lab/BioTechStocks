@@ -1017,25 +1017,34 @@ async function main(){
       }
 
       if (!isLeaf) {
-        // Child cards grid
+        // Child cards grid -- card size scales with TAM (no separate bar)
         const maxTam = Math.max(...children.map(c => c.tam || 1), 1);
-        h+='<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px">';
+        // 12-column grid; cards span more columns proportionally to TAM
+        h+='<div style="display:grid;grid-template-columns:repeat(12,1fr);gap:10px">';
         children.forEach(c => {
-          const pct = (c.tam / maxTam) * 100;
+          const ratio = c.tam / maxTam;
+          // Tier by TAM share vs biggest sibling
+          let colSpan, tierPad, tierTitle, tierNum, tierSub;
+          if (ratio >= 0.5)      { colSpan = 6; tierPad = 18; tierTitle = 1.05; tierNum = 1.3;  tierSub = 0.72; }
+          else if (ratio >= 0.2) { colSpan = 4; tierPad = 14; tierTitle = 0.95; tierNum = 1.1;  tierSub = 0.68; }
+          else if (ratio >= 0.05){ colSpan = 3; tierPad = 12; tierTitle = 0.85; tierNum = 0.95; tierSub = 0.62; }
+          else                   { colSpan = 3; tierPad = 10; tierTitle = 0.78; tierNum = 0.85; tierSub = 0.58; }
           const penOfTam = c.tam > 0 ? (c.sales/c.tam*100).toFixed(1) : 0;
           const coCount = areaData[c.path]?.companies?.length || 0;
           const level = c.path.split('.').length;
-          // Count subAreas at next level
           const subAreas = Object.keys(areaData).filter(k => k.startsWith(c.path + '.') && k.split('.').length === level+1).length;
-          h+=`<div onclick="window._mktDrill('${c.path}')" style="background:#0f1117;border:1px solid #ffffff12;border-radius:8px;padding:12px;cursor:pointer;transition:border-color 0.15s" onmouseover="this.style.borderColor='#f97316'" onmouseout="this.style.borderColor='#ffffff12'">`;
-          h+=`<div style="font-size:.85rem;font-weight:700;margin-bottom:6px;color:#e2e4ea">${nice(c.name)}</div>`;
-          h+=`<div style="font-size:.6rem;color:var(--text2);font-family:var(--mono);margin-bottom:8px">${subAreas>0?subAreas+' sub-markets':coCount+' drugs'}</div>`;
-          // TAM bar
-          h+=`<div style="position:relative;height:8px;background:#161920;border-radius:2px;margin-bottom:4px;overflow:hidden"><div style="position:absolute;top:0;left:0;height:100%;width:${pct}%;background:linear-gradient(90deg,#f97316,#fb923c);border-radius:2px"></div></div>`;
           const cardFlag = c.somCapped ? '*' : '';
           const cardTitle = c.somCapped ? `title="Drug SOMs overlap -- capped at TAM (raw sum was ${fmtB(c.somRaw)})"` : '';
-          h+=`<div style="display:flex;justify-content:space-between;font-size:.65rem;font-family:var(--mono);margin-bottom:6px"><span style="color:#f97316">TAM ${fmtB(c.tam)}</span><span style="color:#a855f7" ${cardTitle}>SOM${cardFlag} ${fmtB(c.som)}</span></div>`;
-          h+=`<div style="display:flex;justify-content:space-between;font-size:.6rem;font-family:var(--mono);color:var(--text2)"><span>Sales ${fmtB(c.sales)}</span><span>Pen ${penOfTam}%</span></div>`;
+          h+=`<div onclick="window._mktDrill('${c.path}')" style="grid-column:span ${colSpan};background:#0f1117;border:1px solid #ffffff12;border-radius:8px;padding:${tierPad}px;cursor:pointer;transition:border-color 0.15s;display:flex;flex-direction:column;justify-content:space-between;min-height:${tierPad*6}px" onmouseover="this.style.borderColor='#f97316'" onmouseout="this.style.borderColor='#ffffff12'">`;
+          h+=`<div>`;
+          h+=`<div style="font-size:${tierTitle}rem;font-weight:700;margin-bottom:4px;color:#e2e4ea">${nice(c.name)}</div>`;
+          h+=`<div style="font-size:${tierSub}rem;color:var(--text2);font-family:var(--mono);margin-bottom:10px">${subAreas>0?subAreas+' sub-markets':coCount+' drugs'}</div>`;
+          h+='</div>';
+          h+=`<div>`;
+          h+=`<div style="display:flex;justify-content:space-between;font-size:${tierNum}rem;font-family:var(--mono);font-weight:700;margin-bottom:4px"><span style="color:#f97316">${fmtB(c.tam)}</span><span style="color:#a855f7" ${cardTitle}>${fmtB(c.som)}${cardFlag}</span></div>`;
+          h+=`<div style="display:flex;justify-content:space-between;font-size:${tierSub}rem;font-family:var(--mono);color:var(--text2)"><span>TAM</span><span>SOM</span></div>`;
+          h+=`<div style="display:flex;justify-content:space-between;font-size:${tierSub}rem;font-family:var(--mono);color:var(--text2);margin-top:6px;padding-top:6px;border-top:1px solid #ffffff08"><span>Sales ${fmtB(c.sales)}</span><span>${penOfTam}% pen</span></div>`;
+          h+='</div>';
           h+='</div>';
         });
         h+='</div>';

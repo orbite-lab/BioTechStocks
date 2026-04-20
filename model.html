@@ -888,6 +888,7 @@
                   if (hasSOM) { for (const [rk] of REGIONS) { const tr = m.regions[rk] || {}; const cs = m.company_slice[rk] || {}; somM += (tr.patientsK || 0) * ((cs.reachPct || 0) / 100) * ((cs.wtpPct || 0) / 100) * (cs.priceK || 0); } }
                   const comp = hasRegions && ind.area ? findCompetitors(ind.area, configs, taxonomy, config.company.ticker) : { marketed: [], development: [] };
                   const mktSales = comp.marketed.reduce((s, c) => s + (c.sales || 0), 0);
+                  const ownMktSales = comp.marketed.filter(c => c.isSelf).reduce((s, c) => s + (c.sales || 0), 0);
                   const fmtV = v => v >= 1000 ? (ccy + (v / 1000).toFixed(1) + "B") : (ccy + Math.round(v) + "M");
                   const penDisplay = hasSOM ? (addressableM > 0 ? (somM / addressableM * 100).toFixed(1) + "%" : "0%") : ((m.penPct || 0) + "%");
                   const stagePill = s => { const sl = (s || "").toLowerCase(); const col = sl.includes("commercial") ? "#22c55e" : sl.includes("3") ? "#f59e0b" : sl.includes("2") ? "#fb923c" : sl.includes("1") ? "#ef4444" : "#6b7080"; return e("span", { style: { fontSize: 9, fontWeight: 700, padding: "1px 5px", borderRadius: 3, background: col + "22", color: col, fontFamily: "'JetBrains Mono'" } }, s || "--"); };
@@ -899,9 +900,12 @@
                   let somTip = "";
                   if (hasSOM) { somTip = "SOM = Serviceable Obtainable Market\n"; for (const [rk, rLabel] of REGIONS) { const tr = m.regions[rk] || {}; const cs = m.company_slice[rk] || {}; const rv = (tr.patientsK || 0) * ((cs.reachPct || 0) / 100) * ((cs.wtpPct || 0) / 100) * (cs.priceK || 0); somTip += rLabel + ": " + (tr.patientsK||0) + "K pts x " + (cs.reachPct||0) + "% reach x " + (cs.wtpPct||0) + "% WTP x $" + (cs.priceK||0) + "K = $" + Math.round(rv) + "M\n"; } somTip += "Total: " + fmtV(somM) + " (implied pen: " + penDisplay + ")"; const csSrc = m.company_slice_sources || {}; const notes = Object.values(csSrc).map(s => s.note).filter(Boolean); if (notes.length) somTip += "\n---\n" + notes.join("\n"); }
                   // Build Marketed tooltip
-                  let mktTip = "Marketed competitors (" + comp.marketed.length + ")\n";
-                  comp.marketed.forEach(c => { mktTip += (c.isSelf ? "* " : "") + c.ticker + " " + c.assetName + ": " + (c.sales ? fmtV(c.sales) + (c.salesIsReported ? " (reported" + (c.salesYear ? " " + c.salesYear : "") + ")" : " (est.)") : "--") + "\n"; });
-                  if (mktSales > 0) mktTip += "Total: " + fmtV(mktSales);
+                  let mktTip = "Marketed drugs (" + comp.marketed.length + ")\n";
+                  comp.marketed.forEach(c => { mktTip += (c.isSelf ? "[YOURS] " : "") + c.ticker + " " + c.assetName + ": " + (c.sales ? fmtV(c.sales) + (c.salesIsReported ? " (reported" + (c.salesYear ? " " + c.salesYear : "") + ")" : " (est.)") : "--") + "\n"; });
+                  if (mktSales > 0) {
+                    mktTip += "Total: " + fmtV(mktSales);
+                    if (ownMktSales > 0) mktTip += "\nYour share: " + fmtV(ownMktSales) + " (" + (ownMktSales/mktSales*100).toFixed(0) + "%)";
+                  }
                   // Build In Dev tooltip
                   let devTip = "In development (" + comp.development.length + ")\n";
                   comp.development.forEach(c => { devTip += c.ticker + " " + c.assetName + " [" + (c.stage || "?") + "]" + (c.nextCatalyst ? " -- " + c.nextCatalyst.date + ": " + c.nextCatalyst.title : "") + "\n"; });
@@ -920,8 +924,11 @@
                         e("div", { style: { fontSize: 10, fontWeight: 700, color: "#f97316", fontFamily: "'JetBrains Mono'" } }, fmtV(addressableM))
                       ),
                       e("div", { style: { textAlign: "right" }, title: mktTip },
-                        e("div", { style: { fontSize: 8, color: "#6b7080", textTransform: "uppercase", letterSpacing: 0.8, lineHeight: 1 } }, "Marketed"),
-                        e("div", { style: { fontSize: 10, fontWeight: 700, color: "#22c55e", fontFamily: "'JetBrains Mono'" } }, mktSales > 0 ? fmtV(mktSales) : "--")
+                        e("div", { style: { fontSize: 8, color: "#6b7080", textTransform: "uppercase", letterSpacing: 0.8, lineHeight: 1 } }, "Marketed" + (ownMktSales > 0 ? " (yours)" : "")),
+                        e("div", { style: { fontSize: 10, fontWeight: 700, color: "#22c55e", fontFamily: "'JetBrains Mono'" } },
+                          mktSales > 0
+                            ? (ownMktSales > 0 ? fmtV(ownMktSales) + " / " + fmtV(mktSales) : fmtV(mktSales))
+                            : "--")
                       ),
                       e("div", { style: { textAlign: "right" }, title: devTip },
                         e("div", { style: { fontSize: 8, color: "#6b7080", textTransform: "uppercase", letterSpacing: 0.8, lineHeight: 1 } }, "In dev"),

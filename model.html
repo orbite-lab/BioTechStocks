@@ -550,7 +550,7 @@
       const [showPipeline, setShowPipeline] = useState(false);
       const [showContext, setShowContext] = useState(false);
       const [showMethodology, setShowMethodology] = useState(false);
-      const [scenExpanded, setScenExpanded] = useState({});
+      const [scenExpanded, setScenExpanded] = useState(false);
       const [expandedMkt, setExpandedMkt] = useState({});
 
       // On company switch: use cached price from prices.json immediately, then refresh from Yahoo in background
@@ -765,10 +765,10 @@
             model.sks.map((sk, si) => {
               const scen = state.scenarios[sk]; const r = model.results[sk];
               const ud = ((r.tp - state.currentPrice) / state.currentPrice) * 100;
-              const expanded = !!scenExpanded[sk];
+              const expanded = scenExpanded;
               return e("div", { key: sk, style: { background: "#161920", borderRadius: 10, padding: scenarioKeys.length > 3 ? "14px" : "18px", border: "1px solid " + CC[sk] + "22", position: "relative", overflow: "hidden", flex: 1, minWidth: scenarioKeys.length > 3 ? 200 : 270 } },
                 e("div", { style: { position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(90deg," + CC[sk] + "," + CC[sk] + "44)" } }),
-                e("div", { onClick: () => setScenExpanded(prev => ({ ...prev, [sk]: !prev[sk] })), style: { cursor: "pointer", userSelect: "none" } },
+                e("div", { onClick: () => setScenExpanded(prev => !prev), style: { cursor: "pointer", userSelect: "none" } },
                   e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 12, alignItems: "center" } },
                     e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: CC[sk] } }, sk),
                     e("div", { style: { display: "flex", gap: 8, alignItems: "center" } },

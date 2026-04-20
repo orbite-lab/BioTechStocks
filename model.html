@@ -977,6 +977,7 @@
             const pe = fin.pe_ttm;
             const evs = liveEVSales || fin.ev_sales_ttm;
             const sub = fin.subsector;
+            const median = arr => { if (!arr.length) return null; const s = [...arr].sort((a,b)=>a-b); const m = Math.floor(s.length/2); return s.length % 2 ? s[m] : (s[m-1]+s[m])/2; };
             // Market cap in USD determines tier (mega / large / mid / small / micro)
             const mcapUSD_M = shares * state.currentPrice * fx;
             const capTierKey = mcapUSD_M > 100000 ? "mega_cap" : mcapUSD_M > 20000 ? "large_cap" : mcapUSD_M > 5000 ? "mid_cap" : mcapUSD_M > 1000 ? "small_cap" : "micro_cap";
@@ -997,8 +998,7 @@
             const allPE = median(allPeers.map(([,f]) => f.pe_ttm).filter(v => v != null && v > 0));
             const allEVS = median(allPeers.map(([,f]) => f.ev_sales_ttm).filter(v => v != null && v > 0));
             const allN = allPeers.length;
-            // LIVE peer median: compute from financials.json, grouped by subsector (excludes self, excludes nulls)
-            const median = arr => { if (!arr.length) return null; const s = [...arr].sort((a,b)=>a-b); const m = Math.floor(s.length/2); return s.length % 2 ? s[m] : (s[m-1]+s[m])/2; };
+            // LIVE peer median: subsector-matched
             const livePeers = Object.entries(financials).filter(([t, f]) => t !== tk && f.subsector === sub);
             const livePE = median(livePeers.map(([t,f]) => f.pe_ttm).filter(v => v != null && v > 0));
             const liveEVS = median(livePeers.map(([t,f]) => f.ev_sales_ttm).filter(v => v != null && v > 0));

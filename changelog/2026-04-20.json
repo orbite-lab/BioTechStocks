@@ -1,0 +1,67 @@
+[
+  {
+    "timestamp": "2026-04-20T14:18:12Z",
+    "ticker": "DFTX",
+    "news": "White House signals support for expanded psychedelic research, drawing attention to DFTX's late-stage psychiatric pipeline including DT120 ODT for GAD and MDD.",
+    "source": "https://simplywall.st/stocks/us/pharmaceuticals-biotech/nasdaq-dftx/definium-therapeutics/news/definium-therapeutics-dftx-is-up-53-after-white-house-signal",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.dt120.gad.pos",
+        "old_value": 60,
+        "new_value": 65,
+        "reason": "White House support for psychedelic research reduces regulatory risk for GAD indication",
+        "old_actual": 60
+      },
+      {
+        "path": "scenarios.base.assumptions.dt120.mdd.pos",
+        "old_value": 25,
+        "new_value": 30,
+        "reason": "Policy tailwinds for psychedelic therapies improve MDD approval prospects",
+        "old_actual": 25
+      },
+      {
+        "path": "scenarios.bull.assumptions.dt120.gad.pos",
+        "old_value": 80,
+        "new_value": 85,
+        "reason": "Strong regulatory support enhances bull case GAD probability",
+        "old_actual": 80
+      },
+      {
+        "path": "scenarios.bull.assumptions.dt120.mdd.pos",
+        "old_value": 60,
+        "new_value": 65,
+        "reason": "Policy shift increases bull case MDD success probability",
+        "old_actual": 60
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-20T14:18:12Z",
+    "ticker": "NKTR",
+    "news": "Nektar announced 52-week topline results from REZOLVE-AA extension showing 27% of participants achieved clinically meaningful hair growth (SALT Score 20), comparable to low-dose treatments for severe alopecia areata.",
+    "source": "https://www.statnews.com/2026/04/20/nektar-drug-rezpeg-hair-growth-alopecia/",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.rezpeg_aa.aa.pos",
+        "old_value": 25,
+        "new_value": 35,
+        "reason": "52-week data showing 27% achieving SALT Score 20 provides additional durability data supporting probability of success, though efficacy appears modest versus JAK inhibitors",
+        "old_actual": 25
+      },
+      {
+        "path": "scenarios.bear.assumptions.rezpeg_aa.aa.pos",
+        "old_value": 10,
+        "new_value": 15,
+        "reason": "Even in bear case, 52-week durability data reduces risk of complete program failure",
+        "old_actual": 10
+      },
+      {
+        "path": "scenarios.bull.assumptions.rezpeg_aa.aa.pos",
+        "old_value": 45,
+        "new_value": 50,
+        "reason": "Sustained efficacy at 52 weeks supports advancement to Phase 3, though efficacy level suggests modest bull case improvement",
+        "old_actual": 45
+      }
+    ]
+  }
+]

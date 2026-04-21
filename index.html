@@ -733,6 +733,7 @@ async function main(){
   let kellyResult=null;
   let kellyRunning=false;
   let kellyOpts={kFrac:0.5, maxPos:0.20, maxL2:0.40, N:5000};
+  let kellyUniverse=[]; // set by render() = current filtered rows
 
   function bucketOf(r){
     if(r.tps.bear!=null&&r.price<r.tps.bear)return 'below_bear';
@@ -822,6 +823,8 @@ async function main(){
     if(filterPhase) filtered=filtered.filter(r=>r.meta.phase===filterPhase);
     if(filterRare!==null) filtered=filtered.filter(r=>r.meta.rare===filterRare);
     if(activeFilter) filtered=filtered.filter(r=>bucketOf(r)===activeFilter);
+    // Expose current filtered set to Kelly optimizer (runs against active filter)
+    kellyUniverse=filtered;
 
     const bk={below_bear:0,bear_base:0,base_bull:0,bull_pb:0,above_pb:0};
     filtered.forEach(r=>{bk[bucketOf(r)]++;});
@@ -1050,7 +1053,14 @@ async function main(){
       h+=`<div style="font-size:.7rem;color:#6b7080">${kellyOpen?'\u25BE collapse':'\u25B8 expand'}</div>`;
       h+='</div>';
       if(kellyOpen){
-        h+='<div class="card-sub">Solves f* = argmax E[ln(1 + \u03A3 f\u1D62\u00B7r\u1D62)] across '+rows.length+' names. Correlation from taxonomy: same-L3 \u03C1=0.70, same-L2 \u03C1=0.45, same-L1 \u03C1=0.25, sector beta \u03C1=0.15 (10% shrinkage toward identity for PD).</div>';
+        const uniN=kellyUniverse.length;
+        const hasFilters=(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterMod1||filterMod2||filterMod3||filterPhase||filterRare!==null||activeFilter);
+        const uniLbl=hasFilters?`<span style="color:#fbbf24;font-weight:600">${uniN} names</span> (filtered from ${rows.length}) \u2014 <span style="color:#6b7080;cursor:pointer;text-decoration:underline" onclick="window._fClear()">clear filters</span> to use full universe`:`<span style="color:#b0b4c0;font-weight:600">${uniN} names</span> (no filters active \u2014 full universe)`;
+        h+=`<div class="card-sub">Universe: ${uniLbl}. Solves f* = argmax E[ln(1 + \u03A3 f\u1D62\u00B7r\u1D62)] with taxonomy-based correlation: same-L3 \u03C1=0.70, same-L2 \u03C1=0.45, same-L1 \u03C1=0.25, sector beta \u03C1=0.15.</div>`;
+        // Stale badge: if previous result was run against a different universe
+        if(kellyResult && kellyResult._universeSize!==uniN){
+          h+=`<div style="background:#7c2d1222;border:1px solid #f59e0b66;border-radius:4px;padding:6px 10px;margin-bottom:10px;font-size:.7rem;color:#fbbf24">\u26A0 Filter changed since last run (was ${kellyResult._universeSize} names, now ${uniN}). Re-run to update results.</div>`;
+        }
         // Controls
         h+='<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;padding:10px 0;border-bottom:1px solid #ffffff0a;margin-bottom:12px">';
         // Kelly fraction
@@ -1069,7 +1079,7 @@ async function main(){
         h+='</div>';
 
         if(!kellyResult && !kellyRunning){
-          h+='<div style="padding:20px;text-align:center;color:#6b7080;font-size:.75rem">Click <b>Run</b> to compute optimal portfolio weights across all '+rows.length+' names. Takes ~1-2 seconds.</div>';
+          h+='<div style="padding:20px;text-align:center;color:#6b7080;font-size:.75rem">Click <b>Run</b> to compute optimal portfolio weights across the <b>'+uniN+' filtered names</b>. Takes ~1-2 seconds.</div>';
         } else if(kellyRunning){
           h+='<div style="padding:20px;text-align:center;color:#fbbf24;font-size:.75rem">\u23F3 Sampling correlated scenarios and optimizing... this takes ~1-2s.</div>';
         } else if(kellyResult){
@@ -1982,10 +1992,19 @@ async function main(){
   window._kellyToggle=function(){kellyOpen=!kellyOpen;render();};
   window._kellyRun=function(){
     if(kellyRunning) return;
+    if(!kellyUniverse || kellyUniverse.length<2){
+      alert('Kelly needs at least 2 names. Relax your filters.');
+      return;
+    }
     kellyRunning=true; render();
-    // Defer to next frame so UI updates before heavy computation
+    // Snapshot universe size at run-time so stale-detection works if user filters again
+    const universeSnap=kellyUniverse.slice();
+    const universeTickers=new Set(universeSnap.map(r=>r.ticker));
     setTimeout(()=>{
-      try{ kellyResult=runPortfolioKelly(rows, configs, kellyOpts); }
+      try{
+        kellyResult=runPortfolioKelly(universeSnap, configs, kellyOpts);
+        if(kellyResult){ kellyResult._universeTickers=universeTickers; kellyResult._universeSize=universeSnap.length; }
+      }
       catch(e){ console.error('Kelly failed',e); kellyResult=null; }
       kellyRunning=false; render();
     },30);

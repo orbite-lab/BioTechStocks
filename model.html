@@ -952,11 +952,123 @@
                 e("div", { style: { display: "flex", justifyContent: "space-between", marginTop: 6, paddingTop: 6, borderTop: "1px solid #ffffff06", fontSize: 10 } },
                   e("span", { style: { color: "#6b7080" } }, "EV / Cash / DR / Dil"),
                   e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } }, ccy + (r.ev / 1000).toFixed(1) + "B \u00b7 " + ccy + state.cash + "M \u00b7 " + r.dr + "% \u00b7 " + r.dil + "%")
-                )
+                ),
+                // Kelly sizing: binary Kelly for this single scenario vs "bet doesn't pan out = keep current price"
+                (() => {
+                  const p = model.normW[origSi];  // probability = scenario weight
+                  const retUp = (r.tp - state.currentPrice) / state.currentPrice;  // return if this scenario plays out
+                  // Binary Kelly with single opposite outcome (price stays at today if not):
+                  // f* = p - (1-p)/b where b = payoff on win
+                  // For downside scenario (retUp < 0), f* < 0 means "short / avoid"; we show 0 cap
+                  let kelly = null;
+                  if (retUp > 0) { const b = retUp; kelly = p - (1 - p) / b; }
+                  else if (retUp < 0) { kelly = -(p - (1 - p) / (-retUp)); }  // inverse sign for short-equivalent
+                  const halfK = kelly != null ? kelly / 2 : null;
+                  const kellyCol = kelly == null ? "#6b7080" : kelly > 0.2 ? "#22c55e" : kelly > 0 ? "#fbbf24" : "#ef4444";
+                  const kellyLabel = kelly == null ? "--" : (kelly * 100).toFixed(0) + "% full / " + (halfK * 100).toFixed(0) + "% half";
+                  return e("div", { style: { display: "flex", justifyContent: "space-between", marginTop: 4, fontSize: 10 }, title: "Single-scenario Kelly: p=" + (p*100).toFixed(0) + "%, return=" + (retUp*100).toFixed(0) + "%. f* = p - (1-p)/b. Half Kelly recommended to reduce volatility." },
+                    e("span", { style: { color: "#6b7080" } }, "Kelly (f* / f*/2)"),
+                    e("span", { style: { fontFamily: "'JetBrains Mono'", color: kellyCol, fontWeight: 600 } }, kellyLabel)
+                  );
+                })()
               );
               });
             })()
           ),
+
+          // Portfolio-level Kelly: numerically solve f* = argmax Σ p_i × log(1 + f × r_i)
+          // across the full weighted scenario distribution.
+          (() => {
+            const px = state.currentPrice;
+            if (!px || !isFinite(px)) return null;
+            // Build (p, r) pairs from scenarios
+            const pairs = model.sks.map((sk, i) => ({
+              sk,
+              p: model.normW[i],
+              r: (model.results[sk].tp - px) / px,
+              tp: model.results[sk].tp,
+            })).filter(x => isFinite(x.r));
+            if (pairs.length < 2) return null;
+            // Expected return & expected log-return (at f=0) check
+            const expRet = pairs.reduce((s, x) => s + x.p * x.r, 0);
+            // Objective and derivative
+            const U = (f) => pairs.reduce((s, x) => s + x.p * Math.log(Math.max(1 + f * x.r, 1e-12)), 0);
+            const dU = (f) => pairs.reduce((s, x) => s + x.p * x.r / Math.max(1 + f * x.r, 1e-12), 0);
+            // Leverage cap: can't lose more than 100% long-only → need 1 + f*min(r) > 0
+            const minR = Math.min(...pairs.map(x => x.r));
+            const maxR = Math.max(...pairs.map(x => x.r));
+            // Feasible f range: if minR < 0 → f < 1/(-minR); if maxR > 0 short bound f > -1/maxR
+            const fHi = minR < 0 ? 0.999 / (-minR) : 5;   // cap long at 5x if no downside (unlikely)
+            const fLo = maxR > 0 ? -0.999 / maxR : -5;
+            // Bisection on dU over [fLo, fHi]
+            let lo = fLo, hi = fHi;
+            const dLo = dU(lo), dHi = dU(hi);
+            let kelly;
+            if (dLo <= 0) kelly = lo;
+            else if (dHi >= 0) kelly = hi;
+            else {
+              for (let it = 0; it < 80; it++) {
+                const mid = (lo + hi) / 2;
+                const dm = dU(mid);
+                if (dm > 0) lo = mid; else hi = mid;
+                if (Math.abs(hi - lo) < 1e-7) break;
+              }
+              kelly = (lo + hi) / 2;
+            }
+            const halfK = kelly / 2;
+            const quartK = kelly / 4;
+            const geoFull = U(kelly);
+            const geoHalf = U(halfK);
+            const geoQuart = U(quartK);
+            const pct = v => (v * 100).toFixed(0) + "%";
+            const kCol = kelly > 0.25 ? "#22c55e" : kelly > 0 ? "#fbbf24" : "#ef4444";
+            // Display fraction (long-only recommendation): clamp to [0, 1] for "sane portfolio % of equity"
+            const clampLong = v => Math.max(0, Math.min(1, v));
+            return e("div", { style: { background: "#0a0c10", border: "1px solid #fbbf2433", borderRadius: 8, padding: 14, marginBottom: 16 } },
+              e("div", { style: { display: "flex", alignItems: "center", gap: 8, marginBottom: 10 } },
+                e("div", { style: { fontSize: 11, fontWeight: 600, color: "#fbbf24", letterSpacing: 0.5 } }, "PORTFOLIO KELLY (multi-scenario)"),
+                e("div", { style: { fontSize: 10, color: "#6b7080" } }, "solves f* = argmax \u03A3 p\u1D62 \u00D7 ln(1 + f\u00B7r\u1D62)")
+              ),
+              // Scenario summary row
+              e("div", { style: { display: "grid", gridTemplateColumns: "repeat(" + pairs.length + ", 1fr)", gap: 6, marginBottom: 10, fontSize: 10 } },
+                ...pairs.map(x => e("div", { key: x.sk, style: { background: "#000", border: "1px solid #ffffff10", borderRadius: 4, padding: "4px 6px" } },
+                  e("div", { style: { color: CC[x.sk] || "#b0b4c0", fontWeight: 600 } }, x.sk),
+                  e("div", { style: { color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, "p=" + pct(x.p) + " r=" + (x.r >= 0 ? "+" : "") + pct(x.r))
+                ))
+              ),
+              // Kelly result row
+              e("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 8, marginBottom: 8 } },
+                e("div", { style: { background: "#000", border: "1px solid " + kCol + "40", borderRadius: 4, padding: 8 } },
+                  e("div", { style: { fontSize: 9, color: "#6b7080", marginBottom: 2 } }, "FULL KELLY f*"),
+                  e("div", { style: { fontSize: 18, fontWeight: 700, color: kCol, fontFamily: "'JetBrains Mono'" } }, pct(kelly)),
+                  e("div", { style: { fontSize: 9, color: "#6b7080", marginTop: 2 } }, "E[ln(1+fr)] = " + (geoFull * 100).toFixed(2) + "%")
+                ),
+                e("div", { style: { background: "#000", border: "1px solid #ffffff10", borderRadius: 4, padding: 8 } },
+                  e("div", { style: { fontSize: 9, color: "#6b7080", marginBottom: 2 } }, "HALF KELLY (recommended)"),
+                  e("div", { style: { fontSize: 18, fontWeight: 700, color: "#60a5fa", fontFamily: "'JetBrains Mono'" } }, pct(halfK)),
+                  e("div", { style: { fontSize: 9, color: "#6b7080", marginTop: 2 } }, "E[ln] = " + (geoHalf * 100).toFixed(2) + "%")
+                ),
+                e("div", { style: { background: "#000", border: "1px solid #ffffff10", borderRadius: 4, padding: 8 } },
+                  e("div", { style: { fontSize: 9, color: "#6b7080", marginBottom: 2 } }, "QUARTER KELLY (conservative)"),
+                  e("div", { style: { fontSize: 18, fontWeight: 700, color: "#b0b4c0", fontFamily: "'JetBrains Mono'" } }, pct(quartK)),
+                  e("div", { style: { fontSize: 9, color: "#6b7080", marginTop: 2 } }, "E[ln] = " + (geoQuart * 100).toFixed(2) + "%")
+                ),
+                e("div", { style: { background: "#000", border: "1px solid #ffffff10", borderRadius: 4, padding: 8 } },
+                  e("div", { style: { fontSize: 9, color: "#6b7080", marginBottom: 2 } }, "EXPECTED RETURN"),
+                  e("div", { style: { fontSize: 18, fontWeight: 700, color: expRet >= 0 ? "#22c55e" : "#ef4444", fontFamily: "'JetBrains Mono'" } }, (expRet >= 0 ? "+" : "") + pct(expRet)),
+                  e("div", { style: { fontSize: 9, color: "#6b7080", marginTop: 2 } }, "arithmetic, weighted")
+                )
+              ),
+              // Interpretation
+              e("div", { style: { fontSize: 10, color: "#6b7080", lineHeight: 1.5, paddingTop: 6, borderTop: "1px solid #ffffff08" } },
+                kelly <= 0
+                  ? e("span", { style: { color: "#ef4444" } }, "\u26A0 Negative Kelly \u2192 edge is unfavorable at current price; skip or short.")
+                  : kelly > 1
+                    ? e("span", { style: { color: "#fbbf24" } }, "Kelly > 100% implies leverage. Cap at " + pct(clampLong(halfK)) + " of equity (half-Kelly, long-only).")
+                    : e("span", {}, "Recommend sizing at ", e("b", { style: { color: "#60a5fa" } }, pct(halfK)), " of equity (half-Kelly). Full Kelly maximizes geometric growth but ~2\u00D7 the drawdown volatility.")
+              )
+            );
+          })(),
 
           // Valuation vs Peers & History — only for commercial companies with financial data
           (() => {

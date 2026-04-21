@@ -767,11 +767,14 @@ async function main(){
       const cashPS=co.cash/co.sharesOut;
       const ev=Math.max(0,price*co.sharesOut-co.cash);
       const evUSD=toUSD(ev,co.currency||'USD')/1000; // in $B USD
+      const mcapUSDB=toUSD(price*co.sharesOut, co.currency||'USD')/1000; // in $B USD
+      // Market cap tier: mega >100, large 20-100, mid 5-20, small 1-5, micro <1 ($B USD)
+      const mcapTier=mcapUSDB>=100?'mega':mcapUSDB>=20?'large':mcapUSDB>=5?'mid':mcapUSDB>=1?'small':'micro';
       const wtUp=((weightedTP-price)/price*100);
       const meta=deriveCompanyMeta(cfg);
       const catalysts=computeCatalysts(cfg,price);
       r.push({ticker:tk,name:co.name,ccy:ccySym(co.currency),dec:ccyDec(co.currency),
-        price,prevClose,configPrice:co.currentPrice,live:!!lp,cashPS,ev,evUSD,tps,weightedTP,wtUp,currency:co.currency,subtitle:co.subtitle||"",yahooTicker:co.yahooTicker||tk,meta,catalysts});
+        price,prevClose,configPrice:co.currentPrice,live:!!lp,cashPS,ev,evUSD,mcapUSDB,mcapTier,tps,weightedTP,wtUp,currency:co.currency,subtitle:co.subtitle||"",yahooTicker:co.yahooTicker||tk,meta,catalysts});
     }
     return r;
   }
@@ -820,6 +823,7 @@ async function main(){
   let activeFilter=null;
   let filterL1=new Set(), filterL2=new Set(), filterL3=new Set(), filterL4=new Set(), filterPhase=null, filterRare=null;
   let filterMod1=null, filterMod2=null, filterMod3=null;
+  let filterMcap=new Set(); // {'mega','large','mid','small','micro'} multi-select
   let stripSort="base";
   let purityMode="wtd";
   let mktNavPath=[]; // Market explorer drill-down path (e.g. ["oncology","hematology","cll_nhl"])
@@ -1187,12 +1191,24 @@ async function main(){
       if(!skipPhase&&filterPhase) f=f.filter(r=>r.meta.phase===filterPhase);
       if(!skipRare&&filterRare!==null) f=f.filter(r=>r.meta.rare===filterRare);
       if(!skipBucket&&activeFilter) f=f.filter(r=>bucketOf(r)===activeFilter);
+      if(filterMcap.size) f=f.filter(r=>filterMcap.has(r.mcapTier));
       return f;
     }
     const forArea=applyFiltersExcept(rows,true,false,false,false,false);
     const forMod=applyFiltersExcept(rows,false,true,false,false,false);
     const forPhase=applyFiltersExcept(rows,false,false,true,false,false);
     const forRare=applyFiltersExcept(rows,false,false,false,true,false);
+    // Mcap counts cross-filtered (all other filters applied)
+    const mcapCounts={mega:0,large:0,mid:0,small:0,micro:0};
+    let mcapBase=rows;
+    if(filterL1.size) mcapBase=mcapBase.filter(r=>r.meta.areas.some(a=>[...filterL1].some(fl=>a===fl||a.startsWith(fl+"."))));
+    if(filterL2.size) mcapBase=mcapBase.filter(r=>r.meta.areas.some(a=>[...filterL2].some(fl=>a===fl||a.startsWith(fl+"."))));
+    if(filterL3.size) mcapBase=mcapBase.filter(r=>r.meta.areas.some(a=>filterL3.has(a)||[...filterL4].some(fl=>a===fl)));
+    if(filterL4.size) mcapBase=mcapBase.filter(r=>r.meta.areas.some(a=>filterL4.has(a)));
+    if(filterMod1) mcapBase=mcapBase.filter(r=>r.meta.modalities.some(m=>m===filterMod1||m.startsWith(filterMod1+".")));
+    if(filterPhase) mcapBase=mcapBase.filter(r=>r.meta.phase===filterPhase);
+    if(filterRare!==null) mcapBase=mcapBase.filter(r=>r.meta.rare===filterRare);
+    mcapBase.forEach(r=>{mcapCounts[r.mcapTier]=(mcapCounts[r.mcapTier]||0)+1;});
     function countAreas(src){
       const c1={},c2={},c3={};let rc=0;
       src.forEach(r=>{
@@ -1242,6 +1258,7 @@ async function main(){
     if(filterPhase) filtered=filtered.filter(r=>r.meta.phase===filterPhase);
     if(filterRare!==null) filtered=filtered.filter(r=>r.meta.rare===filterRare);
     if(activeFilter) filtered=filtered.filter(r=>bucketOf(r)===activeFilter);
+    if(filterMcap.size) filtered=filtered.filter(r=>filterMcap.has(r.mcapTier));
     // Expose current filtered set to Kelly optimizer (runs against active filter)
     kellyUniverse=filtered;
 
@@ -1278,12 +1295,20 @@ async function main(){
     fh+='</select>';
     fh+='<span class="fsep"></span>';
     fh+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()" title="Filter companies with rare disease indications">\u2605 Rare<span class="cnt">${rareCountCross}</span></span>`;
+    // Market cap tier chips
+    fh+='<span class="fsep"></span>';
+    fh+='<span class="fbar-lbl" title="Filter by market capitalization (USD)">Mcap</span>';
+    [['mega','Mega','>$100B'],['large','Large','$20-100B'],['mid','Mid','$5-20B'],['small','Small','$1-5B'],['micro','Micro','<$1B']].forEach(([k,lbl,range])=>{
+      if(!mcapCounts[k])return;
+      const active=filterMcap.has(k);
+      fh+=`<span class="fchip ${active?'active':''}" onclick="window._fMcap('${k}')" title="${range}">${lbl}<span class="cnt">${mcapCounts[k]}</span></span>`;
+    });
     // Purity toggle — only meaningful when an area or rare filter is active (otherwise no badges render)
     if(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterRare===true){
       fh+='<span class="fsep"></span>';
       fh+=`<span class="fchip ${purityMode==='wtd'?'active':''}" onclick="window._purityMode()" style="padding:2px 8px;font-size:.62rem" title="Toggle: Raw TAM vs Risk-Adjusted (PoS\u00d7Apr weighted)">Purity: ${purityMode==='wtd'?'Risk-Adj':'Raw TAM'}</span>`;
     }
-    if(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterPhase||filterRare!==null||activeFilter||filterMod1||filterMod2||filterMod3)
+    if(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterPhase||filterRare!==null||activeFilter||filterMod1||filterMod2||filterMod3||filterMcap.size)
       fh+=`<span class="fchip" style="border-color:#ef444444;color:#fca5a5" onclick="window._fClear()">\u2715 Clear</span>`;
     fh+=`<span style="margin-left:auto;font-size:.7rem;color:var(--text2);font-family:var(--mono)">${filtered.length}/${rows.length}</span>`;
     fh+='</div>';
@@ -2316,7 +2341,8 @@ async function main(){
   };
   window._purityMode=function(){purityMode=purityMode==='wtd'?'raw':'wtd';render();};
   window._catY=function(m){catYAxis=m;render();};
-  window._fClear=function(){filterL1.clear();filterL2.clear();filterL3.clear();filterL4.clear();filterPhase=null;filterRare=null;filterMod1=null;filterMod2=null;filterMod3=null;activeFilter=null;stripSort='base';render();};
+  window._fClear=function(){filterL1.clear();filterL2.clear();filterL3.clear();filterL4.clear();filterPhase=null;filterRare=null;filterMod1=null;filterMod2=null;filterMod3=null;activeFilter=null;stripSort='base';filterMcap.clear();render();};
+  window._fMcap=function(k){if(filterMcap.has(k))filterMcap.delete(k);else filterMcap.add(k);render();};
   window._setCorr=function(v){window._corrVal=+v;render();};
   window._setOvr=function(tk,v){if(!window._manualOvr)window._manualOvr={};if(v==='auto')delete window._manualOvr[tk];else window._manualOvr[tk]=+v;render();};
   // Portfolio Kelly handlers

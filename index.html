@@ -1033,8 +1033,8 @@ async function main(){
         schedule.eventTable.filter(c=>!c.skipped && uniTix.has(c.ticker)).forEach(c=>{
           const x=padL+(c.daysOut/horizonD)*plotW;
           if(x<padL||x>W-padR) return;
-          h+=`<line x1="${x}" y1="${padT}" x2="${x}" y2="${H-padB}" stroke="#fbbf24" stroke-width="1" stroke-dasharray="2,4" opacity="0.4"><title>${c.ticker} ${c.dateStr}: ${c.title||c.type}</title></line>`;
-          h+=`<circle cx="${x}" cy="${padT+6}" r="3" fill="#fbbf24"><title>${c.ticker}: ${c.dateStr}</title></circle>`;
+          h+=`<line x1="${x}" y1="${padT}" x2="${x}" y2="${H-padB}" stroke="#fbbf24" stroke-width="1" stroke-dasharray="2,4" opacity="0.4"><title>${c.ticker} ${(c.date||c.dateSort)}: ${c.title||c.type}</title></line>`;
+          h+=`<circle cx="${x}" cy="${padT+6}" r="3" fill="#fbbf24"><title>${c.ticker}: ${(c.date||c.dateSort)}</title></circle>`;
         });
         h+='</svg>';
         // Legend
@@ -1121,7 +1121,7 @@ async function main(){
           const kCol=c.skipped?'#555':c.kelly>0.15?'#22c55e':c.kelly>0.05?'#fbbf24':'#ef4444';
           const erCol=c.expR>0?'#22c55e':'#ef4444';
           h+=`<div style="display:grid;grid-template-columns:80px 60px 1fr 55px 75px 60px 70px 55px;gap:4px;padding:5px 0;border-bottom:1px solid #ffffff06;font-size:.72rem;align-items:center">`;
-          h+=`<div style="color:#b0b4c0;font-family:var(--mono);font-size:.68rem">${c.dateStr||'?'}</div>`;
+          h+=`<div style="color:#b0b4c0;font-family:var(--mono);font-size:.68rem">${(c.date||c.dateSort)||'?'}</div>`;
           h+=`<a href="model.html?ticker=${c.ticker}" style="font-weight:700;color:#60a5fa;text-decoration:none;font-family:var(--mono)">${c.ticker}</a>`;
           h+=`<div style="color:#b0b4c0;font-size:.68rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${(c.title||c.type||'')} (d+${c.daysOut})">${c.title||c.type||''}</div>`;
           h+=`<div style="text-align:right;font-family:var(--mono);color:#b0b4c0">${c.yourPoS||0}%</div>`;

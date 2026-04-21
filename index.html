@@ -735,6 +735,90 @@ async function main(){
   let kellyOpts={kFrac:0.5, maxPos:0.20, maxL2:0.40, N:5000};
   let kellyUniverse=[]; // set by render() = current filtered rows
 
+  // Render the Portfolio Kelly Optimizer card as an HTML string.
+  function renderKellyCard(){
+    let h='';
+    h+='<div style="margin-top:16px;padding-top:16px;border-top:1px solid #ffffff10"><div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;cursor:pointer;margin-bottom:8px" onclick="window._kellyToggle()">';
+    h+='<div style="font-size:.88rem;font-weight:600"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:linear-gradient(180deg,#fbbf24,#22c55e);vertical-align:middle;margin-right:8px"></span>Portfolio Kelly Optimizer <span style="font-size:.62rem;color:#6b7080;font-weight:400;margin-left:6px">multi-asset \u00b7 taxonomy-correlated</span></div>';
+    h+=`<div style="font-size:.7rem;color:#6b7080">${kellyOpen?'\u25BE collapse':'\u25B8 expand'}</div>`;
+    h+='</div>';
+    if(kellyOpen){
+      const uniN=kellyUniverse.length;
+      const hasFilters=(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterMod1||filterMod2||filterMod3||filterPhase||filterRare!==null||activeFilter);
+      const uniLbl=hasFilters?`<span style="color:#fbbf24;font-weight:600">${uniN} names</span> (filtered from ${rows.length}) \u2014 <span style="color:#6b7080;cursor:pointer;text-decoration:underline" onclick="window._fClear()">clear filters</span> to use full universe`:`<span style="color:#b0b4c0;font-weight:600">${uniN} names</span> (no filters active \u2014 full universe)`;
+      h+=`<div class="card-sub">Universe: ${uniLbl}. Solves f* = argmax E[ln(1 + \u03A3 f\u1D62\u00B7r\u1D62)] with taxonomy-based correlation: same-L3 \u03C1=0.70, same-L2 \u03C1=0.45, same-L1 \u03C1=0.25, sector beta \u03C1=0.15.</div>`;
+      if(kellyResult && kellyResult._universeSize!==uniN){
+        h+=`<div style="background:#7c2d1222;border:1px solid #f59e0b66;border-radius:4px;padding:6px 10px;margin-bottom:10px;font-size:.7rem;color:#fbbf24">\u26A0 Filter changed since last run (was ${kellyResult._universeSize} names, now ${uniN}). Re-run to update results.</div>`;
+      }
+      // Controls
+      h+='<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;padding:10px 0;border-bottom:1px solid #ffffff0a;margin-bottom:12px">';
+      h+='<div style="display:flex;gap:4px;align-items:center"><span style="font-size:.7rem;color:#6b7080">Kelly fraction:</span>';
+      [[1.0,'Full'],[0.5,'Half'],[0.25,'Quarter'],[0.125,'Eighth']].forEach(([v,lbl])=>{
+        const act=Math.abs(kellyOpts.kFrac-v)<1e-6;
+        h+=`<span class="fchip ${act?'active':''}" onclick="window._kellyFrac(${v})" style="padding:2px 8px;font-size:.65rem">${lbl}</span>`;
+      });
+      h+='</div>';
+      h+=`<div style="display:flex;gap:6px;align-items:center"><span style="font-size:.7rem;color:#6b7080">Max per name:</span><input type="range" min="5" max="50" step="5" value="${Math.round(kellyOpts.maxPos*100)}" oninput="window._kellyMaxPos(this.value)" style="width:80px"><span style="font-family:var(--mono);font-size:.7rem;color:#b0b4c0;min-width:32px">${Math.round(kellyOpts.maxPos*100)}%</span></div>`;
+      h+=`<div style="display:flex;gap:6px;align-items:center"><span style="font-size:.7rem;color:#6b7080">Max per L1:</span><input type="range" min="20" max="100" step="5" value="${Math.round(kellyOpts.maxL2*100)}" oninput="window._kellyMaxL2(this.value)" style="width:80px"><span style="font-family:var(--mono);font-size:.7rem;color:#b0b4c0;min-width:32px">${Math.round(kellyOpts.maxL2*100)}%</span></div>`;
+      h+=`<span class="fchip ${kellyRunning?'':'active'}" style="padding:4px 12px;font-size:.7rem;background:${kellyRunning?'#333':'#fbbf2422'};border-color:${kellyRunning?'#666':'#fbbf2466'};color:${kellyRunning?'#888':'#fbbf24'}" onclick="${kellyRunning?'':'window._kellyRun()'}">${kellyRunning?'\u23F3 Running...':'\u25B6 Run Monte Carlo ('+kellyOpts.N+' samples)'}</span>`;
+      h+='</div>';
+
+      if(!kellyResult && !kellyRunning){
+        h+='<div style="padding:20px;text-align:center;color:#6b7080;font-size:.75rem">Click <b>Run</b> to compute optimal portfolio weights across the <b>'+uniN+' filtered names</b>. Takes ~1-2 seconds.</div>';
+      } else if(kellyRunning){
+        h+='<div style="padding:20px;text-align:center;color:#fbbf24;font-size:.75rem">\u23F3 Sampling correlated scenarios and optimizing... this takes ~1-2s.</div>';
+      } else if(kellyResult){
+        const kr=kellyResult;
+        const held=kr.weights.filter(w=>w.w>0.005);
+        const excluded=kr.weights.filter(w=>w.w<=0.005);
+        h+='<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:12px">';
+        const stat=(lbl,val,col)=>`<div style="background:#0a0c10;border:1px solid #ffffff10;border-radius:4px;padding:8px"><div style="font-size:.6rem;color:#6b7080;margin-bottom:2px">${lbl}</div><div style="font-size:1rem;font-weight:700;color:${col};font-family:var(--mono)">${val}</div></div>`;
+        const pctS=v=>(v>=0?'+':'')+(v*100).toFixed(1)+'%';
+        h+=stat('TOTAL DEPLOYED',(kr.totalDeployed*100).toFixed(0)+'%','#60a5fa');
+        h+=stat('E[LOG RETURN]',pctS(kr.expectedLog),kr.expectedLog>0?'#22c55e':'#ef4444');
+        h+=stat('MEDIAN RETURN',pctS(kr.pct50),kr.pct50>0?'#22c55e':'#ef4444');
+        h+=stat('5%-95% RANGE',pctS(kr.pct5)+' \u2192 '+pctS(kr.pct95),'#b0b4c0');
+        h+=stat('P(DRAWDOWN > 20%)',(kr.drawdownProb*100).toFixed(0)+'%',kr.drawdownProb<0.15?'#22c55e':kr.drawdownProb<0.30?'#fbbf24':'#ef4444');
+        h+='</div>';
+
+        h+='<div style="font-size:.7rem;color:#fbbf24;font-weight:600;letter-spacing:.5px;margin-bottom:6px">RECOMMENDED POSITIONS ('+held.length+' names, '+kr.K+' considered)</div>';
+        if(held.length===0){
+          h+='<div style="color:#6b7080;font-size:.75rem;padding:12px">No positive-edge positions at current price / scenario weights. All tickers had negative or zero optimal weight.</div>';
+        } else {
+          h+='<div style="display:grid;grid-template-columns:60px 1fr 80px 80px 80px;gap:4px;padding:4px 0;border-bottom:1px solid #ffffff15;font-size:.62rem;color:#6b7080;letter-spacing:.5px">';
+          h+='<div>TICKER</div><div>AREA</div><div style="text-align:right">WEIGHT</div><div style="text-align:right">FULL-K</div><div style="text-align:right">E[r]</div>';
+          h+='</div>';
+          held.forEach(w=>{
+            const wPct=(w.w*100).toFixed(1);
+            const wFullPct=(w.wFull*100).toFixed(0);
+            const expPct=((w.expR)*100).toFixed(0);
+            const barW=Math.min(100,w.w/kr.maxPos*100);
+            h+=`<div style="display:grid;grid-template-columns:60px 1fr 80px 80px 80px;gap:4px;padding:5px 0;border-bottom:1px solid #ffffff06;font-size:.72rem;align-items:center">`;
+            h+=`<a href="model.html?ticker=${w.ticker}" style="font-weight:700;color:#e2e4ea;text-decoration:none;font-family:var(--mono)">${w.ticker}</a>`;
+            h+=`<div style="color:#b0b4c0;font-size:.65rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${w.area}">${w.area.replace(/_/g,' ')}</div>`;
+            h+=`<div style="text-align:right;font-family:var(--mono);font-weight:700;color:#22c55e;position:relative"><div style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:${barW}%;height:14px;background:linear-gradient(90deg,#22c55e22,#22c55e44);border-right:2px solid #22c55e;z-index:0"></div><span style="position:relative;z-index:1">${wPct}%</span></div>`;
+            h+=`<div style="text-align:right;font-family:var(--mono);color:#6b7080">${wFullPct}%</div>`;
+            h+=`<div style="text-align:right;font-family:var(--mono);color:${w.expR>0?'#22c55e':'#ef4444'}">${w.expR>=0?'+':''}${expPct}%</div>`;
+            h+=`</div>`;
+          });
+        }
+
+        if(excluded.length>0){
+          h+=`<div style="margin-top:10px;font-size:.65rem;color:#6b7080"><b>Not held (${excluded.length}):</b> `;
+          h+=excluded.map(w=>w.ticker).join(', ');
+          h+=' <span style="color:#555">\u2014 negative edge, worse risk-adjusted than peers, or displaced by correlation.</span></div>';
+        }
+
+        h+='<div style="margin-top:10px;padding:8px;background:#0a0c10;border-left:3px solid #fbbf24;font-size:.7rem;color:#b0b4c0;line-height:1.5">';
+        const fracLbl = kr.kFrac===1?'full':kr.kFrac===0.5?'half':kr.kFrac===0.25?'quarter':(kr.kFrac*100).toFixed(0)+'%';
+        h+=`<b style="color:#fbbf24">\u{1F4CA} How to read:</b> At <b>${fracLbl}-Kelly</b> with max ${(kr.maxPos*100).toFixed(0)}% per name and ${(kr.maxL2*100).toFixed(0)}% per L1 sector, the optimizer allocates <b>${(kr.totalDeployed*100).toFixed(0)}%</b> of equity across <b>${held.length}</b> names. Remaining <b>${(100-kr.totalDeployed*100).toFixed(0)}%</b> in cash. Expected geometric return: <b>${pctS(kr.expectedLog)}</b> per period. Try <b>Full Kelly</b> to see max-growth sizing (very concentrated), or <b>Quarter Kelly</b> for defensive (robust to probability misspecification).`;
+        h+='</div>';
+      }
+    }
+    h+='</div>';
+    return h;
+  }
+
   function bucketOf(r){
     if(r.tps.bear!=null&&r.price<r.tps.bear)return 'below_bear';
     if(r.tps.base!=null&&r.price<r.tps.base)return 'bear_base';
@@ -1046,98 +1130,6 @@ async function main(){
 
       const fmtB = v => v >= 1000 ? '$'+(v/1000).toFixed(1)+'B' : '$'+Math.round(v)+'M';
       const nice = s => s.replace(/_/g,' ');
-
-      // ============== PORTFOLIO KELLY CARD ==============
-      h+='<div class="card" id="sec-kelly"><div class="card-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;cursor:pointer" onclick="window._kellyToggle()">';
-      h+='<div><div class="dot" style="background:linear-gradient(180deg,#fbbf24,#22c55e);display:inline-block;vertical-align:middle;margin-right:8px"></div>Portfolio Kelly Optimizer <span style="font-size:.62rem;color:#6b7080;font-weight:400;margin-left:6px">multi-asset \u00b7 taxonomy-correlated</span></div>';
-      h+=`<div style="font-size:.7rem;color:#6b7080">${kellyOpen?'\u25BE collapse':'\u25B8 expand'}</div>`;
-      h+='</div>';
-      if(kellyOpen){
-        const uniN=kellyUniverse.length;
-        const hasFilters=(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterMod1||filterMod2||filterMod3||filterPhase||filterRare!==null||activeFilter);
-        const uniLbl=hasFilters?`<span style="color:#fbbf24;font-weight:600">${uniN} names</span> (filtered from ${rows.length}) \u2014 <span style="color:#6b7080;cursor:pointer;text-decoration:underline" onclick="window._fClear()">clear filters</span> to use full universe`:`<span style="color:#b0b4c0;font-weight:600">${uniN} names</span> (no filters active \u2014 full universe)`;
-        h+=`<div class="card-sub">Universe: ${uniLbl}. Solves f* = argmax E[ln(1 + \u03A3 f\u1D62\u00B7r\u1D62)] with taxonomy-based correlation: same-L3 \u03C1=0.70, same-L2 \u03C1=0.45, same-L1 \u03C1=0.25, sector beta \u03C1=0.15.</div>`;
-        // Stale badge: if previous result was run against a different universe
-        if(kellyResult && kellyResult._universeSize!==uniN){
-          h+=`<div style="background:#7c2d1222;border:1px solid #f59e0b66;border-radius:4px;padding:6px 10px;margin-bottom:10px;font-size:.7rem;color:#fbbf24">\u26A0 Filter changed since last run (was ${kellyResult._universeSize} names, now ${uniN}). Re-run to update results.</div>`;
-        }
-        // Controls
-        h+='<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;padding:10px 0;border-bottom:1px solid #ffffff0a;margin-bottom:12px">';
-        // Kelly fraction
-        h+='<div style="display:flex;gap:4px;align-items:center"><span style="font-size:.7rem;color:#6b7080">Kelly fraction:</span>';
-        [[1.0,'Full'],[0.5,'Half'],[0.25,'Quarter'],[0.125,'Eighth']].forEach(([v,lbl])=>{
-          const act=Math.abs(kellyOpts.kFrac-v)<1e-6;
-          h+=`<span class="fchip ${act?'active':''}" onclick="window._kellyFrac(${v})" style="padding:2px 8px;font-size:.65rem">${lbl}</span>`;
-        });
-        h+='</div>';
-        // Max position
-        h+=`<div style="display:flex;gap:6px;align-items:center"><span style="font-size:.7rem;color:#6b7080">Max per name:</span><input type="range" min="5" max="50" step="5" value="${Math.round(kellyOpts.maxPos*100)}" oninput="window._kellyMaxPos(this.value)" style="width:80px"><span style="font-family:var(--mono);font-size:.7rem;color:#b0b4c0;min-width:32px">${Math.round(kellyOpts.maxPos*100)}%</span></div>`;
-        // Max L1 sector
-        h+=`<div style="display:flex;gap:6px;align-items:center"><span style="font-size:.7rem;color:#6b7080">Max per L1:</span><input type="range" min="20" max="100" step="5" value="${Math.round(kellyOpts.maxL2*100)}" oninput="window._kellyMaxL2(this.value)" style="width:80px"><span style="font-family:var(--mono);font-size:.7rem;color:#b0b4c0;min-width:32px">${Math.round(kellyOpts.maxL2*100)}%</span></div>`;
-        // Run button
-        h+=`<span class="fchip ${kellyRunning?'':'active'}" style="padding:4px 12px;font-size:.7rem;background:${kellyRunning?'#333':'#fbbf2422'};border-color:${kellyRunning?'#666':'#fbbf2466'};color:${kellyRunning?'#888':'#fbbf24'}" onclick="${kellyRunning?'':'window._kellyRun()'}">${kellyRunning?'\u23F3 Running...':'\u25B6 Run Monte Carlo ('+kellyOpts.N+' samples)'}</span>`;
-        h+='</div>';
-
-        if(!kellyResult && !kellyRunning){
-          h+='<div style="padding:20px;text-align:center;color:#6b7080;font-size:.75rem">Click <b>Run</b> to compute optimal portfolio weights across the <b>'+uniN+' filtered names</b>. Takes ~1-2 seconds.</div>';
-        } else if(kellyRunning){
-          h+='<div style="padding:20px;text-align:center;color:#fbbf24;font-size:.75rem">\u23F3 Sampling correlated scenarios and optimizing... this takes ~1-2s.</div>';
-        } else if(kellyResult){
-          const kr=kellyResult;
-          const held=kr.weights.filter(w=>w.w>0.005);
-          const excluded=kr.weights.filter(w=>w.w<=0.005);
-          // Stats row
-          h+='<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:12px">';
-          const stat=(lbl,val,col)=>`<div style="background:#0a0c10;border:1px solid #ffffff10;border-radius:4px;padding:8px"><div style="font-size:.6rem;color:#6b7080;margin-bottom:2px">${lbl}</div><div style="font-size:1rem;font-weight:700;color:${col};font-family:var(--mono)">${val}</div></div>`;
-          const pctS=v=>(v>=0?'+':'')+(v*100).toFixed(1)+'%';
-          h+=stat('TOTAL DEPLOYED',(kr.totalDeployed*100).toFixed(0)+'%','#60a5fa');
-          h+=stat('E[LOG RETURN]',pctS(kr.expectedLog),kr.expectedLog>0?'#22c55e':'#ef4444');
-          h+=stat('MEDIAN RETURN',pctS(kr.pct50),kr.pct50>0?'#22c55e':'#ef4444');
-          h+=stat('5%-95% RANGE',pctS(kr.pct5)+' \u2192 '+pctS(kr.pct95),'#b0b4c0');
-          h+=stat('P(DRAWDOWN > 20%)',(kr.drawdownProb*100).toFixed(0)+'%',kr.drawdownProb<0.15?'#22c55e':kr.drawdownProb<0.30?'#fbbf24':'#ef4444');
-          h+='</div>';
-
-          // Held positions table
-          h+='<div style="font-size:.7rem;color:#fbbf24;font-weight:600;letter-spacing:.5px;margin-bottom:6px">RECOMMENDED POSITIONS ('+held.length+' names, '+kr.K+' considered)</div>';
-          if(held.length===0){
-            h+='<div style="color:#6b7080;font-size:.75rem;padding:12px">No positive-edge positions at current price / scenario weights. All tickers had negative or zero optimal weight.</div>';
-          } else {
-            h+='<div style="display:grid;grid-template-columns:60px 1fr 80px 80px 80px;gap:4px;padding:4px 0;border-bottom:1px solid #ffffff15;font-size:.62rem;color:#6b7080;letter-spacing:.5px">';
-            h+='<div>TICKER</div><div>AREA</div><div style="text-align:right">WEIGHT</div><div style="text-align:right">FULL-K</div><div style="text-align:right">E[r]</div>';
-            h+='</div>';
-            held.forEach(w=>{
-              const wPct=(w.w*100).toFixed(1);
-              const wFullPct=(w.wFull*100).toFixed(0);
-              const expPct=((w.expR)*100).toFixed(0);
-              const barW=Math.min(100,w.w/kr.maxPos*100);
-              h+=`<div style="display:grid;grid-template-columns:60px 1fr 80px 80px 80px;gap:4px;padding:5px 0;border-bottom:1px solid #ffffff06;font-size:.72rem;align-items:center">`;
-              h+=`<a href="model.html?ticker=${w.ticker}" style="font-weight:700;color:#e2e4ea;text-decoration:none;font-family:var(--mono)">${w.ticker}</a>`;
-              h+=`<div style="color:#b0b4c0;font-size:.65rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${w.area}">${w.area.replace(/_/g,' ')}</div>`;
-              h+=`<div style="text-align:right;font-family:var(--mono);font-weight:700;color:#22c55e;position:relative"><div style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:${barW}%;height:14px;background:linear-gradient(90deg,#22c55e22,#22c55e44);border-right:2px solid #22c55e;z-index:0"></div><span style="position:relative;z-index:1">${wPct}%</span></div>`;
-              h+=`<div style="text-align:right;font-family:var(--mono);color:#6b7080">${wFullPct}%</div>`;
-              h+=`<div style="text-align:right;font-family:var(--mono);color:${w.expR>0?'#22c55e':'#ef4444'}">${w.expR>=0?'+':''}${expPct}%</div>`;
-              h+=`</div>`;
-            });
-          }
-
-          // Excluded names (collapsed summary)
-          if(excluded.length>0){
-            h+=`<div style="margin-top:10px;font-size:.65rem;color:#6b7080"><b>Not held (${excluded.length}):</b> `;
-            h+=excluded.map(w=>w.ticker).join(', ');
-            h+=' <span style="color:#555">\u2014 negative edge, worse risk-adjusted than peers, or displaced by correlation.</span></div>';
-          }
-
-          // Interpretation
-          h+='<div style="margin-top:10px;padding:8px;background:#0a0c10;border-left:3px solid #fbbf24;font-size:.7rem;color:#b0b4c0;line-height:1.5">';
-          const fracLbl = kr.kFrac===1?'full':kr.kFrac===0.5?'half':kr.kFrac===0.25?'quarter':(kr.kFrac*100).toFixed(0)+'%';
-          h+=`<b style="color:#fbbf24">\u{1F4CA} How to read:</b> At <b>${fracLbl}-Kelly</b> with max ${(kr.maxPos*100).toFixed(0)}% per name and ${(kr.maxL2*100).toFixed(0)}% per L1 sector, the optimizer allocates <b>${(kr.totalDeployed*100).toFixed(0)}%</b> of equity across <b>${held.length}</b> names. Remaining <b>${(100-kr.totalDeployed*100).toFixed(0)}%</b> in cash. Expected geometric return: <b>${pctS(kr.expectedLog)}</b> per period. Try <b>Full Kelly</b> to see max-growth sizing (very concentrated), or <b>Quarter Kelly</b> for defensive (robust to probability misspecification).`;
-          h+='</div>';
-        }
-        h+='</div>';  // close kelly card
-      } else {
-        h+='</div>';  // close collapsed kelly card
-      }
-      // ============== /PORTFOLIO KELLY CARD ==============
 
       h+='<div class="card" id="sec-markets"><div class="card-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div><div class="dot" style="background:linear-gradient(180deg,#f97316,#a855f7);display:inline-block;vertical-align:middle;margin-right:8px"></div>Market Explorer</div>';
       // Sort chips
@@ -1852,6 +1844,8 @@ async function main(){
       h+=`</div></details>`;
       h+=`</div>`;
     }
+    // Portfolio Kelly Optimizer — rendered inside the Portfolio section
+    h+=renderKellyCard();
     h+='</div>';
 
     // Table

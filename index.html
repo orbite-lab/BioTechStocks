@@ -420,6 +420,106 @@ function runPortfolioKelly(rows, configs, opts){
           drawdownProb:drawProb, totalDeployed, N, K, maxPos, maxL2, kFrac};
 }
 
+// ================================================================
+// CATALYST-AWARE KELLY: single-event binary Kelly + Gaussian-kernel
+// schedule + walk-forward Monte Carlo simulation
+// ================================================================
+function catEventKelly(cat){
+  // Binary Kelly: with prob p win ru (>0), with prob (1-p) lose |rd| (rd<0)
+  // f* = (p*ru - (1-p)*|rd|) / (ru*|rd|)
+  const p=(cat.yourPoS||0)/100;
+  const ru=(cat.successMove||0)/100;
+  const rd=(cat.failMove||0)/100;
+  const expR=p*ru+(1-p)*rd;
+  let kelly=0;
+  if(ru>1e-4 && rd<-1e-4){
+    kelly=(p*ru-(1-p)*Math.abs(rd))/(ru*Math.abs(rd));
+  } else if(expR>0){
+    // Degenerate: both tails same sign but positive EV -- size modestly
+    kelly=Math.min(0.10, Math.abs(expR));
+  }
+  return {kelly, expR, p, ru, rd};
+}
+
+function buildCatalystSchedule(universe, catalysts, baseWeights, opts){
+  const horizonD=opts.horizonM*30;
+  const stepD=7;
+  const steps=Math.ceil(horizonD/stepD)+1;
+  const timeline=[]; for(let i=0;i<steps;i++) timeline.push(i*stepD);
+  const tickers=universe.map(r=>r.ticker);
+  const series={}; tickers.forEach(tk=>series[tk]=new Float64Array(steps));
+  const baseMap={}; baseWeights.forEach(w=>{baseMap[w.ticker]=w.w;});
+  // Baseline weight: fraction of static Kelly result, blended by (1 - catInfluence)
+  const baseScale=1-opts.catInfluence+opts.catInfluence*0.4; // structural core always ≥40% of static
+  tickers.forEach(tk=>{
+    const bw=(baseMap[tk]||0)*baseScale;
+    for(let i=0;i<steps;i++) series[tk][i]=bw;
+  });
+  // Catalyst bumps (Gaussian kernel)
+  const eventTable=[];
+  const sigma=opts.sigma, sig2=2*sigma*sigma;
+  catalysts.forEach(c=>{
+    if(c.daysOut>horizonD || c.daysOut<0) return;
+    const ek=catEventKelly(c);
+    if(ek.kelly<opts.minKelly) { eventTable.push({...c, ...ek, skipped:true, eventBump:0}); return; }
+    const bump=ek.kelly*opts.kFrac*opts.catInfluence;
+    const tk=c.ticker;
+    if(!series[tk]) return; // ticker not in filtered universe
+    for(let i=0;i<steps;i++){
+      const dt=timeline[i]-c.daysOut;
+      const g=Math.exp(-(dt*dt)/sig2);
+      series[tk][i]+=bump*g;
+    }
+    eventTable.push({...c, ...ek, eventBump:bump, skipped:false});
+  });
+  // Cap per-name at 25% and normalize total ≤ 100% at each step
+  const CAP=0.25;
+  const totals=new Float64Array(steps);
+  for(let i=0;i<steps;i++){
+    let sum=0;
+    for(const tk of tickers){ if(series[tk][i]>CAP) series[tk][i]=CAP; sum+=series[tk][i]; }
+    if(sum>1){ const sc=1/sum; for(const tk of tickers) series[tk][i]*=sc; sum=1; }
+    totals[i]=sum;
+  }
+  // Peak weight per ticker (for ranking)
+  const peak={}; tickers.forEach(tk=>{ let mx=0; for(let i=0;i<steps;i++) if(series[tk][i]>mx) mx=series[tk][i]; peak[tk]=mx; });
+  return {timeline, series, tickers, eventTable, totals, peak, steps, horizonD, stepD};
+}
+
+function walkForwardKellySim(catalysts, opts, N){
+  const sorted=[...catalysts].filter(c=>c.kelly>=opts.minKelly && !c.skipped).sort((a,b)=>a.daysOut-b.daysOut);
+  if(!sorted.length) return null;
+  const finals=new Float64Array(N);
+  const pathPeakDD=new Float64Array(N);
+  for(let s=0;s<N;s++){
+    let cap=1.0, peakCap=1.0, maxDD=0;
+    for(const c of sorted){
+      const f=c.kelly*opts.kFrac*opts.catInfluence;
+      const win=Math.random()<c.p;
+      const ret=win?c.ru:c.rd;
+      cap*=(1+f*ret);
+      if(cap<=0){ cap=1e-6; break; }
+      if(cap>peakCap) peakCap=cap;
+      const dd=(peakCap-cap)/peakCap;
+      if(dd>maxDD) maxDD=dd;
+    }
+    finals[s]=cap;
+    pathPeakDD[s]=maxDD;
+  }
+  const sortedF=Array.from(finals).sort((a,b)=>a-b);
+  const sortedDD=Array.from(pathPeakDD).sort((a,b)=>a-b);
+  const pct=(arr,q)=>arr[Math.max(0,Math.min(N-1,Math.floor(q*N)))];
+  const mean=sortedF.reduce((a,b)=>a+b,0)/N;
+  let meanLog=0; for(let i=0;i<N;i++) meanLog+=Math.log(Math.max(finals[i],1e-6)); meanLog/=N;
+  return {
+    N, events:sorted.length, finals:sortedF,
+    median:pct(sortedF,0.5)-1, mean:mean-1, meanLog,
+    p5:pct(sortedF,0.05)-1, p95:pct(sortedF,0.95)-1, p25:pct(sortedF,0.25)-1, p75:pct(sortedF,0.75)-1,
+    medianDD:pct(sortedDD,0.5), p95DD:pct(sortedDD,0.95),
+    probLoss:sortedF.filter(x=>x<1).length/N
+  };
+}
+
 // Compute catalyst impact as % change in model TP (not vs stock price)
 function computeCatalysts(cfg,currentPrice){
   if(!cfg.catalysts||!cfg.catalysts.length)return[];
@@ -734,6 +834,10 @@ async function main(){
   let kellyRunning=false;
   let kellyOpts={kFrac:0.5, maxPos:0.20, maxL2:0.40, N:5000};
   let kellyUniverse=[]; // set by render() = current filtered rows
+  // Catalyst-Aware Kelly Schedule state
+  let catKellyOpen=false;
+  let catKellyTab='calendar'; // 'calendar' | 'simulation' | 'events'
+  let catKellyOpts={horizonM:6, kFrac:0.5, catInfluence:0.7, sigma:21, N:2000, minKelly:0.02};
 
   // Render the Portfolio Kelly Optimizer card as an HTML string.
   function renderKellyCard(){
@@ -816,6 +920,221 @@ async function main(){
       }
     }
     h+='</div>';
+    return h;
+  }
+
+  // Render the Catalyst-Aware Kelly Schedule card.
+  // Uses the current kellyUniverse, kellyResult.weights (as baseline), and catalysts on each row.
+  function renderCatalystKellyCard(){
+    let h='';
+    h+='<div style="margin-top:20px;padding-top:16px;border-top:1px solid #ffffff10"><div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;cursor:pointer;margin-bottom:8px" onclick="window._catKellyToggle()">';
+    h+='<div style="font-size:.88rem;font-weight:600"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:linear-gradient(180deg,#22c55e,#ef4444);vertical-align:middle;margin-right:8px"></span>Catalyst-Aware Kelly Schedule <span style="font-size:.62rem;color:#6b7080;font-weight:400;margin-left:6px">event-driven \u00b7 smooth Gaussian kernel</span></div>';
+    h+=`<div style="font-size:.7rem;color:#6b7080">${catKellyOpen?'\u25BE collapse':'\u25B8 expand'}</div>`;
+    h+='</div>';
+    if(!catKellyOpen){ h+='</div>'; return h; }
+
+    // Require: kellyResult available (structural baseline)
+    if(!kellyResult){
+      h+='<div class="card-sub">Run the Portfolio Kelly Optimizer above first \u2014 this card uses its weights as the structural baseline.</div>';
+      h+='</div>'; return h;
+    }
+
+    // Gather catalysts across current universe (same filter as Kelly)
+    const universe=kellyUniverse;
+    const uniTix=new Set(universe.map(r=>r.ticker));
+    const catalysts=[];
+    universe.forEach(r=>{ (r.catalysts||[]).forEach(c=>catalysts.push({...c,ticker:r.ticker})); });
+
+    // Build schedule
+    const schedule=buildCatalystSchedule(universe, catalysts, kellyResult.weights, catKellyOpts);
+    const opts=catKellyOpts;
+
+    h+=`<div class="card-sub">Baseline from Portfolio Kelly above (${(kellyResult.totalDeployed*100).toFixed(0)}% deployed), modulated by upcoming catalysts via Gaussian kernel (\u03C3=${opts.sigma}d). No hard entries/exits \u2014 weights rise smoothly toward each catalyst and decay after.</div>`;
+
+    // Controls row
+    h+='<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;padding:10px 0;border-bottom:1px solid #ffffff0a;margin-bottom:12px">';
+    h+='<div style="display:flex;gap:4px;align-items:center"><span style="font-size:.7rem;color:#6b7080">Horizon:</span>';
+    [[3,'3m'],[6,'6m'],[12,'12m'],[24,'24m']].forEach(([v,lbl])=>{
+      const act=opts.horizonM===v;
+      h+=`<span class="fchip ${act?'active':''}" onclick="window._catKellyHorizon(${v})" style="padding:2px 8px;font-size:.65rem">${lbl}</span>`;
+    });
+    h+='</div>';
+    h+='<div style="display:flex;gap:4px;align-items:center"><span style="font-size:.7rem;color:#6b7080">Kelly:</span>';
+    [[1.0,'Full'],[0.5,'Half'],[0.25,'Quarter'],[0.125,'Eighth']].forEach(([v,lbl])=>{
+      const act=Math.abs(opts.kFrac-v)<1e-6;
+      h+=`<span class="fchip ${act?'active':''}" onclick="window._catKellyFrac(${v})" style="padding:2px 8px;font-size:.65rem">${lbl}</span>`;
+    });
+    h+='</div>';
+    h+=`<div style="display:flex;gap:6px;align-items:center" title="0 = ignore catalysts (pure structural Kelly); 1 = max catalyst weighting"><span style="font-size:.7rem;color:#6b7080">Catalyst influence:</span><input type="range" min="0" max="100" step="5" value="${Math.round(opts.catInfluence*100)}" oninput="window._catKellyInfluence(this.value)" style="width:90px"><span style="font-family:var(--mono);font-size:.7rem;color:#b0b4c0;min-width:32px">${Math.round(opts.catInfluence*100)}%</span></div>`;
+    h+=`<div style="display:flex;gap:6px;align-items:center" title="Kernel width: how many days before/after a catalyst it influences weight"><span style="font-size:.7rem;color:#6b7080">Kernel \u03C3:</span>`;
+    [[7,'7d'],[21,'21d'],[45,'45d']].forEach(([v,lbl])=>{
+      const act=opts.sigma===v;
+      h+=`<span class="fchip ${act?'active':''}" onclick="window._catKellySigma(${v})" style="padding:2px 8px;font-size:.65rem">${lbl}</span>`;
+    });
+    h+='</div>';
+    h+='</div>';
+
+    // Tabs
+    h+='<div style="display:flex;gap:4px;margin-bottom:10px">';
+    [['calendar','\uD83D\uDCC5 Calendar (time series)'],['simulation','\uD83C\uDFB2 Simulation (walk-forward)'],['events','\uD83D\uDCCA Events table']].forEach(([k,lbl])=>{
+      const act=catKellyTab===k;
+      h+=`<span class="fchip ${act?'active':''}" onclick="window._catKellyTab('${k}')" style="padding:4px 10px;font-size:.7rem">${lbl}</span>`;
+    });
+    h+='</div>';
+
+    // ============== Tab content ==============
+    if(catKellyTab==='calendar'){
+      // Stacked area chart (SVG)
+      const {timeline, series, tickers, peak, steps, totals, horizonD}=schedule;
+      const heldTix=tickers.filter(tk=>peak[tk]>0.005).sort((a,b)=>peak[b]-peak[a]);
+      if(!heldTix.length){
+        h+='<div style="padding:30px;text-align:center;color:#6b7080;font-size:.75rem">No positions with peak weight above 0.5%. Relax filters or lower the Kelly fraction.</div>';
+      } else {
+        const W=820, H=280, padL=40, padR=8, padT=10, padB=30;
+        const plotW=W-padL-padR, plotH=H-padT-padB;
+        // Pre-compute stacked y values
+        const stack=heldTix.map(()=>new Float64Array(steps));
+        for(let i=0;i<steps;i++){
+          let acc=0;
+          heldTix.forEach((tk,bi)=>{ acc+=series[tk][i]; stack[bi][i]=acc; });
+        }
+        const yMax=1.0; // weights are fractions
+        const xAt=i=>padL+(timeline[i]/horizonD)*plotW;
+        const yAt=v=>padT+(1-v/yMax)*plotH;
+        // Color palette (distinct per ticker)
+        const PAL=['#60a5fa','#a855f7','#22c55e','#fbbf24','#ef4444','#06b6d4','#ec4899','#84cc16','#f97316','#14b8a6','#8b5cf6','#f59e0b','#10b981','#e11d48','#0ea5e9'];
+        h+=`<svg width="100%" viewBox="0 0 ${W} ${H}" style="background:#0a0c10;border:1px solid #ffffff10;border-radius:6px;display:block">`;
+        // Grid lines (horizontal, 25/50/75/100%)
+        [0.25,0.50,0.75,1.0].forEach(v=>{
+          h+=`<line x1="${padL}" y1="${yAt(v)}" x2="${W-padR}" y2="${yAt(v)}" stroke="#ffffff10" stroke-dasharray="3,3"/>`;
+          h+=`<text x="${padL-4}" y="${yAt(v)+3}" text-anchor="end" fill="#6b7080" font-size="9" font-family="monospace">${(v*100).toFixed(0)}%</text>`;
+        });
+        // X axis month marks
+        const today=new Date();
+        const months=Math.ceil(opts.horizonM);
+        for(let m=0;m<=months;m++){
+          const d=new Date(today); d.setMonth(d.getMonth()+m);
+          const x=padL+(m*30/horizonD)*plotW;
+          if(x>W-padR) break;
+          h+=`<line x1="${x}" y1="${padT}" x2="${x}" y2="${H-padB}" stroke="#ffffff08"/>`;
+          h+=`<text x="${x}" y="${H-padB+14}" text-anchor="middle" fill="#6b7080" font-size="9" font-family="monospace">${d.toLocaleString('en',{month:'short'})}</text>`;
+        }
+        // Stacked area bands (bottom-up)
+        heldTix.forEach((tk,bi)=>{
+          const col=PAL[bi%PAL.length];
+          let pts=[];
+          // Top edge (current layer)
+          for(let i=0;i<steps;i++) pts.push(`${xAt(i)},${yAt(stack[bi][i])}`);
+          // Bottom edge (previous layer, reversed)
+          for(let i=steps-1;i>=0;i--){ const below=bi===0?0:stack[bi-1][i]; pts.push(`${xAt(i)},${yAt(below)}`); }
+          h+=`<polygon points="${pts.join(' ')}" fill="${col}" fill-opacity="0.55" stroke="${col}" stroke-width="0.5"><title>${tk} \u00b7 peak ${(peak[tk]*100).toFixed(1)}%</title></polygon>`;
+        });
+        // Catalyst event markers (vertical dashed lines)
+        schedule.eventTable.filter(c=>!c.skipped && uniTix.has(c.ticker)).forEach(c=>{
+          const x=padL+(c.daysOut/horizonD)*plotW;
+          if(x<padL||x>W-padR) return;
+          h+=`<line x1="${x}" y1="${padT}" x2="${x}" y2="${H-padB}" stroke="#fbbf24" stroke-width="1" stroke-dasharray="2,4" opacity="0.4"><title>${c.ticker} ${c.dateStr}: ${c.title||c.type}</title></line>`;
+          h+=`<circle cx="${x}" cy="${padT+6}" r="3" fill="#fbbf24"><title>${c.ticker}: ${c.dateStr}</title></circle>`;
+        });
+        h+='</svg>';
+        // Legend
+        h+='<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;font-size:.68rem">';
+        heldTix.slice(0,20).forEach((tk,bi)=>{
+          const col=PAL[bi%PAL.length];
+          h+=`<span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;background:${col};opacity:.7;border-radius:2px;display:inline-block"></span><a href="model.html?ticker=${tk}" style="color:#b0b4c0;text-decoration:none;font-family:var(--mono)">${tk}</a><span style="color:#6b7080">peak ${(peak[tk]*100).toFixed(1)}%</span></span>`;
+        });
+        h+='</div>';
+        // Summary line
+        let maxTotal=0, argMax=0;
+        for(let i=0;i<steps;i++){ if(totals[i]>maxTotal){ maxTotal=totals[i]; argMax=i; } }
+        const peakDate=new Date(today); peakDate.setDate(peakDate.getDate()+timeline[argMax]);
+        const meanDeploy=Array.from(totals).reduce((a,b)=>a+b,0)/steps;
+        h+=`<div style="margin-top:8px;padding:8px;background:#0a0c10;border-left:3px solid #22c55e;font-size:.7rem;color:#b0b4c0;line-height:1.5">`;
+        h+=`<b style="color:#22c55e">\u{1F4CA} Schedule summary:</b> Peak exposure <b>${(maxTotal*100).toFixed(0)}%</b> around <b>${peakDate.toLocaleDateString('en',{month:'short',day:'numeric'})}</b>. Mean deployment <b>${(meanDeploy*100).toFixed(0)}%</b> over the ${opts.horizonM}m horizon. Weights shown are already net of the ${Math.round(opts.catInfluence*100)}% catalyst-influence blend and the ${opts.kFrac===1?'full':opts.kFrac===0.5?'half':opts.kFrac===0.25?'quarter':'eighth'}-Kelly scaling.`;
+        h+='</div>';
+      }
+    } else if(catKellyTab==='simulation'){
+      // Walk-forward MC on filtered catalysts
+      const valid=schedule.eventTable.filter(c=>!c.skipped && uniTix.has(c.ticker));
+      const sim=walkForwardKellySim(valid, opts, opts.N);
+      if(!sim){
+        h+='<div style="padding:30px;text-align:center;color:#6b7080;font-size:.75rem">No valid catalyst events in horizon (try lengthening horizon or lowering min Kelly).</div>';
+      } else {
+        // Stats tiles
+        const pctS=v=>(v>=0?'+':'')+(v*100).toFixed(1)+'%';
+        h+='<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:12px">';
+        const stat=(lbl,val,col,sub)=>`<div style="background:#0a0c10;border:1px solid #ffffff10;border-radius:4px;padding:8px"><div style="font-size:.6rem;color:#6b7080;margin-bottom:2px">${lbl}</div><div style="font-size:1rem;font-weight:700;color:${col};font-family:var(--mono)">${val}</div>${sub?`<div style="font-size:.58rem;color:#555;margin-top:2px">${sub}</div>`:''}</div>`;
+        h+=stat('EVENTS SIMULATED', sim.events, '#60a5fa', sim.N+' paths');
+        h+=stat('MEDIAN RETURN', pctS(sim.median), sim.median>0?'#22c55e':'#ef4444', 'terminal');
+        h+=stat('E[LOG RETURN]', pctS(sim.meanLog), sim.meanLog>0?'#22c55e':'#ef4444', 'geometric');
+        h+=stat('5% \u2192 95%', pctS(sim.p5)+' \u2192 '+pctS(sim.p95), '#b0b4c0', 'tail range');
+        h+=stat('P(loss)', (sim.probLoss*100).toFixed(0)+'%', sim.probLoss<0.3?'#22c55e':sim.probLoss<0.5?'#fbbf24':'#ef4444', 'pathwise DD p95 '+(sim.p95DD*100).toFixed(0)+'%');
+        h+='</div>';
+
+        // Histogram of terminal wealth
+        const finals=sim.finals;
+        const n=finals.length;
+        const lo=Math.max(finals[Math.floor(n*0.01)], 0.01);
+        const hi=Math.min(finals[Math.floor(n*0.99)], 10);
+        const bins=40;
+        const bw=(hi-lo)/bins;
+        const hist=new Array(bins).fill(0);
+        finals.forEach(f=>{ const bi=Math.min(bins-1,Math.max(0,Math.floor((f-lo)/bw))); hist[bi]++; });
+        const hMax=Math.max(...hist);
+        const W=820,H=180,padL=30,padR=8,padT=10,padB=28;
+        const plotW=W-padL-padR, plotH=H-padT-padB;
+        h+=`<svg width="100%" viewBox="0 0 ${W} ${H}" style="background:#0a0c10;border:1px solid #ffffff10;border-radius:6px;display:block;margin-bottom:6px">`;
+        // Break-even line (x at capital=1)
+        const xBreak=padL+((1-lo)/(hi-lo))*plotW;
+        if(xBreak>padL && xBreak<W-padR){
+          h+=`<line x1="${xBreak}" y1="${padT}" x2="${xBreak}" y2="${H-padB}" stroke="#ffffff33" stroke-dasharray="3,3"/>`;
+          h+=`<text x="${xBreak}" y="${padT+10}" text-anchor="middle" fill="#b0b4c0" font-size="9" font-family="monospace">break-even</text>`;
+        }
+        hist.forEach((c,i)=>{
+          const x=padL+(i/bins)*plotW;
+          const w=(plotW/bins)-1;
+          const hh=(c/hMax)*plotH;
+          const binCenter=lo+(i+0.5)*bw;
+          const col=binCenter<1?'#ef4444':'#22c55e';
+          h+=`<rect x="${x}" y="${H-padB-hh}" width="${w}" height="${hh}" fill="${col}" fill-opacity="0.6"/>`;
+        });
+        // X axis labels
+        [0,0.5,1].forEach(q=>{
+          const v=lo+q*(hi-lo);
+          const x=padL+q*plotW;
+          h+=`<text x="${x}" y="${H-padB+14}" text-anchor="middle" fill="#6b7080" font-size="9" font-family="monospace">\u00D7${v.toFixed(2)}</text>`;
+        });
+        h+=`<text x="${W-padR}" y="${H-padB+14}" text-anchor="end" fill="#6b7080" font-size="9" font-family="monospace">\u00D7${hi.toFixed(2)}</text>`;
+        h+='</svg>';
+        h+=`<div style="font-size:.65rem;color:#6b7080;text-align:center">Terminal wealth distribution after ${sim.events} sequential catalyst bets, starting from $1. Red bins = capital lost, green = gain.</div>`;
+        h+=`<div style="margin-top:10px;padding:8px;background:#0a0c10;border-left:3px solid #22c55e;font-size:.7rem;color:#b0b4c0;line-height:1.5"><b style="color:#22c55e">\u{1F3B2} How to read:</b> After following the ${opts.kFrac===0.5?'half':opts.kFrac===0.25?'quarter':opts.kFrac===0.125?'eighth':'full'}-Kelly sequence through <b>${sim.events} catalysts</b>, median outcome is <b>${pctS(sim.median)}</b> with <b>${(sim.probLoss*100).toFixed(0)}%</b> chance of ending below starting capital. Worst 5% of paths drawdown to <b>${pctS(sim.p5)}</b>; best 5% reach <b>${pctS(sim.p95)}</b>. Geometric return ${pctS(sim.meanLog)} is the number to optimize \u2014 not the mean.</div>`;
+      }
+    } else if(catKellyTab==='events'){
+      const evs=schedule.eventTable.filter(c=>uniTix.has(c.ticker)).sort((a,b)=>a.daysOut-b.daysOut);
+      if(!evs.length){
+        h+='<div style="padding:30px;text-align:center;color:#6b7080;font-size:.75rem">No catalyst events in horizon.</div>';
+      } else {
+        h+='<div style="display:grid;grid-template-columns:80px 60px 1fr 55px 75px 60px 70px 55px;gap:4px;padding:5px 0;border-bottom:1px solid #ffffff15;font-size:.6rem;color:#6b7080;letter-spacing:.5px">';
+        h+='<div>DATE</div><div>TICKER</div><div>EVENT</div><div style="text-align:right">PoS</div><div style="text-align:right">+%/-%</div><div style="text-align:right">MAT.</div><div style="text-align:right">KELLY f*</div><div style="text-align:right">BUMP</div>';
+        h+='</div>';
+        evs.forEach(c=>{
+          const kCol=c.skipped?'#555':c.kelly>0.15?'#22c55e':c.kelly>0.05?'#fbbf24':'#ef4444';
+          const erCol=c.expR>0?'#22c55e':'#ef4444';
+          h+=`<div style="display:grid;grid-template-columns:80px 60px 1fr 55px 75px 60px 70px 55px;gap:4px;padding:5px 0;border-bottom:1px solid #ffffff06;font-size:.72rem;align-items:center">`;
+          h+=`<div style="color:#b0b4c0;font-family:var(--mono);font-size:.68rem">${c.dateStr||'?'}</div>`;
+          h+=`<a href="model.html?ticker=${c.ticker}" style="font-weight:700;color:#60a5fa;text-decoration:none;font-family:var(--mono)">${c.ticker}</a>`;
+          h+=`<div style="color:#b0b4c0;font-size:.68rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${(c.title||c.type||'')} (d+${c.daysOut})">${c.title||c.type||''}</div>`;
+          h+=`<div style="text-align:right;font-family:var(--mono);color:#b0b4c0">${c.yourPoS||0}%</div>`;
+          h+=`<div style="text-align:right;font-family:var(--mono);font-size:.66rem"><span style="color:#22c55e">+${c.successMove}</span>/<span style="color:#ef4444">${c.failMove}</span></div>`;
+          h+=`<div style="text-align:right;font-family:var(--mono);color:#b0b4c0">${c.materiality||0}%</div>`;
+          h+=`<div style="text-align:right;font-family:var(--mono);font-weight:700;color:${kCol}">${(c.kelly*100).toFixed(0)}%${c.skipped?' \u2716':''}</div>`;
+          h+=`<div style="text-align:right;font-family:var(--mono);color:${c.eventBump>0?'#60a5fa':'#555'}">${c.eventBump>0?'+'+(c.eventBump*100).toFixed(1)+'%':'\u2014'}</div>`;
+          h+=`</div>`;
+        });
+        h+=`<div style="margin-top:10px;font-size:.65rem;color:#6b7080">Skipped events (Kelly &lt; ${(opts.minKelly*100).toFixed(0)}% threshold) are shown grayed. <b>BUMP</b> = peak weight contribution after half-Kelly scaling and catalyst-influence blend.</div>`;
+      }
+    }
+    h+='</div>'; // close card wrapper
     return h;
   }
 
@@ -1846,6 +2165,8 @@ async function main(){
     }
     // Portfolio Kelly Optimizer — rendered inside the Portfolio section
     h+=renderKellyCard();
+    // Catalyst-Aware Kelly Schedule — event-driven sizing, uses the static Kelly as baseline
+    h+=renderCatalystKellyCard();
     h+='</div>';
 
     // Table
@@ -2006,6 +2327,13 @@ async function main(){
   window._kellyFrac=function(v){kellyOpts.kFrac=+v; render();};
   window._kellyMaxPos=function(v){kellyOpts.maxPos=+v/100; render();};
   window._kellyMaxL2=function(v){kellyOpts.maxL2=+v/100; render();};
+  // Catalyst-aware Kelly handlers
+  window._catKellyToggle=function(){catKellyOpen=!catKellyOpen; render();};
+  window._catKellyTab=function(t){catKellyTab=t; render();};
+  window._catKellyHorizon=function(v){catKellyOpts.horizonM=+v; render();};
+  window._catKellyFrac=function(v){catKellyOpts.kFrac=+v; render();};
+  window._catKellyInfluence=function(v){catKellyOpts.catInfluence=+v/100; render();};
+  window._catKellySigma=function(v){catKellyOpts.sigma=+v; render();};
   window._ddOpen=function(){document.getElementById('ddList')?.classList.add('open');};
   window._ddClose=function(){document.getElementById('ddList')?.classList.remove('open');};
   window._ddFilter=function(q){const dd=document.getElementById('ddList');if(!dd)return;dd.classList.add('open');

@@ -1011,8 +1011,8 @@
                 e("div", { style: { fontSize: 11, fontWeight: 600, color: "#fbbf24", letterSpacing: 0.5 } }, "PORTFOLIO KELLY (multi-scenario)"),
                 e("div", { style: { fontSize: 10, color: "#6b7080" } }, "solves f* = argmax \u03A3 p\u1D62 \u00D7 ln(1 + f\u00B7r\u1D62)")
               ),
-              // Kelly result row
-              e("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 8, marginBottom: 8 } },
+              // Kelly result row (3 tiles: full / half / quarter)
+              e("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 8 } },
                 e("div", { style: { background: "#000", border: "1px solid " + kCol + "40", borderRadius: 4, padding: 8 } },
                   e("div", { style: { fontSize: 9, color: "#6b7080", marginBottom: 2 } }, "FULL KELLY f*"),
                   e("div", { style: { fontSize: 18, fontWeight: 700, color: kCol, fontFamily: "'JetBrains Mono'" } }, pct(kelly)),
@@ -1027,20 +1027,19 @@
                   e("div", { style: { fontSize: 9, color: "#6b7080", marginBottom: 2 } }, "QUARTER KELLY (conservative)"),
                   e("div", { style: { fontSize: 18, fontWeight: 700, color: "#b0b4c0", fontFamily: "'JetBrains Mono'" } }, pct(quartK)),
                   e("div", { style: { fontSize: 9, color: "#6b7080", marginTop: 2 } }, "E[ln] = " + (geoQuart * 100).toFixed(2) + "%")
-                ),
-                e("div", { style: { background: "#000", border: "1px solid #ffffff10", borderRadius: 4, padding: 8 } },
-                  e("div", { style: { fontSize: 9, color: "#6b7080", marginBottom: 2 } }, "EXPECTED RETURN"),
-                  e("div", { style: { fontSize: 18, fontWeight: 700, color: expRet >= 0 ? "#22c55e" : "#ef4444", fontFamily: "'JetBrains Mono'" } }, (expRet >= 0 ? "+" : "") + pct(expRet)),
-                  e("div", { style: { fontSize: 9, color: "#6b7080", marginTop: 2 } }, "arithmetic, weighted")
                 )
               ),
               // Interpretation
-              e("div", { style: { fontSize: 10, color: "#6b7080", lineHeight: 1.5, paddingTop: 6, borderTop: "1px solid #ffffff08" } },
+              e("div", { style: { fontSize: 11, color: "#b0b4c0", lineHeight: 1.55, paddingTop: 8, borderTop: "1px solid #ffffff08" } },
+                e("b", { style: { color: "#fbbf24" } }, "How to read: "),
+                "f* is the share of equity that maximizes geometric growth ",
+                e("i", {}, "if this were your only position"),
+                ". Half Kelly captures ~75% of the growth with ~50% of the volatility and is robust to errors in your probability weights. Quarter Kelly is the conservative default most practitioners use. ",
                 kelly <= 0
-                  ? e("span", { style: { color: "#ef4444" } }, "\u26A0 Negative Kelly \u2192 edge is unfavorable at current price; skip or short.")
+                  ? e("span", { style: { color: "#ef4444", fontWeight: 600 } }, "\u26A0 Negative Kelly \u2192 edge is unfavorable at current price; skip or short.")
                   : kelly > 1
-                    ? e("span", { style: { color: "#fbbf24" } }, "Kelly > 100% implies leverage. Cap at " + pct(clampLong(halfK)) + " of equity (half-Kelly, long-only).")
-                    : e("span", {}, "Recommend sizing at ", e("b", { style: { color: "#60a5fa" } }, pct(halfK)), " of equity (half-Kelly). Full Kelly maximizes geometric growth but ~2\u00D7 the drawdown volatility.")
+                    ? e("span", { style: { color: "#fbbf24", fontWeight: 600 } }, "Full Kelly > 100% implies leverage \u2014 cap at " + pct(clampLong(halfK)) + " of equity (half-Kelly, long-only).")
+                    : e("span", {}, "Recommended sizing: ", e("b", { style: { color: "#60a5fa" } }, pct(halfK)), " of equity (half-Kelly).")
               )
             );
           })(),

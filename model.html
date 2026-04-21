@@ -952,25 +952,7 @@
                 e("div", { style: { display: "flex", justifyContent: "space-between", marginTop: 6, paddingTop: 6, borderTop: "1px solid #ffffff06", fontSize: 10 } },
                   e("span", { style: { color: "#6b7080" } }, "EV / Cash / DR / Dil"),
                   e("span", { style: { fontFamily: "'JetBrains Mono'", color: "#b0b4c0", fontWeight: 600 } }, ccy + (r.ev / 1000).toFixed(1) + "B \u00b7 " + ccy + state.cash + "M \u00b7 " + r.dr + "% \u00b7 " + r.dil + "%")
-                ),
-                // Kelly sizing: binary Kelly for this single scenario vs "bet doesn't pan out = keep current price"
-                (() => {
-                  const p = model.normW[origSi];  // probability = scenario weight
-                  const retUp = (r.tp - state.currentPrice) / state.currentPrice;  // return if this scenario plays out
-                  // Binary Kelly with single opposite outcome (price stays at today if not):
-                  // f* = p - (1-p)/b where b = payoff on win
-                  // For downside scenario (retUp < 0), f* < 0 means "short / avoid"; we show 0 cap
-                  let kelly = null;
-                  if (retUp > 0) { const b = retUp; kelly = p - (1 - p) / b; }
-                  else if (retUp < 0) { kelly = -(p - (1 - p) / (-retUp)); }  // inverse sign for short-equivalent
-                  const halfK = kelly != null ? kelly / 2 : null;
-                  const kellyCol = kelly == null ? "#6b7080" : kelly > 0.2 ? "#22c55e" : kelly > 0 ? "#fbbf24" : "#ef4444";
-                  const kellyLabel = kelly == null ? "--" : (kelly * 100).toFixed(0) + "% full / " + (halfK * 100).toFixed(0) + "% half";
-                  return e("div", { style: { display: "flex", justifyContent: "space-between", marginTop: 4, fontSize: 10 }, title: "Single-scenario Kelly: p=" + (p*100).toFixed(0) + "%, return=" + (retUp*100).toFixed(0) + "%. f* = p - (1-p)/b. Half Kelly recommended to reduce volatility." },
-                    e("span", { style: { color: "#6b7080" } }, "Kelly (f* / f*/2)"),
-                    e("span", { style: { fontFamily: "'JetBrains Mono'", color: kellyCol, fontWeight: 600 } }, kellyLabel)
-                  );
-                })()
+                )
               );
               });
             })()

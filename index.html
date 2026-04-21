@@ -277,6 +277,149 @@ function computeTPShifted(cfg,assetId,indId,pos,apr,weights,mode){
   }
   return computeAll(mod).weightedTP;
 }
+
+// ================================================================
+// PORTFOLIO KELLY OPTIMIZER (multi-asset, taxonomy-correlated)
+// Solves: max_f E[ln(1 + Σ f_i·r_i)]  s.t.  f∈[0,maxPos], Σf≤1, per-L1 ≤ maxL2
+// ================================================================
+function _tickerCorr(a,b){
+  if(!a||!b) return 0.15;                                 // baseline biotech beta
+  const A=a.split("."), B=b.split(".");
+  if(A[0]!==B[0]) return 0.15;                            // different L1
+  if(A.length<2||B.length<2||A[1]!==B[1]) return 0.25;    // same L1
+  if(A.length<3||B.length<3||A[2]!==B[2]) return 0.45;    // same L2
+  return 0.70;                                            // same L3
+}
+function _cholesky(M){
+  const n=M.length, L=Array.from({length:n},()=>new Float64Array(n));
+  for(let i=0;i<n;i++) for(let j=0;j<=i;j++){
+    let s=M[i][j];
+    for(let k=0;k<j;k++) s-=L[i][k]*L[j][k];
+    if(i===j){ L[i][j]=Math.sqrt(Math.max(s,1e-10)); }
+    else L[i][j]=s/L[j][j];
+  }
+  return L;
+}
+function _randn(){ let u=0,v=0; while(u===0)u=Math.random(); while(v===0)v=Math.random(); return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v); }
+function _ncdf(x){ const t=1/(1+0.2316419*Math.abs(x)); const d=0.3989422804*Math.exp(-x*x/2);
+  const p=d*t*(0.3193815+t*(-0.3565638+t*(1.781478+t*(-1.821256+t*1.330274)))); return x>0?1-p:p; }
+function _primaryArea(meta){
+  const foc=(meta.focusWtd&&meta.focusWtd.length?meta.focusWtd:(meta.focus||[]));
+  if(!foc.length) return "";
+  const l3=foc.find(f=>f.area.split(".").length>=3); if(l3) return l3.area;
+  const l2=foc.find(f=>f.area.split(".").length===2); if(l2) return l2.area;
+  return foc[0].area;
+}
+function runPortfolioKelly(rows, configs, opts){
+  opts=opts||{};
+  const N=opts.N||5000, maxPos=opts.maxPos||0.25, maxL2=opts.maxL2||0.40;
+  const kFrac=opts.kFrac||0.5, iters=opts.iters||300, ridge=opts.ridge||0.10;
+
+  // Build ticker list with scenario (p, r) pairs
+  const tix=[];
+  rows.forEach(r=>{
+    const cfg=configs[r.ticker]; if(!cfg||!cfg.scenarios) return;
+    const sks=Object.keys(cfg.scenarios);
+    const wts=sks.map(s=>cfg.scenarios[s].wt||0);
+    const tw=wts.reduce((a,b)=>a+b,0); if(tw<=0) return;
+    const pairs=sks.map((sk,i)=>({p:wts[i]/tw, r:(r.tps[sk]-r.price)/r.price}))
+                   .filter(x=>isFinite(x.r));
+    if(pairs.length<2) return;
+    let cum=0; const cdf=pairs.map(x=>({r:x.r, upTo:(cum+=x.p)}));
+    const area=_primaryArea(r.meta);
+    tix.push({ticker:r.ticker, area, l1:area.split(".")[0]||"_other", pairs, cdf,
+              expR: pairs.reduce((s,p)=>s+p.p*p.r,0)});
+  });
+  const K=tix.length; if(K<2) return null;
+
+  // Correlation matrix with ridge shrinkage toward identity (ensures PD)
+  const C=Array.from({length:K},()=>new Float64Array(K));
+  for(let i=0;i<K;i++){ C[i][i]=1;
+    for(let j=0;j<i;j++){
+      const rho=(1-ridge)*_tickerCorr(tix[i].area, tix[j].area);
+      C[i][j]=rho; C[j][i]=rho;
+    }
+  }
+  const L=_cholesky(C);
+
+  // Monte Carlo: N samples × K assets
+  const R=Array.from({length:N},()=>new Float64Array(K));
+  const g=new Float64Array(K), z=new Float64Array(K);
+  for(let n=0;n<N;n++){
+    for(let k=0;k<K;k++) g[k]=_randn();
+    for(let i=0;i<K;i++){ let s=0; for(let j=0;j<=i;j++) s+=L[i][j]*g[j]; z[i]=s; }
+    for(let i=0;i<K;i++){
+      const u=_ncdf(z[i]); const cdf=tix[i].cdf;
+      let pick=cdf[cdf.length-1].r;
+      for(const c of cdf){ if(u<=c.upTo){ pick=c.r; break; } }
+      R[n][i]=pick;
+    }
+  }
+
+  const l1Groups={}; tix.forEach((t,i)=>{ (l1Groups[t.l1]=l1Groups[t.l1]||[]).push(i); });
+
+  function gradU(f){
+    const grad=new Float64Array(K); let U=0;
+    for(let n=0;n<N;n++){
+      let pr=1; const row=R[n];
+      for(let i=0;i<K;i++) pr+=f[i]*row[i];
+      if(pr<1e-6) pr=1e-6;
+      U+=Math.log(pr);
+      const inv=1/pr;
+      for(let i=0;i<K;i++) grad[i]+=row[i]*inv;
+    }
+    for(let i=0;i<K;i++) grad[i]/=N;
+    return {U:U/N, g:grad};
+  }
+  function project(f){
+    for(let i=0;i<K;i++){ if(f[i]<0) f[i]=0; if(f[i]>maxPos) f[i]=maxPos; }
+    for(const l1 in l1Groups){ let s=0; const idx=l1Groups[l1];
+      for(const i of idx) s+=f[i];
+      if(s>maxL2){ const sc=maxL2/s; for(const i of idx) f[i]*=sc; }
+    }
+    let tot=0; for(let i=0;i<K;i++) tot+=f[i];
+    if(tot>1){ const sc=1/tot; for(let i=0;i<K;i++) f[i]*=sc; }
+  }
+
+  // Warm start: seed proportional to positive expected return
+  const fFull=new Float64Array(K);
+  let posEdge=0; tix.forEach((t,i)=>{ if(t.expR>0){ fFull[i]=t.expR; posEdge+=t.expR; } });
+  if(posEdge>0){ const sc=0.5/posEdge; for(let i=0;i<K;i++) fFull[i]*=sc; } // start at 50% total
+  project(fFull);
+
+  let eta=0.05, prevU=-Infinity;
+  for(let it=0;it<iters;it++){
+    const {U,g}=gradU(fFull);
+    for(let i=0;i<K;i++) fFull[i]+=eta*g[i];
+    project(fFull);
+    if(it>30 && Math.abs(U-prevU)<1e-6) break;
+    prevU=U; eta*=0.996;
+  }
+
+  // Fractional Kelly scaling
+  const fUse=new Float64Array(K);
+  for(let i=0;i<K;i++) fUse[i]=fFull[i]*kFrac;
+
+  // Stats on the CHOSEN fractional portfolio
+  const rets=new Float64Array(N);
+  for(let n=0;n<N;n++){ let pr=0; for(let i=0;i<K;i++) pr+=fUse[i]*R[n][i]; rets[n]=pr; }
+  const sorted=Array.from(rets).sort((a,b)=>a-b);
+  const pct=q=>sorted[Math.max(0,Math.min(N-1,Math.floor(q*N)))];
+  const meanArith=sorted.reduce((a,b)=>a+b,0)/N;
+  let meanLog=0; for(let n=0;n<N;n++) meanLog+=Math.log(Math.max(1+rets[n],1e-6));
+  meanLog/=N;
+  const drawProb=sorted.filter(r=>r<-0.2).length/N;
+  let totalDeployed=0; for(let i=0;i<K;i++) totalDeployed+=fUse[i];
+
+  const weights=tix.map((t,i)=>({ticker:t.ticker, area:t.area, l1:t.l1,
+      wFull:fFull[i], w:fUse[i], expR:t.expR}))
+    .sort((a,b)=>b.w-a.w);
+
+  return {weights, expectedLog:meanLog, expectedArith:meanArith,
+          pct5:pct(0.05), pct50:pct(0.5), pct95:pct(0.95),
+          drawdownProb:drawProb, totalDeployed, N, K, maxPos, maxL2, kFrac};
+}
+
 // Compute catalyst impact as % change in model TP (not vs stock price)
 function computeCatalysts(cfg,currentPrice){
   if(!cfg.catalysts||!cfg.catalysts.length)return[];
@@ -585,6 +728,11 @@ async function main(){
   let catERMin=null; // expected return min filter; null = use computed bound
   let catERMax=null; // expected return max filter; null = use computed bound
   let catTickerFilter=null; // ticker to isolate on the chart; null = show all
+  // Portfolio Kelly state
+  let kellyOpen=false;
+  let kellyResult=null;
+  let kellyRunning=false;
+  let kellyOpts={kFrac:0.5, maxPos:0.20, maxL2:0.40, N:5000};
 
   function bucketOf(r){
     if(r.tps.bear!=null&&r.price<r.tps.bear)return 'below_bear';
@@ -895,6 +1043,91 @@ async function main(){
 
       const fmtB = v => v >= 1000 ? '$'+(v/1000).toFixed(1)+'B' : '$'+Math.round(v)+'M';
       const nice = s => s.replace(/_/g,' ');
+
+      // ============== PORTFOLIO KELLY CARD ==============
+      h+='<div class="card" id="sec-kelly"><div class="card-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;cursor:pointer" onclick="window._kellyToggle()">';
+      h+='<div><div class="dot" style="background:linear-gradient(180deg,#fbbf24,#22c55e);display:inline-block;vertical-align:middle;margin-right:8px"></div>Portfolio Kelly Optimizer <span style="font-size:.62rem;color:#6b7080;font-weight:400;margin-left:6px">multi-asset \u00b7 taxonomy-correlated</span></div>';
+      h+=`<div style="font-size:.7rem;color:#6b7080">${kellyOpen?'\u25BE collapse':'\u25B8 expand'}</div>`;
+      h+='</div>';
+      if(kellyOpen){
+        h+='<div class="card-sub">Solves f* = argmax E[ln(1 + \u03A3 f\u1D62\u00B7r\u1D62)] across '+rows.length+' names. Correlation from taxonomy: same-L3 \u03C1=0.70, same-L2 \u03C1=0.45, same-L1 \u03C1=0.25, sector beta \u03C1=0.15 (10% shrinkage toward identity for PD).</div>';
+        // Controls
+        h+='<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;padding:10px 0;border-bottom:1px solid #ffffff0a;margin-bottom:12px">';
+        // Kelly fraction
+        h+='<div style="display:flex;gap:4px;align-items:center"><span style="font-size:.7rem;color:#6b7080">Kelly fraction:</span>';
+        [[1.0,'Full'],[0.5,'Half'],[0.25,'Quarter'],[0.125,'Eighth']].forEach(([v,lbl])=>{
+          const act=Math.abs(kellyOpts.kFrac-v)<1e-6;
+          h+=`<span class="fchip ${act?'active':''}" onclick="window._kellyFrac(${v})" style="padding:2px 8px;font-size:.65rem">${lbl}</span>`;
+        });
+        h+='</div>';
+        // Max position
+        h+=`<div style="display:flex;gap:6px;align-items:center"><span style="font-size:.7rem;color:#6b7080">Max per name:</span><input type="range" min="5" max="50" step="5" value="${Math.round(kellyOpts.maxPos*100)}" oninput="window._kellyMaxPos(this.value)" style="width:80px"><span style="font-family:var(--mono);font-size:.7rem;color:#b0b4c0;min-width:32px">${Math.round(kellyOpts.maxPos*100)}%</span></div>`;
+        // Max L1 sector
+        h+=`<div style="display:flex;gap:6px;align-items:center"><span style="font-size:.7rem;color:#6b7080">Max per L1:</span><input type="range" min="20" max="100" step="5" value="${Math.round(kellyOpts.maxL2*100)}" oninput="window._kellyMaxL2(this.value)" style="width:80px"><span style="font-family:var(--mono);font-size:.7rem;color:#b0b4c0;min-width:32px">${Math.round(kellyOpts.maxL2*100)}%</span></div>`;
+        // Run button
+        h+=`<span class="fchip ${kellyRunning?'':'active'}" style="padding:4px 12px;font-size:.7rem;background:${kellyRunning?'#333':'#fbbf2422'};border-color:${kellyRunning?'#666':'#fbbf2466'};color:${kellyRunning?'#888':'#fbbf24'}" onclick="${kellyRunning?'':'window._kellyRun()'}">${kellyRunning?'\u23F3 Running...':'\u25B6 Run Monte Carlo ('+kellyOpts.N+' samples)'}</span>`;
+        h+='</div>';
+
+        if(!kellyResult && !kellyRunning){
+          h+='<div style="padding:20px;text-align:center;color:#6b7080;font-size:.75rem">Click <b>Run</b> to compute optimal portfolio weights across all '+rows.length+' names. Takes ~1-2 seconds.</div>';
+        } else if(kellyRunning){
+          h+='<div style="padding:20px;text-align:center;color:#fbbf24;font-size:.75rem">\u23F3 Sampling correlated scenarios and optimizing... this takes ~1-2s.</div>';
+        } else if(kellyResult){
+          const kr=kellyResult;
+          const held=kr.weights.filter(w=>w.w>0.005);
+          const excluded=kr.weights.filter(w=>w.w<=0.005);
+          // Stats row
+          h+='<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:12px">';
+          const stat=(lbl,val,col)=>`<div style="background:#0a0c10;border:1px solid #ffffff10;border-radius:4px;padding:8px"><div style="font-size:.6rem;color:#6b7080;margin-bottom:2px">${lbl}</div><div style="font-size:1rem;font-weight:700;color:${col};font-family:var(--mono)">${val}</div></div>`;
+          const pctS=v=>(v>=0?'+':'')+(v*100).toFixed(1)+'%';
+          h+=stat('TOTAL DEPLOYED',(kr.totalDeployed*100).toFixed(0)+'%','#60a5fa');
+          h+=stat('E[LOG RETURN]',pctS(kr.expectedLog),kr.expectedLog>0?'#22c55e':'#ef4444');
+          h+=stat('MEDIAN RETURN',pctS(kr.pct50),kr.pct50>0?'#22c55e':'#ef4444');
+          h+=stat('5%-95% RANGE',pctS(kr.pct5)+' \u2192 '+pctS(kr.pct95),'#b0b4c0');
+          h+=stat('P(DRAWDOWN > 20%)',(kr.drawdownProb*100).toFixed(0)+'%',kr.drawdownProb<0.15?'#22c55e':kr.drawdownProb<0.30?'#fbbf24':'#ef4444');
+          h+='</div>';
+
+          // Held positions table
+          h+='<div style="font-size:.7rem;color:#fbbf24;font-weight:600;letter-spacing:.5px;margin-bottom:6px">RECOMMENDED POSITIONS ('+held.length+' names, '+kr.K+' considered)</div>';
+          if(held.length===0){
+            h+='<div style="color:#6b7080;font-size:.75rem;padding:12px">No positive-edge positions at current price / scenario weights. All tickers had negative or zero optimal weight.</div>';
+          } else {
+            h+='<div style="display:grid;grid-template-columns:60px 1fr 80px 80px 80px;gap:4px;padding:4px 0;border-bottom:1px solid #ffffff15;font-size:.62rem;color:#6b7080;letter-spacing:.5px">';
+            h+='<div>TICKER</div><div>AREA</div><div style="text-align:right">WEIGHT</div><div style="text-align:right">FULL-K</div><div style="text-align:right">E[r]</div>';
+            h+='</div>';
+            held.forEach(w=>{
+              const wPct=(w.w*100).toFixed(1);
+              const wFullPct=(w.wFull*100).toFixed(0);
+              const expPct=((w.expR)*100).toFixed(0);
+              const barW=Math.min(100,w.w/kr.maxPos*100);
+              h+=`<div style="display:grid;grid-template-columns:60px 1fr 80px 80px 80px;gap:4px;padding:5px 0;border-bottom:1px solid #ffffff06;font-size:.72rem;align-items:center">`;
+              h+=`<a href="model.html?ticker=${w.ticker}" style="font-weight:700;color:#e2e4ea;text-decoration:none;font-family:var(--mono)">${w.ticker}</a>`;
+              h+=`<div style="color:#b0b4c0;font-size:.65rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${w.area}">${w.area.replace(/_/g,' ')}</div>`;
+              h+=`<div style="text-align:right;font-family:var(--mono);font-weight:700;color:#22c55e;position:relative"><div style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:${barW}%;height:14px;background:linear-gradient(90deg,#22c55e22,#22c55e44);border-right:2px solid #22c55e;z-index:0"></div><span style="position:relative;z-index:1">${wPct}%</span></div>`;
+              h+=`<div style="text-align:right;font-family:var(--mono);color:#6b7080">${wFullPct}%</div>`;
+              h+=`<div style="text-align:right;font-family:var(--mono);color:${w.expR>0?'#22c55e':'#ef4444'}">${w.expR>=0?'+':''}${expPct}%</div>`;
+              h+=`</div>`;
+            });
+          }
+
+          // Excluded names (collapsed summary)
+          if(excluded.length>0){
+            h+=`<div style="margin-top:10px;font-size:.65rem;color:#6b7080"><b>Not held (${excluded.length}):</b> `;
+            h+=excluded.map(w=>w.ticker).join(', ');
+            h+=' <span style="color:#555">\u2014 negative edge, worse risk-adjusted than peers, or displaced by correlation.</span></div>';
+          }
+
+          // Interpretation
+          h+='<div style="margin-top:10px;padding:8px;background:#0a0c10;border-left:3px solid #fbbf24;font-size:.7rem;color:#b0b4c0;line-height:1.5">';
+          const fracLbl = kr.kFrac===1?'full':kr.kFrac===0.5?'half':kr.kFrac===0.25?'quarter':(kr.kFrac*100).toFixed(0)+'%';
+          h+=`<b style="color:#fbbf24">\u{1F4CA} How to read:</b> At <b>${fracLbl}-Kelly</b> with max ${(kr.maxPos*100).toFixed(0)}% per name and ${(kr.maxL2*100).toFixed(0)}% per L1 sector, the optimizer allocates <b>${(kr.totalDeployed*100).toFixed(0)}%</b> of equity across <b>${held.length}</b> names. Remaining <b>${(100-kr.totalDeployed*100).toFixed(0)}%</b> in cash. Expected geometric return: <b>${pctS(kr.expectedLog)}</b> per period. Try <b>Full Kelly</b> to see max-growth sizing (very concentrated), or <b>Quarter Kelly</b> for defensive (robust to probability misspecification).`;
+          h+='</div>';
+        }
+        h+='</div>';  // close kelly card
+      } else {
+        h+='</div>';  // close collapsed kelly card
+      }
+      // ============== /PORTFOLIO KELLY CARD ==============
 
       h+='<div class="card" id="sec-markets"><div class="card-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div><div class="dot" style="background:linear-gradient(180deg,#f97316,#a855f7);display:inline-block;vertical-align:middle;margin-right:8px"></div>Market Explorer</div>';
       // Sort chips
@@ -1745,6 +1978,21 @@ async function main(){
   window._fClear=function(){filterL1.clear();filterL2.clear();filterL3.clear();filterL4.clear();filterPhase=null;filterRare=null;filterMod1=null;filterMod2=null;filterMod3=null;activeFilter=null;stripSort='base';render();};
   window._setCorr=function(v){window._corrVal=+v;render();};
   window._setOvr=function(tk,v){if(!window._manualOvr)window._manualOvr={};if(v==='auto')delete window._manualOvr[tk];else window._manualOvr[tk]=+v;render();};
+  // Portfolio Kelly handlers
+  window._kellyToggle=function(){kellyOpen=!kellyOpen;render();};
+  window._kellyRun=function(){
+    if(kellyRunning) return;
+    kellyRunning=true; render();
+    // Defer to next frame so UI updates before heavy computation
+    setTimeout(()=>{
+      try{ kellyResult=runPortfolioKelly(rows, configs, kellyOpts); }
+      catch(e){ console.error('Kelly failed',e); kellyResult=null; }
+      kellyRunning=false; render();
+    },30);
+  };
+  window._kellyFrac=function(v){kellyOpts.kFrac=+v; render();};
+  window._kellyMaxPos=function(v){kellyOpts.maxPos=+v/100; render();};
+  window._kellyMaxL2=function(v){kellyOpts.maxL2=+v/100; render();};
   window._ddOpen=function(){document.getElementById('ddList')?.classList.add('open');};
   window._ddClose=function(){document.getElementById('ddList')?.classList.remove('open');};
   window._ddFilter=function(q){const dd=document.getElementById('ddList');if(!dd)return;dd.classList.add('open');

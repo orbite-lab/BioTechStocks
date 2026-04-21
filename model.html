@@ -1011,13 +1011,6 @@
                 e("div", { style: { fontSize: 11, fontWeight: 600, color: "#fbbf24", letterSpacing: 0.5 } }, "PORTFOLIO KELLY (multi-scenario)"),
                 e("div", { style: { fontSize: 10, color: "#6b7080" } }, "solves f* = argmax \u03A3 p\u1D62 \u00D7 ln(1 + f\u00B7r\u1D62)")
               ),
-              // Scenario summary row
-              e("div", { style: { display: "grid", gridTemplateColumns: "repeat(" + pairs.length + ", 1fr)", gap: 6, marginBottom: 10, fontSize: 10 } },
-                ...pairs.map(x => e("div", { key: x.sk, style: { background: "#000", border: "1px solid #ffffff10", borderRadius: 4, padding: "4px 6px" } },
-                  e("div", { style: { color: CC[x.sk] || "#b0b4c0", fontWeight: 600 } }, x.sk),
-                  e("div", { style: { color: "#6b7080", fontFamily: "'JetBrains Mono'" } }, "p=" + pct(x.p) + " r=" + (x.r >= 0 ? "+" : "") + pct(x.r))
-                ))
-              ),
               // Kelly result row
               e("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 8, marginBottom: 8 } },
                 e("div", { style: { background: "#000", border: "1px solid " + kCol + "40", borderRadius: 4, padding: 8 } },

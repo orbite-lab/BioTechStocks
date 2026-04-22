@@ -16,7 +16,7 @@ def load_taxonomy():
     if not TAXONOMY.exists():
         print("[WARN]  taxonomy.json not found -- generating from configs (first run)")
         return None, None
-    t = json.loads(TAXONOMY.read_text())
+    t = json.loads(TAXONOMY.read_text(encoding="utf-8"))
     areas = set()
     for l1, l2s in t["therapeutic_areas"].items():
         for l2, l3s in l2s.items():
@@ -51,7 +51,7 @@ def validate():
             continue
         
         try:
-            d = json.loads(cfg_path.read_text())
+            d = json.loads(cfg_path.read_text(encoding="utf-8"))
         except json.JSONDecodeError as e:
             errors.append(f"{tk}: invalid JSON -- {e}")
             continue

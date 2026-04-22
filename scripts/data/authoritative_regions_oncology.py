@@ -97,26 +97,34 @@ REGIONS = {
         "eu":  {"patientsK": 200, "wtpPct": 45, "priceK": 130},
         "row": {"patientsK": 250, "wtpPct": 12, "priceK": 50},
     },
-    "oncology.hematology.cll_nhl.bcl2": {
-        "us":  {"patientsK": 80,  "wtpPct": 65, "priceK": 165},
-        "eu":  {"patientsK": 90,  "wtpPct": 48, "priceK": 95},
-        "row": {"patientsK": 110, "wtpPct": 14, "priceK": 35},
+    # CLL/NHL line-of-disease L4 sub-segments. Patient counts approximate
+    # the eligible treated cohort per year (incidence x treated-share).
+    # source: SEER, NORD, Lymphoma Research Foundation epi summaries
+    "oncology.hematology.cll_nhl.cll": {
+        # CLL ~21K US incident/yr but ~80K actively-treated prevalent (5-10yr survival
+        # on BTK/BCL2). Sized for annual treated cohort since drugs are continuous.
+        # Supports Imbruvica + Calquence/Brukinsa + Venclexta combined ~$10B WW
+        "us":  {"patientsK": 80,  "wtpPct": 70, "priceK": 100},
+        "eu":  {"patientsK": 95,  "wtpPct": 50, "priceK": 60},
+        "row": {"patientsK": 150, "wtpPct": 12, "priceK": 25},
     },
-    "oncology.hematology.cll_nhl.btk_resistant": {
-        "us":  {"patientsK": 12, "wtpPct": 60, "priceK": 215},
-        "eu":  {"patientsK": 18, "wtpPct": 42, "priceK": 125},
-        "row": {"patientsK": 25, "wtpPct": 10, "priceK": 45},
+    "oncology.hematology.cll_nhl.fl": {
+        # Follicular lymphoma + indolent NHL ~14K US new/yr; many on watch-and-wait
+        # blended price reflects mix of rituximab/lenalidomide/bispecifics/CAR-T
+        "us":  {"patientsK": 14, "wtpPct": 65, "priceK": 80},
+        "eu":  {"patientsK": 17, "wtpPct": 48, "priceK": 50},
+        "row": {"patientsK": 30, "wtpPct": 12, "priceK": 20},
     },
-    "oncology.hematology.cll_nhl.car_t_combo": {
-        "us":  {"patientsK": 5, "wtpPct": 55, "priceK": 440},
-        "eu":  {"patientsK": 4, "wtpPct": 38, "priceK": 260},
-        "row": {"patientsK": 3, "wtpPct": 10, "priceK": 85},
+    "oncology.hematology.cll_nhl.mcl": {
+        # Mantle cell lymphoma ~5K US new/yr; aggressive, BTK + CAR-T
+        "us":  {"patientsK": 5, "wtpPct": 70, "priceK": 120},
+        "eu":  {"patientsK": 6, "wtpPct": 52, "priceK": 75},
+        "row": {"patientsK": 10, "wtpPct": 10, "priceK": 30},
     },
-    "oncology.hematology.cll_nhl.dlbcl": {
-        "us":  {"patientsK": 40,  "wtpPct": 68, "priceK": 195},
-        "eu":  {"patientsK": 38,  "wtpPct": 50, "priceK": 115},
-        "row": {"patientsK": 120, "wtpPct": 15, "priceK": 40},
-    },
+    # Note: BCL2-targeted, BTK-resistant, and CAR-T-combo populations are
+    # *clinical sub-cohorts* of CLL but were previously tagged as L4. They
+    # are now collapsed back into cll_nhl.cll. CAR-T platform-level analysis
+    # belongs in the Technology Explorer (cell_therapy.car_t_*).
     "oncology.hematology.dlbcl": {
         "us":  {"patientsK": 40,  "wtpPct": 68, "priceK": 195},
         "eu":  {"patientsK": 38,  "wtpPct": 50, "priceK": 115},
@@ -283,10 +291,9 @@ PEN_PCT = {
     "oncology.gynecologic.ovarian": 52,
     "oncology.hematology.aml": 48,
     "oncology.hematology.cll_nhl": 47,
-    "oncology.hematology.cll_nhl.bcl2": 40,
-    "oncology.hematology.cll_nhl.btk_resistant": 35,
-    "oncology.hematology.cll_nhl.car_t_combo": 30,
-    "oncology.hematology.cll_nhl.dlbcl": 52,
+    "oncology.hematology.cll_nhl.cll": 65,
+    "oncology.hematology.cll_nhl.fl": 45,
+    "oncology.hematology.cll_nhl.mcl": 50,
     "oncology.hematology.dlbcl": 55,
     "oncology.hematology.myeloma": 58,
     "oncology.hematology.myeloma.1l": 70,

@@ -1805,25 +1805,25 @@
         {
           "id": "cll",
           "name": "CLL/SLL + MCL",
-          "area": "oncology.hematology.cll_nhl",
+          "area": "oncology.hematology.cll_nhl.cll",
           "market": {
             "tamB": 6,
-            "penPct": 47,
+            "penPct": 65,
             "regions": {
               "us": {
-                "patientsK": 180,
-                "wtpPct": 60,
-                "priceK": 220
+                "patientsK": 80,
+                "wtpPct": 70,
+                "priceK": 100
               },
               "eu": {
-                "patientsK": 200,
-                "wtpPct": 45,
-                "priceK": 130
+                "patientsK": 95,
+                "wtpPct": 50,
+                "priceK": 60
               },
               "row": {
-                "patientsK": 250,
+                "patientsK": 150,
                 "wtpPct": 12,
-                "priceK": 50
+                "priceK": 25
               }
             },
             "sources": {
@@ -1858,21 +1858,21 @@
                 "note": "~47% peak -- BTKi + CAR-T + bispecifics combined capture of eligible CLL/NHL over 5yr."
               }
             },
-            "salesM": 2800.0,
+            "salesM": 1500,
             "salesYear": 2025,
             "company_slice": {
               "us": {
-                "reachPct": 15.4,
+                "reachPct": 25,
                 "wtpPct": 55,
-                "priceK": 200
+                "priceK": 180
               },
               "eu": {
-                "reachPct": 10.2,
+                "reachPct": 18,
                 "wtpPct": 45,
-                "priceK": 120
+                "priceK": 110
               },
               "row": {
-                "reachPct": 3.7,
+                "reachPct": 5,
                 "wtpPct": 10,
                 "priceK": 45
               }
@@ -1904,8 +1904,10 @@
               },
               "row.priceK": {
                 "note": "$45K blended -- Japan ~$80K NHI, China NRDL ~$30K."
-              }
-            }
+              },
+              "_split": "Imbruvica is approved CLL+MCL+WM+MZL+cGVHD; only CLL slice (largest) modeled here"
+            },
+            "notes": "CLL portion of Imbruvica franchise (~55% of $2.8B WW). Remainder (MCL, WM, MZL, cGVHD) not separately modeled."
           },
           "company_slice": {
             "us": {
@@ -1939,25 +1941,25 @@
         {
           "id": "cll_ven",
           "name": "CLL/SLL (venetoclax)",
-          "area": "oncology.hematology.cll_nhl.bcl2",
+          "area": "oncology.hematology.cll_nhl.cll",
           "market": {
             "tamB": 5,
-            "penPct": 40,
+            "penPct": 65,
             "regions": {
               "us": {
                 "patientsK": 80,
-                "wtpPct": 65,
-                "priceK": 165
+                "wtpPct": 70,
+                "priceK": 100
               },
               "eu": {
-                "patientsK": 90,
-                "wtpPct": 48,
-                "priceK": 95
+                "patientsK": 95,
+                "wtpPct": 50,
+                "priceK": 60
               },
               "row": {
-                "patientsK": 110,
-                "wtpPct": 14,
-                "priceK": 35
+                "patientsK": 150,
+                "wtpPct": 12,
+                "priceK": 25
               }
             },
             "sources": {
@@ -1996,19 +1998,19 @@
             "salesYear": 2025,
             "company_slice": {
               "us": {
-                "reachPct": 18.5,
+                "reachPct": 18,
                 "wtpPct": 60,
-                "priceK": 180
+                "priceK": 175
               },
               "eu": {
-                "reachPct": 13.3,
+                "reachPct": 14,
                 "wtpPct": 48,
-                "priceK": 110
+                "priceK": 105
               },
               "row": {
-                "reachPct": 3.7,
+                "reachPct": 4,
                 "wtpPct": 12,
-                "priceK": 50
+                "priceK": 45
               }
             },
             "company_slice_sources": {

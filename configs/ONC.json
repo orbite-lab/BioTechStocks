@@ -23,26 +23,26 @@
           "id": "btk",
           "name": "CLL + MCL + WM + B-cell malignancies",
           "market": {
-            "notes": "Brukinsa 2025: $3.9B (+49%), US $2.8B. Global BTKi leader. 75+ markets. 87% GM.",
+            "notes": "CLL portion of BTK franchise (~70% of $3.9B WW). MCL/WM/MZL not modeled.",
             "tamB": 12.0,
-            "penPct": 47,
-            "salesM": 3900.0,
+            "penPct": 65,
+            "salesM": 2800,
             "salesYear": 2025,
             "regions": {
               "us": {
-                "patientsK": 180,
-                "wtpPct": 60,
-                "priceK": 220
+                "patientsK": 80,
+                "wtpPct": 70,
+                "priceK": 100
               },
               "eu": {
-                "patientsK": 200,
-                "wtpPct": 45,
-                "priceK": 130
+                "patientsK": 95,
+                "wtpPct": 50,
+                "priceK": 60
               },
               "row": {
-                "patientsK": 250,
+                "patientsK": 150,
                 "wtpPct": 12,
-                "priceK": 50
+                "priceK": 25
               }
             },
             "sources": {
@@ -79,17 +79,17 @@
             },
             "company_slice": {
               "us": {
-                "reachPct": 22,
-                "wtpPct": 65,
-                "priceK": 210
+                "reachPct": 40,
+                "wtpPct": 60,
+                "priceK": 195
               },
               "eu": {
-                "reachPct": 15,
+                "reachPct": 30,
                 "wtpPct": 48,
-                "priceK": 125
+                "priceK": 115
               },
               "row": {
-                "reachPct": 4,
+                "reachPct": 8,
                 "wtpPct": 12,
                 "priceK": 50
               }
@@ -124,7 +124,7 @@
               }
             }
           },
-          "area": "oncology.hematology.cll_nhl"
+          "area": "oncology.hematology.cll_nhl.cll"
         }
       ],
       "modality": "small_molecule.kinase_inhibitor.btk_inhibitor"
@@ -257,24 +257,24 @@
           "name": "CLL + NHL (BCL2)",
           "market": {
             "tamB": 8.0,
-            "penPct": 40,
+            "penPct": 65,
             "peakYear": 2033,
             "notes": "Potentially best-in-class BCL2. Brukinsa+sonro fixed-duration CLL. $3-5B peak.",
             "regions": {
               "us": {
                 "patientsK": 80,
-                "wtpPct": 65,
-                "priceK": 165
+                "wtpPct": 70,
+                "priceK": 100
               },
               "eu": {
-                "patientsK": 90,
-                "wtpPct": 48,
-                "priceK": 95
+                "patientsK": 95,
+                "wtpPct": 50,
+                "priceK": 60
               },
               "row": {
-                "patientsK": 110,
-                "wtpPct": 14,
-                "priceK": 35
+                "patientsK": 150,
+                "wtpPct": 12,
+                "priceK": 25
               }
             },
             "sources": {
@@ -356,7 +356,7 @@
               }
             }
           },
-          "area": "oncology.hematology.cll_nhl.bcl2"
+          "area": "oncology.hematology.cll_nhl.cll"
         }
       ],
       "modality": "small_molecule.enzyme_inhibitor.bcl2_inhibitor"
@@ -372,24 +372,24 @@
           "name": "BTK-resistant B-cell malignancies",
           "market": {
             "tamB": 6.0,
-            "penPct": 35,
+            "penPct": 65,
             "peakYear": 2034,
             "notes": "BTK degrader for resistance setting.",
             "regions": {
               "us": {
-                "patientsK": 12,
-                "wtpPct": 60,
-                "priceK": 215
+                "patientsK": 80,
+                "wtpPct": 70,
+                "priceK": 100
               },
               "eu": {
-                "patientsK": 18,
-                "wtpPct": 42,
-                "priceK": 125
+                "patientsK": 95,
+                "wtpPct": 50,
+                "priceK": 60
               },
               "row": {
-                "patientsK": 25,
-                "wtpPct": 10,
-                "priceK": 45
+                "patientsK": 150,
+                "wtpPct": 12,
+                "priceK": 25
               }
             },
             "sources": {
@@ -471,7 +471,7 @@
               }
             }
           },
-          "area": "oncology.hematology.cll_nhl.btk_resistant"
+          "area": "oncology.hematology.cll_nhl.cll"
         }
       ],
       "modality": "small_molecule.protein_degrader.btk_cdac"

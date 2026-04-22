@@ -86,6 +86,62 @@ Every indication has both:
 - `SOM ≥ salesM` for commercial drugs (peak can't be below current run rate)
 - Scenario TPs monotonic: mega_bear ≤ bear ≤ base ≤ bull ≤ psychedelic_bull
 
+### Pseudo-areas (`_*` prefix)
+
+Areas starting with `_` are **meta-tags, not real disease classifications**.
+Used for assets that don't fit the disease taxonomy:
+- Platform / discovery indications without a chosen lead disease
+- Pre-clinical research spanning multiple potential indications
+- Pure technology investments where forcing a disease tag would mislead
+
+Currently in use:
+- `_platform.adc_discovery` (6990 Daiichi ADC platform R&D)
+- `_platform.bicycle_discovery` (BCYC discovery pipeline)
+
+**Behavior:**
+- **Market Explorer** skips `_*` paths (clean disease drill-down)
+- **Technology Explorer** shows them (classified by modality, where platforms belong)
+- **validate.py** exempts from depth requirement and "missing TAM data" warning
+  (still errors if `area` is entirely missing)
+- **Audit** doesn't flag (no SOM/TAM math forced)
+- **Display labels** in `data/taxonomy.json display_names`
+
+**When to retire a `_*` tag**: once the asset picks a lead indication, retag to the
+proper disease L3 (`oncology.lung.nsclc_driver.her2` etc.) and populate market.
+
+### Modality taxonomy + display labels
+
+Each asset has a `modality` field with `L1.L2.L3` path. Auto-aggregated into
+`data/taxonomy.json modalities` by `scripts/recurring/rebuild_taxonomy.py`.
+
+13 L1 modality classes (each represents a structurally distinct production class):
+1. `small_molecule` — organic synthesis (kinase, GPCR, ion-channel, PPI, transporter, etc.)
+2. `peptide` — solid-phase synthesis (incretins, hormones, cyclic peptides)
+3. `antibody` — mAb / bispecific / fragment / fusion (Eylea is `antibody.fusion.vegf_trap`)
+4. `adc` — antibody-drug conjugates (DXd-linker, multi-payload, peptide-drug)
+5. `recombinant_protein` — non-antibody therapeutic proteins (cytokines, enzymes, toxins)
+6. `cell_therapy` — autologous / allogeneic / in vivo CAR-T (NK, TCR slots reserved)
+7. `gene_therapy` — DNA delivery one-shot (AAV, lentivirus reserved)
+8. `gene_editing` — CRISPR / base / prime editing (own L1, distinct production from AAV)
+9. `nucleic_acid` — RNA-modulating (ASO, siRNA, splice modulator, mRNA reserved)
+10. `radiopharmaceutical` — radioligand / radioconjugate / alpha-emitter
+11. `vaccine` — protein subunit / VLP / mRNA reserved
+12. `formulation_modifier` — long-acting depot, half-life extender, ocular sustained, etc.
+13. `aesthetic_or_other` — hyaluronic filler, etc.
+
+**Convention notes:**
+- Mechanism (agonist/antagonist) lives in L3, never as a sister L2 to structural class
+- Kinase inhibitors are technically enzymes but kept as their own L2 by pharma convention
+  (~1000 kinases, distinct ATP-pocket mechanism, distinct competitive landscape)
+- BCL-2 / MDM2-p53 / KRAS-SOS1 are **PPI** targets (`protein_protein_inhibitor`),
+  not enzyme inhibitors
+
+**Display labels** (`data/taxonomy.json.display_names`): human-readable UI strings
+for L1/L2/L3 keys. Used by index.html (Market+Tech Explorer) and model.html (asset
+chips). Lookup priority: exact match → last-segment match → underscore-replace
+fallback. Preserved across `rebuild_taxonomy.py` runs. Bulk-add via
+`scripts/archive/_add_display_names.py`.
+
 ### Scenarios
 
 Five: `mega_bear`, `bear`, `base`, `bull`, `psychedelic_bull`. Each has:
@@ -200,6 +256,13 @@ py scripts/recurring/rebuild_taxonomy.py
 4. **SOTP vs non-SOTP is sticky**: `recalibrate_mega_cap.py` detects
    `pipelineDR` in the val block and skips override — don't switch structures
    without intent.
+5. **Disease taxonomy is pure clinical** — never tag technology as a disease
+   sub-segment (no `myeloma.car_t`, no `cll_nhl.bcl2`). Technology lives in the
+   modality taxonomy. Use `_*` pseudo-areas for true platform/discovery assets
+   that can't pick a lead disease.
+6. **Multi-indication assets** (Imbruvica, Brukinsa, Dupixent, Darzalex, etc.)
+   should split `salesM` across their actual approved indications as separate
+   indication entries, not lumped into one.
 
 ## Where edits happen
 

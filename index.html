@@ -110,7 +110,8 @@ tbody tr:hover{background:#ffffff06}
 .fchip{padding:4px 10px;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--bg3);color:var(--text2);transition:.15s;white-space:nowrap}
 .fchip:hover{border-color:#60a5fa;color:var(--text1)}
 .fchip.active{background:#3b82f622;border-color:#3b82f6;color:#93c5fd}
-.fchip .cnt{font-size:.6rem;opacity:.6;margin-left:3px}
+.fchip .cnt{font-size:.6rem;opacity:.6;margin-left:5px}
+.fchip-rare .cnt{font-size:.6rem;opacity:.7;margin-left:5px}
 .fchip-rare{padding:4px 10px;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer;border:1px solid #f59e0b44;background:#f59e0b08;color:#f59e0b;transition:.15s}
 .fchip-rare:hover{border-color:#f59e0b;color:#fbbf24;background:#f59e0b18}
 .fchip-rare.active{background:#f59e0b22;border-color:#f59e0b;color:#fbbf24}
@@ -1296,18 +1297,36 @@ async function main(){
     let h='';
     let fh=''; // filter HTML → goes into sticky bar
 
-    // Filter bar — Area
+    // Compute aggregate TAM per L1 (for chip ordering by market size)
+    // Dedupe by leaf area so a popular L3 shared across companies counts once.
+    const l1Tams={}; const seenL3byL1={};
+    Object.values(configs).forEach(cfg=>{
+      cfg.assets.forEach(a=>(a.indications||[]).forEach(ind=>{
+        const ar=ind.area||''; if(!ar||ar.startsWith('_')) return;
+        const parts=ar.split('.'); const l1=parts[0];
+        const leaf=parts.slice(0,Math.min(parts.length,3)).join('.');
+        seenL3byL1[l1]=seenL3byL1[l1]||new Set();
+        if(seenL3byL1[l1].has(leaf)) return;
+        seenL3byL1[l1].add(leaf);
+        let tam=0; const m=ind.market||{};
+        for(const r of Object.values(m.regions||{})){
+          if(r) tam+=(r.patientsK||0)*((r.wtpPct||0)/100)*(r.priceK||0);
+        }
+        l1Tams[l1]=(l1Tams[l1]||0)+tam;
+      }));
+    });
+    // Filter bar — Area (sorted by total TAM desc, then count desc, then alpha)
     fh+='<div class="fbar">';
     fh+='<span class="fbar-lbl">Area</span>';
-    L1_ORDER.forEach(l1=>{
-      if(!l1Counts[l1])return;
-      const active=filterL1.has(l1);
-      fh+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')">${L1_NAMES[l1]||l1}<span class="cnt">${l1Counts[l1]}</span></span>`;
+    const sortedL1s=Object.keys(l1Counts).sort((a,b)=>{
+      const ta=(l1Tams[a]||0), tb=(l1Tams[b]||0);
+      if(ta!==tb) return tb-ta;
+      return (l1Counts[b]||0)-(l1Counts[a]||0);
     });
-    // Fallback: show any L1 from data not in L1_ORDER
-    Object.keys(l1Counts).filter(l1=>!L1_ORDER.includes(l1)).sort().forEach(l1=>{
+    sortedL1s.forEach(l1=>{
       const active=filterL1.has(l1);
-      fh+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')">${L1_NAMES[l1]||l1.replace(/_/g,' ')}<span class="cnt">${l1Counts[l1]}</span></span>`;
+      const tt=l1Tams[l1]?` title="Total TAM \$${(l1Tams[l1]/1000).toFixed(1)}B"`:'';
+      fh+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')"${tt}>${L1_NAMES[l1]||l1.replace(/_/g,' ')}<span class="cnt">${l1Counts[l1]}</span></span>`;
     });
     fh+='<span class="fsep"></span>';
     fh+='<span class="fbar-lbl">Phase</span>';

@@ -70,9 +70,12 @@ REGIONS = {
         "row": {"patientsK": 650, "wtpPct": 22, "priceK": 28},
     },
     "oncology.gi.pancreatic": {
-        "us":  {"patientsK": 45,  "wtpPct": 55, "priceK": 70},
-        "eu":  {"patientsK": 60,  "wtpPct": 42, "priceK": 40},
-        "row": {"patientsK": 250, "wtpPct": 14, "priceK": 15},
+        # bumped for next-gen RAS therapies (RVMD daraxonrasib): broader patient
+        # eligibility + premium pricing. Was $3.3B WW (Folfirinox + gem-Abrax era);
+        # now $6B WW reflecting 2027+ market with daraxonrasib at $150-200K WAC.
+        "us":  {"patientsK": 60,  "wtpPct": 60, "priceK": 110},
+        "eu":  {"patientsK": 80,  "wtpPct": 45, "priceK": 60},
+        "row": {"patientsK": 350, "wtpPct": 15, "priceK": 22},
     },
 
     # ------------------------------------------------------------

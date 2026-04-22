@@ -361,6 +361,178 @@
       "modality": "cell_therapy.car_t_autologous.bcma_car_t"
     },
     {
+      "id": "yescarta",
+      "name": "Yescarta (axicabtagene ciloleucel)",
+      "stage": "Commercial ($1.5B 2025, declining demand vs bispecifics)",
+      "modality": "cell_therapy.car_t_autologous",
+      "designations": [],
+      "indications": [
+        {
+          "id": "dlbcl_2l",
+          "name": "DLBCL 2L+ (relapsed/refractory)",
+          "area": "oncology.hematology.dlbcl",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 68,
+                "priceK": 195
+              },
+              "eu": {
+                "patientsK": 38,
+                "wtpPct": 50,
+                "priceK": 115
+              },
+              "row": {
+                "patientsK": 120,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 75,
+                "priceK": 480
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 55,
+                "priceK": 320
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 10,
+                "priceK": 150
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Yescarta first-mover CAR-T DLBCL; 2L approval 2022 (ZUMA-7); ~12% of relapsed DLBCL patients access",
+              "us.priceK": "WAC ~$465K + IRT/admin = $480K all-in"
+            },
+            "penPct": 55,
+            "cagrPct": -3,
+            "peakYear": 2027,
+            "salesM": 1050,
+            "salesYear": 2025,
+            "notes": "Demand lagging vs bispecifics (Tecvayli class) and improving 1L combos. Decline ~5-10% per year expected."
+          }
+        },
+        {
+          "id": "fl_inhl",
+          "name": "Follicular lymphoma + indolent NHL 3L+",
+          "area": "oncology.hematology.cll_nhl",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 180,
+                "wtpPct": 60,
+                "priceK": 220
+              },
+              "eu": {
+                "patientsK": 200,
+                "wtpPct": 45,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 250,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.8,
+                "wtpPct": 70,
+                "priceK": 480
+              },
+              "eu": {
+                "reachPct": 0.6,
+                "wtpPct": 50,
+                "priceK": 320
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 10,
+                "priceK": 150
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Yescarta FL approval 2021; smaller indication; ~4% of relapsed FL"
+            },
+            "penPct": 47,
+            "cagrPct": -2,
+            "peakYear": 2027,
+            "salesM": 430,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "tecartus",
+      "name": "Tecartus (brexucabtagene autoleucel)",
+      "stage": "Commercial ($360M 2025, MCL focus)",
+      "modality": "cell_therapy.car_t_autologous",
+      "designations": [],
+      "indications": [
+        {
+          "id": "mcl_2l",
+          "name": "Mantle cell lymphoma 2L+ (post-BTK)",
+          "area": "oncology.hematology.cll_nhl",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 180,
+                "wtpPct": 60,
+                "priceK": 220
+              },
+              "eu": {
+                "patientsK": 200,
+                "wtpPct": 45,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 250,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.54,
+                "wtpPct": 70,
+                "priceK": 480
+              },
+              "eu": {
+                "reachPct": 0.36,
+                "wtpPct": 52,
+                "priceK": 320
+              },
+              "row": {
+                "reachPct": 0.03,
+                "wtpPct": 10,
+                "priceK": 150
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Tecartus first-in-class CAR-T for MCL post-BTK inhibitor failure; ~18% of post-BTKi MCL pts access",
+              "us.priceK": "WAC ~$465K"
+            },
+            "penPct": 47,
+            "cagrPct": -3,
+            "peakYear": 2027,
+            "salesM": 340,
+            "salesYear": 2025,
+            "notes": "MCL is small market (~5K US/yr); Tecartus dominant CAR-T option but bispecifics encroaching."
+          }
+        }
+      ]
+    },
+    {
       "id": "liver",
       "name": "Liver disease + Veklury",
       "stage": "Commercial ($4.1B 2025)",

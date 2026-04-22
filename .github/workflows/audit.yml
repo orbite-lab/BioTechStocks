@@ -4,36 +4,73 @@ on:
     paths:
       - 'configs/**'
       - 'scripts/ops/audit_configs.py'
+      - 'scripts/ops/validate_schema.py'
+      - 'scripts/ops/snapshot_scenarios.py'
+      - 'scripts/lib/**'
+      - 'snapshots/**'
   push:
     branches: [main]
     paths:
       - 'configs/**'
       - 'scripts/ops/audit_configs.py'
+      - 'scripts/ops/validate_schema.py'
+      - 'scripts/ops/snapshot_scenarios.py'
+      - 'scripts/lib/**'
+      - 'snapshots/**'
   workflow_dispatch: {}
 
 jobs:
-  audit:
+  schema:
+    name: Schema validation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install deps
+        run: pip install jsonschema
+      - name: Validate all configs against schema
+        run: python scripts/ops/validate_schema.py
 
+  audit:
+    name: Sanity audit (SOM/TAM invariants)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Run audit
-        id: audit
         run: |
           python scripts/ops/audit_configs.py | tee audit.log
-          # Extract CRIT count from summary line: "CRIT: N  FLAG: M  WARN: K"
           CRIT=$(grep -oP 'CRIT: \K[0-9]+' audit.log | head -1)
           FLAG=$(grep -oP 'FLAG: \K[0-9]+' audit.log | head -1)
-          echo "crit=$CRIT" >> $GITHUB_OUTPUT
-          echo "flag=$FLAG" >> $GITHUB_OUTPUT
           echo "### Config Audit" >> $GITHUB_STEP_SUMMARY
           echo "- CRIT: $CRIT" >> $GITHUB_STEP_SUMMARY
           echo "- FLAG: $FLAG" >> $GITHUB_STEP_SUMMARY
           if [ "$CRIT" -gt 0 ]; then
-            echo "❌ CRIT > 0 -- blocking" >> $GITHUB_STEP_SUMMARY
+            echo "FAIL CRIT > 0 -- blocking" >> $GITHUB_STEP_SUMMARY
             exit 1
           fi
-          echo "✅ No critical issues" >> $GITHUB_STEP_SUMMARY
+          echo "OK no critical issues" >> $GITHUB_STEP_SUMMARY
+
+  snapshot:
+    name: Scenario snapshot diff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Diff vs baseline
+        run: |
+          python scripts/ops/snapshot_scenarios.py --ci | tee snapshot.log
+          echo "### Scenario snapshot diff" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          head -60 snapshot.log >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          if grep -q '^\[FAIL\]' snapshot.log; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**To accept intentional drift:** run \`py scripts/ops/snapshot_scenarios.py --update\` locally and commit the updated \`snapshots/scenarios.json\`." >> $GITHUB_STEP_SUMMARY
+          fi

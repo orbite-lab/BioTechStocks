@@ -1,71 +1,13 @@
 # -*- coding: utf-8 -*-
 """Quick audit across all configs -- flag inconsistencies, out-of-place values."""
-import json, os
+import json, os, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+from lib.compute import compute_tp, som_of, tam_of, SCENARIO_ORDER as SCEN_ORDER
+
 CONFIGS = ROOT / "configs"
-SCEN_ORDER = ["mega_bear", "bear", "base", "bull", "psychedelic_bull"]
-
-
-def som_of(m):
-    if "company_slice" not in m or "regions" not in m:
-        return 0
-    t = 0
-    for rk, cs in m["company_slice"].items():
-        tr = m["regions"].get(rk)
-        if not tr or not cs:
-            continue
-        t += (tr.get("patientsK", 0) or 0) * (cs.get("reachPct", 0) / 100) \
-             * (cs.get("wtpPct", 0) / 100) * (cs.get("priceK", 0) or 0)
-    return t
-
-
-def tam_of(m):
-    if "regions" not in m:
-        return 0
-    t = 0
-    for r in m["regions"].values():
-        if not r: continue
-        t += (r.get("patientsK", 0) or 0) * (r.get("wtpPct", 0) / 100) \
-             * (r.get("priceK", 0) or 0)
-    return t
-
-
-def compute_tp(cfg, sk):
-    scen = cfg["scenarios"].get(sk); co = cfg["company"]
-    if not scen: return None
-    val = scen["val"]; isSOTP = val.get("pipelineDR") is not None
-    pipeRA = totalRA = totalGross = 0
-    for a in cfg["assets"]:
-        stgL = (a.get("stage", "") or "").lower()
-        isComm = a["id"] == "commercial" or (isSOTP and ("commercial" in stgL or "launched" in stgL or "marketed" in stgL))
-        for ind in a["indications"]:
-            asmp = scen.get("assumptions", {}).get(a["id"], {}).get(ind["id"], {"pos":0,"apr":0,"pen":1})
-            m = ind.get("market", {})
-            if isComm and isSOTP: continue
-            pk = 0
-            if "company_slice" in m and "regions" in m:
-                pk = som_of(m) * asmp["pen"]
-            elif "regions" in m:
-                addr = tam_of(m)
-                if m.get("cagrPct"):
-                    yr = (m.get("peakYear", 2033) - 2026); addr *= (1 + m["cagrPct"]/100) ** yr
-                pk = addr * ((m.get("penPct", 0) or 0)/100) * asmp["pen"]
-            comp = (asmp["pos"]/100) * (asmp["apr"]/100); ra = pk * comp
-            if isSOTP: pipeRA += ra
-            totalRA += ra; totalGross += pk
-    dM = 1 - val.get("dil", 0)/100
-    if isSOTP:
-        cEV = val.get("commercialRevM", 0) * val.get("commercialMult", 1)
-        yr = 2031-2026; df = (1 + val["pipelineDR"]/100) ** yr
-        pEV = (pipeRA * val.get("pipelineMult", 1)) / df
-        ev = cEV + pEV + (co.get("cash") or 0)
-    else:
-        can = totalRA * (val.get("cannib", 0)/100); net = totalRA - can
-        yr = 2033-2026; df = (1 + val["dr"]/100) ** yr
-        ev = (net * val["mult"]) / df + (co.get("cash") or 0)
-    return (ev / co["sharesOut"]) * dM
 
 
 def audit_one(tk, cfg):

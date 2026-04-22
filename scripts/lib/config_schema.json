@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orbite-lab.github.io/BioTechStocks/config.schema.json",
+  "title": "Biotech Valuation Company Config",
+  "type": "object",
+  "required": ["company", "assets", "scenarios"],
+  "additionalProperties": true,
+  "properties": {
+    "company": {
+      "type": "object",
+      "required": ["ticker", "name", "currentPrice", "sharesOut", "cash"],
+      "additionalProperties": true,
+      "properties": {
+        "ticker": {"type": "string", "pattern": "^[A-Z0-9_.]+$"},
+        "name": {"type": "string", "minLength": 1},
+        "currentPrice": {"type": "number", "exclusiveMinimum": 0},
+        "sharesOut": {"type": "number", "exclusiveMinimum": 0, "description": "Millions of shares"},
+        "cash": {"type": "number", "description": "Cash in $M (can be negative for net debt)"},
+        "currency": {"enum": ["USD", "EUR", "GBP", "CHF", "JPY", "HKD", "SEK", "DKK", "CNY"]},
+        "phase": {"enum": ["commercial", "nda_filed", "phase3", "phase2", "phase1", "preclinical"]},
+        "subtitle": {"type": "string"},
+        "yahooTicker": {"type": "string"}
+      }
+    },
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "indications"],
+        "additionalProperties": true,
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "name": {"type": "string"},
+          "stage": {"type": "string"},
+          "modality": {"type": "string"},
+          "indications": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["id"],
+              "additionalProperties": true,
+              "properties": {
+                "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+                "name": {"type": "string"},
+                "area": {"type": "string", "pattern": "^[a-z_]+(\\.[a-z0-9_]+){0,3}$"},
+                "rare": {"type": "boolean"},
+                "market": {"$ref": "#/$defs/market"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "scenarios": {
+      "type": "object",
+      "required": ["mega_bear", "bear", "base", "bull", "psychedelic_bull"],
+      "additionalProperties": false,
+      "properties": {
+        "mega_bear":        {"$ref": "#/$defs/scenario"},
+        "bear":             {"$ref": "#/$defs/scenario"},
+        "base":             {"$ref": "#/$defs/scenario"},
+        "bull":             {"$ref": "#/$defs/scenario"},
+        "psychedelic_bull": {"$ref": "#/$defs/scenario"}
+      }
+    },
+    "catalysts": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/catalyst"}
+    }
+  },
+  "$defs": {
+    "region": {
+      "type": "object",
+      "properties": {
+        "patientsK": {"type": "number", "minimum": 0, "description": "Thousands of patients/yr"},
+        "wtpPct":    {"type": "number", "minimum": 0, "maximum": 100},
+        "priceK":    {"type": "number", "minimum": 0, "description": "Annual treatment cost in $K"}
+      }
+    },
+    "companySlice": {
+      "type": "object",
+      "properties": {
+        "reachPct": {"type": "number", "minimum": 0, "maximum": 100},
+        "wtpPct":   {"type": "number", "minimum": 0, "maximum": 100},
+        "priceK":   {"type": "number", "minimum": 0}
+      }
+    },
+    "market": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "regions": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "us":  {"$ref": "#/$defs/region"},
+            "eu":  {"$ref": "#/$defs/region"},
+            "row": {"$ref": "#/$defs/region"}
+          }
+        },
+        "company_slice": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "us":  {"$ref": "#/$defs/companySlice"},
+            "eu":  {"$ref": "#/$defs/companySlice"},
+            "row": {"$ref": "#/$defs/companySlice"}
+          }
+        },
+        "sources": {"type": "object"},
+        "company_slice_sources": {"type": "object"},
+        "penPct":       {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "cagrPct":      {"type": ["number", "null"]},
+        "expansionPct": {"type": ["number", "null"]},
+        "peakYear":     {"type": ["number", "null"], "minimum": 2025, "maximum": 2050},
+        "salesM":       {"type": ["number", "null"], "minimum": 0, "description": "Most recent reported sales ($M)"},
+        "salesYear":    {"type": ["number", "null"]},
+        "tamB":         {"type": ["number", "null"]},
+        "patientsK":    {"type": ["number", "null"]},
+        "pricingK":     {"type": ["number", "null"]},
+        "notes":        {"type": "string"}
+      }
+    },
+    "scenario": {
+      "type": "object",
+      "required": ["wt", "val"],
+      "additionalProperties": true,
+      "properties": {
+        "wt": {"type": "number", "minimum": 0, "maximum": 100, "description": "Probability weight (all scenarios should sum to 100)"},
+        "val": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "mult":             {"type": "number", "minimum": 0, "maximum": 50},
+            "dr":               {"type": "number", "minimum": 0, "maximum": 50},
+            "cannib":           {"type": "number", "minimum": 0, "maximum": 100},
+            "plat":             {"type": "number"},
+            "exus":             {"type": "number"},
+            "dil":              {"type": "number", "minimum": 0, "maximum": 90},
+            "pipelineDR":       {"type": "number", "minimum": 0, "maximum": 30},
+            "pipelineMult":     {"type": "number", "minimum": 0, "maximum": 30},
+            "commercialMult":   {"type": "number", "minimum": 0, "maximum": 30},
+            "commercialRevM":   {"type": "number", "minimum": 0},
+            "milestones":       {"type": "number", "minimum": 0}
+          }
+        },
+        "assumptions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "pos": {"type": "number", "minimum": 0, "maximum": 100},
+                "apr": {"type": "number", "minimum": 0, "maximum": 100},
+                "pen": {"type": "number", "minimum": 0, "maximum": 10}
+              }
+            }
+          }
+        }
+      }
+    },
+    "catalyst": {
+      "type": "object",
+      "required": ["date", "asset", "indication", "title", "type"],
+      "additionalProperties": true,
+      "properties": {
+        "date":       {"type": "string"},
+        "dateSort":   {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+        "asset":      {"type": "string"},
+        "indication": {"type": "string"},
+        "title":      {"type": "string"},
+        "type":       {"enum": ["phase1_data", "phase2_data", "phase3_data", "phase1_start", "phase2_start", "phase3_start", "pdufa", "ema_approval", "label_expansion", "investor_day", "partnership", "m_and_a", "regulatory", "launch", "pricing", "conference_data", "milestone", "bla_submission", "nda_submission", "other"]},
+        "binary":     {"type": "boolean"},
+        "fail_pos":   {"type": "number", "minimum": 0, "maximum": 100},
+        "fail_apr":   {"type": "number", "minimum": 0, "maximum": 100},
+        "success_pos": {"type": "number", "minimum": 0, "maximum": 100},
+        "success_apr": {"type": "number", "minimum": 0, "maximum": 100}
+      }
+    }
+  }
+}

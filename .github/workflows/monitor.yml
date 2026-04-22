@@ -5,6 +5,10 @@ on:
     - cron: '30 12 * * 1-5'
   workflow_dispatch: # Manual trigger button in GitHub UI
 
+concurrency:
+  group: catalyst-monitor
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -45,5 +49,15 @@ jobs:
             print('Config updates')
           ")
             git commit -m "🔬 $SUMMARY"
-            git push
+            # Retry push up to 3 times with rebase in case main moved during the run
+            for i in 1 2 3; do
+              if git push; then
+                echo "Push succeeded on attempt $i"
+                exit 0
+              fi
+              echo "Push attempt $i failed; rebasing..."
+              git pull --rebase origin main
+            done
+            echo "Push failed after 3 retries"
+            exit 1
           fi

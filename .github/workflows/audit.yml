@@ -1,0 +1,39 @@
+name: Config Audit
+on:
+  pull_request:
+    paths:
+      - 'configs/**'
+      - 'scripts/ops/audit_configs.py'
+  push:
+    branches: [main]
+    paths:
+      - 'configs/**'
+      - 'scripts/ops/audit_configs.py'
+  workflow_dispatch: {}
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run audit
+        id: audit
+        run: |
+          python scripts/ops/audit_configs.py | tee audit.log
+          # Extract CRIT count from summary line: "CRIT: N  FLAG: M  WARN: K"
+          CRIT=$(grep -oP 'CRIT: \K[0-9]+' audit.log | head -1)
+          FLAG=$(grep -oP 'FLAG: \K[0-9]+' audit.log | head -1)
+          echo "crit=$CRIT" >> $GITHUB_OUTPUT
+          echo "flag=$FLAG" >> $GITHUB_OUTPUT
+          echo "### Config Audit" >> $GITHUB_STEP_SUMMARY
+          echo "- CRIT: $CRIT" >> $GITHUB_STEP_SUMMARY
+          echo "- FLAG: $FLAG" >> $GITHUB_STEP_SUMMARY
+          if [ "$CRIT" -gt 0 ]; then
+            echo "❌ CRIT > 0 -- blocking" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+          echo "✅ No critical issues" >> $GITHUB_STEP_SUMMARY

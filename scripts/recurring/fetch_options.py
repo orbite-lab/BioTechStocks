@@ -27,7 +27,7 @@ except ImportError:
     print("[ERROR] Install yfinance: pip install yfinance --break-system-packages")
     sys.exit(1)
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIGS = ROOT / "configs"
 CACHE = ROOT / "options_cache.json"
 

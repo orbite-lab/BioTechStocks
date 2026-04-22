@@ -8,7 +8,7 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIGS = ROOT / "configs"
 OUT = ROOT / "taxonomy.json"
 

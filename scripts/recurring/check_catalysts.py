@@ -38,7 +38,7 @@ import requests
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIGS_DIR = ROOT / "configs"
 MANIFEST = CONFIGS_DIR / "manifest.json"
 CHANGELOG_DIR = ROOT / "changelog"

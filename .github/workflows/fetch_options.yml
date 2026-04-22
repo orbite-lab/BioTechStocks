@@ -17,7 +17,7 @@ jobs:
       - name: Install yfinance
         run: pip install yfinance
       - name: Fetch options data
-        run: python scripts/fetch_options.py
+        run: python scripts/recurring/fetch_options.py
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"

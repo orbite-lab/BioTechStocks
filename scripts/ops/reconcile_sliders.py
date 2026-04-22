@@ -9,10 +9,10 @@ company_slice.reachPct per drug so SOM >= salesM invariant holds.
 import json, sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIGS = ROOT / "configs"
-SCRIPTS = ROOT / "scripts"
-sys.path.insert(0, str(SCRIPTS))
+DATA = ROOT / "scripts" / "data"
+sys.path.insert(0, str(DATA))
 
 # Merge all authoritative regions
 REGIONS = {}

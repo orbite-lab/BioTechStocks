@@ -24,7 +24,7 @@ except ImportError:
     print("[ERROR] yfinance not installed. Run: pip install yfinance --break-system-packages")
     sys.exit(1)
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIGS = ROOT / "configs"
 MANIFEST = CONFIGS / "manifest.json"
 PRICES = ROOT / "prices.json"

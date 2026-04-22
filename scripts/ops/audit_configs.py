@@ -3,7 +3,7 @@
 import json, os
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIGS = ROOT / "configs"
 SCEN_ORDER = ["mega_bear", "bear", "base", "bull", "psychedelic_bull"]
 

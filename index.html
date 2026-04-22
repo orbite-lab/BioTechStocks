@@ -828,6 +828,8 @@ async function main(){
   let purityMode="wtd";
   let mktNavPath=[]; // Market explorer drill-down path (e.g. ["oncology","hematology","cll_nhl"])
   let mktSortMode="tam"; // tam | som | sales | pen
+  let techNavPath=[]; // Tech explorer drill-down path (e.g. ["cell_therapy","car_t_autologous"])
+  let techSortMode="som"; // tam | som | sales | count
   let catYAxis="expected"; // "swing" or "expected"
   let catZoom=180; // days window for catalyst chart; can be 30/60/90/180/365/9999
   let catSortKey="expectedReturn"; // column key to sort catalyst table by
@@ -844,7 +846,7 @@ async function main(){
   let kellyUniverse=[]; // set by render() = current filtered rows
   // Collapsible sections (Market Explorer and below all collapsed by default)
   let collapsedSec={
-    'sec-markets':true, 'sec-range':true, 'sec-pipeline':true, 'sec-ev-tam':true,
+    'sec-markets':true, 'sec-tech':true, 'sec-range':true, 'sec-pipeline':true, 'sec-ev-tam':true,
     'sec-catalyst':true, 'sec-portfolio':true, 'sec-table':true
   };
   const chev=id=>`<span class="sec-chev" title="${collapsedSec[id]?'Expand':'Collapse'}">${collapsedSec[id]?'\u25B8':'\u25BE'}</span>`;
@@ -1595,6 +1597,131 @@ async function main(){
       h+='</div>';  // close card
     })();
 
+    // ============== TECHNOLOGY EXPLORER (modality drill-down) ==============
+    (() => {
+      // Build aggregated data keyed by modality path (L1, L1.L2, L1.L2.L3)
+      // Each asset can have a single modality string like "cell_therapy.car_t_autologous.bcma"
+      const techData = {};
+      for (const [tk, cfg] of Object.entries(configs)) {
+        const coName = cfg.company.name || tk;
+        for (const a of cfg.assets) {
+          const mod = a.modality || '_unclassified';
+          // Sum SOM/sales across all indications of this asset
+          let assetSom=0, assetSales=0;
+          const diseaseAreas = new Set();
+          for (const ind of a.indications) {
+            const m = ind.market || {}; const reg = m.regions || {}; const cs = m.company_slice || {};
+            for (const rk of ['us','eu','row']) {
+              const pr = reg[rk] || {};
+              if (cs[rk]) assetSom += (pr.patientsK||0) * ((cs[rk].reachPct||0)/100) * ((cs[rk].wtpPct||0)/100) * (cs[rk].priceK||0);
+            }
+            assetSales += m.salesM || 0;
+            if (ind.area) diseaseAreas.add(ind.area.split('.').slice(0,2).join('.')); // L2 disease tag
+          }
+          const parts = mod.split('.');
+          for (let depth = 1; depth <= parts.length; depth++) {
+            const path = parts.slice(0, depth).join('.');
+            if (!techData[path]) techData[path] = { som:0, sales:0, assets:[], diseaseAreas:new Set() };
+            techData[path].som += assetSom;
+            techData[path].sales += assetSales;
+            diseaseAreas.forEach(d => techData[path].diseaseAreas.add(d));
+            if (depth === parts.length) {
+              techData[path].assets.push({
+                ticker: tk, name: coName, asset: a.name, assetId: a.id,
+                modality: mod, som: assetSom, sales: assetSales, stage: a.stage || '',
+                diseases: [...diseaseAreas]
+              });
+            }
+          }
+        }
+      }
+      const currentPath = techNavPath.join('.');
+      const currentData = currentPath ? techData[currentPath] : null;
+      const childPrefix = currentPath ? currentPath + '.' : '';
+      const childDepth = techNavPath.length + 1;
+      const children = Object.keys(techData)
+        .filter(k => k.startsWith(childPrefix) && k.split('.').length === childDepth)
+        .map(k => ({ path: k, name: k.slice(childPrefix.length), ...techData[k] }));
+      children.sort((a,b) => {
+        if (techSortMode === 'som') return b.som - a.som;
+        if (techSortMode === 'sales') return b.sales - a.sales;
+        if (techSortMode === 'count') return b.assets.length - a.assets.length;
+        return b.som - a.som;
+      });
+      const isLeaf = children.length === 0 && currentData;
+      const fmtB = v => v >= 1000 ? '$'+(v/1000).toFixed(1)+'B' : '$'+Math.round(v)+'M';
+      const nice = s => s.replace(/_/g,' ');
+
+      h+=`<div class="card${secCls('sec-tech')}" id="sec-tech"><div class="card-title" ${titleAttrsFlex('sec-tech')}><div>${chev('sec-tech')}<div class="dot" style="background:linear-gradient(180deg,#06b6d4,#a855f7);display:inline-block;vertical-align:middle;margin-right:8px"></div>Technology Explorer <span style="font-size:.62rem;color:#6b7080;font-weight:400;margin-left:6px">modality \u00b7 cross-disease pivot</span></div>`;
+      h+='<div style="display:flex;gap:4px">';
+      [['som','SOM'],['sales','Sales'],['count','Asset count']].forEach(([k,lbl])=>{
+        const active = techSortMode===k;
+        h+=`<span class="fchip ${active?'active':''}" onclick="window._techSort('${k}')" style="padding:2px 8px;font-size:.65rem">${lbl}</span>`;
+      });
+      h+='</div></div>';
+
+      // Breadcrumb
+      h+='<div style="display:flex;flex-wrap:wrap;align-items:center;gap:4px;padding:10px 0;font-size:.75rem;font-family:var(--mono)">';
+      h+=`<span onclick="window._techGo([])" style="cursor:pointer;color:${techNavPath.length===0?'#06b6d4':'#60a5fa'};font-weight:${techNavPath.length===0?'700':'500'}">\u{1F9EC} All Technologies</span>`;
+      techNavPath.forEach((p,i)=>{
+        h+=`<span style="color:#6b7080">\u203A</span>`;
+        const last = i===techNavPath.length-1;
+        h+=`<span onclick="window._techGo(${i+1})" style="cursor:pointer;color:${last?'#06b6d4':'#60a5fa'};font-weight:${last?'700':'500'}">${nice(p)}</span>`;
+      });
+      h+='</div>';
+
+      // Stats
+      if (currentData) {
+        h+='<div style="display:flex;gap:16px;padding:8px 12px;background:#0f1117;border-radius:6px;margin-bottom:12px;flex-wrap:wrap">';
+        h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">Total SOM</div><div style="font-size:1rem;font-weight:700;color:#a855f7;font-family:var(--mono)">${fmtB(currentData.som)}</div></div>`;
+        h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">2025 Sales</div><div style="font-size:1rem;font-weight:700;color:#22c55e;font-family:var(--mono)">${fmtB(currentData.sales)}</div></div>`;
+        h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">${isLeaf?'Assets':'Sub-platforms'}</div><div style="font-size:1rem;font-weight:700;color:#e2e4ea;font-family:var(--mono)">${isLeaf?currentData.assets.length:children.length}</div></div>`;
+        h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">Disease areas treated</div><div style="font-size:1rem;font-weight:700;color:#06b6d4;font-family:var(--mono)">${currentData.diseaseAreas.size}</div></div>`;
+        h+='</div>';
+      }
+
+      if (!isLeaf) {
+        const maxSom = Math.max(...children.map(c=>c.som||1),1);
+        h+='<div style="display:grid;grid-template-columns:repeat(12,1fr);gap:10px">';
+        children.forEach(c=>{
+          const ratio = c.som / maxSom;
+          let colSpan, tierPad, tierTitle, tierNum;
+          if (ratio >= 0.5)      { colSpan=6; tierPad=18; tierTitle=1.05; tierNum=1.3; }
+          else if (ratio >= 0.2) { colSpan=4; tierPad=14; tierTitle=0.95; tierNum=1.1; }
+          else if (ratio >= 0.05){ colSpan=3; tierPad=12; tierTitle=0.85; tierNum=0.95; }
+          else                   { colSpan=3; tierPad=10; tierTitle=0.78; tierNum=0.85; }
+          const subCount = Object.keys(techData).filter(k => k.startsWith(c.path+'.') && k.split('.').length === c.path.split('.').length+1).length;
+          h+=`<div onclick="window._techDrill('${c.path}')" style="grid-column:span ${colSpan};background:#0f1117;border:1px solid #ffffff12;border-radius:8px;padding:${tierPad}px;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;min-height:${tierPad*6}px" onmouseover="this.style.borderColor='#06b6d4'" onmouseout="this.style.borderColor='#ffffff12'">`;
+          h+=`<div><div style="font-size:${tierTitle}rem;font-weight:700;margin-bottom:4px;color:#e2e4ea">${nice(c.name)}</div>`;
+          h+=`<div style="font-size:.62rem;color:var(--text2);font-family:var(--mono);margin-bottom:10px">${subCount>0?subCount+' sub-platforms':c.assets.length+' assets'} \u00b7 ${c.diseaseAreas.size} disease${c.diseaseAreas.size===1?'':'s'}</div></div>`;
+          h+=`<div><div style="display:flex;justify-content:space-between;font-size:${tierNum}rem;font-family:var(--mono);font-weight:700;margin-bottom:4px"><span style="color:#a855f7">${fmtB(c.som)}</span><span style="color:#22c55e">${fmtB(c.sales)}</span></div>`;
+          h+=`<div style="display:flex;justify-content:space-between;font-size:.62rem;font-family:var(--mono);color:var(--text2)"><span>SOM</span><span>Sales</span></div></div>`;
+          h+='</div>';
+        });
+        h+='</div>';
+      } else if (isLeaf && currentData) {
+        // Asset list
+        const assets = [...currentData.assets].sort((a,b)=>b.som-a.som);
+        const maxSom = Math.max(...assets.map(a=>a.som),1);
+        h+='<div style="display:flex;flex-direction:column;gap:6px">';
+        assets.forEach(c=>{
+          const pct = (c.som/maxSom)*100;
+          const stageCol = c.stage.toLowerCase().includes('commercial')?'#22c55e':c.stage.toLowerCase().includes('3')?'#f59e0b':c.stage.toLowerCase().includes('2')?'#fb923c':'#6b7080';
+          h+=`<div style="display:grid;grid-template-columns:60px 1fr 200px 90px 90px 80px;gap:8px;align-items:center;padding:8px 12px;background:#0f1117;border-radius:6px;border:1px solid #ffffff08;font-size:.7rem">`;
+          h+=`<a href="model.html?ticker=${c.ticker}" style="font-family:var(--mono);font-weight:700;color:#60a5fa;text-decoration:none">${c.ticker}</a>`;
+          h+=`<div><div style="color:#e2e4ea;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.asset}</div><div style="color:var(--text2);font-size:.6rem">${c.diseases.map(d=>nice(d)).join(' \u00b7 ')||'—'}</div></div>`;
+          h+=`<div style="position:relative;height:6px;background:#161920;border-radius:2px;overflow:hidden"><div style="position:absolute;top:0;left:0;height:100%;width:${pct}%;background:#06b6d4"></div></div>`;
+          h+=`<div style="text-align:right;font-family:var(--mono);color:#a855f7;font-weight:600">${fmtB(c.som)}</div>`;
+          h+=`<div style="text-align:right;font-family:var(--mono);color:${c.sales>0?'#22c55e':'#6b7080'};font-weight:600">${c.sales>0?fmtB(c.sales):'\u2014'}</div>`;
+          h+=`<div style="text-align:right"><span style="font-size:.58rem;font-weight:700;padding:2px 5px;border-radius:3px;background:${stageCol}22;color:${stageCol};font-family:var(--mono)">${c.stage.split('(')[0].trim().slice(0,12)||'\u2014'}</span></div>`;
+          h+='</div>';
+        });
+        h+='</div>';
+      }
+      h+='</div>'; // close card
+    })();
+    // ============== /TECHNOLOGY EXPLORER ==============
+
     h+=`<div class="card${secCls('sec-range')}" id="sec-range"><div class="card-title" ${titleAttrsFlex('sec-range')}><div>${chev('sec-range')}<div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6);display:inline-block;vertical-align:middle;margin-right:8px"></div>Market Valuation Overview</div>`;
     h+='<div style="display:flex;gap:4px">';
     h+=`<span class="fchip ${stripSort==='base'?'active':''}" onclick="window._stripSort('base')" style="padding:2px 8px;font-size:.65rem">Base Upside</span>`;
@@ -2294,6 +2421,9 @@ async function main(){
   window._mktSort=function(s){mktSortMode=s;render();};
   window._mktDrill=function(path){mktNavPath=path.split('.');render();document.getElementById('sec-markets')?.scrollIntoView({behavior:'smooth',block:'start'});};
   window._mktGo=function(depth){mktNavPath=typeof depth==='number'?mktNavPath.slice(0,depth):depth;render();};
+  window._techSort=function(s){techSortMode=s;render();};
+  window._techDrill=function(path){techNavPath=path.split('.');render();document.getElementById('sec-tech')?.scrollIntoView({behavior:'smooth',block:'start'});};
+  window._techGo=function(depth){techNavPath=typeof depth==='number'?techNavPath.slice(0,depth):depth;render();};
   window._setCatZoom=function(d){
     catZoom=d;
     // Zoom changes the universe → reset ER bounds so they snap to new range

@@ -13,13 +13,13 @@ CONFIGS = ROOT / "configs"
 OUT = ROOT / "data" / "taxonomy.json"
 
 def rebuild():
-    manifest = json.loads((CONFIGS / "manifest.json").read_text())
+    manifest = json.loads((CONFIGS / "manifest.json").read_text(encoding="utf-8"))
 
     areas = defaultdict(lambda: {"companies": set(), "rare": False})
     mods = defaultdict(lambda: {"companies": set()})
 
     for tk in manifest:
-        d = json.loads((CONFIGS / f"{tk}.json").read_text())
+        d = json.loads((CONFIGS / f"{tk}.json").read_text(encoding="utf-8"))
         for a in d["assets"]:
             if a.get("modality"):
                 mods[a["modality"]]["companies"].add(tk)

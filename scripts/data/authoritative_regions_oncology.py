@@ -127,20 +127,25 @@ REGIONS = {
         "eu":  {"patientsK": 180, "wtpPct": 48, "priceK": 140},
         "row": {"patientsK": 300, "wtpPct": 16, "priceK": 50},
     },
-    "oncology.hematology.myeloma.frontline": {
-        "us":  {"patientsK": 20, "wtpPct": 72, "priceK": 225},
-        "eu":  {"patientsK": 24, "wtpPct": 55, "priceK": 135},
+    # MM line-of-therapy L4 sub-segments. Patient counts approximate the
+    # cohort actively treated in that line annually (incidence x line-share x survival).
+    # 1L = newly diagnosed, frontline regimens (RVd, dara-RVd combos)
+    # 2l_3l = early relapse after 1-2 prior lines (Carvykti current label, daratumumab combos)
+    # 4l_plus = heavily pre-treated R/R, where bispecifics + cell therapies live
+    "oncology.hematology.myeloma.1l": {
+        "us":  {"patientsK": 32, "wtpPct": 75, "priceK": 220},
+        "eu":  {"patientsK": 36, "wtpPct": 58, "priceK": 130},
         "row": {"patientsK": 80, "wtpPct": 18, "priceK": 55},
     },
-    "oncology.hematology.myeloma.car_t": {
-        "us":  {"patientsK": 3,   "wtpPct": 58, "priceK": 490},
-        "eu":  {"patientsK": 2,   "wtpPct": 42, "priceK": 295},
-        "row": {"patientsK": 1.5, "wtpPct": 12, "priceK": 110},
+    "oncology.hematology.myeloma.2l_3l": {
+        "us":  {"patientsK": 24, "wtpPct": 65, "priceK": 280},
+        "eu":  {"patientsK": 28, "wtpPct": 50, "priceK": 165},
+        "row": {"patientsK": 50, "wtpPct": 14, "priceK": 60},
     },
-    "oncology.hematology.myeloma.car_t_invivo": {
-        "us":  {"patientsK": 20, "wtpPct": 50, "priceK": 220},
-        "eu":  {"patientsK": 22, "wtpPct": 40, "priceK": 140},
-        "row": {"patientsK": 50, "wtpPct": 15, "priceK": 55},
+    "oncology.hematology.myeloma.4l_plus": {
+        "us":  {"patientsK": 12, "wtpPct": 55, "priceK": 380},
+        "eu":  {"patientsK": 14, "wtpPct": 42, "priceK": 220},
+        "row": {"patientsK": 20, "wtpPct": 10, "priceK": 80},
     },
     "oncology.hematology.tcell_lymphoma": {
         "us":  {"patientsK": 12, "wtpPct": 58, "priceK": 155},
@@ -284,9 +289,9 @@ PEN_PCT = {
     "oncology.hematology.cll_nhl.dlbcl": 52,
     "oncology.hematology.dlbcl": 55,
     "oncology.hematology.myeloma": 58,
-    "oncology.hematology.myeloma.frontline": 68,
-    "oncology.hematology.myeloma.car_t": 32,
-    "oncology.hematology.myeloma.car_t_invivo": 38,
+    "oncology.hematology.myeloma.1l": 70,
+    "oncology.hematology.myeloma.2l_3l": 55,
+    "oncology.hematology.myeloma.4l_plus": 35,
     "oncology.hematology.tcell_lymphoma": 42,
     "oncology.lung.nsclc_driver.alk": 68,
     "oncology.lung.nsclc_driver.cmet": 50,

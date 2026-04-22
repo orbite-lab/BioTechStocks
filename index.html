@@ -1405,79 +1405,81 @@ async function main(){
     });
     fh+='</div>';
 
+    // ========== Drill-down sub-chips (Area L2/L3/L4 + Modality L1/L2/L3) ==========
+    // These build into a separate buffer `navSub` injected into the left nav.
+    // (Used to build into `fh`/sticky-filters; now lives in the sidebar.)
+    let navSub='';
     // L2 sub-chips (show when L1 is active)
     if(filterL1.size){
       const l2s=Object.keys(l2Counts).filter(k=>[...filterL1].some(fl=>k.startsWith(fl+"."))).sort((a,b)=>(l2Counts[b]||0)-(l2Counts[a]||0));
       if(l2s.length>0){
-        fh+='<div class="fl2-row">';
-        fh+=`<span class="fl2chip ${!filterL2.size?'active':''}" onclick="window._fL2(null)">All</span>`;
+        navSub+='<span class="nav-flbl" style="margin-top:6px">Area &rsaquo; L2</span><div class="fchip-row">';
+        navSub+=`<span class="fl2chip ${!filterL2.size?'active':''}" onclick="window._fL2(null)">All</span>`;
         l2s.forEach(l2=>{
           const label=l2.split(".").pop().replace(/_/g," ");
           const active=filterL2.has(l2);
-          fh+=`<span class="fl2chip ${active?'active':''}" onclick="window._fL2('${l2}')">${label}<span class="cnt">${l2Counts[l2]}</span></span>`;
+          navSub+=`<span class="fl2chip ${active?'active':''}" onclick="window._fL2('${l2}')">${label}<span class="cnt">${l2Counts[l2]}</span></span>`;
         });
-        fh+='</div>';
+        navSub+='</div>';
       }
     }
-
     // L3 sub-chips (show when L2 is active)
     if(filterL2.size){
       const l3s=Object.keys(l3Counts).filter(k=>[...filterL2].some(fl=>k.startsWith(fl+"."))).sort((a,b)=>(l3Counts[b]||0)-(l3Counts[a]||0));
       if(l3s.length>0){
-        fh+='<div class="fl2-row" style="padding-left:28px">';
-        fh+=`<span class="fl2chip ${!filterL3.size?'active':''}" onclick="window._fL3(null)">All</span>`;
+        navSub+='<span class="nav-flbl">Area &rsaquo; L3</span><div class="fchip-row">';
+        navSub+=`<span class="fl2chip ${!filterL3.size?'active':''}" onclick="window._fL3(null)">All</span>`;
         l3s.forEach(l3=>{
           const label=l3.split(".").pop().replace(/_/g," ");
           const active=filterL3.has(l3);
-          fh+=`<span class="fl2chip ${active?'active':''}" onclick="window._fL3('${l3}')">${label}<span class="cnt">${l3Counts[l3]}</span></span>`;
+          navSub+=`<span class="fl2chip ${active?'active':''}" onclick="window._fL3('${l3}')">${label}<span class="cnt">${l3Counts[l3]}</span></span>`;
         });
-        fh+='</div>';
+        navSub+='</div>';
       }
     }
+    // L4 sub-chips (show when L3 is active)
     if(filterL3.size){
       const l4Counts={};
       rows.forEach(r=>{r.meta.areas.forEach(a=>{const p=a.split(".");if(p.length>=4){const l4k=p.slice(0,4).join(".");if([...filterL3].some(fl=>l4k.startsWith(fl+"."))){l4Counts[l4k]=(l4Counts[l4k]||0)+1;}}});});
       const l4s=Object.keys(l4Counts).sort((a,b)=>(l4Counts[b]||0)-(l4Counts[a]||0));
       if(l4s.length>0){
-        fh+='<div class="fl2-row" style="padding-left:42px">';
-        fh+=`<span class="fl2chip ${!filterL4.size?'active':''}" onclick="window._fL4(null)">All</span>`;
+        navSub+='<span class="nav-flbl">Area &rsaquo; L4</span><div class="fchip-row">';
+        navSub+=`<span class="fl2chip ${!filterL4.size?'active':''}" onclick="window._fL4(null)">All</span>`;
         l4s.forEach(l4=>{
           const label=l4.split(".").pop().replace(/_/g," ");
           const active=filterL4.has(l4);
-          fh+=`<span class="fl2chip ${active?'active':''}" onclick="window._fL4('${l4}')">${label}<span class="cnt">${l4Counts[l4]}</span></span>`;
+          navSub+=`<span class="fl2chip ${active?'active':''}" onclick="window._fL4('${l4}')">${label}<span class="cnt">${l4Counts[l4]}</span></span>`;
         });
-        fh+='</div>';
+        navSub+='</div>';
       }
     }
 
-    // Modality filter row
-    const MOD_NAMES={small_molecule:"Small Molecule",antibody:"Antibody",adc:"ADC",nucleic_acid:"Nucleic Acid",gene_therapy:"Gene Therapy",cell_therapy:"Cell Therapy",pegylated_protein:"Peg Protein",vaccine:"Vaccine",formulation_platform:"Formulation",biologic:"Biologic",peptide:"Peptide"};
-    const MOD_ORDER=["small_molecule","antibody","adc","nucleic_acid","gene_therapy","cell_therapy","peptide","biologic","pegylated_protein","vaccine","formulation_platform"];
-    fh+='<div class="fbar" style="margin-top:-2px;border-top:0;border-top-left-radius:0;border-top-right-radius:0">';
-    fh+='<span class="fbar-lbl">Platform</span>';
+    // Platform (Modality L1) chips
+    const MOD_NAMES={small_molecule:"Small Molecule",antibody:"Antibody",adc:"ADC",nucleic_acid:"Nucleic Acid",gene_therapy:"Gene Therapy",gene_editing:"Gene Editing",cell_therapy:"Cell Therapy",pegylated_protein:"Peg Protein",vaccine:"Vaccine",formulation_modifier:"Formulation",recombinant_protein:"Recomb. Protein",radiopharmaceutical:"Radio-Pharma",aesthetic_or_other:"Aesthetic/Other",peptide:"Peptide"};
+    const MOD_ORDER=["small_molecule","antibody","adc","nucleic_acid","gene_therapy","gene_editing","cell_therapy","peptide","recombinant_protein","radiopharmaceutical","vaccine","formulation_modifier","aesthetic_or_other"];
+    navSub+='<span class="nav-flbl">Platform</span><div class="fchip-row">';
     MOD_ORDER.forEach(m1=>{
       if(!m1Counts[m1])return;
       const active=filterMod1===m1;
-      fh+=`<span class="fchip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod1('${m1}')">${MOD_NAMES[m1]||m1}<span class="cnt">${m1Counts[m1]}</span></span>`;
+      navSub+=`<span class="fchip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod1('${m1}')">${MOD_NAMES[m1]||m1}<span class="cnt">${m1Counts[m1]}</span></span>`;
     });
     Object.keys(m1Counts).filter(m1=>!MOD_ORDER.includes(m1)).sort().forEach(m1=>{
       const active=filterMod1===m1;
-      fh+=`<span class="fchip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod1('${m1}')">${MOD_NAMES[m1]||m1.replace(/_/g,' ')}<span class="cnt">${m1Counts[m1]}</span></span>`;
+      navSub+=`<span class="fchip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod1('${m1}')">${MOD_NAMES[m1]||m1.replace(/_/g,' ')}<span class="cnt">${m1Counts[m1]}</span></span>`;
     });
-    fh+='</div>';
-
+    navSub+='</div>';
     // Mod L2 sub-chips
     if(filterMod1){
       const m2s=Object.keys(m2Counts).filter(k=>k.startsWith(filterMod1+".")).sort((a,b)=>(m2Counts[b]||0)-(m2Counts[a]||0));
       if(m2s.length>0){
-        fh+='<div class="fl2-row">';
-        fh+=`<span class="fl2chip ${!filterMod2?'active':''}" style="${!filterMod2?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod2(null)">All ${MOD_NAMES[filterMod1]}</span>`;
+        navSub+='<span class="nav-flbl">Platform &rsaquo; L2</span><div class="fchip-row">';
+        navSub+=`<span class="fl2chip ${!filterMod2?'active':''}" style="${!filterMod2?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod2(null)">All</span>`;
         m2s.forEach(m2=>{
           const label=m2.split(".").pop().replace(/_/g," ");
           const active=filterMod2===m2;
-          fh+=`<span class="fl2chip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod2('${m2}')">${label}<span class="cnt">${m2Counts[m2]}</span></span>`;
+          navSub+=`<span class="fl2chip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod2('${m2}')">${label}<span class="cnt">${m2Counts[m2]}</span></span>`;
         });
-        fh+='</div>';
+        navSub+='</div>';
       }
     }
 
@@ -1485,14 +1487,14 @@ async function main(){
     if(filterMod2){
       const m3s=Object.keys(m3Counts).filter(k=>k.startsWith(filterMod2+".")).sort((a,b)=>(m3Counts[b]||0)-(m3Counts[a]||0));
       if(m3s.length>0){
-        fh+='<div class="fl2-row" style="padding-left:28px">';
-        fh+=`<span class="fl2chip ${!filterMod3?'active':''}" style="${!filterMod3?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod3(null)">All ${filterMod2.split('.').pop().replace(/_/g,' ')}</span>`;
+        navSub+='<span class="nav-flbl">Platform &rsaquo; L3</span><div class="fchip-row">';
+        navSub+=`<span class="fl2chip ${!filterMod3?'active':''}" style="${!filterMod3?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod3(null)">All</span>`;
         m3s.forEach(m3=>{
           const label=m3.split(".").pop().replace(/_/g," ");
           const active=filterMod3===m3;
-          fh+=`<span class="fl2chip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod3('${m3}')">${label}<span class="cnt">${m3Counts[m3]}</span></span>`;
+          navSub+=`<span class="fl2chip ${active?'active':''}" style="${active?'background:#3b82f622;border-color:#3b82f6;color:#93c5fd':''}" onclick="window._fMod3('${m3}')">${label}<span class="cnt">${m3Counts[m3]}</span></span>`;
         });
-        fh+='</div>';
+        navSub+='</div>';
       }
     }
     // Bucket stats moved into the Market Valuation Overview card body (see below)
@@ -2533,6 +2535,8 @@ async function main(){
       filterHtml+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')"${tt}>${L1_NAMES[l1]||l1.replace(/_/g,' ')}<span class="cnt">${l1Counts[l1]}</span></span>`;
     });
     filterHtml+='</div>';
+    // Append L2/L3/L4 area sub-chips + Platform (modality) chips + Mod sub-chips
+    filterHtml+=navSub;
     // Purity toggle when relevant
     if(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterRare===true){
       filterHtml+=`<div style="margin-top:8px"><span class="fchip ${purityMode==='wtd'?'active':''}" onclick="window._purityMode()" style="padding:2px 8px;font-size:.62rem">Purity: ${purityMode==='wtd'?'Risk-Adj':'Raw TAM'}</span></div>`;

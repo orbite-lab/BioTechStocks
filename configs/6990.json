@@ -486,27 +486,8 @@
           "id": "next_gen",
           "name": "Next-gen ADC modalities + non-oncology",
           "market": {
-            "tamB": 8,
-            "penPct": 40,
-            "peakYear": 2036,
             "notes": "OptiDC proprietary platform. Bispecific ADCs, RDCs, iADCs, DACs. Expanding into autoimmune (TSLP bsAb) + COPD. Crescent Biopharma partnership. One of worlds leading ADC platforms.",
-            "regions": {
-              "us": {
-                "patientsK": 250,
-                "wtpPct": 55,
-                "priceK": 195
-              },
-              "eu": {
-                "patientsK": 320,
-                "wtpPct": 42,
-                "priceK": 115
-              },
-              "row": {
-                "patientsK": 900,
-                "wtpPct": 14,
-                "priceK": 45
-              }
-            },
+            "regions": {},
             "sources": {
               "us.patientsK": {
                 "note": "~250K US addressable across HER2/TROP2/HER3/CEACAM5/B7-H3 ADCs; sum of biomarker-positive solid tumors. Source: company 10-Ks."
@@ -539,23 +520,7 @@
                 "note": "~40% peak -- platform addresses broad range; launch curves staggered by asset; 5-7yr ramp across targets."
               }
             },
-            "company_slice": {
-              "us": {
-                "reachPct": 0.5,
-                "wtpPct": 12,
-                "priceK": 200
-              },
-              "eu": {
-                "reachPct": 0.3,
-                "wtpPct": 8,
-                "priceK": 110
-              },
-              "row": {
-                "reachPct": 0.2,
-                "wtpPct": 3,
-                "priceK": 40
-              }
-            },
+            "company_slice": {},
             "company_slice_sources": {
               "us.reachPct": {
                 "note": "Next-gen ADC platform (topo + novel payloads); 6% aggregate peak reach (2033+)."
@@ -586,7 +551,7 @@
               }
             }
           },
-          "area": "oncology.multi_tumor.adc_platform"
+          "area": "_platform.adc_discovery"
         }
       ],
       "modality": "adc.multi_payload.rdc_iadc_dac"

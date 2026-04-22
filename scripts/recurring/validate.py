@@ -99,7 +99,12 @@ def validate():
                 market = ind.get("market", {})
                 
                 # Area depth check
-                if area:
+                # _* prefix denotes pseudo-area (platform / discovery / metadata) -- exempt from depth + taxonomy checks
+                if not area:
+                    errors.append(f"{tk}.{a['id']}.{ind['id']}: missing area tag")
+                elif area.startswith("_"):
+                    pass  # platform/discovery indication; no depth requirement
+                else:
                     parts = area.split(".")
                     if len(parts) not in (3, 4):
                         errors.append(f"{tk}.{a['id']}.{ind['id']}: area '{area}' must be L1.L2.L3 or L1.L2.L3.L4 (depth={len(parts)})")
@@ -107,14 +112,14 @@ def validate():
                         warnings.append(f"{tk}.{a['id']}.{ind['id']}: NEW area '{area}' not in taxonomy.json -- add it or check spelling")
                     if len(parts) >= 3:
                         l3_area_parents[parts[2]].add(f"{parts[0]}.{parts[1]}")
-                else:
-                    errors.append(f"{tk}.{a['id']}.{ind['id']}: missing area tag")
                 
-                # Market data checks
+                # Market data checks (skip for _* pseudo-areas -- platform/discovery
+                # indications have no addressable market by design)
                 has_tam = market.get("tamB", 0) > 0
                 has_patients = market.get("patientsK", 0) > 0 and market.get("pricingK", 0) > 0
                 has_regions = isinstance(market.get("regions"), dict) and len(market.get("regions", {})) > 0
-                if not has_tam and not has_patients and not has_regions and a["id"] != "commercial":
+                is_platform = area.startswith("_")
+                if not has_tam and not has_patients and not has_regions and a["id"] != "commercial" and not is_platform:
                     warnings.append(f"{tk}.{a['id']}.{ind['id']}: no TAM data (tamB, patientsKxpricingK, or regions)")
                 
                 if has_tam and "penPct" not in market and "patientsK" not in market:

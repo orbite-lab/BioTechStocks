@@ -1448,6 +1448,9 @@ async function main(){
         for (const a of cfg.assets) {
           for (const ind of a.indications) {
             const area = ind.area || 'unclassified';
+            // Skip pseudo-areas (prefix _) -- platform/discovery indications without
+            // a specific lead disease. They appear in the Technology Explorer instead.
+            if (area.startsWith('_')) continue;
             const m = ind.market || {};
             const reg = m.regions || {};
             const cs = m.company_slice || {};

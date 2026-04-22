@@ -242,18 +242,10 @@ REGIONS = {
     },
 
     # ------------------------------------------------------------
-    # MULTI-TUMOR
-    # ------------------------------------------------------------
-    "oncology.multi_tumor.adc_platform": {
-        "us":  {"patientsK": 250, "wtpPct": 55, "priceK": 195},
-        "eu":  {"patientsK": 320, "wtpPct": 42, "priceK": 115},
-        "row": {"patientsK": 900, "wtpPct": 14, "priceK": 45},
-    },
-    "oncology.multi_tumor.bicycle_discovery": {
-        "us":  {"patientsK": 80,  "wtpPct": 52, "priceK": 225},
-        "eu":  {"patientsK": 100, "wtpPct": 38, "priceK": 135},
-        "row": {"patientsK": 250, "wtpPct": 12, "priceK": 55},
-    },
+    # (oncology.multi_tumor.* removed -- platform/discovery indications without
+    # specific lead diseases now use the _platform.* pseudo-area, which the
+    # Market Explorer filters out by convention. These are visible in the
+    # Technology Explorer where platforms belong.)
 
     # ------------------------------------------------------------
     # NEUROENDOCRINE
@@ -335,8 +327,7 @@ PEN_PCT = {
     "oncology.lung.nsclc_driver.trop2": 45,
     "oncology.lung.nsclc_undruggable": 55,
     "oncology.lung.sclc": 48,
-    "oncology.multi_tumor.adc_platform": 40,
-    "oncology.multi_tumor.bicycle_discovery": 30,
+    # (multi_tumor.* removed -- now _platform.*)
     "oncology.neuroendocrine.gepnet": 50,
     "hematology.rare_blood.hemoglobinopathy": 18,
     "oncology.skin.melanoma": 65,

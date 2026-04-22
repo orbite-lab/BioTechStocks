@@ -237,6 +237,29 @@ REGIONS = {
         "eu":  {"patientsK": 75,   "wtpPct": 32, "priceK": 1600},
         "row": {"patientsK": 5200, "wtpPct": 6,  "priceK": 200},
     },
+
+    # ------------------------------------------------------------
+    # SKIN ONCOLOGY (cscc / bcc / melanoma) -- IO regimens dominate
+    # ------------------------------------------------------------
+    # source: SEER advanced/metastatic melanoma incidence ~30K US/yr;
+    # IO regimen avg ~$180K (Opdivo+Yervoy / pembro)
+    "oncology.skin.melanoma": {
+        "us":  {"patientsK": 30,  "wtpPct": 75, "priceK": 180},
+        "eu":  {"patientsK": 35,  "wtpPct": 60, "priceK": 100},
+        "row": {"patientsK": 80,  "wtpPct": 12, "priceK": 40},
+    },
+    # source: Karia 2013 advanced cSCC US ~20K; Libtayo WAC ~$200K
+    "oncology.skin.cscc": {
+        "us":  {"patientsK": 20,  "wtpPct": 70, "priceK": 200},
+        "eu":  {"patientsK": 25,  "wtpPct": 55, "priceK": 110},
+        "row": {"patientsK": 50,  "wtpPct": 10, "priceK": 40},
+    },
+    # source: NCI advanced/metastatic BCC US ~12K; Libtayo / sonidegib pricing ~$200K
+    "oncology.skin.bcc": {
+        "us":  {"patientsK": 12,  "wtpPct": 70, "priceK": 200},
+        "eu":  {"patientsK": 15,  "wtpPct": 55, "priceK": 110},
+        "row": {"patientsK": 30,  "wtpPct": 10, "priceK": 40},
+    },
 }
 
 
@@ -279,6 +302,9 @@ PEN_PCT = {
     "oncology.multi_tumor.bicycle_discovery": 30,
     "oncology.neuroendocrine.gepnet": 50,
     "hematology.rare_blood.hemoglobinopathy": 18,
+    "oncology.skin.melanoma": 65,
+    "oncology.skin.cscc": 50,
+    "oncology.skin.bcc": 45,
 }
 
 

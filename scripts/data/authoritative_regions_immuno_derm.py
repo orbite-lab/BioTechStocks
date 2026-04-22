@@ -148,6 +148,18 @@ REGIONS = {
         "eu":  {"patientsK": 2000,  "wtpPct": 35, "priceK": 3},
         "row": {"patientsK": 60000, "wtpPct": 12, "priceK": 0.5},
     },
+    # source: Dellon 2022 EoE diagnosed prevalence ~150K US (rising); Dupixent EoE WAC ~$35K
+    "immunology.inflammatory_gi.eoe": {
+        "us":  {"patientsK": 150,  "wtpPct": 55, "priceK": 35},
+        "eu":  {"patientsK": 120,  "wtpPct": 35, "priceK": 20},
+        "row": {"patientsK": 250,  "wtpPct": 6,  "priceK": 5},
+    },
+    # source: Boozalis 2018 PN US prevalence ~150K severe; Dupixent PN approval 2022, WAC ~$35K
+    "dermatology.inflammatory_derm.prurigo_nodularis": {
+        "us":  {"patientsK": 150,  "wtpPct": 55, "priceK": 35},
+        "eu":  {"patientsK": 180,  "wtpPct": 35, "priceK": 20},
+        "row": {"patientsK": 800,  "wtpPct": 5,  "priceK": 4},
+    },
 }
 
 # Peak penetration (%) per disease area, from the penPct tooltip note.
@@ -174,4 +186,6 @@ PEN_PCT = {
     "dermatology.rare_skin.deb": 60,
     "dermatology.rare_skin.hailey_hailey": 10,
     "dermatology.rare_skin.vitiligo": 15,
+    "immunology.inflammatory_gi.eoe": 30,
+    "dermatology.inflammatory_derm.prurigo_nodularis": 30,
 }

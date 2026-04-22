@@ -148,6 +148,12 @@ REGIONS = {
         "eu":  {"patientsK": 80,    "wtpPct": 50, "priceK": 200},
         "row": {"patientsK": 150,   "wtpPct": 20, "priceK": 100},
     },
+    # source: NORD HoFH prevalence ~1 in 250K (US ~1.3K, EU ~2K), Evkeeza WAC ~$450K/yr
+    "cardio_metabolic.lipids.hofh": {
+        "us":  {"patientsK": 1.5,   "wtpPct": 75, "priceK": 450},
+        "eu":  {"patientsK": 2,     "wtpPct": 60, "priceK": 300},
+        "row": {"patientsK": 10,    "wtpPct": 8,  "priceK": 80},
+    },
 }
 
 PEN_PCT = {
@@ -175,4 +181,5 @@ PEN_PCT = {
     "endocrine.calcium.adh1": 25,
     "endocrine.pituitary.acromegaly": 20,
     "endocrine.thyroid.graves": 15,
+    "cardio_metabolic.lipids.hofh": 35,
 }

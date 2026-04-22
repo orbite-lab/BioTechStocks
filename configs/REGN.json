@@ -1,0 +1,1761 @@
+{
+  "company": {
+    "ticker": "REGN",
+    "name": "Regeneron Pharmaceuticals",
+    "subtitle": "Eylea/Eylea HD + Dupixent collab + Libtayo + emerging bispecifics",
+    "sharesOut": 102.6,
+    "cash": 3100,
+    "currentPrice": 750,
+    "currency": "USD",
+    "yahooTicker": "REGN",
+    "phase": "commercial"
+  },
+  "valuationType": "multiple_based",
+  "assets": [
+    {
+      "id": "eylea",
+      "name": "Eylea + Eylea HD (aflibercept)",
+      "stage": "Commercial ($5.5B 2025 US, biosimilar pressure on 2mg, HD growing +18% q/q)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "wet_amd",
+          "name": "Wet age-related macular degeneration",
+          "area": "ophthalmology.retina.nvamd",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 200,
+                "wtpPct": 80,
+                "priceK": 11
+              },
+              "eu": {
+                "patientsK": 300,
+                "wtpPct": 65,
+                "priceK": 6
+              },
+              "row": {
+                "patientsK": 1000,
+                "wtpPct": 35,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 85,
+                "priceK": 13
+              },
+              "eu": {
+                "reachPct": 95,
+                "wtpPct": 60,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 38.0,
+                "wtpPct": 12,
+                "priceK": 2.5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Eylea franchise ~22% wet AMD share post-biosimilar entry; HD recapturing some loss",
+              "us.priceK": "Eylea 2mg ~$1850/inj * 7-8 inj = $13-15K; HD $2625/inj * 5-6 inj = similar",
+              "eu.priceK": "Bayer commercializes EU; lower net pricing"
+            },
+            "penPct": 50,
+            "cagrPct": 4,
+            "peakYear": 2030,
+            "salesM": 2900,
+            "salesYear": 2025,
+            "notes": "Largest Eylea indication. Biosimilar Yesafili (Sandoz) + Pavblu (Amgen) launched 2025; Eylea HD 8mg taking share back; Vabysmo (Roche) competitor. [salesM = US-only; EU goes to Bayer, REGN books royalty separately]"
+          }
+        },
+        {
+          "id": "dme",
+          "name": "Diabetic macular edema",
+          "area": "ophthalmology.retina.dme",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 750,
+                "wtpPct": 70,
+                "priceK": 11
+              },
+              "eu": {
+                "patientsK": 1000,
+                "wtpPct": 55,
+                "priceK": 6
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 30,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 15.0,
+                "wtpPct": 80,
+                "priceK": 13
+              },
+              "eu": {
+                "reachPct": 10.8,
+                "wtpPct": 55,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 2.4,
+                "wtpPct": 10,
+                "priceK": 2.5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "~25% DME treated share; major competitor Vabysmo"
+            },
+            "penPct": 35,
+            "cagrPct": 3,
+            "peakYear": 2030,
+            "salesM": 1000,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "dr",
+          "name": "Diabetic retinopathy",
+          "area": "ophthalmology.retina.dr",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 800,
+                "wtpPct": 65,
+                "priceK": 11
+              },
+              "eu": {
+                "patientsK": 1100,
+                "wtpPct": 50,
+                "priceK": 6
+              },
+              "row": {
+                "patientsK": 4000,
+                "wtpPct": 25,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 70,
+                "priceK": 13
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 10,
+                "priceK": 2.5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Smaller indication; ~8% capture of vision-threatening DR"
+            },
+            "penPct": 30,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 300,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "rvo",
+          "name": "Retinal vein occlusion (macular edema)",
+          "area": "ophthalmology.retina.rvo",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 250,
+                "wtpPct": 60,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 280,
+                "wtpPct": 45,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 600,
+                "wtpPct": 8,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 30,
+                "wtpPct": 80,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 22,
+                "wtpPct": 55,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 10,
+                "priceK": 2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "~30% RVO treated share; Eylea HD label expansion approved 2025"
+            },
+            "penPct": 35,
+            "cagrPct": 3,
+            "peakYear": 2030,
+            "salesM": 500,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "dupixent",
+      "name": "Dupixent (dupilumab) -- Sanofi collab, REGN ~25% economics",
+      "stage": "Commercial ($17.8B 2025 WW; REGN share ~$4.5B; growth +20% YoY)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "ad",
+          "name": "Atopic dermatitis (moderate-severe)",
+          "area": "dermatology.inflammatory_derm.atopic_dermatitis_systemic",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 65,
+                "priceK": 38
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 48,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 20000,
+                "wtpPct": 15,
+                "priceK": 8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3.2,
+                "wtpPct": 70,
+                "priceK": 38
+              },
+              "eu": {
+                "reachPct": 2.4,
+                "wtpPct": 50,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.4,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Dupixent dominant in moderate-severe AD; ~30% reach of biologic-eligible",
+              "us.priceK": "Dupixent WAC ~$38-42K/yr; net ~70% after rebates",
+              "_partner": "REGN gets ~25-27% economics on Dupixent profits per Sanofi collaboration agreement; reachPct scaled to reflect REGN-attributable share, not gross franchise size"
+            },
+            "penPct": 35,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 2200,
+            "salesYear": 2025,
+            "notes": "REGN reports its 25% Sanofi profit-share. Largest Dupixent indication."
+          }
+        },
+        {
+          "id": "asthma",
+          "name": "Severe eosinophilic / Type 2 asthma",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 40
+              },
+              "eu": {
+                "patientsK": 3000,
+                "wtpPct": 55,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 25,
+                "priceK": 10
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2.2,
+                "wtpPct": 65,
+                "priceK": 38
+              },
+              "eu": {
+                "reachPct": 1.6,
+                "wtpPct": 50,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 8,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Type 2 asthma biologic share ~20%; competing with Tezspire (AZ), Nucala (GSK), Fasenra (AZ)",
+              "_partner": "REGN gets ~25-27% economics on Dupixent profits per Sanofi collaboration agreement; reachPct scaled to reflect REGN-attributable share, not gross franchise size"
+            },
+            "penPct": 25,
+            "cagrPct": 6,
+            "peakYear": 2030,
+            "salesM": 900,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "eoe",
+          "name": "Eosinophilic esophagitis",
+          "area": "immunology.inflammatory_gi.eoe",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 150,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 120,
+                "wtpPct": 35,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 250,
+                "wtpPct": 6,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6.8,
+                "wtpPct": 60,
+                "priceK": 38
+              },
+              "eu": {
+                "reachPct": 5.0,
+                "wtpPct": 40,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.8,
+                "wtpPct": 6,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "First and only biologic for EoE; rapidly capturing the eligible pool",
+              "_partner": "REGN gets ~25-27% economics on Dupixent profits per Sanofi collaboration agreement; reachPct scaled to reflect REGN-attributable share, not gross franchise size"
+            },
+            "penPct": 30,
+            "cagrPct": 12,
+            "peakYear": 2030,
+            "salesM": 200,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "copd",
+          "name": "Type 2 (eosinophilic) COPD",
+          "area": "respiratory.inflammatory.copd",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3000,
+                "wtpPct": 60,
+                "priceK": 40
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 40,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 30000,
+                "wtpPct": 15,
+                "priceK": 1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.4,
+                "wtpPct": 60,
+                "priceK": 38
+              },
+              "eu": {
+                "reachPct": 0.3,
+                "wtpPct": 40,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.0,
+                "wtpPct": 5,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "First biologic approved for COPD (2024); early ramp; Itepekimab AERIFY-2 missed so Dupixent remains the biologic option",
+              "_partner": "REGN gets ~25-27% economics on Dupixent profits per Sanofi collaboration agreement; reachPct scaled to reflect REGN-attributable share, not gross franchise size"
+            },
+            "penPct": 10,
+            "cagrPct": 25,
+            "peakYear": 2032,
+            "salesM": 150,
+            "salesYear": 2025,
+            "notes": "Big optionality: blockbuster potential 2030+ as biologic-eligible eos COPD population gets identified."
+          }
+        },
+        {
+          "id": "crswnp",
+          "name": "Chronic rhinosinusitis with nasal polyps",
+          "area": "respiratory.inflammatory.crswnp",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 750,
+                "wtpPct": 50,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 900,
+                "wtpPct": 35,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 8,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2.0,
+                "wtpPct": 65,
+                "priceK": 38
+              },
+              "eu": {
+                "reachPct": 1.4,
+                "wtpPct": 45,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 8,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Dupixent leader in CRSwNP biologics; competing with Xolair, Tezspire",
+              "_partner": "REGN gets ~25-27% economics on Dupixent profits per Sanofi collaboration agreement; reachPct scaled to reflect REGN-attributable share, not gross franchise size"
+            },
+            "penPct": 25,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 400,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "prurigo",
+          "name": "Prurigo nodularis",
+          "area": "dermatology.inflammatory_derm.prurigo_nodularis",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 150,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 180,
+                "wtpPct": 35,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 5,
+                "priceK": 4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4.8,
+                "wtpPct": 60,
+                "priceK": 38
+              },
+              "eu": {
+                "reachPct": 3.2,
+                "wtpPct": 40,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.4,
+                "wtpPct": 5,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "First and only biologic for PN (Dupixent approved 2022)",
+              "_partner": "REGN gets ~25-27% economics on Dupixent profits per Sanofi collaboration agreement; reachPct scaled to reflect REGN-attributable share, not gross franchise size"
+            },
+            "penPct": 30,
+            "cagrPct": 15,
+            "peakYear": 2030,
+            "salesM": 150,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "libtayo",
+      "name": "Libtayo (cemiplimab, anti-PD-1)",
+      "stage": "Commercial ($1.5B 2025, +16% YoY)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "nsclc",
+          "name": "1L NSCLC PD-L1+ (and combos)",
+          "area": "oncology.lung.nsclc_undruggable",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 65,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 45,
+                "wtpPct": 48,
+                "priceK": 80
+              },
+              "row": {
+                "patientsK": 180,
+                "wtpPct": 18,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 15.2,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 10.1,
+                "wtpPct": 60,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 2.5,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Smaller share vs Keytruda/Opdivo; ~6% of advanced NSCLC IO use"
+            },
+            "penPct": 55,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 700,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "cscc",
+          "name": "Advanced cutaneous SCC",
+          "area": "oncology.skin.cscc",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 50,
+                "wtpPct": 10,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 38,
+                "wtpPct": 75,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 28,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 10,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Libtayo first-in-class for advanced cSCC; ~40% market leader"
+            },
+            "penPct": 50,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 600,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "bcc",
+          "name": "Advanced basal cell carcinoma",
+          "area": "oncology.skin.bcc",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 15,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 30,
+                "wtpPct": 10,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 35,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 25,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 10,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Approved 2L+ BCC after hedgehog inhibitors"
+            },
+            "penPct": 45,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 200,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "praluent",
+      "name": "Praluent (alirocumab, PCSK9 mAb)",
+      "stage": "Commercial declining ($400M 2025, -10% YoY)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "ldl",
+          "name": "Hypercholesterolemia / CV risk reduction",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 20000,
+                "wtpPct": 70,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 25000,
+                "wtpPct": 60,
+                "priceK": 2.5
+              },
+              "row": {
+                "patientsK": 40000,
+                "wtpPct": 30,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 60,
+                "priceK": 6
+              },
+              "eu": {
+                "reachPct": 0.4,
+                "wtpPct": 45,
+                "priceK": 3
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 8,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "PCSK9 mAb class lost to oral PCSK9 + Repatha; small remaining base"
+            },
+            "penPct": 6,
+            "cagrPct": -5,
+            "peakYear": 2027,
+            "salesM": 400,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "evkeeza",
+      "name": "Evkeeza (evinacumab, ANGPTL3)",
+      "stage": "Commercial ($120M 2025, niche rare)",
+      "designations": [
+        "orphan"
+      ],
+      "indications": [
+        {
+          "id": "hofh",
+          "name": "Homozygous familial hypercholesterolemia",
+          "area": "cardio_metabolic.lipids.hofh",
+          "rare": true,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1.5,
+                "wtpPct": 75,
+                "priceK": 450
+              },
+              "eu": {
+                "patientsK": 2,
+                "wtpPct": 60,
+                "priceK": 300
+              },
+              "row": {
+                "patientsK": 10,
+                "wtpPct": 8,
+                "priceK": 80
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 80,
+                "priceK": 450
+              },
+              "eu": {
+                "reachPct": 18,
+                "wtpPct": 60,
+                "priceK": 300
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 8,
+                "priceK": 80
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "First-in-class ANGPTL3 inhibitor for HoFH; small but loyal patient base",
+              "us.priceK": "Evkeeza WAC ~$450K/yr (Roche notes 2023)"
+            },
+            "penPct": 35,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 120,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "linvoseltamab",
+      "name": "Lynozyfic (linvoseltamab, BCMAxCD3)",
+      "stage": "Commercial launching (approved 2024-2025; ramping)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "rrmm",
+          "name": "Relapsed/refractory multiple myeloma",
+          "area": "oncology.hematology.myeloma",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 160,
+                "wtpPct": 65,
+                "priceK": 235
+              },
+              "eu": {
+                "patientsK": 180,
+                "wtpPct": 48,
+                "priceK": 140
+              },
+              "row": {
+                "patientsK": 300,
+                "wtpPct": 16,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.6,
+                "wtpPct": 75,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 0.8,
+                "wtpPct": 55,
+                "priceK": 160
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 10,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Late entrant vs Tecvayli (J&J), Elrexfio (Pfizer); ~$250-300K WAC"
+            },
+            "penPct": 58,
+            "cagrPct": 30,
+            "peakYear": 2032,
+            "salesM": 50,
+            "salesYear": 2025,
+            "notes": "Recent launch. 1L MM expansion pending Ph3."
+          }
+        }
+      ]
+    },
+    {
+      "id": "odronextamab",
+      "name": "Ordspono (odronextamab, CD20xCD3)",
+      "stage": "Commercial EU; US BLA refile",
+      "designations": [],
+      "indications": [
+        {
+          "id": "fl_dlbcl",
+          "name": "Relapsed/refractory FL and DLBCL",
+          "area": "oncology.hematology.cll_nhl",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 180,
+                "wtpPct": 60,
+                "priceK": 220
+              },
+              "eu": {
+                "patientsK": 200,
+                "wtpPct": 45,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 250,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.4,
+                "wtpPct": 70,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 2.0,
+                "wtpPct": 55,
+                "priceK": 140
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 8,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "US launch pending; EU launched 2024 as Ordspono"
+            },
+            "penPct": 47,
+            "cagrPct": 25,
+            "peakYear": 2032,
+            "salesM": 30,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "fianlimab",
+      "name": "Fianlimab (LAG-3 mAb) + Libtayo combo",
+      "stage": "Phase 3 (1L melanoma readout H1 2026 -- THE catalyst)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "mel_1l",
+          "name": "1L unresectable/metastatic melanoma",
+          "area": "oncology.skin.melanoma",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 80,
+                "priceK": 300
+              },
+              "eu": {
+                "reachPct": 20,
+                "wtpPct": 60,
+                "priceK": 170
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 12,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "If positive, fianlimab+Libtayo could capture 25%+ of 1L mel from Opdivo+Yervoy/Opdualag",
+              "us.priceK": "Combo regimen ~$250-350K/yr"
+            },
+            "penPct": 65,
+            "cagrPct": 5,
+            "peakYear": 2032,
+            "notes": "Pivotal Ph3 readout H1 2026. If positive: $2-3B peak. If negative: zero."
+          }
+        }
+      ]
+    },
+    {
+      "id": "pozelimab",
+      "name": "Pozelimab + cemdisiran (C5 mAb + siRNA)",
+      "stage": "Phase 3 (gMG, paroxysmal nocturnal hemoglobinuria)",
+      "designations": [
+        "orphan"
+      ],
+      "indications": [
+        {
+          "id": "gmg",
+          "name": "Generalized myasthenia gravis",
+          "area": "immunology.neuromuscular_autoimmune.myasthenia_gravis",
+          "rare": true,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60,
+                "wtpPct": 65,
+                "priceK": 280
+              },
+              "eu": {
+                "patientsK": 130,
+                "wtpPct": 48,
+                "priceK": 150
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 75,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 55,
+                "priceK": 200
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 8,
+                "priceK": 80
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "C5+siRNA combo competing with Ultomiris (AZ), Vyvgart (ARGX); modest share if approved"
+            },
+            "penPct": 40,
+            "cagrPct": 10,
+            "peakYear": 2033
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "val": {
+        "mult": 3.5,
+        "dr": 3,
+        "cannib": 25,
+        "plat": 0,
+        "exus": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "eylea": {
+          "wet_amd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "dme": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "dr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "rvo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "dupixent": {
+          "ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "eoe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "crswnp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "prurigo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "libtayo": {
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "cscc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "praluent": {
+          "ldl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "evkeeza": {
+          "hofh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "linvoseltamab": {
+          "rrmm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "odronextamab": {
+          "fl_dlbcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "fianlimab": {
+          "mel_1l": {
+            "pos": 15,
+            "apr": 30,
+            "pen": 0.5
+          }
+        },
+        "pozelimab": {
+          "gmg": {
+            "pos": 25,
+            "apr": 40,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "val": {
+        "mult": 4.0,
+        "dr": 3,
+        "cannib": 15,
+        "plat": 0,
+        "exus": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "eylea": {
+          "wet_amd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "dme": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "dr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "rvo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "dupixent": {
+          "ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "eoe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "crswnp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "prurigo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "libtayo": {
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "cscc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "praluent": {
+          "ldl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "evkeeza": {
+          "hofh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "linvoseltamab": {
+          "rrmm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "odronextamab": {
+          "fl_dlbcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "fianlimab": {
+          "mel_1l": {
+            "pos": 30,
+            "apr": 50,
+            "pen": 0.7
+          }
+        },
+        "pozelimab": {
+          "gmg": {
+            "pos": 40,
+            "apr": 55,
+            "pen": 0.7
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 50,
+      "val": {
+        "mult": 5.0,
+        "dr": 3,
+        "cannib": 5,
+        "plat": 0,
+        "exus": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "eylea": {
+          "wet_amd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "dme": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "dr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "rvo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "dupixent": {
+          "ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "eoe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "crswnp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "prurigo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "libtayo": {
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "cscc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "praluent": {
+          "ldl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "evkeeza": {
+          "hofh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "linvoseltamab": {
+          "rrmm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "odronextamab": {
+          "fl_dlbcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "fianlimab": {
+          "mel_1l": {
+            "pos": 55,
+            "apr": 70,
+            "pen": 1.0
+          }
+        },
+        "pozelimab": {
+          "gmg": {
+            "pos": 60,
+            "apr": 70,
+            "pen": 1.0
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "mult": 7.0,
+        "dr": 3,
+        "cannib": 2,
+        "plat": 0,
+        "exus": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "eylea": {
+          "wet_amd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "dme": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "dr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "rvo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "dupixent": {
+          "ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "eoe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "crswnp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "prurigo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "libtayo": {
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "cscc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "bcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "praluent": {
+          "ldl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "evkeeza": {
+          "hofh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "linvoseltamab": {
+          "rrmm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "odronextamab": {
+          "fl_dlbcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "fianlimab": {
+          "mel_1l": {
+            "pos": 75,
+            "apr": 85,
+            "pen": 1.3
+          }
+        },
+        "pozelimab": {
+          "gmg": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 1.3
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "mult": 10.0,
+        "dr": 2,
+        "cannib": 0,
+        "plat": 0,
+        "exus": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "eylea": {
+          "wet_amd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "dme": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "dr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "rvo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "dupixent": {
+          "ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "eoe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.6
+          },
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 2.0
+          },
+          "crswnp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "prurigo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.6
+          }
+        },
+        "libtayo": {
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "cscc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "bcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "praluent": {
+          "ldl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "evkeeza": {
+          "hofh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "linvoseltamab": {
+          "rrmm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.8
+          }
+        },
+        "odronextamab": {
+          "fl_dlbcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.6
+          }
+        },
+        "fianlimab": {
+          "mel_1l": {
+            "pos": 90,
+            "apr": 95,
+            "pen": 1.6
+          }
+        },
+        "pozelimab": {
+          "gmg": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 1.6
+          }
+        }
+      }
+    }
+  },
+  "context": {
+    "thesis_one_liner": "Eylea franchise stabilized by HD switch + biosimilar pressure on 2mg, Dupixent compounding +20%, Libtayo growing skin-onc share, fianlimab H1 2026 readout the rerating catalyst.",
+    "key_risks": [
+      "Eylea biosimilar erosion in US faster than HD recapture",
+      "Fianlimab Ph3 melanoma fail (binary; ~30% downside)",
+      "Sanofi Dupixent collab terms / IRA negotiation",
+      "Linvoseltamab launch slower than $1B+ peak hopes vs J&J/Pfizer competition"
+    ],
+    "key_upsides": [
+      "Fianlimab + Libtayo wins 1L melanoma combo (+20-30% share take)",
+      "Dupixent COPD ramp accelerates (eos COPD market $5B+)",
+      "Linvoseltamab 1L MM expansion succeeds",
+      "Pozelimab gMG approval"
+    ]
+  },
+  "catalysts": [
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-30",
+      "asset": "fianlimab",
+      "indication": "mel_1l",
+      "title": "Fianlimab + Libtayo Ph3 1L melanoma readout (RELATIVITY-097)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 10,
+      "fail_apr": 30,
+      "success_pos": 80,
+      "success_apr": 90,
+      "_source": "https://investor.regeneron.com/news-releases",
+      "_confidence": "high",
+      "_rationale": "Most catalyst-rich event for REGN; market expects readout H1 2026 per JPM 2026 presentation"
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-11-30",
+      "asset": "linvoseltamab",
+      "indication": "rrmm",
+      "title": "Linvoseltamab 1L MM Ph3 readout",
+      "type": "phase3_data",
+      "binary": false,
+      "fail_pos": 50,
+      "fail_apr": 70,
+      "success_pos": 90,
+      "success_apr": 95,
+      "_confidence": "medium"
+    },
+    {
+      "date": "Q3 2026",
+      "dateSort": "2026-09-30",
+      "asset": "pozelimab",
+      "indication": "gmg",
+      "title": "Pozelimab + cemdisiran Ph3 gMG readout",
+      "type": "phase3_data",
+      "binary": false,
+      "fail_pos": 40,
+      "fail_apr": 55,
+      "success_pos": 85,
+      "success_apr": 90,
+      "_confidence": "medium"
+    },
+    {
+      "date": "Q2 2026",
+      "dateSort": "2026-05-15",
+      "asset": "odronextamab",
+      "indication": "fl_dlbcl",
+      "title": "Odronextamab US BLA action (FL/DLBCL)",
+      "type": "pdufa",
+      "binary": false,
+      "fail_pos": 60,
+      "fail_apr": 50,
+      "success_pos": 95,
+      "success_apr": 95,
+      "_confidence": "medium"
+    }
+  ]
+}

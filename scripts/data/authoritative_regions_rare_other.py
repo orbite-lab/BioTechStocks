@@ -194,6 +194,19 @@ REGIONS = {
         "eu":  {"patientsK": 4000,  "wtpPct": 40, "priceK": 22},
         "row": {"patientsK": 30000, "wtpPct": 15, "priceK": 1},
     },
+    # source: NEI prevalence ~250K US RVO; ~280K EU; ROW per WHO Vision 2020
+    "ophthalmology.retina.rvo": {
+        "us":  {"patientsK": 250,  "wtpPct": 60, "priceK": 12},
+        "eu":  {"patientsK": 280,  "wtpPct": 45, "priceK": 7},
+        "row": {"patientsK": 600,  "wtpPct": 8,  "priceK": 2},
+    },
+    # source: Sanofi/REGN CRSwNP biologic-eligible severe pop estimates ~750K US;
+    # Dupixent CRSwNP WAC ~$35K/yr
+    "respiratory.inflammatory.crswnp": {
+        "us":  {"patientsK": 750,  "wtpPct": 50, "priceK": 35},
+        "eu":  {"patientsK": 900,  "wtpPct": 35, "priceK": 20},
+        "row": {"patientsK": 3000, "wtpPct": 8,  "priceK": 5},
+    },
 }
 
 PEN_PCT = {
@@ -227,4 +240,6 @@ PEN_PCT = {
     "ophthalmology.optic_nerve.nmosd": 40,
     "respiratory.inflammatory.asthma_severe": 25,
     "respiratory.inflammatory.copd": 10,
+    "ophthalmology.retina.rvo": 35,
+    "respiratory.inflammatory.crswnp": 25,
 }

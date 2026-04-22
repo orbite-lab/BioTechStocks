@@ -1238,7 +1238,10 @@ async function main(){
       const c1={},c2={},c3={};let rc=0;
       src.forEach(r=>{
         const s1=new Set(),s2=new Set(),s3=new Set();
-        r.meta.areas.forEach(a=>{const p=a.split(".");
+        r.meta.areas.forEach(a=>{
+          // Skip pseudo-areas (_* prefix: platform/discovery, not real disease classification)
+          if(a.startsWith('_')) return;
+          const p=a.split(".");
           if(p.length===1&&!s1.has(a)){c1[a]=(c1[a]||0)+1;s1.add(a);}
           if(p.length===2){const k=p[0]+"."+p[1];if(!s2.has(k)){c2[k]=(c2[k]||0)+1;s2.add(k);}}
           if(p.length>=3){const k3=p.slice(0,3).join(".");if(!s3.has(k3)){c3[k3]=(c3[k3]||0)+1;s3.add(k3);}}});

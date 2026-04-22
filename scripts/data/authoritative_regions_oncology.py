@@ -92,43 +92,69 @@ REGIONS = {
         "eu":  {"patientsK": 27, "wtpPct": 45, "priceK": 105},
         "row": {"patientsK": 90, "wtpPct": 14, "priceK": 35},
     },
-    "oncology.hematology.cll_nhl": {
-        "us":  {"patientsK": 180, "wtpPct": 60, "priceK": 220},
-        "eu":  {"patientsK": 200, "wtpPct": 45, "priceK": 130},
-        "row": {"patientsK": 250, "wtpPct": 12, "priceK": 50},
-    },
-    # CLL/NHL line-of-disease L4 sub-segments. Patient counts approximate
-    # the eligible treated cohort per year (incidence x treated-share).
-    # source: SEER, NORD, Lymphoma Research Foundation epi summaries
-    "oncology.hematology.cll_nhl.cll": {
-        # CLL ~21K US incident/yr but ~80K actively-treated prevalent (5-10yr survival
-        # on BTK/BCL2). Sized for annual treated cohort since drugs are continuous.
-        # Supports Imbruvica + Calquence/Brukinsa + Venclexta combined ~$10B WW
+    # ------------------------------------------------------------
+    # HEMATOLOGIC MALIGNANCIES -- CLL split from NHL (medically distinct);
+    # NHL groups all B-cell + T-cell lymphomas with disease-specific L4s.
+    # Patient counts are annual treated cohorts (not raw incidence) because
+    # most drugs are continuous chronic therapy.
+    # source: SEER, NORD, Lymphoma Research Foundation
+    # ------------------------------------------------------------
+
+    # CLL: chronic lymphocytic leukemia. ~21K US incident, ~80K actively-treated
+    # prevalent (5-10yr median OS on BTK/BCL2). Supports the ~$10B WW BTK+BCL2 spend.
+    "oncology.hematology.cll": {
         "us":  {"patientsK": 80,  "wtpPct": 70, "priceK": 100},
         "eu":  {"patientsK": 95,  "wtpPct": 50, "priceK": 60},
         "row": {"patientsK": 150, "wtpPct": 12, "priceK": 25},
     },
-    "oncology.hematology.cll_nhl.fl": {
-        # Follicular lymphoma + indolent NHL ~14K US new/yr; many on watch-and-wait
-        # blended price reflects mix of rituximab/lenalidomide/bispecifics/CAR-T
+
+    # NHL parent (legacy aggregate). Sub-segments below.
+    "oncology.hematology.nhl": {
+        "us":  {"patientsK": 80, "wtpPct": 60, "priceK": 150},
+        "eu":  {"patientsK": 90, "wtpPct": 45, "priceK": 90},
+        "row": {"patientsK": 200, "wtpPct": 12, "priceK": 35},
+    },
+    # DLBCL: diffuse large B-cell lymphoma. Most common aggressive NHL.
+    # Curative intent 1L (R-CHOP); 2L+ market for CAR-T + bispecifics + Polivy combos.
+    "oncology.hematology.nhl.dlbcl": {
+        "us":  {"patientsK": 40,  "wtpPct": 68, "priceK": 195},
+        "eu":  {"patientsK": 38,  "wtpPct": 50, "priceK": 115},
+        "row": {"patientsK": 120, "wtpPct": 15, "priceK": 40},
+    },
+    # FL + iNHL: indolent B-cell lymphoma; many on watch-and-wait initially.
+    # Treatment mix: rituximab/lenalidomide/bispecifics/CAR-T.
+    "oncology.hematology.nhl.fl": {
         "us":  {"patientsK": 14, "wtpPct": 65, "priceK": 80},
         "eu":  {"patientsK": 17, "wtpPct": 48, "priceK": 50},
         "row": {"patientsK": 30, "wtpPct": 12, "priceK": 20},
     },
-    "oncology.hematology.cll_nhl.mcl": {
-        # Mantle cell lymphoma ~5K US new/yr; aggressive, BTK + CAR-T
+    # MCL: mantle cell lymphoma; aggressive but treatable.
+    # BTK first-line, CAR-T (Tecartus) post-BTKi.
+    "oncology.hematology.nhl.mcl": {
         "us":  {"patientsK": 5, "wtpPct": 70, "priceK": 120},
         "eu":  {"patientsK": 6, "wtpPct": 52, "priceK": 75},
         "row": {"patientsK": 10, "wtpPct": 10, "priceK": 30},
     },
-    # Note: BCL2-targeted, BTK-resistant, and CAR-T-combo populations are
-    # *clinical sub-cohorts* of CLL but were previously tagged as L4. They
-    # are now collapsed back into cll_nhl.cll. CAR-T platform-level analysis
-    # belongs in the Technology Explorer (cell_therapy.car_t_*).
-    "oncology.hematology.dlbcl": {
-        "us":  {"patientsK": 40,  "wtpPct": 68, "priceK": 195},
-        "eu":  {"patientsK": 38,  "wtpPct": 50, "priceK": 115},
-        "row": {"patientsK": 120, "wtpPct": 15, "priceK": 40},
+    # WM: Waldenstrom macroglobulinemia / lymphoplasmacytic lymphoma. Rare;
+    # BTK inhibitors are 1L standard (Brukinsa, Imbruvica), rituximab combos.
+    "oncology.hematology.nhl.wm": {
+        "us":  {"patientsK": 5,  "wtpPct": 70, "priceK": 180},
+        "eu":  {"patientsK": 6,  "wtpPct": 52, "priceK": 110},
+        "row": {"patientsK": 12, "wtpPct": 10, "priceK": 35},
+    },
+    # MZL: marginal zone lymphoma (splenic, nodal, MALT).
+    # BTK + lenalidomide-rituximab + CAR-T expanding.
+    "oncology.hematology.nhl.mzl": {
+        "us":  {"patientsK": 7,  "wtpPct": 65, "priceK": 100},
+        "eu":  {"patientsK": 9,  "wtpPct": 48, "priceK": 60},
+        "row": {"patientsK": 18, "wtpPct": 12, "priceK": 25},
+    },
+    # T-cell lymphomas (PTCL, CTCL, etc). Smaller market; Soquelitinib (CRVS)
+    # + Adcetris + romidepsin + CAR-T pipeline.
+    "oncology.hematology.nhl.tcell": {
+        "us":  {"patientsK": 8,  "wtpPct": 60, "priceK": 130},
+        "eu":  {"patientsK": 10, "wtpPct": 42, "priceK": 75},
+        "row": {"patientsK": 20, "wtpPct": 10, "priceK": 28},
     },
     "oncology.hematology.myeloma": {
         "us":  {"patientsK": 160, "wtpPct": 65, "priceK": 235},
@@ -155,11 +181,7 @@ REGIONS = {
         "eu":  {"patientsK": 14, "wtpPct": 42, "priceK": 220},
         "row": {"patientsK": 20, "wtpPct": 10, "priceK": 80},
     },
-    "oncology.hematology.tcell_lymphoma": {
-        "us":  {"patientsK": 12, "wtpPct": 58, "priceK": 155},
-        "eu":  {"patientsK": 9,  "wtpPct": 42, "priceK": 90},
-        "row": {"patientsK": 40, "wtpPct": 14, "priceK": 32},
-    },
+    # (oncology.hematology.tcell_lymphoma renamed to oncology.hematology.nhl.tcell above)
 
     # ------------------------------------------------------------
     # LUNG - NSCLC DRIVER SUBTYPES
@@ -290,16 +312,19 @@ PEN_PCT = {
     "oncology.gi.pancreatic": 40,
     "oncology.gynecologic.ovarian": 52,
     "oncology.hematology.aml": 48,
-    "oncology.hematology.cll_nhl": 47,
-    "oncology.hematology.cll_nhl.cll": 65,
-    "oncology.hematology.cll_nhl.fl": 45,
-    "oncology.hematology.cll_nhl.mcl": 50,
-    "oncology.hematology.dlbcl": 55,
+    "oncology.hematology.cll": 65,
+    "oncology.hematology.nhl": 35,
+    "oncology.hematology.nhl.dlbcl": 55,
+    "oncology.hematology.nhl.fl": 45,
+    "oncology.hematology.nhl.mcl": 50,
+    "oncology.hematology.nhl.wm": 55,
+    "oncology.hematology.nhl.mzl": 40,
+    "oncology.hematology.nhl.tcell": 40,
     "oncology.hematology.myeloma": 58,
     "oncology.hematology.myeloma.1l": 70,
     "oncology.hematology.myeloma.2l_3l": 55,
     "oncology.hematology.myeloma.4l_plus": 35,
-    "oncology.hematology.tcell_lymphoma": 42,
+    # tcell_lymphoma renamed -> nhl.tcell (above)
     "oncology.lung.nsclc_driver.alk": 68,
     "oncology.lung.nsclc_driver.cmet": 50,
     "oncology.lung.nsclc_driver.her2": 48,

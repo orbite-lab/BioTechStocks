@@ -160,6 +160,13 @@ REGIONS = {
         "eu":  {"patientsK": 180,  "wtpPct": 35, "priceK": 20},
         "row": {"patientsK": 800,  "wtpPct": 5,  "priceK": 4},
     },
+    # source: Lee 2022 cGVHD prevalence ~14K incident/yr post-allo-SCT US;
+    # actively-treated active disease ~30K prevalent. Imbruvica + Jakafi + ECP.
+    "immunology.transplant.cgvhd": {
+        "us":  {"patientsK": 30,  "wtpPct": 70, "priceK": 150},
+        "eu":  {"patientsK": 28,  "wtpPct": 50, "priceK": 90},
+        "row": {"patientsK": 60,  "wtpPct": 10, "priceK": 30},
+    },
 }
 
 # Peak penetration (%) per disease area, from the penPct tooltip note.
@@ -188,4 +195,5 @@ PEN_PCT = {
     "dermatology.rare_skin.vitiligo": 15,
     "immunology.inflammatory_gi.eoe": 30,
     "dermatology.inflammatory_derm.prurigo_nodularis": 30,
+    "immunology.transplant.cgvhd": 35,
 }

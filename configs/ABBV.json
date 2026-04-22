@@ -1804,11 +1804,10 @@
       "indications": [
         {
           "id": "cll",
-          "name": "CLL/SLL + MCL",
-          "area": "oncology.hematology.cll_nhl.cll",
+          "name": "Chronic lymphocytic leukemia",
+          "area": "oncology.hematology.cll",
+          "rare": false,
           "market": {
-            "tamB": 6,
-            "penPct": 65,
             "regions": {
               "us": {
                 "patientsK": 80,
@@ -1826,40 +1825,6 @@
                 "priceK": 25
               }
             },
-            "sources": {
-              "us.patientsK": {
-                "note": "SEER 2024: ~21K new CLL + ~80K new NHL/yr; ~180K prevalent on active tx. Source: NCI SEER, LLS."
-              },
-              "eu.patientsK": {
-                "note": "EU5 prevalence ~200K CLL/NHL on tx; HMRN + EUROCARE registries."
-              },
-              "row.patientsK": {
-                "note": "Global ex-US/EU ~250K; China NMPA CLL registry + APAC hematology estimates."
-              },
-              "us.wtpPct": {
-                "note": "~60% -- Medicare + commercial coverage for BTKi/CAR-T strong; CAR-T access gated by accredited centers."
-              },
-              "eu.wtpPct": {
-                "note": "~45% -- HTA (NICE, G-BA) approved BTKi/bispecifics; CAR-T reimbursement varies by country."
-              },
-              "row.wtpPct": {
-                "note": "~12% -- Japan + AU well-covered; EM rely on rituximab biosimilars + CHOP chemo."
-              },
-              "us.priceK": {
-                "note": "Blended $220K: BTKi $200K (45% pts) + CAR-T $410K (5%) + bispecific $250K (10%) + anti-CD20 $80K (25%) + chemo $30K (15%)."
-              },
-              "eu.priceK": {
-                "note": "~$130K blended; EU net ~60% of US list across modalities."
-              },
-              "row.priceK": {
-                "note": "~$50K blended; generics (rituximab biosim, CHOP) dominant outside Japan."
-              },
-              "penPct": {
-                "note": "~47% peak -- BTKi + CAR-T + bispecifics combined capture of eligible CLL/NHL over 5yr."
-              }
-            },
-            "salesM": 1500,
-            "salesYear": 2025,
             "company_slice": {
               "us": {
                 "reachPct": 25,
@@ -1878,56 +1843,214 @@
               }
             },
             "company_slice_sources": {
-              "us.reachPct": {
-                "note": "Imbruvica 12% of ~200K US CLL/MCL/WM -- declining fast vs Brukinsa (BeOne) + Calquence (AZ) on superior selectivity/AF profile."
-              },
-              "us.wtpPct": {
-                "note": "55% -- Medicare Part D + commercial; NCCN Cat 1 CLL but Brukinsa head-to-head ALPINE superiority shifting preference."
-              },
-              "us.priceK": {
-                "note": "Imbruvica WAC $220K/yr; net ~$200K; Medicare Part D oral onc + J&J co-promote share."
-              },
-              "eu.reachPct": {
-                "note": "8% EU CLL/MCL -- NICE TA429 + G-BA reimbursed but Brukinsa/Calquence taking 1L share on tolerability."
-              },
-              "eu.wtpPct": {
-                "note": "45% -- HTA reimbursed but newer BTKi preferred; step-therapy changes 2024-25."
-              },
-              "eu.priceK": {
-                "note": "$120K EU net -- UK NHS ~GBP 4K/mo, Germany AMNOG ~EUR 5.5K/mo; ~55% of US list."
-              },
-              "row.reachPct": {
-                "note": "3% of 400K ROW CLL -- Japan NHI + China NRDL; competition from Brukinsa heavy in China."
-              },
-              "row.wtpPct": {
-                "note": "10% -- Japan NHI 30% copay, China NRDL discount."
-              },
-              "row.priceK": {
-                "note": "$45K blended -- Japan ~$80K NHI, China NRDL ~$30K."
-              },
-              "_split": "Imbruvica is approved CLL+MCL+WM+MZL+cGVHD; only CLL slice (largest) modeled here"
+              "us.reachPct": "Imbruvica BTKi share ~25% US CLL post-Brukinsa entry"
             },
-            "notes": "CLL portion of Imbruvica franchise (~55% of $2.8B WW). Remainder (MCL, WM, MZL, cGVHD) not separately modeled."
-          },
-          "company_slice": {
-            "us": {
-              "reachPct": 12,
-              "wtpPct": 55,
-              "priceK": 200
+            "penPct": 65,
+            "cagrPct": -3,
+            "peakYear": 2027,
+            "salesM": 1450,
+            "salesYear": 2025,
+            "notes": "CLL portion (~52% of $2.8B Imbruvica franchise WW)"
+          }
+        },
+        {
+          "id": "mcl",
+          "name": "Mantle cell lymphoma",
+          "area": "oncology.hematology.nhl.mcl",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5,
+                "wtpPct": 70,
+                "priceK": 120
+              },
+              "eu": {
+                "patientsK": 6,
+                "wtpPct": 52,
+                "priceK": 75
+              },
+              "row": {
+                "patientsK": 10,
+                "wtpPct": 10,
+                "priceK": 30
+              }
             },
-            "eu": {
-              "reachPct": 8,
-              "wtpPct": 45,
-              "priceK": 120
+            "company_slice": {
+              "us": {
+                "reachPct": 74.5,
+                "wtpPct": 65,
+                "priceK": 180
+              },
+              "eu": {
+                "reachPct": 59.6,
+                "wtpPct": 48,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 12.8,
+                "wtpPct": 10,
+                "priceK": 45
+              }
             },
-            "row": {
-              "reachPct": 3,
-              "wtpPct": 10,
-              "priceK": 45
-            }
-          },
-          "company_slice_sources": {
-            "us.reachPct": "Declining vs Brukinsa/Calquence; ~12% CLL/NHL share eroding"
+            "company_slice_sources": {
+              "us.reachPct": "Imbruvica MCL share ~35%, declining vs Brukinsa"
+            },
+            "penPct": 50,
+            "cagrPct": -5,
+            "peakYear": 2027,
+            "salesM": 420,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "wm",
+          "name": "Waldenstrom macroglobulinemia",
+          "area": "oncology.hematology.nhl.wm",
+          "rare": true,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5,
+                "wtpPct": 70,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 6,
+                "wtpPct": 52,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 12,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 50,
+                "wtpPct": 70,
+                "priceK": 180
+              },
+              "eu": {
+                "reachPct": 35,
+                "wtpPct": 52,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 8,
+                "wtpPct": 10,
+                "priceK": 45
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Imbruvica first BTKi for WM, ~50% share eroding to Brukinsa (ASPEN trial)"
+            },
+            "penPct": 55,
+            "cagrPct": -4,
+            "peakYear": 2027,
+            "salesM": 390,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "mzl",
+          "name": "Marginal zone lymphoma",
+          "area": "oncology.hematology.nhl.mzl",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 7,
+                "wtpPct": 65,
+                "priceK": 100
+              },
+              "eu": {
+                "patientsK": 9,
+                "wtpPct": 48,
+                "priceK": 60
+              },
+              "row": {
+                "patientsK": 18,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 60,
+                "priceK": 180
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 45,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 10,
+                "priceK": 45
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Imbruvica MZL approval"
+            },
+            "penPct": 40,
+            "cagrPct": -3,
+            "peakYear": 2027,
+            "salesM": 140,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "cgvhd",
+          "name": "Chronic graft-versus-host disease",
+          "area": "immunology.transplant.cgvhd",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 70,
+                "priceK": 150
+              },
+              "eu": {
+                "patientsK": 28,
+                "wtpPct": 50,
+                "priceK": 90
+              },
+              "row": {
+                "patientsK": 60,
+                "wtpPct": 10,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 70,
+                "priceK": 180
+              },
+              "eu": {
+                "reachPct": 18,
+                "wtpPct": 50,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 10,
+                "priceK": 45
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "First FDA-approved cGVHD therapy 2017; Jakafi competing"
+            },
+            "penPct": 35,
+            "cagrPct": -2,
+            "peakYear": 2027,
+            "salesM": 280,
+            "salesYear": 2025
           }
         }
       ]
@@ -1941,7 +2064,7 @@
         {
           "id": "cll_ven",
           "name": "CLL/SLL (venetoclax)",
-          "area": "oncology.hematology.cll_nhl.cll",
+          "area": "oncology.hematology.cll",
           "market": {
             "tamB": 5,
             "penPct": 65,
@@ -2935,7 +3058,27 @@
           "cll": {
             "pos": 100,
             "apr": 100,
-            "pen": 1.0
+            "pen": 0.85
+          },
+          "mcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "wm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "mzl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "cgvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
           }
         },
         "venclexta": {
@@ -3091,7 +3234,27 @@
           "cll": {
             "pos": 100,
             "apr": 100,
-            "pen": 1.0
+            "pen": 0.95
+          },
+          "mcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "wm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "mzl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "cgvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
           }
         },
         "venclexta": {
@@ -3245,6 +3408,26 @@
         },
         "imbruvica": {
           "cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "wm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mzl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "cgvhd": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -3403,7 +3586,27 @@
           "cll": {
             "pos": 100,
             "apr": 100,
-            "pen": 1.0
+            "pen": 1.05
+          },
+          "mcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "wm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "mzl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "cgvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
           }
         },
         "venclexta": {
@@ -3559,7 +3762,27 @@
           "cll": {
             "pos": 100,
             "apr": 100,
-            "pen": 1.0
+            "pen": 1.1
+          },
+          "mcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "wm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "mzl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "cgvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
           }
         },
         "venclexta": {

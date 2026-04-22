@@ -20,14 +20,11 @@
       "designations": [],
       "indications": [
         {
-          "id": "btk",
-          "name": "CLL + MCL + WM + B-cell malignancies",
+          "id": "cll",
+          "name": "Chronic lymphocytic leukemia",
+          "area": "oncology.hematology.cll",
+          "rare": false,
           "market": {
-            "notes": "CLL portion of BTK franchise (~70% of $3.9B WW). MCL/WM/MZL not modeled.",
-            "tamB": 12.0,
-            "penPct": 65,
-            "salesM": 2800,
-            "salesYear": 2025,
             "regions": {
               "us": {
                 "patientsK": 80,
@@ -45,47 +42,116 @@
                 "priceK": 25
               }
             },
-            "sources": {
-              "us.patientsK": {
-                "note": "SEER 2024: ~21K new CLL + ~80K new NHL/yr; ~180K prevalent on active tx. Source: NCI SEER, LLS."
-              },
-              "eu.patientsK": {
-                "note": "EU5 prevalence ~200K CLL/NHL on tx; HMRN + EUROCARE registries."
-              },
-              "row.patientsK": {
-                "note": "Global ex-US/EU ~250K; China NMPA CLL registry + APAC hematology estimates."
-              },
-              "us.wtpPct": {
-                "note": "~60% -- Medicare + commercial coverage for BTKi/CAR-T strong; CAR-T access gated by accredited centers."
-              },
-              "eu.wtpPct": {
-                "note": "~45% -- HTA (NICE, G-BA) approved BTKi/bispecifics; CAR-T reimbursement varies by country."
-              },
-              "row.wtpPct": {
-                "note": "~12% -- Japan + AU well-covered; EM rely on rituximab biosimilars + CHOP chemo."
-              },
-              "us.priceK": {
-                "note": "Blended $220K: BTKi $200K (45% pts) + CAR-T $410K (5%) + bispecific $250K (10%) + anti-CD20 $80K (25%) + chemo $30K (15%)."
-              },
-              "eu.priceK": {
-                "note": "~$130K blended; EU net ~60% of US list across modalities."
-              },
-              "row.priceK": {
-                "note": "~$50K blended; generics (rituximab biosim, CHOP) dominant outside Japan."
-              },
-              "penPct": {
-                "note": "~47% peak -- BTKi + CAR-T + bispecifics combined capture of eligible CLL/NHL over 5yr."
-              }
-            },
             "company_slice": {
               "us": {
                 "reachPct": 40,
-                "wtpPct": 60,
+                "wtpPct": 65,
                 "priceK": 195
               },
               "eu": {
                 "reachPct": 30,
-                "wtpPct": 48,
+                "wtpPct": 50,
+                "priceK": 115
+              },
+              "row": {
+                "reachPct": 10,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Brukinsa BTKi leader US CLL ~40%, taking share via better tolerability/PFS"
+            },
+            "penPct": 65,
+            "cagrPct": 12,
+            "peakYear": 2030,
+            "salesM": 2900,
+            "salesYear": 2025,
+            "notes": "CLL is largest Brukinsa indication (~75% of $3.9B WW)"
+          }
+        },
+        {
+          "id": "mcl",
+          "name": "Mantle cell lymphoma",
+          "area": "oncology.hematology.nhl.mcl",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5,
+                "wtpPct": 70,
+                "priceK": 120
+              },
+              "eu": {
+                "patientsK": 6,
+                "wtpPct": 52,
+                "priceK": 75
+              },
+              "row": {
+                "patientsK": 10,
+                "wtpPct": 10,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 64.4,
+                "wtpPct": 70,
+                "priceK": 195
+              },
+              "eu": {
+                "reachPct": 42.9,
+                "wtpPct": 52,
+                "priceK": 115
+              },
+              "row": {
+                "reachPct": 11.4,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Brukinsa MCL post-BTK approval"
+            },
+            "penPct": 50,
+            "cagrPct": 5,
+            "peakYear": 2028,
+            "salesM": 400,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "wm",
+          "name": "Waldenstrom macroglobulinemia",
+          "area": "oncology.hematology.nhl.wm",
+          "rare": true,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5,
+                "wtpPct": 70,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 6,
+                "wtpPct": 52,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 12,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 45,
+                "wtpPct": 75,
+                "priceK": 195
+              },
+              "eu": {
+                "reachPct": 30,
+                "wtpPct": 55,
                 "priceK": 115
               },
               "row": {
@@ -95,36 +161,64 @@
               }
             },
             "company_slice_sources": {
-              "us.reachPct": {
-                "note": "Brukinsa 22% of US CLL/MCL/WM BTKi market -- ALPINE head-to-head superiority vs Imbruvica drove 2024-25 share gains; $3.9B 2025 global."
+              "us.reachPct": "Brukinsa first BTKi to show superior PFS vs Imbruvica in WM (ASPEN trial)"
+            },
+            "penPct": 55,
+            "cagrPct": 6,
+            "peakYear": 2028,
+            "salesM": 400,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "mzl",
+          "name": "Marginal zone lymphoma",
+          "area": "oncology.hematology.nhl.mzl",
+          "rare": false,
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 7,
+                "wtpPct": 65,
+                "priceK": 100
               },
-              "us.priceK": {
-                "note": "Brukinsa WAC $235K/yr; net ~$210K after Part D rebates + 340B; BeOne direct patient assistance."
+              "eu": {
+                "patientsK": 9,
+                "wtpPct": 48,
+                "priceK": 60
               },
-              "us.wtpPct": {
-                "note": "65% -- NCCN Cat 1 CLL/MCL/WM/MZL; Medicare Part D + commercial broad; superior AF/safety vs Imbruvica drives formulary wins."
-              },
-              "eu.reachPct": {
-                "note": "15% of EU CLL/MCL BTKi -- EMA 2021; NICE TA814 + G-BA added benefit proven ALPINE; taking Imbruvica share."
-              },
-              "eu.wtpPct": {
-                "note": "48% -- NICE/G-BA recommended all indications; ASMR III CLL 1L; ALPINE superiority drives HTA."
-              },
-              "eu.priceK": {
-                "note": "$125K EU net -- UK NHS ~GBP 4K/mo, Germany AMNOG ~EUR 5.5K/mo; ~55% of US list."
-              },
-              "row.reachPct": {
-                "note": "4% of 400K ROW CLL/MCL -- China NMPA + NRDL 2020 (BeiGene home market), Japan NHI 2022."
-              },
-              "row.wtpPct": {
-                "note": "12% -- China NRDL ~70% discount, Japan NHI 30% copay, AU PBS."
-              },
-              "row.priceK": {
-                "note": "$50K blended -- China NRDL ~$40K, Japan NHI ~$85K."
+              "row": {
+                "patientsK": 18,
+                "wtpPct": 12,
+                "priceK": 25
               }
-            }
-          },
-          "area": "oncology.hematology.cll_nhl.cll"
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 22,
+                "wtpPct": 65,
+                "priceK": 195
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 48,
+                "priceK": 115
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Brukinsa MZL approval"
+            },
+            "penPct": 40,
+            "cagrPct": 5,
+            "peakYear": 2028,
+            "salesM": 200,
+            "salesYear": 2025
+          }
         }
       ],
       "modality": "small_molecule.kinase_inhibitor.btk_inhibitor"
@@ -356,7 +450,7 @@
               }
             }
           },
-          "area": "oncology.hematology.cll_nhl.cll"
+          "area": "oncology.hematology.cll"
         }
       ],
       "modality": "small_molecule.enzyme_inhibitor.bcl2_inhibitor"
@@ -471,7 +565,7 @@
               }
             }
           },
-          "area": "oncology.hematology.cll_nhl.cll"
+          "area": "oncology.hematology.cll"
         }
       ],
       "modality": "small_molecule.protein_degrader.btk_cdac"
@@ -603,10 +697,25 @@
       ],
       "assumptions": {
         "commercial": {
-          "btk": {
+          "cll": {
             "pos": 100,
             "apr": 100,
-            "pen": 1.0
+            "pen": 0.85
+          },
+          "mcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "wm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "mzl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
           }
         },
         "tevimbra": {
@@ -657,10 +766,25 @@
       ],
       "assumptions": {
         "commercial": {
-          "btk": {
+          "cll": {
             "pos": 100,
             "apr": 100,
-            "pen": 1.0
+            "pen": 0.95
+          },
+          "mcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "wm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "mzl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
           }
         },
         "tevimbra": {
@@ -711,7 +835,22 @@
       ],
       "assumptions": {
         "commercial": {
-          "btk": {
+          "cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "wm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mzl": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -765,10 +904,25 @@
       ],
       "assumptions": {
         "commercial": {
-          "btk": {
+          "cll": {
             "pos": 100,
             "apr": 100,
-            "pen": 1.0
+            "pen": 1.15
+          },
+          "mcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "wm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "mzl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
           }
         },
         "tevimbra": {
@@ -819,10 +973,25 @@
       ],
       "assumptions": {
         "commercial": {
-          "btk": {
+          "cll": {
             "pos": 100,
             "apr": 100,
-            "pen": 1.0
+            "pen": 1.3
+          },
+          "mcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "wm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "mzl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
           }
         },
         "tevimbra": {

@@ -11,7 +11,7 @@
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
     "area_count_l3": 124,
-    "area_count_l4": 21,
+    "area_count_l4": 24,
     "modality_count": 117,
     "companies": 46
   },
@@ -636,6 +636,15 @@
           "count": 2,
           "rare": true
         }
+      },
+      "transplant": {
+        "cgvhd": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1,
+          "rare": false
+        }
       }
     },
     "infectious_disease": {
@@ -890,49 +899,12 @@
           "count": 1,
           "rare": false
         },
-        "cll_nhl": {
+        "cll": {
           "companies": [
             "ABBV",
-            "GILD",
-            "NKTR",
-            "ONC",
-            "REGN"
+            "ONC"
           ],
-          "count": 5,
-          "rare": false,
-          "sub": {
-            "cll": {
-              "companies": [
-                "ABBV",
-                "ONC"
-              ],
-              "count": 2,
-              "rare": false
-            },
-            "fl": {
-              "companies": [
-                "GILD",
-                "REGN"
-              ],
-              "count": 2,
-              "rare": false
-            },
-            "mcl": {
-              "companies": [
-                "GILD"
-              ],
-              "count": 1,
-              "rare": false
-            }
-          }
-        },
-        "dlbcl": {
-          "companies": [
-            "ALLO",
-            "GILD",
-            "LEGN"
-          ],
-          "count": 3,
+          "count": 2,
           "rare": false
         },
         "myeloma": {
@@ -969,12 +941,70 @@
             }
           }
         },
-        "tcell_lymphoma": {
+        "nhl": {
           "companies": [
-            "CRVS"
+            "ABBV",
+            "ALLO",
+            "CRVS",
+            "GILD",
+            "LEGN",
+            "NKTR",
+            "ONC",
+            "REGN"
           ],
-          "count": 1,
-          "rare": true
+          "count": 8,
+          "rare": true,
+          "sub": {
+            "dlbcl": {
+              "companies": [
+                "ALLO",
+                "GILD",
+                "LEGN"
+              ],
+              "count": 3,
+              "rare": false
+            },
+            "fl": {
+              "companies": [
+                "GILD",
+                "REGN"
+              ],
+              "count": 2,
+              "rare": false
+            },
+            "mcl": {
+              "companies": [
+                "ABBV",
+                "GILD",
+                "ONC"
+              ],
+              "count": 3,
+              "rare": false
+            },
+            "mzl": {
+              "companies": [
+                "ABBV",
+                "ONC"
+              ],
+              "count": 2,
+              "rare": false
+            },
+            "tcell": {
+              "companies": [
+                "CRVS"
+              ],
+              "count": 1,
+              "rare": true
+            },
+            "wm": {
+              "companies": [
+                "ABBV",
+                "ONC"
+              ],
+              "count": 2,
+              "rare": true
+            }
+          }
         }
       },
       "lung": {

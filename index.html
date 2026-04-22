@@ -753,6 +753,25 @@ async function main(){
     }
   }catch{/* prices cache not available — fall back to live fetch */}
 
+  // Load taxonomy display_names for friendly UI labels
+  let displayNames={};
+  try{
+    const tr=await fetch("data/taxonomy.json?v="+Date.now());
+    if(tr.ok){
+      const tx=await tr.json();
+      displayNames=tx.display_names||{};
+    }
+  }catch{/* ok if missing -- nice() falls back to underscore replace */}
+  // Friendly label helper: prefer display_names map, fall back to last-segment underscore-replace
+  window._nicelabel=function(key){
+    if(!key) return '';
+    if(displayNames[key]) return displayNames[key];
+    // Try last segment of dotted path (e.g. "small_molecule.gpcr.cgrp_antagonist" -> "cgrp_antagonist" -> lookup)
+    const last=key.split('.').pop();
+    if(displayNames[last]) return displayNames[last];
+    return last.replace(/_/g,' ');
+  };
+
   // Build rows with config prices initially
 
   function buildRows(){
@@ -1491,7 +1510,7 @@ async function main(){
       const isLeaf = children.length === 0 && currentData;
 
       const fmtB = v => v >= 1000 ? '$'+(v/1000).toFixed(1)+'B' : '$'+Math.round(v)+'M';
-      const nice = s => s.replace(/_/g,' ');
+      const nice = s => window._nicelabel ? window._nicelabel(s) : s.replace(/_/g,' ');
 
       h+=`<div class="card${secCls('sec-markets')}" id="sec-markets"><div class="card-title" ${titleAttrsFlex('sec-markets')}><div>${chev('sec-markets')}<div class="dot" style="background:linear-gradient(180deg,#f97316,#a855f7);display:inline-block;vertical-align:middle;margin-right:8px"></div>Market Explorer</div>`;
       // Sort chips
@@ -1650,7 +1669,7 @@ async function main(){
       });
       const isLeaf = children.length === 0 && currentData;
       const fmtB = v => v >= 1000 ? '$'+(v/1000).toFixed(1)+'B' : '$'+Math.round(v)+'M';
-      const nice = s => s.replace(/_/g,' ');
+      const nice = s => window._nicelabel ? window._nicelabel(s) : s.replace(/_/g,' ');
 
       h+=`<div class="card${secCls('sec-tech')}" id="sec-tech"><div class="card-title" ${titleAttrsFlex('sec-tech')}><div>${chev('sec-tech')}<div class="dot" style="background:linear-gradient(180deg,#06b6d4,#a855f7);display:inline-block;vertical-align:middle;margin-right:8px"></div>Technology Explorer <span style="font-size:.62rem;color:#6b7080;font-weight:400;margin-left:6px">modality \u00b7 cross-disease pivot</span></div>`;
       h+='<div style="display:flex;gap:4px">';

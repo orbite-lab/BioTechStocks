@@ -738,7 +738,9 @@
             }
             const chipStyle = (bg,col) => ({display:"inline-flex",alignItems:"center",gap:4,padding:"3px 9px",borderRadius:5,fontSize:10,fontWeight:600,fontFamily:"'JetBrains Mono'",marginRight:5,marginBottom:4,background:bg,color:col,border:"1px solid "+col+"33"});
             const pCol = phaseColors[co.phase] || "#6b7080";
-            const fmt = s => s.split(".").map(p=>p.replace(/_/g," ")).join(" \u203a ");
+            // Friendly label: each segment falls back through display_names map (taxonomy.json), then underscore-replace
+            const dn = taxonomy?.display_names || {};
+            const fmt = s => s.split(".").map(p => dn[p] || p.replace(/_/g," ")).join(" \u203a ");
             // Per-asset tags with stage
             const assetChips = config.assets.map(a => {
               const stg = (a.stage || "").toLowerCase();

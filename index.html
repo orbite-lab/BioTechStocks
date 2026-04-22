@@ -105,9 +105,12 @@ tbody tr:hover{background:#ffffff06}
 .sticky-filters .stats{margin-bottom:6px}
 @media(max-width:1000px){.stats,.ptf-results{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){.stats,.ptf-results{grid-template-columns:1fr}}
-.fbar{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;margin-bottom:16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.fbar-lbl{font-size:.68rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-right:4px;font-weight:600}
-.fchip{padding:4px 10px;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--bg3);color:var(--text2);transition:.15s;white-space:nowrap}
+.fbar{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:8px 12px;margin-bottom:8px;display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.fbar:last-of-type{margin-bottom:14px}
+.fbar.fbar-top{padding:6px 12px;background:var(--bg1)}
+.fbar-lbl{font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:.8px;margin-right:2px;font-weight:600;opacity:.7}
+.fbar-meta{margin-left:auto;display:flex;gap:8px;align-items:center;font-size:.7rem;color:var(--text2);font-family:var(--mono)}
+.fchip{padding:3px 9px;border-radius:5px;font-size:.7rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--bg3);color:var(--text2);transition:.15s;white-space:nowrap}
 .fchip:hover{border-color:#60a5fa;color:var(--text1)}
 .fchip.active{background:#3b82f622;border-color:#3b82f6;color:#93c5fd}
 .fchip .cnt{font-size:.6rem;opacity:.6;margin-left:5px}
@@ -115,10 +118,10 @@ tbody tr:hover{background:#ffffff06}
 .fchip-rare{padding:4px 10px;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer;border:1px solid #f59e0b44;background:#f59e0b08;color:#f59e0b;transition:.15s}
 .fchip-rare:hover{border-color:#f59e0b;color:#fbbf24;background:#f59e0b18}
 .fchip-rare.active{background:#f59e0b22;border-color:#f59e0b;color:#fbbf24}
-.fsep{width:1px;height:20px;background:var(--border);margin:0 4px}
+.fsep{width:1px;height:16px;background:var(--border);margin:0 5px;opacity:.5}
 .fsel{padding:4px 8px;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--bg3);color:var(--text2);outline:none;font-family:var(--mono)}
 .fsel:focus{border-color:#3b82f6}
-.fl2-row{display:flex;flex-wrap:wrap;gap:5px;padding:4px 14px 8px;margin-bottom:12px}
+.fl2-row{display:flex;flex-wrap:wrap;gap:4px;padding:2px 14px 6px;margin-bottom:6px}
 .fl2chip{padding:3px 8px;border-radius:5px;font-size:.67rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--bg1);color:var(--text2);transition:.15s}
 .fl2chip:hover{border-color:#a855f7;color:var(--text1)}
 .fl2chip.active{background:#a855f722;border-color:#a855f7;color:#d8b4fe}
@@ -1315,7 +1318,33 @@ async function main(){
         l1Tams[l1]=(l1Tams[l1]||0)+tam;
       }));
     });
-    // Filter bar — Area (sorted by total TAM desc, then count desc, then alpha)
+    // -------- Row 1: Company-level filters (size, phase, rare) + meta on right --------
+    fh+='<div class="fbar fbar-top">';
+    fh+='<span class="fbar-lbl">Size</span>';
+    [['mega','Mega','>$100B'],['large','Large','$20-100B'],['mid','Mid','$5-20B'],['small','Small','$1-5B'],['micro','Micro','<$1B']].forEach(([k,lbl,range])=>{
+      if(!mcapCounts[k])return;
+      const active=filterMcap.has(k);
+      fh+=`<span class="fchip ${active?'active':''}" onclick="window._fMcap('${k}')" title="${range}">${lbl}<span class="cnt">${mcapCounts[k]}</span></span>`;
+    });
+    fh+='<span class="fsep"></span>';
+    fh+='<span class="fbar-lbl">Phase</span>';
+    fh+=`<select class="fsel" onchange="window._fPhase(this.value)"><option value="">All</option>`;
+    PHASE_ORDER.forEach(p=>{if(phaseCounts[p])fh+=`<option value="${p}" ${filterPhase===p?'selected':''}>${PHASE_NAMES[p]} (${phaseCounts[p]})</option>`;});
+    fh+='</select>';
+    fh+='<span class="fsep"></span>';
+    fh+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()" title="Filter companies with rare disease indications">\u2605 Rare<span class="cnt">${rareCountCross}</span></span>`;
+    // Right-aligned meta cluster
+    fh+='<span class="fbar-meta">';
+    if(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterRare===true){
+      fh+=`<span class="fchip ${purityMode==='wtd'?'active':''}" onclick="window._purityMode()" style="padding:2px 8px;font-size:.62rem" title="Toggle: Raw TAM vs Risk-Adjusted (PoS\u00d7Apr weighted)">Purity: ${purityMode==='wtd'?'Risk-Adj':'Raw TAM'}</span>`;
+    }
+    if(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterPhase||filterRare!==null||activeFilter||filterMod1||filterMod2||filterMod3||filterMcap.size)
+      fh+=`<span class="fchip" style="border-color:#ef444444;color:#fca5a5" onclick="window._fClear()">\u2715 Clear</span>`;
+    fh+=`<span><b style="color:var(--text1)">${filtered.length}</b>/${rows.length}</span>`;
+    fh+='</span>';
+    fh+='</div>';
+
+    // -------- Row 2: Disease area chips (sorted by aggregate TAM) --------
     fh+='<div class="fbar">';
     fh+='<span class="fbar-lbl">Area</span>';
     const sortedL1s=Object.keys(l1Counts).sort((a,b)=>{
@@ -1328,29 +1357,6 @@ async function main(){
       const tt=l1Tams[l1]?` title="Total TAM \$${(l1Tams[l1]/1000).toFixed(1)}B"`:'';
       fh+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')"${tt}>${L1_NAMES[l1]||l1.replace(/_/g,' ')}<span class="cnt">${l1Counts[l1]}</span></span>`;
     });
-    fh+='<span class="fsep"></span>';
-    fh+='<span class="fbar-lbl">Phase</span>';
-    fh+=`<select class="fsel" onchange="window._fPhase(this.value)"><option value="">All</option>`;
-    PHASE_ORDER.forEach(p=>{if(phaseCounts[p])fh+=`<option value="${p}" ${filterPhase===p?'selected':''}>${PHASE_NAMES[p]} (${phaseCounts[p]})</option>`;});
-    fh+='</select>';
-    fh+='<span class="fsep"></span>';
-    fh+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()" title="Filter companies with rare disease indications">\u2605 Rare<span class="cnt">${rareCountCross}</span></span>`;
-    // Market cap tier chips
-    fh+='<span class="fsep"></span>';
-    fh+='<span class="fbar-lbl" title="Filter by market capitalization (USD)">Mcap</span>';
-    [['mega','Mega','>$100B'],['large','Large','$20-100B'],['mid','Mid','$5-20B'],['small','Small','$1-5B'],['micro','Micro','<$1B']].forEach(([k,lbl,range])=>{
-      if(!mcapCounts[k])return;
-      const active=filterMcap.has(k);
-      fh+=`<span class="fchip ${active?'active':''}" onclick="window._fMcap('${k}')" title="${range}">${lbl}<span class="cnt">${mcapCounts[k]}</span></span>`;
-    });
-    // Purity toggle — only meaningful when an area or rare filter is active (otherwise no badges render)
-    if(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterRare===true){
-      fh+='<span class="fsep"></span>';
-      fh+=`<span class="fchip ${purityMode==='wtd'?'active':''}" onclick="window._purityMode()" style="padding:2px 8px;font-size:.62rem" title="Toggle: Raw TAM vs Risk-Adjusted (PoS\u00d7Apr weighted)">Purity: ${purityMode==='wtd'?'Risk-Adj':'Raw TAM'}</span>`;
-    }
-    if(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterPhase||filterRare!==null||activeFilter||filterMod1||filterMod2||filterMod3||filterMcap.size)
-      fh+=`<span class="fchip" style="border-color:#ef444444;color:#fca5a5" onclick="window._fClear()">\u2715 Clear</span>`;
-    fh+=`<span style="margin-left:auto;font-size:.7rem;color:var(--text2);font-family:var(--mono)">${filtered.length}/${rows.length}</span>`;
     fh+='</div>';
 
     // L2 sub-chips (show when L1 is active)

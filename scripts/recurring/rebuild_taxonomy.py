@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIGS = ROOT / "configs"
-OUT = ROOT / "taxonomy.json"
+OUT = ROOT / "data" / "taxonomy.json"
 
 def rebuild():
     manifest = json.loads((CONFIGS / "manifest.json").read_text())

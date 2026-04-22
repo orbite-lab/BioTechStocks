@@ -216,20 +216,20 @@
             setConfigs(cfgs);
             setSource("server");
             try {
-              const tr = await fetch("taxonomy.json");
+              const tr = await fetch("data/taxonomy.json");
               if (tr.ok) setTaxonomy(await tr.json());
             } catch { /* taxonomy optional */ }
             try {
-              const fr = await fetch("financials.json");
+              const fr = await fetch("data/financials.json");
               if (fr.ok) setFinancials(await fr.json());
             } catch { /* financials optional */ }
             try {
-              const sb = await fetch("sector_benchmarks.json");
+              const sb = await fetch("data/sector_benchmarks.json");
               if (sb.ok) setSectorBenchmarks(await sb.json());
             } catch { /* benchmarks optional */ }
             // Seed cached prices from prices.json (GitHub Actions, ~30 min cadence)
             try {
-              const pr = await fetch("prices.json?v=" + Date.now());
+              const pr = await fetch("data/prices.json?v=" + Date.now());
               if (pr.ok) {
                 const pj = await pr.json();
                 const seeded = {};

@@ -29,7 +29,7 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIGS = ROOT / "configs"
-CACHE = ROOT / "options_cache.json"
+CACHE = ROOT / "data" / "options_cache.json"
 
 
 def get_options_data(ticker_yahoo, catalyst_date_str, stock_price):

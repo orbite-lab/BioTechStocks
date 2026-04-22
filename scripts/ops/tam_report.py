@@ -166,8 +166,8 @@ def write_md(rows, path):
 
 if __name__ == "__main__":
     rows = collect()
-    csv_path = ROOT / "tam_report.csv"
-    md_path = ROOT / "tam_report.md"
+    csv_path = ROOT / "reports" / "tam_report.csv"
+    md_path = ROOT / "reports" / "tam_report.md"
     write_csv(rows, csv_path)
     write_md(rows, md_path)
     print(f"Wrote {len(rows)} rows to:")

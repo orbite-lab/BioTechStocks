@@ -720,7 +720,7 @@ async function main(){
     if(!Object.keys(configs).length)throw 0;
     // Load options cache and merge into catalysts
     try{
-      const or2=await fetch("options_cache.json?v="+Date.now());
+      const or2=await fetch("data/options_cache.json?v="+Date.now());
       if(or2.ok){
         const oc=await or2.json();
         for(const[tk,catOpts]of Object.entries(oc)){
@@ -739,7 +739,7 @@ async function main(){
   let pricesLoaded=false;
   let pricesFetchedAt=null;
   try{
-    const pr=await fetch("prices.json?v="+Date.now());
+    const pr=await fetch("data/prices.json?v="+Date.now());
     if(pr.ok){
       const pj=await pr.json();
       if(pj._meta&&pj._meta.fetchedAt)pricesFetchedAt=pj._meta.fetchedAt;

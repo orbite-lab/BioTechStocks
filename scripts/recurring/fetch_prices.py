@@ -27,7 +27,7 @@ except ImportError:
 ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIGS = ROOT / "configs"
 MANIFEST = CONFIGS / "manifest.json"
-PRICES = ROOT / "prices.json"
+PRICES = ROOT / "data" / "prices.json"
 
 
 def load_existing():

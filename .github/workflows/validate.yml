@@ -1,9 +1,9 @@
 name: Validate Configs
 on:
   push:
-    paths: ['configs/**', 'taxonomy.json']
+    paths: ['configs/**', 'data/taxonomy.json']
   pull_request:
-    paths: ['configs/**', 'taxonomy.json']
+    paths: ['configs/**', 'data/taxonomy.json']
 
 jobs:
   validate:
@@ -18,9 +18,9 @@ jobs:
       - name: Check taxonomy is up to date
         run: |
           python scripts/recurring/rebuild_taxonomy.py
-          if ! git diff --quiet taxonomy.json; then
+          if ! git diff --quiet data/taxonomy.json; then
             echo "❌ taxonomy.json is stale — run: python scripts/recurring/rebuild_taxonomy.py"
-            git diff taxonomy.json | head -50
+            git diff data/taxonomy.json | head -50
             exit 1
           fi
           echo "✅ taxonomy.json is up to date"

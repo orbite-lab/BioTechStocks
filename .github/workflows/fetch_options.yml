@@ -22,7 +22,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add options_cache.json
+          git add data/options_cache.json
           if git diff --cached --quiet; then
             echo "No changes to options data"
             exit 0

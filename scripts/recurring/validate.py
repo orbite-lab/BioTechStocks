@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIGS = ROOT / "configs"
-TAXONOMY = ROOT / "taxonomy.json"
+TAXONOMY = ROOT / "data" / "taxonomy.json"
 
 def load_taxonomy():
     if not TAXONOMY.exists():

@@ -129,40 +129,59 @@ tbody tr:hover{background:#ffffff06}
 .fl2chip .cnt{font-size:.58rem;opacity:.5;margin-left:2px}
 .purity-badge{display:inline-block;font-size:.62rem;font-family:var(--mono);padding:2px 5px;border-radius:3px;background:#a855f722;color:#c084fc;margin-left:5px;font-weight:700;border:1px solid #a855f733}
 
-/* ===== Master-detail layout: edge-flush left nav + filters inside ===== */
+/* ===== Master-detail layout: edge-flush left nav (NAVIGATION ONLY, no scroll) ===== */
 .app-shell{margin-top:4px}
-.left-nav{position:fixed;left:0;top:46px;bottom:0;width:228px;overflow-y:auto;padding:10px 6px 20px;background:var(--bg2);border-right:1px solid var(--border);scrollbar-width:thin;z-index:50}
-.left-nav::-webkit-scrollbar{width:6px}
-.left-nav::-webkit-scrollbar-thumb{background:#ffffff14;border-radius:3px}
+.left-nav{position:fixed;left:0;top:46px;bottom:0;width:200px;overflow:hidden;padding:10px 6px;background:var(--bg2);border-right:1px solid var(--border);z-index:50;display:flex;flex-direction:column}
 .left-nav .nav-group{font-size:.56rem;text-transform:uppercase;letter-spacing:1.6px;color:var(--text2);opacity:.55;padding:14px 12px 5px;font-weight:700}
 .left-nav .nav-group:first-child{padding-top:6px}
 .left-nav .nav-item{display:flex;justify-content:space-between;align-items:center;padding:7px 10px 7px 12px;border-radius:6px;cursor:pointer;font-size:.78rem;color:var(--text1);margin:1px 4px;transition:background .12s,color .12s,border-left-color .12s;gap:8px;border-left:3px solid transparent}
 .left-nav .nav-item:hover{background:#ffffff08}
 .left-nav .nav-item.active{background:#60a5fa15;color:#bfdbfe;font-weight:600}
 .left-nav .nav-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-.left-nav .nav-cnt{font-size:.62rem;color:var(--text2);font-family:var(--mono);opacity:.55}
-
-/* Filter section inside the nav */
-.left-nav .nav-filters{padding:6px 10px}
-.left-nav .nav-filters .nav-flbl{font-size:.56rem;text-transform:uppercase;letter-spacing:1.6px;color:var(--text2);opacity:.55;font-weight:700;margin-top:10px;margin-bottom:4px;display:block}
-.left-nav .nav-filters .nav-flbl:first-child{margin-top:0}
-.left-nav .nav-filters .fchip,.left-nav .nav-filters .fchip-rare{padding:3px 8px;font-size:.66rem;margin:2px 2px 0 0;display:inline-flex}
-.left-nav .nav-filters .fchip-row{display:flex;flex-wrap:wrap;gap:3px}
-.left-nav .nav-filters .fsel{width:100%;padding:4px 6px;font-size:.7rem;background:var(--bg3);border:1px solid var(--border);color:var(--text1);border-radius:5px;outline:none}
-.left-nav .nav-filters .fchip[style*="ef4444"]{margin-top:6px}
-.left-nav .nav-filters .nav-meta{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;color:var(--text2);font-family:var(--mono);padding:6px 0;border-top:1px solid #ffffff10;margin-top:8px}
-.left-nav .nav-filters .nav-meta b{color:var(--text1)}
 
 .main-area{min-width:0}
 .main-area > .card{display:none}
 .main-area > .card.active-section{display:block;margin-bottom:16px}
 
-/* Hide the legacy sticky-filters element entirely now that filters are in the nav */
+/* ===== Filter drawer (right slide-in) ===== */
+.filter-btn{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:6px;background:var(--bg3);border:1px solid var(--border);color:var(--text1);font-size:.75rem;font-weight:600;cursor:pointer;transition:.15s;font-family:inherit}
+.filter-btn:hover{border-color:#60a5fa;color:#bfdbfe}
+.filter-btn.has-active{border-color:#60a5fa;background:#60a5fa18;color:#bfdbfe}
+.filter-btn .badge{background:#60a5fa;color:#0a0c10;font-size:.62rem;font-weight:700;padding:1px 6px;border-radius:8px;min-width:18px;text-align:center;font-family:var(--mono)}
+.drawer-overlay{position:fixed;inset:0;background:#00000088;backdrop-filter:blur(2px);z-index:300;opacity:0;pointer-events:none;transition:opacity .18s}
+.drawer-overlay.open{opacity:1;pointer-events:auto}
+.filter-drawer{position:fixed;right:0;top:0;bottom:0;width:380px;max-width:90vw;background:var(--bg2);border-left:1px solid var(--border);z-index:310;transform:translateX(100%);transition:transform .22s ease-out;display:flex;flex-direction:column;box-shadow:-12px 0 30px rgba(0,0,0,.4)}
+.filter-drawer.open{transform:translateX(0)}
+.drawer-header{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
+.drawer-header .title{font-size:.95rem;font-weight:700;color:var(--text1)}
+.drawer-header .close{font-size:1.2rem;color:var(--text2);cursor:pointer;background:none;border:none;padding:4px 8px;border-radius:4px}
+.drawer-header .close:hover{background:#ffffff10;color:var(--text1)}
+.drawer-body{flex:1;overflow-y:auto;padding:14px 18px;scrollbar-width:thin}
+.drawer-body::-webkit-scrollbar{width:6px}
+.drawer-body::-webkit-scrollbar-thumb{background:#ffffff14;border-radius:3px}
+.drawer-body .nav-flbl{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text2);opacity:.7;font-weight:700;margin-top:14px;margin-bottom:5px;display:block}
+.drawer-body .nav-flbl:first-child{margin-top:0}
+.drawer-body .fchip-row{display:flex;flex-wrap:wrap;gap:4px}
+.drawer-body .fchip,.drawer-body .fchip-rare,.drawer-body .fl2chip{padding:4px 9px;font-size:.7rem;margin:0;display:inline-flex}
+.drawer-body .fsel{padding:5px 8px;font-size:.75rem;background:var(--bg3);border:1px solid var(--border);color:var(--text1);border-radius:5px;outline:none}
+.drawer-footer{padding:10px 18px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:var(--text2);font-family:var(--mono);flex-shrink:0}
+.drawer-footer b{color:var(--text1)}
+
+/* ===== Active-filter token strip (above active card) ===== */
+.active-filters{display:flex;flex-wrap:wrap;gap:5px;align-items:center;padding:8px 0 12px;font-size:.7rem;color:var(--text2)}
+.active-filters .pill{display:inline-flex;align-items:center;gap:5px;padding:3px 4px 3px 8px;background:#60a5fa18;border:1px solid #60a5fa44;border-radius:5px;color:#bfdbfe;font-size:.68rem;font-weight:600;cursor:pointer;transition:.12s}
+.active-filters .pill:hover{background:#60a5fa28;border-color:#60a5fa}
+.active-filters .pill .x{opacity:.6;font-weight:700;padding:0 2px}
+.active-filters .pill:hover .x{opacity:1}
+.active-filters .lbl{margin-right:2px;opacity:.6;font-size:.66rem;text-transform:uppercase;letter-spacing:.8px}
+
+/* Hide the legacy sticky-filters element entirely (filters now in drawer) */
 .sticky-filters{display:none !important}
 
 @media (max-width:980px){
-  .left-nav{position:relative;left:0;top:0;width:100%;height:auto;border-right:none;border-bottom:1px solid var(--border);max-height:none;padding-bottom:8px}
-  .left-nav .nav-group{padding:6px 8px 2px}
+  .left-nav{position:relative;left:0;top:0;width:100%;height:auto;border-right:none;border-bottom:1px solid var(--border);padding-bottom:8px;flex-direction:row;flex-wrap:wrap;overflow:visible}
+  .left-nav .nav-group{padding:6px 8px 2px;width:100%}
+  .filter-drawer{width:90vw}
 }
 </style>
 </head>
@@ -174,6 +193,10 @@ tbody tr:hover{background:#ffffff06}
     <div class="topbar-list" id="topList"></div>
   </div>
   <span class="topbar-count" id="topCount"></span>
+  <button class="filter-btn" id="filterBtn" onclick="window._toggleDrawer()" style="display:none">
+    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4h12M4 8h8M6 12h4"/></svg>
+    Filters <span class="badge" id="filterBadge" style="display:none">0</span>
+  </button>
   <nav class="topbar-nav" id="topNav">
     <button onclick="window._navTo('sec-range')" data-sec="sec-range">Range</button>
     <button onclick="window._navTo('sec-markets')" data-sec="sec-markets">Markets</button>
@@ -184,6 +207,18 @@ tbody tr:hover{background:#ffffff06}
   </nav>
 </div>
 <div id="stickyFilters" class="sticky-filters"></div>
+<div id="drawerOverlay" class="drawer-overlay" onclick="window._toggleDrawer()"></div>
+<aside id="filterDrawer" class="filter-drawer">
+  <div class="drawer-header">
+    <span class="title">Filters</span>
+    <button class="close" onclick="window._toggleDrawer()" aria-label="Close">×</button>
+  </div>
+  <div id="drawerBody" class="drawer-body"></div>
+  <div class="drawer-footer">
+    <span id="drawerCount"></span>
+    <span id="drawerClear"></span>
+  </div>
+</aside>
 <div class="wrap">
 <div id="app"><div class="loading">Loading configs&hellip;</div></div>
 </div>
@@ -915,6 +950,8 @@ async function main(){
   };
   // Master-detail navigation state (default = Range Strip = the hero card)
   let activeNavSec='sec-range';
+  // Filter drawer (slide-in from right)
+  let drawerOpen=false;
   const chev=id=>`<span class="sec-chev" title="${collapsedSec[id]?'Expand':'Collapse'}">${collapsedSec[id]?'\u25B8':'\u25BE'}</span>`;
   const secCls=id=>collapsedSec[id]?' sec-collapsed':'';
   // Attributes to attach to a card-title to make the whole bar clickable for toggle.
@@ -2498,50 +2535,82 @@ async function main(){
     h+=`<a href="https://github.com/orbite-lab/BioTechStocks" style="color:#60a5fa">Source configs</a> \u00b7 `;
     h+=`<a href="model.html" style="color:#60a5fa">Open model viewer</a></div>`;
 
-    // Filters now live INSIDE the left nav -- legacy stickyFilters element
-    // hidden via CSS but we still populate it as a no-op fallback.
+    // ========== Filters: build drawer body + topbar button + active token strip ==========
     document.getElementById('stickyFilters').innerHTML='';
 
-    // ========== Build left nav: filters + section nav ==========
-    // Compact filter HTML for inside the nav (vertical layout).
-    let filterHtml='<div class="nav-filters">';
-    // Header: count + clear
-    const anyFilter=(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterPhase||filterRare!==null||activeFilter||filterMod1||filterMod2||filterMod3||filterMcap.size);
-    filterHtml+=`<div class="nav-meta" style="border-top:none;margin-top:0;padding-top:0"><span><b>${filtered.length}</b> / ${rows.length}</span>`;
-    if(anyFilter) filterHtml+='<span class="fchip" style="border-color:#ef444444;color:#fca5a5;padding:2px 8px;font-size:.62rem" onclick="window._fClear()">\u2715 Clear</span>';
-    filterHtml+='</div>';
-    // Size
-    filterHtml+='<span class="nav-flbl">Size</span><div class="fchip-row">';
+    // Active-filter count for the topbar button badge
+    const activeFilters=[];
+    [...filterMcap].forEach(k=>activeFilters.push({lbl:'Size',val:k.charAt(0).toUpperCase()+k.slice(1),clear:`window._fMcap('${k}')`}));
+    if(filterPhase) activeFilters.push({lbl:'Phase',val:PHASE_NAMES[filterPhase]||filterPhase,clear:`window._fPhase('')`});
+    if(filterRare===true) activeFilters.push({lbl:'',val:'\u2605 Rare',clear:'window._fRare()'});
+    [...filterL1].forEach(l1=>activeFilters.push({lbl:'Area',val:L1_NAMES[l1]||l1.replace(/_/g,' '),clear:`window._fL1('${l1}')`}));
+    [...filterL2].forEach(l2=>activeFilters.push({lbl:'L2',val:l2.split('.').pop().replace(/_/g,' '),clear:`window._fL2('${l2}')`}));
+    [...filterL3].forEach(l3=>activeFilters.push({lbl:'L3',val:l3.split('.').pop().replace(/_/g,' '),clear:`window._fL3('${l3}')`}));
+    [...filterL4].forEach(l4=>activeFilters.push({lbl:'L4',val:l4.split('.').pop().replace(/_/g,' '),clear:`window._fL4('${l4}')`}));
+    if(filterMod1) activeFilters.push({lbl:'Platform',val:filterMod1.replace(/_/g,' '),clear:`window._fMod1(null)`});
+    if(filterMod2) activeFilters.push({lbl:'P.L2',val:filterMod2.split('.').pop().replace(/_/g,' '),clear:`window._fMod2(null)`});
+    if(filterMod3) activeFilters.push({lbl:'P.L3',val:filterMod3.split('.').pop().replace(/_/g,' '),clear:`window._fMod3(null)`});
+    if(activeFilter) activeFilters.push({lbl:'Bucket',val:activeFilter.replace(/_/g,' '),clear:`window._filter('${activeFilter}')`});
+    const anyFilter=activeFilters.length>0;
+
+    // Update topbar Filters button (count badge + style)
+    const fbtn=document.getElementById('filterBtn');
+    if(fbtn){
+      fbtn.style.display='inline-flex';
+      fbtn.classList.toggle('has-active', anyFilter);
+      const fbadge=document.getElementById('filterBadge');
+      if(anyFilter){fbadge.textContent=activeFilters.length;fbadge.style.display='inline-block';}
+      else fbadge.style.display='none';
+    }
+
+    // Build drawer body (all filter sections, vertical layout, scrollable)
+    let drawerHtml='';
+    drawerHtml+='<span class="nav-flbl">Size</span><div class="fchip-row">';
     [['mega','Mega','>$100B'],['large','Large','$20-100B'],['mid','Mid','$5-20B'],['small','Small','$1-5B'],['micro','Micro','<$1B']].forEach(([k,lbl,range])=>{
       if(!mcapCounts[k])return;
       const active=filterMcap.has(k);
-      filterHtml+=`<span class="fchip ${active?'active':''}" onclick="window._fMcap('${k}')" title="${range}">${lbl}<span class="cnt">${mcapCounts[k]}</span></span>`;
+      drawerHtml+=`<span class="fchip ${active?'active':''}" onclick="window._fMcap('${k}')" title="${range}">${lbl}<span class="cnt">${mcapCounts[k]}</span></span>`;
     });
-    filterHtml+='</div>';
-    // Phase
-    filterHtml+='<span class="nav-flbl">Phase</span>';
-    filterHtml+=`<select class="fsel" onchange="window._fPhase(this.value)"><option value="">All</option>`;
-    PHASE_ORDER.forEach(p=>{if(phaseCounts[p])filterHtml+=`<option value="${p}" ${filterPhase===p?'selected':''}>${PHASE_NAMES[p]} (${phaseCounts[p]})</option>`;});
-    filterHtml+='</select>';
-    // Rare
-    filterHtml+='<span class="nav-flbl">Designation</span><div class="fchip-row">';
-    filterHtml+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()" title="Filter companies with rare disease indications">\u2605 Rare<span class="cnt">${rareCountCross}</span></span>`;
-    filterHtml+='</div>';
-    // Area chips (sorted by TAM)
-    filterHtml+='<span class="nav-flbl">Area (by TAM)</span><div class="fchip-row">';
+    drawerHtml+='</div>';
+    drawerHtml+='<span class="nav-flbl">Phase</span>';
+    drawerHtml+=`<select class="fsel" onchange="window._fPhase(this.value)"><option value="">All</option>`;
+    PHASE_ORDER.forEach(p=>{if(phaseCounts[p])drawerHtml+=`<option value="${p}" ${filterPhase===p?'selected':''}>${PHASE_NAMES[p]} (${phaseCounts[p]})</option>`;});
+    drawerHtml+='</select>';
+    drawerHtml+='<span class="nav-flbl">Designation</span><div class="fchip-row">';
+    drawerHtml+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()" title="Filter companies with rare disease indications">\u2605 Rare<span class="cnt">${rareCountCross}</span></span>`;
+    drawerHtml+='</div>';
+    drawerHtml+='<span class="nav-flbl">Area (by TAM)</span><div class="fchip-row">';
     sortedL1s.forEach(l1=>{
       const active=filterL1.has(l1);
       const tt=l1Tams[l1]?` title="Total TAM \$${(l1Tams[l1]/1000).toFixed(1)}B"`:'';
-      filterHtml+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')"${tt}>${L1_NAMES[l1]||l1.replace(/_/g,' ')}<span class="cnt">${l1Counts[l1]}</span></span>`;
+      drawerHtml+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')"${tt}>${L1_NAMES[l1]||l1.replace(/_/g,' ')}<span class="cnt">${l1Counts[l1]}</span></span>`;
     });
-    filterHtml+='</div>';
-    // Append L2/L3/L4 area sub-chips + Platform (modality) chips + Mod sub-chips
-    filterHtml+=navSub;
-    // Purity toggle when relevant
+    drawerHtml+='</div>';
+    drawerHtml+=navSub;
     if(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterRare===true){
-      filterHtml+=`<div style="margin-top:8px"><span class="fchip ${purityMode==='wtd'?'active':''}" onclick="window._purityMode()" style="padding:2px 8px;font-size:.62rem">Purity: ${purityMode==='wtd'?'Risk-Adj':'Raw TAM'}</span></div>`;
+      drawerHtml+=`<div style="margin-top:14px"><span class="fchip ${purityMode==='wtd'?'active':''}" onclick="window._purityMode()" style="padding:3px 10px;font-size:.7rem">Purity: ${purityMode==='wtd'?'Risk-Adj':'Raw TAM'}</span></div>`;
     }
-    filterHtml+='</div>';
+    document.getElementById('drawerBody').innerHTML=drawerHtml;
+    document.getElementById('drawerCount').innerHTML=`<b>${filtered.length}</b> / ${rows.length} visible`;
+    document.getElementById('drawerClear').innerHTML=anyFilter?`<span class="fchip" style="border-color:#ef444444;color:#fca5a5;padding:3px 9px;font-size:.7rem" onclick="window._fClear()">\u2715 Clear all</span>`:'';
+
+    // Drawer open/close state
+    const drawerEl=document.getElementById('filterDrawer');
+    const overlayEl=document.getElementById('drawerOverlay');
+    if(drawerOpen){drawerEl.classList.add('open'); overlayEl.classList.add('open');}
+    else{drawerEl.classList.remove('open'); overlayEl.classList.remove('open');}
+
+    // Active-filter token strip (shown above the active card)
+    let activeStripHtml='';
+    if(anyFilter){
+      activeStripHtml='<div class="active-filters">';
+      activeStripHtml+='<span class="lbl">Filtered:</span>';
+      activeFilters.forEach(f=>{
+        activeStripHtml+=`<span class="pill" onclick="${f.clear}" title="Click to remove">${f.lbl?`<span style="opacity:.55;font-size:.6rem;text-transform:uppercase;letter-spacing:.5px">${f.lbl}</span>`:''}<span>${f.val}</span><span class="x">\u2715</span></span>`;
+      });
+      activeStripHtml+=`<span class="pill" style="background:#ef444418;border-color:#ef444444;color:#fca5a5" onclick="window._fClear()">Clear all</span>`;
+      activeStripHtml+='</div>';
+    }
 
     // Section navigation (existing groups)
     const navSpec=[
@@ -2570,9 +2639,9 @@ async function main(){
         navSecHtml+=`<div class="nav-item${isActive?' active':''}" onclick="window._navTo('${sec}')" style="${isActive?`border-left-color:${col}`:''}"><span style="display:flex;align-items:center;gap:8px"><span class="nav-dot" style="background:${col}"></span>${label}</span></div>`;
       });
     });
-    const navHtml=`<div class="left-nav"><div class="nav-group">FILTERS</div>${filterHtml}${navSecHtml}</div>`;
+    const navHtml=`<div class="left-nav">${navSecHtml}</div>`;
 
-    app.innerHTML = `<div class="app-shell">${navHtml}<div class="main-area">${h}</div></div>`;
+    app.innerHTML = `<div class="app-shell">${navHtml}<div class="main-area">${activeStripHtml}${h}</div></div>`;
     // Mark only the active card visible (CSS hides all .main-area > .card by default)
     const activeEl = document.getElementById(activeNavSec);
     if (activeEl && activeEl.classList.contains('card')) {
@@ -2680,6 +2749,9 @@ async function main(){
   window._kellyMaxL2=function(v){kellyOpts.maxL2=+v/100; render();};
   window._secToggle=function(id){collapsedSec[id]=!collapsedSec[id]; render();};
   window._navTo=function(sec){activeNavSec=sec; render(); window.scrollTo({top:0,behavior:'smooth'});};
+  window._toggleDrawer=function(){drawerOpen=!drawerOpen; render();};
+  // ESC closes drawer
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawerOpen){drawerOpen=false;render();}});
   // Click anywhere on the title bar to toggle, UNLESS the click was on an
   // interactive child (chip/select/input/a/button, or any element with its
   // own onclick attribute). Walks up from event.target until it hits the card-title.

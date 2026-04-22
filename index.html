@@ -9,7 +9,8 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#080b12;min-height:100vh;font-family:'DM Sans',system-ui,sans-serif;color:#c8cdd8}
 :root{--mb:#991b1b;--bear:#ef4444;--base:#f59e0b;--bull:#22c55e;--pb:#a855f7;--bg1:#0d1019;--bg2:#131722;--bg3:#1a1f2e;--border:#ffffff12;--text1:#e2e4ea;--text2:#8890a0;--mono:'JetBrains Mono',monospace}
-.wrap{max-width:1800px;margin:0 auto;padding:12px 20px 24px}
+.wrap{max-width:1800px;margin:0 auto;padding:12px 20px 24px 248px}
+@media(max-width:980px){.wrap{padding-left:20px}}
 .hdr{display:flex;align-items:center;gap:14px;margin-bottom:6px}
 .hdr h1{font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,#60a5fa,#a78bfa,#f472b6);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hdr .bar{width:4px;height:36px;border-radius:99px;background:linear-gradient(180deg,#3b82f6,#8b5cf6);box-shadow:0 0 16px #3b82f644}
@@ -128,26 +129,40 @@ tbody tr:hover{background:#ffffff06}
 .fl2chip .cnt{font-size:.58rem;opacity:.5;margin-left:2px}
 .purity-badge{display:inline-block;font-size:.62rem;font-family:var(--mono);padding:2px 5px;border-radius:3px;background:#a855f722;color:#c084fc;margin-left:5px;font-weight:700;border:1px solid #a855f733}
 
-/* ===== Master-detail layout ===== */
-.app-shell{display:flex;gap:14px;align-items:flex-start;margin-top:4px}
-.left-nav{width:218px;flex-shrink:0;position:sticky;top:46px;max-height:calc(100vh - 60px);overflow-y:auto;padding:10px 6px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;scrollbar-width:thin}
+/* ===== Master-detail layout: edge-flush left nav + filters inside ===== */
+.app-shell{margin-top:4px}
+.left-nav{position:fixed;left:0;top:46px;bottom:0;width:228px;overflow-y:auto;padding:10px 6px 20px;background:var(--bg2);border-right:1px solid var(--border);scrollbar-width:thin;z-index:50}
 .left-nav::-webkit-scrollbar{width:6px}
 .left-nav::-webkit-scrollbar-thumb{background:#ffffff14;border-radius:3px}
-.left-nav .nav-group{font-size:.56rem;text-transform:uppercase;letter-spacing:1.6px;color:var(--text2);opacity:.5;padding:14px 12px 5px;font-weight:700}
+.left-nav .nav-group{font-size:.56rem;text-transform:uppercase;letter-spacing:1.6px;color:var(--text2);opacity:.55;padding:14px 12px 5px;font-weight:700}
 .left-nav .nav-group:first-child{padding-top:6px}
 .left-nav .nav-item{display:flex;justify-content:space-between;align-items:center;padding:7px 10px 7px 12px;border-radius:6px;cursor:pointer;font-size:.78rem;color:var(--text1);margin:1px 4px;transition:background .12s,color .12s,border-left-color .12s;gap:8px;border-left:3px solid transparent}
 .left-nav .nav-item:hover{background:#ffffff08}
 .left-nav .nav-item.active{background:#60a5fa15;color:#bfdbfe;font-weight:600}
 .left-nav .nav-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
 .left-nav .nav-cnt{font-size:.62rem;color:var(--text2);font-family:var(--mono);opacity:.55}
-.main-area{flex:1;min-width:0}
+
+/* Filter section inside the nav */
+.left-nav .nav-filters{padding:6px 10px}
+.left-nav .nav-filters .nav-flbl{font-size:.56rem;text-transform:uppercase;letter-spacing:1.6px;color:var(--text2);opacity:.55;font-weight:700;margin-top:10px;margin-bottom:4px;display:block}
+.left-nav .nav-filters .nav-flbl:first-child{margin-top:0}
+.left-nav .nav-filters .fchip,.left-nav .nav-filters .fchip-rare{padding:3px 8px;font-size:.66rem;margin:2px 2px 0 0;display:inline-flex}
+.left-nav .nav-filters .fchip-row{display:flex;flex-wrap:wrap;gap:3px}
+.left-nav .nav-filters .fsel{width:100%;padding:4px 6px;font-size:.7rem;background:var(--bg3);border:1px solid var(--border);color:var(--text1);border-radius:5px;outline:none}
+.left-nav .nav-filters .fchip[style*="ef4444"]{margin-top:6px}
+.left-nav .nav-filters .nav-meta{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;color:var(--text2);font-family:var(--mono);padding:6px 0;border-top:1px solid #ffffff10;margin-top:8px}
+.left-nav .nav-filters .nav-meta b{color:var(--text1)}
+
+.main-area{min-width:0}
 .main-area > .card{display:none}
-.main-area > .card.active-section{display:block}
-.main-area > .card.active-section{margin-bottom:16px}
+.main-area > .card.active-section{display:block;margin-bottom:16px}
+
+/* Hide the legacy sticky-filters element entirely now that filters are in the nav */
+.sticky-filters{display:none !important}
+
 @media (max-width:980px){
-  .app-shell{flex-direction:column;gap:8px}
-  .left-nav{position:relative;top:0;width:100%;max-height:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:2px}
-  .left-nav .nav-group{grid-column:1/-1;padding:6px 8px 2px}
+  .left-nav{position:relative;left:0;top:0;width:100%;height:auto;border-right:none;border-bottom:1px solid var(--border);max-height:none;padding-bottom:8px}
+  .left-nav .nav-group{padding:6px 8px 2px}
 }
 </style>
 </head>
@@ -1480,14 +1495,15 @@ async function main(){
         fh+='</div>';
       }
     }
-    // Stats
-    h+='<div class="stats">';
+    // Bucket stats moved into the Market Valuation Overview card body (see below)
+    // -- they were taking too much space when always visible.
+    let bucketStatsHtml='<div class="stats">';
     [{k:"below_bear",c:"s-mb",l:"Below Bear",d:"Deep value — price < bear TP"},{k:"bear_base",c:"s-br",l:"Bear–Base",d:"Between bear and base TP"},{k:"base_bull",c:"s-bs",l:"Base–Bull",d:"Fair value range"},{k:"bull_pb",c:"s-bl",l:"Bull–Psych",d:"Above bull, below psych bull"},{k:"above_pb",c:"s-pb",l:"Above Psych Bull",d:"Extreme premium"}].forEach(b=>{
       const isActive=activeFilter===b.k;
       const dim=activeFilter&&!isActive;
-      h+=`<div class="stat ${b.c}" onclick="window._filter('${b.k}')" style="cursor:pointer;transition:.2s;${isActive?'box-shadow:0 0 0 2px currentColor;transform:scale(1.03);':''}${dim?'opacity:.35;':''}"><div class="lbl">${b.l}</div><div class="val">${bk[b.k]}</div><div class="desc">${isActive?'Click to clear filter':b.d}</div></div>`;
+      bucketStatsHtml+=`<div class="stat ${b.c}" onclick="window._filter('${b.k}')" style="cursor:pointer;transition:.2s;${isActive?'box-shadow:0 0 0 2px currentColor;transform:scale(1.03);':''}${dim?'opacity:.35;':''}"><div class="lbl">${b.l}</div><div class="val">${bk[b.k]}</div><div class="desc">${isActive?'Click to clear filter':b.d}</div></div>`;
     });
-    h+='</div>';
+    bucketStatsHtml+='</div>';
 
     // Chart
     const visibleRows=filtered;
@@ -1808,6 +1824,8 @@ async function main(){
     if(hasPurity)h+=`<span class="fchip ${stripSort==='purity'?'active':''}" onclick="window._stripSort('purity')" style="padding:2px 8px;font-size:.65rem;${stripSort==='purity'?'background:#a855f722;border-color:#a855f7;color:#d8b4fe':''}">Purity</span>`;
     h+='</div></div>';
     h+='<div class="card-sub">Upside / downside to scenario targets · Dots right of 0% = upside</div>';
+    // Bucket counts (5 colored boxes -- click to filter rows by valuation bucket)
+    h+=bucketStatsHtml;
     h+=buildRangeStrip(visibleRows,activeArea,filterRare,stripSort,purityMode);
 
     // Optionality card — total TAM (raw vs risk-adjusted)
@@ -2478,11 +2496,50 @@ async function main(){
     h+=`<a href="https://github.com/orbite-lab/BioTechStocks" style="color:#60a5fa">Source configs</a> \u00b7 `;
     h+=`<a href="model.html" style="color:#60a5fa">Open model viewer</a></div>`;
 
-    document.getElementById('stickyFilters').innerHTML=fh;
-    document.getElementById('stickyFilters').style.display='block';
+    // Filters now live INSIDE the left nav -- legacy stickyFilters element
+    // hidden via CSS but we still populate it as a no-op fallback.
+    document.getElementById('stickyFilters').innerHTML='';
 
-    // ========== Master-detail layout wrapping ==========
-    // Build left navigation (grouped by theme), highlight the active section.
+    // ========== Build left nav: filters + section nav ==========
+    // Compact filter HTML for inside the nav (vertical layout).
+    let filterHtml='<div class="nav-filters">';
+    // Header: count + clear
+    const anyFilter=(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterPhase||filterRare!==null||activeFilter||filterMod1||filterMod2||filterMod3||filterMcap.size);
+    filterHtml+=`<div class="nav-meta" style="border-top:none;margin-top:0;padding-top:0"><span><b>${filtered.length}</b> / ${rows.length}</span>`;
+    if(anyFilter) filterHtml+='<span class="fchip" style="border-color:#ef444444;color:#fca5a5;padding:2px 8px;font-size:.62rem" onclick="window._fClear()">\u2715 Clear</span>';
+    filterHtml+='</div>';
+    // Size
+    filterHtml+='<span class="nav-flbl">Size</span><div class="fchip-row">';
+    [['mega','Mega','>$100B'],['large','Large','$20-100B'],['mid','Mid','$5-20B'],['small','Small','$1-5B'],['micro','Micro','<$1B']].forEach(([k,lbl,range])=>{
+      if(!mcapCounts[k])return;
+      const active=filterMcap.has(k);
+      filterHtml+=`<span class="fchip ${active?'active':''}" onclick="window._fMcap('${k}')" title="${range}">${lbl}<span class="cnt">${mcapCounts[k]}</span></span>`;
+    });
+    filterHtml+='</div>';
+    // Phase
+    filterHtml+='<span class="nav-flbl">Phase</span>';
+    filterHtml+=`<select class="fsel" onchange="window._fPhase(this.value)"><option value="">All</option>`;
+    PHASE_ORDER.forEach(p=>{if(phaseCounts[p])filterHtml+=`<option value="${p}" ${filterPhase===p?'selected':''}>${PHASE_NAMES[p]} (${phaseCounts[p]})</option>`;});
+    filterHtml+='</select>';
+    // Rare
+    filterHtml+='<span class="nav-flbl">Designation</span><div class="fchip-row">';
+    filterHtml+=`<span class="fchip-rare ${filterRare===true?'active':''}" onclick="window._fRare()" title="Filter companies with rare disease indications">\u2605 Rare<span class="cnt">${rareCountCross}</span></span>`;
+    filterHtml+='</div>';
+    // Area chips (sorted by TAM)
+    filterHtml+='<span class="nav-flbl">Area (by TAM)</span><div class="fchip-row">';
+    sortedL1s.forEach(l1=>{
+      const active=filterL1.has(l1);
+      const tt=l1Tams[l1]?` title="Total TAM \$${(l1Tams[l1]/1000).toFixed(1)}B"`:'';
+      filterHtml+=`<span class="fchip ${active?'active':''}" onclick="window._fL1('${l1}')"${tt}>${L1_NAMES[l1]||l1.replace(/_/g,' ')}<span class="cnt">${l1Counts[l1]}</span></span>`;
+    });
+    filterHtml+='</div>';
+    // Purity toggle when relevant
+    if(filterL1.size||filterL2.size||filterL3.size||filterL4.size||filterRare===true){
+      filterHtml+=`<div style="margin-top:8px"><span class="fchip ${purityMode==='wtd'?'active':''}" onclick="window._purityMode()" style="padding:2px 8px;font-size:.62rem">Purity: ${purityMode==='wtd'?'Risk-Adj':'Raw TAM'}</span></div>`;
+    }
+    filterHtml+='</div>';
+
+    // Section navigation (existing groups)
     const navSpec=[
       ['MARKETS', [
         ['sec-range',    'Valuation Range', '#3b82f6'],
@@ -2501,15 +2558,15 @@ async function main(){
         ['sec-table',    'Company Analysis', '#10b981'],
       ]],
     ];
-    let navHtml='<div class="left-nav">';
+    let navSecHtml='';
     navSpec.forEach(([group, items])=>{
-      navHtml+=`<div class="nav-group">${group}</div>`;
+      navSecHtml+=`<div class="nav-group">${group}</div>`;
       items.forEach(([sec,label,col])=>{
         const isActive = activeNavSec===sec;
-        navHtml+=`<div class="nav-item${isActive?' active':''}" onclick="window._navTo('${sec}')" style="${isActive?`border-left-color:${col}`:''}"><span style="display:flex;align-items:center;gap:8px"><span class="nav-dot" style="background:${col}"></span>${label}</span></div>`;
+        navSecHtml+=`<div class="nav-item${isActive?' active':''}" onclick="window._navTo('${sec}')" style="${isActive?`border-left-color:${col}`:''}"><span style="display:flex;align-items:center;gap:8px"><span class="nav-dot" style="background:${col}"></span>${label}</span></div>`;
       });
     });
-    navHtml+='</div>';
+    const navHtml=`<div class="left-nav"><div class="nav-group">FILTERS</div>${filterHtml}${navSecHtml}</div>`;
 
     app.innerHTML = `<div class="app-shell">${navHtml}<div class="main-area">${h}</div></div>`;
     // Mark only the active card visible (CSS hides all .main-area > .card by default)

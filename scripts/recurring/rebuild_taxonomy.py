@@ -68,6 +68,15 @@ def rebuild():
     l4_count = len([k for k in areas if len(k.split(".")) == 4])
     mod3_count = len([k for k in mods if len(k.split(".")) == 3])
 
+    # Preserve display_names map across rebuilds (manually curated UI labels)
+    existing_display_names = {}
+    if OUT.exists():
+        try:
+            existing = json.loads(OUT.read_text(encoding="utf-8"))
+            existing_display_names = existing.get("display_names", {})
+        except Exception:
+            pass
+
     taxonomy = {
         "_meta": {
             "description": "Master taxonomy for BioTechStocks screener -- L1.L2.L3(.L4) hierarchical tags",
@@ -86,10 +95,11 @@ def rebuild():
             "companies": len(manifest)
         },
         "therapeutic_areas": build_tree(areas, is_area=True),
-        "modalities": build_tree(mods)
+        "modalities": build_tree(mods),
+        **({"display_names": existing_display_names} if existing_display_names else {})
     }
 
-    OUT.write_text(json.dumps(taxonomy, indent=2))
+    OUT.write_text(json.dumps(taxonomy, indent=2, ensure_ascii=False), encoding="utf-8")
 
     a_tree = taxonomy["therapeutic_areas"]
     m_tree = taxonomy["modalities"]

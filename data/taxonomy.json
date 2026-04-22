@@ -12,7 +12,7 @@
     ],
     "area_count_l3": 124,
     "area_count_l4": 24,
-    "modality_count": 126,
+    "modality_count": 125,
     "companies": 46
   },
   "therapeutic_areas": {
@@ -1765,7 +1765,7 @@
     },
     "small_molecule": {
       "combination": {
-        "thr_beta_glp1_dgat2": {
+        "triple_metabolic": {
           "companies": [
             "MDGL"
           ],
@@ -1773,38 +1773,32 @@
         }
       },
       "enzyme_inhibitor": {
-        "bcl2_inhibitor": {
+        "bcl2": {
           "companies": [
             "ABBV",
             "ONC"
           ],
           "count": 2
         },
-        "cetp_inhibitor": {
+        "cetp": {
           "companies": [
             "NAMS"
           ],
           "count": 1
         },
-        "cyp11b1_inhibitor": {
+        "cyp11b1": {
           "companies": [
             "NBIX"
           ],
           "count": 1
         },
-        "diazoxide": {
-          "companies": [
-            "NBIX"
-          ],
-          "count": 1
-        },
-        "factor_xa_inhibitor": {
+        "factor_xa": {
           "companies": [
             "4568"
           ],
           "count": 1
         },
-        "integrase_inhibitor": {
+        "integrase": {
           "companies": [
             "GILD"
           ],
@@ -1816,53 +1810,63 @@
           ],
           "count": 1
         },
-        "p38_mapk_inhibitor": {
-          "companies": [
-            "CRVO"
-          ],
-          "count": 1
-        },
-        "pde4_inhibitor": {
+        "pde4": {
           "companies": [
             "ARQT",
             "OCS"
           ],
           "count": 2
         },
-        "ribitol_substrate": {
+        "scd1": {
+          "companies": [
+            "GLMD"
+          ],
+          "count": 1
+        }
+      },
+      "gpcr": {
+        "5ht2a_agonist": {
+          "companies": [
+            "DFTX"
+          ],
+          "count": 1
+        },
+        "casr_antagonist": {
           "companies": [
             "BBIO"
           ],
           "count": 1
         },
-        "s1p_modulator": {
+        "cgrp_antagonist": {
           "companies": [
-            "ABVX"
+            "ABBV"
           ],
           "count": 1
         },
-        "scd1_inhibitor": {
+        "d2_d3_partial_agonist": {
           "companies": [
-            "GLMD"
+            "ABBV"
           ],
           "count": 1
         },
-        "sglt2_inhibitor": {
+        "eta_at1_antagonist": {
+          "companies": [
+            "TVTX"
+          ],
+          "count": 1
+        },
+        "glp1_oral_agonist": {
           "companies": [
             "LLY"
           ],
           "count": 1
-        }
-      },
-      "gpcr_agonist": {
-        "oral_glp1": {
+        },
+        "m4_muscarinic_agonist": {
           "companies": [
-            "LLY"
+            "ABBV"
           ],
           "count": 1
-        }
-      },
-      "gpcr_modulator": {
+        },
         "mc4r_agonist": {
           "companies": [
             "RYTM"
@@ -1874,10 +1878,59 @@
             "NBIX"
           ],
           "count": 1
+        },
+        "muscarinic_m1_m4_agonist": {
+          "companies": [
+            "NBIX"
+          ],
+          "count": 1
+        },
+        "s1p_modulator": {
+          "companies": [
+            "ABVX"
+          ],
+          "count": 1
         }
       },
       "ion_channel": {
+        "ampa_modulator": {
+          "companies": [
+            "NBIX"
+          ],
+          "count": 1
+        },
         "gaba_modulator": {
+          "companies": [
+            "AXSM"
+          ],
+          "count": 1
+        },
+        "k_atp_opener": {
+          "companies": [
+            "NBIX"
+          ],
+          "count": 1
+        },
+        "kv7_opener": {
+          "companies": [
+            "BHVN"
+          ],
+          "count": 1
+        },
+        "nav_blocker": {
+          "companies": [
+            "PRAX",
+            "UCB"
+          ],
+          "count": 2
+        },
+        "nmda_modulator": {
+          "companies": [
+            "AXSM"
+          ],
+          "count": 1
+        },
+        "nmda_sigma1_modulator": {
           "companies": [
             "AXSM"
           ],
@@ -1890,49 +1943,14 @@
           "count": 1
         }
       },
-      "ion_channel_modulator": {
-        "kv7_opener": {
-          "companies": [
-            "BHVN"
-          ],
-          "count": 1
-        },
-        "nav_channel": {
-          "companies": [
-            "PRAX",
-            "UCB"
-          ],
-          "count": 2
-        },
-        "nav_channel_blocker": {
-          "companies": [
-            "PRAX"
-          ],
-          "count": 1
-        }
-      },
-      "jak_inhibitor": {
-        "jak1_selective": {
-          "companies": [
-            "ABBV"
-          ],
-          "count": 1
-        },
-        "jak1_topical": {
-          "companies": [
-            "ARQT"
-          ],
-          "count": 1
-        }
-      },
       "kinase_inhibitor": {
-        "alk_inhibitor": {
+        "alk": {
           "companies": [
             "NUVL"
           ],
           "count": 1
         },
-        "bcl2_btk_next_gen": {
+        "btk_bcl2_next_gen": {
           "companies": [
             "ONC"
           ],
@@ -1944,37 +1962,55 @@
           ],
           "count": 1
         },
-        "btk_inhibitor": {
+        "btk_reversible": {
           "companies": [
             "ONC"
           ],
           "count": 1
         },
-        "cdk4_6_inhibitor": {
+        "cdk4_6": {
           "companies": [
             "LLY"
           ],
           "count": 1
         },
-        "fgfr3_inhibitor": {
+        "fgfr3": {
           "companies": [
             "BBIO"
           ],
           "count": 1
         },
-        "her2_kinase": {
+        "her2": {
           "companies": [
             "NUVL"
           ],
           "count": 1
         },
-        "itk_inhibitor": {
+        "itk": {
           "companies": [
             "CRVS"
           ],
           "count": 1
         },
-        "pi3k_inhibitor": {
+        "jak1_selective": {
+          "companies": [
+            "ABBV"
+          ],
+          "count": 1
+        },
+        "jak1_topical": {
+          "companies": [
+            "ARQT"
+          ],
+          "count": 1
+        },
+        "p38_mapk": {
+          "companies": [
+            "CRVO"
+          ],
+          "count": 1
+        },
+        "pi3k": {
           "companies": [
             "CELC"
           ],
@@ -1986,7 +2022,7 @@
           ],
           "count": 1
         },
-        "ros1_inhibitor": {
+        "ros1": {
           "companies": [
             "NUVL"
           ],
@@ -2014,7 +2050,7 @@
           ],
           "count": 1
         },
-        "mode_trap": {
+        "mode_platform": {
           "companies": [
             "BHVN"
           ],
@@ -2027,92 +2063,14 @@
           "count": 1
         }
       },
-      "psychedelic_compound": {
-        "mm120_lsd": {
-          "companies": [
-            "DFTX"
-          ],
-          "count": 1
-        }
-      },
-      "receptor_agonist": {
-        "m4_muscarinic_agonist": {
-          "companies": [
-            "ABBV"
-          ],
-          "count": 1
-        },
-        "muscarinic_m1_m4": {
-          "companies": [
-            "NBIX"
-          ],
-          "count": 1
-        }
-      },
-      "receptor_antagonist": {
-        "ampa_modulator": {
-          "companies": [
-            "NBIX"
-          ],
-          "count": 1
-        },
-        "capsid_inhibitor": {
-          "companies": [
-            "GILD"
-          ],
-          "count": 1
-        },
-        "casr_antagonist": {
-          "companies": [
-            "BBIO"
-          ],
-          "count": 1
-        },
-        "cgrp_antagonist": {
-          "companies": [
-            "ABBV"
-          ],
-          "count": 1
-        },
-        "d2_d3_partial_agonist": {
-          "companies": [
-            "ABBV"
-          ],
-          "count": 1
-        },
-        "dri_modulator": {
-          "companies": [
-            "AXSM"
-          ],
-          "count": 1
-        },
-        "eta_at1_dual": {
-          "companies": [
-            "TVTX"
-          ],
-          "count": 1
-        },
-        "nmda_modulator": {
-          "companies": [
-            "AXSM"
-          ],
-          "count": 1
-        },
-        "nmda_sigma1": {
-          "companies": [
-            "AXSM"
-          ],
-          "count": 1
-        },
-        "vmat2_inhibitor": {
-          "companies": [
-            "NBIX"
-          ],
-          "count": 1
-        }
-      },
       "reuptake_inhibitor": {
-        "dat_net": {
+        "dat_net_inhibitor": {
+          "companies": [
+            "AXSM"
+          ],
+          "count": 1
+        },
+        "dri": {
           "companies": [
             "AXSM"
           ],
@@ -2120,9 +2078,39 @@
         }
       },
       "stabilizer": {
-        "ttr_stabilizer": {
+        "ttr": {
           "companies": [
             "BBIO"
+          ],
+          "count": 1
+        }
+      },
+      "substrate_replacement": {
+        "ribitol": {
+          "companies": [
+            "BBIO"
+          ],
+          "count": 1
+        }
+      },
+      "transporter_inhibitor": {
+        "sglt2": {
+          "companies": [
+            "LLY"
+          ],
+          "count": 1
+        },
+        "vmat2": {
+          "companies": [
+            "NBIX"
+          ],
+          "count": 1
+        }
+      },
+      "viral_target": {
+        "capsid_inhibitor": {
+          "companies": [
+            "GILD"
           ],
           "count": 1
         }
@@ -2138,5 +2126,87 @@
         }
       }
     }
+  },
+  "display_names": {
+    "small_molecule": "Small molecule",
+    "peptide": "Peptide",
+    "antibody": "Antibody",
+    "adc": "Antibody-drug conjugate",
+    "recombinant_protein": "Recombinant protein",
+    "cell_therapy": "Cell therapy",
+    "gene_therapy": "Gene therapy",
+    "gene_editing": "Gene editing",
+    "nucleic_acid": "Nucleic acid (RNA-modulating)",
+    "radiopharmaceutical": "Radiopharmaceutical",
+    "vaccine": "Vaccine",
+    "formulation_modifier": "Formulation platform",
+    "aesthetic_or_other": "Aesthetic / other",
+    "enzyme_inhibitor": "Enzyme inhibitor",
+    "kinase_inhibitor": "Kinase inhibitor",
+    "protein_degrader": "Protein degrader",
+    "gpcr": "GPCR (G-protein coupled receptor)",
+    "ion_channel": "Ion channel",
+    "transporter_inhibitor": "Transporter inhibitor",
+    "reuptake_inhibitor": "Monoamine reuptake inhibitor",
+    "receptor_antagonist": "Receptor antagonist (other)",
+    "viral_target": "Viral target",
+    "nuclear_receptor": "Nuclear receptor",
+    "stabilizer": "Conformational stabilizer",
+    "substrate_replacement": "Substrate replacement",
+    "combination": "Fixed-dose combination",
+    "bcl2": "BCL-2 inhibitor",
+    "cetp": "CETP inhibitor",
+    "cyp11b1": "CYP11B1 inhibitor",
+    "factor_xa": "Factor Xa inhibitor",
+    "integrase": "HIV integrase inhibitor",
+    "nrti": "Nucleoside reverse transcriptase inhibitor (NRTI)",
+    "pde4": "PDE4 inhibitor",
+    "scd1": "SCD1 inhibitor",
+    "btk_covalent": "BTK inhibitor (covalent)",
+    "btk_reversible": "BTK inhibitor (reversible)",
+    "btk_bcl2_next_gen": "Next-gen BTK / BCL-2",
+    "btk_cdac": "BTK chimeric degrader (CDAC)",
+    "her2": "HER2 kinase inhibitor",
+    "alk": "ALK inhibitor",
+    "cdk4_6": "CDK4/6 inhibitor",
+    "fgfr3": "FGFR3 inhibitor",
+    "itk": "ITK inhibitor",
+    "pi3k": "PI3K inhibitor",
+    "p38_mapk": "p38 MAPK inhibitor",
+    "ras_on_inhibitor": "RAS(ON) inhibitor",
+    "ros1": "ROS1 inhibitor",
+    "jak1_selective": "JAK1-selective inhibitor",
+    "jak1_topical": "JAK1 topical inhibitor",
+    "molecular_glue": "Molecular glue degrader",
+    "mode_platform": "MoDE-trap degrader (BHVN platform)",
+    "kinesin_degrader": "Kinesin degrader",
+    "glp1_oral_agonist": "Oral GLP-1 agonist",
+    "mc4r_agonist": "MC4R agonist",
+    "muscarinic_agonist": "Muscarinic agonist",
+    "muscarinic_m1_m4_agonist": "M1/M4 muscarinic agonist",
+    "m4_muscarinic_agonist": "M4-selective muscarinic agonist",
+    "cgrp_antagonist": "CGRP receptor antagonist",
+    "casr_antagonist": "Calcium-sensing receptor antagonist",
+    "d2_d3_partial_agonist": "D2/D3 partial agonist",
+    "eta_at1_antagonist": "Endothelin-A + AT1 dual antagonist",
+    "s1p_modulator": "S1P receptor modulator",
+    "5ht2a_agonist": "5-HT2A receptor agonist (psychedelic)",
+    "gaba_modulator": "GABA-A modulator",
+    "sv2a_modulator": "SV2A modulator",
+    "kv7_opener": "Kv7 channel opener",
+    "nav_blocker": "Nav channel blocker",
+    "ampa_modulator": "AMPA receptor modulator",
+    "nmda_modulator": "NMDA receptor modulator",
+    "nmda_sigma1_modulator": "NMDA + sigma-1 modulator",
+    "k_atp_opener": "K-ATP channel opener (diazoxide)",
+    "sglt2": "SGLT2 inhibitor",
+    "vmat2": "VMAT2 inhibitor",
+    "dat_net_inhibitor": "DAT/NET reuptake inhibitor",
+    "dri": "Dopamine reuptake inhibitor (DRI)",
+    "capsid_inhibitor": "HIV capsid inhibitor",
+    "thr_beta_agonist": "Thyroid hormone receptor-beta agonist",
+    "ttr": "TTR stabilizer",
+    "ribitol": "Ribitol substrate replacement (LGMD2I)",
+    "triple_metabolic": "THR-β + GLP-1 + DGAT2 triple combo"
   }
 }

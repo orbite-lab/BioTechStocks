@@ -1423,6 +1423,7 @@ async function main(){
     if(filterRare!==null) filtered=filtered.filter(r=>r.meta.rare===filterRare);
     if(activeFilter) filtered=filtered.filter(r=>bucketOf(r)===activeFilter);
     if(filterMcap.size) filtered=filtered.filter(r=>filterMcap.has(r.mcapTier));
+    if(filterSignal&&filterSignal.tickers&&filterSignal.tickers.size) filtered=filtered.filter(r=>filterSignal.tickers.has(r.ticker));
     // Expose current filtered set to Kelly optimizer (runs against active filter)
     kellyUniverse=filtered;
 

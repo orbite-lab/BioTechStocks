@@ -1509,11 +1509,12 @@
             )
           ),
 
-          // Context (Last + Next catalyst) -- auto-derived from the catalysts[] array
-          // (refreshed by the LLM monitor workflow), with fallback to hand-curated
-          // config.context.lastData / config.context.nextCatalyst for tickers whose
-          // catalysts[] is empty or that have richer narrative in the config.
+          // Catalyst timeline (collapsible) -- shows up to 3 most-recent past + 4 upcoming.
+          // Auto-derived from catalysts[] (refreshed by the LLM monitor). Falls back to
+          // hand-curated config.context for tickers whose catalysts[] is empty.
           (() => {
+            const MAX_PAST = 3;
+            const MAX_FUTURE = 4;
             const today = new Date().toISOString().slice(0, 10);
             const cats = (config.catalysts || []).slice().sort((a, b) => (a.dateSort || "").localeCompare(b.dateSort || ""));
             const past = cats.filter(c => c.dateSort && c.dateSort < today);
@@ -1526,53 +1527,97 @@
               return (a.name || cat.asset) + (ind ? " \u00b7 " + (ind.name || cat.indication) : "");
             };
 
-            const deriveBullets = (cat) => {
-              if (!cat) return [];
-              const pts = [];
-              const assetLabel = indName(cat);
-              if (assetLabel) pts.push(assetLabel);
-              if (cat._rationale) pts.push(cat._rationale);
-              if (cat.binary && (cat.success_pos || cat.success_apr)) {
-                pts.push("If success: PoS " + (cat.success_pos || 0) + "% \u00b7 APR " + (cat.success_apr || 0) + "%");
-                pts.push("If fail: PoS " + (cat.fail_pos || 0) + "% \u00b7 APR " + (cat.fail_apr || 0) + "%");
-              }
-              if (cat.type) pts.push("Type: " + cat.type.replace(/_/g, " "));
-              if (cat._addedAt) pts.push("Last refreshed " + cat._addedAt.slice(0, 10) + (cat._confidence ? " \u00b7 confidence: " + cat._confidence : ""));
-              return pts;
-            };
+            // Normalize a catalyst into a compact display object
+            const normCat = (cat) => ({
+              title: cat.title,
+              date: cat.date || cat.dateSort || "",
+              type: cat.type || "",
+              asset: indName(cat),
+              rationale: cat._rationale || "",
+              binary: !!cat.binary,
+              s_pos: cat.success_pos, s_apr: cat.success_apr,
+              f_pos: cat.fail_pos, f_apr: cat.fail_apr,
+              sourceUrl: cat._sourceUrl,
+              confidence: cat._confidence || "",
+              addedAt: cat._addedAt ? cat._addedAt.slice(0, 10) : "",
+            });
 
-            // Prefer auto-derived from catalysts[]; fall back to config.context
-            let lastData = null, nextData = null;
-            if (past.length || future.length) {
-              const lastCat = past[past.length - 1];
-              const nextCat = future[0];
-              if (lastCat) lastData = { title: lastCat.title, date: lastCat.date || lastCat.dateSort, points: deriveBullets(lastCat), sourceUrl: lastCat._sourceUrl };
-              if (nextCat) nextData = { title: nextCat.title, date: nextCat.date || nextCat.dateSort, points: deriveBullets(nextCat), sourceUrl: nextCat._sourceUrl };
+            // Build lists: prefer catalysts[], fall back to config.context for lastData/nextCatalyst
+            let lastList = past.slice(-MAX_PAST).reverse().map(normCat);  // most recent first
+            let nextList = future.slice(0, MAX_FUTURE).map(normCat);       // earliest first
+            const pastExtra = Math.max(0, past.length - MAX_PAST);
+            const futureExtra = Math.max(0, future.length - MAX_FUTURE);
+
+            if (lastList.length === 0 && config.context?.lastData) {
+              const ld = config.context.lastData;
+              lastList = [{ title: ld.title, date: ld.date || "", type: "", asset: "", rationale: "", binary: false, sourceUrl: null, confidence: "", addedAt: "" , pointsFallback: ld.points || [] }];
             }
-            if (!lastData && config.context?.lastData) lastData = { title: config.context.lastData.title, date: config.context.lastData.date, points: config.context.lastData.points || [] };
-            if (!nextData && config.context?.nextCatalyst) nextData = { title: config.context.nextCatalyst.title, date: config.context.nextCatalyst.date, points: config.context.nextCatalyst.thresholds || [] };
-            if (!lastData && !nextData) return null;
+            if (nextList.length === 0 && config.context?.nextCatalyst) {
+              const nd = config.context.nextCatalyst;
+              nextList = [{ title: nd.title, date: nd.date || "", type: "", asset: "", rationale: "", binary: false, sourceUrl: null, confidence: "", addedAt: "", pointsFallback: nd.thresholds || [] }];
+            }
 
-            const linkBtn = (url) => url ? e("a", { href: url, target: "_blank", style: { fontSize: 10, color: "#60a5fa", textDecoration: "none", marginLeft: 6 }, onClick: (ev) => ev.stopPropagation() }, "source \u2197") : null;
+            if (lastList.length === 0 && nextList.length === 0) return null;
+
+            const primaryLast = lastList[0];
+            const primaryNext = nextList[0];
+            const nextMoreBadge = future.length > 1
+              ? e("span", { style: { background: "#22c55e22", color: "#86efac", fontSize: 9, fontWeight: 700, padding: "1px 6px", borderRadius: 4, marginLeft: 6, fontFamily: "'JetBrains Mono'" } }, "+" + (future.length - 1))
+              : null;
+
+            const linkBtn = (url) => url ? e("a", { href: url, target: "_blank", style: { fontSize: 10, color: "#60a5fa", textDecoration: "none", marginLeft: 6 }, onClick: (ev) => ev.stopPropagation() }, "\u2197") : null;
+
+            // A single compact event block (used in the expanded list)
+            const eventBlock = (c, isFirst, color) => e("div", {
+              style: { background: "#0a0c10", border: "1px solid " + color + "22", borderRadius: 6, padding: "8px 10px", marginBottom: 6 }
+            },
+              e("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 } },
+                e("div", { style: { flex: 1, minWidth: 0 } },
+                  e("div", { style: { fontSize: 10, color: color, fontWeight: 700, fontFamily: "'JetBrains Mono'", marginBottom: 2, letterSpacing: 0.3 } }, (c.date || "").toUpperCase()),
+                  e("div", { style: { fontSize: 11.5, color: "#e2e4ea", fontWeight: 600, marginBottom: 2, lineHeight: 1.35 } }, c.title, linkBtn(c.sourceUrl)),
+                  c.asset && e("div", { style: { fontSize: 10, color: "#6b7080", marginBottom: 3 } }, c.asset),
+                  c.rationale && e("div", { style: { fontSize: 10, color: "#8b8f99", lineHeight: 1.45, marginBottom: 3 } }, c.rationale),
+                  (c.pointsFallback || []).map((p, i) => e("div", { key: "pf" + i, style: { fontSize: 10, color: "#8b8f99", lineHeight: 1.45 } }, "\u2022 " + p)),
+                  (c.binary && (c.s_pos || c.s_apr)) ? e("div", { style: { display: "flex", gap: 10, fontSize: 10, marginTop: 3, fontFamily: "'JetBrains Mono'" } },
+                    e("span", { style: { color: "#22c55e" } }, "\u2713 " + (c.s_pos || 0) + "/" + (c.s_apr || 0)),
+                    e("span", { style: { color: "#ef4444" } }, "\u2717 " + (c.f_pos || 0) + "/" + (c.f_apr || 0))
+                  ) : null,
+                  e("div", { style: { display: "flex", gap: 8, marginTop: 3, fontSize: 9, color: "#555" } },
+                    c.type && e("span", { style: { background: "#ffffff08", padding: "1px 5px", borderRadius: 3 } }, c.type.replace(/_/g, " ")),
+                    c.confidence && e("span", {}, "conf: " + c.confidence),
+                    c.addedAt && e("span", {}, "refr: " + c.addedAt)
+                  )
+                )
+              )
+            );
 
             return e("div", { style: { marginBottom: 14 } },
               e("div", { onClick: () => setShowContext(!showContext), style: { background: "#161920", borderRadius: showContext ? "10px 10px 0 0" : 10, padding: "10px 16px", border: "1px solid #ffffff06", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", userSelect: "none" } },
                 e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#b0b4c0" } },
                   "Last & Next catalyst \u00b7 ",
-                  lastData && e("span", { style: { color: "#f97316", fontWeight: 600 } }, lastData.title),
-                  lastData && nextData && e("span", { style: { color: "#6b7080" } }, " \u2192 "),
-                  nextData && e("span", { style: { color: "#22c55e", fontWeight: 600 } }, nextData.title)
+                  primaryLast && e("span", { style: { color: "#f97316", fontWeight: 600 } }, primaryLast.title),
+                  primaryLast && primaryNext && e("span", { style: { color: "#6b7080" } }, " \u2192 "),
+                  primaryNext && e("span", { style: { color: "#22c55e", fontWeight: 600 } }, primaryNext.title),
+                  nextMoreBadge
                 ),
                 e("div", { style: { fontSize: 10, color: "#6b7080", transition: "transform 0.2s", transform: showContext ? "rotate(180deg)" : "rotate(0deg)" } }, "\u25BC")
               ),
-              showContext && e("div", { style: { background: "#161920", borderRadius: "0 0 10px 10px", padding: "14px 16px", borderLeft: "1px solid #ffffff06", borderRight: "1px solid #ffffff06", borderBottom: "1px solid #ffffff06", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 } },
-                lastData && e("div", { style: { fontSize: 11, lineHeight: 1.6 } },
-                  e("div", { style: { color: "#f97316", fontWeight: 700, marginBottom: 6, fontSize: 12 } }, "Last: " + lastData.title + " (" + (lastData.date || "") + ")", linkBtn(lastData.sourceUrl)),
-                  (lastData.points || []).map((p, i) => e("div", { key: i, style: { color: "#6b7080" } }, "\u2022 " + p))
+              showContext && e("div", { style: { background: "#161920", borderRadius: "0 0 10px 10px", padding: "12px 14px", borderLeft: "1px solid #ffffff06", borderRight: "1px solid #ffffff06", borderBottom: "1px solid #ffffff06", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 } },
+                // LEFT: past (orange)
+                e("div", {},
+                  e("div", { style: { fontSize: 10, fontWeight: 700, letterSpacing: 1.2, color: "#f97316", marginBottom: 6, textTransform: "uppercase" } }, "\u25C4 Recent events" + (pastExtra > 0 ? " (" + past.length + " total)" : "")),
+                  lastList.length === 0
+                    ? e("div", { style: { fontSize: 10, color: "#555", padding: "6px 2px" } }, "No past events recorded")
+                    : lastList.map((c, i) => e(React.Fragment, { key: "l" + i }, eventBlock(c, i === 0, "#f97316"))),
+                  pastExtra > 0 && e("div", { style: { fontSize: 10, color: "#6b7080", fontStyle: "italic", marginTop: 2 } }, "+" + pastExtra + " earlier")
                 ),
-                nextData && e("div", { style: { fontSize: 11, lineHeight: 1.6 } },
-                  e("div", { style: { color: "#22c55e", fontWeight: 700, marginBottom: 6, fontSize: 12 } }, "Next: " + nextData.title + " (" + (nextData.date || "") + ")", linkBtn(nextData.sourceUrl)),
-                  (nextData.points || []).map((p, i) => e("div", { key: i, style: { color: "#6b7080" } }, "\u2022 " + p))
+                // RIGHT: future (green)
+                e("div", {},
+                  e("div", { style: { fontSize: 10, fontWeight: 700, letterSpacing: 1.2, color: "#22c55e", marginBottom: 6, textTransform: "uppercase" } }, "\u25BA Upcoming" + (futureExtra > 0 ? " (" + future.length + " total)" : "")),
+                  nextList.length === 0
+                    ? e("div", { style: { fontSize: 10, color: "#555", padding: "6px 2px" } }, "No upcoming catalysts")
+                    : nextList.map((c, i) => e(React.Fragment, { key: "n" + i }, eventBlock(c, i === 0, "#22c55e"))),
+                  futureExtra > 0 && e("div", { style: { fontSize: 10, color: "#6b7080", fontStyle: "italic", marginTop: 2 } }, "+" + futureExtra + " further out")
                 )
               )
             );

@@ -2896,7 +2896,7 @@ async function main(){
   };
   window._purityMode=function(){purityMode=purityMode==='wtd'?'raw':'wtd';render();};
   window._catY=function(m){catYAxis=m;render();};
-  window._fClear=function(){filterL1.clear();filterL2.clear();filterL3.clear();filterL4.clear();filterPhase=null;filterRare=null;filterMod1=null;filterMod2=null;filterMod3=null;activeFilter=null;stripSort='base';filterMcap.clear();render();};
+  window._fClear=function(){filterL1.clear();filterL2.clear();filterL3.clear();filterL4.clear();filterPhase=null;filterRare=null;filterMod1=null;filterMod2=null;filterMod3=null;activeFilter=null;stripSort='base';filterMcap.clear();filterSignal=null;render();renderSignalBadges();};
   window._fMcap=function(k){if(filterMcap.has(k))filterMcap.delete(k);else filterMcap.add(k);render();};
   window._setCorr=function(v){window._corrVal=+v;render();};
   window._setOvr=function(tk,v){if(!window._manualOvr)window._manualOvr={};if(v==='auto')delete window._manualOvr[tk];else window._manualOvr[tk]=+v;render();};

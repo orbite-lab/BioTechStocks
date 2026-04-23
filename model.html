@@ -771,13 +771,13 @@
                 ),
                 e("div", { style: { flex: 1 } }),
                 // KPI: Weighted TP
-                e("div", { style: { display: "flex", flexDirection: "column", alignItems: "flex-start" } },
+                e("div", { style: { display: "flex", flexDirection: "column", alignItems: "center" } },
                   e("div", { style: { fontSize: 9, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1.4 } }, "Weighted TP"),
                   e("div", { style: { fontSize: 26, fontWeight: 800, fontFamily: "'JetBrains Mono'", color: "#f97316", lineHeight: 1.1 } }, ccy + model.weightedTP.toFixed(dec))
                 ),
                 divider(),
                 // KPI: Stock (editable)
-                e("div", { style: { display: "flex", flexDirection: "column", alignItems: "flex-start" } },
+                e("div", { style: { display: "flex", flexDirection: "column", alignItems: "center" } },
                   e("div", { style: { fontSize: 9, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1.4, display: "flex", alignItems: "center", gap: 5 } },
                     "Stock",
                     e("span", { style: { fontSize: 8, padding: "1px 4px", borderRadius: 3, fontWeight: 700, letterSpacing: 0.5,
@@ -794,13 +794,13 @@
                 ),
                 divider(),
                 // KPI: Upside
-                e("div", { style: { display: "flex", flexDirection: "column", alignItems: "flex-start" } },
+                e("div", { style: { display: "flex", flexDirection: "column", alignItems: "center" } },
                   e("div", { style: { fontSize: 9, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1.4 } }, "Upside"),
                   e("div", { style: { fontSize: 20, fontWeight: 700, fontFamily: "'JetBrains Mono'", color: model.upside > 0 ? "#22c55e" : "#ef4444", lineHeight: 1.1 } }, (model.upside > 0 ? "+" : "") + model.upside.toFixed(0) + "%")
                 ),
                 divider(),
                 // KPI: Cash / Shr
-                e("div", { style: { display: "flex", flexDirection: "column", alignItems: "flex-start" } },
+                e("div", { style: { display: "flex", flexDirection: "column", alignItems: "center" } },
                   e("div", { style: { fontSize: 9, color: "#6b7080", textTransform: "uppercase", letterSpacing: 1.4 } }, "Cash/Shr"),
                   e("div", { style: { fontSize: 16, fontWeight: 700, fontFamily: "'JetBrains Mono'", lineHeight: 1.1 } }, ccy + model.cashPS.toFixed(dec))
                 ),

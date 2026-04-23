@@ -1509,28 +1509,74 @@
             )
           ),
 
-          // Context (Last + Next) -- collapsible, placed after assumption sliders
-          config.context && e("div", { style: { marginBottom: 14 } },
-            e("div", { onClick: () => setShowContext(!showContext), style: { background: "#161920", borderRadius: showContext ? "10px 10px 0 0" : 10, padding: "10px 16px", border: "1px solid #ffffff06", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", userSelect: "none" } },
-              e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#b0b4c0" } },
-                "Last & Next catalyst \u00b7 ",
-                e("span", { style: { color: "#f97316", fontWeight: 600 } }, config.context.lastData.title),
-                e("span", { style: { color: "#6b7080" } }, " \u2192 "),
-                e("span", { style: { color: "#22c55e", fontWeight: 600 } }, config.context.nextCatalyst.title)
+          // Context (Last + Next catalyst) -- auto-derived from the catalysts[] array
+          // (refreshed by the LLM monitor workflow), with fallback to hand-curated
+          // config.context.lastData / config.context.nextCatalyst for tickers whose
+          // catalysts[] is empty or that have richer narrative in the config.
+          (() => {
+            const today = new Date().toISOString().slice(0, 10);
+            const cats = (config.catalysts || []).slice().sort((a, b) => (a.dateSort || "").localeCompare(b.dateSort || ""));
+            const past = cats.filter(c => c.dateSort && c.dateSort < today);
+            const future = cats.filter(c => !c.dateSort || c.dateSort >= today);
+
+            const indName = (cat) => {
+              const a = config.assets.find(x => x.id === cat.asset);
+              if (!a) return "";
+              const ind = a.indications.find(i => i.id === cat.indication);
+              return (a.name || cat.asset) + (ind ? " \u00b7 " + (ind.name || cat.indication) : "");
+            };
+
+            const deriveBullets = (cat) => {
+              if (!cat) return [];
+              const pts = [];
+              const assetLabel = indName(cat);
+              if (assetLabel) pts.push(assetLabel);
+              if (cat._rationale) pts.push(cat._rationale);
+              if (cat.binary && (cat.success_pos || cat.success_apr)) {
+                pts.push("If success: PoS " + (cat.success_pos || 0) + "% \u00b7 APR " + (cat.success_apr || 0) + "%");
+                pts.push("If fail: PoS " + (cat.fail_pos || 0) + "% \u00b7 APR " + (cat.fail_apr || 0) + "%");
+              }
+              if (cat.type) pts.push("Type: " + cat.type.replace(/_/g, " "));
+              if (cat._addedAt) pts.push("Last refreshed " + cat._addedAt.slice(0, 10) + (cat._confidence ? " \u00b7 confidence: " + cat._confidence : ""));
+              return pts;
+            };
+
+            // Prefer auto-derived from catalysts[]; fall back to config.context
+            let lastData = null, nextData = null;
+            if (past.length || future.length) {
+              const lastCat = past[past.length - 1];
+              const nextCat = future[0];
+              if (lastCat) lastData = { title: lastCat.title, date: lastCat.date || lastCat.dateSort, points: deriveBullets(lastCat), sourceUrl: lastCat._sourceUrl };
+              if (nextCat) nextData = { title: nextCat.title, date: nextCat.date || nextCat.dateSort, points: deriveBullets(nextCat), sourceUrl: nextCat._sourceUrl };
+            }
+            if (!lastData && config.context?.lastData) lastData = { title: config.context.lastData.title, date: config.context.lastData.date, points: config.context.lastData.points || [] };
+            if (!nextData && config.context?.nextCatalyst) nextData = { title: config.context.nextCatalyst.title, date: config.context.nextCatalyst.date, points: config.context.nextCatalyst.thresholds || [] };
+            if (!lastData && !nextData) return null;
+
+            const linkBtn = (url) => url ? e("a", { href: url, target: "_blank", style: { fontSize: 10, color: "#60a5fa", textDecoration: "none", marginLeft: 6 }, onClick: (ev) => ev.stopPropagation() }, "source \u2197") : null;
+
+            return e("div", { style: { marginBottom: 14 } },
+              e("div", { onClick: () => setShowContext(!showContext), style: { background: "#161920", borderRadius: showContext ? "10px 10px 0 0" : 10, padding: "10px 16px", border: "1px solid #ffffff06", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", userSelect: "none" } },
+                e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#b0b4c0" } },
+                  "Last & Next catalyst \u00b7 ",
+                  lastData && e("span", { style: { color: "#f97316", fontWeight: 600 } }, lastData.title),
+                  lastData && nextData && e("span", { style: { color: "#6b7080" } }, " \u2192 "),
+                  nextData && e("span", { style: { color: "#22c55e", fontWeight: 600 } }, nextData.title)
+                ),
+                e("div", { style: { fontSize: 10, color: "#6b7080", transition: "transform 0.2s", transform: showContext ? "rotate(180deg)" : "rotate(0deg)" } }, "\u25BC")
               ),
-              e("div", { style: { fontSize: 10, color: "#6b7080", transition: "transform 0.2s", transform: showContext ? "rotate(180deg)" : "rotate(0deg)" } }, "\u25BC")
-            ),
-            showContext && e("div", { style: { background: "#161920", borderRadius: "0 0 10px 10px", padding: "14px 16px", borderLeft: "1px solid #ffffff06", borderRight: "1px solid #ffffff06", borderBottom: "1px solid #ffffff06", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 } },
-              e("div", { style: { fontSize: 11, lineHeight: 1.6 } },
-                e("div", { style: { color: "#f97316", fontWeight: 700, marginBottom: 6, fontSize: 12 } }, "Last: " + config.context.lastData.title + " (" + config.context.lastData.date + ")"),
-                config.context.lastData.points.map((p, i) => e("div", { key: i, style: { color: "#6b7080" } }, "\u2022 " + p))
-              ),
-              e("div", { style: { fontSize: 11, lineHeight: 1.6 } },
-                e("div", { style: { color: "#22c55e", fontWeight: 700, marginBottom: 6, fontSize: 12 } }, "Next: " + config.context.nextCatalyst.title + " (" + config.context.nextCatalyst.date + ")"),
-                config.context.nextCatalyst.thresholds.map((p, i) => e("div", { key: i, style: { color: "#6b7080" } }, "\u2022 " + p))
+              showContext && e("div", { style: { background: "#161920", borderRadius: "0 0 10px 10px", padding: "14px 16px", borderLeft: "1px solid #ffffff06", borderRight: "1px solid #ffffff06", borderBottom: "1px solid #ffffff06", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 } },
+                lastData && e("div", { style: { fontSize: 11, lineHeight: 1.6 } },
+                  e("div", { style: { color: "#f97316", fontWeight: 700, marginBottom: 6, fontSize: 12 } }, "Last: " + lastData.title + " (" + (lastData.date || "") + ")", linkBtn(lastData.sourceUrl)),
+                  (lastData.points || []).map((p, i) => e("div", { key: i, style: { color: "#6b7080" } }, "\u2022 " + p))
+                ),
+                nextData && e("div", { style: { fontSize: 11, lineHeight: 1.6 } },
+                  e("div", { style: { color: "#22c55e", fontWeight: 700, marginBottom: 6, fontSize: 12 } }, "Next: " + nextData.title + " (" + (nextData.date || "") + ")", linkBtn(nextData.sourceUrl)),
+                  (nextData.points || []).map((p, i) => e("div", { key: i, style: { color: "#6b7080" } }, "\u2022 " + p))
+                )
               )
-            )
-          ),
+            );
+          })(),
 
           // Risks
           config.context?.risks && e("div", { style: { background: "#161920", borderRadius: 10, padding: "14px 16px", border: "1px solid #ef444418", marginBottom: 22 } },

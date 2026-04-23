@@ -1527,16 +1527,36 @@
               return (a.name || cat.asset) + (ind ? " \u00b7 " + (ind.name || cat.indication) : "");
             };
 
-            // Normalize a catalyst into a compact display object
+            // Materiality: what fraction of weighted TP depends on this catalyst's asset.
+            // Computed by zeroing pos=apr=0 for the asset.indication across all scenarios
+            // and comparing the new weighted TP to the base.
+            const baseWTP = model.weightedTP;
+            const catMateriality = (cat) => {
+              if (!cat.asset || !cat.indication || !baseWTP || !isFinite(baseWTP)) return null;
+              const modState = JSON.parse(JSON.stringify(state));
+              for (const sk of model.sks) {
+                const asmp = modState.scenarios[sk].assumptions || (modState.scenarios[sk].assumptions = {});
+                asmp[cat.asset] = asmp[cat.asset] || {};
+                asmp[cat.asset][cat.indication] = { pos: 0, apr: 0, pen: 1 };
+              }
+              let zeroWTP = 0;
+              const co = { ...config.company, cash: state.cash, currentPrice: state.currentPrice };
+              model.sks.forEach((sk, i) => {
+                const r = computeScenario({ ...config, company: co }, sk, modState);
+                zeroWTP += (r.tp || 0) * model.normW[i];
+              });
+              const m = Math.max(0, Math.min(1, (baseWTP - zeroWTP) / baseWTP));
+              return Math.round(m * 100);
+            };
+
+            // Normalize a catalyst into a compact display object (+ materiality)
             const normCat = (cat) => ({
               title: cat.title,
               date: cat.date || cat.dateSort || "",
               type: cat.type || "",
               asset: indName(cat),
               rationale: cat._rationale || "",
-              binary: !!cat.binary,
-              s_pos: cat.success_pos, s_apr: cat.success_apr,
-              f_pos: cat.fail_pos, f_apr: cat.fail_apr,
+              materiality: catMateriality(cat),
               sourceUrl: cat._sourceUrl,
               confidence: cat._confidence || "",
               addedAt: cat._addedAt ? cat._addedAt.slice(0, 10) : "",
@@ -1550,11 +1570,33 @@
 
             if (lastList.length === 0 && config.context?.lastData) {
               const ld = config.context.lastData;
-              lastList = [{ title: ld.title, date: ld.date || "", type: "", asset: "", rationale: "", binary: false, sourceUrl: null, confidence: "", addedAt: "" , pointsFallback: ld.points || [] }];
+              lastList = [{ title: ld.title, date: ld.date || "", type: "", asset: "", rationale: "", materiality: null, sourceUrl: null, confidence: "", addedAt: "", pointsFallback: ld.points || [] }];
             }
             if (nextList.length === 0 && config.context?.nextCatalyst) {
               const nd = config.context.nextCatalyst;
-              nextList = [{ title: nd.title, date: nd.date || "", type: "", asset: "", rationale: "", binary: false, sourceUrl: null, confidence: "", addedAt: "", pointsFallback: nd.thresholds || [] }];
+              nextList = [{ title: nd.title, date: nd.date || "", type: "", asset: "", rationale: "", materiality: null, sourceUrl: null, confidence: "", addedAt: "", pointsFallback: nd.thresholds || [] }];
+            }
+
+            // Enrich PRIMARY past + next with hand-curated bullets from config.context if titles relate
+            const titleMatch = (a, b) => {
+              if (!a || !b) return false;
+              const na = a.toLowerCase(), nb = b.toLowerCase();
+              return na === nb || na.includes(nb.slice(0, 20)) || nb.includes(na.slice(0, 20));
+            };
+            if (lastList[0] && !lastList[0].pointsFallback && config.context?.lastData?.points?.length) {
+              if (titleMatch(lastList[0].title, config.context.lastData.title)) {
+                lastList[0].curatedBullets = config.context.lastData.points;
+              }
+            }
+            if (nextList[0] && !nextList[0].pointsFallback && config.context?.nextCatalyst?.thresholds?.length) {
+              if (titleMatch(nextList[0].title, config.context.nextCatalyst.title)) {
+                nextList[0].curatedBullets = config.context.nextCatalyst.thresholds;
+              } else {
+                // If titles don't match, still show the curated bullets on the primary
+                // next catalyst as "what to watch for" context -- since these are the
+                // thesis-level points the config owner wanted surfaced.
+                nextList[0].curatedBullets = config.context.nextCatalyst.thresholds;
+              }
             }
 
             if (lastList.length === 0 && nextList.length === 0) return null;
@@ -1567,27 +1609,32 @@
 
             const linkBtn = (url) => url ? e("a", { href: url, target: "_blank", style: { fontSize: 10, color: "#60a5fa", textDecoration: "none", marginLeft: 6 }, onClick: (ev) => ev.stopPropagation() }, "\u2197") : null;
 
+            // Materiality chip color: >25% red (binary risk), 10-25% amber, <10% neutral
+            const matColor = (m) => m == null ? "#6b7080" : m >= 25 ? "#ef4444" : m >= 10 ? "#fbbf24" : "#86efac";
+
             // A single compact event block (used in the expanded list)
             const eventBlock = (c, isFirst, color) => e("div", {
               style: { background: "#0a0c10", border: "1px solid " + color + "22", borderRadius: 6, padding: "8px 10px", marginBottom: 6 }
             },
-              e("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 } },
-                e("div", { style: { flex: 1, minWidth: 0 } },
-                  e("div", { style: { fontSize: 10, color: color, fontWeight: 700, fontFamily: "'JetBrains Mono'", marginBottom: 2, letterSpacing: 0.3 } }, (c.date || "").toUpperCase()),
-                  e("div", { style: { fontSize: 11.5, color: "#e2e4ea", fontWeight: 600, marginBottom: 2, lineHeight: 1.35 } }, c.title, linkBtn(c.sourceUrl)),
-                  c.asset && e("div", { style: { fontSize: 10, color: "#6b7080", marginBottom: 3 } }, c.asset),
-                  c.rationale && e("div", { style: { fontSize: 10, color: "#8b8f99", lineHeight: 1.45, marginBottom: 3 } }, c.rationale),
-                  (c.pointsFallback || []).map((p, i) => e("div", { key: "pf" + i, style: { fontSize: 10, color: "#8b8f99", lineHeight: 1.45 } }, "\u2022 " + p)),
-                  (c.binary && (c.s_pos || c.s_apr)) ? e("div", { style: { display: "flex", gap: 10, fontSize: 10, marginTop: 3, fontFamily: "'JetBrains Mono'" } },
-                    e("span", { style: { color: "#22c55e" } }, "\u2713 " + (c.s_pos || 0) + "/" + (c.s_apr || 0)),
-                    e("span", { style: { color: "#ef4444" } }, "\u2717 " + (c.f_pos || 0) + "/" + (c.f_apr || 0))
-                  ) : null,
-                  e("div", { style: { display: "flex", gap: 8, marginTop: 3, fontSize: 9, color: "#555" } },
-                    c.type && e("span", { style: { background: "#ffffff08", padding: "1px 5px", borderRadius: 3 } }, c.type.replace(/_/g, " ")),
-                    c.confidence && e("span", {}, "conf: " + c.confidence),
-                    c.addedAt && e("span", {}, "refr: " + c.addedAt)
-                  )
-                )
+              e("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8, marginBottom: 2 } },
+                e("div", { style: { fontSize: 10, color: color, fontWeight: 700, fontFamily: "'JetBrains Mono'", letterSpacing: 0.3 } }, (c.date || "").toUpperCase()),
+                c.materiality != null && e("div", {
+                  style: { fontSize: 9, color: matColor(c.materiality), fontWeight: 700, fontFamily: "'JetBrains Mono'", background: matColor(c.materiality) + "18", padding: "1px 6px", borderRadius: 3, whiteSpace: "nowrap" },
+                  title: "Materiality: % of weighted TP that depends on this asset.indication"
+                }, "MAT: " + c.materiality + "%")
+              ),
+              e("div", { style: { fontSize: 11.5, color: "#e2e4ea", fontWeight: 600, marginBottom: 2, lineHeight: 1.35 } }, c.title, linkBtn(c.sourceUrl)),
+              c.asset && e("div", { style: { fontSize: 10, color: "#6b7080", marginBottom: 3 } }, c.asset),
+              c.rationale && e("div", { style: { fontSize: 10, color: "#8b8f99", lineHeight: 1.45, marginBottom: 3 } }, c.rationale),
+              (c.pointsFallback || []).map((p, i) => e("div", { key: "pf" + i, style: { fontSize: 10, color: "#8b8f99", lineHeight: 1.45 } }, "\u2022 " + p)),
+              (c.curatedBullets || []).length > 0 && e("div", { style: { marginTop: 4, marginBottom: 3, paddingTop: 4, borderTop: "1px solid #ffffff06" } },
+                e("div", { style: { fontSize: 9, color: "#6b7080", marginBottom: 2, textTransform: "uppercase", letterSpacing: 0.6, fontWeight: 700 } }, "What to watch"),
+                (c.curatedBullets || []).map((p, i) => e("div", { key: "cb" + i, style: { fontSize: 10, color: "#b0b4c0", lineHeight: 1.45 } }, "\u2022 " + p))
+              ),
+              e("div", { style: { display: "flex", gap: 8, marginTop: 4, fontSize: 9, color: "#555", flexWrap: "wrap" } },
+                c.type && e("span", { style: { background: "#ffffff08", padding: "1px 5px", borderRadius: 3 } }, c.type.replace(/_/g, " ")),
+                c.confidence && e("span", {}, "conf: " + c.confidence),
+                c.addedAt && e("span", {}, "refr: " + c.addedAt)
               )
             );
 

@@ -96,10 +96,18 @@ tbody tr:hover{background:#ffffff06}
 .topbar-item .t{font-family:var(--mono);font-weight:700;color:#60a5fa;margin-right:8px}
 .topbar-item .n{color:var(--text2);font-size:.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .topbar-count{font-size:.75rem;color:var(--text2);font-family:var(--mono);white-space:nowrap}
-.topbar-nav{display:flex;gap:2px;margin-left:auto}
-.topbar-nav button{background:transparent;border:1px solid transparent;border-radius:5px;padding:4px 10px;font-size:.68rem;font-family:var(--mono);color:var(--text2);cursor:pointer;white-space:nowrap;transition:.15s}
-.topbar-nav button:hover{background:#ffffff08;color:var(--text1)}
-.topbar-nav button.active{background:#3b82f622;border-color:#3b82f644;color:#60a5fa}
+.topbar-nav{display:flex;gap:4px;margin-left:auto;align-items:center}
+.sig-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:6px;font-size:.68rem;font-family:var(--mono);font-weight:600;cursor:pointer;white-space:nowrap;transition:.15s;border:1px solid transparent;user-select:none}
+.sig-badge .sig-label{color:var(--text2);letter-spacing:.2px}
+.sig-badge .sig-count{font-weight:800;font-size:.78rem}
+.sig-badge:hover{background:#ffffff08}
+.sig-badge.active{border-color:currentColor}
+.sig-badge.empty{opacity:.35;cursor:default}
+.sig-badge.empty:hover{background:transparent}
+.sig-cash{color:#ef4444}
+.sig-pdufa{color:#f59e0b}
+.sig-rr{color:#22c55e}
+.sig-hot{color:#60a5fa}
 .sticky-filters{position:sticky;top:46px;z-index:190;background:#080b12ee;backdrop-filter:blur(12px);padding:6px 20px 0;border-bottom:1px solid var(--border);display:none}
 .sticky-filters .fbar{margin-bottom:6px;padding:6px 10px}
 .sticky-filters .fl2-row{margin-bottom:6px;padding:2px 10px 4px}
@@ -197,14 +205,7 @@ tbody tr:hover{background:#ffffff06}
     <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4h12M4 8h8M6 12h4"/></svg>
     Filters <span class="badge" id="filterBadge" style="display:none">0</span>
   </button>
-  <nav class="topbar-nav" id="topNav">
-    <button onclick="window._navTo('sec-range')" data-sec="sec-range">Range</button>
-    <button onclick="window._navTo('sec-markets')" data-sec="sec-markets">Markets</button>
-    <button onclick="window._navTo('sec-pipeline')" data-sec="sec-pipeline">Pipeline</button>
-    <button onclick="window._navTo('sec-catalyst')" data-sec="sec-catalyst">Catalysts</button>
-    <button onclick="window._navTo('sec-portfolio')" data-sec="sec-portfolio">Portfolio</button>
-    <button onclick="window._navTo('sec-table')" data-sec="sec-table">Table</button>
-  </nav>
+  <nav class="topbar-nav" id="topNav"></nav>
 </div>
 <div id="stickyFilters" class="sticky-filters"></div>
 <div id="drawerOverlay" class="drawer-overlay" onclick="window._toggleDrawer()"></div>
@@ -898,6 +899,57 @@ async function main(){
     tl.innerHTML=items;
   }
   populateTopbar();
+
+  // Signal badges: 4 auto-computed condition counts rendered into #topNav.
+  // Click applies a filter (narrows every card to the matching tickers).
+  function computeSignals(){
+    const cashT=new Set(), pdufaT=new Set(), rrT=new Set(), hotT=new Set();
+    for(const r of rows){
+      if(r.ev<0) cashT.add(r.ticker);
+      if(r.catalysts&&r.catalysts.some(c=>c.type==='pdufa'&&c.daysOut>=0&&c.daysOut<=30)) pdufaT.add(r.ticker);
+      if(r.catalysts&&r.catalysts.some(c=>c.daysOut>=0&&c.daysOut<=7)) hotT.add(r.ticker);
+      if(r.tps&&r.price>0){
+        const bullUp=((r.tps.bull||0)-r.price)/r.price;
+        const megaDn=(r.price-(r.tps.mega_bear||0))/r.price;
+        if(bullUp>0&&megaDn>0&&(bullUp/megaDn)>=5) rrT.add(r.ticker);
+      }
+    }
+    return {cash:cashT,pdufa:pdufaT,rr:rrT,hot:hotT};
+  }
+  function renderSignalBadges(){
+    const nv=document.getElementById('topNav');if(!nv)return;
+    const sig=computeSignals();
+    const defs=[
+      {kind:'cash',  cls:'sig-cash',  label:'\u003c cash',   tickers:sig.cash},
+      {kind:'pdufa', cls:'sig-pdufa', label:'PDUFA 30d',     tickers:sig.pdufa},
+      {kind:'rr',    cls:'sig-rr',    label:'R/R \u00b75',   tickers:sig.rr},
+      {kind:'hot',   cls:'sig-hot',   label:'hot 7d',        tickers:sig.hot},
+    ];
+    const activeKind=filterSignal?filterSignal.kind:null;
+    nv.innerHTML=defs.map(d=>{
+      const n=d.tickers.size;
+      const isActive=activeKind===d.kind;
+      const emptyCls=n===0?' empty':'';
+      const activeCls=isActive?' active':'';
+      const onClick=n===0?'':`onclick="window._toggleSignal('${d.kind}')"`;
+      return `<div class="sig-badge ${d.cls}${emptyCls}${activeCls}" ${onClick} title="${[...d.tickers].join(' \u00b7 ')||'none'}"><span class="sig-label">${d.label}</span><span class="sig-count">${n}</span></div>`;
+    }).join('');
+  }
+  window._toggleSignal=function(kind){
+    if(filterSignal&&filterSignal.kind===kind){filterSignal=null;}
+    else{
+      const sig=computeSignals();
+      const tickers=sig[kind];
+      if(!tickers||tickers.size===0)return;
+      const labels={cash:'< cash',pdufa:'PDUFA 30d',rr:'R/R \u00b75',hot:'hot 7d'};
+      filterSignal={kind,tickers:new Set(tickers),label:labels[kind]};
+    }
+    doSort();render();renderSignalBadges();
+    // Scroll to range card so the filter effect is visible
+    const r=document.getElementById('sec-range');if(r)r.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  renderSignalBadges();
+
   window._topFilter=function(q){
     const tl=document.getElementById('topList');if(!tl)return;
     tl.classList.add('open');
@@ -919,6 +971,7 @@ async function main(){
   let filterL1=new Set(), filterL2=new Set(), filterL3=new Set(), filterL4=new Set(), filterPhase=null, filterRare=null;
   let filterMod1=null, filterMod2=null, filterMod3=null;
   let filterMcap=new Set(); // {'mega','large','mid','small','micro'} multi-select
+  let filterSignal=null; // {kind:'cash'|'pdufa'|'rr'|'hot', tickers:Set, label:string}
   let stripSort="base";
   let purityMode="wtd";
   let mktNavPath=[]; // Market explorer drill-down path (e.g. ["oncology","hematology","cll_nhl"])
@@ -1297,6 +1350,7 @@ async function main(){
       if(!skipRare&&filterRare!==null) f=f.filter(r=>r.meta.rare===filterRare);
       if(!skipBucket&&activeFilter) f=f.filter(r=>bucketOf(r)===activeFilter);
       if(filterMcap.size) f=f.filter(r=>filterMcap.has(r.mcapTier));
+      if(filterSignal&&filterSignal.tickers&&filterSignal.tickers.size) f=f.filter(r=>filterSignal.tickers.has(r.ticker));
       return f;
     }
     const forArea=applyFiltersExcept(rows,true,false,false,false,false);
@@ -2551,6 +2605,7 @@ async function main(){
     if(filterMod2) activeFilters.push({lbl:'P.L2',val:filterMod2.split('.').pop().replace(/_/g,' '),clear:`window._fMod2(null)`});
     if(filterMod3) activeFilters.push({lbl:'P.L3',val:filterMod3.split('.').pop().replace(/_/g,' '),clear:`window._fMod3(null)`});
     if(activeFilter) activeFilters.push({lbl:'Bucket',val:activeFilter.replace(/_/g,' '),clear:`window._filter('${activeFilter}')`});
+    if(filterSignal) activeFilters.push({lbl:'Signal',val:filterSignal.label+' \u00b7 '+filterSignal.tickers.size,clear:`window._toggleSignal('${filterSignal.kind}')`});
     const anyFilter=activeFilters.length>0;
 
     // Update topbar Filters button (count badge + style)
@@ -2792,9 +2847,9 @@ async function main(){
         return fetchLivePrice(yt).then(r=>r?[tk,r]:null);
       }));
       results.filter(Boolean).forEach(([tk,lp])=>{livePrices[tk]=lp;updated++;});
-      if(updated>0){rows=buildRows();doSort();render();populateTopbar();}
+      if(updated>0){rows=buildRows();doSort();render();populateTopbar();renderSignalBadges();}
     }
-    if(updated>0){pricesLoaded=true;rows=buildRows();doSort();render();populateTopbar();}
+    if(updated>0){pricesLoaded=true;rows=buildRows();doSort();render();populateTopbar();renderSignalBadges();}
   })();
 }
 main();

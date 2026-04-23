@@ -99,10 +99,17 @@ REGIONS = {
     # ============================================================
     # DERMATOLOGY - INFLAMMATORY
     # ============================================================
+    # source: US moderate-to-severe AD on systemic Rx ~500K (NHANES + derm
+    # billing claims); EU5 ~700K; ROW ~4M through dermatology channels.
+    # Blended net price ~$25K/yr (Dupixent WAC $38K with PBM rebates ~35%;
+    # Rinvoq/Cibinqo similar). Global addressable TAM ~$14B matches current
+    # branded biologic+JAK spend (Dupixent-AD $9B + Rinvoq-AD $1.5B + others
+    # $3B = $13-14B). Prior values (1.5M US, 20M ROW, $38K uniform WAC)
+    # conflated all AD with biologic-eligible severe -- 6x inflation vs reality.
     "dermatology.inflammatory_derm.atopic_dermatitis_systemic": {
-        "us":  {"patientsK": 1500,  "wtpPct": 65, "priceK": 38},
-        "eu":  {"patientsK": 2500,  "wtpPct": 48, "priceK": 22},
-        "row": {"patientsK": 20000, "wtpPct": 15, "priceK": 8},
+        "us":  {"patientsK": 500,   "wtpPct": 55, "priceK": 25},
+        "eu":  {"patientsK": 700,   "wtpPct": 40, "priceK": 16},
+        "row": {"patientsK": 4000,  "wtpPct": 12, "priceK": 5},
     },
     "dermatology.inflammatory_derm.atopic_dermatitis_topical": {
         "us":  {"patientsK": 8000,    "wtpPct": 55, "priceK": 2},
@@ -114,10 +121,18 @@ REGIONS = {
         "eu":  {"patientsK": 300,  "wtpPct": 40, "priceK": 22},
         "row": {"patientsK": 2000, "wtpPct": 10, "priceK": 5},
     },
+    # source: US biologic-treated moderate-severe psoriasis ~1.5M (NPF registry
+    # + dermatology claims); EU5 ~2M; ROW ~10M via specialty derm channels.
+    # Blended net price ~$20K/yr -- Stelara/Skyrizi/Cosentyx/Taltz/Tremfya
+    # WAC $50-60K but PBM rebates + biosimilar competition on Stelara drive
+    # net down. Global addressable TAM ~$42B matches projected 2027-28 peak
+    # branded spend (Skyrizi ~$15B + Stelara ~$5B post-biosimilar + Cosentyx
+    # ~$7B + Tremfya ~$5B + Taltz ~$3.5B + Bimzelx ~$3B + Sotyktu/Otezla ~$4B).
+    # Prior TAM $105B at $52K uniform WAC overstated net economics by ~2.5x.
     "dermatology.inflammatory_derm.psoriasis_systemic": {
-        "us":  {"patientsK": 1500,  "wtpPct": 68, "priceK": 52},
-        "eu":  {"patientsK": 2500,  "wtpPct": 52, "priceK": 26},
-        "row": {"patientsK": 15000, "wtpPct": 15, "priceK": 8},
+        "us":  {"patientsK": 1500,  "wtpPct": 55, "priceK": 20},
+        "eu":  {"patientsK": 2000,  "wtpPct": 40, "priceK": 12},
+        "row": {"patientsK": 10000, "wtpPct": 12, "priceK": 4},
     },
     "dermatology.inflammatory_derm.psoriasis_topical": {
         "us":  {"patientsK": 6000,   "wtpPct": 50, "priceK": 1.5},

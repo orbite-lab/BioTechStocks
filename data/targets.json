@@ -1,13 +1,100 @@
 {
   "_meta": {
-    "generated": "2026-04-23T15:17:30Z",
-    "target_count": 101,
+    "generated": "2026-04-23T15:22:22Z",
+    "target_count": 143,
     "total_assets": 227,
-    "assets_with_targets": 170,
-    "multi_modality_count": 8,
-    "multi_disease_count": 42
+    "assets_with_targets": 223,
+    "multi_modality_count": 12,
+    "multi_disease_count": 48
   },
   "targets": {
+    "ACVR1C": {
+      "companies": [
+        "ARWR"
+      ],
+      "modalities": [
+        "nucleic_acid.trirna.arrow_trirna"
+      ],
+      "areas": [
+        "cardio_metabolic.obesity.general"
+      ],
+      "assets": [
+        {
+          "ticker": "ARWR",
+          "asset": "obesity",
+          "name": "ARO-INHBE + ARO-ALK7 (obesity RNAi)",
+          "modality": "nucleic_acid.trirna.arrow_trirna",
+          "areas": [
+            "cardio_metabolic.obesity.general"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "nucleic_acid"
+      ]
+    },
+    "ACVR2B": {
+      "companies": [
+        "BHVN"
+      ],
+      "modalities": [
+        "small_molecule.protein_degrader.mode_platform"
+      ],
+      "areas": [
+        "cardio_metabolic.obesity.general"
+      ],
+      "assets": [
+        {
+          "ticker": "BHVN",
+          "asset": "taldef",
+          "name": "Taldefgrobep alfa — myostatin-activin inhibitor",
+          "modality": "small_molecule.protein_degrader.mode_platform",
+          "areas": [
+            "cardio_metabolic.obesity.general"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ]
+    },
+    "AGT": {
+      "companies": [
+        "ALNY"
+      ],
+      "modalities": [
+        "nucleic_acid.sirna.galnac_platform"
+      ],
+      "areas": [
+        "cardio_metabolic.hypertension.agt_knockdown"
+      ],
+      "assets": [
+        {
+          "ticker": "ALNY",
+          "asset": "zilebesiran",
+          "name": "Zilebesiran - hypertension (Roche partnership)",
+          "modality": "nucleic_acid.sirna.galnac_platform",
+          "areas": [
+            "cardio_metabolic.hypertension.agt_knockdown"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "nucleic_acid"
+      ]
+    },
     "AGTR1": {
       "companies": [
         "TVTX"
@@ -45,6 +132,35 @@
       "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
+      ]
+    },
+    "ALAS1": {
+      "companies": [
+        "ALNY"
+      ],
+      "modalities": [
+        "nucleic_acid.sirna.galnac_platform"
+      ],
+      "areas": [
+        "cardio_metabolic.rare_metabolic.porphyria"
+      ],
+      "assets": [
+        {
+          "ticker": "ALNY",
+          "asset": "givlaari",
+          "name": "Givlaari (givosiran)",
+          "modality": "nucleic_acid.sirna.galnac_platform",
+          "areas": [
+            "cardio_metabolic.rare_metabolic.porphyria"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "nucleic_acid"
       ]
     },
     "ALK": {
@@ -107,15 +223,38 @@
     },
     "ANGPTL3": {
       "companies": [
+        "ARWR",
+        "CRSP",
         "REGN"
       ],
       "modalities": [
-        "antibody.monoclonal.anti_angptl3"
+        "antibody.monoclonal.anti_angptl3",
+        "gene_editing.crispr_cas9.invivo",
+        "nucleic_acid.trirna.arrow_trirna"
       ],
       "areas": [
-        "cardio_metabolic.lipids.hofh"
+        "cardio_metabolic.lipids.hofh",
+        "cardio_metabolic.lipids.ldl_cv_risk"
       ],
       "assets": [
+        {
+          "ticker": "ARWR",
+          "asset": "zodasiran",
+          "name": "Zodasiran — ANGPTL3 (mixed hyperlipidemia)",
+          "modality": "nucleic_acid.trirna.arrow_trirna",
+          "areas": [
+            "cardio_metabolic.lipids.ldl_cv_risk"
+          ]
+        },
+        {
+          "ticker": "CRSP",
+          "asset": "ctx310",
+          "name": "CTX310 - in vivo ANGPTL3 editing (CV)",
+          "modality": "gene_editing.crispr_cas9.invivo",
+          "areas": [
+            "cardio_metabolic.lipids.ldl_cv_risk"
+          ]
+        },
         {
           "ticker": "REGN",
           "asset": "evkeeza",
@@ -126,12 +265,14 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 1,
+      "assetCount": 3,
+      "modalityCount": 3,
+      "modalityClassCount": 3,
+      "areaCount": 2,
       "modalityClasses": [
-        "antibody"
+        "antibody",
+        "gene_editing",
+        "nucleic_acid"
       ]
     },
     "APLNR": {
@@ -165,15 +306,28 @@
     },
     "APOC3": {
       "companies": [
-        "ARWR"
+        "ARWR",
+        "IONS"
       ],
       "modalities": [
+        "nucleic_acid.antisense.galnac_aso",
+        "nucleic_acid.trirna.arrow_trirna",
         "nucleic_acid.trirna.pcsk9_apoc3_dual"
       ],
       "areas": [
-        "cardio_metabolic.lipids.ldl_cv_risk"
+        "cardio_metabolic.lipids.ldl_cv_risk",
+        "cardio_metabolic.lipids.triglycerides"
       ],
       "assets": [
+        {
+          "ticker": "ARWR",
+          "asset": "commercial",
+          "name": "REDEMPLO (plozasiran) — FCS launched",
+          "modality": "nucleic_acid.trirna.arrow_trirna",
+          "areas": [
+            "cardio_metabolic.lipids.triglycerides"
+          ]
+        },
         {
           "ticker": "ARWR",
           "asset": "aro_dimer",
@@ -181,6 +335,44 @@
           "modality": "nucleic_acid.trirna.pcsk9_apoc3_dual",
           "areas": [
             "cardio_metabolic.lipids.ldl_cv_risk"
+          ]
+        },
+        {
+          "ticker": "IONS",
+          "asset": "commercial",
+          "name": "TRYNGOLZA (olezarsen) — FCS + sHTG",
+          "modality": "nucleic_acid.antisense.galnac_aso",
+          "areas": [
+            "cardio_metabolic.lipids.triglycerides"
+          ]
+        }
+      ],
+      "assetCount": 3,
+      "modalityCount": 3,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "nucleic_acid"
+      ]
+    },
+    "APP": {
+      "companies": [
+        "ALNY"
+      ],
+      "modalities": [
+        "nucleic_acid.sirna.galnac_platform"
+      ],
+      "areas": [
+        "cns.neurodegeneration.caa"
+      ],
+      "assets": [
+        {
+          "ticker": "ALNY",
+          "asset": "mivelsiran",
+          "name": "Mivelsiran - Alzheimer/CAA",
+          "modality": "nucleic_acid.sirna.galnac_platform",
+          "areas": [
+            "cns.neurodegeneration.caa"
           ]
         }
       ],
@@ -190,6 +382,64 @@
       "areaCount": 1,
       "modalityClasses": [
         "nucleic_acid"
+      ]
+    },
+    "ATP2C1": {
+      "companies": [
+        "KRYS"
+      ],
+      "modalities": [
+        "gene_therapy.gene_replacement.hsv1_vector"
+      ],
+      "areas": [
+        "dermatology.rare_skin.hailey_hailey"
+      ],
+      "assets": [
+        {
+          "ticker": "KRYS",
+          "asset": "kb111",
+          "name": "KB111 — Hailey-Hailey disease",
+          "modality": "gene_therapy.gene_replacement.hsv1_vector",
+          "areas": [
+            "dermatology.rare_skin.hailey_hailey"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "gene_therapy"
+      ]
+    },
+    "BCL11A": {
+      "companies": [
+        "CRSP"
+      ],
+      "modalities": [
+        "gene_editing.crispr_cas9.exvivo"
+      ],
+      "areas": [
+        "hematology.rare_blood.hemoglobinopathy"
+      ],
+      "assets": [
+        {
+          "ticker": "CRSP",
+          "asset": "casgevy",
+          "name": "Casgevy (exa-cel) - SCD + TDT",
+          "modality": "gene_editing.crispr_cas9.exvivo",
+          "areas": [
+            "hematology.rare_blood.hemoglobinopathy"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "gene_editing"
       ]
     },
     "BCL2": {
@@ -242,6 +492,35 @@
       "areaCount": 3,
       "modalityClasses": [
         "small_molecule"
+      ]
+    },
+    "BORRELIA_OSPA": {
+      "companies": [
+        "VLA"
+      ],
+      "modalities": [
+        "vaccine.protein_subunit.vlp_conjugate"
+      ],
+      "areas": [
+        "infectious_disease.vaccines.lyme"
+      ],
+      "assets": [
+        {
+          "ticker": "VLA",
+          "asset": "vla15",
+          "name": "VLA15/LB6V (Lyme) — royalties",
+          "modality": "vaccine.protein_subunit.vlp_conjugate",
+          "areas": [
+            "infectious_disease.vaccines.lyme"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "vaccine"
       ]
     },
     "BTK": {
@@ -625,6 +904,35 @@
         "adc"
       ]
     },
+    "CD28": {
+      "companies": [
+        "JANX"
+      ],
+      "modalities": [
+        "antibody.bispecific.tumor_activated_tce"
+      ],
+      "areas": [
+        "oncology.genitourinary.prostate"
+      ],
+      "assets": [
+        {
+          "ticker": "JANX",
+          "asset": "psma_tracir",
+          "name": "PSMA-TRACIr — CD28 costimulatory",
+          "modality": "antibody.bispecific.tumor_activated_tce",
+          "areas": [
+            "oncology.genitourinary.prostate"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ]
+    },
     "CD3": {
       "companies": [
         "REGN"
@@ -659,6 +967,45 @@
       ],
       "assetCount": 2,
       "modalityCount": 2,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "antibody"
+      ]
+    },
+    "CD3E": {
+      "companies": [
+        "JANX"
+      ],
+      "modalities": [
+        "antibody.bispecific.tumor_activated_tce"
+      ],
+      "areas": [
+        "oncology.genitourinary.prostate",
+        "oncology.gi.colorectal"
+      ],
+      "assets": [
+        {
+          "ticker": "JANX",
+          "asset": "janx007",
+          "name": "JANX007 — PSMA-TRACTr (mCRPC)",
+          "modality": "antibody.bispecific.tumor_activated_tce",
+          "areas": [
+            "oncology.genitourinary.prostate"
+          ]
+        },
+        {
+          "ticker": "JANX",
+          "asset": "janx008",
+          "name": "JANX008 — EGFR-TRACTr (solid tumors)",
+          "modality": "antibody.bispecific.tumor_activated_tce",
+          "areas": [
+            "oncology.gi.colorectal"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 1,
       "modalityClassCount": 1,
       "areaCount": 2,
       "modalityClasses": [
@@ -732,6 +1079,35 @@
       "areaCount": 2,
       "modalityClasses": [
         "cell_therapy"
+      ]
+    },
+    "CDK2": {
+      "companies": [
+        "KYMR"
+      ],
+      "modalities": [
+        "small_molecule.protein_degrader.molecular_glue"
+      ],
+      "areas": [
+        "oncology.breast.hr_her2_neg"
+      ],
+      "assets": [
+        {
+          "ticker": "KYMR",
+          "asset": "cdk2",
+          "name": "CDK2 molecular glue (Gilead oncology)",
+          "modality": "small_molecule.protein_degrader.molecular_glue",
+          "areas": [
+            "oncology.breast.hr_her2_neg"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
       ]
     },
     "CDK4": {
@@ -859,6 +1235,64 @@
         "small_molecule"
       ]
     },
+    "CFTR": {
+      "companies": [
+        "KRYS"
+      ],
+      "modalities": [
+        "gene_therapy.gene_replacement.hsv1_vector"
+      ],
+      "areas": [
+        "respiratory.genetic.cystic_fibrosis"
+      ],
+      "assets": [
+        {
+          "ticker": "KRYS",
+          "asset": "kb407",
+          "name": "KB407 — inhaled gene therapy (Cystic Fibrosis)",
+          "modality": "gene_therapy.gene_replacement.hsv1_vector",
+          "areas": [
+            "respiratory.genetic.cystic_fibrosis"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "gene_therapy"
+      ]
+    },
+    "CHIK_VIRUS": {
+      "companies": [
+        "VLA"
+      ],
+      "modalities": [
+        "vaccine.protein_subunit.vlp_conjugate"
+      ],
+      "areas": [
+        "infectious_disease.vaccines.chikungunya"
+      ],
+      "assets": [
+        {
+          "ticker": "VLA",
+          "asset": "ixchiq",
+          "name": "IXCHIQ (Chikungunya)",
+          "modality": "vaccine.protein_subunit.vlp_conjugate",
+          "areas": [
+            "infectious_disease.vaccines.chikungunya"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "vaccine"
+      ]
+    },
     "CHRM1": {
       "companies": [
         "NBIX"
@@ -977,6 +1411,45 @@
         "adc"
       ]
     },
+    "COL7A1": {
+      "companies": [
+        "KRYS"
+      ],
+      "modalities": [
+        "gene_therapy.gene_replacement.hsv1_vector"
+      ],
+      "areas": [
+        "dermatology.rare_skin.deb",
+        "ophthalmology.anterior_neuro.deb_ocular"
+      ],
+      "assets": [
+        {
+          "ticker": "KRYS",
+          "asset": "commercial",
+          "name": "VYJUVEK — redosable gene therapy (DEB)",
+          "modality": "gene_therapy.gene_replacement.hsv1_vector",
+          "areas": [
+            "dermatology.rare_skin.deb"
+          ]
+        },
+        {
+          "ticker": "KRYS",
+          "asset": "kb803",
+          "name": "KB803 — ocular DEB gene therapy",
+          "modality": "gene_therapy.gene_replacement.hsv1_vector",
+          "areas": [
+            "ophthalmology.anterior_neuro.deb_ocular"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "gene_therapy"
+      ]
+    },
     "CYP11B1": {
       "companies": [
         "NBIX"
@@ -995,6 +1468,35 @@
           "modality": "small_molecule.enzyme_inhibitor.cyp11b1",
           "areas": [
             "endocrine.adrenal.cah"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ]
+    },
+    "DGAT2": {
+      "companies": [
+        "MDGL"
+      ],
+      "modalities": [
+        "small_molecule.combination.triple_metabolic"
+      ],
+      "areas": [
+        "cardio_metabolic.liver.mash"
+      ],
+      "assets": [
+        {
+          "ticker": "MDGL",
+          "asset": "combos",
+          "name": "Rezdiffra combination pipeline (GLP-1 + DGAT-2 + siRNA)",
+          "modality": "small_molecule.combination.triple_metabolic",
+          "areas": [
+            "cardio_metabolic.liver.mash"
           ]
         }
       ],
@@ -1247,6 +1749,35 @@
         "small_molecule"
       ]
     },
+    "EGFR": {
+      "companies": [
+        "JANX"
+      ],
+      "modalities": [
+        "antibody.bispecific.tumor_activated_tce"
+      ],
+      "areas": [
+        "oncology.gi.colorectal"
+      ],
+      "assets": [
+        {
+          "ticker": "JANX",
+          "asset": "janx008",
+          "name": "JANX008 — EGFR-TRACTr (solid tumors)",
+          "modality": "antibody.bispecific.tumor_activated_tce",
+          "areas": [
+            "oncology.gi.colorectal"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ]
+    },
     "EPHA2": {
       "companies": [
         "BCYC"
@@ -1386,6 +1917,35 @@
         "small_molecule"
       ]
     },
+    "F11": {
+      "companies": [
+        "CRSP"
+      ],
+      "modalities": [
+        "gene_editing.crispr_cas9.invivo"
+      ],
+      "areas": [
+        "cardio_metabolic.diabetes.t1d"
+      ],
+      "assets": [
+        {
+          "ticker": "CRSP",
+          "asset": "discovery",
+          "name": "CTX340 + diabetes + discovery",
+          "modality": "gene_editing.crispr_cas9.invivo",
+          "areas": [
+            "cardio_metabolic.diabetes.t1d"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "gene_editing"
+      ]
+    },
     "FCGRT": {
       "companies": [
         "ARGX",
@@ -1513,6 +2073,44 @@
         "small_molecule"
       ]
     },
+    "FOLH1": {
+      "companies": [
+        "JANX"
+      ],
+      "modalities": [
+        "antibody.bispecific.tumor_activated_tce"
+      ],
+      "areas": [
+        "oncology.genitourinary.prostate"
+      ],
+      "assets": [
+        {
+          "ticker": "JANX",
+          "asset": "janx007",
+          "name": "JANX007 — PSMA-TRACTr (mCRPC)",
+          "modality": "antibody.bispecific.tumor_activated_tce",
+          "areas": [
+            "oncology.genitourinary.prostate"
+          ]
+        },
+        {
+          "ticker": "JANX",
+          "asset": "psma_tracir",
+          "name": "PSMA-TRACIr — CD28 costimulatory",
+          "modality": "antibody.bispecific.tumor_activated_tce",
+          "areas": [
+            "oncology.genitourinary.prostate"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ]
+    },
     "FOLR1": {
       "companies": [
         "ABBV"
@@ -1598,6 +2196,35 @@
       "areaCount": 1,
       "modalityClasses": [
         "peptide"
+      ]
+    },
+    "GFAP": {
+      "companies": [
+        "IONS"
+      ],
+      "modalities": [
+        "nucleic_acid.antisense.galnac_aso"
+      ],
+      "areas": [
+        "cns.neurodegeneration.alexander"
+      ],
+      "assets": [
+        {
+          "ticker": "IONS",
+          "asset": "zilgan",
+          "name": "Zilganersen — Alexander disease",
+          "modality": "nucleic_acid.antisense.galnac_aso",
+          "areas": [
+            "cns.neurodegeneration.alexander"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "nucleic_acid"
       ]
     },
     "GIPR": {
@@ -1788,6 +2415,64 @@
       "areaCount": 4,
       "modalityClasses": [
         "small_molecule"
+      ]
+    },
+    "HAO1": {
+      "companies": [
+        "ALNY"
+      ],
+      "modalities": [
+        "nucleic_acid.sirna.galnac_platform"
+      ],
+      "areas": [
+        "cardio_metabolic.rare_metabolic.hyperoxaluria"
+      ],
+      "assets": [
+        {
+          "ticker": "ALNY",
+          "asset": "oxlumo",
+          "name": "Oxlumo (lumasiran)",
+          "modality": "nucleic_acid.sirna.galnac_platform",
+          "areas": [
+            "cardio_metabolic.rare_metabolic.hyperoxaluria"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "nucleic_acid"
+      ]
+    },
+    "HBV": {
+      "companies": [
+        "IONS"
+      ],
+      "modalities": [
+        "nucleic_acid.antisense.galnac_aso"
+      ],
+      "areas": [
+        "cardio_metabolic.liver.hbv_functional_cure"
+      ],
+      "assets": [
+        {
+          "ticker": "IONS",
+          "asset": "bepiro",
+          "name": "Bepirovirsen — chronic Hep B (partnered w/ GSK)",
+          "modality": "nucleic_acid.antisense.galnac_aso",
+          "areas": [
+            "cardio_metabolic.liver.hbv_functional_cure"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "nucleic_acid"
       ]
     },
     "HIV_CAPSID": {
@@ -1995,6 +2680,93 @@
         "small_molecule"
       ]
     },
+    "IGA1_GAL_DEF": {
+      "companies": [
+        "BHVN"
+      ],
+      "modalities": [
+        "small_molecule.protein_degrader.mode_platform"
+      ],
+      "areas": [
+        "immunology.autoimmune.iga_nephropathy"
+      ],
+      "assets": [
+        {
+          "ticker": "BHVN",
+          "asset": "bhv1400",
+          "name": "BHV-1400 — Gd-IgA1 TRAP degrader",
+          "modality": "small_molecule.protein_degrader.mode_platform",
+          "areas": [
+            "immunology.autoimmune.iga_nephropathy"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ]
+    },
+    "IGG": {
+      "companies": [
+        "BHVN"
+      ],
+      "modalities": [
+        "small_molecule.protein_degrader.mode_platform"
+      ],
+      "areas": [
+        "endocrine.thyroid.graves"
+      ],
+      "assets": [
+        {
+          "ticker": "BHVN",
+          "asset": "bhv1300",
+          "name": "BHV-1300 — IgG MoDE degrader",
+          "modality": "small_molecule.protein_degrader.mode_platform",
+          "areas": [
+            "endocrine.thyroid.graves"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ]
+    },
+    "IL12A": {
+      "companies": [
+        "KRYS"
+      ],
+      "modalities": [
+        "gene_therapy.gene_replacement.hsv1_vector"
+      ],
+      "areas": [
+        "oncology.lung.nsclc_driver.other"
+      ],
+      "assets": [
+        {
+          "ticker": "KRYS",
+          "asset": "kb707",
+          "name": "KB707 — redosable immunotherapy (NSCLC)",
+          "modality": "gene_therapy.gene_replacement.hsv1_vector",
+          "areas": [
+            "oncology.lung.nsclc_driver.other"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "gene_therapy"
+      ]
+    },
     "IL13": {
       "companies": [
         "ARQT"
@@ -2124,17 +2896,29 @@
     },
     "IL2": {
       "companies": [
+        "KRYS",
         "NKTR"
       ],
       "modalities": [
+        "gene_therapy.gene_replacement.hsv1_vector",
         "recombinant_protein.cytokine.il2"
       ],
       "areas": [
         "cardio_metabolic.diabetes.t1d",
         "dermatology.inflammatory_derm.atopic_dermatitis_systemic",
-        "dermatology.rare_skin.alopecia_areata"
+        "dermatology.rare_skin.alopecia_areata",
+        "oncology.lung.nsclc_driver.other"
       ],
       "assets": [
+        {
+          "ticker": "KRYS",
+          "asset": "kb707",
+          "name": "KB707 — redosable immunotherapy (NSCLC)",
+          "modality": "gene_therapy.gene_replacement.hsv1_vector",
+          "areas": [
+            "oncology.lung.nsclc_driver.other"
+          ]
+        },
         {
           "ticker": "NKTR",
           "asset": "rezpeg_ad",
@@ -2163,11 +2947,12 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 3,
+      "assetCount": 4,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
+      "areaCount": 4,
       "modalityClasses": [
+        "gene_therapy",
         "recombinant_protein"
       ]
     },
@@ -2239,6 +3024,93 @@
       "areaCount": 6,
       "modalityClasses": [
         "antibody"
+      ]
+    },
+    "INHBE": {
+      "companies": [
+        "ARWR"
+      ],
+      "modalities": [
+        "nucleic_acid.trirna.arrow_trirna"
+      ],
+      "areas": [
+        "cardio_metabolic.obesity.general"
+      ],
+      "assets": [
+        {
+          "ticker": "ARWR",
+          "asset": "obesity",
+          "name": "ARO-INHBE + ARO-ALK7 (obesity RNAi)",
+          "modality": "nucleic_acid.trirna.arrow_trirna",
+          "areas": [
+            "cardio_metabolic.obesity.general"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "nucleic_acid"
+      ]
+    },
+    "IRAK4": {
+      "companies": [
+        "KYMR"
+      ],
+      "modalities": [
+        "small_molecule.protein_degrader.molecular_glue"
+      ],
+      "areas": [
+        "dermatology.inflammatory_derm.hidradenitis_suppurativa"
+      ],
+      "assets": [
+        {
+          "ticker": "KYMR",
+          "asset": "irak4",
+          "name": "KT-485/SAR447971 — IRAK4 degrader (Sanofi)",
+          "modality": "small_molecule.protein_degrader.molecular_glue",
+          "areas": [
+            "dermatology.inflammatory_derm.hidradenitis_suppurativa"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ]
+    },
+    "IRF5": {
+      "companies": [
+        "KYMR"
+      ],
+      "modalities": [
+        "small_molecule.protein_degrader.molecular_glue"
+      ],
+      "areas": [
+        "immunology.autoimmune.sle"
+      ],
+      "assets": [
+        {
+          "ticker": "KYMR",
+          "asset": "kt579",
+          "name": "KT-579 — oral IRF5 degrader (autoimmune)",
+          "modality": "small_molecule.protein_degrader.molecular_glue",
+          "areas": [
+            "immunology.autoimmune.sle"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
       ]
     },
     "ITK": {
@@ -2355,6 +3227,35 @@
       "areaCount": 6,
       "modalityClasses": [
         "small_molecule"
+      ]
+    },
+    "JEV": {
+      "companies": [
+        "VLA"
+      ],
+      "modalities": [
+        "vaccine.protein_subunit.vlp_conjugate"
+      ],
+      "areas": [
+        "infectious_disease.vaccines.travel"
+      ],
+      "assets": [
+        {
+          "ticker": "VLA",
+          "asset": "commercial",
+          "name": "IXIARO + DUKORAL (Travel vaccines)",
+          "modality": "vaccine.protein_subunit.vlp_conjugate",
+          "areas": [
+            "infectious_disease.vaccines.travel"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "vaccine"
       ]
     },
     "KCNJ11": {
@@ -2483,6 +3384,47 @@
         "small_molecule"
       ]
     },
+    "KLKB1": {
+      "companies": [
+        "IONS",
+        "NTLA"
+      ],
+      "modalities": [
+        "gene_editing.crispr_cas9.invivo",
+        "nucleic_acid.antisense.galnac_aso"
+      ],
+      "areas": [
+        "immunology.autoimmune.hereditary_angioedema"
+      ],
+      "assets": [
+        {
+          "ticker": "IONS",
+          "asset": "dawnzera",
+          "name": "DAWNZERA (donidalorsen) — HAE",
+          "modality": "nucleic_acid.antisense.galnac_aso",
+          "areas": [
+            "immunology.autoimmune.hereditary_angioedema"
+          ]
+        },
+        {
+          "ticker": "NTLA",
+          "asset": "lonvoz",
+          "name": "Lonvo-z (NTLA-2002) — Hereditary Angioedema",
+          "modality": "gene_editing.crispr_cas9.invivo",
+          "areas": [
+            "immunology.autoimmune.hereditary_angioedema"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
+      "areaCount": 1,
+      "modalityClasses": [
+        "gene_editing",
+        "nucleic_acid"
+      ]
+    },
     "KRAS": {
       "companies": [
         "RVMD"
@@ -2579,6 +3521,35 @@
         "antibody"
       ]
     },
+    "LPA": {
+      "companies": [
+        "IONS"
+      ],
+      "modalities": [
+        "nucleic_acid.antisense.galnac_aso"
+      ],
+      "areas": [
+        "cardio_metabolic.lipids.lpa"
+      ],
+      "assets": [
+        {
+          "ticker": "IONS",
+          "asset": "pelac",
+          "name": "Pelacarsen — Lp(a) (partnered w/ Novartis)",
+          "modality": "nucleic_acid.antisense.galnac_aso",
+          "areas": [
+            "cardio_metabolic.lipids.lpa"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "nucleic_acid"
+      ]
+    },
     "MAPK14": {
       "companies": [
         "CRVO"
@@ -2636,6 +3607,35 @@
       "areaCount": 4,
       "modalityClasses": [
         "small_molecule"
+      ]
+    },
+    "MAPT": {
+      "companies": [
+        "ARWR"
+      ],
+      "modalities": [
+        "nucleic_acid.trirna.arrow_trirna"
+      ],
+      "areas": [
+        "cns.neurodegeneration.alzheimer"
+      ],
+      "assets": [
+        {
+          "ticker": "ARWR",
+          "asset": "aro_mapt",
+          "name": "ARO-MAPT — CNS (Alzheimer's/tauopathies)",
+          "modality": "nucleic_acid.trirna.arrow_trirna",
+          "areas": [
+            "cns.neurodegeneration.alzheimer"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "nucleic_acid"
       ]
     },
     "MC4R": {
@@ -2734,6 +3734,35 @@
         "adc"
       ]
     },
+    "MMP14": {
+      "companies": [
+        "BCYC"
+      ],
+      "modalities": [
+        "radiopharmaceutical.radio_conjugate.lead212_target"
+      ],
+      "areas": [
+        "oncology.lung.nsclc_undruggable"
+      ],
+      "assets": [
+        {
+          "ticker": "BCYC",
+          "asset": "brc",
+          "name": "Bicycle Radioconjugates (BRC) — radiopharmaceuticals",
+          "modality": "radiopharmaceutical.radio_conjugate.lead212_target",
+          "areas": [
+            "oncology.lung.nsclc_undruggable"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "radiopharmaceutical"
+      ]
+    },
     "MS4A1": {
       "companies": [
         "REGN"
@@ -2761,6 +3790,35 @@
       "areaCount": 1,
       "modalityClasses": [
         "antibody"
+      ]
+    },
+    "MSTN": {
+      "companies": [
+        "BHVN"
+      ],
+      "modalities": [
+        "small_molecule.protein_degrader.mode_platform"
+      ],
+      "areas": [
+        "cardio_metabolic.obesity.general"
+      ],
+      "assets": [
+        {
+          "ticker": "BHVN",
+          "asset": "taldef",
+          "name": "Taldefgrobep alfa — myostatin-activin inhibitor",
+          "modality": "small_molecule.protein_degrader.mode_platform",
+          "areas": [
+            "cardio_metabolic.obesity.general"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
       ]
     },
     "MUSK": {
@@ -2841,6 +3899,35 @@
       "modalityClasses": [
         "adc",
         "antibody"
+      ]
+    },
+    "NGF": {
+      "companies": [
+        "KRYS"
+      ],
+      "modalities": [
+        "gene_therapy.gene_replacement.hsv1_vector"
+      ],
+      "areas": [
+        "ophthalmology.anterior_neuro.neurotrophic_keratitis"
+      ],
+      "assets": [
+        {
+          "ticker": "KRYS",
+          "asset": "kb801",
+          "name": "KB801 — neurotrophic keratitis",
+          "modality": "gene_therapy.gene_replacement.hsv1_vector",
+          "areas": [
+            "ophthalmology.anterior_neuro.neurotrophic_keratitis"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "gene_therapy"
       ]
     },
     "NLRP3": {
@@ -2968,6 +4055,35 @@
       "areaCount": 3,
       "modalityClasses": [
         "small_molecule"
+      ]
+    },
+    "OPRM1": {
+      "companies": [
+        "CAMX"
+      ],
+      "modalities": [
+        "formulation_modifier.long_acting.fluidcrystal_sc"
+      ],
+      "areas": [
+        "cns.psychiatry.opioid_dependence"
+      ],
+      "assets": [
+        {
+          "ticker": "CAMX",
+          "asset": "commercial",
+          "name": "Buvidal/Brixadi — long-acting buprenorphine (opioid dependence)",
+          "modality": "formulation_modifier.long_acting.fluidcrystal_sc",
+          "areas": [
+            "cns.psychiatry.opioid_dependence"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "formulation_modifier"
       ]
     },
     "PCSK9": {
@@ -3396,6 +4512,35 @@
         "small_molecule"
       ]
     },
+    "SCN2A": {
+      "companies": [
+        "PRAX"
+      ],
+      "modalities": [
+        "nucleic_acid.antisense.galnac_aso"
+      ],
+      "areas": [
+        "cns.epilepsy.dee"
+      ],
+      "assets": [
+        {
+          "ticker": "PRAX",
+          "asset": "elsun",
+          "name": "Elsunersen — ASO (SCN2A-DEE)",
+          "modality": "nucleic_acid.antisense.galnac_aso",
+          "areas": [
+            "cns.epilepsy.dee"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "nucleic_acid"
+      ]
+    },
     "SCN9A": {
       "companies": [
         "UCB"
@@ -3425,6 +4570,35 @@
         "antibody"
       ]
     },
+    "SERPINA1": {
+      "companies": [
+        "CRSP"
+      ],
+      "modalities": [
+        "gene_editing.crispr_cas9.invivo"
+      ],
+      "areas": [
+        "cardio_metabolic.liver.a1at"
+      ],
+      "assets": [
+        {
+          "ticker": "CRSP",
+          "asset": "ctx460",
+          "name": "CTX460 - in vivo AATD editing",
+          "modality": "gene_editing.crispr_cas9.invivo",
+          "areas": [
+            "cardio_metabolic.liver.a1at"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "gene_editing"
+      ]
+    },
     "SGCB": {
       "companies": [
         "SRPT"
@@ -3452,6 +4626,35 @@
       "areaCount": 1,
       "modalityClasses": [
         "gene_therapy"
+      ]
+    },
+    "SHIGELLA": {
+      "companies": [
+        "VLA"
+      ],
+      "modalities": [
+        "vaccine.protein_subunit.vlp_conjugate"
+      ],
+      "areas": [
+        "infectious_disease.vaccines.shigella_zika"
+      ],
+      "assets": [
+        {
+          "ticker": "VLA",
+          "asset": "s4v2",
+          "name": "S4V2 (Shigella)",
+          "modality": "vaccine.protein_subunit.vlp_conjugate",
+          "areas": [
+            "infectious_disease.vaccines.shigella_zika"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "vaccine"
       ]
     },
     "SIGMAR1": {
@@ -3679,6 +4882,84 @@
         "antibody"
       ]
     },
+    "SSTR2": {
+      "companies": [
+        "CAMX"
+      ],
+      "modalities": [
+        "formulation_modifier.long_acting.fluidcrystal_sc"
+      ],
+      "areas": [
+        "cardio_metabolic.liver.pld_adpkd",
+        "endocrine.pituitary.acromegaly",
+        "oncology.neuroendocrine.gepnet"
+      ],
+      "assets": [
+        {
+          "ticker": "CAMX",
+          "asset": "oczyesa",
+          "name": "Oczyesa/Oclaiz (CAM2029) — octreotide SC depot (acromegaly)",
+          "modality": "formulation_modifier.long_acting.fluidcrystal_sc",
+          "areas": [
+            "endocrine.pituitary.acromegaly"
+          ]
+        },
+        {
+          "ticker": "CAMX",
+          "asset": "sorento",
+          "name": "CAM2029 — GEP-NET (SORENTO Phase 3)",
+          "modality": "formulation_modifier.long_acting.fluidcrystal_sc",
+          "areas": [
+            "oncology.neuroendocrine.gepnet"
+          ]
+        },
+        {
+          "ticker": "CAMX",
+          "asset": "pld",
+          "name": "CAM2029 — polycystic liver disease",
+          "modality": "formulation_modifier.long_acting.fluidcrystal_sc",
+          "areas": [
+            "cardio_metabolic.liver.pld_adpkd"
+          ]
+        }
+      ],
+      "assetCount": 3,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 3,
+      "modalityClasses": [
+        "formulation_modifier"
+      ]
+    },
+    "STAT6": {
+      "companies": [
+        "KYMR"
+      ],
+      "modalities": [
+        "small_molecule.protein_degrader.molecular_glue"
+      ],
+      "areas": [
+        "dermatology.inflammatory_derm.atopic_dermatitis_systemic"
+      ],
+      "assets": [
+        {
+          "ticker": "KYMR",
+          "asset": "kt621",
+          "name": "KT-621 — oral STAT6 degrader (AD + asthma)",
+          "modality": "small_molecule.protein_degrader.molecular_glue",
+          "areas": [
+            "dermatology.inflammatory_derm.atopic_dermatitis_systemic"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ]
+    },
     "SV2A": {
       "companies": [
         "UCB"
@@ -3712,13 +4993,16 @@
       "companies": [
         "4568",
         "6990",
+        "BHVN",
         "GILD"
       ],
       "modalities": [
-        "adc.dxd_linker.trop2_adc"
+        "adc.dxd_linker.trop2_adc",
+        "small_molecule.protein_degrader.mode_platform"
       ],
       "areas": [
         "oncology.breast.tnbc",
+        "oncology.gi.colorectal",
         "oncology.lung.nsclc_driver.trop2"
       ],
       "assets": [
@@ -3741,6 +5025,15 @@
           ]
         },
         {
+          "ticker": "BHVN",
+          "asset": "bhv1510",
+          "name": "BHV-1510 — Trop2 ADC",
+          "modality": "small_molecule.protein_degrader.mode_platform",
+          "areas": [
+            "oncology.gi.colorectal"
+          ]
+        },
+        {
           "ticker": "GILD",
           "asset": "trodelvy",
           "name": "Trodelvy â€” 1L metastatic TNBC + breast cancer",
@@ -3750,12 +5043,13 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 2,
+      "assetCount": 4,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
-        "adc"
+        "adc",
+        "small_molecule"
       ]
     },
     "THRB": {
@@ -3763,6 +5057,7 @@
         "MDGL"
       ],
       "modalities": [
+        "small_molecule.combination.triple_metabolic",
         "small_molecule.nuclear_receptor.thr_beta_agonist"
       ],
       "areas": [
@@ -3786,10 +5081,19 @@
           "areas": [
             "cardio_metabolic.liver.mash"
           ]
+        },
+        {
+          "ticker": "MDGL",
+          "asset": "combos",
+          "name": "Rezdiffra combination pipeline (GLP-1 + DGAT-2 + siRNA)",
+          "modality": "small_molecule.combination.triple_metabolic",
+          "areas": [
+            "cardio_metabolic.liver.mash"
+          ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 1,
+      "assetCount": 3,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
@@ -3859,7 +5163,8 @@
       ],
       "modalities": [
         "antibody.bispecific.bcma_cd3",
-        "cell_therapy.car_t_autologous.bcma_car_t"
+        "cell_therapy.car_t_autologous.bcma_car_t",
+        "cell_therapy.car_t_in_vivo.lnp_car_t"
       ],
       "areas": [
         "oncology.hematology.myeloma.1l",
@@ -3895,6 +5200,15 @@
           ]
         },
         {
+          "ticker": "LEGN",
+          "asset": "invivo",
+          "name": "In vivo CAR-T platform",
+          "modality": "cell_therapy.car_t_in_vivo.lnp_car_t",
+          "areas": [
+            "oncology.hematology.myeloma.4l_plus"
+          ]
+        },
+        {
           "ticker": "REGN",
           "asset": "linvoseltamab",
           "name": "Lynozyfic (linvoseltamab, BCMAxCD3)",
@@ -3904,8 +5218,8 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 2,
+      "assetCount": 5,
+      "modalityCount": 3,
       "modalityClassCount": 2,
       "areaCount": 3,
       "modalityClasses": [
@@ -3944,16 +5258,42 @@
     },
     "TTR": {
       "companies": [
-        "BBIO"
+        "ALNY",
+        "BBIO",
+        "IONS",
+        "NTLA"
       ],
       "modalities": [
         "antibody.monoclonal.anti_ttr",
+        "gene_editing.crispr_cas9.invivo",
+        "nucleic_acid.antisense.galnac_aso",
+        "nucleic_acid.sirna.galnac_platform",
+        "nucleic_acid.sirna.galnac_platform_nextgen",
         "small_molecule.stabilizer.ttr"
       ],
       "areas": [
-        "cardio_metabolic.attr.attr_cm"
+        "cardio_metabolic.attr.attr_cm",
+        "cardio_metabolic.attr.attr_pn"
       ],
       "assets": [
+        {
+          "ticker": "ALNY",
+          "asset": "commercial",
+          "name": "TTR franchise (Amvuttra + Onpattro)",
+          "modality": "nucleic_acid.sirna.galnac_platform",
+          "areas": [
+            "cardio_metabolic.attr.attr_cm"
+          ]
+        },
+        {
+          "ticker": "ALNY",
+          "asset": "nucresiran",
+          "name": "Nucresiran - next-gen TTR RNAi",
+          "modality": "nucleic_acid.sirna.galnac_platform_nextgen",
+          "areas": [
+            "cardio_metabolic.attr.attr_cm"
+          ]
+        },
         {
           "ticker": "BBIO",
           "asset": "commercial",
@@ -3971,14 +5311,43 @@
           "areas": [
             "cardio_metabolic.attr.attr_cm"
           ]
+        },
+        {
+          "ticker": "IONS",
+          "asset": "eplont",
+          "name": "Eplontersen (WAINUA) — ATTR (partnered w/ AZ)",
+          "modality": "nucleic_acid.antisense.galnac_aso",
+          "areas": [
+            "cardio_metabolic.attr.attr_pn"
+          ]
+        },
+        {
+          "ticker": "NTLA",
+          "asset": "nexz_cm",
+          "name": "Nex-z (NTLA-2001) — ATTR Cardiomyopathy",
+          "modality": "gene_editing.crispr_cas9.invivo",
+          "areas": [
+            "cardio_metabolic.attr.attr_cm"
+          ]
+        },
+        {
+          "ticker": "NTLA",
+          "asset": "nexz_pn",
+          "name": "Nex-z (NTLA-2001) — ATTR Polyneuropathy",
+          "modality": "gene_editing.crispr_cas9.invivo",
+          "areas": [
+            "cardio_metabolic.attr.attr_pn"
+          ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
-      "modalityClassCount": 2,
-      "areaCount": 1,
+      "assetCount": 7,
+      "modalityCount": 6,
+      "modalityClassCount": 4,
+      "areaCount": 2,
       "modalityClasses": [
         "antibody",
+        "gene_editing",
+        "nucleic_acid",
         "small_molecule"
       ]
     },
@@ -4015,6 +5384,64 @@
       "areaCount": 4,
       "modalityClasses": [
         "antibody"
+      ]
+    },
+    "VIBRIO_CHOLERAE": {
+      "companies": [
+        "VLA"
+      ],
+      "modalities": [
+        "vaccine.protein_subunit.vlp_conjugate"
+      ],
+      "areas": [
+        "infectious_disease.vaccines.travel"
+      ],
+      "assets": [
+        {
+          "ticker": "VLA",
+          "asset": "commercial",
+          "name": "IXIARO + DUKORAL (Travel vaccines)",
+          "modality": "vaccine.protein_subunit.vlp_conjugate",
+          "areas": [
+            "infectious_disease.vaccines.travel"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "vaccine"
+      ]
+    },
+    "ZIKA_VIRUS": {
+      "companies": [
+        "VLA"
+      ],
+      "modalities": [
+        "vaccine.protein_subunit.vlp_conjugate"
+      ],
+      "areas": [
+        "infectious_disease.vaccines.shigella_zika"
+      ],
+      "assets": [
+        {
+          "ticker": "VLA",
+          "asset": "zika",
+          "name": "VLA1601 (Zika)",
+          "modality": "vaccine.protein_subunit.vlp_conjugate",
+          "areas": [
+            "infectious_disease.vaccines.shigella_zika"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "vaccine"
       ]
     }
   }

@@ -184,15 +184,28 @@ REGIONS = {
     # =====================================================================
     # RESPIRATORY - INFLAMMATORY
     # =====================================================================
+    # source: GINA 2024 ~5-10% of asthmatics are severe; US biologic-eligible
+    # pool ~500K (CDC/GBD), EU5 ~600K, ROW ~3M via specialty channels. Blended
+    # biologic net price ~$20-25K post-rebate (WAC $35-40K). Global addressable
+    # TAM ~$17B aligns with current branded biologic spend (Xolair + Fasenra +
+    # Nucala + Tezspire + Dupixent-asthma = ~$12-15B). Prior values (2.5M US,
+    # 25M ROW) conflated all asthmatics with severe biologic-eligible -- 10x off.
     "respiratory.inflammatory.asthma_severe": {
-        "us":  {"patientsK": 2500,  "wtpPct": 70, "priceK": 40},
-        "eu":  {"patientsK": 3000,  "wtpPct": 55, "priceK": 22},
-        "row": {"patientsK": 25000, "wtpPct": 25, "priceK": 10},
+        "us":  {"patientsK": 500,   "wtpPct": 55, "priceK": 35},
+        "eu":  {"patientsK": 600,   "wtpPct": 40, "priceK": 20},
+        "row": {"patientsK": 3000,  "wtpPct": 12, "priceK": 8},
     },
+    # source: GOLD 2024 ~16M diagnosed US COPD, ~22M EU, ~350M global. Branded
+    # market dominated by triple inhalers (Trelegy/Breztri/Anoro ~$6B US) with
+    # emerging biologic segment (Dupixent-COPD, ensifentrine). Blended inhaler
+    # +biologic pricing ~$10-12K US. Global addressable TAM ~$25B matches
+    # combined inhaled+biologic spend. Prior values ($40K priceK, full 3M US)
+    # assumed uniform biologic pricing for all COPD which is not the franchise
+    # structure -- ~4x off on US, ~6x off on EU.
     "respiratory.inflammatory.copd": {
-        "us":  {"patientsK": 3000,  "wtpPct": 60, "priceK": 40},
-        "eu":  {"patientsK": 4000,  "wtpPct": 40, "priceK": 22},
-        "row": {"patientsK": 30000, "wtpPct": 15, "priceK": 1},
+        "us":  {"patientsK": 2500,  "wtpPct": 45, "priceK": 12},
+        "eu":  {"patientsK": 3500,  "wtpPct": 30, "priceK": 7},
+        "row": {"patientsK": 25000, "wtpPct": 10, "priceK": 1.5},
     },
     # source: NEI prevalence ~250K US RVO; ~280K EU; ROW per WHO Vision 2020
     "ophthalmology.retina.rvo": {

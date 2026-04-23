@@ -1435,6 +1435,9 @@ async function main(){
     if(filterRare!==null) filtered=filtered.filter(r=>r.meta.rare===filterRare);
     if(activeFilter) filtered=filtered.filter(r=>bucketOf(r)===activeFilter);
     if(filterMcap.size) filtered=filtered.filter(r=>filterMcap.has(r.mcapTier));
+    // Snapshot the "without filterSignal" universe -- Target Explorer uses this
+    // so clicking a target card doesn't also shrink the target list itself.
+    const filteredPreSignal = filtered.slice();
     if(filterSignal&&filterSignal.tickers&&filterSignal.tickers.size) filtered=filtered.filter(r=>filterSignal.tickers.has(r.ticker));
     // Expose current filtered set to Kelly optimizer (runs against active filter)
     kellyUniverse=filtered;
@@ -1943,7 +1946,9 @@ async function main(){
         if(targetFilterMode==='multi_dis') return v.areaCount>=2;
         return true;
       });
-      const allowedTickers = new Set(filtered.map(r=>r.ticker));
+      // Use the pre-signal universe so clicking a target card doesn't also
+      // shrink the target grid (click is for filtering the DOWNSTREAM cards).
+      const allowedTickers = new Set(filteredPreSignal.map(r=>r.ticker));
       const visible = filteredByMode.filter(([,v])=>v.companies.some(c=>allowedTickers.has(c)));
       const totalMM = allTargets.filter(([,v])=>v.modalityClassCount>=2).length;
       const totalMD = allTargets.filter(([,v])=>v.areaCount>=2).length;
@@ -2840,7 +2845,8 @@ async function main(){
   window._targetMode=function(m){targetFilterMode=m;render();};
   window._filterByTarget=function(tgt){
     // Toggle: clicking an already-active target clears the filter
-    if(filterSignal&&filterSignal.kind==='target'&&filterSignal.targetName===tgt){
+    const wasActive = !!(filterSignal&&filterSignal.kind==='target'&&filterSignal.targetName===tgt);
+    if(wasActive){
       filterSignal=null;
     } else {
       const entry=targetsIdx[tgt];
@@ -2848,6 +2854,14 @@ async function main(){
       filterSignal={kind:'target', targetName:tgt, tickers:new Set(entry.companies), label:'target '+tgt};
     }
     doSort();render();renderSignalBadges();
+    // On activation (not clearing), jump to the Valuation Range section so the
+    // user immediately sees the narrowed universe. On clear, stay put.
+    if(!wasActive){
+      activeNavSec='sec-range';
+      render();
+      const el=document.getElementById('sec-range');
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
   };
   window._setCatZoom=function(d){
     catZoom=d;

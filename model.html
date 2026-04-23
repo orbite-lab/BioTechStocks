@@ -1197,6 +1197,15 @@
 
           // Markets — collapsible
           activeTab === "markets" && (() => {
+            // Track areas seen so TAM is counted once per unique area (avoids double-counting
+            // when two formulations / drugs share the same disease, e.g. VRDN TED IV + TED SC).
+            // SOM stays additive across indications, but is capped at the shared-area TAM.
+            const seenAreaTAM = {};   // area -> TAM (first-seen wins; identical configs should match)
+            const somByArea   = {};   // area -> accumulated SOM
+            const sharedAreas = {};   // area -> count of indications tagged with it
+            for (const a of config.assets) for (const ind of a.indications) {
+              if (ind.area) sharedAreas[ind.area] = (sharedAreas[ind.area] || 0) + 1;
+            }
             let totalTAM = 0, totalAtPen = 0;
             for (const a of config.assets) {
               for (const ind of a.indications) {
@@ -1213,20 +1222,34 @@
                 } else if (m.tamB) {
                   addrM = m.tamB * 1000;
                 }
-                totalTAM += addrM;
+                // Only count TAM once per unique area (dedupe shared-market formulations)
+                const aKey = ind.area || ("_nokey_" + mk);
+                if (!(aKey in seenAreaTAM)) {
+                  seenAreaTAM[aKey] = addrM;
+                  totalTAM += addrM;
+                }
+                // SOM stays additive across indications
+                let somM;
                 if (m.company_slice && m.regions) {
-                  let somM = 0;
+                  somM = 0;
                   for (const [rk, cs] of Object.entries(m.company_slice)) {
                     const tr = m.regions[rk];
                     if (!tr || !cs) continue;
                     somM += (tr.patientsK || 0) * ((cs.reachPct || 0) / 100) * ((cs.wtpPct || 0) / 100) * (cs.priceK || 0);
                   }
-                  totalAtPen += somM;
                 } else {
-                  totalAtPen += addrM * ((m.penPct || 0) / 100);
+                  somM = addrM * ((m.penPct || 0) / 100);
                 }
+                somByArea[aKey] = (somByArea[aKey] || 0) + somM;
               }
             }
+            // Cap per-area SOM at that area's TAM (a drug can't serve more than the whole market)
+            for (const k in somByArea) {
+              if (seenAreaTAM[k] != null && somByArea[k] > seenAreaTAM[k]) somByArea[k] = seenAreaTAM[k];
+              totalAtPen += somByArea[k];
+            }
+            // Flags rendered rows use to mark shared-market rows
+            const areaRenderCount = {};
             const fmtM = v => v >= 1000 ? (ccy + (v / 1000).toFixed(2) + "B") : (ccy + v.toFixed(0) + "M");
             return e("div", { style: { marginBottom: 14 } },
             e("div", { onClick: () => setShowMarkets(!showMarkets), style: { background: "#161920", borderRadius: showMarkets ? "10px 10px 0 0" : 10, padding: "10px 16px", border: "1px solid #ffffff06", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", userSelect: "none", gap: 12, flexWrap: "wrap" } },
@@ -1250,6 +1273,12 @@
                   const REGIONS = [["us","US"],["eu","EU"],["row","ROW"]];
                   const hasRegions = !!m.regions;
                   const isExpanded = !!expandedMkt[mk];
+                  // Shared-market detection: if this area already rendered in an earlier row,
+                  // flag so we can suppress its TAM in the summary (prevents visual double-count).
+                  const aKey = ind.area || ("_nokey_" + mk);
+                  const isSharedArea = (sharedAreas[aKey] || 0) > 1;
+                  const sharedCopyIdx = (areaRenderCount[aKey] = (areaRenderCount[aKey] || 0) + 1);
+                  const isFirstOfArea = sharedCopyIdx === 1;
                   let addressableM = 0;
                   if (hasRegions) { for (const [rk] of REGIONS) { const r = m.regions[rk] || {}; addressableM += (r.patientsK || 0) * ((r.wtpPct || 0) / 100) * (r.priceK || 0); } }
                   let somM = 0, hasSOM = !!(m.company_slice && hasRegions);
@@ -1287,9 +1316,9 @@
                         e("div", { style: { fontSize: 11, fontWeight: 700, color: "#e2e4ea", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" } }, ind.name),
                         ind.area && e("div", { style: { fontSize: 8, color: "#6b7080", fontFamily: "'JetBrains Mono'", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", marginTop: 1 } }, ind.area.split(".").map(p => p.replace(/_/g, " ")).join(" \u203A "))
                       ),
-                      e("div", { style: { textAlign: "right" }, title: tamTip },
-                        e("div", { style: { fontSize: 8, color: "#6b7080", textTransform: "uppercase", letterSpacing: 0.8, lineHeight: 1 } }, "TAM"),
-                        e("div", { style: { fontSize: 10, fontWeight: 700, color: "#f97316", fontFamily: "'JetBrains Mono'" } }, fmtV(addressableM))
+                      e("div", { style: { textAlign: "right" }, title: isSharedArea && !isFirstOfArea ? ("Shared market -- TAM counted once on the first row for " + (ind.area || "this area")) : tamTip },
+                        e("div", { style: { fontSize: 8, color: "#6b7080", textTransform: "uppercase", letterSpacing: 0.8, lineHeight: 1 } }, isSharedArea ? (isFirstOfArea ? "TAM \u22c8" : "shared") : "TAM"),
+                        e("div", { style: { fontSize: 10, fontWeight: 700, color: isSharedArea && !isFirstOfArea ? "#6b7080" : "#f97316", fontFamily: "'JetBrains Mono'", fontStyle: isSharedArea && !isFirstOfArea ? "italic" : "normal" } }, isSharedArea && !isFirstOfArea ? "\u2196 same" : fmtV(addressableM))
                       ),
                       e("div", { style: { textAlign: "right" }, title: mktTip },
                         e("div", { style: { fontSize: 8, color: "#6b7080", textTransform: "uppercase", letterSpacing: 0.8, lineHeight: 1 } }, "Marketed" + (ownMktSales > 0 ? " (yours)" : "")),

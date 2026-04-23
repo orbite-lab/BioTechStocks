@@ -1,0 +1,42 @@
+name: Deploy to GitHub Pages
+
+# Replaces the auto-generated pages-build-deployment workflow with an
+# explicit one that carries a concurrency group + cancel-in-progress.
+# Without this, rapid pushes queue Pages deploys one-after-another and
+# the Pages backend occasionally hangs in "updating_pages" when the
+# queue gets deep. Cancel-in-progress ensures only the latest commit's
+# deploy is ever running.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

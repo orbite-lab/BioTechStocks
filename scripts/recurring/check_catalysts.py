@@ -112,6 +112,33 @@ def summarize_existing_catalysts(config, window_end):
     return out
 
 
+def summarize_recent_past_catalysts(config, today, lookback_days=90):
+    """Past catalysts in the last `lookback_days`. Used by the LLM to judge
+    whether the subtitle thesis line is stale (e.g. last quarter's readout
+    still framing today's narrative even though the event has landed)."""
+    cutoff = today - timedelta(days=lookback_days)
+    out = []
+    for cat in config.get("catalysts", []):
+        ds = cat.get("dateSort", "")
+        try:
+            cat_date = datetime.fromisoformat(ds.replace("Z", "+00:00")) if ds else None
+        except (ValueError, AttributeError):
+            cat_date = None
+        if not cat_date:
+            continue
+        cat_date_n = cat_date.replace(tzinfo=None)
+        if cat_date_n < cutoff or cat_date_n > today.replace(tzinfo=None):
+            continue
+        out.append({
+            "title": cat.get("title", ""),
+            "dateSort": ds,
+            "type": cat.get("type", ""),
+            "asset": cat.get("asset", ""),
+            "indication": cat.get("indication", ""),
+        })
+    return out
+
+
 # ─── Sonnet call ──────────────────────────────────────────────
 
 SYSTEM_PROMPT = """You are a biotech equity analyst auto-syncing catalyst tracking. Today is {today}.
@@ -230,6 +257,26 @@ Use the company's current_base_assumptions for that asset/indication as a seed. 
 
 All four fields MUST be integers in [0, 100]. success_pos must be >= fail_pos. success_apr must be >= fail_apr.
 
+SUBTITLE THESIS LINE
+Each company has a `current_subtitle` — a short free-form thesis line that reads like
+"<Company Name> · <current framing>" (e.g. "Viridian Therapeutics · Post-REVEAL-1 · Batoclimab TED failure (Apr 2 2026) clears competitive path").
+
+Propose an updated subtitle when BOTH are true:
+  1) A material catalyst listed in `recent_resolved_catalysts` (last 90 days) makes the
+     current framing stale — e.g. subtitle references "pre-data" but the data is now out,
+     a competitor event has resolved, or a pivotal readout has landed.
+  2) You have concrete post-event evidence from web_search confirming the outcome and
+     can restate the thesis in one punchy clause.
+
+Rules for subtitle output:
+  - ALWAYS lead with the company name verbatim, then " · ", then the new thesis clause.
+  - Keep it under 140 characters total.
+  - NO em-dashes (use " - " or " · ").
+  - NO hallucinated asset names or dates. If you can't confirm, skip the proposal.
+  - Preserve editorial voice ("clears competitive path", "de-risks BLA", etc. are good;
+    generic "strong pipeline" is bad).
+  - Skip entirely if the current subtitle still reads as accurate — do not rewrite for style.
+
 OUTPUT
 Output ONLY valid JSON, no preamble:
 {{
@@ -251,10 +298,18 @@ Output ONLY valid JSON, no preamble:
       "rationale": "one sentence"
     }}
   ],
-  "TICKER2": []
+  "TICKER2": [],
+  "_subtitles": {{
+    "TICKER1": {{
+      "text": "Revolution Medicines · Daraxonrasib PDAC Ph3 positive · consensus peak revises higher",
+      "rationale": "RASolute 303 primary endpoint hit April 15 2026; subtitle previously said 'awaiting pivotal data'",
+      "confidence": "high",
+      "source": "https://..."
+    }}
+  }}
 }}
 
-ALWAYS include every requested ticker as a key, even if empty. Set "binary": true only for pivotal phase 2/3 readouts and PDUFA. confidence in {{high, medium, low}}."""
+ALWAYS include every requested ticker as a key in the top level (value is the catalyst array). Include "_subtitles" as a top-level object (may be empty {{}}) — only include tickers that need an update. Set "binary": true only for pivotal phase 2/3 readouts and PDUFA. confidence in {{high, medium, low}}."""
 
 
 def check_batch(batch_configs, window_days):
@@ -267,6 +322,7 @@ def check_batch(batch_configs, window_days):
     for ticker, cfg in batch_configs.items():
         co = cfg.get("company", {})
         existing = summarize_existing_catalysts(cfg, window_end.replace(tzinfo=None))
+        recent_past = summarize_recent_past_catalysts(cfg, today)
         base_lookup = {}
         for a in cfg.get("assets", []):
             for i in a.get("indications", []):
@@ -275,7 +331,7 @@ def check_batch(batch_configs, window_days):
         briefs.append({
             "ticker": ticker,
             "name": co.get("name", ticker),
-            "subtitle": co.get("subtitle", ""),
+            "current_subtitle": co.get("subtitle", ""),
             "phase": co.get("phase", ""),
             "assets": [
                 {
@@ -291,6 +347,7 @@ def check_batch(batch_configs, window_days):
             ],
             "current_base_assumptions": base_lookup,
             "existing_catalysts_in_window": existing,
+            "recent_resolved_catalysts": recent_past,
         })
 
     system = SYSTEM_PROMPT.format(
@@ -327,12 +384,15 @@ def check_batch(batch_configs, window_days):
     except (ValueError, json.JSONDecodeError) as e:
         print(f"  [WARN] Could not parse model response: {e}")
         print(f"  Raw (first 500 chars): {full_text[:500]}")
-        return {t: [] for t in batch_configs.keys()}
+        return {t: [] for t in batch_configs.keys()}, {}
 
+    subtitle_proposals = result.pop("_subtitles", {}) or {}
+    if not isinstance(subtitle_proposals, dict):
+        subtitle_proposals = {}
     for t in batch_configs.keys():
         if t not in result or not isinstance(result.get(t), list):
             result[t] = []
-    return result
+    return result, subtitle_proposals
 
 
 # ─── Validation + dedup ──────────────────────────────────────
@@ -388,6 +448,35 @@ def validate_proposal(prop, valid_asset_ids, valid_indication_pairs):
     return cleaned, True, ""
 
 
+def validate_subtitle_proposal(prop, company_name, current_subtitle):
+    """Return (cleaned_text, ok, reason). Enforces name prefix, length cap,
+    and rejects if proposal is identical to current or trivially cosmetic."""
+    if not isinstance(prop, dict):
+        return None, False, "not a dict"
+    text = (prop.get("text") or "").strip()
+    conf = (prop.get("confidence") or "medium").lower()
+    if not text:
+        return None, False, "empty text"
+    if len(text) > 180:
+        return None, False, f"too long ({len(text)} chars)"
+    if company_name and not text.lower().startswith(company_name.lower()[:6]):
+        return None, False, f"must start with company name '{company_name}'"
+    # Replace em-dashes defensively
+    text = text.replace("\u2014", " - ").replace("\u2013", " - ")
+    if text.strip() == (current_subtitle or "").strip():
+        return None, False, "identical to current"
+    if conf not in ("high", "medium", "low"):
+        conf = "medium"
+    # Only high-confidence proposals auto-apply; medium/low require manual review
+    # (we still accept them into the changelog for visibility)
+    return {
+        "text": text,
+        "confidence": conf,
+        "rationale": prop.get("rationale", ""),
+        "source": prop.get("source", ""),
+    }, True, ""
+
+
 def is_duplicate(prop, existing_catalysts):
     try:
         prop_date = datetime.fromisoformat(prop["dateSort"])
@@ -426,6 +515,24 @@ def log_additions(ticker, additions, timestamp):
             "catalyst": add,
             "source": add.get("_sourceUrl", ""),
         })
+    daily_file.write_text(json.dumps(daily, indent=2))
+
+
+def log_subtitle_update(ticker, old_text, new_prop, timestamp, applied):
+    daily_file = CHANGELOG_DIR / f"{timestamp[:10]}.json"
+    daily = json.loads(daily_file.read_text()) if daily_file.exists() else []
+    if not isinstance(daily, list):
+        daily = []
+    daily.append({
+        "timestamp": timestamp,
+        "ticker": ticker,
+        "action": "subtitle_updated" if applied else "subtitle_proposed",
+        "old": old_text,
+        "new": new_prop["text"],
+        "confidence": new_prop["confidence"],
+        "rationale": new_prop.get("rationale", ""),
+        "source": new_prop.get("source", ""),
+    })
     daily_file.write_text(json.dumps(daily, indent=2))
 
 
@@ -477,17 +584,20 @@ def main():
 
     tickers = sorted(configs.keys())
     all_proposals = {}
+    all_subtitle_proposals = {}
     batches = [tickers[i:i + BATCH_SIZE] for i in range(0, len(tickers), BATCH_SIZE)]
     print(f"Processing {len(batches)} batch(es) of up to {BATCH_SIZE} tickers...\n")
 
     for i, batch in enumerate(batches, 1):
         print(f"── Batch {i}/{len(batches)} ──")
         batch_cfgs = {t: configs[t] for t in batch}
-        result = check_batch(batch_cfgs, window_days)
+        result, subtitle_props = check_batch(batch_cfgs, window_days)
         all_proposals.update(result)
+        all_subtitle_proposals.update(subtitle_props)
         for t in batch:
             n = len(result.get(t, []))
-            print(f"  {t:8} {'✓ none' if n == 0 else f'+{n} candidate(s)'}")
+            sub_mark = " (+sub)" if t in subtitle_props else ""
+            print(f"  {t:8} {'✓ none' if n == 0 else f'+{n} candidate(s)'}{sub_mark}")
         print()
 
     print("── Validating + applying ──")
@@ -495,7 +605,10 @@ def main():
     total_added = 0
     total_rejected = 0
     total_duplicate = 0
+    total_subtitles_applied = 0
+    total_subtitles_proposed = 0
     summary_lines = []
+    subtitle_summary_lines = []
 
     for ticker, props in all_proposals.items():
         if ticker not in configs:
@@ -539,22 +652,61 @@ def main():
             print(f"           pos {k['fail_pos']}->{k['success_pos']} apr {k['fail_apr']}->{k['success_apr']} ({k['_confidence']})")
             summary_lines.append(f"{ticker}: {k['title'][:55]} ({k['date']})")
 
+    # ── Subtitle updates ─────────────────────────────────────────────
+    # Only HIGH-confidence proposals auto-apply; medium/low are logged for review.
+    print("── Subtitle proposals ──")
+    for ticker, prop in all_subtitle_proposals.items():
+        if ticker not in configs:
+            continue
+        cfg = configs[ticker]
+        co = cfg.get("company", {})
+        current = co.get("subtitle", "")
+        name = co.get("name", ticker)
+        cleaned, ok, reason = validate_subtitle_proposal(prop, name, current)
+        if not ok:
+            print(f"  [REJECT] {ticker}: subtitle - {reason}")
+            continue
+        total_subtitles_proposed += 1
+        apply_now = cleaned["confidence"] == "high"
+        if apply_now:
+            co["subtitle"] = cleaned["text"]
+            if not dry_run:
+                cfg_path = CONFIGS_DIR / f"{ticker}.json"
+                cfg_path.write_text(json.dumps(cfg, indent=2))
+                log_subtitle_update(ticker, current, cleaned, timestamp, applied=True)
+            total_subtitles_applied += 1
+            print(f"  [APPLY]  {ticker}: {cleaned['text'][:80]}")
+            subtitle_summary_lines.append(f"{ticker}: {cleaned['text'][:70]}")
+        else:
+            if not dry_run:
+                log_subtitle_update(ticker, current, cleaned, timestamp, applied=False)
+            print(f"  [PROPOSE {cleaned['confidence']:6}] {ticker}: {cleaned['text'][:70]}")
+    if not all_subtitle_proposals:
+        print("  (none)")
+
     print()
     print("═══ Summary ═══")
-    print(f"  Added:      {total_added}")
-    print(f"  Duplicates: {total_duplicate}")
-    print(f"  Rejected:   {total_rejected}")
+    print(f"  Catalysts added:      {total_added}")
+    print(f"  Catalyst duplicates:  {total_duplicate}")
+    print(f"  Catalysts rejected:   {total_rejected}")
+    print(f"  Subtitles applied:    {total_subtitles_applied}")
+    print(f"  Subtitles proposed:   {total_subtitles_proposed - total_subtitles_applied} (not auto-applied)")
 
     if dry_run:
         print(f"\n[dry-run] No files written")
-    elif total_added > 0:
-        print(f"\n✓ Updated {len({l.split(':')[0] for l in summary_lines})} configs")
+    elif total_added > 0 or total_subtitles_applied > 0:
+        touched = {l.split(':')[0] for l in summary_lines} | {l.split(':')[0] for l in subtitle_summary_lines}
+        print(f"\n✓ Updated {len(touched)} configs")
         print(f"✓ Logged to changelog/{timestamp[:10]}.json")
-        if summary_lines:
-            msg = f"<b>📅 {total_added} new catalyst(s) auto-added</b>\n\n" + "\n".join(f"• {s}" for s in summary_lines[:15])
+        tg_parts = []
+        if total_added > 0:
+            tg_parts.append(f"<b>📅 {total_added} new catalyst(s) auto-added</b>\n" + "\n".join(f"• {s}" for s in summary_lines[:15]))
             if len(summary_lines) > 15:
-                msg += f"\n… and {len(summary_lines) - 15} more"
-            send_telegram(msg)
+                tg_parts.append(f"… and {len(summary_lines) - 15} more")
+        if total_subtitles_applied > 0:
+            tg_parts.append(f"<b>📝 {total_subtitles_applied} subtitle(s) updated</b>\n" + "\n".join(f"• {s}" for s in subtitle_summary_lines[:10]))
+        if tg_parts:
+            send_telegram("\n\n".join(tg_parts))
     else:
         print(f"\n✓ All configs are up to date")
 

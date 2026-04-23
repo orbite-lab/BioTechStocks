@@ -830,6 +830,16 @@ async function main(){
     }
   }catch{/* prices cache not available — fall back to live fetch */}
 
+  // Load target index (auto-rebuilt by CI from asset.targets[] in configs)
+  let targetsIdx={};
+  try{
+    const tr=await fetch("data/targets.json?v="+Date.now());
+    if(tr.ok){
+      const tj=await tr.json();
+      targetsIdx=tj.targets||{};
+    }
+  }catch{/* ok if missing -- Target Explorer will show empty */}
+
   // Load taxonomy display_names for friendly UI labels
   let displayNames={};
   try{
@@ -980,6 +990,8 @@ async function main(){
   let mktSortMode="tam"; // tam | som | sales | pen
   let techNavPath=[]; // Tech explorer drill-down path (e.g. ["cell_therapy","car_t_autologous"])
   let techSortMode="som"; // tam | som | sales | count
+  let targetSort="companies"; // companies | modalities | diseases | name
+  let targetFilterMode="all"; // all | multi_mod | multi_dis
   let catYAxis="expected"; // "swing" or "expected"
   let catZoom=180; // days window for catalyst chart; can be 30/60/90/180/365/9999
   let catSortKey="expectedReturn"; // column key to sort catalyst table by
@@ -1000,7 +1012,7 @@ async function main(){
   // map for backward compat with chev() and titleAttrs() helpers but force
   // expansion for the active section in the nav-aware renderer below.
   let collapsedSec={
-    'sec-markets':false, 'sec-tech':false, 'sec-range':false, 'sec-pipeline':false, 'sec-ev-tam':false,
+    'sec-markets':false, 'sec-tech':false, 'sec-target':false, 'sec-range':false, 'sec-pipeline':false, 'sec-ev-tam':false,
     'sec-catalyst':false, 'sec-portfolio':false, 'sec-table':false
   };
   // Master-detail navigation state (default = Range Strip = the hero card)
@@ -1912,6 +1924,93 @@ async function main(){
     })();
     // ============== /TECHNOLOGY EXPLORER ==============
 
+    // ============== TARGET EXPLORER ==============
+    // Molecular-target axis derived from asset.targets[]. Cross-cuts modality
+    // and disease -- surfaces "GLP1R hit by peptide + small-mol + formulation"
+    // at a glance. Click a target to filter the universe.
+    (() => {
+      h+=`<div class="card${secCls('sec-target')}" id="sec-target"><div class="card-title" ${titleAttrsFlex('sec-target')}><div>${chev('sec-target')}<div class="dot" style="background:linear-gradient(180deg,#ec4899,#a855f7);display:inline-block;vertical-align:middle;margin-right:8px"></div>Target Explorer <span style="font-size:.62rem;color:#6b7080;font-weight:400;margin-left:6px">molecular target \u00b7 cross-modality + cross-disease</span></div>`;
+      h+='<div style="display:flex;gap:4px">';
+      [['name','Name'],['companies','Companies'],['modalities','Modalities'],['diseases','Diseases']].forEach(([k,lbl])=>{
+        const active = targetSort===k;
+        h+=`<span class="fchip ${active?'active':''}" onclick="window._targetSort('${k}')" style="padding:2px 8px;font-size:.65rem">${lbl}</span>`;
+      });
+      h+='</div></div>';
+
+      const allTargets = Object.entries(targetsIdx);
+      const filteredByMode = allTargets.filter(([,v])=>{
+        if(targetFilterMode==='multi_mod') return v.modalityClassCount>=2;
+        if(targetFilterMode==='multi_dis') return v.areaCount>=2;
+        return true;
+      });
+      const allowedTickers = new Set(filtered.map(r=>r.ticker));
+      const visible = filteredByMode.filter(([,v])=>v.companies.some(c=>allowedTickers.has(c)));
+      const totalMM = allTargets.filter(([,v])=>v.modalityClassCount>=2).length;
+      const totalMD = allTargets.filter(([,v])=>v.areaCount>=2).length;
+      h+='<div class="card-sub">Each target aggregates its asset hits across companies, modality classes, and L3 disease areas. Click to filter the universe to companies working on that target.</div>';
+      h+='<div style="display:flex;gap:6px;margin:6px 0 10px;flex-wrap:wrap">';
+      const modes=[['all',`All (${allTargets.length})`],['multi_mod',`Multi-modality (${totalMM})`],['multi_dis',`Multi-disease (${totalMD})`]];
+      modes.forEach(([k,lbl])=>{
+        const active = targetFilterMode===k;
+        h+=`<span class="fchip ${active?'active':''}" onclick="window._targetMode('${k}')" style="padding:3px 10px;font-size:.7rem">${lbl}</span>`;
+      });
+      h+=`<span style="margin-left:auto;font-size:.65rem;color:#6b7080;font-family:var(--mono);align-self:center">Showing ${visible.length} of ${allTargets.length}</span>`;
+      h+='</div>';
+
+      const sorter = {
+        name:       ([a],[b]) => a.localeCompare(b),
+        companies:  ([,a],[,b]) => (b.companies.length-a.companies.length) || (b.assetCount-a.assetCount),
+        modalities: ([,a],[,b]) => (b.modalityClassCount-a.modalityClassCount) || (b.modalityCount-a.modalityCount),
+        diseases:   ([,a],[,b]) => (b.areaCount-a.areaCount) || (b.assetCount-a.assetCount),
+      };
+      const sorted = visible.slice().sort(sorter[targetSort]||sorter.companies);
+
+      if(sorted.length===0){
+        h+='<div style="padding:18px;color:var(--text2);text-align:center;font-size:.85rem">No targets match the current filter combination.</div>';
+      } else {
+        h+='<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;padding:4px 0">';
+        sorted.forEach(([tgt,v])=>{
+          const diseaseL1s = v.areas.filter(a=>!a.startsWith('_')).map(a=>a.split('.')[0]);
+          const uniqueL1s = [...new Set(diseaseL1s)];
+          const mmColor = v.modalityClassCount>=3?'#22c55e':v.modalityClassCount>=2?'#06b6d4':'#6b7080';
+          const mdColor = v.areaCount>=3?'#22c55e':v.areaCount>=2?'#06b6d4':'#6b7080';
+          const isActive = !!(filterSignal && filterSignal.kind==='target' && filterSignal.targetName===tgt);
+          const borderCol = isActive ? '#ec4899' : '#ffffff14';
+          const tip = `Companies: ${v.companies.join(', ')}\nModalities: ${v.modalities.join(', ')}\nAreas: ${v.areas.join(', ')}`;
+          h+=`<div onclick="window._filterByTarget('${tgt}')" title="${tip.replace(/"/g,'&quot;')}" style="background:#0f1117;border:1px solid ${borderCol};border-radius:7px;padding:9px 11px;cursor:pointer;display:flex;flex-direction:column;gap:3px;transition:border-color .15s" onmouseover="this.style.borderColor='#ec4899'" onmouseout="this.style.borderColor='${borderCol}'">`;
+          h+=`<div style="display:flex;justify-content:space-between;align-items:center">`;
+          h+=`<span style="font-family:var(--mono);font-weight:800;font-size:.82rem;color:#ec4899">${tgt}</span>`;
+          h+=`<span style="font-size:.58rem;color:#6b7080;font-family:var(--mono)">${v.assetCount} asset${v.assetCount===1?'':'s'}</span>`;
+          h+=`</div>`;
+          h+=`<div style="display:flex;gap:10px;font-size:.62rem;font-family:var(--mono);color:#6b7080">`;
+          h+=`<span><span style="color:#e2e4ea;font-weight:700">${v.companies.length}</span> co</span>`;
+          h+=`<span><span style="color:${mmColor};font-weight:700">${v.modalityClassCount}</span> mod class${v.modalityClassCount===1?'':'es'}</span>`;
+          h+=`<span><span style="color:${mdColor};font-weight:700">${v.areaCount}</span> disease${v.areaCount===1?'':'s'}</span>`;
+          h+=`</div>`;
+          if(v.modalityClasses.length){
+            h+=`<div style="display:flex;gap:3px;flex-wrap:wrap;margin-top:2px">`;
+            v.modalityClasses.slice(0,4).forEach(mc=>{
+              h+=`<span style="padding:1px 5px;border-radius:3px;background:#06b6d418;color:#06b6d4;font-size:.55rem;font-family:var(--mono);font-weight:600">${mc.replace(/_/g,' ')}</span>`;
+            });
+            if(v.modalityClasses.length>4) h+=`<span style="font-size:.55rem;color:#6b7080">+${v.modalityClasses.length-4}</span>`;
+            h+=`</div>`;
+          }
+          if(uniqueL1s.length){
+            h+=`<div style="display:flex;gap:3px;flex-wrap:wrap">`;
+            uniqueL1s.slice(0,4).forEach(l1=>{
+              h+=`<span style="padding:1px 5px;border-radius:3px;background:#f9731618;color:#f97316;font-size:.55rem;font-family:var(--mono);font-weight:600">${l1.replace(/_/g,' ')}</span>`;
+            });
+            if(uniqueL1s.length>4) h+=`<span style="font-size:.55rem;color:#6b7080">+${uniqueL1s.length-4}</span>`;
+            h+=`</div>`;
+          }
+          h+=`</div>`;
+        });
+        h+='</div>';
+      }
+      h+='</div>'; // close card
+    })();
+    // ============== /TARGET EXPLORER ==============
+
     h+=`<div class="card${secCls('sec-range')}" id="sec-range"><div class="card-title" ${titleAttrsFlex('sec-range')}><div>${chev('sec-range')}<div class="dot" style="background:linear-gradient(180deg,#3b82f6,#8b5cf6);display:inline-block;vertical-align:middle;margin-right:8px"></div>Market Valuation Overview</div>`;
     h+='<div style="display:flex;gap:4px">';
     h+=`<span class="fchip ${stripSort==='base'?'active':''}" onclick="window._stripSort('base')" style="padding:2px 8px;font-size:.65rem">Base Upside</span>`;
@@ -2608,7 +2707,13 @@ async function main(){
     if(filterMod2) activeFilters.push({lbl:'P.L2',val:filterMod2.split('.').pop().replace(/_/g,' '),clear:`window._fMod2(null)`});
     if(filterMod3) activeFilters.push({lbl:'P.L3',val:filterMod3.split('.').pop().replace(/_/g,' '),clear:`window._fMod3(null)`});
     if(activeFilter) activeFilters.push({lbl:'Bucket',val:activeFilter.replace(/_/g,' '),clear:`window._filter('${activeFilter}')`});
-    if(filterSignal) activeFilters.push({lbl:'Signal',val:filterSignal.label+' \u00b7 '+filterSignal.tickers.size,clear:`window._toggleSignal('${filterSignal.kind}')`});
+    if(filterSignal){
+      const clearCmd = filterSignal.kind==='target'
+        ? `window._filterByTarget('${filterSignal.targetName}')`
+        : `window._toggleSignal('${filterSignal.kind}')`;
+      const tokLbl = filterSignal.kind==='target' ? 'Target' : 'Signal';
+      activeFilters.push({lbl:tokLbl, val:filterSignal.label+' \u00b7 '+filterSignal.tickers.size, clear:clearCmd});
+    }
     const anyFilter=activeFilters.length>0;
 
     // Update topbar Filters button (count badge + style)
@@ -2676,6 +2781,7 @@ async function main(){
         ['sec-range',    'Valuation Range', '#3b82f6'],
         ['sec-markets',  'Market Explorer', '#f97316'],
         ['sec-tech',     'Technology Explorer', '#06b6d4'],
+        ['sec-target',   'Target Explorer', '#ec4899'],
         ['sec-pipeline', 'Pipeline Optionality', '#f59e0b'],
         ['sec-ev-tam',   'EV vs Risk-Adj TAM', '#ef4444'],
       ]],
@@ -2730,6 +2836,19 @@ async function main(){
   window._techSort=function(s){techSortMode=s;render();};
   window._techDrill=function(path){techNavPath=path.split('.');activeNavSec='sec-tech';render();window.scrollTo({top:0,behavior:'smooth'});};
   window._techGo=function(depth){techNavPath=typeof depth==='number'?techNavPath.slice(0,depth):depth;render();};
+  window._targetSort=function(s){targetSort=s;render();};
+  window._targetMode=function(m){targetFilterMode=m;render();};
+  window._filterByTarget=function(tgt){
+    // Toggle: clicking an already-active target clears the filter
+    if(filterSignal&&filterSignal.kind==='target'&&filterSignal.targetName===tgt){
+      filterSignal=null;
+    } else {
+      const entry=targetsIdx[tgt];
+      if(!entry||!entry.companies||entry.companies.length===0)return;
+      filterSignal={kind:'target', targetName:tgt, tickers:new Set(entry.companies), label:'target '+tgt};
+    }
+    doSort();render();renderSignalBadges();
+  };
   window._setCatZoom=function(d){
     catZoom=d;
     // Zoom changes the universe → reset ER bounds so they snap to new range

@@ -1,0 +1,60 @@
+[
+  {
+    "timestamp": "2026-04-23T14:17:31Z",
+    "ticker": "BIOA",
+    "news": "BioAge Labs reported positive Phase 1 results for BGE-102 showing 85% median reduction in high-sensitivity C-reactive protein, with Phase 2 CV trial planned for 1H 2026.",
+    "source": "https://www.statnews.com/2026/04/21/bioage-drug-inflammation-cardiovascular-risks/",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.bge102.cv_inflammation.pos",
+        "old_value": 30,
+        "new_value": 40,
+        "reason": "Strong 85% hsCRP reduction validates NLRP3 mechanism and supports Phase 2 readiness",
+        "old_actual": 30
+      },
+      {
+        "path": "scenarios.bear.assumptions.bge102.cv_inflammation.pos",
+        "old_value": 15,
+        "new_value": 25,
+        "reason": "Even in bear case, positive Phase 1 biomarker data reduces execution risk",
+        "old_actual": 15
+      },
+      {
+        "path": "scenarios.bull.assumptions.bge102.cv_inflammation.pos",
+        "old_value": 50,
+        "new_value": 60,
+        "reason": "85% hsCRP reduction exceeds typical biomarker thresholds and supports best-in-class potential",
+        "old_actual": 50
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-23T14:17:31Z",
+    "ticker": "NKTR",
+    "news": "Nektar announced pricing of an upsized $325M public offering at $92/share to fund Phase 3 trials for rezpegaldesleukin in atopic dermatitis and alopecia areata.",
+    "source": "https://ir.nektar.com/news-releases/news-release-details/nektar-therapeutics-announces-pricing-upsized-325-million-public",
+    "changes": [
+      {
+        "path": "company.cash",
+        "old_value": 720,
+        "new_value": 1020,
+        "reason": "Adding $325M net proceeds from the offering to existing $720M cash (less ~$25M fees)",
+        "old_actual": 720
+      },
+      {
+        "path": "company.sharesOut",
+        "old_value": 29,
+        "new_value": 32.5,
+        "reason": "Adding 3.53M new shares from the offering to current 29M shares outstanding",
+        "old_actual": 29
+      },
+      {
+        "path": "scenarios.base.val.dil",
+        "old_value": 5,
+        "new_value": 7,
+        "reason": "Increased dilution from additional 3.53M shares, though mitigated by strong funding for Phase 3",
+        "old_actual": 5
+      }
+    ]
+  }
+]

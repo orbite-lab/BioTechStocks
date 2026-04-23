@@ -35,6 +35,9 @@ jobs:
       - name: Reconcile company.phase
         run: python scripts/ops/reconcile_phase.py --write
 
+      - name: Reconcile market.regions from authoritative epi
+        run: python scripts/ops/reconcile_sliders.py
+
       - name: Fail if stale (PRs only)
         if: github.event_name == 'pull_request'
         run: |

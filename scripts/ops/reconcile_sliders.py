@@ -64,7 +64,7 @@ for t in manifest:
                 m["penPct"] = PEN_PCT[area]
             changed = True
     if changed:
-        path.write_text(json.dumps(d, indent=2, ensure_ascii=False), encoding="utf-8")
+        path.write_text(json.dumps(d, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 print(f"\nApplied new regions. {len(changes)} patient-count changes with >50% delta.")
 
@@ -113,7 +113,7 @@ for t in manifest:
                 adjusted += 1
                 changed = True
     if changed:
-        path.write_text(json.dumps(d, indent=2, ensure_ascii=False), encoding="utf-8")
+        path.write_text(json.dumps(d, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 print(f"Adjusted company_slice on {adjusted} indications.")
 

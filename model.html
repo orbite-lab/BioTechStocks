@@ -971,7 +971,7 @@
               { id: "peers",       label: "Peers & History" },
               { id: "risks",       label: "Risks & Method" },
             ];
-            return e("div", { style: { display: "flex", gap: 2, marginBottom: 14, borderBottom: "1px solid #ffffff14", overflowX: "auto" } },
+            return e("div", { style: { display: "flex", gap: 2, marginBottom: 14, borderBottom: "1px solid #ffffff14", overflowX: "auto", overflowY: "hidden" } },
               tabs.map(t => {
                 const on = activeTab === t.id;
                 return e("div", { key: t.id, onClick: () => setActiveTab(t.id),

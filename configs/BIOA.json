@@ -1,0 +1,511 @@
+{
+  "company": {
+    "ticker": "BIOA",
+    "name": "BioAge Labs",
+    "subtitle": "BioAge Labs · Post-Azelaprag pivot · NLRP3 lead BGE-102 Ph1 readout H1 2026",
+    "sharesOut": 44,
+    "cash": 281,
+    "currentPrice": 18.36,
+    "cashRunway": "Through 2029",
+    "yahooTicker": "BIOA",
+    "phase": "phase1"
+  },
+  "assets": [
+    {
+      "id": "bge102",
+      "name": "BGE-102",
+      "stage": "Phase 1",
+      "designations": [],
+      "indications": [
+        {
+          "id": "cv_inflammation",
+          "name": "Obesity + elevated hsCRP (CV risk)",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40000,
+                "wtpPct": 50,
+                "priceK": 15
+              },
+              "eu": {
+                "patientsK": 30000,
+                "wtpPct": 35,
+                "priceK": 8
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 8,
+                "priceK": 3
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.2,
+                "wtpPct": 40,
+                "priceK": 8
+              },
+              "eu": {
+                "reachPct": 0.1,
+                "wtpPct": 30,
+                "priceK": 5
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 10,
+                "priceK": 2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Targeting residual inflammatory CV risk subgroup of obesity (elevated hsCRP); crowded with NVS ziltivekimab (Ph3 ZEUS/ARTEMIS) and legacy CANTOS canakinumab. 0.2% reach = hsCRP-elevated subset only, contingent on Ph2a hsCRP reduction in H2 2026."
+              },
+              "us.priceK": {
+                "note": "$8K/yr chronic oral therapy; modest premium to generic statins given inflammation-specific positioning, well below injectable ziltivekimab price point."
+              },
+              "us.wtpPct": {
+                "note": "40% -- requires CV outcomes trial to unlock broad payer access; prior to that, limited to hsCRP-selected specialty use."
+              },
+              "eu.reachPct": {
+                "note": "1% -- EU CV access constrained by HTA; waits for CVOT."
+              },
+              "eu.priceK": {
+                "note": "$5K/yr net after HTA."
+              },
+              "row.reachPct": {
+                "note": "0.5% -- limited ROW access pre-label."
+              }
+            },
+            "penPct": 5,
+            "cagrPct": 6,
+            "peakYear": 2033
+          },
+          "area": "cardio_metabolic.obesity.general",
+          "rare": false
+        },
+        {
+          "id": "dme",
+          "name": "Diabetic macular edema",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 750,
+                "wtpPct": 70,
+                "priceK": 11
+              },
+              "eu": {
+                "patientsK": 1000,
+                "wtpPct": 55,
+                "priceK": 6
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 30,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3.0,
+                "wtpPct": 50,
+                "priceK": 8
+              },
+              "eu": {
+                "reachPct": 2.0,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "reachPct": 1.0,
+                "wtpPct": 15,
+                "priceK": 2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Early-stage oral NLRP3 entrant vs entrenched intravitreal anti-VEGF (Eylea HD, Vabysmo); oral convenience advantage offset by lack of anti-VEGF mechanism. 3% peak assumption."
+              },
+              "us.priceK": {
+                "note": "$8K/yr oral chronic; prices below $25K/yr Eylea/Vabysmo course to differentiate."
+              },
+              "us.wtpPct": {
+                "note": "50% -- second-line add-on positioning; requires Ph2a proof of retinal benefit before broader access."
+              },
+              "eu.reachPct": {
+                "note": "2% -- EU retina access tight without head-to-head vs anti-VEGF."
+              },
+              "row.reachPct": {
+                "note": "1% -- global retina specialty network limited."
+              }
+            },
+            "penPct": 35,
+            "cagrPct": 5,
+            "peakYear": 2033
+          },
+          "area": "ophthalmology.retina.dme",
+          "rare": false
+        }
+      ],
+      "modality": "small_molecule.enzyme.nlrp3_inhibitor"
+    },
+    {
+      "id": "apj",
+      "name": "APJ agonist programs (oral + SC)",
+      "stage": "Preclinical",
+      "designations": [],
+      "indications": [
+        {
+          "id": "obesity",
+          "name": "Obesity (APJ agonist)",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40000,
+                "wtpPct": 50,
+                "priceK": 15
+              },
+              "eu": {
+                "patientsK": 30000,
+                "wtpPct": 35,
+                "priceK": 8
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 8,
+                "priceK": 3
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.1,
+                "wtpPct": 30,
+                "priceK": 10
+              },
+              "eu": {
+                "reachPct": 0.05,
+                "wtpPct": 20,
+                "priceK": 5
+              },
+              "row": {
+                "reachPct": 0.02,
+                "wtpPct": 5,
+                "priceK": 2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Preclinical APJ agonist; IND filing planned end-2026. Speculative 0.1% share in an obesity market dominated by GLP-1/GIP incumbents (LLY tirzepatide, NVO semaglutide); differentiated muscle-preservation angle."
+              },
+              "us.priceK": {
+                "note": "$10K/yr chronic; similar to next-gen obesity agents but discounted to drive adoption."
+              },
+              "us.wtpPct": {
+                "note": "30% -- requires Ph2 efficacy and safety validation; GLP-1 class raises bar for new MoAs."
+              },
+              "eu.reachPct": {
+                "note": "0.5% -- late-follower obesity access in EU very limited."
+              },
+              "row.reachPct": {
+                "note": "0.2% -- de minimis pre-Ph3."
+              }
+            },
+            "penPct": 5,
+            "cagrPct": 10,
+            "peakYear": 2034
+          },
+          "area": "cardio_metabolic.obesity.general",
+          "rare": false
+        }
+      ],
+      "modality": "small_molecule.gpcr.apelin_agonist"
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "BGE-102 Ph1 safety signal; APJ IND delayed; cash burns to runway end",
+      "events": [
+        "✗ BGE-102 Ph1 shows liver or CNS safety flag similar to azelaprag",
+        "✗ Ph2a CV initiation delayed to 2027",
+        "✗ APJ preclinical fails to nominate clinical candidate",
+        "→ Pipeline stalls to cash value"
+      ],
+      "assumptions": {
+        "bge102": {
+          "cv_inflammation": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 1.0
+          },
+          "dme": {
+            "pos": 3,
+            "apr": 10,
+            "pen": 1.0
+          }
+        },
+        "apj": {
+          "obesity": {
+            "pos": 2,
+            "apr": 5,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "dr": 16,
+        "dil": 30,
+        "mult": 3,
+        "plat": 0,
+        "exus": 0,
+        "cannib": 15
+      }
+    },
+    "bear": {
+      "wt": 20,
+      "narrative": "BGE-102 Ph1 clean but underwhelming hsCRP signal; APJ IND on track but crowded",
+      "events": [
+        "✓ BGE-102 Ph1 SAD/MAD safety clean",
+        "△ Ph2a hsCRP reduction below 30% (below CANTOS/ziltivekimab benchmark)",
+        "✓ DME Ph1b/2a initiates but slow enrollment",
+        "△ APJ IND filed but Ph1 enrollment competitive"
+      ],
+      "assumptions": {
+        "bge102": {
+          "cv_inflammation": {
+            "pos": 15,
+            "apr": 25,
+            "pen": 1.0
+          },
+          "dme": {
+            "pos": 10,
+            "apr": 25,
+            "pen": 1.0
+          }
+        },
+        "apj": {
+          "obesity": {
+            "pos": 5,
+            "apr": 15,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "dr": 13,
+        "dil": 15,
+        "mult": 4,
+        "plat": 50,
+        "exus": 0,
+        "cannib": 5
+      }
+    },
+    "base": {
+      "wt": 45,
+      "narrative": "BGE-102 Ph1 clean + meaningful hsCRP signal; DME and APJ programs advance",
+      "events": [
+        "✓ BGE-102 SAD/MAD full data H1 2026 -- favorable PK, target engagement",
+        "✓ Ph2a CV initiates H1 2026 on schedule",
+        "✓ Ph1b/2a DME initiates mid-2026",
+        "✓ APJ IND filed end-2026"
+      ],
+      "assumptions": {
+        "bge102": {
+          "cv_inflammation": {
+            "pos": 30,
+            "apr": 45,
+            "pen": 1.0
+          },
+          "dme": {
+            "pos": 22,
+            "apr": 45,
+            "pen": 1.0
+          }
+        },
+        "apj": {
+          "obesity": {
+            "pos": 12,
+            "apr": 30,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "dr": 11,
+        "dil": 5,
+        "mult": 6,
+        "plat": 150,
+        "exus": 0,
+        "cannib": 2
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "BGE-102 Ph2a CV readout best-in-class; DME shows early retinal benefit; APJ clinical on track",
+      "events": [
+        "✓ Ph2a CV: >40% hsCRP reduction, comparable to ziltivekimab",
+        "✓ DME Ph1b/2a early imaging signal (retinal thickness)",
+        "✓ APJ Ph1 initiates H1 2027 with muscle-preservation differentiation",
+        "→ Multiple shots on goal validated"
+      ],
+      "assumptions": {
+        "bge102": {
+          "cv_inflammation": {
+            "pos": 50,
+            "apr": 65,
+            "pen": 1.2
+          },
+          "dme": {
+            "pos": 40,
+            "apr": 65,
+            "pen": 1.1
+          }
+        },
+        "apj": {
+          "obesity": {
+            "pos": 22,
+            "apr": 50,
+            "pen": 1.2
+          }
+        }
+      },
+      "val": {
+        "dr": 10,
+        "dil": 0,
+        "mult": 9,
+        "plat": 400,
+        "exus": 0,
+        "cannib": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "BGE-102 emerges as best-in-class oral NLRP3 platform; franchise story re-rates",
+      "events": [
+        "✓ BGE-102 Ph2a CV >50% hsCRP reduction -- CVOT path de-risked",
+        "✓ DME Ph2a clinically meaningful BCVA gain",
+        "✓ APJ candidate best-in-class muscle-preservation in Ph1 obesity",
+        "→ Takeout candidate / multi-indication franchise re-rate"
+      ],
+      "assumptions": {
+        "bge102": {
+          "cv_inflammation": {
+            "pos": 70,
+            "apr": 80,
+            "pen": 1.5
+          },
+          "dme": {
+            "pos": 60,
+            "apr": 80,
+            "pen": 1.3
+          }
+        },
+        "apj": {
+          "obesity": {
+            "pos": 40,
+            "apr": 70,
+            "pen": 1.5
+          }
+        }
+      },
+      "val": {
+        "dr": 9,
+        "dil": 0,
+        "mult": 13,
+        "plat": 900,
+        "exus": 0,
+        "cannib": 0
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-15",
+      "asset": "bge102",
+      "indication": "cv_inflammation",
+      "title": "BGE-102 Phase 1 SAD/MAD full data",
+      "type": "phase1_data",
+      "binary": false,
+      "fail_pos": 5,
+      "fail_apr": 10,
+      "success_pos": 40,
+      "success_apr": 55,
+      "_source": "curated",
+      "_sourceUrl": "https://www.benzinga.com/news/health-care/26/04/51943738/bioage-labs-stock-gains-after-positive-early-data-and-pipeline-plans",
+      "_addedAt": "2026-04-23T00:00:00Z",
+      "_confidence": "high",
+      "_rationale": "Company guided full Ph1 SAD/MAD readout for H1 2026"
+    },
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-30",
+      "asset": "bge102",
+      "indication": "cv_inflammation",
+      "title": "BGE-102 Phase 2a initiation (obesity + elevated hsCRP)",
+      "type": "phase2_start",
+      "binary": false,
+      "fail_pos": 15,
+      "fail_apr": 30,
+      "success_pos": 35,
+      "success_apr": 50,
+      "_source": "curated",
+      "_sourceUrl": "https://ir.bioagelabs.com/",
+      "_addedAt": "2026-04-23T00:00:00Z",
+      "_confidence": "high",
+      "_rationale": "Company guided Ph2a initiation H1 2026"
+    },
+    {
+      "date": "Mid 2026",
+      "dateSort": "2026-08-01",
+      "asset": "bge102",
+      "indication": "dme",
+      "title": "BGE-102 Phase 1b/2a initiation in DME",
+      "type": "phase2_start",
+      "binary": false,
+      "fail_pos": 10,
+      "fail_apr": 25,
+      "success_pos": 25,
+      "success_apr": 45,
+      "_source": "curated",
+      "_sourceUrl": "https://ir.bioagelabs.com/",
+      "_addedAt": "2026-04-23T00:00:00Z",
+      "_confidence": "medium",
+      "_rationale": "Company guided Ph1b/2a DME initiation mid-2026"
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "bge102",
+      "indication": "cv_inflammation",
+      "title": "BGE-102 Phase 2a topline (hsCRP reduction in obesity)",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 8,
+      "fail_apr": 15,
+      "success_pos": 55,
+      "success_apr": 70,
+      "_source": "curated",
+      "_sourceUrl": "https://ir.bioagelabs.com/",
+      "_addedAt": "2026-04-23T00:00:00Z",
+      "_confidence": "medium",
+      "_rationale": "Company guided Ph2a results by year-end 2026"
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-31",
+      "asset": "apj",
+      "indication": "obesity",
+      "title": "APJ agonist IND filing (lead candidate nomination)",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 3,
+      "fail_apr": 10,
+      "success_pos": 18,
+      "success_apr": 40,
+      "_source": "curated",
+      "_sourceUrl": "https://ir.bioagelabs.com/",
+      "_addedAt": "2026-04-23T00:00:00Z",
+      "_confidence": "medium",
+      "_rationale": "Company guided APJ IND by YE 2026"
+    }
+  ]
+}

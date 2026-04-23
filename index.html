@@ -900,6 +900,9 @@ async function main(){
   }
   populateTopbar();
 
+  // Signal filter state (must be declared BEFORE renderSignalBadges reads it)
+  let filterSignal=null; // {kind:'cash'|'pdufa'|'rr'|'hot', tickers:Set, label:string}
+
   // Signal badges: 4 auto-computed condition counts rendered into #topNav.
   // Click applies a filter (narrows every card to the matching tickers).
   function computeSignals(){
@@ -971,7 +974,6 @@ async function main(){
   let filterL1=new Set(), filterL2=new Set(), filterL3=new Set(), filterL4=new Set(), filterPhase=null, filterRare=null;
   let filterMod1=null, filterMod2=null, filterMod3=null;
   let filterMcap=new Set(); // {'mega','large','mid','small','micro'} multi-select
-  let filterSignal=null; // {kind:'cash'|'pdufa'|'rr'|'hot', tickers:Set, label:string}
   let stripSort="base";
   let purityMode="wtd";
   let mktNavPath=[]; // Market explorer drill-down path (e.g. ["oncology","hematology","cll_nhl"])

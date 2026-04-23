@@ -436,7 +436,11 @@
         // SOTP: commercial at EV/Rev + pipeline rNPV + milestones
         commercialRev = val.commercialRevM || commercialRev || 0;
         commercialEV = commercialRev * (val.commercialMult || 2.5);
-        const avgYr = (state.avgPeakYear || 2031) - 2026;
+        // NOTE: hardcoded 2031 to match index.html computeScenario and scripts/lib/compute.py.
+        // Previously used state.avgPeakYear (derived from per-indication peakYear), but that
+        // caused model.html TPs to drift 10-20% lower than the screener for companies whose
+        // indications peak later than 2031. Sync is now authoritative across all three paths.
+        const avgYr = 2031 - 2026;
         const df = Math.pow(1 + (val.pipelineDR || 14) / 100, avgYr);
         pipelineEV = (pipelineRA * (val.pipelineMult || 4)) / df;
         milestonesEV = (val.milestones || 0) * lymeComposite;
@@ -445,7 +449,8 @@
         // Flat: single DR/mult for everything
         const cannib = val.cannib ? totalRA * (val.cannib / 100) : 0;
         const netRA = totalRA - cannib;
-        const avgYr = (state.avgPeakYear || 2033) - 2026;
+        // Hardcoded 2033 to match index.html + scripts/lib/compute.py -- see SOTP note above.
+        const avgYr = 2033 - 2026;
         const df = Math.pow(1 + val.dr / 100, avgYr);
         const platExusAdj = totalGross > 0 ? (val.plat + val.exus) * (netRA / totalGross) : 0;
         ev = (netRA * val.mult + platExusAdj) / df + state.cash;

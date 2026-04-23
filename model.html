@@ -960,91 +960,9 @@
             })()
           ),
 
-          // Portfolio-level Kelly: numerically solve f* = argmax Σ p_i × log(1 + f × r_i)
-          // across the full weighted scenario distribution.
-          (() => {
-            const px = state.currentPrice;
-            if (!px || !isFinite(px)) return null;
-            // Build (p, r) pairs from scenarios
-            const pairs = model.sks.map((sk, i) => ({
-              sk,
-              p: model.normW[i],
-              r: (model.results[sk].tp - px) / px,
-              tp: model.results[sk].tp,
-            })).filter(x => isFinite(x.r));
-            if (pairs.length < 2) return null;
-            // Expected return & expected log-return (at f=0) check
-            const expRet = pairs.reduce((s, x) => s + x.p * x.r, 0);
-            // Objective and derivative
-            const U = (f) => pairs.reduce((s, x) => s + x.p * Math.log(Math.max(1 + f * x.r, 1e-12)), 0);
-            const dU = (f) => pairs.reduce((s, x) => s + x.p * x.r / Math.max(1 + f * x.r, 1e-12), 0);
-            // Leverage cap: can't lose more than 100% long-only → need 1 + f*min(r) > 0
-            const minR = Math.min(...pairs.map(x => x.r));
-            const maxR = Math.max(...pairs.map(x => x.r));
-            // Feasible f range: if minR < 0 → f < 1/(-minR); if maxR > 0 short bound f > -1/maxR
-            const fHi = minR < 0 ? 0.999 / (-minR) : 5;   // cap long at 5x if no downside (unlikely)
-            const fLo = maxR > 0 ? -0.999 / maxR : -5;
-            // Bisection on dU over [fLo, fHi]
-            let lo = fLo, hi = fHi;
-            const dLo = dU(lo), dHi = dU(hi);
-            let kelly;
-            if (dLo <= 0) kelly = lo;
-            else if (dHi >= 0) kelly = hi;
-            else {
-              for (let it = 0; it < 80; it++) {
-                const mid = (lo + hi) / 2;
-                const dm = dU(mid);
-                if (dm > 0) lo = mid; else hi = mid;
-                if (Math.abs(hi - lo) < 1e-7) break;
-              }
-              kelly = (lo + hi) / 2;
-            }
-            const halfK = kelly / 2;
-            const quartK = kelly / 4;
-            const geoFull = U(kelly);
-            const geoHalf = U(halfK);
-            const geoQuart = U(quartK);
-            const pct = v => (v * 100).toFixed(0) + "%";
-            const kCol = kelly > 0.25 ? "#22c55e" : kelly > 0 ? "#fbbf24" : "#ef4444";
-            // Display fraction (long-only recommendation): clamp to [0, 1] for "sane portfolio % of equity"
-            const clampLong = v => Math.max(0, Math.min(1, v));
-            return e("div", { style: { background: "#0a0c10", border: "1px solid #fbbf2433", borderRadius: 8, padding: 14, marginBottom: 16 } },
-              e("div", { style: { display: "flex", alignItems: "center", gap: 8, marginBottom: 10 } },
-                e("div", { style: { fontSize: 11, fontWeight: 600, color: "#fbbf24", letterSpacing: 0.5 } }, "PORTFOLIO KELLY (multi-scenario)"),
-                e("div", { style: { fontSize: 10, color: "#6b7080" } }, "solves f* = argmax \u03A3 p\u1D62 \u00D7 ln(1 + f\u00B7r\u1D62)")
-              ),
-              // Kelly result row (3 tiles: full / half / quarter)
-              e("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 8 } },
-                e("div", { style: { background: "#000", border: "1px solid " + kCol + "40", borderRadius: 4, padding: 8 } },
-                  e("div", { style: { fontSize: 9, color: "#6b7080", marginBottom: 2 } }, "FULL KELLY f*"),
-                  e("div", { style: { fontSize: 18, fontWeight: 700, color: kCol, fontFamily: "'JetBrains Mono'" } }, pct(kelly)),
-                  e("div", { style: { fontSize: 9, color: "#6b7080", marginTop: 2 } }, "E[ln(1+fr)] = " + (geoFull * 100).toFixed(2) + "%")
-                ),
-                e("div", { style: { background: "#000", border: "1px solid #ffffff10", borderRadius: 4, padding: 8 } },
-                  e("div", { style: { fontSize: 9, color: "#6b7080", marginBottom: 2 } }, "HALF KELLY (recommended)"),
-                  e("div", { style: { fontSize: 18, fontWeight: 700, color: "#60a5fa", fontFamily: "'JetBrains Mono'" } }, pct(halfK)),
-                  e("div", { style: { fontSize: 9, color: "#6b7080", marginTop: 2 } }, "E[ln] = " + (geoHalf * 100).toFixed(2) + "%")
-                ),
-                e("div", { style: { background: "#000", border: "1px solid #ffffff10", borderRadius: 4, padding: 8 } },
-                  e("div", { style: { fontSize: 9, color: "#6b7080", marginBottom: 2 } }, "QUARTER KELLY (conservative)"),
-                  e("div", { style: { fontSize: 18, fontWeight: 700, color: "#b0b4c0", fontFamily: "'JetBrains Mono'" } }, pct(quartK)),
-                  e("div", { style: { fontSize: 9, color: "#6b7080", marginTop: 2 } }, "E[ln] = " + (geoQuart * 100).toFixed(2) + "%")
-                )
-              ),
-              // Interpretation
-              e("div", { style: { fontSize: 11, color: "#b0b4c0", lineHeight: 1.55, paddingTop: 8, borderTop: "1px solid #ffffff08" } },
-                e("b", { style: { color: "#fbbf24" } }, "How to read: "),
-                "f* is the share of equity that maximizes geometric growth ",
-                e("i", {}, "if this were your only position"),
-                ". Half Kelly captures ~75% of the growth with ~50% of the volatility and is robust to errors in your probability weights. Quarter Kelly is the conservative default most practitioners use. ",
-                kelly <= 0
-                  ? e("span", { style: { color: "#ef4444", fontWeight: 600 } }, "\u26A0 Negative Kelly \u2192 edge is unfavorable at current price; skip or short.")
-                  : kelly > 1
-                    ? e("span", { style: { color: "#fbbf24", fontWeight: 600 } }, "Full Kelly > 100% implies leverage \u2014 cap at " + pct(clampLong(halfK)) + " of equity (half-Kelly, long-only).")
-                    : e("span", {}, "Recommended sizing: ", e("b", { style: { color: "#60a5fa" } }, pct(halfK)), " of equity (half-Kelly).")
-              )
-            );
-          })(),
+          // (Portfolio Kelly card removed -- single-stock Kelly is misleading
+          // in isolation; the portfolio-level optimizer in index.html is the
+          // correct tool for position sizing across the full universe.)
 
           // Valuation vs Peers & History — only for commercial companies with financial data
           (() => {

@@ -750,7 +750,13 @@
                   e("span", { key: ind.id, style: chipStyle(ind.rare ? "#f59e0b10" : "#a855f710", ind.rare ? "#fbbf24" : "#c084fc") },
                     ind.rare ? "\u2605 " : "", fmt(ind.area))
                 ),
-                a.modality && e("span", { style: chipStyle("#3b82f610","#60a5fa") }, fmt(a.modality))
+                a.modality && e("span", { style: chipStyle("#3b82f610","#60a5fa") }, fmt(a.modality)),
+                (a.targets || []).map(tgt =>
+                  e("a", { key: "t_" + tgt, href: "index.html#target=" + encodeURIComponent(tgt),
+                    title: "Molecular target -- click to filter screener by " + tgt,
+                    style: { ...chipStyle("#ec489918","#ec4899"), textDecoration: "none", cursor: "pointer" } },
+                    "\u25CE ", tgt)
+                )
               );
             });
             let totalTAM = 0, rareTAM = 0;

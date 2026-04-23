@@ -2970,6 +2970,17 @@ async function main(){
 
   render();
 
+  // Hash-based deep links (e.g. model.html target chip -> index.html#target=CD19)
+  (function applyHashFilter(){
+    const h=(window.location.hash||"").replace(/^#/,"");
+    if(!h)return;
+    const parts=Object.fromEntries(h.split("&").map(p=>{const [k,v]=p.split("=");return [k,decodeURIComponent(v||"")];}));
+    if(parts.target && targetsIdx[parts.target]){
+      // Defer one tick so render() finishes before filter side-effects
+      setTimeout(()=>window._filterByTarget(parts.target),0);
+    }
+  })();
+
   // Background: fetch live prices for any tickers missing from prices.json cache
   (async()=>{
     const tickers=Object.keys(configs).filter(tk=>!livePrices[tk]);

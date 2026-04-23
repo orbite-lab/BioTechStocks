@@ -5,22 +5,59 @@ on:
   pull_request:
     paths: ['configs/**', 'data/taxonomy.json']
 
+concurrency:
+  group: validate-configs
+  cancel-in-progress: false
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
       - name: Validate configs against taxonomy
         run: python scripts/recurring/validate.py
-      - name: Check taxonomy is up to date
+
+      # On PRs: FAIL if taxonomy is stale (contributor must regenerate and push)
+      # On main pushes: AUTO-REGENERATE and commit (taxonomy is 100% derived from
+      # configs, so hand-curating is pure make-work)
+      - name: Rebuild taxonomy
+        run: python scripts/recurring/rebuild_taxonomy.py
+
+      - name: Fail if stale (PRs only)
+        if: github.event_name == 'pull_request'
         run: |
-          python scripts/recurring/rebuild_taxonomy.py
           if ! git diff --quiet data/taxonomy.json; then
-            echo "❌ taxonomy.json is stale — run: python scripts/recurring/rebuild_taxonomy.py"
+            echo "❌ taxonomy.json is stale — run locally: python scripts/recurring/rebuild_taxonomy.py"
             git diff data/taxonomy.json | head -50
             exit 1
           fi
           echo "✅ taxonomy.json is up to date"
+
+      - name: Auto-commit regenerated taxonomy (main pushes)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          if git diff --quiet data/taxonomy.json; then
+            echo "✅ taxonomy.json already up to date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/taxonomy.json
+          git commit -m "chore: auto-rebuild data/taxonomy.json"
+          # Retry push up to 3 times with rebase in case main moved during the run
+          for i in 1 2 3; do
+            if git push; then
+              echo "Push succeeded on attempt $i"
+              exit 0
+            fi
+            echo "Push attempt $i failed; rebasing..."
+            git pull --rebase origin main
+          done
+          echo "Push failed after 3 retries"
+          exit 1

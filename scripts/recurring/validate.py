@@ -22,6 +22,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIGS = ROOT / "configs"
 TAXONOMY = ROOT / "data" / "taxonomy.json"
+TARGETS = ROOT / "data" / "targets.json"
+
+# Target strings must be all-caps alphanumeric + underscore.
+# Examples: TNF, NLRP3, GLP1R, KRAS_G12C, HIV_INTEGRASE, AMYLOID_BETA.
+import re
+TARGET_PATTERN = re.compile(r"^[A-Z][A-Z0-9_]{1,30}$")
 
 # If a config's area/modality tag isn't in taxonomy BUT a known tag is within
 # this similarity ratio, flag it as a suspected typo (ERROR not WARNING).
@@ -51,6 +57,16 @@ def load_taxonomy():
     return areas, mods
 
 
+def load_known_targets():
+    """Load the derived target index, if present. Returns the set of target
+    strings used anywhere in configs (same role as taxonomy's 'areas' / 'mods'
+    sets -- serves as the fuzzy-match reference corpus)."""
+    if not TARGETS.exists():
+        return None
+    t = json.loads(TARGETS.read_text(encoding="utf-8"))
+    return set(t.get("targets", {}).keys())
+
+
 def fuzzy_suggest(unknown, known_set):
     """Return the closest known string if ratio >= threshold, else None."""
     if not known_set:
@@ -63,6 +79,7 @@ def validate():
     errors = []
     warnings = []
     known_areas, known_mods = load_taxonomy()
+    known_targets = load_known_targets()
 
     manifest = json.loads((CONFIGS / "manifest.json").read_text())
 
@@ -155,6 +172,31 @@ def validate():
                     l3_mod_parents[parts[2]].add(f"{parts[0]}.{parts[1]}")
             else:
                 warnings.append(f"{tk}.{a['id']}: missing modality tag")
+
+            # Target tag checks: format + fuzzy-match against known.
+            # `targets` field is a list of target strings (HGNC symbols or
+            # standard pathway names). Empty list is acceptable (platform /
+            # mechanism-only assets). Missing field is a warning during the
+            # rollout; once all configs have it, can be upgraded to error.
+            targets = a.get("targets")
+            if targets is None:
+                warnings.append(f"{tk}.{a['id']}: missing targets[] field -- run scripts/ops/seed_targets.py --write")
+            elif not isinstance(targets, list):
+                errors.append(f"{tk}.{a['id']}: targets must be a list, got {type(targets).__name__}")
+            else:
+                for tgt in targets:
+                    if not isinstance(tgt, str):
+                        errors.append(f"{tk}.{a['id']}: target entry must be a string, got {type(tgt).__name__}")
+                        continue
+                    if not TARGET_PATTERN.match(tgt):
+                        errors.append(f"{tk}.{a['id']}: target '{tgt}' must be uppercase alphanumeric + underscore (e.g. TNF, KRAS_G12C)")
+                        continue
+                    if known_targets is not None and tgt not in known_targets:
+                        suggestion = fuzzy_suggest(tgt, known_targets)
+                        if suggestion:
+                            errors.append(f"{tk}.{a['id']}: target '{tgt}' looks like a typo -- did you mean '{suggestion}'?")
+                        else:
+                            warnings.append(f"{tk}.{a['id']}: NEW target '{tgt}' -- rebuild_targets will add it")
 
             for ind in a.get("indications", []):
                 area = ind.get("area", "")

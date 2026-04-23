@@ -1,9 +1,9 @@
 name: Validate Configs
 on:
   push:
-    paths: ['configs/**', 'data/taxonomy.json']
+    paths: ['configs/**', 'data/taxonomy.json', 'data/targets.json']
   pull_request:
-    paths: ['configs/**', 'data/taxonomy.json']
+    paths: ['configs/**', 'data/taxonomy.json', 'data/targets.json']
 
 concurrency:
   group: validate-configs
@@ -32,6 +32,9 @@ jobs:
       - name: Rebuild taxonomy
         run: python scripts/recurring/rebuild_taxonomy.py
 
+      - name: Rebuild targets index
+        run: python scripts/recurring/rebuild_targets.py
+
       - name: Reconcile company.phase
         run: python scripts/ops/reconcile_phase.py --write
 
@@ -41,30 +44,35 @@ jobs:
       - name: Fail if stale (PRs only)
         if: github.event_name == 'pull_request'
         run: |
-          if ! git diff --quiet data/taxonomy.json configs/; then
+          if ! git diff --quiet data/taxonomy.json data/targets.json configs/; then
             echo "❌ Derived state is stale. Run locally:"
             echo "    python scripts/recurring/rebuild_taxonomy.py"
+            echo "    python scripts/recurring/rebuild_targets.py"
             echo "    python scripts/ops/reconcile_phase.py --write"
-            git diff --stat data/taxonomy.json configs/
-            git diff data/taxonomy.json configs/ | head -80
+            echo "    python scripts/ops/reconcile_sliders.py"
+            git diff --stat data/taxonomy.json data/targets.json configs/
+            git diff data/taxonomy.json data/targets.json configs/ | head -80
             exit 1
           fi
-          echo "✅ taxonomy.json + company.phase are up to date"
+          echo "✅ taxonomy + targets + phase + regions are up to date"
 
       - name: Auto-commit regenerated state (main pushes)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
-          if git diff --quiet data/taxonomy.json configs/; then
+          if git diff --quiet data/taxonomy.json data/targets.json configs/; then
             echo "✅ nothing to reconcile"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/taxonomy.json configs/
+          git add data/taxonomy.json data/targets.json configs/
           # Build a commit message listing what changed
           MSG="chore: auto-reconcile derived state"
           if ! git diff --cached --quiet data/taxonomy.json; then
             MSG="$MSG (taxonomy)"
+          fi
+          if ! git diff --cached --quiet data/targets.json; then
+            MSG="$MSG (targets)"
           fi
           if ! git diff --cached --quiet configs/; then
             CHANGED_CFGS=$(git diff --cached --name-only configs/ | wc -l)

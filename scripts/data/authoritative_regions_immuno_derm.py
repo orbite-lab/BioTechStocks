@@ -111,10 +111,17 @@ REGIONS = {
         "eu":  {"patientsK": 700,   "wtpPct": 40, "priceK": 16},
         "row": {"patientsK": 4000,  "wtpPct": 12, "priceK": 5},
     },
+    # source: US AD prevalence ~30M but branded topical-addressable (novel
+    # nonsteroidal creams -- Opzelura, Zoryve-AD, Eucrisa) ~5M per INCY / ARQT
+    # commercial franchises. Generic steroids + Elidel/Protopic tacrolimus
+    # dominate the remainder at $20-100 per tube. Addressable branded TAM
+    # ~$4-5B globally -- matches Opzelura ~$600M + Zoryve-AD launch curve +
+    # Eucrisa + Aldara combined. Prior TAM ($17B at 8M US / 55% / $2K) assumed
+    # every topical-using AD patient buys at branded pricing; ~4x too big.
     "dermatology.inflammatory_derm.atopic_dermatitis_topical": {
-        "us":  {"patientsK": 8000,    "wtpPct": 55, "priceK": 2},
-        "eu":  {"patientsK": 12000,   "wtpPct": 45, "priceK": 0.8},
-        "row": {"patientsK": 100000,  "wtpPct": 20, "priceK": 0.2},
+        "us":  {"patientsK": 5000,   "wtpPct": 30, "priceK": 2},
+        "eu":  {"patientsK": 5000,   "wtpPct": 20, "priceK": 1},
+        "row": {"patientsK": 20000,  "wtpPct": 8,  "priceK": 0.2},
     },
     "dermatology.inflammatory_derm.hidradenitis_suppurativa": {
         "us":  {"patientsK": 200,  "wtpPct": 55, "priceK": 45},
@@ -134,10 +141,17 @@ REGIONS = {
         "eu":  {"patientsK": 2000,  "wtpPct": 40, "priceK": 12},
         "row": {"patientsK": 10000, "wtpPct": 12, "priceK": 4},
     },
+    # source: US psoriasis ~7M but topical-branded-addressable (novel
+    # nonsteroidal creams -- Zoryve, Vtama, Enstilar) ~3M. Taclonex generics
+    # + topical corticosteroid generics + vitamin-D analogs dominate at
+    # $30-100 per tube. Addressable branded TAM ~$3B globally -- matches
+    # Zoryve ~$250M + Vtama ~$350M today with $1-2B peak each projected.
+    # Prior TAM ($8B at 6M US / 50% / $1.5K) assumed every topical-using
+    # psoriasis patient pays branded -- ~3x too big.
     "dermatology.inflammatory_derm.psoriasis_topical": {
-        "us":  {"patientsK": 6000,   "wtpPct": 50, "priceK": 1.5},
-        "eu":  {"patientsK": 10000,  "wtpPct": 40, "priceK": 0.5},
-        "row": {"patientsK": 80000,  "wtpPct": 18, "priceK": 0.1},
+        "us":  {"patientsK": 3000,   "wtpPct": 30, "priceK": 2},
+        "eu":  {"patientsK": 4000,   "wtpPct": 20, "priceK": 1},
+        "row": {"patientsK": 20000,  "wtpPct": 8,  "priceK": 0.2},
     },
 
     # ============================================================

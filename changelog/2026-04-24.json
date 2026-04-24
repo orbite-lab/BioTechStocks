@@ -1,0 +1,96 @@
+[
+  {
+    "timestamp": "2026-04-24T14:12:30Z",
+    "ticker": "4568",
+    "news": "Daiichi Sankyo delayed annual earnings release to review oncology supply plans and assess potential manufacturing contract loss provisions, causing shares to fall 10% to 4-year lows.",
+    "source": "https://au.investing.com/news/stock-market-news/daiichi-sankyo-shares-slide-to-4yr-low-after-co-delays-annual-earnings-4382210",
+    "changes": [
+      {
+        "path": "scenarios.base.val.commercialMult",
+        "old_value": 4.5,
+        "new_value": 4.2,
+        "reason": "Supply chain concerns and manufacturing issues suggest operational execution risk that warrants lower valuation multiple",
+        "old_actual": 4.5
+      },
+      {
+        "path": "scenarios.bear.val.commercialMult",
+        "old_value": 3.0,
+        "new_value": 2.8,
+        "reason": "Manufacturing and supply issues amplify downside risk in bear scenario",
+        "old_actual": 3.0
+      },
+      {
+        "path": "scenarios.bull.val.commercialMult",
+        "old_value": 6.0,
+        "new_value": 5.7,
+        "reason": "Supply chain uncertainty reduces premium multiple in bull case",
+        "old_actual": 6.0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-24T14:12:30Z",
+    "ticker": "BIOA",
+    "news": "BGE-102 achieved \u226585% median hsCRP reductions in Phase 1, with Phase 2 cardiovascular and DME trials planned to initiate mid-2026.",
+    "source": "https://www.globenewswire.com/news-release/2026/04/21/3277765/0/en/bioage-reports-positive-phase-1-data-for-bge-102-a-novel-oral-nlrp3-inhibitor-demonstrating-potential-best-in-class-reductions-in-hscrp.html",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.bge102.cv_inflammation.pos",
+        "old_value": 40,
+        "new_value": 50,
+        "reason": "\u226585% hsCRP reduction exceeds expectations and benchmarks like CANTOS/ziltivekimab",
+        "old_actual": 40
+      },
+      {
+        "path": "scenarios.base.assumptions.bge102.cv_inflammation.apr",
+        "old_value": 45,
+        "new_value": 55,
+        "reason": "Strong Phase 1 efficacy signal de-risks Phase 2a approval probability",
+        "old_actual": 45
+      },
+      {
+        "path": "scenarios.bear.assumptions.bge102.cv_inflammation.pos",
+        "old_value": 25,
+        "new_value": 35,
+        "reason": "Even in bear case, \u226585% hsCRP reduction is clinically meaningful",
+        "old_actual": 25
+      },
+      {
+        "path": "scenarios.bull.assumptions.bge102.cv_inflammation.pos",
+        "old_value": 60,
+        "new_value": 70,
+        "reason": "Best-in-class hsCRP reduction supports higher bull case probability",
+        "old_actual": 60
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-24T14:12:30Z",
+    "ticker": "LLY",
+    "news": "Eli Lilly's weight loss drugs Foundayo and Zepbound are significantly underperforming Novo Nordisk's Wegovy in weekly prescriptions, with Foundayo getting only 3,707 vs Wegovy's 18,410 initial prescriptions and Zepbound declining 2% while Wegovy grew 7%.",
+    "source": "https://www.gurufocus.com/news/8815825/eli-lilly-lly-faces-pressure-as-weight-loss-drug-prescriptions-lag-behind-competitor",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.orforglipron.oral_glp1.pen",
+        "old_value": 1.0,
+        "new_value": 0.8,
+        "reason": "Foundayo (Orforglipron) severely underperforming with only 3,707 initial prescriptions vs Wegovy's 18,410 suggests weaker market penetration potential",
+        "old_actual": 1.0
+      },
+      {
+        "path": "scenarios.bear.assumptions.orforglipron.oral_glp1.pen",
+        "old_value": 0.7,
+        "new_value": 0.5,
+        "reason": "Poor early prescription data increases downside risk for oral GLP-1 penetration in bear case",
+        "old_actual": 0.7
+      },
+      {
+        "path": "scenarios.bull.assumptions.orforglipron.oral_glp1.pen",
+        "old_value": 1.3,
+        "new_value": 1.1,
+        "reason": "Even in bull case, weak launch data reduces upside penetration potential for oral formulation",
+        "old_actual": 1.3
+      }
+    ]
+  }
+]

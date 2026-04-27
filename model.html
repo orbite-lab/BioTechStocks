@@ -1648,14 +1648,16 @@
                 lastList[0].curatedBullets = config.context.lastData.points;
               }
             }
-            if (nextList[0] && !nextList[0].pointsFallback && config.context?.nextCatalyst?.thresholds?.length) {
-              if (titleMatch(nextList[0].title, config.context.nextCatalyst.title)) {
-                nextList[0].curatedBullets = config.context.nextCatalyst.thresholds;
-              } else {
-                // If titles don't match, still show the curated bullets on the primary
-                // next catalyst as "what to watch for" context -- since these are the
-                // thesis-level points the config owner wanted surfaced.
-                nextList[0].curatedBullets = config.context.nextCatalyst.thresholds;
+            if (config.context?.nextCatalyst?.thresholds?.length) {
+              // Attach the curated "what to watch" bullets to the catalyst whose
+              // title matches context.nextCatalyst.title. If no match, leave
+              // unattached -- bullets curated for one event (e.g. PDUFA) should
+              // not bleed onto a different upcoming event (e.g. an earlier Ph3
+              // readout that happens to land first on the calendar).
+              const targetTitle = config.context.nextCatalyst.title;
+              const targetEntry = nextList.find(c => !c.pointsFallback && titleMatch(c.title, targetTitle));
+              if (targetEntry) {
+                targetEntry.curatedBullets = config.context.nextCatalyst.thresholds;
               }
             }
 

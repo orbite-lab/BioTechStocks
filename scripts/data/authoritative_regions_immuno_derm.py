@@ -43,24 +43,40 @@ REGIONS = {
     # ============================================================
     # IMMUNOLOGY - INFLAMMATORY GI
     # ============================================================
+    # source: US Crohn's ~800K diagnosed (CCFA) but biologic-treated ~50%.
+    # Branded class: Stelara ~$4B Crohn's + Skyrizi-Crohn's ~$4B + Entyvio
+    # (both UC+Crohn's) ~$5B + Humira-Crohn's ~$2B + Rinvoq + Tremfya =
+    # ~$18-20B current global, peak $25B post-Humira-biosimilar. Net price
+    # ~$25K/yr after PBM rebates (WAC $50-65K). Prior TAM $53B at $62K WAC
+    # uniform = ~3x off net economics.
     "immunology.inflammatory_gi.crohns": {
-        "us":  {"patientsK": 800,  "wtpPct": 65, "priceK": 62},
-        "eu":  {"patientsK": 1300, "wtpPct": 48, "priceK": 30},
-        "row": {"patientsK": 2000, "wtpPct": 12, "priceK": 10},
+        "us":  {"patientsK": 800,  "wtpPct": 55, "priceK": 25},
+        "eu":  {"patientsK": 1500, "wtpPct": 35, "priceK": 15},
+        "row": {"patientsK": 5000, "wtpPct": 10, "priceK": 4},
     },
+    # source: US UC ~1M diagnosed (CCFA), biologic-treated ~40%. Same branded
+    # franchises as Crohn's (Entyvio + Stelara + Skyrizi-UC + Humira + Rinvoq
+    # + Tremfya + Zeposia + Velsipity), totalling ~$15-18B current global,
+    # peak ~$20B. Same $25K net pricing pattern. Prior $46B inflated 3x.
     "immunology.inflammatory_gi.ulcerative_colitis": {
-        "us":  {"patientsK": 700,  "wtpPct": 62, "priceK": 55},
-        "eu":  {"patientsK": 1500, "wtpPct": 45, "priceK": 28},
-        "row": {"patientsK": 3000, "wtpPct": 12, "priceK": 8},
+        "us":  {"patientsK": 1000, "wtpPct": 50, "priceK": 20},
+        "eu":  {"patientsK": 1500, "wtpPct": 30, "priceK": 12},
+        "row": {"patientsK": 5000, "wtpPct": 8,  "priceK": 3},
     },
 
     # ============================================================
     # IMMUNOLOGY - INFLAMMATORY SYSTEMIC
     # ============================================================
+    # source: US RA ~1.5M diagnosed (ACR), biologic-treated ~50%. Branded
+    # class post-Humira-biosimilar: Humira-RA ~$5B (declining) + Rinvoq-RA
+    # ~$3B + Cimzia + Actemra + Orencia + Olumiant + Xeljanz = ~$25-30B today
+    # global. Class peak ~$30-35B as Humira completes its biosimilar slide
+    # offset by Rinvoq + new oral entries. Net ~$20K/yr post-rebate. Prior
+    # $98B at $55K WAC across full population was ~3x off net economics.
     "immunology.inflammatory_systemic.rheumatoid_arthritis": {
-        "us":  {"patientsK": 1500,  "wtpPct": 55, "priceK": 55},
-        "eu":  {"patientsK": 2900,  "wtpPct": 42, "priceK": 28},
-        "row": {"patientsK": 18000, "wtpPct": 10, "priceK": 10},
+        "us":  {"patientsK": 1500,  "wtpPct": 50, "priceK": 20},
+        "eu":  {"patientsK": 2500,  "wtpPct": 35, "priceK": 12},
+        "row": {"patientsK": 12000, "wtpPct": 12, "priceK": 4},
     },
 
     # ============================================================

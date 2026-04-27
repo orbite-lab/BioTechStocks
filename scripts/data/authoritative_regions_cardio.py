@@ -23,10 +23,18 @@ REGIONS = {
         "eu":  {"patientsK": 1500,  "wtpPct": 80, "priceK": 2.5},
         "row": {"patientsK": 8000,  "wtpPct": 40, "priceK": 1},
     },
+    # source: US T2D ~38M (CDC) but branded-priced patients ~17M (~70% on Rx,
+    # but ~80% of those receive generic metformin/sulfonylureas at <$300/yr
+    # before stepping up). Branded class breakdown: GLP-1 diabetes labels
+    # (Ozempic/Trulicity/Mounjaro/Rybelsus) ~$30B + insulin franchise $15-20B
+    # + SGLT2 (Jardiance/Farxiga/Invokana) ~$10B + DPP4 declining ~$3B = ~$60B
+    # current global, projected $80-90B peak with GLP-1 class expansion.
+    # Prior values (90% WTP at $4K US uniform) treated entire diagnosed
+    # population as on premium GLP-1; ~2x off net economics.
     "cardio_metabolic.diabetes.t2d": {
-        "us":  {"patientsK": 25000, "wtpPct": 90, "priceK": 4},
-        "eu":  {"patientsK": 22000, "wtpPct": 85, "priceK": 2},
-        "row": {"patientsK": 150000,"wtpPct": 45, "priceK": 0.6},
+        "us":  {"patientsK": 25000, "wtpPct": 70, "priceK": 2.5},
+        "eu":  {"patientsK": 22000, "wtpPct": 60, "priceK": 1.5},
+        "row": {"patientsK": 150000,"wtpPct": 25, "priceK": 0.4},
     },
 
     # ==================== HYPERTENSION ====================
@@ -43,10 +51,16 @@ REGIONS = {
     },
 
     # ==================== LIPIDS ====================
+    # source: US ~80M with elevated LDL but statin generics dominate first-
+    # line at <$50/yr. Branded class is the high-risk subset addressable by
+    # PCSK9 (Repatha + Praluent ~$2B) + Inclisiran/Leqvio ~$1B + Nexletol
+    # ~$0.4B + emerging CETP (obicetrapib Ph3) and Lp(a)-specific agents.
+    # Total branded class ~$5B today, peak $20-25B with new entrants. Prior
+    # TAM $117B treated all elevated-LDL patients as PCSK9-priced -- ~6x off.
     "cardio_metabolic.lipids.ldl_cv_risk": {
-        "us":  {"patientsK": 20000, "wtpPct": 70, "priceK": 5},
-        "eu":  {"patientsK": 25000, "wtpPct": 60, "priceK": 2.5},
-        "row": {"patientsK": 40000, "wtpPct": 30, "priceK": 0.8},
+        "us":  {"patientsK": 30000, "wtpPct": 25, "priceK": 1.5},
+        "eu":  {"patientsK": 35000, "wtpPct": 20, "priceK": 1},
+        "row": {"patientsK": 200000,"wtpPct": 8,  "priceK": 0.2},
     },
     "cardio_metabolic.lipids.lpa": {
         "us":  {"patientsK": 100,   "wtpPct": 40, "priceK": 8},
@@ -88,10 +102,18 @@ REGIONS = {
     },
 
     # ==================== OBESITY ====================
+    # source: US obesity ~108M (NHANES) but branded-Rx-eligible (BMI >=30 or
+    # >=27 w/ comorbidity, with insurance access) ~40M. Net realized price
+    # ~$9K/yr after PBM rebates (WAC $13-15K, ~30-40% rebates). Wegovy + Zepbound
+    # + Saxenda + diabetes-label GLP-1 spillover = ~$30-40B today, projected
+    # peak $150-200B by 2030 per Goldman/MS estimates. Prior TAM $396B at $15K
+    # WAC across full 40M US assumed every eligible patient buys at full WAC
+    # -- 2x net economics. New TAM $144B sits in the middle of the analyst
+    # peak band, with growth headroom.
     "cardio_metabolic.obesity.general": {
-        "us":  {"patientsK": 40000, "wtpPct": 50, "priceK": 15},
-        "eu":  {"patientsK": 30000, "wtpPct": 35, "priceK": 8},
-        "row": {"patientsK": 50000, "wtpPct": 8,  "priceK": 3},
+        "us":  {"patientsK": 40000, "wtpPct": 30, "priceK": 9},
+        "eu":  {"patientsK": 30000, "wtpPct": 20, "priceK": 5},
+        "row": {"patientsK": 50000, "wtpPct": 6,  "priceK": 2},
     },
     "cardio_metabolic.obesity.rare_genetic.hypothalamic_obesity": {
         "us":  {"patientsK": 10,    "wtpPct": 70, "priceK": 325},

@@ -53,10 +53,18 @@ REGIONS = {
         "eu":  {"patientsK": 40,    "wtpPct": 45, "priceK": 20},
         "row": {"patientsK": 220,   "wtpPct": 20, "priceK": 5},
     },
+    # source: US AD ~6M diagnosed (Alzheimer's Association); EU5 ~7M; ROW ~25M.
+    # Branded class is the recently-launched anti-amyloid biologic franchise:
+    # Leqembi (BIIB/Eisai) ~$300M 2025 + Kisunla (LLY) ~$200M 2025, both still
+    # ramping. Class peak forecast $10-15B by 2030 (limited by MCI/early-AD
+    # eligibility, ARIA monitoring requirement, infusion logistics). Donepezil
+    # + memantine generic carry the rest. Prior US TAM at 50% WTP and $28K
+    # priceK assumed all 2M moderate AD on biologics; ~5x off given eligibility
+    # constraints. New TAM $11B fits Leqembi+Kisunla peak forecast.
     "cns.neurodegeneration.alzheimer": {
-        "us":  {"patientsK": 2000,  "wtpPct": 50, "priceK": 28},
-        "eu":  {"patientsK": 1500,  "wtpPct": 35, "priceK": 15},
-        "row": {"patientsK": 25000, "wtpPct": 8,  "priceK": 5},
+        "us":  {"patientsK": 6000,  "wtpPct": 25, "priceK": 5},
+        "eu":  {"patientsK": 8000,  "wtpPct": 12, "priceK": 3},
+        "row": {"patientsK": 40000, "wtpPct": 3,  "priceK": 0.5},
     },
     "cns.neurodegeneration.caa": {
         "us":  {"patientsK": 500,   "wtpPct": 25, "priceK": 1},
@@ -85,10 +93,18 @@ REGIONS = {
     },
 
     # PAIN
+    # source: US migraine ~40M (AMF) but branded-Rx subset ~4M (the chronic +
+    # episodic-frequent population eligible for CGRP class). Triptans now
+    # generic. CGRP class (Aimovig + Ajovy + Emgality + Nurtec + Ubrelvy +
+    # Qulipta) ~$5-7B today, peak $12-15B with more oral entries. Prior US
+    # TAM 4M x 65% WTP x $6K assumed every CGRP-eligible patient on branded
+    # at uniform pricing -- ~2.5x off vs realized net economics (PBM rebates
+    # 30-40% on injectable/oral CGRPs, especially after Pfizer Rimegepant
+    # competition).
     "cns.pain.migraine": {
-        "us":  {"patientsK": 4000,  "wtpPct": 65, "priceK": 6},
-        "eu":  {"patientsK": 6000,  "wtpPct": 45, "priceK": 3},
-        "row": {"patientsK": 50000, "wtpPct": 15, "priceK": 1},
+        "us":  {"patientsK": 4000,  "wtpPct": 30, "priceK": 3},
+        "eu":  {"patientsK": 6000,  "wtpPct": 18, "priceK": 1.5},
+        "row": {"patientsK": 50000, "wtpPct": 5,  "priceK": 0.4},
     },
 
     # PSYCHIATRY

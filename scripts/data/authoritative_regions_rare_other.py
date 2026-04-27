@@ -152,10 +152,17 @@ REGIONS = {
         "eu":  {"patientsK": 20, "wtpPct": 30, "priceK": 30},
         "row": {"patientsK": 12, "wtpPct": 15, "priceK": 15},
     },
+    # source: US active moderate-severe TED ~50K (Tepezza-addressable per
+    # Horizon/Amgen IR); EU5 ~70K; ROW ~150K. IGF-1R class is genuinely premium
+    # priced (Tepezza WAC ~$460K per 8-infusion course; veligrotug similar).
+    # Tepezza ~$2B today, peak forecast $3-4B; veligrotug + elegrobart-SC
+    # entering 2026-27 -> total class peak $5-8B globally. Prior US TAM 50K
+    # x 65% x $450K assumed nearly all active TED on Tepezza at full WAC --
+    # ~3x off given net realization (PBM rebates + course-not-chronic).
     "ophthalmology.anterior_neuro.ted": {
-        "us":  {"patientsK": 50, "wtpPct": 65, "priceK": 450},
-        "eu":  {"patientsK": 70, "wtpPct": 40, "priceK": 280},
-        "row": {"patientsK": 30, "wtpPct": 15, "priceK": 150},
+        "us":  {"patientsK": 50,  "wtpPct": 50, "priceK": 250},
+        "eu":  {"patientsK": 70,  "wtpPct": 30, "priceK": 150},
+        "row": {"patientsK": 100, "wtpPct": 10, "priceK": 50},
     },
 
     # =====================================================================

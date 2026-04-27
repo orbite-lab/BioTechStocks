@@ -93,7 +93,7 @@ def get_base_pos_apr(config, asset_id, indication_id):
 def summarize_existing_catalysts(config, window_end):
     out = []
     for cat in config.get("catalysts", []):
-        if cat.get("resolved"):
+        if cat.get("resolved") or cat.get("_resolvedAt"):
             continue
         ds = cat.get("dateSort", "")
         try:
@@ -108,6 +108,10 @@ def summarize_existing_catalysts(config, window_end):
             "indication": cat.get("indication", ""),
             "type": cat.get("type", ""),
             "dateSort": ds,
+            "fail_pos": cat.get("fail_pos"),
+            "fail_apr": cat.get("fail_apr"),
+            "success_pos": cat.get("success_pos"),
+            "success_apr": cat.get("success_apr"),
         })
     return out
 
@@ -257,6 +261,39 @@ Use the company's current_base_assumptions for that asset/indication as a seed. 
 
 All four fields MUST be integers in [0, 100]. success_pos must be >= fail_pos. success_apr must be >= fail_apr.
 
+RESOLUTION DETECTION (existing catalysts that may have already happened)
+Every catalyst in `existing_catalysts_in_window` has a `dateSort` in the
+future (i.e. still listed as upcoming). For EACH such catalyst, run a
+follow-up web_search of the form:
+  "<COMPANY> <TRIAL OR EVENT NAME> results"
+  "<COMPANY> <DRUG> readout"
+  "<COMPANY> <PDUFA DRUG> approved OR CRL"
+
+If you find post-event news dated AFTER the catalyst's dateSort or even
+before it (companies sometimes report ahead of guidance), the event has
+RESOLVED and should be marked. Return one entry per resolved catalyst in
+`_resolutions`.
+
+Outcome classification rules:
+  - "success" - primary endpoint hit, approval granted, AdCom positive,
+                clearly positive market reaction (>= +5% on data day)
+  - "fail"    - primary missed, CRL issued, AdCom negative, drug pulled,
+                clearly negative market reaction (<= -10% on data day)
+  - "mixed"   - primary missed but secondary hit; partial label; ambiguous
+                or modest market reaction
+
+Confidence:
+  - "high"    - clear post-event press release + market reaction confirms
+  - "medium"  - news exists but outcome interpretation requires judgement
+  - "low"     - signals event happened but unable to confirm outcome
+
+Rules:
+  - title_match must be the EXACT title string from existing_catalysts_in_window
+    (not your paraphrase) so the application script can find the catalyst.
+  - actual_date must be ISO-format (YYYY-MM-DD) of the actual readout/PDUFA day.
+  - Skip if you cannot confirm the event has happened.
+  - Skip if the market reaction or outcome is ambiguous AND confidence < high.
+
 SUBTITLE THESIS LINE
 Each company has a `current_subtitle` — a short free-form thesis line that reads like
 "<Company Name> · <current framing>" (e.g. "Viridian Therapeutics · Post-REVEAL-1 · Batoclimab TED failure (Apr 2 2026) clears competitive path").
@@ -306,10 +343,22 @@ Output ONLY valid JSON, no preamble:
       "confidence": "high",
       "source": "https://..."
     }}
+  }},
+  "_resolutions": {{
+    "TICKER1": [
+      {{
+        "title_match": "REZOLVE-AA 52-week alopecia areata data",
+        "actual_date": "2026-04-20",
+        "outcome": "success",
+        "rationale": "29-31% SALT-20 vs 0% placebo; deepening wks36-52; stock +19% day-of",
+        "source": "https://...",
+        "confidence": "high"
+      }}
+    ]
   }}
 }}
 
-ALWAYS include every requested ticker as a key in the top level (value is the catalyst array). Include "_subtitles" as a top-level object (may be empty {{}}) — only include tickers that need an update. Set "binary": true only for pivotal phase 2/3 readouts and PDUFA. confidence in {{high, medium, low}}."""
+ALWAYS include every requested ticker as a key in the top level (value is the catalyst array). Include "_subtitles" and "_resolutions" as top-level objects (may be empty {{}}) — only include tickers that need updates. Set "binary": true only for pivotal phase 2/3 readouts and PDUFA. confidence in {{high, medium, low}}."""
 
 
 def check_batch(batch_configs, window_days):
@@ -373,7 +422,7 @@ def check_batch(batch_configs, window_days):
         )
     except Exception as e:
         print(f"  [ERROR] API call failed: {e}")
-        return {t: [] for t in batch_configs.keys()}
+        return {t: [] for t in batch_configs.keys()}, {}, {}
 
     text_parts = [b.text for b in response.content if hasattr(b, "text")]
     full_text = "\n".join(text_parts)
@@ -384,15 +433,18 @@ def check_batch(batch_configs, window_days):
     except (ValueError, json.JSONDecodeError) as e:
         print(f"  [WARN] Could not parse model response: {e}")
         print(f"  Raw (first 500 chars): {full_text[:500]}")
-        return {t: [] for t in batch_configs.keys()}, {}
+        return {t: [] for t in batch_configs.keys()}, {}, {}
 
     subtitle_proposals = result.pop("_subtitles", {}) or {}
     if not isinstance(subtitle_proposals, dict):
         subtitle_proposals = {}
+    resolution_proposals = result.pop("_resolutions", {}) or {}
+    if not isinstance(resolution_proposals, dict):
+        resolution_proposals = {}
     for t in batch_configs.keys():
         if t not in result or not isinstance(result.get(t), list):
             result[t] = []
-    return result, subtitle_proposals
+    return result, subtitle_proposals, resolution_proposals
 
 
 # ─── Validation + dedup ──────────────────────────────────────
@@ -536,6 +588,127 @@ def log_subtitle_update(ticker, old_text, new_prop, timestamp, applied):
     daily_file.write_text(json.dumps(daily, indent=2))
 
 
+def log_resolution(ticker, target_title, prop, timestamp, applied):
+    daily_file = CHANGELOG_DIR / f"{timestamp[:10]}.json"
+    daily = json.loads(daily_file.read_text()) if daily_file.exists() else []
+    if not isinstance(daily, list):
+        daily = []
+    daily.append({
+        "timestamp": timestamp,
+        "ticker": ticker,
+        "action": "catalyst_resolved" if applied else "catalyst_resolution_proposed",
+        "title": target_title,
+        "actual_date": prop.get("actual_date"),
+        "outcome": prop.get("outcome"),
+        "confidence": prop.get("confidence"),
+        "rationale": prop.get("rationale", ""),
+        "source": prop.get("source", ""),
+    })
+    daily_file.write_text(json.dumps(daily, indent=2))
+
+
+def validate_resolution_proposal(prop, existing_titles):
+    """Return (cleaned, ok, reason). Resolution must:
+    - reference an existing catalyst title (exact match)
+    - have valid outcome + confidence
+    - have parseable actual_date
+    """
+    if not isinstance(prop, dict):
+        return None, False, "not a dict"
+    title = (prop.get("title_match") or "").strip()
+    if not title:
+        return None, False, "missing title_match"
+    if title not in existing_titles:
+        return None, False, f"title_match '{title[:60]}' not in existing catalysts"
+    outcome = (prop.get("outcome") or "").lower()
+    if outcome not in ("success", "fail", "mixed"):
+        return None, False, f"invalid outcome '{outcome}'"
+    conf = (prop.get("confidence") or "medium").lower()
+    if conf not in ("high", "medium", "low"):
+        conf = "medium"
+    actual_date = prop.get("actual_date") or ""
+    try:
+        datetime.fromisoformat(actual_date)
+    except (ValueError, TypeError):
+        return None, False, f"invalid actual_date '{actual_date}'"
+    return {
+        "title_match":  title,
+        "actual_date":  actual_date,
+        "outcome":      outcome,
+        "confidence":   conf,
+        "rationale":    prop.get("rationale", ""),
+        "source":       prop.get("source", ""),
+    }, True, ""
+
+
+def apply_resolution(cfg, target_title, prop, timestamp):
+    """Mutate cfg in place: find catalyst by title, update dateSort to
+    actual readout date, attach _resolvedAt / _outcome / _outcomeRationale,
+    and shift scenario assumptions toward success_*/fail_* depending on
+    outcome (only when confidence is high; medium/low log only).
+
+    Returns (catalyst_dict, applied_changes_summary).
+    """
+    cats = cfg.get("catalysts", []) or []
+    target = None
+    for c in cats:
+        if c.get("title") == target_title:
+            target = c
+            break
+    if target is None:
+        return None, {"error": "catalyst not found at apply time"}
+
+    aid = target.get("asset")
+    iid = target.get("indication")
+    fail_pos = target.get("fail_pos")
+    fail_apr = target.get("fail_apr")
+    succ_pos = target.get("success_pos")
+    succ_apr = target.get("success_apr")
+
+    # Always update dateSort + add resolution metadata
+    target["dateSort"] = prop["actual_date"]
+    target["date"] = prop["actual_date"]
+    target["_resolvedAt"] = timestamp
+    target["_outcome"] = prop["outcome"]
+    target["_outcomeRationale"] = prop["rationale"]
+    target["_outcomeSource"] = prop.get("source", "")
+    target["_outcomeConfidence"] = prop["confidence"]
+
+    summary = {"dateSort": prop["actual_date"], "outcome": prop["outcome"]}
+
+    # On HIGH confidence success/fail, shift scenario assumptions toward the
+    # catalyst's pre-recorded floors/ceilings. We move 70% of the gap in base,
+    # smaller in extremes (mega/psy already capture the wide tail).
+    if prop["confidence"] == "high" and aid and iid and prop["outcome"] in ("success", "fail"):
+        target_pos = succ_pos if prop["outcome"] == "success" else fail_pos
+        target_apr = succ_apr if prop["outcome"] == "success" else fail_apr
+        if target_pos is not None and target_apr is not None:
+            shift_weights = {
+                "mega_bear":        0.30,
+                "bear":             0.50,
+                "base":             0.70,
+                "bull":             0.50,
+                "psychedelic_bull": 0.30,
+            }
+            shifts = []
+            for sk, w in shift_weights.items():
+                scen = cfg.get("scenarios", {}).get(sk)
+                if not scen:
+                    continue
+                asmp = scen.setdefault("assumptions", {}).setdefault(aid, {}).setdefault(iid, {"pos": 0, "apr": 0, "pen": 1})
+                old_pos = asmp.get("pos", 0)
+                old_apr = asmp.get("apr", 0)
+                new_pos = round(old_pos + (target_pos - old_pos) * w)
+                new_apr = round(old_apr + (target_apr - old_apr) * w)
+                # Maintain non-decreasing monotonicity by clamp afterward
+                asmp["pos"] = max(0, min(100, new_pos))
+                asmp["apr"] = max(0, min(100, new_apr))
+                shifts.append({"sk": sk, "pos": [old_pos, asmp["pos"]], "apr": [old_apr, asmp["apr"]]})
+            summary["assumption_shifts"] = shifts
+
+    return target, summary
+
+
 # ─── Telegram ────────────────────────────────────────────────
 
 def send_telegram(text):
@@ -588,16 +761,20 @@ def main():
     batches = [tickers[i:i + BATCH_SIZE] for i in range(0, len(tickers), BATCH_SIZE)]
     print(f"Processing {len(batches)} batch(es) of up to {BATCH_SIZE} tickers...\n")
 
+    all_resolution_proposals = {}
     for i, batch in enumerate(batches, 1):
         print(f"── Batch {i}/{len(batches)} ──")
         batch_cfgs = {t: configs[t] for t in batch}
-        result, subtitle_props = check_batch(batch_cfgs, window_days)
+        result, subtitle_props, resolution_props = check_batch(batch_cfgs, window_days)
         all_proposals.update(result)
         all_subtitle_proposals.update(subtitle_props)
+        all_resolution_proposals.update(resolution_props)
         for t in batch:
             n = len(result.get(t, []))
             sub_mark = " (+sub)" if t in subtitle_props else ""
-            print(f"  {t:8} {'✓ none' if n == 0 else f'+{n} candidate(s)'}{sub_mark}")
+            res_n = len(resolution_props.get(t, []) or [])
+            res_mark = f" (+{res_n} resolved)" if res_n else ""
+            print(f"  {t:8} {'✓ none' if n == 0 else f'+{n} candidate(s)'}{sub_mark}{res_mark}")
         print()
 
     print("── Validating + applying ──")
@@ -684,6 +861,49 @@ def main():
     if not all_subtitle_proposals:
         print("  (none)")
 
+    # ── Catalyst resolutions ────────────────────────────────────────
+    # When the LLM finds post-event news for an upcoming catalyst, advance its
+    # dateSort + tag with outcome metadata. High-confidence resolutions also
+    # shift scenario assumptions toward the catalyst's pre-recorded floor/
+    # ceiling. Lower confidence: log only.
+    total_resolutions_applied = 0
+    total_resolutions_proposed = 0
+    resolution_summary_lines = []
+    print("── Catalyst resolutions ──")
+    for ticker, props in (all_resolution_proposals or {}).items():
+        if ticker not in configs or not props:
+            continue
+        cfg = configs[ticker]
+        existing_titles = {c.get("title", "") for c in cfg.get("catalysts", []) or []}
+        for p in props:
+            cleaned, ok, reason = validate_resolution_proposal(p, existing_titles)
+            if not ok:
+                print(f"  [REJECT] {ticker}: resolution - {reason}")
+                continue
+            total_resolutions_proposed += 1
+            apply_now = cleaned["confidence"] == "high"
+            if apply_now:
+                target, summary = apply_resolution(cfg, cleaned["title_match"], cleaned, timestamp)
+                if target is None:
+                    print(f"  [SKIP]   {ticker}: catalyst not found at apply time")
+                    continue
+                if not dry_run:
+                    cfg_path = CONFIGS_DIR / f"{ticker}.json"
+                    cfg_path.write_text(json.dumps(cfg, indent=2, ensure_ascii=False) + "\n",
+                                        encoding="utf-8")
+                    log_resolution(ticker, cleaned["title_match"], cleaned, timestamp, applied=True)
+                total_resolutions_applied += 1
+                shift_n = len(summary.get("assumption_shifts", []) or [])
+                shift_str = f" + {shift_n} scen shifts" if shift_n else ""
+                print(f"  [APPLY]  {ticker}: {cleaned['outcome']:7} {cleaned['actual_date']} {cleaned['title_match'][:50]}{shift_str}")
+                resolution_summary_lines.append(f"{ticker}: {cleaned['outcome']} - {cleaned['title_match'][:55]}")
+            else:
+                if not dry_run:
+                    log_resolution(ticker, cleaned["title_match"], cleaned, timestamp, applied=False)
+                print(f"  [PROPOSE {cleaned['confidence']:6}] {ticker}: {cleaned['outcome']} - {cleaned['title_match'][:50]}")
+    if not all_resolution_proposals:
+        print("  (none)")
+
     print()
     print("═══ Summary ═══")
     print(f"  Catalysts added:      {total_added}")
@@ -691,11 +911,16 @@ def main():
     print(f"  Catalysts rejected:   {total_rejected}")
     print(f"  Subtitles applied:    {total_subtitles_applied}")
     print(f"  Subtitles proposed:   {total_subtitles_proposed - total_subtitles_applied} (not auto-applied)")
+    print(f"  Resolutions applied:  {total_resolutions_applied}")
+    print(f"  Resolutions proposed: {total_resolutions_proposed - total_resolutions_applied} (not auto-applied)")
 
+    any_change = total_added > 0 or total_subtitles_applied > 0 or total_resolutions_applied > 0
     if dry_run:
         print(f"\n[dry-run] No files written")
-    elif total_added > 0 or total_subtitles_applied > 0:
-        touched = {l.split(':')[0] for l in summary_lines} | {l.split(':')[0] for l in subtitle_summary_lines}
+    elif any_change:
+        touched = ({l.split(':')[0] for l in summary_lines}
+                   | {l.split(':')[0] for l in subtitle_summary_lines}
+                   | {l.split(':')[0] for l in resolution_summary_lines})
         print(f"\n✓ Updated {len(touched)} configs")
         print(f"✓ Logged to changelog/{timestamp[:10]}.json")
         tg_parts = []
@@ -705,6 +930,8 @@ def main():
                 tg_parts.append(f"… and {len(summary_lines) - 15} more")
         if total_subtitles_applied > 0:
             tg_parts.append(f"<b>📝 {total_subtitles_applied} subtitle(s) updated</b>\n" + "\n".join(f"• {s}" for s in subtitle_summary_lines[:10]))
+        if total_resolutions_applied > 0:
+            tg_parts.append(f"<b>✅ {total_resolutions_applied} catalyst(s) resolved</b>\n" + "\n".join(f"• {s}" for s in resolution_summary_lines[:10]))
         if tg_parts:
             send_telegram("\n\n".join(tg_parts))
     else:

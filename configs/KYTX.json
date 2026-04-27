@@ -1,0 +1,690 @@
+{
+  "company": {
+    "ticker": "KYTX",
+    "name": "Kyverna Therapeutics",
+    "subtitle": "Kyverna Therapeutics · KYV-101 (CD19 CAR-T) BLA H1 2026 in SPS · gMG Ph3 KYSA-6 + LN/MS expansion",
+    "sharesOut": 57,
+    "cash": 279,
+    "currentPrice": 9.02,
+    "currency": "USD",
+    "yahooTicker": "KYTX",
+    "cashRunway": "Into 2028 (covers SPS launch + gMG Ph3)",
+    "phase": "nda_filed"
+  },
+  "assets": [
+    {
+      "id": "kyv101",
+      "name": "KYV-101 (mivakemticel) — autologous CD19 CAR-T",
+      "stage": "BLA filed (SPS, H1 2026)",
+      "designations": [
+        "RMAT (SPS)",
+        "Fast Track (SPS, gMG, LN, MS)"
+      ],
+      "indications": [
+        {
+          "id": "sps",
+          "name": "Stiff Person Syndrome (SPS)",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1.5,
+                "wtpPct": 65,
+                "priceK": 600
+              },
+              "eu": {
+                "patientsK": 1.5,
+                "wtpPct": 45,
+                "priceK": 400
+              },
+              "row": {
+                "patientsK": 3,
+                "wtpPct": 8,
+                "priceK": 200
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 30,
+                "wtpPct": 60,
+                "priceK": 600
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 40,
+                "priceK": 400
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 5,
+                "priceK": 200
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "KYV-101 first-in-class for SPS; KYSA-8 registrational data positive late 2025; BLA H1 2026, launch end-2026. ~30% peak reach of ~1.5K addressable US pts (off-label IVIG/benzo responders + symptomatic)."
+              },
+              "us.priceK": {
+                "note": "$600K one-time WAC modeled; CAR-T autoimmune precedent (Yescarta $480K + manufacturing complexity premium for ultra-rare)."
+              },
+              "us.wtpPct": {
+                "note": "60% -- no approved therapy for SPS; CAR-T autoimmune Medicare coverage emerging; outcomes-based contracts likely."
+              },
+              "eu.reachPct": {
+                "note": "15% -- EMA filing 2027; managed-entry agreements required; ATMP framework slow."
+              },
+              "eu.priceK": {
+                "note": "$400K; EU CAR-T net ~67% of US."
+              },
+              "row.reachPct": {
+                "note": "5% -- Japan PMDA potential 2028; rest ROW negligible."
+              }
+            },
+            "penPct": 30,
+            "cagrPct": 5,
+            "peakYear": 2031
+          },
+          "area": "immunology.neuromuscular_autoimmune.sps",
+          "rare": true
+        },
+        {
+          "id": "gmg",
+          "name": "Generalized Myasthenia Gravis (gMG)",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60,
+                "wtpPct": 65,
+                "priceK": 280
+              },
+              "eu": {
+                "patientsK": 130,
+                "wtpPct": 48,
+                "priceK": 150
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 50,
+                "priceK": 500
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 30,
+                "priceK": 300
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 8,
+                "priceK": 100
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "KYSA-6 Ph3 underway; KYV-101 captures treatment-resistant gMG subset post Vyvgart/Soliris failure (~3-5% of total gMG)."
+              },
+              "us.priceK": {
+                "note": "$500K one-time vs Vyvgart chronic ~$200K/yr; CAR-T positioned as durable cure for refractory cases."
+              },
+              "us.wtpPct": {
+                "note": "50% -- payors require Vyvgart/Soliris failure; ICER will assess vs chronic therapy long-term costs."
+              },
+              "eu.reachPct": {
+                "note": "1.5% -- EMA + national HTA conservative on CAR-T autoimmune; Soliris/Vyvgart already reimbursed."
+              },
+              "row.reachPct": {
+                "note": "0.3% -- specialty centers only."
+              }
+            },
+            "penPct": 40,
+            "cagrPct": 7,
+            "peakYear": 2032
+          },
+          "area": "immunology.neuromuscular_autoimmune.myasthenia_gravis",
+          "rare": false
+        },
+        {
+          "id": "ln",
+          "name": "Lupus Nephritis (LN)",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 300,
+                "wtpPct": 55,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 350,
+                "wtpPct": 38,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 4000,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.3,
+                "wtpPct": 35,
+                "priceK": 450
+              },
+              "eu": {
+                "reachPct": 0.15,
+                "wtpPct": 20,
+                "priceK": 280
+              },
+              "row": {
+                "reachPct": 0.02,
+                "wtpPct": 5,
+                "priceK": 100
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "KYV-101 KYSA-1 Ph2 in LN; small-share capture of refractory LN within broader SLE TAM (LN is ~15% of SLE pts)."
+              },
+              "us.priceK": {
+                "note": "$450K one-time CAR-T; positioned vs Saphnelo/Benlysta/Lupkynis chronic biologics."
+              },
+              "us.wtpPct": {
+                "note": "35% -- payors will require multiple biologic failures; nephrology-rheumatology tumor board review."
+              }
+            },
+            "penPct": 25,
+            "cagrPct": 6,
+            "peakYear": 2033
+          },
+          "area": "immunology.autoimmune.sle",
+          "rare": false
+        },
+        {
+          "id": "ms",
+          "name": "Multiple Sclerosis (progressive / treatment-resistant)",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 900,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 40,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 1500,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.1,
+                "wtpPct": 35,
+                "priceK": 500
+              },
+              "eu": {
+                "reachPct": 0.05,
+                "wtpPct": 20,
+                "priceK": 300
+              },
+              "row": {
+                "reachPct": 0.01,
+                "wtpPct": 5,
+                "priceK": 100
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "KYV-101 KYSA-7 Ph2 in progressive MS; very narrow addressable pop = severe progressive MS failing DMT class (~1% of total MS, ~9K US). Reach 0.1% = ~900 patients on CAR-T peak vs broader ~10M on DMTs."
+              },
+              "us.priceK": {
+                "note": "$500K one-time; MS DMT class is generic-pressured ($25K net) but CAR-T positioning is for severely treatment-failing pts where any cost-effectiveness argument may hold."
+              },
+              "us.wtpPct": {
+                "note": "35% -- payors very cautious on CAR-T for MS given existing DMT availability; needs durable response data."
+              }
+            },
+            "penPct": 25,
+            "cagrPct": 4,
+            "peakYear": 2034
+          },
+          "area": "immunology.demyelinating.multiple_sclerosis",
+          "rare": false
+        }
+      ],
+      "modality": "cell_therapy.car_t_autologous.cd19_autoimmune",
+      "targets": [
+        "CD19"
+      ]
+    },
+    {
+      "id": "kyv102",
+      "name": "KYV-102 — whole-blood rapid-manufactured CD19 CAR-T",
+      "stage": "Preclinical/Phase 1 readiness",
+      "designations": [],
+      "indications": [
+        {
+          "id": "platform",
+          "name": "Whole-blood CAR-T platform (autoimmune indications TBD)",
+          "market": {
+            "regions": {},
+            "penPct": 0
+          },
+          "area": "_platform.cell_therapy_discovery",
+          "rare": false
+        }
+      ],
+      "modality": "cell_therapy.car_t_autologous.cd19_autoimmune",
+      "targets": [
+        "CD19"
+      ]
+    },
+    {
+      "id": "kyv201",
+      "name": "KYV-201 — allogeneic CD19 CAR-T",
+      "stage": "Preclinical",
+      "designations": [],
+      "indications": [
+        {
+          "id": "platform",
+          "name": "Allogeneic CAR-T platform (autoimmune indications TBD)",
+          "market": {
+            "regions": {},
+            "penPct": 0
+          },
+          "area": "_platform.cell_therapy_discovery",
+          "rare": false
+        }
+      ],
+      "modality": "cell_therapy.car_t_allogeneic.cd19_allo_car_t",
+      "targets": [
+        "CD19"
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "BLA CRL + CAR-T autoimmune class fails to gain traction in autoimmune indications",
+      "events": [
+        "✗ FDA issues CRL on KYV-101 SPS BLA — manufacturing or REMS concern",
+        "✗ Severe ICANS / cytokine-release events emerge in autoimmune CAR-T class (CRSP/cabaletta also affected)",
+        "✗ KYSA-6 gMG Ph3 misses primary endpoint",
+        "→ Pipeline collapses to cash floor, dilution to extend runway"
+      ],
+      "assumptions": {
+        "kyv101": {
+          "sps": {
+            "pos": 30,
+            "apr": 30,
+            "pen": 1.0
+          },
+          "gmg": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 1.0
+          },
+          "ln": {
+            "pos": 3,
+            "apr": 8,
+            "pen": 1.0
+          },
+          "ms": {
+            "pos": 2,
+            "apr": 5,
+            "pen": 1.0
+          }
+        },
+        "kyv102": {
+          "platform": {
+            "pos": 0,
+            "apr": 0,
+            "pen": 1.0
+          }
+        },
+        "kyv201": {
+          "platform": {
+            "pos": 0,
+            "apr": 0,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "dr": 17,
+        "dil": 35,
+        "mult": 3,
+        "plat": 0,
+        "exus": 0,
+        "cannib": 10
+      }
+    },
+    "bear": {
+      "wt": 20,
+      "narrative": "SPS approved but small franchise; gMG Ph3 mixed; expansion indications stall",
+      "events": [
+        "✓ KYV-101 SPS approved late 2026, slow launch ($30-60M Year 1)",
+        "△ KYSA-6 gMG hits endpoint but post-Vyvgart label-cap limits commercial",
+        "△ LN/MS indications underwhelm in Ph2",
+        "→ Single-product orphan biotech, modest re-rate"
+      ],
+      "assumptions": {
+        "kyv101": {
+          "sps": {
+            "pos": 75,
+            "apr": 60,
+            "pen": 1.0
+          },
+          "gmg": {
+            "pos": 30,
+            "apr": 35,
+            "pen": 0.7
+          },
+          "ln": {
+            "pos": 12,
+            "apr": 22,
+            "pen": 0.7
+          },
+          "ms": {
+            "pos": 8,
+            "apr": 18,
+            "pen": 0.7
+          }
+        },
+        "kyv102": {
+          "platform": {
+            "pos": 5,
+            "apr": 5,
+            "pen": 1.0
+          }
+        },
+        "kyv201": {
+          "platform": {
+            "pos": 3,
+            "apr": 3,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "dr": 14,
+        "dil": 15,
+        "mult": 4,
+        "plat": 50,
+        "exus": 0,
+        "cannib": 5
+      }
+    },
+    "base": {
+      "wt": 45,
+      "narrative": "SPS launch successful + gMG Ph3 positive + LN/MS Ph2 supportive",
+      "events": [
+        "✓ KYV-101 SPS approved mid-2026, first CAR-T autoimmune launch",
+        "✓ KYSA-6 gMG Ph3 positive 2027, label expansion 2028",
+        "✓ KYSA-1 LN Ph2 positive — Ph3 initiated 2027",
+        "✓ KYSA-7 MS Ph2 positive — Ph3 initiated 2028",
+        "✓ KYV-102 IND 2026 — whole-blood manufacturing differentiation"
+      ],
+      "assumptions": {
+        "kyv101": {
+          "sps": {
+            "pos": 90,
+            "apr": 88,
+            "pen": 1.0
+          },
+          "gmg": {
+            "pos": 55,
+            "apr": 60,
+            "pen": 1.0
+          },
+          "ln": {
+            "pos": 30,
+            "apr": 50,
+            "pen": 1.0
+          },
+          "ms": {
+            "pos": 22,
+            "apr": 40,
+            "pen": 1.0
+          }
+        },
+        "kyv102": {
+          "platform": {
+            "pos": 25,
+            "apr": 30,
+            "pen": 1.0
+          }
+        },
+        "kyv201": {
+          "platform": {
+            "pos": 12,
+            "apr": 20,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "dr": 11,
+        "dil": 5,
+        "mult": 6,
+        "plat": 200,
+        "exus": 0,
+        "cannib": 2
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "KYV-101 becomes the platform CAR-T autoimmune across SPS + gMG + LN + MS; takeout interest builds",
+      "events": [
+        "✓ SPS launch ramps fast ($120M+ Year 1, $250M+ Year 2)",
+        "✓ KYSA-6 gMG positive — KYV-101 captures 4-6% of gMG market",
+        "✓ KYSA-1 LN approval 2029; KYSA-7 MS approval 2030",
+        "✓ KYV-102 whole-blood manufacturing slashes CoGS 50%; field-of-use license",
+        "✓ Big-pharma takeout speculation (Gilead/JNJ/AbbVie autoimmune build-out)"
+      ],
+      "assumptions": {
+        "kyv101": {
+          "sps": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.3
+          },
+          "gmg": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 1.2
+          },
+          "ln": {
+            "pos": 50,
+            "apr": 70,
+            "pen": 1.2
+          },
+          "ms": {
+            "pos": 38,
+            "apr": 60,
+            "pen": 1.2
+          }
+        },
+        "kyv102": {
+          "platform": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 1.3
+          }
+        },
+        "kyv201": {
+          "platform": {
+            "pos": 30,
+            "apr": 45,
+            "pen": 1.2
+          }
+        }
+      },
+      "val": {
+        "dr": 12,
+        "dil": 0,
+        "mult": 5,
+        "plat": 0,
+        "exus": 0,
+        "cannib": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Autologous CAR-T autoimmune validated as durable cure across class; KYV-102/201 platform licensing drives takeout",
+      "events": [
+        "✓ KYV-101 across 4 approved indications by 2030; >$1B franchise",
+        "✓ KYV-102 whole-blood manufacturing licensed across CAR-T sector",
+        "✓ KYV-201 allogeneic Ph3 starts 2027 — off-the-shelf disruption",
+        "✓ Takeout at $35-50/share by JNJ, Gilead, or AbbVie"
+      ],
+      "assumptions": {
+        "kyv101": {
+          "sps": {
+            "pos": 98,
+            "apr": 97,
+            "pen": 1.5
+          },
+          "gmg": {
+            "pos": 88,
+            "apr": 90,
+            "pen": 1.4
+          },
+          "ln": {
+            "pos": 70,
+            "apr": 85,
+            "pen": 1.4
+          },
+          "ms": {
+            "pos": 60,
+            "apr": 80,
+            "pen": 1.4
+          }
+        },
+        "kyv102": {
+          "platform": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 1.5
+          }
+        },
+        "kyv201": {
+          "platform": {
+            "pos": 55,
+            "apr": 65,
+            "pen": 1.4
+          }
+        }
+      },
+      "val": {
+        "dr": 11,
+        "dil": 0,
+        "mult": 7,
+        "plat": 100,
+        "exus": 0,
+        "cannib": 0
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-15",
+      "asset": "kyv101",
+      "indication": "sps",
+      "title": "KYV-101 BLA submission for SPS",
+      "type": "bla_submission",
+      "binary": false,
+      "fail_pos": 60,
+      "fail_apr": 50,
+      "success_pos": 90,
+      "success_apr": 85,
+      "_source": "curated",
+      "_sourceUrl": "https://ir.kyvernatx.com/news-releases",
+      "_addedAt": "2026-04-27T00:00:00Z",
+      "_confidence": "high",
+      "_rationale": "Company guided BLA filing 1H 2026 post KYSA-8 SPS data"
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "kyv101",
+      "indication": "sps",
+      "title": "KYV-101 SPS PDUFA + commercial launch",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 60,
+      "fail_apr": 30,
+      "success_pos": 95,
+      "success_apr": 95,
+      "_source": "curated",
+      "_sourceUrl": "https://ir.kyvernatx.com/news-releases",
+      "_addedAt": "2026-04-27T00:00:00Z",
+      "_confidence": "medium",
+      "_rationale": "Standard PDUFA cycle 6-10 months from BLA; Priority Review possible given orphan/RMAT"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "kyv101",
+      "indication": "ln",
+      "title": "KYSA-1 Ph2 lupus nephritis update",
+      "type": "phase2_data",
+      "binary": false,
+      "fail_pos": 12,
+      "fail_apr": 25,
+      "success_pos": 40,
+      "success_apr": 60,
+      "_source": "curated",
+      "_sourceUrl": "https://ir.kyvernatx.com/news-releases",
+      "_addedAt": "2026-04-27T00:00:00Z",
+      "_confidence": "medium",
+      "_rationale": "Company expects KYSA-1 LN expansion data through 2026"
+    },
+    {
+      "date": "Q1 2027",
+      "dateSort": "2027-03-31",
+      "asset": "kyv101",
+      "indication": "gmg",
+      "title": "KYSA-6 Phase 3 gMG topline",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 10,
+      "fail_apr": 15,
+      "success_pos": 80,
+      "success_apr": 85,
+      "_source": "curated",
+      "_sourceUrl": "https://ir.kyvernatx.com/news-releases",
+      "_addedAt": "2026-04-27T00:00:00Z",
+      "_confidence": "medium",
+      "_rationale": "KYSA-6 fully enrolled, primary readout window 2027"
+    },
+    {
+      "date": "H2 2027",
+      "dateSort": "2027-09-30",
+      "asset": "kyv101",
+      "indication": "ms",
+      "title": "KYSA-7 Phase 2 MS data",
+      "type": "phase2_data",
+      "binary": false,
+      "fail_pos": 8,
+      "fail_apr": 18,
+      "success_pos": 30,
+      "success_apr": 50,
+      "_source": "curated",
+      "_sourceUrl": "https://ir.kyvernatx.com/news-releases",
+      "_addedAt": "2026-04-27T00:00:00Z",
+      "_confidence": "medium",
+      "_rationale": "KYSA-7 progressive MS Ph2 enrolling 2025-26"
+    }
+  ]
+}

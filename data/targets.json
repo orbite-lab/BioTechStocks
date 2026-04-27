@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated": "2026-04-27T07:32:51Z",
+    "generated": "2026-04-27T13:45:49Z",
     "target_count": 143,
-    "total_assets": 227,
-    "assets_with_targets": 223,
+    "total_assets": 230,
+    "assets_with_targets": 226,
     "multi_modality_count": 12,
     "multi_disease_count": 48
   },
@@ -785,6 +785,7 @@
         "CRSP",
         "GILD",
         "JANX",
+        "KYTX",
         "LEGN"
       ],
       "modalities": [
@@ -795,7 +796,11 @@
         "cell_therapy.car_t_autologous.cd19_car_t"
       ],
       "areas": [
+        "_platform.cell_therapy_discovery",
         "immunology.autoimmune.sle",
+        "immunology.demyelinating.multiple_sclerosis",
+        "immunology.neuromuscular_autoimmune.myasthenia_gravis",
+        "immunology.neuromuscular_autoimmune.sps",
         "oncology.hematology.nhl.dlbcl",
         "oncology.hematology.nhl.fl",
         "oncology.hematology.nhl.mcl"
@@ -857,6 +862,36 @@
           ]
         },
         {
+          "ticker": "KYTX",
+          "asset": "kyv101",
+          "name": "KYV-101 (mivakemticel) — autologous CD19 CAR-T",
+          "modality": "cell_therapy.car_t_autologous.cd19_autoimmune",
+          "areas": [
+            "immunology.autoimmune.sle",
+            "immunology.demyelinating.multiple_sclerosis",
+            "immunology.neuromuscular_autoimmune.myasthenia_gravis",
+            "immunology.neuromuscular_autoimmune.sps"
+          ]
+        },
+        {
+          "ticker": "KYTX",
+          "asset": "kyv102",
+          "name": "KYV-102 — whole-blood rapid-manufactured CD19 CAR-T",
+          "modality": "cell_therapy.car_t_autologous.cd19_autoimmune",
+          "areas": [
+            "_platform.cell_therapy_discovery"
+          ]
+        },
+        {
+          "ticker": "KYTX",
+          "asset": "kyv201",
+          "name": "KYV-201 — allogeneic CD19 CAR-T",
+          "modality": "cell_therapy.car_t_allogeneic.cd19_allo_car_t",
+          "areas": [
+            "_platform.cell_therapy_discovery"
+          ]
+        },
+        {
           "ticker": "LEGN",
           "asset": "lucar",
           "name": "LUCAR-G39D â€” allogeneic gamma-delta CAR-T",
@@ -866,10 +901,10 @@
           ]
         }
       ],
-      "assetCount": 7,
+      "assetCount": 10,
       "modalityCount": 5,
       "modalityClassCount": 2,
-      "areaCount": 4,
+      "areaCount": 8,
       "modalityClasses": [
         "antibody",
         "cell_therapy"

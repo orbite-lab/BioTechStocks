@@ -10,10 +10,10 @@
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
-    "area_count_l3": 122,
+    "area_count_l3": 124,
     "area_count_l4": 24,
     "modality_count": 129,
-    "companies": 47
+    "companies": 48
   },
   "therapeutic_areas": {
     "cardio_metabolic": {
@@ -573,9 +573,19 @@
             "CRSP",
             "JANX",
             "KYMR",
+            "KYTX",
             "UCB"
           ],
-          "count": 5,
+          "count": 6,
+          "rare": false
+        }
+      },
+      "demyelinating": {
+        "multiple_sclerosis": {
+          "companies": [
+            "KYTX"
+          ],
+          "count": 1,
           "rare": false
         }
       },
@@ -632,9 +642,17 @@
         "myasthenia_gravis": {
           "companies": [
             "ARGX",
+            "KYTX",
             "REGN"
           ],
-          "count": 2,
+          "count": 3,
+          "rare": true
+        },
+        "sps": {
+          "companies": [
+            "KYTX"
+          ],
+          "count": 1,
           "rare": true
         }
       },
@@ -1518,9 +1536,10 @@
         "cd19_allo_car_t": {
           "companies": [
             "ALLO",
+            "KYTX",
             "LEGN"
           ],
-          "count": 2
+          "count": 3
         },
         "cd70_allo_car_t": {
           "companies": [
@@ -1545,9 +1564,10 @@
         },
         "cd19_autoimmune": {
           "companies": [
-            "CRSP"
+            "CRSP",
+            "KYTX"
           ],
-          "count": 1
+          "count": 2
         },
         "cd19_car_t": {
           "companies": [

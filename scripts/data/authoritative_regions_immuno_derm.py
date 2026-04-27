@@ -97,6 +97,30 @@ REGIONS = {
         "eu":  {"patientsK": 130, "wtpPct": 48, "priceK": 150},
         "row": {"patientsK": 800, "wtpPct": 12, "priceK": 25},
     },
+    # source: SPS prevalence ~1 per 1M (NORD, Stiff Person Syndrome Foundation)
+    # = ~330 US diagnosed; broader "treatable" pool (off-label IVIG/benzo
+    # responders) ~1-2K. EU5 ~1.5K. No approved therapy specifically for SPS;
+    # IVIG + benzodiazepines used off-label. KYV-101 (Kyverna CAR-T) BLA H1
+    # 2026 would be first-in-class. Premium orphan-CAR-T pricing ~$600K
+    # one-time (Yescarta $480K precedent).
+    "immunology.neuromuscular_autoimmune.sps": {
+        "us":  {"patientsK": 1.5, "wtpPct": 65, "priceK": 600},
+        "eu":  {"patientsK": 1.5, "wtpPct": 45, "priceK": 400},
+        "row": {"patientsK": 3,   "wtpPct": 8,  "priceK": 200},
+    },
+
+    # ============================================================
+    # IMMUNOLOGY - DEMYELINATING (multiple sclerosis class)
+    # ============================================================
+    # source: US MS ~900K diagnosed (NMSS); EU5 ~1.5M; ROW ~1.5M global. Branded
+    # DMT class (Ocrevus $7B + Kesimpta $3B + Tysabri $2B + Mavenclad + Tecfidera
+    # post-generic + Aubagio post-generic + Lemtrada + Briumvi + Ponvory) = ~$25B
+    # current global, peak $30B with new entries. Net ~$25K/yr post-rebates.
+    "immunology.demyelinating.multiple_sclerosis": {
+        "us":  {"patientsK": 900,   "wtpPct": 60, "priceK": 25},
+        "eu":  {"patientsK": 1500,  "wtpPct": 40, "priceK": 15},
+        "row": {"patientsK": 1500,  "wtpPct": 12, "priceK": 5},
+    },
 
     # ============================================================
     # DERMATOLOGY - AESTHETICS (procedures/yr as patientsK)
@@ -227,6 +251,8 @@ PEN_PCT = {
     "immunology.neuromuscular_autoimmune.itp": 35,
     "immunology.neuromuscular_autoimmune.mmn": 65,
     "immunology.neuromuscular_autoimmune.myasthenia_gravis": 40,
+    "immunology.neuromuscular_autoimmune.sps": 30,
+    "immunology.demyelinating.multiple_sclerosis": 25,
     "dermatology.aesthetics.filler": 5,
     "dermatology.aesthetics.neurotoxin": 12,
     "dermatology.inflammatory_derm.atopic_dermatitis_systemic": 35,

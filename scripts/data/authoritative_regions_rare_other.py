@@ -86,10 +86,18 @@ REGIONS = {
         "eu":  {"patientsK": 600,  "wtpPct": 45, "priceK": 15},
         "row": {"patientsK": 8000, "wtpPct": 25, "priceK": 0.1},
     },
+    # source: US PLHIV ~1.2M with ~80% on ART (CDC HIV Surveillance); EU5
+    # ~900K PLHIV; ROW ~37M (UNAIDS) with treatment access ~75% via PEPFAR
+    # /Global Fund at near-generic pricing. Branded ART franchise (Biktarvy
+    # $13B + Descovy $2B + Cabenuva LAA $1B + Tivicay/Triumeq + Genvoya etc.)
+    # ~$30-35B today globally. Long-acting + Lenacapavir-based regimens push
+    # peak to $40-50B by 2030. Prior $66B at $45K WAC across full US PLHIV
+    # treated everyone as on Biktarvy-priced ART; ~2x off vs net realized
+    # (Medicaid 340B discounts, ADAP, and a chunk on generic Atripla/Truvada).
     "infectious_disease.anti_infective.hiv_treatment": {
-        "us":  {"patientsK": 1200,  "wtpPct": 85, "priceK": 45},
-        "eu":  {"patientsK": 900,   "wtpPct": 80, "priceK": 25},
-        "row": {"patientsK": 25000, "wtpPct": 65, "priceK": 0.1},
+        "us":  {"patientsK": 1000,  "wtpPct": 70, "priceK": 25},
+        "eu":  {"patientsK": 800,   "wtpPct": 60, "priceK": 12},
+        "row": {"patientsK": 28000, "wtpPct": 30, "priceK": 0.4},
     },
 
     # =====================================================================

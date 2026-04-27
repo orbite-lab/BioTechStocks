@@ -6,15 +6,26 @@
 
 REGIONS = {
     # ==================== ATTR ====================
+    # source: ATTR-CM diagnosed prevalence ~80K US, ~60K EU5, ~40K ROW per
+    # Pfizer/BMS IR + ATTR registry data. Branded class: Vyndaqel/Vyndamax
+    # ~$5B 2025 (Pfizer) + Amvuttra-CM (Alnylam, expanded label 2025) +
+    # Acoramidis (BBIO, launched 2025). Class peak ~$10-15B by 2030 with
+    # Acoramidis + ATTR-CRISPR (NTLA NEXZ) entrants. Prior $30B at $250K
+    # uniform priceK assumed every diagnosed pt on tafamidis/Amvuttra at
+    # WAC; ~2.5x off given ~50% of diagnosed pts are still on supportive
+    # care or pending diagnosis.
     "cardio_metabolic.attr.attr_cm": {
-        "us":  {"patientsK": 120,   "wtpPct": 70, "priceK": 250},
-        "eu":  {"patientsK": 90,    "wtpPct": 55, "priceK": 140},
-        "row": {"patientsK": 60,    "wtpPct": 40, "priceK": 90},
+        "us":  {"patientsK": 80,    "wtpPct": 55, "priceK": 180},
+        "eu":  {"patientsK": 60,    "wtpPct": 40, "priceK": 120},
+        "row": {"patientsK": 40,    "wtpPct": 20, "priceK": 70},
     },
+    # source: ATTR-PN ~10K US (smaller than ATTR-CM); orphan-priced franchise.
+    # Onpattro (Alnylam, declining post-Amvuttra) + Wainua (IONS/AZ) + Amvuttra
+    # ~$3B today, peak $4-5B. Prior $6B at $460K WAC slightly overstated.
     "cardio_metabolic.attr.attr_pn": {
-        "us":  {"patientsK": 10,    "wtpPct": 75, "priceK": 460},
-        "eu":  {"patientsK": 10,    "wtpPct": 65, "priceK": 280},
-        "row": {"patientsK": 8,     "wtpPct": 50, "priceK": 180},
+        "us":  {"patientsK": 10,    "wtpPct": 65, "priceK": 350},
+        "eu":  {"patientsK": 10,    "wtpPct": 50, "priceK": 220},
+        "row": {"patientsK": 8,     "wtpPct": 25, "priceK": 120},
     },
 
     # ==================== DIABETES ====================
@@ -149,10 +160,17 @@ REGIONS = {
     },
 
     # ==================== THROMBOSIS ====================
+    # source: US AFib + VTE patients on anticoagulation ~6M (CDC + AHA
+    # registries). Branded DOAC class (Eliquis $13B + Xarelto $7B + Pradaxa
+    # ~$2B + Savaysa) ~$22B today globally. Eliquis/Xarelto generic erosion
+    # 2026-28 partly offset by emerging Factor XI/XIa class (BHV-1310/abelacimab
+    # / asundexian etc.) -- class peak $35-40B. Warfarin generic carries the
+    # rest. LMWHs (enoxaparin) generic. Prior $60B at $5K uniform priceK
+    # treated entire patient pool as on premium DOAC; ~2x off net economics.
     "cardio_metabolic.thrombosis.anticoagulation": {
-        "us":  {"patientsK": 8000,  "wtpPct": 85, "priceK": 5},
-        "eu":  {"patientsK": 7000,  "wtpPct": 75, "priceK": 2.5},
-        "row": {"patientsK": 40000, "wtpPct": 40, "priceK": 0.8},
+        "us":  {"patientsK": 6000,  "wtpPct": 60, "priceK": 3.5},
+        "eu":  {"patientsK": 7000,  "wtpPct": 50, "priceK": 1.5},
+        "row": {"patientsK": 30000, "wtpPct": 15, "priceK": 0.4},
     },
 
     # ==================== ENDOCRINE: ADRENAL ====================

@@ -16,10 +16,18 @@ REGIONS = {
         "eu":  {"patientsK": 140, "wtpPct": 50, "priceK": 95},
         "row": {"patientsK": 200, "wtpPct": 18, "priceK": 35},
     },
+    # source: US HR+/HER2- mBC + adjuvant high-risk ~250K Rx-eligible per ASCO/
+    # NCCN treatment patterns. Branded class: Ibrance $5B + Verzenio $4B +
+    # Kisqali $3B + Truqap $0.5B + Orserdu launching + emerging CDK7/oral SERDs
+    # = ~$13-15B today globally, peak $25-30B by 2030 (post-CDK4/6 LOE
+    # offsets from new oral SERDs + AKT/PI3K class). Prior $44B at $95K
+    # uniform priceK assumed every diagnosed patient on premium oral therapy
+    # for full duration; ~1.5x off net economics post PBM rebates and
+    # treatment cycling.
     "oncology.breast.hr_her2_neg": {
-        "us":  {"patientsK": 400, "wtpPct": 75, "priceK": 95},
-        "eu":  {"patientsK": 450, "wtpPct": 55, "priceK": 55},
-        "row": {"patientsK": 550, "wtpPct": 20, "priceK": 20},
+        "us":  {"patientsK": 250, "wtpPct": 65, "priceK": 70},
+        "eu":  {"patientsK": 350, "wtpPct": 45, "priceK": 40},
+        "row": {"patientsK": 500, "wtpPct": 12, "priceK": 12},
     },
     "oncology.breast.tnbc": {
         "us":  {"patientsK": 60,  "wtpPct": 65, "priceK": 140},

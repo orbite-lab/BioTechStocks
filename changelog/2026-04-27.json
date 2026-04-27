@@ -1,0 +1,147 @@
+[
+  {
+    "timestamp": "2026-04-27T14:32:09Z",
+    "ticker": "ABBV",
+    "news": "AbbVie submitted FDA application for risankizumab subcutaneous induction in adults with moderately to severely active Crohn's disease, enabling fully subcutaneous treatment from induction through maintenance.",
+    "source": "https://www.hcplive.com/view/risankizumab-skyrizi-sc-induction-application-submitted-to-fda-for-crohn-s-disease",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.skyrizi.ibd.pos",
+        "old_value": 100,
+        "new_value": 100,
+        "reason": "FDA submission already filed; no change to base case probability of success",
+        "old_actual": 100
+      },
+      {
+        "path": "scenarios.base.assumptions.skyrizi.ibd.apr",
+        "old_value": 100,
+        "new_value": 100,
+        "reason": "Subcutaneous induction filing based on positive Phase 3 AFFIRM data; approval probability remains high",
+        "old_actual": 100
+      },
+      {
+        "path": "scenarios.base.assumptions.skyrizi.ibd.pen",
+        "old_value": 1.0,
+        "new_value": 1.05,
+        "reason": "Fully subcutaneous treatment option improves convenience vs IV induction, potentially increasing penetration by 5%",
+        "old_actual": 1.0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-27T14:32:09Z",
+    "ticker": "NTLA",
+    "news": "Intellia will report topline clinical data from its global Phase 3 HAELO clinical trial of lonvoguran ziclumeran in hereditary angioedema today at 8:00 a.m. ET.",
+    "source": "https://www.globenewswire.com/news-release/2026/04/24/3281073/0/en/Intellia-Therapeutics-to-Report-Topline-Data-from-Global-Phase-3-HAELO-Clinical-Trial-of-Lonvoguran-Ziclumeran-in-Hereditary-Angioedema-on-April-27-2026.html",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.lonvoz.hae.pos",
+        "old_value": 80,
+        "new_value": 85,
+        "reason": "HAELO Phase 3 data readout today - increasing PoS slightly given stock surge suggests positive sentiment but being conservative until actual results",
+        "old_actual": 80
+      },
+      {
+        "path": "scenarios.bull.assumptions.lonvoz.hae.pos",
+        "old_value": 90,
+        "new_value": 92,
+        "reason": "Similar modest increase for bull case given data readout catalyst today",
+        "old_actual": 90
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-27T14:32:09Z",
+    "ticker": "ARQT",
+    "news": "Arcutis submitted supplemental NDA to FDA for ZORYVE cream expansion to treat atopic dermatitis in infants down to 3 months, supported by positive INTEGUMENT-INFANT Phase 2 data.",
+    "source": "https://www.manilatimes.net/2026/04/27/tmt-newswire/globenewswire/arcutis-submits-supplemental-new-drug-application-to-the-fda-for-zoryve-roflumilast-cream-005-to-expand-indication-for-treatment-of-atopic-dermatitis-to-infants-down-to-3-months/2329270",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.zoryve_exp.derm_exp.pos",
+        "old_value": 70,
+        "new_value": 80,
+        "reason": "sNDA submission to FDA for infant AD indication increases probability of approval from Phase 2 data to regulatory filing stage",
+        "old_actual": 70
+      },
+      {
+        "path": "scenarios.bear.assumptions.zoryve_exp.derm_exp.pos",
+        "old_value": 60,
+        "new_value": 70,
+        "reason": "Even in bear case, sNDA filing with positive Phase 2 data warrants higher approval probability",
+        "old_actual": 60
+      },
+      {
+        "path": "scenarios.bull.assumptions.zoryve_exp.derm_exp.pos",
+        "old_value": 80,
+        "new_value": 85,
+        "reason": "Bull case benefits from de-risked regulatory pathway with actual sNDA submission",
+        "old_actual": 80
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-27T14:32:09Z",
+    "ticker": "NTLA",
+    "news": "Intellia announces it will report topline data from HAELO Phase 3 trial on April 27, 2026, providing a specific date for the key lonvo-z readout.",
+    "source": "https://www.stocktitan.net/news/clinical-trials.html",
+    "changes": [
+      {
+        "path": "catalysts.0.date",
+        "old_value": "Mid-2026",
+        "new_value": "April 27, 2026",
+        "reason": "Company provided specific date for HAELO topline data readout",
+        "old_actual": "Mid-2026"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-27T14:32:09Z",
+    "ticker": "NTLA",
+    "news": "Intellia announced positive Phase 3 HAELO results for lonvo-z in hereditary angioedema, meeting all endpoints, with rolling BLA submission initiated and launch planned for first half of 2027.",
+    "source": "https://www.manilatimes.net/2026/04/27/tmt-newswire/globenewswire/intellia-therapeutics-reports-positive-phase-3-results-in-hereditary-angioedema-marking-a-global-first-for-in-vivo-gene-editing/2329180",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.lonvoz.hae.pos",
+        "old_value": 85,
+        "new_value": 95,
+        "reason": "Phase 3 HAELO met primary and all key secondary endpoints with positive safety data",
+        "old_actual": 85
+      },
+      {
+        "path": "scenarios.base.assumptions.lonvoz.hae.apr",
+        "old_value": 85,
+        "new_value": 95,
+        "reason": "Rolling BLA submission initiated confirms regulatory pathway success probability increase",
+        "old_actual": 85
+      },
+      {
+        "path": "scenarios.bear.assumptions.lonvoz.hae.pos",
+        "old_value": 55,
+        "new_value": 70,
+        "reason": "Even in bear case, positive Phase 3 data reduces failure risk",
+        "old_actual": 55
+      },
+      {
+        "path": "scenarios.bear.assumptions.lonvoz.hae.apr",
+        "old_value": 65,
+        "new_value": 80,
+        "reason": "BLA submission already initiated de-risks regulatory approval",
+        "old_actual": 65
+      },
+      {
+        "path": "scenarios.bull.assumptions.lonvoz.hae.pos",
+        "old_value": 92,
+        "new_value": 98,
+        "reason": "Strong Phase 3 data meeting all endpoints supports bull case penetration",
+        "old_actual": 92
+      },
+      {
+        "path": "scenarios.mega_bear.assumptions.lonvoz.hae.pos",
+        "old_value": 10,
+        "new_value": 30,
+        "reason": "Positive Phase 3 results make mega bear scenario less likely",
+        "old_actual": 10
+      }
+    ]
+  }
+]

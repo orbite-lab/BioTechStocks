@@ -30,10 +30,16 @@ REGIONS = {
     },
 
     # ==================== HYPERTENSION ====================
+    # source: AGT knockdown is a brand-new RNAi class addressing resistant
+    # hypertension specifically (~5M US per ACC criteria). NOT the entire HTN
+    # market (which is generic-dominated, ACEi/ARB/CCB/diuretic at <$50/yr
+    # branded TAM <$3B). Zilebesiran (Alnylam/Roche partnership) is the only
+    # asset and analyst peak forecasts $2-4B globally. Prior values (10M US
+    # at $8K) inflated 10x by treating all HTN at biologic pricing.
     "cardio_metabolic.hypertension.agt_knockdown": {
-        "us":  {"patientsK": 10000, "wtpPct": 25, "priceK": 8},
-        "eu":  {"patientsK": 8000,  "wtpPct": 15, "priceK": 4},
-        "row": {"patientsK": 60000, "wtpPct": 5,  "priceK": 2},
+        "us":  {"patientsK": 1000, "wtpPct": 30, "priceK": 8},
+        "eu":  {"patientsK": 1500, "wtpPct": 20, "priceK": 4},
+        "row": {"patientsK": 5000, "wtpPct": 5,  "priceK": 1},
     },
 
     # ==================== LIPIDS ====================
@@ -64,10 +70,16 @@ REGIONS = {
         "eu":  {"patientsK": 1500,  "wtpPct": 50, "priceK": 8},
         "row": {"patientsK": 50000, "wtpPct": 15, "priceK": 0.3},
     },
+    # source: US MASH ~5M with significant fibrosis F2-F3 (the trial-eligible
+    # cohort per AASLD); EU5 ~4M; ROW ~20M but specialty access very limited.
+    # Class is launching: Rezdiffra (MDGL) approved Mar 2024, Wegovy MASH on
+    # the way, FGF21 + GLP-1 combos in Ph3. Analyst peak forecast for the
+    # whole class ~$25B by 2030. Prior $175B TAM at $47K uniform priceK
+    # treated all MASH like high-end orphan biologic -- ~7x off.
     "cardio_metabolic.liver.mash": {
-        "us":  {"patientsK": 6000,  "wtpPct": 45, "priceK": 47},
-        "eu":  {"patientsK": 4000,  "wtpPct": 30, "priceK": 25},
-        "row": {"patientsK": 15000, "wtpPct": 10, "priceK": 12},
+        "us":  {"patientsK": 3000,  "wtpPct": 35, "priceK": 12},
+        "eu":  {"patientsK": 4000,  "wtpPct": 25, "priceK": 8},
+        "row": {"patientsK": 20000, "wtpPct": 8,  "priceK": 2},
     },
     "cardio_metabolic.liver.pld_adpkd": {
         "us":  {"patientsK": 20,    "wtpPct": 65, "priceK": 13},
@@ -143,10 +155,18 @@ REGIONS = {
     },
 
     # ==================== ENDOCRINE: THYROID ====================
+    # source: US Graves' disease prevalence ~150K (NIDDK); EU5 ~200K; ROW ~1M.
+    # Standard care is methimazole + RAI + thyroidectomy (all generic); branded
+    # franchise emerging via FcRn (batoclimab Ph3 failed Apr 2026) and IgG
+    # degraders (BHV-1300 Ph1b -> pivotal H2 2026). Analyst peak forecast for
+    # the branded class ~$3-5B globally. NOTE: TED (thyroid-eye disease) is
+    # tagged separately under ophthalmology.anterior_neuro.ted with its own
+    # Tepezza-anchored TAM. Prior $35B treated all Graves' patients as
+    # branded-biologic eligible at $350K -- ~7x off.
     "endocrine.thyroid.graves": {
-        "us":  {"patientsK": 100,   "wtpPct": 70, "priceK": 350},
-        "eu":  {"patientsK": 80,    "wtpPct": 50, "priceK": 200},
-        "row": {"patientsK": 150,   "wtpPct": 20, "priceK": 100},
+        "us":  {"patientsK": 150,   "wtpPct": 35, "priceK": 30},
+        "eu":  {"patientsK": 200,   "wtpPct": 22, "priceK": 18},
+        "row": {"patientsK": 1000,  "wtpPct": 5,  "priceK": 5},
     },
     # source: NORD HoFH prevalence ~1 in 250K (US ~1.3K, EU ~2K), Evkeeza WAC ~$450K/yr
     "cardio_metabolic.lipids.hofh": {

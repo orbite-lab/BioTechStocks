@@ -262,10 +262,20 @@ REGIONS = {
     # ------------------------------------------------------------
     # HEMATOLOGY - RARE BLOOD
     # ------------------------------------------------------------
+    # source: US SCD ~100K diagnosed (CDC); EU5 ~100K; ROW ~5M (high WHO Africa
+    # incidence but very limited specialty access). TDT adds another ~5K US.
+    # Branded franchise mixes one-time gene therapy (Casgevy + Lyfgenia, $2.2M
+    # WAC each, ~5K transplant-eligible severe US, ~$1B class peak limited by
+    # HCT capacity) with chronic management (voxelotor $140K/yr branded,
+    # crizanlizumab $90K/yr, hydroxyurea generic). Class peak ~$8-10B globally.
+    # Prior values (priceK $2200 x full population) treated all 5.2M ROW
+    # patients as gene-therapy-eligible at $2.2M -- ~12x inflation.
+    # Blended priceK below amortizes one-time GT over a 30-year horizon plus
+    # chronic-management mix.
     "hematology.rare_blood.hemoglobinopathy": {
-        "us":  {"patientsK": 20,   "wtpPct": 45, "priceK": 2200},
-        "eu":  {"patientsK": 75,   "wtpPct": 32, "priceK": 1600},
-        "row": {"patientsK": 5200, "wtpPct": 6,  "priceK": 200},
+        "us":  {"patientsK": 100,   "wtpPct": 60, "priceK": 80},
+        "eu":  {"patientsK": 100,   "wtpPct": 40, "priceK": 40},
+        "row": {"patientsK": 5000,  "wtpPct": 10, "priceK": 5},
     },
 
     # ------------------------------------------------------------

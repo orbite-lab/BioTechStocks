@@ -30,10 +30,16 @@ REGIONS = {
         "eu":  {"patientsK": 1000,  "wtpPct": 45, "priceK": 0.8},
         "row": {"patientsK": 60000, "wtpPct": 15, "priceK": 0.3},
     },
+    # source: US TD diagnosed ~500K (per AAN guidance + Movement Disorder
+    # Society reports). VMAT2 class is the only branded entry: Ingrezza
+    # (NBIX) ~$2.5B 2025 sales -> ~$4B peak; Austedo (TEVA) ~$1.5B -> $2.5B
+    # peak. Class peak ~$7-8B globally. Prior US TAM 600K x 65% x $70K = $27B
+    # priced every TD patient as if on Ingrezza; net realized prices are
+    # ~$25-30K/yr after PBM rebates. Right-sizing to ~$7B total.
     "cns.movement.tardive_dyskinesia": {
-        "us":  {"patientsK": 600,   "wtpPct": 65, "priceK": 70},
-        "eu":  {"patientsK": 400,   "wtpPct": 35, "priceK": 40},
-        "row": {"patientsK": 2000,  "wtpPct": 15, "priceK": 15},
+        "us":  {"patientsK": 500,   "wtpPct": 50, "priceK": 25},
+        "eu":  {"patientsK": 500,   "wtpPct": 25, "priceK": 5},
+        "row": {"patientsK": 2000,  "wtpPct": 3,  "priceK": 1.5},
     },
 
     # NEURODEGENERATION

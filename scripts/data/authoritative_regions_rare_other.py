@@ -21,10 +21,17 @@ REGIONS = {
         "eu":  {"patientsK": 12,   "wtpPct": 55, "priceK": 210},
         "row": {"patientsK": 8,    "wtpPct": 25, "priceK": 150},
     },
+    # source: US osteoporosis ~10M diagnosed (NOF), of which ~3-5M are at high
+    # fracture risk (the branded-biologic addressable subset). Bisphosphonate
+    # generics dominate first-line at <$200/yr. Branded class (Prolia $4B +
+    # Evenity $1.5B + Forteo $0.7B + Tymlos $0.4B + Tymlos generic emerging)
+    # totals ~$7B today; analyst peak $15-20B as Prolia loses exclusivity but
+    # Evenity + new Romosozumab follow-ons grow. Prior US TAM 10M x 35% x $25K
+    # = $87B treated all OP patients as biologic-priced -- ~6x off.
     "musculoskeletal.bone_cartilage.osteoporosis": {
-        "us":  {"patientsK": 10000, "wtpPct": 35, "priceK": 25},
-        "eu":  {"patientsK": 22000, "wtpPct": 28, "priceK": 16},
-        "row": {"patientsK": 15000, "wtpPct": 15, "priceK": 1.5},
+        "us":  {"patientsK": 5000,  "wtpPct": 35, "priceK": 5},
+        "eu":  {"patientsK": 8000,  "wtpPct": 25, "priceK": 3},
+        "row": {"patientsK": 80000, "wtpPct": 10, "priceK": 0.5},
     },
 
     # =====================================================================
@@ -117,10 +124,18 @@ REGIONS = {
         "eu":  {"patientsK": 4, "wtpPct": 30, "priceK": 230},
         "row": {"patientsK": 1, "wtpPct": 10, "priceK": 100},
     },
+    # source: US DED prevalence ~16M (AAO + NEI estimates) but the branded
+    # specialty market (Restasis $0.4B declining + Xiidra $0.5B + Tyrvaya $0.3B
+    # + Eysuvis + Miebo) addresses only the moderate-severe ~3M who fail OTC
+    # tears. Total branded class ~$3B today, peak $5-6B with new entrants
+    # (licaminlimab Ph3, varenicline-N reformulations). Prior US TAM 16M x 40%
+    # x $7K = $45B treated entire DED population as buying branded scripts at
+    # WAC -- ~12x off. Generic OTC artificial tears + cyclosporine generic
+    # carry the bulk of patients at $20-100/yr OOP.
     "ophthalmology.anterior_neuro.dry_eye": {
-        "us":  {"patientsK": 16000,  "wtpPct": 40, "priceK": 7},
-        "eu":  {"patientsK": 30000,  "wtpPct": 30, "priceK": 2},
-        "row": {"patientsK": 15000,  "wtpPct": 20, "priceK": 0.5},
+        "us":  {"patientsK": 3000,  "wtpPct": 30, "priceK": 4},
+        "eu":  {"patientsK": 4000,  "wtpPct": 18, "priceK": 2},
+        "row": {"patientsK": 20000, "wtpPct": 5,  "priceK": 0.5},
     },
     "ophthalmology.anterior_neuro.naion": {
         "us":  {"patientsK": 6,  "wtpPct": 50, "priceK": 40},

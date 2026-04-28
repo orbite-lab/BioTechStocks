@@ -1,0 +1,168 @@
+[
+  {
+    "timestamp": "2026-04-28T15:19:35Z",
+    "ticker": "BBIO",
+    "news": "BridgeBio settled a generic patent dispute with Pfizer over Vyndamax, providing clarity on competitive dynamics in the ATTR-CM treatment market.",
+    "source": "https://seekingalpha.com/news/4580634-bridgebio-gains-after-settlement-in-pfizer-vyndamax-patent-dispute",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.commercial.attr_cm.pen",
+        "old_value": 1.0,
+        "new_value": 1.05,
+        "reason": "Patent settlement reduces competitive uncertainty for Attruby vs Vyndamax, slightly improving long-term market penetration potential",
+        "old_actual": 1.0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-28T15:19:35Z",
+    "ticker": "CLYM",
+    "news": "Climb Bio announced a $110 million private placement with institutional investors, expected to close April 29, 2026.",
+    "source": "https://www.manilatimes.net/2026/04/28/tmt-newswire/globenewswire/climb-bio-inc-announces-1100-million-private-placement/2330211",
+    "changes": [
+      {
+        "path": "company.cash",
+        "old_value": 200,
+        "new_value": 310,
+        "reason": "Adding $110M gross proceeds from private placement to existing $200M cash",
+        "old_actual": 200
+      },
+      {
+        "path": "scenarios.base.val.dil",
+        "old_value": 5,
+        "new_value": 15,
+        "reason": "Significant dilution expected from $110M equity raise given current $432M market cap",
+        "old_actual": 5
+      },
+      {
+        "path": "scenarios.bear.val.dil",
+        "old_value": 15,
+        "new_value": 20,
+        "reason": "Increased dilution in bear case due to equity financing",
+        "old_actual": 15
+      },
+      {
+        "path": "scenarios.bull.val.dil",
+        "old_value": 0,
+        "new_value": 10,
+        "reason": "Even in bull case, meaningful dilution from large equity raise",
+        "old_actual": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-28T15:19:35Z",
+    "ticker": "DFTX",
+    "news": "Definium announced three Phase 3 topline readouts for DT120 in MDD/GAD over the next six months and planned Phase 3 Haven study for PTSD initiating in 2027.",
+    "source": "https://simplywall.st/stocks/us/pharmaceuticals-biotech/nasdaq-dftx/definium-therapeutics/news/can-definium-therapeutics-dftx-lsd-platform-strategy-reframe",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.dt120.gad.pos",
+        "old_value": 65,
+        "new_value": 70,
+        "reason": "Three Phase 3 readouts over six months suggests accelerated timeline and increased confidence in GAD program",
+        "old_actual": 65
+      },
+      {
+        "path": "scenarios.base.assumptions.dt120.mdd.pos",
+        "old_value": 30,
+        "new_value": 35,
+        "reason": "Multiple Phase 3 readouts indicate expanded MDD program beyond just EMERGE trial",
+        "old_actual": 30
+      },
+      {
+        "path": "scenarios.bull.assumptions.dt120.gad.pos",
+        "old_value": 85,
+        "new_value": 88,
+        "reason": "Multiple concurrent Phase 3 trials suggest strong conviction and de-risking of GAD program",
+        "old_actual": 85
+      },
+      {
+        "path": "scenarios.bull.assumptions.dt120.mdd.pos",
+        "old_value": 65,
+        "new_value": 70,
+        "reason": "Additional Phase 3 trials beyond EMERGE indicate broader MDD development program",
+        "old_actual": 65
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-28T15:19:35Z",
+    "ticker": "NTLA",
+    "news": "Intellia announced positive Phase 3 HAELO trial results for lonvo-z showing 87% reduction in HAE attack rates versus placebo and began rolling BLA submission.",
+    "source": "https://www.globenewswire.com/news-release/2026/04/27/3281473/0/en/intellia-therapeutics-reports-positive-phase-3-results-in-hereditary-angioedema-marking-a-global-first-for-in-vivo-gene-editing.html",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.lonvoz.hae.pos",
+        "old_value": 95,
+        "new_value": 100,
+        "reason": "Phase 3 HAELO trial was successful, confirming approval path for lonvo-z in HAE",
+        "old_actual": 95
+      },
+      {
+        "path": "scenarios.bear.assumptions.lonvoz.hae.pos",
+        "old_value": 70,
+        "new_value": 85,
+        "reason": "Positive Phase 3 data significantly de-risks approval probability even in bear case",
+        "old_actual": 70
+      },
+      {
+        "path": "scenarios.bull.assumptions.lonvoz.hae.pos",
+        "old_value": 98,
+        "new_value": 100,
+        "reason": "Successful Phase 3 essentially guarantees approval in bull scenario",
+        "old_actual": 98
+      },
+      {
+        "path": "scenarios.base.assumptions.lonvoz.hae.pen",
+        "old_value": 0.9,
+        "new_value": 0.8,
+        "reason": "87% efficacy is slightly below Phase 2's 96%, suggesting modestly lower market penetration potential",
+        "old_actual": 0.9
+      },
+      {
+        "path": "scenarios.bear.assumptions.lonvoz.hae.pen",
+        "old_value": 0.5,
+        "new_value": 0.6,
+        "reason": "Positive data improves penetration outlook even in conservative scenario",
+        "old_actual": 0.5
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-28T15:19:35Z",
+    "ticker": "RVMD",
+    "news": "Revolution Medicines announced unprecedented overall survival benefit from its Phase 3 RASolute 302 trial of daraxonrasib in metastatic pancreatic cancer with full data headed to ASCO Plenary.",
+    "source": "https://simplywall.st/stocks/us/pharmaceuticals-biotech/nasdaq-rvmd/revolution-medicines/news/a-look-at-revolution-medicines-rvmd-valuation-after-breakthr",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.darax_pdac.pdac.pos",
+        "old_value": 82,
+        "new_value": 92,
+        "reason": "Unprecedented OS benefit in Phase 3 RASolute 302 significantly increases probability of success for PDAC indication",
+        "old_actual": 82
+      },
+      {
+        "path": "scenarios.base.assumptions.darax_pdac.pdac.apr",
+        "old_value": 90,
+        "new_value": 95,
+        "reason": "Strong Phase 3 data with unprecedented OS benefit makes regulatory approval highly likely",
+        "old_actual": 90
+      },
+      {
+        "path": "scenarios.bear.assumptions.darax_pdac.pdac.pos",
+        "old_value": 60,
+        "new_value": 75,
+        "reason": "Even in bear case, unprecedented OS data reduces downside risk for PDAC program",
+        "old_actual": 60
+      },
+      {
+        "path": "scenarios.bull.assumptions.darax_pdac.pdac.pos",
+        "old_value": 88,
+        "new_value": 95,
+        "reason": "Unprecedented OS benefit validates bull case thesis for daraxonrasib in PDAC",
+        "old_actual": 88
+      }
+    ]
+  }
+]

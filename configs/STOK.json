@@ -1,0 +1,572 @@
+{
+  "company": {
+    "ticker": "STOK",
+    "name": "Stoke Therapeutics",
+    "subtitle": "Zorevunersen P3 EMPEROR (Dravet, mid-2027 readout) · STK-002 P1 ADOA (OSPREY) · TANGO ASO platform; Biogen ex-N.America deal",
+    "sharesOut": 60,
+    "cash": 310,
+    "currentPrice": 34.0,
+    "currency": "USD",
+    "yahooTicker": "STOK",
+    "cashRunway": "Into mid-2028 ($328.6M Q3 2025 + $48.7M ATM)",
+    "phase": "phase3"
+  },
+  "assets": [
+    {
+      "id": "zoreva",
+      "name": "Zorevunersen (STK-001) — TANGO splice-modulating ASO (SCN1A upregulation, IT)",
+      "stage": "Phase 3 (EMPEROR)",
+      "designations": [
+        "Breakthrough",
+        "Orphan",
+        "Rare Pediatric Disease"
+      ],
+      "indications": [
+        {
+          "id": "dravet",
+          "name": "Dravet syndrome (SCN1A LoF)",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 75,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 55,
+                "priceK": 25
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 20,
+                "priceK": 8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 80,
+                "priceK": 400
+              },
+              "eu": {
+                "reachPct": 10,
+                "wtpPct": 70,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 8,
+                "wtpPct": 40,
+                "priceK": 15
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Dravet ~25% of US DEE pool (30K). With genetic dx (>95% via NGS) + ASO penetration ~50% of confirmed pts, ~12% of total DEE addressable; ~3.5K US Dravet pts on zorevunersen at peak (2030+)."
+              },
+              "us.wtpPct": {
+                "note": "80% — first disease-modifying Rx for Dravet; precedent set by Spinraza/Qalsody for genetic pediatric ASOs; Medicaid + commercial broad coverage with PA."
+              },
+              "us.priceK": {
+                "note": "$400K/yr blended WAC modeled. IT dosing q4mo (3 maint doses/yr after loading). Spinraza precedent $750K yr1 / $375K maint; Qalsody $190K. Dravet's higher unmet need + cognitive benefit supports premium ~$400K blend."
+              },
+              "eu.reachPct": {
+                "note": "10% reach of EU DEE pool — Biogen commercializes ex-US/Canada/Mexico. Same Dravet share assumption (~25% of DEE). Reach reflects Biogen's territory execution."
+              },
+              "eu.wtpPct": {
+                "note": "70% — EMA orphan pathway; NICE/G-BA reimburse ASOs for pediatric genetic with managed-entry (Spinraza precedent)."
+              },
+              "eu.priceK": {
+                "note": "$50K royalty-equivalent: Biogen will price ~$250-350K net in EU; Stoke receives tiered royalty 'low-double-digits to high-teens' (~14% blended)."
+              },
+              "row.reachPct": {
+                "note": "8% reach of ROW DEE pool — Japan PMDA + selected developed Asia/LatAm via Biogen. Lower reach reflects fragmented access."
+              },
+              "row.wtpPct": {
+                "note": "40% — Japan covers ASO orphan; emerging markets limited."
+              },
+              "row.priceK": {
+                "note": "$15K royalty-equivalent: Biogen ROW net ~$100K blended × ~14% Stoke royalty."
+              }
+            },
+            "penPct": 40,
+            "cagrPct": 6,
+            "peakYear": 2032
+          },
+          "area": "cns.epilepsy.dee",
+          "rare": true
+        }
+      ],
+      "modality": "nucleic_acid.antisense.tango_aso",
+      "targets": [
+        "SCN1A"
+      ]
+    },
+    {
+      "id": "stk002",
+      "name": "STK-002 — TANGO splice-modulating ASO (OPA1 upregulation, IVT)",
+      "stage": "Phase 1 (OSPREY)",
+      "designations": [
+        "Orphan"
+      ],
+      "indications": [
+        {
+          "id": "adoa",
+          "name": "Autosomal dominant optic atrophy (ADOA, OPA1)",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 13,
+                "wtpPct": 55,
+                "priceK": 400
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 40,
+                "priceK": 250
+              },
+              "row": {
+                "patientsK": 30,
+                "wtpPct": 15,
+                "priceK": 100
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 20,
+                "wtpPct": 65,
+                "priceK": 450
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 50,
+                "priceK": 300
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 20,
+                "priceK": 150
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "STK-002 first-in-class for ADOA; OSPREY P1 ongoing 2026 (US/UK/Japan); 65-90% of ADOA caused by OPA1 haploinsufficiency. ~20% peak reach of ~13K US ADOA pts at 2032+ launch — addresses OPA1-confirmed subset with active vision loss."
+              },
+              "us.priceK": {
+                "note": "$450K/yr blended WAC modeled. IVT dosing q6mo. Genetic orphan ophthalmic ASO premium; LHON gene therapy (Lumevoq) cleared $800K+; Spinraza precedent $750K/$375K."
+              },
+              "us.wtpPct": {
+                "note": "65% — orphan ophthalmology with genetic confirmation, no approved DMT for ADOA; payors will require OPA1 confirmation + active progression."
+              },
+              "eu.reachPct": {
+                "note": "15% reach of ~25K EU ADOA pts (Danish/Northern European founder mutation boosts prevalence). Stoke retains global rights ex-zorevunersen — full economics."
+              },
+              "eu.wtpPct": {
+                "note": "50% — EMA orphan; NICE/G-BA managed-entry typical for ophthalmic ASO/gene therapy."
+              },
+              "eu.priceK": {
+                "note": "$300K/yr; EU net ~67% of US WAC."
+              },
+              "row.reachPct": {
+                "note": "5% — Japan PMDA orphan + select developed Asia."
+              },
+              "row.wtpPct": {
+                "note": "20% — Japan covered; ROW genetic ophthalmic specialty access limited."
+              },
+              "row.priceK": {
+                "note": "$150K blended; mostly Japan-driven."
+              }
+            },
+            "penPct": 25,
+            "cagrPct": 5,
+            "peakYear": 2034
+          },
+          "area": "ophthalmology.optic_nerve.adoa",
+          "rare": true
+        }
+      ],
+      "modality": "nucleic_acid.antisense.tango_aso",
+      "targets": [
+        "OPA1"
+      ]
+    },
+    {
+      "id": "syngap",
+      "name": "STK-SYNGAP1 — TANGO ASO (SYNGAP1 upregulation, IT) [Preclinical]",
+      "stage": "Preclinical (lead optimization 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "syngap1",
+          "name": "SYNGAP1-related neurodevelopmental disorder",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 75,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 55,
+                "priceK": 25
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 20,
+                "priceK": 8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 60,
+                "priceK": 500
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 45,
+                "priceK": 350
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 15,
+                "priceK": 150
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "SYNGAP1-related disorder = ultra-rare (~1:10K-30K prevalence; ~3-5K US pts). Lead optimization 2026, IND ~2027-28, approval ~2032+. 2% reach of broader DEE pool reflects narrow SYNGAP1 subset (~10% of DEE)."
+              },
+              "us.priceK": {
+                "note": "$500K/yr modeled — orphan ASO premium; ultra-rare pediatric neurogenetic precedent (Spinraza, Qalsody)."
+              },
+              "us.wtpPct": {
+                "note": "60% pre-launch placeholder; genetic confirmation enables clean orphan coverage when clinical data mature."
+              },
+              "eu.reachPct": {
+                "note": "1% — EMA orphan path; conservative reach for preclinical asset."
+              },
+              "eu.priceK": {
+                "note": "$350K/yr net."
+              },
+              "row.reachPct": {
+                "note": "0.3% — speculative."
+              },
+              "row.priceK": {
+                "note": "$150K blended."
+              }
+            },
+            "penPct": 40,
+            "cagrPct": 5,
+            "peakYear": 2035
+          },
+          "area": "cns.epilepsy.dee",
+          "rare": true
+        }
+      ],
+      "modality": "nucleic_acid.antisense.tango_aso",
+      "targets": [
+        "SYNGAP1"
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "EMPEROR Phase 3 fails — zorevunersen does not show efficacy or has unacceptable AE profile",
+      "events": [
+        "✗ EMPEROR mid-2027 readout misses primary endpoint (convulsive seizure reduction)",
+        "✗ STK-002 OSPREY shows no OPA1 protein upregulation in retinal tissue",
+        "✗ SYNGAP1 preclinical fails to advance to IND",
+        "→ Pipeline collapses to cash floor, dilution to extend runway"
+      ],
+      "assumptions": {
+        "zoreva": {
+          "dravet": {
+            "pos": 30,
+            "apr": 30,
+            "pen": 1.0
+          }
+        },
+        "stk002": {
+          "adoa": {
+            "pos": 5,
+            "apr": 30,
+            "pen": 1.0
+          }
+        },
+        "syngap": {
+          "syngap1": {
+            "pos": 0,
+            "apr": 5,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "mult": 3,
+        "dr": 15,
+        "cannib": 10
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "EMPEROR mixed — modest seizure reduction but FDA requires confirmatory trial; ADOA early signal weak",
+      "events": [
+        "△ Zorevunersen meets primary but cognitive secondary endpoints disappoint — narrow approval",
+        "△ STK-002 OSPREY shows target engagement but limited functional improvement",
+        "✗ SYNGAP1 IND delayed by chemistry / tox",
+        "→ Single-product orphan biotech, slow Dravet launch"
+      ],
+      "assumptions": {
+        "zoreva": {
+          "dravet": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 1.0
+          }
+        },
+        "stk002": {
+          "adoa": {
+            "pos": 15,
+            "apr": 45,
+            "pen": 1.0
+          }
+        },
+        "syngap": {
+          "syngap1": {
+            "pos": 3,
+            "apr": 12,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "mult": 4,
+        "dr": 12,
+        "cannib": 5
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Zorevunersen P3 positive — first DMT for Dravet, US launch 2028; STK-002 P1 supports P2; SYNGAP1 IND 2027",
+      "events": [
+        "✓ EMPEROR mid-2027 hits primary (convulsive seizure reduction) + cognitive secondaries",
+        "✓ NDA submission 2027, US launch H2 2028 (Stoke commercial); Biogen ex-NA launch H1 2029",
+        "✓ STK-002 OSPREY shows OPA1 upregulation + visual function stabilization, P2 starts 2027",
+        "✓ SYNGAP1 clinical candidate nominated 2026, IND 2027-28"
+      ],
+      "assumptions": {
+        "zoreva": {
+          "dravet": {
+            "pos": 70,
+            "apr": 85,
+            "pen": 1.0
+          }
+        },
+        "stk002": {
+          "adoa": {
+            "pos": 30,
+            "apr": 65,
+            "pen": 1.0
+          }
+        },
+        "syngap": {
+          "syngap1": {
+            "pos": 8,
+            "apr": 30,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "mult": 6,
+        "dr": 10,
+        "cannib": 2
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Zorevunersen best-in-disease + ADOA platform extension + TANGO franchise builds",
+      "events": [
+        "✓ EMPEROR clear win: ≥50% seizure reduction + cognitive/behavioral improvement",
+        "✓ Zorevunersen $1.2B+ US peak; royalty stream from Biogen ex-NA adds $250M+",
+        "✓ STK-002 ADOA P2 positive — first DMT for inherited optic neuropathy",
+        "✓ SYNGAP1 IND 2027; TANGO ASO franchise expands (additional CNS targets)"
+      ],
+      "assumptions": {
+        "zoreva": {
+          "dravet": {
+            "pos": 85,
+            "apr": 92,
+            "pen": 1.0
+          }
+        },
+        "stk002": {
+          "adoa": {
+            "pos": 50,
+            "apr": 80,
+            "pen": 1.0
+          }
+        },
+        "syngap": {
+          "syngap1": {
+            "pos": 18,
+            "apr": 50,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "mult": 9,
+        "dr": 9,
+        "cannib": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "TANGO platform validated — zorevunersen blockbuster + ADOA franchise + multi-asset CNS leader; takeout by Biogen / Roche / Vertex",
+      "events": [
+        "✓ Zorevunersen $1.5B+ US peak, dominant Dravet share + label expansion to broader DEEs",
+        "✓ STK-002 transforms ADOA care — Lumevoq-equivalent TAM capture",
+        "✓ SYNGAP1 + 2-3 additional TANGO programs in clinic by 2030",
+        "✓ Big-pharma takeout at $80-120/share (Biogen NA buyback + Roche / Vertex CNS interest)"
+      ],
+      "assumptions": {
+        "zoreva": {
+          "dravet": {
+            "pos": 95,
+            "apr": 97,
+            "pen": 1.0
+          }
+        },
+        "stk002": {
+          "adoa": {
+            "pos": 70,
+            "apr": 90,
+            "pen": 1.0
+          }
+        },
+        "syngap": {
+          "syngap1": {
+            "pos": 35,
+            "apr": 70,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "mult": 13,
+        "dr": 8,
+        "cannib": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Nov 2025 + Jan 2026",
+      "title": "Q3 2025 results + EMPEROR enrollment timeline update",
+      "points": [
+        "EMPEROR Phase 3 enrollment completion now expected Q2 2026 (delayed from prior guidance)",
+        "Phase 3 readout mid-2027 → NDA submission",
+        "Biogen partnership Feb 2025: $165M upfront + up to $385M milestones + tiered royalties (low-DD to high-teens) for ex-US/Canada/Mexico",
+        "STK-002 OSPREY P1 enrolling US/UK/Japan; EU sites H1 2026; >150 candidates identified",
+        "Cash $328.6M Q3 2025 + $48.7M ATM = $377M; runway to mid-2028",
+        "SYNGAP1 lead optimization underway, candidate nomination 2026"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Q2 2026",
+      "title": "EMPEROR enrollment completion (150 patients)",
+      "thresholds": [
+        "Hits Q2 2026 enrollment target → on track for mid-2027 readout",
+        "Slips further → readout slips to H2 2027+, cash runway pressure",
+        "Also 2026: STK-002 OSPREY initial P1 cohort data (target engagement, safety)",
+        "Also 2026: SYNGAP1 clinical candidate nomination"
+      ]
+    },
+    "risks": [
+      "Single high-conviction P3 readout (mid-2027) drives ~70% of valuation — binary risk",
+      "Biogen royalty economics dilute ex-NA upside; high-teens cap on Biogen territory",
+      "Dravet pediatric ASO faces gene-therapy competition long-term (Encoded ETX-101 AAV; Tevard)",
+      "STK-002 P1 ophthalmic ASO has no clinical precedent for OPA1 upregulation mechanism",
+      "Cash runway to mid-2028 — bridge financing likely before EMPEROR readout",
+      "Dravet caregiver community has strong patient advocacy but ASO IT logistics are challenging"
+    ]
+  },
+  "catalysts": [
+    {
+      "date": "Q2 2026",
+      "dateSort": "2026-06-30",
+      "asset": "zoreva",
+      "indication": "dravet",
+      "title": "EMPEROR Phase 3 enrollment completion (150 pts)",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 65,
+      "fail_apr": 75,
+      "success_pos": 75,
+      "success_apr": 85,
+      "_source": "company",
+      "_sourceUrl": "https://investor.stoketherapeutics.com/news-releases/news-release-details/stoke-therapeutics-announces-updates-timelines-completion/",
+      "_addedAt": "2026-04-28T00:00:00Z",
+      "_confidence": "high",
+      "_rationale": "Company guided Q2 2026 enrollment completion in Jan 2026 update; on-track signal de-risks mid-2027 readout"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-10-31",
+      "asset": "stk002",
+      "indication": "adoa",
+      "title": "STK-002 OSPREY Phase 1 initial cohort data (target engagement + safety)",
+      "type": "phase1_data",
+      "binary": false,
+      "fail_pos": 8,
+      "fail_apr": 35,
+      "success_pos": 35,
+      "success_apr": 70,
+      "_source": "company",
+      "_sourceUrl": "https://investor.stoketherapeutics.com/news-releases/news-release-details/stoke-therapeutics-receives-authorization-initiate-phase-12/",
+      "_addedAt": "2026-04-28T00:00:00Z",
+      "_confidence": "medium",
+      "_rationale": "OSPREY enrolling US/UK/Japan since 2025; first-cohort data window H2 2026"
+    },
+    {
+      "date": "End of 2026",
+      "dateSort": "2026-12-31",
+      "asset": "syngap",
+      "indication": "syngap1",
+      "title": "SYNGAP1 clinical candidate nomination",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 4,
+      "fail_apr": 15,
+      "success_pos": 12,
+      "success_apr": 35,
+      "_source": "company",
+      "_sourceUrl": "https://investor.stoketherapeutics.com/news-releases/news-release-details/stoke-therapeutics-reports-third-quarter-2025-financial-results",
+      "_addedAt": "2026-04-28T00:00:00Z",
+      "_confidence": "medium",
+      "_rationale": "Company guided lead optimization underway for SYNGAP1 clinical candidate identification in 2026"
+    },
+    {
+      "date": "Mid-2027",
+      "dateSort": "2027-07-15",
+      "asset": "zoreva",
+      "indication": "dravet",
+      "title": "EMPEROR Phase 3 topline readout (Dravet)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 25,
+      "fail_apr": 30,
+      "success_pos": 90,
+      "success_apr": 92,
+      "_source": "company",
+      "_sourceUrl": "https://investor.stoketherapeutics.com/news-releases/news-release-details/stoke-therapeutics-announces-updates-timelines-completion/",
+      "_addedAt": "2026-04-28T00:00:00Z",
+      "_confidence": "high",
+      "_rationale": "Company-guided mid-2027 EMPEROR primary endpoint readout — highest-impact catalyst, drives NDA submission"
+    }
+  ]
+}

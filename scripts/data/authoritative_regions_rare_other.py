@@ -200,6 +200,18 @@ REGIONS = {
     # =====================================================================
     # OPHTHALMOLOGY - OPTIC NERVE
     # =====================================================================
+    # source: ADOA prevalence ~1:25K general (NIH GARD, OMIM 165500); higher in
+    # Denmark ~1:10K due to OPA1 founder mutation (Yu-Wai-Man et al., Brain
+    # 2010). 65-90% of ADOA caused by OPA1 haploinsufficiency. US diagnosed
+    # ~13K, EU5+UK ~25K (Danish/Northern European founder boost), ROW ~30K
+    # (most undiagnosed in LMICs). No approved disease-modifying therapy.
+    # Pricing pegs to ASO orphan pediatric/genetic precedent (Spinraza $750K
+    # yr1 / $375K maint; Qalsody $190K). Stoke STK-002 first-in-class P1 OSPREY.
+    "ophthalmology.optic_nerve.adoa": {
+        "us":  {"patientsK": 13, "wtpPct": 55, "priceK": 400},
+        "eu":  {"patientsK": 25, "wtpPct": 40, "priceK": 250},
+        "row": {"patientsK": 30, "wtpPct": 15, "priceK": 100},
+    },
     "ophthalmology.optic_nerve.lhon": {
         "us":  {"patientsK": 4, "wtpPct": 45, "priceK": 800},
         "eu":  {"patientsK": 6, "wtpPct": 30, "priceK": 500},
@@ -279,6 +291,7 @@ PEN_PCT = {
     "ophthalmology.retina.dr": 30,
     "ophthalmology.retina.ga": 10,
     "ophthalmology.retina.nvamd": 50,
+    "ophthalmology.optic_nerve.adoa": 25,
     "ophthalmology.optic_nerve.lhon": 20,
     "ophthalmology.optic_nerve.nmosd": 40,
     "respiratory.inflammatory.asthma_severe": 25,

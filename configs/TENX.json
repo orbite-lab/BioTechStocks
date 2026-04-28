@@ -1,0 +1,286 @@
+{
+  "company": {
+    "ticker": "TENX",
+    "name": "Tenax Therapeutics",
+    "subtitle": "Tenax Therapeutics · Oral levosimendan PH-HFpEF · LEVEL Ph3 topline May 1, 2026 · first-in-class indication",
+    "sharesOut": 17,
+    "cash": 99,
+    "currentPrice": 13.92,
+    "currency": "USD",
+    "yahooTicker": "TENX",
+    "cashRunway": "Through 2027 (covers LEVEL + LEVEL-2 Ph3)",
+    "phase": "phase3"
+  },
+  "assets": [
+    {
+      "id": "levosimendan",
+      "name": "Oral levosimendan (TNX-103) — calcium sensitizer + K-ATP opener",
+      "stage": "Phase 3 (LEVEL topline May 1, 2026; LEVEL-2 long-term enrolling)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "ph_hfpef",
+          "name": "PH-HFpEF (pulmonary hypertension with HF preserved EF)",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 35,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 700,
+                "wtpPct": 20,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 2000,
+                "wtpPct": 5,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 40,
+                "priceK": 30
+              },
+              "eu": {
+                "reachPct": 2.5,
+                "wtpPct": 22,
+                "priceK": 18
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 5,
+                "priceK": 6
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "First-in-class for PH-HFpEF if approved 2027; ~8% peak reach (~40K patients) of ~500K severe symptomatic addressable pool. No competing approved oral therapy in this indication."
+              },
+              "us.priceK": {
+                "note": "$30K/yr WAC modeled (specialty cardiology oral chronic); benchmarked vs Adempas/PAH branded class ($30-60K) but priced lower for HFpEF setting where payor scrutiny is intense."
+              },
+              "us.wtpPct": {
+                "note": "40% -- payors will require RHC + echo confirmation of PH overlap; cardiology specialty channel; early launch will be slow given novel indication."
+              },
+              "eu.reachPct": {
+                "note": "4% -- EU launch 2028+ following EMA filing; HTA bodies skeptical of PH-HFpEF as separable indication."
+              },
+              "eu.priceK": {
+                "note": "$18K/yr net after HTA negotiation."
+              },
+              "row.reachPct": {
+                "note": "1% -- Japan PMDA potential 2029; rest ROW negligible."
+              }
+            },
+            "penPct": 20,
+            "cagrPct": 4,
+            "peakYear": 2032
+          },
+          "area": "cardio_metabolic.cardiopulmonary.ph_hfpef",
+          "rare": false
+        }
+      ],
+      "modality": "small_molecule.calcium_sensitizer.troponin_c",
+      "targets": [
+        "TNNC1"
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 15,
+      "narrative": "LEVEL Phase 3 misses primary endpoint — single-asset binary failure",
+      "events": [
+        "✗ LEVEL primary 6MWD or composite endpoint not significant",
+        "✗ Mechanism dispute on troponin-C calcium sensitization in HFpEF",
+        "✗ LEVEL-2 trial halted; company forced to dilute heavily",
+        "→ Stock collapses to cash floor (~$5-6/share post-dilution)"
+      ],
+      "assumptions": {
+        "levosimendan": {
+          "ph_hfpef": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "dr": 17,
+        "dil": 40,
+        "mult": 3,
+        "plat": 0,
+        "exus": 0,
+        "cannib": 10
+      }
+    },
+    "bear": {
+      "wt": 20,
+      "narrative": "LEVEL hits but signal weaker than expected; LEVEL-2 needed for approval",
+      "events": [
+        "△ LEVEL primary endpoint met but effect size modest (6MWD +20-25m)",
+        "△ FDA requires LEVEL-2 confirmation before BLA acceptance",
+        "△ Launch delayed to 2029; commercial uptake slow given HFpEF complexity",
+        "→ Single-product orphan-cardio franchise, modest commercial outcome"
+      ],
+      "assumptions": {
+        "levosimendan": {
+          "ph_hfpef": {
+            "pos": 35,
+            "apr": 40,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "dr": 14,
+        "dil": 20,
+        "mult": 4,
+        "plat": 0,
+        "exus": 0,
+        "cannib": 5
+      }
+    },
+    "base": {
+      "wt": 40,
+      "narrative": "LEVEL clearly positive; BLA path opens; LEVEL-2 confirmatory data 2027",
+      "events": [
+        "✓ LEVEL primary endpoint met (6MWD +30-40m, p<0.01)",
+        "✓ Clean safety profile sustained at 6mo + 12mo",
+        "✓ FDA accepts BLA H2 2027; launch H2 2028",
+        "✓ Commercial ramp $50-150M Years 1-3 (cardiology specialty)"
+      ],
+      "assumptions": {
+        "levosimendan": {
+          "ph_hfpef": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "dr": 11,
+        "dil": 5,
+        "mult": 6,
+        "plat": 0,
+        "exus": 0,
+        "cannib": 2
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "narrative": "LEVEL exceeds expectations; LEVEL-2 positive; cardiology adoption strong",
+      "events": [
+        "✓ LEVEL +50m+ 6MWD with reduced HF hospitalizations",
+        "✓ LEVEL-2 long-term endpoints positive 2027",
+        "✓ Cardiology guideline inclusion 2028",
+        "✓ Peak revenue $400-600M as PH-HFpEF first-in-class"
+      ],
+      "assumptions": {
+        "levosimendan": {
+          "ph_hfpef": {
+            "pos": 88,
+            "apr": 90,
+            "pen": 1.2
+          }
+        }
+      },
+      "val": {
+        "dr": 10,
+        "dil": 0,
+        "mult": 6,
+        "plat": 0,
+        "exus": 0,
+        "cannib": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Levosimendan becomes PH-HFpEF standard of care + label expansion to other PH groups",
+      "events": [
+        "✓ Levosimendan dominates PH-HFpEF, peak $1B+ globally",
+        "✓ Label expansion to Group 1 PAH or Group 3 PH (lung disease)",
+        "✓ Big pharma takeout (Bayer, Merck, J&J cardiology pipeline build-out)",
+        "→ Takeout at $40-60/share"
+      ],
+      "assumptions": {
+        "levosimendan": {
+          "ph_hfpef": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.4
+          }
+        }
+      },
+      "val": {
+        "dr": 9,
+        "dil": 0,
+        "mult": 8,
+        "plat": 100,
+        "exus": 0,
+        "cannib": 0
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "May 1, 2026",
+      "dateSort": "2026-05-01",
+      "asset": "levosimendan",
+      "indication": "ph_hfpef",
+      "title": "LEVEL Phase 3 topline (oral levosimendan PH-HFpEF)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 5,
+      "fail_apr": 10,
+      "success_pos": 80,
+      "success_apr": 85,
+      "_source": "curated",
+      "_sourceUrl": "https://investors.tenaxthera.com/news-events/news-releases",
+      "_addedAt": "2026-04-28T00:00:00Z",
+      "_confidence": "high",
+      "_rationale": "LEVEL fully enrolled 2025; topline guided May 1, 2026"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "levosimendan",
+      "indication": "ph_hfpef",
+      "title": "LEVEL-2 enrollment update (long-term outcomes Ph3)",
+      "type": "phase3_start",
+      "binary": false,
+      "fail_pos": 30,
+      "fail_apr": 40,
+      "success_pos": 75,
+      "success_apr": 80,
+      "_source": "curated",
+      "_sourceUrl": "https://investors.tenaxthera.com/news-events/news-releases",
+      "_addedAt": "2026-04-28T00:00:00Z",
+      "_confidence": "medium",
+      "_rationale": "LEVEL-2 long-term placebo-controlled; enrollment guided through 2026-27"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-06-30",
+      "asset": "levosimendan",
+      "indication": "ph_hfpef",
+      "title": "Levosimendan BLA submission",
+      "type": "bla_submission",
+      "binary": false,
+      "fail_pos": 65,
+      "fail_apr": 50,
+      "success_pos": 85,
+      "success_apr": 85,
+      "_source": "curated",
+      "_sourceUrl": "https://investors.tenaxthera.com/news-events/news-releases",
+      "_addedAt": "2026-04-28T00:00:00Z",
+      "_confidence": "medium",
+      "_rationale": "Conditional on LEVEL success; company guides BLA H1 2027"
+    }
+  ]
+}

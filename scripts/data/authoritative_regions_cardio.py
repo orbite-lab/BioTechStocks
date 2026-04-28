@@ -48,6 +48,21 @@ REGIONS = {
         "row": {"patientsK": 150000,"wtpPct": 25, "priceK": 0.4},
     },
 
+    # ==================== CARDIOPULMONARY (PH-HFpEF) ====================
+    # source: US HFpEF ~3M diagnosed (NHANES); ~30-50% have PH overlap
+    # (echocardiographic estPASP > 35) per ESC/AHA guidance = ~1M PH-HFpEF
+    # diagnosed; severe symptomatic NYHA III-IV addressable for novel oral
+    # therapies ~500K. EU5 ~700K. ROW ~2M. NO approved therapy specifically
+    # for PH-HFpEF (Group 2 PH per WSPH classification); off-label PDE5i
+    # contraindicated by RELAX/PILUMA-PH-HFpEF. First-mover oral pricing
+    # $25-35K/yr specialty cardiology. Class peak TAM ~$5-8B if first agent
+    # gets approved; conservative TAM $7B given uncertain payor envelope.
+    "cardio_metabolic.cardiopulmonary.ph_hfpef": {
+        "us":  {"patientsK": 500,  "wtpPct": 35, "priceK": 25},
+        "eu":  {"patientsK": 700,  "wtpPct": 20, "priceK": 15},
+        "row": {"patientsK": 2000, "wtpPct": 5,  "priceK": 5},
+    },
+
     # ==================== HYPERTENSION ====================
     # source: AGT knockdown is a brand-new RNAi class addressing resistant
     # hypertension specifically (~5M US per ACC criteria). NOT the entire HTN
@@ -219,6 +234,7 @@ REGIONS = {
 PEN_PCT = {
     "cardio_metabolic.attr.attr_cm": 45,
     "cardio_metabolic.attr.attr_pn": 55,
+    "cardio_metabolic.cardiopulmonary.ph_hfpef": 20,
     "cardio_metabolic.diabetes.t1d": 12,
     "cardio_metabolic.diabetes.t2d": 10,
     "cardio_metabolic.hypertension.agt_knockdown": 8,

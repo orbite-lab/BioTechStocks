@@ -1941,7 +1941,7 @@ async function main(){
     (() => {
       h+=`<div class="card${secCls('sec-target')}" id="sec-target"><div class="card-title" ${titleAttrsFlex('sec-target')}><div>${chev('sec-target')}<div class="dot" style="background:linear-gradient(180deg,#ec4899,#a855f7);display:inline-block;vertical-align:middle;margin-right:8px"></div>Target Explorer <span style="font-size:.62rem;color:#6b7080;font-weight:400;margin-left:6px">molecular target \u00b7 cross-modality + cross-disease</span></div>`;
       h+='<div style="display:flex;gap:4px">';
-      [['name','Name'],['companies','Companies'],['modalities','Modalities'],['diseases','Diseases']].forEach(([k,lbl])=>{
+      [['name','Name'],['companies','Co'],['modalities','Mod'],['diseases','Dx'],['tam','TAM'],['som','SOM'],['sales','Sales'],['cagr','CAGR']].forEach(([k,lbl])=>{
         const active = targetSort===k;
         h+=`<span class="fchip ${active?'active':''}" onclick="window._targetSort('${k}')" style="padding:2px 8px;font-size:.65rem">${lbl}</span>`;
       });
@@ -1974,6 +1974,10 @@ async function main(){
         companies:  ([,a],[,b]) => (b.companies.length-a.companies.length) || (b.assetCount-a.assetCount),
         modalities: ([,a],[,b]) => (b.modalityClassCount-a.modalityClassCount) || (b.modalityCount-a.modalityCount),
         diseases:   ([,a],[,b]) => (b.areaCount-a.areaCount) || (b.assetCount-a.assetCount),
+        tam:        ([,a],[,b]) => ((b.totalTAM||0)-(a.totalTAM||0)) || ((b.totalSOM||0)-(a.totalSOM||0)),
+        som:        ([,a],[,b]) => ((b.totalSOM||0)-(a.totalSOM||0)) || ((b.totalTAM||0)-(a.totalTAM||0)),
+        sales:      ([,a],[,b]) => ((b.totalSales||0)-(a.totalSales||0)) || ((b.totalSOM||0)-(a.totalSOM||0)),
+        cagr:       ([,a],[,b]) => ((b.cagrPct||0)-(a.cagrPct||0)) || ((b.totalSOM||0)-(a.totalSOM||0)),
       };
       const sorted = visible.slice().sort(sorter[targetSort]||sorter.companies);
 

@@ -2071,6 +2071,15 @@ async function main(){
           h+=`<span style="font-family:var(--mono);font-weight:800;font-size:.82rem;color:#ec4899">${tgt}</span>`;
           h+=`<span style="font-size:.58rem;color:#6b7080;font-family:var(--mono)">${v.assetCount} asset${v.assetCount===1?'':'s'}</span>`;
           h+=`</div>`;
+          // Market-size strip (pre-click): TAM (deduped) | SOM | observed sales | CAGR
+          const fmtCardB = x => x >= 1000 ? '$'+(x/1000).toFixed(1)+'B' : (x>0?'$'+Math.round(x)+'M':'—');
+          const tT = v.totalTAM || 0, tS = v.totalSOM || 0, tSales = v.totalSales || 0, tCAGR = v.cagrPct || 0;
+          h+=`<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;font-family:var(--mono);font-size:.58rem;padding:4px 0;border-top:1px solid #ffffff08;border-bottom:1px solid #ffffff08">`;
+          h+=`<div><div style="color:#6b7080;font-size:.5rem;text-transform:uppercase;letter-spacing:.4px">TAM</div><div style="color:#f97316;font-weight:700">${fmtCardB(tT)}</div></div>`;
+          h+=`<div><div style="color:#6b7080;font-size:.5rem;text-transform:uppercase;letter-spacing:.4px">SOM</div><div style="color:#a855f7;font-weight:700">${fmtCardB(tS)}</div></div>`;
+          h+=`<div><div style="color:#6b7080;font-size:.5rem;text-transform:uppercase;letter-spacing:.4px">Sales</div><div style="color:${tSales>0?'#22c55e':'#6b7080'};font-weight:700">${fmtCardB(tSales)}</div></div>`;
+          h+=`<div><div style="color:#6b7080;font-size:.5rem;text-transform:uppercase;letter-spacing:.4px">CAGR</div><div style="color:${tCAGR>0?'#06b6d4':'#6b7080'};font-weight:700">${tCAGR>0?tCAGR.toFixed(1)+'%':'—'}</div></div>`;
+          h+=`</div>`;
           h+=`<div style="display:flex;gap:10px;font-size:.62rem;font-family:var(--mono);color:#6b7080">`;
           h+=`<span><span style="color:#e2e4ea;font-weight:700">${v.companies.length}</span> co</span>`;
           h+=`<span><span style="color:${mmColor};font-weight:700">${v.modalityClassCount}</span> mod class${v.modalityClassCount===1?'':'es'}</span>`;

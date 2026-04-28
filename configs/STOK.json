@@ -28,41 +28,41 @@
           "market": {
             "regions": {
               "us": {
-                "patientsK": 30,
-                "wtpPct": 75,
-                "priceK": 45
+                "patientsK": 38,
+                "wtpPct": 80,
+                "priceK": 80
               },
               "eu": {
-                "patientsK": 35,
-                "wtpPct": 55,
-                "priceK": 25
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 50
               },
               "row": {
-                "patientsK": 150,
-                "wtpPct": 20,
-                "priceK": 8
+                "patientsK": 60,
+                "wtpPct": 25,
+                "priceK": 12
               }
             },
             "company_slice": {
               "us": {
-                "reachPct": 12,
+                "reachPct": 10,
                 "wtpPct": 80,
                 "priceK": 400
               },
               "eu": {
-                "reachPct": 10,
+                "reachPct": 8,
                 "wtpPct": 70,
                 "priceK": 50
               },
               "row": {
-                "reachPct": 8,
+                "reachPct": 6,
                 "wtpPct": 40,
                 "priceK": 15
               }
             },
             "company_slice_sources": {
               "us.reachPct": {
-                "note": "Dravet ~25% of US DEE pool (30K). With genetic dx (>95% via NGS) + ASO penetration ~50% of confirmed pts, ~12% of total DEE addressable; ~3.5K US Dravet pts on zorevunersen at peak (2030+)."
+                "note": "10% of ~38K US Dravet pool — genetic confirmation >95% via NGS, ASO penetration ~10% of total Dravet population at peak (~3.8K US patients on zorevunersen 2030+). Conservative vs Spinraza early-launch SMA penetration."
               },
               "us.wtpPct": {
                 "note": "80% — first disease-modifying Rx for Dravet; precedent set by Spinraza/Qalsody for genetic pediatric ASOs; Medicaid + commercial broad coverage with PA."
@@ -71,7 +71,7 @@
                 "note": "$400K/yr blended WAC modeled. IT dosing q4mo (3 maint doses/yr after loading). Spinraza precedent $750K yr1 / $375K maint; Qalsody $190K. Dravet's higher unmet need + cognitive benefit supports premium ~$400K blend."
               },
               "eu.reachPct": {
-                "note": "10% reach of EU DEE pool — Biogen commercializes ex-US/Canada/Mexico. Same Dravet share assumption (~25% of DEE). Reach reflects Biogen's territory execution."
+                "note": "8% reach of ~50K EU Dravet pool — Biogen commercializes ex-US/Canada/Mexico. Reach reflects Biogen's territory execution."
               },
               "eu.wtpPct": {
                 "note": "70% — EMA orphan pathway; NICE/G-BA reimburse ASOs for pediatric genetic with managed-entry (Spinraza precedent)."
@@ -80,7 +80,7 @@
                 "note": "$50K royalty-equivalent: Biogen will price ~$250-350K net in EU; Stoke receives tiered royalty 'low-double-digits to high-teens' (~14% blended)."
               },
               "row.reachPct": {
-                "note": "8% reach of ROW DEE pool — Japan PMDA + selected developed Asia/LatAm via Biogen. Lower reach reflects fragmented access."
+                "note": "6% reach of ~60K ROW Dravet pool — Japan PMDA + selected developed Asia/LatAm via Biogen. Lower reach reflects fragmented access."
               },
               "row.wtpPct": {
                 "note": "40% — Japan covers ASO orphan; emerging markets limited."
@@ -89,15 +89,15 @@
                 "note": "$15K royalty-equivalent: Biogen ROW net ~$100K blended × ~14% Stoke royalty."
               }
             },
-            "penPct": 40,
+            "penPct": 50,
             "cagrPct": 6,
             "peakYear": 2032
           },
-          "area": "cns.epilepsy.dee",
+          "area": "cns.epilepsy.dee.dravet",
           "rare": true
         }
       ],
-      "modality": "nucleic_acid.antisense.tango_aso",
+      "modality": "nucleic_acid.splice_modulator.tango_aso",
       "targets": [
         "SCN1A"
       ]
@@ -185,7 +185,7 @@
           "rare": true
         }
       ],
-      "modality": "nucleic_acid.antisense.tango_aso",
+      "modality": "nucleic_acid.splice_modulator.tango_aso",
       "targets": [
         "OPA1"
       ]
@@ -202,41 +202,41 @@
           "market": {
             "regions": {
               "us": {
-                "patientsK": 30,
-                "wtpPct": 75,
-                "priceK": 45
+                "patientsK": 5,
+                "wtpPct": 70,
+                "priceK": 60
               },
               "eu": {
-                "patientsK": 35,
-                "wtpPct": 55,
-                "priceK": 25
+                "patientsK": 7,
+                "wtpPct": 50,
+                "priceK": 35
               },
               "row": {
-                "patientsK": 150,
-                "wtpPct": 20,
-                "priceK": 8
+                "patientsK": 15,
+                "wtpPct": 18,
+                "priceK": 10
               }
             },
             "company_slice": {
               "us": {
-                "reachPct": 2,
+                "reachPct": 12,
                 "wtpPct": 60,
                 "priceK": 500
               },
               "eu": {
-                "reachPct": 1,
+                "reachPct": 8,
                 "wtpPct": 45,
                 "priceK": 350
               },
               "row": {
-                "reachPct": 0.3,
+                "reachPct": 2,
                 "wtpPct": 15,
                 "priceK": 150
               }
             },
             "company_slice_sources": {
               "us.reachPct": {
-                "note": "SYNGAP1-related disorder = ultra-rare (~1:10K-30K prevalence; ~3-5K US pts). Lead optimization 2026, IND ~2027-28, approval ~2032+. 2% reach of broader DEE pool reflects narrow SYNGAP1 subset (~10% of DEE)."
+                "note": "12% of ~5K US SYNGAP1 pool = ~600 patients. Lead optimization 2026, IND ~2027-28, approval ~2032+. Genetic confirmation rate rising with NGS panels; addressable subset of confirmed SYNGAP1 LoF mutations."
               },
               "us.priceK": {
                 "note": "$500K/yr modeled — orphan ASO premium; ultra-rare pediatric neurogenetic precedent (Spinraza, Qalsody)."
@@ -245,27 +245,27 @@
                 "note": "60% pre-launch placeholder; genetic confirmation enables clean orphan coverage when clinical data mature."
               },
               "eu.reachPct": {
-                "note": "1% — EMA orphan path; conservative reach for preclinical asset."
+                "note": "8% of ~7K EU SYNGAP1 pool = ~560 patients. EMA orphan path; conservative reach for preclinical asset."
               },
               "eu.priceK": {
                 "note": "$350K/yr net."
               },
               "row.reachPct": {
-                "note": "0.3% — speculative."
+                "note": "2% of ~15K ROW SYNGAP1 pool = ~300 patients. Japan PMDA + select developed markets only."
               },
               "row.priceK": {
                 "note": "$150K blended."
               }
             },
-            "penPct": 40,
+            "penPct": 35,
             "cagrPct": 5,
             "peakYear": 2035
           },
-          "area": "cns.epilepsy.dee",
+          "area": "cns.epilepsy.dee.syngap1",
           "rare": true
         }
       ],
-      "modality": "nucleic_acid.antisense.tango_aso",
+      "modality": "nucleic_acid.splice_modulator.tango_aso",
       "targets": [
         "SYNGAP1"
       ]

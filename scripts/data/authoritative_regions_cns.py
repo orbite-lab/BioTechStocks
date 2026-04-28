@@ -13,6 +13,30 @@ REGIONS = {
         "eu":  {"patientsK": 35,    "wtpPct": 55, "priceK": 25},
         "row": {"patientsK": 150,   "wtpPct": 20, "priceK": 8},
     },
+    # source: Dravet syndrome (SCN1A LoF) incidence ~1:15,700 live births
+    # (Wu et al., Pediatrics 2015); US prevalent ~38K diagnosed (Dravet
+    # Syndrome Foundation); EU5+UK ~50K (Orphanet); ROW ~60K (largely
+    # undiagnosed in LMICs). Genetic-confirmed subset addressable by SCN1A
+    # ASO (Stoke zorevunersen P3) — distinct drug niche from SCN2A/SCN8A
+    # (PRAX relutrigine) and broader DEE pool. Pricing precedent: Fintepla
+    # ($96K) + Epidiolex ($32K) + Diacomit (~$30K) + ASO premium (Spinraza
+    # $375K maint) → blended class peak ~$80K.
+    "cns.epilepsy.dee.dravet": {
+        "us":  {"patientsK": 38,  "wtpPct": 80, "priceK": 80},
+        "eu":  {"patientsK": 50,  "wtpPct": 60, "priceK": 50},
+        "row": {"patientsK": 60,  "wtpPct": 25, "priceK": 12},
+    },
+    # source: SYNGAP1-related neurodevelopmental disorder, OMIM 612621.
+    # Estimated prevalence ~1:10,000-30,000 (SynGAP Research Fund + recent
+    # exome-sequencing studies); ~85% of pts have epilepsy (DEE phenotype).
+    # US prevalent ~5K; EU5+UK ~7K; ROW ~15K. No approved DMT. Genetic
+    # confirmation rate rising rapidly with NGS panel adoption. Pricing
+    # pegs to ASO orphan pediatric (Spinraza/Qalsody precedent).
+    "cns.epilepsy.dee.syngap1": {
+        "us":  {"patientsK": 5,   "wtpPct": 70, "priceK": 60},
+        "eu":  {"patientsK": 7,   "wtpPct": 50, "priceK": 35},
+        "row": {"patientsK": 15,  "wtpPct": 18, "priceK": 10},
+    },
     "cns.epilepsy.focal": {
         "us":  {"patientsK": 1200,  "wtpPct": 85, "priceK": 4},
         "eu":  {"patientsK": 2500,  "wtpPct": 70, "priceK": 2},
@@ -154,6 +178,8 @@ REGIONS = {
 
 PEN_PCT = {
     "cns.epilepsy.dee": 40,
+    "cns.epilepsy.dee.dravet": 50,
+    "cns.epilepsy.dee.syngap1": 35,
     "cns.epilepsy.focal": 70,
     "cns.epilepsy.generalized": 65,
     "cns.movement.essential_tremor": 25,

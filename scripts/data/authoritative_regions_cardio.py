@@ -62,6 +62,27 @@ REGIONS = {
         "eu":  {"patientsK": 700,  "wtpPct": 20, "priceK": 15},
         "row": {"patientsK": 2000, "wtpPct": 5,  "priceK": 5},
     },
+    # source: US HFrEF ~3M (NHANES); ~30% have PH overlap (Group 2) = ~1M
+    # diagnosed; severe addressable for novel oral/biologic Rx ~300K. EU5
+    # ~400K. ROW ~1.5M. Existing therapies (sacubitril/valsartan, SGLT2i)
+    # treat HF base but do not directly target PH overlap. Class peak ~$5B
+    # for first-in-class PH-HFrEF agent. Distinct from HFpEF (preserved EF
+    # has different cardiac remodeling biology).
+    "cardio_metabolic.cardiopulmonary.ph_hfref": {
+        "us":  {"patientsK": 300,  "wtpPct": 35, "priceK": 25},
+        "eu":  {"patientsK": 400,  "wtpPct": 22, "priceK": 15},
+        "row": {"patientsK": 1500, "wtpPct": 5,  "priceK": 5},
+    },
+    # source: ILD prevalence US ~200K (IPF ~150K + other interstitial lung
+    # diseases); ~40% develop pulmonary hypertension overlap (Group 3 PH per
+    # WSPH) = ~80K. Severe symptomatic addressable for oral/biologic ~30K.
+    # EU5 ~50K. Tyvaso (United Therapeutics) approved 2021 for PH-ILD,
+    # ~$300M franchise. Class peak ~$2-3B with new entrants. Orphan pricing.
+    "cardio_metabolic.cardiopulmonary.ph_ild": {
+        "us":  {"patientsK": 30,  "wtpPct": 50, "priceK": 80},
+        "eu":  {"patientsK": 50,  "wtpPct": 30, "priceK": 50},
+        "row": {"patientsK": 200, "wtpPct": 8,  "priceK": 15},
+    },
 
     # ==================== HYPERTENSION ====================
     # source: AGT knockdown is a brand-new RNAi class addressing resistant
@@ -235,6 +256,8 @@ PEN_PCT = {
     "cardio_metabolic.attr.attr_cm": 45,
     "cardio_metabolic.attr.attr_pn": 55,
     "cardio_metabolic.cardiopulmonary.ph_hfpef": 20,
+    "cardio_metabolic.cardiopulmonary.ph_hfref": 20,
+    "cardio_metabolic.cardiopulmonary.ph_ild": 30,
     "cardio_metabolic.diabetes.t1d": 12,
     "cardio_metabolic.diabetes.t2d": 10,
     "cardio_metabolic.hypertension.agt_knockdown": 8,

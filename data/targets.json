@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated": "2026-04-28T07:38:29Z",
-    "target_count": 145,
-    "total_assets": 233,
-    "assets_with_targets": 228,
+    "generated": "2026-04-28T12:11:31Z",
+    "target_count": 146,
+    "total_assets": 235,
+    "assets_with_targets": 230,
     "multi_modality_count": 12,
     "multi_disease_count": 49
   },
@@ -782,6 +782,7 @@
     "CD19": {
       "companies": [
         "ALLO",
+        "CLYM",
         "CRSP",
         "GILD",
         "JANX",
@@ -790,6 +791,7 @@
       ],
       "modalities": [
         "antibody.bispecific.cd19_arm_modulator",
+        "antibody.monoclonal.anti_cd19",
         "cell_therapy.car_t_allogeneic.cd19_allo_car_t",
         "cell_therapy.car_t_allogeneic.dual_cd19_cd70_allo_car_t",
         "cell_therapy.car_t_autologous.cd19_autoimmune",
@@ -797,8 +799,10 @@
       ],
       "areas": [
         "_platform.cell_therapy_discovery",
+        "immunology.autoimmune.pmn",
         "immunology.autoimmune.sle",
         "immunology.demyelinating.multiple_sclerosis",
+        "immunology.neuromuscular_autoimmune.itp",
         "immunology.neuromuscular_autoimmune.myasthenia_gravis",
         "immunology.neuromuscular_autoimmune.sps",
         "oncology.hematology.nhl.dlbcl",
@@ -822,6 +826,17 @@
           "modality": "cell_therapy.car_t_allogeneic.dual_cd19_cd70_allo_car_t",
           "areas": [
             "immunology.autoimmune.sle"
+          ]
+        },
+        {
+          "ticker": "CLYM",
+          "asset": "budoprutug",
+          "name": "Budoprutug — anti-CD19 monoclonal antibody",
+          "modality": "antibody.monoclonal.anti_cd19",
+          "areas": [
+            "immunology.autoimmune.pmn",
+            "immunology.autoimmune.sle",
+            "immunology.neuromuscular_autoimmune.itp"
           ]
         },
         {
@@ -901,10 +916,10 @@
           ]
         }
       ],
-      "assetCount": 10,
-      "modalityCount": 5,
+      "assetCount": 11,
+      "modalityCount": 6,
       "modalityClassCount": 2,
-      "areaCount": 8,
+      "areaCount": 10,
       "modalityClasses": [
         "antibody",
         "cell_therapy"
@@ -5313,6 +5328,35 @@
           "modality": "antibody.bispecific.nectin4_cd137",
           "areas": [
             "oncology.genitourinary.bladder"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ]
+    },
+    "TNFSF13": {
+      "companies": [
+        "CLYM"
+      ],
+      "modalities": [
+        "antibody.monoclonal.anti_april"
+      ],
+      "areas": [
+        "immunology.autoimmune.iga_nephropathy"
+      ],
+      "assets": [
+        {
+          "ticker": "CLYM",
+          "asset": "clym116",
+          "name": "CLYM116 — anti-APRIL monoclonal antibody",
+          "modality": "antibody.monoclonal.anti_april",
+          "areas": [
+            "immunology.autoimmune.iga_nephropathy"
           ]
         }
       ],

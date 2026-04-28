@@ -1,0 +1,554 @@
+{
+  "company": {
+    "ticker": "CLYM",
+    "name": "Climb Bio",
+    "subtitle": "Climb Bio · Budoprutug (anti-CD19) PrisMN Ph2 pMN H2 2026 · ITP/SLE expansion · CLYM116 (anti-APRIL) IgAN",
+    "sharesOut": 48,
+    "cash": 200,
+    "currentPrice": 9.0,
+    "currency": "USD",
+    "yahooTicker": "CLYM",
+    "cashRunway": "Into 2028 (covers all four pivotal readouts + CLYM116)",
+    "phase": "phase2"
+  },
+  "assets": [
+    {
+      "id": "budoprutug",
+      "name": "Budoprutug — anti-CD19 monoclonal antibody",
+      "stage": "Phase 2 (PrisMN pMN initial data H2 2026; Ph1b/2a ITP + Ph1b SLE)",
+      "designations": [
+        "FDA Fast Track (pMN, Apr 2026)"
+      ],
+      "indications": [
+        {
+          "id": "pmn",
+          "name": "Primary Membranous Nephropathy (pMN)",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 60,
+                "priceK": 90
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 40,
+                "priceK": 50
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 8,
+                "priceK": 15
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 30,
+                "priceK": 60
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 8,
+                "priceK": 20
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Budoprutug PrisMN Ph2; ~12% peak reach (~3.6K US patients) of ~30K diagnosed pMN. FDA Fast Track granted Apr 2026. Anti-CD19 differentiation vs off-label rituximab anti-CD20 -- broader B-cell depletion including plasmablasts."
+              },
+              "us.priceK": {
+                "note": "$100K/yr biologic specialty nephrology pricing benchmarked vs Tavneos ($150K) + rituximab off-label ($30K)."
+              },
+              "us.wtpPct": {
+                "note": "50% -- nephrology specialty channel; payors will require anti-PLA2R+ confirmation; Fast Track designation eases reimbursement."
+              }
+            },
+            "penPct": 30,
+            "cagrPct": 5,
+            "peakYear": 2032
+          },
+          "area": "immunology.autoimmune.pmn",
+          "rare": true
+        },
+        {
+          "id": "itp",
+          "name": "Immune Thrombocytopenia (ITP) — Ph1b/2a",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60,
+                "wtpPct": 60,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 45,
+                "priceK": 45
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 12,
+                "priceK": 12
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 45,
+                "priceK": 90
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 30,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 0.8,
+                "wtpPct": 8,
+                "priceK": 15
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Budoprutug Ph1b/2a in ITP; positions as durable cure vs chronic TPO-RA (Promacta/Doptelet). ~8% reach of severe ITP refractory pool."
+              },
+              "us.priceK": {
+                "note": "$90K/yr; benchmarked vs Promacta/Doptelet TPO-RA chronic but priced higher for one-time-style B-cell depletion course."
+              }
+            },
+            "penPct": 35,
+            "cagrPct": 4,
+            "peakYear": 2033
+          },
+          "area": "immunology.neuromuscular_autoimmune.itp",
+          "rare": false
+        },
+        {
+          "id": "sle",
+          "name": "Systemic Lupus Erythematosus (SLE) — Ph1b",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 300,
+                "wtpPct": 55,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 350,
+                "wtpPct": 38,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 4000,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 40,
+                "priceK": 90
+              },
+              "eu": {
+                "reachPct": 0.7,
+                "wtpPct": 25,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 5,
+                "priceK": 15
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Budoprutug Ph1b in SLE; refractory/severe SLE subset (Saphnelo/Benlysta failures). ~1.5% reach of broader SLE (300K US) = ~4.5K patients."
+              },
+              "us.priceK": {
+                "note": "$90K/yr B-cell depleter specialty pricing."
+              }
+            },
+            "penPct": 25,
+            "cagrPct": 5,
+            "peakYear": 2034
+          },
+          "area": "immunology.autoimmune.sle",
+          "rare": false
+        }
+      ],
+      "modality": "antibody.monoclonal.anti_cd19",
+      "targets": [
+        "CD19"
+      ]
+    },
+    {
+      "id": "clym116",
+      "name": "CLYM116 — anti-APRIL monoclonal antibody",
+      "stage": "Phase 1 (IgA nephropathy)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "igan",
+          "name": "IgA Nephropathy (IgAN) — Phase 1",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 130,
+                "wtpPct": 50,
+                "priceK": 65
+              },
+              "eu": {
+                "patientsK": 150,
+                "wtpPct": 35,
+                "priceK": 32
+              },
+              "row": {
+                "patientsK": 1500,
+                "wtpPct": 10,
+                "priceK": 6
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 40,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 25,
+                "priceK": 45
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 8,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "CLYM116 anti-APRIL Ph1 in IgAN; competes with sibeprenlimab (NVS) + zigakibart (Otsuka) + anti-APRIL class. ~3% reach of ~130K US IgAN."
+              },
+              "us.priceK": {
+                "note": "$80K/yr biologic anti-APRIL benchmark; Filspari + Tarpeyo establish IgAN branded floor."
+              }
+            },
+            "penPct": 30,
+            "cagrPct": 5,
+            "peakYear": 2034
+          },
+          "area": "immunology.autoimmune.iga_nephropathy",
+          "rare": false
+        }
+      ],
+      "modality": "antibody.monoclonal.anti_april",
+      "targets": [
+        "TNFSF13"
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "narrative": "PrisMN misses + safety signals on B-cell depletion class derail platform",
+      "events": [
+        "✗ Budoprutug PrisMN Ph2 fails to show meaningful proteinuria reduction",
+        "✗ Cytokine release / ICANS-like signal in autoimmune CAR-T-adjacent class concerns",
+        "✗ ITP + SLE expansion paused; CLYM116 IgAN deprioritized",
+        "→ Stock retests cash floor (~$3-4/share post-dilution)"
+      ],
+      "assumptions": {
+        "budoprutug": {
+          "pmn": {
+            "pos": 8,
+            "apr": 15,
+            "pen": 1.0
+          },
+          "itp": {
+            "pos": 5,
+            "apr": 12,
+            "pen": 1.0
+          },
+          "sle": {
+            "pos": 3,
+            "apr": 8,
+            "pen": 1.0
+          }
+        },
+        "clym116": {
+          "igan": {
+            "pos": 5,
+            "apr": 10,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "dr": 16,
+        "dil": 30,
+        "mult": 3,
+        "plat": 0,
+        "exus": 0,
+        "cannib": 10
+      }
+    },
+    "bear": {
+      "wt": 20,
+      "narrative": "PrisMN modest signal; ITP positive but small; SLE deprioritized",
+      "events": [
+        "△ PrisMN proteinuria reduction marginal; further studies needed",
+        "△ ITP Ph1b/2a positive but commercial niche limited",
+        "△ SLE program shelved post Ph1b",
+        "→ Single-indication pMN biotech, slow ramp"
+      ],
+      "assumptions": {
+        "budoprutug": {
+          "pmn": {
+            "pos": 35,
+            "apr": 50,
+            "pen": 0.7
+          },
+          "itp": {
+            "pos": 25,
+            "apr": 40,
+            "pen": 0.6
+          },
+          "sle": {
+            "pos": 12,
+            "apr": 20,
+            "pen": 0.5
+          }
+        },
+        "clym116": {
+          "igan": {
+            "pos": 18,
+            "apr": 30,
+            "pen": 0.6
+          }
+        }
+      },
+      "val": {
+        "dr": 13,
+        "dil": 15,
+        "mult": 4,
+        "plat": 50,
+        "exus": 0,
+        "cannib": 5
+      }
+    },
+    "base": {
+      "wt": 45,
+      "narrative": "PrisMN Ph2 positive; budoprutug becomes anti-CD19 platform across pMN+ITP+SLE; CLYM116 IgAN advances",
+      "events": [
+        "✓ PrisMN Ph2 hits primary (proteinuria reduction + complete remission)",
+        "✓ FDA accepts Fast Track; Ph3 initiated 2027 for pMN",
+        "✓ ITP Ph2 positive; SLE Ph1b clean safety",
+        "✓ CLYM116 IgAN Ph1a positive PD; Ph2 launches"
+      ],
+      "assumptions": {
+        "budoprutug": {
+          "pmn": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 1.0
+          },
+          "itp": {
+            "pos": 45,
+            "apr": 60,
+            "pen": 1.0
+          },
+          "sle": {
+            "pos": 25,
+            "apr": 45,
+            "pen": 0.8
+          }
+        },
+        "clym116": {
+          "igan": {
+            "pos": 35,
+            "apr": 50,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "dr": 12,
+        "dil": 5,
+        "mult": 6,
+        "plat": 200,
+        "exus": 0,
+        "cannib": 2
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "narrative": "Budoprutug becomes platform B-cell depleter across 3+ autoimmune indications; CLYM116 advances",
+      "events": [
+        "✓ PrisMN Ph2 strong (sustained complete remission >50% pts)",
+        "✓ ITP Ph2 strongly positive; SLE Ph1b POC supports Ph2",
+        "✓ CLYM116 IgAN Ph2 differentiates from sibeprenlimab/zigakibart",
+        "✓ Multi-indication anti-CD19 franchise opens"
+      ],
+      "assumptions": {
+        "budoprutug": {
+          "pmn": {
+            "pos": 85,
+            "apr": 88,
+            "pen": 1.2
+          },
+          "itp": {
+            "pos": 70,
+            "apr": 80,
+            "pen": 1.2
+          },
+          "sle": {
+            "pos": 50,
+            "apr": 70,
+            "pen": 1.1
+          }
+        },
+        "clym116": {
+          "igan": {
+            "pos": 60,
+            "apr": 75,
+            "pen": 1.2
+          }
+        }
+      },
+      "val": {
+        "dr": 11,
+        "dil": 0,
+        "mult": 6,
+        "plat": 100,
+        "exus": 0,
+        "cannib": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Budoprutug across 4 approved autoimmune indications; takeout interest from B-cell-focused pharma",
+      "events": [
+        "✓ Budoprutug pMN approved 2029; ITP + SLE follow-on labels",
+        "✓ Anti-CD19 mAb class validated in autoimmune (alongside Kyverna CAR-T)",
+        "✓ CLYM116 IgAN Ph3 results 2030",
+        "✓ Big-pharma takeout (BMS / J&J / Vertex autoimmune build-out)",
+        "→ Takeout at $30-40/share"
+      ],
+      "assumptions": {
+        "budoprutug": {
+          "pmn": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.4
+          },
+          "itp": {
+            "pos": 85,
+            "apr": 90,
+            "pen": 1.3
+          },
+          "sle": {
+            "pos": 70,
+            "apr": 85,
+            "pen": 1.3
+          }
+        },
+        "clym116": {
+          "igan": {
+            "pos": 80,
+            "apr": 88,
+            "pen": 1.4
+          }
+        }
+      },
+      "val": {
+        "dr": 10,
+        "dil": 0,
+        "mult": 8,
+        "plat": 400,
+        "exus": 0,
+        "cannib": 0
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Apr 2026",
+      "dateSort": "2026-04-15",
+      "asset": "budoprutug",
+      "indication": "pmn",
+      "title": "Budoprutug FDA Fast Track Designation (pMN)",
+      "type": "regulatory",
+      "binary": false,
+      "fail_pos": 60,
+      "fail_apr": 65,
+      "success_pos": 70,
+      "success_apr": 70,
+      "_source": "curated",
+      "_sourceUrl": "https://investors.climbbio.com/",
+      "_addedAt": "2026-04-28T00:00:00Z",
+      "_confidence": "high",
+      "_rationale": "Already announced Apr 2026 -- past event; remains in catalyst list as historical anchor"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "budoprutug",
+      "indication": "pmn",
+      "title": "PrisMN Phase 2 initial data (budoprutug pMN)",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 8,
+      "fail_apr": 15,
+      "success_pos": 75,
+      "success_apr": 80,
+      "_source": "curated",
+      "_sourceUrl": "https://investors.climbbio.com/",
+      "_addedAt": "2026-04-28T00:00:00Z",
+      "_confidence": "high",
+      "_rationale": "Company guided initial PrisMN Ph2 data H2 2026"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-12-15",
+      "asset": "budoprutug",
+      "indication": "itp",
+      "title": "Budoprutug Ph1b/2a ITP interim",
+      "type": "phase2_data",
+      "binary": false,
+      "fail_pos": 12,
+      "fail_apr": 25,
+      "success_pos": 60,
+      "success_apr": 70,
+      "_source": "curated",
+      "_sourceUrl": "https://investors.climbbio.com/",
+      "_addedAt": "2026-04-28T00:00:00Z",
+      "_confidence": "medium",
+      "_rationale": "Company indicated multiple readouts across budoprutug indications in 2026"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-06-30",
+      "asset": "clym116",
+      "indication": "igan",
+      "title": "CLYM116 Ph1 IgAN PK/PD readout",
+      "type": "phase1_data",
+      "binary": false,
+      "fail_pos": 8,
+      "fail_apr": 15,
+      "success_pos": 35,
+      "success_apr": 45,
+      "_source": "curated",
+      "_sourceUrl": "https://investors.climbbio.com/",
+      "_addedAt": "2026-04-28T00:00:00Z",
+      "_confidence": "medium",
+      "_rationale": "Anti-APRIL Ph1 dosing through 2026; PK/PD likely H1 2027"
+    }
+  ]
+}

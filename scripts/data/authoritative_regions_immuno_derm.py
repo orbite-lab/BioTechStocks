@@ -39,6 +39,16 @@ REGIONS = {
         "eu":  {"patientsK": 350,  "wtpPct": 38, "priceK": 22},
         "row": {"patientsK": 4000, "wtpPct": 10, "priceK": 5},
     },
+    # source: pMN (primary membranous nephropathy) ~30K US diagnosed; ~50K EU5;
+    # ~150K ROW. Anti-PLA2R-driven autoimmune kidney disease. Standard care
+    # rituximab off-label + cyclophosphamide. Emerging branded class (anti-CD19
+    # / anti-CD20 / APRIL inhibitors); peak class TAM ~$2-3B globally with
+    # first-line label. Orphan-priced specialty nephrology channel.
+    "immunology.autoimmune.pmn": {
+        "us":  {"patientsK": 30,  "wtpPct": 60, "priceK": 90},
+        "eu":  {"patientsK": 50,  "wtpPct": 40, "priceK": 50},
+        "row": {"patientsK": 150, "wtpPct": 8,  "priceK": 15},
+    },
 
     # ============================================================
     # IMMUNOLOGY - INFLAMMATORY GI
@@ -243,6 +253,7 @@ PEN_PCT = {
     "immunology.autoimmune.fsgs": 25,
     "immunology.autoimmune.hereditary_angioedema": 70,
     "immunology.autoimmune.iga_nephropathy": 30,
+    "immunology.autoimmune.pmn": 30,
     "immunology.autoimmune.sjogrens": 15,
     "immunology.autoimmune.sle": 25,
     "immunology.inflammatory_gi.crohns": 38,

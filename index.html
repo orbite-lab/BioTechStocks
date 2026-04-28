@@ -1977,6 +1977,81 @@ async function main(){
       };
       const sorted = visible.slice().sort(sorter[targetSort]||sorter.companies);
 
+      // ── Detail panel (when a target is expanded) ──
+      // Renders ABOVE the grid so the user doesn't have to scroll past
+      // hundreds of cards. Aggregates TAM/SOM/CAGR/peakYear across all
+      // assets hitting this target; renders an asset x indication breakdown
+      // table and a "Filter universe" CTA so the click flow is two-step.
+      if (targetExpanded && targetsIdx[targetExpanded]) {
+        const v = targetsIdx[targetExpanded];
+        const fmtB = x => x >= 1000 ? '$'+(x/1000).toFixed(1)+'B' : '$'+Math.round(x)+'M';
+        const fmtV = x => x >= 1000 ? '$'+(x/1000).toFixed(1)+'B' : '$'+Math.round(x)+'M';
+        const nice = s => window._nicelabel ? window._nicelabel(s) : (s||'').replace(/_/g,' ');
+        let totalSOM=0, totalTAM=0, weightedCAGR=0, weightedPeakYear=0;
+        const seenAreas=new Set();
+        const detailRows=[];
+        for (const aRef of (v.assets||[])) {
+          const cfg = configs[aRef.ticker];
+          if (!cfg) continue;
+          const asset = (cfg.assets||[]).find(a=>a.id===aRef.asset);
+          if (!asset) continue;
+          for (const ind of (asset.indications||[])) {
+            const m = ind.market||{};
+            const regs = m.regions||{};
+            const cs = m.company_slice||{};
+            const tam = ['us','eu','row'].reduce((s,rk)=>s + ((regs[rk]?.patientsK||0)*((regs[rk]?.wtpPct||0)/100)*(regs[rk]?.priceK||0)),0);
+            const som = ['us','eu','row'].reduce((s,rk)=>s + ((regs[rk]?.patientsK||0)*((cs[rk]?.reachPct||0)/100)*((cs[rk]?.wtpPct||0)/100)*(cs[rk]?.priceK||0)),0);
+            if (ind.area && !seenAreas.has(ind.area)) { seenAreas.add(ind.area); totalTAM += tam; }
+            totalSOM += som;
+            const cg = m.cagrPct||0, pk = m.peakYear||2033;
+            weightedCAGR += cg*som;
+            weightedPeakYear += pk*som;
+            detailRows.push({
+              ticker: aRef.ticker, assetName: asset.name||'', modality: asset.modality||'',
+              area: ind.area||'', indName: ind.name||'',
+              som, tam, salesM: m.salesM||0, cagrPct: cg, peakYear: pk
+            });
+          }
+        }
+        const cagrAvg = totalSOM>0 ? weightedCAGR/totalSOM : 0;
+        const peakYearAvg = totalSOM>0 ? Math.round(weightedPeakYear/totalSOM) : 2033;
+        detailRows.sort((a,b)=>b.som - a.som);
+
+        h += '<div style="margin-bottom:14px;padding:14px 16px;background:#0f1117;border:1px solid #ec489944;border-radius:8px">';
+        h += `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">`;
+        h += `<div><span style="font-family:var(--mono);font-weight:800;color:#ec4899;font-size:1.05rem">◎ ${targetExpanded}</span> <span style="font-size:.7rem;color:var(--text2);margin-left:8px">${v.assetCount} asset${v.assetCount===1?'':'s'} · ${v.companies.length} compan${v.companies.length===1?'y':'ies'} · ${v.modalityClassCount} modality class${v.modalityClassCount===1?'':'es'} · ${v.areaCount} disease area${v.areaCount===1?'':'s'}</span></div>`;
+        h += `<div style="display:flex;gap:6px">`;
+        h += `<span class="fchip" style="padding:4px 12px;font-size:.7rem;background:#ec489922;border-color:#ec4899;color:#fda4af;cursor:pointer" onclick="event.stopPropagation();window._filterByTarget('${targetExpanded}')">Filter universe →</span>`;
+        h += `<span class="fchip" style="padding:4px 12px;font-size:.7rem;cursor:pointer" onclick="event.stopPropagation();window._targetExpand('${targetExpanded}')">✕ Close</span>`;
+        h += `</div>`;
+        h += `</div>`;
+        h += `<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px;padding:10px 12px;background:#0a0d14;border-radius:6px">`;
+        h += `<div><div style="font-size:.55rem;color:var(--text2);text-transform:uppercase;letter-spacing:1.2;margin-bottom:2px">TAM (deduped by area)</div><div style="font-size:1.05rem;font-weight:800;color:#f97316;font-family:var(--mono)">${fmtB(totalTAM)}</div></div>`;
+        h += `<div><div style="font-size:.55rem;color:var(--text2);text-transform:uppercase;letter-spacing:1.2;margin-bottom:2px">Aggregate SOM</div><div style="font-size:1.05rem;font-weight:800;color:#a855f7;font-family:var(--mono)">${fmtB(totalSOM)}</div></div>`;
+        h += `<div><div style="font-size:.55rem;color:var(--text2);text-transform:uppercase;letter-spacing:1.2;margin-bottom:2px">CAGR (SOM-weighted)</div><div style="font-size:1.05rem;font-weight:800;color:#22c55e;font-family:var(--mono)">${cagrAvg.toFixed(1)}%</div></div>`;
+        h += `<div><div style="font-size:.55rem;color:var(--text2);text-transform:uppercase;letter-spacing:1.2;margin-bottom:2px">Peak year (SOM-wtd)</div><div style="font-size:1.05rem;font-weight:800;color:#06b6d4;font-family:var(--mono)">${peakYearAvg}</div></div>`;
+        h += `</div>`;
+        h += `<div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1.2;margin-bottom:6px">Asset × indication breakdown (sorted by SOM)</div>`;
+        const headerStyle = `display:grid;grid-template-columns:55px 1.4fr 1.5fr 1.5fr 70px 70px 70px 50px;gap:8px;font-size:.55rem;color:var(--text2);font-family:var(--mono);text-transform:uppercase;letter-spacing:1;padding-bottom:6px;border-bottom:1px solid #ffffff14`;
+        h += `<div style="${headerStyle}">`;
+        h += `<span>Tick</span><span>Asset</span><span>Modality</span><span>Area</span><span style="text-align:right">TAM</span><span style="text-align:right">SOM</span><span style="text-align:right">Sales</span><span style="text-align:right">Peak</span>`;
+        h += `</div>`;
+        const rowStyle = `display:grid;grid-template-columns:55px 1.4fr 1.5fr 1.5fr 70px 70px 70px 50px;gap:8px;font-size:.7rem;font-family:var(--mono);padding:6px 0;border-bottom:1px solid #ffffff05;align-items:baseline`;
+        detailRows.forEach(r=>{
+          h += `<div style="${rowStyle}">`;
+          h += `<a href="model.html?ticker=${r.ticker}" style="color:#60a5fa;font-weight:700;text-decoration:none">${r.ticker}</a>`;
+          h += `<span style="color:var(--text1);overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.assetName}">${r.assetName.slice(0,40)}</span>`;
+          h += `<span style="color:#06b6d4;font-size:.6rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.modality}">${(r.modality||'').replace(/_/g,' ')}</span>`;
+          h += `<span style="color:#f97316;font-size:.6rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.area}">${nice(r.area)}</span>`;
+          h += `<span style="text-align:right;color:#f97316">${fmtV(r.tam)}</span>`;
+          h += `<span style="text-align:right;color:#a855f7;font-weight:700">${fmtV(r.som)}</span>`;
+          h += `<span style="text-align:right;color:#22c55e">${r.salesM>0?fmtV(r.salesM):'—'}</span>`;
+          h += `<span style="text-align:right;color:var(--text2)">${r.peakYear}</span>`;
+          h += `</div>`;
+        });
+        h += '</div>';
+      }
+
       if(sorted.length===0){
         h+='<div style="padding:18px;color:var(--text2);text-align:center;font-size:.85rem">No targets match the current filter combination.</div>';
       } else {
@@ -2022,85 +2097,6 @@ async function main(){
         h+='</div>';
       }
 
-      // ── Detail panel (when a target is expanded) ──
-      // Aggregates TAM/SOM/CAGR/peakYear across all assets hitting this target;
-      // renders an asset x indication breakdown table and a "Filter universe"
-      // CTA so the click flow is two-step: explore -> filter, instead of
-      // jumping straight from a single click to a filtered universe.
-      if (targetExpanded && targetsIdx[targetExpanded]) {
-        const v = targetsIdx[targetExpanded];
-        const fmtB = x => x >= 1000 ? '$'+(x/1000).toFixed(1)+'B' : '$'+Math.round(x)+'M';
-        const fmtV = x => x >= 1000 ? '$'+(x/1000).toFixed(1)+'B' : '$'+Math.round(x)+'M';
-        const nice = s => window._nicelabel ? window._nicelabel(s) : (s||'').replace(/_/g,' ');
-        let totalSOM=0, totalTAM=0, weightedCAGR=0, weightedPeakYear=0;
-        const seenAreas=new Set();
-        const detailRows=[];
-        for (const aRef of (v.assets||[])) {
-          const cfg = configs[aRef.ticker];
-          if (!cfg) continue;
-          const asset = (cfg.assets||[]).find(a=>a.id===aRef.asset);
-          if (!asset) continue;
-          for (const ind of (asset.indications||[])) {
-            const m = ind.market||{};
-            const regs = m.regions||{};
-            const cs = m.company_slice||{};
-            const tam = ['us','eu','row'].reduce((s,rk)=>s + ((regs[rk]?.patientsK||0)*((regs[rk]?.wtpPct||0)/100)*(regs[rk]?.priceK||0)),0);
-            const som = ['us','eu','row'].reduce((s,rk)=>s + ((regs[rk]?.patientsK||0)*((cs[rk]?.reachPct||0)/100)*((cs[rk]?.wtpPct||0)/100)*(cs[rk]?.priceK||0)),0);
-            if (ind.area && !seenAreas.has(ind.area)) { seenAreas.add(ind.area); totalTAM += tam; }
-            totalSOM += som;
-            const cg = m.cagrPct||0, pk = m.peakYear||2033;
-            weightedCAGR += cg*som;
-            weightedPeakYear += pk*som;
-            detailRows.push({
-              ticker: aRef.ticker, assetName: asset.name||'', modality: asset.modality||'',
-              area: ind.area||'', indName: ind.name||'',
-              som, tam, salesM: m.salesM||0, cagrPct: cg, peakYear: pk
-            });
-          }
-        }
-        const cagrAvg = totalSOM>0 ? weightedCAGR/totalSOM : 0;
-        const peakYearAvg = totalSOM>0 ? Math.round(weightedPeakYear/totalSOM) : 2033;
-        detailRows.sort((a,b)=>b.som - a.som);
-
-        h += '<div style="margin-top:14px;padding:14px 16px;background:#0f1117;border:1px solid #ec489944;border-radius:8px">';
-        // Header row
-        h += `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">`;
-        h += `<div><span style="font-family:var(--mono);font-weight:800;color:#ec4899;font-size:1.05rem">◎ ${targetExpanded}</span> <span style="font-size:.7rem;color:var(--text2);margin-left:8px">${v.assetCount} asset${v.assetCount===1?'':'s'} · ${v.companies.length} compan${v.companies.length===1?'y':'ies'} · ${v.modalityClassCount} modality class${v.modalityClassCount===1?'':'es'} · ${v.areaCount} disease area${v.areaCount===1?'':'s'}</span></div>`;
-        h += `<div style="display:flex;gap:6px">`;
-        h += `<span class="fchip" style="padding:4px 12px;font-size:.7rem;background:#ec489922;border-color:#ec4899;color:#fda4af;cursor:pointer" onclick="event.stopPropagation();window._filterByTarget('${targetExpanded}')">Filter universe →</span>`;
-        h += `<span class="fchip" style="padding:4px 12px;font-size:.7rem;cursor:pointer" onclick="event.stopPropagation();window._targetExpand('${targetExpanded}')">✕ Close</span>`;
-        h += `</div>`;
-        h += `</div>`;
-
-        // Top-level metric strip
-        h += `<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px;padding:10px 12px;background:#0a0d14;border-radius:6px">`;
-        h += `<div><div style="font-size:.55rem;color:var(--text2);text-transform:uppercase;letter-spacing:1.2;margin-bottom:2px">TAM (deduped by area)</div><div style="font-size:1.05rem;font-weight:800;color:#f97316;font-family:var(--mono)">${fmtB(totalTAM)}</div></div>`;
-        h += `<div><div style="font-size:.55rem;color:var(--text2);text-transform:uppercase;letter-spacing:1.2;margin-bottom:2px">Aggregate SOM</div><div style="font-size:1.05rem;font-weight:800;color:#a855f7;font-family:var(--mono)">${fmtB(totalSOM)}</div></div>`;
-        h += `<div><div style="font-size:.55rem;color:var(--text2);text-transform:uppercase;letter-spacing:1.2;margin-bottom:2px">CAGR (SOM-weighted)</div><div style="font-size:1.05rem;font-weight:800;color:#22c55e;font-family:var(--mono)">${cagrAvg.toFixed(1)}%</div></div>`;
-        h += `<div><div style="font-size:.55rem;color:var(--text2);text-transform:uppercase;letter-spacing:1.2;margin-bottom:2px">Peak year (SOM-wtd)</div><div style="font-size:1.05rem;font-weight:800;color:#06b6d4;font-family:var(--mono)">${peakYearAvg}</div></div>`;
-        h += `</div>`;
-
-        // Asset x indication table
-        h += `<div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1.2;margin-bottom:6px">Asset × indication breakdown (sorted by SOM)</div>`;
-        const headerStyle = `display:grid;grid-template-columns:55px 1.4fr 1.5fr 1.5fr 70px 70px 70px 50px;gap:8px;font-size:.55rem;color:var(--text2);font-family:var(--mono);text-transform:uppercase;letter-spacing:1;padding-bottom:6px;border-bottom:1px solid #ffffff14`;
-        h += `<div style="${headerStyle}">`;
-        h += `<span>Tick</span><span>Asset</span><span>Modality</span><span>Area</span><span style="text-align:right">TAM</span><span style="text-align:right">SOM</span><span style="text-align:right">Sales</span><span style="text-align:right">Peak</span>`;
-        h += `</div>`;
-        const rowStyle = `display:grid;grid-template-columns:55px 1.4fr 1.5fr 1.5fr 70px 70px 70px 50px;gap:8px;font-size:.7rem;font-family:var(--mono);padding:6px 0;border-bottom:1px solid #ffffff05;align-items:baseline`;
-        detailRows.forEach(r=>{
-          h += `<div style="${rowStyle}">`;
-          h += `<a href="model.html?ticker=${r.ticker}" style="color:#60a5fa;font-weight:700;text-decoration:none">${r.ticker}</a>`;
-          h += `<span style="color:var(--text1);overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.assetName}">${r.assetName.slice(0,40)}</span>`;
-          h += `<span style="color:#06b6d4;font-size:.6rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.modality}">${(r.modality||'').replace(/_/g,' ')}</span>`;
-          h += `<span style="color:#f97316;font-size:.6rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.area}">${nice(r.area)}</span>`;
-          h += `<span style="text-align:right;color:#f97316">${fmtV(r.tam)}</span>`;
-          h += `<span style="text-align:right;color:#a855f7;font-weight:700">${fmtV(r.som)}</span>`;
-          h += `<span style="text-align:right;color:#22c55e">${r.salesM>0?fmtV(r.salesM):'—'}</span>`;
-          h += `<span style="text-align:right;color:var(--text2)">${r.peakYear}</span>`;
-          h += `</div>`;
-        });
-        h += '</div>';
-      }
       h+='</div>'; // close card
     })();
     // ============== /TARGET EXPLORER ==============

@@ -1,0 +1,2264 @@
+{
+  "company": {
+    "ticker": "MRK",
+    "name": "Merck & Co. Inc.",
+    "subtitle": "Keytruda $31.7B 2025 (48% revenue) | 2028 LOE cliff | Subq Keytruda Qlex bridge | Winrevair PAH ramping | Tulisokibart UC/CD Ph3",
+    "sharesOut": 2470,
+    "cash": 8000,
+    "currentPrice": 110.23,
+    "currency": "USD",
+    "yahooTicker": "MRK",
+    "cashRunway": "Self-funding ($20B+ annual op cash flow; $35B LT debt post-Verona/Prometheus M&A)",
+    "phase": "commercial"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "keytruda",
+      "name": "Keytruda + Qlex (pembrolizumab IV + subq)",
+      "stage": "Commercial ($31.7B 2025; subq Qlex approved Sep-2025; LOE 2028)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "nsclc",
+          "name": "NSCLC (1L + adjuvant + perioperative)",
+          "market": {
+            "tamB": 30,
+            "penPct": 60,
+            "salesM": 13000,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "Largest Keytruda indication ~40% of brand. KEYNOTE-189/407/671 1L mono+chemo; KEYNOTE-091 adjuvant; perioperative. ~$13B 2025. Subq Qlex approved Sep-2025 bridges to 2032+ patent estate.",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 80,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 95,
+                "wtpPct": 65,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 73.2,
+                "wtpPct": 18,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Keytruda dominant 1L NSCLC -- ~22% of all advanced NSCLC pts (post tagrisso/etc filtering); broad indication."
+              },
+              "us.priceK": {
+                "note": "$175K/yr blended -- WAC $192K, net ~$160K post 340B/PBM rebates."
+              },
+              "us.wtpPct": {
+                "note": "80% -- universal Medicare/commercial coverage; PD-L1 testing routine."
+              },
+              "eu.reachPct": {
+                "note": "12% of advanced NSCLC -- EU5 reimbursed 1L by NICE/G-BA; HTA discounts."
+              },
+              "eu.wtpPct": {
+                "note": "65% -- universal HTA; AMNOG-discounted."
+              },
+              "eu.priceK": {
+                "note": "$100K/yr EU net (~57% US list)."
+              },
+              "row.reachPct": {
+                "note": "5% -- Japan/AU widely covered; China NRDL listing 2024 expanded volume; LATAM emerging."
+              },
+              "row.wtpPct": {
+                "note": "18% -- Japan NHI full, China NRDL partial."
+              },
+              "row.priceK": {
+                "note": "$35K blended -- China NRDL ~$15K, Japan ~$80K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 80,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 100,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 400,
+                "wtpPct": 16,
+                "priceK": 35
+              }
+            }
+          },
+          "area": "oncology.lung.nsclc_io_combo"
+        },
+        {
+          "id": "skin_melanoma",
+          "name": "Melanoma (adjuvant + advanced) + cSCC",
+          "market": {
+            "tamB": 5,
+            "penPct": 65,
+            "salesM": 3500,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "KEYNOTE-006 advanced; KEYNOTE-054/716 adjuvant; KEYTRUDA + LENVIMA + VYJUVEK combos. Also cSCC label. ~$3.5B 2025.",
+            "company_slice": {
+              "us": {
+                "reachPct": 94.6,
+                "wtpPct": 80,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 53.0,
+                "wtpPct": 65,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 18.9,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Keytruda ~25% of US advanced melanoma -- KEYNOTE-006 set 1L PD-1 standard; adjuvant capture KEYNOTE-054."
+              },
+              "us.priceK": {
+                "note": "$175K/yr blended."
+              },
+              "us.wtpPct": {
+                "note": "80% -- broad coverage; high unmet need pre-IO era."
+              },
+              "eu.reachPct": {
+                "note": "14%."
+              },
+              "eu.wtpPct": {
+                "note": "65%."
+              },
+              "eu.priceK": {
+                "note": "$100K."
+              },
+              "row.reachPct": {
+                "note": "5%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            }
+          },
+          "area": "oncology.skin.melanoma"
+        },
+        {
+          "id": "gi_gastric",
+          "name": "GI tumors (gastric/HCC/MSI-H/CRC)",
+          "market": {
+            "tamB": 10,
+            "penPct": 48,
+            "salesM": 5000,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "KEYNOTE-859 gastric; KEYNOTE-394/240 HCC; KEYNOTE-177 MSI-H CRC; KEYNOTE-A18 gynecologic. ~$5B 2025 across GI.",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 75,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 78.3,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 31.3,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Keytruda ~18% of US advanced gastric/HCC/MSI-H -- biomarker-selected (PD-L1, MSI-H)."
+              },
+              "us.priceK": {
+                "note": "$175K/yr blended."
+              },
+              "us.wtpPct": {
+                "note": "75%."
+              },
+              "eu.reachPct": {
+                "note": "10%."
+              },
+              "eu.wtpPct": {
+                "note": "60%."
+              },
+              "eu.priceK": {
+                "note": "$100K."
+              },
+              "row.reachPct": {
+                "note": "4% -- China NRDL gastric volume key; APAC HCC strong."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 58,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 44,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 20,
+                "priceK": 32
+              }
+            }
+          },
+          "area": "oncology.gi.gastric_esoph"
+        },
+        {
+          "id": "gu_rcc_bladder",
+          "name": "GU (RCC + urothelial)",
+          "market": {
+            "tamB": 6,
+            "penPct": 58,
+            "salesM": 3500,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "KEYNOTE-426 RCC + Inlyta combo; KEYNOTE-A39 urothelial + Padcev combo. ~$3.5B 2025 across RCC + urothelial.",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 78,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 64.9,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 26.0,
+                "wtpPct": 15,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Keytruda ~18% of US RCC + bladder pools combined."
+              },
+              "us.priceK": {
+                "note": "$175K/yr blended."
+              },
+              "us.wtpPct": {
+                "note": "78%."
+              },
+              "eu.reachPct": {
+                "note": "10%."
+              },
+              "eu.wtpPct": {
+                "note": "60%."
+              },
+              "eu.priceK": {
+                "note": "$100K."
+              },
+              "row.reachPct": {
+                "note": "4%."
+              },
+              "row.wtpPct": {
+                "note": "15%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 68,
+                "priceK": 215
+              },
+              "eu": {
+                "patientsK": 30,
+                "wtpPct": 50,
+                "priceK": 125
+              },
+              "row": {
+                "patientsK": 70,
+                "wtpPct": 16,
+                "priceK": 40
+              }
+            }
+          },
+          "area": "oncology.genitourinary.rcc"
+        },
+        {
+          "id": "h_n_breast",
+          "name": "Head & Neck + Breast TNBC",
+          "market": {
+            "tamB": 10,
+            "penPct": 55,
+            "salesM": 3500,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "KEYNOTE-048 H&N 1L; KEYNOTE-522 + 355 TNBC neoadjuvant + advanced. ~$3.5B 2025 across H&N + TNBC.",
+            "company_slice": {
+              "us": {
+                "reachPct": 43.6,
+                "wtpPct": 75,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 21.8,
+                "wtpPct": 58,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 7.9,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Keytruda ~22% combined US H&N + TNBC; KEYNOTE-048 set H&N 1L standard."
+              },
+              "us.priceK": {
+                "note": "$175K/yr blended."
+              },
+              "us.wtpPct": {
+                "note": "75%."
+              },
+              "eu.reachPct": {
+                "note": "11%."
+              },
+              "eu.wtpPct": {
+                "note": "58%."
+              },
+              "eu.priceK": {
+                "note": "$100K."
+              },
+              "row.reachPct": {
+                "note": "4%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 70,
+                "wtpPct": 65,
+                "priceK": 145
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 50,
+                "priceK": 85
+              },
+              "row": {
+                "patientsK": 600,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            }
+          },
+          "area": "oncology.head_neck.hnscc"
+        },
+        {
+          "id": "gyn_lymphoma_other",
+          "name": "Gynecologic (cervical+endometrial) + classical Hodgkin + MSI-H other",
+          "market": {
+            "tamB": 8,
+            "penPct": 52,
+            "salesM": 3000,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "KEYNOTE-A18 cervical; KEYNOTE-868 endometrial; classical Hodgkin (KEYNOTE-204); MSI-H tumor-agnostic. ~$3B 2025 across this long tail.",
+            "company_slice": {
+              "us": {
+                "reachPct": 69.0,
+                "wtpPct": 78,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 38.4,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 11.5,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Keytruda ~9% across the gyn+cHL+MSI-H long tail (anchored to ovarian TAM as proxy for gynecologic class)."
+              },
+              "us.priceK": {
+                "note": "$175K/yr blended."
+              },
+              "us.wtpPct": {
+                "note": "78%."
+              },
+              "eu.reachPct": {
+                "note": "5%."
+              },
+              "eu.wtpPct": {
+                "note": "60%."
+              },
+              "eu.priceK": {
+                "note": "$100K."
+              },
+              "row.reachPct": {
+                "note": "1.5%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 35,
+                "wtpPct": 65,
+                "priceK": 125
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 50,
+                "priceK": 72
+              },
+              "row": {
+                "patientsK": 90,
+                "wtpPct": 16,
+                "priceK": 25
+              }
+            }
+          },
+          "area": "oncology.gynecologic.ovarian"
+        }
+      ],
+      "modality": "antibody.checkpoint.pd1",
+      "targets": [
+        "PDCD1"
+      ]
+    },
+    {
+      "id": "gardasil",
+      "name": "Gardasil 9 (HPV vaccine)",
+      "stage": "Commercial ($5.2B 2025, -39% on China inventory)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "hpv",
+          "name": "HPV vaccination (9-26 routine + catch-up)",
+          "market": {
+            "tamB": 8,
+            "penPct": 65,
+            "salesM": 5200,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "9-valent HPV vaccine. ~$8.6B 2024 -> $5.2B 2025 (China inventory crash + Japan softness). ACIP recommended 9-26 routine; catch-up to 45. Recovery expected 2026-27. Cervarix (GSK) near-zero share.",
+            "company_slice": {
+              "us": {
+                "reachPct": 75,
+                "wtpPct": 75,
+                "priceK": 0.7
+              },
+              "eu": {
+                "reachPct": 60,
+                "wtpPct": 55,
+                "priceK": 0.45
+              },
+              "row": {
+                "reachPct": 12,
+                "wtpPct": 20,
+                "priceK": 0.18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Gardasil 9 ~75% of US adolescent HPV vaccination market."
+              },
+              "us.priceK": {
+                "note": "$700/yr 3-dose series equivalent."
+              },
+              "us.wtpPct": {
+                "note": "75% -- VFC + private commercial cover; ACIP routine."
+              },
+              "eu.reachPct": {
+                "note": "60% of EU HPV market."
+              },
+              "eu.wtpPct": {
+                "note": "55% -- national programs vary."
+              },
+              "eu.priceK": {
+                "note": "$450 EU net."
+              },
+              "row.reachPct": {
+                "note": "12% -- China + LATAM private + government pilots; recovery 2026-27."
+              },
+              "row.wtpPct": {
+                "note": "20%."
+              },
+              "row.priceK": {
+                "note": "$180 blended."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 75,
+                "priceK": 0.7
+              },
+              "eu": {
+                "patientsK": 30000,
+                "wtpPct": 60,
+                "priceK": 0.45
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.18
+              }
+            }
+          },
+          "area": "infectious_disease.vaccines.hpv"
+        }
+      ],
+      "modality": "vaccine.protein_subunit.virus_like_particle",
+      "targets": [
+        "HPV"
+      ]
+    },
+    {
+      "id": "winrevair",
+      "name": "Winrevair (sotatercept) — PAH",
+      "stage": "Commercial ($1.4B 2025, +233%; ZENITH outcomes 76% MACE/death/transplant reduction)",
+      "designations": [
+        "Orphan (US + EU)"
+      ],
+      "indications": [
+        {
+          "id": "pah",
+          "name": "Pulmonary arterial hypertension",
+          "market": {
+            "tamB": 8,
+            "penPct": 65,
+            "salesM": 1400,
+            "salesYear": 2025,
+            "peakYear": 2032,
+            "cagrPct": 6,
+            "notes": "First-in-class activin signaling pathway agent (TGF-beta superfamily). Subq Q3W. ZENITH stopped early Oct 2025 -- 76% reduction in composite (death/transplant/PAH worsening hospitalization). Label expanded Oct 2025. Acceleron $11.5B acquisition 2021. Peak forecast $5-7B.",
+            "company_slice": {
+              "us": {
+                "reachPct": 50,
+                "wtpPct": 80,
+                "priceK": 240
+              },
+              "eu": {
+                "reachPct": 30,
+                "wtpPct": 65,
+                "priceK": 150
+              },
+              "row": {
+                "reachPct": 8,
+                "wtpPct": 18,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Winrevair ~50% reach of 40K US PAH pts (FC II-IV active tx); ZENITH outcomes drive 1L+ adoption."
+              },
+              "us.priceK": {
+                "note": "$240K/yr WAC; $244K list per Acceleron pricing PR."
+              },
+              "us.wtpPct": {
+                "note": "80% -- specialty pharmacy; Medicare/commercial broad coverage."
+              },
+              "eu.reachPct": {
+                "note": "30% -- EMA approved; HTA cautious on add-on cost."
+              },
+              "eu.wtpPct": {
+                "note": "65%."
+              },
+              "eu.priceK": {
+                "note": "$150K EU net."
+              },
+              "row.reachPct": {
+                "note": "8% -- Japan + AU launching; China private."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$60K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 75,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 18,
+                "priceK": 25
+              }
+            }
+          },
+          "area": "cardio_metabolic.cardiopulmonary.pah",
+          "rare": true
+        }
+      ],
+      "modality": "recombinant_protein.fusion.activin_trap",
+      "targets": [
+        "ACVR2A"
+      ]
+    },
+    {
+      "id": "welireg",
+      "name": "Welireg (belzutifan) — HIF-2α (RCC + VHL + pheo/para)",
+      "stage": "Commercial ($716M 2025, +41%; pheo/para added May-2025)",
+      "designations": [
+        "Orphan (VHL)"
+      ],
+      "indications": [
+        {
+          "id": "rcc",
+          "name": "Renal cell carcinoma + VHL + pheo/para",
+          "market": {
+            "tamB": 6,
+            "penPct": 58,
+            "salesM": 716,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "notes": "First-in-class oral HIF-2α inhibitor. RCC 2L+ post-IO + VHL-related tumors + pheochromocytoma/paraganglioma. Adjuvant RCC Ph3 readout 2H 2026.",
+            "company_slice": {
+              "us": {
+                "reachPct": 17.5,
+                "wtpPct": 75,
+                "priceK": 240
+              },
+              "eu": {
+                "reachPct": 11.7,
+                "wtpPct": 55,
+                "priceK": 145
+              },
+              "row": {
+                "reachPct": 1.7,
+                "wtpPct": 12,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Welireg ~6% of US RCC pts -- 2L+ post Inlyta+Keytruda, plus VHL + pheo/para small but high-margin."
+              },
+              "us.priceK": {
+                "note": "$240K/yr WAC oral specialty oncology."
+              },
+              "us.wtpPct": {
+                "note": "75%."
+              },
+              "eu.reachPct": {
+                "note": "4%."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$145K."
+              },
+              "row.reachPct": {
+                "note": "0.6%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$60K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 68,
+                "priceK": 215
+              },
+              "eu": {
+                "patientsK": 30,
+                "wtpPct": 50,
+                "priceK": 125
+              },
+              "row": {
+                "patientsK": 70,
+                "wtpPct": 16,
+                "priceK": 40
+              }
+            }
+          },
+          "area": "oncology.genitourinary.rcc"
+        }
+      ],
+      "modality": "small_molecule.transcription_factor.hif2a_inhibitor",
+      "targets": [
+        "HIF2A"
+      ]
+    },
+    {
+      "id": "vaccines_other",
+      "name": "Vaccines portfolio (Capvaxive + Vaxneuvance + Pneumovax + Enflonsia)",
+      "stage": "Commercial (~$2.6B 2025; pneumococcal + RSV peds)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "pneumo",
+          "name": "Pneumococcal (adult Capvaxive + Vaxneuvance + PPSV23)",
+          "market": {
+            "tamB": 12,
+            "penPct": 55,
+            "salesM": 1700,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "notes": "Capvaxive (21v) launch 2024 ramping; Vaxneuvance (15v); Pneumovax 23 legacy. Combined ~$1.7B 2025. Compete with Pfizer Prevnar 20 (~$6.5B). Adult >=50 ACIP routine.",
+            "company_slice": {
+              "us": {
+                "reachPct": 30,
+                "wtpPct": 60,
+                "priceK": 0.22
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 40,
+                "priceK": 0.15
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 14,
+                "priceK": 0.05
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Merck pneumococcal ~30% of US adult vaccinated pool (Pfizer Prevnar 20 dominant ~60%)."
+              },
+              "us.priceK": {
+                "note": "$220 single-dose blended."
+              },
+              "us.wtpPct": {
+                "note": "60% -- Medicare Part B + commercial cover."
+              },
+              "eu.reachPct": {
+                "note": "15%."
+              },
+              "eu.wtpPct": {
+                "note": "40%."
+              },
+              "eu.priceK": {
+                "note": "$150."
+              },
+              "row.reachPct": {
+                "note": "5%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$50."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 110000,
+                "wtpPct": 60,
+                "priceK": 0.22
+              },
+              "eu": {
+                "patientsK": 200000,
+                "wtpPct": 45,
+                "priceK": 0.15
+              },
+              "row": {
+                "patientsK": 800000,
+                "wtpPct": 15,
+                "priceK": 0.05
+              }
+            }
+          },
+          "area": "infectious_disease.vaccines.pneumococcal"
+        },
+        {
+          "id": "rsv_peds",
+          "name": "Enflonsia (clesrovimab) RSV peds",
+          "market": {
+            "tamB": 5,
+            "penPct": 35,
+            "salesM": 200,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "notes": "Clesrovimab approved Jun 2025; first season shipping. ACIP-recommended alternative to nirsevimab (Beyfortus AZ/Sanofi). Single-dose RSV season prophylaxis for infants. Peak ~$1-2B.",
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 70,
+                "priceK": 0.5
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 55,
+                "priceK": 0.32
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Enflonsia ~12% reach of US peds RSV cohort -- nirsevimab Beyfortus dominant first-mover."
+              },
+              "us.priceK": {
+                "note": "$500/dose ACIP-published price."
+              },
+              "us.wtpPct": {
+                "note": "70% -- VFC + commercial; included in childhood vaccine schedule."
+              },
+              "eu.reachPct": {
+                "note": "6% -- Beyfortus dominant EU."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$320."
+              },
+              "row.reachPct": {
+                "note": "0.5% -- limited launches."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$100."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 4500,
+                "wtpPct": 70,
+                "priceK": 0.5
+              },
+              "eu": {
+                "patientsK": 4500,
+                "wtpPct": 55,
+                "priceK": 0.32
+              },
+              "row": {
+                "patientsK": 120000,
+                "wtpPct": 12,
+                "priceK": 0.1
+              }
+            }
+          },
+          "area": "infectious_disease.vaccines.rsv"
+        }
+      ],
+      "modality": "vaccine.protein_subunit.conjugate",
+      "targets": []
+    },
+    {
+      "id": "ohtuvayre",
+      "name": "Ohtuvayre (ensifentrine) — COPD (Verona acquisition $10B)",
+      "stage": "Commercial (Verona closed Oct 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "copd",
+          "name": "COPD maintenance (PDE3/4 inhaled)",
+          "market": {
+            "tamB": 15,
+            "penPct": 10,
+            "salesM": 250,
+            "salesYear": 2025,
+            "peakYear": 2032,
+            "cagrPct": 5,
+            "notes": "First-in-class inhaled PDE3/4 inhibitor. Approved Jun 2024. Verona acquisition closed Oct 7, 2025 ($10B; $107/ADS). Peak forecasts $3-5B. Expanding patient labels to severe asthma (Ph2).",
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 60,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 40,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.4,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Ohtuvayre ~5% of US severe COPD pool by peak; novel MOA but inhaled requires patient training."
+              },
+              "us.priceK": {
+                "note": "$35K/yr WAC -- specialty pulmonology."
+              },
+              "us.wtpPct": {
+                "note": "60% -- prior auth common; Medicare Part D + commercial."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "40%."
+              },
+              "eu.priceK": {
+                "note": "$22K."
+              },
+              "row.reachPct": {
+                "note": "0.4%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$8K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            }
+          },
+          "area": "respiratory.inflammatory.copd"
+        }
+      ],
+      "modality": "small_molecule.phosphodiesterase.pde3_4_dual",
+      "targets": [
+        "PDE3",
+        "PDE4"
+      ]
+    },
+    {
+      "id": "tulisokibart",
+      "name": "Tulisokibart (MK-7240, anti-TL1A) — UC + CD (Prometheus $10.8B)",
+      "stage": "Phase 3 ATLAS-UC (~720 pts, readout 2027)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "uc",
+          "name": "Ulcerative colitis (moderate-severe)",
+          "market": {
+            "tamB": 8,
+            "penPct": 35,
+            "peakYear": 2032,
+            "notes": "Anti-TL1A monoclonal antibody. Prometheus $10.8B acquisition 2023. Ph2 ARTEMIS-UC positive. Ph3 ATLAS-UC in moderate-to-severe UC (~720 pts), readout 2027. Companion Ph2b in Crohn's. Class peers: RVT-3101 (Roche/Roivant), TEV-48574 (Teva). Peak forecasts $5-8B if first-in-class.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 50,
+                "priceK": 95
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 38,
+                "priceK": 55
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Tulisokibart 2028+ launch if Ph3 hits; 4% peak reach UC competitive vs Stelara/Skyrizi/Entyvio/Rinvoq."
+              },
+              "us.priceK": {
+                "note": "$95K/yr biologic class peer pricing."
+              },
+              "us.wtpPct": {
+                "note": "50% -- payors require step therapy through TNFi/IL-23/JAKi."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$55K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$22K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1000,
+                "wtpPct": 50,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 30,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 5000,
+                "wtpPct": 8,
+                "priceK": 3
+              }
+            }
+          },
+          "area": "immunology.inflammatory_gi.ulcerative_colitis"
+        },
+        {
+          "id": "crohns",
+          "name": "Crohn's disease (moderate-severe)",
+          "market": {
+            "tamB": 10,
+            "penPct": 38,
+            "peakYear": 2033,
+            "notes": "Tulisokibart Ph2b in Crohn's; Ph3 to follow. Same biologic class.",
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 45,
+                "priceK": 95
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 32,
+                "priceK": 55
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 8,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Tulisokibart Crohn's later launch if Ph3 hits ~3% peak reach."
+              },
+              "us.priceK": {
+                "note": "$95K/yr biologic."
+              },
+              "us.wtpPct": {
+                "note": "45%."
+              },
+              "eu.reachPct": {
+                "note": "1.5%."
+              },
+              "eu.wtpPct": {
+                "note": "32%."
+              },
+              "eu.priceK": {
+                "note": "$55K."
+              },
+              "row.reachPct": {
+                "note": "0.2%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$22K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 800,
+                "wtpPct": 55,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 35,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 5000,
+                "wtpPct": 10,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "immunology.inflammatory_gi.crohns"
+        }
+      ],
+      "modality": "antibody.cytokine.tl1a_blocker",
+      "targets": [
+        "TL1A"
+      ]
+    },
+    {
+      "id": "i_dxd",
+      "name": "Ifinatamab deruxtecan (I-DXd) — B7-H3 ADC (Daiichi co-dev)",
+      "stage": "FDA Priority Review; PDUFA Oct 10, 2026 for ES-SCLC",
+      "designations": [
+        "Breakthrough (US)",
+        "Priority Review"
+      ],
+      "indications": [
+        {
+          "id": "sclc",
+          "name": "ES-SCLC 2L+ (post-platinum)",
+          "market": {
+            "tamB": 4,
+            "penPct": 48,
+            "peakYear": 2030,
+            "notes": "B7-H3-targeting ADC with DXd payload (Daiichi co-developed). IDeate-Lung01 Ph2 ORR 48.2%, mPFS 4.9mo. PDUFA Oct 10, 2026. IDeate-Lung02 Ph3 vs TPC enrolling.",
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 65,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 48,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 0.8,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "I-DXd 2L+ ES-SCLC capture ~8% of US SCLC pool given high unmet need post-platinum."
+              },
+              "us.priceK": {
+                "note": "$175K/yr ADC class pricing."
+              },
+              "us.wtpPct": {
+                "note": "65% -- ES-SCLC has limited 2L options; payors approve novel ADCs."
+              },
+              "eu.reachPct": {
+                "note": "4%."
+              },
+              "eu.wtpPct": {
+                "note": "48%."
+              },
+              "eu.priceK": {
+                "note": "$100K."
+              },
+              "row.reachPct": {
+                "note": "0.8%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 22,
+                "wtpPct": 60,
+                "priceK": 125
+              },
+              "eu": {
+                "patientsK": 28,
+                "wtpPct": 44,
+                "priceK": 72
+              },
+              "row": {
+                "patientsK": 180,
+                "wtpPct": 14,
+                "priceK": 28
+              }
+            }
+          },
+          "area": "oncology.lung.sclc"
+        }
+      ],
+      "modality": "adc.dxd_linker.b7h3_adc",
+      "targets": [
+        "CD276"
+      ]
+    },
+    {
+      "id": "r_dxd",
+      "name": "Raludotatug deruxtecan (R-DXd) — CDH6 ADC (Daiichi co-dev)",
+      "stage": "Phase 3 REJOICE-Ovarian01 (50.5% Ph2 ORR, FDA Breakthrough)",
+      "designations": [
+        "Breakthrough (US)"
+      ],
+      "indications": [
+        {
+          "id": "ovarian_rdxd",
+          "name": "Platinum-resistant ovarian cancer",
+          "market": {
+            "tamB": 4,
+            "penPct": 52,
+            "peakYear": 2031,
+            "notes": "CDH6-targeting ADC with DXd payload. REJOICE-Ovarian01 Ph2 50.5% ORR / 77.6% DCR in platinum-resistant. Ph3 portion enrolling at 5.6 mg/kg. FDA Breakthrough Designation.",
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 55,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 40,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "R-DXd platinum-resistant ovarian ~6% peak reach if Ph3 confirms; Elahere (mirvetuximab FRa-ADC) is incumbent."
+              },
+              "us.priceK": {
+                "note": "$175K/yr ADC."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "3%."
+              },
+              "eu.wtpPct": {
+                "note": "40%."
+              },
+              "eu.priceK": {
+                "note": "$100K."
+              },
+              "row.reachPct": {
+                "note": "0.5%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 35,
+                "wtpPct": 65,
+                "priceK": 125
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 50,
+                "priceK": 72
+              },
+              "row": {
+                "patientsK": 90,
+                "wtpPct": 16,
+                "priceK": 25
+              }
+            }
+          },
+          "area": "oncology.gynecologic.ovarian"
+        }
+      ],
+      "modality": "adc.dxd_linker.cdh6_adc",
+      "targets": [
+        "CDH6"
+      ]
+    },
+    {
+      "id": "nemtabrutinib",
+      "name": "Nemtabrutinib (MK-1026) — reversible BTK (CLL Ph3)",
+      "stage": "Phase 3 BELLWAVE-011 (1L CLL/SLL vs ibrutinib/acalabrutinib)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "cll",
+          "name": "1L CLL/SLL (BTK inhibitor)",
+          "market": {
+            "tamB": 6,
+            "penPct": 65,
+            "peakYear": 2034,
+            "notes": "Reversible BTK inhibitor (vs covalent ibrutinib/acalabrutinib/zanubrutinib). BELLWAVE-011 (~1,200 pts) head-to-head; primary completion 2032. BELLWAVE-010 R/R venetoclax combo. ONC sonrotoclax + Loxo pirtobrutinib competitive.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 55,
+                "priceK": 165
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 38,
+                "priceK": 95
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 9,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Nemtabrutinib 4% peak reach 1L CLL post BELLWAVE-011 readout 2032."
+              },
+              "us.priceK": {
+                "note": "$165K/yr BTKi class peer."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$95K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "9%."
+              },
+              "row.priceK": {
+                "note": "$30K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 80,
+                "wtpPct": 70,
+                "priceK": 100
+              },
+              "eu": {
+                "patientsK": 95,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            }
+          },
+          "area": "oncology.hematology.cll"
+        }
+      ],
+      "modality": "small_molecule.kinase_inhibitor.btk_reversible",
+      "targets": [
+        "BTK"
+      ]
+    },
+    {
+      "id": "animal_health",
+      "name": "Merck Animal Health (livestock + companion)",
+      "stage": "Commercial ($6.4B 2025, +9% ex-FX)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "veterinary",
+          "name": "Animal Health platform (Bravecto Quantum, livestock vaccines, companion diagnostics)",
+          "market": {
+            "tamB": 60,
+            "penPct": 12,
+            "salesM": 6400,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "notes": "Separate biz unit. Livestock +14% Q3 (Bovilis vaccines); companion under parasiticide pressure. Bravecto Quantum yearly injection approved 2025. Class peers: Zoetis ($9B), Elanco ($4B), Boehringer Animal Health.",
+            "company_slice": {},
+            "company_slice_sources": {}
+          },
+          "area": "_animal_health.veterinary"
+        }
+      ],
+      "modality": "small_molecule.veterinary.various",
+      "targets": []
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Keytruda 2028 cliff hits hard + slow Qlex switch + tulisokibart fails + Gardasil never recovers",
+      "events": [
+        "X Keytruda IV biosimilars Q4 2028 -- erosion 50%+ Y1, faster than expected",
+        "X Keytruda Qlex switch <20% (payor pushback on subq pricing premium)",
+        "X Tulisokibart ATLAS-UC fails / borderline + Crohn's de-prioritized",
+        "X Gardasil China inventory + Japan softness persists; never recovers >$5B",
+        "X I-DXd PDUFA delays / label restrictions on SCLC",
+        "-> Stock to $75-85 (cash + Winrevair + animal health floor)"
+      ],
+      "assumptions": {
+        "keytruda": {
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "skin_melanoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "gi_gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "gu_rcc_bladder": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "h_n_breast": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "gyn_lymphoma_other": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "gardasil": {
+          "hpv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "winrevair": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "welireg": {
+          "rcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "vaccines_other": {
+          "pneumo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "rsv_peds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "ohtuvayre": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "tulisokibart": {
+          "uc": {
+            "pos": 30,
+            "apr": 35,
+            "pen": 0.4
+          },
+          "crohns": {
+            "pos": 18,
+            "apr": 25,
+            "pen": 0.3
+          }
+        },
+        "i_dxd": {
+          "sclc": {
+            "pos": 70,
+            "apr": 60,
+            "pen": 0.5
+          }
+        },
+        "r_dxd": {
+          "ovarian_rdxd": {
+            "pos": 35,
+            "apr": 40,
+            "pen": 0.4
+          }
+        },
+        "nemtabrutinib": {
+          "cll": {
+            "pos": 25,
+            "apr": 30,
+            "pen": 0.4
+          }
+        },
+        "animal_health": {
+          "veterinary": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 14,
+        "pipelineMult": 4,
+        "commercialMult": 3.5,
+        "commercialRevM": 48000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Cliff manageable but harsh + Qlex captures 25% + tulisokibart OK + Winrevair offsets partially",
+      "events": [
+        "~ Keytruda IV biosimilar erosion -40% Y1 + Qlex captures 25% switch",
+        "~ Tulisokibart ATLAS-UC OK; CD slow",
+        "V Winrevair $4B+ peak",
+        "V I-DXd approved SCLC; modest ramp",
+        "X R-DXd Ph3 ovarian missed"
+      ],
+      "assumptions": {
+        "keytruda": {
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "skin_melanoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "gi_gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "gu_rcc_bladder": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "h_n_breast": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "gyn_lymphoma_other": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "gardasil": {
+          "hpv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "winrevair": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "welireg": {
+          "rcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "vaccines_other": {
+          "pneumo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "rsv_peds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "ohtuvayre": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "tulisokibart": {
+          "uc": {
+            "pos": 55,
+            "apr": 60,
+            "pen": 0.6
+          },
+          "crohns": {
+            "pos": 35,
+            "apr": 45,
+            "pen": 0.5
+          }
+        },
+        "i_dxd": {
+          "sclc": {
+            "pos": 90,
+            "apr": 85,
+            "pen": 0.7
+          }
+        },
+        "r_dxd": {
+          "ovarian_rdxd": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.5
+          }
+        },
+        "nemtabrutinib": {
+          "cll": {
+            "pos": 45,
+            "apr": 50,
+            "pen": 0.5
+          }
+        },
+        "animal_health": {
+          "veterinary": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 5,
+        "commercialMult": 5.0,
+        "commercialRevM": 56000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Qlex captures 35% of IV before LOE + Winrevair $5B + tulisokibart breakthrough + ADCs offset",
+      "events": [
+        "V Keytruda Qlex captures 35% IV->subq switch by 2028",
+        "V Winrevair $5-6B 2030+ on ZENITH expansion",
+        "V Tulisokibart ATLAS-UC positive; UC launch 2028",
+        "V I-DXd approved SCLC + IDeate-Lung02 Ph3 follows",
+        "V R-DXd ovarian Ph3 positive; broader ADC franchise",
+        "V Capvaxive ramp + Enflonsia second-season uptake"
+      ],
+      "assumptions": {
+        "keytruda": {
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "skin_melanoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "gi_gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "gu_rcc_bladder": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "h_n_breast": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "gyn_lymphoma_other": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "gardasil": {
+          "hpv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "winrevair": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "welireg": {
+          "rcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "vaccines_other": {
+          "pneumo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "rsv_peds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "ohtuvayre": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "tulisokibart": {
+          "uc": {
+            "pos": 75,
+            "apr": 78,
+            "pen": 0.85
+          },
+          "crohns": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 0.7
+          }
+        },
+        "i_dxd": {
+          "sclc": {
+            "pos": 96,
+            "apr": 92,
+            "pen": 0.95
+          }
+        },
+        "r_dxd": {
+          "ovarian_rdxd": {
+            "pos": 70,
+            "apr": 70,
+            "pen": 0.7
+          }
+        },
+        "nemtabrutinib": {
+          "cll": {
+            "pos": 65,
+            "apr": 68,
+            "pen": 0.7
+          }
+        },
+        "animal_health": {
+          "veterinary": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 5.5,
+        "commercialMult": 6.5,
+        "commercialRevM": 65000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Qlex 45%+ + tulisokibart $7B+ in IBD + ADC franchise expands + Winrevair $7B + label expansions",
+      "events": [
+        "V Qlex captures 45%+ IV switch + extends to 2032 patent estate",
+        "V Tulisokibart ATLAS-UC strong + Crohn's positive; $7B+ peak in IBD",
+        "V I-DXd label expands NSCLC + R-DXd ovarian + new CDH6 indications",
+        "V Winrevair indication expansions (HFpEF, label growth) $7B+",
+        "V Welireg adjuvant RCC label adds + pheo/para expand",
+        "V Net franchise grows through cliff"
+      ],
+      "assumptions": {
+        "keytruda": {
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "skin_melanoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "gi_gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "gu_rcc_bladder": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "h_n_breast": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "gyn_lymphoma_other": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "gardasil": {
+          "hpv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "winrevair": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "welireg": {
+          "rcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "vaccines_other": {
+          "pneumo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "rsv_peds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "ohtuvayre": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "tulisokibart": {
+          "uc": {
+            "pos": 88,
+            "apr": 88,
+            "pen": 1.05
+          },
+          "crohns": {
+            "pos": 75,
+            "apr": 78,
+            "pen": 0.9
+          }
+        },
+        "i_dxd": {
+          "sclc": {
+            "pos": 99,
+            "apr": 96,
+            "pen": 1.1
+          }
+        },
+        "r_dxd": {
+          "ovarian_rdxd": {
+            "pos": 85,
+            "apr": 82,
+            "pen": 0.9
+          }
+        },
+        "nemtabrutinib": {
+          "cll": {
+            "pos": 78,
+            "apr": 80,
+            "pen": 0.9
+          }
+        },
+        "animal_health": {
+          "veterinary": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 7,
+        "commercialMult": 8.5,
+        "commercialRevM": 75000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Keytruda franchise grows through cliff + IBD megafranchise + multi-tumor ADC platform + animal health + M&A optionality",
+      "events": [
+        "V Qlex + label expansion + lifecycle management = Keytruda flat through 2030",
+        "V Tulisokibart $10B+ in UC + CD + 3 add'l IMID indications",
+        "V Winrevair $10B PAH + HFpEF + HFrEF expansion",
+        "V ADC franchise (I-DXd + R-DXd + future Daiichi assets) > $5B combined",
+        "V Animal Health spin-off realizes hidden value",
+        "V Acquisition premium / sum-of-parts unlock"
+      ],
+      "assumptions": {
+        "keytruda": {
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          },
+          "skin_melanoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          },
+          "gi_gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          },
+          "gu_rcc_bladder": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          },
+          "h_n_breast": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          },
+          "gyn_lymphoma_other": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          }
+        },
+        "gardasil": {
+          "hpv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "winrevair": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.6
+          }
+        },
+        "welireg": {
+          "rcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "vaccines_other": {
+          "pneumo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "rsv_peds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "ohtuvayre": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "tulisokibart": {
+          "uc": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.3
+          },
+          "crohns": {
+            "pos": 88,
+            "apr": 90,
+            "pen": 1.2
+          }
+        },
+        "i_dxd": {
+          "sclc": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.3
+          }
+        },
+        "r_dxd": {
+          "ovarian_rdxd": {
+            "pos": 95,
+            "apr": 92,
+            "pen": 1.2
+          }
+        },
+        "nemtabrutinib": {
+          "cll": {
+            "pos": 88,
+            "apr": 90,
+            "pen": 1.2
+          }
+        },
+        "animal_health": {
+          "veterinary": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 9,
+        "commercialMult": 11.0,
+        "commercialRevM": 90000,
+        "milestones": 0,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 3, 2026 (Q4 2025 / FY 2025)",
+      "title": "FY2025 $65B revenue (+1%); 2026 guide $65.5-67B; Keytruda 2028 LOE looms",
+      "points": [
+        "FY2025 revenue $65.0B (+1% reported, +1% ex-FX)",
+        "Keytruda $31.7B (+7%) -- 48% of total, 55% of pharma",
+        "Subq Keytruda Qlex approved Sep 19, 2025 (Halozyme partnership)",
+        "Gardasil $5.2B (-39%) on China inventory crash + Japan softness",
+        "Winrevair $1.4B (+233%) post ZENITH outcomes 76% MACE/death/transplant reduction",
+        "Capvaxive $759M new launch (21v adult pneumo)",
+        "Enflonsia clesrovimab approved Jun 9, 2025 (RSV peds)",
+        "Verona acquisition closed Oct 7, 2025 ($10B; Ohtuvayre COPD)",
+        "Welireg $716M (+41%); pheo/para added May 2025",
+        "Animal Health $6.4B (+9% ex-FX)",
+        "I-DXd PDUFA Oct 10, 2026 (ES-SCLC, B7-H3 ADC w/ Daiichi)",
+        "Tulisokibart Ph3 ATLAS-UC enrolling (~720 pts, readout 2027)",
+        "2026 guide $65.5-67B / EPS $5.00-5.15 (below sell-side $67.6B / $5.36)"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "Oct 10, 2026",
+      "title": "I-DXd PDUFA (ES-SCLC) — first ADC approval; Welireg adjuvant RCC Ph3",
+      "thresholds": [
+        "Oct 10, 2026: I-DXd FDA PDUFA (ES-SCLC, B7-H3 ADC)",
+        "2H 2026: Welireg adjuvant RCC Ph3 readout",
+        "2026-27: Capvaxive ACIP momentum + Enflonsia second RSV season",
+        "2H 2026 / 1H 2027: IDeate-Lung02 Ph3 SCLC readout",
+        "2027: Tulisokibart ATLAS-UC Ph3 topline",
+        "2027: REJOICE-Ovarian01 Ph3 portion data",
+        "2028: Keytruda US LOE (composition-of-matter Dec 2028)"
+      ]
+    },
+    "risks": [
+      "Keytruda 2028 LOE: 48% of revenue, IV biosimilars from Samsung Bioepis/Amgen/Celltrion/Indian players. Method patents extend May/Nov 2029.",
+      "Subq Keytruda Qlex (~2032 patent estate) is the bridge -- payor acceptance + switching velocity uncertain. Merck guides 30-40% switch by 2028.",
+      "Gardasil $8.6B->$5.2B collapse: China inventory destocking + Japan softness; recovery to $7-8B uncertain.",
+      "Tulisokibart $10.8B Prometheus acquisition (2023) needs Ph3 ATLAS-UC win to justify; class peers (Roivant RVT-3101, Teva TEV-48574) competing.",
+      "Verona $10B for Ohtuvayre (single-asset, COPD competitive vs Trelegy/Breztri/Spiriva).",
+      "ADC partnership with Daiichi: I-DXd + R-DXd + patritumab failed (HER3-DXd OS missed). Co-development economics + clinical risk.",
+      "Vibostolimab/TIGIT failed (KeyVibe-008 SCLC Sep 2024) -- IO combination strategy questioned.",
+      "Pricing pressure: IRA negotiation for Keytruda (Medicare 2027 selection cycle).",
+      "Activist / capital allocation scrutiny on Animal Health spin-off potential."
+    ]
+  },
+  "catalysts": [
+    {
+      "date": "Oct 10, 2026",
+      "dateSort": "2026-10-10",
+      "asset": "i_dxd",
+      "indication": "sclc",
+      "title": "I-DXd FDA PDUFA — ES-SCLC (B7-H3 ADC)",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 90,
+      "fail_apr": 5,
+      "success_pos": 96,
+      "success_apr": 100,
+      "_confidence": "high",
+      "_sourceUrl": "https://www.biopharminternational.com/view/ifinatamab-deruxtecan-granted-priority-review-for-previously-treated-extensive-stage-small-cell-lung-cancer",
+      "_rationale": "FDA accepted Priority Review; PDUFA target action Oct 10, 2026."
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "welireg",
+      "indication": "rcc",
+      "title": "Welireg adjuvant RCC Ph3 readout",
+      "type": "phase3_data",
+      "binary": false,
+      "fail_pos": 90,
+      "fail_apr": 70,
+      "success_pos": 98,
+      "success_apr": 95,
+      "_confidence": "medium",
+      "_rationale": "Adjuvant RCC Ph3 expected H2 2026 per Q4'25 call."
+    },
+    {
+      "date": "2H 2026 / 1H 2027",
+      "dateSort": "2027-03-31",
+      "asset": "i_dxd",
+      "indication": "sclc",
+      "title": "IDeate-Lung02 Ph3 SCLC readout (vs TPC)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 0,
+      "fail_apr": 0,
+      "success_pos": 90,
+      "success_apr": 92,
+      "_confidence": "medium",
+      "_rationale": "Ph3 confirmatory study following Ph2 ORR 48%; readout 2H26/1H27 per ClinicalTrials.gov enrollment status."
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-09-30",
+      "asset": "tulisokibart",
+      "indication": "uc",
+      "title": "ATLAS-UC Ph3 tulisokibart topline (UC moderate-severe)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 0,
+      "fail_apr": 0,
+      "success_pos": 88,
+      "success_apr": 88,
+      "_confidence": "medium",
+      "_rationale": "ATLAS-UC primary completion 2027 per ClinicalTrials.gov; ARTEMIS-UC Ph2 positive de-risks."
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-12-31",
+      "asset": "r_dxd",
+      "indication": "ovarian_rdxd",
+      "title": "REJOICE-Ovarian01 Ph3 portion data",
+      "type": "phase3_data",
+      "binary": false,
+      "fail_pos": 30,
+      "fail_apr": 50,
+      "success_pos": 85,
+      "success_apr": 82,
+      "_confidence": "medium",
+      "_rationale": "Ph3 enrolling at 5.6 mg/kg post 50.5% Ph2 ORR; data 2027+."
+    },
+    {
+      "date": "Dec 2028",
+      "dateSort": "2028-12-15",
+      "asset": "keytruda",
+      "indication": "nsclc",
+      "title": "Keytruda US LOE — composition-of-matter expiry",
+      "type": "loe",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_confidence": "high",
+      "_rationale": "Composition-of-matter US patent expires Dec 2028; method patents extend May/Nov 2029. Subq Qlex extends to ~2032."
+    }
+  ]
+}

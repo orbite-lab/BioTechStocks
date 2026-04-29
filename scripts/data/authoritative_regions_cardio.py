@@ -83,6 +83,20 @@ REGIONS = {
         "eu":  {"patientsK": 50,  "wtpPct": 30, "priceK": 50},
         "row": {"patientsK": 200, "wtpPct": 8,  "priceK": 15},
     },
+    # PAH (Pulmonary Arterial Hypertension, WSPH Group 1): rare progressive
+    # disease (~3-15 cases per 1M). US ~40K diagnosed (~30K functional class
+    # II-IV active treatment), EU5 ~50K, ROW ~150K. Class peers: ERA (Tracleer/
+    # Opsumit/Letairis), PDE5i (Adcirca/Revatio), prostacyclins (Tyvaso/Remodulin/
+    # Uptravi/Yutrepia), riociguat (Adempas), sotatercept (Winrevair, Merck
+    # post Acceleron $11.5B 2021). Winrevair launched 2024 as first activin
+    # signaling pathway agent; ~$1.4B 2025 (+233% YoY); ZENITH outcomes 76%
+    # MACE+death+transplant reduction. Class peak ~$10-12B globally.
+    # source: PAH Registry / REVEAL; PHA US 2024; EU5 ESC PH guidelines.
+    "cardio_metabolic.cardiopulmonary.pah": {
+        "us":  {"patientsK": 40,  "wtpPct": 75, "priceK": 110},
+        "eu":  {"patientsK": 50,  "wtpPct": 60, "priceK": 65},
+        "row": {"patientsK": 150, "wtpPct": 18, "priceK": 25},
+    },
 
     # ==================== HYPERTENSION ====================
     # source: AGT knockdown is a brand-new RNAi class addressing resistant
@@ -272,6 +286,7 @@ PEN_PCT = {
     "cardio_metabolic.cardiopulmonary.ph_hfpef": 20,
     "cardio_metabolic.cardiopulmonary.ph_hfref": 20,
     "cardio_metabolic.cardiopulmonary.ph_ild": 30,
+    "cardio_metabolic.cardiopulmonary.pah": 65,
     "cardio_metabolic.diabetes.t1d": 12,
     "cardio_metabolic.diabetes.t2d": 10,
     "cardio_metabolic.hypertension.agt_knockdown": 8,

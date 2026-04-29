@@ -123,6 +123,40 @@ REGIONS = {
         "eu":  {"patientsK": 80000,  "wtpPct": 50, "priceK": 0.2},
         "row": {"patientsK": 200000, "wtpPct": 40, "priceK": 0.1},
     },
+    # HPV vaccine (Gardasil 9, MRK): adolescent + young adult routine vaccination.
+    # US ~25M eligible 9-26 (CDC ACIP catch-up to 26); ~75% 1+ dose coverage;
+    # 3-dose series ~$700/yr equivalent. EU ~30M. ROW ~150M (China Gardasil
+    # massive — was $5B+ pre-2024 inventory crisis). 2025 Gardasil $5.2B (-39%)
+    # post-China inventory pause. Class peak $8-10B at recovery. Cervarix (GSK)
+    # near-zero share. source: CDC ACIP; Merck 10-K; WHO EPI coverage.
+    "infectious_disease.vaccines.hpv": {
+        "us":  {"patientsK": 25000,  "wtpPct": 75, "priceK": 0.7},
+        "eu":  {"patientsK": 30000,  "wtpPct": 60, "priceK": 0.45},
+        "row": {"patientsK": 150000, "wtpPct": 25, "priceK": 0.18},
+    },
+    # Pneumococcal vaccines (PCV/PPSV): Prevnar 20 (Pfizer ~$6.5B 2024), Capvaxive
+    # 21-valent (Merck launch 2024, $759M 2025), Vaxneuvance 15-valent (Merck),
+    # Pneumovax 23 (Merck PPSV legacy). Adult >=50 ACIP-recommended;
+    # US ~110M adult eligible (~70% lifetime coverage); EU 200M; ROW broader.
+    # Class peak $12-15B globally with universal adult recommendation.
+    # source: CDC ACIP 2024; Pfizer + Merck 10-Ks.
+    "infectious_disease.vaccines.pneumococcal": {
+        "us":  {"patientsK": 110000, "wtpPct": 60, "priceK": 0.22},
+        "eu":  {"patientsK": 200000, "wtpPct": 45, "priceK": 0.15},
+        "row": {"patientsK": 800000, "wtpPct": 15, "priceK": 0.05},
+    },
+    # RSV mAb (peds long-acting): nirsevimab (Beyfortus, AZ/Sanofi ~$2B 2024),
+    # clesrovimab (Enflonsia, Merck approved Jun 2025), motavizumab legacy.
+    # Single-dose RSV season prophylaxis for <8mo + high-risk 8-19mo. US ~3.7M
+    # birth cohort + ~1M high-risk older, EU ~4M, ROW ~120M (concentrated peds).
+    # Class peak ~$5-7B at full coverage. Adult RSV vaccines (Arexvy GSK, Abrysvo
+    # Pfizer, mResvia Moderna) are in vaccines.rsv_adult separately.
+    # source: CDC ACIP RSV peds guidelines; AZ/Sanofi + Merck 10-Ks.
+    "infectious_disease.vaccines.rsv": {
+        "us":  {"patientsK": 4500,   "wtpPct": 70, "priceK": 0.5},
+        "eu":  {"patientsK": 4500,   "wtpPct": 55, "priceK": 0.32},
+        "row": {"patientsK": 120000, "wtpPct": 12, "priceK": 0.1},
+    },
 
     # =====================================================================
     # OPHTHALMOLOGY - ANTERIOR & NEURO
@@ -300,6 +334,9 @@ PEN_PCT = {
     "infectious_disease.vaccines.lyme": 25,
     "infectious_disease.vaccines.shigella_zika": 20,
     "infectious_disease.vaccines.travel": 25,
+    "infectious_disease.vaccines.hpv": 65,
+    "infectious_disease.vaccines.pneumococcal": 55,
+    "infectious_disease.vaccines.rsv": 35,
     "ophthalmology.anterior_neuro.deb_ocular": 25,
     "ophthalmology.anterior_neuro.dry_eye": 15,
     "ophthalmology.anterior_neuro.naion": 15,

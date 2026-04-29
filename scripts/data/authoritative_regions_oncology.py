@@ -237,6 +237,21 @@ REGIONS = {
         "eu":  {"patientsK": 45,  "wtpPct": 48, "priceK": 80},
         "row": {"patientsK": 180, "wtpPct": 18, "priceK": 30},
     },
+    # IO-treatable advanced NSCLC: the broad PD-1/PD-L1-eligible 1L+ population
+    # (PD-L1+ mono, chemo+IO combo, adjuvant, perioperative). Distinct from
+    # nsclc_undruggable (KRAS-WT/non-driver only) and nsclc_io_resistant
+    # (post-CPI failure). This is the bucket where Keytruda + Opdivo + Tecentriq
+    # + Imfinzi compete head-to-head -- effectively all advanced NSCLC except
+    # specific driver subtypes (EGFR/ALK first-line gets TKIs, IO at progression).
+    # US ~80K eligible (advanced NSCLC + adjuvant); EU 100K; ROW 400K (China big).
+    # Class total ~$20B globally (Keytruda ~$13B + Opdivo ~$4B + Tecentriq +
+    # Imfinzi). Blended priceK ~$180 reflects Keytruda dominance.
+    # source: SEER NSCLC registry; Merck/BMS/Roche 10-Ks; PD-L1 testing rates.
+    "oncology.lung.nsclc_io_combo": {
+        "us":  {"patientsK": 80,  "wtpPct": 75, "priceK": 180},
+        "eu":  {"patientsK": 100, "wtpPct": 60, "priceK": 100},
+        "row": {"patientsK": 400, "wtpPct": 16, "priceK": 35},
+    },
     # Driver-agnostic IO-resistant NSCLC: pts who progressed on checkpoint
     # inhibitors (~50% of advanced NSCLC progress within 1-2y on pembro/IO).
     # US: ~70K incident io-progressors/yr; large unmet need bucket distinct
@@ -406,6 +421,7 @@ PEN_PCT = {
     "oncology.lung.nsclc_driver.ros1": 65,
     "oncology.lung.nsclc_driver.trop2": 45,
     "oncology.lung.nsclc_undruggable": 55,
+    "oncology.lung.nsclc_io_combo": 60,
     "oncology.lung.nsclc_io_resistant": 35,
     "oncology.lung.sclc": 48,
     # (multi_tumor.* removed -- now _platform.*)

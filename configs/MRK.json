@@ -1427,6 +1427,76 @@
       ]
     },
     {
+      "id": "partnered",
+      "name": "Partnered + tail products (Bridion + Lynparza + Lenvima + tail)",
+      "stage": "Commercial (~$5.4B 2025; AZ + Eisai profit-shares + tail)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "bridion",
+          "name": "Bridion (sugammadex) — anesthesia reversal",
+          "market": {
+            "tamB": 3,
+            "penPct": 0,
+            "salesM": 1840,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Cyclodextrin reversal of rocuronium/vecuronium NMB. ~$1.84B 2025 (+4%). US LOE 2026 (post-AAM litigation). Generic erosion expected 2026-27. Tail-product status post-LOE.",
+            "company_slice": {},
+            "company_slice_sources": {}
+          },
+          "area": "_tail_products.anesthesia"
+        },
+        {
+          "id": "lynparza",
+          "name": "Lynparza (olaparib, PARP) — w/ AZ profit-share",
+          "market": {
+            "tamB": 6,
+            "penPct": 0,
+            "salesM": 1450,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "PARP inhibitor; AZ booked sales globally + MRK profit-share. ~$1.45B MRK 2025. Indications: ovarian (BRCA+ HRD+), breast (gBRCA+), prostate (HRR+), pancreatic. AZ collaboration since 2017. AZ recognizes commercial revenue; MRK books profit-share + milestones.",
+            "company_slice": {},
+            "company_slice_sources": {}
+          },
+          "area": "_tail_products.partnered_oncology"
+        },
+        {
+          "id": "lenvima",
+          "name": "Lenvima (lenvatinib, TKI) — w/ Eisai profit-share",
+          "market": {
+            "tamB": 5,
+            "penPct": 0,
+            "salesM": 1050,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "Multi-target TKI (VEGFR, FGFR, PDGFR, KIT, RET); profit-share with Eisai. ~$1.05B MRK 2025 (+4%). Indications: HCC, RCC + Keytruda combo, thyroid, endometrial. Eisai books global commercial; MRK profit-share.",
+            "company_slice": {},
+            "company_slice_sources": {}
+          },
+          "area": "_tail_products.partnered_oncology"
+        },
+        {
+          "id": "tail",
+          "name": "Tail products (Nexplanon + Belsomra + RotaTeq + ProQuad + M-M-R II + Varivax + Zerbaxa + Recarbrio + Prevymis CMV + Pneumovax 23 + Zostavax)",
+          "market": {
+            "tamB": 15,
+            "penPct": 0,
+            "salesM": 5000,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "Tail-of-tail commercial portfolio bundled to keep model lean. ~$5B 2025 across: Nexplanon (~$1.4B contraceptive implant), RotaTeq (~$700M), Belsomra (~$300M insomnia), ProQuad/M-M-R II/Varivax/Zostavax legacy peds vaccines (~$1.5B combined), antibiotics Zerbaxa/Recarbrio (~$250M), Prevymis CMV (~$500M post-HCT prophylaxis), other (~$350M). Mature franchise with mixed growth + decline trajectories. Tagged as pseudo-area to avoid forcing taxonomy expansion for low-priority products.",
+            "company_slice": {},
+            "company_slice_sources": {}
+          },
+          "area": "_tail_products.merck_misc"
+        }
+      ],
+      "modality": "small_molecule.various.tail",
+      "targets": []
+    },
+    {
       "id": "animal_health",
       "name": "Merck Animal Health (livestock + companion)",
       "stage": "Commercial ($6.4B 2025, +9% ex-FX)",
@@ -1570,6 +1640,28 @@
             "pen": 0.4
           }
         },
+        "partnered": {
+          "bridion": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "lynparza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "lenvima": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
         "animal_health": {
           "veterinary": {
             "pos": 100,
@@ -1701,6 +1793,28 @@
             "pos": 45,
             "apr": 50,
             "pen": 0.5
+          }
+        },
+        "partnered": {
+          "bridion": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "lynparza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "lenvima": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
           }
         },
         "animal_health": {
@@ -1837,6 +1951,28 @@
             "pen": 0.7
           }
         },
+        "partnered": {
+          "bridion": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "lynparza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "lenvima": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
         "animal_health": {
           "veterinary": {
             "pos": 100,
@@ -1971,6 +2107,28 @@
             "pen": 0.9
           }
         },
+        "partnered": {
+          "bridion": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "lynparza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "lenvima": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
         "animal_health": {
           "veterinary": {
             "pos": 100,
@@ -2103,6 +2261,28 @@
             "pos": 88,
             "apr": 90,
             "pen": 1.2
+          }
+        },
+        "partnered": {
+          "bridion": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "lynparza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "lenvima": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
           }
         },
         "animal_health": {

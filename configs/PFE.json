@@ -1,0 +1,3077 @@
+{
+  "company": {
+    "ticker": "PFE",
+    "name": "Pfizer Inc.",
+    "subtitle": "$62.6B 2025 | Eliquis 2026 + Ibrance 2027 + Vyndaqel 2028 LOE wave | Seagen ADCs offset | Obesity pivot post-danuglipron",
+    "sharesOut": 5686,
+    "cash": 10000,
+    "currentPrice": 27.0,
+    "currency": "USD",
+    "yahooTicker": "PFE",
+    "cashRunway": "Operating $10B+/yr; net debt ~$60B post-Seagen constrains M&A",
+    "phase": "commercial"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "covid",
+      "name": "COVID franchise (Comirnaty + Paxlovid)",
+      "stage": "Commercial (~$6B 2025; normalized seasonal)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "comirnaty",
+          "name": "Comirnaty (BNT mRNA COVID vaccine)",
+          "market": {
+            "tamB": 12,
+            "penPct": 8,
+            "salesM": 5300,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "BNT mRNA COVID vaccine partnered with BioNTech (50/50 profit-share ex-GREATER CHINA). 2025 ~$5.3B (-35% YoY normalization). Annual booster ACIP-recommended >=65 + at-risk. ~25M US doses 2024-25 season.",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 25,
+                "priceK": 0.13
+              },
+              "eu": {
+                "reachPct": 81.7,
+                "wtpPct": 22,
+                "priceK": 0.09
+              },
+              "row": {
+                "reachPct": 15.3,
+                "wtpPct": 8,
+                "priceK": 0.04
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Comirnaty ~12% reach -- ~25M US doses / ~210M adult eligible (BNT 50% share + Moderna 50%)."
+              },
+              "us.priceK": {
+                "note": "$130/dose blended -- commercial $130, Medicare Part B, Bridge Access free uninsured."
+              },
+              "us.wtpPct": {
+                "note": "25% -- 65+ ACIP routine; PA on others."
+              },
+              "eu.reachPct": {
+                "note": "8%."
+              },
+              "eu.wtpPct": {
+                "note": "22%."
+              },
+              "eu.priceK": {
+                "note": "$90."
+              },
+              "row.reachPct": {
+                "note": "1.5%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$40."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 100000,
+                "wtpPct": 25,
+                "priceK": 0.13
+              },
+              "eu": {
+                "patientsK": 200000,
+                "wtpPct": 22,
+                "priceK": 0.09
+              },
+              "row": {
+                "patientsK": 1500000,
+                "wtpPct": 8,
+                "priceK": 0.04
+              }
+            }
+          },
+          "area": "infectious_disease.vaccines.covid"
+        },
+        {
+          "id": "paxlovid",
+          "name": "Paxlovid (nirmatrelvir/ritonavir oral antiviral)",
+          "market": {
+            "tamB": 2,
+            "penPct": 12,
+            "salesM": 800,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Oral 3CL protease inhibitor for symptomatic high-risk COVID. 2025 ~$0.8B (-70% YoY). Paxlovid+ ritonavir 5-day course. US WAC ~$1390/course post-USG transition.",
+            "company_slice": {
+              "us": {
+                "reachPct": 37.3,
+                "wtpPct": 35,
+                "priceK": 1.4
+              },
+              "eu": {
+                "reachPct": 12.4,
+                "wtpPct": 22,
+                "priceK": 0.9
+              },
+              "row": {
+                "reachPct": 2.5,
+                "wtpPct": 8,
+                "priceK": 0.4
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Paxlovid ~6% reach of ~5M annual high-risk COVID Rx-eligible."
+              },
+              "us.priceK": {
+                "note": "$1.4K/course post-USG transition WAC."
+              },
+              "us.wtpPct": {
+                "note": "35% -- Medicare/commercial cover; awareness limits use."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "22%."
+              },
+              "eu.priceK": {
+                "note": "$900."
+              },
+              "row.reachPct": {
+                "note": "0.4%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$400."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 5000,
+                "wtpPct": 35,
+                "priceK": 1.4
+              },
+              "eu": {
+                "patientsK": 10000,
+                "wtpPct": 25,
+                "priceK": 0.9
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 8,
+                "priceK": 0.4
+              }
+            }
+          },
+          "area": "infectious_disease.anti_infective.covid_treatment"
+        }
+      ],
+      "modality": "vaccine.mrna.covid",
+      "targets": [
+        "SARSCOV2"
+      ]
+    },
+    {
+      "id": "eliquis",
+      "name": "Eliquis (apixaban, Factor Xa) — w/ BMS profit-share",
+      "stage": "Commercial ($6.5B PFE 2025; US LOE late 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "anticoagulation",
+          "name": "AF stroke prevention + VTE",
+          "market": {
+            "tamB": 25,
+            "penPct": 4,
+            "salesM": 6494,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Direct Factor Xa inhibitor; AF stroke prevention + VTE treatment + prevention. BMS books global commercial; PFE 50/50 profit-share. ~$6.49B PFE 2025 (~10% of total). US composition LOE late 2026 (generic apixaban approved Nov 2024). Medicare IRA-negotiated price $295/30-day starting 2026 — material erosion.",
+            "company_slice": {
+              "us": {
+                "reachPct": 34.4,
+                "wtpPct": 70,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 19.7,
+                "wtpPct": 55,
+                "priceK": 3
+              },
+              "row": {
+                "reachPct": 3.7,
+                "wtpPct": 18,
+                "priceK": 1.2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Eliquis ~14% of US AF/VTE thrombosis pool (BMS+PFE combined ~50% NOAC class share, PFE 50% profit-share)."
+              },
+              "us.priceK": {
+                "note": "$5K/yr blended -- WAC $7K, IRA negotiated $295/30d ($3.5K/yr) post 2026."
+              },
+              "us.wtpPct": {
+                "note": "70% -- Medicare Part D + commercial broad coverage; PA standard."
+              },
+              "eu.reachPct": {
+                "note": "8% -- EU NOAC class branded penetration ~30%."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$3K."
+              },
+              "row.reachPct": {
+                "note": "1.5%."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$1.2K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 60,
+                "priceK": 3.5
+              },
+              "eu": {
+                "patientsK": 7000,
+                "wtpPct": 50,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 30000,
+                "wtpPct": 15,
+                "priceK": 0.4
+              }
+            }
+          },
+          "area": "cardio_metabolic.thrombosis.anticoagulation"
+        }
+      ],
+      "modality": "small_molecule.coagulation.factor_xa_inhibitor",
+      "targets": [
+        "F10"
+      ]
+    },
+    {
+      "id": "vyndaqel",
+      "name": "Vyndaqel/Vyndamax (tafamidis, TTR stabilizer)",
+      "stage": "Commercial ($4.4B 2025; LOE end 2028)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "attr_cm",
+          "name": "ATTR-CM (cardiomyopathy)",
+          "market": {
+            "tamB": 12,
+            "penPct": 45,
+            "salesM": 4367,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "First-in-class TTR stabilizer for ATTR-CM (wild-type + hereditary). Approved 2019. Major growth driver post-2020. ~$4.4B 2025 (+~15%). US composition LOE end 2028 (PTE-extended). Litigation strategy + life-cycle management ongoing. Class competition: BridgeBio acoramidis (Attruby, late 2024 launch) + Alnylam vutrisiran (Amvuttra ATTR-CM label exp 2025) + AZ eplontersen.",
+            "company_slice": {
+              "us": {
+                "reachPct": 30,
+                "wtpPct": 80,
+                "priceK": 235
+              },
+              "eu": {
+                "reachPct": 18,
+                "wtpPct": 65,
+                "priceK": 145
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 18,
+                "priceK": 55
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Vyndaqel ~30% of US ATTR-CM diagnosed pool (~70K US treated); first-mover dominance pre-acoramidis."
+              },
+              "us.priceK": {
+                "note": "$235K/yr WAC tafamidis (Vyndamax 80mg)."
+              },
+              "us.wtpPct": {
+                "note": "80% -- specialty pharmacy; Medicare Part D + commercial broad coverage."
+              },
+              "eu.reachPct": {
+                "note": "18%."
+              },
+              "eu.wtpPct": {
+                "note": "65%."
+              },
+              "eu.priceK": {
+                "note": "$145K EU net."
+              },
+              "row.reachPct": {
+                "note": "4%."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$55K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 80,
+                "wtpPct": 55,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 60,
+                "wtpPct": 40,
+                "priceK": 120
+              },
+              "row": {
+                "patientsK": 40,
+                "wtpPct": 20,
+                "priceK": 70
+              }
+            }
+          },
+          "area": "cardio_metabolic.attr.attr_cm"
+        }
+      ],
+      "modality": "small_molecule.protein_stabilizer.transthyretin",
+      "targets": [
+        "TTR"
+      ]
+    },
+    {
+      "id": "prevnar",
+      "name": "Prevnar 13/20 (PCV13/PCV20 pneumococcal vaccine)",
+      "stage": "Commercial ($6.4B 2025; PCV13 LOE 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "pneumo",
+          "name": "Pneumococcal vaccination (peds + adult)",
+          "market": {
+            "tamB": 13,
+            "penPct": 55,
+            "salesM": 6380,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "PCV13 (Prevnar 13) peds + adult + PCV20 (Prevnar 20) adult>=18 expansion. 2025 ~$6.4B (~10% revenue). PCV13 composition LOE 2026 -- but PCV20 protected. Class peer: Merck Vaxneuvance (15v) + Capvaxive (21v).",
+            "company_slice": {
+              "us": {
+                "reachPct": 50,
+                "wtpPct": 60,
+                "priceK": 0.22
+              },
+              "eu": {
+                "reachPct": 28,
+                "wtpPct": 45,
+                "priceK": 0.15
+              },
+              "row": {
+                "reachPct": 8,
+                "wtpPct": 14,
+                "priceK": 0.05
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Prevnar ~50% of US adult pneumococcal market (Merck 30%); peds nearly universal Prevnar 13/20."
+              },
+              "us.priceK": {
+                "note": "$220/dose blended (Prevnar 20 ~$245)."
+              },
+              "us.wtpPct": {
+                "note": "60% -- VFC + Medicare Part B + commercial."
+              },
+              "eu.reachPct": {
+                "note": "28%."
+              },
+              "eu.wtpPct": {
+                "note": "45%."
+              },
+              "eu.priceK": {
+                "note": "$150."
+              },
+              "row.reachPct": {
+                "note": "8%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$50."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 110000,
+                "wtpPct": 60,
+                "priceK": 0.22
+              },
+              "eu": {
+                "patientsK": 200000,
+                "wtpPct": 45,
+                "priceK": 0.15
+              },
+              "row": {
+                "patientsK": 800000,
+                "wtpPct": 15,
+                "priceK": 0.05
+              }
+            }
+          },
+          "area": "infectious_disease.vaccines.pneumococcal"
+        }
+      ],
+      "modality": "vaccine.protein_subunit.conjugate",
+      "targets": []
+    },
+    {
+      "id": "ibrance",
+      "name": "Ibrance (palbociclib, CDK4/6) — breast",
+      "stage": "Commercial ($2.4B 2025, declining; US LOE Mar 2027)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "hr_breast",
+          "name": "HR+/HER2- advanced breast cancer",
+          "market": {
+            "tamB": 8,
+            "penPct": 58,
+            "salesM": 2362,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "First-in-class CDK4/6 inhibitor approved 2015. ~$2.36B 2025 (declining). US composition LOE Mar 2027 (PTE-extended). Class competition: Kisqali (Novartis ribociclib, taking share post-NATALEE) + Verzenio (Lilly abemaciclib, monarchE adjuvant). Generic palbociclib launches 2027+.",
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 75,
+                "priceK": 165
+              },
+              "eu": {
+                "reachPct": 7,
+                "wtpPct": 55,
+                "priceK": 95
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Ibrance ~12% of HR+/HER2- breast pool (declining vs Kisqali, Verzenio adjuvant share)."
+              },
+              "us.priceK": {
+                "note": "$165K/yr WAC."
+              },
+              "us.wtpPct": {
+                "note": "75%."
+              },
+              "eu.reachPct": {
+                "note": "7%."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$95K."
+              },
+              "row.reachPct": {
+                "note": "1.5%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 250,
+                "wtpPct": 65,
+                "priceK": 70
+              },
+              "eu": {
+                "patientsK": 350,
+                "wtpPct": 45,
+                "priceK": 40
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 12,
+                "priceK": 12
+              }
+            }
+          },
+          "area": "oncology.breast.hr_her2_neg"
+        }
+      ],
+      "modality": "small_molecule.kinase_inhibitor.cdk4_6",
+      "targets": [
+        "CDK4",
+        "CDK6"
+      ]
+    },
+    {
+      "id": "xtandi",
+      "name": "Xtandi (enzalutamide, AR antagonist) — w/ Astellas alliance",
+      "stage": "Commercial ($2.3B PFE alliance 2025; US LOE 2027)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "prostate",
+          "name": "Castration-resistant + metastatic prostate cancer",
+          "market": {
+            "tamB": 8,
+            "penPct": 60,
+            "salesM": 2300,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Second-gen androgen receptor inhibitor. Approved 2012. Astellas alliance 50/50. PFE alliance revenue ~$2.3B 2025. US LOE 2027. Class peers: Erleada (J&J), Nubeqa (Bayer/Orion).",
+            "company_slice": {
+              "us": {
+                "reachPct": 22,
+                "wtpPct": 70,
+                "priceK": 165
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 50,
+                "priceK": 95
+              },
+              "row": {
+                "reachPct": 2.5,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Xtandi ~22% of US prostate cancer pool (alliance share with Astellas)."
+              },
+              "us.priceK": {
+                "note": "$165K/yr WAC blended."
+              },
+              "us.wtpPct": {
+                "note": "70%."
+              },
+              "eu.reachPct": {
+                "note": "12%."
+              },
+              "eu.wtpPct": {
+                "note": "50%."
+              },
+              "eu.priceK": {
+                "note": "$95K."
+              },
+              "row.reachPct": {
+                "note": "2.5%."
+              },
+              "row.wtpPct": {
+                "note": "15%."
+              },
+              "row.priceK": {
+                "note": "$40K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 100,
+                "wtpPct": 70,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 110,
+                "wtpPct": 52,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 18
+              }
+            }
+          },
+          "area": "oncology.genitourinary.prostate"
+        }
+      ],
+      "modality": "small_molecule.nuclear_receptor.androgen_antagonist",
+      "targets": [
+        "AR"
+      ]
+    },
+    {
+      "id": "padcev",
+      "name": "Padcev (enfortumab vedotin, Nectin-4 ADC, Seagen)",
+      "stage": "Commercial ($907M 2025, +15%; 1L mUC standard)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "bladder",
+          "name": "Urothelial carcinoma (1L mUC + Keytruda combo)",
+          "market": {
+            "tamB": 4,
+            "penPct": 50,
+            "salesM": 907,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 8,
+            "notes": "Nectin-4 ADC with MMAE payload. EV-302 1L mUC + Keytruda combo became standard 2024 (HR 0.47 OS). Peak forecast $3-5B with EU expansion + earlier-line use.",
+            "company_slice": {
+              "us": {
+                "reachPct": 15,
+                "wtpPct": 75,
+                "priceK": 310
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 55,
+                "priceK": 180
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 14,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Padcev ~15% of US bladder pool (1L mUC + 2L+ post-CPI)."
+              },
+              "us.priceK": {
+                "note": "$310K/yr ADC class."
+              },
+              "us.wtpPct": {
+                "note": "75%."
+              },
+              "eu.reachPct": {
+                "note": "8%."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$180K."
+              },
+              "row.reachPct": {
+                "note": "1.5%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$60K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 62,
+                "priceK": 185
+              },
+              "eu": {
+                "patientsK": 28,
+                "wtpPct": 45,
+                "priceK": 105
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            }
+          },
+          "area": "oncology.genitourinary.bladder"
+        }
+      ],
+      "modality": "adc.mmae_linker.nectin4_adc",
+      "targets": [
+        "NECTIN4"
+      ]
+    },
+    {
+      "id": "lorbrena",
+      "name": "Lorbrena (lorlatinib, ALK inhibitor)",
+      "stage": "Commercial ($1.05B 2025, +38%)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "alk_nsclc",
+          "name": "ALK+ NSCLC 1L (CROWN)",
+          "market": {
+            "tamB": 4,
+            "penPct": 68,
+            "salesM": 1050,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 6,
+            "notes": "Third-gen ALK TKI. CROWN 1L vs crizotinib showed superior PFS + brain efficacy. ~$1.05B 2025 (+38% structural growth in 1L). Competition: Alecensa (Roche alectinib), brigatinib (Takeda), NUVL zidesamtinib pipeline.",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 75,
+                "priceK": 235
+              },
+              "eu": {
+                "reachPct": 65.2,
+                "wtpPct": 55,
+                "priceK": 140
+              },
+              "row": {
+                "reachPct": 16.3,
+                "wtpPct": 14,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Lorbrena ~35% reach of US ALK+ NSCLC pool (~3K addressable); CROWN drives 1L share gain."
+              },
+              "us.priceK": {
+                "note": "$235K/yr WAC."
+              },
+              "us.wtpPct": {
+                "note": "75%."
+              },
+              "eu.reachPct": {
+                "note": "20%."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$140K."
+              },
+              "row.reachPct": {
+                "note": "5%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$50K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 6,
+                "wtpPct": 72,
+                "priceK": 205
+              },
+              "eu": {
+                "patientsK": 7,
+                "wtpPct": 55,
+                "priceK": 120
+              },
+              "row": {
+                "patientsK": 15,
+                "wtpPct": 22,
+                "priceK": 55
+              }
+            }
+          },
+          "area": "oncology.lung.nsclc_driver.alk"
+        }
+      ],
+      "modality": "small_molecule.kinase_inhibitor.alk",
+      "targets": [
+        "ALK"
+      ]
+    },
+    {
+      "id": "adcetris",
+      "name": "Adcetris (brentuximab vedotin, CD30 ADC, Seagen)",
+      "stage": "Commercial (~$900M 2025, declining)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "hodgkin_tcell",
+          "name": "Hodgkin lymphoma + T-cell lymphomas + cutaneous",
+          "market": {
+            "tamB": 3,
+            "penPct": 35,
+            "salesM": 900,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "CD30 ADC with MMAE payload. cHL + ALCL + PTCL. ~$900M 2025 (declining ~12% post Hodgkin BV+AVD adoption peak). US LOE 2026.",
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 70,
+                "priceK": 290
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 50,
+                "priceK": 170
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Adcetris ~6% of US NHL pool -- CD30+ subset (Hodgkin + ALCL + PTCL) ~15% of NHL; declining post BV+AVD peak."
+              },
+              "us.priceK": {
+                "note": "$290K/yr ADC class."
+              },
+              "us.wtpPct": {
+                "note": "75%."
+              },
+              "eu.reachPct": {
+                "note": "10%."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$170K."
+              },
+              "row.reachPct": {
+                "note": "2%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$60K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 80,
+                "wtpPct": 60,
+                "priceK": 150
+              },
+              "eu": {
+                "patientsK": 90,
+                "wtpPct": 45,
+                "priceK": 90
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            }
+          },
+          "area": "oncology.hematology.nhl"
+        }
+      ],
+      "modality": "adc.mmae_linker.cd30_adc",
+      "targets": [
+        "TNFRSF8"
+      ]
+    },
+    {
+      "id": "braftovi_mektovi",
+      "name": "Braftovi (encorafenib) + Mektovi (binimetinib)",
+      "stage": "Commercial ($700M 2025, +40% on BRAF+ CRC)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "melanoma",
+          "name": "BRAF+ melanoma (encorafenib + binimetinib)",
+          "market": {
+            "tamB": 3,
+            "penPct": 65,
+            "salesM": 350,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "BRAF V600 + MEK combo. Melanoma legacy. ~$350M 2025 portion (declining as IO replaces).",
+            "company_slice": {
+              "us": {
+                "reachPct": 11.5,
+                "wtpPct": 70,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 5.7,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 0.9,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Braftovi+Mektovi ~8% melanoma BRAF+ pool."
+              },
+              "us.priceK": {
+                "note": "$175K/yr combo."
+              },
+              "us.wtpPct": {
+                "note": "70%."
+              },
+              "eu.reachPct": {
+                "note": "4%."
+              },
+              "eu.wtpPct": {
+                "note": "50%."
+              },
+              "eu.priceK": {
+                "note": "$100K."
+              },
+              "row.reachPct": {
+                "note": "0.6%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            }
+          },
+          "area": "oncology.skin.melanoma"
+        },
+        {
+          "id": "crc",
+          "name": "BRAF V600E+ metastatic CRC (BREAKWATER)",
+          "market": {
+            "tamB": 5,
+            "penPct": 50,
+            "salesM": 350,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 10,
+            "notes": "BREAKWATER 1L BRAF+ mCRC + Erbitux + chemo combo positive 2024-25. Growing fast. ~$350M 2025 portion.",
+            "company_slice": {
+              "us": {
+                "reachPct": 6.1,
+                "wtpPct": 70,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 3.0,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 0.6,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Braftovi BRAF+ mCRC ~4% reach (BRAF V600+ ~7-10% of CRC); BREAKWATER drives growth."
+              },
+              "us.priceK": {
+                "note": "$175K/yr combo."
+              },
+              "us.wtpPct": {
+                "note": "70%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "50%."
+              },
+              "eu.priceK": {
+                "note": "$100K."
+              },
+              "row.reachPct": {
+                "note": "0.4%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 55,
+                "wtpPct": 65,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 48,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 320,
+                "wtpPct": 16,
+                "priceK": 22
+              }
+            }
+          },
+          "area": "oncology.gi.colorectal"
+        }
+      ],
+      "modality": "small_molecule.kinase_inhibitor.braf_mek",
+      "targets": [
+        "BRAF",
+        "MAP2K1"
+      ]
+    },
+    {
+      "id": "im_jak_derm",
+      "name": "JAK inflammation portfolio (Xeljanz + Cibinqo + Litfulo)",
+      "stage": "Commercial (~$1.8B 2025; Xeljanz LOE 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "xeljanz_ra_uc",
+          "name": "Xeljanz (tofacitinib JAK1/3) — RA + UC + PsA",
+          "market": {
+            "tamB": 8,
+            "penPct": 28,
+            "salesM": 1300,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "First oral JAK approved 2012. RA + UC + PsA + JIA. ~$1.3B 2025 (-8%). Core market LOE 2026 -- generic tofacitinib launches 2026-27.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 60,
+                "priceK": 60
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 42,
+                "priceK": 35
+              },
+              "row": {
+                "reachPct": 0.4,
+                "wtpPct": 12,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Xeljanz ~4% of RA + UC + PsA combined branded biologic pool; declining."
+              },
+              "us.priceK": {
+                "note": "$60K/yr WAC."
+              },
+              "us.wtpPct": {
+                "note": "60%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "42%."
+              },
+              "eu.priceK": {
+                "note": "$35K."
+              },
+              "row.reachPct": {
+                "note": "0.4%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$12K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 50,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 35,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 12000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "immunology.inflammatory_systemic.rheumatoid_arthritis"
+        },
+        {
+          "id": "cibinqo_ad",
+          "name": "Cibinqo (abrocitinib JAK1) — atopic dermatitis",
+          "market": {
+            "tamB": 6,
+            "penPct": 35,
+            "salesM": 300,
+            "salesYear": 2025,
+            "peakYear": 2029,
+            "cagrPct": 8,
+            "notes": "Selective JAK1 oral for moderate-severe AD. Approved 2022. ~$300M 2025 (+23%). Class peer: Rinvoq (AbbVie upadacitinib) AD. Dupixent dominant overall.",
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 55,
+                "priceK": 60
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 40,
+                "priceK": 35
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Cibinqo ~3% of moderate-severe AD biologic-eligible pool."
+              },
+              "us.priceK": {
+                "note": "$60K/yr WAC."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "1.5%."
+              },
+              "eu.wtpPct": {
+                "note": "40%."
+              },
+              "eu.priceK": {
+                "note": "$35K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$12K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 700,
+                "wtpPct": 40,
+                "priceK": 16
+              },
+              "row": {
+                "patientsK": 4000,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            }
+          },
+          "area": "dermatology.inflammatory_derm.atopic_dermatitis_systemic"
+        },
+        {
+          "id": "litfulo_aa",
+          "name": "Litfulo (ritlecitinib JAK3) — alopecia areata",
+          "market": {
+            "tamB": 1.5,
+            "penPct": 20,
+            "salesM": 200,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 12,
+            "notes": "First-in-class JAK3/TEC oral for severe alopecia areata. Approved 2023. ~$200M 2025. Class peer: Olumiant (Lilly baricitinib AA approved 2022).",
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 50,
+                "priceK": 50
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 35,
+                "priceK": 30
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 8,
+                "priceK": 10
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Litfulo ~8% of severe AA branded pool (~150K US severe)."
+              },
+              "us.priceK": {
+                "note": "$50K/yr WAC."
+              },
+              "us.wtpPct": {
+                "note": "50%."
+              },
+              "eu.reachPct": {
+                "note": "4%."
+              },
+              "eu.wtpPct": {
+                "note": "35%."
+              },
+              "eu.priceK": {
+                "note": "$30K."
+              },
+              "row.reachPct": {
+                "note": "0.5%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$10K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 300,
+                "wtpPct": 45,
+                "priceK": 42
+              },
+              "eu": {
+                "patientsK": 450,
+                "wtpPct": 32,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 4000,
+                "wtpPct": 10,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "dermatology.rare_skin.alopecia_areata"
+        }
+      ],
+      "modality": "small_molecule.kinase_inhibitor.jak",
+      "targets": [
+        "JAK1",
+        "JAK3"
+      ]
+    },
+    {
+      "id": "abrysvo",
+      "name": "Abrysvo (RSV adult/maternal vaccine)",
+      "stage": "Commercial ($800M 2025; ACIP narrowing slowed growth)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "rsv_adult",
+          "name": "Adult (>=60) + maternal RSV vaccination",
+          "market": {
+            "tamB": 5,
+            "penPct": 25,
+            "salesM": 800,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 8,
+            "notes": "Bivalent prefusion-F vaccine. Approved adult>=60 May 2023; maternal Aug 2023. ~$800M 2025. Class competition: Arexvy (GSK ~$1.5B), mResvia (Moderna).",
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 50,
+                "priceK": 0.27
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 35,
+                "priceK": 0.18
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 10,
+                "priceK": 0.06
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Abrysvo ~8% of US >=60 adult RSV vaccinated (Arexvy GSK 60% share, Moderna entrant)."
+              },
+              "us.priceK": {
+                "note": "$270/dose ACIP-published."
+              },
+              "us.wtpPct": {
+                "note": "50% -- Medicare Part B + commercial; ACIP narrowed Aug 2024."
+              },
+              "eu.reachPct": {
+                "note": "4%."
+              },
+              "eu.wtpPct": {
+                "note": "35%."
+              },
+              "eu.priceK": {
+                "note": "$180."
+              },
+              "row.reachPct": {
+                "note": "0.5%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$60."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 50,
+                "priceK": 0.27
+              },
+              "eu": {
+                "patientsK": 120000,
+                "wtpPct": 35,
+                "priceK": 0.18
+              },
+              "row": {
+                "patientsK": 600000,
+                "wtpPct": 10,
+                "priceK": 0.06
+              }
+            }
+          },
+          "area": "infectious_disease.vaccines.rsv_adult"
+        }
+      ],
+      "modality": "vaccine.protein_subunit.prefusion_f",
+      "targets": []
+    },
+    {
+      "id": "nurtec",
+      "name": "Nurtec ODT/Vydura (rimegepant, CGRP)",
+      "stage": "Commercial ($1.5B 2025; Biohaven acquisition)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "migraine",
+          "name": "Migraine (acute + prophylactic)",
+          "market": {
+            "tamB": 8,
+            "penPct": 35,
+            "salesM": 1500,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 12,
+            "notes": "Oral CGRP receptor antagonist (gepant). Acute + prophylactic dual indication. ~$1.5B 2025 (+30%). Class peer: Ubrelvy (AbbVie ubrogepant), Qulipta (AbbVie atogepant prevention).",
+            "company_slice": {
+              "us": {
+                "reachPct": 8.4,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 2.8,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 0.6,
+                "wtpPct": 10,
+                "priceK": 3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Nurtec ~6% of US migraine Rx pool (~38M migraine, ~13M Rx); growing."
+              },
+              "us.priceK": {
+                "note": "$12K/yr blended."
+              },
+              "us.wtpPct": {
+                "note": "45%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "30%."
+              },
+              "eu.priceK": {
+                "note": "$7K."
+              },
+              "row.reachPct": {
+                "note": "0.4%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$3K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 4000,
+                "wtpPct": 30,
+                "priceK": 3
+              },
+              "eu": {
+                "patientsK": 6000,
+                "wtpPct": 18,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 5,
+                "priceK": 0.4
+              }
+            }
+          },
+          "area": "cns.pain.migraine"
+        }
+      ],
+      "modality": "small_molecule.gpcr.cgrp_antagonist",
+      "targets": [
+        "CALCRL",
+        "RAMP1"
+      ]
+    },
+    {
+      "id": "marstacimab",
+      "name": "Marstacimab (anti-TFPI hemophilia)",
+      "stage": "Commercial (approved Oct 2024; ramp 2025-26)",
+      "designations": [
+        "Orphan (US)"
+      ],
+      "indications": [
+        {
+          "id": "hema_marst",
+          "name": "Hemophilia A/B prophylaxis",
+          "market": {
+            "tamB": 8,
+            "penPct": 65,
+            "salesM": 50,
+            "salesYear": 2025,
+            "peakYear": 2032,
+            "cagrPct": 35,
+            "notes": "Anti-TFPI mAb subq weekly. Approved Oct 2024 hem A/B prophylaxis (no inhibitors). Ph3 BASIS positive. Compete with Hemlibra + Mim8 (Novo). Inhibitor ITI Ph3 ongoing.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 65,
+                "priceK": 320
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 50,
+                "priceK": 220
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 12,
+                "priceK": 80
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Marstacimab ~4% of US hemophilia A/B pool by 2030 peak; Hemlibra incumbent dominant."
+              },
+              "us.priceK": {
+                "note": "$320K/yr WAC -- Hemlibra parity."
+              },
+              "us.wtpPct": {
+                "note": "65%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "50%."
+              },
+              "eu.priceK": {
+                "note": "$220K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$80K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 85,
+                "priceK": 300
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "row": {
+                "patientsK": 280,
+                "wtpPct": 25,
+                "priceK": 80
+              }
+            }
+          },
+          "area": "hematology.rare_blood.hemophilia_a"
+        }
+      ],
+      "modality": "antibody.coagulation.tfpi_blocker",
+      "targets": [
+        "TFPI"
+      ]
+    },
+    {
+      "id": "talzenna",
+      "name": "Talzenna (talazoparib, PARP) — prostate combo",
+      "stage": "Commercial ($200M 2025, +47% on Xtandi combo)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "prostate_parp",
+          "name": "HRR-mutated mCRPC (Xtandi combo, TALAPRO-2)",
+          "market": {
+            "tamB": 6,
+            "penPct": 60,
+            "salesM": 200,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 18,
+            "notes": "PARP inhibitor + Xtandi combo for HRR+ mCRPC. TALAPRO-2 positive. ~$200M 2025 (+47%). Niche but growing.",
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 55,
+                "priceK": 180
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 38,
+                "priceK": 105
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Talzenna+Xtandi ~3% HRR-mutated mCRPC reach."
+              },
+              "us.priceK": {
+                "note": "$180K/yr."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "1.5%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$105K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 100,
+                "wtpPct": 70,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 110,
+                "wtpPct": 52,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 18
+              }
+            }
+          },
+          "area": "oncology.genitourinary.prostate"
+        }
+      ],
+      "modality": "small_molecule.kinase_inhibitor.parp",
+      "targets": [
+        "PARP1",
+        "PARP2"
+      ]
+    },
+    {
+      "id": "velsipity",
+      "name": "Velsipity (etrasimod, S1P) — UC",
+      "stage": "Commercial ($150M 2025, ramp)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "uc_velsipity",
+          "name": "Moderate-severe ulcerative colitis",
+          "market": {
+            "tamB": 8,
+            "penPct": 35,
+            "salesM": 150,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 25,
+            "notes": "Selective S1P1/4/5 modulator approved Oct 2023. ~$150M 2025 ramp. Class peer: Zeposia (BMS ozanimod). UC + future Crohn's expansion.",
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 50,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 38,
+                "priceK": 42
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 10,
+                "priceK": 15
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Velsipity ~2% UC biologic-eligible pool by peak."
+              },
+              "us.priceK": {
+                "note": "$70K/yr."
+              },
+              "us.wtpPct": {
+                "note": "50%."
+              },
+              "eu.reachPct": {
+                "note": "1%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$42K."
+              },
+              "row.reachPct": {
+                "note": "0.2%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$15K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1000,
+                "wtpPct": 50,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 30,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 5000,
+                "wtpPct": 8,
+                "priceK": 3
+              }
+            }
+          },
+          "area": "immunology.inflammatory_gi.ulcerative_colitis"
+        }
+      ],
+      "modality": "small_molecule.gpcr.s1p_modulator",
+      "targets": [
+        "S1PR1"
+      ]
+    },
+    {
+      "id": "established_products",
+      "name": "Established Products (sterile injectables + heritage)",
+      "stage": "Commercial (~$5B 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "tail",
+          "name": "Sulperazon + Bicillin + Premarin + Brufen + Pristiq + Norvasc + Zoloft generic + others",
+          "market": {
+            "tamB": 50,
+            "penPct": 0,
+            "salesM": 5000,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Heritage portfolio of off-patent + sterile injectable + LOE'd brands. Mature, slowly declining ~$5B 2025. Includes Sulperazon (cefoperazone-sulbactam, China dominant), Bicillin (penicillin G benzathine), Premarin (estrogen HRT), Brufen (ibuprofen), Pristiq (desvenlafaxine), Norvasc (amlodipine generic), and many others.",
+            "company_slice": {},
+            "company_slice_sources": {}
+          },
+          "area": "_established_products.heritage"
+        }
+      ],
+      "modality": "small_molecule.various.legacy",
+      "targets": []
+    },
+    {
+      "id": "sasanlimab",
+      "name": "Sasanlimab (anti-PD-1 SC) — NMIBC",
+      "stage": "EU registration; CREST positive",
+      "designations": [
+        "Breakthrough (US)"
+      ],
+      "indications": [
+        {
+          "id": "nmibc",
+          "name": "BCG-naive high-risk NMIBC",
+          "market": {
+            "tamB": 2,
+            "penPct": 50,
+            "peakYear": 2030,
+            "notes": "Subcutaneous PD-1 antibody + BCG combo for BCG-naive high-risk non-muscle invasive bladder cancer. CREST Ph3 positive. EU registration. Niche first-to-market opportunity ~80K US NMIBC.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 60,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 42,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Sasanlimab ~4% reach US NMIBC if approved 2027+."
+              },
+              "us.priceK": {
+                "note": "$175K/yr PD-1 class."
+              },
+              "us.wtpPct": {
+                "note": "60%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "42%."
+              },
+              "eu.priceK": {
+                "note": "$100K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 62,
+                "priceK": 185
+              },
+              "eu": {
+                "patientsK": 28,
+                "wtpPct": 45,
+                "priceK": 105
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            }
+          },
+          "area": "oncology.genitourinary.bladder"
+        }
+      ],
+      "modality": "antibody.checkpoint.pd1",
+      "targets": [
+        "PDCD1"
+      ]
+    },
+    {
+      "id": "vepdegestrant",
+      "name": "Vepdegestrant (ARV-471, PROTAC ER degrader, Arvinas partner)",
+      "stage": "Phase 3 registration; ESR1-mutant subset",
+      "designations": [
+        "Fast Track (US)"
+      ],
+      "indications": [
+        {
+          "id": "er_breast",
+          "name": "ER+/HER2- breast cancer (post-CDK4/6, ESR1-mutant)",
+          "market": {
+            "tamB": 10,
+            "penPct": 58,
+            "peakYear": 2030,
+            "notes": "First-in-class oral PROTAC estrogen receptor degrader. Arvinas 50/50 collaboration. VERITAC-2 differentiated only in ESR1-mutant subset (~30% post-AI). Pfizer evaluating commercial path; Arvinas may take some indications.",
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 55,
+                "priceK": 165
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 38,
+                "priceK": 95
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Vepdegestrant ~3% peak reach in ESR1-mutant subset post-CDK4/6 progression (50% PFE share)."
+              },
+              "us.priceK": {
+                "note": "$165K/yr."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "1.5%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$95K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 250,
+                "wtpPct": 65,
+                "priceK": 70
+              },
+              "eu": {
+                "patientsK": 350,
+                "wtpPct": 45,
+                "priceK": 40
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 12,
+                "priceK": 12
+              }
+            }
+          },
+          "area": "oncology.breast.hr_her2_neg"
+        }
+      ],
+      "modality": "small_molecule.protac.er_degrader",
+      "targets": [
+        "ESR1"
+      ]
+    },
+    {
+      "id": "sigvotatug",
+      "name": "Sigvotatug vedotin (Integrin β6 ADC, Seagen)",
+      "stage": "Phase 3 Be6A LUNG-02 (1L mNSCLC TPS-high)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "nsclc_sv",
+          "name": "1L mNSCLC TPS-high (Integrin β6 + Keytruda combo)",
+          "market": {
+            "tamB": 12,
+            "penPct": 60,
+            "peakYear": 2032,
+            "notes": "Integrin β6-targeting ADC with MMAE payload. Be6A LUNG-02 1L mNSCLC TPS>=50%. Differentiation vs HER2-DXd, Datopotamab. Major potential franchise asset $3-5B peak.",
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 60,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 42,
+                "priceK": 115
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 10,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Sigvotatug ~6% peak NSCLC; depends on Ph3 confirmatory."
+              },
+              "us.priceK": {
+                "note": "$200K/yr ADC class."
+              },
+              "us.wtpPct": {
+                "note": "60%."
+              },
+              "eu.reachPct": {
+                "note": "3%."
+              },
+              "eu.wtpPct": {
+                "note": "42%."
+              },
+              "eu.priceK": {
+                "note": "$115K."
+              },
+              "row.reachPct": {
+                "note": "0.5%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$40K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 80,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 100,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 400,
+                "wtpPct": 16,
+                "priceK": 35
+              }
+            }
+          },
+          "area": "oncology.lung.nsclc_io_combo"
+        }
+      ],
+      "modality": "adc.mmae_linker.integrin_b6_adc",
+      "targets": [
+        "ITGB6"
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Full LOE wave hits unmitigated + obesity gap + Seagen ADCs underperform + debt servicing pressure",
+      "events": [
+        "X Eliquis Q4 2026 generic launch -- 50% Y1 erosion",
+        "X Ibrance Mar 2027 generic + Kisqali/Verzenio share war = -60% by 2028",
+        "X Vyndaqel acoramidis (BridgeBio) takes 40% share pre-LOE 2028",
+        "X No obesity in-license materializes",
+        "X Sigvotatug Ph3 NSCLC fails or borderline",
+        "X Cost-cuts not enough; debt-driven dividend cut",
+        "-> Stock to $18-20 (cash + heritage floor minus debt overhang)"
+      ],
+      "assumptions": {
+        "covid": {
+          "comirnaty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "paxlovid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "eliquis": {
+          "anticoagulation": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "vyndaqel": {
+          "attr_cm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "prevnar": {
+          "pneumo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "ibrance": {
+          "hr_breast": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.45
+          }
+        },
+        "xtandi": {
+          "prostate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "padcev": {
+          "bladder": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "lorbrena": {
+          "alk_nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "adcetris": {
+          "hodgkin_tcell": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "braftovi_mektovi": {
+          "melanoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "crc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "im_jak_derm": {
+          "xeljanz_ra_uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "cibinqo_ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "litfulo_aa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "abrysvo": {
+          "rsv_adult": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "nurtec": {
+          "migraine": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "marstacimab": {
+          "hema_marst": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "talzenna": {
+          "prostate_parp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "velsipity": {
+          "uc_velsipity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "established_products": {
+          "tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "sasanlimab": {
+          "nmibc": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 0.5
+          }
+        },
+        "vepdegestrant": {
+          "er_breast": {
+            "pos": 30,
+            "apr": 35,
+            "pen": 0.4
+          }
+        },
+        "sigvotatug": {
+          "nsclc_sv": {
+            "pos": 25,
+            "apr": 30,
+            "pen": 0.4
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 14,
+        "pipelineMult": 4,
+        "commercialMult": 2.5,
+        "commercialRevM": 45000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Heavy LOE erosion + slow ADC ramp + obesity BD eventually",
+      "events": [
+        "~ Eliquis -45% Y1 then stabilizes at 30% generic share",
+        "~ Ibrance steep decline; Kisqali takes most lost share",
+        "~ Vyndaqel acoramidis takes 25-30% share pre-LOE",
+        "~ Padcev + Lorbrena grow but offset partial",
+        "~ Sigvotatug Ph3 OK; sasanlimab approved EU",
+        "~ Obesity BD deal closes 2027"
+      ],
+      "assumptions": {
+        "covid": {
+          "comirnaty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "paxlovid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "eliquis": {
+          "anticoagulation": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "vyndaqel": {
+          "attr_cm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "prevnar": {
+          "pneumo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "ibrance": {
+          "hr_breast": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "xtandi": {
+          "prostate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "padcev": {
+          "bladder": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "lorbrena": {
+          "alk_nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "adcetris": {
+          "hodgkin_tcell": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "braftovi_mektovi": {
+          "melanoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "crc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "im_jak_derm": {
+          "xeljanz_ra_uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          },
+          "cibinqo_ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "litfulo_aa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "abrysvo": {
+          "rsv_adult": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "nurtec": {
+          "migraine": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "marstacimab": {
+          "hema_marst": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "talzenna": {
+          "prostate_parp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "velsipity": {
+          "uc_velsipity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "established_products": {
+          "tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "sasanlimab": {
+          "nmibc": {
+            "pos": 75,
+            "apr": 80,
+            "pen": 0.7
+          }
+        },
+        "vepdegestrant": {
+          "er_breast": {
+            "pos": 55,
+            "apr": 60,
+            "pen": 0.6
+          }
+        },
+        "sigvotatug": {
+          "nsclc_sv": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.6
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 11,
+        "pipelineMult": 5,
+        "commercialMult": 3.5,
+        "commercialRevM": 50000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "LOE wave manageable + Seagen ADCs deliver + obesity BD + cost cuts on track",
+      "events": [
+        "V Eliquis generic erosion partially offset by Vyndaqel growth",
+        "V Padcev $3B+ peak; sigvotatug Ph3 NSCLC positive",
+        "V Sasanlimab approved + niche launch",
+        "V Vepdegestrant ESR1-mutant approved 2027",
+        "V Obesity in-license materializes 2026-27",
+        "V $7.2B cost-savings program delivers EPS"
+      ],
+      "assumptions": {
+        "covid": {
+          "comirnaty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "paxlovid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "eliquis": {
+          "anticoagulation": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "vyndaqel": {
+          "attr_cm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "prevnar": {
+          "pneumo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "ibrance": {
+          "hr_breast": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "xtandi": {
+          "prostate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "padcev": {
+          "bladder": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "lorbrena": {
+          "alk_nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "adcetris": {
+          "hodgkin_tcell": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "braftovi_mektovi": {
+          "melanoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "crc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "im_jak_derm": {
+          "xeljanz_ra_uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "cibinqo_ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "litfulo_aa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "abrysvo": {
+          "rsv_adult": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "nurtec": {
+          "migraine": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "marstacimab": {
+          "hema_marst": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "talzenna": {
+          "prostate_parp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "velsipity": {
+          "uc_velsipity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "established_products": {
+          "tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "sasanlimab": {
+          "nmibc": {
+            "pos": 92,
+            "apr": 90,
+            "pen": 0.85
+          }
+        },
+        "vepdegestrant": {
+          "er_breast": {
+            "pos": 75,
+            "apr": 78,
+            "pen": 0.85
+          }
+        },
+        "sigvotatug": {
+          "nsclc_sv": {
+            "pos": 75,
+            "apr": 75,
+            "pen": 0.85
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 5.5,
+        "commercialMult": 4.5,
+        "commercialRevM": 56000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Seagen ADCs ramp $5B+ + obesity BD wins + Vyndaqel litigation extends + cost cuts deliver",
+      "events": [
+        "V Sigvotatug + Padcev + future ADCs combined $5B+ peak",
+        "V Obesity BD acquisition delivers $3-5B asset",
+        "V Vyndaqel litigation extends to 2030+",
+        "V Cost-savings exceed $7.2B target",
+        "V Sasanlimab + vepdegestrant + multi-indication wins"
+      ],
+      "assumptions": {
+        "covid": {
+          "comirnaty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "paxlovid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "eliquis": {
+          "anticoagulation": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "vyndaqel": {
+          "attr_cm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "prevnar": {
+          "pneumo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "ibrance": {
+          "hr_breast": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "xtandi": {
+          "prostate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "padcev": {
+          "bladder": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "lorbrena": {
+          "alk_nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "adcetris": {
+          "hodgkin_tcell": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "braftovi_mektovi": {
+          "melanoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "crc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "im_jak_derm": {
+          "xeljanz_ra_uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "cibinqo_ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "litfulo_aa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "abrysvo": {
+          "rsv_adult": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "nurtec": {
+          "migraine": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "marstacimab": {
+          "hema_marst": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "talzenna": {
+          "prostate_parp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "velsipity": {
+          "uc_velsipity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "established_products": {
+          "tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "sasanlimab": {
+          "nmibc": {
+            "pos": 98,
+            "apr": 95,
+            "pen": 1.0
+          }
+        },
+        "vepdegestrant": {
+          "er_breast": {
+            "pos": 88,
+            "apr": 88,
+            "pen": 1.0
+          }
+        },
+        "sigvotatug": {
+          "nsclc_sv": {
+            "pos": 90,
+            "apr": 88,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 7,
+        "commercialMult": 5.5,
+        "commercialRevM": 64000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Transformative obesity M&A + ADC platform leadership + Vyndaqel litigation + multi-indication ADC wins",
+      "events": [
+        "V Major obesity acquisition closes — Pfizer regains GLP-1 game",
+        "V Seagen ADC franchise reaches $10B+ with 5+ indications",
+        "V Vyndaqel litigation + next-gen extends franchise to 2032+",
+        "V Multi-PROTAC platform from Arvinas expansion",
+        "V Acquisition / strategic alternatives realize sum-of-parts"
+      ],
+      "assumptions": {
+        "covid": {
+          "comirnaty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "paxlovid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "eliquis": {
+          "anticoagulation": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "vyndaqel": {
+          "attr_cm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "prevnar": {
+          "pneumo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "ibrance": {
+          "hr_breast": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "xtandi": {
+          "prostate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "padcev": {
+          "bladder": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "lorbrena": {
+          "alk_nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "adcetris": {
+          "hodgkin_tcell": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "braftovi_mektovi": {
+          "melanoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "crc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "im_jak_derm": {
+          "xeljanz_ra_uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "cibinqo_ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "litfulo_aa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "abrysvo": {
+          "rsv_adult": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "nurtec": {
+          "migraine": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "marstacimab": {
+          "hema_marst": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "talzenna": {
+          "prostate_parp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "velsipity": {
+          "uc_velsipity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "established_products": {
+          "tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "sasanlimab": {
+          "nmibc": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.2
+          }
+        },
+        "vepdegestrant": {
+          "er_breast": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.2
+          }
+        },
+        "sigvotatug": {
+          "nsclc_sv": {
+            "pos": 96,
+            "apr": 95,
+            "pen": 1.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 9,
+        "commercialMult": 7.5,
+        "commercialRevM": 75000,
+        "milestones": 0,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 3, 2026 (Q4 2025 / FY 2025)",
+      "title": "FY2025 $62.6B (-2% op); 2026 guide $59.5-62.5B; 2026-28 LOE wave looms",
+      "points": [
+        "FY2025 revenue $62.6B (-2% operational vs $63.6B 2024)",
+        "Comirnaty $5.3B (-35% YoY normalization)",
+        "Eliquis $6.49B (+13%) -- US LOE late 2026",
+        "Vyndaqel/Vyndamax $4.37B (+15%) -- LOE end 2028",
+        "Prevnar $6.38B (+5%)",
+        "Ibrance $2.36B declining -- US LOE Mar 2027",
+        "Padcev $907M (+15%) -- 1L mUC standard post EV-302",
+        "Seagen integration first full year complete",
+        "Cost-savings program raised to $7.2B by end 2027",
+        "Long-term debt ~$61.6B post-Seagen $43B deal",
+        "2026 guide $59.5-62.5B / EPS $2.80-3.00 (below sell-side $63.5B / $3.10)",
+        "Danuglipron discontinued Apr 14, 2025 (DILI signal); obesity pivot"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "H1 2026",
+      "title": "Sasanlimab EU registration + Q1 2026 earnings + obesity BD watch",
+      "thresholds": [
+        "H1 2026: Sasanlimab EU registration (NMIBC)",
+        "2026: Vepdegestrant Ph3 ER+ breast registration prep",
+        "Q4 2026: Eliquis US LOE event (single largest negative catalyst)",
+        "Mar 2027: Ibrance US LOE",
+        "2027: Sigvotatug Ph3 1L mNSCLC topline",
+        "2027-28: Vyndaqel litigation outcomes / next-gen TTR strategy",
+        "End 2028: Vyndaqel US LOE -- THE big event"
+      ]
+    },
+    "risks": [
+      "Concentrated 2026-28 LOE wave: Eliquis (Q4 2026), Ibrance (Mar 2027), Xtandi (2027), Vyndaqel (end 2028) = ~$15B+ revenue at risk",
+      "Vyndaqel acoramidis (BridgeBio Attruby) competition + Alnylam vutrisiran ATTR-CM label expansion erode pre-LOE",
+      "Net debt ~$60B post-Seagen $43B deal limits transformative M&A; obesity in-license likely $5-10B max",
+      "Danuglipron discontinuation Apr 2025 left obesity gap vs LLY/NOVO duopoly; lotiglipron also discontinued; Pfizer behind in oral GLP-1 race",
+      "Comirnaty / Paxlovid normalization continues; not a growth driver",
+      "Seagen integration mixed: Padcev outperforms but Adcetris/Tukysa underperform (Tukysa $820M intangible impairment Q4 2025)",
+      "Cost-savings program execution risk + margin pressure from IRA negotiation (Eliquis 2026, Vyndaqel TBD)",
+      "Vibostolimab/TIGIT failed (KeyVibe-008 SCLC Sep 2024)",
+      "Activist scrutiny on capital allocation post-Seagen; potential strategic alternatives",
+      "Eliquis is BMS profit-share so net contribution lower than gross; modeled at PFE share"
+    ]
+  },
+  "catalysts": [
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-30",
+      "asset": "sasanlimab",
+      "indication": "nmibc",
+      "title": "Sasanlimab EMA registration decision (BCG-naive NMIBC)",
+      "type": "ema_approval",
+      "binary": true,
+      "fail_pos": 80,
+      "fail_apr": 30,
+      "success_pos": 95,
+      "success_apr": 95,
+      "_confidence": "high",
+      "_rationale": "EU registration phase per Pfizer Feb 2026 pipeline; CREST Ph3 positive."
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "eliquis",
+      "indication": "anticoagulation",
+      "title": "Eliquis US generic launch — composition LOE",
+      "type": "loe",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_confidence": "high",
+      "_rationale": "Generic apixaban approved Nov 2024; US composition LOE late 2026. Single largest negative catalyst."
+    },
+    {
+      "date": "Mar 2027",
+      "dateSort": "2027-03-15",
+      "asset": "ibrance",
+      "indication": "hr_breast",
+      "title": "Ibrance US LOE (palbociclib generic)",
+      "type": "loe",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_confidence": "high",
+      "_rationale": "PTE-extended composition LOE March 2027."
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-09-30",
+      "asset": "sigvotatug",
+      "indication": "nsclc_sv",
+      "title": "Sigvotatug vedotin Ph3 Be6A LUNG-02 readout (1L mNSCLC)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 0,
+      "fail_apr": 0,
+      "success_pos": 88,
+      "success_apr": 86,
+      "_confidence": "medium",
+      "_rationale": "Be6A LUNG-02 Ph3 enrolling per Pfizer Feb 2026 pipeline; readout 2027+."
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-12-31",
+      "asset": "vepdegestrant",
+      "indication": "er_breast",
+      "title": "Vepdegestrant ER+ breast registration / commercial path",
+      "type": "registration",
+      "binary": false,
+      "fail_pos": 60,
+      "fail_apr": 65,
+      "success_pos": 88,
+      "success_apr": 85,
+      "_confidence": "medium",
+      "_rationale": "VERITAC-2 differentiated in ESR1-mutant subset; Pfizer/Arvinas commercial path TBD."
+    },
+    {
+      "date": "End 2028",
+      "dateSort": "2028-12-31",
+      "asset": "vyndaqel",
+      "indication": "attr_cm",
+      "title": "Vyndaqel US LOE — composition expiry (THE big one)",
+      "type": "loe",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_confidence": "high",
+      "_rationale": "PTE-extended LOE end 2028; litigation strategy + next-gen TTR may extend."
+    }
+  ]
+}

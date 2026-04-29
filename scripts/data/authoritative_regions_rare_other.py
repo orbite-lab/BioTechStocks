@@ -145,6 +145,37 @@ REGIONS = {
         "eu":  {"patientsK": 200000, "wtpPct": 45, "priceK": 0.15},
         "row": {"patientsK": 800000, "wtpPct": 15, "priceK": 0.05},
     },
+    # COVID mRNA vaccine: Comirnaty (Pfizer/BNT) + Spikevax (Moderna). Routine
+    # 2024+ became seasonal annual booster (FDA + CDC ACIP recommendation,
+    # adult >=65 + at-risk). Demand normalized post-pandemic: 2024-25 season
+    # ~25M doses US, ~80M EU+UK, ~150M ROW. Class peak ~$10-12B globally
+    # post-normalization (vs $50B+ at pandemic peak). Pricing $115-130/dose
+    # commercial.
+    "infectious_disease.vaccines.covid": {
+        "us":  {"patientsK": 100000,  "wtpPct": 25, "priceK": 0.13},
+        "eu":  {"patientsK": 200000,  "wtpPct": 22, "priceK": 0.09},
+        "row": {"patientsK": 1500000, "wtpPct": 8,  "priceK": 0.04},
+    },
+    # COVID antiviral treatment: Paxlovid (Pfizer nirmatrelvir/ritonavir),
+    # Lagevrio (Merck molnupiravir, declining). High-risk symptomatic COVID
+    # outpatient. US ~5M Rx eligible/yr, ~80% age>=65 + comorbid. EU 10M, ROW
+    # 50M. Class peak ~$2B post-normalization (vs $19B Paxlovid 2022 peak).
+    "infectious_disease.anti_infective.covid_treatment": {
+        "us":  {"patientsK": 5000,   "wtpPct": 35, "priceK": 1.4},
+        "eu":  {"patientsK": 10000,  "wtpPct": 25, "priceK": 0.9},
+        "row": {"patientsK": 50000,  "wtpPct": 8,  "priceK": 0.4},
+    },
+    # RSV adult/maternal vaccine: Abrysvo (Pfizer ~$700M 2025), Arexvy
+    # (GSK adjuvanted ~$1.5B 2025), mResvia (Moderna). Adult >=60 ACIP-
+    # recommended single-dose; maternal 32-36w gestation Abrysvo. US ~80M
+    # adult>=60 + ~3.7M pregnancies; EU ~120M; ROW ~600M. Class peak ~$5-6B
+    # globally with universal adult recommendation.
+    # source: CDC ACIP RSV adult guidelines; GSK + Pfizer + Moderna 10-Ks.
+    "infectious_disease.vaccines.rsv_adult": {
+        "us":  {"patientsK": 80000,  "wtpPct": 50, "priceK": 0.27},
+        "eu":  {"patientsK": 120000, "wtpPct": 35, "priceK": 0.18},
+        "row": {"patientsK": 600000, "wtpPct": 10, "priceK": 0.06},
+    },
     # Rotavirus vaccine (peds): RotaTeq (Merck pentavalent, ~$700M 2025),
     # Rotarix (GSK monovalent, ~$1B 2025). Routine US/EU/many ROW infant
     # immunization (2-3 doses 2-6mo). US 3.7M birth cohort, EU 4M, ROW ~120M.
@@ -414,6 +445,9 @@ PEN_PCT = {
     "perioperative.anesthesia.nmb_reversal": 30,
     "women_health.contraception.larc_implant": 18,
     "oncology.endocrine.thyroid_cancer": 35,
+    "infectious_disease.vaccines.covid": 8,
+    "infectious_disease.anti_infective.covid_treatment": 12,
+    "infectious_disease.vaccines.rsv_adult": 25,
     "ophthalmology.anterior_neuro.deb_ocular": 25,
     "ophthalmology.anterior_neuro.dry_eye": 15,
     "ophthalmology.anterior_neuro.naion": 15,

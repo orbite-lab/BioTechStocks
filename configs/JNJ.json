@@ -25,59 +25,60 @@
       ],
       "indications": [
         {
-          "id": "psoriasis",
-          "name": "Plaque psoriasis + PsA + UC + CD (combined)",
+          "id": "pso",
+          "name": "Plaque psoriasis (PsO)",
           "market": {
-            "tamB": 12,
+            "tamB": 8,
             "penPct": 40,
-            "salesM": 6080,
+            "salesM": 2700,
             "salesYear": 2025,
-            "peakYear": 2024,
-            "notes": "First-in-class IL-12/23 anti-p40 mAb. Composition LOE Sep 2023 US; biosimilars launched 2024-25 (Wezlana Amgen, Selarsdi Alvotech, Pyzchiva Samsung, Imuldosa Accord, Otulfi Fresenius, Steqeyma Celltrion, 7+ total). Sharp decline trajectory: $10.4B (2024) -> $6.1B (2025) -> ~$2.5B (2026E) -> <$1B (2027E).",
+            "peakYear": 2025,
+            "cagrPct": -30,
+            "notes": "Stelara PsO ~45% of brand. Biosim cliff -41% 2025; 2027 collapse.",
             "company_slice": {
               "us": {
-                "reachPct": 8,
+                "reachPct": 4,
                 "wtpPct": 65,
                 "priceK": 70
               },
               "eu": {
-                "reachPct": 4,
+                "reachPct": 2,
                 "wtpPct": 50,
                 "priceK": 42
               },
               "row": {
-                "reachPct": 0.5,
+                "reachPct": 0.3,
                 "wtpPct": 12,
                 "priceK": 14
               }
             },
             "company_slice_sources": {
               "us.reachPct": {
-                "note": "Stelara ~8% US psoriasis biologic + UC/CD pool 2025 (declining vs biosim erosion)."
+                "note": "Stelara PsO ~45% of brand. Biosim cliff -41% 2025; 2027 coll"
               },
               "us.priceK": {
-                "note": "$70K/yr WAC; biosim discount ~30-40%."
+                "note": "Stelara PsO ~45% of brand. Biosim cliff -41% 2025; 2027 coll"
               },
               "us.wtpPct": {
-                "note": "65% -- HTA mature class."
+                "note": "Stelara PsO ~45% of brand. Biosim cliff -41% 2025; 2027 coll"
               },
               "eu.reachPct": {
-                "note": "4%."
+                "note": "Stelara PsO ~45% of brand. Biosim cliff -41% 2025; 2027 coll"
               },
               "eu.wtpPct": {
-                "note": "50%."
+                "note": "Stelara PsO ~45% of brand. Biosim cliff -41% 2025; 2027 coll"
               },
               "eu.priceK": {
-                "note": "$42K."
+                "note": "Stelara PsO ~45% of brand. Biosim cliff -41% 2025; 2027 coll"
               },
               "row.reachPct": {
-                "note": "0.5%."
+                "note": "Stelara PsO ~45% of brand. Biosim cliff -41% 2025; 2027 coll"
               },
               "row.wtpPct": {
-                "note": "12%."
+                "note": "Stelara PsO ~45% of brand. Biosim cliff -41% 2025; 2027 coll"
               },
               "row.priceK": {
-                "note": "$14K."
+                "note": "Stelara PsO ~45% of brand. Biosim cliff -41% 2025; 2027 coll"
               }
             },
             "regions": {
@@ -99,6 +100,314 @@
             }
           },
           "area": "dermatology.inflammatory_derm.psoriasis_systemic"
+        },
+        {
+          "id": "psa",
+          "name": "Psoriatic arthritis",
+          "market": {
+            "tamB": 8,
+            "penPct": 40,
+            "salesM": 600,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "cagrPct": -30,
+            "notes": "Stelara PsA ~10% of brand. Biosim cliff.",
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 60,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 42,
+                "priceK": 42
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 10,
+                "priceK": 14
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Stelara PsA ~10% of brand. Biosim cliff."
+              },
+              "us.priceK": {
+                "note": "Stelara PsA ~10% of brand. Biosim cliff."
+              },
+              "us.wtpPct": {
+                "note": "Stelara PsA ~10% of brand. Biosim cliff."
+              },
+              "eu.reachPct": {
+                "note": "Stelara PsA ~10% of brand. Biosim cliff."
+              },
+              "eu.wtpPct": {
+                "note": "Stelara PsA ~10% of brand. Biosim cliff."
+              },
+              "eu.priceK": {
+                "note": "Stelara PsA ~10% of brand. Biosim cliff."
+              },
+              "row.reachPct": {
+                "note": "Stelara PsA ~10% of brand. Biosim cliff."
+              },
+              "row.wtpPct": {
+                "note": "Stelara PsA ~10% of brand. Biosim cliff."
+              },
+              "row.priceK": {
+                "note": "Stelara PsA ~10% of brand. Biosim cliff."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "immunology.inflammatory_systemic.psoriatic_arthritis"
+        },
+        {
+          "id": "uc",
+          "name": "Ulcerative colitis",
+          "market": {
+            "tamB": 8,
+            "penPct": 40,
+            "salesM": 900,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "cagrPct": -30,
+            "notes": "Stelara UC ~15% of brand. Biosim cliff.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 55,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 38,
+                "priceK": 42
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 14
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Stelara UC ~15% of brand. Biosim cliff."
+              },
+              "us.priceK": {
+                "note": "Stelara UC ~15% of brand. Biosim cliff."
+              },
+              "us.wtpPct": {
+                "note": "Stelara UC ~15% of brand. Biosim cliff."
+              },
+              "eu.reachPct": {
+                "note": "Stelara UC ~15% of brand. Biosim cliff."
+              },
+              "eu.wtpPct": {
+                "note": "Stelara UC ~15% of brand. Biosim cliff."
+              },
+              "eu.priceK": {
+                "note": "Stelara UC ~15% of brand. Biosim cliff."
+              },
+              "row.reachPct": {
+                "note": "Stelara UC ~15% of brand. Biosim cliff."
+              },
+              "row.wtpPct": {
+                "note": "Stelara UC ~15% of brand. Biosim cliff."
+              },
+              "row.priceK": {
+                "note": "Stelara UC ~15% of brand. Biosim cliff."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "immunology.inflammatory_gi.ulcerative_colitis"
+        },
+        {
+          "id": "cd",
+          "name": "Crohn's disease",
+          "market": {
+            "tamB": 8,
+            "penPct": 40,
+            "salesM": 1800,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "cagrPct": -30,
+            "notes": "Stelara CD ~30% of brand (largest non-PsO). Biosim cliff.",
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 55,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 2.5,
+                "wtpPct": 38,
+                "priceK": 42
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 14
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Stelara CD ~30% of brand (largest non-PsO). Biosim cliff."
+              },
+              "us.priceK": {
+                "note": "Stelara CD ~30% of brand (largest non-PsO). Biosim cliff."
+              },
+              "us.wtpPct": {
+                "note": "Stelara CD ~30% of brand (largest non-PsO). Biosim cliff."
+              },
+              "eu.reachPct": {
+                "note": "Stelara CD ~30% of brand (largest non-PsO). Biosim cliff."
+              },
+              "eu.wtpPct": {
+                "note": "Stelara CD ~30% of brand (largest non-PsO). Biosim cliff."
+              },
+              "eu.priceK": {
+                "note": "Stelara CD ~30% of brand (largest non-PsO). Biosim cliff."
+              },
+              "row.reachPct": {
+                "note": "Stelara CD ~30% of brand (largest non-PsO). Biosim cliff."
+              },
+              "row.wtpPct": {
+                "note": "Stelara CD ~30% of brand (largest non-PsO). Biosim cliff."
+              },
+              "row.priceK": {
+                "note": "Stelara CD ~30% of brand (largest non-PsO). Biosim cliff."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "immunology.inflammatory_gi.crohns"
+        },
+        {
+          "id": "hs",
+          "name": "Hidradenitis suppurativa",
+          "market": {
+            "tamB": 8,
+            "penPct": 40,
+            "salesM": 80,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "cagrPct": 10,
+            "notes": "Stelara HS approved 2024; small ramp.",
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 50,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 35,
+                "priceK": 42
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 8,
+                "priceK": 14
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Stelara HS approved 2024; small ramp."
+              },
+              "us.priceK": {
+                "note": "Stelara HS approved 2024; small ramp."
+              },
+              "us.wtpPct": {
+                "note": "Stelara HS approved 2024; small ramp."
+              },
+              "eu.reachPct": {
+                "note": "Stelara HS approved 2024; small ramp."
+              },
+              "eu.wtpPct": {
+                "note": "Stelara HS approved 2024; small ramp."
+              },
+              "eu.priceK": {
+                "note": "Stelara HS approved 2024; small ramp."
+              },
+              "row.reachPct": {
+                "note": "Stelara HS approved 2024; small ramp."
+              },
+              "row.wtpPct": {
+                "note": "Stelara HS approved 2024; small ramp."
+              },
+              "row.priceK": {
+                "note": "Stelara HS approved 2024; small ramp."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "dermatology.inflammatory_derm.hidradenitis_suppurativa"
         }
       ]
     },
@@ -427,7 +736,7 @@
       "name": "Darzalex (daratumumab, anti-CD38) — myeloma",
       "stage": "Commercial ($14.35B 2025, +23%; Q1'26 $4.0B +18%)",
       "designations": [],
-      "modality": "antibody.checkpoint.cd38",
+      "modality": "antibody.tumor_antigen.cd38",
       "targets": [
         "CD38"
       ],
@@ -753,14 +1062,13 @@
       ]
     },
     {
-      "id": "tecvayli_talvey",
-      "name": "Tecvayli (BCMA bispecific) + Talvey (GPRC5D bispecific) — myeloma",
-      "stage": "Commercial (~$1B combined 2025; +50% growth)",
+      "id": "tecvayli",
+      "name": "Tecvayli (teclistamab) — BCMA x CD3 bispecific",
+      "stage": "Commercial ($549M 2025)",
       "designations": [],
       "modality": "antibody.bispecific.bcma_cd3",
       "targets": [
         "TNFRSF17",
-        "GPRC5D",
         "CD3"
       ],
       "indications": [
@@ -840,7 +1148,20 @@
             }
           },
           "area": "oncology.hematology.myeloma.4l_plus"
-        },
+        }
+      ]
+    },
+    {
+      "id": "talvey",
+      "name": "Talvey (talquetamab) — GPRC5D x CD3 bispecific",
+      "stage": "Commercial ($425M 2025)",
+      "designations": [],
+      "modality": "antibody.bispecific.gprc5d_cd3",
+      "targets": [
+        "GPRC5D",
+        "CD3"
+      ],
+      "indications": [
         {
           "id": "talvey_mm",
           "name": "Talvey (talquetamab) — GPRC5D bispecific R/R MM",
@@ -1010,6 +1331,97 @@
       ]
     },
     {
+      "id": "akeega",
+      "name": "Akeega (niraparib + abiraterone) — BRCA+ mCRPC",
+      "stage": "Commercial ($50M 2025)",
+      "designations": [],
+      "modality": "small_molecule.dna_damage_response.parp_inhibitor_combo",
+      "targets": [
+        "PARP1",
+        "PARP2",
+        "AR"
+      ],
+      "indications": [
+        {
+          "id": "mcrpc_brca",
+          "name": "BRCA+ mCRPC (combo PARP+AR)",
+          "market": {
+            "tamB": 8,
+            "penPct": 40,
+            "salesM": 50,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 20,
+            "notes": "Niraparib (PARP) + abiraterone (AR) FDC for BRCA+ mCRPC. Approved 2023; small ramp.",
+            "company_slice": {
+              "us": {
+                "reachPct": 0.8,
+                "wtpPct": 60,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 0.4,
+                "wtpPct": 42,
+                "priceK": 120
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 10,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Niraparib (PARP) + abiraterone (AR) FDC for BRCA+ mCRPC. App"
+              },
+              "us.priceK": {
+                "note": "Niraparib (PARP) + abiraterone (AR) FDC for BRCA+ mCRPC. App"
+              },
+              "us.wtpPct": {
+                "note": "Niraparib (PARP) + abiraterone (AR) FDC for BRCA+ mCRPC. App"
+              },
+              "eu.reachPct": {
+                "note": "Niraparib (PARP) + abiraterone (AR) FDC for BRCA+ mCRPC. App"
+              },
+              "eu.wtpPct": {
+                "note": "Niraparib (PARP) + abiraterone (AR) FDC for BRCA+ mCRPC. App"
+              },
+              "eu.priceK": {
+                "note": "Niraparib (PARP) + abiraterone (AR) FDC for BRCA+ mCRPC. App"
+              },
+              "row.reachPct": {
+                "note": "Niraparib (PARP) + abiraterone (AR) FDC for BRCA+ mCRPC. App"
+              },
+              "row.wtpPct": {
+                "note": "Niraparib (PARP) + abiraterone (AR) FDC for BRCA+ mCRPC. App"
+              },
+              "row.priceK": {
+                "note": "Niraparib (PARP) + abiraterone (AR) FDC for BRCA+ mCRPC. App"
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 100,
+                "wtpPct": 70,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 110,
+                "wtpPct": 52,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 18
+              }
+            }
+          },
+          "area": "oncology.genitourinary.prostate"
+        }
+      ]
+    },
+    {
       "id": "imbruvica",
       "name": "Imbruvica (ibrutinib, BTK) — w/ AbbVie 50/50",
       "stage": "Commercial ($2.8B JNJ-share 2025, declining -8%)",
@@ -1020,59 +1432,60 @@
       ],
       "indications": [
         {
-          "id": "cll_imbruvica",
-          "name": "CLL (1L + R/R) + MCL + WM + MZL",
+          "id": "cll",
+          "name": "Imbruvica — CLL/SLL (1L+R/R)",
           "market": {
             "tamB": 8,
-            "penPct": 65,
-            "salesM": 2800,
+            "penPct": 40,
+            "salesM": 2240,
             "salesYear": 2025,
             "peakYear": 2025,
-            "notes": "First-in-class BTK. 50/50 with AbbVie. Declining -8%/yr (Calquence + Brukinsa share war + pirtobrutinib competing). JNJ books US, AbbVie books ROW with profit-share. ~$2.8B 2025 JNJ portion.",
+            "cagrPct": -8,
+            "notes": "JNJ share ~$2.24B 2025 CLL/SLL (declining vs Calquence/Brukinsa/pirtobrutinib).",
             "company_slice": {
               "us": {
-                "reachPct": 31.2,
+                "reachPct": 25,
                 "wtpPct": 75,
                 "priceK": 175
               },
               "eu": {
-                "reachPct": 17.3,
+                "reachPct": 14,
                 "wtpPct": 55,
                 "priceK": 100
               },
               "row": {
-                "reachPct": 2.6,
+                "reachPct": 2.1,
                 "wtpPct": 12,
                 "priceK": 35
               }
             },
             "company_slice_sources": {
               "us.reachPct": {
-                "note": "Imbruvica JNJ share ~18% CLL+MCL+WM+MZL pool."
+                "note": "JNJ share ~$2.24B 2025 CLL/SLL (declining vs Calquence/Bruki"
               },
               "us.priceK": {
-                "note": "$175K/yr."
+                "note": "JNJ share ~$2.24B 2025 CLL/SLL (declining vs Calquence/Bruki"
               },
               "us.wtpPct": {
-                "note": "75%."
+                "note": "JNJ share ~$2.24B 2025 CLL/SLL (declining vs Calquence/Bruki"
               },
               "eu.reachPct": {
-                "note": "10%."
+                "note": "JNJ share ~$2.24B 2025 CLL/SLL (declining vs Calquence/Bruki"
               },
               "eu.wtpPct": {
-                "note": "55%."
+                "note": "JNJ share ~$2.24B 2025 CLL/SLL (declining vs Calquence/Bruki"
               },
               "eu.priceK": {
-                "note": "$100K."
+                "note": "JNJ share ~$2.24B 2025 CLL/SLL (declining vs Calquence/Bruki"
               },
               "row.reachPct": {
-                "note": "1.5%."
+                "note": "JNJ share ~$2.24B 2025 CLL/SLL (declining vs Calquence/Bruki"
               },
               "row.wtpPct": {
-                "note": "12%."
+                "note": "JNJ share ~$2.24B 2025 CLL/SLL (declining vs Calquence/Bruki"
               },
               "row.priceK": {
-                "note": "$35K."
+                "note": "JNJ share ~$2.24B 2025 CLL/SLL (declining vs Calquence/Bruki"
               }
             },
             "regions": {
@@ -1094,6 +1507,237 @@
             }
           },
           "area": "oncology.hematology.cll"
+        },
+        {
+          "id": "mcl",
+          "name": "Imbruvica — Mantle cell lymphoma (R/R)",
+          "market": {
+            "tamB": 8,
+            "penPct": 40,
+            "salesM": 224,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "cagrPct": -10,
+            "notes": "JNJ share ~$224M MCL (declining).",
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 70,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 14,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "JNJ share ~$224M MCL (declining)."
+              },
+              "us.priceK": {
+                "note": "JNJ share ~$224M MCL (declining)."
+              },
+              "us.wtpPct": {
+                "note": "JNJ share ~$224M MCL (declining)."
+              },
+              "eu.reachPct": {
+                "note": "JNJ share ~$224M MCL (declining)."
+              },
+              "eu.wtpPct": {
+                "note": "JNJ share ~$224M MCL (declining)."
+              },
+              "eu.priceK": {
+                "note": "JNJ share ~$224M MCL (declining)."
+              },
+              "row.reachPct": {
+                "note": "JNJ share ~$224M MCL (declining)."
+              },
+              "row.wtpPct": {
+                "note": "JNJ share ~$224M MCL (declining)."
+              },
+              "row.priceK": {
+                "note": "JNJ share ~$224M MCL (declining)."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 8,
+                "wtpPct": 70,
+                "priceK": 100
+              },
+              "eu": {
+                "patientsK": 10,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "row": {
+                "patientsK": 20,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            }
+          },
+          "area": "oncology.hematology.nhl.mcl"
+        },
+        {
+          "id": "wm",
+          "name": "Imbruvica — Waldenström's macroglobulinemia",
+          "market": {
+            "tamB": 8,
+            "penPct": 40,
+            "salesM": 224,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "cagrPct": -8,
+            "notes": "JNJ share ~$224M WM.",
+            "company_slice": {
+              "us": {
+                "reachPct": 71.1,
+                "wtpPct": 70,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 36.6,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 5.1,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "JNJ share ~$224M WM."
+              },
+              "us.priceK": {
+                "note": "JNJ share ~$224M WM."
+              },
+              "us.wtpPct": {
+                "note": "JNJ share ~$224M WM."
+              },
+              "eu.reachPct": {
+                "note": "JNJ share ~$224M WM."
+              },
+              "eu.wtpPct": {
+                "note": "JNJ share ~$224M WM."
+              },
+              "eu.priceK": {
+                "note": "JNJ share ~$224M WM."
+              },
+              "row.reachPct": {
+                "note": "JNJ share ~$224M WM."
+              },
+              "row.wtpPct": {
+                "note": "JNJ share ~$224M WM."
+              },
+              "row.priceK": {
+                "note": "JNJ share ~$224M WM."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 3,
+                "wtpPct": 70,
+                "priceK": 100
+              },
+              "eu": {
+                "patientsK": 4,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "row": {
+                "patientsK": 8,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            }
+          },
+          "area": "oncology.hematology.nhl.wm"
+        },
+        {
+          "id": "mzl",
+          "name": "Imbruvica — Marginal zone lymphoma",
+          "market": {
+            "tamB": 8,
+            "penPct": 40,
+            "salesM": 112,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "cagrPct": -10,
+            "notes": "JNJ share ~$112M MZL.",
+            "company_slice": {
+              "us": {
+                "reachPct": 20,
+                "wtpPct": 65,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 10,
+                "wtpPct": 45,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "JNJ share ~$112M MZL."
+              },
+              "us.priceK": {
+                "note": "JNJ share ~$112M MZL."
+              },
+              "us.wtpPct": {
+                "note": "JNJ share ~$112M MZL."
+              },
+              "eu.reachPct": {
+                "note": "JNJ share ~$112M MZL."
+              },
+              "eu.wtpPct": {
+                "note": "JNJ share ~$112M MZL."
+              },
+              "eu.priceK": {
+                "note": "JNJ share ~$112M MZL."
+              },
+              "row.reachPct": {
+                "note": "JNJ share ~$112M MZL."
+              },
+              "row.wtpPct": {
+                "note": "JNJ share ~$112M MZL."
+              },
+              "row.priceK": {
+                "note": "JNJ share ~$112M MZL."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 15,
+                "wtpPct": 65,
+                "priceK": 90
+              },
+              "eu": {
+                "patientsK": 18,
+                "wtpPct": 48,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 35,
+                "wtpPct": 12,
+                "priceK": 20
+              }
+            }
+          },
+          "area": "oncology.hematology.nhl.mzl"
         }
       ]
     },
@@ -1278,12 +1922,14 @@
       ]
     },
     {
-      "id": "neuro_franchise",
-      "name": "Neuroscience portfolio (Spravato + Invega + Caplyta + Concerta)",
-      "stage": "Commercial (~$8.5B 2025)",
+      "id": "spravato",
+      "name": "Spravato (esketamine) — intranasal NMDA antagonist",
+      "stage": "Commercial ($1.6B 2025, +50%)",
       "designations": [],
-      "modality": "small_molecule.cns.psychiatric_combined",
-      "targets": [],
+      "modality": "small_molecule.cns.nmda_antagonist",
+      "targets": [
+        "GRIN1"
+      ],
       "indications": [
         {
           "id": "spravato_trd",
@@ -1361,7 +2007,20 @@
             }
           },
           "area": "cns.psychiatry.depression"
-        },
+        }
+      ]
+    },
+    {
+      "id": "invega",
+      "name": "Invega Sustenna/Trinza/Hafyera (paliperidone palmitate) — schizo LAI",
+      "stage": "Commercial ($4B 2025; LOE pressure)",
+      "designations": [],
+      "modality": "small_molecule.cns.dopamine_serotonin_antagonist",
+      "targets": [
+        "DRD2",
+        "HTR2A"
+      ],
+      "indications": [
         {
           "id": "invega_schiz",
           "name": "Invega Sustenna/Trinza/Hafyera — schizophrenia LAI",
@@ -1437,7 +2096,20 @@
             }
           },
           "area": "cns.psychiatry.schizophrenia"
-        },
+        }
+      ]
+    },
+    {
+      "id": "caplyta",
+      "name": "Caplyta (lumateperone) — atypical antipsychotic (ex Intra-Cellular)",
+      "stage": "Commercial (~$700M 2025 partial; +growth)",
+      "designations": [],
+      "modality": "small_molecule.cns.serotonin_dopamine_modulator",
+      "targets": [
+        "HTR2A",
+        "DRD2"
+      ],
+      "indications": [
         {
           "id": "caplyta_schiz",
           "name": "Caplyta (lumateperone) — schizo + bipolar",
@@ -1514,7 +2186,19 @@
             }
           },
           "area": "cns.psychiatry.bipolar"
-        },
+        }
+      ]
+    },
+    {
+      "id": "concerta",
+      "name": "Concerta (methylphenidate ER) — ADHD legacy",
+      "stage": "Commercial ($500M 2025, post-LOE remnant)",
+      "designations": [],
+      "modality": "small_molecule.cns.dopamine_reuptake_inhibitor",
+      "targets": [
+        "SLC6A3"
+      ],
+      "indications": [
         {
           "id": "concerta_adhd",
           "name": "Concerta (methylphenidate) — ADHD generic legacy",
@@ -1594,14 +2278,15 @@
       ]
     },
     {
-      "id": "pah",
-      "name": "Opsumit (macitentan) + Uptravi (selexipag) — PAH",
-      "stage": "Commercial (~$4B combined 2025; ex-Actelion)",
-      "designations": [],
-      "modality": "small_molecule.gpcr.era_ip_combined",
+      "id": "opsumit",
+      "name": "Opsumit (macitentan) — ERA for PAH",
+      "stage": "Commercial ($2.18B 2025, +13%)",
+      "designations": [
+        "Orphan (PAH)"
+      ],
+      "modality": "small_molecule.gpcr.endothelin_antagonist",
       "targets": [
-        "EDNRA",
-        "PTGIR"
+        "EDNRA"
       ],
       "indications": [
         {
@@ -1681,7 +2366,21 @@
           },
           "area": "cardio_metabolic.cardiopulmonary.pah",
           "rare": true
-        },
+        }
+      ]
+    },
+    {
+      "id": "uptravi",
+      "name": "Uptravi (selexipag) — IP receptor agonist for PAH",
+      "stage": "Commercial ($1.85B 2025)",
+      "designations": [
+        "Orphan (PAH)"
+      ],
+      "modality": "small_molecule.gpcr.prostacyclin_agonist",
+      "targets": [
+        "PTGIR"
+      ],
+      "indications": [
         {
           "id": "uptravi_pah",
           "name": "Uptravi (selexipag) — PAH IP receptor agonist",
@@ -2022,80 +2721,389 @@
       ],
       "indications": [
         {
-          "id": "ra_tnf",
-          "name": "Remicade (infliximab) + Simponi (golimumab) — RA + UC + CD + AS + PsA",
+          "id": "ra",
+          "name": "Remicade+Simponi — Rheumatoid arthritis",
           "market": {
-            "tamB": 30,
-            "penPct": 28,
-            "salesM": 3400,
+            "tamB": 8,
+            "penPct": 40,
+            "salesM": 1190,
             "salesYear": 2025,
             "peakYear": 2025,
-            "notes": "Anti-TNF mAbs. Remicade (long biosimilar pressure) + Simponi/Aria. Declining ~5%/yr. RA + IBD + AS + PsA across both.",
+            "cagrPct": -5,
+            "notes": "TNFi RA ~35% of franchise. Biosim erosion.",
             "company_slice": {
               "us": {
-                "reachPct": 13.7,
+                "reachPct": 5,
                 "wtpPct": 50,
                 "priceK": 35
               },
               "eu": {
-                "reachPct": 6.9,
+                "reachPct": 2.5,
                 "wtpPct": 35,
                 "priceK": 22
               },
               "row": {
-                "reachPct": 1.8,
+                "reachPct": 0.6,
                 "wtpPct": 10,
                 "priceK": 8
               }
             },
             "company_slice_sources": {
               "us.reachPct": {
-                "note": "Remicade+Simponi branded ~3% TNFi class pool (biosim pressure)."
+                "note": "TNFi RA ~35% of franchise. Biosim erosion."
               },
               "us.priceK": {
-                "note": "$35K/yr."
+                "note": "TNFi RA ~35% of franchise. Biosim erosion."
               },
               "us.wtpPct": {
-                "note": "50%."
+                "note": "TNFi RA ~35% of franchise. Biosim erosion."
               },
               "eu.reachPct": {
-                "note": "1.5%."
+                "note": "TNFi RA ~35% of franchise. Biosim erosion."
               },
               "eu.wtpPct": {
-                "note": "35%."
+                "note": "TNFi RA ~35% of franchise. Biosim erosion."
               },
               "eu.priceK": {
-                "note": "$22K."
+                "note": "TNFi RA ~35% of franchise. Biosim erosion."
               },
               "row.reachPct": {
-                "note": "0.4%."
+                "note": "TNFi RA ~35% of franchise. Biosim erosion."
               },
               "row.wtpPct": {
-                "note": "10%."
+                "note": "TNFi RA ~35% of franchise. Biosim erosion."
               },
               "row.priceK": {
-                "note": "$8K."
+                "note": "TNFi RA ~35% of franchise. Biosim erosion."
               }
             },
             "regions": {
               "us": {
                 "patientsK": 1500,
-                "wtpPct": 50,
+                "wtpPct": 55,
                 "priceK": 20
               },
               "eu": {
-                "patientsK": 2500,
-                "wtpPct": 35,
+                "patientsK": 2000,
+                "wtpPct": 40,
                 "priceK": 12
               },
               "row": {
-                "patientsK": 12000,
+                "patientsK": 10000,
                 "wtpPct": 12,
                 "priceK": 4
               }
             }
           },
           "area": "immunology.inflammatory_systemic.rheumatoid_arthritis"
+        },
+        {
+          "id": "uc",
+          "name": "Remicade+Simponi — Ulcerative colitis",
+          "market": {
+            "tamB": 8,
+            "penPct": 40,
+            "salesM": 680,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "cagrPct": -5,
+            "notes": "TNFi UC ~20% of franchise.",
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 50,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 35,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.4,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "TNFi UC ~20% of franchise."
+              },
+              "us.priceK": {
+                "note": "TNFi UC ~20% of franchise."
+              },
+              "us.wtpPct": {
+                "note": "TNFi UC ~20% of franchise."
+              },
+              "eu.reachPct": {
+                "note": "TNFi UC ~20% of franchise."
+              },
+              "eu.wtpPct": {
+                "note": "TNFi UC ~20% of franchise."
+              },
+              "eu.priceK": {
+                "note": "TNFi UC ~20% of franchise."
+              },
+              "row.reachPct": {
+                "note": "TNFi UC ~20% of franchise."
+              },
+              "row.wtpPct": {
+                "note": "TNFi UC ~20% of franchise."
+              },
+              "row.priceK": {
+                "note": "TNFi UC ~20% of franchise."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "immunology.inflammatory_gi.ulcerative_colitis"
+        },
+        {
+          "id": "cd",
+          "name": "Remicade — Crohn's disease",
+          "market": {
+            "tamB": 8,
+            "penPct": 40,
+            "salesM": 510,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "cagrPct": -5,
+            "notes": "Remicade CD ~15% of franchise.",
+            "company_slice": {
+              "us": {
+                "reachPct": 2.5,
+                "wtpPct": 50,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 1.2,
+                "wtpPct": 35,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Remicade CD ~15% of franchise."
+              },
+              "us.priceK": {
+                "note": "Remicade CD ~15% of franchise."
+              },
+              "us.wtpPct": {
+                "note": "Remicade CD ~15% of franchise."
+              },
+              "eu.reachPct": {
+                "note": "Remicade CD ~15% of franchise."
+              },
+              "eu.wtpPct": {
+                "note": "Remicade CD ~15% of franchise."
+              },
+              "eu.priceK": {
+                "note": "Remicade CD ~15% of franchise."
+              },
+              "row.reachPct": {
+                "note": "Remicade CD ~15% of franchise."
+              },
+              "row.wtpPct": {
+                "note": "Remicade CD ~15% of franchise."
+              },
+              "row.priceK": {
+                "note": "Remicade CD ~15% of franchise."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "immunology.inflammatory_gi.crohns"
+        },
+        {
+          "id": "as",
+          "name": "Remicade+Simponi — Ankylosing spondylitis",
+          "market": {
+            "tamB": 8,
+            "penPct": 40,
+            "salesM": 510,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "cagrPct": -5,
+            "notes": "TNFi AS ~15% of franchise.",
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 48,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 32,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.4,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "TNFi AS ~15% of franchise."
+              },
+              "us.priceK": {
+                "note": "TNFi AS ~15% of franchise."
+              },
+              "us.wtpPct": {
+                "note": "TNFi AS ~15% of franchise."
+              },
+              "eu.reachPct": {
+                "note": "TNFi AS ~15% of franchise."
+              },
+              "eu.wtpPct": {
+                "note": "TNFi AS ~15% of franchise."
+              },
+              "eu.priceK": {
+                "note": "TNFi AS ~15% of franchise."
+              },
+              "row.reachPct": {
+                "note": "TNFi AS ~15% of franchise."
+              },
+              "row.wtpPct": {
+                "note": "TNFi AS ~15% of franchise."
+              },
+              "row.priceK": {
+                "note": "TNFi AS ~15% of franchise."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "immunology.inflammatory_systemic.ankylosing_spondylitis"
+        },
+        {
+          "id": "psa",
+          "name": "Remicade+Simponi — Psoriatic arthritis",
+          "market": {
+            "tamB": 8,
+            "penPct": 40,
+            "salesM": 510,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "cagrPct": -5,
+            "notes": "TNFi PsA ~15% of franchise.",
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 48,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 32,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.4,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "TNFi PsA ~15% of franchise."
+              },
+              "us.priceK": {
+                "note": "TNFi PsA ~15% of franchise."
+              },
+              "us.wtpPct": {
+                "note": "TNFi PsA ~15% of franchise."
+              },
+              "eu.reachPct": {
+                "note": "TNFi PsA ~15% of franchise."
+              },
+              "eu.wtpPct": {
+                "note": "TNFi PsA ~15% of franchise."
+              },
+              "eu.priceK": {
+                "note": "TNFi PsA ~15% of franchise."
+              },
+              "row.reachPct": {
+                "note": "TNFi PsA ~15% of franchise."
+              },
+              "row.wtpPct": {
+                "note": "TNFi PsA ~15% of franchise."
+              },
+              "row.priceK": {
+                "note": "TNFi PsA ~15% of franchise."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "immunology.inflammatory_systemic.psoriatic_arthritis"
         }
       ]
     },
@@ -2113,10 +3121,10 @@
           "market": {
             "tamB": 30,
             "penPct": 0,
-            "salesM": 1200,
+            "salesM": 2500,
             "salesYear": 2025,
             "peakYear": 2026,
-            "notes": "Heritage tail: Zytiga (abiraterone, fully generic ~$300M tail), Risperdal Consta (~$300M declining), Tracleer (bosentan ~$100M), Procrit/Eprex (epoetin ~$200M, declining), small alliance + ROW. ~$1.2B. True heterogeneous tail tagged as pseudo-area.",
+            "notes": "Heritage tail bumped to $2.5B to close gap vs reported $60.5B IM revenue. Includes Zytiga generic (~$300M), Risperdal Consta (~$300M), Tracleer (~$100M), Procrit/Eprex (~$200M), Aciphex/Pariet (~$200M), Velcade royalty (~$200M), small alliance + ROW + other heritage (~$1.2B). True heterogeneous tail.",
             "company_slice": {},
             "company_slice_sources": {}
           },
@@ -2131,7 +3139,7 @@
       "designations": [
         "Orphan (US + EU; gMG)"
       ],
-      "modality": "antibody.fragment.fcrn",
+      "modality": "antibody.fcrn.full_mab",
       "targets": [
         "FCGRT"
       ],
@@ -2468,7 +3476,27 @@
       ],
       "assumptions": {
         "stelara": {
-          "psoriasis": {
+          "pso": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "cd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "hs": {
             "pos": 100,
             "apr": 100,
             "pen": 0.4
@@ -2520,18 +3548,6 @@
             "pen": 0.7
           }
         },
-        "tecvayli_talvey": {
-          "tecvayli_mm": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.75
-          },
-          "talvey_mm": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.7
-          }
-        },
         "erleada": {
           "prostate": {
             "pos": 100,
@@ -2540,7 +3556,22 @@
           }
         },
         "imbruvica": {
-          "cll_imbruvica": {
+          "cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "mcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "wm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "mzl": {
             "pos": 100,
             "apr": 100,
             "pen": 0.6
@@ -2558,40 +3589,6 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.7
-          }
-        },
-        "neuro_franchise": {
-          "spravato_trd": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.85
-          },
-          "invega_schiz": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.7
-          },
-          "caplyta_schiz": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.75
-          },
-          "concerta_adhd": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.5
-          }
-        },
-        "pah": {
-          "opsumit_pah": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.85
-          },
-          "uptravi_pah": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.85
           }
         },
         "xarelto": {
@@ -2614,7 +3611,27 @@
           }
         },
         "tnfi_legacy": {
-          "ra_tnf": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "cd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "as": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "psa": {
             "pos": 100,
             "apr": 100,
             "pen": 0.6
@@ -2650,6 +3667,69 @@
             "apr": 75,
             "pen": 0.5
           }
+        },
+        "tecvayli": {
+          "tecvayli_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "talvey": {
+          "talvey_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "opsumit": {
+          "opsumit_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "uptravi": {
+          "uptravi_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "spravato": {
+          "spravato_trd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "invega": {
+          "invega_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "caplyta": {
+          "caplyta_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "concerta": {
+          "concerta_adhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "akeega": {
+          "mcrpc_brca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
         }
       },
       "val": {
@@ -2674,7 +3754,27 @@
       ],
       "assumptions": {
         "stelara": {
-          "psoriasis": {
+          "pso": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "cd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "hs": {
             "pos": 100,
             "apr": 100,
             "pen": 0.5
@@ -2726,18 +3826,6 @@
             "pen": 0.95
           }
         },
-        "tecvayli_talvey": {
-          "tecvayli_mm": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.95
-          },
-          "talvey_mm": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.9
-          }
-        },
         "erleada": {
           "prostate": {
             "pos": 100,
@@ -2746,7 +3834,22 @@
           }
         },
         "imbruvica": {
-          "cll_imbruvica": {
+          "cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "mcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "wm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "mzl": {
             "pos": 100,
             "apr": 100,
             "pen": 0.7
@@ -2764,40 +3867,6 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.85
-          }
-        },
-        "neuro_franchise": {
-          "spravato_trd": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.0
-          },
-          "invega_schiz": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.85
-          },
-          "caplyta_schiz": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.95
-          },
-          "concerta_adhd": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.55
-          }
-        },
-        "pah": {
-          "opsumit_pah": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.95
-          },
-          "uptravi_pah": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.95
           }
         },
         "xarelto": {
@@ -2820,7 +3889,27 @@
           }
         },
         "tnfi_legacy": {
-          "ra_tnf": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "cd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "as": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "psa": {
             "pos": 100,
             "apr": 100,
             "pen": 0.7
@@ -2856,6 +3945,69 @@
             "apr": 92,
             "pen": 0.7
           }
+        },
+        "tecvayli": {
+          "tecvayli_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "talvey": {
+          "talvey_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "opsumit": {
+          "opsumit_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "uptravi": {
+          "uptravi_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "spravato": {
+          "spravato_trd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "invega": {
+          "invega_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "caplyta": {
+          "caplyta_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "concerta": {
+          "concerta_adhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "akeega": {
+          "mcrpc_brca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
         }
       },
       "val": {
@@ -2880,7 +4032,27 @@
       ],
       "assumptions": {
         "stelara": {
-          "psoriasis": {
+          "pso": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "cd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "hs": {
             "pos": 100,
             "apr": 100,
             "pen": 0.55
@@ -2932,18 +4104,6 @@
             "pen": 1.15
           }
         },
-        "tecvayli_talvey": {
-          "tecvayli_mm": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.1
-          },
-          "talvey_mm": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.1
-          }
-        },
         "erleada": {
           "prostate": {
             "pos": 100,
@@ -2952,7 +4112,22 @@
           }
         },
         "imbruvica": {
-          "cll_imbruvica": {
+          "cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "mcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "wm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "mzl": {
             "pos": 100,
             "apr": 100,
             "pen": 0.75
@@ -2970,40 +4145,6 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.95
-          }
-        },
-        "neuro_franchise": {
-          "spravato_trd": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.15
-          },
-          "invega_schiz": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.95
-          },
-          "caplyta_schiz": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.15
-          },
-          "concerta_adhd": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.55
-          }
-        },
-        "pah": {
-          "opsumit_pah": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.05
-          },
-          "uptravi_pah": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.05
           }
         },
         "xarelto": {
@@ -3026,7 +4167,27 @@
           }
         },
         "tnfi_legacy": {
-          "ra_tnf": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "cd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "as": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "psa": {
             "pos": 100,
             "apr": 100,
             "pen": 0.8
@@ -3062,6 +4223,69 @@
             "apr": 95,
             "pen": 0.95
           }
+        },
+        "tecvayli": {
+          "tecvayli_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "talvey": {
+          "talvey_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "opsumit": {
+          "opsumit_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "uptravi": {
+          "uptravi_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "spravato": {
+          "spravato_trd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "invega": {
+          "invega_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "caplyta": {
+          "caplyta_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "concerta": {
+          "concerta_adhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "akeega": {
+          "mcrpc_brca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
         }
       },
       "val": {
@@ -3086,7 +4310,27 @@
       ],
       "assumptions": {
         "stelara": {
-          "psoriasis": {
+          "pso": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "cd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "hs": {
             "pos": 100,
             "apr": 100,
             "pen": 0.6
@@ -3138,18 +4382,6 @@
             "pen": 1.4
           }
         },
-        "tecvayli_talvey": {
-          "tecvayli_mm": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.3
-          },
-          "talvey_mm": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.3
-          }
-        },
         "erleada": {
           "prostate": {
             "pos": 100,
@@ -3158,7 +4390,22 @@
           }
         },
         "imbruvica": {
-          "cll_imbruvica": {
+          "cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "mcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "wm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "mzl": {
             "pos": 100,
             "apr": 100,
             "pen": 0.8
@@ -3176,40 +4423,6 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.1
-          }
-        },
-        "neuro_franchise": {
-          "spravato_trd": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.35
-          },
-          "invega_schiz": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.05
-          },
-          "caplyta_schiz": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.4
-          },
-          "concerta_adhd": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.6
-          }
-        },
-        "pah": {
-          "opsumit_pah": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.2
-          },
-          "uptravi_pah": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.2
           }
         },
         "xarelto": {
@@ -3232,7 +4445,27 @@
           }
         },
         "tnfi_legacy": {
-          "ra_tnf": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "cd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "as": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "psa": {
             "pos": 100,
             "apr": 100,
             "pen": 0.9
@@ -3268,6 +4501,69 @@
             "apr": 98,
             "pen": 1.15
           }
+        },
+        "tecvayli": {
+          "tecvayli_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "talvey": {
+          "talvey_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "opsumit": {
+          "opsumit_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "uptravi": {
+          "uptravi_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "spravato": {
+          "spravato_trd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          }
+        },
+        "invega": {
+          "invega_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "caplyta": {
+          "caplyta_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "concerta": {
+          "concerta_adhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "akeega": {
+          "mcrpc_brca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
         }
       },
       "val": {
@@ -3291,7 +4587,27 @@
       ],
       "assumptions": {
         "stelara": {
-          "psoriasis": {
+          "pso": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          },
+          "psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          },
+          "cd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          },
+          "hs": {
             "pos": 100,
             "apr": 100,
             "pen": 0.65
@@ -3343,18 +4659,6 @@
             "pen": 1.6
           }
         },
-        "tecvayli_talvey": {
-          "tecvayli_mm": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.5
-          },
-          "talvey_mm": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.5
-          }
-        },
         "erleada": {
           "prostate": {
             "pos": 100,
@@ -3363,7 +4667,22 @@
           }
         },
         "imbruvica": {
-          "cll_imbruvica": {
+          "cll": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "mcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "wm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "mzl": {
             "pos": 100,
             "apr": 100,
             "pen": 0.9
@@ -3381,40 +4700,6 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.25
-          }
-        },
-        "neuro_franchise": {
-          "spravato_trd": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.55
-          },
-          "invega_schiz": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.15
-          },
-          "caplyta_schiz": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.6
-          },
-          "concerta_adhd": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.65
-          }
-        },
-        "pah": {
-          "opsumit_pah": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.4
-          },
-          "uptravi_pah": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.4
           }
         },
         "xarelto": {
@@ -3437,7 +4722,27 @@
           }
         },
         "tnfi_legacy": {
-          "ra_tnf": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "cd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "as": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "psa": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -3472,6 +4777,69 @@
             "pos": 99,
             "apr": 99,
             "pen": 1.35
+          }
+        },
+        "tecvayli": {
+          "tecvayli_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "talvey": {
+          "talvey_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "opsumit": {
+          "opsumit_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "uptravi": {
+          "uptravi_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "spravato": {
+          "spravato_trd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.55
+          }
+        },
+        "invega": {
+          "invega_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "caplyta": {
+          "caplyta_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.6
+          }
+        },
+        "concerta": {
+          "concerta_adhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "akeega": {
+          "mcrpc_brca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
           }
         }
       },
@@ -3551,7 +4919,7 @@
     {
       "date": "H2 2026",
       "dateSort": "2026-10-15",
-      "asset": "neuro_franchise",
+      "asset": "caplyta",
       "indication": "caplyta_schiz",
       "title": "Caplyta MDD label expansion sBLA decision",
       "type": "pdufa",

@@ -110,6 +110,29 @@ REGIONS = {
         "eu":  {"patientsK": 1500, "wtpPct": 20, "priceK": 4},
         "row": {"patientsK": 5000, "wtpPct": 5,  "priceK": 1},
     },
+    # Outpatient hypertension (generic ACEi/ARB/CCB/beta-blocker class):
+    # ~120M US adults with HTN, ~80M on Rx. Class is ~95% generic (amlodipine
+    # / lisinopril / losartan / metoprolol / atenolol / HCTZ all <$50/yr).
+    # Branded tail: Norvasc remnants (Pfizer ~$300M global), Inderal LA
+    # (propranolol ER), Cardura/Cardura XL (doxazosin), Vasotec/Vaseretic.
+    # Total US branded HTN ~$1.5B, declining. Class peak ~$3B globally with
+    # biosimilar/branded combo erosion. Distinct from agt_knockdown niche.
+    "cardio_metabolic.hypertension.outpatient_generic": {
+        "us":  {"patientsK": 80000,  "wtpPct": 12, "priceK": 0.05},
+        "eu":  {"patientsK": 100000, "wtpPct": 10, "priceK": 0.03},
+        "row": {"patientsK": 500000, "wtpPct": 5,  "priceK": 0.01},
+    },
+    # Lipids generic statin class: atorvastatin (Lipitor remnants ~$1B
+    # globally), rosuvastatin (Crestor remnants), simvastatin/pravastatin/
+    # lovastatin generic. ~30M US on statins; branded tail ~$2-3B globally
+    # post-LOE wave 2011-2016 (Japan + China + EM where generic substitution
+    # slower drives branded tail). Distinct from PCSK9 class (lipids.ldl_cv_risk).
+    # priceK reflects average branded retail (not generic).
+    "cardio_metabolic.lipids.statin_generic": {
+        "us":  {"patientsK": 30000,  "wtpPct": 15, "priceK": 0.15},
+        "eu":  {"patientsK": 40000,  "wtpPct": 12, "priceK": 0.08},
+        "row": {"patientsK": 200000, "wtpPct": 8,  "priceK": 0.04},
+    },
 
     # ==================== LIPIDS ====================
     # source: US ~80M with elevated LDL but statin generics dominate first-
@@ -290,6 +313,8 @@ PEN_PCT = {
     "cardio_metabolic.diabetes.t1d": 12,
     "cardio_metabolic.diabetes.t2d": 10,
     "cardio_metabolic.hypertension.agt_knockdown": 8,
+    "cardio_metabolic.hypertension.outpatient_generic": 8,
+    "cardio_metabolic.lipids.statin_generic": 10,
     "cardio_metabolic.lipids.ldl_cv_risk": 6,
     "cardio_metabolic.lipids.lpa": 3,
     "cardio_metabolic.lipids.triglycerides": 25,

@@ -172,9 +172,9 @@ REGIONS = {
     # globally with universal adult recommendation.
     # source: CDC ACIP RSV adult guidelines; GSK + Pfizer + Moderna 10-Ks.
     "infectious_disease.vaccines.rsv_adult": {
-        "us":  {"patientsK": 80000,  "wtpPct": 50, "priceK": 0.27},
-        "eu":  {"patientsK": 120000, "wtpPct": 35, "priceK": 0.18},
-        "row": {"patientsK": 600000, "wtpPct": 10, "priceK": 0.06},
+        "us":  {"patientsK": 80000,  "wtpPct": 25, "priceK": 0.27},
+        "eu":  {"patientsK": 120000, "wtpPct": 18, "priceK": 0.18},
+        "row": {"patientsK": 600000, "wtpPct": 5,  "priceK": 0.06},
     },
     # Rotavirus vaccine (peds): RotaTeq (Merck pentavalent, ~$700M 2025),
     # Rotarix (GSK monovalent, ~$1B 2025). Routine US/EU/many ROW infant
@@ -195,15 +195,18 @@ REGIONS = {
         "eu":  {"patientsK": 10000,   "wtpPct": 55, "priceK": 0.1},
         "row": {"patientsK": 250000,  "wtpPct": 18, "priceK": 0.04},
     },
-    # Hospital-acquired bacterial infections (cIAI/cUTI/HABP/VABP, MDR/XDR):
-    # ceftolozane-tazobactam (Zerbaxa, Merck ~$200M), imipenem-relebactam
-    # (Recarbrio, Merck ~$50M), meropenem-vaborbactam (Vabomere), ceftazidime-
-    # avibactam (Avycaz, Pfizer/AbbVie). US ~750K MDR infections/yr; class
-    # peak ~$1.5-2B globally, niche specialty (ICU/ID consult use).
+    # Hospital-acquired bacterial infections + general hospital antibiotics:
+    # MDR/XDR Gram-negative specialty (US/EU): ceftolozane-tazobactam (Zerbaxa,
+    # Merck ~$200M), imipenem-relebactam (Recarbrio, Merck ~$50M), meropenem-
+    # vaborbactam, ceftazidime-avibactam. Plus broader hospital antibiotics
+    # in China + EM (cefoperazone-sulbactam Sulperazon Pfizer ~$2B China,
+    # piperacillin-tazobactam, meropenem branded). ROW patient volumes
+    # dominated by China NRDL hospital formularies. Class peak ~$5B globally
+    # (US/EU specialty + China branded volume).
     "infectious_disease.anti_infective.bacterial_hospital": {
         "us":  {"patientsK": 750,    "wtpPct": 60, "priceK": 1.5},
         "eu":  {"patientsK": 900,    "wtpPct": 45, "priceK": 0.9},
-        "row": {"patientsK": 5000,   "wtpPct": 12, "priceK": 0.3},
+        "row": {"patientsK": 20000,  "wtpPct": 35, "priceK": 0.5},
     },
     # CMV prophylaxis post-HCT (Prevymis letermovir, Merck ~$500M 2025): post-
     # allogeneic stem cell transplant CMV reactivation prevention. Approved 2017
@@ -225,6 +228,17 @@ REGIONS = {
         "us":  {"patientsK": 4000,   "wtpPct": 55, "priceK": 0.5},
         "eu":  {"patientsK": 5000,   "wtpPct": 45, "priceK": 0.3},
         "row": {"patientsK": 25000,  "wtpPct": 18, "priceK": 0.1},
+    },
+    # Menopause hormone replacement therapy (HRT): conjugated estrogens
+    # (Premarin, Pfizer ~$300M legacy), estradiol+progestin (Prempro), oral
+    # contraceptives crossover (Yaz/Yasmin Bayer), intravaginal estrogen.
+    # ~50M US menopausal women, ~5M actively on HRT (declined post-WHI 2002
+    # safety concerns; modest recovery). Branded tail ~$1B globally;
+    # generic dominant.
+    "women_health.menopause_hrt": {
+        "us":  {"patientsK": 5000,   "wtpPct": 25, "priceK": 0.4},
+        "eu":  {"patientsK": 7000,   "wtpPct": 18, "priceK": 0.25},
+        "row": {"patientsK": 30000,  "wtpPct": 5,  "priceK": 0.08},
     },
     # Long-acting reversible contraception (LARC) implant: Nexplanon (Merck
     # etonogestrel ~$1.4B 2025) dominates implant subclass. Broader LARC also
@@ -444,6 +458,7 @@ PEN_PCT = {
     "infectious_disease.anti_infective.cmv": 50,
     "perioperative.anesthesia.nmb_reversal": 30,
     "women_health.contraception.larc_implant": 18,
+    "women_health.menopause_hrt": 10,
     "oncology.endocrine.thyroid_cancer": 35,
     "infectious_disease.vaccines.covid": 8,
     "infectious_disease.anti_infective.covid_treatment": 12,

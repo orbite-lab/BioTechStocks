@@ -1357,17 +1357,17 @@
             "regions": {
               "us": {
                 "patientsK": 80000,
-                "wtpPct": 50,
+                "wtpPct": 25,
                 "priceK": 0.27
               },
               "eu": {
                 "patientsK": 120000,
-                "wtpPct": 35,
+                "wtpPct": 18,
                 "priceK": 0.18
               },
               "row": {
                 "patientsK": 600000,
-                "wtpPct": 10,
+                "wtpPct": 5,
                 "priceK": 0.06
               }
             }
@@ -1739,28 +1739,432 @@
       ]
     },
     {
-      "id": "established_products",
-      "name": "Established Products (sterile injectables + heritage)",
-      "stage": "Commercial (~$5B 2025)",
+      "id": "sulperazon",
+      "name": "Sulperazon (cefoperazone-sulbactam) — China hospital antibiotic",
+      "stage": "Commercial (~$2B 2025; China dominant)",
       "designations": [],
       "indications": [
         {
-          "id": "tail",
-          "name": "Sulperazon + Bicillin + Premarin + Brufen + Pristiq + Norvasc + Zoloft generic + others",
+          "id": "bacterial_china",
+          "name": "Hospital Gram-negative infections (China-dominated)",
           "market": {
-            "tamB": 50,
-            "penPct": 0,
-            "salesM": 5000,
+            "tamB": 2,
+            "penPct": 25,
+            "salesM": 2000,
             "salesYear": 2025,
             "peakYear": 2026,
-            "notes": "Heritage portfolio of off-patent + sterile injectable + LOE'd brands. Mature, slowly declining ~$5B 2025. Includes Sulperazon (cefoperazone-sulbactam, China dominant), Bicillin (penicillin G benzathine), Premarin (estrogen HRT), Brufen (ibuprofen), Pristiq (desvenlafaxine), Norvasc (amlodipine generic), and many others.",
+            "notes": "Cefoperazone-sulbactam combination. Approved in China + Asia + EM (NOT US/EU). Extreme China dominance: ~$1.8B China sales, ~$200M ROW. Pfizer's largest Asia antibiotic franchise. Generic competition increasing post-2024 China VBP rounds.",
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 85.7,
+                "wtpPct": 35,
+                "priceK": 0.5
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": {
+                "note": "Sulperazon ~60% of China hospital cefoperazone-sulbactam class share."
+              },
+              "row.priceK": {
+                "note": "$500/course China branded post-VBP."
+              },
+              "row.wtpPct": {
+                "note": "60% -- China NRDL hospital formulary."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 750,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 900,
+                "wtpPct": 45,
+                "priceK": 0.9
+              },
+              "row": {
+                "patientsK": 20000,
+                "wtpPct": 35,
+                "priceK": 0.5
+              }
+            }
+          },
+          "area": "infectious_disease.anti_infective.bacterial_hospital"
+        }
+      ],
+      "modality": "small_molecule.antibiotic.beta_lactam_combo",
+      "targets": []
+    },
+    {
+      "id": "cv_legacy",
+      "name": "CV legacy generics (Norvasc + Inderal + Lipitor remnants + Cardura)",
+      "stage": "Commercial (~$1B 2025; mature/declining)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "norvasc_htn",
+          "name": "Norvasc (amlodipine) + Inderal + Cardura — HTN",
+          "market": {
+            "tamB": 4,
+            "penPct": 8,
+            "salesM": 600,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Norvasc (amlodipine CCB) ~$300M post-LOE branded remnants + Inderal LA (propranolol) + Cardura (doxazosin) + Vasotec (enalapril). All long-LOE'd; Pfizer maintains branded share via international markets where generic substitution slower (China, EM).",
+            "company_slice": {
+              "us": {
+                "reachPct": 24.2,
+                "wtpPct": 12,
+                "priceK": 0.05
+              },
+              "eu": {
+                "reachPct": 19.4,
+                "wtpPct": 10,
+                "priceK": 0.03
+              },
+              "row": {
+                "reachPct": 72.6,
+                "wtpPct": 8,
+                "priceK": 0.025
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Norvasc/Cardura/Inderal ~0.5% of US generic HTN class -- mostly branded remnants in non-formulary contexts."
+              },
+              "us.priceK": {
+                "note": "$50/yr branded vs $5 generic."
+              },
+              "us.wtpPct": {
+                "note": "12% -- branded preference in some commercial plans."
+              },
+              "eu.reachPct": {
+                "note": "0.4%."
+              },
+              "eu.wtpPct": {
+                "note": "10%."
+              },
+              "eu.priceK": {
+                "note": "$30."
+              },
+              "row.reachPct": {
+                "note": "1.5% -- China + EM where generic substitution slower."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$25."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.05
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.03
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.01
+              }
+            }
+          },
+          "area": "cardio_metabolic.hypertension.outpatient_generic"
+        },
+        {
+          "id": "lipitor_statin",
+          "name": "Lipitor (atorvastatin) + Caduet — statin remnants",
+          "market": {
+            "tamB": 2,
+            "penPct": 10,
+            "salesM": 400,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Atorvastatin LOE 2011; Pfizer maintains ~$400M global branded Lipitor + Caduet (atorvastatin+amlodipine combo) remnants in markets where generic substitution slower (Japan, China, EM).",
+            "company_slice": {
+              "us": {
+                "reachPct": 25.6,
+                "wtpPct": 10,
+                "priceK": 0.05
+              },
+              "eu": {
+                "reachPct": 17.0,
+                "wtpPct": 8,
+                "priceK": 0.03
+              },
+              "row": {
+                "reachPct": 85.2,
+                "wtpPct": 8,
+                "priceK": 0.04
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Lipitor branded ~0.3% of US statin pool post-LOE."
+              },
+              "us.priceK": {
+                "note": "$50/yr branded vs $5 generic."
+              },
+              "us.wtpPct": {
+                "note": "10% -- branded preference in some contexts."
+              },
+              "eu.reachPct": {
+                "note": "0.2%."
+              },
+              "eu.wtpPct": {
+                "note": "8%."
+              },
+              "eu.priceK": {
+                "note": "$30."
+              },
+              "row.reachPct": {
+                "note": "1% -- Japan + China + EM where generic switch slower."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$40."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 15,
+                "priceK": 0.15
+              },
+              "eu": {
+                "patientsK": 40000,
+                "wtpPct": 12,
+                "priceK": 0.08
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.04
+              }
+            }
+          },
+          "area": "cardio_metabolic.lipids.statin_generic"
+        }
+      ],
+      "modality": "small_molecule.cv.legacy_generic",
+      "targets": []
+    },
+    {
+      "id": "cns_legacy",
+      "name": "CNS legacy generics (Pristiq + Zoloft + Geodon remnants)",
+      "stage": "Commercial (~$700M 2025; mature/declining)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "depression_legacy",
+          "name": "Pristiq (desvenlafaxine SNRI) + Zoloft (sertraline SSRI) — depression",
+          "market": {
+            "tamB": 8,
+            "penPct": 60,
+            "salesM": 500,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Pristiq (desvenlafaxine, SNRI) ~$200M branded remnants + Zoloft (sertraline) ~$150M branded remnants + other legacy antidepressants. SSRIs/SNRIs nearly fully generic; Pfizer branded share in non-substitutable contexts.",
+            "company_slice": {
+              "us": {
+                "reachPct": 55.3,
+                "wtpPct": 15,
+                "priceK": 0.4
+              },
+              "eu": {
+                "reachPct": 29.5,
+                "wtpPct": 10,
+                "priceK": 0.25
+              },
+              "row": {
+                "reachPct": 14.7,
+                "wtpPct": 8,
+                "priceK": 0.12
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Pristiq+Zoloft branded ~1.5% of US depression Rx pool (~16M Rx)."
+              },
+              "us.priceK": {
+                "note": "$400/yr branded vs $50 generic."
+              },
+              "us.wtpPct": {
+                "note": "15% -- some patients require branded for tolerability."
+              },
+              "eu.reachPct": {
+                "note": "0.8%."
+              },
+              "eu.wtpPct": {
+                "note": "10%."
+              },
+              "eu.priceK": {
+                "note": "$250."
+              },
+              "row.reachPct": {
+                "note": "0.4%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$120."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            }
+          },
+          "area": "cns.psychiatry.depression"
+        }
+      ],
+      "modality": "small_molecule.cns.legacy_generic",
+      "targets": []
+    },
+    {
+      "id": "premarin",
+      "name": "Premarin (conjugated estrogens) — menopause HRT",
+      "stage": "Commercial (~$300M 2025; declining)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "hrt",
+          "name": "Menopause hormone replacement therapy",
+          "market": {
+            "tamB": 1.5,
+            "penPct": 10,
+            "salesM": 300,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Conjugated estrogens (Premarin) + Prempro (Premarin+medroxyprogesterone) + Premphase. Declining steadily post-WHI 2002 safety concerns. Modest recovery + new VMS competition (Veozah Astellas).",
+            "company_slice": {
+              "us": {
+                "reachPct": 66.9,
+                "wtpPct": 25,
+                "priceK": 0.4
+              },
+              "eu": {
+                "reachPct": 33.5,
+                "wtpPct": 18,
+                "priceK": 0.25
+              },
+              "row": {
+                "reachPct": 8.4,
+                "wtpPct": 5,
+                "priceK": 0.08
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Premarin ~4% of US menopausal women on HRT (~5M; Premarin ~25% market share)."
+              },
+              "us.priceK": {
+                "note": "$400/yr WAC."
+              },
+              "us.wtpPct": {
+                "note": "25% -- VMS class coverage."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "18%."
+              },
+              "eu.priceK": {
+                "note": "$250."
+              },
+              "row.reachPct": {
+                "note": "0.5%."
+              },
+              "row.wtpPct": {
+                "note": "5%."
+              },
+              "row.priceK": {
+                "note": "$80."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 5000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              },
+              "eu": {
+                "patientsK": 7000,
+                "wtpPct": 18,
+                "priceK": 0.25
+              },
+              "row": {
+                "patientsK": 30000,
+                "wtpPct": 5,
+                "priceK": 0.08
+              }
+            }
+          },
+          "area": "women_health.menopause_hrt"
+        }
+      ],
+      "modality": "small_molecule.steroid.estrogen",
+      "targets": [
+        "ESR1"
+      ]
+    },
+    {
+      "id": "established_misc",
+      "name": "Established misc (Bicillin + Brufen + sterile injectables tail)",
+      "stage": "Commercial (~$1.6B 2025; mature)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "misc",
+          "name": "Bicillin penicillin + Brufen ibuprofen + sterile injectables + heritage",
+          "market": {
+            "tamB": 5,
+            "penPct": 0,
+            "salesM": 1600,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Catch-all: Bicillin (penicillin G benzathine ~$300M IM antibiotic for syphilis/strep), Brufen (ibuprofen ~$200M international branded), sterile injectables tail (~$800M many small products), Hospira heritage portfolio remnants ($300M generic-branded). Bundled because individual products are <$200M and span many disease areas.",
             "company_slice": {},
             "company_slice_sources": {}
           },
-          "area": "_established_products.heritage"
+          "area": "_established_products.misc"
         }
       ],
-      "modality": "small_molecule.various.legacy",
+      "modality": "small_molecule.various.heritage",
       "targets": []
     },
     {
@@ -2172,11 +2576,44 @@
             "pen": 0.5
           }
         },
-        "established_products": {
-          "tail": {
+        "sulperazon": {
+          "bacterial_china": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.7
+            "pen": 0.6
+          }
+        },
+        "cv_legacy": {
+          "norvasc_htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "lipitor_statin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "cns_legacy": {
+          "depression_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "premarin": {
+          "hrt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "established_misc": {
+          "misc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
           }
         },
         "sasanlimab": {
@@ -2354,11 +2791,44 @@
             "pen": 0.7
           }
         },
-        "established_products": {
-          "tail": {
+        "sulperazon": {
+          "bacterial_china": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.8
+            "pen": 0.7
+          }
+        },
+        "cv_legacy": {
+          "norvasc_htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "lipitor_statin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "cns_legacy": {
+          "depression_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "premarin": {
+          "hrt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "established_misc": {
+          "misc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
           }
         },
         "sasanlimab": {
@@ -2536,11 +3006,44 @@
             "pen": 0.9
           }
         },
-        "established_products": {
-          "tail": {
+        "sulperazon": {
+          "bacterial_china": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.85
+            "pen": 0.8
+          }
+        },
+        "cv_legacy": {
+          "norvasc_htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "lipitor_statin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "cns_legacy": {
+          "depression_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "premarin": {
+          "hrt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "established_misc": {
+          "misc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
           }
         },
         "sasanlimab": {
@@ -2717,11 +3220,44 @@
             "pen": 1.1
           }
         },
-        "established_products": {
-          "tail": {
+        "sulperazon": {
+          "bacterial_china": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.95
+            "pen": 0.85
+          }
+        },
+        "cv_legacy": {
+          "norvasc_htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "lipitor_statin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "cns_legacy": {
+          "depression_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "premarin": {
+          "hrt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "established_misc": {
+          "misc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
           }
         },
         "sasanlimab": {
@@ -2898,11 +3434,44 @@
             "pen": 1.3
           }
         },
-        "established_products": {
-          "tail": {
+        "sulperazon": {
+          "bacterial_china": {
             "pos": 100,
             "apr": 100,
-            "pen": 1.0
+            "pen": 0.9
+          }
+        },
+        "cv_legacy": {
+          "norvasc_htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "lipitor_statin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "cns_legacy": {
+          "depression_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "premarin": {
+          "hrt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "established_misc": {
+          "misc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
           }
         },
         "sasanlimab": {

@@ -167,6 +167,25 @@ REGIONS = {
         "eu":  {"patientsK": 2500,  "wtpPct": 60, "priceK": 5},
         "row": {"patientsK": 24000, "wtpPct": 25, "priceK": 1.5},
     },
+    # Narcolepsy + Idiopathic Hypersomnia: chronic excessive daytime sleepiness
+    # disorders. US prevalence: narcolepsy ~165K diagnosed (~80K NT1 with
+    # cataplexy + ~80K NT2); idiopathic hypersomnia ~50K -- combined ~200K
+    # treated US. EU ~250K, ROW ~800K (under-diagnosed). Class:
+    #   Xyrem/Xywav (Jazz, sodium oxybate ~$1.7B 2024; Xyrem authorized
+    #     generic via Hikma 2023)
+    #   Wakix (Harmony Bio pitolisant, ~$700M 2025)
+    #   Sunosi (Axsome solriamfetol, ~$80M)
+    #   Generic stimulants (modafinil/methylphenidate)
+    # Next-gen orexin agonists racing: Takeda TAK-861/oveporexton (Ph3),
+    # LLY/Centessa cleminorexton/ORX750 (Ph2/3, $7.8B Mar-2026 deal),
+    # Alkermes ALKS 2680 (Ph2). Class peak ~$5-7B with orexins expanding TAM
+    # via better cataplexy + IH coverage. Pricing $30-50K/yr branded.
+    # source: Sleep Foundation 2024; Jazz/Harmony/Takeda 10-Ks.
+    "cns.psychiatry.narcolepsy_hypersomnia": {
+        "us":  {"patientsK": 200,  "wtpPct": 50, "priceK": 35},
+        "eu":  {"patientsK": 250,  "wtpPct": 35, "priceK": 20},
+        "row": {"patientsK": 800,  "wtpPct": 12, "priceK": 7},
+    },
     # Insomnia (chronic): ~25M US adults chronic, ~10M actively Rx'd; mostly
     # generic zolpidem/eszopiclone. Branded class: dual orexin antagonists
     # (DORAs) -- Belsomra (Merck suvorexant ~$300M), Quviviq (Idorsia
@@ -211,5 +230,6 @@ PEN_PCT = {
     "cns.psychiatry.pain_fibromyalgia": 30,
     "cns.psychiatry.schizophrenia": 60,
     "cns.psychiatry.insomnia": 12,
+    "cns.psychiatry.narcolepsy_hypersomnia": 35,
     "cns.sleep.narcolepsy": 45,
 }

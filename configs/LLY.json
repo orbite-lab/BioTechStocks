@@ -768,6 +768,94 @@
       ]
     },
     {
+      "id": "orx750",
+      "name": "Cleminorexton (ORX750) — OX2R agonist (Centessa $7.8B Mar-2026)",
+      "stage": "Phase 2/3 (NT1 lead; expanding to IH + NT2 post-acquisition)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "narcolepsy_ih",
+          "name": "Narcolepsy (NT1+NT2) + idiopathic hypersomnia",
+          "market": {
+            "tamB": 6,
+            "penPct": 35,
+            "peakYear": 2032,
+            "cagrPct": 6,
+            "notes": "Selective oral OX2R agonist acquired via Centessa $7.8B deal Mar 31, 2026 ($38 cash + $9 CVR; close Q3 2026). Lead asset cleminorexton (ORX750). Phase 2 NT1 cataplexy benefit + wakefulness; Phase 3 starts 2026. Direct competitors: Takeda TAK-861/oveporexton (Ph3 ahead), Alkermes ALKS 2680 (Ph2). Class peers Xywav (Jazz) + Wakix (Harmony) treat existing market. Orexin agonists may expand TAM via better cataplexy + IH coverage. Peak forecast $3-5B if approved across NT1 + IH.",
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 60,
+                "priceK": 50
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 42,
+                "priceK": 28
+              },
+              "row": {
+                "reachPct": 0.8,
+                "wtpPct": 12,
+                "priceK": 10
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "ORX750 ~12% reach of 200K US narcolepsy+IH pool by 2030 peak; competitive vs Takeda oveporexton (Ph3 ahead) -- LLY commercial scale + GLP-1-style sales infra is differentiator."
+              },
+              "us.priceK": {
+                "note": "$50K/yr WAC modeled -- premium to Wakix ($35K), discount to Xywav ($90K)."
+              },
+              "us.wtpPct": {
+                "note": "60% -- specialty neuro/sleep medicine; payors require formal narcolepsy diagnosis (cataplexy or ICSD-3)."
+              },
+              "eu.reachPct": {
+                "note": "6% -- EU launch 2029+; HTA cautious on add-on cost vs Wakix."
+              },
+              "eu.wtpPct": {
+                "note": "42%."
+              },
+              "eu.priceK": {
+                "note": "$28K EU net."
+              },
+              "row.reachPct": {
+                "note": "0.8% -- Japan + AU launches 2030+; emerging markets minimal."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$10K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 200,
+                "wtpPct": 50,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 250,
+                "wtpPct": 35,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 12,
+                "priceK": 7
+              }
+            }
+          },
+          "area": "cns.psychiatry.narcolepsy_hypersomnia",
+          "rare": true
+        }
+      ],
+      "modality": "small_molecule.gpcr.orexin_agonist",
+      "targets": [
+        "HCRTR2"
+      ]
+    },
+    {
       "id": "jardiance",
       "name": "Jardiance (empagliflozin) — Lilly share",
       "stage": "Commercial (BI partnership)",
@@ -943,6 +1031,13 @@
             "pen": 1.0
           }
         },
+        "orx750": {
+          "narcolepsy_ih": {
+            "pos": 25,
+            "apr": 30,
+            "pen": 0.4
+          }
+        },
         "jardiance": {
           "t2d_hf": {
             "pos": 100,
@@ -1015,6 +1110,13 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.0
+          }
+        },
+        "orx750": {
+          "narcolepsy_ih": {
+            "pos": 45,
+            "apr": 55,
+            "pen": 0.6
           }
         },
         "jardiance": {
@@ -1091,6 +1193,13 @@
             "pen": 1.0
           }
         },
+        "orx750": {
+          "narcolepsy_ih": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 0.85
+          }
+        },
         "jardiance": {
           "t2d_hf": {
             "pos": 100,
@@ -1162,6 +1271,13 @@
           "alz": {
             "pos": 100,
             "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "orx750": {
+          "narcolepsy_ih": {
+            "pos": 88,
+            "apr": 90,
             "pen": 1.0
           }
         },
@@ -1239,6 +1355,13 @@
             "pen": 1.0
           }
         },
+        "orx750": {
+          "narcolepsy_ih": {
+            "pos": 96,
+            "apr": 96,
+            "pen": 1.2
+          }
+        },
         "jardiance": {
           "t2d_hf": {
             "pos": 100,
@@ -1296,6 +1419,37 @@
     ]
   },
   "catalysts": [
+    {
+      "date": "Q3 2026",
+      "dateSort": "2026-09-30",
+      "asset": "orx750",
+      "indication": "narcolepsy_ih",
+      "title": "Centessa acquisition close ($7.8B; cleminorexton/ORX750 OX2R agonist)",
+      "type": "ma_close",
+      "binary": true,
+      "fail_pos": 70,
+      "fail_apr": 75,
+      "success_pos": 75,
+      "success_apr": 78,
+      "_confidence": "high",
+      "_sourceUrl": "https://investor.lilly.com/news-releases/news-release-details/lilly-acquire-centessa-pharmaceuticals-advance-treatments-sleep",
+      "_rationale": "$38 cash + $9 CVR per share announced Mar 31, 2026; close expected Q3 2026 pending shareholder/regulatory approval."
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-09-30",
+      "asset": "orx750",
+      "indication": "narcolepsy_ih",
+      "title": "ORX750 (cleminorexton) Phase 3 readout — narcolepsy NT1",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 40,
+      "success_pos": 88,
+      "success_apr": 90,
+      "_confidence": "medium",
+      "_rationale": "Phase 3 to be initiated post-acquisition close in 2026; topline expected 2027+. Race vs Takeda TAK-861 (Ph3 ahead) + Alkermes ALKS 2680 (Ph2)."
+    },
     {
       "date": "June 5-8, 2026",
       "dateSort": "2026-06-06",

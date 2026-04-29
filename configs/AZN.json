@@ -1577,10 +1577,15 @@
       ]
     },
     {
-      "id": "respiratory",
-      "name": "Respiratory portfolio (Symbicort + Breztri + Fasenra + Tezspire)",
-      "stage": "Commercial (~$7.2B 2025)",
+      "id": "symbicort",
+      "name": "Symbicort (budesonide+formoterol ICS/LABA)",
+      "stage": "Commercial ($2.89B 2025; biosimilar pressure)",
       "designations": [],
+      "modality": "small_molecule.respiratory.ics_laba_combo",
+      "targets": [
+        "ADRB2",
+        "GR"
+      ],
       "indications": [
         {
           "id": "symbicort",
@@ -1657,7 +1662,21 @@
             }
           },
           "area": "respiratory.inflammatory.copd"
-        },
+        }
+      ]
+    },
+    {
+      "id": "breztri",
+      "name": "Breztri (BGF triple) — COPD",
+      "stage": "Commercial ($1.20B 2025, +12%)",
+      "designations": [],
+      "modality": "small_molecule.respiratory.ics_laba_lama_triple",
+      "targets": [
+        "ADRB2",
+        "GR",
+        "CHRM3"
+      ],
+      "indications": [
         {
           "id": "breztri",
           "name": "Breztri (BGF triple) — COPD",
@@ -1734,7 +1753,19 @@
             }
           },
           "area": "respiratory.inflammatory.copd"
-        },
+        }
+      ]
+    },
+    {
+      "id": "fasenra",
+      "name": "Fasenra (benralizumab, IL-5R)",
+      "stage": "Commercial ($1.98B 2025; missed COPD Ph3 2024)",
+      "designations": [],
+      "modality": "antibody.cytokine.il5_blocker",
+      "targets": [
+        "IL5RA"
+      ],
+      "indications": [
         {
           "id": "fasenra",
           "name": "Fasenra (benralizumab IL-5) — severe asthma",
@@ -1810,7 +1841,19 @@
             }
           },
           "area": "respiratory.inflammatory.asthma_severe"
-        },
+        }
+      ]
+    },
+    {
+      "id": "tezspire",
+      "name": "Tezspire (tezepelumab, TSLP) — w/ Amgen 50/50",
+      "stage": "Commercial ($1.13B AZ 2025; COPD readout pending H1 2026)",
+      "designations": [],
+      "modality": "antibody.cytokine.tslp_blocker",
+      "targets": [
+        "TSLP"
+      ],
+      "indications": [
         {
           "id": "tezspire",
           "name": "Tezspire (tezepelumab TSLP) — w/ Amgen 50/50",
@@ -1888,11 +1931,6 @@
           },
           "area": "respiratory.inflammatory.asthma_severe"
         }
-      ],
-      "modality": "antibody.cytokine.respiratory",
-      "targets": [
-        "IL5",
-        "TSLP"
       ]
     },
     {
@@ -1986,9 +2024,15 @@
     },
     {
       "id": "rare_alexion",
-      "name": "Rare disease (Alexion: Soliris+Ultomiris+Strensiq+Koselugo)",
-      "stage": "Commercial (~$9.1B 2025, +4%)",
-      "designations": [],
+      "name": "Soliris + Ultomiris (eculizumab + ravulizumab, C5 complement)",
+      "stage": "Commercial (~$5.2B 2025; Ultomiris growing, Soliris declining)",
+      "designations": [
+        "Orphan (US + EU)"
+      ],
+      "modality": "antibody.complement.c5_inhibitor",
+      "targets": [
+        "C5"
+      ],
       "indications": [
         {
           "id": "pnh",
@@ -2221,7 +2265,21 @@
             }
           },
           "area": "immunology.neuromuscular_autoimmune.myasthenia_gravis"
-        },
+        }
+      ]
+    },
+    {
+      "id": "strensiq",
+      "name": "Strensiq (asfotase alfa) — hypophosphatasia",
+      "stage": "Commercial ($1.5B 2025, +15%)",
+      "designations": [
+        "Orphan (US + EU)"
+      ],
+      "modality": "recombinant_protein.enzyme.alkaline_phosphatase",
+      "targets": [
+        "ALPL"
+      ],
+      "indications": [
         {
           "id": "strensiq",
           "name": "Strensiq (asfotase alfa) — hypophosphatasia",
@@ -2300,11 +2358,6 @@
           "area": "endocrine.calcium.hypophosphatasia",
           "rare": true
         }
-      ],
-      "modality": "antibody.complement.c5_inhibitor",
-      "targets": [
-        "C5",
-        "ALPL"
       ]
     },
     {
@@ -2568,7 +2621,7 @@
           "area": "cardio_metabolic.hypertension.resistant"
         }
       ],
-      "modality": "small_molecule.steroid.aldosterone_synthase_inhibitor",
+      "modality": "small_molecule.enzyme_inhibitor.aldosterone_synthase",
       "targets": [
         "CYP11B2"
       ]
@@ -2963,22 +3016,28 @@
             "pen": 0.4
           }
         },
-        "respiratory": {
+        "symbicort": {
           "symbicort": {
             "pos": 100,
             "apr": 100,
             "pen": 0.6
-          },
+          }
+        },
+        "breztri": {
           "breztri": {
             "pos": 100,
             "apr": 100,
             "pen": 0.7
-          },
+          }
+        },
+        "fasenra": {
           "fasenra": {
             "pos": 100,
             "apr": 100,
             "pen": 0.75
-          },
+          }
+        },
+        "tezspire": {
           "tezspire": {
             "pos": 100,
             "apr": 100,
@@ -3007,7 +3066,9 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.75
-          },
+          }
+        },
+        "strensiq": {
           "strensiq": {
             "pos": 100,
             "apr": 100,
@@ -3190,22 +3251,28 @@
             "pen": 0.5
           }
         },
-        "respiratory": {
+        "symbicort": {
           "symbicort": {
             "pos": 100,
             "apr": 100,
             "pen": 0.75
-          },
+          }
+        },
+        "breztri": {
           "breztri": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
-          },
+          }
+        },
+        "fasenra": {
           "fasenra": {
             "pos": 100,
             "apr": 100,
             "pen": 0.9
-          },
+          }
+        },
+        "tezspire": {
           "tezspire": {
             "pos": 100,
             "apr": 100,
@@ -3234,7 +3301,9 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.9
-          },
+          }
+        },
+        "strensiq": {
           "strensiq": {
             "pos": 100,
             "apr": 100,
@@ -3419,22 +3488,28 @@
             "pen": 0.55
           }
         },
-        "respiratory": {
+        "symbicort": {
           "symbicort": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
-          },
+          }
+        },
+        "breztri": {
           "breztri": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
-          },
+          }
+        },
+        "fasenra": {
           "fasenra": {
             "pos": 100,
             "apr": 100,
             "pen": 1.05
-          },
+          }
+        },
+        "tezspire": {
           "tezspire": {
             "pos": 100,
             "apr": 100,
@@ -3463,7 +3538,9 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.1
-          },
+          }
+        },
+        "strensiq": {
           "strensiq": {
             "pos": 100,
             "apr": 100,
@@ -3647,22 +3724,28 @@
             "pen": 0.6
           }
         },
-        "respiratory": {
+        "symbicort": {
           "symbicort": {
             "pos": 100,
             "apr": 100,
             "pen": 0.95
-          },
+          }
+        },
+        "breztri": {
           "breztri": {
             "pos": 100,
             "apr": 100,
             "pen": 1.2
-          },
+          }
+        },
+        "fasenra": {
           "fasenra": {
             "pos": 100,
             "apr": 100,
             "pen": 1.2
-          },
+          }
+        },
+        "tezspire": {
           "tezspire": {
             "pos": 100,
             "apr": 100,
@@ -3691,7 +3774,9 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.3
-          },
+          }
+        },
+        "strensiq": {
           "strensiq": {
             "pos": 100,
             "apr": 100,
@@ -3874,22 +3959,28 @@
             "pen": 0.65
           }
         },
-        "respiratory": {
+        "symbicort": {
           "symbicort": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
-          },
+          }
+        },
+        "breztri": {
           "breztri": {
             "pos": 100,
             "apr": 100,
             "pen": 1.4
-          },
+          }
+        },
+        "fasenra": {
           "fasenra": {
             "pos": 100,
             "apr": 100,
             "pen": 1.35
-          },
+          }
+        },
+        "tezspire": {
           "tezspire": {
             "pos": 100,
             "apr": 100,
@@ -3918,7 +4009,9 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.5
-          },
+          }
+        },
+        "strensiq": {
           "strensiq": {
             "pos": 100,
             "apr": 100,

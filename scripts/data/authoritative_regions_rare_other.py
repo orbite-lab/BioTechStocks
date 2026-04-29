@@ -235,7 +235,7 @@ REGIONS = {
     # ~50M US menopausal women, ~5M actively on HRT (declined post-WHI 2002
     # safety concerns; modest recovery). Branded tail ~$1B globally;
     # generic dominant.
-    "women_health.menopause_hrt": {
+    "women_health.menopause.hrt": {
         "us":  {"patientsK": 5000,   "wtpPct": 25, "priceK": 0.4},
         "eu":  {"patientsK": 7000,   "wtpPct": 18, "priceK": 0.25},
         "row": {"patientsK": 30000,  "wtpPct": 5,  "priceK": 0.08},
@@ -458,7 +458,7 @@ PEN_PCT = {
     "infectious_disease.anti_infective.cmv": 50,
     "perioperative.anesthesia.nmb_reversal": 30,
     "women_health.contraception.larc_implant": 18,
-    "women_health.menopause_hrt": 10,
+    "women_health.menopause.hrt": 10,
     "oncology.endocrine.thyroid_cancer": 35,
     "infectious_disease.vaccines.covid": 8,
     "infectious_disease.anti_infective.covid_treatment": 12,

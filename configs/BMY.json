@@ -652,30 +652,30 @@
           }
         },
         {
-          "id": "hematology_io",
-          "name": "Hodgkin's lymphoma + other heme",
-          "area": "oncology.hematology.nhl.dlbcl",
+          "id": "hodgkin_io",
+          "name": "Hodgkin's lymphoma 3L+ (CheckMate-205) + cHL post-allo SCT",
+          "area": "oncology.hematology.hodgkin",
           "market": {
             "tamB": 8,
-            "penPct": 55,
+            "penPct": 70,
             "salesM": 800,
             "salesYear": 2025,
             "peakYear": 2027,
             "cagrPct": 0,
-            "notes": "Opdivo Hodgkin's 3L+ + various heme.",
+            "notes": "Opdivo Hodgkin's 3L+ post-Adcetris/auto-SCT. CheckMate-205 + Phase 4 confirmatory. ~8% of brand.",
             "company_slice": {
               "us": {
-                "reachPct": 25.3,
+                "reachPct": 95,
                 "wtpPct": 60,
                 "priceK": 165
               },
               "eu": {
-                "reachPct": 12.6,
+                "reachPct": 52.4,
                 "wtpPct": 42,
                 "priceK": 95
               },
               "row": {
-                "reachPct": 1.3,
+                "reachPct": 5.4,
                 "wtpPct": 12,
                 "priceK": 35
               }
@@ -711,19 +711,19 @@
             },
             "regions": {
               "us": {
-                "patientsK": 40,
-                "wtpPct": 68,
-                "priceK": 195
+                "patientsK": 9,
+                "wtpPct": 75,
+                "priceK": 200
               },
               "eu": {
-                "patientsK": 38,
-                "wtpPct": 50,
-                "priceK": 115
+                "patientsK": 12,
+                "wtpPct": 55,
+                "priceK": 120
               },
               "row": {
-                "patientsK": 120,
-                "wtpPct": 15,
-                "priceK": 40
+                "patientsK": 50,
+                "wtpPct": 14,
+                "priceK": 35
               }
             }
           }
@@ -831,61 +831,61 @@
       ],
       "indications": [
         {
-          "id": "melanoma_io_combo",
-          "name": "Melanoma + RCC + MSI-H mCRC + HCC + NSCLC IO combos",
+          "id": "melanoma",
+          "name": "Melanoma 1L combo with Opdivo (CheckMate-067)",
           "area": "oncology.skin.melanoma",
           "market": {
             "tamB": 8,
             "penPct": 65,
-            "salesM": 2500,
+            "salesM": 875,
             "salesYear": 2025,
             "peakYear": 2027,
             "cagrPct": 3,
-            "notes": "Anti-CTLA-4 standard combo with Opdivo across multiple solid tumors.",
+            "notes": "Yervoy melanoma combo ~35% of brand. CheckMate-067 1L melanoma 5-yr OS landmark.",
             "company_slice": {
               "us": {
-                "reachPct": 82.8,
+                "reachPct": 29.3,
                 "wtpPct": 70,
                 "priceK": 165
               },
               "eu": {
-                "reachPct": 52.0,
+                "reachPct": 17.6,
                 "wtpPct": 50,
                 "priceK": 95
               },
               "row": {
-                "reachPct": 4.7,
+                "reachPct": 1.5,
                 "wtpPct": 12,
                 "priceK": 35
               }
             },
             "company_slice_sources": {
               "us.reachPct": {
-                "note": "Anti-CTLA-4 standard combo with Opdivo across multiple solid"
+                "note": "Yervoy melanoma combo ~35% of brand. CheckMate-067 1L melano"
               },
               "us.wtpPct": {
-                "note": "Anti-CTLA-4 standard combo with Opdivo across multiple solid"
+                "note": "Yervoy melanoma combo ~35% of brand. CheckMate-067 1L melano"
               },
               "us.priceK": {
-                "note": "Anti-CTLA-4 standard combo with Opdivo across multiple solid"
+                "note": "Yervoy melanoma combo ~35% of brand. CheckMate-067 1L melano"
               },
               "eu.reachPct": {
-                "note": "Anti-CTLA-4 standard combo with Opdivo across multiple solid"
+                "note": "Yervoy melanoma combo ~35% of brand. CheckMate-067 1L melano"
               },
               "eu.wtpPct": {
-                "note": "Anti-CTLA-4 standard combo with Opdivo across multiple solid"
+                "note": "Yervoy melanoma combo ~35% of brand. CheckMate-067 1L melano"
               },
               "eu.priceK": {
-                "note": "Anti-CTLA-4 standard combo with Opdivo across multiple solid"
+                "note": "Yervoy melanoma combo ~35% of brand. CheckMate-067 1L melano"
               },
               "row.reachPct": {
-                "note": "Anti-CTLA-4 standard combo with Opdivo across multiple solid"
+                "note": "Yervoy melanoma combo ~35% of brand. CheckMate-067 1L melano"
               },
               "row.wtpPct": {
-                "note": "Anti-CTLA-4 standard combo with Opdivo across multiple solid"
+                "note": "Yervoy melanoma combo ~35% of brand. CheckMate-067 1L melano"
               },
               "row.priceK": {
-                "note": "Anti-CTLA-4 standard combo with Opdivo across multiple solid"
+                "note": "Yervoy melanoma combo ~35% of brand. CheckMate-067 1L melano"
               }
             },
             "regions": {
@@ -903,6 +903,391 @@
                 "patientsK": 80,
                 "wtpPct": 12,
                 "priceK": 40
+              }
+            }
+          }
+        },
+        {
+          "id": "rcc",
+          "name": "RCC 1L combo (CheckMate-9ER + 214)",
+          "area": "oncology.genitourinary.rcc",
+          "market": {
+            "tamB": 8,
+            "penPct": 58,
+            "salesM": 500,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 3,
+            "notes": "Yervoy RCC combo ~20% of brand.",
+            "company_slice": {
+              "us": {
+                "reachPct": 21.9,
+                "wtpPct": 65,
+                "priceK": 165
+              },
+              "eu": {
+                "reachPct": 11.7,
+                "wtpPct": 48,
+                "priceK": 95
+              },
+              "row": {
+                "reachPct": 1.2,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Yervoy RCC combo ~20% of brand."
+              },
+              "us.wtpPct": {
+                "note": "Yervoy RCC combo ~20% of brand."
+              },
+              "us.priceK": {
+                "note": "Yervoy RCC combo ~20% of brand."
+              },
+              "eu.reachPct": {
+                "note": "Yervoy RCC combo ~20% of brand."
+              },
+              "eu.wtpPct": {
+                "note": "Yervoy RCC combo ~20% of brand."
+              },
+              "eu.priceK": {
+                "note": "Yervoy RCC combo ~20% of brand."
+              },
+              "row.reachPct": {
+                "note": "Yervoy RCC combo ~20% of brand."
+              },
+              "row.wtpPct": {
+                "note": "Yervoy RCC combo ~20% of brand."
+              },
+              "row.priceK": {
+                "note": "Yervoy RCC combo ~20% of brand."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 68,
+                "priceK": 215
+              },
+              "eu": {
+                "patientsK": 30,
+                "wtpPct": 50,
+                "priceK": 125
+              },
+              "row": {
+                "patientsK": 70,
+                "wtpPct": 16,
+                "priceK": 40
+              }
+            }
+          }
+        },
+        {
+          "id": "nsclc",
+          "name": "NSCLC 1L IO combos (CheckMate-9LA + 227)",
+          "area": "oncology.lung.nsclc_io_combo",
+          "market": {
+            "tamB": 8,
+            "penPct": 60,
+            "salesM": 500,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 3,
+            "notes": "Yervoy NSCLC combo ~20% of brand.",
+            "company_slice": {
+              "us": {
+                "reachPct": 8.2,
+                "wtpPct": 55,
+                "priceK": 165
+              },
+              "eu": {
+                "reachPct": 4.1,
+                "wtpPct": 38,
+                "priceK": 95
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Yervoy NSCLC combo ~20% of brand."
+              },
+              "us.wtpPct": {
+                "note": "Yervoy NSCLC combo ~20% of brand."
+              },
+              "us.priceK": {
+                "note": "Yervoy NSCLC combo ~20% of brand."
+              },
+              "eu.reachPct": {
+                "note": "Yervoy NSCLC combo ~20% of brand."
+              },
+              "eu.wtpPct": {
+                "note": "Yervoy NSCLC combo ~20% of brand."
+              },
+              "eu.priceK": {
+                "note": "Yervoy NSCLC combo ~20% of brand."
+              },
+              "row.reachPct": {
+                "note": "Yervoy NSCLC combo ~20% of brand."
+              },
+              "row.wtpPct": {
+                "note": "Yervoy NSCLC combo ~20% of brand."
+              },
+              "row.priceK": {
+                "note": "Yervoy NSCLC combo ~20% of brand."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 80,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 100,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 400,
+                "wtpPct": 16,
+                "priceK": 35
+              }
+            }
+          }
+        },
+        {
+          "id": "hcc",
+          "name": "HCC 1L combo (CheckMate-9DW)",
+          "area": "oncology.gi.hcc",
+          "market": {
+            "tamB": 8,
+            "penPct": 45,
+            "salesM": 250,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "cagrPct": 8,
+            "notes": "Yervoy HCC combo ~10% of brand.",
+            "company_slice": {
+              "us": {
+                "reachPct": 15.2,
+                "wtpPct": 55,
+                "priceK": 165
+              },
+              "eu": {
+                "reachPct": 7.6,
+                "wtpPct": 40,
+                "priceK": 95
+              },
+              "row": {
+                "reachPct": 1.0,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Yervoy HCC combo ~10% of brand."
+              },
+              "us.wtpPct": {
+                "note": "Yervoy HCC combo ~10% of brand."
+              },
+              "us.priceK": {
+                "note": "Yervoy HCC combo ~10% of brand."
+              },
+              "eu.reachPct": {
+                "note": "Yervoy HCC combo ~10% of brand."
+              },
+              "eu.wtpPct": {
+                "note": "Yervoy HCC combo ~10% of brand."
+              },
+              "eu.priceK": {
+                "note": "Yervoy HCC combo ~10% of brand."
+              },
+              "row.reachPct": {
+                "note": "Yervoy HCC combo ~10% of brand."
+              },
+              "row.wtpPct": {
+                "note": "Yervoy HCC combo ~10% of brand."
+              },
+              "row.priceK": {
+                "note": "Yervoy HCC combo ~10% of brand."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 60,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 46,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 650,
+                "wtpPct": 22,
+                "priceK": 28
+              }
+            }
+          }
+        },
+        {
+          "id": "gastric",
+          "name": "Gastric/GEJ 1L combo (CheckMate-649)",
+          "area": "oncology.gi.gastric_esoph",
+          "market": {
+            "tamB": 8,
+            "penPct": 48,
+            "salesM": 250,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 3,
+            "notes": "Yervoy gastric combo ~10% of brand.",
+            "company_slice": {
+              "us": {
+                "reachPct": 13.1,
+                "wtpPct": 50,
+                "priceK": 165
+              },
+              "eu": {
+                "reachPct": 6.6,
+                "wtpPct": 38,
+                "priceK": 95
+              },
+              "row": {
+                "reachPct": 0.8,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Yervoy gastric combo ~10% of brand."
+              },
+              "us.wtpPct": {
+                "note": "Yervoy gastric combo ~10% of brand."
+              },
+              "us.priceK": {
+                "note": "Yervoy gastric combo ~10% of brand."
+              },
+              "eu.reachPct": {
+                "note": "Yervoy gastric combo ~10% of brand."
+              },
+              "eu.wtpPct": {
+                "note": "Yervoy gastric combo ~10% of brand."
+              },
+              "eu.priceK": {
+                "note": "Yervoy gastric combo ~10% of brand."
+              },
+              "row.reachPct": {
+                "note": "Yervoy gastric combo ~10% of brand."
+              },
+              "row.wtpPct": {
+                "note": "Yervoy gastric combo ~10% of brand."
+              },
+              "row.priceK": {
+                "note": "Yervoy gastric combo ~10% of brand."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 58,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 44,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 20,
+                "priceK": 32
+              }
+            }
+          }
+        },
+        {
+          "id": "crc",
+          "name": "MSI-H mCRC combo (CheckMate-8HW)",
+          "area": "oncology.gi.colorectal",
+          "market": {
+            "tamB": 8,
+            "penPct": 50,
+            "salesM": 125,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 5,
+            "notes": "Yervoy MSI-H mCRC combo ~5% of brand.",
+            "company_slice": {
+              "us": {
+                "reachPct": 3.2,
+                "wtpPct": 50,
+                "priceK": 165
+              },
+              "eu": {
+                "reachPct": 1.6,
+                "wtpPct": 35,
+                "priceK": 95
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Yervoy MSI-H mCRC combo ~5% of brand."
+              },
+              "us.wtpPct": {
+                "note": "Yervoy MSI-H mCRC combo ~5% of brand."
+              },
+              "us.priceK": {
+                "note": "Yervoy MSI-H mCRC combo ~5% of brand."
+              },
+              "eu.reachPct": {
+                "note": "Yervoy MSI-H mCRC combo ~5% of brand."
+              },
+              "eu.wtpPct": {
+                "note": "Yervoy MSI-H mCRC combo ~5% of brand."
+              },
+              "eu.priceK": {
+                "note": "Yervoy MSI-H mCRC combo ~5% of brand."
+              },
+              "row.reachPct": {
+                "note": "Yervoy MSI-H mCRC combo ~5% of brand."
+              },
+              "row.wtpPct": {
+                "note": "Yervoy MSI-H mCRC combo ~5% of brand."
+              },
+              "row.priceK": {
+                "note": "Yervoy MSI-H mCRC combo ~5% of brand."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 55,
+                "wtpPct": 65,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 48,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 320,
+                "wtpPct": 16,
+                "priceK": 22
               }
             }
           }
@@ -1175,61 +1560,61 @@
       ],
       "indications": [
         {
-          "id": "mm_legacy",
-          "name": "Multiple myeloma + MDS + MCL (LOE 2022 declining)",
+          "id": "mm",
+          "name": "Multiple myeloma (LOE 2022 declining)",
           "area": "oncology.hematology.myeloma.2l_3l",
           "market": {
             "tamB": 8,
             "penPct": 55,
-            "salesM": 2400,
+            "salesM": 1920,
             "salesYear": 2025,
             "peakYear": 2025,
             "cagrPct": -25,
-            "notes": "First IMiD; LOE March 2022. Volume-limited generics through 2026 then unrestricted. Steep decline 2026-27.",
+            "notes": "Revlimid MM ~80% of brand. LOE March 2022; volume-limited generics through 2026 then unrestricted.",
             "company_slice": {
               "us": {
-                "reachPct": 69.3,
+                "reachPct": 56.2,
                 "wtpPct": 65,
                 "priceK": 175
               },
               "eu": {
-                "reachPct": 37.0,
+                "reachPct": 28.1,
                 "wtpPct": 48,
                 "priceK": 100
               },
               "row": {
-                "reachPct": 4.6,
+                "reachPct": 3.7,
                 "wtpPct": 12,
                 "priceK": 35
               }
             },
             "company_slice_sources": {
               "us.reachPct": {
-                "note": "First IMiD; LOE March 2022. Volume-limited generics through "
+                "note": "Revlimid MM ~80% of brand. LOE March 2022; volume-limited ge"
               },
               "us.wtpPct": {
-                "note": "First IMiD; LOE March 2022. Volume-limited generics through "
+                "note": "Revlimid MM ~80% of brand. LOE March 2022; volume-limited ge"
               },
               "us.priceK": {
-                "note": "First IMiD; LOE March 2022. Volume-limited generics through "
+                "note": "Revlimid MM ~80% of brand. LOE March 2022; volume-limited ge"
               },
               "eu.reachPct": {
-                "note": "First IMiD; LOE March 2022. Volume-limited generics through "
+                "note": "Revlimid MM ~80% of brand. LOE March 2022; volume-limited ge"
               },
               "eu.wtpPct": {
-                "note": "First IMiD; LOE March 2022. Volume-limited generics through "
+                "note": "Revlimid MM ~80% of brand. LOE March 2022; volume-limited ge"
               },
               "eu.priceK": {
-                "note": "First IMiD; LOE March 2022. Volume-limited generics through "
+                "note": "Revlimid MM ~80% of brand. LOE March 2022; volume-limited ge"
               },
               "row.reachPct": {
-                "note": "First IMiD; LOE March 2022. Volume-limited generics through "
+                "note": "Revlimid MM ~80% of brand. LOE March 2022; volume-limited ge"
               },
               "row.wtpPct": {
-                "note": "First IMiD; LOE March 2022. Volume-limited generics through "
+                "note": "Revlimid MM ~80% of brand. LOE March 2022; volume-limited ge"
               },
               "row.priceK": {
-                "note": "First IMiD; LOE March 2022. Volume-limited generics through "
+                "note": "Revlimid MM ~80% of brand. LOE March 2022; volume-limited ge"
               }
             },
             "regions": {
@@ -1247,6 +1632,160 @@
                 "patientsK": 80,
                 "wtpPct": 16,
                 "priceK": 70
+              }
+            }
+          }
+        },
+        {
+          "id": "mds_5q",
+          "name": "MDS deletion 5q (LOE)",
+          "area": "hematology.myeloproliferative.mds",
+          "market": {
+            "tamB": 8,
+            "penPct": 60,
+            "salesM": 290,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "cagrPct": -25,
+            "notes": "Revlimid MDS-del(5q) ~12% of brand.",
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 70,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Revlimid MDS-del(5q) ~12% of brand."
+              },
+              "us.wtpPct": {
+                "note": "Revlimid MDS-del(5q) ~12% of brand."
+              },
+              "us.priceK": {
+                "note": "Revlimid MDS-del(5q) ~12% of brand."
+              },
+              "eu.reachPct": {
+                "note": "Revlimid MDS-del(5q) ~12% of brand."
+              },
+              "eu.wtpPct": {
+                "note": "Revlimid MDS-del(5q) ~12% of brand."
+              },
+              "eu.priceK": {
+                "note": "Revlimid MDS-del(5q) ~12% of brand."
+              },
+              "row.reachPct": {
+                "note": "Revlimid MDS-del(5q) ~12% of brand."
+              },
+              "row.wtpPct": {
+                "note": "Revlimid MDS-del(5q) ~12% of brand."
+              },
+              "row.priceK": {
+                "note": "Revlimid MDS-del(5q) ~12% of brand."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 70,
+                "priceK": 140
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 50,
+                "priceK": 85
+              },
+              "row": {
+                "patientsK": 250,
+                "wtpPct": 14,
+                "priceK": 30
+              }
+            }
+          }
+        },
+        {
+          "id": "mcl",
+          "name": "Mantle cell lymphoma R/R (LOE)",
+          "area": "oncology.hematology.nhl.mcl",
+          "market": {
+            "tamB": 8,
+            "penPct": 50,
+            "salesM": 190,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "cagrPct": -25,
+            "notes": "Revlimid MCL ~8% of brand.",
+            "company_slice": {
+              "us": {
+                "reachPct": 14.5,
+                "wtpPct": 60,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 7.3,
+                "wtpPct": 42,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 0.7,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Revlimid MCL ~8% of brand."
+              },
+              "us.wtpPct": {
+                "note": "Revlimid MCL ~8% of brand."
+              },
+              "us.priceK": {
+                "note": "Revlimid MCL ~8% of brand."
+              },
+              "eu.reachPct": {
+                "note": "Revlimid MCL ~8% of brand."
+              },
+              "eu.wtpPct": {
+                "note": "Revlimid MCL ~8% of brand."
+              },
+              "eu.priceK": {
+                "note": "Revlimid MCL ~8% of brand."
+              },
+              "row.reachPct": {
+                "note": "Revlimid MCL ~8% of brand."
+              },
+              "row.wtpPct": {
+                "note": "Revlimid MCL ~8% of brand."
+              },
+              "row.priceK": {
+                "note": "Revlimid MCL ~8% of brand."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 15,
+                "wtpPct": 70,
+                "priceK": 175
+              },
+              "eu": {
+                "patientsK": 18,
+                "wtpPct": 52,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 40,
+                "wtpPct": 12,
+                "priceK": 35
               }
             }
           }
@@ -1768,7 +2307,7 @@
       "name": "Cobenfy (xanomeline + trospium) — M1/M4 muscarinic agonist (schizophrenia)",
       "stage": "Commercial ($140M 2025; first-in-class non-D2 schizo; AD agitation Ph3)",
       "designations": [],
-      "modality": "small_molecule.cns.muscarinic_agonist",
+      "modality": "small_molecule.gpcr.muscarinic_agonist",
       "targets": [
         "CHRM1",
         "CHRM4"
@@ -2838,15 +3377,15 @@
         {
           "id": "eoe",
           "name": "Eosinophilic esophagitis (FilGAP-2 Ph3)",
-          "area": "respiratory.inflammatory.crswnp",
+          "area": "immunology.inflammatory_gi.eoe",
           "market": {
             "tamB": 8,
-            "penPct": 25,
+            "penPct": 30,
             "salesM": 0,
             "salesYear": 2025,
             "peakYear": 2030,
             "cagrPct": 50,
-            "notes": "Anti-IL-13 (vs Dupixent IL-4/13). EoE class peer: Dupixent (SNY/REGN approved EoE 2022). Tagged crswnp as proxy (no EoE leaf). Filed 2025.",
+            "notes": "Anti-IL-13 (vs Dupixent IL-4/13). EoE class peer: Dupixent (SNY/REGN approved EoE 2022). Correctly tagged inflammatory_gi.eoe. Filed 2025.",
             "company_slice": {
               "us": {
                 "reachPct": 5,
@@ -2895,18 +3434,18 @@
             },
             "regions": {
               "us": {
-                "patientsK": 750,
-                "wtpPct": 50,
+                "patientsK": 150,
+                "wtpPct": 55,
                 "priceK": 35
               },
               "eu": {
-                "patientsK": 900,
+                "patientsK": 120,
                 "wtpPct": 35,
                 "priceK": 20
               },
               "row": {
-                "patientsK": 3000,
-                "wtpPct": 8,
+                "patientsK": 250,
+                "wtpPct": 6,
                 "priceK": 5
               }
             }
@@ -3008,7 +3547,7 @@
       "name": "Iberdomide (CC-220) — next-gen cereblon E3 ligase modulator",
       "stage": "Phase 3 EXCALIBER MM + iberdomide combos",
       "designations": [],
-      "modality": "small_molecule.imid.cereblon_modulator_next_gen",
+      "modality": "small_molecule.imid.cereblon_modulator",
       "targets": [
         "CRBN"
       ],
@@ -3147,7 +3686,7 @@
             "apr": 100,
             "pen": 0.5
           },
-          "hematology_io": {
+          "hodgkin_io": {
             "pos": 100,
             "apr": 100,
             "pen": 0.5
@@ -3161,7 +3700,32 @@
           }
         },
         "yervoy": {
-          "melanoma_io_combo": {
+          "melanoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "rcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "crc": {
             "pos": 100,
             "apr": 100,
             "pen": 0.5
@@ -3187,7 +3751,17 @@
           }
         },
         "revlimid": {
-          "mm_legacy": {
+          "mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "mds_5q": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "mcl": {
             "pos": 100,
             "apr": 100,
             "pen": 0.4
@@ -3400,7 +3974,7 @@
             "apr": 100,
             "pen": 0.75
           },
-          "hematology_io": {
+          "hodgkin_io": {
             "pos": 100,
             "apr": 100,
             "pen": 0.75
@@ -3414,7 +3988,32 @@
           }
         },
         "yervoy": {
-          "melanoma_io_combo": {
+          "melanoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "rcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "crc": {
             "pos": 100,
             "apr": 100,
             "pen": 0.75
@@ -3440,7 +4039,17 @@
           }
         },
         "revlimid": {
-          "mm_legacy": {
+          "mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "mds_5q": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "mcl": {
             "pos": 100,
             "apr": 100,
             "pen": 0.55
@@ -3655,7 +4264,7 @@
             "apr": 100,
             "pen": 0.95
           },
-          "hematology_io": {
+          "hodgkin_io": {
             "pos": 100,
             "apr": 100,
             "pen": 0.95
@@ -3669,7 +4278,32 @@
           }
         },
         "yervoy": {
-          "melanoma_io_combo": {
+          "melanoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "rcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "crc": {
             "pos": 100,
             "apr": 100,
             "pen": 0.95
@@ -3695,7 +4329,17 @@
           }
         },
         "revlimid": {
-          "mm_legacy": {
+          "mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "mds_5q": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "mcl": {
             "pos": 100,
             "apr": 100,
             "pen": 0.7
@@ -3908,7 +4552,7 @@
             "apr": 100,
             "pen": 1.15
           },
-          "hematology_io": {
+          "hodgkin_io": {
             "pos": 100,
             "apr": 100,
             "pen": 1.15
@@ -3922,7 +4566,32 @@
           }
         },
         "yervoy": {
-          "melanoma_io_combo": {
+          "melanoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "rcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "crc": {
             "pos": 100,
             "apr": 100,
             "pen": 1.15
@@ -3948,7 +4617,17 @@
           }
         },
         "revlimid": {
-          "mm_legacy": {
+          "mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "mds_5q": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "mcl": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
@@ -4160,7 +4839,7 @@
             "apr": 100,
             "pen": 1.4
           },
-          "hematology_io": {
+          "hodgkin_io": {
             "pos": 100,
             "apr": 100,
             "pen": 1.4
@@ -4174,7 +4853,32 @@
           }
         },
         "yervoy": {
-          "melanoma_io_combo": {
+          "melanoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          },
+          "rcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          },
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          },
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          },
+          "gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          },
+          "crc": {
             "pos": 100,
             "apr": 100,
             "pen": 1.4
@@ -4200,7 +4904,17 @@
           }
         },
         "revlimid": {
-          "mm_legacy": {
+          "mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mds_5q": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mcl": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0

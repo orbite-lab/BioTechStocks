@@ -388,6 +388,16 @@ REGIONS = {
         "eu":  {"patientsK": 70,  "wtpPct": 50, "priceK": 85},
         "row": {"patientsK": 250, "wtpPct": 14, "priceK": 30},
     },
+    # Hodgkin lymphoma (cHL + NLPHL): ~9K US new cases/yr, ~80% cure 1L
+    # ABVD/BV+AVD; ~30% relapse on 1L = ~3K R/R prevalent on biologic tx.
+    # EU 12K, ROW 50K. Class: Adcetris (Pfizer/Seagen brentuximab CD30
+    # ADC ~$1.5B globally), Opdivo (BMS PD-1 ~$0.8B HL share), Keytruda
+    # (Merck PD-1 KEYNOTE-204). Net branded ~$200K/yr.
+    "oncology.hematology.hodgkin": {
+        "us":  {"patientsK": 9,   "wtpPct": 75, "priceK": 200},
+        "eu":  {"patientsK": 12,  "wtpPct": 55, "priceK": 120},
+        "row": {"patientsK": 50,  "wtpPct": 14, "priceK": 35},
+    },
     # Aplastic anemia (severe): ~3K US, ~4K EU5, ~30K ROW. Branded class:
     # Promacta/Revolade (eltrombopag TPO mimetic Novartis ~$300M AA share)
     # added to standard IST (cyclosporine + ATG). Net branded ~$110K/yr.
@@ -552,6 +562,7 @@ PEN_PCT = {
     "hematology.myeloproliferative.mf": 65,
     "hematology.myeloproliferative.pv": 25,
     "hematology.myeloproliferative.mds": 60,
+    "oncology.hematology.hodgkin": 70,
     "hematology.rare_blood.aplastic_anemia": 60,
     "oncology.hematology.cml": 65,
     "nephrology.glomerular.c3g": 45,

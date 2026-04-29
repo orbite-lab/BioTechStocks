@@ -73,6 +73,17 @@ REGIONS = {
         "eu":  {"patientsK": 1500, "wtpPct": 30, "priceK": 12},
         "row": {"patientsK": 5000, "wtpPct": 8,  "priceK": 3},
     },
+    # Eosinophilic esophagitis (EoE): chronic Th2-driven esophageal
+    # inflammation. US ~150K diagnosed (CDC 2024), ~250K EU5, ~1M ROW.
+    # Class: Dupixent (SNY/REGN IL-4/13, approved EoE 2022 ~$1.5B EoE
+    # share globally), cendakimab (BMS anti-IL-13 Ph3 filed 2025),
+    # tezepelumab (AZN/Amgen anti-TSLP Ph2 EoE), corticosteroids
+    # standard. Net branded ~$35K/yr.
+    "immunology.inflammatory_gi.eoe": {
+        "us":  {"patientsK": 150,  "wtpPct": 50, "priceK": 35},
+        "eu":  {"patientsK": 250,  "wtpPct": 35, "priceK": 22},
+        "row": {"patientsK": 1000, "wtpPct": 8,  "priceK": 8},
+    },
 
     # ============================================================
     # IMMUNOLOGY - INFLAMMATORY SYSTEMIC
@@ -330,6 +341,7 @@ PEN_PCT = {
     "immunology.autoimmune.sle": 25,
     "immunology.inflammatory_gi.crohns": 38,
     "immunology.inflammatory_gi.ulcerative_colitis": 35,
+    "immunology.inflammatory_gi.eoe": 35,
     "immunology.inflammatory_systemic.rheumatoid_arthritis": 28,
     "immunology.inflammatory_systemic.psoriatic_arthritis": 30,
     "immunology.inflammatory_systemic.gca_pmr": 18,

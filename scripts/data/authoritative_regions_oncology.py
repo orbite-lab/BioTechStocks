@@ -180,14 +180,14 @@ REGIONS = {
     # 2l_3l = early relapse after 1-2 prior lines (Carvykti current label, daratumumab combos)
     # 4l_plus = heavily pre-treated R/R, where bispecifics + cell therapies live
     "oncology.hematology.myeloma.1l": {
-        "us":  {"patientsK": 32, "wtpPct": 75, "priceK": 220},
-        "eu":  {"patientsK": 36, "wtpPct": 58, "priceK": 130},
-        "row": {"patientsK": 80, "wtpPct": 18, "priceK": 55},
+        "us":  {"patientsK": 50, "wtpPct": 80, "priceK": 280},
+        "eu":  {"patientsK": 55, "wtpPct": 62, "priceK": 165},
+        "row": {"patientsK": 130, "wtpPct": 20, "priceK": 65},
     },
     "oncology.hematology.myeloma.2l_3l": {
-        "us":  {"patientsK": 24, "wtpPct": 65, "priceK": 280},
-        "eu":  {"patientsK": 28, "wtpPct": 50, "priceK": 165},
-        "row": {"patientsK": 50, "wtpPct": 14, "priceK": 60},
+        "us":  {"patientsK": 36, "wtpPct": 70, "priceK": 320},
+        "eu":  {"patientsK": 42, "wtpPct": 55, "priceK": 195},
+        "row": {"patientsK": 80, "wtpPct": 16, "priceK": 70},
     },
     "oncology.hematology.myeloma.4l_plus": {
         "us":  {"patientsK": 12, "wtpPct": 55, "priceK": 380},

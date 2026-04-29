@@ -83,6 +83,25 @@ REGIONS = {
     # global. Class peak ~$30-35B as Humira completes its biosimilar slide
     # offset by Rinvoq + new oral entries. Net ~$20K/yr post-rebate. Prior
     # $98B at $55K WAC across full population was ~3x off net economics.
+    # Psoriatic arthritis (PsA): inflammatory arthritis associated with psoriasis.
+    # ~1.5M US prevalent (~30% of psoriasis pts develop PsA), ~2M EU, ~10M ROW.
+    # Class: Stelara/Tremfya (J&J IL-12/23/IL-23), Cosentyx/Bimzelx (Novartis/UCB
+    # IL-17), Skyrizi (AbbVie IL-23), Rinvoq/Olumiant (JAK), TNFi legacy. Class
+    # peak ~$10-12B globally. source: NPF; J&J + AbbVie + Novartis 10-Ks.
+    "immunology.inflammatory_systemic.psoriatic_arthritis": {
+        "us":  {"patientsK": 1500,  "wtpPct": 50, "priceK": 50},
+        "eu":  {"patientsK": 2000,  "wtpPct": 35, "priceK": 30},
+        "row": {"patientsK": 10000, "wtpPct": 8,  "priceK": 10},
+    },
+    # Ankylosing spondylitis (AS) + axial spondyloarthritis (axSpA): chronic
+    # inflammatory spinal arthritis. ~1M US AS + ~2M nr-axSpA, ~1.5M EU AS,
+    # ~10M ROW. Class: Cosentyx/Bimzelx (IL-17), TNFi legacy (Humira/Enbrel/
+    # Simponi), JAKi (Rinvoq/Xeljanz). Class peak ~$5-7B globally.
+    "immunology.inflammatory_systemic.ankylosing_spondylitis": {
+        "us":  {"patientsK": 1000,  "wtpPct": 45, "priceK": 50},
+        "eu":  {"patientsK": 1500,  "wtpPct": 32, "priceK": 30},
+        "row": {"patientsK": 10000, "wtpPct": 7,  "priceK": 10},
+    },
     "immunology.inflammatory_systemic.rheumatoid_arthritis": {
         "us":  {"patientsK": 1500,  "wtpPct": 50, "priceK": 20},
         "eu":  {"patientsK": 2500,  "wtpPct": 35, "priceK": 12},
@@ -292,6 +311,8 @@ PEN_PCT = {
     "immunology.inflammatory_gi.crohns": 38,
     "immunology.inflammatory_gi.ulcerative_colitis": 35,
     "immunology.inflammatory_systemic.rheumatoid_arthritis": 28,
+    "immunology.inflammatory_systemic.psoriatic_arthritis": 30,
+    "immunology.inflammatory_systemic.ankylosing_spondylitis": 25,
     "immunology.neuromuscular_autoimmune.itp": 35,
     "immunology.neuromuscular_autoimmune.mmn": 65,
     "immunology.neuromuscular_autoimmune.myasthenia_gravis": 40,

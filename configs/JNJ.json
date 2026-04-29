@@ -1,0 +1,3627 @@
+{
+  "company": {
+    "ticker": "JNJ",
+    "name": "Johnson & Johnson — Innovative Medicines (Pharma)",
+    "subtitle": "Pharma-only model | $60.5B 2025 IM revenue | Stelara $6.1B (-41% LOE) | Tremfya/Darzalex/Caplyta growth | Carvykti 50/50 LEGN | Nipocalimab multi-indication",
+    "sharesOut": 2406,
+    "cash": 22050,
+    "currentPrice": 241.0,
+    "currency": "USD",
+    "yahooTicker": "JNJ",
+    "cashRunway": "Self-funding ($25B+ op cash flow); Pharma segment only modeled (excludes MedTech ~$32B)",
+    "phase": "commercial"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "stelara",
+      "name": "Stelara (ustekinumab, IL-12/23) — biosimilar cliff",
+      "stage": "Commercial ($6.08B 2025, -41% LOE; Q1'26 -61.7% accelerating)",
+      "designations": [],
+      "modality": "antibody.cytokine.il12_23_blocker",
+      "targets": [
+        "IL12B",
+        "IL23A"
+      ],
+      "indications": [
+        {
+          "id": "psoriasis",
+          "name": "Plaque psoriasis + PsA + UC + CD (combined)",
+          "market": {
+            "tamB": 12,
+            "penPct": 40,
+            "salesM": 6080,
+            "salesYear": 2025,
+            "peakYear": 2024,
+            "notes": "First-in-class IL-12/23 anti-p40 mAb. Composition LOE Sep 2023 US; biosimilars launched 2024-25 (Wezlana Amgen, Selarsdi Alvotech, Pyzchiva Samsung, Imuldosa Accord, Otulfi Fresenius, Steqeyma Celltrion, 7+ total). Sharp decline trajectory: $10.4B (2024) -> $6.1B (2025) -> ~$2.5B (2026E) -> <$1B (2027E).",
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 65,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 50,
+                "priceK": 42
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 14
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Stelara ~8% US psoriasis biologic + UC/CD pool 2025 (declining vs biosim erosion)."
+              },
+              "us.priceK": {
+                "note": "$70K/yr WAC; biosim discount ~30-40%."
+              },
+              "us.wtpPct": {
+                "note": "65% -- HTA mature class."
+              },
+              "eu.reachPct": {
+                "note": "4%."
+              },
+              "eu.wtpPct": {
+                "note": "50%."
+              },
+              "eu.priceK": {
+                "note": "$42K."
+              },
+              "row.reachPct": {
+                "note": "0.5%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$14K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "dermatology.inflammatory_derm.psoriasis_systemic"
+        }
+      ]
+    },
+    {
+      "id": "tremfya",
+      "name": "Tremfya (guselkumab, IL-23) — Stelara successor",
+      "stage": "Commercial ($5.2B 2025, +40%; Q1'26 +74%)",
+      "designations": [],
+      "modality": "antibody.cytokine.il23_blocker",
+      "targets": [
+        "IL23A"
+      ],
+      "indications": [
+        {
+          "id": "psoriasis",
+          "name": "Plaque psoriasis (PsO)",
+          "market": {
+            "tamB": 8,
+            "penPct": 40,
+            "salesM": 2200,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 18,
+            "notes": "IL-23 selective (anti-p19) succeeding Stelara. PsO largest indication ~42% of brand. Class peers: Skyrizi (AbbVie), Ilumya (Sun Pharma).",
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 65,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 48,
+                "priceK": 42
+              },
+              "row": {
+                "reachPct": 0.7,
+                "wtpPct": 12,
+                "priceK": 14
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Tremfya ~10% PsO biologic-eligible pool."
+              },
+              "us.priceK": {
+                "note": "$70K/yr."
+              },
+              "us.wtpPct": {
+                "note": "65%."
+              },
+              "eu.reachPct": {
+                "note": "5%."
+              },
+              "eu.wtpPct": {
+                "note": "48%."
+              },
+              "eu.priceK": {
+                "note": "$42K."
+              },
+              "row.reachPct": {
+                "note": "0.7%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$14K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "dermatology.inflammatory_derm.psoriasis_systemic"
+        },
+        {
+          "id": "psa",
+          "name": "Psoriatic arthritis (PsA)",
+          "market": {
+            "tamB": 6,
+            "penPct": 30,
+            "salesM": 1100,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 15,
+            "notes": "PsA approved 2020. ~21% of Tremfya brand.",
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 60,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 42,
+                "priceK": 42
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 10,
+                "priceK": 14
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Tremfya ~8% PsA pool (Skyrizi competitive)."
+              },
+              "us.priceK": {
+                "note": "$70K."
+              },
+              "us.wtpPct": {
+                "note": "60%."
+              },
+              "eu.reachPct": {
+                "note": "4%."
+              },
+              "eu.wtpPct": {
+                "note": "42%."
+              },
+              "eu.priceK": {
+                "note": "$42K."
+              },
+              "row.reachPct": {
+                "note": "0.5%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$14K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 50,
+                "priceK": 50
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 35,
+                "priceK": 30
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 8,
+                "priceK": 10
+              }
+            }
+          },
+          "area": "immunology.inflammatory_systemic.psoriatic_arthritis"
+        },
+        {
+          "id": "uc",
+          "name": "Ulcerative colitis (QUASAR Ph3 2024)",
+          "market": {
+            "tamB": 8,
+            "penPct": 35,
+            "salesM": 1300,
+            "salesYear": 2025,
+            "peakYear": 2031,
+            "cagrPct": 25,
+            "notes": "UC approved 2024 (QUASAR Ph3 positive). ~25% of Tremfya brand growing.",
+            "company_slice": {
+              "us": {
+                "reachPct": 7,
+                "wtpPct": 55,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 38,
+                "priceK": 42
+              },
+              "row": {
+                "reachPct": 0.4,
+                "wtpPct": 10,
+                "priceK": 14
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Tremfya ~7% UC biologic-eligible pool, growing."
+              },
+              "us.priceK": {
+                "note": "$70K."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "3%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$42K."
+              },
+              "row.reachPct": {
+                "note": "0.4%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$14K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1000,
+                "wtpPct": 50,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 30,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 5000,
+                "wtpPct": 8,
+                "priceK": 3
+              }
+            }
+          },
+          "area": "immunology.inflammatory_gi.ulcerative_colitis"
+        },
+        {
+          "id": "cd",
+          "name": "Crohn's disease (GRAVITI Ph3 2025)",
+          "market": {
+            "tamB": 10,
+            "penPct": 38,
+            "salesM": 600,
+            "salesYear": 2025,
+            "peakYear": 2032,
+            "cagrPct": 35,
+            "notes": "CD approved 2025 (GRAVITI Ph3 positive). ~12% of Tremfya brand, fastest growth.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 50,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 35,
+                "priceK": 42
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 8,
+                "priceK": 14
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Tremfya CD ~4% biologic-eligible (early ramp 2025)."
+              },
+              "us.priceK": {
+                "note": "$70K."
+              },
+              "us.wtpPct": {
+                "note": "50%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "35%."
+              },
+              "eu.priceK": {
+                "note": "$42K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$14K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 800,
+                "wtpPct": 55,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 35,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 5000,
+                "wtpPct": 10,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "immunology.inflammatory_gi.crohns"
+        }
+      ]
+    },
+    {
+      "id": "darzalex",
+      "name": "Darzalex (daratumumab, anti-CD38) — myeloma",
+      "stage": "Commercial ($14.35B 2025, +23%; Q1'26 $4.0B +18%)",
+      "designations": [],
+      "modality": "antibody.checkpoint.cd38",
+      "targets": [
+        "CD38"
+      ],
+      "indications": [
+        {
+          "id": "mm_1l",
+          "name": "Multiple myeloma 1L (PERSEUS + CEPHEUS quad-combos)",
+          "market": {
+            "tamB": 10,
+            "penPct": 70,
+            "salesM": 8000,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 12,
+            "notes": "1L MM Dara+VRd quad-combo (PERSEUS Ph3 transplant-eligible, CEPHEUS transplant-ineligible). ~$7B 2025 1L portion.",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 80,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 95,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 41.3,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Darzalex ~25% 1L MM dominant (quad-combo standard)."
+              },
+              "us.priceK": {
+                "note": "$175K/yr."
+              },
+              "us.wtpPct": {
+                "note": "80%."
+              },
+              "eu.reachPct": {
+                "note": "14%."
+              },
+              "eu.wtpPct": {
+                "note": "60%."
+              },
+              "eu.priceK": {
+                "note": "$100K."
+              },
+              "row.reachPct": {
+                "note": "3%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 80,
+                "priceK": 280
+              },
+              "eu": {
+                "patientsK": 55,
+                "wtpPct": 62,
+                "priceK": 165
+              },
+              "row": {
+                "patientsK": 130,
+                "wtpPct": 20,
+                "priceK": 65
+              }
+            }
+          },
+          "area": "oncology.hematology.myeloma.1l"
+        },
+        {
+          "id": "mm_2l",
+          "name": "Multiple myeloma 2L-3L",
+          "market": {
+            "tamB": 8,
+            "penPct": 55,
+            "salesM": 4500,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "2L-3L MM combos. ~$5.5B 2025.",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 78,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 95,
+                "wtpPct": 58,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 32.1,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Darzalex ~22% 2L-3L MM."
+              },
+              "us.priceK": {
+                "note": "$175K."
+              },
+              "us.wtpPct": {
+                "note": "78%."
+              },
+              "eu.reachPct": {
+                "note": "12%."
+              },
+              "eu.wtpPct": {
+                "note": "58%."
+              },
+              "eu.priceK": {
+                "note": "$100K."
+              },
+              "row.reachPct": {
+                "note": "2.5%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 36,
+                "wtpPct": 70,
+                "priceK": 320
+              },
+              "eu": {
+                "patientsK": 42,
+                "wtpPct": 55,
+                "priceK": 195
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 16,
+                "priceK": 70
+              }
+            }
+          },
+          "area": "oncology.hematology.myeloma.2l_3l"
+        },
+        {
+          "id": "mm_4l",
+          "name": "Multiple myeloma 4L+ (relapsed/refractory)",
+          "market": {
+            "tamB": 5,
+            "penPct": 35,
+            "salesM": 1850,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "4L+ R/R MM Darzalex monotherapy + combos. ~$1.85B 2025 (declining as Carvykti/Tecvayli/Talvey take share).",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 75,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 70.4,
+                "wtpPct": 55,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 17.6,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Darzalex 4L+ MM ~12% (declining)."
+              },
+              "us.priceK": {
+                "note": "$175K."
+              },
+              "us.wtpPct": {
+                "note": "75%."
+              },
+              "eu.reachPct": {
+                "note": "6%."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$100K."
+              },
+              "row.reachPct": {
+                "note": "1.5%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 55,
+                "priceK": 380
+              },
+              "eu": {
+                "patientsK": 14,
+                "wtpPct": 42,
+                "priceK": 220
+              },
+              "row": {
+                "patientsK": 20,
+                "wtpPct": 10,
+                "priceK": 80
+              }
+            }
+          },
+          "area": "oncology.hematology.myeloma.4l_plus"
+        }
+      ]
+    },
+    {
+      "id": "carvykti",
+      "name": "Carvykti (cilta-cel, BCMA CAR-T) — w/ Legend 50/50",
+      "stage": "Commercial ($1.0B JNJ-share 2025; LEGN books complementary $1B = $1.9B franchise)",
+      "designations": [],
+      "modality": "cell_therapy.car_t_autologous.bcma_car_t",
+      "targets": [
+        "TNFRSF17"
+      ],
+      "indications": [
+        {
+          "id": "mm_4l",
+          "name": "Multiple myeloma R/R (CARTITUDE-1) + 1L expansion (CARTITUDE-4/5/6 Ph3)",
+          "market": {
+            "tamB": 5,
+            "penPct": 35,
+            "salesM": 1000,
+            "salesYear": 2025,
+            "peakYear": 2032,
+            "cagrPct": 30,
+            "notes": "BCMA CAR-T autologous. JNJ books gross sales in US/EU/ROW (its commercial territory); LEGN books China gross + collaboration share. Total franchise 2025 ~$1.9B (50/50 economics ex-China). JNJ-reported share $963M 2025 (rounded $1B). CARTITUDE-4 2L+ approved 2024; CARTITUDE-5/6 1L MM Ph3 readouts 2026-27 -- transformational if positive.",
+            "company_slice": {
+              "us": {
+                "reachPct": 30.1,
+                "wtpPct": 60,
+                "priceK": 530
+              },
+              "eu": {
+                "reachPct": 15.1,
+                "wtpPct": 45,
+                "priceK": 360
+              },
+              "row": {
+                "reachPct": 3.0,
+                "wtpPct": 12,
+                "priceK": 130
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Carvykti JNJ share ~4% of US R/R MM (LEGN holds complementary ~50% economic share separately in our model). 50/50 split: see LEGN config for the matching franchise share."
+              },
+              "us.priceK": {
+                "note": "$530K WAC -- premium autologous CAR-T pricing parity (Yescarta $464K base, manufacturing premium)."
+              },
+              "us.wtpPct": {
+                "note": "60% -- ATC capacity bottleneck; busulfan conditioning."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "45%."
+              },
+              "eu.priceK": {
+                "note": "$360K."
+              },
+              "row.reachPct": {
+                "note": "0.4%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$130K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 55,
+                "priceK": 380
+              },
+              "eu": {
+                "patientsK": 14,
+                "wtpPct": 42,
+                "priceK": 220
+              },
+              "row": {
+                "patientsK": 20,
+                "wtpPct": 10,
+                "priceK": 80
+              }
+            }
+          },
+          "area": "oncology.hematology.myeloma.4l_plus"
+        }
+      ]
+    },
+    {
+      "id": "tecvayli_talvey",
+      "name": "Tecvayli (BCMA bispecific) + Talvey (GPRC5D bispecific) — myeloma",
+      "stage": "Commercial (~$1B combined 2025; +50% growth)",
+      "designations": [],
+      "modality": "antibody.bispecific.bcma_cd3",
+      "targets": [
+        "TNFRSF17",
+        "GPRC5D",
+        "CD3"
+      ],
+      "indications": [
+        {
+          "id": "tecvayli_mm",
+          "name": "Tecvayli (teclistamab) — BCMA bispecific R/R MM",
+          "market": {
+            "tamB": 5,
+            "penPct": 35,
+            "salesM": 549,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 25,
+            "notes": "BCMA x CD3 bispecific. R/R MM 4L+. ~$549M 2025. Combo Ph3 readouts 2026-27.",
+            "company_slice": {
+              "us": {
+                "reachPct": 21.9,
+                "wtpPct": 70,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 11.0,
+                "wtpPct": 50,
+                "priceK": 230
+              },
+              "row": {
+                "reachPct": 1.6,
+                "wtpPct": 12,
+                "priceK": 80
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Tecvayli ~4% R/R MM."
+              },
+              "us.priceK": {
+                "note": "$350K/yr bispecific."
+              },
+              "us.wtpPct": {
+                "note": "70%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "50%."
+              },
+              "eu.priceK": {
+                "note": "$230K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$80K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 55,
+                "priceK": 380
+              },
+              "eu": {
+                "patientsK": 14,
+                "wtpPct": 42,
+                "priceK": 220
+              },
+              "row": {
+                "patientsK": 20,
+                "wtpPct": 10,
+                "priceK": 80
+              }
+            }
+          },
+          "area": "oncology.hematology.myeloma.4l_plus"
+        },
+        {
+          "id": "talvey_mm",
+          "name": "Talvey (talquetamab) — GPRC5D bispecific R/R MM",
+          "market": {
+            "tamB": 4,
+            "penPct": 35,
+            "salesM": 425,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 35,
+            "notes": "First-in-class GPRC5D x CD3 bispecific. R/R MM. Differentiated from BCMA-class. ~$425M 2025.",
+            "company_slice": {
+              "us": {
+                "reachPct": 18.4,
+                "wtpPct": 65,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 9.2,
+                "wtpPct": 45,
+                "priceK": 230
+              },
+              "row": {
+                "reachPct": 1.2,
+                "wtpPct": 10,
+                "priceK": 80
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Talvey ~3% R/R MM."
+              },
+              "us.priceK": {
+                "note": "$350K bispecific."
+              },
+              "us.wtpPct": {
+                "note": "65%."
+              },
+              "eu.reachPct": {
+                "note": "1.5%."
+              },
+              "eu.wtpPct": {
+                "note": "45%."
+              },
+              "eu.priceK": {
+                "note": "$230K."
+              },
+              "row.reachPct": {
+                "note": "0.2%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$80K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 55,
+                "priceK": 380
+              },
+              "eu": {
+                "patientsK": 14,
+                "wtpPct": 42,
+                "priceK": 220
+              },
+              "row": {
+                "patientsK": 20,
+                "wtpPct": 10,
+                "priceK": 80
+              }
+            }
+          },
+          "area": "oncology.hematology.myeloma.4l_plus"
+        }
+      ]
+    },
+    {
+      "id": "erleada",
+      "name": "Erleada (apalutamide, AR antagonist) — prostate",
+      "stage": "Commercial ($3.4B 2025, +15%)",
+      "designations": [],
+      "modality": "small_molecule.nuclear_receptor.androgen_antagonist",
+      "targets": [
+        "AR"
+      ],
+      "indications": [
+        {
+          "id": "prostate",
+          "name": "nmCRPC + mHSPC prostate cancer",
+          "market": {
+            "tamB": 8,
+            "penPct": 60,
+            "salesM": 3400,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 8,
+            "notes": "Second-gen AR antagonist. SPARTAN nmCRPC + TITAN mHSPC. ~$3.4B 2025 (+15%). Class peers: Xtandi (Astellas/PFE), Nubeqa (Bayer).",
+            "company_slice": {
+              "us": {
+                "reachPct": 32.6,
+                "wtpPct": 75,
+                "priceK": 165
+              },
+              "eu": {
+                "reachPct": 17.8,
+                "wtpPct": 55,
+                "priceK": 95
+              },
+              "row": {
+                "reachPct": 3.7,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Erleada ~22% prostate AR class."
+              },
+              "us.priceK": {
+                "note": "$165K/yr."
+              },
+              "us.wtpPct": {
+                "note": "75%."
+              },
+              "eu.reachPct": {
+                "note": "12%."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$95K."
+              },
+              "row.reachPct": {
+                "note": "2.5%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 100,
+                "wtpPct": 70,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 110,
+                "wtpPct": 52,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 18
+              }
+            }
+          },
+          "area": "oncology.genitourinary.prostate"
+        }
+      ]
+    },
+    {
+      "id": "imbruvica",
+      "name": "Imbruvica (ibrutinib, BTK) — w/ AbbVie 50/50",
+      "stage": "Commercial ($2.8B JNJ-share 2025, declining -8%)",
+      "designations": [],
+      "modality": "small_molecule.kinase_inhibitor.btk_covalent",
+      "targets": [
+        "BTK"
+      ],
+      "indications": [
+        {
+          "id": "cll_imbruvica",
+          "name": "CLL (1L + R/R) + MCL + WM + MZL",
+          "market": {
+            "tamB": 8,
+            "penPct": 65,
+            "salesM": 2800,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "notes": "First-in-class BTK. 50/50 with AbbVie. Declining -8%/yr (Calquence + Brukinsa share war + pirtobrutinib competing). JNJ books US, AbbVie books ROW with profit-share. ~$2.8B 2025 JNJ portion.",
+            "company_slice": {
+              "us": {
+                "reachPct": 31.2,
+                "wtpPct": 75,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 17.3,
+                "wtpPct": 55,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 2.6,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Imbruvica JNJ share ~18% CLL+MCL+WM+MZL pool."
+              },
+              "us.priceK": {
+                "note": "$175K/yr."
+              },
+              "us.wtpPct": {
+                "note": "75%."
+              },
+              "eu.reachPct": {
+                "note": "10%."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$100K."
+              },
+              "row.reachPct": {
+                "note": "1.5%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 80,
+                "wtpPct": 70,
+                "priceK": 100
+              },
+              "eu": {
+                "patientsK": 95,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            }
+          },
+          "area": "oncology.hematology.cll"
+        }
+      ]
+    },
+    {
+      "id": "rybrevant",
+      "name": "Rybrevant (amivantamab) + Lazcluze (lazertinib) — NSCLC EGFR",
+      "stage": "Commercial ($700M 2025; MARIPOSA 1L EGFR positive)",
+      "designations": [],
+      "modality": "antibody.bispecific.egfr_met",
+      "targets": [
+        "EGFR",
+        "MET"
+      ],
+      "indications": [
+        {
+          "id": "nsclc_egfr",
+          "name": "NSCLC EGFR-mutant 1L (MARIPOSA) + post-Tagrisso",
+          "market": {
+            "tamB": 18,
+            "penPct": 70,
+            "salesM": 700,
+            "salesYear": 2025,
+            "peakYear": 2032,
+            "cagrPct": 30,
+            "notes": "EGFR x MET bispecific (Rybrevant) + 3rd-gen EGFR TKI (Lazcluze). MARIPOSA 1L positive vs Tagrisso. PALOMA-3 SC formulation. ~$700M 2025 ramping.",
+            "company_slice": {
+              "us": {
+                "reachPct": 12.7,
+                "wtpPct": 65,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 6.3,
+                "wtpPct": 45,
+                "priceK": 115
+              },
+              "row": {
+                "reachPct": 1.1,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Rybrevant+Lazcluze ~6% EGFR+ NSCLC pool (Tagrisso AZN dominant)."
+              },
+              "us.priceK": {
+                "note": "$200K/yr combo."
+              },
+              "us.wtpPct": {
+                "note": "65%."
+              },
+              "eu.reachPct": {
+                "note": "3%."
+              },
+              "eu.wtpPct": {
+                "note": "45%."
+              },
+              "eu.priceK": {
+                "note": "$115K."
+              },
+              "row.reachPct": {
+                "note": "0.5%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$40K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 78,
+                "priceK": 230
+              },
+              "eu": {
+                "patientsK": 65,
+                "wtpPct": 60,
+                "priceK": 135
+              },
+              "row": {
+                "patientsK": 250,
+                "wtpPct": 25,
+                "priceK": 50
+              }
+            }
+          },
+          "area": "oncology.lung.nsclc_driver.egfr"
+        }
+      ]
+    },
+    {
+      "id": "balversa",
+      "name": "Balversa (erdafitinib, FGFR) — bladder",
+      "stage": "Commercial ($200M 2025)",
+      "designations": [],
+      "modality": "small_molecule.kinase_inhibitor.fgfr",
+      "targets": [
+        "FGFR1",
+        "FGFR2",
+        "FGFR3"
+      ],
+      "indications": [
+        {
+          "id": "bladder_balv",
+          "name": "FGFR-altered urothelial bladder",
+          "market": {
+            "tamB": 4,
+            "penPct": 50,
+            "salesM": 200,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "Pan-FGFR oral. THOR Ph3 confirmatory. Niche FGFR3+ bladder ~20% of urothelial.",
+            "company_slice": {
+              "us": {
+                "reachPct": 9.8,
+                "wtpPct": 60,
+                "priceK": 165
+              },
+              "eu": {
+                "reachPct": 4.9,
+                "wtpPct": 42,
+                "priceK": 95
+              },
+              "row": {
+                "reachPct": 0.7,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Balversa ~3% bladder pool (FGFR3+ subset)."
+              },
+              "us.priceK": {
+                "note": "$165K/yr."
+              },
+              "us.wtpPct": {
+                "note": "60%."
+              },
+              "eu.reachPct": {
+                "note": "1.5%."
+              },
+              "eu.wtpPct": {
+                "note": "42%."
+              },
+              "eu.priceK": {
+                "note": "$95K."
+              },
+              "row.reachPct": {
+                "note": "0.2%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 62,
+                "priceK": 185
+              },
+              "eu": {
+                "patientsK": 28,
+                "wtpPct": 45,
+                "priceK": 105
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            }
+          },
+          "area": "oncology.genitourinary.bladder"
+        }
+      ]
+    },
+    {
+      "id": "neuro_franchise",
+      "name": "Neuroscience portfolio (Spravato + Invega + Caplyta + Concerta)",
+      "stage": "Commercial (~$8.5B 2025)",
+      "designations": [],
+      "modality": "small_molecule.cns.psychiatric_combined",
+      "targets": [],
+      "indications": [
+        {
+          "id": "spravato_trd",
+          "name": "Spravato (esketamine NMDA) — TRD + MDSI",
+          "market": {
+            "tamB": 8,
+            "penPct": 60,
+            "salesM": 1600,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 30,
+            "notes": "Intranasal esketamine NMDA antagonist. TRD + MDD with suicidal ideation. ~$1.6B 2025 (+50%). REMS-controlled.",
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 35,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 0.4,
+                "wtpPct": 10,
+                "priceK": 6
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Spravato ~5% TRD pool."
+              },
+              "us.priceK": {
+                "note": "$25K/yr REMS-controlled."
+              },
+              "us.wtpPct": {
+                "note": "50%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "35%."
+              },
+              "eu.priceK": {
+                "note": "$15K."
+              },
+              "row.reachPct": {
+                "note": "0.4%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$6K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            }
+          },
+          "area": "cns.psychiatry.depression"
+        },
+        {
+          "id": "invega_schiz",
+          "name": "Invega Sustenna/Trinza/Hafyera — schizophrenia LAI",
+          "market": {
+            "tamB": 8,
+            "penPct": 60,
+            "salesM": 4000,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "Paliperidone palmitate long-acting injectable (1mo/3mo/6mo). Schizo + schizoaffective. ~$4B 2025. LOE Sustenna 2024 partial; Trinza/Hafyera longer.",
+            "company_slice": {
+              "us": {
+                "reachPct": 30,
+                "wtpPct": 70,
+                "priceK": 18
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 50,
+                "priceK": 10
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 14,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Invega LAI ~30% US schizophrenia LAI pool."
+              },
+              "us.priceK": {
+                "note": "$18K/yr blended."
+              },
+              "us.wtpPct": {
+                "note": "70%."
+              },
+              "eu.reachPct": {
+                "note": "15%."
+              },
+              "eu.wtpPct": {
+                "note": "50%."
+              },
+              "eu.priceK": {
+                "note": "$10K."
+              },
+              "row.reachPct": {
+                "note": "3%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$4K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            }
+          },
+          "area": "cns.psychiatry.schizophrenia"
+        },
+        {
+          "id": "caplyta_schiz",
+          "name": "Caplyta (lumateperone) — schizo + bipolar",
+          "market": {
+            "tamB": 8,
+            "penPct": 30,
+            "salesM": 700,
+            "salesYear": 2025,
+            "peakYear": 2032,
+            "cagrPct": 35,
+            "notes": "Atypical antipsychotic. Schizo + bipolar I/II depression. Acquired via Intra-Cellular $14.6B Apr 2025. ~$700M 2025 partial-year. MDD label expansion sBLA H2 2026.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 50,
+                "priceK": 18
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 35,
+                "priceK": 10
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 8,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Caplyta ~4% schizo/bipolar pool ramping."
+              },
+              "us.priceK": {
+                "note": "$18K/yr."
+              },
+              "us.wtpPct": {
+                "note": "50%."
+              },
+              "eu.reachPct": {
+                "note": "1%."
+              },
+              "eu.wtpPct": {
+                "note": "35%."
+              },
+              "eu.priceK": {
+                "note": "$10K."
+              },
+              "row.reachPct": {
+                "note": "0.2%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$4K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 10000,
+                "wtpPct": 28,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 8,
+                "priceK": 2
+              }
+            }
+          },
+          "area": "cns.psychiatry.bipolar"
+        },
+        {
+          "id": "concerta_adhd",
+          "name": "Concerta (methylphenidate) — ADHD generic legacy",
+          "market": {
+            "tamB": 12,
+            "penPct": 55,
+            "salesM": 500,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Methylphenidate ER. Long off-patent; brand remnants. ~$500M 2025.",
+            "company_slice": {
+              "us": {
+                "reachPct": 8.7,
+                "wtpPct": 25,
+                "priceK": 4
+              },
+              "eu": {
+                "reachPct": 4.3,
+                "wtpPct": 18,
+                "priceK": 2.5
+              },
+              "row": {
+                "reachPct": 4.3,
+                "wtpPct": 10,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Concerta ~1% ADHD branded post-LOE."
+              },
+              "us.priceK": {
+                "note": "$4K/yr branded."
+              },
+              "us.wtpPct": {
+                "note": "25%."
+              },
+              "eu.reachPct": {
+                "note": "0.5%."
+              },
+              "eu.wtpPct": {
+                "note": "18%."
+              },
+              "eu.priceK": {
+                "note": "$2.5K."
+              },
+              "row.reachPct": {
+                "note": "0.5%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$1K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 55,
+                "priceK": 1.2
+              },
+              "row": {
+                "patientsK": 35000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            }
+          },
+          "area": "cns.psychiatry.adhd"
+        }
+      ]
+    },
+    {
+      "id": "pah",
+      "name": "Opsumit (macitentan) + Uptravi (selexipag) — PAH",
+      "stage": "Commercial (~$4B combined 2025; ex-Actelion)",
+      "designations": [],
+      "modality": "small_molecule.gpcr.era_ip_combined",
+      "targets": [
+        "EDNRA",
+        "PTGIR"
+      ],
+      "indications": [
+        {
+          "id": "opsumit_pah",
+          "name": "Opsumit (macitentan) — PAH ERA",
+          "market": {
+            "tamB": 8,
+            "penPct": 65,
+            "salesM": 2180,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 8,
+            "notes": "Endothelin receptor antagonist (ERA). 1L + maintenance PAH. ~$2.18B 2025 (+13%).",
+            "company_slice": {
+              "us": {
+                "reachPct": 70.4,
+                "wtpPct": 80,
+                "priceK": 110
+              },
+              "eu": {
+                "reachPct": 38.4,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "row": {
+                "reachPct": 6.4,
+                "wtpPct": 18,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Opsumit ~22% US PAH pool (ERA class leader)."
+              },
+              "us.priceK": {
+                "note": "$110K/yr."
+              },
+              "us.wtpPct": {
+                "note": "80%."
+              },
+              "eu.reachPct": {
+                "note": "12%."
+              },
+              "eu.wtpPct": {
+                "note": "60%."
+              },
+              "eu.priceK": {
+                "note": "$65K."
+              },
+              "row.reachPct": {
+                "note": "2%."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$25K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 75,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 18,
+                "priceK": 25
+              }
+            }
+          },
+          "area": "cardio_metabolic.cardiopulmonary.pah",
+          "rare": true
+        },
+        {
+          "id": "uptravi_pah",
+          "name": "Uptravi (selexipag) — PAH IP receptor agonist",
+          "market": {
+            "tamB": 6,
+            "penPct": 65,
+            "salesM": 1850,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "notes": "Oral IP receptor agonist for PAH (prostacyclin pathway). ~$1.85B 2025.",
+            "company_slice": {
+              "us": {
+                "reachPct": 63.9,
+                "wtpPct": 75,
+                "priceK": 110
+              },
+              "eu": {
+                "reachPct": 35.5,
+                "wtpPct": 55,
+                "priceK": 65
+              },
+              "row": {
+                "reachPct": 5.3,
+                "wtpPct": 16,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Uptravi ~18% US PAH pool."
+              },
+              "us.priceK": {
+                "note": "$110K."
+              },
+              "us.wtpPct": {
+                "note": "75%."
+              },
+              "eu.reachPct": {
+                "note": "10%."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$65K."
+              },
+              "row.reachPct": {
+                "note": "1.5%."
+              },
+              "row.wtpPct": {
+                "note": "16%."
+              },
+              "row.priceK": {
+                "note": "$25K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 75,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 18,
+                "priceK": 25
+              }
+            }
+          },
+          "area": "cardio_metabolic.cardiopulmonary.pah",
+          "rare": true
+        }
+      ]
+    },
+    {
+      "id": "xarelto",
+      "name": "Xarelto (rivaroxaban, anti-Xa) — w/ Bayer; US LOE Nov 2025",
+      "stage": "Commercial ($2.5B 2025; US LOE Nov 2025)",
+      "designations": [],
+      "modality": "small_molecule.coagulation.factor_xa_inhibitor",
+      "targets": [
+        "F10"
+      ],
+      "indications": [
+        {
+          "id": "anticoag",
+          "name": "AF stroke prevention + VTE + ACS",
+          "market": {
+            "tamB": 25,
+            "penPct": 4,
+            "salesM": 2500,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "notes": "Direct Factor Xa inhibitor. JNJ books US (~50% of class), Bayer books ROW. US LOE Nov 2025; collapse 2026.",
+            "company_slice": {
+              "us": {
+                "reachPct": 19.1,
+                "wtpPct": 65,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 0.8,
+                "wtpPct": 18,
+                "priceK": 1
+              },
+              "row": {
+                "reachPct": 0.8,
+                "wtpPct": 14,
+                "priceK": 0.6
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Xarelto JNJ-share ~7% US AF/VTE pool (declining post Nov 2025 LOE)."
+              },
+              "us.priceK": {
+                "note": "$5K/yr."
+              },
+              "us.wtpPct": {
+                "note": "65%."
+              },
+              "eu.reachPct": {
+                "note": "0.3% -- Bayer books EU."
+              },
+              "eu.wtpPct": {
+                "note": "18%."
+              },
+              "eu.priceK": {
+                "note": "$1K."
+              },
+              "row.reachPct": {
+                "note": "0.3% -- Bayer."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$0.6K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 60,
+                "priceK": 3.5
+              },
+              "eu": {
+                "patientsK": 7000,
+                "wtpPct": 50,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 30000,
+                "wtpPct": 15,
+                "priceK": 0.4
+              }
+            }
+          },
+          "area": "cardio_metabolic.thrombosis.anticoagulation"
+        }
+      ]
+    },
+    {
+      "id": "hiv_franchise",
+      "name": "HIV portfolio (Symtuza + Edurant + Vocabria/Cabenuva)",
+      "stage": "Commercial (~$1.5B combined 2025)",
+      "designations": [],
+      "modality": "small_molecule.antiviral.hiv_combined",
+      "targets": [],
+      "indications": [
+        {
+          "id": "symtuza",
+          "name": "Symtuza (DRV/COBI/FTC/TAF) — HIV STR",
+          "market": {
+            "tamB": 14,
+            "penPct": 40,
+            "salesM": 700,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "Single-tablet darunavir-based regimen for treatment-experienced HIV. Niche vs INSTI-based STRs (Biktarvy GILD dominant).",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 65,
+                "priceK": 28
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 45,
+                "priceK": 18
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 6
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Symtuza ~4% US HIV STR (Biktarvy dominant)."
+              },
+              "us.priceK": {
+                "note": "$28K/yr."
+              },
+              "us.wtpPct": {
+                "note": "65%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "45%."
+              },
+              "eu.priceK": {
+                "note": "$18K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$6K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1000,
+                "wtpPct": 70,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 800,
+                "wtpPct": 60,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 28000,
+                "wtpPct": 30,
+                "priceK": 0.4
+              }
+            }
+          },
+          "area": "infectious_disease.anti_infective.hiv_treatment"
+        },
+        {
+          "id": "edurant_legacy",
+          "name": "Edurant (rilpivirine NNRTI) + Vocabria/Cabenuva (cabotegravir, w/ ViiV)",
+          "market": {
+            "tamB": 14,
+            "penPct": 40,
+            "salesM": 800,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "Edurant ~$200M (declining HIV NNRTI). Vocabria/Cabenuva LA HIV (cabotegravir, ViiV/GSK majority) ~$600M JNJ portion via royalty.",
+            "company_slice": {
+              "us": {
+                "reachPct": 5.7,
+                "wtpPct": 55,
+                "priceK": 28
+              },
+              "eu": {
+                "reachPct": 2.9,
+                "wtpPct": 38,
+                "priceK": 18
+              },
+              "row": {
+                "reachPct": 1.0,
+                "wtpPct": 10,
+                "priceK": 6
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "JNJ HIV legacy ~3% US treatment pool."
+              },
+              "us.priceK": {
+                "note": "$28K/yr."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "1.5%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$18K."
+              },
+              "row.reachPct": {
+                "note": "0.5%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$6K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1000,
+                "wtpPct": 70,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 800,
+                "wtpPct": 60,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 28000,
+                "wtpPct": 30,
+                "priceK": 0.4
+              }
+            }
+          },
+          "area": "infectious_disease.anti_infective.hiv_treatment"
+        }
+      ]
+    },
+    {
+      "id": "tnfi_legacy",
+      "name": "Remicade + Simponi (anti-TNF) — declining post-biosimilars",
+      "stage": "Commercial ($3.4B combined 2025; biosimilar pressure)",
+      "designations": [],
+      "modality": "antibody.cytokine.tnf_blocker",
+      "targets": [
+        "TNF"
+      ],
+      "indications": [
+        {
+          "id": "ra_tnf",
+          "name": "Remicade (infliximab) + Simponi (golimumab) — RA + UC + CD + AS + PsA",
+          "market": {
+            "tamB": 30,
+            "penPct": 28,
+            "salesM": 3400,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "notes": "Anti-TNF mAbs. Remicade (long biosimilar pressure) + Simponi/Aria. Declining ~5%/yr. RA + IBD + AS + PsA across both.",
+            "company_slice": {
+              "us": {
+                "reachPct": 13.7,
+                "wtpPct": 50,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 6.9,
+                "wtpPct": 35,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 1.8,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Remicade+Simponi branded ~3% TNFi class pool (biosim pressure)."
+              },
+              "us.priceK": {
+                "note": "$35K/yr."
+              },
+              "us.wtpPct": {
+                "note": "50%."
+              },
+              "eu.reachPct": {
+                "note": "1.5%."
+              },
+              "eu.wtpPct": {
+                "note": "35%."
+              },
+              "eu.priceK": {
+                "note": "$22K."
+              },
+              "row.reachPct": {
+                "note": "0.4%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$8K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 50,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 35,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 12000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "immunology.inflammatory_systemic.rheumatoid_arthritis"
+        }
+      ]
+    },
+    {
+      "id": "established_misc",
+      "name": "Heritage misc (Zytiga generic + Risperdal Consta + Tracleer + others)",
+      "stage": "Commercial (~$1.2B 2025; mature heritage)",
+      "designations": [],
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "indications": [
+        {
+          "id": "tail",
+          "name": "Heritage tail (Zytiga + Risperdal Consta + Tracleer + small)",
+          "market": {
+            "tamB": 30,
+            "penPct": 0,
+            "salesM": 1200,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Heritage tail: Zytiga (abiraterone, fully generic ~$300M tail), Risperdal Consta (~$300M declining), Tracleer (bosentan ~$100M), Procrit/Eprex (epoetin ~$200M, declining), small alliance + ROW. ~$1.2B. True heterogeneous tail tagged as pseudo-area.",
+            "company_slice": {},
+            "company_slice_sources": {}
+          },
+          "area": "_established_products.jnj_heritage"
+        }
+      ]
+    },
+    {
+      "id": "nipocalimab",
+      "name": "Imaavy (nipocalimab, anti-FcRn) — multi-indication franchise",
+      "stage": "Approved gMG Apr 2025; sBLA wAIHA Feb 2026; multiple Ph3 ongoing",
+      "designations": [
+        "Orphan (US + EU; gMG)"
+      ],
+      "modality": "antibody.fragment.fcrn",
+      "targets": [
+        "FCGRT"
+      ],
+      "indications": [
+        {
+          "id": "mg_nipo",
+          "name": "Generalized myasthenia gravis (Imaavy approved Apr 2025)",
+          "market": {
+            "tamB": 4,
+            "penPct": 40,
+            "salesM": 200,
+            "salesYear": 2025,
+            "peakYear": 2031,
+            "cagrPct": 45,
+            "notes": "Anti-FcRn mAb. Approved gMG Apr 2025 (broad label incl. peds). ~$200M 2025 ramp. Class peer: Vyvgart (Argenx FcRn, dominant), Ultomiris (AZN C5).",
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 55,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 38,
+                "priceK": 150
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Imaavy ~5% MG pool (Vyvgart Argenx dominant)."
+              },
+              "us.priceK": {
+                "note": "$280K/yr."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$150K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$25K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 60,
+                "wtpPct": 65,
+                "priceK": 280
+              },
+              "eu": {
+                "patientsK": 130,
+                "wtpPct": 48,
+                "priceK": 150
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            }
+          },
+          "area": "immunology.neuromuscular_autoimmune.myasthenia_gravis"
+        },
+        {
+          "id": "sle_nipo",
+          "name": "Systemic lupus erythematosus (GARDENIA Ph3)",
+          "market": {
+            "tamB": 8,
+            "penPct": 25,
+            "peakYear": 2031,
+            "cagrPct": 25,
+            "notes": "GARDENIA Ph3 SLE post-positive JASMINE Ph2b. Class peer: Saphnelo (AZN IFN-α), Benlysta (GSK BAFF). Major potential franchise.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 50,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 35,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Nipocalimab SLE ~4% peak (post-Ph3, 2028+ launch)."
+              },
+              "us.priceK": {
+                "note": "$200K/yr."
+              },
+              "us.wtpPct": {
+                "note": "50%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "35%."
+              },
+              "eu.priceK": {
+                "note": "$130K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 300,
+                "wtpPct": 55,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 350,
+                "wtpPct": 38,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 4000,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            }
+          },
+          "area": "immunology.autoimmune.sle"
+        },
+        {
+          "id": "cidp_nipo",
+          "name": "CIDP (chronic inflammatory demyelinating polyneuropathy)",
+          "market": {
+            "tamB": 4,
+            "penPct": 35,
+            "peakYear": 2030,
+            "cagrPct": 30,
+            "notes": "Nipocalimab CIDP Ph3. Class peer: Vyvgart Hytrulo (Argenx, approved Jun 2024), Riliprubart (Sanofi anti-C1s Ph3).",
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 55,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 2.5,
+                "wtpPct": 38,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Nipocalimab CIDP ~5% peak post-Ph3."
+              },
+              "us.priceK": {
+                "note": "$200K/yr."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "2.5%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$130K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            }
+          },
+          "area": "immunology.neuromuscular_autoimmune.cidp"
+        }
+      ]
+    },
+    {
+      "id": "icotrokinra",
+      "name": "Icotrokinra (JNJ-2113) — oral IL-23 peptide",
+      "stage": "Phase 3 ICONIC positive psoriasis; NDA submitted",
+      "designations": [],
+      "modality": "peptide.cytokine.il23_oral",
+      "targets": [
+        "IL23A"
+      ],
+      "indications": [
+        {
+          "id": "pso_icok",
+          "name": "Plaque psoriasis (oral peptide IL-23)",
+          "market": {
+            "tamB": 8,
+            "penPct": 40,
+            "peakYear": 2031,
+            "cagrPct": 30,
+            "notes": "First oral IL-23 peptide. ICONIC Ph3 plaque pso positive. NDA filed; 2026 approval expected. Differentiation: oral convenience vs injectables (Stelara/Tremfya/Skyrizi/Cosentyx).",
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 55,
+                "priceK": 50
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 38,
+                "priceK": 30
+              },
+              "row": {
+                "reachPct": 0.4,
+                "wtpPct": 10,
+                "priceK": 10
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Icotrokinra ~6% PsO pool by peak (oral expansion)."
+              },
+              "us.priceK": {
+                "note": "$50K/yr -- discount to injectable."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "3%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$30K."
+              },
+              "row.reachPct": {
+                "note": "0.4%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$10K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "dermatology.inflammatory_derm.psoriasis_systemic"
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Stelara cliff continues + Tremfya growth slows + Carvykti 1L disappoints + nipocalimab Ph3 misses",
+      "events": [
+        "X Stelara erodes faster than expected (full cliff by 2027)",
+        "X Tremfya CD/UC growth flatlines vs Skyrizi competition",
+        "X Carvykti CARTITUDE-5/6 1L MM disappoints",
+        "X Nipocalimab SLE Ph3 misses",
+        "X Caplyta MDD label expansion delayed",
+        "X Xarelto US LOE Nov 2025 hits as expected",
+        "-> Stock to $190-200 (Pharma cliff preview)"
+      ],
+      "assumptions": {
+        "stelara": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "tremfya": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "cd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "darzalex": {
+          "mm_1l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "mm_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "mm_4l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "carvykti": {
+          "mm_4l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "tecvayli_talvey": {
+          "tecvayli_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "talvey_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "erleada": {
+          "prostate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "imbruvica": {
+          "cll_imbruvica": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "rybrevant": {
+          "nsclc_egfr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "balversa": {
+          "bladder_balv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "neuro_franchise": {
+          "spravato_trd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "invega_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "caplyta_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "concerta_adhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "pah": {
+          "opsumit_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "uptravi_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "xarelto": {
+          "anticoag": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "hiv_franchise": {
+          "symtuza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "edurant_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "tnfi_legacy": {
+          "ra_tnf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "established_misc": {
+          "tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "nipocalimab": {
+          "mg_nipo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "sle_nipo": {
+            "pos": 25,
+            "apr": 30,
+            "pen": 0.4
+          },
+          "cidp_nipo": {
+            "pos": 35,
+            "apr": 40,
+            "pen": 0.4
+          }
+        },
+        "icotrokinra": {
+          "pso_icok": {
+            "pos": 80,
+            "apr": 75,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 12,
+        "pipelineMult": 4,
+        "commercialMult": 4.5,
+        "commercialRevM": 52000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Stelara cliff + steady growth from successors + select pipeline wins",
+      "events": [
+        "~ Stelara erodes to <$2B by 2027",
+        "~ Tremfya hits $9B 2030",
+        "~ Carvykti CARTITUDE-5 1L MM positive",
+        "~ Nipocalimab MG ramp + CIDP positive",
+        "~ Caplyta MDD approved 2026",
+        "~ Icotrokinra approved psoriasis"
+      ],
+      "assumptions": {
+        "stelara": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "tremfya": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "cd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "darzalex": {
+          "mm_1l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mm_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "mm_4l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "carvykti": {
+          "mm_4l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "tecvayli_talvey": {
+          "tecvayli_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "talvey_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "erleada": {
+          "prostate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "imbruvica": {
+          "cll_imbruvica": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "rybrevant": {
+          "nsclc_egfr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "balversa": {
+          "bladder_balv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "neuro_franchise": {
+          "spravato_trd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "invega_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "caplyta_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "concerta_adhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "pah": {
+          "opsumit_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "uptravi_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "xarelto": {
+          "anticoag": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "hiv_franchise": {
+          "symtuza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "edurant_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "tnfi_legacy": {
+          "ra_tnf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "established_misc": {
+          "tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "nipocalimab": {
+          "mg_nipo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "sle_nipo": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.6
+          },
+          "cidp_nipo": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 0.65
+          }
+        },
+        "icotrokinra": {
+          "pso_icok": {
+            "pos": 95,
+            "apr": 92,
+            "pen": 0.7
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 5,
+        "commercialMult": 5.5,
+        "commercialRevM": 58000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Tremfya hits $10B+ + Carvykti 1L positive + Nipocalimab multi-indication + Caplyta franchise",
+      "events": [
+        "V Tremfya $11B+ peak across 4 indications",
+        "V Carvykti CARTITUDE-5/6 1L MM Ph3 positive (transformational)",
+        "V Nipocalimab MG ramp + SLE Ph3 + CIDP all positive",
+        "V Caplyta MDD approved 2026; $3B+ peak",
+        "V Icotrokinra captures meaningful share of oral psoriasis",
+        "V Darzalex maintains share through next decade"
+      ],
+      "assumptions": {
+        "stelara": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "tremfya": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "cd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "darzalex": {
+          "mm_1l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "mm_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "mm_4l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "carvykti": {
+          "mm_4l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "tecvayli_talvey": {
+          "tecvayli_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "talvey_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "erleada": {
+          "prostate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "imbruvica": {
+          "cll_imbruvica": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "rybrevant": {
+          "nsclc_egfr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "balversa": {
+          "bladder_balv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "neuro_franchise": {
+          "spravato_trd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "invega_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "caplyta_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "concerta_adhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "pah": {
+          "opsumit_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "uptravi_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "xarelto": {
+          "anticoag": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "hiv_franchise": {
+          "symtuza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "edurant_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "tnfi_legacy": {
+          "ra_tnf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "established_misc": {
+          "tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "nipocalimab": {
+          "mg_nipo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "sle_nipo": {
+            "pos": 75,
+            "apr": 75,
+            "pen": 0.85
+          },
+          "cidp_nipo": {
+            "pos": 80,
+            "apr": 78,
+            "pen": 0.85
+          }
+        },
+        "icotrokinra": {
+          "pso_icok": {
+            "pos": 99,
+            "apr": 95,
+            "pen": 0.95
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 6,
+        "commercialMult": 7.0,
+        "commercialRevM": 65000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Tremfya $13B+ + Nipocalimab >$5B multi-indication + Carvykti $5B+ + ADCs deliver",
+      "events": [
+        "V Tremfya $13B+ across 4 indications + label expansion",
+        "V Nipocalimab >$5B across MG + SLE + CIDP + Sjögren's + IIM",
+        "V Carvykti 1L MM transformational; $5B+ JNJ-share",
+        "V Tecvayli + Talvey combos $3B+ combined",
+        "V Caplyta MDD + bipolar reaches $5B+",
+        "V Icotrokinra oral IL-23 dominates oral PsO market"
+      ],
+      "assumptions": {
+        "stelara": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "tremfya": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          },
+          "cd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "darzalex": {
+          "mm_1l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          },
+          "mm_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "mm_4l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "carvykti": {
+          "mm_4l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "tecvayli_talvey": {
+          "tecvayli_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "talvey_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "erleada": {
+          "prostate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "imbruvica": {
+          "cll_imbruvica": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "rybrevant": {
+          "nsclc_egfr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "balversa": {
+          "bladder_balv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "neuro_franchise": {
+          "spravato_trd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          },
+          "invega_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "caplyta_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          },
+          "concerta_adhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "pah": {
+          "opsumit_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "uptravi_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "xarelto": {
+          "anticoag": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "hiv_franchise": {
+          "symtuza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "edurant_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "tnfi_legacy": {
+          "ra_tnf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "established_misc": {
+          "tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "nipocalimab": {
+          "mg_nipo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "sle_nipo": {
+            "pos": 90,
+            "apr": 88,
+            "pen": 1.05
+          },
+          "cidp_nipo": {
+            "pos": 92,
+            "apr": 90,
+            "pen": 1.05
+          }
+        },
+        "icotrokinra": {
+          "pso_icok": {
+            "pos": 99,
+            "apr": 98,
+            "pen": 1.15
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 7,
+        "commercialMult": 9.0,
+        "commercialRevM": 75000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Multi-franchise dominance + Tremfya $15B+ + Nipocalimab $8B+ + Carvykti 1L blockbuster + transformative pipeline",
+      "events": [
+        "V Tremfya $15B+ across 4 indications",
+        "V Nipocalimab $8B+ across 5+ indications -- new biggest franchise",
+        "V Carvykti 1L MM transforms space; $8B+ JNJ-share",
+        "V Caplyta franchise reaches $7B across schizo/bipolar/MDD",
+        "V Multiple expansion to peak premium pharma multiples"
+      ],
+      "assumptions": {
+        "stelara": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "tremfya": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.6
+          },
+          "cd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "darzalex": {
+          "mm_1l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          },
+          "mm_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          },
+          "mm_4l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "carvykti": {
+          "mm_4l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.6
+          }
+        },
+        "tecvayli_talvey": {
+          "tecvayli_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "talvey_mm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "erleada": {
+          "prostate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          }
+        },
+        "imbruvica": {
+          "cll_imbruvica": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "rybrevant": {
+          "nsclc_egfr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "balversa": {
+          "bladder_balv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "neuro_franchise": {
+          "spravato_trd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.55
+          },
+          "invega_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "caplyta_schiz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.6
+          },
+          "concerta_adhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "pah": {
+          "opsumit_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          },
+          "uptravi_pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "xarelto": {
+          "anticoag": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "hiv_franchise": {
+          "symtuza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "edurant_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "tnfi_legacy": {
+          "ra_tnf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "established_misc": {
+          "tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "nipocalimab": {
+          "mg_nipo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          },
+          "sle_nipo": {
+            "pos": 96,
+            "apr": 95,
+            "pen": 1.25
+          },
+          "cidp_nipo": {
+            "pos": 98,
+            "apr": 95,
+            "pen": 1.25
+          }
+        },
+        "icotrokinra": {
+          "pso_icok": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.35
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 9,
+        "commercialMult": 12.0,
+        "commercialRevM": 90000,
+        "milestones": 0,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Apr 14, 2026 (Q1 2026) + Jan 2026 (FY2025)",
+      "title": "Pharma-only model. FY2025 IM $60.5B. Q1'26 +11% IM. Stelara cliff vs Tremfya/Darzalex/Caplyta growth.",
+      "points": [
+        "FY2025 Innovative Medicines $60.5B (+6% reported)",
+        "Q1 2026: IM $15.4B (+11.2% op); 2026 guide raised to $100.8B total / EPS $11.55",
+        "Stelara $6.08B (-41.3%) -- biosimilar cliff; Q1'26 -61.7% accelerating",
+        "Tremfya $5.2B (+40.5%); CD approved 2025 -- 4-indication blockbuster trajectory",
+        "Darzalex $14.35B (+23%) -- top oncology asset",
+        "Carvykti $963M JNJ share ($1.9B total franchise w/ LEGN 50/50)",
+        "Caplyta partial-year ~$700M post Intra-Cellular $14.6B Apr 2025 close",
+        "Spravato $1.6B (+50% TRD ramp)",
+        "Imaavy (nipocalimab) approved gMG Apr 2025; multi-indication Ph3 program",
+        "Icotrokinra (oral IL-23 peptide) NDA filed; 2026 PsO approval expected",
+        "Xarelto US LOE Nov 2025 -- 2026 collapse",
+        "Orthopedics spin-off announced 2025 (executes 2026-27); excludes Pharma",
+        "MODEL EXCLUDES MedTech (~$32B) -- Pharma-only valuation"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "H2 2026",
+      "title": "Caplyta MDD approval + Icotrokinra PsO approval + Nipocalimab wAIHA + CARTITUDE 1L readouts",
+      "thresholds": [
+        "H2 2026: Caplyta MDD label expansion sBLA decision",
+        "H2 2026: Icotrokinra (JNJ-2113) PsO approval (NDA filed)",
+        "2026: Nipocalimab wAIHA approval (sBLA Feb 2026)",
+        "2026-27: Carvykti CARTITUDE-5/6 1L MM Ph3 readouts (transformational)",
+        "2026-27: Nipocalimab Sjögren's + CIDP + HDFN readouts",
+        "2027: Nipocalimab GARDENIA SLE Ph3 readout",
+        "2027: Tecvayli/Talvey combo Ph3 readouts (RedirecTT-1)"
+      ]
+    },
+    "risks": [
+      "Stelara biosimilar cliff: $10.4B 2024 -> $6.1B 2025 -> ~$2.5B 2026 -> <$1B 2027 (largest pharma cliff currently)",
+      "Tremfya competitive vs Skyrizi (AbbVie) IL-23 class -- needs to capture full Stelara succession",
+      "Nipocalimab Vyvgart (Argenx) competition in MG/CIDP -- pricing + label scope",
+      "Carvykti 1L expansion (CARTITUDE-5/6) is binary; 4L+ alone limits market",
+      "Tecvayli/Talvey combinations needed to differentiate vs Carvykti + competing bispecifics (REGN linvoseltamab)",
+      "Caplyta acquisition $14.6B -- needs >$5B peak to justify",
+      "Imbruvica competitive losses to Calquence (AZN) + Brukinsa (BeiGene) + pirtobrutinib (LLY) ongoing",
+      "Xarelto Nov 2025 LOE: $2.5B -> ~$0.5B 2027",
+      "Orthopedics spin-off complexity 2026-27",
+      "Talc litigation overhang (~$10B reserve)",
+      "Carvykti revenue allocation: this model uses JNJ-reported $1B (50% economic share); LEGN config has complementary $1B (LEGN's 50% share). Total franchise ~$1.9B reflected across both configs; Market Explorer aggregation correctly captures the combined franchise without double-counting"
+    ]
+  },
+  "catalysts": [
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "icotrokinra",
+      "indication": "pso_icok",
+      "title": "Icotrokinra (JNJ-2113) PsO PDUFA — first oral IL-23 peptide",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 88,
+      "fail_apr": 5,
+      "success_pos": 96,
+      "success_apr": 100,
+      "_confidence": "high",
+      "_rationale": "ICONIC Ph3 positive; NDA filed; standard 10-month review."
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-10-15",
+      "asset": "neuro_franchise",
+      "indication": "caplyta_schiz",
+      "title": "Caplyta MDD label expansion sBLA decision",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 90,
+      "fail_apr": 8,
+      "success_pos": 96,
+      "success_apr": 95,
+      "_confidence": "medium",
+      "_rationale": "Ph3 MDD positive (Intra-Cellular legacy); sBLA review."
+    },
+    {
+      "date": "2026",
+      "dateSort": "2026-12-15",
+      "asset": "nipocalimab",
+      "indication": "mg_nipo",
+      "title": "Nipocalimab wAIHA approval (sBLA Feb 2026)",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 80,
+      "fail_apr": 10,
+      "success_pos": 92,
+      "success_apr": 92,
+      "_confidence": "medium",
+      "_rationale": "ENERGY Ph3 wAIHA positive; sBLA filed Feb 2026."
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-06-30",
+      "asset": "carvykti",
+      "indication": "mm_4l",
+      "title": "Carvykti CARTITUDE-5/-6 1L MM Ph3 readouts (transformational)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 0,
+      "fail_apr": 0,
+      "success_pos": 88,
+      "success_apr": 86,
+      "_confidence": "medium",
+      "_rationale": "1L MM Ph3 transition trials; if positive, transforms BCMA CAR-T from R/R to 1L (massive TAM expansion)."
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-09-30",
+      "asset": "nipocalimab",
+      "indication": "sle_nipo",
+      "title": "Nipocalimab GARDENIA SLE Ph3 readout",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 0,
+      "fail_apr": 0,
+      "success_pos": 86,
+      "success_apr": 84,
+      "_confidence": "medium",
+      "_rationale": "GARDENIA Ph3 SLE post JASMINE Ph2b positive."
+    },
+    {
+      "date": "Nov 2025",
+      "dateSort": "2025-11-15",
+      "asset": "xarelto",
+      "indication": "anticoag",
+      "title": "Xarelto US LOE — generic rivaroxaban launch",
+      "type": "loe",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_confidence": "high",
+      "_rationale": "Composition LOE Nov 2025; generics ramping 2026."
+    }
+  ]
+}

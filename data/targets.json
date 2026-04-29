@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-29T12:27:52Z",
-    "target_count": 208,
-    "total_assets": 344,
-    "assets_with_targets": 321,
-    "multi_modality_count": 17,
-    "multi_disease_count": 80
+    "generated": "2026-04-29T12:49:25Z",
+    "target_count": 212,
+    "total_assets": 361,
+    "assets_with_targets": 335,
+    "multi_modality_count": 19,
+    "multi_disease_count": 83
   },
   "targets": {
     "ACVR1C": {
@@ -723,6 +723,7 @@
     },
     "AR": {
       "companies": [
+        "JNJ",
         "PFE"
       ],
       "modalities": [
@@ -733,6 +734,15 @@
       ],
       "assets": [
         {
+          "ticker": "JNJ",
+          "asset": "erleada",
+          "name": "Erleada (apalutamide, AR antagonist) — prostate",
+          "modality": "small_molecule.nuclear_receptor.androgen_antagonist",
+          "areas": [
+            "oncology.genitourinary.prostate"
+          ]
+        },
+        {
           "ticker": "PFE",
           "asset": "xtandi",
           "name": "Xtandi (enzalutamide, AR antagonist) — w/ Astellas alliance",
@@ -742,7 +752,7 @@
           ]
         }
       ],
-      "assetCount": 1,
+      "assetCount": 2,
       "modalityCount": 1,
       "modalityClassCount": 1,
       "areaCount": 1,
@@ -750,10 +760,10 @@
         "small_molecule"
       ],
       "totalTAM": 10444.0,
-      "totalSOM": 3198.0,
-      "totalSales": 2300.0,
-      "cagrPct": 0.0,
-      "peakYear": 2026
+      "totalSOM": 8291.6,
+      "totalSales": 5700.0,
+      "cagrPct": 4.9,
+      "peakYear": 2028
     },
     "ATP2C1": {
       "companies": [
@@ -956,6 +966,7 @@
       "companies": [
         "ABBV",
         "AZN",
+        "JNJ",
         "MRK",
         "ONC",
         "SNY"
@@ -997,6 +1008,15 @@
           "areas": [
             "oncology.hematology.cll",
             "oncology.hematology.nhl.mcl"
+          ]
+        },
+        {
+          "ticker": "JNJ",
+          "asset": "imbruvica",
+          "name": "Imbruvica (ibrutinib, BTK) — w/ AbbVie 50/50",
+          "modality": "small_molecule.kinase_inhibitor.btk_covalent",
+          "areas": [
+            "oncology.hematology.cll"
           ]
         },
         {
@@ -1048,7 +1068,7 @@
           ]
         }
       ],
-      "assetCount": 7,
+      "assetCount": 8,
       "modalityCount": 4,
       "modalityClassCount": 1,
       "areaCount": 7,
@@ -1056,9 +1076,9 @@
         "small_molecule"
       ],
       "totalTAM": 48135.9,
-      "totalSOM": 24275.9,
-      "totalSales": 10080.0,
-      "cagrPct": 4.6,
+      "totalSOM": 28472.2,
+      "totalSales": 12880.0,
+      "cagrPct": 3.9,
       "peakYear": 2029
     },
     "C1S": {
@@ -1607,6 +1627,7 @@
     },
     "CD3": {
       "companies": [
+        "JNJ",
         "REGN",
         "SNY"
       ],
@@ -1621,6 +1642,15 @@
         "oncology.hematology.nhl.fl"
       ],
       "assets": [
+        {
+          "ticker": "JNJ",
+          "asset": "tecvayli_talvey",
+          "name": "Tecvayli (BCMA bispecific) + Talvey (GPRC5D bispecific) — myeloma",
+          "modality": "antibody.bispecific.bcma_cd3",
+          "areas": [
+            "oncology.hematology.myeloma.4l_plus"
+          ]
+        },
         {
           "ticker": "REGN",
           "asset": "linvoseltamab",
@@ -1649,7 +1679,7 @@
           ]
         }
       ],
-      "assetCount": 3,
+      "assetCount": 4,
       "modalityCount": 3,
       "modalityClassCount": 1,
       "areaCount": 3,
@@ -1657,22 +1687,36 @@
         "antibody"
       ],
       "totalTAM": 19444.6,
-      "totalSOM": 4449.5,
-      "totalSales": 380.0,
-      "cagrPct": 25.1,
+      "totalSOM": 5911.1,
+      "totalSales": 1354.0,
+      "cagrPct": 26.1,
       "peakYear": 2031
     },
     "CD38": {
       "companies": [
+        "JNJ",
         "SNY"
       ],
       "modalities": [
         "antibody.checkpoint.cd38"
       ],
       "areas": [
-        "oncology.hematology.myeloma.2l_3l"
+        "oncology.hematology.myeloma.1l",
+        "oncology.hematology.myeloma.2l_3l",
+        "oncology.hematology.myeloma.4l_plus"
       ],
       "assets": [
+        {
+          "ticker": "JNJ",
+          "asset": "darzalex",
+          "name": "Darzalex (daratumumab, anti-CD38) — myeloma",
+          "modality": "antibody.checkpoint.cd38",
+          "areas": [
+            "oncology.hematology.myeloma.1l",
+            "oncology.hematology.myeloma.2l_3l",
+            "oncology.hematology.myeloma.4l_plus"
+          ]
+        },
         {
           "ticker": "SNY",
           "asset": "sarclisa",
@@ -1683,18 +1727,18 @@
           ]
         }
       ],
-      "assetCount": 1,
+      "assetCount": 2,
       "modalityCount": 1,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 3,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 7098.0,
-      "totalSOM": 899.8,
-      "totalSales": 600.0,
-      "cagrPct": 18.0,
-      "peakYear": 2030
+      "totalTAM": 19846.0,
+      "totalSOM": 14156.5,
+      "totalSales": 14950.0,
+      "cagrPct": 6.6,
+      "peakYear": 2029
     },
     "CD3E": {
       "companies": [
@@ -2755,16 +2799,28 @@
     },
     "EDNRA": {
       "companies": [
+        "JNJ",
         "TVTX"
       ],
       "modalities": [
+        "small_molecule.gpcr.era_ip_combined",
         "small_molecule.gpcr.eta_at1_antagonist"
       ],
       "areas": [
+        "cardio_metabolic.cardiopulmonary.pah",
         "immunology.autoimmune.fsgs",
         "immunology.autoimmune.iga_nephropathy"
       ],
       "assets": [
+        {
+          "ticker": "JNJ",
+          "asset": "pah",
+          "name": "Opsumit (macitentan) + Uptravi (selexipag) — PAH",
+          "modality": "small_molecule.gpcr.era_ip_combined",
+          "areas": [
+            "cardio_metabolic.cardiopulmonary.pah"
+          ]
+        },
         {
           "ticker": "TVTX",
           "asset": "filspari_igan",
@@ -2784,25 +2840,27 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 1,
+      "assetCount": 3,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 9160.5,
-      "totalSOM": 998.2,
-      "totalSales": 400.0,
-      "cagrPct": 0.0,
-      "peakYear": 2031
+      "totalTAM": 15085.5,
+      "totalSOM": 7043.3,
+      "totalSales": 4430.0,
+      "cagrPct": 3.7,
+      "peakYear": 2030
     },
     "EGFR": {
       "companies": [
         "AZN",
-        "JANX"
+        "JANX",
+        "JNJ"
       ],
       "modalities": [
+        "antibody.bispecific.egfr_met",
         "antibody.bispecific.tumor_activated_tce",
         "small_molecule.kinase_inhibitor.egfr_tki"
       ],
@@ -2828,10 +2886,19 @@
           "areas": [
             "oncology.gi.colorectal"
           ]
+        },
+        {
+          "ticker": "JNJ",
+          "asset": "rybrevant",
+          "name": "Rybrevant (amivantamab) + Lazcluze (lazertinib) — NSCLC EGFR",
+          "modality": "antibody.bispecific.egfr_met",
+          "areas": [
+            "oncology.lung.nsclc_driver.egfr"
+          ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 2,
       "areaCount": 2,
       "modalityClasses": [
@@ -2839,9 +2906,9 @@
         "small_molecule"
       ],
       "totalTAM": 23730.7,
-      "totalSOM": 17595.7,
-      "totalSales": 7254.0,
-      "cagrPct": 6.0,
+      "totalSOM": 18646.3,
+      "totalSales": 7954.0,
+      "cagrPct": 7.3,
       "peakYear": 2030
     },
     "EPHA2": {
@@ -3041,6 +3108,7 @@
     "F10": {
       "companies": [
         "4568",
+        "JNJ",
         "NOVO",
         "PFE",
         "SNY"
@@ -3061,6 +3129,15 @@
           "asset": "japan_legacy",
           "name": "Japan pharma + other pipeline",
           "modality": "small_molecule.enzyme_inhibitor.factor_xa",
+          "areas": [
+            "cardio_metabolic.thrombosis.anticoagulation"
+          ]
+        },
+        {
+          "ticker": "JNJ",
+          "asset": "xarelto",
+          "name": "Xarelto (rivaroxaban, anti-Xa) — w/ Bayer; US LOE Nov 2025",
+          "modality": "small_molecule.coagulation.factor_xa_inhibitor",
           "areas": [
             "cardio_metabolic.thrombosis.anticoagulation"
           ]
@@ -3093,7 +3170,7 @@
           ]
         }
       ],
-      "assetCount": 4,
+      "assetCount": 5,
       "modalityCount": 4,
       "modalityClassCount": 2,
       "areaCount": 2,
@@ -3102,8 +3179,8 @@
         "small_molecule"
       ],
       "totalTAM": 34350.0,
-      "totalSOM": 18210.7,
-      "totalSales": 9694.0,
+      "totalSOM": 21965.4,
+      "totalSales": 12194.0,
       "cagrPct": 0.0,
       "peakYear": 2027
     },
@@ -3248,6 +3325,7 @@
     "FCGRT": {
       "companies": [
         "ARGX",
+        "JNJ",
         "VRDN"
       ],
       "modalities": [
@@ -3256,6 +3334,7 @@
       ],
       "areas": [
         "immunology.autoimmune.sjogrens",
+        "immunology.autoimmune.sle",
         "immunology.neuromuscular_autoimmune.cidp",
         "immunology.neuromuscular_autoimmune.itp",
         "immunology.neuromuscular_autoimmune.myasthenia_gravis",
@@ -3301,6 +3380,17 @@
           ]
         },
         {
+          "ticker": "JNJ",
+          "asset": "nipocalimab",
+          "name": "Imaavy (nipocalimab, anti-FcRn) — multi-indication franchise",
+          "modality": "antibody.fragment.fcrn",
+          "areas": [
+            "immunology.autoimmune.sle",
+            "immunology.neuromuscular_autoimmune.cidp",
+            "immunology.neuromuscular_autoimmune.myasthenia_gravis"
+          ]
+        },
+        {
           "ticker": "VRDN",
           "asset": "veli",
           "name": "Veligrotug (IV)",
@@ -3319,33 +3409,45 @@
           ]
         }
       ],
-      "assetCount": 6,
+      "assetCount": 7,
       "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 6,
+      "areaCount": 7,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 59228.0,
-      "totalSOM": 21043.2,
-      "totalSales": 4200.0,
-      "cagrPct": 4.9,
+      "totalTAM": 71579.0,
+      "totalSOM": 23448.2,
+      "totalSales": 4400.0,
+      "cagrPct": 7.5,
       "peakYear": 2033
     },
     "FGFR1": {
       "companies": [
+        "JNJ",
         "MRK"
       ],
       "modalities": [
+        "small_molecule.kinase_inhibitor.fgfr",
         "small_molecule.kinase_inhibitor.multi_tki"
       ],
       "areas": [
         "oncology.endocrine.thyroid_cancer",
+        "oncology.genitourinary.bladder",
         "oncology.genitourinary.rcc",
         "oncology.gi.hcc",
         "oncology.gynecologic.ovarian"
       ],
       "assets": [
+        {
+          "ticker": "JNJ",
+          "asset": "balversa",
+          "name": "Balversa (erdafitinib, FGFR) — bladder",
+          "modality": "small_molecule.kinase_inhibitor.fgfr",
+          "areas": [
+            "oncology.genitourinary.bladder"
+          ]
+        },
         {
           "ticker": "MRK",
           "asset": "lenvima",
@@ -3359,37 +3461,37 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 4,
+      "areaCount": 5,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 19450.2,
-      "totalSOM": 1574.1,
-      "totalSales": 1050.0,
+      "totalTAM": 24032.8,
+      "totalSOM": 1873.3,
+      "totalSales": 1250.0,
       "cagrPct": 0.0,
       "peakYear": 2027
     },
-    "FGFR3": {
+    "FGFR2": {
       "companies": [
-        "BBIO"
+        "JNJ"
       ],
       "modalities": [
-        "small_molecule.kinase_inhibitor.fgfr3"
+        "small_molecule.kinase_inhibitor.fgfr"
       ],
       "areas": [
-        "musculoskeletal.bone_cartilage.achondroplasia"
+        "oncology.genitourinary.bladder"
       ],
       "assets": [
         {
-          "ticker": "BBIO",
-          "asset": "infig",
-          "name": "Infigratinib — achondroplasia",
-          "modality": "small_molecule.kinase_inhibitor.fgfr3",
+          "ticker": "JNJ",
+          "asset": "balversa",
+          "name": "Balversa (erdafitinib, FGFR) — bladder",
+          "modality": "small_molecule.kinase_inhibitor.fgfr",
           "areas": [
-            "musculoskeletal.bone_cartilage.achondroplasia"
+            "oncology.genitourinary.bladder"
           ]
         }
       ],
@@ -3400,11 +3502,57 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 3926.0,
-      "totalSOM": 665.6,
-      "totalSales": 0.0,
+      "totalTAM": 4582.5,
+      "totalSOM": 299.3,
+      "totalSales": 200.0,
       "cagrPct": 0.0,
-      "peakYear": 2032
+      "peakYear": 2028
+    },
+    "FGFR3": {
+      "companies": [
+        "BBIO",
+        "JNJ"
+      ],
+      "modalities": [
+        "small_molecule.kinase_inhibitor.fgfr",
+        "small_molecule.kinase_inhibitor.fgfr3"
+      ],
+      "areas": [
+        "musculoskeletal.bone_cartilage.achondroplasia",
+        "oncology.genitourinary.bladder"
+      ],
+      "assets": [
+        {
+          "ticker": "BBIO",
+          "asset": "infig",
+          "name": "Infigratinib — achondroplasia",
+          "modality": "small_molecule.kinase_inhibitor.fgfr3",
+          "areas": [
+            "musculoskeletal.bone_cartilage.achondroplasia"
+          ]
+        },
+        {
+          "ticker": "JNJ",
+          "asset": "balversa",
+          "name": "Balversa (erdafitinib, FGFR) — bladder",
+          "modality": "small_molecule.kinase_inhibitor.fgfr",
+          "areas": [
+            "oncology.genitourinary.bladder"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 8508.5,
+      "totalSOM": 964.9,
+      "totalSales": 200.0,
+      "cagrPct": 0.0,
+      "peakYear": 2031
     },
     "FKRP": {
       "companies": [
@@ -3838,6 +3986,40 @@
       "totalSales": 72970.0,
       "cagrPct": 1.2,
       "peakYear": 2032
+    },
+    "GPRC5D": {
+      "companies": [
+        "JNJ"
+      ],
+      "modalities": [
+        "antibody.bispecific.bcma_cd3"
+      ],
+      "areas": [
+        "oncology.hematology.myeloma.4l_plus"
+      ],
+      "assets": [
+        {
+          "ticker": "JNJ",
+          "asset": "tecvayli_talvey",
+          "name": "Tecvayli (BCMA bispecific) + Talvey (GPRC5D bispecific) — myeloma",
+          "modality": "antibody.bispecific.bcma_cd3",
+          "areas": [
+            "oncology.hematology.myeloma.4l_plus"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 3961.6,
+      "totalSOM": 1461.6,
+      "totalSales": 974.0,
+      "cagrPct": 29.4,
+      "peakYear": 2030
     },
     "GR": {
       "companies": [
@@ -4376,7 +4558,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -4563,6 +4745,40 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2035
+    },
+    "IL12B": {
+      "companies": [
+        "JNJ"
+      ],
+      "modalities": [
+        "antibody.cytokine.il12_23_blocker"
+      ],
+      "areas": [
+        "dermatology.inflammatory_derm.psoriasis_systemic"
+      ],
+      "assets": [
+        {
+          "ticker": "JNJ",
+          "asset": "stelara",
+          "name": "Stelara (ustekinumab, IL-12/23) — biosimilar cliff",
+          "modality": "antibody.cytokine.il12_23_blocker",
+          "areas": [
+            "dermatology.inflammatory_derm.psoriasis_systemic"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 30900.0,
+      "totalSOM": 7224.0,
+      "totalSales": 6080.0,
+      "cagrPct": 0.0,
+      "peakYear": 2024
     },
     "IL13": {
       "companies": [
@@ -4780,14 +4996,20 @@
     },
     "IL23A": {
       "companies": [
-        "ABBV"
+        "ABBV",
+        "JNJ"
       ],
       "modalities": [
-        "antibody.monoclonal.anti_il23"
+        "antibody.cytokine.il12_23_blocker",
+        "antibody.cytokine.il23_blocker",
+        "antibody.monoclonal.anti_il23",
+        "peptide.cytokine.il23_oral"
       ],
       "areas": [
         "dermatology.inflammatory_derm.psoriasis_systemic",
-        "immunology.inflammatory_gi.crohns"
+        "immunology.inflammatory_gi.crohns",
+        "immunology.inflammatory_gi.ulcerative_colitis",
+        "immunology.inflammatory_systemic.psoriatic_arthritis"
       ],
       "assets": [
         {
@@ -4799,20 +5021,51 @@
             "dermatology.inflammatory_derm.psoriasis_systemic",
             "immunology.inflammatory_gi.crohns"
           ]
+        },
+        {
+          "ticker": "JNJ",
+          "asset": "stelara",
+          "name": "Stelara (ustekinumab, IL-12/23) — biosimilar cliff",
+          "modality": "antibody.cytokine.il12_23_blocker",
+          "areas": [
+            "dermatology.inflammatory_derm.psoriasis_systemic"
+          ]
+        },
+        {
+          "ticker": "JNJ",
+          "asset": "tremfya",
+          "name": "Tremfya (guselkumab, IL-23) — Stelara successor",
+          "modality": "antibody.cytokine.il23_blocker",
+          "areas": [
+            "dermatology.inflammatory_derm.psoriasis_systemic",
+            "immunology.inflammatory_gi.crohns",
+            "immunology.inflammatory_gi.ulcerative_colitis",
+            "immunology.inflammatory_systemic.psoriatic_arthritis"
+          ]
+        },
+        {
+          "ticker": "JNJ",
+          "asset": "icotrokinra",
+          "name": "Icotrokinra (JNJ-2113) — oral IL-23 peptide",
+          "modality": "peptide.cytokine.il23_oral",
+          "areas": [
+            "dermatology.inflammatory_derm.psoriasis_systemic"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 2,
+      "assetCount": 4,
+      "modalityCount": 4,
+      "modalityClassCount": 2,
+      "areaCount": 4,
       "modalityClasses": [
-        "antibody"
+        "antibody",
+        "peptide"
       ],
-      "totalTAM": 51775.0,
-      "totalSOM": 12851.8,
-      "totalSales": 8800.0,
-      "cagrPct": 0.0,
-      "peakYear": 2033
+      "totalTAM": 134875.0,
+      "totalSOM": 43773.6,
+      "totalSales": 20080.0,
+      "cagrPct": 11.3,
+      "peakYear": 2030
     },
     "IL33": {
       "companies": [
@@ -5667,7 +5920,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -6021,13 +6274,16 @@
     },
     "MET": {
       "companies": [
-        "ABBV"
+        "ABBV",
+        "JNJ"
       ],
       "modalities": [
-        "adc.dxd_linker.cmet_adc"
+        "adc.dxd_linker.cmet_adc",
+        "antibody.bispecific.egfr_met"
       ],
       "areas": [
-        "oncology.lung.nsclc_driver.cmet"
+        "oncology.lung.nsclc_driver.cmet",
+        "oncology.lung.nsclc_driver.egfr"
       ],
       "assets": [
         {
@@ -6038,20 +6294,30 @@
           "areas": [
             "oncology.lung.nsclc_driver.cmet"
           ]
+        },
+        {
+          "ticker": "JNJ",
+          "asset": "rybrevant",
+          "name": "Rybrevant (amivantamab) + Lazcluze (lazertinib) — NSCLC EGFR",
+          "modality": "antibody.bispecific.egfr_met",
+          "areas": [
+            "oncology.lung.nsclc_driver.egfr"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
+      "areaCount": 2,
       "modalityClasses": [
-        "adc"
+        "adc",
+        "antibody"
       ],
-      "totalTAM": 630.0,
-      "totalSOM": 73.6,
-      "totalSales": 0.0,
-      "cagrPct": 0.0,
-      "peakYear": 2033
+      "totalTAM": 17990.0,
+      "totalSOM": 1124.2,
+      "totalSales": 700.0,
+      "cagrPct": 28.0,
+      "peakYear": 2032
     },
     "MMP14": {
       "companies": [
@@ -6285,7 +6551,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -6426,7 +6692,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -7182,6 +7448,40 @@
       "totalSales": 0.0,
       "cagrPct": 1.4,
       "peakYear": 2033
+    },
+    "PTGIR": {
+      "companies": [
+        "JNJ"
+      ],
+      "modalities": [
+        "small_molecule.gpcr.era_ip_combined"
+      ],
+      "areas": [
+        "cardio_metabolic.cardiopulmonary.pah"
+      ],
+      "assets": [
+        {
+          "ticker": "JNJ",
+          "asset": "pah",
+          "name": "Opsumit (macitentan) + Uptravi (selexipag) — PAH",
+          "modality": "small_molecule.gpcr.era_ip_combined",
+          "areas": [
+            "cardio_metabolic.cardiopulmonary.pah"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 5925.0,
+      "totalSOM": 6045.1,
+      "totalSales": 4030.0,
+      "cagrPct": 4.3,
+      "peakYear": 2030
     },
     "RAMP1": {
       "companies": [
@@ -8414,10 +8714,12 @@
     "TNF": {
       "companies": [
         "ABBV",
+        "JNJ",
         "OCS",
         "UCB"
       ],
       "modalities": [
+        "antibody.cytokine.tnf_blocker",
         "antibody.fragment.anti_tnf_topical",
         "antibody.monoclonal.anti_tnf"
       ],
@@ -8440,6 +8742,15 @@
           ]
         },
         {
+          "ticker": "JNJ",
+          "asset": "tnfi_legacy",
+          "name": "Remicade + Simponi (anti-TNF) — declining post-biosimilars",
+          "modality": "antibody.cytokine.tnf_blocker",
+          "areas": [
+            "immunology.inflammatory_systemic.rheumatoid_arthritis"
+          ]
+        },
+        {
           "ticker": "OCS",
           "asset": "licam",
           "name": "OCS-02 Licaminlimab — topical anti-TNFα (DED)",
@@ -8458,22 +8769,23 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 2,
+      "assetCount": 4,
+      "modalityCount": 3,
       "modalityClassCount": 1,
       "areaCount": 4,
       "modalityClasses": [
         "antibody"
       ],
       "totalTAM": 88575.0,
-      "totalSOM": 10119.7,
-      "totalSales": 6800.0,
+      "totalSOM": 15217.0,
+      "totalSales": 10200.0,
       "cagrPct": 0.0,
-      "peakYear": 2033
+      "peakYear": 2030
     },
     "TNFRSF17": {
       "companies": [
         "GILD",
+        "JNJ",
         "LEGN",
         "REGN"
       ],
@@ -8493,6 +8805,24 @@
           "asset": "anito_cel",
           "name": "Anito-cel â€” CAR-T (multiple myeloma)",
           "modality": "cell_therapy.car_t_autologous.bcma_car_t",
+          "areas": [
+            "oncology.hematology.myeloma.4l_plus"
+          ]
+        },
+        {
+          "ticker": "JNJ",
+          "asset": "carvykti",
+          "name": "Carvykti (cilta-cel, BCMA CAR-T) — w/ Legend 50/50",
+          "modality": "cell_therapy.car_t_autologous.bcma_car_t",
+          "areas": [
+            "oncology.hematology.myeloma.4l_plus"
+          ]
+        },
+        {
+          "ticker": "JNJ",
+          "asset": "tecvayli_talvey",
+          "name": "Tecvayli (BCMA bispecific) + Talvey (GPRC5D bispecific) — myeloma",
+          "modality": "antibody.bispecific.bcma_cd3",
           "areas": [
             "oncology.hematology.myeloma.4l_plus"
           ]
@@ -8534,7 +8864,7 @@
           ]
         }
       ],
-      "assetCount": 5,
+      "assetCount": 7,
       "modalityCount": 3,
       "modalityClassCount": 2,
       "areaCount": 3,
@@ -8543,10 +8873,10 @@
         "cell_therapy"
       ],
       "totalTAM": 19846.0,
-      "totalSOM": 4059.0,
-      "totalSales": 1110.0,
-      "cagrPct": 0.6,
-      "peakYear": 2033
+      "totalSOM": 7021.0,
+      "totalSales": 3084.0,
+      "cagrPct": 12.8,
+      "peakYear": 2032
     },
     "TNFRSF8": {
       "companies": [

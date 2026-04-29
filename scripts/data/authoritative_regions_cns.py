@@ -147,6 +147,16 @@ REGIONS = {
         "eu":  {"patientsK": 2500,  "wtpPct": 30, "priceK": 1.5},
         "row": {"patientsK": 75000, "wtpPct": 10, "priceK": 0.5},
     },
+    # Bipolar disorder (BPD I + II): manic/hypomanic + depressive episodes.
+    # ~6M US prevalence (~2.8% adult lifetime), ~10M EU, ~50M ROW. Class:
+    # atypical antipsychotics (Abilify Maintena, Vraylar, Latuda, Caplyta
+    # bipolar depression label 2021), lithium legacy, anticonvulsants.
+    # Class peak ~$8-10B globally. source: NIMH; J&J + AbbVie + Allergan/Lundbeck 10-Ks.
+    "cns.psychiatry.bipolar": {
+        "us":  {"patientsK": 6000,  "wtpPct": 40, "priceK": 12},
+        "eu":  {"patientsK": 10000, "wtpPct": 28, "priceK": 7},
+        "row": {"patientsK": 50000, "wtpPct": 8,  "priceK": 2},
+    },
     "cns.psychiatry.depression": {
         "us":  {"patientsK": 8000,   "wtpPct": 80, "priceK": 1.5},
         "eu":  {"patientsK": 12000,  "wtpPct": 65, "priceK": 0.7},
@@ -231,6 +241,7 @@ PEN_PCT = {
     "cns.psychiatry.anxiety": 70,
     "cns.psychiatry.asd": 10,
     "cns.psychiatry.depression": 60,
+    "cns.psychiatry.bipolar": 30,
     "cns.psychiatry.opioid_dependence": 25,
     "cns.psychiatry.pain_fibromyalgia": 30,
     "cns.psychiatry.schizophrenia": 60,

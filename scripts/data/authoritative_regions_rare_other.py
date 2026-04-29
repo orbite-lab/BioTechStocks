@@ -161,18 +161,21 @@ REGIONS = {
     # + ~10M adult Tdap booster annually; EU 4M peds + 12M adult; ROW 100M
     # peds. Class ~$1B globally. WHO EPI growing.
     "infectious_disease.vaccines.pertussis": {
-        "us":  {"patientsK": 14000,   "wtpPct": 50, "priceK": 0.06},
-        "eu":  {"patientsK": 18000,   "wtpPct": 38, "priceK": 0.04},
-        "row": {"patientsK": 110000,  "wtpPct": 12, "priceK": 0.015},
+        # Class bumped to ~$2B globally (Sanofi DTP + GSK Boostrix + peds combos).
+        "us":  {"patientsK": 14000,   "wtpPct": 60, "priceK": 0.10},
+        "eu":  {"patientsK": 18000,   "wtpPct": 45, "priceK": 0.07},
+        "row": {"patientsK": 110000,  "wtpPct": 18, "priceK": 0.025},
     },
     # Meningococcal vaccines: Menactra/Menquadfi (Sanofi MenACWY ~$700M),
     # Bexsero/Trumenba (GSK/Pfizer MenB), Penbraya (Pfizer pentavalent).
     # ACIP recommends adolescent (11-12 + booster 16) + at-risk adult. US ~10M
     # adolescent annual + ~5M adult; EU ~15M; ROW ~50M. Class peak ~$2.5B.
     "infectious_disease.vaccines.meningococcal": {
-        "us":  {"patientsK": 15000,  "wtpPct": 50, "priceK": 0.13},
-        "eu":  {"patientsK": 15000,  "wtpPct": 35, "priceK": 0.08},
-        "row": {"patientsK": 50000,  "wtpPct": 12, "priceK": 0.03},
+        # Class peak bumped to $3-3.5B globally to fit actual GSK Bexsero/
+        # Menveo/Penmenvy + Pfizer Trumenba + Sanofi MenQuadfi market.
+        "us":  {"patientsK": 15000,  "wtpPct": 65, "priceK": 0.20},
+        "eu":  {"patientsK": 15000,  "wtpPct": 50, "priceK": 0.13},
+        "row": {"patientsK": 50000,  "wtpPct": 18, "priceK": 0.05},
     },
     # IPV (inactivated polio) + Hib (Haemophilus influenzae b) peds vaccines:
     # Sanofi IPV + Hib portfolio (Pentacel, IPOL, ActHIB), GSK Pediarix.
@@ -629,6 +632,26 @@ REGIONS = {
         "eu":  {"patientsK": 7,    "wtpPct": 60, "priceK": 230},
         "row": {"patientsK": 25,   "wtpPct": 18, "priceK": 80},
     },
+    # Herpes zoster (shingles) vaccine: adult >=50 ACIP-recommended.
+    # US ~120M eligible (lifetime coverage ~50-60%), EU 200M, ROW 800M.
+    # Class: Shingrix (GSK adjuvanted recombinant gE ~$4.5B globally),
+    # Zostavax (Merck live attenuated, discontinued 2020). Net branded
+    # ~$0.4/dose blended (2-dose series). Class peak $5-6B at full coverage.
+    "infectious_disease.vaccines.zoster": {
+        "us":  {"patientsK": 120000, "wtpPct": 60, "priceK": 0.40},
+        "eu":  {"patientsK": 200000, "wtpPct": 45, "priceK": 0.30},
+        "row": {"patientsK": 800000, "wtpPct": 12, "priceK": 0.10},
+    },
+    # Refractory chronic cough (RCC): unexplained or cough refractory to
+    # treatment, >8 weeks duration. ~10M US affected, ~14M EU, ~50M ROW.
+    # No approved therapies (FDA rejected gefapixant/Lyfnua Merck 2024).
+    # Branded class emerging: Camlipixant (GSK P2X3 antagonist Ph3 CALM-1/2).
+    # Net branded peak ~$3K/yr.
+    "respiratory.inflammatory.cough_chronic": {
+        "us":  {"patientsK": 10000, "wtpPct": 35, "priceK": 3},
+        "eu":  {"patientsK": 14000, "wtpPct": 25, "priceK": 1.8},
+        "row": {"patientsK": 50000, "wtpPct": 8,  "priceK": 0.5},
+    },
 }
 
 PEN_PCT = {
@@ -700,4 +723,6 @@ PEN_PCT = {
     "nephrology.glomerular.adpkd": 28,
     "nephrology.glomerular.amkd": 25,
     "cns.neurodegeneration.friedreich": 50,
+    "infectious_disease.vaccines.zoster": 35,
+    "respiratory.inflammatory.cough_chronic": 25,
 }

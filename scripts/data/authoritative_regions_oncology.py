@@ -94,6 +94,16 @@ REGIONS = {
         "eu":  {"patientsK": 50, "wtpPct": 50, "priceK": 72},
         "row": {"patientsK": 90, "wtpPct": 16, "priceK": 25},
     },
+    # Endometrial cancer: ~67K US new cases/yr, ~50K prevalent on biologic
+    # tx (advanced/recurrent dMMR + pMMR). EU 80K, ROW 250K. Class:
+    # Jemperli (GSK dostarlimab anti-PD-1 dMMR + RUBY pMMR ~$700M),
+    # Keytruda (Merck KEYNOTE-868 pMMR), Lenvima/Keytruda combo (Eisai/
+    # Merck KEYNOTE-775 pMMR pre-PD-1). Net branded ~$170K/yr.
+    "oncology.gynecologic.endometrial": {
+        "us":  {"patientsK": 50,  "wtpPct": 70, "priceK": 170},
+        "eu":  {"patientsK": 80,  "wtpPct": 50, "priceK": 100},
+        "row": {"patientsK": 250, "wtpPct": 14, "priceK": 35},
+    },
 
     # ------------------------------------------------------------
     # HEMATOLOGY
@@ -524,6 +534,7 @@ PEN_PCT = {
     "oncology.gi.hcc": 45,
     "oncology.gi.pancreatic": 40,
     "oncology.gynecologic.ovarian": 52,
+    "oncology.gynecologic.endometrial": 60,
     "oncology.hematology.aml": 48,
     "oncology.hematology.cll": 65,
     "oncology.hematology.nhl": 35,

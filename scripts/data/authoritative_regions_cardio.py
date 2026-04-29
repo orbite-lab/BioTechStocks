@@ -144,9 +144,12 @@ REGIONS = {
     # Total US branded HTN ~$1.5B, declining. Class peak ~$3B globally with
     # biosimilar/branded combo erosion. Distinct from agt_knockdown niche.
     "cardio_metabolic.hypertension.outpatient_generic": {
-        "us":  {"patientsK": 80000,  "wtpPct": 12, "priceK": 0.05},
-        "eu":  {"patientsK": 100000, "wtpPct": 10, "priceK": 0.03},
-        "row": {"patientsK": 500000, "wtpPct": 5,  "priceK": 0.01},
+        # Bumped to reflect branded ARB / ARB-CCB FDC / aliskiren residuals:
+        # Diovan/Exforge (Novartis ~$1.3B), Benicar/Edarbi/Atacand/Avapro
+        # tail brands. Generic-eroded but ~$5B class globally.
+        "us":  {"patientsK": 80000,  "wtpPct": 12, "priceK": 0.30},
+        "eu":  {"patientsK": 100000, "wtpPct": 10, "priceK": 0.20},
+        "row": {"patientsK": 500000, "wtpPct": 5,  "priceK": 0.05},
     },
     # Resistant hypertension (3+ antihypertensives w/ uncontrolled BP):
     # ~5M US per ACC criteria. Distinct from agt_knockdown niche (zilebesiran
@@ -313,6 +316,16 @@ REGIONS = {
         "eu":  {"patientsK": 10,    "wtpPct": 65, "priceK": 45},
         "row": {"patientsK": 15,    "wtpPct": 35, "priceK": 20},
     },
+    # Cushing's disease (pituitary ACTH-secreting adenoma): ~3K US prevalent
+    # surgically-refractory, ~4K EU5, ~10K ROW. Class: Signifor (pasireotide
+    # Novartis SOM agonist ~$50M), Isturisa (osilodrostat Recordati 11-beta-
+    # hydroxylase inhibitor ~$200M), Korlym (mifepristone Corcept ~$500M),
+    # Mifepristone Recorlev (Xeris ~$50M). Class globally ~$0.8B branded.
+    "endocrine.pituitary.cushings": {
+        "us":  {"patientsK": 3,     "wtpPct": 70, "priceK": 110},
+        "eu":  {"patientsK": 4,     "wtpPct": 55, "priceK": 65},
+        "row": {"patientsK": 10,    "wtpPct": 18, "priceK": 25},
+    },
 
     # ==================== ENDOCRINE: THYROID ====================
     # source: US Graves' disease prevalence ~150K (NIDDK); EU5 ~200K; ROW ~1M.
@@ -440,6 +453,7 @@ PEN_PCT = {
     "endocrine.adrenal.cah": 35,
     "endocrine.calcium.adh1": 25,
     "endocrine.pituitary.acromegaly": 20,
+    "endocrine.pituitary.cushings": 35,
     "endocrine.thyroid.graves": 15,
     "cardio_metabolic.lipids.hofh": 35,
     "endocrine.pituitary.gh_deficiency": 35,

@@ -385,6 +385,16 @@ REGIONS = {
         "eu":  {"patientsK": 6,   "wtpPct": 60, "priceK": 85},
         "row": {"patientsK": 50,  "wtpPct": 18, "priceK": 30},
     },
+    # Chronic myeloid leukemia (CML): ~9K US incident, ~70K prevalent on
+    # chronic TKI therapy. Class: Glivec/Gleevec generic ($1B residual),
+    # Tasigna (Novartis 2nd gen), Sprycel (BMS), Bosulif (Pfizer), Scemblix
+    # (Novartis STAMP allosteric, ASC4FIRST 1L 2024). Class globally ~$5B
+    # branded + generics. Net branded ~$160K/yr.
+    "oncology.hematology.cml": {
+        "us":  {"patientsK": 70,  "wtpPct": 60, "priceK": 160},
+        "eu":  {"patientsK": 85,  "wtpPct": 45, "priceK": 95},
+        "row": {"patientsK": 350, "wtpPct": 12, "priceK": 35},
+    },
     # C3 glomerulopathy (C3G): ultra-rare complement-mediated kidney
     # disease, ~1K US prevalent, ~2K EU5, ~6K ROW. Branded class emerging:
     # Fabhalta (iptacopan factor B inhibitor Novartis Ph3 APPEAR-C3G 2025
@@ -531,6 +541,7 @@ PEN_PCT = {
     "hematology.myeloproliferative.mf": 65,
     "hematology.myeloproliferative.pv": 25,
     "hematology.rare_blood.aplastic_anemia": 60,
+    "oncology.hematology.cml": 65,
     "nephrology.glomerular.c3g": 45,
     "oncology.skin.melanoma": 65,
     "oncology.skin.cscc": 50,

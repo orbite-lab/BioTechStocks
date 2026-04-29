@@ -93,6 +93,26 @@ REGIONS = {
         "eu":  {"patientsK": 2000,  "wtpPct": 35, "priceK": 30},
         "row": {"patientsK": 10000, "wtpPct": 8,  "priceK": 10},
     },
+    # Giant cell arteritis (GCA) + Polymyalgia rheumatica (PMR):
+    # GCA US ~228K prevalent, PMR ~711K (NIH). Mostly elderly women.
+    # Class: Actemra (tocilizumab approved 2017 GCA), corticosteroids
+    # standard, Cosentyx Ph3 PMR positive 2025 (submission H1 2026).
+    # Net branded blended ~$30K/yr.
+    "immunology.inflammatory_systemic.gca_pmr": {
+        "us":  {"patientsK": 940,  "wtpPct": 25, "priceK": 30},
+        "eu":  {"patientsK": 1300, "wtpPct": 18, "priceK": 18},
+        "row": {"patientsK": 4000, "wtpPct": 6,  "priceK": 7},
+    },
+    # Periodic fever syndromes (CAPS, TRAPS, HIDS/MKD, FMF) + Still's
+    # disease (sJIA + AOSD) + Behcet. US ~30K biologics-eligible, EU 40K,
+    # ROW 200K (FMF higher in Mediterranean). Class: Ilaris (canakinumab
+    # anti-IL-1b Novartis ~$1.9B), Kineret (anakinra Sobi), Arcalyst
+    # (rilonacept Kiniksa). Net branded ~$220K/yr orphan-priced.
+    "immunology.autoinflammatory.periodic_fever": {
+        "us":  {"patientsK": 30,   "wtpPct": 70, "priceK": 220},
+        "eu":  {"patientsK": 40,   "wtpPct": 55, "priceK": 130},
+        "row": {"patientsK": 200,  "wtpPct": 12, "priceK": 50},
+    },
     # Ankylosing spondylitis (AS) + axial spondyloarthritis (axSpA): chronic
     # inflammatory spinal arthritis. ~1M US AS + ~2M nr-axSpA, ~1.5M EU AS,
     # ~10M ROW. Class: Cosentyx/Bimzelx (IL-17), TNFi legacy (Humira/Enbrel/
@@ -312,6 +332,8 @@ PEN_PCT = {
     "immunology.inflammatory_gi.ulcerative_colitis": 35,
     "immunology.inflammatory_systemic.rheumatoid_arthritis": 28,
     "immunology.inflammatory_systemic.psoriatic_arthritis": 30,
+    "immunology.inflammatory_systemic.gca_pmr": 18,
+    "immunology.autoinflammatory.periodic_fever": 65,
     "immunology.inflammatory_systemic.ankylosing_spondylitis": 25,
     "immunology.neuromuscular_autoimmune.itp": 35,
     "immunology.neuromuscular_autoimmune.mmn": 65,

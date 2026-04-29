@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-29T14:26:24Z",
-    "target_count": 240,
-    "total_assets": 433,
-    "assets_with_targets": 406,
-    "multi_modality_count": 25,
-    "multi_disease_count": 103
+    "generated": "2026-04-29T14:38:05Z",
+    "target_count": 254,
+    "total_assets": 464,
+    "assets_with_targets": 436,
+    "multi_modality_count": 29,
+    "multi_disease_count": 106
   },
   "targets": {
     "ABL1": {
@@ -1125,7 +1125,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 4026.4,
       "totalSales": 2915.0,
       "cagrPct": 3.2,
@@ -1426,6 +1426,40 @@
       "cagrPct": 9.7,
       "peakYear": 2030
     },
+    "C5AR1": {
+      "companies": [
+        "AMGN"
+      ],
+      "modalities": [
+        "small_molecule.complement.c5ar_antagonist"
+      ],
+      "areas": [
+        "nephrology.glomerular.aav_anca"
+      ],
+      "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "tavneos",
+          "name": "Tavneos (avacopan) — C5aR antagonist oral (ANCA vasculitis)",
+          "modality": "small_molecule.complement.c5ar_antagonist",
+          "areas": [
+            "nephrology.glomerular.aav_anca"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 10608.0,
+      "totalSOM": 626.5,
+      "totalSales": 459.0,
+      "cagrPct": 18.0,
+      "peakYear": 2030
+    },
     "CALCIUM_MODULATOR": {
       "companies": [
         "OCS"
@@ -1473,11 +1507,13 @@
     "CALCRL": {
       "companies": [
         "ABBV",
+        "AMGN",
         "NVS",
         "PFE"
       ],
       "modalities": [
         "antibody.cytokine.cgrpr_blocker",
+        "antibody.gpcr.cgrpr_blocker",
         "small_molecule.gpcr.cgrp_antagonist"
       ],
       "areas": [
@@ -1489,6 +1525,15 @@
           "asset": "qulipta",
           "name": "Qulipta (atogepant)",
           "modality": "small_molecule.gpcr.cgrp_antagonist",
+          "areas": [
+            "cns.pain.migraine"
+          ]
+        },
+        {
+          "ticker": "AMGN",
+          "asset": "aimovig_amgn",
+          "name": "Aimovig (erenumab) — anti-CGRPR mAb (migraine; w/ NVS 50/50)",
+          "modality": "antibody.gpcr.cgrpr_blocker",
           "areas": [
             "cns.pain.migraine"
           ]
@@ -1512,8 +1557,8 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 2,
+      "assetCount": 4,
+      "modalityCount": 3,
       "modalityClassCount": 2,
       "areaCount": 1,
       "modalityClasses": [
@@ -1521,10 +1566,10 @@
         "small_molecule"
       ],
       "totalTAM": 6220.0,
-      "totalSOM": 4493.0,
-      "totalSales": 3000.0,
-      "cagrPct": 5.3,
-      "peakYear": 2031
+      "totalSOM": 5081.0,
+      "totalSales": 3350.0,
+      "cagrPct": 4.1,
+      "peakYear": 2030
     },
     "CASR": {
       "companies": [
@@ -1597,6 +1642,7 @@
     "CD19": {
       "companies": [
         "ALLO",
+        "AMGN",
         "CLYM",
         "CRSP",
         "GILD",
@@ -1607,6 +1653,7 @@
       ],
       "modalities": [
         "antibody.bispecific.cd19_arm_modulator",
+        "antibody.bispecific.cd19_cd3",
         "antibody.monoclonal.anti_cd19",
         "cell_therapy.car_t_allogeneic.cd19_allo_car_t",
         "cell_therapy.car_t_allogeneic.dual_cd19_cd70_allo_car_t",
@@ -1618,9 +1665,11 @@
         "immunology.autoimmune.pmn",
         "immunology.autoimmune.sle",
         "immunology.demyelinating.multiple_sclerosis",
+        "immunology.demyelinating.nmosd",
         "immunology.neuromuscular_autoimmune.itp",
         "immunology.neuromuscular_autoimmune.myasthenia_gravis",
         "immunology.neuromuscular_autoimmune.sps",
+        "oncology.hematology.aml",
         "oncology.hematology.nhl.dlbcl",
         "oncology.hematology.nhl.fl",
         "oncology.hematology.nhl.mcl"
@@ -1642,6 +1691,24 @@
           "modality": "cell_therapy.car_t_allogeneic.dual_cd19_cd70_allo_car_t",
           "areas": [
             "immunology.autoimmune.sle"
+          ]
+        },
+        {
+          "ticker": "AMGN",
+          "asset": "blincyto",
+          "name": "Blincyto (blinatumomab) — CD19xCD3 BiTE (first BiTE)",
+          "modality": "antibody.bispecific.cd19_cd3",
+          "areas": [
+            "oncology.hematology.aml"
+          ]
+        },
+        {
+          "ticker": "AMGN",
+          "asset": "uplizna",
+          "name": "Uplizna (inebilizumab) — anti-CD19 mAb (NMOSD)",
+          "modality": "antibody.monoclonal.anti_cd19",
+          "areas": [
+            "immunology.demyelinating.nmosd"
           ]
         },
         {
@@ -1741,18 +1808,18 @@
           ]
         }
       ],
-      "assetCount": 12,
-      "modalityCount": 6,
+      "assetCount": 14,
+      "modalityCount": 7,
       "modalityClassCount": 2,
-      "areaCount": 10,
+      "areaCount": 12,
       "modalityClasses": [
         "antibody",
         "cell_therapy"
       ],
-      "totalTAM": 79712.5,
-      "totalSOM": 9417.3,
-      "totalSales": 2320.0,
-      "cagrPct": 0.3,
+      "totalTAM": 88596.6,
+      "totalSOM": 12739.8,
+      "totalSales": 4534.0,
+      "cagrPct": 4.7,
       "peakYear": 2030
     },
     "CD274": {
@@ -1894,6 +1961,7 @@
     },
     "CD3": {
       "companies": [
+        "AMGN",
         "JNJ",
         "REGN",
         "RHHBY",
@@ -1901,17 +1969,50 @@
       ],
       "modalities": [
         "antibody.bispecific.bcma_cd3",
+        "antibody.bispecific.cd19_cd3",
         "antibody.bispecific.cd20_cd3",
+        "antibody.bispecific.dll3_cd3",
         "antibody.bispecific.gprc5d_cd3",
+        "antibody.bispecific.steap1_cd3",
         "antibody.checkpoint.cd3"
       ],
       "areas": [
         "cardio_metabolic.diabetes.t1d",
+        "oncology.genitourinary.prostate",
+        "oncology.hematology.aml",
         "oncology.hematology.myeloma.4l_plus",
         "oncology.hematology.nhl.dlbcl",
-        "oncology.hematology.nhl.fl"
+        "oncology.hematology.nhl.fl",
+        "oncology.lung.sclc"
       ],
       "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "blincyto",
+          "name": "Blincyto (blinatumomab) — CD19xCD3 BiTE (first BiTE)",
+          "modality": "antibody.bispecific.cd19_cd3",
+          "areas": [
+            "oncology.hematology.aml"
+          ]
+        },
+        {
+          "ticker": "AMGN",
+          "asset": "imdelltra",
+          "name": "Imdelltra (tarlatamab) — DLL3xCD3 BiTE for SCLC",
+          "modality": "antibody.bispecific.dll3_cd3",
+          "areas": [
+            "oncology.lung.sclc"
+          ]
+        },
+        {
+          "ticker": "AMGN",
+          "asset": "xaluritamig",
+          "name": "Xaluritamig (AMG 509) — STEAP1xCD3 BiTE (mCRPC)",
+          "modality": "antibody.bispecific.steap1_cd3",
+          "areas": [
+            "oncology.genitourinary.prostate"
+          ]
+        },
         {
           "ticker": "JNJ",
           "asset": "tecvayli",
@@ -1976,17 +2077,17 @@
           ]
         }
       ],
-      "assetCount": 7,
-      "modalityCount": 4,
+      "assetCount": 10,
+      "modalityCount": 7,
       "modalityClassCount": 1,
-      "areaCount": 4,
+      "areaCount": 7,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 27653.6,
-      "totalSOM": 6741.7,
-      "totalSales": 1794.0,
-      "cagrPct": 27.6,
+      "totalTAM": 45580.4,
+      "totalSOM": 11214.1,
+      "totalSales": 3980.0,
+      "cagrPct": 29.9,
       "peakYear": 2031
     },
     "CD38": {
@@ -2773,6 +2874,40 @@
       "cagrPct": 0.0,
       "peakYear": 2032
     },
+    "CSF3R": {
+      "companies": [
+        "AMGN"
+      ],
+      "modalities": [
+        "recombinant_protein.cytokine.gcsf"
+      ],
+      "areas": [
+        "oncology.supportive_care.bone_metastases"
+      ],
+      "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "neulasta",
+          "name": "Neulasta + Neupogen (pegfilgrastim/filgrastim) — G-CSF supportive",
+          "modality": "recombinant_protein.cytokine.gcsf",
+          "areas": [
+            "oncology.supportive_care.bone_metastases"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 15840.0,
+      "totalSOM": 653.1,
+      "totalSales": 435.0,
+      "cagrPct": -15.0,
+      "peakYear": 2025
+    },
     "CTLA4": {
       "companies": [
         "AZN"
@@ -3040,6 +3175,40 @@
       "totalSales": 200.0,
       "cagrPct": 0.0,
       "peakYear": 2025
+    },
+    "DLL3": {
+      "companies": [
+        "AMGN"
+      ],
+      "modalities": [
+        "antibody.bispecific.dll3_cd3"
+      ],
+      "areas": [
+        "oncology.lung.sclc"
+      ],
+      "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "imdelltra",
+          "name": "Imdelltra (tarlatamab) — DLL3xCD3 BiTE for SCLC",
+          "modality": "antibody.bispecific.dll3_cd3",
+          "areas": [
+            "oncology.lung.sclc"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 3242.6,
+      "totalSOM": 850.2,
+      "totalSales": 627.0,
+      "cagrPct": 50.0,
+      "peakYear": 2031
     },
     "DMD": {
       "companies": [
@@ -3427,6 +3596,7 @@
     },
     "EGFR": {
       "companies": [
+        "AMGN",
         "AZN",
         "JANX",
         "JNJ"
@@ -3434,6 +3604,7 @@
       "modalities": [
         "antibody.bispecific.egfr_met",
         "antibody.bispecific.tumor_activated_tce",
+        "antibody.cytokine.egfr_blocker",
         "small_molecule.kinase_inhibitor.egfr_tki"
       ],
       "areas": [
@@ -3441,6 +3612,15 @@
         "oncology.lung.nsclc_driver.egfr"
       ],
       "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "vectibix",
+          "name": "Vectibix (panitumumab) — anti-EGFR mAb (mCRC RAS-WT)",
+          "modality": "antibody.cytokine.egfr_blocker",
+          "areas": [
+            "oncology.gi.colorectal"
+          ]
+        },
         {
           "ticker": "AZN",
           "asset": "tagrisso",
@@ -3469,8 +3649,8 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 3,
+      "assetCount": 4,
+      "modalityCount": 4,
       "modalityClassCount": 2,
       "areaCount": 2,
       "modalityClasses": [
@@ -3478,9 +3658,9 @@
         "small_molecule"
       ],
       "totalTAM": 23730.7,
-      "totalSOM": 18646.3,
-      "totalSales": 7954.0,
-      "cagrPct": 7.3,
+      "totalSOM": 20409.4,
+      "totalSales": 9129.0,
+      "cagrPct": 6.7,
       "peakYear": 2030
     },
     "EPHA2": {
@@ -3516,6 +3696,40 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2034
+    },
+    "EPOR": {
+      "companies": [
+        "AMGN"
+      ],
+      "modalities": [
+        "recombinant_protein.cytokine.epo_long_acting"
+      ],
+      "areas": [
+        "nephrology.ckd.disease_modifying"
+      ],
+      "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "aranesp",
+          "name": "Aranesp (darbepoetin alfa) — EPO long-acting",
+          "modality": "recombinant_protein.cytokine.epo_long_acting",
+          "areas": [
+            "nephrology.ckd.disease_modifying"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 41100.0,
+      "totalSOM": 3431.4,
+      "totalSales": 1389.0,
+      "cagrPct": -10.0,
+      "peakYear": 2025
     },
     "ERBB2": {
       "companies": [
@@ -4120,15 +4334,27 @@
     },
     "FGFR2": {
       "companies": [
+        "AMGN",
         "JNJ"
       ],
       "modalities": [
+        "antibody.cytokine.fgfr2b_blocker",
         "small_molecule.kinase_inhibitor.fgfr"
       ],
       "areas": [
-        "oncology.genitourinary.bladder"
+        "oncology.genitourinary.bladder",
+        "oncology.gi.gastric_esoph"
       ],
       "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "bemarituzumab",
+          "name": "Bemarituzumab — anti-FGFR2b mAb (FGFR2b+ gastric)",
+          "modality": "antibody.cytokine.fgfr2b_blocker",
+          "areas": [
+            "oncology.gi.gastric_esoph"
+          ]
+        },
         {
           "ticker": "JNJ",
           "asset": "balversa",
@@ -4139,18 +4365,19 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
+      "areaCount": 2,
       "modalityClasses": [
+        "antibody",
         "small_molecule"
       ],
-      "totalTAM": 4582.5,
-      "totalSOM": 299.3,
+      "totalTAM": 12861.2,
+      "totalSOM": 631.4,
       "totalSales": 200.0,
-      "cagrPct": 0.0,
-      "peakYear": 2028
+      "cagrPct": 21.0,
+      "peakYear": 2029
     },
     "FGFR3": {
       "companies": [
@@ -4459,9 +4686,11 @@
     },
     "GIPR": {
       "companies": [
+        "AMGN",
         "LLY"
       ],
       "modalities": [
+        "antibody.bispecific.gipr_glp1",
         "peptide.incretin.glp1_gip",
         "peptide.incretin.glp1_gip_glucagon"
       ],
@@ -4470,6 +4699,15 @@
         "cardio_metabolic.obesity.general"
       ],
       "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "maritide",
+          "name": "MariTide (maridebart cafraglutide) — GIPR antagonist + GLP-1 agonist (obesity Ph3)",
+          "modality": "antibody.bispecific.gipr_glp1",
+          "areas": [
+            "cardio_metabolic.obesity.general"
+          ]
+        },
         {
           "ticker": "LLY",
           "asset": "commercial",
@@ -4490,27 +4728,30 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
-      "modalityClassCount": 1,
+      "assetCount": 3,
+      "modalityCount": 3,
+      "modalityClassCount": 2,
       "areaCount": 2,
       "modalityClasses": [
+        "antibody",
         "peptide"
       ],
       "totalTAM": 222550.0,
-      "totalSOM": 81906.7,
+      "totalSOM": 83569.2,
       "totalSales": 39600.0,
-      "cagrPct": 1.2,
+      "cagrPct": 3.2,
       "peakYear": 2032
     },
     "GLP1R": {
       "companies": [
+        "AMGN",
         "AZN",
         "CAMX",
         "LLY",
         "NOVO"
       ],
       "modalities": [
+        "antibody.bispecific.gipr_glp1",
         "formulation_modifier.long_acting.fluidcrystal_incretin",
         "peptide.glp1.amycretin",
         "peptide.glp1.cagrisema",
@@ -4526,6 +4767,15 @@
         "cardio_metabolic.obesity.general"
       ],
       "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "maritide",
+          "name": "MariTide (maridebart cafraglutide) — GIPR antagonist + GLP-1 agonist (obesity Ph3)",
+          "modality": "antibody.bispecific.gipr_glp1",
+          "areas": [
+            "cardio_metabolic.obesity.general"
+          ]
+        },
         {
           "ticker": "AZN",
           "asset": "azd5004",
@@ -4628,19 +4878,20 @@
           ]
         }
       ],
-      "assetCount": 11,
-      "modalityCount": 9,
-      "modalityClassCount": 3,
+      "assetCount": 12,
+      "modalityCount": 10,
+      "modalityClassCount": 4,
       "areaCount": 2,
       "modalityClasses": [
+        "antibody",
         "formulation_modifier",
         "peptide",
         "small_molecule"
       ],
       "totalTAM": 222550.0,
-      "totalSOM": 174648.4,
+      "totalSOM": 176310.9,
       "totalSales": 72970.0,
-      "cagrPct": 1.2,
+      "cagrPct": 2.1,
       "peakYear": 2032
     },
     "GPRC5D": {
@@ -5248,7 +5499,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -5391,6 +5642,40 @@
       "cagrPct": 0.0,
       "peakYear": 2033
     },
+    "IGF1R": {
+      "companies": [
+        "AMGN"
+      ],
+      "modalities": [
+        "antibody.cytokine.igf1r_blocker"
+      ],
+      "areas": [
+        "ophthalmology.anterior_neuro.ted"
+      ],
+      "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "tepezza",
+          "name": "Tepezza (teprotumumab) — anti-IGF-1R mAb (TED)",
+          "modality": "antibody.cytokine.igf1r_blocker",
+          "areas": [
+            "ophthalmology.anterior_neuro.ted"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 9900.0,
+      "totalSOM": 2851.6,
+      "totalSales": 1903.0,
+      "cagrPct": 8.0,
+      "peakYear": 2030
+    },
     "IGG": {
       "companies": [
         "BHVN"
@@ -5507,6 +5792,7 @@
     },
     "IL12B": {
       "companies": [
+        "AMGN",
         "JNJ"
       ],
       "modalities": [
@@ -5521,6 +5807,15 @@
       ],
       "assets": [
         {
+          "ticker": "AMGN",
+          "asset": "wezlana",
+          "name": "Wezlana/Wezenla (ustekinumab biosim) — Stelara biosim",
+          "modality": "antibody.cytokine.il12_23_blocker",
+          "areas": [
+            "dermatology.inflammatory_derm.psoriasis_systemic"
+          ]
+        },
+        {
           "ticker": "JNJ",
           "asset": "stelara",
           "name": "Stelara (ustekinumab, IL-12/23) — biosimilar cliff",
@@ -5534,7 +5829,7 @@
           ]
         }
       ],
-      "assetCount": 1,
+      "assetCount": 2,
       "modalityCount": 1,
       "modalityClassCount": 1,
       "areaCount": 5,
@@ -5542,9 +5837,9 @@
         "antibody"
       ],
       "totalTAM": 143465.0,
-      "totalSOM": 10453.2,
-      "totalSales": 6080.0,
-      "cagrPct": -29.3,
+      "totalSOM": 11039.2,
+      "totalSales": 6353.0,
+      "cagrPct": -25.1,
       "peakYear": 2025
     },
     "IL13": {
@@ -5860,6 +6155,7 @@
     "IL23A": {
       "companies": [
         "ABBV",
+        "AMGN",
         "JNJ"
       ],
       "modalities": [
@@ -5884,6 +6180,15 @@
           "areas": [
             "dermatology.inflammatory_derm.psoriasis_systemic",
             "immunology.inflammatory_gi.crohns"
+          ]
+        },
+        {
+          "ticker": "AMGN",
+          "asset": "wezlana",
+          "name": "Wezlana/Wezenla (ustekinumab biosim) — Stelara biosim",
+          "modality": "antibody.cytokine.il12_23_blocker",
+          "areas": [
+            "dermatology.inflammatory_derm.psoriasis_systemic"
           ]
         },
         {
@@ -5921,7 +6226,7 @@
           ]
         }
       ],
-      "assetCount": 4,
+      "assetCount": 5,
       "modalityCount": 4,
       "modalityClassCount": 2,
       "areaCount": 5,
@@ -5930,9 +6235,9 @@
         "peptide"
       ],
       "totalTAM": 143465.0,
-      "totalSOM": 47002.9,
-      "totalSales": 20080.0,
-      "cagrPct": 4.0,
+      "totalSOM": 47588.9,
+      "totalSales": 20353.0,
+      "cagrPct": 4.6,
       "peakYear": 2030
     },
     "IL33": {
@@ -6837,9 +7142,11 @@
     },
     "KRAS": {
       "companies": [
+        "AMGN",
         "RVMD"
       ],
       "modalities": [
+        "small_molecule.kinase_inhibitor.kras_g12c",
         "small_molecule.kinase_inhibitor.ras_on_inhibitor"
       ],
       "areas": [
@@ -6848,6 +7155,16 @@
         "oncology.lung.nsclc_driver.kras"
       ],
       "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "lumakras",
+          "name": "Lumakras/Lumykras (sotorasib) — KRAS G12C inhibitor",
+          "modality": "small_molecule.kinase_inhibitor.kras_g12c",
+          "areas": [
+            "oncology.gi.colorectal",
+            "oncology.lung.nsclc_driver.kras"
+          ]
+        },
         {
           "ticker": "RVMD",
           "asset": "darax_pdac",
@@ -6894,17 +7211,17 @@
           ]
         }
       ],
-      "assetCount": 5,
-      "modalityCount": 1,
+      "assetCount": 6,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 3,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
-      "totalSOM": 12080.7,
-      "totalSales": 0.0,
-      "cagrPct": 0.0,
+      "totalTAM": 17761.5,
+      "totalSOM": 12862.9,
+      "totalSales": 363.0,
+      "cagrPct": 0.5,
       "peakYear": 2032
     },
     "LAG3": {
@@ -6943,17 +7260,28 @@
     },
     "LPA": {
       "companies": [
+        "AMGN",
         "IONS",
         "NVS"
       ],
       "modalities": [
         "nucleic_acid.antisense.galnac_aso",
-        "nucleic_acid.aso.lpa_apolipoprotein"
+        "nucleic_acid.aso.lpa_apolipoprotein",
+        "nucleic_acid.sirna.lpa_galnac"
       ],
       "areas": [
         "cardio_metabolic.lipids.lpa"
       ],
       "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "olpasiran",
+          "name": "Olpasiran — Lp(a)-lowering siRNA (Ph3 OCEAN(a))",
+          "modality": "nucleic_acid.sirna.lpa_galnac",
+          "areas": [
+            "cardio_metabolic.lipids.lpa"
+          ]
+        },
         {
           "ticker": "IONS",
           "asset": "pelac",
@@ -6973,17 +7301,17 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "nucleic_acid"
       ],
       "totalTAM": 396.0,
-      "totalSOM": 18.3,
+      "totalSOM": 28.3,
       "totalSales": 0.0,
-      "cagrPct": 32.6,
+      "cagrPct": 38.7,
       "peakYear": 2032
     },
     "MAGEA4": {
@@ -7104,7 +7432,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 4026.4,
       "totalSales": 2915.0,
       "cagrPct": 3.2,
@@ -7144,7 +7472,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 2976.9,
       "totalSales": 2215.0,
       "cagrPct": 2.5,
@@ -7451,9 +7779,11 @@
     },
     "MPL": {
       "companies": [
+        "AMGN",
         "NVS"
       ],
       "modalities": [
+        "recombinant_protein.fusion.tpo_peptibody",
         "small_molecule.tpo_mimetic.thrombopoietin_receptor_agonist"
       ],
       "areas": [
@@ -7462,6 +7792,15 @@
         "infectious_disease.anti_infective.hiv_treatment"
       ],
       "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "nplate",
+          "name": "Nplate (romiplostim) — TPO peptibody (ITP)",
+          "modality": "recombinant_protein.fusion.tpo_peptibody",
+          "areas": [
+            "immunology.neuromuscular_autoimmune.itp"
+          ]
+        },
         {
           "ticker": "NVS",
           "asset": "promacta",
@@ -7474,18 +7813,19 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
       "areaCount": 3,
       "modalityClasses": [
+        "recombinant_protein",
         "small_molecule"
       ],
       "totalTAM": 32976.0,
-      "totalSOM": 3020.6,
-      "totalSales": 1640.0,
-      "cagrPct": -27.1,
-      "peakYear": 2025
+      "totalSOM": 5307.3,
+      "totalSales": 3164.0,
+      "cagrPct": -13.2,
+      "peakYear": 2026
     },
     "MS4A1": {
       "companies": [
@@ -7653,6 +7993,40 @@
       "cagrPct": 0.0,
       "peakYear": 2032
     },
+    "NA": {
+      "companies": [
+        "AMGN"
+      ],
+      "modalities": [
+        "recombinant_protein.enzyme.uricase_pegylated"
+      ],
+      "areas": [
+        "musculoskeletal.crystal_arthropathy.gout"
+      ],
+      "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "krystexxa",
+          "name": "Krystexxa (pegloticase) — pegylated uricase (refractory gout)",
+          "modality": "recombinant_protein.enzyme.uricase_pegylated",
+          "areas": [
+            "musculoskeletal.crystal_arthropathy.gout"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 1686.0,
+      "totalSOM": 1396.8,
+      "totalSales": 1340.0,
+      "cagrPct": 6.0,
+      "peakYear": 2028
+    },
     "NECTIN4": {
       "companies": [
         "6990",
@@ -7749,7 +8123,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -7890,7 +8264,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -8159,6 +8533,7 @@
     },
     "PCSK9": {
       "companies": [
+        "AMGN",
         "ARWR",
         "AZN",
         "NVS",
@@ -8176,6 +8551,15 @@
         "cardio_metabolic.lipids.ldl_cv_risk"
       ],
       "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "repatha",
+          "name": "Repatha (evolocumab) — anti-PCSK9 mAb",
+          "modality": "antibody.cytokine.pcsk9_blocker",
+          "areas": [
+            "cardio_metabolic.lipids.ldl_cv_risk"
+          ]
+        },
         {
           "ticker": "ARWR",
           "asset": "aro_dimer",
@@ -8222,7 +8606,7 @@
           ]
         }
       ],
-      "assetCount": 5,
+      "assetCount": 6,
       "modalityCount": 5,
       "modalityClassCount": 3,
       "areaCount": 1,
@@ -8232,9 +8616,9 @@
         "small_molecule"
       ],
       "totalTAM": 21450.0,
-      "totalSOM": 9281.0,
-      "totalSales": 1900.0,
-      "cagrPct": 18.5,
+      "totalSOM": 23371.0,
+      "totalSales": 4916.0,
+      "cagrPct": 22.4,
       "peakYear": 2031
     },
     "PDCD1": {
@@ -8397,18 +8781,72 @@
       "cagrPct": 5.0,
       "peakYear": 2032
     },
+    "PDE4A": {
+      "companies": [
+        "AMGN"
+      ],
+      "modalities": [
+        "small_molecule.phosphodiesterase.pde4_inhibitor"
+      ],
+      "areas": [
+        "dermatology.inflammatory_derm.psoriasis_systemic",
+        "immunology.autoinflammatory.periodic_fever",
+        "immunology.inflammatory_systemic.psoriatic_arthritis"
+      ],
+      "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "otezla",
+          "name": "Otezla (apremilast) — PDE4 inhibitor (oral PsO + PsA + Behçet)",
+          "modality": "small_molecule.phosphodiesterase.pde4_inhibitor",
+          "areas": [
+            "dermatology.inflammatory_derm.psoriasis_systemic",
+            "immunology.autoinflammatory.periodic_fever",
+            "immunology.inflammatory_systemic.psoriatic_arthritis"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 3,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 106080.0,
+      "totalSOM": 3962.5,
+      "totalSales": 2265.0,
+      "cagrPct": 5.0,
+      "peakYear": 2027
+    },
     "PDE4B": {
       "companies": [
+        "AMGN",
         "ARQT"
       ],
       "modalities": [
-        "small_molecule.enzyme_inhibitor.pde4"
+        "small_molecule.enzyme_inhibitor.pde4",
+        "small_molecule.phosphodiesterase.pde4_inhibitor"
       ],
       "areas": [
         "dermatology.inflammatory_derm.atopic_dermatitis_topical",
-        "dermatology.inflammatory_derm.psoriasis_topical"
+        "dermatology.inflammatory_derm.psoriasis_systemic",
+        "dermatology.inflammatory_derm.psoriasis_topical",
+        "immunology.autoinflammatory.periodic_fever",
+        "immunology.inflammatory_systemic.psoriatic_arthritis"
       ],
       "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "otezla",
+          "name": "Otezla (apremilast) — PDE4 inhibitor (oral PsO + PsA + Behçet)",
+          "modality": "small_molecule.phosphodiesterase.pde4_inhibitor",
+          "areas": [
+            "dermatology.inflammatory_derm.psoriasis_systemic",
+            "immunology.autoinflammatory.periodic_fever",
+            "immunology.inflammatory_systemic.psoriatic_arthritis"
+          ]
+        },
         {
           "ticker": "ARQT",
           "asset": "commercial",
@@ -8428,18 +8866,18 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 1,
+      "assetCount": 3,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 2,
+      "areaCount": 5,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 7240.0,
-      "totalSOM": 1700.0,
-      "totalSales": 250.0,
-      "cagrPct": 0.0,
-      "peakYear": 2032
+      "totalTAM": 113320.0,
+      "totalSOM": 5662.5,
+      "totalSales": 2515.0,
+      "cagrPct": 3.5,
+      "peakYear": 2029
     },
     "PDE4D": {
       "companies": [
@@ -8524,6 +8962,40 @@
       "totalSales": 1050.0,
       "cagrPct": 0.0,
       "peakYear": 2027
+    },
+    "PGF": {
+      "companies": [
+        "AMGN"
+      ],
+      "modalities": [
+        "antibody.fusion.vegf_trap"
+      ],
+      "areas": [
+        "ophthalmology.retina.nvamd"
+      ],
+      "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "pavblu",
+          "name": "Pavblu (aflibercept biosim) — Eylea biosim",
+          "modality": "antibody.fusion.vegf_trap",
+          "areas": [
+            "ophthalmology.retina.nvamd"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 3630.0,
+      "totalSOM": 1050.6,
+      "totalSales": 700.0,
+      "cagrPct": 35.0,
+      "peakYear": 2028
     },
     "PGR": {
       "companies": [
@@ -8705,7 +9177,7 @@
         "small_molecule"
       ],
       "totalTAM": 4590.0,
-      "totalSOM": 91.2,
+      "totalSOM": 91.9,
       "totalSales": 90.0,
       "cagrPct": -8.0,
       "peakYear": 2025
@@ -8739,7 +9211,7 @@
         "small_molecule"
       ],
       "totalTAM": 4590.0,
-      "totalSOM": 91.2,
+      "totalSOM": 91.9,
       "totalSales": 90.0,
       "cagrPct": -8.0,
       "peakYear": 2025
@@ -8802,6 +9274,108 @@
       "totalSales": 0.0,
       "cagrPct": 1.4,
       "peakYear": 2033
+    },
+    "PRMT5": {
+      "companies": [
+        "AMGN"
+      ],
+      "modalities": [
+        "small_molecule.epigenetic.prmt5_mta_inhibitor"
+      ],
+      "areas": [
+        "oncology.lung.nsclc_undruggable"
+      ],
+      "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "amg193",
+          "name": "AMG 193 — PRMT5 MTA-cooperative inhibitor (MTAP-deleted tumors)",
+          "modality": "small_molecule.epigenetic.prmt5_mta_inhibitor",
+          "areas": [
+            "oncology.lung.nsclc_undruggable"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 5332.5,
+      "totalSOM": 206.6,
+      "totalSales": 0.0,
+      "cagrPct": 60.0,
+      "peakYear": 2031
+    },
+    "PSMB1": {
+      "companies": [
+        "AMGN"
+      ],
+      "modalities": [
+        "small_molecule.proteasome_inhibitor.epoxyketone"
+      ],
+      "areas": [
+        "oncology.hematology.myeloma.2l_3l"
+      ],
+      "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "kyprolis",
+          "name": "Kyprolis (carfilzomib) — proteasome inhibitor",
+          "modality": "small_molecule.proteasome_inhibitor.epoxyketone",
+          "areas": [
+            "oncology.hematology.myeloma.2l_3l"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 13464.5,
+      "totalSOM": 2120.1,
+      "totalSales": 1412.0,
+      "cagrPct": -3.0,
+      "peakYear": 2027
+    },
+    "PSMB5": {
+      "companies": [
+        "AMGN"
+      ],
+      "modalities": [
+        "small_molecule.proteasome_inhibitor.epoxyketone"
+      ],
+      "areas": [
+        "oncology.hematology.myeloma.2l_3l"
+      ],
+      "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "kyprolis",
+          "name": "Kyprolis (carfilzomib) — proteasome inhibitor",
+          "modality": "small_molecule.proteasome_inhibitor.epoxyketone",
+          "areas": [
+            "oncology.hematology.myeloma.2l_3l"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 13464.5,
+      "totalSOM": 2120.1,
+      "totalSales": 1412.0,
+      "cagrPct": -3.0,
+      "peakYear": 2027
     },
     "PTGIR": {
       "companies": [
@@ -9843,15 +10417,26 @@
     },
     "SOST": {
       "companies": [
+        "AMGN",
         "UCB"
       ],
       "modalities": [
+        "antibody.cytokine.sclerostin_blocker",
         "antibody.monoclonal.anti_sclerostin"
       ],
       "areas": [
         "musculoskeletal.bone_cartilage.osteoporosis"
       ],
       "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "evenity",
+          "name": "Evenity (romosozumab) — anti-sclerostin mAb (osteoporosis dual-action)",
+          "modality": "antibody.cytokine.sclerostin_blocker",
+          "areas": [
+            "musculoskeletal.bone_cartilage.osteoporosis"
+          ]
+        },
         {
           "ticker": "UCB",
           "asset": "evenity",
@@ -9862,17 +10447,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "antibody"
       ],
       "totalTAM": 18750.0,
-      "totalSOM": 2246.6,
-      "totalSales": 1200.0,
-      "cagrPct": 0.0,
+      "totalSOM": 10203.4,
+      "totalSales": 3300.0,
+      "cagrPct": 14.0,
       "peakYear": 2030
     },
     "SSTR2": {
@@ -10034,6 +10619,40 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2034
+    },
+    "STEAP1": {
+      "companies": [
+        "AMGN"
+      ],
+      "modalities": [
+        "antibody.bispecific.steap1_cd3"
+      ],
+      "areas": [
+        "oncology.genitourinary.prostate"
+      ],
+      "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "xaluritamig",
+          "name": "Xaluritamig (AMG 509) — STEAP1xCD3 BiTE (mCRPC)",
+          "modality": "antibody.bispecific.steap1_cd3",
+          "areas": [
+            "oncology.genitourinary.prostate"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 10444.0,
+      "totalSOM": 1283.0,
+      "totalSales": 0.0,
+      "cagrPct": 50.0,
+      "peakYear": 2031
     },
     "SV2A": {
       "companies": [
@@ -10341,6 +10960,7 @@
     "TNF": {
       "companies": [
         "ABBV",
+        "AMGN",
         "JNJ",
         "OCS",
         "UCB"
@@ -10348,7 +10968,8 @@
       "modalities": [
         "antibody.cytokine.tnf_blocker",
         "antibody.fragment.anti_tnf_topical",
-        "antibody.monoclonal.anti_tnf"
+        "antibody.monoclonal.anti_tnf",
+        "recombinant_protein.fusion.tnfr_fc"
       ],
       "areas": [
         "dermatology.inflammatory_derm.psoriasis_systemic",
@@ -10368,6 +10989,24 @@
           "areas": [
             "dermatology.inflammatory_derm.psoriasis_systemic",
             "immunology.inflammatory_gi.crohns",
+            "immunology.inflammatory_systemic.rheumatoid_arthritis"
+          ]
+        },
+        {
+          "ticker": "AMGN",
+          "asset": "enbrel",
+          "name": "Enbrel (etanercept) — anti-TNF fusion protein",
+          "modality": "recombinant_protein.fusion.tnfr_fc",
+          "areas": [
+            "immunology.inflammatory_systemic.rheumatoid_arthritis"
+          ]
+        },
+        {
+          "ticker": "AMGN",
+          "asset": "amjevita",
+          "name": "Amjevita/Amgevita (adalimumab biosim) — Humira biosim",
+          "modality": "antibody.cytokine.tnf_blocker",
+          "areas": [
             "immunology.inflammatory_systemic.rheumatoid_arthritis"
           ]
         },
@@ -10403,18 +11042,19 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 3,
-      "modalityClassCount": 1,
+      "assetCount": 6,
+      "modalityCount": 4,
+      "modalityClassCount": 2,
       "areaCount": 7,
       "modalityClasses": [
-        "antibody"
+        "antibody",
+        "recombinant_protein"
       ],
       "totalTAM": 215575.0,
-      "totalSOM": 15443.5,
-      "totalSales": 10200.0,
-      "cagrPct": -1.7,
-      "peakYear": 2030
+      "totalSOM": 19674.7,
+      "totalSales": 13023.0,
+      "cagrPct": -5.2,
+      "peakYear": 2029
     },
     "TNFRSF13C": {
       "companies": [
@@ -10548,6 +11188,40 @@
       "cagrPct": 8.2,
       "peakYear": 2032
     },
+    "TNFRSF4": {
+      "companies": [
+        "AMGN"
+      ],
+      "modalities": [
+        "antibody.cytokine.ox40_blocker"
+      ],
+      "areas": [
+        "dermatology.inflammatory_derm.atopic_dermatitis_systemic"
+      ],
+      "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "rocatinlimab",
+          "name": "Rocatinlimab — anti-OX40 mAb (atopic dermatitis + others)",
+          "modality": "antibody.cytokine.ox40_blocker",
+          "areas": [
+            "dermatology.inflammatory_derm.atopic_dermatitis_systemic"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 13755.0,
+      "totalSOM": 717.6,
+      "totalSales": 0.0,
+      "cagrPct": 45.0,
+      "peakYear": 2031
+    },
     "TNFRSF8": {
       "companies": [
         "PFE"
@@ -10615,6 +11289,50 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2035
+    },
+    "TNFSF11": {
+      "companies": [
+        "AMGN"
+      ],
+      "modalities": [
+        "antibody.cytokine.rankl_blocker"
+      ],
+      "areas": [
+        "musculoskeletal.bone_cartilage.osteoporosis",
+        "oncology.supportive_care.bone_metastases"
+      ],
+      "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "prolia",
+          "name": "Prolia (denosumab) — anti-RANKL mAb (osteoporosis)",
+          "modality": "antibody.cytokine.rankl_blocker",
+          "areas": [
+            "musculoskeletal.bone_cartilage.osteoporosis"
+          ]
+        },
+        {
+          "ticker": "AMGN",
+          "asset": "xgeva",
+          "name": "Xgeva (denosumab) — anti-RANKL mAb (oncology bone metastases)",
+          "modality": "antibody.cytokine.rankl_blocker",
+          "areas": [
+            "oncology.supportive_care.bone_metastases"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 34590.0,
+      "totalSOM": 9748.0,
+      "totalSales": 6498.0,
+      "cagrPct": -12.0,
+      "peakYear": 2025
     },
     "TNFSF13": {
       "companies": [
@@ -10720,6 +11438,7 @@
     },
     "TSLP": {
       "companies": [
+        "AMGN",
         "AZN"
       ],
       "modalities": [
@@ -10730,6 +11449,15 @@
       ],
       "assets": [
         {
+          "ticker": "AMGN",
+          "asset": "tezspire",
+          "name": "Tezspire (tezepelumab) — anti-TSLP mAb (severe asthma) w/ AZN 50/50",
+          "modality": "antibody.cytokine.tslp_blocker",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe"
+          ]
+        },
+        {
           "ticker": "AZN",
           "asset": "tezspire",
           "name": "Tezspire (tezepelumab, TSLP) — w/ Amgen 50/50",
@@ -10739,7 +11467,7 @@
           ]
         }
       ],
-      "assetCount": 1,
+      "assetCount": 2,
       "modalityCount": 1,
       "modalityClassCount": 1,
       "areaCount": 1,
@@ -10747,9 +11475,9 @@
         "antibody"
       ],
       "totalTAM": 17305.0,
-      "totalSOM": 1693.6,
-      "totalSales": 1131.0,
-      "cagrPct": 18.0,
+      "totalSOM": 3910.4,
+      "totalSales": 2609.0,
+      "cagrPct": 23.7,
       "peakYear": 2031
     },
     "TTR": {
@@ -10910,6 +11638,7 @@
     },
     "VEGFA": {
       "companies": [
+        "AMGN",
         "NVS",
         "REGN",
         "RHHBY"
@@ -10932,6 +11661,24 @@
         "ophthalmology.retina.rvo"
       ],
       "assets": [
+        {
+          "ticker": "AMGN",
+          "asset": "pavblu",
+          "name": "Pavblu (aflibercept biosim) — Eylea biosim",
+          "modality": "antibody.fusion.vegf_trap",
+          "areas": [
+            "ophthalmology.retina.nvamd"
+          ]
+        },
+        {
+          "ticker": "AMGN",
+          "asset": "mvasi",
+          "name": "Mvasi (bevacizumab biosim) — Avastin biosim",
+          "modality": "antibody.monoclonal.anti_vegf_a",
+          "areas": [
+            "oncology.gi.colorectal"
+          ]
+        },
         {
           "ticker": "NVS",
           "asset": "lucentis_nvs",
@@ -10996,7 +11743,7 @@
           ]
         }
       ],
-      "assetCount": 6,
+      "assetCount": 8,
       "modalityCount": 5,
       "modalityClassCount": 2,
       "areaCount": 8,
@@ -11005,9 +11752,9 @@
         "formulation_modifier"
       ],
       "totalTAM": 63738.4,
-      "totalSOM": 15948.7,
-      "totalSales": 11231.0,
-      "cagrPct": 4.7,
+      "totalSOM": 18038.6,
+      "totalSales": 12702.0,
+      "cagrPct": 5.7,
       "peakYear": 2029
     },
     "VEGFR1": {

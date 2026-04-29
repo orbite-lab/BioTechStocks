@@ -530,6 +530,42 @@ REGIONS = {
         "eu":  {"patientsK": 50,  "wtpPct": 60, "priceK": 170},
         "row": {"patientsK": 80,  "wtpPct": 18, "priceK": 60},
     },
+    # Refractory chronic gout (uncontrolled hyperuricemia despite ULT):
+    # ~50K US treated/yr, ~70K EU5, ~200K ROW. Class: Krystexxa (Amgen
+    # pegloticase IV uricase ~$1.3B), febuxostat (generic). Branded
+    # ~$30K/yr blended (Krystexxa premium-priced).
+    "musculoskeletal.crystal_arthropathy.gout": {
+        "us":  {"patientsK": 50,  "wtpPct": 65, "priceK": 30},
+        "eu":  {"patientsK": 70,  "wtpPct": 45, "priceK": 18},
+        "row": {"patientsK": 200, "wtpPct": 12, "priceK": 6},
+    },
+    # ANCA-associated vasculitis (GPA + MPA): ~50K US prevalent on tx,
+    # ~70K EU5, ~200K ROW. Class: Tavneos (Amgen avacopan C5aR
+    # antagonist ~$0.5B), rituximab (Roche/biosim). Net branded
+    # ~$200K/yr orphan-priced.
+    "nephrology.glomerular.aav_anca": {
+        "us":  {"patientsK": 50,  "wtpPct": 60, "priceK": 200},
+        "eu":  {"patientsK": 70,  "wtpPct": 42, "priceK": 120},
+        "row": {"patientsK": 200, "wtpPct": 12, "priceK": 45},
+    },
+    # NMO spectrum disorder (NMOSD AQP4-IgG+): ~10K US prevalent, ~14K
+    # EU5, ~80K ROW. Class: Uplizna (Amgen/Horizon inebilizumab anti-CD19
+    # ~$650M), Soliris/Ultomiris (AZN anti-C5), Enspryng (Roche
+    # anti-IL-6R). Net branded ~$300K/yr orphan-priced.
+    "immunology.demyelinating.nmosd": {
+        "us":  {"patientsK": 10,  "wtpPct": 75, "priceK": 300},
+        "eu":  {"patientsK": 14,  "wtpPct": 55, "priceK": 180},
+        "row": {"patientsK": 80,  "wtpPct": 18, "priceK": 70},
+    },
+    # Bone metastases SRE prevention in solid tumors with bone mets:
+    # US ~600K prevalent population, ~800K EU5, ~3M ROW. Class: Xgeva
+    # (Amgen denosumab ~$2B; same molecule as Prolia), zoledronic acid
+    # generic. Net branded ~$25K/yr.
+    "oncology.supportive_care.bone_metastases": {
+        "us":  {"patientsK": 600,  "wtpPct": 60, "priceK": 25},
+        "eu":  {"patientsK": 800,  "wtpPct": 45, "priceK": 14},
+        "row": {"patientsK": 3000, "wtpPct": 12, "priceK": 5},
+    },
 }
 
 PEN_PCT = {
@@ -591,4 +627,8 @@ PEN_PCT = {
     "ophthalmology.anterior_neuro.uveitis": 18,
     "cardio_metabolic.thrombosis.thrombolytic": 70,
     "respiratory.genetic.cystic_fibrosis": 80,
+    "musculoskeletal.crystal_arthropathy.gout": 35,
+    "nephrology.glomerular.aav_anca": 45,
+    "immunology.demyelinating.nmosd": 50,
+    "oncology.supportive_care.bone_metastases": 35,
 }

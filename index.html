@@ -1738,22 +1738,36 @@ async function main(){
       });
       h+='</div>';
 
-      // Current level stats
+      // Current level stats (drilled-in path) OR root totals (all-markets summary).
+      // At root (mktNavPath=[]), currentData is null so we synthesize totals from L1
+      // children -- safe because L1 trees don't share leaves so sums don't double-count.
+      let statsTam, statsSom, statsSales, statsCount, statsLabel, somCapped = false, somRaw = 0;
       if (currentData) {
-        const totalTam = currentData.tam;
-        const totalSom = currentData.som;
-        const totalSales = currentData.sales;
-        const penOfTam = totalTam > 0 ? (totalSales/totalTam*100).toFixed(1) : 0;
-        h+='<div style="display:flex;gap:16px;padding:8px 12px;background:#0f1117;border-radius:6px;margin-bottom:12px;flex-wrap:wrap">';
-        h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">TAM (unique leaves)</div><div style="font-size:1rem;font-weight:700;color:#f97316;font-family:var(--mono)">${fmtB(totalTam)}</div></div>`;
-        const somCapNote = currentData.somCapped ? ` title="Drug SOMs overlap -- capped at TAM (raw sum was ${fmtB(currentData.somRaw)})"` : '';
-        const somFlag = currentData.somCapped ? ' *' : '';
-        h+=`<div${somCapNote}><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">SOM${somFlag}</div><div style="font-size:1rem;font-weight:700;color:#a855f7;font-family:var(--mono)">${fmtB(totalSom)}</div></div>`;
-        h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">2025 Sales</div><div style="font-size:1rem;font-weight:700;color:#22c55e;font-family:var(--mono)">${fmtB(totalSales)}</div></div>`;
-        h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">Market penetration</div><div style="font-size:1rem;font-weight:700;color:#fbbf24;font-family:var(--mono)">${penOfTam}%</div></div>`;
-        h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">${isLeaf?'Drugs':'Sub-markets'}</div><div style="font-size:1rem;font-weight:700;color:#e2e4ea;font-family:var(--mono)">${isLeaf?currentData.companies.length:children.length}</div></div>`;
-        h+='</div>';
+        statsTam = currentData.tam;
+        statsSom = currentData.som;
+        statsSales = currentData.sales;
+        statsCount = isLeaf ? currentData.companies.length : children.length;
+        statsLabel = isLeaf ? 'Drugs' : 'Sub-markets';
+        somCapped = !!currentData.somCapped;
+        somRaw = currentData.somRaw || 0;
+      } else {
+        // Root view: aggregate across all L1s
+        statsTam = children.reduce((s,c) => s + (c.tam || 0), 0);
+        statsSom = children.reduce((s,c) => s + (c.som || 0), 0);
+        statsSales = children.reduce((s,c) => s + (c.sales || 0), 0);
+        statsCount = children.length;
+        statsLabel = 'L1 markets';
       }
+      const penOfTam = statsTam > 0 ? (statsSales/statsTam*100).toFixed(1) : 0;
+      h+='<div style="display:flex;gap:16px;padding:8px 12px;background:#0f1117;border-radius:6px;margin-bottom:12px;flex-wrap:wrap">';
+      h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">${currentData?'TAM (unique leaves)':'Total TAM'}</div><div style="font-size:1rem;font-weight:700;color:#f97316;font-family:var(--mono)">${fmtB(statsTam)}</div></div>`;
+      const somCapNote = somCapped ? ` title="Drug SOMs overlap -- capped at TAM (raw sum was ${fmtB(somRaw)})"` : '';
+      const somFlag = somCapped ? ' *' : '';
+      h+=`<div${somCapNote}><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">${currentData?'SOM':'Total SOM'}${somFlag}</div><div style="font-size:1rem;font-weight:700;color:#a855f7;font-family:var(--mono)">${fmtB(statsSom)}</div></div>`;
+      h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">${currentData?'2025 Sales':'Total Sales'}</div><div style="font-size:1rem;font-weight:700;color:#22c55e;font-family:var(--mono)">${fmtB(statsSales)}</div></div>`;
+      h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">Market penetration</div><div style="font-size:1rem;font-weight:700;color:#fbbf24;font-family:var(--mono)">${penOfTam}%</div></div>`;
+      h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">${statsLabel}</div><div style="font-size:1rem;font-weight:700;color:#e2e4ea;font-family:var(--mono)">${statsCount}</div></div>`;
+      h+='</div>';
 
       if (!isLeaf) {
         // Child cards grid -- card size scales with TAM (no separate bar)

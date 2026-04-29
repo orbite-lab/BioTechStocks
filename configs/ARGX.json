@@ -21,12 +21,12 @@
       "indications": [
         {
           "id": "fcrn_comm",
-          "name": "gMG + CIDP + expansions",
+          "name": "Vyvgart — generalized myasthenia gravis (MG)",
           "market": {
             "notes": "$4.2B (+90%), Q4 $1.29B. 19K patients. SeronegMG PDUFA May 10 2026. ADAPT OCULUS positive. ITP topline H2 2026.",
             "tamB": 8.0,
             "penPct": 40,
-            "salesM": 4200.0,
+            "salesM": 3200,
             "salesYear": 2025,
             "company_slice": {
               "us": {
@@ -126,6 +126,83 @@
           },
           "area": "immunology.neuromuscular_autoimmune.myasthenia_gravis",
           "rare": true
+        },
+        {
+          "id": "cidp",
+          "name": "Vyvgart Hytrulo — CIDP (chronic inflammatory demyelinating polyneuropathy)",
+          "market": {
+            "tamB": 4,
+            "penPct": 35,
+            "salesM": 1000,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 35,
+            "notes": "Vyvgart Hytrulo (efgartigimod SC) approved CIDP June 2024. ~$1B 2025 ramp; first FcRn-class for CIDP. Class peers: IVIg (Octapharma + Takeda + CSL) standard-of-care, Sanofi Riliprubart Ph3 (anti-C1s).",
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Vyvgart Hytrulo ~25% of US CIDP refractory pool by peak; first FcRn class for CIDP."
+              },
+              "us.priceK": {
+                "note": "$200K/yr WAC."
+              },
+              "us.wtpPct": {
+                "note": "70%."
+              },
+              "eu.reachPct": {
+                "note": "12%."
+              },
+              "eu.wtpPct": {
+                "note": "50%."
+              },
+              "eu.priceK": {
+                "note": "$130K."
+              },
+              "row.reachPct": {
+                "note": "1.5%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            }
+          },
+          "area": "immunology.neuromuscular_autoimmune.cidp"
         }
       ],
       "modality": "antibody.fc_fragment.fcrn_blocker",
@@ -606,6 +683,93 @@
       "targets": [
         "FCGRT"
       ]
+    },
+    {
+      "id": "myositis",
+      "name": "Vyvgart — myositis (ALKIVIA Phase 3)",
+      "stage": "Phase 3 ALKIVIA (DM + polymyositis + IMNM)",
+      "designations": [],
+      "modality": "antibody.fragment.fcrn",
+      "targets": [
+        "FCGRT"
+      ],
+      "indications": [
+        {
+          "id": "myositis_iim",
+          "name": "Idiopathic inflammatory myopathies (DM + PM + IMNM)",
+          "market": {
+            "tamB": 5,
+            "penPct": 25,
+            "peakYear": 2031,
+            "cagrPct": 25,
+            "notes": "ALKIVIA Ph3 in dermatomyositis, polymyositis, immune-mediated necrotizing myopathy. Readout 2026. Class: IVIg standard, corticosteroids. First FcRn for myositis if positive. Peak forecast $1-2B.",
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 55,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 38,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Vyvgart myositis ~8% peak if Ph3 positive (~50K US IIM)."
+              },
+              "us.priceK": {
+                "note": "$200K/yr."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "4%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$130K."
+              },
+              "row.reachPct": {
+                "note": "0.5%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 50,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 38,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            }
+          },
+          "area": "immunology.neuromuscular_autoimmune.myositis"
+        }
+      ]
     }
   ],
   "scenarios": {
@@ -623,6 +787,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.0
+          },
+          "cidp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
           }
         },
         "itp_expand": {
@@ -652,6 +821,13 @@
             "apr": 15,
             "pen": 0.2
           }
+        },
+        "myositis": {
+          "myositis_iim": {
+            "pos": 25,
+            "apr": 30,
+            "pen": 0.4
+          }
         }
       },
       "val": {
@@ -677,6 +853,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.0
+          },
+          "cidp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
           }
         },
         "itp_expand": {
@@ -706,6 +887,13 @@
             "apr": 30,
             "pen": 0.4
           }
+        },
+        "myositis": {
+          "myositis_iim": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.6
+          }
         }
       },
       "val": {
@@ -729,6 +917,11 @@
       "assumptions": {
         "commercial": {
           "fcrn_comm": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "cidp": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -761,6 +954,13 @@
             "apr": 40,
             "pen": 0.6
           }
+        },
+        "myositis": {
+          "myositis_iim": {
+            "pos": 75,
+            "apr": 78,
+            "pen": 0.85
+          }
         }
       },
       "val": {
@@ -786,6 +986,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.0
+          },
+          "cidp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
           }
         },
         "itp_expand": {
@@ -815,6 +1020,13 @@
             "apr": 50,
             "pen": 0.8
           }
+        },
+        "myositis": {
+          "myositis_iim": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 1.0
+          }
         }
       },
       "val": {
@@ -840,6 +1052,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.0
+          },
+          "cidp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
           }
         },
         "itp_expand": {
@@ -868,6 +1085,13 @@
             "pos": 55,
             "apr": 65,
             "pen": 1.0
+          }
+        },
+        "myositis": {
+          "myositis_iim": {
+            "pos": 96,
+            "apr": 95,
+            "pen": 1.2
           }
         }
       },

@@ -107,6 +107,18 @@ REGIONS = {
         "eu":  {"patientsK": 130, "wtpPct": 48, "priceK": 150},
         "row": {"patientsK": 800, "wtpPct": 12, "priceK": 25},
     },
+    # Idiopathic inflammatory myopathies (myositis): dermatomyositis (DM),
+    # polymyositis (PM), inclusion body myositis (IBM), immune-mediated
+    # necrotizing myopathy (IMNM). ~50K US, ~70K EU, ~200K ROW. Class:
+    # IVIg (Octapharma) standard, corticosteroids legacy, MMF/aza off-label.
+    # Argenx Vyvgart Ph3 ALKIVIA (DM, polymyositis, IMNM) -- if positive
+    # opens novel branded class. Class peak ~$2-3B globally.
+    # source: Myositis Association; Argenx + Octapharma 10-Ks.
+    "immunology.neuromuscular_autoimmune.myositis": {
+        "us":  {"patientsK": 50,  "wtpPct": 50, "priceK": 200},
+        "eu":  {"patientsK": 70,  "wtpPct": 38, "priceK": 130},
+        "row": {"patientsK": 200, "wtpPct": 10, "priceK": 35},
+    },
     # CIDP (chronic inflammatory demyelinating polyneuropathy): rare autoimmune
     # peripheral neuropathy. ~30K US diagnosed, ~50K EU, ~150K ROW. Class:
     # Vyvgart Hytrulo (Argenx efgartigimod, FDA approved 2024 ~$700M ramping),
@@ -284,6 +296,7 @@ PEN_PCT = {
     "immunology.neuromuscular_autoimmune.mmn": 65,
     "immunology.neuromuscular_autoimmune.myasthenia_gravis": 40,
     "immunology.neuromuscular_autoimmune.cidp": 35,
+    "immunology.neuromuscular_autoimmune.myositis": 25,
     "immunology.neuromuscular_autoimmune.sps": 30,
     "immunology.demyelinating.multiple_sclerosis": 25,
     "dermatology.aesthetics.filler": 5,

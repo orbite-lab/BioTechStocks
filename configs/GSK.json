@@ -528,7 +528,9 @@
       "designations": [],
       "modality": "small_molecule.antiviral.integrase_strand_inhibitor",
       "targets": [
-        "HIV_INT"
+        "INT",
+        "RT",
+        "CCR5"
       ],
       "indications": [
         {
@@ -538,11 +540,11 @@
           "market": {
             "tamB": 8,
             "penPct": 40,
-            "salesM": 6096,
+            "salesM": 7596,
             "salesYear": 2025,
             "peakYear": 2027,
             "cagrPct": 5,
-            "notes": "INSTI-based regimens: Dovato (3TC+DTG 2-drug ~$2B), Tivicay (DTG mono ~$0.7B), Triumeq (ABC/3TC/DTG ~$1.1B), Cabenuva (cabotegravir+rilpivirine LA Q1M/Q2M ~$1.5B), Juluca (DTG+RPV ~$0.5B). Class peer: Biktarvy (Gilead $13B dominant).",
+            "notes": "INSTI-based regimens: Dovato (3TC+DTG 2-drug ~$2B), Tivicay (DTG mono ~$0.7B), Triumeq (ABC/3TC/DTG ~$1.1B), Cabenuva (cabotegravir+rilpivirine LA Q1M/Q2M ~$1.5B), Juluca (DTG+RPV ~$0.5B). Class peer: Biktarvy (Gilead $13B dominant). Sized to £5.5B reported ViiV ex-PrEP.",
             "company_slice": {
               "us": {
                 "reachPct": 25.8,
@@ -1113,28 +1115,28 @@
         {
           "id": "egpa",
           "name": "EGPA (eosinophilic granulomatosis with polyangiitis)",
-          "area": "immunology.autoimmune.fsgs",
+          "area": "immunology.autoimmune.egpa",
           "market": {
             "tamB": 8,
-            "penPct": 25,
+            "penPct": 60,
             "salesM": 381,
             "salesYear": 2025,
             "peakYear": 2030,
             "cagrPct": 12,
-            "notes": "EGPA ~15% of brand. Tagged FSGS as autoimmune proxy (no EGPA leaf). Class first-in-class.",
+            "notes": "EGPA ~15% of brand. First-in-class anti-IL-5 for EGPA (approved 2017). Class peer: Tezspire (AZN/Amgen anti-TSLP Ph3 EGPA).",
             "company_slice": {
               "us": {
-                "reachPct": 48.8,
+                "reachPct": 95,
                 "wtpPct": 65,
                 "priceK": 35
               },
               "eu": {
-                "reachPct": 26.0,
+                "reachPct": 95,
                 "wtpPct": 48,
                 "priceK": 22
               },
               "row": {
-                "reachPct": 1.6,
+                "reachPct": 16.7,
                 "wtpPct": 12,
                 "priceK": 9
               }
@@ -1170,19 +1172,19 @@
             },
             "regions": {
               "us": {
-                "patientsK": 40,
-                "wtpPct": 45,
-                "priceK": 90
+                "patientsK": 12,
+                "wtpPct": 75,
+                "priceK": 60
               },
               "eu": {
-                "patientsK": 45,
-                "wtpPct": 30,
-                "priceK": 45
+                "patientsK": 15,
+                "wtpPct": 55,
+                "priceK": 35
               },
               "row": {
-                "patientsK": 200,
-                "wtpPct": 8,
-                "priceK": 8
+                "patientsK": 60,
+                "wtpPct": 14,
+                "priceK": 12
               }
             }
           }
@@ -1356,15 +1358,15 @@
         {
           "id": "ln",
           "name": "Lupus nephritis (LN)",
-          "area": "immunology.autoimmune.iga_nephropathy",
+          "area": "nephrology.glomerular.lupus_nephritis",
           "market": {
             "tamB": 8,
-            "penPct": 30,
+            "penPct": 40,
             "salesM": 381,
             "salesYear": 2025,
             "peakYear": 2030,
             "cagrPct": 18,
-            "notes": "Benlysta LN ~20% of brand (BLISS-LN Ph3). Class peer: Lupkynis (Aurinia voclosporin), atrasentan/iptacopan.",
+            "notes": "Benlysta LN ~20% of brand (BLISS-LN Ph3). Class peer: Lupkynis (Aurinia voclosporin), Saphnelo (AZN Ph3).",
             "company_slice": {
               "us": {
                 "reachPct": 13.4,
@@ -1413,19 +1415,19 @@
             },
             "regions": {
               "us": {
-                "patientsK": 130,
-                "wtpPct": 50,
-                "priceK": 65
+                "patientsK": 100,
+                "wtpPct": 60,
+                "priceK": 45
               },
               "eu": {
-                "patientsK": 150,
-                "wtpPct": 35,
-                "priceK": 32
+                "patientsK": 120,
+                "wtpPct": 42,
+                "priceK": 27
               },
               "row": {
-                "patientsK": 1500,
-                "wtpPct": 10,
-                "priceK": 6
+                "patientsK": 600,
+                "wtpPct": 12,
+                "priceK": 9
               }
             }
           }
@@ -1895,7 +1897,7 @@
           "market": {
             "tamB": 30,
             "penPct": 0,
-            "salesM": 11537,
+            "salesM": 10037,
             "salesYear": 2025,
             "peakYear": 2025,
             "cagrPct": -8,
@@ -2168,7 +2170,7 @@
       "designations": [],
       "modality": "nucleic_acid.aso.hbv_hbsag",
       "targets": [
-        "HBV_HBSAG"
+        "HBV"
       ],
       "indications": [
         {

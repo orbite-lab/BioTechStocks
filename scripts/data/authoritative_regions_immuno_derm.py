@@ -124,6 +124,19 @@ REGIONS = {
         "eu":  {"patientsK": 40,   "wtpPct": 55, "priceK": 130},
         "row": {"patientsK": 200,  "wtpPct": 12, "priceK": 50},
     },
+    # Eosinophilic granulomatosis with polyangiitis (EGPA, formerly
+    # Churg-Strauss): rare ANCA-associated vasculitis with eosinophilic
+    # infiltration. ~5K US prevalent, ~7K EU5, ~30K ROW. Branded class:
+    # Nucala (GSK mepolizumab anti-IL-5 first-in-class EGPA approval 2017
+    # ~$300M EGPA share), Tezspire (AZN/Amgen anti-TSLP Ph3 EGPA
+    # ongoing). Net branded ~$45K/yr.
+    "immunology.autoimmune.egpa": {
+        # Bumped for actual class size: Nucala EGPA share alone ~$300-400M
+        # supports class TAM ~$1B with broader treated population.
+        "us":  {"patientsK": 12,  "wtpPct": 75, "priceK": 60},
+        "eu":  {"patientsK": 15,  "wtpPct": 55, "priceK": 35},
+        "row": {"patientsK": 60,  "wtpPct": 14, "priceK": 12},
+    },
     # Ankylosing spondylitis (AS) + axial spondyloarthritis (axSpA): chronic
     # inflammatory spinal arthritis. ~1M US AS + ~2M nr-axSpA, ~1.5M EU AS,
     # ~10M ROW. Class: Cosentyx/Bimzelx (IL-17), TNFi legacy (Humira/Enbrel/
@@ -346,6 +359,7 @@ PEN_PCT = {
     "immunology.inflammatory_systemic.psoriatic_arthritis": 30,
     "immunology.inflammatory_systemic.gca_pmr": 18,
     "immunology.autoinflammatory.periodic_fever": 65,
+    "immunology.autoimmune.egpa": 60,
     "immunology.inflammatory_systemic.ankylosing_spondylitis": 25,
     "immunology.neuromuscular_autoimmune.itp": 35,
     "immunology.neuromuscular_autoimmune.mmn": 65,

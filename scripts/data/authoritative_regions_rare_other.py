@@ -652,6 +652,17 @@ REGIONS = {
         "eu":  {"patientsK": 14000, "wtpPct": 25, "priceK": 1.8},
         "row": {"patientsK": 50000, "wtpPct": 8,  "priceK": 0.5},
     },
+    # Lupus nephritis (LN): kidney manifestation of SLE. ~100K US
+    # prevalent (40-60% of SLE patients develop LN), ~120K EU5, ~600K
+    # ROW. Branded class: Benlysta (GSK belimumab BLISS-LN ~$300M LN
+    # share), Lupkynis (Aurinia voclosporin calcineurin inhibitor
+    # ~$200M), Saphnelo (AZN anifrolumab Ph3 ongoing LN), MMF/cyclo
+    # (off-label generics standard). Net branded ~$45K/yr.
+    "nephrology.glomerular.lupus_nephritis": {
+        "us":  {"patientsK": 100,  "wtpPct": 60, "priceK": 45},
+        "eu":  {"patientsK": 120,  "wtpPct": 42, "priceK": 27},
+        "row": {"patientsK": 600,  "wtpPct": 12, "priceK": 9},
+    },
 }
 
 PEN_PCT = {
@@ -725,4 +736,5 @@ PEN_PCT = {
     "cns.neurodegeneration.friedreich": 50,
     "infectious_disease.vaccines.zoster": 35,
     "respiratory.inflammatory.cough_chronic": 25,
+    "nephrology.glomerular.lupus_nephritis": 40,
 }

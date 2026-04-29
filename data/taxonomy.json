@@ -10,7 +10,7 @@
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
-    "area_count_l3": 206,
+    "area_count_l3": 208,
     "area_count_l4": 28,
     "modality_count": 340,
     "companies": 65
@@ -886,12 +886,18 @@
     },
     "immunology": {
       "autoimmune": {
+        "egpa": {
+          "companies": [
+            "GSK"
+          ],
+          "count": 1,
+          "rare": false
+        },
         "fsgs": {
           "companies": [
-            "GSK",
             "TVTX"
           ],
-          "count": 2,
+          "count": 1,
           "rare": true
         },
         "hereditary_angioedema": {
@@ -907,12 +913,11 @@
           "companies": [
             "BHVN",
             "CLYM",
-            "GSK",
             "NVS",
             "TVTX",
             "VRTX"
           ],
-          "count": 6,
+          "count": 5,
           "rare": true
         },
         "pmn": {
@@ -1439,6 +1444,13 @@
         "c3g": {
           "companies": [
             "NVS"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "lupus_nephritis": {
+          "companies": [
+            "GSK"
           ],
           "count": 1,
           "rare": false

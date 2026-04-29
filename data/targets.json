@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-29T15:19:14Z",
-    "target_count": 268,
-    "total_assets": 500,
-    "assets_with_targets": 469,
-    "multi_modality_count": 33,
-    "multi_disease_count": 115
+    "generated": "2026-04-29T15:31:49Z",
+    "target_count": 278,
+    "total_assets": 518,
+    "assets_with_targets": 485,
+    "multi_modality_count": 35,
+    "multi_disease_count": 122
   },
   "targets": {
     "ABL1": {
@@ -72,6 +72,40 @@
       "totalSales": 3100.0,
       "cagrPct": 0.9,
       "peakYear": 2027
+    },
+    "ACVR1": {
+      "companies": [
+        "GSK"
+      ],
+      "modalities": [
+        "small_molecule.kinase_inhibitor.jak2_acvr1"
+      ],
+      "areas": [
+        "hematology.myeloproliferative.mf"
+      ],
+      "assets": [
+        {
+          "ticker": "GSK",
+          "asset": "ojjaara",
+          "name": "Ojjaara/Omjjara (momelotinib) — JAK1/2 + ACVR1 inhibitor (myelofibrosis with anemia)",
+          "modality": "small_molecule.kinase_inhibitor.jak2_acvr1",
+          "areas": [
+            "hematology.myeloproliferative.mf"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 3875.8,
+      "totalSOM": 381.6,
+      "totalSales": 254.0,
+      "cagrPct": 35.0,
+      "peakYear": 2030
     },
     "ACVR1C": {
       "companies": [
@@ -192,13 +226,17 @@
     },
     "ADRB2": {
       "companies": [
-        "AZN"
+        "AZN",
+        "GSK"
       ],
       "modalities": [
         "small_molecule.respiratory.ics_laba_combo",
-        "small_molecule.respiratory.ics_laba_lama_triple"
+        "small_molecule.respiratory.ics_laba_lama_triple",
+        "small_molecule.respiratory.ics_lama_laba_triple",
+        "small_molecule.respiratory.legacy_inhaler"
       ],
       "areas": [
+        "respiratory.inflammatory.asthma_severe",
         "respiratory.inflammatory.copd"
       ],
       "assets": [
@@ -219,20 +257,40 @@
           "areas": [
             "respiratory.inflammatory.copd"
           ]
+        },
+        {
+          "ticker": "GSK",
+          "asset": "trelegy",
+          "name": "Trelegy Ellipta (FF/UMEC/VI) — ICS/LAMA/LABA triple inhaler",
+          "modality": "small_molecule.respiratory.ics_lama_laba_triple",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe",
+            "respiratory.inflammatory.copd"
+          ]
+        },
+        {
+          "ticker": "GSK",
+          "asset": "respiratory_legacy",
+          "name": "Anoro + Breo + Advair/Seretide + Ventolin — legacy respiratory inhalers",
+          "modality": "small_molecule.respiratory.legacy_inhaler",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe",
+            "respiratory.inflammatory.copd"
+          ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 4,
+      "modalityCount": 4,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 24600.0,
-      "totalSOM": 13137.6,
-      "totalSales": 4084.0,
-      "cagrPct": 1.1,
-      "peakYear": 2027
+      "totalTAM": 41905.0,
+      "totalSOM": 23018.5,
+      "totalSales": 11045.0,
+      "cagrPct": 0.3,
+      "peakYear": 2026
     },
     "AGT": {
       "companies": [
@@ -1196,7 +1254,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 4026.4,
       "totalSales": 2915.0,
       "cagrPct": 3.2,
@@ -1708,6 +1766,42 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2032
+    },
+    "CCR5": {
+      "companies": [
+        "GSK"
+      ],
+      "modalities": [
+        "small_molecule.antiviral.integrase_strand_inhibitor"
+      ],
+      "areas": [
+        "infectious_disease.anti_infective.hiv_prevention",
+        "infectious_disease.anti_infective.hiv_treatment"
+      ],
+      "assets": [
+        {
+          "ticker": "GSK",
+          "asset": "hiv_franchise",
+          "name": "ViiV HIV portfolio (Dovato + Tivicay + Triumeq + Cabenuva + Apretude)",
+          "modality": "small_molecule.antiviral.integrase_strand_inhibitor",
+          "areas": [
+            "infectious_disease.anti_infective.hiv_prevention",
+            "infectious_disease.anti_infective.hiv_treatment"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 48030.0,
+      "totalSOM": 9680.8,
+      "totalSales": 7786.0,
+      "cagrPct": 6.7,
+      "peakYear": 2027
     },
     "CD19": {
       "companies": [
@@ -2943,12 +3037,16 @@
     },
     "CHRM3": {
       "companies": [
-        "AZN"
+        "AZN",
+        "GSK"
       ],
       "modalities": [
-        "small_molecule.respiratory.ics_laba_lama_triple"
+        "small_molecule.respiratory.ics_laba_lama_triple",
+        "small_molecule.respiratory.ics_lama_laba_triple",
+        "small_molecule.respiratory.legacy_inhaler"
       ],
       "areas": [
+        "respiratory.inflammatory.asthma_severe",
         "respiratory.inflammatory.copd"
       ],
       "assets": [
@@ -2960,20 +3058,40 @@
           "areas": [
             "respiratory.inflammatory.copd"
           ]
+        },
+        {
+          "ticker": "GSK",
+          "asset": "trelegy",
+          "name": "Trelegy Ellipta (FF/UMEC/VI) — ICS/LAMA/LABA triple inhaler",
+          "modality": "small_molecule.respiratory.ics_lama_laba_triple",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe",
+            "respiratory.inflammatory.copd"
+          ]
+        },
+        {
+          "ticker": "GSK",
+          "asset": "respiratory_legacy",
+          "name": "Anoro + Breo + Advair/Seretide + Ventolin — legacy respiratory inhalers",
+          "modality": "small_molecule.respiratory.legacy_inhaler",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe",
+            "respiratory.inflammatory.copd"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 24600.0,
-      "totalSOM": 1801.0,
-      "totalSales": 1199.0,
-      "cagrPct": 8.0,
-      "peakYear": 2030
+      "totalTAM": 41905.0,
+      "totalSOM": 11681.9,
+      "totalSales": 8160.0,
+      "cagrPct": 0.6,
+      "peakYear": 2027
     },
     "CHRM4": {
       "companies": [
@@ -5518,15 +5636,26 @@
     },
     "HBV": {
       "companies": [
+        "GSK",
         "IONS"
       ],
       "modalities": [
-        "nucleic_acid.antisense.galnac_aso"
+        "nucleic_acid.antisense.galnac_aso",
+        "nucleic_acid.aso.hbv_hbsag"
       ],
       "areas": [
         "cardio_metabolic.liver.hbv_functional_cure"
       ],
       "assets": [
+        {
+          "ticker": "GSK",
+          "asset": "bepirovirsen",
+          "name": "Bepirovirsen (GSK3228836) — anti-HBV ASO (HBsAg loss + functional cure)",
+          "modality": "nucleic_acid.aso.hbv_hbsag",
+          "areas": [
+            "cardio_metabolic.liver.hbv_functional_cure"
+          ]
+        },
         {
           "ticker": "IONS",
           "asset": "bepiro",
@@ -5537,17 +5666,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "nucleic_acid"
       ],
       "totalTAM": 15450.0,
-      "totalSOM": 14671.6,
+      "totalSOM": 15787.1,
       "totalSales": 0.0,
-      "cagrPct": 0.0,
+      "cagrPct": 3.5,
       "peakYear": 2033
     },
     "HCRTR1": {
@@ -5876,7 +6005,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -6731,6 +6860,55 @@
       "cagrPct": 8.2,
       "peakYear": 2030
     },
+    "IL5": {
+      "companies": [
+        "GSK"
+      ],
+      "modalities": [
+        "antibody.cytokine.il5_blocker",
+        "antibody.cytokine.il5_blocker_la"
+      ],
+      "areas": [
+        "immunology.autoimmune.egpa",
+        "respiratory.inflammatory.asthma_severe",
+        "respiratory.inflammatory.crswnp"
+      ],
+      "assets": [
+        {
+          "ticker": "GSK",
+          "asset": "nucala",
+          "name": "Nucala (mepolizumab) — anti-IL-5 mAb",
+          "modality": "antibody.cytokine.il5_blocker",
+          "areas": [
+            "immunology.autoimmune.egpa",
+            "respiratory.inflammatory.asthma_severe",
+            "respiratory.inflammatory.crswnp"
+          ]
+        },
+        {
+          "ticker": "GSK",
+          "asset": "depemokimab",
+          "name": "Depemokimab — anti-IL-5 long-acting mAb (Q6M dosing)",
+          "modality": "antibody.cytokine.il5_blocker_la",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe",
+            "respiratory.inflammatory.crswnp"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 1,
+      "areaCount": 3,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 38218.0,
+      "totalSOM": 6045.6,
+      "totalSales": 2540.0,
+      "cagrPct": 22.2,
+      "peakYear": 2030
+    },
     "IL5RA": {
       "companies": [
         "AZN"
@@ -6959,6 +7137,42 @@
       "cagrPct": 0.0,
       "peakYear": 2028
     },
+    "INT": {
+      "companies": [
+        "GSK"
+      ],
+      "modalities": [
+        "small_molecule.antiviral.integrase_strand_inhibitor"
+      ],
+      "areas": [
+        "infectious_disease.anti_infective.hiv_prevention",
+        "infectious_disease.anti_infective.hiv_treatment"
+      ],
+      "assets": [
+        {
+          "ticker": "GSK",
+          "asset": "hiv_franchise",
+          "name": "ViiV HIV portfolio (Dovato + Tivicay + Triumeq + Cabenuva + Apretude)",
+          "modality": "small_molecule.antiviral.integrase_strand_inhibitor",
+          "areas": [
+            "infectious_disease.anti_infective.hiv_prevention",
+            "infectious_disease.anti_infective.hiv_treatment"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 48030.0,
+      "totalSOM": 9680.8,
+      "totalSales": 7786.0,
+      "cagrPct": 6.7,
+      "peakYear": 2027
+    },
     "IRAK4": {
       "companies": [
         "KYMR"
@@ -7129,13 +7343,15 @@
       "companies": [
         "ABBV",
         "ARQT",
+        "GSK",
         "NVS",
         "PFE"
       ],
       "modalities": [
         "small_molecule.kinase_inhibitor.jak",
         "small_molecule.kinase_inhibitor.jak1_selective",
-        "small_molecule.kinase_inhibitor.jak1_topical"
+        "small_molecule.kinase_inhibitor.jak1_topical",
+        "small_molecule.kinase_inhibitor.jak2_acvr1"
       ],
       "areas": [
         "dermatology.inflammatory_derm.atopic_dermatitis_systemic",
@@ -7180,6 +7396,15 @@
           ]
         },
         {
+          "ticker": "GSK",
+          "asset": "ojjaara",
+          "name": "Ojjaara/Omjjara (momelotinib) — JAK1/2 + ACVR1 inhibitor (myelofibrosis with anemia)",
+          "modality": "small_molecule.kinase_inhibitor.jak2_acvr1",
+          "areas": [
+            "hematology.myeloproliferative.mf"
+          ]
+        },
+        {
           "ticker": "NVS",
           "asset": "jakavi",
           "name": "Jakavi (ruxolitinib) — JAK1/2 inhibitor (ex-US; Incyte books US as Jakafi)",
@@ -7202,27 +7427,29 @@
           ]
         }
       ],
-      "assetCount": 5,
-      "modalityCount": 3,
+      "assetCount": 6,
+      "modalityCount": 4,
       "modalityClassCount": 1,
       "areaCount": 9,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 117673.8,
-      "totalSOM": 17133.3,
-      "totalSales": 9510.0,
-      "cagrPct": 2.2,
+      "totalSOM": 17514.9,
+      "totalSales": 9764.0,
+      "cagrPct": 2.9,
       "peakYear": 2030
     },
     "JAK2": {
       "companies": [
         "BMY",
+        "GSK",
         "NVS"
       ],
       "modalities": [
         "small_molecule.kinase_inhibitor.jak",
-        "small_molecule.kinase_inhibitor.jak2"
+        "small_molecule.kinase_inhibitor.jak2",
+        "small_molecule.kinase_inhibitor.jak2_acvr1"
       ],
       "areas": [
         "hematology.myeloproliferative.mf",
@@ -7240,6 +7467,15 @@
           ]
         },
         {
+          "ticker": "GSK",
+          "asset": "ojjaara",
+          "name": "Ojjaara/Omjjara (momelotinib) — JAK1/2 + ACVR1 inhibitor (myelofibrosis with anemia)",
+          "modality": "small_molecule.kinase_inhibitor.jak2_acvr1",
+          "areas": [
+            "hematology.myeloproliferative.mf"
+          ]
+        },
+        {
           "ticker": "NVS",
           "asset": "jakavi",
           "name": "Jakavi (ruxolitinib) — JAK1/2 inhibitor (ex-US; Incyte books US as Jakafi)",
@@ -7251,17 +7487,17 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
       "areaCount": 3,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 13045.8,
-      "totalSOM": 4015.2,
-      "totalSales": 2260.0,
-      "cagrPct": 5.9,
+      "totalSOM": 4396.8,
+      "totalSales": 2514.0,
+      "cagrPct": 8.5,
       "peakYear": 2028
     },
     "JAK3": {
@@ -7894,7 +8130,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 4026.4,
       "totalSales": 2915.0,
       "cagrPct": 3.2,
@@ -7934,7 +8170,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 2976.9,
       "totalSales": 2215.0,
       "cagrPct": 2.5,
@@ -8619,7 +8855,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -8660,17 +8896,76 @@
       "cagrPct": 5.7,
       "peakYear": 2033
     },
+    "NMENINGITIDIS": {
+      "companies": [
+        "GSK"
+      ],
+      "modalities": [
+        "vaccine.protein_subunit.meningococcal"
+      ],
+      "areas": [
+        "infectious_disease.vaccines.meningococcal"
+      ],
+      "assets": [
+        {
+          "ticker": "GSK",
+          "asset": "meningo",
+          "name": "Bexsero (4CMenB) + Menveo (MenACWY) + Penmenvy (pentavalent)",
+          "modality": "vaccine.protein_subunit.meningococcal",
+          "areas": [
+            "infectious_disease.vaccines.meningococcal"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "vaccine"
+      ],
+      "totalTAM": 3375.0,
+      "totalSOM": 2250.6,
+      "totalSales": 1100.0,
+      "cagrPct": 10.0,
+      "peakYear": 2030
+    },
     "NR3C1": {
       "companies": [
+        "GSK",
         "OCS"
       ],
       "modalities": [
-        "formulation_modifier.ocular.dex_cyclodextrin"
+        "formulation_modifier.ocular.dex_cyclodextrin",
+        "small_molecule.respiratory.ics_lama_laba_triple",
+        "small_molecule.respiratory.legacy_inhaler"
       ],
       "areas": [
-        "ophthalmology.retina.dme"
+        "ophthalmology.retina.dme",
+        "respiratory.inflammatory.asthma_severe",
+        "respiratory.inflammatory.copd"
       ],
       "assets": [
+        {
+          "ticker": "GSK",
+          "asset": "trelegy",
+          "name": "Trelegy Ellipta (FF/UMEC/VI) — ICS/LAMA/LABA triple inhaler",
+          "modality": "small_molecule.respiratory.ics_lama_laba_triple",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe",
+            "respiratory.inflammatory.copd"
+          ]
+        },
+        {
+          "ticker": "GSK",
+          "asset": "respiratory_legacy",
+          "name": "Anoro + Breo + Advair/Seretide + Ventolin — legacy respiratory inhalers",
+          "modality": "small_molecule.respiratory.legacy_inhaler",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe",
+            "respiratory.inflammatory.copd"
+          ]
+        },
         {
           "ticker": "OCS",
           "asset": "ocs01",
@@ -8681,18 +8976,19 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 1,
+      "assetCount": 3,
+      "modalityCount": 3,
+      "modalityClassCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
-        "formulation_modifier"
+        "formulation_modifier",
+        "small_molecule"
       ],
-      "totalTAM": 9375.0,
-      "totalSOM": 158.7,
-      "totalSales": 0.0,
-      "cagrPct": 0.0,
-      "peakYear": 2032
+      "totalTAM": 51280.0,
+      "totalSOM": 10039.6,
+      "totalSales": 6961.0,
+      "cagrPct": -0.7,
+      "peakYear": 2026
     },
     "NRAS": {
       "companies": [
@@ -8760,7 +9056,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -8868,6 +9164,40 @@
       "cagrPct": 0.0,
       "peakYear": 2033
     },
+    "P2RX3": {
+      "companies": [
+        "GSK"
+      ],
+      "modalities": [
+        "small_molecule.ion_channel.p2x3_antagonist"
+      ],
+      "areas": [
+        "respiratory.inflammatory.cough_chronic"
+      ],
+      "assets": [
+        {
+          "ticker": "GSK",
+          "asset": "camlipixant",
+          "name": "Camlipixant — P2X3 receptor antagonist (refractory chronic cough)",
+          "modality": "small_molecule.ion_channel.p2x3_antagonist",
+          "areas": [
+            "respiratory.inflammatory.cough_chronic"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 18800.0,
+      "totalSOM": 597.4,
+      "totalSales": 0.0,
+      "cagrPct": 40.0,
+      "peakYear": 2030
+    },
     "P2RY12": {
       "companies": [
         "AZN",
@@ -8916,11 +9246,13 @@
     "PARP1": {
       "companies": [
         "AZN",
+        "GSK",
         "JNJ",
         "MRK",
         "PFE"
       ],
       "modalities": [
+        "small_molecule.dna_damage_response.parp_inhibitor",
         "small_molecule.dna_damage_response.parp_inhibitor_combo",
         "small_molecule.kinase_inhibitor.parp"
       ],
@@ -8940,6 +9272,15 @@
             "oncology.breast.hr_her2_neg",
             "oncology.genitourinary.prostate",
             "oncology.gi.pancreatic",
+            "oncology.gynecologic.ovarian"
+          ]
+        },
+        {
+          "ticker": "GSK",
+          "asset": "zejula",
+          "name": "Zejula (niraparib) — PARP inhibitor",
+          "modality": "small_molecule.dna_damage_response.parp_inhibitor",
+          "areas": [
             "oncology.gynecologic.ovarian"
           ]
         },
@@ -8974,27 +9315,29 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 2,
+      "assetCount": 5,
+      "modalityCount": 3,
       "modalityClassCount": 1,
       "areaCount": 4,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 41117.8,
-      "totalSOM": 9312.8,
-      "totalSales": 4980.0,
-      "cagrPct": 1.0,
+      "totalSOM": 10264.8,
+      "totalSales": 5615.0,
+      "cagrPct": 0.4,
       "peakYear": 2027
     },
     "PARP2": {
       "companies": [
         "AZN",
+        "GSK",
         "JNJ",
         "MRK",
         "PFE"
       ],
       "modalities": [
+        "small_molecule.dna_damage_response.parp_inhibitor",
         "small_molecule.dna_damage_response.parp_inhibitor_combo",
         "small_molecule.kinase_inhibitor.parp"
       ],
@@ -9014,6 +9357,15 @@
             "oncology.breast.hr_her2_neg",
             "oncology.genitourinary.prostate",
             "oncology.gi.pancreatic",
+            "oncology.gynecologic.ovarian"
+          ]
+        },
+        {
+          "ticker": "GSK",
+          "asset": "zejula",
+          "name": "Zejula (niraparib) — PARP inhibitor",
+          "modality": "small_molecule.dna_damage_response.parp_inhibitor",
+          "areas": [
             "oncology.gynecologic.ovarian"
           ]
         },
@@ -9048,18 +9400,52 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 2,
+      "assetCount": 5,
+      "modalityCount": 3,
       "modalityClassCount": 1,
       "areaCount": 4,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 41117.8,
-      "totalSOM": 9312.8,
-      "totalSales": 4980.0,
-      "cagrPct": 1.0,
+      "totalSOM": 10264.8,
+      "totalSales": 5615.0,
+      "cagrPct": 0.4,
       "peakYear": 2027
+    },
+    "PBP": {
+      "companies": [
+        "GSK"
+      ],
+      "modalities": [
+        "small_molecule.antibiotic.beta_lactam_combo"
+      ],
+      "areas": [
+        "infectious_disease.anti_infective.bacterial_hospital"
+      ],
+      "assets": [
+        {
+          "ticker": "GSK",
+          "asset": "augmentin",
+          "name": "Augmentin (amoxicillin + clavulanate) — beta-lactam antibiotic",
+          "modality": "small_molecule.antibiotic.beta_lactam_combo",
+          "areas": [
+            "infectious_disease.anti_infective.bacterial_hospital"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 4539.5,
+      "totalSOM": 136.4,
+      "totalSales": 130.0,
+      "cagrPct": -5.0,
+      "peakYear": 2025
     },
     "PCSK9": {
       "companies": [
@@ -9155,6 +9541,7 @@
       "companies": [
         "AZN",
         "BMY",
+        "GSK",
         "MRK",
         "ONC",
         "PFE",
@@ -9172,6 +9559,7 @@
         "oncology.gi.colorectal",
         "oncology.gi.gastric_esoph",
         "oncology.gi.hcc",
+        "oncology.gynecologic.endometrial",
         "oncology.gynecologic.ovarian",
         "oncology.head_neck.hnscc",
         "oncology.hematology.hodgkin",
@@ -9214,6 +9602,15 @@
           "modality": "antibody.checkpoint.pd1_lag3_combo",
           "areas": [
             "oncology.skin.melanoma"
+          ]
+        },
+        {
+          "ticker": "GSK",
+          "asset": "jemperli",
+          "name": "Jemperli (dostarlimab) — anti-PD-1 mAb",
+          "modality": "antibody.checkpoint.pd1",
+          "areas": [
+            "oncology.gynecologic.endometrial"
           ]
         },
         {
@@ -9260,17 +9657,17 @@
           ]
         }
       ],
-      "assetCount": 7,
+      "assetCount": 8,
       "modalityCount": 4,
       "modalityClassCount": 1,
-      "areaCount": 13,
+      "areaCount": 14,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 89045.6,
-      "totalSOM": 66014.3,
-      "totalSales": 45137.0,
-      "cagrPct": 1.9,
+      "totalTAM": 100220.6,
+      "totalSOM": 67263.5,
+      "totalSales": 46026.0,
+      "cagrPct": 2.6,
       "peakYear": 2028
     },
     "PDE3": {
@@ -10157,6 +10554,76 @@
       "totalSales": 100.0,
       "cagrPct": 6.7,
       "peakYear": 2031
+    },
+    "RSV": {
+      "companies": [
+        "GSK"
+      ],
+      "modalities": [
+        "vaccine.protein_subunit.rsv_pref_adjuvanted"
+      ],
+      "areas": [
+        "infectious_disease.vaccines.rsv_adult"
+      ],
+      "assets": [
+        {
+          "ticker": "GSK",
+          "asset": "arexvy",
+          "name": "Arexvy — RSV PreF + AS01E vaccine (adults >=60)",
+          "modality": "vaccine.protein_subunit.rsv_pref_adjuvanted",
+          "areas": [
+            "infectious_disease.vaccines.rsv_adult"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "vaccine"
+      ],
+      "totalTAM": 11088.0,
+      "totalSOM": 1522.8,
+      "totalSales": 1016.0,
+      "cagrPct": 12.0,
+      "peakYear": 2030
+    },
+    "RT": {
+      "companies": [
+        "GSK"
+      ],
+      "modalities": [
+        "small_molecule.antiviral.integrase_strand_inhibitor"
+      ],
+      "areas": [
+        "infectious_disease.anti_infective.hiv_prevention",
+        "infectious_disease.anti_infective.hiv_treatment"
+      ],
+      "assets": [
+        {
+          "ticker": "GSK",
+          "asset": "hiv_franchise",
+          "name": "ViiV HIV portfolio (Dovato + Tivicay + Triumeq + Cabenuva + Apretude)",
+          "modality": "small_molecule.antiviral.integrase_strand_inhibitor",
+          "areas": [
+            "infectious_disease.anti_infective.hiv_prevention",
+            "infectious_disease.anti_infective.hiv_treatment"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 48030.0,
+      "totalSOM": 9680.8,
+      "totalSales": 7786.0,
+      "cagrPct": 6.7,
+      "peakYear": 2027
     },
     "RXFP1": {
       "companies": [
@@ -11801,11 +12268,13 @@
       "companies": [
         "BMY",
         "GILD",
+        "GSK",
         "JNJ",
         "LEGN",
         "REGN"
       ],
       "modalities": [
+        "adc.bcma.mmaf_payload",
         "antibody.bispecific.bcma_cd3",
         "cell_therapy.car_t_autologous.bcma_car_t",
         "cell_therapy.car_t_in_vivo.lnp_car_t"
@@ -11830,6 +12299,15 @@
           "asset": "anito_cel",
           "name": "Anito-cel â€” CAR-T (multiple myeloma)",
           "modality": "cell_therapy.car_t_autologous.bcma_car_t",
+          "areas": [
+            "oncology.hematology.myeloma.4l_plus"
+          ]
+        },
+        {
+          "ticker": "GSK",
+          "asset": "blenrep",
+          "name": "Blenrep (belantamab mafodotin) — BCMA-MMAF ADC (refiled 2025)",
+          "modality": "adc.bcma.mmaf_payload",
           "areas": [
             "oncology.hematology.myeloma.4l_plus"
           ]
@@ -11889,18 +12367,19 @@
           ]
         }
       ],
-      "assetCount": 8,
-      "modalityCount": 3,
-      "modalityClassCount": 2,
+      "assetCount": 9,
+      "modalityCount": 4,
+      "modalityClassCount": 3,
       "areaCount": 3,
       "modalityClasses": [
+        "adc",
         "antibody",
         "cell_therapy"
       ],
       "totalTAM": 35942.6,
-      "totalSOM": 8916.4,
-      "totalSales": 3059.0,
-      "cagrPct": 7.1,
+      "totalSOM": 9145.4,
+      "totalSales": 3211.0,
+      "cagrPct": 8.1,
       "peakYear": 2032
     },
     "TNFRSF4": {
@@ -12099,16 +12578,30 @@
     },
     "TNFSF13B": {
       "companies": [
+        "GSK",
         "VRTX"
       ],
       "modalities": [
+        "antibody.cytokine.baff_blocker",
         "recombinant_protein.fusion.taci_fc"
       ],
       "areas": [
         "immunology.autoimmune.iga_nephropathy",
-        "immunology.autoimmune.pmn"
+        "immunology.autoimmune.pmn",
+        "immunology.autoimmune.sle",
+        "nephrology.glomerular.lupus_nephritis"
       ],
       "assets": [
+        {
+          "ticker": "GSK",
+          "asset": "benlysta",
+          "name": "Benlysta (belimumab) — anti-BAFF mAb",
+          "modality": "antibody.cytokine.baff_blocker",
+          "areas": [
+            "immunology.autoimmune.sle",
+            "nephrology.glomerular.lupus_nephritis"
+          ]
+        },
         {
           "ticker": "VRTX",
           "asset": "povetacicept",
@@ -12120,18 +12613,19 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 2,
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
+      "areaCount": 4,
       "modalityClasses": [
+        "antibody",
         "recombinant_protein"
       ],
-      "totalTAM": 9605.0,
-      "totalSOM": 870.9,
-      "totalSales": 0.0,
-      "cagrPct": 98.1,
-      "peakYear": 2031
+      "totalTAM": 26664.8,
+      "totalSOM": 3408.3,
+      "totalSales": 1778.0,
+      "cagrPct": 33.6,
+      "peakYear": 2030
     },
     "TNFSF4": {
       "companies": [
@@ -12745,6 +13239,40 @@
       "totalSOM": 449.9,
       "totalSales": 300.0,
       "cagrPct": 0.0,
+      "peakYear": 2030
+    },
+    "VZV": {
+      "companies": [
+        "GSK"
+      ],
+      "modalities": [
+        "vaccine.protein_subunit.zoster_ge_adjuvanted"
+      ],
+      "areas": [
+        "infectious_disease.vaccines.zoster"
+      ],
+      "assets": [
+        {
+          "ticker": "GSK",
+          "asset": "shingrix",
+          "name": "Shingrix — adjuvanted recombinant glycoprotein E zoster vaccine",
+          "modality": "vaccine.protein_subunit.zoster_ge_adjuvanted",
+          "areas": [
+            "infectious_disease.vaccines.zoster"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "vaccine"
+      ],
+      "totalTAM": 65400.0,
+      "totalSOM": 6854.4,
+      "totalSales": 4572.0,
+      "cagrPct": 5.0,
       "peakYear": 2030
     },
     "ZIKA_VIRUS": {

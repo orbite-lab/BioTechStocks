@@ -11,7 +11,7 @@
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
     "area_count_l3": 130,
-    "area_count_l4": 25,
+    "area_count_l4": 27,
     "modality_count": 134,
     "companies": 52
   },
@@ -572,7 +572,23 @@
             "CRSP"
           ],
           "count": 1,
-          "rare": true
+          "rare": true,
+          "sub": {
+            "beta_thalassemia": {
+              "companies": [
+                "CRSP"
+              ],
+              "count": 1,
+              "rare": true
+            },
+            "scd": {
+              "companies": [
+                "CRSP"
+              ],
+              "count": 1,
+              "rare": true
+            }
+          }
         }
       }
     },
@@ -1380,14 +1396,6 @@
           "count": 3
         }
       },
-      "multi_payload": {
-        "rdc_iadc_dac": {
-          "companies": [
-            "6990"
-          ],
-          "count": 1
-        }
-      },
       "peptide_drug_conjugate": {
         "bdc_epha2": {
           "companies": [
@@ -1407,11 +1415,19 @@
           ],
           "count": 1
         }
+      },
+      "platform": {
+        "optidc": {
+          "companies": [
+            "6990"
+          ],
+          "count": 1
+        }
       }
     },
-    "aesthetic_or_other": {
-      "hyaluronic_acid": {
-        "dermal_filler": {
+    "aesthetic": {
+      "dermal_filler": {
+        "hyaluronic_acid": {
           "companies": [
             "ABBV"
           ],

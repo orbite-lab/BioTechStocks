@@ -19,30 +19,13 @@
       "designations": [],
       "indications": [
         {
-          "id": "scd_tdt",
-          "name": "SCD + beta-thalassemia gene editing cure",
+          "id": "scd",
+          "name": "Sickle cell disease (SCD) gene editing cure",
           "market": {
-            "tamB": 5.0,
-            "penPct": 18,
+            "tamB": 4.5,
+            "penPct": 15,
             "peakYear": 2032,
-            "notes": "First CRISPR therapy approved. 2025: $116M, 64 infusions. Priced ~$2.2M. Pediatric 5-11 submissions H1 2026. Vertex partnership. Complex manufacturing limits ramp.",
-            "regions": {
-              "us": {
-                "patientsK": 100,
-                "wtpPct": 60,
-                "priceK": 80
-              },
-              "eu": {
-                "patientsK": 100,
-                "wtpPct": 40,
-                "priceK": 40
-              },
-              "row": {
-                "patientsK": 5000,
-                "wtpPct": 10,
-                "priceK": 5
-              }
-            },
+            "notes": "First CRISPR therapy approved for SCD (Dec 2023). Priced ~$2.2M. ~100K US SCD; ~5K severe transplant-eligible. Vertex partnership. Complex manufacturing + busulfan conditioning limit ramp; Medicaid access via CMS gene therapy access model.",
             "sources": {
               "us.patientsK": {
                 "note": "~100K US SCD + ~3K TDT; ~20K SCD severe (2+ VOCs/yr) eligible for gene tx. Source: CDC SCDC, NORD, CRISPR/Vertex 10-K."
@@ -75,16 +58,16 @@
                 "note": "~18% peak -- capacity (myeloablation beds) + payer friction limit; 5-7yr ramp; in-vivo gene editing (Beam, Editas) could expand."
               }
             },
-            "salesM": 116.0,
+            "salesM": 70.0,
             "salesYear": 2025,
             "company_slice": {
               "us": {
-                "reachPct": 0.6,
+                "reachPct": 1.0,
                 "wtpPct": 60,
                 "priceK": 440
               },
               "eu": {
-                "reachPct": 0.4,
+                "reachPct": 0.5,
                 "wtpPct": 45,
                 "priceK": 220
               },
@@ -96,35 +79,129 @@
             },
             "company_slice_sources": {
               "us.reachPct": {
-                "note": "Casgevy SCD + TDT approved Dec-2023; ~16K eligible US SCD/TDT; ~4% reach by 2026 given ATC capacity bottleneck (~40 centers), conditioning toxicity; 2024 CRSP share ~$10M (early ramp)."
+                "note": "~5K US severe SCD transplant-eligible / 100K = 5% theoretical ceiling; ~1% peak reach by 2032 given ATC capacity (~40 centers) + busulfan conditioning friction."
               },
               "us.priceK": {
                 "note": "$2.2M WAC one-time; CRSP books 40% of Vertex ~$1.8M net US; amortized ~$440K/yr over 5yr."
               },
               "us.wtpPct": {
-                "note": "40% -- CMS gene therapy access model + Medicaid outcomes-based agreements (e.g. MI, TN); vein-to-vein 8-10mo; busulfan conditioning limits appeal."
+                "note": "60% -- CMS gene therapy access model + Medicaid outcomes-based deals (MI, TN); 8-10mo vein-to-vein limits patient demand."
               },
               "eu.reachPct": {
-                "note": "3% -- EMA approved 2024; NICE/G-BA + Saudi RSPRC reimbursed 2024; France Italy in negotiation."
+                "note": "0.5% -- EMA approved 2024; NICE/G-BA reimbursed; France/Italy in negotiation; severe SCD ~1K eligible."
               },
               "eu.wtpPct": {
-                "note": "25% -- HTA cautious on one-time gene tx budget; outcomes-based deals required."
+                "note": "45% -- HTA cautious; outcomes-based annuity deals required."
               },
               "eu.priceK": {
-                "note": "~$1.6M EU net (Vertex); CRSP gets 40% share."
+                "note": "~$1.6M EU net; CRSP 40% share."
               },
               "row.reachPct": {
-                "note": "2% -- Saudi + Gulf leading; Brazil cohort; APAC limited; Africa SCD high-burden but no access."
+                "note": "0.05% -- Saudi/Gulf RSPRC leading; sub-Saharan Africa high-burden but near-zero gene-tx access."
               },
               "row.wtpPct": {
-                "note": "10% -- Saudi/UAE reimbursed; Brazil private; rest via sponsored programs."
+                "note": "8% -- Gulf reimbursed; Brazil private; rest via sponsored programs."
               },
               "row.priceK": {
-                "note": "~$1.2M blended; Gulf $1.5M, Brazil $800K."
+                "note": "~$70K blended -- mix of Gulf $1.5M, Brazil $800K, vast sub-Saharan untreated."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 100,
+                "wtpPct": 58,
+                "priceK": 75
+              },
+              "eu": {
+                "patientsK": 60,
+                "wtpPct": 38,
+                "priceK": 35
+              },
+              "row": {
+                "patientsK": 5000,
+                "wtpPct": 8,
+                "priceK": 4
               }
             }
           },
-          "area": "hematology.rare_blood.hemoglobinopathy",
+          "area": "hematology.rare_blood.hemoglobinopathy.scd",
+          "rare": true
+        },
+        {
+          "id": "beta_thalassemia",
+          "name": "Beta-thalassemia (TDT) gene editing cure",
+          "market": {
+            "tamB": 0.6,
+            "penPct": 28,
+            "peakYear": 2032,
+            "notes": "Casgevy approved for transfusion-dependent beta-thalassemia (TDT) Jan 2024. ~3K US, ~15K EU5 (Mediterranean), ~200K APAC + MENA. Faster initial uptake than SCD given existing transfusion specialty centers + clear transplant-eligibility criteria.",
+            "salesM": 46.0,
+            "salesYear": 2025,
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 65,
+                "priceK": 440
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 50,
+                "priceK": 220
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 90
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "8% peak reach -- ~3K US TDT, ~600 transplant-eligible severe; thalassemia centers concentrated; faster ramp than SCD."
+              },
+              "us.priceK": {
+                "note": "$2.2M WAC; CRSP 40% Vertex share ~$880K net; amortized ~$440K/yr over 5yr."
+              },
+              "us.wtpPct": {
+                "note": "65% -- broad commercial coverage post-approval; clear severity criteria simplify PA."
+              },
+              "eu.reachPct": {
+                "note": "4% -- EMA approved Feb 2024; Italy + Germany early access; Mediterranean burden drives EU uptake share."
+              },
+              "eu.wtpPct": {
+                "note": "50% -- HTA generally favorable on TDT given lifetime transfusion cost offset."
+              },
+              "eu.priceK": {
+                "note": "~$1.6M EU net; CRSP 40% share."
+              },
+              "row.reachPct": {
+                "note": "0.5% -- Saudi/Gulf leading; APAC + India growing; ~200K TDT pool but limited specialty access."
+              },
+              "row.wtpPct": {
+                "note": "12% -- Gulf + selective APAC reimbursed."
+              },
+              "row.priceK": {
+                "note": "~$90K blended -- Gulf $1.5M, India/Pakistan/SEA mostly transfusion-only."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 3,
+                "wtpPct": 70,
+                "priceK": 220
+              },
+              "eu": {
+                "patientsK": 15,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 30
+              }
+            }
+          },
+          "area": "hematology.rare_blood.hemoglobinopathy.beta_thalassemia",
           "rare": true
         }
       ],
@@ -619,7 +696,12 @@
       ],
       "assumptions": {
         "casgevy": {
-          "scd_tdt": {
+          "scd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "beta_thalassemia": {
             "pos": 100,
             "apr": 100,
             "pen": 0.4
@@ -673,7 +755,12 @@
       ],
       "assumptions": {
         "casgevy": {
-          "scd_tdt": {
+          "scd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "beta_thalassemia": {
             "pos": 100,
             "apr": 100,
             "pen": 0.6
@@ -727,7 +814,12 @@
       ],
       "assumptions": {
         "casgevy": {
-          "scd_tdt": {
+          "scd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "beta_thalassemia": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
@@ -781,7 +873,12 @@
       ],
       "assumptions": {
         "casgevy": {
-          "scd_tdt": {
+          "scd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "beta_thalassemia": {
             "pos": 100,
             "apr": 100,
             "pen": 1.05
@@ -835,7 +932,12 @@
       ],
       "assumptions": {
         "casgevy": {
-          "scd_tdt": {
+          "scd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "beta_thalassemia": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0

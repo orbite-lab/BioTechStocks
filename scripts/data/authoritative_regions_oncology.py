@@ -285,10 +285,23 @@ REGIONS = {
     # patients as gene-therapy-eligible at $2.2M -- ~12x inflation.
     # Blended priceK below amortizes one-time GT over a 30-year horizon plus
     # chronic-management mix.
-    "hematology.rare_blood.hemoglobinopathy": {
-        "us":  {"patientsK": 100,   "wtpPct": 60, "priceK": 80},
-        "eu":  {"patientsK": 100,   "wtpPct": 40, "priceK": 40},
-        "row": {"patientsK": 5000,  "wtpPct": 10, "priceK": 5},
+    # Sickle cell disease: ~100K US diagnosed (CDC SCDC), ~60K EU5,
+    # ~5M sub-Saharan + India + Caribbean. Branded mix: Casgevy + Lyfgenia
+    # one-time ($2.2-3.1M, ~5K severe transplant-eligible US) blended with
+    # voxelotor/crizanlizumab/hydroxyurea chronic care.
+    "hematology.rare_blood.hemoglobinopathy.scd": {
+        "us":  {"patientsK": 100,  "wtpPct": 58, "priceK": 75},
+        "eu":  {"patientsK": 60,   "wtpPct": 38, "priceK": 35},
+        "row": {"patientsK": 5000, "wtpPct": 8,  "priceK": 4},
+    },
+    # Beta-thalassemia (transfusion-dependent, TDT): ~3K US, ~15K EU5
+    # (Mediterranean burden), ~200K ROW (APAC + MENA). Casgevy + Zynteglo
+    # both approved; faster initial uptake than SCD given existing transfusion
+    # specialty centers + clearer transplant eligibility criteria.
+    "hematology.rare_blood.hemoglobinopathy.beta_thalassemia": {
+        "us":  {"patientsK": 3,   "wtpPct": 70, "priceK": 220},
+        "eu":  {"patientsK": 15,  "wtpPct": 55, "priceK": 110},
+        "row": {"patientsK": 200, "wtpPct": 18, "priceK": 30},
     },
 
     # ------------------------------------------------------------
@@ -355,7 +368,8 @@ PEN_PCT = {
     "oncology.lung.sclc": 48,
     # (multi_tumor.* removed -- now _platform.*)
     "oncology.neuroendocrine.gepnet": 50,
-    "hematology.rare_blood.hemoglobinopathy": 18,
+    "hematology.rare_blood.hemoglobinopathy.scd": 15,
+    "hematology.rare_blood.hemoglobinopathy.beta_thalassemia": 28,
     "oncology.skin.melanoma": 65,
     "oncology.skin.cscc": 50,
     "oncology.skin.bcc": 45,

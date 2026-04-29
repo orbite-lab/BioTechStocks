@@ -516,9 +516,9 @@ REGIONS = {
     # tPA-treated ~10% (~70K/yr); EU similar. Branded Activase/TNKase (Roche),
     # generic alteplase. Net branded ~$5K/dose. Class small ~$1.5B globally.
     "cardio_metabolic.thrombosis.thrombolytic": {
-        "us":  {"patientsK": 100,  "wtpPct": 85, "priceK": 8},
-        "eu":  {"patientsK": 120,  "wtpPct": 65, "priceK": 5},
-        "row": {"patientsK": 500,  "wtpPct": 18, "priceK": 2},
+        "us":  {"patientsK": 200,  "wtpPct": 90, "priceK": 18},
+        "eu":  {"patientsK": 220,  "wtpPct": 70, "priceK": 11},
+        "row": {"patientsK": 800,  "wtpPct": 22, "priceK": 5},
     },
     # source: Cystic fibrosis ~40K US (CFF Patient Registry 2024), ~50K EU5,
     # ~80K ROW. Branded class dominated by Vertex CFTR modulators (Trikafta

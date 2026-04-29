@@ -358,28 +358,28 @@
         {
           "id": "mcc",
           "name": "Merkel cell carcinoma metastatic",
-          "area": "oncology.skin.cscc",
+          "area": "oncology.skin.merkel_cell",
           "market": {
             "tamB": 8,
-            "penPct": 50,
+            "penPct": 60,
             "salesM": 168,
             "salesYear": 2025,
             "peakYear": 2027,
             "cagrPct": -5,
-            "notes": "First & only PD-L1 for MCC. Tagged cscc as proxy (no MCC leaf).",
+            "notes": "First & only PD-L1 for MCC (neuroendocrine skin cancer, distinct from cSCC). Class peers: Keytruda KEYNOTE-913, Libtayo MCC trials.",
             "company_slice": {
               "us": {
-                "reachPct": 20,
+                "reachPct": 59.2,
                 "wtpPct": 65,
                 "priceK": 165
               },
               "eu": {
-                "reachPct": 12,
+                "reachPct": 35.5,
                 "wtpPct": 45,
                 "priceK": 95
               },
               "row": {
-                "reachPct": 1,
+                "reachPct": 3.0,
                 "wtpPct": 10,
                 "priceK": 35
               }
@@ -415,19 +415,19 @@
             },
             "regions": {
               "us": {
-                "patientsK": 20,
-                "wtpPct": 70,
-                "priceK": 200
+                "patientsK": 3,
+                "wtpPct": 75,
+                "priceK": 165
               },
               "eu": {
-                "patientsK": 25,
+                "patientsK": 4,
                 "wtpPct": 55,
-                "priceK": 110
+                "priceK": 95
               },
               "row": {
-                "patientsK": 50,
-                "wtpPct": 10,
-                "priceK": 40
+                "patientsK": 8,
+                "wtpPct": 14,
+                "priceK": 35
               }
             }
           }
@@ -704,28 +704,28 @@
         {
           "id": "ivf",
           "name": "IVF / ART (gonadotropin stimulation + ovulation)",
-          "area": "women_health.contraception.larc_implant",
+          "area": "women_health.fertility.ivf",
           "market": {
             "tamB": 8,
-            "penPct": 18,
+            "penPct": 35,
             "salesM": 1904,
             "salesYear": 2025,
             "peakYear": 2030,
             "cagrPct": 4,
-            "notes": "Class-leading recombinant FSH (Gonal-f), FSH+LH FDC (Pergoveris), GnRH antagonist (Cetrotide), recombinant hCG (Ovitrelle). Class peers: Ferring Bemfola/Rekovelle, Theramex Pergoveris generic. Tagged larc_implant as women's health proxy (no IVF leaf).",
+            "notes": "Class-leading IVF/ART franchise: rFSH (Gonal-f), rFSH+rLH FDC (Pergoveris), GnRH antagonist (Cetrotide), rhCG (Ovitrelle). Class peers: Ferring Bemfola/Rekovelle/Menopur, Theramex generics.",
             "company_slice": {
               "us": {
-                "reachPct": 1.5,
+                "reachPct": 95,
                 "wtpPct": 65,
                 "priceK": 4
               },
               "eu": {
-                "reachPct": 0.8,
+                "reachPct": 95,
                 "wtpPct": 45,
                 "priceK": 2.5
               },
               "row": {
-                "reachPct": 0.06,
+                "reachPct": 38.1,
                 "wtpPct": 14,
                 "priceK": 0.8
               }
@@ -761,19 +761,19 @@
             },
             "regions": {
               "us": {
-                "patientsK": 70000,
-                "wtpPct": 35,
-                "priceK": 0.4
+                "patientsK": 400,
+                "wtpPct": 70,
+                "priceK": 6
               },
               "eu": {
-                "patientsK": 80000,
-                "wtpPct": 28,
-                "priceK": 0.25
+                "patientsK": 1000,
+                "wtpPct": 55,
+                "priceK": 4
               },
               "row": {
-                "patientsK": 600000,
-                "wtpPct": 8,
-                "priceK": 0.08
+                "patientsK": 3000,
+                "wtpPct": 18,
+                "priceK": 1.5
               }
             }
           }
@@ -874,7 +874,7 @@
       "name": "Glucophage/Glucophage XR (metformin) — T2D",
       "stage": "Commercial (~$900M 2025; ROW branded)",
       "designations": [],
-      "modality": "small_molecule.metabolic.biguanide",
+      "modality": "small_molecule.kinase_activator.ampk",
       "targets": [
         "PRKAA1"
       ],
@@ -1052,7 +1052,7 @@
       "name": "Ogsiveo (nirogacestat) — gamma-secretase inhibitor (desmoid tumors; SpringWorks acq 2025)",
       "stage": "Commercial (~$200M 2025; first-in-class desmoid; SpringWorks $3.4B acq)",
       "designations": [],
-      "modality": "small_molecule.gamma_secretase_inhibitor.notch_pathway",
+      "modality": "small_molecule.protease_inhibitor.gamma_secretase",
       "targets": [
         "PSEN1"
       ],
@@ -1060,28 +1060,28 @@
         {
           "id": "desmoid",
           "name": "Desmoid tumors (DEFI Ph3)",
-          "area": "oncology.head_neck.hnscc",
+          "area": "oncology.musculoskeletal.desmoid",
           "market": {
             "tamB": 8,
-            "penPct": 55,
+            "penPct": 50,
             "salesM": 224,
             "salesYear": 2025,
             "peakYear": 2031,
             "cagrPct": 35,
-            "notes": "First & only therapy for desmoid tumors (DEFI Ph3 positive). Tagged hnscc as soft-tissue tumor proxy. Class peer: Niktimvo (Incyte/Syndax pelareorep, MF Ph3).",
+            "notes": "First & only therapy for desmoid tumors (DEFI Ph3 positive 2023). Aggressive fibromatosis -- soft tissue tumor.",
             "company_slice": {
               "us": {
-                "reachPct": 3.1,
+                "reachPct": 35.4,
                 "wtpPct": 70,
                 "priceK": 175
               },
               "eu": {
-                "reachPct": 1.6,
+                "reachPct": 18.3,
                 "wtpPct": 50,
                 "priceK": 100
               },
               "row": {
-                "reachPct": 0.2,
+                "reachPct": 2.3,
                 "wtpPct": 12,
                 "priceK": 35
               }
@@ -1117,19 +1117,19 @@
             },
             "regions": {
               "us": {
-                "patientsK": 70,
-                "wtpPct": 65,
-                "priceK": 145
+                "patientsK": 6,
+                "wtpPct": 70,
+                "priceK": 175
               },
               "eu": {
-                "patientsK": 80,
+                "patientsK": 8,
                 "wtpPct": 50,
-                "priceK": 85
+                "priceK": 100
               },
               "row": {
-                "patientsK": 600,
-                "wtpPct": 12,
-                "priceK": 25
+                "patientsK": 25,
+                "wtpPct": 14,
+                "priceK": 35
               }
             }
           }
@@ -1150,15 +1150,15 @@
         {
           "id": "nf1_pn",
           "name": "Neurofibromatosis type 1 plexiform neurofibroma (NF1-PN)",
-          "area": "cns.neurodegeneration.alexander",
+          "area": "oncology.musculoskeletal.nf1_pn",
           "market": {
             "tamB": 8,
-            "penPct": 60,
+            "penPct": 30,
             "salesM": 56,
             "salesYear": 2025,
             "peakYear": 2030,
             "cagrPct": 60,
-            "notes": "MEK inhibitor for NF1-PN (rare genetic CNS/skin syndrome). Class peer: Koselugo (AZN selumetinib pediatric NF1-PN). Tagged alexander as rare neurogenetic proxy.",
+            "notes": "MEK1/2 inhibitor for NF1-PN (RASopathy with peripheral nerve sheath tumors). Adult+pediatric label. Class peer: Koselugo (AZN selumetinib pediatric NF1-PN).",
             "company_slice": {
               "us": {
                 "reachPct": 72.9,
@@ -1207,19 +1207,19 @@
             },
             "regions": {
               "us": {
-                "patientsK": 0.5,
-                "wtpPct": 85,
-                "priceK": 400
-              },
-              "eu": {
-                "patientsK": 0.6,
-                "wtpPct": 70,
+                "patientsK": 80,
+                "wtpPct": 65,
                 "priceK": 250
               },
+              "eu": {
+                "patientsK": 120,
+                "wtpPct": 50,
+                "priceK": 150
+              },
               "row": {
-                "patientsK": 3,
-                "wtpPct": 30,
-                "priceK": 80
+                "patientsK": 500,
+                "wtpPct": 12,
+                "priceK": 50
               }
             }
           }
@@ -1257,7 +1257,7 @@
       "name": "Xevinapant — IAP (cIAP1/2/XIAP) antagonist (locally advanced HNSCC; ex-Debiopharm)",
       "stage": "Phase 3 TrilynX HNSCC FAILED Mar 2024 (futility); XRay Vision 2L MET salvage Ph3 ongoing",
       "designations": [],
-      "modality": "small_molecule.iap_antagonist.smac_mimetic",
+      "modality": "small_molecule.protein_protein_inhibitor.smac_mimetic",
       "targets": [
         "BIRC2",
         "BIRC3",
@@ -1356,15 +1356,15 @@
         {
           "id": "tgct",
           "name": "Tenosynovial giant cell tumor (TGCT, locally aggressive)",
-          "area": "oncology.head_neck.hnscc",
+          "area": "oncology.musculoskeletal.tgct",
           "market": {
             "tamB": 8,
-            "penPct": 55,
+            "penPct": 40,
             "salesM": 0,
             "salesYear": 2025,
             "peakYear": 2031,
             "cagrPct": 50,
-            "notes": "Selective CSF-1R inhibitor for TGCT. Class peer: Turalio (Daiichi pexidartinib first-in-class but hepatotoxicity REMS). Tagged hnscc as soft-tissue tumor proxy. Pimicotinib differentiated safety.",
+            "notes": "Selective CSF-1R inhibitor for TGCT (locally aggressive joint/tendon synovium tumor). Class peer: Turalio (Daiichi pexidartinib first-in-class with hepatotoxicity REMS). MANEUVER Ph3 positive 2024.",
             "company_slice": {
               "us": {
                 "reachPct": 15,
@@ -1413,19 +1413,19 @@
             },
             "regions": {
               "us": {
-                "patientsK": 70,
+                "patientsK": 10,
                 "wtpPct": 65,
-                "priceK": 145
+                "priceK": 175
               },
               "eu": {
-                "patientsK": 80,
-                "wtpPct": 50,
-                "priceK": 85
+                "patientsK": 15,
+                "wtpPct": 45,
+                "priceK": 100
               },
               "row": {
-                "patientsK": 600,
+                "patientsK": 50,
                 "wtpPct": 12,
-                "priceK": 25
+                "priceK": 35
               }
             }
           }

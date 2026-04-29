@@ -500,6 +500,50 @@ REGIONS = {
         "eu":  {"patientsK": 15,  "wtpPct": 55, "priceK": 110},
         "row": {"patientsK": 30,  "wtpPct": 10, "priceK": 40},
     },
+    # Merkel cell carcinoma (MCC): rare aggressive neuroendocrine skin
+    # cancer (NOT keratinocyte-origin like cSCC). ~3K US new cases/yr,
+    # ~70% MCPyV-associated. EU 4K, ROW 8K. Class: Bavencio (Merck KGaA/
+    # Pfizer avelumab anti-PD-L1 first-in-class ~$150M MCC share),
+    # Keytruda (Merck KEYNOTE-913 1L), Libtayo (REGN cemiplimab Ph2 MCC
+    # cemiplimab in trials). Net branded ~$165K/yr.
+    "oncology.skin.merkel_cell": {
+        "us":  {"patientsK": 3,   "wtpPct": 75, "priceK": 165},
+        "eu":  {"patientsK": 4,   "wtpPct": 55, "priceK": 95},
+        "row": {"patientsK": 8,   "wtpPct": 14, "priceK": 35},
+    },
+    # Desmoid tumors (aggressive fibromatosis): rare soft-tissue tumor
+    # from connective tissue; can occur anywhere (abdominal wall,
+    # extremity, intra-abdominal). ~6K US prevalent on tx, ~8K EU,
+    # ~25K ROW. Class: Ogsiveo (Merck KGaA/SpringWorks nirogacestat
+    # gamma-secretase inhibitor first-in-class ~$200M, DEFI Ph3
+    # positive 2023). Net branded ~$175K/yr orphan-priced.
+    "oncology.musculoskeletal.desmoid": {
+        "us":  {"patientsK": 6,   "wtpPct": 70, "priceK": 175},
+        "eu":  {"patientsK": 8,   "wtpPct": 50, "priceK": 100},
+        "row": {"patientsK": 25,  "wtpPct": 14, "priceK": 35},
+    },
+    # NF1 plexiform neurofibroma (NF1-PN): rare RASopathy with
+    # peripheral nerve sheath tumors. ~80K US NF1 patients with PN,
+    # ~120K EU, ~500K ROW. Class: Gomekli (Merck KGaA/SpringWorks
+    # mirdametinib MEK1/2 inhibitor adult+pediatric, FDA approved
+    # Feb 2025), Koselugo (AZN selumetinib MEK1/2 pediatric NF1-PN).
+    # Net branded ~$250K/yr orphan-priced.
+    "oncology.musculoskeletal.nf1_pn": {
+        "us":  {"patientsK": 80,  "wtpPct": 65, "priceK": 250},
+        "eu":  {"patientsK": 120, "wtpPct": 50, "priceK": 150},
+        "row": {"patientsK": 500, "wtpPct": 12, "priceK": 50},
+    },
+    # Tenosynovial giant cell tumor (TGCT): locally aggressive joint/
+    # tendon synovium proliferation. ~30K US prevalent on tx (most
+    # surgical; ~10K systemic biologics-eligible), ~40K EU, ~150K ROW.
+    # Class: Turalio (Daiichi pexidartinib CSF-1R first-in-class but
+    # hepatotoxicity REMS), Pimicotinib (Merck KGaA/Abbisko/Innovent
+    # CSF-1R Ph3 MANEUVER positive 2024). Net branded ~$175K/yr.
+    "oncology.musculoskeletal.tgct": {
+        "us":  {"patientsK": 10,  "wtpPct": 65, "priceK": 175},
+        "eu":  {"patientsK": 15,  "wtpPct": 45, "priceK": 100},
+        "row": {"patientsK": 50,  "wtpPct": 12, "priceK": 35},
+    },
 
     # ------------------------------------------------------------
     # EYE ONCOLOGY (uveal melanoma) -- biologically distinct from cutaneous
@@ -591,6 +635,10 @@ PEN_PCT = {
     "oncology.skin.melanoma": 65,
     "oncology.skin.cscc": 50,
     "oncology.skin.bcc": 45,
+    "oncology.skin.merkel_cell": 60,
+    "oncology.musculoskeletal.desmoid": 50,
+    "oncology.musculoskeletal.nf1_pn": 30,
+    "oncology.musculoskeletal.tgct": 40,
     "oncology.eye.uveal_melanoma": 35,
     "oncology.head_neck.hnscc": 55,
 }

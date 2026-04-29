@@ -696,6 +696,18 @@ REGIONS = {
         "eu":  {"patientsK": 50000,  "wtpPct": 20, "priceK": 0.25},
         "row": {"patientsK": 200000, "wtpPct": 12, "priceK": 0.08},
     },
+    # IVF / Assisted Reproductive Technology (ART): gonadotropin-stimulated
+    # ovulation + IVF cycles. US ~400K cycles/yr, EU ~1M cycles, ROW ~3M.
+    # Class: Merck KGaA Gonal-f (rFSH ~$1.1B) + Pergoveris + Cetrotide +
+    # Ovitrelle; Ferring Bemfola/Rekovelle/Menopur; Theramex generics.
+    # Class globally ~$3-4B branded. Net branded ~$4-5K/cycle.
+    "women_health.fertility.ivf": {
+        # Bumped patientsK (gonadotropin-treated cycles, not just women)
+        # and price to reflect actual class size (~$5-6B globally branded).
+        "us":  {"patientsK": 400,   "wtpPct": 70, "priceK": 6},
+        "eu":  {"patientsK": 1000,  "wtpPct": 55, "priceK": 4},
+        "row": {"patientsK": 3000,  "wtpPct": 18, "priceK": 1.5},
+    },
 }
 
 PEN_PCT = {
@@ -773,4 +785,5 @@ PEN_PCT = {
     "infectious_disease.vaccines.dengue": 22,
     "women_health.contraception.ocp": 25,
     "cardio_metabolic.thrombosis.antiplatelet": 20,
+    "women_health.fertility.ivf": 35,
 }

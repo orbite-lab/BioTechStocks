@@ -2161,6 +2161,83 @@
             }
           },
           "area": "respiratory.inflammatory.asthma_severe"
+        },
+        {
+          "id": "egpa",
+          "name": "EGPA (Ph3 ongoing)",
+          "area": "immunology.autoimmune.egpa",
+          "market": {
+            "tamB": 1,
+            "penPct": 60,
+            "salesM": 0,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 50,
+            "notes": "Anti-TSLP for EGPA Ph3 ongoing. Class leader Nucala (GSK anti-IL-5) approved 2017.",
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 60,
+                "priceK": 60
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 42,
+                "priceK": 35
+              },
+              "row": {
+                "reachPct": 0.15,
+                "wtpPct": 12,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Tezspire EGPA pipeline AZN-share"
+              },
+              "us.wtpPct": {
+                "note": "Tezspire EGPA pipeline AZN-share"
+              },
+              "us.priceK": {
+                "note": "Tezspire EGPA pipeline AZN-share"
+              },
+              "eu.reachPct": {
+                "note": "Tezspire EGPA pipeline AZN-share"
+              },
+              "eu.wtpPct": {
+                "note": "Tezspire EGPA pipeline AZN-share"
+              },
+              "eu.priceK": {
+                "note": "Tezspire EGPA pipeline AZN-share"
+              },
+              "row.reachPct": {
+                "note": "Tezspire EGPA pipeline AZN-share"
+              },
+              "row.wtpPct": {
+                "note": "Tezspire EGPA pipeline AZN-share"
+              },
+              "row.priceK": {
+                "note": "Tezspire EGPA pipeline AZN-share"
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 75,
+                "priceK": 60
+              },
+              "eu": {
+                "patientsK": 15,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "row": {
+                "patientsK": 60,
+                "wtpPct": 14,
+                "priceK": 12
+              }
+            }
+          }
         }
       ]
     },
@@ -2246,6 +2323,83 @@
             }
           },
           "area": "immunology.autoimmune.sle"
+        },
+        {
+          "id": "ln",
+          "name": "Lupus nephritis (TULIP-LN Ph3)",
+          "area": "nephrology.glomerular.lupus_nephritis",
+          "market": {
+            "tamB": 4,
+            "penPct": 40,
+            "salesM": 0,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 60,
+            "notes": "Anti-IFN-α Type 1 receptor mAb for lupus nephritis Ph3 (TULIP-LN ongoing). Class peer: Benlysta (GSK BLISS-LN approved 2020), Lupkynis (Aurinia voclosporin).",
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 55,
+                "priceK": 45
+              },
+              "eu": {
+                "reachPct": 2.5,
+                "wtpPct": 38,
+                "priceK": 27
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 12,
+                "priceK": 9
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Saphnelo LN Ph3"
+              },
+              "us.wtpPct": {
+                "note": "Saphnelo LN Ph3"
+              },
+              "us.priceK": {
+                "note": "Saphnelo LN Ph3"
+              },
+              "eu.reachPct": {
+                "note": "Saphnelo LN Ph3"
+              },
+              "eu.wtpPct": {
+                "note": "Saphnelo LN Ph3"
+              },
+              "eu.priceK": {
+                "note": "Saphnelo LN Ph3"
+              },
+              "row.reachPct": {
+                "note": "Saphnelo LN Ph3"
+              },
+              "row.wtpPct": {
+                "note": "Saphnelo LN Ph3"
+              },
+              "row.priceK": {
+                "note": "Saphnelo LN Ph3"
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 100,
+                "wtpPct": 60,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 120,
+                "wtpPct": 42,
+                "priceK": 27
+              },
+              "row": {
+                "patientsK": 600,
+                "wtpPct": 12,
+                "priceK": 9
+              }
+            }
+          }
         }
       ],
       "modality": "antibody.cytokine.ifn_alpha_blocker",
@@ -3288,6 +3442,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.8
+          },
+          "egpa": {
+            "pos": 40,
+            "apr": 40,
+            "pen": 0.3
           }
         },
         "saphnelo": {
@@ -3295,6 +3454,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.7
+          },
+          "ln": {
+            "pos": 35,
+            "apr": 35,
+            "pen": 0.3
           }
         },
         "rare_alexion": {
@@ -3538,6 +3702,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.95
+          },
+          "egpa": {
+            "pos": 55,
+            "apr": 55,
+            "pen": 0.55
           }
         },
         "saphnelo": {
@@ -3545,6 +3714,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.85
+          },
+          "ln": {
+            "pos": 55,
+            "apr": 55,
+            "pen": 0.55
           }
         },
         "rare_alexion": {
@@ -3790,6 +3964,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.15
+          },
+          "egpa": {
+            "pos": 70,
+            "apr": 68,
+            "pen": 0.85
           }
         },
         "saphnelo": {
@@ -3797,6 +3976,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.0
+          },
+          "ln": {
+            "pos": 72,
+            "apr": 70,
+            "pen": 0.85
           }
         },
         "rare_alexion": {
@@ -4041,6 +4225,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.35
+          },
+          "egpa": {
+            "pos": 82,
+            "apr": 80,
+            "pen": 1.1
           }
         },
         "saphnelo": {
@@ -4048,6 +4237,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.2
+          },
+          "ln": {
+            "pos": 85,
+            "apr": 82,
+            "pen": 1.1
           }
         },
         "rare_alexion": {
@@ -4291,12 +4485,22 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.55
+          },
+          "egpa": {
+            "pos": 92,
+            "apr": 90,
+            "pen": 1.4
           }
         },
         "saphnelo": {
           "sle": {
             "pos": 100,
             "apr": 100,
+            "pen": 1.4
+          },
+          "ln": {
+            "pos": 94,
+            "apr": 90,
             "pen": 1.4
           }
         },

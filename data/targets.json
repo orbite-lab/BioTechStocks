@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-29T15:06:44Z",
-    "target_count": 262,
-    "total_assets": 489,
-    "assets_with_targets": 459,
-    "multi_modality_count": 31,
-    "multi_disease_count": 113
+    "generated": "2026-04-29T15:13:12Z",
+    "target_count": 267,
+    "total_assets": 499,
+    "assets_with_targets": 468,
+    "multi_modality_count": 33,
+    "multi_disease_count": 115
   },
   "targets": {
     "ABL1": {
@@ -842,6 +842,40 @@
       "cagrPct": 0.0,
       "peakYear": 2035
     },
+    "APOL1": {
+      "companies": [
+        "VRTX"
+      ],
+      "modalities": [
+        "small_molecule.protein_inhibitor.apol1"
+      ],
+      "areas": [
+        "immunology.autoimmune.fsgs"
+      ],
+      "assets": [
+        {
+          "ticker": "VRTX",
+          "asset": "inaxaplin",
+          "name": "Inaxaplin (VX-147) — APOL1 small-molecule inhibitor (APOL1-mediated CKD)",
+          "modality": "small_molecule.protein_inhibitor.apol1",
+          "areas": [
+            "immunology.autoimmune.fsgs"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 2355.5,
+      "totalSOM": 76.0,
+      "totalSales": 0.0,
+      "cagrPct": 80.0,
+      "peakYear": 2031
+    },
     "APP": {
       "companies": [
         "ALNY",
@@ -979,9 +1013,11 @@
     },
     "BCL11A": {
       "companies": [
-        "CRSP"
+        "CRSP",
+        "VRTX"
       ],
       "modalities": [
+        "gene_editing.crispr.bcl11a_disruption",
         "gene_editing.crispr_cas9.exvivo"
       ],
       "areas": [
@@ -998,20 +1034,30 @@
             "hematology.rare_blood.hemoglobinopathy.beta_thalassemia",
             "hematology.rare_blood.hemoglobinopathy.scd"
           ]
+        },
+        {
+          "ticker": "VRTX",
+          "asset": "casgevy",
+          "name": "Casgevy (exagamglogene autotemcel) — CRISPR-Cas9 BCL11A gene editing (w/ CRSP)",
+          "modality": "gene_editing.crispr.bcl11a_disruption",
+          "areas": [
+            "hematology.rare_blood.hemoglobinopathy.beta_thalassemia",
+            "hematology.rare_blood.hemoglobinopathy.scd"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 2,
       "modalityClasses": [
         "gene_editing"
       ],
       "totalTAM": 9197.5,
-      "totalSOM": 453.1,
-      "totalSales": 116.0,
-      "cagrPct": 0.0,
-      "peakYear": 2032
+      "totalSOM": 3916.1,
+      "totalSales": 232.0,
+      "cagrPct": 52.3,
+      "peakYear": 2031
     },
     "BCL2": {
       "companies": [
@@ -1150,7 +1196,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 4026.4,
       "totalSales": 2915.0,
       "cagrPct": 3.2,
@@ -2743,10 +2789,14 @@
     },
     "CFTR": {
       "companies": [
-        "KRYS"
+        "KRYS",
+        "VRTX"
       ],
       "modalities": [
-        "gene_therapy.gene_replacement.hsv1_vector"
+        "gene_therapy.gene_replacement.hsv1_vector",
+        "small_molecule.cftr_modulator.legacy",
+        "small_molecule.cftr_modulator.triple_combo",
+        "small_molecule.cftr_modulator.triple_combo_next_gen"
       ],
       "areas": [
         "respiratory.genetic.cystic_fibrosis"
@@ -2760,20 +2810,48 @@
           "areas": [
             "respiratory.genetic.cystic_fibrosis"
           ]
+        },
+        {
+          "ticker": "VRTX",
+          "asset": "trikafta",
+          "name": "Trikafta/Kaftrio (elexacaftor/tezacaftor/ivacaftor) — CFTR triple combo",
+          "modality": "small_molecule.cftr_modulator.triple_combo",
+          "areas": [
+            "respiratory.genetic.cystic_fibrosis"
+          ]
+        },
+        {
+          "ticker": "VRTX",
+          "asset": "alyftrek",
+          "name": "Alyftrek (vanzacaftor/tezacaftor/deutivacaftor) — next-gen CFTR triple QD",
+          "modality": "small_molecule.cftr_modulator.triple_combo_next_gen",
+          "areas": [
+            "respiratory.genetic.cystic_fibrosis"
+          ]
+        },
+        {
+          "ticker": "VRTX",
+          "asset": "legacy_cf",
+          "name": "Symdeko/Symkevi + Orkambi + Kalydeco — legacy CFTR modulators",
+          "modality": "small_molecule.cftr_modulator.legacy",
+          "areas": [
+            "respiratory.genetic.cystic_fibrosis"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
+      "assetCount": 4,
+      "modalityCount": 4,
+      "modalityClassCount": 2,
       "areaCount": 1,
       "modalityClasses": [
-        "gene_therapy"
+        "gene_therapy",
+        "small_molecule"
       ],
       "totalTAM": 14924.0,
-      "totalSOM": 291.4,
-      "totalSales": 0.0,
-      "cagrPct": 0.0,
-      "peakYear": 2034
+      "totalSOM": 17641.2,
+      "totalSales": 11800.0,
+      "cagrPct": 1.8,
+      "peakYear": 2026
     },
     "CHIK_VIRUS": {
       "companies": [
@@ -5798,7 +5876,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -6800,6 +6878,40 @@
       "cagrPct": 0.0,
       "peakYear": 2035
     },
+    "INS": {
+      "companies": [
+        "VRTX"
+      ],
+      "modalities": [
+        "cell_therapy.allogeneic_stem_cell.islet_cells"
+      ],
+      "areas": [
+        "cardio_metabolic.diabetes.t1d"
+      ],
+      "assets": [
+        {
+          "ticker": "VRTX",
+          "asset": "vx880_islets",
+          "name": "VX-880 + VX-264 — fully differentiated allogeneic islet cell therapy (T1D)",
+          "modality": "cell_therapy.allogeneic_stem_cell.islet_cells",
+          "areas": [
+            "cardio_metabolic.diabetes.t1d"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "cell_therapy"
+      ],
+      "totalTAM": 14275.0,
+      "totalSOM": 729.5,
+      "totalSales": 0.0,
+      "cagrPct": 200.0,
+      "peakYear": 2032
+    },
     "INSR": {
       "companies": [
         "NOVO",
@@ -7782,7 +7894,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 4026.4,
       "totalSales": 2915.0,
       "cagrPct": 3.2,
@@ -7822,7 +7934,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 2976.9,
       "totalSales": 2215.0,
       "cagrPct": 2.5,
@@ -8473,7 +8585,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -8614,7 +8726,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -9528,6 +9640,40 @@
       "cagrPct": 23.1,
       "peakYear": 2032
     },
+    "PKD1": {
+      "companies": [
+        "VRTX"
+      ],
+      "modalities": [
+        "small_molecule.protein_modulator.pc1"
+      ],
+      "areas": [
+        "cardio_metabolic.liver.pld_adpkd"
+      ],
+      "assets": [
+        {
+          "ticker": "VRTX",
+          "asset": "vx407_pkd",
+          "name": "VX-407 — PC1 modulator (autosomal dominant polycystic kidney disease)",
+          "modality": "small_molecule.protein_modulator.pc1",
+          "areas": [
+            "cardio_metabolic.liver.pld_adpkd"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 295.2,
+      "totalSOM": 60.7,
+      "totalSales": 0.0,
+      "cagrPct": 80.0,
+      "peakYear": 2032
+    },
     "PLAT": {
       "companies": [
         "RHHBY"
@@ -10247,6 +10393,40 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2035
+    },
+    "SCN10A": {
+      "companies": [
+        "VRTX"
+      ],
+      "modalities": [
+        "small_molecule.ion_channel.nav18_inhibitor"
+      ],
+      "areas": [
+        "cns.pain.migraine"
+      ],
+      "assets": [
+        {
+          "ticker": "VRTX",
+          "asset": "journavx",
+          "name": "Journavx (suzetrigine, VX-548) — NaV1.8 selective inhibitor (acute pain)",
+          "modality": "small_molecule.ion_channel.nav18_inhibitor",
+          "areas": [
+            "cns.pain.migraine"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 6220.0,
+      "totalSOM": 88.8,
+      "totalSales": 60.0,
+      "cagrPct": 100.0,
+      "peakYear": 2031
     },
     "SCN1A": {
       "companies": [
@@ -11837,13 +12017,16 @@
     },
     "TNFSF13": {
       "companies": [
-        "CLYM"
+        "CLYM",
+        "VRTX"
       ],
       "modalities": [
-        "antibody.monoclonal.anti_april"
+        "antibody.monoclonal.anti_april",
+        "recombinant_protein.fusion.taci_fc"
       ],
       "areas": [
-        "immunology.autoimmune.iga_nephropathy"
+        "immunology.autoimmune.iga_nephropathy",
+        "immunology.autoimmune.pmn"
       ],
       "assets": [
         {
@@ -11854,20 +12037,67 @@
           "areas": [
             "immunology.autoimmune.iga_nephropathy"
           ]
+        },
+        {
+          "ticker": "VRTX",
+          "asset": "povetacicept",
+          "name": "Povetacicept (pove) — TACI-Fc fusion (BAFF + APRIL inhibitor, ex-Alpine acq $4.9B 2024)",
+          "modality": "recombinant_protein.fusion.taci_fc",
+          "areas": [
+            "immunology.autoimmune.iga_nephropathy",
+            "immunology.autoimmune.pmn"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
+      "areaCount": 2,
+      "modalityClasses": [
+        "antibody",
+        "recombinant_protein"
+      ],
+      "totalTAM": 9605.0,
+      "totalSOM": 1025.3,
+      "totalSales": 0.0,
+      "cagrPct": 84.1,
+      "peakYear": 2032
+    },
+    "TNFSF13B": {
+      "companies": [
+        "VRTX"
+      ],
+      "modalities": [
+        "recombinant_protein.fusion.taci_fc"
+      ],
+      "areas": [
+        "immunology.autoimmune.iga_nephropathy",
+        "immunology.autoimmune.pmn"
+      ],
+      "assets": [
+        {
+          "ticker": "VRTX",
+          "asset": "povetacicept",
+          "name": "Povetacicept (pove) — TACI-Fc fusion (BAFF + APRIL inhibitor, ex-Alpine acq $4.9B 2024)",
+          "modality": "recombinant_protein.fusion.taci_fc",
+          "areas": [
+            "immunology.autoimmune.iga_nephropathy",
+            "immunology.autoimmune.pmn"
+          ]
         }
       ],
       "assetCount": 1,
       "modalityCount": 1,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
-        "antibody"
+        "recombinant_protein"
       ],
-      "totalTAM": 6805.0,
-      "totalSOM": 154.4,
+      "totalTAM": 9605.0,
+      "totalSOM": 870.9,
       "totalSales": 0.0,
-      "cagrPct": 5.0,
-      "peakYear": 2034
+      "cagrPct": 98.1,
+      "peakYear": 2031
     },
     "TNFSF4": {
       "companies": [

@@ -566,6 +566,26 @@ REGIONS = {
         "eu":  {"patientsK": 800,  "wtpPct": 45, "priceK": 14},
         "row": {"patientsK": 3000, "wtpPct": 12, "priceK": 5},
     },
+    # B-cell acute lymphoblastic leukemia (B-ALL): pediatric + adult.
+    # US ~6K new cases/yr, ~10K prevalent on treatment. EU ~12K, ROW ~80K.
+    # Class: Blincyto (Amgen CD19xCD3 BiTE ~$1.6B), Kymriah (Novartis CD19
+    # CAR-T pediatric/AYA), Besponsa (Pfizer CD22 ADC), Tecartus (Gilead
+    # CD19 CAR-T adult). Net branded ~$200K/yr.
+    "oncology.hematology.b_all": {
+        "us":  {"patientsK": 10,  "wtpPct": 75, "priceK": 200},
+        "eu":  {"patientsK": 12,  "wtpPct": 55, "priceK": 120},
+        "row": {"patientsK": 80,  "wtpPct": 14, "priceK": 35},
+    },
+    # Chemo-induced neutropenia / febrile neutropenia prophylaxis: US
+    # ~1.2M chemo-treated patients/yr, ~50% receive G-CSF support.
+    # Class: Neulasta (Amgen pegfilgrastim long-acting), Neupogen
+    # (filgrastim short-acting), biosim Pelgraz/Udenyca/Fulphila/
+    # Ziextenzo. Net branded ~$8K/cycle.
+    "oncology.supportive_care.neutropenia": {
+        "us":  {"patientsK": 600,  "wtpPct": 70, "priceK": 8},
+        "eu":  {"patientsK": 800,  "wtpPct": 50, "priceK": 5},
+        "row": {"patientsK": 3000, "wtpPct": 12, "priceK": 1.5},
+    },
 }
 
 PEN_PCT = {
@@ -631,4 +651,6 @@ PEN_PCT = {
     "nephrology.glomerular.aav_anca": 45,
     "immunology.demyelinating.nmosd": 50,
     "oncology.supportive_care.bone_metastases": 35,
+    "oncology.hematology.b_all": 70,
+    "oncology.supportive_care.neutropenia": 50,
 }

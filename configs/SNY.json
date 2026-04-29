@@ -1906,15 +1906,91 @@
       ],
       "indications": [
         {
-          "id": "insulin_legacy",
-          "name": "Lantus + Toujeo (insulin glargine)",
+          "id": "t1d_insulin",
+          "name": "Insulin therapy — Type 1 diabetes",
+          "market": {
+            "tamB": 14,
+            "penPct": 12,
+            "salesM": 875,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "Insulin therapy for T1D (~25% of insulin franchise globally; T1D pts mandatory life-long insulin). Split from SNY insulin insulin franchise.",
+            "company_slice": {
+              "us": {
+                "reachPct": 17.7,
+                "wtpPct": 70,
+                "priceK": 4
+              },
+              "eu": {
+                "reachPct": 13.3,
+                "wtpPct": 55,
+                "priceK": 2.5
+              },
+              "row": {
+                "reachPct": 4.4,
+                "wtpPct": 22,
+                "priceK": 1.2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Insulin US T1D pop ~1.9M, branded share captured."
+              },
+              "us.priceK": {
+                "note": "Insulin priceK retained at insulin franchise level."
+              },
+              "us.wtpPct": {
+                "note": "85% T1D mandatory."
+              },
+              "eu.reachPct": {
+                "note": "EU T1D ~1.5M."
+              },
+              "eu.wtpPct": {
+                "note": "80%."
+              },
+              "eu.priceK": {
+                "note": "Insulin EU."
+              },
+              "row.reachPct": {
+                "note": "ROW T1D ~8M."
+              },
+              "row.wtpPct": {
+                "note": "Mandatory but access varied."
+              },
+              "row.priceK": {
+                "note": "ROW blended."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1900,
+                "wtpPct": 85,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 80,
+                "priceK": 2.5
+              },
+              "row": {
+                "patientsK": 8000,
+                "wtpPct": 40,
+                "priceK": 1
+              }
+            }
+          },
+          "area": "cardio_metabolic.diabetes.t1d"
+        },
+        {
+          "id": "t2d_insulin",
+          "name": "Insulin therapy — Type 2 diabetes (insulin-requiring)",
           "market": {
             "tamB": 100,
             "penPct": 10,
-            "salesM": 3500,
+            "salesM": 2625,
             "salesYear": 2025,
-            "peakYear": 2026,
-            "notes": "Lantus (glargine 100u/ml LOE'd) + Toujeo (300u/ml concentrated) + Soliqua (glargine+lixisenatide combo) + Apidra (rapid-acting insulin glulisine). ~$3.5B 2025. Biosimilar pressure (Semglee/Rezvoglar).",
+            "peakYear": 2028,
+            "notes": "Insulin therapy for advanced T2D requiring insulin (~75% of insulin franchise globally). Split from SNY insulin insulin franchise.",
             "company_slice": {
               "us": {
                 "reachPct": 6.2,
@@ -1934,31 +2010,31 @@
             },
             "company_slice_sources": {
               "us.reachPct": {
-                "note": "Sanofi insulin ~0.6% T2D pool post-LOE; biosimilar erosion."
+                "note": "T2D insulin-requiring subset."
               },
               "us.priceK": {
-                "note": "$4K/yr blended."
+                "note": "Insulin priceK."
               },
               "us.wtpPct": {
-                "note": "60%."
+                "note": "Standard T2D coverage."
               },
               "eu.reachPct": {
-                "note": "0.4%."
+                "note": "EU."
               },
               "eu.wtpPct": {
-                "note": "45%."
+                "note": "EU T2D."
               },
               "eu.priceK": {
-                "note": "$2.5K."
+                "note": "EU."
               },
               "row.reachPct": {
-                "note": "0.15%."
+                "note": "ROW."
               },
               "row.wtpPct": {
-                "note": "18%."
+                "note": "ROW."
               },
               "row.priceK": {
-                "note": "$1.2K."
+                "note": "ROW."
               }
             },
             "regions": {
@@ -3275,7 +3351,12 @@
           }
         },
         "general_med": {
-          "insulin_legacy": {
+          "t1d_insulin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "t2d_insulin": {
             "pos": 100,
             "apr": 100,
             "pen": 0.5
@@ -3532,7 +3613,12 @@
           }
         },
         "general_med": {
-          "insulin_legacy": {
+          "t1d_insulin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          },
+          "t2d_insulin": {
             "pos": 100,
             "apr": 100,
             "pen": 0.65
@@ -3791,7 +3877,12 @@
           }
         },
         "general_med": {
-          "insulin_legacy": {
+          "t1d_insulin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "t2d_insulin": {
             "pos": 100,
             "apr": 100,
             "pen": 0.75
@@ -4049,7 +4140,12 @@
           }
         },
         "general_med": {
-          "insulin_legacy": {
+          "t1d_insulin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "t2d_insulin": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
@@ -4306,7 +4402,12 @@
           }
         },
         "general_med": {
-          "insulin_legacy": {
+          "t1d_insulin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "t2d_insulin": {
             "pos": 100,
             "apr": 100,
             "pen": 0.95

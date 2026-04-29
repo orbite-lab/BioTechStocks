@@ -862,80 +862,14 @@
       "modality": "small_molecule.transporter_inhibitor.sglt2",
       "indications": [
         {
-          "id": "t2d_hf",
-          "name": "T2D + heart failure",
-          "area": "cardio_metabolic.diabetes.t2d",
+          "id": "t2d_jardiance",
+          "name": "Jardiance -- T2D (EMPA-REG)",
           "market": {
-            "tamB": 6,
+            "tamB": 80,
             "penPct": 10,
-            "regions": {
-              "us": {
-                "patientsK": 25000,
-                "wtpPct": 70,
-                "priceK": 2.5
-              },
-              "eu": {
-                "patientsK": 22000,
-                "wtpPct": 60,
-                "priceK": 1.5
-              },
-              "row": {
-                "patientsK": 150000,
-                "wtpPct": 25,
-                "priceK": 0.4
-              }
-            },
-            "sources": {
-              "us.patientsK": {
-                "note": "CDC National Diabetes Statistics Report 2024: ~38M US T2D diagnosed; ~25M on pharmacotherapy (metformin + GLP-1 + SGLT2 + insulin)."
-              },
-              "eu.patientsK": {
-                "note": "IDF Atlas 2023: ~35M EU5+UK T2D; ~22M treated with oral/injectable antihyperglycemics."
-              },
-              "row.patientsK": {
-                "note": "IDF global: ~460M T2D ex-US/EU (China 140M, India 100M); ~150M on pharmacotherapy."
-              },
-              "us.wtpPct": {
-                "note": "~90% -- Medicare Part D, Medicaid, commercial cover GLP-1s (Ozempic, Mounjaro) for T2D indication; contrast with obesity exclusion."
-              },
-              "eu.wtpPct": {
-                "note": "~85% -- NICE/G-BA reimburse GLP-1/SGLT2 second-line post-metformin; CV outcomes (LEADER, SUSTAIN-6) drove access."
-              },
-              "row.wtpPct": {
-                "note": "~45% -- Japan NHI broad coverage; emerging markets metformin-dominant, GLP-1 access growing."
-              },
-              "us.priceK": {
-                "note": "$4K blended: metformin ($50), DPP-4 ($3K), SGLT2 Jardiance/Farxiga ($6K), GLP-1 Ozempic/Mounjaro ($10K), insulin ($2K post-cap)."
-              },
-              "eu.priceK": {
-                "note": "EU net ~$2K: GLP-1/SGLT2 ~$4K post-AMNOG/NICE, oral generics dominant."
-              },
-              "row.priceK": {
-                "note": "$600 blended: generic metformin/SU dominant, branded GLP-1 ~$3K in Japan/AU."
-              },
-              "penPct": {
-                "note": "~10% peak reflects incremental novel MOA (glucagon/GIP triagonists, oral GLP-1) on top of saturated standard-of-care."
-              }
-            },
-            "salesM": 3500,
             "salesYear": 2025,
-            "company_slice": {
-              "us": {
-                "reachPct": 4,
-                "wtpPct": 60,
-                "priceK": 7
-              },
-              "eu": {
-                "reachPct": 2,
-                "wtpPct": 35,
-                "priceK": 4
-              },
-              "row": {
-                "reachPct": 0.5,
-                "wtpPct": 12,
-                "priceK": 2
-              }
-            },
+            "peakYear": 2030,
+            "cagrPct": 6,
             "company_slice_sources": {
               "us.reachPct": {
                 "note": "Jardiance ~4% of 25M T2D pts -- SGLT2 class ~15% penetration shared w/ Farxiga; Lilly ~40% global share via BI co-promote."
@@ -964,8 +898,276 @@
               "row.priceK": {
                 "note": "$2K blended -- Japan NHI ~$4K, China NRDL ~$400/yr post-negotiation, EM cash-pay $1-2K or generic substitution."
               }
+            },
+            "salesM": 1750,
+            "notes": "T2D primary.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 60,
+                "priceK": 7
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 35,
+                "priceK": 4
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
             }
-          }
+          },
+          "area": "cardio_metabolic.diabetes.t2d"
+        },
+        {
+          "id": "hfref_jardiance",
+          "name": "Jardiance -- HFrEF (EMPEROR-Reduced)",
+          "market": {
+            "tamB": 80,
+            "penPct": 25,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 6,
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Jardiance ~4% of 25M T2D pts -- SGLT2 class ~15% penetration shared w/ Farxiga; Lilly ~40% global share via BI co-promote."
+              },
+              "us.priceK": {
+                "note": "Jardiance WAC $7K/yr ($570/mo) gross, net ~$3K post 50%+ PBM rebates; Lilly Cares PAP + $10/mo commercial copay card."
+              },
+              "us.wtpPct": {
+                "note": "60% -- Medicare Part D + commercial broad coverage on EMPA-REG CV outcomes + HFrEF/HFpEF/CKD label expansions; T1 formulary."
+              },
+              "eu.reachPct": {
+                "note": "2% of 22M EU T2D on pharmacotx -- SGLT2 class second-line post-metformin; NICE/G-BA reimbursed broadly on outcomes data."
+              },
+              "eu.wtpPct": {
+                "note": "35% -- NICE TA390/G-BA added benefit T2D + HF; broad step-therapy post-metformin; ASMR IV France."
+              },
+              "eu.priceK": {
+                "note": "$4K EU net -- UK NHS ~GBP 500/yr, Germany AMNOG ~EUR 700/yr; metformin generic baseline keeps SGLT2 pricing disciplined."
+              },
+              "row.reachPct": {
+                "note": "0.5% of 150M ROW T2D on pharmacotx -- Japan NHI full coverage, China NRDL added 2020, EM metformin/SU dominant."
+              },
+              "row.wtpPct": {
+                "note": "12% -- Japan NHI 30% copay, China NRDL ~70% discount to launch, AU PBS listed; emerging markets generic oral antidiabetics."
+              },
+              "row.priceK": {
+                "note": "$2K blended -- Japan NHI ~$4K, China NRDL ~$400/yr post-negotiation, EM cash-pay $1-2K or generic substitution."
+              }
+            },
+            "salesM": 770,
+            "notes": "EMPEROR-Reduced 2020.",
+            "company_slice": {
+              "us": {
+                "reachPct": 7.3,
+                "wtpPct": 60,
+                "priceK": 7
+              },
+              "eu": {
+                "reachPct": 3.6,
+                "wtpPct": 35,
+                "priceK": 4
+              },
+              "row": {
+                "reachPct": 0.9,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 3000,
+                "wtpPct": 55,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 42,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 15000,
+                "wtpPct": 12,
+                "priceK": 1.2
+              }
+            }
+          },
+          "area": "cardio_metabolic.heart_failure.hfref"
+        },
+        {
+          "id": "hfpef_jardiance",
+          "name": "Jardiance -- HFpEF (EMPEROR-Preserved)",
+          "market": {
+            "tamB": 80,
+            "penPct": 18,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 6,
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Jardiance ~4% of 25M T2D pts -- SGLT2 class ~15% penetration shared w/ Farxiga; Lilly ~40% global share via BI co-promote."
+              },
+              "us.priceK": {
+                "note": "Jardiance WAC $7K/yr ($570/mo) gross, net ~$3K post 50%+ PBM rebates; Lilly Cares PAP + $10/mo commercial copay card."
+              },
+              "us.wtpPct": {
+                "note": "60% -- Medicare Part D + commercial broad coverage on EMPA-REG CV outcomes + HFrEF/HFpEF/CKD label expansions; T1 formulary."
+              },
+              "eu.reachPct": {
+                "note": "2% of 22M EU T2D on pharmacotx -- SGLT2 class second-line post-metformin; NICE/G-BA reimbursed broadly on outcomes data."
+              },
+              "eu.wtpPct": {
+                "note": "35% -- NICE TA390/G-BA added benefit T2D + HF; broad step-therapy post-metformin; ASMR IV France."
+              },
+              "eu.priceK": {
+                "note": "$4K EU net -- UK NHS ~GBP 500/yr, Germany AMNOG ~EUR 700/yr; metformin generic baseline keeps SGLT2 pricing disciplined."
+              },
+              "row.reachPct": {
+                "note": "0.5% of 150M ROW T2D on pharmacotx -- Japan NHI full coverage, China NRDL added 2020, EM metformin/SU dominant."
+              },
+              "row.wtpPct": {
+                "note": "12% -- Japan NHI 30% copay, China NRDL ~70% discount to launch, AU PBS listed; emerging markets generic oral antidiabetics."
+              },
+              "row.priceK": {
+                "note": "$2K blended -- Japan NHI ~$4K, China NRDL ~$400/yr post-negotiation, EM cash-pay $1-2K or generic substitution."
+              }
+            },
+            "salesM": 630,
+            "notes": "EMPEROR-Preserved 2021.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 60,
+                "priceK": 7
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 35,
+                "priceK": 4
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 3500,
+                "wtpPct": 50,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 5000,
+                "wtpPct": 38,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 16000,
+                "wtpPct": 10,
+                "priceK": 1.2
+              }
+            }
+          },
+          "area": "cardio_metabolic.heart_failure.hfpef"
+        },
+        {
+          "id": "ckd_jardiance",
+          "name": "Jardiance -- CKD (EMPA-KIDNEY)",
+          "market": {
+            "tamB": 80,
+            "penPct": 10,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 6,
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Jardiance ~4% of 25M T2D pts -- SGLT2 class ~15% penetration shared w/ Farxiga; Lilly ~40% global share via BI co-promote."
+              },
+              "us.priceK": {
+                "note": "Jardiance WAC $7K/yr ($570/mo) gross, net ~$3K post 50%+ PBM rebates; Lilly Cares PAP + $10/mo commercial copay card."
+              },
+              "us.wtpPct": {
+                "note": "60% -- Medicare Part D + commercial broad coverage on EMPA-REG CV outcomes + HFrEF/HFpEF/CKD label expansions; T1 formulary."
+              },
+              "eu.reachPct": {
+                "note": "2% of 22M EU T2D on pharmacotx -- SGLT2 class second-line post-metformin; NICE/G-BA reimbursed broadly on outcomes data."
+              },
+              "eu.wtpPct": {
+                "note": "35% -- NICE TA390/G-BA added benefit T2D + HF; broad step-therapy post-metformin; ASMR IV France."
+              },
+              "eu.priceK": {
+                "note": "$4K EU net -- UK NHS ~GBP 500/yr, Germany AMNOG ~EUR 700/yr; metformin generic baseline keeps SGLT2 pricing disciplined."
+              },
+              "row.reachPct": {
+                "note": "0.5% of 150M ROW T2D on pharmacotx -- Japan NHI full coverage, China NRDL added 2020, EM metformin/SU dominant."
+              },
+              "row.wtpPct": {
+                "note": "12% -- Japan NHI 30% copay, China NRDL ~70% discount to launch, AU PBS listed; emerging markets generic oral antidiabetics."
+              },
+              "row.priceK": {
+                "note": "$2K blended -- Japan NHI ~$4K, China NRDL ~$400/yr post-negotiation, EM cash-pay $1-2K or generic substitution."
+              }
+            },
+            "salesM": 350,
+            "notes": "EMPA-KIDNEY 2022.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 60,
+                "priceK": 7
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 35,
+                "priceK": 4
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 2
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 15000,
+                "wtpPct": 30,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 18000,
+                "wtpPct": 22,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 80000,
+                "wtpPct": 7,
+                "priceK": 1.2
+              }
+            }
+          },
+          "area": "nephrology.ckd.disease_modifying"
         }
       ],
       "targets": [
@@ -1039,7 +1241,22 @@
           }
         },
         "jardiance": {
-          "t2d_hf": {
+          "t2d_jardiance": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "hfref_jardiance": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "hfpef_jardiance": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ckd_jardiance": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1120,7 +1337,22 @@
           }
         },
         "jardiance": {
-          "t2d_hf": {
+          "t2d_jardiance": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "hfref_jardiance": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "hfpef_jardiance": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ckd_jardiance": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1201,7 +1433,22 @@
           }
         },
         "jardiance": {
-          "t2d_hf": {
+          "t2d_jardiance": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "hfref_jardiance": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "hfpef_jardiance": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ckd_jardiance": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1282,7 +1529,22 @@
           }
         },
         "jardiance": {
-          "t2d_hf": {
+          "t2d_jardiance": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "hfref_jardiance": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "hfpef_jardiance": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ckd_jardiance": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1363,7 +1625,22 @@
           }
         },
         "jardiance": {
-          "t2d_hf": {
+          "t2d_jardiance": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "hfref_jardiance": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "hfpef_jardiance": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ckd_jardiance": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0

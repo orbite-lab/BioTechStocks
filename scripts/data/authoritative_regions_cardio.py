@@ -98,6 +98,32 @@ REGIONS = {
         "row": {"patientsK": 150, "wtpPct": 18, "priceK": 25},
     },
 
+    # ==================== HEART FAILURE (general, not PH-overlap) ====================
+    # Distinct from cardiopulmonary.ph_hfref/hfpef (which capture PH-HF overlap).
+    # General HF treated population is much larger.
+
+    # Heart failure with reduced ejection fraction (HFrEF, NYHA II-IV):
+    # ~3M US HFrEF, ~4M EU, ~15M ROW. Class: Entresto (Novartis sacubitril/
+    # valsartan ~$8B 2024), SGLT2 (Farxiga + Jardiance label expansion),
+    # ARNI/ACE/ARB legacy, MRA (spironolactone/eplerenone). Class peak
+    # ~$15-20B globally with SGLT2 + Entresto adoption.
+    # source: AHA 2024 HF stats; Novartis + AZN + LLY 10-Ks.
+    "cardio_metabolic.heart_failure.hfref": {
+        "us":  {"patientsK": 3000,  "wtpPct": 55, "priceK": 5},
+        "eu":  {"patientsK": 4000,  "wtpPct": 42, "priceK": 3},
+        "row": {"patientsK": 15000, "wtpPct": 12, "priceK": 1.2},
+    },
+    # Heart failure with preserved ejection fraction (HFpEF, NYHA II-IV):
+    # ~3.5M US HFpEF, ~5M EU, ~16M ROW. Class: Farxiga (DELIVER 2022) +
+    # Jardiance (EMPEROR-Preserved 2021) became 1L; Entresto (PARAGON-HF
+    # marginal). Class peak ~$10-12B globally (overlapping but not equal
+    # with HFrEF spend).
+    "cardio_metabolic.heart_failure.hfpef": {
+        "us":  {"patientsK": 3500,  "wtpPct": 50, "priceK": 5},
+        "eu":  {"patientsK": 5000,  "wtpPct": 38, "priceK": 3},
+        "row": {"patientsK": 16000, "wtpPct": 10, "priceK": 1.2},
+    },
+
     # ==================== HYPERTENSION ====================
     # source: AGT knockdown is a brand-new RNAi class addressing resistant
     # hypertension specifically (~5M US per ACC criteria). NOT the entire HTN
@@ -385,6 +411,8 @@ PEN_PCT = {
     "cardio_metabolic.diabetes.t1d": 12,
     "cardio_metabolic.diabetes.t2d": 10,
     "cardio_metabolic.hypertension.agt_knockdown": 8,
+    "cardio_metabolic.heart_failure.hfref": 25,
+    "cardio_metabolic.heart_failure.hfpef": 18,
     "cardio_metabolic.hypertension.outpatient_generic": 8,
     "cardio_metabolic.hypertension.resistant": 18,
     "cardio_metabolic.lipids.statin_generic": 10,

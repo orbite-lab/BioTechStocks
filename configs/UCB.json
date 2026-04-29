@@ -20,80 +20,14 @@
       "designations": [],
       "indications": [
         {
-          "id": "bimzelx",
-          "name": "Psoriasis + HS + PsA + axSpA",
+          "id": "bimzelx_pso",
+          "name": "Bimzelx (bimekizumab IL-17A/F) -- plaque psoriasis",
           "market": {
-            "notes": "Bimzelx 2025: E2.2B (+267%). Halfway to E4B+ peak. 45% HS patient share globally. Patent to 2037. First dual IL-17A/F inhibitor.",
             "tamB": 30.0,
             "penPct": 40,
-            "regions": {
-              "us": {
-                "patientsK": 1500,
-                "wtpPct": 55,
-                "priceK": 20
-              },
-              "eu": {
-                "patientsK": 2000,
-                "wtpPct": 40,
-                "priceK": 12
-              },
-              "row": {
-                "patientsK": 10000,
-                "wtpPct": 12,
-                "priceK": 4
-              }
-            },
-            "sources": {
-              "us.patientsK": {
-                "note": "NPF: ~8M US psoriasis total; ~1.5M moderate-severe on systemic/biologic; CDC 3% adult prevalence."
-              },
-              "eu.patientsK": {
-                "note": "EADV registry: ~2.5M EU27+UK mod-severe on systemic; PASI 75/90/100 targets standard."
-              },
-              "row.patientsK": {
-                "note": "Global ex-US/EU ~15M mod-severe; Japan high biologic uptake; China NRDL expanding biologic access."
-              },
-              "us.wtpPct": {
-                "note": "~68% -- Medicare + commercial full biologic ladder; IL-23 (Skyrizi/Tremfya) + IL-17 (Cosentyx/Taltz/Bimzelx); Sotyktu TYK2."
-              },
-              "eu.wtpPct": {
-                "note": "~52% -- NICE/G-BA cover full class; adalimumab biosim first-line ~80% share; IL-23/IL-17 2L."
-              },
-              "row.wtpPct": {
-                "note": "~15% -- MTX + phototherapy + adalimumab biosim; Japan J-DPS covers IL-23/IL-17 broadly."
-              },
-              "us.priceK": {
-                "note": "Blended $52K: Humira biosim $18K + Skyrizi $85K + Tremfya $75K + Cosentyx $60K + Taltz $60K + Sotyktu $75K; MTX $2K."
-              },
-              "eu.priceK": {
-                "note": "~$26K blended -- adalim biosim ~$8K net + IL-23 ~$35K + IL-17 ~$28K."
-              },
-              "row.priceK": {
-                "note": "~$8K -- MTX/biosim anti-TNF dominant ex-Japan."
-              },
-              "penPct": {
-                "note": "~40% peak -- IL-23/IL-17 shift continues; TYK2 (Sotyktu) oral convenience; biosimilars extend access."
-              }
-            },
-            "salesM": 1500,
             "salesYear": 2025,
-            "company_slice": {
-              "us": {
-                "reachPct": 5,
-                "wtpPct": 45,
-                "priceK": 70
-              },
-              "eu": {
-                "reachPct": 4,
-                "wtpPct": 35,
-                "priceK": 40
-              },
-              "row": {
-                "reachPct": 0.8,
-                "wtpPct": 10,
-                "priceK": 16
-              }
-            },
+            "peakYear": 2030,
+            "cagrPct": 22,
             "company_slice_sources": {
               "us.reachPct": {
                 "note": "Bimzelx ~5% of 1.5M US mod-severe pso -- launched Oct 2023 post-3yr FDA delay; dual IL-17A/F mechanism; $1.5B 2025 global."
@@ -122,9 +56,276 @@
               "row.priceK": {
                 "note": "$16K blended -- Japan NHI ~$28K, EM UCB access."
               }
+            },
+            "salesM": 750,
+            "notes": "Plaque psoriasis ~50% of brand. IL-17A+F dual blocker; superior PASI100 vs Cosentyx.",
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 45,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 35,
+                "priceK": 40
+              },
+              "row": {
+                "reachPct": 0.8,
+                "wtpPct": 10,
+                "priceK": 16
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
             }
           },
           "area": "dermatology.inflammatory_derm.psoriasis_systemic"
+        },
+        {
+          "id": "bimzelx_psa",
+          "name": "Bimzelx -- psoriatic arthritis",
+          "market": {
+            "tamB": 30.0,
+            "penPct": 30,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 22,
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Bimzelx ~5% of 1.5M US mod-severe pso -- launched Oct 2023 post-3yr FDA delay; dual IL-17A/F mechanism; $1.5B 2025 global."
+              },
+              "us.priceK": {
+                "note": "Bimzelx WAC $76K/yr; net ~$70K; priced parity to Cosentyx/Taltz but superior PASI 100 head-to-head BE RADIANT/HEAD."
+              },
+              "us.wtpPct": {
+                "note": "45% -- commercial formulary ramping 2024-25; Medicare Part D; post-biologic step therapy; PASI 100 data drives adoption."
+              },
+              "eu.reachPct": {
+                "note": "4% of 2.5M EU mod-severe pso -- EMA 2021 ahead of US; NICE TA723 + G-BA added benefit proven; HS + PsA + axSpA expand."
+              },
+              "eu.wtpPct": {
+                "note": "35% -- NICE/G-BA recommended; HS label differentiator; post-biologic step therapy; ASMR III-IV."
+              },
+              "eu.priceK": {
+                "note": "$40K EU net -- UK NHS ~GBP 1.2K/mo, Germany ~EUR 1.8K/mo post-AMNOG; ~55% of US list."
+              },
+              "row.reachPct": {
+                "note": "0.8% of 15M ROW mod-severe pso -- Japan NHI 2022, China NMPA pending."
+              },
+              "row.wtpPct": {
+                "note": "10% -- Japan NHI 30% copay, rest limited launch."
+              },
+              "row.priceK": {
+                "note": "$16K blended -- Japan NHI ~$28K, EM UCB access."
+              }
+            },
+            "salesM": 300,
+            "notes": "PsA (BE OPTIMAL/COMPLETE Ph3 positive).",
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 45,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 35,
+                "priceK": 40
+              },
+              "row": {
+                "reachPct": 0.8,
+                "wtpPct": 10,
+                "priceK": 16
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 50,
+                "priceK": 50
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 35,
+                "priceK": 30
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 8,
+                "priceK": 10
+              }
+            }
+          },
+          "area": "immunology.inflammatory_systemic.psoriatic_arthritis"
+        },
+        {
+          "id": "bimzelx_axspa",
+          "name": "Bimzelx -- ankylosing spondylitis + non-radiographic axSpA",
+          "market": {
+            "tamB": 30.0,
+            "penPct": 25,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 22,
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Bimzelx ~5% of 1.5M US mod-severe pso -- launched Oct 2023 post-3yr FDA delay; dual IL-17A/F mechanism; $1.5B 2025 global."
+              },
+              "us.priceK": {
+                "note": "Bimzelx WAC $76K/yr; net ~$70K; priced parity to Cosentyx/Taltz but superior PASI 100 head-to-head BE RADIANT/HEAD."
+              },
+              "us.wtpPct": {
+                "note": "45% -- commercial formulary ramping 2024-25; Medicare Part D; post-biologic step therapy; PASI 100 data drives adoption."
+              },
+              "eu.reachPct": {
+                "note": "4% of 2.5M EU mod-severe pso -- EMA 2021 ahead of US; NICE TA723 + G-BA added benefit proven; HS + PsA + axSpA expand."
+              },
+              "eu.wtpPct": {
+                "note": "35% -- NICE/G-BA recommended; HS label differentiator; post-biologic step therapy; ASMR III-IV."
+              },
+              "eu.priceK": {
+                "note": "$40K EU net -- UK NHS ~GBP 1.2K/mo, Germany ~EUR 1.8K/mo post-AMNOG; ~55% of US list."
+              },
+              "row.reachPct": {
+                "note": "0.8% of 15M ROW mod-severe pso -- Japan NHI 2022, China NMPA pending."
+              },
+              "row.wtpPct": {
+                "note": "10% -- Japan NHI 30% copay, rest limited launch."
+              },
+              "row.priceK": {
+                "note": "$16K blended -- Japan NHI ~$28K, EM UCB access."
+              }
+            },
+            "salesM": 270,
+            "notes": "axSpA (BE MOBILE 1+2 Ph3 positive).",
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 45,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 35,
+                "priceK": 40
+              },
+              "row": {
+                "reachPct": 0.8,
+                "wtpPct": 10,
+                "priceK": 16
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1000,
+                "wtpPct": 45,
+                "priceK": 50
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 32,
+                "priceK": 30
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 7,
+                "priceK": 10
+              }
+            }
+          },
+          "area": "immunology.inflammatory_systemic.ankylosing_spondylitis"
+        },
+        {
+          "id": "bimzelx_hs",
+          "name": "Bimzelx -- hidradenitis suppurativa",
+          "market": {
+            "tamB": 30.0,
+            "penPct": 25,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 22,
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Bimzelx ~5% of 1.5M US mod-severe pso -- launched Oct 2023 post-3yr FDA delay; dual IL-17A/F mechanism; $1.5B 2025 global."
+              },
+              "us.priceK": {
+                "note": "Bimzelx WAC $76K/yr; net ~$70K; priced parity to Cosentyx/Taltz but superior PASI 100 head-to-head BE RADIANT/HEAD."
+              },
+              "us.wtpPct": {
+                "note": "45% -- commercial formulary ramping 2024-25; Medicare Part D; post-biologic step therapy; PASI 100 data drives adoption."
+              },
+              "eu.reachPct": {
+                "note": "4% of 2.5M EU mod-severe pso -- EMA 2021 ahead of US; NICE TA723 + G-BA added benefit proven; HS + PsA + axSpA expand."
+              },
+              "eu.wtpPct": {
+                "note": "35% -- NICE/G-BA recommended; HS label differentiator; post-biologic step therapy; ASMR III-IV."
+              },
+              "eu.priceK": {
+                "note": "$40K EU net -- UK NHS ~GBP 1.2K/mo, Germany ~EUR 1.8K/mo post-AMNOG; ~55% of US list."
+              },
+              "row.reachPct": {
+                "note": "0.8% of 15M ROW mod-severe pso -- Japan NHI 2022, China NMPA pending."
+              },
+              "row.wtpPct": {
+                "note": "10% -- Japan NHI 30% copay, rest limited launch."
+              },
+              "row.priceK": {
+                "note": "$16K blended -- Japan NHI ~$28K, EM UCB access."
+              }
+            },
+            "salesM": 180,
+            "notes": "HS approved 2024 (BE HEARD I+II Ph3).",
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 45,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 35,
+                "priceK": 40
+              },
+              "row": {
+                "reachPct": 0.8,
+                "wtpPct": 10,
+                "priceK": 16
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 200,
+                "wtpPct": 55,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 300,
+                "wtpPct": 40,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 2000,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            }
+          },
+          "area": "dermatology.inflammatory_derm.hidradenitis_suppurativa"
         }
       ],
       "modality": "antibody.monoclonal.anti_il17a_f",
@@ -850,7 +1051,22 @@
       ],
       "assumptions": {
         "commercial": {
-          "bimzelx": {
+          "bimzelx_pso": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bimzelx_psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bimzelx_axspa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bimzelx_hs": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -919,7 +1135,22 @@
       ],
       "assumptions": {
         "commercial": {
-          "bimzelx": {
+          "bimzelx_pso": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bimzelx_psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bimzelx_axspa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bimzelx_hs": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -988,7 +1219,22 @@
       ],
       "assumptions": {
         "commercial": {
-          "bimzelx": {
+          "bimzelx_pso": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bimzelx_psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bimzelx_axspa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bimzelx_hs": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1056,7 +1302,22 @@
       ],
       "assumptions": {
         "commercial": {
-          "bimzelx": {
+          "bimzelx_pso": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bimzelx_psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bimzelx_axspa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bimzelx_hs": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1124,7 +1385,22 @@
       ],
       "assumptions": {
         "commercial": {
-          "bimzelx": {
+          "bimzelx_pso": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bimzelx_psa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bimzelx_axspa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "bimzelx_hs": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1222,7 +1498,7 @@
       "date": "H1 2026",
       "dateSort": "2026-06-30",
       "asset": "commercial",
-      "indication": "bimzelx",
+      "indication": "bimzelx_psa",
       "title": "BE BOLD head-to-head Phase 4 readout",
       "type": "conference_data",
       "binary": false,

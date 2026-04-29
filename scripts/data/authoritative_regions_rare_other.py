@@ -453,6 +453,18 @@ REGIONS = {
     # ------------------------------------------------------------
     # NEPHROLOGY - SUPPORTIVE / DIALYSIS-ADJACENT
     # ------------------------------------------------------------
+    # General CKD (chronic kidney disease, stages 3-5 non-dialysis): ~37M US
+    # CKD prevalence; ~15M Stage 3-4 (treatable with disease-modifying agents).
+    # Branded class: SGLT2i for CKD (Farxiga DAPA-CKD 2020, Jardiance
+    # EMPA-KIDNEY 2022), MRA finerenone (Bayer Kerendia FIDELIO/FIGARO),
+    # roxadustat (FibroGen/AZ HIF-PHI), Tezspire CKD pipeline, ziltivekimab
+    # ZEUS pipeline. Class peak ~$15-20B with SGLT2 + MRA + new entrants.
+    # Distinct from dialysis-specific phosphate_binder + cardiorenal_inflammation.
+    "nephrology.ckd.disease_modifying": {
+        "us":  {"patientsK": 15000, "wtpPct": 30, "priceK": 5},
+        "eu":  {"patientsK": 18000, "wtpPct": 22, "priceK": 3},
+        "row": {"patientsK": 80000, "wtpPct": 7,  "priceK": 1.2},
+    },
     # Phosphate binders for ESRD/CKD-MBD: ~600K US dialysis pts; class:
     # Renagel/Renvela (sevelamer Sanofi ~$200M legacy), Velphoro
     # (sucroferric oxyhydroxide Vifor), Auryxia (ferric citrate Akebia),
@@ -538,4 +550,5 @@ PEN_PCT = {
     "ophthalmology.retina.rvo": 35,
     "respiratory.inflammatory.crswnp": 25,
     "nephrology.ckd.cardiorenal_inflammation": 12,
+    "nephrology.ckd.disease_modifying": 10,
 }

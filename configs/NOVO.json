@@ -372,15 +372,91 @@
       "designations": [],
       "indications": [
         {
+          "id": "t1d_insulin",
+          "name": "Insulin therapy — Type 1 diabetes",
+          "market": {
+            "tamB": 14,
+            "penPct": 12,
+            "salesM": 1250,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "Insulin therapy for T1D (~25% of insulin franchise globally; T1D pts mandatory life-long insulin). Split from NOVO insulin insulin franchise.",
+            "company_slice": {
+              "us": {
+                "reachPct": 23.3,
+                "wtpPct": 80,
+                "priceK": 4
+              },
+              "eu": {
+                "reachPct": 14.6,
+                "wtpPct": 65,
+                "priceK": 2.5
+              },
+              "row": {
+                "reachPct": 4.4,
+                "wtpPct": 25,
+                "priceK": 1.2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Insulin US T1D pop ~1.9M, branded share captured."
+              },
+              "us.priceK": {
+                "note": "Insulin priceK retained at insulin franchise level."
+              },
+              "us.wtpPct": {
+                "note": "85% T1D mandatory."
+              },
+              "eu.reachPct": {
+                "note": "EU T1D ~1.5M."
+              },
+              "eu.wtpPct": {
+                "note": "80%."
+              },
+              "eu.priceK": {
+                "note": "Insulin EU."
+              },
+              "row.reachPct": {
+                "note": "ROW T1D ~8M."
+              },
+              "row.wtpPct": {
+                "note": "Mandatory but access varied."
+              },
+              "row.priceK": {
+                "note": "ROW blended."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1900,
+                "wtpPct": 85,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 80,
+                "priceK": 2.5
+              },
+              "row": {
+                "patientsK": 8000,
+                "wtpPct": 40,
+                "priceK": 1
+              }
+            }
+          },
+          "area": "cardio_metabolic.diabetes.t1d"
+        },
+        {
           "id": "t2d_insulin",
-          "name": "Insulin therapy (T1D + T2D)",
+          "name": "Insulin therapy — Type 2 diabetes (insulin-requiring)",
           "market": {
             "tamB": 100,
             "penPct": 10,
-            "salesM": 5000,
+            "salesM": 3750,
             "salesYear": 2025,
             "peakYear": 2028,
-            "notes": "Long-acting Tresiba (degludec) + Levemir + Awiqli (icodec weekly basal, EU/JP/CA approved; FDA CRL 2024) + rapid-acting NovoRapid/Novolog/Fiasp + premix Ryzodeg/Xultophy. Mature class with biosimilar pressure (Semglee, Rezvoglar) + tirzepatide displacing basal in T2D. ~$5B 2025 NVO insulin total. IcoSema (icodec+sema weekly) filed.",
+            "notes": "Insulin therapy for advanced T2D requiring insulin (~75% of insulin franchise globally). Split from NOVO insulin insulin franchise.",
             "company_slice": {
               "us": {
                 "reachPct": 7.4,
@@ -400,31 +476,31 @@
             },
             "company_slice_sources": {
               "us.reachPct": {
-                "note": "NVO ~30% US insulin market share / ~7M insulin users / 36M T2D = ~1.5% reach of T2D pool; Lantus + biosim erode steady."
+                "note": "T2D insulin-requiring subset."
               },
               "us.priceK": {
-                "note": "$4K/yr blended -- Tresiba $4.5K, Awiqli premium ~$5K, NovoRapid $3.5K post Insulin price reform 2024."
+                "note": "Insulin priceK."
               },
               "us.wtpPct": {
-                "note": "70% -- universal coverage; insulin price cap $35/mo Medicare; commercial varies."
+                "note": "Standard T2D coverage."
               },
               "eu.reachPct": {
-                "note": "1.0% -- EU insulin biosim penetration high; NVO branded share ~25%."
+                "note": "EU."
               },
               "eu.wtpPct": {
-                "note": "60% -- universal HTA reimbursement."
+                "note": "EU T2D."
               },
               "eu.priceK": {
-                "note": "$2.5K blended."
+                "note": "EU."
               },
               "row.reachPct": {
-                "note": "0.3% -- China + India insulin biosim dominant; LATAM private market."
+                "note": "ROW."
               },
               "row.wtpPct": {
-                "note": "25%."
+                "note": "ROW."
               },
               "row.priceK": {
-                "note": "$1.2K."
+                "note": "ROW."
               }
             },
             "regions": {
@@ -1101,6 +1177,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.8
+          },
+          "t1d_insulin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
           }
         },
         "hemophilia_legacy": {
@@ -1201,6 +1282,11 @@
         },
         "insulin": {
           "t2d_insulin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "t1d_insulin": {
             "pos": 100,
             "apr": 100,
             "pen": 0.9
@@ -1307,6 +1393,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.0
+          },
+          "t1d_insulin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
           }
         },
         "hemophilia_legacy": {
@@ -1410,6 +1501,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.05
+          },
+          "t1d_insulin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
           }
         },
         "hemophilia_legacy": {
@@ -1510,6 +1606,11 @@
         },
         "insulin": {
           "t2d_insulin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "t1d_insulin": {
             "pos": 100,
             "apr": 100,
             "pen": 1.1

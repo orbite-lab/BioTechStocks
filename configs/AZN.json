@@ -1407,32 +1407,13 @@
       "indications": [
         {
           "id": "t2d_farx",
-          "name": "T2D + HFrEF + HFpEF + CKD",
+          "name": "Farxiga -- T2D (DECLARE-TIMI58 CV outcomes)",
           "market": {
-            "tamB": 200,
+            "tamB": 80,
             "penPct": 10,
-            "salesM": 8405,
             "salesYear": 2025,
             "peakYear": 2030,
             "cagrPct": 6,
-            "notes": "SGLT2 inhibitor; T2D (DECLARE-TIMI58 CV outcomes), HFrEF (DAPA-HF), HFpEF (DELIVER), CKD (DAPA-CKD). AZ #1 product. ~$8.41B 2025. Class peer: Jardiance (BI/Lilly empagliflozin). Composition LOE ~2030.",
-            "company_slice": {
-              "us": {
-                "reachPct": 8,
-                "wtpPct": 65,
-                "priceK": 8
-              },
-              "eu": {
-                "reachPct": 5,
-                "wtpPct": 50,
-                "priceK": 4.5
-              },
-              "row": {
-                "reachPct": 1.5,
-                "wtpPct": 18,
-                "priceK": 1.5
-              }
-            },
             "company_slice_sources": {
               "us.reachPct": {
                 "note": "Farxiga ~8% reach across T2D + HF + CKD pools combined; SGLT2 class duopoly with Jardiance."
@@ -1462,6 +1443,25 @@
                 "note": "$1.5K."
               }
             },
+            "salesM": 4202,
+            "notes": "T2D primary indication; SGLT2 class duopoly w/ Jardiance.",
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 65,
+                "priceK": 8
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 4.5
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 18,
+                "priceK": 1.5
+              }
+            },
             "regions": {
               "us": {
                 "patientsK": 25000,
@@ -1481,6 +1481,237 @@
             }
           },
           "area": "cardio_metabolic.diabetes.t2d"
+        },
+        {
+          "id": "hfref_farx",
+          "name": "Farxiga -- HFrEF (DAPA-HF)",
+          "market": {
+            "tamB": 80,
+            "penPct": 25,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 6,
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Farxiga ~8% reach across T2D + HF + CKD pools combined; SGLT2 class duopoly with Jardiance."
+              },
+              "us.priceK": {
+                "note": "$8K/yr WAC."
+              },
+              "us.wtpPct": {
+                "note": "65%."
+              },
+              "eu.reachPct": {
+                "note": "5%."
+              },
+              "eu.wtpPct": {
+                "note": "50%."
+              },
+              "eu.priceK": {
+                "note": "$4.5K."
+              },
+              "row.reachPct": {
+                "note": "1.5% -- China NRDL listed; Japan NHI."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$1.5K."
+              }
+            },
+            "salesM": 1849,
+            "notes": "DAPA-HF positive 2019; Class 1A guideline rec for HFrEF.",
+            "company_slice": {
+              "us": {
+                "reachPct": 12.6,
+                "wtpPct": 65,
+                "priceK": 8
+              },
+              "eu": {
+                "reachPct": 7.9,
+                "wtpPct": 50,
+                "priceK": 4.5
+              },
+              "row": {
+                "reachPct": 2.4,
+                "wtpPct": 18,
+                "priceK": 1.5
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 3000,
+                "wtpPct": 55,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 42,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 15000,
+                "wtpPct": 12,
+                "priceK": 1.2
+              }
+            }
+          },
+          "area": "cardio_metabolic.heart_failure.hfref"
+        },
+        {
+          "id": "hfpef_farx",
+          "name": "Farxiga -- HFpEF (DELIVER)",
+          "market": {
+            "tamB": 80,
+            "penPct": 18,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 6,
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Farxiga ~8% reach across T2D + HF + CKD pools combined; SGLT2 class duopoly with Jardiance."
+              },
+              "us.priceK": {
+                "note": "$8K/yr WAC."
+              },
+              "us.wtpPct": {
+                "note": "65%."
+              },
+              "eu.reachPct": {
+                "note": "5%."
+              },
+              "eu.wtpPct": {
+                "note": "50%."
+              },
+              "eu.priceK": {
+                "note": "$4.5K."
+              },
+              "row.reachPct": {
+                "note": "1.5% -- China NRDL listed; Japan NHI."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$1.5K."
+              }
+            },
+            "salesM": 1512,
+            "notes": "DELIVER positive 2022; broadened HF label across full LVEF spectrum.",
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 65,
+                "priceK": 8
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 4.5
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 18,
+                "priceK": 1.5
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 3500,
+                "wtpPct": 50,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 5000,
+                "wtpPct": 38,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 16000,
+                "wtpPct": 10,
+                "priceK": 1.2
+              }
+            }
+          },
+          "area": "cardio_metabolic.heart_failure.hfpef"
+        },
+        {
+          "id": "ckd_farx",
+          "name": "Farxiga -- CKD (DAPA-CKD)",
+          "market": {
+            "tamB": 80,
+            "penPct": 10,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 6,
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Farxiga ~8% reach across T2D + HF + CKD pools combined; SGLT2 class duopoly with Jardiance."
+              },
+              "us.priceK": {
+                "note": "$8K/yr WAC."
+              },
+              "us.wtpPct": {
+                "note": "65%."
+              },
+              "eu.reachPct": {
+                "note": "5%."
+              },
+              "eu.wtpPct": {
+                "note": "50%."
+              },
+              "eu.priceK": {
+                "note": "$4.5K."
+              },
+              "row.reachPct": {
+                "note": "1.5% -- China NRDL listed; Japan NHI."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$1.5K."
+              }
+            },
+            "salesM": 840,
+            "notes": "DAPA-CKD 2020; SGLT2i now standard CKD-DM + non-DM CKD.",
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 65,
+                "priceK": 8
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 4.5
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 18,
+                "priceK": 1.5
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 15000,
+                "wtpPct": 30,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 18000,
+                "wtpPct": 22,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 80000,
+                "wtpPct": 7,
+                "priceK": 1.2
+              }
+            }
+          },
+          "area": "nephrology.ckd.disease_modifying"
         }
       ],
       "modality": "small_molecule.transporter_inhibitor.sglt2",
@@ -3007,6 +3238,21 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.7
+          },
+          "hfref_farx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "hfpef_farx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "ckd_farx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
           }
         },
         "brilinta": {
@@ -3239,6 +3485,21 @@
         },
         "farxiga": {
           "t2d_farx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "hfref_farx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "hfpef_farx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "ckd_farx": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
@@ -3479,6 +3740,21 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.0
+          },
+          "hfref_farx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "hfpef_farx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ckd_farx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
           }
         },
         "brilinta": {
@@ -3715,6 +3991,21 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.15
+          },
+          "hfref_farx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "hfpef_farx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "ckd_farx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
           }
         },
         "brilinta": {
@@ -3947,6 +4238,21 @@
         },
         "farxiga": {
           "t2d_farx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "hfref_farx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "hfpef_farx": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "ckd_farx": {
             "pos": 100,
             "apr": 100,
             "pen": 1.3

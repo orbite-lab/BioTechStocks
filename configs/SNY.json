@@ -2399,6 +2399,98 @@
       ]
     },
     {
+      "id": "dengvaxia",
+      "name": "Dengvaxia (CYD-TDV) — tetravalent dengue vaccine (seroprevalence-restricted)",
+      "stage": "Commercial (~$50M 2025; heavily restricted post-2018)",
+      "designations": [],
+      "modality": "vaccine.live_attenuated.dengue_chimeric",
+      "targets": [
+        "DENV1",
+        "DENV2",
+        "DENV3",
+        "DENV4"
+      ],
+      "indications": [
+        {
+          "id": "dengue",
+          "name": "Dengue prevention (seropositive 9-45 yrs in endemic areas only)",
+          "area": "infectious_disease.vaccines.dengue",
+          "market": {
+            "tamB": 1,
+            "penPct": 22,
+            "salesM": 50,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": -10,
+            "notes": "Chimeric YF-DENV tetravalent live-attenuated vaccine. Residual after 2018 seroprevalence restriction (vaccine-enhanced disease in dengue-naive recipients caused Philippines withdrawal). Class peer: Qdenga (Takeda, broader label including dengue-naive).",
+            "company_slice": {
+              "us": {
+                "reachPct": 1.2,
+                "wtpPct": 30,
+                "priceK": 0.1
+              },
+              "eu": {
+                "reachPct": 2.5,
+                "wtpPct": 28,
+                "priceK": 0.08
+              },
+              "row": {
+                "reachPct": 10.0,
+                "wtpPct": 25,
+                "priceK": 0.03
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Dengvaxia Sanofi seroprevalence-restricted"
+              },
+              "us.wtpPct": {
+                "note": "Dengvaxia Sanofi seroprevalence-restricted"
+              },
+              "us.priceK": {
+                "note": "Dengvaxia Sanofi seroprevalence-restricted"
+              },
+              "eu.reachPct": {
+                "note": "Dengvaxia Sanofi seroprevalence-restricted"
+              },
+              "eu.wtpPct": {
+                "note": "Dengvaxia Sanofi seroprevalence-restricted"
+              },
+              "eu.priceK": {
+                "note": "Dengvaxia Sanofi seroprevalence-restricted"
+              },
+              "row.reachPct": {
+                "note": "Dengvaxia Sanofi seroprevalence-restricted"
+              },
+              "row.wtpPct": {
+                "note": "Dengvaxia Sanofi seroprevalence-restricted"
+              },
+              "row.priceK": {
+                "note": "Dengvaxia Sanofi seroprevalence-restricted"
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 200,
+                "wtpPct": 35,
+                "priceK": 0.2
+              },
+              "eu": {
+                "patientsK": 500,
+                "wtpPct": 30,
+                "priceK": 0.15
+              },
+              "row": {
+                "patientsK": 100000,
+                "wtpPct": 25,
+                "priceK": 0.05
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
       "id": "renvela",
       "name": "Renagel/Renvela (sevelamer) -- phosphate binder ESRD",
       "stage": "Commercial (~$200M 2025; generic pressure)",
@@ -3455,6 +3547,13 @@
             "apr": 100,
             "pen": 0.6
           }
+        },
+        "dengvaxia": {
+          "dengue": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
         }
       },
       "val": {
@@ -3716,6 +3815,13 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.7
+          }
+        },
+        "dengvaxia": {
+          "dengue": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
           }
         }
       },
@@ -3981,6 +4087,13 @@
             "apr": 100,
             "pen": 0.8
           }
+        },
+        "dengvaxia": {
+          "dengue": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
         }
       },
       "val": {
@@ -4240,6 +4353,13 @@
             "pen": 0.85
           },
           "heritage_misc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "dengvaxia": {
+          "dengue": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
@@ -4505,6 +4625,13 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.9
+          }
+        },
+        "dengvaxia": {
+          "dengue": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
           }
         }
       },

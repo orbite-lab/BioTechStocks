@@ -29,7 +29,7 @@
           "market": {
             "tamB": 6,
             "penPct": 35,
-            "salesM": 7000,
+            "salesM": 8500,
             "salesYear": 2025,
             "peakYear": 2030,
             "cagrPct": 8,
@@ -106,7 +106,7 @@
           "market": {
             "tamB": 8,
             "penPct": 25,
-            "salesM": 3500,
+            "salesM": 4200,
             "salesYear": 2025,
             "peakYear": 2030,
             "notes": "Approved 2018. Severe eosinophilic + Type 2 high asthma. ~$3.5B 2025 portion.",
@@ -182,7 +182,7 @@
           "market": {
             "tamB": 4,
             "penPct": 25,
-            "salesM": 1500,
+            "salesM": 1700,
             "salesYear": 2025,
             "peakYear": 2030,
             "notes": "Approved 2019. ~$1.5B portion.",
@@ -258,7 +258,7 @@
           "market": {
             "tamB": 1.5,
             "penPct": 30,
-            "salesM": 800,
+            "salesM": 1000,
             "salesYear": 2025,
             "peakYear": 2030,
             "notes": "Approved 2022. Adult + adolescent + pediatric. ~$800M portion.",
@@ -334,7 +334,7 @@
           "market": {
             "tamB": 1.5,
             "penPct": 30,
-            "salesM": 700,
+            "salesM": 800,
             "salesYear": 2025,
             "peakYear": 2030,
             "notes": "Approved 2022. ~$700M portion.",
@@ -410,7 +410,7 @@
           "market": {
             "tamB": 15,
             "penPct": 10,
-            "salesM": 700,
+            "salesM": 1100,
             "salesYear": 2025,
             "peakYear": 2032,
             "cagrPct": 35,
@@ -1816,6 +1816,82 @@
           },
           "area": "endocrine.lysosomal_storage.asmd",
           "rare": true
+        },
+        {
+          "id": "mozobil",
+          "name": "Mozobil (plerixafor) — stem cell mobilization (autologous HCT)",
+          "market": {
+            "tamB": 1.5,
+            "penPct": 35,
+            "salesM": 300,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "CXCR4 antagonist for HSC mobilization in autologous transplant (myeloma, NHL). ~$350M 2025. Niche specialty. Genzyme legacy.",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 75,
+                "priceK": 18
+              },
+              "eu": {
+                "reachPct": 95,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 14,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Mozobil ~30% US auto-HCT mobilization pool."
+              },
+              "us.priceK": {
+                "note": "$18K/course."
+              },
+              "us.wtpPct": {
+                "note": "75%."
+              },
+              "eu.reachPct": {
+                "note": "18%."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$12K."
+              },
+              "row.reachPct": {
+                "note": "4%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$5K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 80,
+                "wtpPct": 60,
+                "priceK": 150
+              },
+              "eu": {
+                "patientsK": 90,
+                "wtpPct": 45,
+                "priceK": 90
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            }
+          },
+          "area": "oncology.hematology.nhl"
         }
       ]
     },
@@ -1835,23 +1911,23 @@
           "market": {
             "tamB": 100,
             "penPct": 10,
-            "salesM": 2000,
+            "salesM": 3500,
             "salesYear": 2025,
             "peakYear": 2026,
-            "notes": "Lantus (glargine 100u/ml LOE'd) + Toujeo (300u/ml concentrated) + Suliqua (glargine+lixisenatide combo). ~$2B 2025. Biosimilar pressure (Semglee/Rezvoglar).",
+            "notes": "Lantus (glargine 100u/ml LOE'd) + Toujeo (300u/ml concentrated) + Soliqua (glargine+lixisenatide combo) + Apidra (rapid-acting insulin glulisine). ~$3.5B 2025. Biosimilar pressure (Semglee/Rezvoglar).",
             "company_slice": {
               "us": {
-                "reachPct": 3.5,
+                "reachPct": 6.2,
                 "wtpPct": 60,
                 "priceK": 4
               },
               "eu": {
-                "reachPct": 2.4,
+                "reachPct": 4.2,
                 "wtpPct": 45,
                 "priceK": 2.5
               },
               "row": {
-                "reachPct": 0.9,
+                "reachPct": 1.6,
                 "wtpPct": 18,
                 "priceK": 1.2
               }
@@ -1908,23 +1984,701 @@
       ]
     },
     {
-      "id": "established_misc",
-      "name": "Established misc (Aprovel + Maxalt + Praluent + Eloctate + heritage tail)",
-      "stage": "Commercial (~$15B 2025; mature heritage)",
+      "id": "eloctate_alprolix",
+      "name": "Eloctate (Hem A) + Alprolix (Hem B) -- w/ Sobi (legacy hemophilia)",
+      "stage": "Commercial (~$700M 2025; declining as ALTUVIIIO succeeds Eloctate)",
+      "designations": [],
+      "modality": "recombinant_protein.coagulation.factor_fc_fusion",
+      "targets": [
+        "F8",
+        "F9"
+      ],
+      "indications": [
+        {
+          "id": "eloctate_hema",
+          "name": "Eloctate (efmoroctocog alfa) -- Hemophilia A legacy",
+          "market": {
+            "tamB": 8,
+            "penPct": 65,
+            "salesM": 400,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Recombinant Factor VIII-Fc fusion (Bioverativ legacy 2018). Declining as ALTUVIIIO next-gen succeeds. ~$400M 2025.",
+            "company_slice": {
+              "us": {
+                "reachPct": 11.2,
+                "wtpPct": 70,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 5.6,
+                "wtpPct": 55,
+                "priceK": 180
+              },
+              "row": {
+                "reachPct": 0.8,
+                "wtpPct": 12,
+                "priceK": 70
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Eloctate ~4% Hem A pool declining vs ALTUVIIIO."
+              },
+              "us.priceK": {
+                "note": "$280K/yr."
+              },
+              "us.wtpPct": {
+                "note": "70%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$180K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$70K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 85,
+                "priceK": 300
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "row": {
+                "patientsK": 280,
+                "wtpPct": 25,
+                "priceK": 80
+              }
+            }
+          },
+          "area": "hematology.rare_blood.hemophilia_a"
+        },
+        {
+          "id": "alprolix_hemb",
+          "name": "Alprolix (eftrenonacog alfa) -- Hemophilia B",
+          "market": {
+            "tamB": 1.5,
+            "penPct": 60,
+            "salesM": 300,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Recombinant Factor IX-Fc fusion. ~$300M 2025. Class peer: BeneFIX (Pfizer), Idelvion (CSL), Rebinyn (Novo). Hemgenix gene therapy emerging.",
+            "company_slice": {
+              "us": {
+                "reachPct": 30.7,
+                "wtpPct": 75,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 15.3,
+                "wtpPct": 60,
+                "priceK": 180
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 14,
+                "priceK": 70
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Alprolix ~12% Hem B pool (Bioverativ legacy)."
+              },
+              "us.priceK": {
+                "note": "$280K/yr."
+              },
+              "us.wtpPct": {
+                "note": "75%."
+              },
+              "eu.reachPct": {
+                "note": "6%."
+              },
+              "eu.wtpPct": {
+                "note": "60%."
+              },
+              "eu.priceK": {
+                "note": "$180K."
+              },
+              "row.reachPct": {
+                "note": "0.6%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$70K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 5,
+                "wtpPct": 80,
+                "priceK": 280
+              },
+              "eu": {
+                "patientsK": 7,
+                "wtpPct": 70,
+                "priceK": 180
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 22,
+                "priceK": 70
+              }
+            }
+          },
+          "area": "hematology.rare_blood.hemophilia_b"
+        }
+      ]
+    },
+    {
+      "id": "praluent",
+      "name": "Praluent (alirocumab, PCSK9) -- w/ Regeneron 50/50",
+      "stage": "Commercial (~$300M 2025 SNY portion)",
+      "designations": [],
+      "modality": "antibody.cytokine.pcsk9_blocker",
+      "targets": [
+        "PCSK9"
+      ],
+      "indications": [
+        {
+          "id": "ldl_pra",
+          "name": "ASCVD/HeFH LDL-C reduction (PCSK9 mAb)",
+          "market": {
+            "tamB": 30,
+            "penPct": 6,
+            "salesM": 300,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "PCSK9 mAb. ~$300M Sanofi share (Regeneron 50/50). Class peer: Repatha (Amgen evolocumab dominant ~$2B). PCSK9 mAb class small relative to oral pipeline.",
+            "company_slice": {
+              "us": {
+                "reachPct": 1,
+                "wtpPct": 35,
+                "priceK": 6
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 22,
+                "priceK": 4
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 6,
+                "priceK": 1.5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Praluent ~1% PCSK9 mAb pool (Repatha dominant)."
+              },
+              "us.priceK": {
+                "note": "$6K/yr WAC."
+              },
+              "us.wtpPct": {
+                "note": "35%."
+              },
+              "eu.reachPct": {
+                "note": "0.5%."
+              },
+              "eu.wtpPct": {
+                "note": "22%."
+              },
+              "eu.priceK": {
+                "note": "$4K."
+              },
+              "row.reachPct": {
+                "note": "0.05%."
+              },
+              "row.wtpPct": {
+                "note": "6%."
+              },
+              "row.priceK": {
+                "note": "$1.5K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            }
+          },
+          "area": "cardio_metabolic.lipids.ldl_cv_risk"
+        }
+      ]
+    },
+    {
+      "id": "vaccines_meningo",
+      "name": "Menactra/Menquadfi (meningococcal MenACWY)",
+      "stage": "Commercial (~$700M 2025)",
+      "designations": [],
+      "modality": "vaccine.protein_subunit.meningococcal_conjugate",
+      "targets": [],
+      "indications": [
+        {
+          "id": "meningo",
+          "name": "Meningococcal MenACWY adolescent + adult",
+          "market": {
+            "tamB": 2.5,
+            "penPct": 55,
+            "salesM": 700,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "MenACWY conjugate vaccine (Menactra legacy + Menquadfi next-gen). ACIP routine 11-12+booster 16 + at-risk adult. Class peers: Menveo (GSK), Nimenrix (Pfizer). Pentavalent Penbraya (Pfizer ABCWY) emerging competitor.",
+            "company_slice": {
+              "us": {
+                "reachPct": 83.6,
+                "wtpPct": 50,
+                "priceK": 0.13
+              },
+              "eu": {
+                "reachPct": 50.2,
+                "wtpPct": 35,
+                "priceK": 0.08
+              },
+              "row": {
+                "reachPct": 13.4,
+                "wtpPct": 12,
+                "priceK": 0.03
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Sanofi Menactra+Menquadfi ~25% US meningococcal MenACWY pool."
+              },
+              "us.priceK": {
+                "note": "$130/dose."
+              },
+              "us.wtpPct": {
+                "note": "50% -- ACIP routine adolescent."
+              },
+              "eu.reachPct": {
+                "note": "15%."
+              },
+              "eu.wtpPct": {
+                "note": "35%."
+              },
+              "eu.priceK": {
+                "note": "$80."
+              },
+              "row.reachPct": {
+                "note": "4%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$30."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 15000,
+                "wtpPct": 50,
+                "priceK": 0.13
+              },
+              "eu": {
+                "patientsK": 15000,
+                "wtpPct": 35,
+                "priceK": 0.08
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 12,
+                "priceK": 0.03
+              }
+            }
+          },
+          "area": "infectious_disease.vaccines.meningococcal"
+        }
+      ]
+    },
+    {
+      "id": "renvela",
+      "name": "Renagel/Renvela (sevelamer) -- phosphate binder ESRD",
+      "stage": "Commercial (~$200M 2025; generic pressure)",
+      "designations": [],
+      "modality": "small_molecule.polymer.phosphate_binder",
+      "targets": [],
+      "indications": [
+        {
+          "id": "esrd_pb",
+          "name": "Hyperphosphatemia in ESRD/CKD-MBD dialysis",
+          "market": {
+            "tamB": 3,
+            "penPct": 25,
+            "salesM": 200,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Non-absorbed phosphate binder polymer for dialysis pts. ~$200M 2025 (declining; sevelamer LOE'd, generic pressure). Class peer: Velphoro (Vifor sucroferric oxyhydroxide), Auryxia (Akebia ferric citrate).",
+            "company_slice": {
+              "us": {
+                "reachPct": 19.3,
+                "wtpPct": 50,
+                "priceK": 4
+              },
+              "eu": {
+                "reachPct": 9.6,
+                "wtpPct": 38,
+                "priceK": 2.5
+              },
+              "row": {
+                "reachPct": 1.9,
+                "wtpPct": 10,
+                "priceK": 0.8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Renvela ~4% US ESRD phosphate binder; declining."
+              },
+              "us.priceK": {
+                "note": "$4K/yr branded vs generic."
+              },
+              "us.wtpPct": {
+                "note": "50%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$2.5K."
+              },
+              "row.reachPct": {
+                "note": "0.4%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$0.8K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 600,
+                "wtpPct": 60,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 700,
+                "wtpPct": 45,
+                "priceK": 2.5
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 0.8
+              }
+            }
+          },
+          "area": "nephrology.ckd.phosphate_binder"
+        }
+      ]
+    },
+    {
+      "id": "aprovel",
+      "name": "Aprovel/CoAprovel (irbesartan) -- HTN legacy",
+      "stage": "Commercial (~$700M 2025; EM-driven generic remnants)",
+      "designations": [],
+      "modality": "small_molecule.gpcr.arb_at1",
+      "targets": [
+        "AGTR1"
+      ],
+      "indications": [
+        {
+          "id": "htn_apro",
+          "name": "Hypertension (irbesartan ARB + HCTZ combo)",
+          "market": {
+            "tamB": 5,
+            "penPct": 8,
+            "salesM": 700,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Irbesartan ARB + Avalide/CoAprovel HCTZ combo. Off-patent globally; Sanofi maintains EM/Asia branded share. ~$700M 2025.",
+            "company_slice": {
+              "us": {
+                "reachPct": 11.6,
+                "wtpPct": 15,
+                "priceK": 0.05
+              },
+              "eu": {
+                "reachPct": 11.6,
+                "wtpPct": 12,
+                "priceK": 0.04
+              },
+              "row": {
+                "reachPct": 57.8,
+                "wtpPct": 8,
+                "priceK": 0.04
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Aprovel branded ~0.3% post-LOE."
+              },
+              "us.priceK": {
+                "note": "$50/yr."
+              },
+              "us.wtpPct": {
+                "note": "15%."
+              },
+              "eu.reachPct": {
+                "note": "0.3%."
+              },
+              "eu.wtpPct": {
+                "note": "12%."
+              },
+              "eu.priceK": {
+                "note": "$40."
+              },
+              "row.reachPct": {
+                "note": "1.5% -- China + EM where generic substitution slower."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$40."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.05
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.03
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.01
+              }
+            }
+          },
+          "area": "cardio_metabolic.hypertension.outpatient_generic"
+        }
+      ]
+    },
+    {
+      "id": "lovenox_plavix",
+      "name": "Lovenox (enoxaparin) + Plavix (clopidogrel) -- legacy",
+      "stage": "Commercial (~$1.2B 2025; EM-driven post-LOE)",
+      "designations": [],
+      "modality": "small_molecule.coagulation.legacy_antithrombotic",
+      "targets": [
+        "F10",
+        "P2RY12"
+      ],
+      "indications": [
+        {
+          "id": "thrombosis_lovenox",
+          "name": "Lovenox + Plavix antithrombotic legacy",
+          "market": {
+            "tamB": 25,
+            "penPct": 4,
+            "salesM": 1200,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Lovenox LMWH (~$700M, mostly EM branded post US LOE 2010) + Plavix P2Y12 (~$500M, almost entirely EM/Asia branded). Mature legacy.",
+            "company_slice": {
+              "us": {
+                "reachPct": 14.5,
+                "wtpPct": 18,
+                "priceK": 1
+              },
+              "eu": {
+                "reachPct": 14.5,
+                "wtpPct": 15,
+                "priceK": 0.5
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 12,
+                "priceK": 0.4
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Lovenox+Plavix branded ~0.2% post-LOE; mostly EM volume."
+              },
+              "us.priceK": {
+                "note": "$1K/yr blended branded."
+              },
+              "us.wtpPct": {
+                "note": "18%."
+              },
+              "eu.reachPct": {
+                "note": "0.2%."
+              },
+              "eu.wtpPct": {
+                "note": "15%."
+              },
+              "eu.priceK": {
+                "note": "$500."
+              },
+              "row.reachPct": {
+                "note": "1.5% -- China + EM dominant."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$400."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 60,
+                "priceK": 3.5
+              },
+              "eu": {
+                "patientsK": 7000,
+                "wtpPct": 50,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 30000,
+                "wtpPct": 15,
+                "priceK": 0.4
+              }
+            }
+          },
+          "area": "cardio_metabolic.thrombosis.anticoagulation"
+        }
+      ]
+    },
+    {
+      "id": "established_cv_cns",
+      "name": "Heritage CV/CNS legacy bundle (Multaq + Maxalt + small)",
+      "stage": "Commercial (~$2B 2025; mature legacy tail)",
       "designations": [],
       "modality": "small_molecule.various.heritage",
       "targets": [],
       "indications": [
         {
-          "id": "misc",
-          "name": "Aprovel/CoAprovel + Maxalt + Praluent + Eloctate + heritage CV/CNS/anti-infective tail",
+          "id": "multaq",
+          "name": "Multaq (dronedarone, antiarrhythmic AF)",
           "market": {
-            "tamB": 80,
-            "penPct": 0,
-            "salesM": 15000,
+            "tamB": 5,
+            "penPct": 4,
+            "salesM": 200,
             "salesYear": 2025,
             "peakYear": 2026,
-            "notes": "Catch-all bundle: Aprovel/CoAprovel (irbesartan HTN combos, generic), Maxalt (rizatriptan migraine, generic), Praluent (alirocumab PCSK9 w/ Regeneron, ~$300M Sanofi), Eloctate (legacy Hem A factor VIII fusion, ~$400M declining as ALTUVIIIO succeeds), large EM/heritage portfolio across CV/CNS/anti-infective. Mature, slowly declining ~$15B 2025 to reconcile €43.6B total revenue.",
+            "notes": "Dronedarone class III antiarrhythmic for paroxysmal/persistent AF rhythm control. Approved 2009; mature ~$200M.",
+            "company_slice": {
+              "us": {
+                "reachPct": 2.5,
+                "wtpPct": 30,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 1.3,
+                "wtpPct": 22,
+                "priceK": 3
+              },
+              "row": {
+                "reachPct": 0.6,
+                "wtpPct": 8,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Multaq ~0.2% AF rhythm-control pool."
+              },
+              "us.priceK": {
+                "note": "$5K/yr."
+              },
+              "us.wtpPct": {
+                "note": "30%."
+              },
+              "eu.reachPct": {
+                "note": "0.1%."
+              },
+              "eu.wtpPct": {
+                "note": "22%."
+              },
+              "eu.priceK": {
+                "note": "$3K."
+              },
+              "row.reachPct": {
+                "note": "0.05%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$1K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 60,
+                "priceK": 3.5
+              },
+              "eu": {
+                "patientsK": 7000,
+                "wtpPct": 50,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 30000,
+                "wtpPct": 15,
+                "priceK": 0.4
+              }
+            }
+          },
+          "area": "cardio_metabolic.thrombosis.anticoagulation"
+        },
+        {
+          "id": "heritage_misc",
+          "name": "Heritage misc tail (Maxalt + Auvi-Q + various legacy CV/CNS/anti-infective)",
+          "market": {
+            "tamB": 30,
+            "penPct": 0,
+            "salesM": 1800,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Heritage tail: Maxalt (rizatriptan migraine ~$100M, generic), Auvi-Q (epinephrine auto-injector ~$200M), broader EM/heritage portfolio across CV/CNS/anti-infective + alliance true-ups. ~$1.8B 2025 to reconcile EUR 43.6B total revenue. True heterogeneous tail tagged as pseudo-area.",
             "company_slice": {},
             "company_slice_sources": {}
           },
@@ -2513,6 +3267,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.85
+          },
+          "mozobil": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
           }
         },
         "general_med": {
@@ -2557,8 +3316,60 @@
             "pen": 0.4
           }
         },
-        "established_misc": {
-          "misc": {
+        "eloctate_alprolix": {
+          "eloctate_hema": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "alprolix_hemb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "praluent": {
+          "ldl_pra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "vaccines_meningo": {
+          "meningo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "renvela": {
+          "esrd_pb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "aprovel": {
+          "htn_apro": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "lovenox_plavix": {
+          "thrombosis_lovenox": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "established_cv_cns": {
+          "multaq": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "heritage_misc": {
             "pos": 100,
             "apr": 100,
             "pen": 0.6
@@ -2713,6 +3524,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.0
+          },
+          "mozobil": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
           }
         },
         "general_med": {
@@ -2757,8 +3573,60 @@
             "pen": 0.65
           }
         },
-        "established_misc": {
-          "misc": {
+        "eloctate_alprolix": {
+          "eloctate_hema": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "alprolix_hemb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "praluent": {
+          "ldl_pra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "vaccines_meningo": {
+          "meningo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "renvela": {
+          "esrd_pb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "aprovel": {
+          "htn_apro": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "lovenox_plavix": {
+          "thrombosis_lovenox": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "established_cv_cns": {
+          "multaq": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "heritage_misc": {
             "pos": 100,
             "apr": 100,
             "pen": 0.7
@@ -2915,6 +3783,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.15
+          },
+          "mozobil": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
           }
         },
         "general_med": {
@@ -2959,8 +3832,60 @@
             "pen": 0.85
           }
         },
-        "established_misc": {
-          "misc": {
+        "eloctate_alprolix": {
+          "eloctate_hema": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "alprolix_hemb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "praluent": {
+          "ldl_pra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "vaccines_meningo": {
+          "meningo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "renvela": {
+          "esrd_pb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "aprovel": {
+          "htn_apro": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "lovenox_plavix": {
+          "thrombosis_lovenox": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "established_cv_cns": {
+          "multaq": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "heritage_misc": {
             "pos": 100,
             "apr": 100,
             "pen": 0.8
@@ -3116,6 +4041,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.3
+          },
+          "mozobil": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
           }
         },
         "general_med": {
@@ -3160,8 +4090,60 @@
             "pen": 1.05
           }
         },
-        "established_misc": {
-          "misc": {
+        "eloctate_alprolix": {
+          "eloctate_hema": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "alprolix_hemb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "praluent": {
+          "ldl_pra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "vaccines_meningo": {
+          "meningo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "renvela": {
+          "esrd_pb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "aprovel": {
+          "htn_apro": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "lovenox_plavix": {
+          "thrombosis_lovenox": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "established_cv_cns": {
+          "multaq": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "heritage_misc": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
@@ -3316,6 +4298,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.5
+          },
+          "mozobil": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
           }
         },
         "general_med": {
@@ -3360,8 +4347,60 @@
             "pen": 1.3
           }
         },
-        "established_misc": {
-          "misc": {
+        "eloctate_alprolix": {
+          "eloctate_hema": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "alprolix_hemb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "praluent": {
+          "ldl_pra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "vaccines_meningo": {
+          "meningo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "renvela": {
+          "esrd_pb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "aprovel": {
+          "htn_apro": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "lovenox_plavix": {
+          "thrombosis_lovenox": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "established_cv_cns": {
+          "multaq": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "heritage_misc": {
             "pos": 100,
             "apr": 100,
             "pen": 0.9

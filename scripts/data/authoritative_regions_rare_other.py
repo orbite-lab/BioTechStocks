@@ -165,6 +165,15 @@ REGIONS = {
         "eu":  {"patientsK": 18000,   "wtpPct": 38, "priceK": 0.04},
         "row": {"patientsK": 110000,  "wtpPct": 12, "priceK": 0.015},
     },
+    # Meningococcal vaccines: Menactra/Menquadfi (Sanofi MenACWY ~$700M),
+    # Bexsero/Trumenba (GSK/Pfizer MenB), Penbraya (Pfizer pentavalent).
+    # ACIP recommends adolescent (11-12 + booster 16) + at-risk adult. US ~10M
+    # adolescent annual + ~5M adult; EU ~15M; ROW ~50M. Class peak ~$2.5B.
+    "infectious_disease.vaccines.meningococcal": {
+        "us":  {"patientsK": 15000,  "wtpPct": 50, "priceK": 0.13},
+        "eu":  {"patientsK": 15000,  "wtpPct": 35, "priceK": 0.08},
+        "row": {"patientsK": 50000,  "wtpPct": 12, "priceK": 0.03},
+    },
     # IPV (inactivated polio) + Hib (Haemophilus influenzae b) peds vaccines:
     # Sanofi IPV + Hib portfolio (Pentacel, IPOL, ActHIB), GSK Pediarix.
     # US 3.7M birth cohort routine; EU 4M; ROW 120M (WHO EPI). Class ~$2B
@@ -442,6 +451,20 @@ REGIONS = {
     },
 
     # ------------------------------------------------------------
+    # NEPHROLOGY - SUPPORTIVE / DIALYSIS-ADJACENT
+    # ------------------------------------------------------------
+    # Phosphate binders for ESRD/CKD-MBD: ~600K US dialysis pts; class:
+    # Renagel/Renvela (sevelamer Sanofi ~$200M legacy), Velphoro
+    # (sucroferric oxyhydroxide Vifor), Auryxia (ferric citrate Akebia),
+    # Phoslyra (calcium acetate). Class peak ~$1B globally; mature, generic
+    # pressure on sevelamer.
+    "nephrology.ckd.phosphate_binder": {
+        "us":  {"patientsK": 600,  "wtpPct": 60, "priceK": 4},
+        "eu":  {"patientsK": 700,  "wtpPct": 45, "priceK": 2.5},
+        "row": {"patientsK": 3000, "wtpPct": 12, "priceK": 0.8},
+    },
+
+    # ------------------------------------------------------------
     # NEPHROLOGY - CHRONIC KIDNEY DISEASE
     # ------------------------------------------------------------
     # Cardiorenal inflammation in CKD: high-CRP CKD patients with
@@ -495,6 +518,8 @@ PEN_PCT = {
     "infectious_disease.vaccines.influenza": 38,
     "infectious_disease.vaccines.pertussis": 45,
     "infectious_disease.vaccines.polio_hib": 75,
+    "infectious_disease.vaccines.meningococcal": 55,
+    "nephrology.ckd.phosphate_binder": 25,
     "ophthalmology.anterior_neuro.deb_ocular": 25,
     "ophthalmology.anterior_neuro.dry_eye": 15,
     "ophthalmology.anterior_neuro.naion": 15,

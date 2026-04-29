@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-29T12:18:57Z",
+    "generated": "2026-04-29T12:27:31Z",
     "target_count": 208,
-    "total_assets": 338,
-    "assets_with_targets": 317,
-    "multi_modality_count": 16,
-    "multi_disease_count": 78
+    "total_assets": 344,
+    "assets_with_targets": 321,
+    "multi_modality_count": 17,
+    "multi_disease_count": 80
   },
   "targets": {
     "ACVR1C": {
@@ -190,16 +190,28 @@
     },
     "AGTR1": {
       "companies": [
+        "SNY",
         "TVTX"
       ],
       "modalities": [
+        "small_molecule.gpcr.arb_at1",
         "small_molecule.gpcr.eta_at1_antagonist"
       ],
       "areas": [
+        "cardio_metabolic.hypertension.outpatient_generic",
         "immunology.autoimmune.fsgs",
         "immunology.autoimmune.iga_nephropathy"
       ],
       "assets": [
+        {
+          "ticker": "SNY",
+          "asset": "aprovel",
+          "name": "Aprovel/CoAprovel (irbesartan) -- HTN legacy",
+          "modality": "small_molecule.gpcr.arb_at1",
+          "areas": [
+            "cardio_metabolic.hypertension.outpatient_generic"
+          ]
+        },
         {
           "ticker": "TVTX",
           "asset": "filspari_igan",
@@ -219,18 +231,18 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 1,
+      "assetCount": 3,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 9160.5,
-      "totalSOM": 998.2,
-      "totalSales": 400.0,
+      "totalTAM": 10190.5,
+      "totalSOM": 2048.2,
+      "totalSales": 1100.0,
       "cagrPct": 0.0,
-      "peakYear": 2031
+      "peakYear": 2029
     },
     "AKT1": {
       "companies": [
@@ -3030,11 +3042,13 @@
       "companies": [
         "4568",
         "NOVO",
-        "PFE"
+        "PFE",
+        "SNY"
       ],
       "modalities": [
         "antibody.bispecific.fviiia_mimetic",
         "small_molecule.coagulation.factor_xa_inhibitor",
+        "small_molecule.coagulation.legacy_antithrombotic",
         "small_molecule.enzyme_inhibitor.factor_xa"
       ],
       "areas": [
@@ -3068,10 +3082,19 @@
           "areas": [
             "cardio_metabolic.thrombosis.anticoagulation"
           ]
+        },
+        {
+          "ticker": "SNY",
+          "asset": "lovenox_plavix",
+          "name": "Lovenox (enoxaparin) + Plavix (clopidogrel) -- legacy",
+          "modality": "small_molecule.coagulation.legacy_antithrombotic",
+          "areas": [
+            "cardio_metabolic.thrombosis.anticoagulation"
+          ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 3,
+      "assetCount": 4,
+      "modalityCount": 4,
       "modalityClassCount": 2,
       "areaCount": 2,
       "modalityClasses": [
@@ -3079,8 +3102,8 @@
         "small_molecule"
       ],
       "totalTAM": 34350.0,
-      "totalSOM": 16610.0,
-      "totalSales": 8494.0,
+      "totalSOM": 18210.7,
+      "totalSales": 9694.0,
       "cagrPct": 0.0,
       "peakYear": 2027
     },
@@ -3124,10 +3147,12 @@
         "SNY"
       ],
       "modalities": [
+        "recombinant_protein.coagulation.factor_fc_fusion",
         "recombinant_protein.coagulation.factor_viii"
       ],
       "areas": [
-        "hematology.rare_blood.hemophilia_a"
+        "hematology.rare_blood.hemophilia_a",
+        "hematology.rare_blood.hemophilia_b"
       ],
       "assets": [
         {
@@ -3147,30 +3172,43 @@
           "areas": [
             "hematology.rare_blood.hemophilia_a"
           ]
+        },
+        {
+          "ticker": "SNY",
+          "asset": "eloctate_alprolix",
+          "name": "Eloctate (Hem A) + Alprolix (Hem B) -- w/ Sobi (legacy hemophilia)",
+          "modality": "recombinant_protein.coagulation.factor_fc_fusion",
+          "areas": [
+            "hematology.rare_blood.hemophilia_a",
+            "hematology.rare_blood.hemophilia_b"
+          ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 1,
+      "assetCount": 3,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "recombinant_protein"
       ],
-      "totalTAM": 14700.0,
-      "totalSOM": 3302.7,
-      "totalSales": 2200.0,
-      "cagrPct": 4.1,
-      "peakYear": 2028
+      "totalTAM": 17934.0,
+      "totalSOM": 4348.9,
+      "totalSales": 2900.0,
+      "cagrPct": 3.1,
+      "peakYear": 2027
     },
     "F9": {
       "companies": [
-        "NOVO"
+        "NOVO",
+        "SNY"
       ],
       "modalities": [
-        "antibody.bispecific.fviiia_mimetic"
+        "antibody.bispecific.fviiia_mimetic",
+        "recombinant_protein.coagulation.factor_fc_fusion"
       ],
       "areas": [
-        "hematology.rare_blood.hemophilia_a"
+        "hematology.rare_blood.hemophilia_a",
+        "hematology.rare_blood.hemophilia_b"
       ],
       "assets": [
         {
@@ -3181,20 +3219,31 @@
           "areas": [
             "hematology.rare_blood.hemophilia_a"
           ]
+        },
+        {
+          "ticker": "SNY",
+          "asset": "eloctate_alprolix",
+          "name": "Eloctate (Hem A) + Alprolix (Hem B) -- w/ Sobi (legacy hemophilia)",
+          "modality": "recombinant_protein.coagulation.factor_fc_fusion",
+          "areas": [
+            "hematology.rare_blood.hemophilia_a",
+            "hematology.rare_blood.hemophilia_b"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
+      "areaCount": 2,
       "modalityClasses": [
-        "antibody"
+        "antibody",
+        "recombinant_protein"
       ],
-      "totalTAM": 14700.0,
-      "totalSOM": 950.1,
-      "totalSales": 0.0,
+      "totalTAM": 17934.0,
+      "totalSOM": 1996.3,
+      "totalSales": 700.0,
       "cagrPct": 0.0,
-      "peakYear": 2032
+      "peakYear": 2029
     },
     "FCGRT": {
       "companies": [
@@ -4327,7 +4376,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -4857,7 +4906,7 @@
       ],
       "totalTAM": 108295.0,
       "totalSOM": 31108.6,
-      "totalSales": 14400.0,
+      "totalSales": 17500.0,
       "cagrPct": 8.2,
       "peakYear": 2030
     },
@@ -5002,8 +5051,8 @@
         "recombinant_protein"
       ],
       "totalTAM": 78550.0,
-      "totalSOM": 10490.6,
-      "totalSales": 7000.0,
+      "totalSOM": 12782.9,
+      "totalSales": 8500.0,
       "cagrPct": 0.0,
       "peakYear": 2027
     },
@@ -5618,7 +5667,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -6236,7 +6285,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -6377,7 +6426,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -6453,9 +6502,11 @@
     },
     "P2RY12": {
       "companies": [
-        "AZN"
+        "AZN",
+        "SNY"
       ],
       "modalities": [
+        "small_molecule.coagulation.legacy_antithrombotic",
         "small_molecule.coagulation.p2y12_inhibitor"
       ],
       "areas": [
@@ -6470,20 +6521,29 @@
           "areas": [
             "cardio_metabolic.thrombosis.anticoagulation"
           ]
+        },
+        {
+          "ticker": "SNY",
+          "asset": "lovenox_plavix",
+          "name": "Lovenox (enoxaparin) + Plavix (clopidogrel) -- legacy",
+          "modality": "small_molecule.coagulation.legacy_antithrombotic",
+          "areas": [
+            "cardio_metabolic.thrombosis.anticoagulation"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 19650.0,
-      "totalSOM": 1239.4,
-      "totalSales": 823.0,
+      "totalSOM": 2840.1,
+      "totalSales": 2023.0,
       "cagrPct": 0.0,
-      "peakYear": 2025
+      "peakYear": 2026
     },
     "PARP1": {
       "companies": [
@@ -6615,9 +6675,11 @@
       "companies": [
         "ARWR",
         "AZN",
-        "REGN"
+        "REGN",
+        "SNY"
       ],
       "modalities": [
+        "antibody.cytokine.pcsk9_blocker",
         "antibody.monoclonal.anti_pcsk9",
         "nucleic_acid.trirna.pcsk9_apoc3_dual",
         "small_molecule.protein_protein_inhibitor.pcsk9_oral"
@@ -6652,10 +6714,19 @@
           "areas": [
             "cardio_metabolic.lipids.ldl_cv_risk"
           ]
+        },
+        {
+          "ticker": "SNY",
+          "asset": "praluent",
+          "name": "Praluent (alirocumab, PCSK9) -- w/ Regeneron 50/50",
+          "modality": "antibody.cytokine.pcsk9_blocker",
+          "areas": [
+            "cardio_metabolic.lipids.ldl_cv_risk"
+          ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 3,
+      "assetCount": 4,
+      "modalityCount": 4,
       "modalityClassCount": 3,
       "areaCount": 1,
       "modalityClasses": [
@@ -6664,9 +6735,9 @@
         "small_molecule"
       ],
       "totalTAM": 21450.0,
-      "totalSOM": 5530.0,
-      "totalSales": 400.0,
-      "cagrPct": 12.4,
+      "totalSOM": 6323.0,
+      "totalSales": 700.0,
+      "cagrPct": 10.8,
       "peakYear": 2032
     },
     "PDCD1": {

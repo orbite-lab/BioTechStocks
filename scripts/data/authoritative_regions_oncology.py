@@ -345,6 +345,17 @@ REGIONS = {
         "eu":  {"patientsK": 25,  "wtpPct": 80, "priceK": 200},
         "row": {"patientsK": 280, "wtpPct": 25, "priceK": 80},
     },
+    # Hemophilia B (Factor IX deficiency): ~5K severe US, ~7K EU, ~80K ROW.
+    # Class: Alprolix (rFIX-Fc Sanofi/Sobi ~$300M legacy), BeneFIX (Pfizer
+    # nonacog alfa), Idelvion (CSL albutrepenonacog alfa long-acting),
+    # Refixia/Rebinyn (Novo nonacog beta pegol). Hemgenix (CSL Behring,
+    # AAV5 gene therapy ~$3.5M one-time, slow uptake). Class peak ~$1.5B
+    # globally. source: WFH 2024; CSL/Sanofi/Pfizer 10-Ks.
+    "hematology.rare_blood.hemophilia_b": {
+        "us":  {"patientsK": 5,   "wtpPct": 80, "priceK": 280},
+        "eu":  {"patientsK": 7,   "wtpPct": 70, "priceK": 180},
+        "row": {"patientsK": 80,  "wtpPct": 22, "priceK": 70},
+    },
     # Acquired thrombotic thrombocytopenic purpura (aTTP): ultra-rare ADAMTS13
     # autoimmune deficiency. ~3K US incident/yr, ~4K EU, ~10K ROW. Class:
     # Cablivi (caplacizumab anti-vWF nanobody, Sanofi ~$300M), plasma exchange
@@ -477,6 +488,7 @@ PEN_PCT = {
     "hematology.rare_blood.pnh": 60,
     "hematology.rare_blood.ahus": 55,
     "hematology.rare_blood.attp": 70,
+    "hematology.rare_blood.hemophilia_b": 60,
     "oncology.skin.melanoma": 65,
     "oncology.skin.cscc": 50,
     "oncology.skin.bcc": 45,

@@ -30,48 +30,48 @@
             "salesYear": 2025,
             "company_slice": {
               "us": {
-                "reachPct": 25,
+                "reachPct": 4,
                 "wtpPct": 60,
-                "priceK": 15
+                "priceK": 1.5
               },
               "eu": {
-                "reachPct": 15,
-                "wtpPct": 50,
+                "reachPct": 8,
+                "wtpPct": 55,
                 "priceK": 8
               },
               "row": {
-                "reachPct": 5,
-                "wtpPct": 12,
-                "priceK": 3
+                "reachPct": 0.5,
+                "wtpPct": 8,
+                "priceK": 2
               }
             },
             "company_slice_sources": {
               "us.reachPct": {
-                "note": "Brixadi (buprenorphine ER SC) launched 2023 via Braeburn; 8% of ~2M US OUD on MAT vs Sublocade dominant (~60%) and generic Suboxone (~30%)."
+                "note": "US is royalty-only: Braeburn books Brixadi end-customer sales, CAMX gets ~12% royalty. ~4% reach of 2M US OUD pool reflects Brixadi share of LAI buprenorphine (~30% of ~150K LAI patients). Royalty economics encoded via priceK."
               },
               "us.priceK": {
-                "note": "$25K/yr WAC; parity with Sublocade ($1,750/mo); Medicaid PDL placement key."
+                "note": "$1.5K royalty-equivalent: ~12% royalty × $15K WAC net Brixadi end-price. Not full-price capture."
               },
               "us.wtpPct": {
                 "note": "60% -- payors cover as MAT; REMS program; weekly/monthly flexibility vs Sublocade monthly only."
               },
               "eu.reachPct": {
-                "note": "Buvidal launched 2018 EU via Camurus; 18% of ~1.5M EU OUD in MAT; Nordics/UK early leaders."
+                "note": "Buvidal own-sales EU/Nordics/UK; CAMX 100K patient target = ~8% of 1.3M EU OUD pool (Nordics/UK early leaders)."
               },
               "eu.wtpPct": {
-                "note": "70% -- OUD treatment prioritized by health services; UK NHS widely adopted."
+                "note": "55% -- OUD treatment prioritized; UK NHS widely adopted; some HTA price pressure (UK funding issues)."
               },
               "eu.priceK": {
-                "note": "$15K/yr net; UK ~14K GBP, Germany ~16K EUR."
+                "note": "$8K/yr net; UK ~14K GBP, Germany ~16K EUR (gross), HTA-discounted."
               },
               "row.reachPct": {
-                "note": "5% -- AU launched; partial LATAM; Asia limited."
+                "note": "0.5% -- Australia PBS listed (small base); partial LATAM; minimal Asia. Realistic peak <$50M."
               },
               "row.wtpPct": {
-                "note": "50% -- Australia PBS listed."
+                "note": "8% -- Australia + select LATAM; rest highly stigmatized + low MAT access."
               },
               "row.priceK": {
-                "note": "$10K/yr blended."
+                "note": "$2K blended -- AU PBS + LATAM tiered."
               }
             },
             "sources": {
@@ -195,7 +195,7 @@
                 "note": "~20% peak -- oral paltusotine (Crinetics Ph3) + Mycapssa shift drives SSA switch pool expansion."
               }
             },
-            "salesM": 80,
+            "salesM": 8,
             "salesYear": 2025,
             "company_slice": {
               "us": {
@@ -373,8 +373,8 @@
       ]
     },
     {
-      "id": "pld",
-      "name": "CAM2029 — polycystic liver disease",
+      "id": "cam2043",
+      "name": "CAM2043 — polycystic liver disease",
       "stage": "Phase 2b positive (POSITANO) + Phase 2/3 planned",
       "designations": [
         "Orphan (US + EU for ADPKD)"
@@ -644,7 +644,7 @@
             "pen": 0.3
           }
         },
-        "pld": {
+        "cam2043": {
           "pld": {
             "pos": 20,
             "apr": 25,
@@ -699,7 +699,7 @@
             "pen": 0.5
           }
         },
-        "pld": {
+        "cam2043": {
           "pld": {
             "pos": 30,
             "apr": 35,
@@ -755,7 +755,7 @@
             "pen": 0.8
           }
         },
-        "pld": {
+        "cam2043": {
           "pld": {
             "pos": 40,
             "apr": 50,
@@ -810,7 +810,7 @@
             "pen": 1.0
           }
         },
-        "pld": {
+        "cam2043": {
           "pld": {
             "pos": 55,
             "apr": 60,
@@ -865,7 +865,7 @@
             "pen": 1.2
           }
         },
-        "pld": {
+        "cam2043": {
           "pld": {
             "pos": 65,
             "apr": 70,
@@ -931,19 +931,6 @@
     ]
   },
   "catalysts": [
-    {
-      "date": "2026",
-      "dateSort": "2026-06-01",
-      "asset": "sorento",
-      "indication": "gepnet",
-      "title": "Sorento GEP-NET Phase 2 data",
-      "type": "phase2_data",
-      "binary": false,
-      "fail_pos": 20,
-      "fail_apr": 30,
-      "success_pos": 60,
-      "success_apr": 65
-    },
     {
       "date": "June 10, 2026",
       "dateSort": "2026-06-10",

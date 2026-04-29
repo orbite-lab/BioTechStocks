@@ -122,6 +122,17 @@ REGIONS = {
         "eu":  {"patientsK": 100000, "wtpPct": 10, "priceK": 0.03},
         "row": {"patientsK": 500000, "wtpPct": 5,  "priceK": 0.01},
     },
+    # Resistant hypertension (3+ antihypertensives w/ uncontrolled BP):
+    # ~5M US per ACC criteria. Distinct from agt_knockdown niche (zilebesiran
+    # RNAi specifically). Baxdrostat (AZ aldosterone synthase inhibitor) Ph3
+    # BAX-CSO; PDUFA Q2 2026. Class peers: spironolactone generic (off-label),
+    # finerenone Bayer (CKD label primarily), zilebesiran. Branded class
+    # peak ~$3-5B globally for novel resistant HTN drugs.
+    "cardio_metabolic.hypertension.resistant": {
+        "us":  {"patientsK": 5000,  "wtpPct": 30, "priceK": 4},
+        "eu":  {"patientsK": 7000,  "wtpPct": 22, "priceK": 2.5},
+        "row": {"patientsK": 30000, "wtpPct": 6,  "priceK": 0.8},
+    },
     # Lipids generic statin class: atorvastatin (Lipitor remnants ~$1B
     # globally), rosuvastatin (Crestor remnants), simvastatin/pravastatin/
     # lovastatin generic. ~30M US on statins; branded tail ~$2-3B globally
@@ -254,6 +265,16 @@ REGIONS = {
     },
 
     # ==================== ENDOCRINE: CALCIUM ====================
+    # Hypophosphatasia (HPP): rare inherited disorder of bone mineralization
+    # (TNSALP/ALPL deficiency). ~3K US diagnosed (peds + adult); ~5K EU;
+    # ~15K ROW. Strensiq (asfotase alfa, AZ/Alexion) is only approved enzyme
+    # replacement; ~$1.5B 2025. Class peak ~$2B globally.
+    # source: Alexion/AZ 10-K; NORD HPP.
+    "endocrine.calcium.hypophosphatasia": {
+        "us":  {"patientsK": 3,   "wtpPct": 90, "priceK": 700},
+        "eu":  {"patientsK": 5,   "wtpPct": 80, "priceK": 480},
+        "row": {"patientsK": 15,  "wtpPct": 22, "priceK": 200},
+    },
     "endocrine.calcium.adh1": {
         "us":  {"patientsK": 10,    "wtpPct": 70, "priceK": 250},
         "eu":  {"patientsK": 12,    "wtpPct": 55, "priceK": 150},
@@ -314,7 +335,9 @@ PEN_PCT = {
     "cardio_metabolic.diabetes.t2d": 10,
     "cardio_metabolic.hypertension.agt_knockdown": 8,
     "cardio_metabolic.hypertension.outpatient_generic": 8,
+    "cardio_metabolic.hypertension.resistant": 18,
     "cardio_metabolic.lipids.statin_generic": 10,
+    "endocrine.calcium.hypophosphatasia": 60,
     "cardio_metabolic.lipids.ldl_cv_risk": 6,
     "cardio_metabolic.lipids.lpa": 3,
     "cardio_metabolic.lipids.triglycerides": 25,

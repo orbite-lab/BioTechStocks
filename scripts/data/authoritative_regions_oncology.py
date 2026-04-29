@@ -139,12 +139,14 @@ REGIONS = {
         "eu":  {"patientsK": 17, "wtpPct": 48, "priceK": 50},
         "row": {"patientsK": 30, "wtpPct": 12, "priceK": 20},
     },
-    # MCL: mantle cell lymphoma; aggressive but treatable.
-    # BTK first-line, CAR-T (Tecartus) post-BTKi.
+    # MCL: mantle cell lymphoma; aggressive but treatable. ~5K US incident
+    # + ~10K prevalent on therapy = ~15K addressable; ~18K EU; ~40K ROW.
+    # BTK first-line (Calquence/Brukinsa/Imbruvica/pirtobrutinib), CAR-T
+    # (Tecartus) post-BTKi. Class peak ~$3B globally.
     "oncology.hematology.nhl.mcl": {
-        "us":  {"patientsK": 5, "wtpPct": 70, "priceK": 120},
-        "eu":  {"patientsK": 6, "wtpPct": 52, "priceK": 75},
-        "row": {"patientsK": 10, "wtpPct": 10, "priceK": 30},
+        "us":  {"patientsK": 15, "wtpPct": 70, "priceK": 175},
+        "eu":  {"patientsK": 18, "wtpPct": 52, "priceK": 100},
+        "row": {"patientsK": 40, "wtpPct": 12, "priceK": 35},
     },
     # WM: Waldenstrom macroglobulinemia / lymphoplasmacytic lymphoma. Rare;
     # BTK inhibitors are 1L standard (Brukinsa, Imbruvica), rituximab combos.
@@ -201,6 +203,17 @@ REGIONS = {
         "us":  {"patientsK": 6,  "wtpPct": 72, "priceK": 205},
         "eu":  {"patientsK": 7,  "wtpPct": 55, "priceK": 120},
         "row": {"patientsK": 15, "wtpPct": 22, "priceK": 55},
+    },
+    # EGFR-mutant NSCLC: largest driver subtype (~15% Caucasian, ~50% Asian
+    # NSCLC). US ~50K eligible; EU 65K; ROW 250K (China dominant). Class:
+    # Tagrisso (osimertinib AZ ~$7B near-monopoly), Iressa/Tarceva legacy,
+    # Vizimpro (Pfizer dacomitinib), Lazcluze (Janssen lazertinib + Rybrevant).
+    # Class peak ~$15B globally with Tagrisso 1L+adjuvant+LAURA expansions.
+    # source: SEER + AACR EGFR-mutant prevalence; AZ + Janssen 10-Ks.
+    "oncology.lung.nsclc_driver.egfr": {
+        "us":  {"patientsK": 50,  "wtpPct": 78, "priceK": 230},
+        "eu":  {"patientsK": 65,  "wtpPct": 60, "priceK": 135},
+        "row": {"patientsK": 250, "wtpPct": 25, "priceK": 50},
     },
     "oncology.lung.nsclc_driver.cmet": {
         "us":  {"patientsK": 3,  "wtpPct": 60, "priceK": 195},
@@ -332,6 +345,28 @@ REGIONS = {
         "eu":  {"patientsK": 25,  "wtpPct": 80, "priceK": 200},
         "row": {"patientsK": 280, "wtpPct": 25, "priceK": 80},
     },
+    # Paroxysmal nocturnal hemoglobinuria (PNH): rare acquired stem-cell
+    # disorder w/ uncontrolled complement-mediated hemolysis. ~12K US
+    # diagnosed, ~7K on chronic Rx; EU 18K; ROW 50K. Class: Soliris
+    # (eculizumab AZ/Alexion ~$2.5B PNH+aHUS+MG combined declining), Ultomiris
+    # (ravulizumab AZ long-acting C5, ~$3B all indications growing), Voydeya
+    # (danicopan add-on factor D), Empaveli/Fabhalta (pegcetacoplan/iptacopan
+    # complement). Class peak ~$5B globally.
+    # source: Alexion/AZ 10-Ks; NORD; PNH Foundation.
+    "hematology.rare_blood.pnh": {
+        "us":  {"patientsK": 12,  "wtpPct": 85, "priceK": 480},
+        "eu":  {"patientsK": 18,  "wtpPct": 75, "priceK": 320},
+        "row": {"patientsK": 50,  "wtpPct": 22, "priceK": 130},
+    },
+    # Atypical hemolytic uremic syndrome (aHUS): rare complement-mediated
+    # thrombotic microangiopathy. ~5K US, ~7K EU, ~25K ROW prevalent. C5-
+    # blockade is curative (Soliris/Ultomiris). Class peak ~$1.5B globally.
+    # source: Alexion/AZ 10-Ks; NORD aHUS.
+    "hematology.rare_blood.ahus": {
+        "us":  {"patientsK": 5,   "wtpPct": 80, "priceK": 480},
+        "eu":  {"patientsK": 7,   "wtpPct": 70, "priceK": 320},
+        "row": {"patientsK": 25,  "wtpPct": 18, "priceK": 130},
+    },
 
     # ------------------------------------------------------------
     # SKIN ONCOLOGY (cscc / bcc / melanoma) -- IO regimens dominate
@@ -414,6 +449,7 @@ PEN_PCT = {
     "oncology.hematology.myeloma.4l_plus": 35,
     # tcell_lymphoma renamed -> nhl.tcell (above)
     "oncology.lung.nsclc_driver.alk": 68,
+    "oncology.lung.nsclc_driver.egfr": 70,
     "oncology.lung.nsclc_driver.cmet": 50,
     "oncology.lung.nsclc_driver.her2": 48,
     "oncology.lung.nsclc_driver.her3": 42,
@@ -429,6 +465,8 @@ PEN_PCT = {
     "hematology.rare_blood.hemoglobinopathy.scd": 15,
     "hematology.rare_blood.hemoglobinopathy.beta_thalassemia": 28,
     "hematology.rare_blood.hemophilia_a": 65,
+    "hematology.rare_blood.pnh": 60,
+    "hematology.rare_blood.ahus": 55,
     "oncology.skin.melanoma": 65,
     "oncology.skin.cscc": 50,
     "oncology.skin.bcc": 45,

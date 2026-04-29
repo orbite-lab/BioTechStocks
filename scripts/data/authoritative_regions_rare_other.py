@@ -262,6 +262,25 @@ REGIONS = {
         "eu":  {"patientsK": 900,  "wtpPct": 35, "priceK": 20},
         "row": {"patientsK": 3000, "wtpPct": 8,  "priceK": 5},
     },
+
+    # ------------------------------------------------------------
+    # NEPHROLOGY - CHRONIC KIDNEY DISEASE
+    # ------------------------------------------------------------
+    # Cardiorenal inflammation in CKD: high-CRP CKD patients with
+    # atherosclerotic CV disease (ASCVD). Phase 3 ZEUS (Novo ziltivekimab,
+    # anti-IL-6) primary endpoint = MACE. Patient population is CKD-defined
+    # (Stage 3-4 + elevated hsCRP + prior CV event), specialty crosses
+    # nephrology + cardiology. Class-defining if positive (canakinumab CANTOS
+    # validated POC but never approved). ~5M US CKD with elevated hsCRP;
+    # addressable subset (Stage 3-4 + hsCRP >2 mg/L + ASCVD) ~800K US.
+    # Branded class peer pricing ~$10K/yr (PCSK9 analog given specialty +
+    # chronic). source: Pradhan ASBMR 2024 hsCRP-CKD prevalence; CDC + USRDS
+    # CKD registry; KDIGO 2024 cardiorenal guidelines.
+    "nephrology.ckd.cardiorenal_inflammation": {
+        "us":  {"patientsK": 800,  "wtpPct": 30, "priceK": 10},
+        "eu":  {"patientsK": 1000, "wtpPct": 22, "priceK": 5},
+        "row": {"patientsK": 3000, "wtpPct": 7,  "priceK": 1},
+    },
 }
 
 PEN_PCT = {
@@ -298,4 +317,5 @@ PEN_PCT = {
     "respiratory.inflammatory.copd": 10,
     "ophthalmology.retina.rvo": 35,
     "respiratory.inflammatory.crswnp": 25,
+    "nephrology.ckd.cardiorenal_inflammation": 12,
 }

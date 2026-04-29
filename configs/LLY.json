@@ -20,13 +20,135 @@
       "designations": [],
       "indications": [
         {
-          "id": "incretin",
-          "name": "Diabetes (Mounjaro) + Obesity (Zepbound)",
+          "id": "mounjaro_t2d",
+          "name": "Mounjaro — T2D (tirzepatide)",
           "market": {
-            "notes": "Mounjaro: $26.1B 2025, Zepbound: $13.5B 2025. Combined Q4: $11.7B ($47B annualized). 60.5% US incretin market share. Zepbound 71% new US obesity Rx. 2026 guide: $80-83B total revenue. Manufacturing capacity +60% H1 2026. Walmart LillyDirect partnership at $349/mo.",
-            "tamB": 130.0,
-            "penPct": 5,
-            "salesM": 40000.0,
+            "notes": "Mounjaro 2025 sales $26.1B (T2D portion of tirzepatide franchise). SURPASS Ph3 program established class-leading A1c + weight reduction. SURPASS-CVOT positive 2024. 60% US incretin market share. Pricing $13K/yr WAC, ~$10K net.",
+            "salesM": 26100.0,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "company_slice": {
+              "us": {
+                "reachPct": 14.5,
+                "wtpPct": 70,
+                "priceK": 13
+              },
+              "eu": {
+                "reachPct": 6.2,
+                "wtpPct": 50,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 1.2,
+                "wtpPct": 18,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Mounjaro ~7% reach of ~25M US T2D adults; SURPASS-CVOT positive expanded label."
+              },
+              "us.priceK": {
+                "note": "$13K/yr WAC; ~$10K net post commercial + Medicare Part D rebates."
+              },
+              "us.wtpPct": {
+                "note": "70% -- T2D drug widely covered Medicare/Medicaid; PA standard."
+              },
+              "eu.reachPct": {
+                "note": "3% of EU T2D pool; UK NICE TA875 reimbursed; Germany G-BA T2D added benefit."
+              },
+              "eu.wtpPct": {
+                "note": "50% -- HTA covers T2D second-line; AMNOG-discounted."
+              },
+              "eu.priceK": {
+                "note": "$7K/yr EU net post HTA negotiation."
+              },
+              "row.reachPct": {
+                "note": "0.6% -- Japan PMDA T2D covered (30% copay); Korea HIRA; AU PBS T2D-only; China NRDL pending."
+              },
+              "row.wtpPct": {
+                "note": "18% -- Japan NHI tirzepatide T2D reimbursed; Korea/AU partial."
+              },
+              "row.priceK": {
+                "note": "$4K blended -- Japan $8K, China private $3K, emerging $1-2K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "penPct": 10
+          },
+          "area": "cardio_metabolic.diabetes.t2d"
+        },
+        {
+          "id": "zepbound_obesity",
+          "name": "Zepbound — obesity (tirzepatide)",
+          "market": {
+            "notes": "Zepbound 2025 sales $13.5B (obesity portion of tirzepatide franchise). SURMOUNT Ph3 22.5% mean weight loss; SURMOUNT-5 H2H showed +47% greater weight loss vs Wegovy. 71% new US obesity Rx in 2025. LillyDirect $349/mo single-dose vials. Manufacturing capacity +60% H1 2026.",
+            "salesM": 13500.0,
+            "salesYear": 2025,
+            "peakYear": 2031,
+            "cagrPct": 5,
+            "company_slice": {
+              "us": {
+                "reachPct": 9.5,
+                "wtpPct": 35,
+                "priceK": 14
+              },
+              "eu": {
+                "reachPct": 2.9,
+                "wtpPct": 22,
+                "priceK": 8
+              },
+              "row": {
+                "reachPct": 0.8,
+                "wtpPct": 8,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Zepbound ~5% reach -- 71% new obesity Rx + supply unlock 2026; ~2M US patients on tx."
+              },
+              "us.priceK": {
+                "note": "$14K WAC blended -- LillyDirect $4K/yr self-pay vials + ~$15K commercial after rebates."
+              },
+              "us.wtpPct": {
+                "note": "35% -- Medicare excludes weight-loss (Part D statute); commercial expanding post-SURMOUNT-MMO CV outcomes; PA + step-edit common."
+              },
+              "eu.reachPct": {
+                "note": "1.5% -- UK NHS covers BMI >=35 + comorbid; Germany obesity self-pay; France ASMR IV limits."
+              },
+              "eu.wtpPct": {
+                "note": "22% -- restricted reimbursement; specialist tier-3 weight services only."
+              },
+              "eu.priceK": {
+                "note": "$8K EU net post HTA -- UK GBP 120-220/mo NHS, Germany AMNOG EUR 400/mo."
+              },
+              "row.reachPct": {
+                "note": "0.4% -- Japan PMDA approved obesity 2024 (BMI >=27 + comorbid); China NMPA approved; emerging markets cash."
+              },
+              "row.wtpPct": {
+                "note": "8% -- Japan NHI obesity covered selectively; emerging markets self-pay."
+              },
+              "row.priceK": {
+                "note": "$4K blended -- Japan $8K NHI, emerging $1-2K."
+              }
+            },
             "regions": {
               "us": {
                 "patientsK": 40000,
@@ -44,84 +166,7 @@
                 "priceK": 2
               }
             },
-            "sources": {
-              "us.patientsK": {
-                "note": "CDC NHANES 2023: 42% US adults BMI>=30 = ~110M; ~40M eligible for anti-obesity medications (AOMs) post-insurance criteria."
-              },
-              "eu.patientsK": {
-                "note": "WHO Europe 2023: ~150M obese in EU+UK; ~30M eligible for AOMs given stricter HTA BMI/comorbidity gates."
-              },
-              "row.patientsK": {
-                "note": "Global ex-US/EU ~450M obese; ~50M eligible (China, Japan, AU have growing GLP-1 reimbursement)."
-              },
-              "us.wtpPct": {
-                "note": "~50% -- Medicare excludes weight-loss indication (Part D statute); commercial coverage expanding post-SELECT CV outcomes."
-              },
-              "eu.wtpPct": {
-                "note": "~35% -- NICE/G-BA limited to BMI>=35 + comorbidities; most purchase out-of-pocket."
-              },
-              "row.wtpPct": {
-                "note": "~8% -- Japan PMDA approved, Medicare-equivalent coverage; emerging markets mostly self-pay."
-              },
-              "us.priceK": {
-                "note": "$15K/yr avg across Mounjaro ($13K), Zepbound ($12K), Wegovy ($16K), Saxenda ($15K); oral GLP-1 pending."
-              },
-              "eu.priceK": {
-                "note": "EU net ~$8K; post-G-BA negotiation Zepbound/Wegovy in UK, Germany ~50% of US list."
-              },
-              "row.priceK": {
-                "note": "$3K blended; Japan PMDA pricing ~$9K, emerging markets ~$1-2K via rebates/tiered pricing."
-              },
-              "penPct": {
-                "note": "~5% peak reflects capacity-constrained launch curve; supply expansion through 2028 unlocks more."
-              }
-            },
-            "company_slice": {
-              "us": {
-                "reachPct": 12,
-                "wtpPct": 80,
-                "priceK": 14
-              },
-              "eu": {
-                "reachPct": 4,
-                "wtpPct": 35,
-                "priceK": 8
-              },
-              "row": {
-                "reachPct": 1,
-                "wtpPct": 12,
-                "priceK": 4
-              }
-            },
-            "company_slice_sources": {
-              "us.reachPct": {
-                "note": "Mounjaro+Zepbound ~2.8M US pts on tx of ~40M AOM-eligible = ~7%; slider 12% reflects 2028 supply-unlocked peak (capacity +60% H1-26)."
-              },
-              "us.priceK": {
-                "note": "Mounjaro $13K + Zepbound $12K WAC; LillyDirect self-pay $349/mo (~$4K) for single-dose vials; net ~$14K blended after 30-40% PBM rebates."
-              },
-              "us.wtpPct": {
-                "note": "80% -- SELECT/SURMOUNT CV+MACE benefit + T2D label drives broad commercial + Medicare Part D coverage for Mounjaro; Part D weight-loss statute caps Zepbound."
-              },
-              "eu.reachPct": {
-                "note": "~4% of 30M AOM-eligible EU; UK NHS covers Mounjaro T2D + Wegovy obesity BMI>=35+comorbid; Germany G-BA added benefit T2D only, obesity self-pay."
-              },
-              "eu.wtpPct": {
-                "note": "35% -- NICE TA875 Mounjaro T2D reimbursed; obesity restricted to specialist tier-3 weight services; France ASMR IV (minor) limits uptake."
-              },
-              "eu.priceK": {
-                "note": "EU net ~$8K -- UK Mounjaro GBP 120-220/mo NHS, Germany AMNOG ~EUR 400/mo, ~55% of US list post-HTA negotiation."
-              },
-              "row.reachPct": {
-                "note": "~1% of 50M eligible ROW -- Japan PMDA Mounjaro T2D only (not obesity); China NMPA approved 2024, NRDL pending; emerging markets compounded semag."
-              },
-              "row.wtpPct": {
-                "note": "12% -- Japan NHI tirzepatide T2D covered 30% copay; Korea HIRA covered T2D; AU PBS T2D-only; obesity self-pay ex-Japan."
-              },
-              "row.priceK": {
-                "note": "$4K blended -- Japan NHI tirzepatide ~$8K/yr reimbursed, China Gaoxin private ~$3K, emerging markets cash-pay $1-2K via Lilly tiered access."
-              }
-            }
+            "penPct": 5
           },
           "area": "cardio_metabolic.obesity.general"
         }
@@ -852,7 +897,12 @@
       ],
       "assumptions": {
         "commercial": {
-          "incretin": {
+          "mounjaro_t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "zepbound_obesity": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -921,7 +971,12 @@
       ],
       "assumptions": {
         "commercial": {
-          "incretin": {
+          "mounjaro_t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "zepbound_obesity": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -990,7 +1045,12 @@
       ],
       "assumptions": {
         "commercial": {
-          "incretin": {
+          "mounjaro_t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "zepbound_obesity": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1059,7 +1119,12 @@
       ],
       "assumptions": {
         "commercial": {
-          "incretin": {
+          "mounjaro_t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "zepbound_obesity": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0
@@ -1128,7 +1193,12 @@
       ],
       "assumptions": {
         "commercial": {
-          "incretin": {
+          "mounjaro_t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "zepbound_obesity": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0

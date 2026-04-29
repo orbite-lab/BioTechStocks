@@ -250,28 +250,19 @@ REGIONS = {
         "eu":  {"patientsK": 2,     "wtpPct": 60, "priceK": 300},
         "row": {"patientsK": 10,    "wtpPct": 8,  "priceK": 80},
     },
-    # GH deficiency (pediatric idiopathic GHD + adult GHD): ~50K US diagnosed
-    # (~10K pediatric incident, ~40K adult prevalent on therapy), ~70K EU5+UK,
-    # ~300K ROW. Branded class: somatropin daily injectables (Norditropin,
-    # Genotropin, Humatrope, Saizen, Omnitrope, Skytrofa) ~$25K/yr blended +
-    # weekly long-acting (Sogroya/somapacitan, Skytrofa/lonapegsomatropin) ~$40K.
-    # source: Pituitary Society 2024 prevalence; Novo Nordisk + Pfizer 10-Ks.
+    # GH deficiency (pediatric idiopathic GHD + adult GHD): broader than
+    # initially scoped. Global branded somatropin market ~$3.5-4B with multiple
+    # players: Novo Norditropin/Sogroya ~$860M, Pfizer Genotropin ~$650M,
+    # Novartis Omnitrope (biosim) ~$300M, Lilly Humatrope, Merck Saizen,
+    # Ascendis Skytrofa (long-acting). US patientsK includes GHD peds (~12K),
+    # GHD adult (~40K), ISS (~15K), Turner syndrome + Noonan + SHOX + Prader-
+    # Willi (~13K) -- broader treatable pop ~80K. Daily injection $25K +
+    # weekly long-acting (Sogroya, Skytrofa) $40K -> blended ~$32K/yr branded.
+    # source: Pituitary Society 2024 prevalence; Novo + Pfizer + Ascendis 10-Ks.
     "endocrine.pituitary.gh_deficiency": {
-        "us":  {"patientsK": 50,  "wtpPct": 60, "priceK": 25},
-        "eu":  {"patientsK": 70,  "wtpPct": 50, "priceK": 15},
-        "row": {"patientsK": 300, "wtpPct": 12, "priceK": 8},
-    },
-    # CV inflammation / atherothrombosis in CKD: high-CRP CKD + atherosclerotic
-    # CVD population. ~5M US CKD with elevated hsCRP; addressable subset
-    # (Stage 3-4 CKD + hsCRP >2 mg/L + prior CV event) ~800K. Class peer:
-    # canakinumab CANTOS (anti-IL-1b, never approved CV) demonstrated proof-
-    # of-concept; ziltivekimab (anti-IL-6, Novo) Phase 3 ZEUS readout H2 2026 --
-    # if positive, opens entirely new branded category. Pricing anchor: PCSK9
-    # inhibitor analog (~$10K/yr) given specialty + chronic.
-    "cardio_metabolic.cv_inflammation.atherothrombosis_ckd": {
-        "us":  {"patientsK": 800,  "wtpPct": 30, "priceK": 10},
-        "eu":  {"patientsK": 1000, "wtpPct": 22, "priceK": 5},
-        "row": {"patientsK": 3000, "wtpPct": 7,  "priceK": 1},
+        "us":  {"patientsK": 80,  "wtpPct": 60, "priceK": 32},
+        "eu":  {"patientsK": 100, "wtpPct": 50, "priceK": 20},
+        "row": {"patientsK": 400, "wtpPct": 15, "priceK": 10},
     },
 }
 
@@ -304,6 +295,5 @@ PEN_PCT = {
     "endocrine.pituitary.acromegaly": 20,
     "endocrine.thyroid.graves": 15,
     "cardio_metabolic.lipids.hofh": 35,
-    "endocrine.pituitary.gh_deficiency": 40,
-    "cardio_metabolic.cv_inflammation.atherothrombosis_ckd": 12,
+    "endocrine.pituitary.gh_deficiency": 35,
 }

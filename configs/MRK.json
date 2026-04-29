@@ -1427,74 +1427,1253 @@
       ]
     },
     {
-      "id": "partnered",
-      "name": "Partnered + tail products (Bridion + Lynparza + Lenvima + tail)",
-      "stage": "Commercial (~$5.4B 2025; AZ + Eisai profit-shares + tail)",
+      "id": "bridion",
+      "name": "Bridion (sugammadex) — anesthesia NMB reversal",
+      "stage": "Commercial ($1.84B 2025, US LOE 2026)",
       "designations": [],
       "indications": [
         {
-          "id": "bridion",
-          "name": "Bridion (sugammadex) — anesthesia reversal",
+          "id": "nmb_reversal",
+          "name": "Reversal of rocuronium/vecuronium NMB (post-surgical)",
           "market": {
-            "tamB": 3,
-            "penPct": 0,
+            "tamB": 2.5,
+            "penPct": 30,
             "salesM": 1840,
             "salesYear": 2025,
             "peakYear": 2026,
-            "notes": "Cyclodextrin reversal of rocuronium/vecuronium NMB. ~$1.84B 2025 (+4%). US LOE 2026 (post-AAM litigation). Generic erosion expected 2026-27. Tail-product status post-LOE.",
-            "company_slice": {},
-            "company_slice_sources": {}
+            "notes": "Modified gamma-cyclodextrin selectively encapsulates rocuronium/vecuronium NMBs at end-of-surgery. Approved 2015. ~$1.84B 2025 (+4%). US LOE 2026 (post-AAM litigation). Generic erosion expected 2026-27.",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 50,
+                "priceK": 0.5
+              },
+              "eu": {
+                "reachPct": 95,
+                "wtpPct": 40,
+                "priceK": 0.3
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 15,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Bridion ~25% reach of US NMB-reversal procedures (~4M doses); pre-LOE peak. Generic neostigmine dominates volume."
+              },
+              "us.priceK": {
+                "note": "$500/dose WAC blended."
+              },
+              "us.wtpPct": {
+                "note": "50% -- inpatient hospital pharmacy formulary; cost-conscious institutions prefer neostigmine."
+              },
+              "eu.reachPct": {
+                "note": "18% -- earlier launch + slower generic entry."
+              },
+              "eu.wtpPct": {
+                "note": "40%."
+              },
+              "eu.priceK": {
+                "note": "$300."
+              },
+              "row.reachPct": {
+                "note": "5%."
+              },
+              "row.wtpPct": {
+                "note": "15%."
+              },
+              "row.priceK": {
+                "note": "$100."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 4000,
+                "wtpPct": 55,
+                "priceK": 0.5
+              },
+              "eu": {
+                "patientsK": 5000,
+                "wtpPct": 45,
+                "priceK": 0.3
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 18,
+                "priceK": 0.1
+              }
+            }
           },
-          "area": "_tail_products.anesthesia"
-        },
-        {
-          "id": "lynparza",
-          "name": "Lynparza (olaparib, PARP) — w/ AZ profit-share",
-          "market": {
-            "tamB": 6,
-            "penPct": 0,
-            "salesM": 1450,
-            "salesYear": 2025,
-            "peakYear": 2028,
-            "notes": "PARP inhibitor; AZ booked sales globally + MRK profit-share. ~$1.45B MRK 2025. Indications: ovarian (BRCA+ HRD+), breast (gBRCA+), prostate (HRR+), pancreatic. AZ collaboration since 2017. AZ recognizes commercial revenue; MRK books profit-share + milestones.",
-            "company_slice": {},
-            "company_slice_sources": {}
-          },
-          "area": "_tail_products.partnered_oncology"
-        },
-        {
-          "id": "lenvima",
-          "name": "Lenvima (lenvatinib, TKI) — w/ Eisai profit-share",
-          "market": {
-            "tamB": 5,
-            "penPct": 0,
-            "salesM": 1050,
-            "salesYear": 2025,
-            "peakYear": 2027,
-            "notes": "Multi-target TKI (VEGFR, FGFR, PDGFR, KIT, RET); profit-share with Eisai. ~$1.05B MRK 2025 (+4%). Indications: HCC, RCC + Keytruda combo, thyroid, endometrial. Eisai books global commercial; MRK profit-share.",
-            "company_slice": {},
-            "company_slice_sources": {}
-          },
-          "area": "_tail_products.partnered_oncology"
-        },
-        {
-          "id": "tail",
-          "name": "Tail products (Nexplanon + Belsomra + RotaTeq + ProQuad + M-M-R II + Varivax + Zerbaxa + Recarbrio + Prevymis CMV + Pneumovax 23 + Zostavax)",
-          "market": {
-            "tamB": 15,
-            "penPct": 0,
-            "salesM": 5000,
-            "salesYear": 2025,
-            "peakYear": 2027,
-            "notes": "Tail-of-tail commercial portfolio bundled to keep model lean. ~$5B 2025 across: Nexplanon (~$1.4B contraceptive implant), RotaTeq (~$700M), Belsomra (~$300M insomnia), ProQuad/M-M-R II/Varivax/Zostavax legacy peds vaccines (~$1.5B combined), antibiotics Zerbaxa/Recarbrio (~$250M), Prevymis CMV (~$500M post-HCT prophylaxis), other (~$350M). Mature franchise with mixed growth + decline trajectories. Tagged as pseudo-area to avoid forcing taxonomy expansion for low-priority products.",
-            "company_slice": {},
-            "company_slice_sources": {}
-          },
-          "area": "_tail_products.merck_misc"
+          "area": "perioperative.anesthesia.nmb_reversal"
         }
       ],
-      "modality": "small_molecule.various.tail",
+      "modality": "small_molecule.cyclodextrin.nmb_chelator",
       "targets": []
+    },
+    {
+      "id": "lynparza",
+      "name": "Lynparza (olaparib, PARP) — w/ AZ profit-share",
+      "stage": "Commercial ($1.45B MRK profit-share 2025; AZ books global commercial)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "ovarian_brca",
+          "name": "Ovarian cancer (BRCA+/HRD+ maintenance)",
+          "market": {
+            "tamB": 4,
+            "penPct": 52,
+            "salesM": 700,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "PARP inhibitor; ovarian BRCA+/HRD+ 1L maintenance + 2L+ recurrence. AZ books commercial; MRK profit-share ~50%. Largest Lynparza indication.",
+            "company_slice": {
+              "us": {
+                "reachPct": 39.1,
+                "wtpPct": 70,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 24.4,
+                "wtpPct": 50,
+                "priceK": 45
+              },
+              "row": {
+                "reachPct": 4.9,
+                "wtpPct": 12,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Lynparza BRCA+/HRD+ ovarian maintenance ~8% reach (BRCA+ ~15-20% of ovarian); MRK profit-share economics."
+              },
+              "us.priceK": {
+                "note": "$80K/yr blended -- $160K WAC, ~50% profit-share."
+              },
+              "us.wtpPct": {
+                "note": "70% -- specialty pharmacy + commercial."
+              },
+              "eu.reachPct": {
+                "note": "5%."
+              },
+              "eu.wtpPct": {
+                "note": "50%."
+              },
+              "eu.priceK": {
+                "note": "$45K."
+              },
+              "row.reachPct": {
+                "note": "1%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$18K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 35,
+                "wtpPct": 65,
+                "priceK": 125
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 50,
+                "priceK": 72
+              },
+              "row": {
+                "patientsK": 90,
+                "wtpPct": 16,
+                "priceK": 25
+              }
+            }
+          },
+          "area": "oncology.gynecologic.ovarian"
+        },
+        {
+          "id": "breast_brca",
+          "name": "Breast cancer (gBRCA+ HER2-)",
+          "market": {
+            "tamB": 5,
+            "penPct": 58,
+            "salesM": 360,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "OlympiA adjuvant gBRCA+ HER2- early breast + OlympiAD metastatic gBRCA+. ~25% of Lynparza MRK profit-share.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 60,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 42,
+                "priceK": 45
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 10,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Lynparza gBRCA+ breast ~4% reach (gBRCA+ ~5-7% of breast)."
+              },
+              "us.priceK": {
+                "note": "$80K/yr profit-share blended."
+              },
+              "us.wtpPct": {
+                "note": "60%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "42%."
+              },
+              "eu.priceK": {
+                "note": "$45K."
+              },
+              "row.reachPct": {
+                "note": "0.5%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$18K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 250,
+                "wtpPct": 65,
+                "priceK": 70
+              },
+              "eu": {
+                "patientsK": 350,
+                "wtpPct": 45,
+                "priceK": 40
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 12,
+                "priceK": 12
+              }
+            }
+          },
+          "area": "oncology.breast.hr_her2_neg"
+        },
+        {
+          "id": "prostate_hrr",
+          "name": "Prostate cancer (HRR-mutated mCRPC)",
+          "market": {
+            "tamB": 6,
+            "penPct": 60,
+            "salesM": 290,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "PROpel + PROfound HRR-mutated mCRPC + Lynparza+abiraterone combo. ~20% of Lynparza MRK profit-share.",
+            "company_slice": {
+              "us": {
+                "reachPct": 8.1,
+                "wtpPct": 55,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 4.0,
+                "wtpPct": 38,
+                "priceK": 45
+              },
+              "row": {
+                "reachPct": 1.1,
+                "wtpPct": 10,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Lynparza HRR-mutated mCRPC ~3% reach."
+              },
+              "us.priceK": {
+                "note": "$80K/yr."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "1.5%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$45K."
+              },
+              "row.reachPct": {
+                "note": "0.4%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$18K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 100,
+                "wtpPct": 70,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 110,
+                "wtpPct": 52,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 18
+              }
+            }
+          },
+          "area": "oncology.genitourinary.prostate"
+        },
+        {
+          "id": "pancreatic_brca",
+          "name": "Pancreatic cancer (gBRCA+ maintenance)",
+          "market": {
+            "tamB": 2,
+            "penPct": 40,
+            "salesM": 100,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "POLO gBRCA+ pancreatic maintenance. Smallest Lynparza indication (~5% of MRK profit-share). gBRCA+ ~5-7% of pancreatic.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4.9,
+                "wtpPct": 50,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 2.4,
+                "wtpPct": 35,
+                "priceK": 45
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 8,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Lynparza gBRCA+ pancreatic ~1% reach (rare biomarker subset)."
+              },
+              "us.priceK": {
+                "note": "$80K/yr."
+              },
+              "us.wtpPct": {
+                "note": "50%."
+              },
+              "eu.reachPct": {
+                "note": "0.5%."
+              },
+              "eu.wtpPct": {
+                "note": "35%."
+              },
+              "eu.priceK": {
+                "note": "$45K."
+              },
+              "row.reachPct": {
+                "note": "0.1%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$18K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 60,
+                "wtpPct": 60,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 45,
+                "priceK": 60
+              },
+              "row": {
+                "patientsK": 350,
+                "wtpPct": 15,
+                "priceK": 22
+              }
+            }
+          },
+          "area": "oncology.gi.pancreatic"
+        }
+      ],
+      "modality": "small_molecule.kinase_inhibitor.parp",
+      "targets": [
+        "PARP1",
+        "PARP2"
+      ]
+    },
+    {
+      "id": "lenvima",
+      "name": "Lenvima (lenvatinib, multi-TKI) — w/ Eisai profit-share",
+      "stage": "Commercial ($1.05B MRK profit-share 2025; Eisai books global commercial)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "hcc",
+          "name": "Hepatocellular carcinoma 1L",
+          "market": {
+            "tamB": 4,
+            "penPct": 45,
+            "salesM": 320,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "REFLECT 1L HCC vs sorafenib non-inferior. ~30% of Lenvima profit-share. Atezo-bev (Tecentriq+Avastin) competing 1L.",
+            "company_slice": {
+              "us": {
+                "reachPct": 30.8,
+                "wtpPct": 65,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 15.4,
+                "wtpPct": 45,
+                "priceK": 45
+              },
+              "row": {
+                "reachPct": 4.6,
+                "wtpPct": 15,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Lenvima ~10% of US advanced HCC; profit-share blended pricing."
+              },
+              "us.priceK": {
+                "note": "$80K/yr profit-share blended."
+              },
+              "us.wtpPct": {
+                "note": "65%."
+              },
+              "eu.reachPct": {
+                "note": "5%."
+              },
+              "eu.wtpPct": {
+                "note": "45%."
+              },
+              "eu.priceK": {
+                "note": "$45K."
+              },
+              "row.reachPct": {
+                "note": "1.5% -- China Lenvima volume strong."
+              },
+              "row.wtpPct": {
+                "note": "15%."
+              },
+              "row.priceK": {
+                "note": "$18K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 60,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 46,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 650,
+                "wtpPct": 22,
+                "priceK": 28
+              }
+            }
+          },
+          "area": "oncology.gi.hcc"
+        },
+        {
+          "id": "rcc",
+          "name": "RCC 2L+ (Lenvima + Keytruda combo)",
+          "market": {
+            "tamB": 5,
+            "penPct": 58,
+            "salesM": 320,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "CLEAR 1L RCC Lenvima+Keytruda combo + Lenvima monotherapy 2L+. ~30% of Lenvima profit-share.",
+            "company_slice": {
+              "us": {
+                "reachPct": 26.3,
+                "wtpPct": 70,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 15.8,
+                "wtpPct": 50,
+                "priceK": 45
+              },
+              "row": {
+                "reachPct": 3.2,
+                "wtpPct": 12,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Lenvima+Keytruda ~5% RCC pool capture (CLEAR-supported 1L)."
+              },
+              "us.priceK": {
+                "note": "$80K profit-share."
+              },
+              "us.wtpPct": {
+                "note": "70%."
+              },
+              "eu.reachPct": {
+                "note": "3%."
+              },
+              "eu.wtpPct": {
+                "note": "50%."
+              },
+              "eu.priceK": {
+                "note": "$45K."
+              },
+              "row.reachPct": {
+                "note": "0.6%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$18K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 68,
+                "priceK": 215
+              },
+              "eu": {
+                "patientsK": 30,
+                "wtpPct": 50,
+                "priceK": 125
+              },
+              "row": {
+                "patientsK": 70,
+                "wtpPct": 16,
+                "priceK": 40
+              }
+            }
+          },
+          "area": "oncology.genitourinary.rcc"
+        },
+        {
+          "id": "thyroid",
+          "name": "Differentiated thyroid cancer (advanced/refractory)",
+          "market": {
+            "tamB": 1.5,
+            "penPct": 35,
+            "salesM": 260,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "SELECT advanced/refractory differentiated thyroid cancer. ~25% of Lenvima profit-share. Class peers: Cabometyx, sorafenib.",
+            "company_slice": {
+              "us": {
+                "reachPct": 57.8,
+                "wtpPct": 65,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 34.7,
+                "wtpPct": 45,
+                "priceK": 45
+              },
+              "row": {
+                "reachPct": 9.3,
+                "wtpPct": 12,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Lenvima ~25% of US advanced DTC pool (~10K eligible)."
+              },
+              "us.priceK": {
+                "note": "$80K profit-share."
+              },
+              "us.wtpPct": {
+                "note": "65%."
+              },
+              "eu.reachPct": {
+                "note": "15%."
+              },
+              "eu.wtpPct": {
+                "note": "45%."
+              },
+              "eu.priceK": {
+                "note": "$45K."
+              },
+              "row.reachPct": {
+                "note": "4%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$18K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 70,
+                "priceK": 175
+              },
+              "eu": {
+                "patientsK": 12,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 25,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            }
+          },
+          "area": "oncology.endocrine.thyroid_cancer",
+          "rare": true
+        },
+        {
+          "id": "endometrial",
+          "name": "Endometrial cancer (Lenvima + Keytruda combo)",
+          "market": {
+            "tamB": 3,
+            "penPct": 52,
+            "salesM": 150,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "KEYNOTE-775 / Study 309 endometrial 2L+. ~15% of Lenvima profit-share. Tagged to gynecologic.ovarian as proxy area for now.",
+            "company_slice": {
+              "us": {
+                "reachPct": 10.4,
+                "wtpPct": 60,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 5.2,
+                "wtpPct": 42,
+                "priceK": 45
+              },
+              "row": {
+                "reachPct": 1.0,
+                "wtpPct": 10,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Lenvima+Keytruda endometrial ~4% reach."
+              },
+              "us.priceK": {
+                "note": "$80K profit-share."
+              },
+              "us.wtpPct": {
+                "note": "60%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "42%."
+              },
+              "eu.priceK": {
+                "note": "$45K."
+              },
+              "row.reachPct": {
+                "note": "0.4%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$18K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 35,
+                "wtpPct": 65,
+                "priceK": 125
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 50,
+                "priceK": 72
+              },
+              "row": {
+                "patientsK": 90,
+                "wtpPct": 16,
+                "priceK": 25
+              }
+            }
+          },
+          "area": "oncology.gynecologic.ovarian"
+        }
+      ],
+      "modality": "small_molecule.kinase_inhibitor.multi_tki",
+      "targets": [
+        "VEGFR1",
+        "VEGFR2",
+        "VEGFR3",
+        "FGFR1",
+        "PDGFRA",
+        "KIT",
+        "RET"
+      ]
+    },
+    {
+      "id": "nexplanon",
+      "name": "Nexplanon (etonogestrel) — long-acting contraceptive implant",
+      "stage": "Commercial ($1.4B 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "contraception",
+          "name": "Subdermal contraceptive implant (3-yr)",
+          "market": {
+            "tamB": 4,
+            "penPct": 18,
+            "salesM": 1400,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "Subdermal etonogestrel implant, 3-year contraception. Dominant subdermal LARC option globally. ~3M US users. Approved 2006 (Implanon) / 2011 (Nexplanon next-gen).",
+            "company_slice": {
+              "us": {
+                "reachPct": 16.6,
+                "wtpPct": 35,
+                "priceK": 0.4
+              },
+              "eu": {
+                "reachPct": 8.3,
+                "wtpPct": 25,
+                "priceK": 0.25
+              },
+              "row": {
+                "reachPct": 1.7,
+                "wtpPct": 8,
+                "priceK": 0.08
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Nexplanon ~4% of reproductive-age women US (3M users / 70M); LARC growing."
+              },
+              "us.priceK": {
+                "note": "$400/3-yr device + insertion fee."
+              },
+              "us.wtpPct": {
+                "note": "35% -- ACA contraception coverage; Title X; some commercial PA."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "25%."
+              },
+              "eu.priceK": {
+                "note": "$250 EU net."
+              },
+              "row.reachPct": {
+                "note": "0.4% -- WHO + UNFPA programs in LMICs growing."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$80 blended."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 70000,
+                "wtpPct": 35,
+                "priceK": 0.4
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 28,
+                "priceK": 0.25
+              },
+              "row": {
+                "patientsK": 600000,
+                "wtpPct": 8,
+                "priceK": 0.08
+              }
+            }
+          },
+          "area": "women_health.contraception.larc_implant"
+        }
+      ],
+      "modality": "small_molecule.steroid.progestin",
+      "targets": [
+        "PGR"
+      ]
+    },
+    {
+      "id": "belsomra",
+      "name": "Belsomra (suvorexant) — orexin antagonist (insomnia)",
+      "stage": "Commercial ($300M 2025, declining)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "insomnia",
+          "name": "Adult chronic insomnia",
+          "market": {
+            "tamB": 2,
+            "penPct": 12,
+            "salesM": 300,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Dual orexin receptor antagonist (DORA). Approved 2014. ~$300M 2025 (declining). Newer DORAs Quviviq (Idorsia daridorexant) + Dayvigo (Eisai lemborexant) competitive.",
+            "company_slice": {
+              "us": {
+                "reachPct": 21.7,
+                "wtpPct": 35,
+                "priceK": 0.5
+              },
+              "eu": {
+                "reachPct": 7.2,
+                "wtpPct": 22,
+                "priceK": 0.3
+              },
+              "row": {
+                "reachPct": 1.8,
+                "wtpPct": 8,
+                "priceK": 0.12
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Belsomra ~0.6% of US chronic insomnia pool; declining vs newer DORAs + generic zolpidem."
+              },
+              "us.priceK": {
+                "note": "$500/yr WAC."
+              },
+              "us.wtpPct": {
+                "note": "35% -- generic zolpidem first-line; DORAs second-line."
+              },
+              "eu.reachPct": {
+                "note": "0.2%."
+              },
+              "eu.wtpPct": {
+                "note": "22%."
+              },
+              "eu.priceK": {
+                "note": "$300."
+              },
+              "row.reachPct": {
+                "note": "0.05%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$120."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 10000,
+                "wtpPct": 35,
+                "priceK": 0.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 22,
+                "priceK": 0.3
+              },
+              "row": {
+                "patientsK": 80000,
+                "wtpPct": 8,
+                "priceK": 0.12
+              }
+            }
+          },
+          "area": "cns.psychiatry.insomnia"
+        }
+      ],
+      "modality": "small_molecule.gpcr.orexin_antagonist",
+      "targets": [
+        "HCRTR1",
+        "HCRTR2"
+      ]
+    },
+    {
+      "id": "rotateq",
+      "name": "RotaTeq (rotavirus pentavalent oral vaccine)",
+      "stage": "Commercial ($700M 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "rotavirus_peds",
+          "name": "Pediatric rotavirus immunization",
+          "market": {
+            "tamB": 2.5,
+            "penPct": 65,
+            "salesM": 700,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "Live attenuated pentavalent oral rotavirus vaccine. 3-dose series 2-6mo. ~$700M 2025. Compete with Rotarix (GSK monovalent). WHO EPI growing in LMICs.",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 70,
+                "priceK": 0.2
+              },
+              "eu": {
+                "reachPct": 66.4,
+                "wtpPct": 55,
+                "priceK": 0.13
+              },
+              "row": {
+                "reachPct": 15.9,
+                "wtpPct": 18,
+                "priceK": 0.06
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "RotaTeq ~50% US peds rotavirus vaccination market (Rotarix 50%)."
+              },
+              "us.priceK": {
+                "note": "$200 ACIP-published dose price."
+              },
+              "us.wtpPct": {
+                "note": "70% -- VFC + commercial routine."
+              },
+              "eu.reachPct": {
+                "note": "25% -- Rotarix dominant in some EU markets."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$130."
+              },
+              "row.reachPct": {
+                "note": "6% -- WHO EPI + Gavi-supported tiered pricing."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$60."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 3700,
+                "wtpPct": 75,
+                "priceK": 0.2
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 60,
+                "priceK": 0.13
+              },
+              "row": {
+                "patientsK": 100000,
+                "wtpPct": 22,
+                "priceK": 0.06
+              }
+            }
+          },
+          "area": "infectious_disease.vaccines.rotavirus"
+        }
+      ],
+      "modality": "vaccine.live_attenuated.rotavirus",
+      "targets": []
+    },
+    {
+      "id": "peds_vaccines_legacy",
+      "name": "Peds vaccines (ProQuad + M-M-R II + Varivax + Zostavax legacy)",
+      "stage": "Commercial (~$1.5B 2025, mature)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "mmr_varicella",
+          "name": "MMR + Varicella + zoster legacy",
+          "market": {
+            "tamB": 4,
+            "penPct": 70,
+            "salesM": 1500,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "M-M-R II (measles/mumps/rubella) + ProQuad (MMRV combo) + Varivax (varicella) + Zostavax (legacy shingles, replaced by GSK Shingrix). ~$1.5B 2025. Mature franchise.",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 70,
+                "priceK": 0.15
+              },
+              "eu": {
+                "reachPct": 95,
+                "wtpPct": 55,
+                "priceK": 0.1
+              },
+              "row": {
+                "reachPct": 21.4,
+                "wtpPct": 18,
+                "priceK": 0.04
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Merck dominant US MMR+varicella vaccines (~80% combined market share)."
+              },
+              "us.priceK": {
+                "note": "$150 blended dose."
+              },
+              "us.wtpPct": {
+                "note": "70% -- VFC + ACIP routine."
+              },
+              "eu.reachPct": {
+                "note": "30% -- GSK Priorix competitive in EU."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$100."
+              },
+              "row.reachPct": {
+                "note": "5% -- WHO EPI."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$40."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 70,
+                "priceK": 0.15
+              },
+              "eu": {
+                "patientsK": 10000,
+                "wtpPct": 55,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 250000,
+                "wtpPct": 18,
+                "priceK": 0.04
+              }
+            }
+          },
+          "area": "infectious_disease.vaccines.mmr_varicella"
+        }
+      ],
+      "modality": "vaccine.live_attenuated.peds_combo",
+      "targets": []
+    },
+    {
+      "id": "antibiotics_hospital",
+      "name": "Hospital antibiotics (Zerbaxa + Recarbrio)",
+      "stage": "Commercial (~$250M 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "bacterial_hospital",
+          "name": "Complicated/MDR Gram-negative infections",
+          "market": {
+            "tamB": 2,
+            "penPct": 25,
+            "salesM": 250,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "Zerbaxa (ceftolozane-tazobactam ~$200M) + Recarbrio (imipenem-cilastatin-relebactam ~$50M) for cIAI/cUTI/HABP/VABP MDR. Niche specialty (ICU/ID consult).",
+            "company_slice": {
+              "us": {
+                "reachPct": 43.0,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "eu": {
+                "reachPct": 21.5,
+                "wtpPct": 45,
+                "priceK": 0.9
+              },
+              "row": {
+                "reachPct": 3.6,
+                "wtpPct": 12,
+                "priceK": 0.3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Zerbaxa+Recarbrio ~12% of US MDR Gram-neg specialty market."
+              },
+              "us.priceK": {
+                "note": "$1.5K/course blended."
+              },
+              "us.wtpPct": {
+                "note": "60% -- inpatient hospital formulary; specialty restriction."
+              },
+              "eu.reachPct": {
+                "note": "6%."
+              },
+              "eu.wtpPct": {
+                "note": "45%."
+              },
+              "eu.priceK": {
+                "note": "$900."
+              },
+              "row.reachPct": {
+                "note": "1%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$300."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 750,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 900,
+                "wtpPct": 45,
+                "priceK": 0.9
+              },
+              "row": {
+                "patientsK": 5000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              }
+            }
+          },
+          "area": "infectious_disease.anti_infective.bacterial_hospital"
+        }
+      ],
+      "modality": "small_molecule.antibiotic.beta_lactam_combo",
+      "targets": []
+    },
+    {
+      "id": "prevymis",
+      "name": "Prevymis (letermovir) — CMV prophylaxis",
+      "stage": "Commercial ($500M 2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "cmv_hct",
+          "name": "CMV prophylaxis post-allo HCT + kidney transplant",
+          "market": {
+            "tamB": 1.5,
+            "penPct": 50,
+            "salesM": 500,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "notes": "Terminase inhibitor; CMV prevention in allo HCT (2017) + kidney transplant (2023). ~$500M 2025. Niche specialty. Future expansion: HIV combo, congenital CMV pipeline.",
+            "company_slice": {
+              "us": {
+                "reachPct": 88.3,
+                "wtpPct": 80,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 51.5,
+                "wtpPct": 65,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 11.8,
+                "wtpPct": 18,
+                "priceK": 6
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Prevymis ~60% of US allo HCT CMV+ recipients (~21K/yr); kidney transplant expanding."
+              },
+              "us.priceK": {
+                "note": "$25K/course (200 days post-HCT)."
+              },
+              "us.wtpPct": {
+                "note": "80% -- transplant centers + specialty pharmacy; clear guideline."
+              },
+              "eu.reachPct": {
+                "note": "35%."
+              },
+              "eu.wtpPct": {
+                "note": "65%."
+              },
+              "eu.priceK": {
+                "note": "$15K."
+              },
+              "row.reachPct": {
+                "note": "8%."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$6K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 35,
+                "wtpPct": 80,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 65,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 50,
+                "wtpPct": 18,
+                "priceK": 6
+              }
+            }
+          },
+          "area": "infectious_disease.anti_infective.cmv"
+        }
+      ],
+      "modality": "small_molecule.antiviral.terminase_inhibitor",
+      "targets": [
+        "UL56"
+      ]
     },
     {
       "id": "animal_health",
@@ -1640,26 +2819,97 @@
             "pen": 0.4
           }
         },
-        "partnered": {
-          "bridion": {
+        "bridion": {
+          "nmb_reversal": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.7
+            "pen": 0.5
+          }
+        },
+        "lynparza": {
+          "ovarian_brca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
           },
-          "lynparza": {
+          "breast_brca": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.85
+            "pen": 0.55
           },
-          "lenvima": {
+          "prostate_hrr": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.85
+            "pen": 0.55
           },
-          "tail": {
+          "pancreatic_brca": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.8
+            "pen": 0.55
+          }
+        },
+        "lenvima": {
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "rcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "thyroid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "endometrial": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "nexplanon": {
+          "contraception": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "belsomra": {
+          "insomnia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "rotateq": {
+          "rotavirus_peds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "peds_vaccines_legacy": {
+          "mmr_varicella": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "antibiotics_hospital": {
+          "bacterial_hospital": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "prevymis": {
+          "cmv_hct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
           }
         },
         "animal_health": {
@@ -1795,26 +3045,97 @@
             "pen": 0.5
           }
         },
-        "partnered": {
-          "bridion": {
+        "bridion": {
+          "nmb_reversal": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "lynparza": {
+          "ovarian_brca": {
             "pos": 100,
             "apr": 100,
             "pen": 0.7
           },
-          "lynparza": {
+          "breast_brca": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.85
+            "pen": 0.7
           },
-          "lenvima": {
+          "prostate_hrr": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.85
+            "pen": 0.7
           },
-          "tail": {
+          "pancreatic_brca": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.8
+            "pen": 0.7
+          }
+        },
+        "lenvima": {
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "rcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "thyroid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "endometrial": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "nexplanon": {
+          "contraception": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "belsomra": {
+          "insomnia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "rotateq": {
+          "rotavirus_peds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "peds_vaccines_legacy": {
+          "mmr_varicella": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "antibiotics_hospital": {
+          "bacterial_hospital": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "prevymis": {
+          "cmv_hct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
           }
         },
         "animal_health": {
@@ -1951,23 +3272,94 @@
             "pen": 0.7
           }
         },
-        "partnered": {
-          "bridion": {
+        "bridion": {
+          "nmb_reversal": {
             "pos": 100,
             "apr": 100,
             "pen": 0.7
-          },
-          "lynparza": {
+          }
+        },
+        "lynparza": {
+          "ovarian_brca": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
           },
-          "lenvima": {
+          "breast_brca": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
           },
-          "tail": {
+          "prostate_hrr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "pancreatic_brca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "lenvima": {
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "rcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "thyroid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "endometrial": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "nexplanon": {
+          "contraception": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "belsomra": {
+          "insomnia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "rotateq": {
+          "rotavirus_peds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "peds_vaccines_legacy": {
+          "mmr_varicella": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "antibiotics_hospital": {
+          "bacterial_hospital": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "prevymis": {
+          "cmv_hct": {
             "pos": 100,
             "apr": 100,
             "pen": 0.8
@@ -2107,26 +3499,97 @@
             "pen": 0.9
           }
         },
-        "partnered": {
-          "bridion": {
+        "bridion": {
+          "nmb_reversal": {
             "pos": 100,
             "apr": 100,
             "pen": 0.7
+          }
+        },
+        "lynparza": {
+          "ovarian_brca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
           },
-          "lynparza": {
+          "breast_brca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "prostate_hrr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "pancreatic_brca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "lenvima": {
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "rcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "thyroid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "endometrial": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "nexplanon": {
+          "contraception": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
-          },
-          "lenvima": {
+          }
+        },
+        "belsomra": {
+          "insomnia": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
-          },
-          "tail": {
+          }
+        },
+        "rotateq": {
+          "rotavirus_peds": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.8
+            "pen": 0.85
+          }
+        },
+        "peds_vaccines_legacy": {
+          "mmr_varicella": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "antibiotics_hospital": {
+          "bacterial_hospital": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "prevymis": {
+          "cmv_hct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
           }
         },
         "animal_health": {
@@ -2263,26 +3726,97 @@
             "pen": 1.2
           }
         },
-        "partnered": {
-          "bridion": {
+        "bridion": {
+          "nmb_reversal": {
             "pos": 100,
             "apr": 100,
             "pen": 0.7
-          },
-          "lynparza": {
+          }
+        },
+        "lynparza": {
+          "ovarian_brca": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.85
+            "pen": 1.0
           },
-          "lenvima": {
+          "breast_brca": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.85
+            "pen": 1.0
           },
-          "tail": {
+          "prostate_hrr": {
             "pos": 100,
             "apr": 100,
-            "pen": 0.8
+            "pen": 1.0
+          },
+          "pancreatic_brca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "lenvima": {
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "rcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "thyroid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "endometrial": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "nexplanon": {
+          "contraception": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "belsomra": {
+          "insomnia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "rotateq": {
+          "rotavirus_peds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "peds_vaccines_legacy": {
+          "mmr_varicella": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "antibiotics_hospital": {
+          "bacterial_hospital": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "prevymis": {
+          "cmv_hct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
           }
         },
         "animal_health": {

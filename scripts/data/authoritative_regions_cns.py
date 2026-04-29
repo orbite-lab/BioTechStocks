@@ -167,6 +167,16 @@ REGIONS = {
         "eu":  {"patientsK": 2500,  "wtpPct": 60, "priceK": 5},
         "row": {"patientsK": 24000, "wtpPct": 25, "priceK": 1.5},
     },
+    # Insomnia (chronic): ~25M US adults chronic, ~10M actively Rx'd; mostly
+    # generic zolpidem/eszopiclone. Branded class: dual orexin antagonists
+    # (DORAs) -- Belsomra (Merck suvorexant ~$300M), Quviviq (Idorsia
+    # daridorexant), Dayvigo (Eisai lemborexant). Class peak ~$2-3B.
+    # source: AASM 2024; Merck/Idorsia/Eisai 10-Ks.
+    "cns.psychiatry.insomnia": {
+        "us":  {"patientsK": 10000,  "wtpPct": 35, "priceK": 0.5},
+        "eu":  {"patientsK": 12000,  "wtpPct": 22, "priceK": 0.3},
+        "row": {"patientsK": 80000,  "wtpPct": 8,  "priceK": 0.12},
+    },
 
     # SLEEP
     "cns.sleep.narcolepsy": {
@@ -200,5 +210,6 @@ PEN_PCT = {
     "cns.psychiatry.opioid_dependence": 25,
     "cns.psychiatry.pain_fibromyalgia": 30,
     "cns.psychiatry.schizophrenia": 60,
+    "cns.psychiatry.insomnia": 12,
     "cns.sleep.narcolepsy": 45,
 }

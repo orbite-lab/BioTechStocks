@@ -10,9 +10,9 @@
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
-    "area_count_l3": 140,
+    "area_count_l3": 148,
     "area_count_l4": 27,
-    "modality_count": 157,
+    "modality_count": 165,
     "companies": 55
   },
   "therapeutic_areas": {
@@ -402,6 +402,13 @@
           "count": 4,
           "rare": false
         },
+        "insomnia": {
+          "companies": [
+            "MRK"
+          ],
+          "count": 1,
+          "rare": false
+        },
         "opioid_dependence": {
           "companies": [
             "CAMX"
@@ -760,6 +767,20 @@
     },
     "infectious_disease": {
       "anti_infective": {
+        "bacterial_hospital": {
+          "companies": [
+            "MRK"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "cmv": {
+          "companies": [
+            "MRK"
+          ],
+          "count": 1,
+          "rare": false
+        },
         "hiv_prevention": {
           "companies": [
             "GILD"
@@ -797,7 +818,21 @@
           "count": 1,
           "rare": false
         },
+        "mmr_varicella": {
+          "companies": [
+            "MRK"
+          ],
+          "count": 1,
+          "rare": false
+        },
         "pneumococcal": {
+          "companies": [
+            "MRK"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "rotavirus": {
           "companies": [
             "MRK"
           ],
@@ -942,9 +977,10 @@
             "BOLD",
             "CELC",
             "KYMR",
-            "LLY"
+            "LLY",
+            "MRK"
           ],
-          "count": 4,
+          "count": 5,
           "rare": false
         },
         "tnbc": {
@@ -954,6 +990,15 @@
             "GILD"
           ],
           "count": 3,
+          "rare": true
+        }
+      },
+      "endocrine": {
+        "thyroid_cancer": {
+          "companies": [
+            "MRK"
+          ],
+          "count": 1,
           "rare": true
         }
       },
@@ -978,9 +1023,10 @@
         "prostate": {
           "companies": [
             "CELC",
-            "JANX"
+            "JANX",
+            "MRK"
           ],
-          "count": 2,
+          "count": 3,
           "rare": false
         },
         "rcc": {
@@ -1022,17 +1068,19 @@
         "hcc": {
           "companies": [
             "GLMD",
+            "MRK",
             "ONC"
           ],
-          "count": 2,
+          "count": 3,
           "rare": false
         },
         "pancreatic": {
           "companies": [
             "BCYC",
+            "MRK",
             "RVMD"
           ],
-          "count": 2,
+          "count": 3,
           "rare": false
         }
       },
@@ -1390,6 +1438,17 @@
         }
       }
     },
+    "perioperative": {
+      "anesthesia": {
+        "nmb_reversal": {
+          "companies": [
+            "MRK"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      }
+    },
     "respiratory": {
       "genetic": {
         "cystic_fibrosis": {
@@ -1426,6 +1485,17 @@
         "severe_asthma": {
           "companies": [
             "CRVS"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      }
+    },
+    "women_health": {
+      "contraception": {
+        "larc_implant": {
+          "companies": [
+            "MRK"
           ],
           "count": 1,
           "rare": false
@@ -2098,6 +2168,22 @@
       }
     },
     "small_molecule": {
+      "antibiotic": {
+        "beta_lactam_combo": {
+          "companies": [
+            "MRK"
+          ],
+          "count": 1
+        }
+      },
+      "antiviral": {
+        "terminase_inhibitor": {
+          "companies": [
+            "MRK"
+          ],
+          "count": 1
+        }
+      },
       "calcium_sensitizer": {
         "troponin_c": {
           "companies": [
@@ -2110,6 +2196,14 @@
         "triple_metabolic": {
           "companies": [
             "MDGL"
+          ],
+          "count": 1
+        }
+      },
+      "cyclodextrin": {
+        "nmb_chelator": {
+          "companies": [
+            "MRK"
           ],
           "count": 1
         }
@@ -2233,6 +2327,12 @@
           ],
           "count": 1
         },
+        "orexin_antagonist": {
+          "companies": [
+            "MRK"
+          ],
+          "count": 1
+        },
         "s1p_modulator": {
           "companies": [
             "ABVX"
@@ -2353,9 +2453,21 @@
           ],
           "count": 1
         },
+        "multi_tki": {
+          "companies": [
+            "MRK"
+          ],
+          "count": 1
+        },
         "p38_mapk": {
           "companies": [
             "CRVO"
+          ],
+          "count": 1
+        },
+        "parp": {
+          "companies": [
+            "MRK"
           ],
           "count": 1
         },
@@ -2451,6 +2563,14 @@
           "count": 1
         }
       },
+      "steroid": {
+        "progestin": {
+          "companies": [
+            "MRK"
+          ],
+          "count": 1
+        }
+      },
       "substrate_replacement": {
         "ribitol": {
           "companies": [
@@ -2481,14 +2601,6 @@
           "count": 1
         }
       },
-      "various": {
-        "tail": {
-          "companies": [
-            "MRK"
-          ],
-          "count": 1
-        }
-      },
       "veterinary": {
         "various": {
           "companies": [
@@ -2507,6 +2619,20 @@
       }
     },
     "vaccine": {
+      "live_attenuated": {
+        "peds_combo": {
+          "companies": [
+            "MRK"
+          ],
+          "count": 1
+        },
+        "rotavirus": {
+          "companies": [
+            "MRK"
+          ],
+          "count": 1
+        }
+      },
       "protein_subunit": {
         "conjugate": {
           "companies": [

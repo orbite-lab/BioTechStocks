@@ -167,6 +167,11 @@ REGIONS = {
         "eu":  {"patientsK": 2500,  "wtpPct": 60, "priceK": 5},
         "row": {"patientsK": 24000, "wtpPct": 25, "priceK": 1.5},
     },
+    # ==================== SLEEP-WAKE DISORDERS ====================
+    # Sleep medicine is a distinct neurologic specialty (not psychiatry per
+    # AASM + AAN), with dedicated clinics, polysomnography infrastructure,
+    # and ICSD-3 classification. Patients managed by sleep specialists.
+
     # Narcolepsy + Idiopathic Hypersomnia: chronic excessive daytime sleepiness
     # disorders. US prevalence: narcolepsy ~165K diagnosed (~80K NT1 with
     # cataplexy + ~80K NT2); idiopathic hypersomnia ~50K -- combined ~200K
@@ -181,7 +186,7 @@ REGIONS = {
     # Alkermes ALKS 2680 (Ph2). Class peak ~$5-7B with orexins expanding TAM
     # via better cataplexy + IH coverage. Pricing $30-50K/yr branded.
     # source: Sleep Foundation 2024; Jazz/Harmony/Takeda 10-Ks.
-    "cns.psychiatry.narcolepsy_hypersomnia": {
+    "cns.sleep.narcolepsy_hypersomnia": {
         "us":  {"patientsK": 200,  "wtpPct": 50, "priceK": 35},
         "eu":  {"patientsK": 250,  "wtpPct": 35, "priceK": 20},
         "row": {"patientsK": 800,  "wtpPct": 12, "priceK": 7},
@@ -191,7 +196,7 @@ REGIONS = {
     # (DORAs) -- Belsomra (Merck suvorexant ~$300M), Quviviq (Idorsia
     # daridorexant), Dayvigo (Eisai lemborexant). Class peak ~$2-3B.
     # source: AASM 2024; Merck/Idorsia/Eisai 10-Ks.
-    "cns.psychiatry.insomnia": {
+    "cns.sleep.insomnia": {
         "us":  {"patientsK": 10000,  "wtpPct": 35, "priceK": 0.5},
         "eu":  {"patientsK": 12000,  "wtpPct": 22, "priceK": 0.3},
         "row": {"patientsK": 80000,  "wtpPct": 8,  "priceK": 0.12},
@@ -229,7 +234,7 @@ PEN_PCT = {
     "cns.psychiatry.opioid_dependence": 25,
     "cns.psychiatry.pain_fibromyalgia": 30,
     "cns.psychiatry.schizophrenia": 60,
-    "cns.psychiatry.insomnia": 12,
-    "cns.psychiatry.narcolepsy_hypersomnia": 35,
+    "cns.sleep.insomnia": 12,
+    "cns.sleep.narcolepsy_hypersomnia": 35,
     "cns.sleep.narcolepsy": 45,
 }

@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-29T15:01:45Z",
+    "generated": "2026-04-29T15:06:44Z",
     "target_count": 262,
     "total_assets": 489,
     "assets_with_targets": 459,
     "multi_modality_count": 31,
-    "multi_disease_count": 112
+    "multi_disease_count": 113
   },
   "targets": {
     "ABL1": {
@@ -2815,7 +2815,6 @@
         "NBIX"
       ],
       "modalities": [
-        "small_molecule.cns.muscarinic_agonist",
         "small_molecule.gpcr.muscarinic_agonist",
         "small_molecule.gpcr.muscarinic_m1_m4_agonist"
       ],
@@ -2827,7 +2826,7 @@
           "ticker": "BMY",
           "asset": "cobenfy",
           "name": "Cobenfy (xanomeline + trospium) — M1/M4 muscarinic agonist (schizophrenia)",
-          "modality": "small_molecule.cns.muscarinic_agonist",
+          "modality": "small_molecule.gpcr.muscarinic_agonist",
           "areas": [
             "cns.psychiatry.schizophrenia"
           ]
@@ -2852,7 +2851,7 @@
         }
       ],
       "assetCount": 3,
-      "modalityCount": 3,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
@@ -2905,7 +2904,6 @@
         "NBIX"
       ],
       "modalities": [
-        "small_molecule.cns.muscarinic_agonist",
         "small_molecule.gpcr.m4_muscarinic_agonist",
         "small_molecule.gpcr.muscarinic_agonist",
         "small_molecule.gpcr.muscarinic_m1_m4_agonist"
@@ -2927,7 +2925,7 @@
           "ticker": "BMY",
           "asset": "cobenfy",
           "name": "Cobenfy (xanomeline + trospium) — M1/M4 muscarinic agonist (schizophrenia)",
-          "modality": "small_molecule.cns.muscarinic_agonist",
+          "modality": "small_molecule.gpcr.muscarinic_agonist",
           "areas": [
             "cns.psychiatry.schizophrenia"
           ]
@@ -2952,7 +2950,7 @@
         }
       ],
       "assetCount": 4,
-      "modalityCount": 4,
+      "modalityCount": 3,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
@@ -3047,11 +3045,12 @@
         "BMY"
       ],
       "modalities": [
-        "small_molecule.imid.cereblon_modulator",
-        "small_molecule.imid.cereblon_modulator_next_gen"
+        "small_molecule.imid.cereblon_modulator"
       ],
       "areas": [
-        "oncology.hematology.myeloma.2l_3l"
+        "hematology.myeloproliferative.mds",
+        "oncology.hematology.myeloma.2l_3l",
+        "oncology.hematology.nhl.mcl"
       ],
       "assets": [
         {
@@ -3069,30 +3068,32 @@
           "name": "Revlimid (lenalidomide) — IMiD (heavy LOE decline)",
           "modality": "small_molecule.imid.cereblon_modulator",
           "areas": [
-            "oncology.hematology.myeloma.2l_3l"
+            "hematology.myeloproliferative.mds",
+            "oncology.hematology.myeloma.2l_3l",
+            "oncology.hematology.nhl.mcl"
           ]
         },
         {
           "ticker": "BMY",
           "asset": "iberdomide",
           "name": "Iberdomide (CC-220) — next-gen cereblon E3 ligase modulator",
-          "modality": "small_molecule.imid.cereblon_modulator_next_gen",
+          "modality": "small_molecule.imid.cereblon_modulator",
           "areas": [
             "oncology.hematology.myeloma.2l_3l"
           ]
         }
       ],
       "assetCount": 3,
-      "modalityCount": 2,
+      "modalityCount": 1,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 3,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 13464.5,
-      "totalSOM": 8301.7,
+      "totalTAM": 25331.0,
+      "totalSOM": 8660.1,
       "totalSales": 5200.0,
-      "cagrPct": -16.0,
+      "cagrPct": -16.4,
       "peakYear": 2025
     },
     "CSF3R": {
@@ -3141,7 +3142,10 @@
       ],
       "areas": [
         "oncology.genitourinary.bladder",
+        "oncology.genitourinary.rcc",
         "oncology.gi.cholangiocarcinoma",
+        "oncology.gi.colorectal",
+        "oncology.gi.gastric_esoph",
         "oncology.gi.hcc",
         "oncology.lung.nsclc_io_combo",
         "oncology.lung.sclc",
@@ -3176,6 +3180,11 @@
           "name": "Yervoy (ipilimumab) — anti-CTLA-4 mAb",
           "modality": "antibody.checkpoint.ctla4",
           "areas": [
+            "oncology.genitourinary.rcc",
+            "oncology.gi.colorectal",
+            "oncology.gi.gastric_esoph",
+            "oncology.gi.hcc",
+            "oncology.lung.nsclc_io_combo",
             "oncology.skin.melanoma"
           ]
         }
@@ -3183,14 +3192,14 @@
       "assetCount": 3,
       "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 6,
+      "areaCount": 9,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 41442.2,
-      "totalSOM": 12943.0,
+      "totalTAM": 62069.6,
+      "totalSOM": 12943.7,
       "totalSales": 8600.0,
-      "cagrPct": 4.9,
+      "cagrPct": 5.0,
       "peakYear": 2029
     },
     "CYP11B1": {
@@ -6146,7 +6155,7 @@
       ],
       "areas": [
         "dermatology.inflammatory_derm.atopic_dermatitis_systemic",
-        "respiratory.inflammatory.crswnp"
+        "immunology.inflammatory_gi.eoe"
       ],
       "assets": [
         {
@@ -6164,7 +6173,7 @@
           "name": "Cendakimab — anti-IL-13 mAb (eosinophilic esophagitis)",
           "modality": "antibody.cytokine.il13_blocker",
           "areas": [
-            "respiratory.inflammatory.crswnp"
+            "immunology.inflammatory_gi.eoe"
           ]
         }
       ],
@@ -6175,11 +6184,11 @@
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 34380.0,
-      "totalSOM": 1176.7,
+      "totalTAM": 17557.5,
+      "totalSOM": 428.7,
       "totalSales": 0.0,
-      "cagrPct": 39.0,
-      "peakYear": 2031
+      "cagrPct": 19.8,
+      "peakYear": 2032
     },
     "IL15": {
       "companies": [
@@ -9019,7 +9028,7 @@
         "oncology.gi.hcc",
         "oncology.gynecologic.ovarian",
         "oncology.head_neck.hnscc",
-        "oncology.hematology.nhl.dlbcl",
+        "oncology.hematology.hodgkin",
         "oncology.lung.nsclc_io_combo",
         "oncology.lung.nsclc_undruggable",
         "oncology.skin.bcc",
@@ -9047,7 +9056,7 @@
             "oncology.gi.colorectal",
             "oncology.gi.gastric_esoph",
             "oncology.gi.hcc",
-            "oncology.hematology.nhl.dlbcl",
+            "oncology.hematology.hodgkin",
             "oncology.lung.nsclc_io_combo",
             "oncology.skin.melanoma"
           ]
@@ -9112,8 +9121,8 @@
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 94867.6,
-      "totalSOM": 66105.1,
+      "totalTAM": 89045.6,
+      "totalSOM": 66014.3,
       "totalSales": 45137.0,
       "cagrPct": 1.9,
       "peakYear": 2028

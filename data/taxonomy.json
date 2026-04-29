@@ -10,7 +10,7 @@
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
-    "area_count_l3": 211,
+    "area_count_l3": 214,
     "area_count_l4": 28,
     "modality_count": 365,
     "companies": 67
@@ -314,6 +314,13 @@
             "SNY"
           ],
           "count": 7,
+          "rare": false
+        },
+        "antiplatelet": {
+          "companies": [
+            "BAYN"
+          ],
+          "count": 1,
           "rare": false
         },
         "thrombolytic": {
@@ -1629,24 +1636,26 @@
             "6990",
             "AMGN",
             "AZN",
+            "BAYN",
             "BMY",
             "MRK",
             "ONC"
           ],
-          "count": 6,
+          "count": 7,
           "rare": false
         },
         "hcc": {
           "companies": [
             "AMGN",
             "AZN",
+            "BAYN",
             "BMY",
             "GLMD",
             "MRK",
             "ONC",
             "RHHBY"
           ],
-          "count": 7,
+          "count": 8,
           "rare": false
         },
         "pancreatic": {
@@ -1988,12 +1997,11 @@
         "nsclc_undruggable": {
           "companies": [
             "AMGN",
-            "BAYN",
             "BCYC",
             "JANX",
             "REGN"
           ],
-          "count": 5,
+          "count": 4,
           "rare": false
         },
         "sclc": {
@@ -2005,6 +2013,16 @@
             "RHHBY"
           ],
           "count": 5,
+          "rare": false
+        }
+      },
+      "multi_tumor": {
+        "ntrk_fusion": {
+          "companies": [
+            "BAYN",
+            "BMY"
+          ],
+          "count": 2,
           "rare": false
         }
       },
@@ -2250,6 +2268,13 @@
             "MRK"
           ],
           "count": 2,
+          "rare": false
+        },
+        "ocp": {
+          "companies": [
+            "BAYN"
+          ],
+          "count": 1,
           "rare": false
         }
       },
@@ -3757,14 +3782,6 @@
           "count": 1
         }
       },
-      "cox_inhibitor": {
-        "aspirin": {
-          "companies": [
-            "BAYN"
-          ],
-          "count": 1
-        }
-      },
       "cv": {
         "cv_legacy_brand": {
           "companies": [
@@ -3819,6 +3836,14 @@
           "count": 1
         }
       },
+      "enzyme_activator": {
+        "sgc_stimulator": {
+          "companies": [
+            "BAYN"
+          ],
+          "count": 1
+        }
+      },
       "enzyme_inhibitor": {
         "aldosterone_synthase": {
           "companies": [
@@ -3829,6 +3854,12 @@
         "cetp": {
           "companies": [
             "NAMS"
+          ],
+          "count": 1
+        },
+        "cox_irreversible": {
+          "companies": [
+            "BAYN"
           ],
           "count": 1
         },
@@ -4026,12 +4057,6 @@
             "PFE"
           ],
           "count": 4
-        },
-        "sgc_stimulator": {
-          "companies": [
-            "BAYN"
-          ],
-          "count": 1
         },
         "somatostatin_agonist_combined": {
           "companies": [

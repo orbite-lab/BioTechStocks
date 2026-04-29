@@ -606,7 +606,7 @@
       "name": "Adempas (riociguat) — soluble guanylate cyclase (sGC) stimulator",
       "stage": "Commercial (~$785M 2025; PAH + CTEPH)",
       "designations": [],
-      "modality": "small_molecule.gpcr.sgc_stimulator",
+      "modality": "small_molecule.enzyme_activator.sgc_stimulator",
       "targets": [
         "GUCY1A2",
         "GUCY1B1"
@@ -696,7 +696,7 @@
       "name": "Verquvo (vericiguat) — sGC stimulator (HFrEF; w/ MSD)",
       "stage": "Commercial (~$112M 2025)",
       "designations": [],
-      "modality": "small_molecule.gpcr.sgc_stimulator",
+      "modality": "small_molecule.enzyme_activator.sgc_stimulator",
       "targets": [
         "GUCY1A2",
         "GUCY1B1"
@@ -871,28 +871,28 @@
         {
           "id": "ocp",
           "name": "Yaz/Yasmin/Beyaz (drospirenone OCP)",
-          "area": "women_health.contraception.larc_implant",
+          "area": "women_health.contraception.ocp",
           "market": {
             "tamB": 8,
-            "penPct": 18,
+            "penPct": 25,
             "salesM": 190,
             "salesYear": 2025,
             "peakYear": 2027,
             "cagrPct": -5,
-            "notes": "Drospirenone OCP franchise. Generic competition.",
+            "notes": "Drospirenone OCP franchise (Yaz/Yasmin/Beyaz). Daily oral contraceptive (vs Mirena IUD/LARC). Generic competition.",
             "company_slice": {
               "us": {
-                "reachPct": 1.1,
+                "reachPct": 4.4,
                 "wtpPct": 55,
                 "priceK": 0.5
               },
               "eu": {
-                "reachPct": 0.7,
+                "reachPct": 2.8,
                 "wtpPct": 38,
                 "priceK": 0.3
               },
               "row": {
-                "reachPct": 0.1,
+                "reachPct": 0.4,
                 "wtpPct": 12,
                 "priceK": 0.1
               }
@@ -928,18 +928,18 @@
             },
             "regions": {
               "us": {
-                "patientsK": 70000,
+                "patientsK": 15000,
                 "wtpPct": 35,
                 "priceK": 0.4
               },
               "eu": {
-                "patientsK": 80000,
-                "wtpPct": 28,
+                "patientsK": 30000,
+                "wtpPct": 30,
                 "priceK": 0.25
               },
               "row": {
-                "patientsK": 600000,
-                "wtpPct": 8,
+                "patientsK": 150000,
+                "wtpPct": 18,
                 "priceK": 0.08
               }
             }
@@ -962,28 +962,28 @@
         {
           "id": "ntrk_solid",
           "name": "NTRK fusion-positive solid tumors (tumor-agnostic)",
-          "area": "oncology.lung.nsclc_undruggable",
+          "area": "oncology.multi_tumor.ntrk_fusion",
           "market": {
             "tamB": 8,
-            "penPct": 55,
+            "penPct": 50,
             "salesM": 112,
             "salesYear": 2025,
             "peakYear": 2030,
             "cagrPct": 12,
-            "notes": "First tumor-agnostic NTRK inhibitor. Class peers: Rozlytrek (Roche entrectinib NTRK+ROS1), Augtyro (BMS/Mirati).",
+            "notes": "First tumor-agnostic NTRK1/2/3 inhibitor. NTRK fusions span salivary 60% MASC + thyroid pediatric + secretory breast + infantile fibrosarcoma + soft tissue sarcoma + occasional GBM/lung/CRC (~1% of solid tumors). Class peers: Rozlytrek (Roche), Augtyro (BMS).",
             "company_slice": {
               "us": {
-                "reachPct": 5,
+                "reachPct": 23.0,
                 "wtpPct": 65,
                 "priceK": 175
               },
               "eu": {
-                "reachPct": 2.5,
+                "reachPct": 11.5,
                 "wtpPct": 45,
                 "priceK": 100
               },
               "row": {
-                "reachPct": 0.2,
+                "reachPct": 0.9,
                 "wtpPct": 10,
                 "priceK": 35
               }
@@ -1019,19 +1019,19 @@
             },
             "regions": {
               "us": {
-                "patientsK": 30,
-                "wtpPct": 65,
-                "priceK": 135
+                "patientsK": 5,
+                "wtpPct": 70,
+                "priceK": 175
               },
               "eu": {
-                "patientsK": 45,
-                "wtpPct": 48,
-                "priceK": 80
+                "patientsK": 7,
+                "wtpPct": 50,
+                "priceK": 100
               },
               "row": {
-                "patientsK": 180,
-                "wtpPct": 18,
-                "priceK": 30
+                "patientsK": 30,
+                "wtpPct": 14,
+                "priceK": 35
               }
             }
           }
@@ -1053,16 +1053,16 @@
       "indications": [
         {
           "id": "crc",
-          "name": "Refractory mCRC + GIST + HCC",
+          "name": "Refractory mCRC 3L+",
           "area": "oncology.gi.colorectal",
           "market": {
             "tamB": 8,
             "penPct": 50,
-            "salesM": 560,
+            "salesM": 392,
             "salesYear": 2025,
             "peakYear": 2027,
             "cagrPct": -3,
-            "notes": "Multi-kinase oral. Refractory mCRC 3L+; GIST post-imatinib/sunitinib; HCC. Class peers: Lonsurf (Taiho/Servier), Fruzaqla (Takeda VEGFR-selective), Lenvima.",
+            "notes": "Stivarga mCRC 3L+ ~70% of brand. Class peers: Lonsurf, Fruzaqla.",
             "company_slice": {
               "us": {
                 "reachPct": 14.3,
@@ -1082,31 +1082,31 @@
             },
             "company_slice_sources": {
               "us.reachPct": {
-                "note": "Multi-kinase oral. Refractory mCRC 3L+; GIST post-imatinib/s"
+                "note": "Stivarga mCRC 3L+ ~70% of brand. Class peers: Lonsurf, Fruza"
               },
               "us.wtpPct": {
-                "note": "Multi-kinase oral. Refractory mCRC 3L+; GIST post-imatinib/s"
+                "note": "Stivarga mCRC 3L+ ~70% of brand. Class peers: Lonsurf, Fruza"
               },
               "us.priceK": {
-                "note": "Multi-kinase oral. Refractory mCRC 3L+; GIST post-imatinib/s"
+                "note": "Stivarga mCRC 3L+ ~70% of brand. Class peers: Lonsurf, Fruza"
               },
               "eu.reachPct": {
-                "note": "Multi-kinase oral. Refractory mCRC 3L+; GIST post-imatinib/s"
+                "note": "Stivarga mCRC 3L+ ~70% of brand. Class peers: Lonsurf, Fruza"
               },
               "eu.wtpPct": {
-                "note": "Multi-kinase oral. Refractory mCRC 3L+; GIST post-imatinib/s"
+                "note": "Stivarga mCRC 3L+ ~70% of brand. Class peers: Lonsurf, Fruza"
               },
               "eu.priceK": {
-                "note": "Multi-kinase oral. Refractory mCRC 3L+; GIST post-imatinib/s"
+                "note": "Stivarga mCRC 3L+ ~70% of brand. Class peers: Lonsurf, Fruza"
               },
               "row.reachPct": {
-                "note": "Multi-kinase oral. Refractory mCRC 3L+; GIST post-imatinib/s"
+                "note": "Stivarga mCRC 3L+ ~70% of brand. Class peers: Lonsurf, Fruza"
               },
               "row.wtpPct": {
-                "note": "Multi-kinase oral. Refractory mCRC 3L+; GIST post-imatinib/s"
+                "note": "Stivarga mCRC 3L+ ~70% of brand. Class peers: Lonsurf, Fruza"
               },
               "row.priceK": {
-                "note": "Multi-kinase oral. Refractory mCRC 3L+; GIST post-imatinib/s"
+                "note": "Stivarga mCRC 3L+ ~70% of brand. Class peers: Lonsurf, Fruza"
               }
             },
             "regions": {
@@ -1124,6 +1124,160 @@
                 "patientsK": 320,
                 "wtpPct": 16,
                 "priceK": 22
+              }
+            }
+          }
+        },
+        {
+          "id": "gist",
+          "name": "GIST 3L+ (post-imatinib + sunitinib)",
+          "area": "oncology.gi.gastric_esoph",
+          "market": {
+            "tamB": 8,
+            "penPct": 48,
+            "salesM": 100,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": -3,
+            "notes": "Stivarga GIST ~18% of brand. Tagged gastric_esoph as proxy for GI mesenchymal tumor.",
+            "company_slice": {
+              "us": {
+                "reachPct": 14.3,
+                "wtpPct": 60,
+                "priceK": 140
+              },
+              "eu": {
+                "reachPct": 7.2,
+                "wtpPct": 42,
+                "priceK": 80
+              },
+              "row": {
+                "reachPct": 0.9,
+                "wtpPct": 10,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Stivarga GIST ~18% of brand. Tagged gastric_esoph as proxy f"
+              },
+              "us.wtpPct": {
+                "note": "Stivarga GIST ~18% of brand. Tagged gastric_esoph as proxy f"
+              },
+              "us.priceK": {
+                "note": "Stivarga GIST ~18% of brand. Tagged gastric_esoph as proxy f"
+              },
+              "eu.reachPct": {
+                "note": "Stivarga GIST ~18% of brand. Tagged gastric_esoph as proxy f"
+              },
+              "eu.wtpPct": {
+                "note": "Stivarga GIST ~18% of brand. Tagged gastric_esoph as proxy f"
+              },
+              "eu.priceK": {
+                "note": "Stivarga GIST ~18% of brand. Tagged gastric_esoph as proxy f"
+              },
+              "row.reachPct": {
+                "note": "Stivarga GIST ~18% of brand. Tagged gastric_esoph as proxy f"
+              },
+              "row.wtpPct": {
+                "note": "Stivarga GIST ~18% of brand. Tagged gastric_esoph as proxy f"
+              },
+              "row.priceK": {
+                "note": "Stivarga GIST ~18% of brand. Tagged gastric_esoph as proxy f"
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 58,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 44,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 20,
+                "priceK": 32
+              }
+            }
+          }
+        },
+        {
+          "id": "hcc",
+          "name": "HCC 2L+ (post-sorafenib)",
+          "area": "oncology.gi.hcc",
+          "market": {
+            "tamB": 8,
+            "penPct": 45,
+            "salesM": 67,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": -3,
+            "notes": "Stivarga HCC ~12% of brand.",
+            "company_slice": {
+              "us": {
+                "reachPct": 14.3,
+                "wtpPct": 60,
+                "priceK": 140
+              },
+              "eu": {
+                "reachPct": 7.2,
+                "wtpPct": 42,
+                "priceK": 80
+              },
+              "row": {
+                "reachPct": 0.9,
+                "wtpPct": 10,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Stivarga HCC ~12% of brand."
+              },
+              "us.wtpPct": {
+                "note": "Stivarga HCC ~12% of brand."
+              },
+              "us.priceK": {
+                "note": "Stivarga HCC ~12% of brand."
+              },
+              "eu.reachPct": {
+                "note": "Stivarga HCC ~12% of brand."
+              },
+              "eu.wtpPct": {
+                "note": "Stivarga HCC ~12% of brand."
+              },
+              "eu.priceK": {
+                "note": "Stivarga HCC ~12% of brand."
+              },
+              "row.reachPct": {
+                "note": "Stivarga HCC ~12% of brand."
+              },
+              "row.wtpPct": {
+                "note": "Stivarga HCC ~12% of brand."
+              },
+              "row.priceK": {
+                "note": "Stivarga HCC ~12% of brand."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 60,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 46,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 650,
+                "wtpPct": 22,
+                "priceK": 28
               }
             }
           }
@@ -1225,7 +1379,7 @@
       "name": "Aspirin Cardio (low-dose ASA) — antiplatelet",
       "stage": "Commercial ($1.12B 2025; OTC + Rx ROW)",
       "designations": [],
-      "modality": "small_molecule.cox_inhibitor.aspirin",
+      "modality": "small_molecule.enzyme_inhibitor.cox_irreversible",
       "targets": [
         "PTGS1",
         "PTGS2"
@@ -1234,28 +1388,28 @@
         {
           "id": "antiplatelet",
           "name": "Cardiovascular prophylaxis (low-dose 75-100mg)",
-          "area": "cardio_metabolic.thrombosis.anticoagulation",
+          "area": "cardio_metabolic.thrombosis.antiplatelet",
           "market": {
             "tamB": 8,
-            "penPct": 4,
+            "penPct": 20,
             "salesM": 200,
             "salesYear": 2025,
             "peakYear": 2025,
             "cagrPct": -2,
-            "notes": "Low-dose acetylsalicylic acid for CV prophylaxis. Bayer brand-loyal (especially DACH + LATAM + Asia). Generic dominant in US.",
+            "notes": "Low-dose acetylsalicylic acid for CV prophylaxis (antiplatelet via irreversible COX-1 inhibition -> reduced TXA2). Bayer brand-loyal ROW. Class peers: clopidogrel/Plavix generic, Brilinta (AZN), prasugrel.",
             "company_slice": {
               "us": {
-                "reachPct": 95,
+                "reachPct": 30.1,
                 "wtpPct": 40,
                 "priceK": 0.04
               },
               "eu": {
-                "reachPct": 95,
+                "reachPct": 24.1,
                 "wtpPct": 30,
                 "priceK": 0.025
               },
               "row": {
-                "reachPct": 95,
+                "reachPct": 18.1,
                 "wtpPct": 18,
                 "priceK": 0.01
               }
@@ -1291,19 +1445,19 @@
             },
             "regions": {
               "us": {
-                "patientsK": 6000,
-                "wtpPct": 60,
-                "priceK": 3.5
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 0.4
               },
               "eu": {
-                "patientsK": 7000,
-                "wtpPct": 50,
-                "priceK": 1.5
+                "patientsK": 50000,
+                "wtpPct": 20,
+                "priceK": 0.25
               },
               "row": {
-                "patientsK": 30000,
-                "wtpPct": 15,
-                "priceK": 0.4
+                "patientsK": 200000,
+                "wtpPct": 12,
+                "priceK": 0.08
               }
             }
           }
@@ -1609,6 +1763,16 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.4
+          },
+          "gist": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
           }
         },
         "aliqopa": {
@@ -1743,6 +1907,16 @@
         },
         "stivarga": {
           "crc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "gist": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "hcc": {
             "pos": 100,
             "apr": 100,
             "pen": 0.55
@@ -1884,6 +2058,16 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.7
+          },
+          "gist": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
           }
         },
         "aliqopa": {
@@ -2021,6 +2205,16 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.85
+          },
+          "gist": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
           }
         },
         "aliqopa": {
@@ -2154,6 +2348,16 @@
         },
         "stivarga": {
           "crc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "gist": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "hcc": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0

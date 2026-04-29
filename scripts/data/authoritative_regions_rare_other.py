@@ -675,6 +675,39 @@ REGIONS = {
         "eu":  {"patientsK": 500,    "wtpPct": 30, "priceK": 0.15},
         "row": {"patientsK": 100000, "wtpPct": 25, "priceK": 0.05},
     },
+    # Oral contraceptive pills (OCPs): combined estrogen-progestin or
+    # progestin-only daily pills. US ~15M users, EU ~30M, ROW ~150M.
+    # Class: Yaz/Yasmin franchise (Bayer drospirenone + estradiol),
+    # Lo Loestrin (Allergan), Slynd (progestin-only), Mylan/Teva generics.
+    # Class globally ~$5B with branded share ~$1B.
+    "women_health.contraception.ocp": {
+        "us":  {"patientsK": 15000,  "wtpPct": 35, "priceK": 0.4},
+        "eu":  {"patientsK": 30000,  "wtpPct": 30, "priceK": 0.25},
+        "row": {"patientsK": 150000, "wtpPct": 18, "priceK": 0.08},
+    },
+    # NTRK fusion tumors (tumor-agnostic): rare oncogenic fusions in
+    # NTRK1/2/3. ~1% of solid tumors overall; enriched in salivary
+    # (60% MASC), thyroid (~25-60% pediatric papillary), secretory
+    # breast (~95%), infantile fibrosarcoma. US ~5K eligible/yr, EU 7K,
+    # ROW 30K. Class: Vitrakvi (Bayer larotrectinib), Rozlytrek (Roche
+    # entrectinib NTRK+ROS1), Augtyro (BMS/Mirati repotrectinib
+    # NTRK+ROS1 next-gen). Net branded ~$170K/yr.
+    "oncology.multi_tumor.ntrk_fusion": {
+        "us":  {"patientsK": 5,   "wtpPct": 70, "priceK": 175},
+        "eu":  {"patientsK": 7,   "wtpPct": 50, "priceK": 100},
+        "row": {"patientsK": 30,  "wtpPct": 14, "priceK": 35},
+    },
+    # Antiplatelet therapy (CV prophylaxis post-MI/stroke + DAPT):
+    # blocks platelet aggregation. US ~30M users (low-dose ASA + DAPT),
+    # EU ~50M, ROW ~200M. Class: low-dose Aspirin (Bayer Cardio brand
+    # ROW + generics), Plavix (Sanofi clopidogrel generic), Brilinta
+    # (AZN ticagrelor branded ~$1.5B), Effient (Lilly prasugrel generic).
+    # Net branded blended ~$0.3K/yr.
+    "cardio_metabolic.thrombosis.antiplatelet": {
+        "us":  {"patientsK": 30000,  "wtpPct": 25, "priceK": 0.4},
+        "eu":  {"patientsK": 50000,  "wtpPct": 20, "priceK": 0.25},
+        "row": {"patientsK": 200000, "wtpPct": 12, "priceK": 0.08},
+    },
 }
 
 PEN_PCT = {
@@ -750,4 +783,7 @@ PEN_PCT = {
     "respiratory.inflammatory.cough_chronic": 25,
     "nephrology.glomerular.lupus_nephritis": 40,
     "infectious_disease.vaccines.dengue": 22,
+    "women_health.contraception.ocp": 25,
+    "oncology.multi_tumor.ntrk_fusion": 50,
+    "cardio_metabolic.thrombosis.antiplatelet": 20,
 }

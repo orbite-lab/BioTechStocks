@@ -369,6 +369,16 @@ REGIONS = {
         "eu":  {"patientsK": 7,   "wtpPct": 70, "priceK": 180},
         "row": {"patientsK": 80,  "wtpPct": 22, "priceK": 70},
     },
+    # Von Willebrand disease (vWD): autosomal bleeding disorder with vWF
+    # deficiency/dysfunction. Type 3 severe ~2K US, type 1/2 moderate-
+    # severe ~30K US treated. EU 40K, ROW 200K. Class: Vonvendi (Takeda
+    # rVWF first & only recombinant ~$200M), Humate-P / Wilate (CSL
+    # plasma-derived vWF/FVIII concentrates ~$0.5B). Net branded ~$380K/yr.
+    "hematology.rare_blood.vwd": {
+        "us":  {"patientsK": 30,   "wtpPct": 70, "priceK": 250},
+        "eu":  {"patientsK": 40,   "wtpPct": 55, "priceK": 160},
+        "row": {"patientsK": 200,  "wtpPct": 18, "priceK": 60},
+    },
     # Myelofibrosis (MF): primary + post-PV/post-ET. ~17K US prevalent,
     # ~25K EU5, ~80K ROW. Branded class: Jakavi/Jakafi (ruxolitinib JAK1/2
     # Novartis/Incyte ~$5B globally), Inrebic (fedratinib BMS), Vonjo
@@ -570,6 +580,7 @@ PEN_PCT = {
     "hematology.rare_blood.ahus": 55,
     "hematology.rare_blood.attp": 70,
     "hematology.rare_blood.hemophilia_b": 60,
+    "hematology.rare_blood.vwd": 50,
     "hematology.myeloproliferative.mf": 65,
     "hematology.myeloproliferative.pv": 25,
     "hematology.myeloproliferative.mds": 60,

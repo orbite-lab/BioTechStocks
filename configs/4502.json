@@ -185,7 +185,7 @@
       "name": "Vyvanse (lisdexamfetamine) — ADHD prodrug stimulant (post-LOE 2023)",
       "stage": "Commercial (~$2.3B 2025, -22%; US LOE 2023)",
       "designations": [],
-      "modality": "small_molecule.cns.dopamine_norepinephrine_reuptake_inhibitor",
+      "modality": "small_molecule.cns.amphetamine_releaser",
       "targets": [
         "SLC6A3",
         "SLC6A2"
@@ -370,28 +370,28 @@
         {
           "id": "ig_replacement",
           "name": "Primary immunodeficiency (PI) IgG replacement",
-          "area": "immunology.autoimmune.hereditary_angioedema",
+          "area": "immunology.autoimmune.primary_immunodeficiency",
           "market": {
             "tamB": 8,
-            "penPct": 70,
+            "penPct": 35,
             "salesM": 700,
             "salesYear": 2025,
             "peakYear": 2030,
             "cagrPct": 6,
-            "notes": "Hyqvia (IGSC 10% with hyaluronidase) + Gammagard Liquid + Cuvitru (IGSC 20%). PI replacement therapy. Tagged HAE area as proxy (no PI/IgG-replacement leaf).",
+            "notes": "Hyqvia (IGSC 10% with hyaluronidase) + Gammagard Liquid + Cuvitru (IGSC 20%). Primary immunodeficiency (PI) IgG replacement therapy. Class peers: CSL Privigen/Hizentra, Grifols Flebogamma.",
             "company_slice": {
               "us": {
-                "reachPct": 95,
+                "reachPct": 4.7,
                 "wtpPct": 75,
                 "priceK": 90
               },
               "eu": {
-                "reachPct": 95,
+                "reachPct": 2.3,
                 "wtpPct": 55,
                 "priceK": 55
               },
               "row": {
-                "reachPct": 58.0,
+                "reachPct": 0.2,
                 "wtpPct": 14,
                 "priceK": 18
               }
@@ -427,19 +427,19 @@
             },
             "regions": {
               "us": {
-                "patientsK": 7,
-                "wtpPct": 75,
-                "priceK": 450
+                "patientsK": 250,
+                "wtpPct": 80,
+                "priceK": 110
               },
               "eu": {
-                "patientsK": 10,
-                "wtpPct": 55,
-                "priceK": 280
+                "patientsK": 350,
+                "wtpPct": 60,
+                "priceK": 70
               },
               "row": {
-                "patientsK": 20,
-                "wtpPct": 15,
-                "priceK": 100
+                "patientsK": 2000,
+                "wtpPct": 18,
+                "priceK": 22
               }
             }
           }
@@ -625,28 +625,28 @@
         {
           "id": "vwd",
           "name": "Von Willebrand disease type 3 + severe type 1/2",
-          "area": "hematology.rare_blood.attp",
+          "area": "hematology.rare_blood.vwd",
           "market": {
             "tamB": 8,
-            "penPct": 70,
+            "penPct": 50,
             "salesM": 200,
             "salesYear": 2025,
             "peakYear": 2030,
             "cagrPct": 8,
-            "notes": "First & only recombinant vWF. Niche orphan. Tagged aTTP as closest hematology bucket (no dedicated vWD leaf).",
+            "notes": "First & only recombinant vWF for von Willebrand disease type 3 + severe type 1/2. Class peers: Humate-P / Wilate (CSL plasma-derived vWF/FVIII concentrates).",
             "company_slice": {
               "us": {
-                "reachPct": 28.4,
+                "reachPct": 2.9,
                 "wtpPct": 70,
                 "priceK": 380
               },
               "eu": {
-                "reachPct": 15.1,
+                "reachPct": 1.4,
                 "wtpPct": 50,
                 "priceK": 240
               },
               "row": {
-                "reachPct": 0.9,
+                "reachPct": 0.1,
                 "wtpPct": 12,
                 "priceK": 90
               }
@@ -682,18 +682,18 @@
             },
             "regions": {
               "us": {
-                "patientsK": 3,
-                "wtpPct": 75,
-                "priceK": 270
+                "patientsK": 30,
+                "wtpPct": 70,
+                "priceK": 250
               },
               "eu": {
-                "patientsK": 4,
-                "wtpPct": 60,
-                "priceK": 175
+                "patientsK": 40,
+                "wtpPct": 55,
+                "priceK": 160
               },
               "row": {
-                "patientsK": 10,
-                "wtpPct": 15,
+                "patientsK": 200,
+                "wtpPct": 18,
                 "priceK": 60
               }
             }
@@ -1334,16 +1334,19 @@
       "designations": [],
       "modality": "vaccine.live_attenuated.dengue_tetravalent",
       "targets": [
-        "DENV"
+        "DENV1",
+        "DENV2",
+        "DENV3",
+        "DENV4"
       ],
       "indications": [
         {
           "id": "dengue",
           "name": "Dengue prevention (4-60 yrs in endemic + travelers)",
-          "area": "infectious_disease.vaccines.travel",
+          "area": "infectious_disease.vaccines.dengue",
           "market": {
             "tamB": 8,
-            "penPct": 25,
+            "penPct": 22,
             "salesM": 330,
             "salesYear": 2025,
             "peakYear": 2030,
@@ -1351,17 +1354,17 @@
             "notes": "Live-attenuated tetravalent dengue vaccine. Approved EU + endemic countries 2022; FDA filing pending. Class peer: Dengvaxia (Sanofi seroprevalence-restricted).",
             "company_slice": {
               "us": {
-                "reachPct": 2.1,
+                "reachPct": 10.8,
                 "wtpPct": 50,
                 "priceK": 0.3
               },
               "eu": {
-                "reachPct": 3.5,
+                "reachPct": 18.0,
                 "wtpPct": 38,
                 "priceK": 0.2
               },
               "row": {
-                "reachPct": 10.5,
+                "reachPct": 53.9,
                 "wtpPct": 18,
                 "priceK": 0.05
               }
@@ -1397,19 +1400,19 @@
             },
             "regions": {
               "us": {
-                "patientsK": 30000,
-                "wtpPct": 55,
-                "priceK": 0.25
-              },
-              "eu": {
-                "patientsK": 80000,
-                "wtpPct": 50,
+                "patientsK": 200,
+                "wtpPct": 35,
                 "priceK": 0.2
               },
+              "eu": {
+                "patientsK": 500,
+                "wtpPct": 30,
+                "priceK": 0.15
+              },
               "row": {
-                "patientsK": 200000,
-                "wtpPct": 40,
-                "priceK": 0.1
+                "patientsK": 100000,
+                "wtpPct": 25,
+                "priceK": 0.05
               }
             }
           }
@@ -1702,7 +1705,7 @@
       "name": "Soticlestat — cholesterol 24-hydroxylase (CH24H) inhibitor (Dravet + LGS)",
       "stage": "Phase 3 SKYLINE Dravet + SKYWAY LGS readouts 2025-26",
       "designations": [],
-      "modality": "small_molecule.metabolic.ch24h_inhibitor",
+      "modality": "small_molecule.cns.cholesterol_24_hydroxylase",
       "targets": [
         "CYP46A1"
       ],

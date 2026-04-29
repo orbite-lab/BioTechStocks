@@ -663,6 +663,18 @@ REGIONS = {
         "eu":  {"patientsK": 120,  "wtpPct": 42, "priceK": 27},
         "row": {"patientsK": 600,  "wtpPct": 12, "priceK": 9},
     },
+    # Dengue vaccine: dengue is the most rapidly spreading mosquito-borne
+    # viral disease. Endemic countries (LATAM, SE Asia, Africa) ~3.9B
+    # at-risk population; ~400M infections/yr; ~100M symptomatic. Class:
+    # Qdenga (Takeda TAK-003 tetravalent live-attenuated ~$330M, EU + 30
+    # endemic countries approval; FDA filing pending), Dengvaxia (Sanofi
+    # CYD-TDV seroprevalence-restricted ~$50M residual). Net branded
+    # ~$50/dose blended.
+    "infectious_disease.vaccines.dengue": {
+        "us":  {"patientsK": 200,    "wtpPct": 35, "priceK": 0.20},
+        "eu":  {"patientsK": 500,    "wtpPct": 30, "priceK": 0.15},
+        "row": {"patientsK": 100000, "wtpPct": 25, "priceK": 0.05},
+    },
 }
 
 PEN_PCT = {
@@ -737,4 +749,5 @@ PEN_PCT = {
     "infectious_disease.vaccines.zoster": 35,
     "respiratory.inflammatory.cough_chronic": 25,
     "nephrology.glomerular.lupus_nephritis": 40,
+    "infectious_disease.vaccines.dengue": 22,
 }

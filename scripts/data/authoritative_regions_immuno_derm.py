@@ -137,6 +137,17 @@ REGIONS = {
         "eu":  {"patientsK": 15,  "wtpPct": 55, "priceK": 35},
         "row": {"patientsK": 60,  "wtpPct": 14, "priceK": 12},
     },
+    # Primary immunodeficiency (PI/PIDD): X-linked agammaglobulinemia,
+    # CVID, hyper-IgM, severe combined immunodeficiency, etc. ~250K US
+    # diagnosed (Jeffrey Modell Foundation), ~350K EU5, ~2M ROW. Class:
+    # Hyqvia/Gammagard/Cuvitru (Takeda IGSC ~$2.2B), CSL Privigen/Hizentra
+    # (~$3B), Grifols Flebogamma (~$1.5B). IgG replacement therapy SC/IV.
+    # Net branded ~$110K/yr (lifelong replacement).
+    "immunology.autoimmune.primary_immunodeficiency": {
+        "us":  {"patientsK": 250,  "wtpPct": 80, "priceK": 110},
+        "eu":  {"patientsK": 350,  "wtpPct": 60, "priceK": 70},
+        "row": {"patientsK": 2000, "wtpPct": 18, "priceK": 22},
+    },
     # Ankylosing spondylitis (AS) + axial spondyloarthritis (axSpA): chronic
     # inflammatory spinal arthritis. ~1M US AS + ~2M nr-axSpA, ~1.5M EU AS,
     # ~10M ROW. Class: Cosentyx/Bimzelx (IL-17), TNFi legacy (Humira/Enbrel/
@@ -360,6 +371,7 @@ PEN_PCT = {
     "immunology.inflammatory_systemic.gca_pmr": 18,
     "immunology.autoinflammatory.periodic_fever": 65,
     "immunology.autoimmune.egpa": 60,
+    "immunology.autoimmune.primary_immunodeficiency": 35,
     "immunology.inflammatory_systemic.ankylosing_spondylitis": 25,
     "immunology.neuromuscular_autoimmune.itp": 35,
     "immunology.neuromuscular_autoimmune.mmn": 65,

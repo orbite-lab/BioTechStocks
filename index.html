@@ -998,6 +998,7 @@ async function main(){
   let targetSort="companies"; // companies | modalities | diseases | name
   let targetFilterMode="all"; // all | multi_mod | multi_dis
   let targetExpanded=null;    // string -- which target's detail panel is open
+  let targetTableSort={col:"som", dir:-1}; // detail-panel table sort: col + direction (-1 desc / +1 asc)
   let catYAxis="expected"; // "swing" or "expected"
   let catZoom=180; // days window for catalyst chart; can be 30/60/90/180/365/9999
   let catSortKey="expectedReturn"; // column key to sort catalyst table by
@@ -2019,7 +2020,34 @@ async function main(){
         }
         const cagrAvg = totalSOM>0 ? weightedCAGR/totalSOM : 0;
         const peakYearAvg = totalSOM>0 ? Math.round(weightedPeakYear/totalSOM) : 2033;
-        detailRows.sort((a,b)=>b.som - a.som);
+        // "Last two segments" of an area path -> "L2 › L3" (drops L1).
+        // For pseudo-areas (`_*`) just show the leaf with the underscore.
+        const niceArea = (areaPath) => {
+          if (!areaPath) return '';
+          if (areaPath.startsWith('_')) return nice(areaPath.split('.').pop());
+          const parts = areaPath.split('.');
+          const tail = parts.slice(-2);  // last two segments
+          return tail.map(p => nice(p)).join(' › ');
+        };
+        // Sort table according to current targetTableSort
+        const colKey = (targetTableSort && targetTableSort.col) || 'som';
+        const colDir = (targetTableSort && targetTableSort.dir) || -1;  // -1 desc, +1 asc
+        const tableAccessor = {
+          ticker:   r => r.ticker,
+          asset:    r => r.assetName,
+          modality: r => r.modality,
+          area:     r => r.area,
+          tam:      r => r.tam,
+          som:      r => r.som,
+          sales:    r => r.salesM,
+          peak:     r => r.peakYear,
+        };
+        const acc = tableAccessor[colKey] || tableAccessor.som;
+        detailRows.sort((a,b) => {
+          const va = acc(a), vb = acc(b);
+          if (typeof va === 'number' && typeof vb === 'number') return (vb - va) * (colDir < 0 ? 1 : -1);
+          return String(va).localeCompare(String(vb)) * (colDir < 0 ? -1 : 1);
+        });
 
         h += '<div style="margin-bottom:14px;padding:14px 16px;background:#0f1117;border:1px solid #ec489944;border-radius:8px">';
         h += `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">`;
@@ -2035,10 +2063,19 @@ async function main(){
         h += `<div><div style="font-size:.55rem;color:var(--text2);text-transform:uppercase;letter-spacing:1.2;margin-bottom:2px">CAGR (SOM-weighted)</div><div style="font-size:1.05rem;font-weight:800;color:#22c55e;font-family:var(--mono)">${cagrAvg.toFixed(1)}%</div></div>`;
         h += `<div><div style="font-size:.55rem;color:var(--text2);text-transform:uppercase;letter-spacing:1.2;margin-bottom:2px">Peak year (SOM-wtd)</div><div style="font-size:1.05rem;font-weight:800;color:#06b6d4;font-family:var(--mono)">${peakYearAvg}</div></div>`;
         h += `</div>`;
-        h += `<div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1.2;margin-bottom:6px">Asset × indication breakdown (sorted by SOM)</div>`;
+        h += `<div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1.2;margin-bottom:6px">Asset × indication breakdown · click a column header to sort</div>`;
         const headerStyle = `display:grid;grid-template-columns:55px 1.4fr 1.5fr 1.5fr 70px 70px 70px 50px;gap:8px;font-size:.55rem;color:var(--text2);font-family:var(--mono);text-transform:uppercase;letter-spacing:1;padding-bottom:6px;border-bottom:1px solid #ffffff14`;
+        const arrowFor = (k) => colKey === k ? (colDir < 0 ? ' ▾' : ' ▴') : '';
+        const colCell = (k, lbl, align) => `<span onclick="event.stopPropagation();window._targetTableSort('${k}')" style="cursor:pointer;${align==='right'?'text-align:right':''};color:${colKey===k?'#ec4899':'var(--text2)'};user-select:none">${lbl}${arrowFor(k)}</span>`;
         h += `<div style="${headerStyle}">`;
-        h += `<span>Tick</span><span>Asset</span><span>Modality</span><span>Area</span><span style="text-align:right">TAM</span><span style="text-align:right">SOM</span><span style="text-align:right">Sales</span><span style="text-align:right">Peak</span>`;
+        h += colCell('ticker','Tick','left');
+        h += colCell('asset','Asset','left');
+        h += colCell('modality','Modality','left');
+        h += colCell('area','Area','left');
+        h += colCell('tam','TAM','right');
+        h += colCell('som','SOM','right');
+        h += colCell('sales','Sales','right');
+        h += colCell('peak','Peak','right');
         h += `</div>`;
         const rowStyle = `display:grid;grid-template-columns:55px 1.4fr 1.5fr 1.5fr 70px 70px 70px 50px;gap:8px;font-size:.7rem;font-family:var(--mono);padding:6px 0;border-bottom:1px solid #ffffff05;align-items:baseline`;
         detailRows.forEach(r=>{
@@ -2046,7 +2083,7 @@ async function main(){
           h += `<a href="model.html?ticker=${r.ticker}" style="color:#60a5fa;font-weight:700;text-decoration:none">${r.ticker}</a>`;
           h += `<span style="color:var(--text1);overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.assetName}">${r.assetName.slice(0,40)}</span>`;
           h += `<span style="color:#06b6d4;font-size:.6rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.modality}">${(r.modality||'').replace(/_/g,' ')}</span>`;
-          h += `<span style="color:#f97316;font-size:.6rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.area}">${nice(r.area)}</span>`;
+          h += `<span style="color:#f97316;font-size:.6rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.area}">${niceArea(r.area)}</span>`;
           h += `<span style="text-align:right;color:#f97316">${fmtV(r.tam)}</span>`;
           h += `<span style="text-align:right;color:#a855f7;font-weight:700">${fmtV(r.som)}</span>`;
           h += `<span style="text-align:right;color:#22c55e">${r.salesM>0?fmtV(r.salesM):'—'}</span>`;
@@ -2943,6 +2980,17 @@ async function main(){
     // Toggle inline detail panel. Filtering remains a separate explicit action
     // via the "Filter universe ->" button inside the panel.
     targetExpanded = (targetExpanded === tgt) ? null : tgt;
+    render();
+  };
+  window._targetTableSort=function(col){
+    // Click a column header to sort by it. Same column twice flips direction.
+    if (targetTableSort && targetTableSort.col === col) {
+      targetTableSort = { col, dir: -targetTableSort.dir };
+    } else {
+      // Default direction: numeric columns desc, text columns asc
+      const numericCols = new Set(['tam','som','sales','peak']);
+      targetTableSort = { col, dir: numericCols.has(col) ? -1 : +1 };
+    }
     render();
   };
   window._filterByTarget=function(tgt){

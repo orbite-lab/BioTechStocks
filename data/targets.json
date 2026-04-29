@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-29T13:32:14Z",
-    "target_count": 213,
-    "total_assets": 367,
-    "assets_with_targets": 342,
-    "multi_modality_count": 19,
-    "multi_disease_count": 88
+    "generated": "2026-04-29T13:46:39Z",
+    "target_count": 222,
+    "total_assets": 394,
+    "assets_with_targets": 368,
+    "multi_modality_count": 20,
+    "multi_disease_count": 94
   },
   "targets": {
     "ACVR1C": {
@@ -383,10 +383,12 @@
     "ALK": {
       "companies": [
         "NUVL",
-        "PFE"
+        "PFE",
+        "RHHBY"
       ],
       "modalities": [
-        "small_molecule.kinase_inhibitor.alk"
+        "small_molecule.kinase_inhibitor.alk",
+        "small_molecule.kinase_inhibitor.alk_2nd_gen"
       ],
       "areas": [
         "oncology.lung.nsclc_driver.alk"
@@ -409,20 +411,29 @@
           "areas": [
             "oncology.lung.nsclc_driver.alk"
           ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "alecensa",
+          "name": "Alecensa (alectinib) — ALK TKI (2nd gen)",
+          "modality": "small_molecule.kinase_inhibitor.alk_2nd_gen",
+          "areas": [
+            "oncology.lung.nsclc_driver.alk"
+          ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 1,
+      "assetCount": 3,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 1529.1,
-      "totalSOM": 2276.4,
-      "totalSales": 1050.0,
-      "cagrPct": 3.6,
-      "peakYear": 2031
+      "totalSOM": 4547.0,
+      "totalSales": 3030.0,
+      "cagrPct": 4.3,
+      "peakYear": 2029
     },
     "ALPL": {
       "companies": [
@@ -537,6 +548,46 @@
       "totalSales": 0.0,
       "cagrPct": 3.8,
       "peakYear": 2033
+    },
+    "ANGPT2": {
+      "companies": [
+        "RHHBY"
+      ],
+      "modalities": [
+        "antibody.bispecific.vegf_ang2"
+      ],
+      "areas": [
+        "ophthalmology.retina.dme",
+        "ophthalmology.retina.dr",
+        "ophthalmology.retina.nvamd",
+        "ophthalmology.retina.rvo"
+      ],
+      "assets": [
+        {
+          "ticker": "RHHBY",
+          "asset": "vabysmo",
+          "name": "Vabysmo (faricimab) — VEGF-A/Ang-2 bispecific (retina)",
+          "modality": "antibody.bispecific.vegf_ang2",
+          "areas": [
+            "ophthalmology.retina.dme",
+            "ophthalmology.retina.dr",
+            "ophthalmology.retina.nvamd",
+            "ophthalmology.retina.rvo"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 4,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 26803.0,
+      "totalSOM": 6167.1,
+      "totalSales": 4290.0,
+      "cagrPct": 14.1,
+      "peakYear": 2030
     },
     "ANGPTL3": {
       "companies": [
@@ -689,12 +740,15 @@
     },
     "APP": {
       "companies": [
-        "ALNY"
+        "ALNY",
+        "RHHBY"
       ],
       "modalities": [
+        "antibody.monoclonal.anti_amyloid_brainshuttle",
         "nucleic_acid.sirna.galnac_platform"
       ],
       "areas": [
+        "cns.neurodegeneration.alzheimer",
         "cns.neurodegeneration.caa"
       ],
       "assets": [
@@ -706,20 +760,30 @@
           "areas": [
             "cns.neurodegeneration.caa"
           ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "trontinemab",
+          "name": "Trontinemab — anti-amyloid brain-shuttle (Brainshuttle)",
+          "modality": "antibody.monoclonal.anti_amyloid_brainshuttle",
+          "areas": [
+            "cns.neurodegeneration.alzheimer"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
+      "areaCount": 2,
       "modalityClasses": [
+        "antibody",
         "nucleic_acid"
       ],
-      "totalTAM": 215.0,
-      "totalSOM": 204.3,
+      "totalTAM": 11195.0,
+      "totalSOM": 9548.3,
       "totalSales": 0.0,
-      "cagrPct": 0.0,
-      "peakYear": 2036
+      "cagrPct": 48.9,
+      "peakYear": 2032
     },
     "AR": {
       "companies": [
@@ -1165,7 +1229,8 @@
     "C5": {
       "companies": [
         "AZN",
-        "REGN"
+        "REGN",
+        "RHHBY"
       ],
       "modalities": [
         "antibody.complement.c5_inhibitor",
@@ -1196,9 +1261,18 @@
           "areas": [
             "immunology.neuromuscular_autoimmune.myasthenia_gravis"
           ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "crovalimab",
+          "name": "PiaSky (crovalimab) — anti-C5 mAb (recycling)",
+          "modality": "antibody.complement.c5_inhibitor",
+          "areas": [
+            "hematology.rare_blood.pnh"
+          ]
         }
       ],
-      "assetCount": 2,
+      "assetCount": 3,
       "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 3,
@@ -1206,9 +1280,9 @@
         "antibody"
       ],
       "totalTAM": 37399.0,
-      "totalSOM": 11769.6,
-      "totalSales": 5200.0,
-      "cagrPct": 8.6,
+      "totalSOM": 12099.6,
+      "totalSales": 5420.0,
+      "cagrPct": 9.7,
       "peakYear": 2030
     },
     "CALCIUM_MODULATOR": {
@@ -1520,7 +1594,8 @@
     },
     "CD274": {
       "companies": [
-        "AZN"
+        "AZN",
+        "RHHBY"
       ],
       "modalities": [
         "antibody.checkpoint.pdl1"
@@ -1545,9 +1620,18 @@
             "oncology.lung.nsclc_io_combo",
             "oncology.lung.sclc"
           ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "tecentriq",
+          "name": "Tecentriq (atezolizumab) — anti-PD-L1 mAb",
+          "modality": "antibody.checkpoint.pdl1",
+          "areas": [
+            "oncology.lung.nsclc_io_combo"
+          ]
         }
       ],
-      "assetCount": 1,
+      "assetCount": 2,
       "modalityCount": 1,
       "modalityClassCount": 1,
       "areaCount": 5,
@@ -1555,10 +1639,10 @@
         "antibody"
       ],
       "totalTAM": 34908.2,
-      "totalSOM": 8747.9,
-      "totalSales": 6100.0,
-      "cagrPct": 4.8,
-      "peakYear": 2030
+      "totalSOM": 14853.9,
+      "totalSales": 10170.0,
+      "cagrPct": 1.6,
+      "peakYear": 2028
     },
     "CD276": {
       "companies": [
@@ -1642,6 +1726,7 @@
       "companies": [
         "JNJ",
         "REGN",
+        "RHHBY",
         "SNY"
       ],
       "modalities": [
@@ -1653,6 +1738,7 @@
       "areas": [
         "cardio_metabolic.diabetes.t1d",
         "oncology.hematology.myeloma.4l_plus",
+        "oncology.hematology.nhl.dlbcl",
         "oncology.hematology.nhl.fl"
       ],
       "assets": [
@@ -1693,6 +1779,24 @@
           ]
         },
         {
+          "ticker": "RHHBY",
+          "asset": "lunsumio",
+          "name": "Lunsumio (mosunetuzumab) — CD20xCD3 bispecific",
+          "modality": "antibody.bispecific.cd20_cd3",
+          "areas": [
+            "oncology.hematology.nhl.fl"
+          ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "columvi",
+          "name": "Columvi (glofitamab) — CD20xCD3 bispecific (fixed duration)",
+          "modality": "antibody.bispecific.cd20_cd3",
+          "areas": [
+            "oncology.hematology.nhl.dlbcl"
+          ]
+        },
+        {
           "ticker": "SNY",
           "asset": "tzield",
           "name": "Tzield (teplizumab, anti-CD3) — T1D delay",
@@ -1702,17 +1806,17 @@
           ]
         }
       ],
-      "assetCount": 5,
+      "assetCount": 7,
       "modalityCount": 4,
       "modalityClassCount": 1,
-      "areaCount": 3,
+      "areaCount": 4,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 19444.6,
-      "totalSOM": 5911.1,
-      "totalSales": 1354.0,
-      "cagrPct": 26.1,
+      "totalTAM": 27653.6,
+      "totalSOM": 6741.7,
+      "totalSales": 1794.0,
+      "cagrPct": 27.6,
       "peakYear": 2031
     },
     "CD38": {
@@ -1897,6 +2001,40 @@
       "totalSales": 0.0,
       "cagrPct": 7.6,
       "peakYear": 2034
+    },
+    "CD79B": {
+      "companies": [
+        "RHHBY"
+      ],
+      "modalities": [
+        "adc.cd79b.mmae_payload"
+      ],
+      "areas": [
+        "oncology.hematology.nhl.dlbcl"
+      ],
+      "assets": [
+        {
+          "ticker": "RHHBY",
+          "asset": "polivy",
+          "name": "Polivy (polatuzumab vedotin) — CD79b ADC",
+          "modality": "adc.cd79b.mmae_payload",
+          "areas": [
+            "oncology.hematology.nhl.dlbcl"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "adc"
+      ],
+      "totalTAM": 8209.0,
+      "totalSOM": 1358.8,
+      "totalSales": 990.0,
+      "cagrPct": 18.0,
+      "peakYear": 2030
     },
     "CDH6": {
       "companies": [
@@ -2714,6 +2852,40 @@
       "cagrPct": 0.0,
       "peakYear": 2034
     },
+    "DNASE1": {
+      "companies": [
+        "RHHBY"
+      ],
+      "modalities": [
+        "recombinant_protein.enzyme.dnase"
+      ],
+      "areas": [
+        "respiratory.genetic.cystic_fibrosis"
+      ],
+      "assets": [
+        {
+          "ticker": "RHHBY",
+          "asset": "pulmozyme",
+          "name": "Pulmozyme (dornase alfa) — recombinant DNase for CF",
+          "modality": "recombinant_protein.enzyme.dnase",
+          "areas": [
+            "respiratory.genetic.cystic_fibrosis"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 14924.0,
+      "totalSOM": 633.2,
+      "totalSales": 500.0,
+      "cagrPct": -3.0,
+      "peakYear": 2025
+    },
     "DRD2": {
       "companies": [
         "ABBV",
@@ -2995,10 +3167,14 @@
         "4568",
         "6990",
         "AZN",
-        "NUVL"
+        "NUVL",
+        "RHHBY"
       ],
       "modalities": [
         "adc.dxd_linker.her2_adc",
+        "adc.her2.dm1_payload",
+        "antibody.monoclonal.anti_her2",
+        "antibody.monoclonal.anti_her2_combo",
         "small_molecule.kinase_inhibitor.her2"
       ],
       "areas": [
@@ -3044,21 +3220,58 @@
           "areas": [
             "oncology.lung.nsclc_driver.her2"
           ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "phesgo",
+          "name": "Phesgo (pertuzumab + trastuzumab + hyaluronidase SC FDC)",
+          "modality": "antibody.monoclonal.anti_her2_combo",
+          "areas": [
+            "oncology.breast.her2_pos"
+          ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "perjeta",
+          "name": "Perjeta (pertuzumab) — anti-HER2 mAb",
+          "modality": "antibody.monoclonal.anti_her2",
+          "areas": [
+            "oncology.breast.her2_pos"
+          ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "kadcyla",
+          "name": "Kadcyla (trastuzumab emtansine) — HER2 ADC",
+          "modality": "adc.her2.dm1_payload",
+          "areas": [
+            "oncology.breast.her2_pos"
+          ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "herceptin",
+          "name": "Herceptin (trastuzumab) — anti-HER2 mAb (biosim erosion)",
+          "modality": "antibody.monoclonal.anti_her2",
+          "areas": [
+            "oncology.breast.her2_pos"
+          ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 2,
-      "modalityClassCount": 2,
+      "assetCount": 8,
+      "modalityCount": 5,
+      "modalityClassCount": 3,
       "areaCount": 3,
       "modalityClasses": [
         "adc",
+        "antibody",
         "small_molecule"
       ],
       "totalTAM": 30886.8,
-      "totalSOM": 12773.8,
-      "totalSales": 7530.0,
-      "cagrPct": 3.7,
-      "peakYear": 2032
+      "totalSOM": 27931.8,
+      "totalSales": 17360.0,
+      "cagrPct": 1.6,
+      "peakYear": 2029
     },
     "ERBB3": {
       "companies": [
@@ -3097,10 +3310,12 @@
     "ESR1": {
       "companies": [
         "AZN",
-        "PFE"
+        "PFE",
+        "RHHBY"
       ],
       "modalities": [
         "small_molecule.nuclear_receptor.serd",
+        "small_molecule.nuclear_receptor.serd_oral",
         "small_molecule.protac.er_degrader",
         "small_molecule.steroid.estrogen"
       ],
@@ -3135,20 +3350,29 @@
           "areas": [
             "oncology.breast.hr_her2_neg"
           ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "giredestrant",
+          "name": "Giredestrant — oral SERD (ER+ breast)",
+          "modality": "small_molecule.nuclear_receptor.serd_oral",
+          "areas": [
+            "oncology.breast.hr_her2_neg"
+          ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 3,
+      "assetCount": 4,
+      "modalityCount": 4,
       "modalityClassCount": 1,
       "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 19330.0,
-      "totalSOM": 2990.7,
+      "totalSOM": 6362.7,
       "totalSales": 300.0,
-      "cagrPct": 12.2,
-      "peakYear": 2030
+      "cagrPct": 32.3,
+      "peakYear": 2031
     },
     "F10": {
       "companies": [
@@ -3156,6 +3380,7 @@
         "JNJ",
         "NOVO",
         "PFE",
+        "RHHBY",
         "SNY"
       ],
       "modalities": [
@@ -3206,6 +3431,15 @@
           ]
         },
         {
+          "ticker": "RHHBY",
+          "asset": "hemlibra",
+          "name": "Hemlibra (emicizumab) — FIXa/FX bispecific (hemophilia A)",
+          "modality": "antibody.bispecific.fviiia_mimetic",
+          "areas": [
+            "hematology.rare_blood.hemophilia_a"
+          ]
+        },
+        {
           "ticker": "SNY",
           "asset": "lovenox_plavix",
           "name": "Lovenox (enoxaparin) + Plavix (clopidogrel) -- legacy",
@@ -3215,7 +3449,7 @@
           ]
         }
       ],
-      "assetCount": 5,
+      "assetCount": 6,
       "modalityCount": 4,
       "modalityClassCount": 2,
       "areaCount": 2,
@@ -3224,9 +3458,9 @@
         "small_molecule"
       ],
       "totalTAM": 34350.0,
-      "totalSOM": 21965.4,
-      "totalSales": 12194.0,
-      "cagrPct": 0.0,
+      "totalSOM": 28317.7,
+      "totalSales": 17144.0,
+      "cagrPct": 1.3,
       "peakYear": 2027
     },
     "F11": {
@@ -3322,6 +3556,7 @@
     "F9": {
       "companies": [
         "NOVO",
+        "RHHBY",
         "SNY"
       ],
       "modalities": [
@@ -3343,6 +3578,15 @@
           ]
         },
         {
+          "ticker": "RHHBY",
+          "asset": "hemlibra",
+          "name": "Hemlibra (emicizumab) — FIXa/FX bispecific (hemophilia A)",
+          "modality": "antibody.bispecific.fviiia_mimetic",
+          "areas": [
+            "hematology.rare_blood.hemophilia_a"
+          ]
+        },
+        {
           "ticker": "SNY",
           "asset": "eloctate_alprolix",
           "name": "Eloctate (Hem A) + Alprolix (Hem B) -- w/ Sobi (legacy hemophilia)",
@@ -3353,7 +3597,7 @@
           ]
         }
       ],
-      "assetCount": 2,
+      "assetCount": 3,
       "modalityCount": 2,
       "modalityClassCount": 2,
       "areaCount": 2,
@@ -3362,10 +3606,10 @@
         "recombinant_protein"
       ],
       "totalTAM": 17934.0,
-      "totalSOM": 1996.3,
-      "totalSales": 700.0,
-      "cagrPct": 0.0,
-      "peakYear": 2029
+      "totalSOM": 8348.5,
+      "totalSales": 5650.0,
+      "cagrPct": 4.6,
+      "peakYear": 2028
     },
     "FCGRT": {
       "companies": [
@@ -4637,7 +4881,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -4813,6 +5057,42 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2033
+    },
+    "IGHE": {
+      "companies": [
+        "RHHBY"
+      ],
+      "modalities": [
+        "antibody.monoclonal.anti_ige"
+      ],
+      "areas": [
+        "dermatology.inflammatory_derm.csu",
+        "respiratory.inflammatory.asthma_severe"
+      ],
+      "assets": [
+        {
+          "ticker": "RHHBY",
+          "asset": "xolair",
+          "name": "Xolair (omalizumab) — anti-IgE mAb (50/50 w/ Novartis)",
+          "modality": "antibody.monoclonal.anti_ige",
+          "areas": [
+            "dermatology.inflammatory_derm.csu",
+            "respiratory.inflammatory.asthma_severe"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 41205.0,
+      "totalSOM": 10915.0,
+      "totalSales": 4400.0,
+      "cagrPct": -3.8,
+      "peakYear": 2025
     },
     "IL12A": {
       "companies": [
@@ -5047,6 +5327,42 @@
       "totalSOM": 10272.6,
       "totalSales": 1500.0,
       "cagrPct": 22.0,
+      "peakYear": 2030
+    },
+    "IL1RL1": {
+      "companies": [
+        "RHHBY"
+      ],
+      "modalities": [
+        "antibody.cytokine.st2_blocker"
+      ],
+      "areas": [
+        "respiratory.inflammatory.asthma_severe",
+        "respiratory.inflammatory.copd"
+      ],
+      "assets": [
+        {
+          "ticker": "RHHBY",
+          "asset": "astegolimab",
+          "name": "Astegolimab — anti-ST2 mAb (COPD + severe asthma)",
+          "modality": "antibody.cytokine.st2_blocker",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe",
+            "respiratory.inflammatory.copd"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 41905.0,
+      "totalSOM": 6538.0,
+      "totalSales": 0.0,
+      "cagrPct": 39.2,
       "peakYear": 2030
     },
     "IL2": {
@@ -5326,13 +5642,15 @@
     },
     "IL6": {
       "companies": [
-        "NOVO"
+        "NOVO",
+        "RHHBY"
       ],
       "modalities": [
         "antibody.cytokine.il6_blocker"
       ],
       "areas": [
-        "nephrology.ckd.cardiorenal_inflammation"
+        "nephrology.ckd.cardiorenal_inflammation",
+        "ophthalmology.anterior_neuro.uveitis"
       ],
       "assets": [
         {
@@ -5343,6 +5661,49 @@
           "areas": [
             "nephrology.ckd.cardiorenal_inflammation"
           ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "vamikibart",
+          "name": "Vamikibart — anti-IL-6 mAb intravitreal (uveitis)",
+          "modality": "antibody.cytokine.il6_blocker",
+          "areas": [
+            "ophthalmology.anterior_neuro.uveitis"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 9032.5,
+      "totalSOM": 766.7,
+      "totalSales": 0.0,
+      "cagrPct": 28.3,
+      "peakYear": 2031
+    },
+    "IL6R": {
+      "companies": [
+        "RHHBY"
+      ],
+      "modalities": [
+        "antibody.cytokine.il6r_blocker"
+      ],
+      "areas": [
+        "immunology.inflammatory_systemic.rheumatoid_arthritis"
+      ],
+      "assets": [
+        {
+          "ticker": "RHHBY",
+          "asset": "actemra",
+          "name": "Actemra/RoActemra (tocilizumab) — anti-IL-6R mAb",
+          "modality": "antibody.cytokine.il6r_blocker",
+          "areas": [
+            "immunology.inflammatory_systemic.rheumatoid_arthritis"
+          ]
         }
       ],
       "assetCount": 1,
@@ -5352,11 +5713,11 @@
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 3710.0,
-      "totalSOM": 147.7,
-      "totalSales": 0.0,
-      "cagrPct": 0.0,
-      "peakYear": 2034
+      "totalTAM": 31260.0,
+      "totalSOM": 3388.8,
+      "totalSales": 2420.0,
+      "cagrPct": -8.0,
+      "peakYear": 2025
     },
     "INHBE": {
       "companies": [
@@ -6050,7 +6411,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -6485,12 +6846,16 @@
     },
     "MS4A1": {
       "companies": [
-        "REGN"
+        "REGN",
+        "RHHBY"
       ],
       "modalities": [
-        "antibody.bispecific.cd20_cd3"
+        "antibody.bispecific.cd20_cd3",
+        "antibody.monoclonal.anti_cd20"
       ],
       "areas": [
+        "immunology.demyelinating.multiple_sclerosis",
+        "oncology.hematology.nhl.dlbcl",
         "oncology.hematology.nhl.fl"
       ],
       "assets": [
@@ -6502,20 +6867,56 @@
           "areas": [
             "oncology.hematology.nhl.fl"
           ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "ocrevus",
+          "name": "Ocrevus (ocrelizumab) — anti-CD20 mAb for MS",
+          "modality": "antibody.monoclonal.anti_cd20",
+          "areas": [
+            "immunology.demyelinating.multiple_sclerosis"
+          ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "lunsumio",
+          "name": "Lunsumio (mosunetuzumab) — CD20xCD3 bispecific",
+          "modality": "antibody.bispecific.cd20_cd3",
+          "areas": [
+            "oncology.hematology.nhl.fl"
+          ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "columvi",
+          "name": "Columvi (glofitamab) — CD20xCD3 bispecific (fixed duration)",
+          "modality": "antibody.bispecific.cd20_cd3",
+          "areas": [
+            "oncology.hematology.nhl.dlbcl"
+          ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "rituxan",
+          "name": "Rituxan/MabThera (rituximab) — anti-CD20 mAb (biosim erosion)",
+          "modality": "antibody.monoclonal.anti_cd20",
+          "areas": [
+            "oncology.hematology.nhl.fl"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 5,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 3,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 1208.0,
-      "totalSOM": 36.1,
-      "totalSales": 30.0,
-      "cagrPct": 25.0,
-      "peakYear": 2032
+      "totalTAM": 32817.0,
+      "totalSOM": 13841.2,
+      "totalSales": 8140.0,
+      "cagrPct": 6.7,
+      "peakYear": 2027
     },
     "MSTN": {
       "companies": [
@@ -6681,7 +7082,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -6822,7 +7223,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -7482,10 +7883,12 @@
     },
     "PIK3CA": {
       "companies": [
-        "CELC"
+        "CELC",
+        "RHHBY"
       ],
       "modalities": [
-        "small_molecule.kinase_inhibitor.pi3k"
+        "small_molecule.kinase_inhibitor.pi3k",
+        "small_molecule.kinase_inhibitor.pi3k_alpha"
       ],
       "areas": [
         "oncology.breast.hr_her2_neg",
@@ -7527,20 +7930,63 @@
           "areas": [
             "oncology.genitourinary.prostate"
           ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "itovebi",
+          "name": "Itovebi (inavolisib) — PI3Kalpha inhibitor",
+          "modality": "small_molecule.kinase_inhibitor.pi3k_alpha",
+          "areas": [
+            "oncology.breast.hr_her2_neg"
+          ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 1,
+      "assetCount": 5,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 28839.0,
-      "totalSOM": 7283.7,
-      "totalSales": 0.0,
-      "cagrPct": 0.0,
+      "totalSOM": 11847.2,
+      "totalSales": 330.0,
+      "cagrPct": 23.1,
       "peakYear": 2032
+    },
+    "PLAT": {
+      "companies": [
+        "RHHBY"
+      ],
+      "modalities": [
+        "recombinant_protein.enzyme.tissue_plasminogen_activator"
+      ],
+      "areas": [
+        "cardio_metabolic.thrombosis.thrombolytic"
+      ],
+      "assets": [
+        {
+          "ticker": "RHHBY",
+          "asset": "activase",
+          "name": "Activase + TNKase (alteplase + tenecteplase) — thrombolytics",
+          "modality": "recombinant_protein.enzyme.tissue_plasminogen_activator",
+          "areas": [
+            "cardio_metabolic.thrombosis.thrombolytic"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 1250.0,
+      "totalSOM": 656.5,
+      "totalSales": 600.0,
+      "cagrPct": 2.0,
+      "peakYear": 2026
     },
     "PRAME": {
       "companies": [
@@ -8447,6 +8893,40 @@
       "cagrPct": 0.0,
       "peakYear": 2030
     },
+    "SMN2": {
+      "companies": [
+        "RHHBY"
+      ],
+      "modalities": [
+        "small_molecule.rna_splicing.smn2_modulator"
+      ],
+      "areas": [
+        "musculoskeletal.neuromuscular.sma"
+      ],
+      "assets": [
+        {
+          "ticker": "RHHBY",
+          "asset": "evrysdi",
+          "name": "Evrysdi (risdiplam) — SMN2 splice modulator",
+          "modality": "small_molecule.rna_splicing.smn2_modulator",
+          "areas": [
+            "musculoskeletal.neuromuscular.sma"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 5193.0,
+      "totalSOM": 2476.9,
+      "totalSales": 1650.0,
+      "cagrPct": 8.0,
+      "peakYear": 2028
+    },
     "SNAP25": {
       "companies": [
         "ABBV"
@@ -8491,6 +8971,40 @@
       "totalSales": 6300.0,
       "cagrPct": 0.0,
       "peakYear": 2033
+    },
+    "SNCA": {
+      "companies": [
+        "RHHBY"
+      ],
+      "modalities": [
+        "antibody.monoclonal.anti_alpha_synuclein"
+      ],
+      "areas": [
+        "cns.neurodegeneration.parkinson_disease"
+      ],
+      "assets": [
+        {
+          "ticker": "RHHBY",
+          "asset": "prasinezumab",
+          "name": "Prasinezumab — anti-alpha-synuclein mAb (PD)",
+          "modality": "antibody.monoclonal.anti_alpha_synuclein",
+          "areas": [
+            "cns.neurodegeneration.parkinson_disease"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 14020.0,
+      "totalSOM": 811.8,
+      "totalSales": 0.0,
+      "cagrPct": 40.0,
+      "peakYear": 2032
     },
     "SOST": {
       "companies": [
@@ -9419,12 +9933,16 @@
     },
     "VEGFA": {
       "companies": [
-        "REGN"
+        "REGN",
+        "RHHBY"
       ],
       "modalities": [
-        "antibody.fusion.vegf_trap"
+        "antibody.bispecific.vegf_ang2",
+        "antibody.fusion.vegf_trap",
+        "antibody.monoclonal.anti_vegf_a"
       ],
       "areas": [
+        "oncology.lung.nsclc_io_combo",
         "ophthalmology.retina.dme",
         "ophthalmology.retina.dr",
         "ophthalmology.retina.nvamd",
@@ -9442,20 +9960,41 @@
             "ophthalmology.retina.nvamd",
             "ophthalmology.retina.rvo"
           ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "vabysmo",
+          "name": "Vabysmo (faricimab) — VEGF-A/Ang-2 bispecific (retina)",
+          "modality": "antibody.bispecific.vegf_ang2",
+          "areas": [
+            "ophthalmology.retina.dme",
+            "ophthalmology.retina.dr",
+            "ophthalmology.retina.nvamd",
+            "ophthalmology.retina.rvo"
+          ]
+        },
+        {
+          "ticker": "RHHBY",
+          "asset": "avastin",
+          "name": "Avastin (bevacizumab) — anti-VEGF mAb (biosim erosion)",
+          "modality": "antibody.monoclonal.anti_vegf_a",
+          "areas": [
+            "oncology.lung.nsclc_io_combo"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 4,
+      "areaCount": 5,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 26803.0,
-      "totalSOM": 6747.4,
-      "totalSales": 4700.0,
-      "cagrPct": 3.7,
-      "peakYear": 2030
+      "totalTAM": 45843.0,
+      "totalSOM": 15351.9,
+      "totalSales": 10090.0,
+      "cagrPct": 5.7,
+      "peakYear": 2029
     },
     "VEGFR1": {
       "companies": [

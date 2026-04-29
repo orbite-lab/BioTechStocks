@@ -494,6 +494,42 @@ REGIONS = {
         "eu":  {"patientsK": 1000, "wtpPct": 22, "priceK": 5},
         "row": {"patientsK": 3000, "wtpPct": 7,  "priceK": 1},
     },
+    # source: SMA prevalence ~10K US, ~14K EU5, ~50K ROW (NIH 2024).
+    # Branded class: Spinraza (Biogen ASO) ~$1.7B, Evrysdi (Roche oral) ~$1.5B,
+    # Zolgensma (Novartis AAV9 GT) ~$1.2B. Net price ~$300K/yr blended
+    # (Spinraza $750K Y1, Evrysdi $340K, Zolgensma one-shot $2.25M amortized).
+    "musculoskeletal.neuromuscular.sma": {
+        "us":  {"patientsK": 10,   "wtpPct": 75, "priceK": 350},
+        "eu":  {"patientsK": 14,   "wtpPct": 60, "priceK": 220},
+        "row": {"patientsK": 50,   "wtpPct": 18, "priceK": 80},
+    },
+    # source: non-infectious uveitis ~350K US (NEI 2024), ~500K EU5, ~3M ROW.
+    # Branded class small (~$0.5-1B): Humira off-label, Yutiq implant, plus
+    # emerging IL-6 inhibitors (vamikibart Roche Ph3). Most patients on
+    # corticosteroids. Vision-threatening; blended branded $25K/yr.
+    "ophthalmology.anterior_neuro.uveitis": {
+        "us":  {"patientsK": 350,  "wtpPct": 35, "priceK": 25},
+        "eu":  {"patientsK": 500,  "wtpPct": 22, "priceK": 14},
+        "row": {"patientsK": 3000, "wtpPct": 6,  "priceK": 4},
+    },
+    # source: Acute ischemic stroke + STEMI thrombolysis. US AIS ~700K/yr,
+    # tPA-treated ~10% (~70K/yr); EU similar. Branded Activase/TNKase (Roche),
+    # generic alteplase. Net branded ~$5K/dose. Class small ~$1.5B globally.
+    "cardio_metabolic.thrombosis.thrombolytic": {
+        "us":  {"patientsK": 100,  "wtpPct": 85, "priceK": 8},
+        "eu":  {"patientsK": 120,  "wtpPct": 65, "priceK": 5},
+        "row": {"patientsK": 500,  "wtpPct": 18, "priceK": 2},
+    },
+    # source: Cystic fibrosis ~40K US (CFF Patient Registry 2024), ~50K EU5,
+    # ~80K ROW. Branded class dominated by Vertex CFTR modulators (Trikafta
+    # ~$10B) for ~90% of patients with eligible mutations. Adjuncts include
+    # Pulmozyme (Roche dornase alfa), Tobi (inhaled tobramycin). Net branded
+    # ~$320K/yr Trikafta; mucolytic adjuncts ~$13K/yr.
+    "respiratory.genetic.cystic_fibrosis": {
+        "us":  {"patientsK": 40,  "wtpPct": 80, "priceK": 280},
+        "eu":  {"patientsK": 50,  "wtpPct": 60, "priceK": 170},
+        "row": {"patientsK": 80,  "wtpPct": 18, "priceK": 60},
+    },
 }
 
 PEN_PCT = {
@@ -551,4 +587,8 @@ PEN_PCT = {
     "respiratory.inflammatory.crswnp": 25,
     "nephrology.ckd.cardiorenal_inflammation": 12,
     "nephrology.ckd.disease_modifying": 10,
+    "musculoskeletal.neuromuscular.sma": 55,
+    "ophthalmology.anterior_neuro.uveitis": 18,
+    "cardio_metabolic.thrombosis.thrombolytic": 70,
+    "respiratory.genetic.cystic_fibrosis": 80,
 }

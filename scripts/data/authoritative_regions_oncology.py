@@ -199,10 +199,13 @@ REGIONS = {
     # ------------------------------------------------------------
     # LUNG - NSCLC DRIVER SUBTYPES
     # ------------------------------------------------------------
+    # ALK+ NSCLC: ~3-5% of NSCLC (US ~12K eligible/yr), EU ~15K, Asia
+    # higher prevalence ~50K. Class: Alecensa (Roche $2B), Lorbrena (Pfizer
+    # $0.8B), Xalkori (legacy gen), Brigatinib. Class globally ~$3.5-4B.
     "oncology.lung.nsclc_driver.alk": {
-        "us":  {"patientsK": 6,  "wtpPct": 72, "priceK": 205},
-        "eu":  {"patientsK": 7,  "wtpPct": 55, "priceK": 120},
-        "row": {"patientsK": 15, "wtpPct": 22, "priceK": 55},
+        "us":  {"patientsK": 12, "wtpPct": 72, "priceK": 205},
+        "eu":  {"patientsK": 15, "wtpPct": 55, "priceK": 120},
+        "row": {"patientsK": 50, "wtpPct": 22, "priceK": 55},
     },
     # EGFR-mutant NSCLC: largest driver subtype (~15% Caucasian, ~50% Asian
     # NSCLC). US ~50K eligible; EU 65K; ROW 250K (China dominant). Class:

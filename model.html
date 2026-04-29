@@ -666,6 +666,21 @@
       const ccyDec = c => (c === "JPY" || c === "HKD" || c === "SEK") ? 0 : 2;
       const ccy = ccyOf(config.company.currency);
       const dec = ccyDec(config.company.currency);
+      // Market values (TAM/SOM/salesM/priceK) are stored in USD per CLAUDE.md convention,
+      // but per-share TPs / cash / mcap / EV / scenario val.* are in local currency.
+      // Use `usd` for the former and `ccy` for the latter. For foreign-currency companies,
+      // also surface the local-currency equivalent on sales-like cells (the user asked for both).
+      const usd = "$";
+      const FX_LOCAL = { USD:1, EUR:1.08, GBP:1.27, CHF:1.12, JPY:1/150, HKD:1/7.8, SEK:1/10.5 };
+      const fxL = FX_LOCAL[config.company.currency] || 1;
+      const isForeignCcy = config.company.currency !== "USD";
+      const fmtUSDM = v => v >= 1000 ? usd + (v/1000).toFixed(1) + "B" : usd + Math.round(v) + "M";
+      const fmtUSDLocal = v => {
+        if (!isForeignCcy) return fmtUSDM(v);
+        const loc = v / fxL;
+        const ls = loc >= 1000 ? ccy + (loc/1000).toFixed(1) + "B" : ccy + Math.round(loc) + "M";
+        return fmtUSDM(v) + " (" + ls + ")";
+      };
 
       return e("div", { style: { minHeight: "100vh", background: "#0f1117", color: "#e2e4ea", padding: "28px 20px" } },
         e("div", { style: { maxWidth: 1800, margin: "0 auto" } },
@@ -1271,7 +1286,7 @@
             }
             // Flags rendered rows use to mark shared-market rows
             const areaRenderCount = {};
-            const fmtM = v => v >= 1000 ? (ccy + (v / 1000).toFixed(2) + "B") : (ccy + v.toFixed(0) + "M");
+            const fmtM = v => v >= 1000 ? (usd + (v / 1000).toFixed(2) + "B") : (usd + v.toFixed(0) + "M");
             return e("div", { style: { marginBottom: 14 } },
             e("div", { onClick: () => setShowMarkets(!showMarkets), style: { background: "#161920", borderRadius: showMarkets ? "10px 10px 0 0" : 10, padding: "10px 16px", border: "1px solid #ffffff06", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", userSelect: "none", gap: 12, flexWrap: "wrap" } },
               e("div", { style: { fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "#f97316" } }, "Markets (shared across scenarios)"),
@@ -1307,7 +1322,7 @@
                   const comp = hasRegions && ind.area ? findCompetitors(ind.area, configs, taxonomy, config.company.ticker) : { marketed: [], development: [] };
                   const mktSales = comp.marketed.reduce((s, c) => s + (c.sales || 0), 0);
                   const ownMktSales = comp.marketed.filter(c => c.isSelf).reduce((s, c) => s + (c.sales || 0), 0);
-                  const fmtV = v => v >= 1000 ? (ccy + (v / 1000).toFixed(1) + "B") : (ccy + Math.round(v) + "M");
+                  const fmtV = v => v >= 1000 ? (usd + (v / 1000).toFixed(1) + "B") : (usd + Math.round(v) + "M");
                   const penDisplay = hasSOM ? (addressableM > 0 ? (somM / addressableM * 100).toFixed(1) + "%" : "0%") : ((m.penPct || 0) + "%");
                   const stagePill = s => { const sl = (s || "").toLowerCase(); const col = sl.includes("commercial") ? "#22c55e" : sl.includes("3") ? "#f59e0b" : sl.includes("2") ? "#fb923c" : sl.includes("1") ? "#ef4444" : "#6b7080"; return e("span", { style: { fontSize: 9, fontWeight: 700, padding: "1px 5px", borderRadius: 3, background: col + "22", color: col, fontFamily: "'JetBrains Mono'" } }, s || "--"); };
 
@@ -1367,16 +1382,16 @@
                         return e("div", { key: rk, style: { marginBottom: 10, padding: "6px 8px", background: "#161920", borderRadius: 6 } },
                           e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 4 } },
                             e("span", { style: { fontSize: 10, fontWeight: 700, color: "#60a5fa", letterSpacing: 1 } }, rLabel),
-                            e("span", { style: { fontSize: 10, color: "#b0b4c0", fontFamily: "'JetBrains Mono'" } }, ccy + regionAddr.toFixed(0) + "M")
+                            e("span", { style: { fontSize: 10, color: "#b0b4c0", fontFamily: "'JetBrains Mono'" } }, usd + regionAddr.toFixed(0) + "M")
                           ),
                           e(Sl, { label: "Patients (K)", value: r.patientsK || 0, onChange: v => upd("markets." + mk + ".regions." + rk + ".patientsK", v), min: 0, max: Math.max(200, (r.patientsK||0)*2), step: 0.5, color: "#60a5fa", source: m.sources && m.sources[rk + ".patientsK"] }),
                           e(Sl, { label: "Willingness-to-treat (%)", value: r.wtpPct || 0, onChange: v => upd("markets." + mk + ".regions." + rk + ".wtpPct", v), min: 0, max: 100, unit: "%", color: "#60a5fa", source: m.sources && m.sources[rk + ".wtpPct"] }),
-                          e(Sl, { label: "Price (" + ccy + "K)", value: r.priceK || 0, onChange: v => upd("markets." + mk + ".regions." + rk + ".priceK", v), min: 0, max: Math.max(1000, (r.priceK||0)*2), step: 5, unit: "K", color: "#60a5fa", source: m.sources && m.sources[rk + ".priceK"] })
+                          e(Sl, { label: "Price (" + usd + "K)", value: r.priceK || 0, onChange: v => upd("markets." + mk + ".regions." + rk + ".priceK", v), min: 0, max: Math.max(1000, (r.priceK||0)*2), step: 5, unit: "K", color: "#60a5fa", source: m.sources && m.sources[rk + ".priceK"] })
                         );
                       }),
                       hasRegions && e("div", { style: { padding: "8px 10px", background: "#f9731614", borderRadius: 6, marginBottom: 10, display: "flex", justifyContent: "space-between", alignItems: "center", border: "1px solid #f9731633" } },
                         e("span", { style: { fontSize: 10, fontWeight: 700, color: "#f97316", textTransform: "uppercase", letterSpacing: 1 } }, "Addressable 2031"),
-                        e("span", { style: { fontSize: 14, fontWeight: 800, color: "#f97316", fontFamily: "'JetBrains Mono'" } }, ccy + addressableM.toFixed(0) + "M")
+                        e("span", { style: { fontSize: 14, fontWeight: 800, color: "#f97316", fontFamily: "'JetBrains Mono'" } }, fmtUSDLocal(addressableM))
                       ),
                       // Competitive landscape
                       hasRegions && e("div", { style: { marginBottom: 10 } },
@@ -1391,7 +1406,7 @@
                             e("span", { style: { color: "#b0b4c0", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" } }, c.assetName),
                             e("span", { style: { fontSize: 9, color: "#6b7080" } }, "pur " + c.purityPct + "%")
                           ),
-                          e("span", { style: { fontFamily: "'JetBrains Mono'", color: c.salesIsReported ? "#e2e4ea" : "#6b7080", fontWeight: 600 }, title: c.salesIsReported ? ("Reported" + (c.salesYear ? " " + c.salesYear : "") + " revenue") : "Est. peak rev (TAM x pen)" }, c.sales ? ccy + (c.sales >= 1000 ? (c.sales / 1000).toFixed(1) + "B" : Math.round(c.sales) + "M") + (c.salesIsReported ? "" : "e") : "--")
+                          e("span", { style: { fontFamily: "'JetBrains Mono'", color: c.salesIsReported ? "#e2e4ea" : "#6b7080", fontWeight: 600 }, title: c.salesIsReported ? ("Reported" + (c.salesYear ? " " + c.salesYear : "") + " revenue (USD" + (isForeignCcy ? "; local equivalent in parens" : "") + ")") : "Est. peak rev (TAM x pen, USD)" }, c.sales ? (c.isSelf ? fmtUSDLocal(c.sales) : fmtUSDM(c.sales)) + (c.salesIsReported ? "" : "e") : "--")
                         )),
                         e("div", { style: { fontSize: 10, fontWeight: 700, color: "#fb923c", textTransform: "uppercase", letterSpacing: 1, marginTop: 8, marginBottom: 4 } }, "In development (" + comp.development.length + ")"),
                         comp.development.length === 0 && e("div", { style: { fontSize: 10, color: "#6b7080", fontStyle: "italic" } }, "--"),
@@ -1414,11 +1429,11 @@
                           return e("div", { key: rk, style: { marginBottom: 8, padding: "6px 8px", background: "#161920", borderRadius: 6 } },
                             e("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 4 } },
                               e("span", { style: { fontSize: 10, fontWeight: 700, color: "#a855f7", letterSpacing: 1 } }, rLabel),
-                              e("span", { style: { fontSize: 10, color: "#d8b4fe", fontFamily: "'JetBrains Mono'" } }, ccy + rSOM.toFixed(0) + "M")
+                              e("span", { style: { fontSize: 10, color: "#d8b4fe", fontFamily: "'JetBrains Mono'" } }, usd + rSOM.toFixed(0) + "M")
                             ),
                             e(Sl, { label: "Reach (%)", value: cs.reachPct || 0, onChange: v => upd("markets." + mk + ".company_slice." + rk + ".reachPct", v), min: 0, max: 100, step: 0.1, unit: "%", color: "#a855f7", source: csSources[rk + ".reachPct"] }),
                             e(Sl, { label: "WTP (%)", value: cs.wtpPct || 0, onChange: v => upd("markets." + mk + ".company_slice." + rk + ".wtpPct", v), min: 0, max: 100, unit: "%", color: "#a855f7", source: csSources[rk + ".wtpPct"] }),
-                            e(Sl, { label: "Price (" + ccy + "K)", value: cs.priceK || 0, onChange: v => upd("markets." + mk + ".company_slice." + rk + ".priceK", v), min: 0, max: 3000, step: 5, unit: "K", color: "#a855f7", source: csSources[rk + ".priceK"] })
+                            e(Sl, { label: "Price (" + usd + "K)", value: cs.priceK || 0, onChange: v => upd("markets." + mk + ".company_slice." + rk + ".priceK", v), min: 0, max: 3000, step: 5, unit: "K", color: "#a855f7", source: csSources[rk + ".priceK"] })
                           );
                         }),
                         e("div", { style: { padding: "8px 10px", background: "#a855f714", borderRadius: 6, display: "flex", justifyContent: "space-between", alignItems: "center", border: "1px solid #a855f733" } },
@@ -1426,14 +1441,14 @@
                             e("div", { style: { fontSize: 10, fontWeight: 700, color: "#a855f7", textTransform: "uppercase", letterSpacing: 1 } }, "SOM 2031"),
                             e("div", { style: { fontSize: 9, color: "#6b7080", marginTop: 2 } }, "Implied pen: " + (addressableM > 0 ? (somM / addressableM * 100).toFixed(1) : "0") + "%")
                           ),
-                          e("span", { style: { fontSize: 14, fontWeight: 800, color: "#a855f7", fontFamily: "'JetBrains Mono'" } }, ccy + somM.toFixed(0) + "M")
+                          e("span", { style: { fontSize: 14, fontWeight: 800, color: "#a855f7", fontFamily: "'JetBrains Mono'" } }, fmtUSDLocal(somM))
                         )
                       ),
                       // Peak Pen slider (only when no SOM)
                       !hasSOM && m.penPct != null && e(Sl, { label: "Peak Pen (%)", value: m.penPct, onChange: v => upd("markets." + mk + ".penPct", v), min: 1, max: 40, unit: "%", color: "#f97316", source: m.sources && m.sources["penPct"] }),
                       !hasRegions && m.patientsK != null && e(Sl, { label: "Patients (K)", value: m.patientsK, onChange: v => upd("markets." + mk + ".patientsK", v), min: 5, max: 80, color: "#f97316" }),
-                      !hasRegions && m.patientsK != null && e(Sl, { label: "Pricing (" + ccy + "K)", value: m.pricingK, onChange: v => upd("markets." + mk + ".pricingK", v), min: 50, max: 600, step: 25, unit: "K", color: "#f97316" }),
-                      !hasRegions && m.tamB != null && e(Sl, { label: "TAM (" + ccy + "B)", value: m.tamB, onChange: v => upd("markets." + mk + ".tamB", v), min: 0.05, max: 30, step: 0.05, unit: "B", color: "#f97316" })
+                      !hasRegions && m.patientsK != null && e(Sl, { label: "Pricing (" + usd + "K)", value: m.pricingK, onChange: v => upd("markets." + mk + ".pricingK", v), min: 50, max: 600, step: 25, unit: "K", color: "#f97316" }),
+                      !hasRegions && m.tamB != null && e(Sl, { label: "TAM (" + usd + "B)", value: m.tamB, onChange: v => upd("markets." + mk + ".tamB", v), min: 0.05, max: 30, step: 0.05, unit: "B", color: "#f97316" })
                     )
                   );
                 })),

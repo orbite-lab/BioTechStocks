@@ -345,6 +345,15 @@ REGIONS = {
         "eu":  {"patientsK": 25,  "wtpPct": 80, "priceK": 200},
         "row": {"patientsK": 280, "wtpPct": 25, "priceK": 80},
     },
+    # Acquired thrombotic thrombocytopenic purpura (aTTP): ultra-rare ADAMTS13
+    # autoimmune deficiency. ~3K US incident/yr, ~4K EU, ~10K ROW. Class:
+    # Cablivi (caplacizumab anti-vWF nanobody, Sanofi ~$300M), plasma exchange
+    # standard-of-care. Class peak ~$500M globally.
+    "hematology.rare_blood.attp": {
+        "us":  {"patientsK": 3,  "wtpPct": 75, "priceK": 270},
+        "eu":  {"patientsK": 4,  "wtpPct": 60, "priceK": 175},
+        "row": {"patientsK": 10, "wtpPct": 15, "priceK": 60},
+    },
     # Paroxysmal nocturnal hemoglobinuria (PNH): rare acquired stem-cell
     # disorder w/ uncontrolled complement-mediated hemolysis. ~12K US
     # diagnosed, ~7K on chronic Rx; EU 18K; ROW 50K. Class: Soliris
@@ -467,6 +476,7 @@ PEN_PCT = {
     "hematology.rare_blood.hemophilia_a": 65,
     "hematology.rare_blood.pnh": 60,
     "hematology.rare_blood.ahus": 55,
+    "hematology.rare_blood.attp": 70,
     "oncology.skin.melanoma": 65,
     "oncology.skin.cscc": 50,
     "oncology.skin.bcc": 45,

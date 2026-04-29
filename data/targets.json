@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-29T11:53:54Z",
-    "target_count": 201,
-    "total_assets": 320,
-    "assets_with_targets": 303,
+    "generated": "2026-04-29T12:12:20Z",
+    "target_count": 208,
+    "total_assets": 336,
+    "assets_with_targets": 316,
     "multi_modality_count": 16,
-    "multi_disease_count": 77
+    "multi_disease_count": 78
   },
   "targets": {
     "ACVR1C": {
@@ -945,7 +945,8 @@
         "ABBV",
         "AZN",
         "MRK",
-        "ONC"
+        "ONC",
+        "SNY"
       ],
       "modalities": [
         "small_molecule.kinase_inhibitor.btk_bcl2_next_gen",
@@ -954,6 +955,7 @@
         "small_molecule.protein_degrader.btk_cdac"
       ],
       "areas": [
+        "immunology.demyelinating.multiple_sclerosis",
         "immunology.transplant.cgvhd",
         "oncology.gi.hcc",
         "oncology.hematology.cll",
@@ -1023,20 +1025,63 @@
           "areas": [
             "oncology.gi.hcc"
           ]
+        },
+        {
+          "ticker": "SNY",
+          "asset": "tolebrutinib",
+          "name": "Tolebrutinib (Cenrifki, BTK CNS-penetrant) — MS",
+          "modality": "small_molecule.kinase_inhibitor.btk_covalent",
+          "areas": [
+            "immunology.demyelinating.multiple_sclerosis"
+          ]
         }
       ],
-      "assetCount": 6,
+      "assetCount": 7,
       "modalityCount": 4,
       "modalityClassCount": 1,
-      "areaCount": 6,
+      "areaCount": 7,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 24735.9,
-      "totalSOM": 23038.4,
+      "totalTAM": 48135.9,
+      "totalSOM": 24275.9,
       "totalSales": 10080.0,
-      "cagrPct": 3.6,
+      "cagrPct": 4.6,
       "peakYear": 2029
+    },
+    "C1S": {
+      "companies": [
+        "SNY"
+      ],
+      "modalities": [
+        "antibody.complement.c1s_inhibitor"
+      ],
+      "areas": [
+        "immunology.neuromuscular_autoimmune.cidp"
+      ],
+      "assets": [
+        {
+          "ticker": "SNY",
+          "asset": "riliprubart",
+          "name": "Riliprubart (anti-C1s) — CIDP Ph3",
+          "modality": "antibody.complement.c1s_inhibitor",
+          "areas": [
+            "immunology.neuromuscular_autoimmune.cidp"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 8080.0,
+      "totalSOM": 277.6,
+      "totalSales": 0.0,
+      "cagrPct": 35.0,
+      "peakYear": 2030
     },
     "C2": {
       "companies": [
@@ -1550,13 +1595,16 @@
     },
     "CD3": {
       "companies": [
-        "REGN"
+        "REGN",
+        "SNY"
       ],
       "modalities": [
         "antibody.bispecific.bcma_cd3",
-        "antibody.bispecific.cd20_cd3"
+        "antibody.bispecific.cd20_cd3",
+        "antibody.checkpoint.cd3"
       ],
       "areas": [
+        "cardio_metabolic.diabetes.t1d",
         "oncology.hematology.myeloma.4l_plus",
         "oncology.hematology.nhl.fl"
       ],
@@ -1578,20 +1626,63 @@
           "areas": [
             "oncology.hematology.nhl.fl"
           ]
+        },
+        {
+          "ticker": "SNY",
+          "asset": "tzield",
+          "name": "Tzield (teplizumab, anti-CD3) — T1D delay",
+          "modality": "antibody.checkpoint.cd3",
+          "areas": [
+            "cardio_metabolic.diabetes.t1d"
+          ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 5169.6,
-      "totalSOM": 111.7,
-      "totalSales": 80.0,
-      "cagrPct": 28.4,
-      "peakYear": 2032
+      "totalTAM": 19444.6,
+      "totalSOM": 4449.5,
+      "totalSales": 380.0,
+      "cagrPct": 25.1,
+      "peakYear": 2031
+    },
+    "CD38": {
+      "companies": [
+        "SNY"
+      ],
+      "modalities": [
+        "antibody.checkpoint.cd38"
+      ],
+      "areas": [
+        "oncology.hematology.myeloma.2l_3l"
+      ],
+      "assets": [
+        {
+          "ticker": "SNY",
+          "asset": "sarclisa",
+          "name": "Sarclisa (isatuximab, anti-CD38) — myeloma",
+          "modality": "antibody.checkpoint.cd38",
+          "areas": [
+            "oncology.hematology.myeloma.2l_3l"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 7098.0,
+      "totalSOM": 899.8,
+      "totalSales": 600.0,
+      "cagrPct": 18.0,
+      "peakYear": 2030
     },
     "CD3E": {
       "companies": [
@@ -1639,15 +1730,27 @@
     },
     "CD40LG": {
       "companies": [
+        "SNY",
         "UCB"
       ],
       "modalities": [
+        "antibody.cytokine.cd40l_blocker",
         "antibody.monoclonal.anti_cd40l"
       ],
       "areas": [
-        "immunology.autoimmune.sle"
+        "immunology.autoimmune.sle",
+        "immunology.demyelinating.multiple_sclerosis"
       ],
       "assets": [
+        {
+          "ticker": "SNY",
+          "asset": "frexalimab",
+          "name": "Frexalimab (anti-CD40L) — MS Ph3",
+          "modality": "antibody.cytokine.cd40l_blocker",
+          "areas": [
+            "immunology.demyelinating.multiple_sclerosis"
+          ]
+        },
         {
           "ticker": "UCB",
           "asset": "dapirolizumab",
@@ -1658,17 +1761,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 12351.0,
-      "totalSOM": 1246.0,
+      "totalTAM": 35751.0,
+      "totalSOM": 2257.0,
       "totalSales": 0.0,
-      "cagrPct": 0.0,
+      "cagrPct": 11.2,
       "peakYear": 2033
     },
     "CD70": {
@@ -2377,6 +2480,40 @@
       "cagrPct": 0.0,
       "peakYear": 2035
     },
+    "DHODH": {
+      "companies": [
+        "SNY"
+      ],
+      "modalities": [
+        "small_molecule.dhodh.teriflunomide"
+      ],
+      "areas": [
+        "immunology.demyelinating.multiple_sclerosis"
+      ],
+      "assets": [
+        {
+          "ticker": "SNY",
+          "asset": "aubagio",
+          "name": "Aubagio (teriflunomide) — MS legacy",
+          "modality": "small_molecule.dhodh.teriflunomide",
+          "areas": [
+            "immunology.demyelinating.multiple_sclerosis"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 23400.0,
+      "totalSOM": 310.5,
+      "totalSales": 200.0,
+      "cagrPct": 0.0,
+      "peakYear": 2025
+    },
     "DMD": {
       "companies": [
         "PEPG",
@@ -2983,7 +3120,8 @@
     },
     "F8": {
       "companies": [
-        "NOVO"
+        "NOVO",
+        "SNY"
       ],
       "modalities": [
         "recombinant_protein.coagulation.factor_viii"
@@ -3000,9 +3138,18 @@
           "areas": [
             "hematology.rare_blood.hemophilia_a"
           ]
+        },
+        {
+          "ticker": "SNY",
+          "asset": "altuviiio",
+          "name": "ALTUVIIIO (efanesoctocog alfa) — w/ Sobi (Hem A)",
+          "modality": "recombinant_protein.coagulation.factor_viii",
+          "areas": [
+            "hematology.rare_blood.hemophilia_a"
+          ]
         }
       ],
-      "assetCount": 1,
+      "assetCount": 2,
       "modalityCount": 1,
       "modalityClassCount": 1,
       "areaCount": 1,
@@ -3010,10 +3157,10 @@
         "recombinant_protein"
       ],
       "totalTAM": 14700.0,
-      "totalSOM": 2552.2,
-      "totalSales": 1700.0,
-      "cagrPct": 0.0,
-      "peakYear": 2027
+      "totalSOM": 3302.7,
+      "totalSales": 2200.0,
+      "cagrPct": 4.1,
+      "peakYear": 2028
     },
     "F9": {
       "companies": [
@@ -4167,7 +4314,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -4605,15 +4752,52 @@
       "cagrPct": 0.0,
       "peakYear": 2033
     },
-    "IL4R": {
+    "IL33": {
       "companies": [
-        "REGN"
+        "SNY"
       ],
       "modalities": [
+        "antibody.cytokine.il33_blocker"
+      ],
+      "areas": [
+        "respiratory.inflammatory.copd"
+      ],
+      "assets": [
+        {
+          "ticker": "SNY",
+          "asset": "itepekimab",
+          "name": "Itepekimab (anti-IL-33) — w/ Regeneron 50/50",
+          "modality": "antibody.cytokine.il33_blocker",
+          "areas": [
+            "respiratory.inflammatory.copd"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 24600.0,
+      "totalSOM": 630.2,
+      "totalSales": 0.0,
+      "cagrPct": 18.0,
+      "peakYear": 2032
+    },
+    "IL4R": {
+      "companies": [
+        "REGN",
+        "SNY"
+      ],
+      "modalities": [
+        "antibody.cytokine.il4r_blocker",
         "antibody.monoclonal.anti_il4ra"
       ],
       "areas": [
         "dermatology.inflammatory_derm.atopic_dermatitis_systemic",
+        "dermatology.inflammatory_derm.csu",
         "dermatology.inflammatory_derm.prurigo_nodularis",
         "immunology.inflammatory_gi.eoe",
         "respiratory.inflammatory.asthma_severe",
@@ -4634,19 +4818,34 @@
             "respiratory.inflammatory.copd",
             "respiratory.inflammatory.crswnp"
           ]
+        },
+        {
+          "ticker": "SNY",
+          "asset": "dupixent",
+          "name": "Dupixent (dupilumab, anti-IL-4Rα) — w/ Regeneron 50/50",
+          "modality": "antibody.cytokine.il4r_blocker",
+          "areas": [
+            "dermatology.inflammatory_derm.atopic_dermatitis_systemic",
+            "dermatology.inflammatory_derm.csu",
+            "dermatology.inflammatory_derm.prurigo_nodularis",
+            "immunology.inflammatory_gi.eoe",
+            "respiratory.inflammatory.asthma_severe",
+            "respiratory.inflammatory.copd",
+            "respiratory.inflammatory.crswnp"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 6,
+      "areaCount": 7,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 84395.0,
-      "totalSOM": 5971.9,
-      "totalSales": 4000.0,
-      "cagrPct": 8.9,
+      "totalTAM": 108295.0,
+      "totalSOM": 31108.6,
+      "totalSales": 18400.0,
+      "cagrPct": 8.2,
       "peakYear": 2030
     },
     "IL5RA": {
@@ -4753,7 +4952,8 @@
     },
     "INSR": {
       "companies": [
-        "NOVO"
+        "NOVO",
+        "SNY"
       ],
       "modalities": [
         "recombinant_protein.insulin.long_acting"
@@ -4770,9 +4970,18 @@
           "areas": [
             "cardio_metabolic.diabetes.t2d"
           ]
+        },
+        {
+          "ticker": "SNY",
+          "asset": "general_med",
+          "name": "General Medicines (Lantus + Toujeo + Plavix + Lovenox legacy)",
+          "modality": "recombinant_protein.insulin.long_acting",
+          "areas": [
+            "cardio_metabolic.diabetes.t2d"
+          ]
         }
       ],
-      "assetCount": 1,
+      "assetCount": 2,
       "modalityCount": 1,
       "modalityClassCount": 1,
       "areaCount": 1,
@@ -4780,10 +4989,10 @@
         "recombinant_protein"
       ],
       "totalTAM": 78550.0,
-      "totalSOM": 7505.0,
-      "totalSales": 5000.0,
+      "totalSOM": 10490.6,
+      "totalSales": 7000.0,
       "cagrPct": 0.0,
-      "peakYear": 2028
+      "peakYear": 2027
     },
     "IRAK4": {
       "companies": [
@@ -5396,7 +5605,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -6014,7 +6223,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -6155,7 +6364,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -6963,6 +7172,40 @@
       "totalSales": 1050.0,
       "cagrPct": 0.0,
       "peakYear": 2027
+    },
+    "ROCK2": {
+      "companies": [
+        "SNY"
+      ],
+      "modalities": [
+        "small_molecule.kinase_inhibitor.rock2"
+      ],
+      "areas": [
+        "immunology.transplant.cgvhd"
+      ],
+      "assets": [
+        {
+          "ticker": "SNY",
+          "asset": "rezurock",
+          "name": "Rezurock (belumosudil, ROCK2) — cGVHD",
+          "modality": "small_molecule.kinase_inhibitor.rock2",
+          "areas": [
+            "immunology.transplant.cgvhd"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 4590.0,
+      "totalSOM": 227.9,
+      "totalSales": 200.0,
+      "cagrPct": 12.0,
+      "peakYear": 2030
     },
     "ROS1": {
       "companies": [
@@ -8323,6 +8566,40 @@
       "cagrPct": 5.0,
       "peakYear": 2034
     },
+    "TNFSF4": {
+      "companies": [
+        "SNY"
+      ],
+      "modalities": [
+        "antibody.cytokine.ox40l_blocker"
+      ],
+      "areas": [
+        "dermatology.inflammatory_derm.atopic_dermatitis_systemic"
+      ],
+      "assets": [
+        {
+          "ticker": "SNY",
+          "asset": "amlitelimab",
+          "name": "Amlitelimab (anti-OX40L) — atopic dermatitis Ph3",
+          "modality": "antibody.cytokine.ox40l_blocker",
+          "areas": [
+            "dermatology.inflammatory_derm.atopic_dermatitis_systemic"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 13755.0,
+      "totalSOM": 497.4,
+      "totalSales": 0.0,
+      "cagrPct": 22.0,
+      "peakYear": 2030
+    },
     "TNNC1": {
       "companies": [
         "TENX"
@@ -8740,6 +9017,40 @@
       "totalSales": 155.0,
       "cagrPct": 0.0,
       "peakYear": 2033
+    },
+    "VWF": {
+      "companies": [
+        "SNY"
+      ],
+      "modalities": [
+        "antibody.fragment.vwf"
+      ],
+      "areas": [
+        "hematology.rare_blood.attp"
+      ],
+      "assets": [
+        {
+          "ticker": "SNY",
+          "asset": "cablivi",
+          "name": "Cablivi (caplacizumab, anti-vWF) — aTTP",
+          "modality": "antibody.fragment.vwf",
+          "areas": [
+            "hematology.rare_blood.attp"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 1117.5,
+      "totalSOM": 449.9,
+      "totalSales": 300.0,
+      "cagrPct": 0.0,
+      "peakYear": 2030
     },
     "ZIKA_VIRUS": {
       "companies": [

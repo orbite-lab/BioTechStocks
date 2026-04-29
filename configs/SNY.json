@@ -1,0 +1,3429 @@
+{
+  "company": {
+    "ticker": "SNY",
+    "name": "Sanofi S.A.",
+    "subtitle": "€43.6B 2025 (+10% CER) | Dupixent €15.7B (>30% rev) | Genzyme rare disease | Vaccines #1 flu globally | Tolebrutinib EU approval Apr 2026",
+    "sharesOut": 1218,
+    "cash": 10000,
+    "currentPrice": 83.8,
+    "currency": "EUR",
+    "yahooTicker": "SAN.PA",
+    "cashRunway": "Self-funding (€10B+ FCF; €5B buyback program; Opella divestment €10.7B Apr 2025)",
+    "phase": "commercial"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "dupixent",
+      "name": "Dupixent (dupilumab, anti-IL-4Rα) — w/ Regeneron 50/50",
+      "stage": "Commercial (€15.7B 2025, +25%; multi-indication blockbuster)",
+      "designations": [],
+      "modality": "antibody.cytokine.il4r_blocker",
+      "targets": [
+        "IL4R"
+      ],
+      "indications": [
+        {
+          "id": "ad",
+          "name": "Atopic dermatitis (1L original indication)",
+          "market": {
+            "tamB": 6,
+            "penPct": 35,
+            "salesM": 7000,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 8,
+            "notes": "Original indication 2017. Adult + adolescent + pediatric down to 6mo. Largest Dupixent indication ~45% of brand. Class: Adbry (tralokinumab Leo), Cibinqo (Pfizer JAK), Rinvoq (AbbVie JAK).",
+            "company_slice": {
+              "us": {
+                "reachPct": 63.5,
+                "wtpPct": 65,
+                "priceK": 38
+              },
+              "eu": {
+                "reachPct": 31.8,
+                "wtpPct": 48,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 7.9,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Dupixent ~12% AD biologic-eligible pool (largest segment)."
+              },
+              "us.priceK": {
+                "note": "$38K/yr WAC."
+              },
+              "us.wtpPct": {
+                "note": "65% -- Medicare/commercial broad coverage."
+              },
+              "eu.reachPct": {
+                "note": "6%."
+              },
+              "eu.wtpPct": {
+                "note": "48%."
+              },
+              "eu.priceK": {
+                "note": "$22K."
+              },
+              "row.reachPct": {
+                "note": "1.5%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$8K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 700,
+                "wtpPct": 40,
+                "priceK": 16
+              },
+              "row": {
+                "patientsK": 4000,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            }
+          },
+          "area": "dermatology.inflammatory_derm.atopic_dermatitis_systemic"
+        },
+        {
+          "id": "asthma",
+          "name": "Severe asthma (eosinophilic + Type 2 high)",
+          "market": {
+            "tamB": 8,
+            "penPct": 25,
+            "salesM": 3500,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "notes": "Approved 2018. Severe eosinophilic + Type 2 high asthma. ~$3.5B 2025 portion.",
+            "company_slice": {
+              "us": {
+                "reachPct": 33.1,
+                "wtpPct": 65,
+                "priceK": 38
+              },
+              "eu": {
+                "reachPct": 16.6,
+                "wtpPct": 48,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 3.7,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Dupixent ~18% severe asthma biologic class (leading)."
+              },
+              "us.priceK": {
+                "note": "$38K/yr."
+              },
+              "us.wtpPct": {
+                "note": "65%."
+              },
+              "eu.reachPct": {
+                "note": "9%."
+              },
+              "eu.wtpPct": {
+                "note": "48%."
+              },
+              "eu.priceK": {
+                "note": "$22K."
+              },
+              "row.reachPct": {
+                "note": "2%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$8K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            }
+          },
+          "area": "respiratory.inflammatory.asthma_severe"
+        },
+        {
+          "id": "crswnp",
+          "name": "Chronic rhinosinusitis with nasal polyps (CRSwNP)",
+          "market": {
+            "tamB": 4,
+            "penPct": 25,
+            "salesM": 1500,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "notes": "Approved 2019. ~$1.5B portion.",
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 60,
+                "priceK": 38
+              },
+              "eu": {
+                "reachPct": 9,
+                "wtpPct": 42,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Dupixent ~18% CRSwNP biologic-eligible."
+              },
+              "us.priceK": {
+                "note": "$38K."
+              },
+              "us.wtpPct": {
+                "note": "60%."
+              },
+              "eu.reachPct": {
+                "note": "9%."
+              },
+              "eu.wtpPct": {
+                "note": "42%."
+              },
+              "eu.priceK": {
+                "note": "$22K."
+              },
+              "row.reachPct": {
+                "note": "1.5%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$8K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 750,
+                "wtpPct": 50,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 900,
+                "wtpPct": 35,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 8,
+                "priceK": 5
+              }
+            }
+          },
+          "area": "respiratory.inflammatory.crswnp"
+        },
+        {
+          "id": "eoe",
+          "name": "Eosinophilic esophagitis (EoE)",
+          "market": {
+            "tamB": 1.5,
+            "penPct": 30,
+            "salesM": 800,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "notes": "Approved 2022. Adult + adolescent + pediatric. ~$800M portion.",
+            "company_slice": {
+              "us": {
+                "reachPct": 32.8,
+                "wtpPct": 55,
+                "priceK": 38
+              },
+              "eu": {
+                "reachPct": 16.4,
+                "wtpPct": 38,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 2.7,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Dupixent ~12% EoE Rx pool."
+              },
+              "us.priceK": {
+                "note": "$38K."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "6%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$22K."
+              },
+              "row.reachPct": {
+                "note": "1%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$8K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 150,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 120,
+                "wtpPct": 35,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 250,
+                "wtpPct": 6,
+                "priceK": 5
+              }
+            }
+          },
+          "area": "immunology.inflammatory_gi.eoe"
+        },
+        {
+          "id": "pn",
+          "name": "Prurigo nodularis (PN)",
+          "market": {
+            "tamB": 1.5,
+            "penPct": 30,
+            "salesM": 700,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "notes": "Approved 2022. ~$700M portion.",
+            "company_slice": {
+              "us": {
+                "reachPct": 27.4,
+                "wtpPct": 55,
+                "priceK": 38
+              },
+              "eu": {
+                "reachPct": 12.2,
+                "wtpPct": 38,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 8,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Dupixent first-in-class for PN, ~18% reach."
+              },
+              "us.priceK": {
+                "note": "$38K."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "8%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$22K."
+              },
+              "row.reachPct": {
+                "note": "1%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$8K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 150,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 180,
+                "wtpPct": 35,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 5,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "dermatology.inflammatory_derm.prurigo_nodularis"
+        },
+        {
+          "id": "copd",
+          "name": "COPD eosinophilic (BOREAS + NOTUS)",
+          "market": {
+            "tamB": 15,
+            "penPct": 10,
+            "salesM": 700,
+            "salesYear": 2025,
+            "peakYear": 2032,
+            "cagrPct": 35,
+            "notes": "Approved 2024 for eosinophilic COPD (first biologic in COPD). ~$700M ramp 2025; peak forecast $3-5B.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 55,
+                "priceK": 38
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 38,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Dupixent eosinophilic COPD ~4% reach by peak (eosinophilic subset of severe COPD)."
+              },
+              "us.priceK": {
+                "note": "$38K."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$22K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$8K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            }
+          },
+          "area": "respiratory.inflammatory.copd"
+        },
+        {
+          "id": "csu",
+          "name": "Chronic spontaneous urticaria (CSU)",
+          "market": {
+            "tamB": 4,
+            "penPct": 18,
+            "salesM": 200,
+            "salesYear": 2025,
+            "peakYear": 2032,
+            "cagrPct": 40,
+            "notes": "Approved 2025 for CSU. New indication; ramp early. Class peer: Xolair (Roche omalizumab).",
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 50,
+                "priceK": 38
+              },
+              "eu": {
+                "reachPct": 0.7,
+                "wtpPct": 35,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 8,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Dupixent CSU early ramp; Xolair incumbent."
+              },
+              "us.priceK": {
+                "note": "$38K."
+              },
+              "us.wtpPct": {
+                "note": "50%."
+              },
+              "eu.reachPct": {
+                "note": "0.7%."
+              },
+              "eu.wtpPct": {
+                "note": "35%."
+              },
+              "eu.priceK": {
+                "note": "$22K."
+              },
+              "row.reachPct": {
+                "note": "0.2%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$8K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 28,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 18,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 5,
+                "priceK": 4
+              }
+            }
+          },
+          "area": "dermatology.inflammatory_derm.csu"
+        }
+      ]
+    },
+    {
+      "id": "vaccines_flu",
+      "name": "Influenza vaccine franchise (Fluzone HD + Flublok + Vaxigrip)",
+      "stage": "Commercial (~$3.5B 2025; #1 flu vaccine maker globally)",
+      "designations": [],
+      "modality": "vaccine.protein_subunit.influenza",
+      "targets": [],
+      "indications": [
+        {
+          "id": "flu",
+          "name": "Influenza vaccination (HD + recombinant + quadrivalent)",
+          "market": {
+            "tamB": 10,
+            "penPct": 38,
+            "salesM": 3500,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "Sanofi #1 globally in flu vaccines. Fluzone HD (high-dose, 65+), Flublok (recombinant), Vaxigrip Quadrivalent. ~$3.5B 2025 (declining 2024-25 on US softness + German tender). Class peers: GSK Fluarix, CSL Seqirus Afluria/Flucelvax, Moderna mRNA-1010 Ph3.",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 35,
+                "priceK": 0.06
+              },
+              "eu": {
+                "reachPct": 60.2,
+                "wtpPct": 25,
+                "priceK": 0.04
+              },
+              "row": {
+                "reachPct": 25.1,
+                "wtpPct": 12,
+                "priceK": 0.015
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Sanofi ~22% US flu vaccine market share (Fluzone HD 65+ dominant)."
+              },
+              "us.priceK": {
+                "note": "$60/dose blended (HD ~$80, standard $35)."
+              },
+              "us.wtpPct": {
+                "note": "35% -- ACIP routine 65+; commercial covers all adults."
+              },
+              "eu.reachPct": {
+                "note": "12%."
+              },
+              "eu.wtpPct": {
+                "note": "25%."
+              },
+              "eu.priceK": {
+                "note": "$40."
+              },
+              "row.reachPct": {
+                "note": "5%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$15."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 150000,
+                "wtpPct": 35,
+                "priceK": 0.05
+              },
+              "eu": {
+                "patientsK": 250000,
+                "wtpPct": 25,
+                "priceK": 0.03
+              },
+              "row": {
+                "patientsK": 600000,
+                "wtpPct": 12,
+                "priceK": 0.012
+              }
+            }
+          },
+          "area": "infectious_disease.vaccines.influenza"
+        }
+      ]
+    },
+    {
+      "id": "vaccines_peds",
+      "name": "Vaccines peds (Beyfortus + Pertussis + Polio/Hib)",
+      "stage": "Commercial (~$3B 2025; Beyfortus growing)",
+      "designations": [],
+      "modality": "vaccine.combination.peds",
+      "targets": [],
+      "indications": [
+        {
+          "id": "beyfortus",
+          "name": "Beyfortus (nirsevimab) — RSV peds",
+          "market": {
+            "tamB": 5,
+            "penPct": 35,
+            "salesM": 1780,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 12,
+            "notes": "RSV mAb peds prophylaxis. ~$1.78B 2025 (+9.5%). 50/50 with AZ. Class peer: Enflonsia (Merck clesrovimab approved Jun 2025).",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 70,
+                "priceK": 0.5
+              },
+              "eu": {
+                "reachPct": 74.1,
+                "wtpPct": 55,
+                "priceK": 0.32
+              },
+              "row": {
+                "reachPct": 13.5,
+                "wtpPct": 14,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Beyfortus ~35% US peds RSV cohort dominant; Sanofi books 50%."
+              },
+              "us.priceK": {
+                "note": "$500/dose ACIP."
+              },
+              "us.wtpPct": {
+                "note": "70%."
+              },
+              "eu.reachPct": {
+                "note": "22%."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$320."
+              },
+              "row.reachPct": {
+                "note": "4%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$100."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 4500,
+                "wtpPct": 70,
+                "priceK": 0.5
+              },
+              "eu": {
+                "patientsK": 4500,
+                "wtpPct": 55,
+                "priceK": 0.32
+              },
+              "row": {
+                "patientsK": 120000,
+                "wtpPct": 12,
+                "priceK": 0.1
+              }
+            }
+          },
+          "area": "infectious_disease.vaccines.rsv"
+        },
+        {
+          "id": "pertussis",
+          "name": "Adacel (Tdap pertussis booster) + DTaP",
+          "market": {
+            "tamB": 1.5,
+            "penPct": 45,
+            "salesM": 600,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "Adacel (Sanofi Tdap booster), DAPTACEL/Pediacel peds DTaP. ~$600M 2025.",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 50,
+                "priceK": 0.06
+              },
+              "eu": {
+                "reachPct": 88.4,
+                "wtpPct": 38,
+                "priceK": 0.04
+              },
+              "row": {
+                "reachPct": 19.7,
+                "wtpPct": 12,
+                "priceK": 0.015
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Sanofi ~30% US pertussis vaccine; competes with GSK Boostrix."
+              },
+              "us.priceK": {
+                "note": "$60/dose."
+              },
+              "us.wtpPct": {
+                "note": "50%."
+              },
+              "eu.reachPct": {
+                "note": "18%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$40."
+              },
+              "row.reachPct": {
+                "note": "4%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$15."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 14000,
+                "wtpPct": 50,
+                "priceK": 0.06
+              },
+              "eu": {
+                "patientsK": 18000,
+                "wtpPct": 38,
+                "priceK": 0.04
+              },
+              "row": {
+                "patientsK": 110000,
+                "wtpPct": 12,
+                "priceK": 0.015
+              }
+            }
+          },
+          "area": "infectious_disease.vaccines.pertussis"
+        },
+        {
+          "id": "polio_hib",
+          "name": "Polio/Hib peds (Pentacel + IPOL + ActHIB)",
+          "market": {
+            "tamB": 3,
+            "penPct": 75,
+            "salesM": 700,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "Sanofi Pentacel + IPOL (IPV) + ActHIB. ~$700M 2025.",
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 75,
+                "priceK": 0.18
+              },
+              "eu": {
+                "reachPct": 85.5,
+                "wtpPct": 60,
+                "priceK": 0.12
+              },
+              "row": {
+                "reachPct": 14.2,
+                "wtpPct": 18,
+                "priceK": 0.03
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Sanofi ~50% US polio/Hib peds vaccines (Pentacel)."
+              },
+              "us.priceK": {
+                "note": "$180/dose."
+              },
+              "us.wtpPct": {
+                "note": "75% -- VFC + commercial routine."
+              },
+              "eu.reachPct": {
+                "note": "30%."
+              },
+              "eu.wtpPct": {
+                "note": "60%."
+              },
+              "eu.priceK": {
+                "note": "$120."
+              },
+              "row.reachPct": {
+                "note": "5% -- WHO EPI partner."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$30."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 3700,
+                "wtpPct": 75,
+                "priceK": 0.18
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 60,
+                "priceK": 0.12
+              },
+              "row": {
+                "patientsK": 120000,
+                "wtpPct": 18,
+                "priceK": 0.03
+              }
+            }
+          },
+          "area": "infectious_disease.vaccines.polio_hib"
+        }
+      ]
+    },
+    {
+      "id": "sarclisa",
+      "name": "Sarclisa (isatuximab, anti-CD38) — myeloma",
+      "stage": "Commercial (€600M 2025, +41%)",
+      "designations": [],
+      "modality": "antibody.checkpoint.cd38",
+      "targets": [
+        "CD38"
+      ],
+      "indications": [
+        {
+          "id": "myeloma_2l",
+          "name": "Multiple myeloma (1L + 2L+)",
+          "market": {
+            "tamB": 12,
+            "penPct": 55,
+            "salesM": 600,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 18,
+            "notes": "Anti-CD38 mAb. IMROZ 1L + ICARIA-MM 2L+. Class leader: Darzalex (J&J, $13B). Sarclisa share growing on 1L combo.",
+            "company_slice": {
+              "us": {
+                "reachPct": 25.0,
+                "wtpPct": 70,
+                "priceK": 165
+              },
+              "eu": {
+                "reachPct": 15.0,
+                "wtpPct": 50,
+                "priceK": 95
+              },
+              "row": {
+                "reachPct": 3.0,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Sarclisa ~5% myeloma pool; Darzalex incumbent dominant."
+              },
+              "us.priceK": {
+                "note": "$165K/yr WAC."
+              },
+              "us.wtpPct": {
+                "note": "70%."
+              },
+              "eu.reachPct": {
+                "note": "3%."
+              },
+              "eu.wtpPct": {
+                "note": "50%."
+              },
+              "eu.priceK": {
+                "note": "$95K."
+              },
+              "row.reachPct": {
+                "note": "0.6%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 24,
+                "wtpPct": 65,
+                "priceK": 280
+              },
+              "eu": {
+                "patientsK": 28,
+                "wtpPct": 50,
+                "priceK": 165
+              },
+              "row": {
+                "patientsK": 50,
+                "wtpPct": 14,
+                "priceK": 60
+              }
+            }
+          },
+          "area": "oncology.hematology.myeloma.2l_3l"
+        }
+      ]
+    },
+    {
+      "id": "altuviiio",
+      "name": "ALTUVIIIO (efanesoctocog alfa) — w/ Sobi (Hem A)",
+      "stage": "Commercial (~$500M 2025 ramping; Bioverativ legacy)",
+      "designations": [
+        "Orphan (US + EU)"
+      ],
+      "modality": "recombinant_protein.coagulation.factor_viii",
+      "targets": [
+        "F8"
+      ],
+      "indications": [
+        {
+          "id": "hema_alt",
+          "name": "Hemophilia A prophylaxis (long-acting)",
+          "market": {
+            "tamB": 8,
+            "penPct": 65,
+            "salesM": 500,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 18,
+            "notes": "Long-acting Factor VIII fusion (Bioverativ acquisition 2018). XTEND-1 Ph3 once-weekly. Sobi 50/50. Class peer: Hemlibra (Roche), Mim8 (Novo BLA).",
+            "company_slice": {
+              "us": {
+                "reachPct": 12.0,
+                "wtpPct": 70,
+                "priceK": 320
+              },
+              "eu": {
+                "reachPct": 6.0,
+                "wtpPct": 55,
+                "priceK": 220
+              },
+              "row": {
+                "reachPct": 1.0,
+                "wtpPct": 14,
+                "priceK": 80
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "ALTUVIIIO ~6% of US hemophilia A pool (Hemlibra incumbent dominant)."
+              },
+              "us.priceK": {
+                "note": "$320K/yr Hemlibra parity."
+              },
+              "us.wtpPct": {
+                "note": "70%."
+              },
+              "eu.reachPct": {
+                "note": "3%."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$220K."
+              },
+              "row.reachPct": {
+                "note": "0.5%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$80K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 85,
+                "priceK": 300
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "row": {
+                "patientsK": 280,
+                "wtpPct": 25,
+                "priceK": 80
+              }
+            }
+          },
+          "area": "hematology.rare_blood.hemophilia_a"
+        }
+      ]
+    },
+    {
+      "id": "tzield",
+      "name": "Tzield (teplizumab, anti-CD3) — T1D delay",
+      "stage": "Commercial ($300M 2025 ramp; Provention $2.9B 2023)",
+      "designations": [],
+      "modality": "antibody.checkpoint.cd3",
+      "targets": [
+        "CD3"
+      ],
+      "indications": [
+        {
+          "id": "t1d_delay",
+          "name": "T1D onset delay (Stage 2 pre-clinical)",
+          "market": {
+            "tamB": 2,
+            "penPct": 12,
+            "salesM": 300,
+            "salesYear": 2025,
+            "peakYear": 2031,
+            "cagrPct": 25,
+            "notes": "Anti-CD3 mAb. Approved 2022 to delay T1D onset in Stage 2 (autoantibody+, normoglycemic). 14-day infusion course. ~$300M 2025 ramping.",
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 50,
+                "priceK": 195
+              },
+              "eu": {
+                "reachPct": 0.8,
+                "wtpPct": 38,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 10,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Tzield ~2% peak T1D early-detection pool (~50K Stage 2 US)."
+              },
+              "us.priceK": {
+                "note": "$195K/14-day course."
+              },
+              "us.wtpPct": {
+                "note": "50% -- screening + autoantibody testing required."
+              },
+              "eu.reachPct": {
+                "note": "0.8%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$130K."
+              },
+              "row.reachPct": {
+                "note": "0.1%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$50K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1900,
+                "wtpPct": 85,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 80,
+                "priceK": 2.5
+              },
+              "row": {
+                "patientsK": 8000,
+                "wtpPct": 40,
+                "priceK": 1
+              }
+            }
+          },
+          "area": "cardio_metabolic.diabetes.t1d"
+        }
+      ]
+    },
+    {
+      "id": "rezurock",
+      "name": "Rezurock (belumosudil, ROCK2) — cGVHD",
+      "stage": "Commercial (~$200M 2025; Kadmon $1.9B 2021)",
+      "designations": [],
+      "modality": "small_molecule.kinase_inhibitor.rock2",
+      "targets": [
+        "ROCK2"
+      ],
+      "indications": [
+        {
+          "id": "cgvhd",
+          "name": "Chronic graft-vs-host disease (3L+)",
+          "market": {
+            "tamB": 4,
+            "penPct": 35,
+            "salesM": 200,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 12,
+            "notes": "Selective ROCK2 oral inhibitor. 3L+ cGVHD post failure of 2 prior therapies. Approved 2021. Class: Imbruvica (BTK), Jakafi (JAK), Niktimvo (axatilimab Incyte).",
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 70,
+                "priceK": 150
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 50,
+                "priceK": 90
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Rezurock ~6% cGVHD 3L+ pool."
+              },
+              "us.priceK": {
+                "note": "$150K/yr."
+              },
+              "us.wtpPct": {
+                "note": "70%."
+              },
+              "eu.reachPct": {
+                "note": "3%."
+              },
+              "eu.wtpPct": {
+                "note": "50%."
+              },
+              "eu.priceK": {
+                "note": "$90K."
+              },
+              "row.reachPct": {
+                "note": "0.5%."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$30K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 70,
+                "priceK": 150
+              },
+              "eu": {
+                "patientsK": 28,
+                "wtpPct": 50,
+                "priceK": 90
+              },
+              "row": {
+                "patientsK": 60,
+                "wtpPct": 10,
+                "priceK": 30
+              }
+            }
+          },
+          "area": "immunology.transplant.cgvhd"
+        }
+      ]
+    },
+    {
+      "id": "cablivi",
+      "name": "Cablivi (caplacizumab, anti-vWF) — aTTP",
+      "stage": "Commercial (~$300M 2025)",
+      "designations": [
+        "Orphan (US + EU)"
+      ],
+      "modality": "antibody.fragment.vwf",
+      "targets": [
+        "VWF"
+      ],
+      "indications": [
+        {
+          "id": "attp",
+          "name": "Acquired thrombotic thrombocytopenic purpura (aTTP)",
+          "market": {
+            "tamB": 1,
+            "penPct": 70,
+            "salesM": 300,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "notes": "Anti-vWF Nanobody (Ablynx legacy). Acute aTTP combined with plasma exchange + immunosuppression. ~$300M 2025.",
+            "company_slice": {
+              "us": {
+                "reachPct": 51.0,
+                "wtpPct": 75,
+                "priceK": 270
+              },
+              "eu": {
+                "reachPct": 32.1,
+                "wtpPct": 60,
+                "priceK": 175
+              },
+              "row": {
+                "reachPct": 5.8,
+                "wtpPct": 15,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Cablivi ~35% US aTTP incident pool (~3K)."
+              },
+              "us.priceK": {
+                "note": "$270K/course (acute setting)."
+              },
+              "us.wtpPct": {
+                "note": "75%."
+              },
+              "eu.reachPct": {
+                "note": "22%."
+              },
+              "eu.wtpPct": {
+                "note": "60%."
+              },
+              "eu.priceK": {
+                "note": "$175K."
+              },
+              "row.reachPct": {
+                "note": "4%."
+              },
+              "row.wtpPct": {
+                "note": "15%."
+              },
+              "row.priceK": {
+                "note": "$60K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 3,
+                "wtpPct": 75,
+                "priceK": 270
+              },
+              "eu": {
+                "patientsK": 4,
+                "wtpPct": 60,
+                "priceK": 175
+              },
+              "row": {
+                "patientsK": 10,
+                "wtpPct": 15,
+                "priceK": 60
+              }
+            }
+          },
+          "area": "hematology.rare_blood.attp",
+          "rare": true
+        }
+      ]
+    },
+    {
+      "id": "aubagio",
+      "name": "Aubagio (teriflunomide) — MS legacy",
+      "stage": "Commercial (declining post-LOE 2023)",
+      "designations": [],
+      "modality": "small_molecule.dhodh.teriflunomide",
+      "targets": [
+        "DHODH"
+      ],
+      "indications": [
+        {
+          "id": "ms_aubagio",
+          "name": "Relapsing MS (post-LOE remnant)",
+          "market": {
+            "tamB": 4,
+            "penPct": 25,
+            "salesM": 200,
+            "salesYear": 2025,
+            "peakYear": 2025,
+            "notes": "Teriflunomide DHODH inhibitor. LOE 2023 -- generic teriflunomide eroded sharply. Q3 2025 €49M (-44.6%). Tail product.",
+            "company_slice": {
+              "us": {
+                "reachPct": 1.4,
+                "wtpPct": 30,
+                "priceK": 60
+              },
+              "eu": {
+                "reachPct": 0.7,
+                "wtpPct": 22,
+                "priceK": 35
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 8,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Aubagio branded ~0.8% post-LOE; mostly generic."
+              },
+              "us.priceK": {
+                "note": "$60K/yr branded (post-LOE)."
+              },
+              "us.wtpPct": {
+                "note": "30%."
+              },
+              "eu.reachPct": {
+                "note": "0.4%."
+              },
+              "eu.wtpPct": {
+                "note": "22%."
+              },
+              "eu.priceK": {
+                "note": "$35K."
+              },
+              "row.reachPct": {
+                "note": "0.1%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$12K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 900,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 40,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 1500,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            }
+          },
+          "area": "immunology.demyelinating.multiple_sclerosis"
+        }
+      ]
+    },
+    {
+      "id": "rare_genzyme",
+      "name": "Genzyme rare disease (Cerezyme + Fabrazyme + Pompe + Aldurazyme + Xenpozyme)",
+      "stage": "Commercial (~$3B 2025; Genzyme legacy)",
+      "designations": [],
+      "modality": "recombinant_protein.enzyme.lysosomal",
+      "targets": [],
+      "indications": [
+        {
+          "id": "gaucher",
+          "name": "Gaucher disease (Cerezyme imiglucerase + Cerdelga eliglustat)",
+          "market": {
+            "tamB": 1.5,
+            "penPct": 60,
+            "salesM": 700,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "Cerezyme ERT + Cerdelga oral SRT. ~$700M 2025. Mature franchise; biosimilar pressure on ERT.",
+            "company_slice": {
+              "us": {
+                "reachPct": 50,
+                "wtpPct": 85,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 30,
+                "wtpPct": 75,
+                "priceK": 165
+              },
+              "row": {
+                "reachPct": 6,
+                "wtpPct": 20,
+                "priceK": 70
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Sanofi Gaucher ~50% US share (Takeda VPRIV competitor)."
+              },
+              "us.priceK": {
+                "note": "$250K/yr blended ERT+SRT."
+              },
+              "us.wtpPct": {
+                "note": "85%."
+              },
+              "eu.reachPct": {
+                "note": "30%."
+              },
+              "eu.wtpPct": {
+                "note": "75%."
+              },
+              "eu.priceK": {
+                "note": "$165K."
+              },
+              "row.reachPct": {
+                "note": "6%."
+              },
+              "row.wtpPct": {
+                "note": "20%."
+              },
+              "row.priceK": {
+                "note": "$70K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 6,
+                "wtpPct": 85,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 12,
+                "wtpPct": 75,
+                "priceK": 165
+              },
+              "row": {
+                "patientsK": 30,
+                "wtpPct": 20,
+                "priceK": 70
+              }
+            }
+          },
+          "area": "endocrine.lysosomal_storage.gaucher",
+          "rare": true
+        },
+        {
+          "id": "fabry",
+          "name": "Fabry disease (Fabrazyme agalsidase beta)",
+          "market": {
+            "tamB": 1.5,
+            "penPct": 55,
+            "salesM": 600,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "Fabrazyme ERT for Fabry. ~$600M 2025. Class peer: Galafold (Amicus oral chaperone), Replagal (Takeda; not US).",
+            "company_slice": {
+              "us": {
+                "reachPct": 50,
+                "wtpPct": 85,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 30,
+                "wtpPct": 75,
+                "priceK": 230
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 18,
+                "priceK": 90
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Sanofi Fabrazyme ~50% US Fabry pool."
+              },
+              "us.priceK": {
+                "note": "$350K/yr."
+              },
+              "us.wtpPct": {
+                "note": "85%."
+              },
+              "eu.reachPct": {
+                "note": "30%."
+              },
+              "eu.wtpPct": {
+                "note": "75%."
+              },
+              "eu.priceK": {
+                "note": "$230K."
+              },
+              "row.reachPct": {
+                "note": "5%."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$90K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 5,
+                "wtpPct": 85,
+                "priceK": 350
+              },
+              "eu": {
+                "patientsK": 8,
+                "wtpPct": 75,
+                "priceK": 230
+              },
+              "row": {
+                "patientsK": 25,
+                "wtpPct": 18,
+                "priceK": 90
+              }
+            }
+          },
+          "area": "endocrine.lysosomal_storage.fabry",
+          "rare": true
+        },
+        {
+          "id": "pompe",
+          "name": "Pompe disease (Myozyme/Lumizyme + Nexviazyme)",
+          "market": {
+            "tamB": 1.5,
+            "penPct": 55,
+            "salesM": 1000,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 8,
+            "notes": "Myozyme/Lumizyme legacy + Nexviazyme/Nexviadyme next-gen growing. ~$1B 2025. Class peer: Pombiliti+Opfolda (Amicus next-gen).",
+            "company_slice": {
+              "us": {
+                "reachPct": 50,
+                "wtpPct": 90,
+                "priceK": 600
+              },
+              "eu": {
+                "reachPct": 30,
+                "wtpPct": 80,
+                "priceK": 400
+              },
+              "row": {
+                "reachPct": 6,
+                "wtpPct": 22,
+                "priceK": 150
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Sanofi Pompe franchise ~50% US (~3.5K diagnosed)."
+              },
+              "us.priceK": {
+                "note": "$600K/yr."
+              },
+              "us.wtpPct": {
+                "note": "90%."
+              },
+              "eu.reachPct": {
+                "note": "30%."
+              },
+              "eu.wtpPct": {
+                "note": "80%."
+              },
+              "eu.priceK": {
+                "note": "$400K."
+              },
+              "row.reachPct": {
+                "note": "6%."
+              },
+              "row.wtpPct": {
+                "note": "22%."
+              },
+              "row.priceK": {
+                "note": "$150K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 3.5,
+                "wtpPct": 90,
+                "priceK": 600
+              },
+              "eu": {
+                "patientsK": 5,
+                "wtpPct": 80,
+                "priceK": 400
+              },
+              "row": {
+                "patientsK": 15,
+                "wtpPct": 22,
+                "priceK": 150
+              }
+            }
+          },
+          "area": "endocrine.lysosomal_storage.pompe",
+          "rare": true
+        },
+        {
+          "id": "mps1",
+          "name": "MPS I Hurler (Aldurazyme laronidase)",
+          "market": {
+            "tamB": 0.5,
+            "penPct": 50,
+            "salesM": 300,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "Aldurazyme ERT for MPS I. ~$300M 2025. Co-promote with BioMarin.",
+            "company_slice": {
+              "us": {
+                "reachPct": 50,
+                "wtpPct": 85,
+                "priceK": 400
+              },
+              "eu": {
+                "reachPct": 30,
+                "wtpPct": 75,
+                "priceK": 270
+              },
+              "row": {
+                "reachPct": 6,
+                "wtpPct": 18,
+                "priceK": 100
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Aldurazyme ~50% MPS I."
+              },
+              "us.priceK": {
+                "note": "$400K/yr."
+              },
+              "us.wtpPct": {
+                "note": "85%."
+              },
+              "eu.reachPct": {
+                "note": "30%."
+              },
+              "eu.wtpPct": {
+                "note": "75%."
+              },
+              "eu.priceK": {
+                "note": "$270K."
+              },
+              "row.reachPct": {
+                "note": "6%."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$100K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1.5,
+                "wtpPct": 85,
+                "priceK": 400
+              },
+              "eu": {
+                "patientsK": 2,
+                "wtpPct": 75,
+                "priceK": 270
+              },
+              "row": {
+                "patientsK": 8,
+                "wtpPct": 18,
+                "priceK": 100
+              }
+            }
+          },
+          "area": "endocrine.lysosomal_storage.mps1",
+          "rare": true
+        },
+        {
+          "id": "asmd",
+          "name": "ASMD (Xenpozyme olipudase alfa)",
+          "market": {
+            "tamB": 0.3,
+            "penPct": 50,
+            "salesM": 200,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 18,
+            "notes": "Xenpozyme ERT for ASMD (Niemann-Pick A/B). Approved 2022. Sole approved option. ~$200M 2025.",
+            "company_slice": {
+              "us": {
+                "reachPct": 50,
+                "wtpPct": 90,
+                "priceK": 600
+              },
+              "eu": {
+                "reachPct": 30,
+                "wtpPct": 80,
+                "priceK": 400
+              },
+              "row": {
+                "reachPct": 6,
+                "wtpPct": 18,
+                "priceK": 150
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Xenpozyme sole approved ASMD therapy ~50% reach."
+              },
+              "us.priceK": {
+                "note": "$600K/yr."
+              },
+              "us.wtpPct": {
+                "note": "90%."
+              },
+              "eu.reachPct": {
+                "note": "30%."
+              },
+              "eu.wtpPct": {
+                "note": "80%."
+              },
+              "eu.priceK": {
+                "note": "$400K."
+              },
+              "row.reachPct": {
+                "note": "6%."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$150K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 90,
+                "priceK": 600
+              },
+              "eu": {
+                "patientsK": 1.5,
+                "wtpPct": 80,
+                "priceK": 400
+              },
+              "row": {
+                "patientsK": 5,
+                "wtpPct": 18,
+                "priceK": 150
+              }
+            }
+          },
+          "area": "endocrine.lysosomal_storage.asmd",
+          "rare": true
+        }
+      ]
+    },
+    {
+      "id": "general_med",
+      "name": "General Medicines (Lantus + Toujeo + Plavix + Lovenox legacy)",
+      "stage": "Commercial (~$3B 2025, declining)",
+      "designations": [],
+      "modality": "recombinant_protein.insulin.long_acting",
+      "targets": [
+        "INSR"
+      ],
+      "indications": [
+        {
+          "id": "insulin_legacy",
+          "name": "Lantus + Toujeo (insulin glargine)",
+          "market": {
+            "tamB": 100,
+            "penPct": 10,
+            "salesM": 2000,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Lantus (glargine 100u/ml LOE'd) + Toujeo (300u/ml concentrated) + Suliqua (glargine+lixisenatide combo). ~$2B 2025. Biosimilar pressure (Semglee/Rezvoglar).",
+            "company_slice": {
+              "us": {
+                "reachPct": 3.5,
+                "wtpPct": 60,
+                "priceK": 4
+              },
+              "eu": {
+                "reachPct": 2.4,
+                "wtpPct": 45,
+                "priceK": 2.5
+              },
+              "row": {
+                "reachPct": 0.9,
+                "wtpPct": 18,
+                "priceK": 1.2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Sanofi insulin ~0.6% T2D pool post-LOE; biosimilar erosion."
+              },
+              "us.priceK": {
+                "note": "$4K/yr blended."
+              },
+              "us.wtpPct": {
+                "note": "60%."
+              },
+              "eu.reachPct": {
+                "note": "0.4%."
+              },
+              "eu.wtpPct": {
+                "note": "45%."
+              },
+              "eu.priceK": {
+                "note": "$2.5K."
+              },
+              "row.reachPct": {
+                "note": "0.15%."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$1.2K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            }
+          },
+          "area": "cardio_metabolic.diabetes.t2d"
+        }
+      ]
+    },
+    {
+      "id": "tolebrutinib",
+      "name": "Tolebrutinib (Cenrifki, BTK CNS-penetrant) — MS",
+      "stage": "EU CHMP positive Apr 2026 (Cenrifki SPMS); US CRL on nrSPMS",
+      "designations": [
+        "Orphan (EU)"
+      ],
+      "modality": "small_molecule.kinase_inhibitor.btk_covalent",
+      "targets": [
+        "BTK"
+      ],
+      "indications": [
+        {
+          "id": "ms_tolb",
+          "name": "Non-relapsing SPMS (HERCULES) + future MS expansions",
+          "market": {
+            "tamB": 12,
+            "penPct": 25,
+            "peakYear": 2031,
+            "cagrPct": 22,
+            "notes": "CNS-penetrant BTK. HERCULES Ph3 nrSPMS positive (31% CDP reduction). GEMINI 1/2 missed primary in relapsing MS. PERSEUS missed in PPMS. EU CHMP positive Apr 24 2026 as Cenrifki for SPMS without relapses. FDA issued CRL. Peak forecast $2-4B if EU label expands + US strategy reset.",
+            "company_slice": {
+              "us": {
+                "reachPct": 1,
+                "wtpPct": 30,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 45,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 20
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Tolebrutinib US CRL limits launch; EU primary market."
+              },
+              "us.priceK": {
+                "note": "$80K/yr."
+              },
+              "us.wtpPct": {
+                "note": "30%."
+              },
+              "eu.reachPct": {
+                "note": "3% -- EU CHMP positive Cenrifki SPMS."
+              },
+              "eu.wtpPct": {
+                "note": "45%."
+              },
+              "eu.priceK": {
+                "note": "$50K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$20K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 900,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 40,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 1500,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            }
+          },
+          "area": "immunology.demyelinating.multiple_sclerosis"
+        }
+      ]
+    },
+    {
+      "id": "amlitelimab",
+      "name": "Amlitelimab (anti-OX40L) — atopic dermatitis Ph3",
+      "stage": "Phase 3 OCEANA program complete (COAST 1+2+SHORE positive)",
+      "designations": [],
+      "modality": "antibody.cytokine.ox40l_blocker",
+      "targets": [
+        "TNFSF4"
+      ],
+      "indications": [
+        {
+          "id": "ad_amli",
+          "name": "Moderate-severe atopic dermatitis (Q4W/Q12W)",
+          "market": {
+            "tamB": 6,
+            "penPct": 35,
+            "peakYear": 2030,
+            "cagrPct": 22,
+            "notes": "Anti-OX40L mAb. Q4W/Q12W dosing differentiation. COAST 1+2 + SHORE Ph3 positive. AQUA + ESTUARY readouts through 2026. Leerink: efficacy below Dupixent. Peak forecast $1-3B.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 50,
+                "priceK": 38
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 35,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Amlitelimab AD ~4% peak (Dupixent dominant)."
+              },
+              "us.priceK": {
+                "note": "$38K/yr."
+              },
+              "us.wtpPct": {
+                "note": "50%."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "35%."
+              },
+              "eu.priceK": {
+                "note": "$22K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$8K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 700,
+                "wtpPct": 40,
+                "priceK": 16
+              },
+              "row": {
+                "patientsK": 4000,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            }
+          },
+          "area": "dermatology.inflammatory_derm.atopic_dermatitis_systemic"
+        }
+      ]
+    },
+    {
+      "id": "frexalimab",
+      "name": "Frexalimab (anti-CD40L) — MS Ph3",
+      "stage": "Phase 3 FREXALT (relapsing MS) + FREVIVA (nrSPMS)",
+      "designations": [],
+      "modality": "antibody.cytokine.cd40l_blocker",
+      "targets": [
+        "CD40LG"
+      ],
+      "indications": [
+        {
+          "id": "ms_frex",
+          "name": "MS (relapsing + nrSPMS)",
+          "market": {
+            "tamB": 12,
+            "penPct": 25,
+            "peakYear": 2032,
+            "cagrPct": 25,
+            "notes": "Anti-CD40L mAb (newer than ruplizumab failed). FREXALT relapsing MS + FREVIVA nrSPMS Ph3. Readouts 2026-27. Peak forecast $2-4B if MS class expansion succeeds.",
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 50,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 38,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 10,
+                "priceK": 20
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Frexalimab MS ~2% peak post-Ph3."
+              },
+              "us.priceK": {
+                "note": "$80K/yr."
+              },
+              "us.wtpPct": {
+                "note": "50%."
+              },
+              "eu.reachPct": {
+                "note": "1%."
+              },
+              "eu.wtpPct": {
+                "note": "38%."
+              },
+              "eu.priceK": {
+                "note": "$50K."
+              },
+              "row.reachPct": {
+                "note": "0.2%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$20K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 900,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 40,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 1500,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            }
+          },
+          "area": "immunology.demyelinating.multiple_sclerosis"
+        }
+      ]
+    },
+    {
+      "id": "riliprubart",
+      "name": "Riliprubart (anti-C1s) — CIDP Ph3",
+      "stage": "Phase 3 MOBILIZE + VITALIZE (CIDP)",
+      "designations": [
+        "Orphan (Japan)"
+      ],
+      "modality": "antibody.complement.c1s_inhibitor",
+      "targets": [
+        "C1S"
+      ],
+      "indications": [
+        {
+          "id": "cidp_rili",
+          "name": "Chronic inflammatory demyelinating polyneuropathy (CIDP)",
+          "market": {
+            "tamB": 4,
+            "penPct": 35,
+            "peakYear": 2030,
+            "cagrPct": 35,
+            "notes": "Anti-C1s mAb. MOBILIZE (refractory CIDP) + VITALIZE (IVIg residual) Ph3. Readouts 2026-27. Class peer: Vyvgart Hytrulo (Argenx FcRn). Peak forecast $1-2B.",
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 55,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 40,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Riliprubart CIDP ~6% peak (Vyvgart competing)."
+              },
+              "us.priceK": {
+                "note": "$200K/yr."
+              },
+              "us.wtpPct": {
+                "note": "55%."
+              },
+              "eu.reachPct": {
+                "note": "3%."
+              },
+              "eu.wtpPct": {
+                "note": "40%."
+              },
+              "eu.priceK": {
+                "note": "$130K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "10%."
+              },
+              "row.priceK": {
+                "note": "$35K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            }
+          },
+          "area": "immunology.neuromuscular_autoimmune.cidp"
+        }
+      ]
+    },
+    {
+      "id": "itepekimab",
+      "name": "Itepekimab (anti-IL-33) — w/ Regeneron 50/50",
+      "stage": "Mixed Phase 3 (AERIFY-1 hit, AERIFY-2 miss, May 2025)",
+      "designations": [],
+      "modality": "antibody.cytokine.il33_blocker",
+      "targets": [
+        "IL33"
+      ],
+      "indications": [
+        {
+          "id": "copd_ite",
+          "name": "Former-smoker COPD",
+          "market": {
+            "tamB": 15,
+            "penPct": 10,
+            "peakYear": 2032,
+            "cagrPct": 18,
+            "notes": "Anti-IL-33 mAb. AERIFY-1 met primary in former-smoker COPD (-27% exacerbations); AERIFY-2 missed. Mixed -- regulatory dialogue ongoing. May launch with restricted label.",
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 35,
+                "priceK": 38
+              },
+              "eu": {
+                "reachPct": 0.6,
+                "wtpPct": 25,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 8,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Itepekimab ~1.5% COPD if approved with restricted label."
+              },
+              "us.priceK": {
+                "note": "$38K/yr."
+              },
+              "us.wtpPct": {
+                "note": "35%."
+              },
+              "eu.reachPct": {
+                "note": "0.6%."
+              },
+              "eu.wtpPct": {
+                "note": "25%."
+              },
+              "eu.priceK": {
+                "note": "$22K."
+              },
+              "row.reachPct": {
+                "note": "0.1%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$8K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            }
+          },
+          "area": "respiratory.inflammatory.copd"
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "Dupixent slows + Genzyme biosimilars + tolebrutinib US never recovers + LSDs erode",
+      "events": [
+        "X Dupixent growth flatlines as Argenx + amlitelimab + others compete",
+        "X Cerezyme/Fabrazyme biosimilar erosion accelerates",
+        "X Tolebrutinib US CRL stays unresolved",
+        "X Itepekimab COPD restricted label limits ramp",
+        "X Frexalimab/amlitelimab Ph3 wins muted post-Dupixent",
+        "-> Stock to €60 (cliff preview)"
+      ],
+      "assumptions": {
+        "dupixent": {
+          "ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "crswnp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "eoe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "pn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "csu": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "vaccines_flu": {
+          "flu": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "vaccines_peds": {
+          "beyfortus": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "pertussis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "polio_hib": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "sarclisa": {
+          "myeloma_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "altuviiio": {
+          "hema_alt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "tzield": {
+          "t1d_delay": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "rezurock": {
+          "cgvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "cablivi": {
+          "attp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "aubagio": {
+          "ms_aubagio": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "rare_genzyme": {
+          "gaucher": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "fabry": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "pompe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "mps1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "asmd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "general_med": {
+          "insulin_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "tolebrutinib": {
+          "ms_tolb": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 0.4
+          }
+        },
+        "amlitelimab": {
+          "ad_amli": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "frexalimab": {
+          "ms_frex": {
+            "pos": 25,
+            "apr": 30,
+            "pen": 0.4
+          }
+        },
+        "riliprubart": {
+          "cidp_rili": {
+            "pos": 35,
+            "apr": 40,
+            "pen": 0.4
+          }
+        },
+        "itepekimab": {
+          "copd_ite": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.4
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 12,
+        "pipelineMult": 4,
+        "commercialMult": 2.0,
+        "commercialRevM": 38000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Dupixent grows but slowly + select pipeline wins + Genzyme stable",
+      "events": [
+        "~ Dupixent flat-modest growth post-CSU",
+        "~ Amlitelimab launches but takes <10% AD share",
+        "~ Tolebrutinib EU launches; US off-table",
+        "~ Riliprubart CIDP positive",
+        "~ Frexalimab MS borderline"
+      ],
+      "assumptions": {
+        "dupixent": {
+          "ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "crswnp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "eoe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "pn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "csu": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "vaccines_flu": {
+          "flu": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "vaccines_peds": {
+          "beyfortus": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "pertussis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "polio_hib": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "sarclisa": {
+          "myeloma_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "altuviiio": {
+          "hema_alt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "tzield": {
+          "t1d_delay": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "rezurock": {
+          "cgvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "cablivi": {
+          "attp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "aubagio": {
+          "ms_aubagio": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "rare_genzyme": {
+          "gaucher": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "fabry": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "pompe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mps1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "asmd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "general_med": {
+          "insulin_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "tolebrutinib": {
+          "ms_tolb": {
+            "pos": 85,
+            "apr": 85,
+            "pen": 0.7
+          }
+        },
+        "amlitelimab": {
+          "ad_amli": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 0.75
+          }
+        },
+        "frexalimab": {
+          "ms_frex": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.6
+          }
+        },
+        "riliprubart": {
+          "cidp_rili": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 0.65
+          }
+        },
+        "itepekimab": {
+          "copd_ite": {
+            "pos": 75,
+            "apr": 78,
+            "pen": 0.65
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 5,
+        "commercialMult": 3.0,
+        "commercialRevM": 44000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "Dupixent reaches €20B+ + Genzyme stable + new pipeline launches deliver",
+      "events": [
+        "V Dupixent €20B+ peak across 7 indications",
+        "V CagriSema (no, that's Novo) -- Tolebrutinib EU launch + select markets",
+        "V Amlitelimab launches AD; ~$1.5B peak",
+        "V Riliprubart CIDP approved 2027; ~$1B peak",
+        "V Frexalimab MS positive",
+        "V Genzyme rare disease franchise stable +5%/yr",
+        "V Beyfortus expands geographic ramp"
+      ],
+      "assumptions": {
+        "dupixent": {
+          "ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "crswnp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "eoe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "pn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "csu": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "vaccines_flu": {
+          "flu": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "vaccines_peds": {
+          "beyfortus": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "pertussis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "polio_hib": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "sarclisa": {
+          "myeloma_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "altuviiio": {
+          "hema_alt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "tzield": {
+          "t1d_delay": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "rezurock": {
+          "cgvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "cablivi": {
+          "attp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "aubagio": {
+          "ms_aubagio": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "rare_genzyme": {
+          "gaucher": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "fabry": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "pompe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "mps1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "asmd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "general_med": {
+          "insulin_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "tolebrutinib": {
+          "ms_tolb": {
+            "pos": 95,
+            "apr": 92,
+            "pen": 0.95
+          }
+        },
+        "amlitelimab": {
+          "ad_amli": {
+            "pos": 98,
+            "apr": 95,
+            "pen": 0.95
+          }
+        },
+        "frexalimab": {
+          "ms_frex": {
+            "pos": 75,
+            "apr": 75,
+            "pen": 0.85
+          }
+        },
+        "riliprubart": {
+          "cidp_rili": {
+            "pos": 80,
+            "apr": 78,
+            "pen": 0.85
+          }
+        },
+        "itepekimab": {
+          "copd_ite": {
+            "pos": 90,
+            "apr": 88,
+            "pen": 0.85
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 6,
+        "commercialMult": 4.5,
+        "commercialRevM": 50000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "Dupixent €25B+ + multiple pipeline wins + Genzyme growth + China rebounds",
+      "events": [
+        "V Dupixent reaches €25B+ across 8+ indications",
+        "V Amlitelimab + Riliprubart launch successfully",
+        "V Tolebrutinib expands US (regulatory resubmission)",
+        "V Frexalimab MS class-leading data",
+        "V Itepekimab COPD broader label",
+        "V LSD franchise grows with Pompe + ASMD"
+      ],
+      "assumptions": {
+        "dupixent": {
+          "ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "crswnp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "eoe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "pn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          },
+          "csu": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "vaccines_flu": {
+          "flu": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "vaccines_peds": {
+          "beyfortus": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          },
+          "pertussis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "polio_hib": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "sarclisa": {
+          "myeloma_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          }
+        },
+        "altuviiio": {
+          "hema_alt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "tzield": {
+          "t1d_delay": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "rezurock": {
+          "cgvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "cablivi": {
+          "attp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "aubagio": {
+          "ms_aubagio": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "rare_genzyme": {
+          "gaucher": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "fabry": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "pompe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "mps1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "asmd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "general_med": {
+          "insulin_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "tolebrutinib": {
+          "ms_tolb": {
+            "pos": 99,
+            "apr": 96,
+            "pen": 1.15
+          }
+        },
+        "amlitelimab": {
+          "ad_amli": {
+            "pos": 99,
+            "apr": 97,
+            "pen": 1.1
+          }
+        },
+        "frexalimab": {
+          "ms_frex": {
+            "pos": 88,
+            "apr": 88,
+            "pen": 1.0
+          }
+        },
+        "riliprubart": {
+          "cidp_rili": {
+            "pos": 92,
+            "apr": 90,
+            "pen": 1.0
+          }
+        },
+        "itepekimab": {
+          "copd_ite": {
+            "pos": 98,
+            "apr": 95,
+            "pen": 1.05
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 7,
+        "commercialMult": 6.5,
+        "commercialRevM": 58000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Dupixent €30B+ multi-indication monster + tolebrutinib MS class leader + transformative pipeline",
+      "events": [
+        "V Dupixent reaches €30B+ as adult+peds expansion accelerates",
+        "V Tolebrutinib MS class-leading $5B+ post-FDA reset",
+        "V Frexalimab + amlitelimab combined autoimmune franchise $5B+",
+        "V Genzyme franchise grows on Nexviazyme + Xenpozyme expansion",
+        "V Multiple expansion to peak premium pharma multiples"
+      ],
+      "assumptions": {
+        "dupixent": {
+          "ad": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "crswnp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "eoe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "pn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.45
+          },
+          "csu": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "vaccines_flu": {
+          "flu": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "vaccines_peds": {
+          "beyfortus": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.55
+          },
+          "pertussis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "polio_hib": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          }
+        },
+        "sarclisa": {
+          "myeloma_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.55
+          }
+        },
+        "altuviiio": {
+          "hema_alt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "tzield": {
+          "t1d_delay": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "rezurock": {
+          "cgvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "cablivi": {
+          "attp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "aubagio": {
+          "ms_aubagio": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "rare_genzyme": {
+          "gaucher": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "fabry": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "pompe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "mps1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "asmd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "general_med": {
+          "insulin_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "tolebrutinib": {
+          "ms_tolb": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.4
+          }
+        },
+        "amlitelimab": {
+          "ad_amli": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.3
+          }
+        },
+        "frexalimab": {
+          "ms_frex": {
+            "pos": 96,
+            "apr": 95,
+            "pen": 1.2
+          }
+        },
+        "riliprubart": {
+          "cidp_rili": {
+            "pos": 98,
+            "apr": 96,
+            "pen": 1.2
+          }
+        },
+        "itepekimab": {
+          "copd_ite": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.3
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 9,
+        "commercialMult": 9.5,
+        "commercialRevM": 72000,
+        "milestones": 0,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Jan 29, 2026 (FY2025) + Apr 23, 2026 (Q1 2026)",
+      "title": "FY2025 €43.6B (+10% CER); Dupixent €15.7B; 2026 Q1 +13.6% CER",
+      "points": [
+        "FY2025 revenue €43.6B (+10% CER); Business EPS +15% CER",
+        "Dupixent €15.7B (+25%) -- 30%+ of revenue, growing across 7 indications",
+        "Q1 2026: sales +13.6% CER, Business EPS €1.88 (+14% CER)",
+        "Beyfortus €1.78B (+9.5%) RSV peds w/ AZ 50/50",
+        "Vaccines €3.4B Q3 (-7.8%) -- flu pricing pressure",
+        "Genzyme rare disease ~$3B FY",
+        "Tolebrutinib EU CHMP positive Apr 24 2026 (Cenrifki SPMS); FDA CRL US",
+        "Amlitelimab COAST 1+2+SHORE Ph3 positive AD",
+        "Itepekimab AERIFY-1 hit / AERIFY-2 missed COPD",
+        "Riliprubart Ph3 MOBILIZE+VITALIZE CIDP ongoing",
+        "Opella divestment closed Apr 30 2025 (€10.7B net proceeds)",
+        "€5B buyback ~82% complete by Sep 2025",
+        "2026 guide: high single-digit sales growth, EPS slightly faster"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "H1 2026",
+      "title": "Tolebrutinib EU launch + amlitelimab AQUA/ESTUARY readouts + frexalimab MS Ph3",
+      "thresholds": [
+        "Apr 2026: Tolebrutinib EU CHMP positive Cenrifki -- approval imminent",
+        "H1-H2 2026: Amlitelimab AQUA + ESTUARY Ph3 readouts (AD)",
+        "2026: Frexalimab FREXALT (relapsing MS) + FREVIVA (nrSPMS) Ph3 readouts",
+        "2026-27: Riliprubart MOBILIZE + VITALIZE CIDP Ph3 readouts",
+        "2026: Beyfortus second RSV season + label expansion",
+        "2026-27: Dupixent additional label expansions (CSU growth, BP, others)",
+        "2027: Sarclisa 1L MM expansion"
+      ]
+    },
+    "risks": [
+      "Dupixent dependency: >30% of revenue, but composition patent into early 2030s -- biggest moat. Risk: cannibalization by next-gen IL-13 (Lilly lebrikizumab), JAK (Rinvoq, Cibinqo)",
+      "Tolebrutinib US FDA CRL on nrSPMS NDA -- requires regulatory reset; PERSEUS PPMS missed",
+      "Vaccine pricing pressure (German tender flu 2025; US flu vaccination softness)",
+      "Genzyme rare disease biosimilar pressure (Cerezyme/Fabrazyme older entries)",
+      "Aubagio MS LOE 2023 ongoing decline (-45% YoY)",
+      "Amlitelimab efficacy 'meaningfully inferior to Dupixent' per Leerink -- adoption concern",
+      "Itepekimab AERIFY-2 miss limits COPD launch trajectory",
+      "Beyfortus competition (Merck Enflonsia Jun 2025 launched RSV peds)",
+      "Multiple alliance economics: Dupixent (REGN 50/50), Beyfortus (AZ 50/50), Itepekimab (REGN 50/50), ALTUVIIIO (Sobi)",
+      "China growth dependency post anti-corruption normalization"
+    ]
+  },
+  "catalysts": [
+    {
+      "date": "May 2026",
+      "dateSort": "2026-05-15",
+      "asset": "tolebrutinib",
+      "indication": "ms_tolb",
+      "title": "Tolebrutinib EU approval (Cenrifki, SPMS without relapses)",
+      "type": "ema_approval",
+      "binary": true,
+      "fail_pos": 90,
+      "fail_apr": 70,
+      "success_pos": 96,
+      "success_apr": 95,
+      "_confidence": "high",
+      "_rationale": "CHMP positive opinion Apr 24 2026; EC formal approval typically 2-3 months."
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "amlitelimab",
+      "indication": "ad_amli",
+      "title": "Amlitelimab AQUA + ESTUARY Ph3 final readouts (AD)",
+      "type": "phase3_data",
+      "binary": false,
+      "fail_pos": 70,
+      "fail_apr": 75,
+      "success_pos": 95,
+      "success_apr": 92,
+      "_confidence": "high",
+      "_rationale": "OCEANA program COAST 1+2+SHORE positive; AQUA + ESTUARY through 2026 per Sanofi."
+    },
+    {
+      "date": "2026",
+      "dateSort": "2026-12-31",
+      "asset": "frexalimab",
+      "indication": "ms_frex",
+      "title": "Frexalimab FREXALT + FREVIVA Ph3 readouts (MS)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 0,
+      "fail_apr": 0,
+      "success_pos": 88,
+      "success_apr": 86,
+      "_confidence": "medium",
+      "_rationale": "Ph3 enrolling per Sanofi pipeline; readouts 2026-27."
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-09-30",
+      "asset": "riliprubart",
+      "indication": "cidp_rili",
+      "title": "Riliprubart MOBILIZE + VITALIZE Ph3 (CIDP)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 0,
+      "fail_apr": 0,
+      "success_pos": 88,
+      "success_apr": 86,
+      "_confidence": "medium",
+      "_rationale": "MOBILIZE refractory + VITALIZE IVIg-residual Ph3 ongoing; 2026-27 readouts."
+    }
+  ]
+}

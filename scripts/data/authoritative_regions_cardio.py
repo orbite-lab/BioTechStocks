@@ -322,6 +322,57 @@ REGIONS = {
         "eu":  {"patientsK": 100, "wtpPct": 50, "priceK": 20},
         "row": {"patientsK": 400, "wtpPct": 15, "priceK": 10},
     },
+
+    # ==================== LYSOSOMAL STORAGE DISEASES (LSDs) ====================
+    # Genzyme legacy franchise; enzyme replacement therapy class. Sanofi dominant
+    # post-Bioverativ; Takeda + BioMarin compete in some indications.
+
+    # Gaucher disease (glucocerebrosidase deficiency, GBA): ~6K US (Type 1 most
+    # common), ~12K EU, ~30K ROW (high in Ashkenazi Jewish ancestry). Class:
+    # Cerezyme (imiglucerase ERT, Sanofi $700M), Cerdelga (eliglustat oral SRT,
+    # Sanofi), VPRIV (velaglucerase, Takeda), Elelyso (taliglucerase, Pfizer
+    # generic). Class peak ~$1.5B globally; biosimilar pressure on ERT.
+    # source: NORD Gaucher; Sanofi Genzyme + Takeda 10-Ks.
+    "endocrine.lysosomal_storage.gaucher": {
+        "us":  {"patientsK": 6,   "wtpPct": 85, "priceK": 250},
+        "eu":  {"patientsK": 12,  "wtpPct": 75, "priceK": 165},
+        "row": {"patientsK": 30,  "wtpPct": 20, "priceK": 70},
+    },
+    # Fabry disease (alpha-galactosidase A deficiency, GLA): ~5K US,
+    # ~8K EU, ~25K ROW. Class: Fabrazyme (agalsidase beta, Sanofi $600M),
+    # Replagal (agalsidase alfa, Takeda; not US), Galafold (migalastat oral
+    # chaperone, Amicus). Class peak ~$1.5B globally.
+    "endocrine.lysosomal_storage.fabry": {
+        "us":  {"patientsK": 5,   "wtpPct": 85, "priceK": 350},
+        "eu":  {"patientsK": 8,   "wtpPct": 75, "priceK": 230},
+        "row": {"patientsK": 25,  "wtpPct": 18, "priceK": 90},
+    },
+    # Pompe disease (acid alpha-glucosidase deficiency, GAA): ~3.5K US (IOPD +
+    # LOPD), ~5K EU, ~15K ROW. Class: Myozyme/Lumizyme (alglucosidase alfa
+    # legacy, Sanofi), Nexviazyme/Nexviadyme (avalglucosidase alfa next-gen,
+    # Sanofi $600M growing), Pombiliti+Opfolda (Amicus next-gen). Class peak
+    # ~$1.5B with Nexviazyme growth.
+    "endocrine.lysosomal_storage.pompe": {
+        "us":  {"patientsK": 3.5, "wtpPct": 90, "priceK": 600},
+        "eu":  {"patientsK": 5,   "wtpPct": 80, "priceK": 400},
+        "row": {"patientsK": 15,  "wtpPct": 22, "priceK": 150},
+    },
+    # MPS I (Hurler/Scheie syndrome, IDUA deficiency): ~1.5K US, ~2K EU,
+    # ~8K ROW. Class: Aldurazyme (laronidase, Sanofi/BioMarin co-promote
+    # ~$300M), HSCT for severe pediatric. Class peak ~$500M.
+    "endocrine.lysosomal_storage.mps1": {
+        "us":  {"patientsK": 1.5, "wtpPct": 85, "priceK": 400},
+        "eu":  {"patientsK": 2,   "wtpPct": 75, "priceK": 270},
+        "row": {"patientsK": 8,   "wtpPct": 18, "priceK": 100},
+    },
+    # ASMD (acid sphingomyelinase deficiency, formerly Niemann-Pick A/B):
+    # ultra-rare. ~1K US, ~1.5K EU, ~5K ROW. Class: Xenpozyme (olipudase alfa,
+    # Sanofi only approved ERT). Class peak ~$300M.
+    "endocrine.lysosomal_storage.asmd": {
+        "us":  {"patientsK": 1,   "wtpPct": 90, "priceK": 600},
+        "eu":  {"patientsK": 1.5, "wtpPct": 80, "priceK": 400},
+        "row": {"patientsK": 5,   "wtpPct": 18, "priceK": 150},
+    },
 }
 
 PEN_PCT = {
@@ -338,6 +389,11 @@ PEN_PCT = {
     "cardio_metabolic.hypertension.resistant": 18,
     "cardio_metabolic.lipids.statin_generic": 10,
     "endocrine.calcium.hypophosphatasia": 60,
+    "endocrine.lysosomal_storage.gaucher": 60,
+    "endocrine.lysosomal_storage.fabry": 55,
+    "endocrine.lysosomal_storage.pompe": 55,
+    "endocrine.lysosomal_storage.mps1": 50,
+    "endocrine.lysosomal_storage.asmd": 50,
     "cardio_metabolic.lipids.ldl_cv_risk": 6,
     "cardio_metabolic.lipids.lpa": 3,
     "cardio_metabolic.lipids.triglycerides": 25,

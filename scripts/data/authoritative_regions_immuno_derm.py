@@ -107,6 +107,17 @@ REGIONS = {
         "eu":  {"patientsK": 130, "wtpPct": 48, "priceK": 150},
         "row": {"patientsK": 800, "wtpPct": 12, "priceK": 25},
     },
+    # CIDP (chronic inflammatory demyelinating polyneuropathy): rare autoimmune
+    # peripheral neuropathy. ~30K US diagnosed, ~50K EU, ~150K ROW. Class:
+    # Vyvgart Hytrulo (Argenx efgartigimod, FDA approved 2024 ~$700M ramping),
+    # IVIg/SCIg standard-of-care historic, Riliprubart (Sanofi anti-C1s Ph3
+    # MOBILIZE+VITALIZE), CSL Behring Hizentra. Class peak ~$3-4B globally
+    # with Vyvgart class adoption. source: GBS/CIDP Foundation; Argenx 10-K.
+    "immunology.neuromuscular_autoimmune.cidp": {
+        "us":  {"patientsK": 30,  "wtpPct": 70, "priceK": 200},
+        "eu":  {"patientsK": 50,  "wtpPct": 50, "priceK": 130},
+        "row": {"patientsK": 150, "wtpPct": 12, "priceK": 35},
+    },
     # source: SPS prevalence ~1 per 1M (NORD, Stiff Person Syndrome Foundation)
     # = ~330 US diagnosed; broader "treatable" pool (off-label IVIG/benzo
     # responders) ~1-2K. EU5 ~1.5K. No approved therapy specifically for SPS;
@@ -239,6 +250,16 @@ REGIONS = {
         "eu":  {"patientsK": 180,  "wtpPct": 35, "priceK": 20},
         "row": {"patientsK": 800,  "wtpPct": 5,  "priceK": 4},
     },
+    # CSU (chronic spontaneous urticaria): chronic itchy hives >=6 weeks despite
+    # H1-antihistamine. ~1.5M US, ~2M EU, ~10M ROW. Class: Xolair (omalizumab,
+    # Roche $4B all indications), Dupixent (FDA approved CSU 2025 expansion),
+    # ligelizumab (Novartis, dropped 2024), KalVista bradykinin pipeline.
+    # Class peak ~$3-4B with Dupixent + Xolair share.
+    "dermatology.inflammatory_derm.csu": {
+        "us":  {"patientsK": 1500, "wtpPct": 28, "priceK": 35},
+        "eu":  {"patientsK": 2000, "wtpPct": 18, "priceK": 20},
+        "row": {"patientsK": 10000, "wtpPct": 5, "priceK": 4},
+    },
     # source: Lee 2022 cGVHD prevalence ~14K incident/yr post-allo-SCT US;
     # actively-treated active disease ~30K prevalent. Imbruvica + Jakafi + ECP.
     "immunology.transplant.cgvhd": {
@@ -262,6 +283,7 @@ PEN_PCT = {
     "immunology.neuromuscular_autoimmune.itp": 35,
     "immunology.neuromuscular_autoimmune.mmn": 65,
     "immunology.neuromuscular_autoimmune.myasthenia_gravis": 40,
+    "immunology.neuromuscular_autoimmune.cidp": 35,
     "immunology.neuromuscular_autoimmune.sps": 30,
     "immunology.demyelinating.multiple_sclerosis": 25,
     "dermatology.aesthetics.filler": 5,
@@ -277,5 +299,6 @@ PEN_PCT = {
     "dermatology.rare_skin.vitiligo": 15,
     "immunology.inflammatory_gi.eoe": 30,
     "dermatology.inflammatory_derm.prurigo_nodularis": 30,
+    "dermatology.inflammatory_derm.csu": 18,
     "immunology.transplant.cgvhd": 35,
 }

@@ -145,6 +145,35 @@ REGIONS = {
         "eu":  {"patientsK": 200000, "wtpPct": 45, "priceK": 0.15},
         "row": {"patientsK": 800000, "wtpPct": 15, "priceK": 0.05},
     },
+    # Influenza vaccines: Sanofi #1 globally (Fluzone HD, Flublok recombinant,
+    # Vaxigrip, Quadrivalent), GSK Fluarix, CSL Seqirus Afluria/Flucelvax,
+    # Moderna mRNA-1010 in Ph3. US ~150M doses/yr (~50% adult coverage),
+    # EU ~250M, ROW ~600M. Class peak ~$8-10B globally; pricing pressure
+    # 2024-25 (German tender, US Medicare/commercial mix). Sanofi flu franchise
+    # ~$3.5B 2025. source: CDC FluVaxView; WHO; Sanofi/GSK 10-Ks.
+    "infectious_disease.vaccines.influenza": {
+        "us":  {"patientsK": 150000,  "wtpPct": 35, "priceK": 0.05},
+        "eu":  {"patientsK": 250000,  "wtpPct": 25, "priceK": 0.03},
+        "row": {"patientsK": 600000,  "wtpPct": 12, "priceK": 0.012},
+    },
+    # Pertussis (whooping cough) booster + DTaP/Tdap: Adacel (Sanofi),
+    # Boostrix (GSK), Daptacel/Pediarix (peds). US ~3.7M birth cohort routine
+    # + ~10M adult Tdap booster annually; EU 4M peds + 12M adult; ROW 100M
+    # peds. Class ~$1B globally. WHO EPI growing.
+    "infectious_disease.vaccines.pertussis": {
+        "us":  {"patientsK": 14000,   "wtpPct": 50, "priceK": 0.06},
+        "eu":  {"patientsK": 18000,   "wtpPct": 38, "priceK": 0.04},
+        "row": {"patientsK": 110000,  "wtpPct": 12, "priceK": 0.015},
+    },
+    # IPV (inactivated polio) + Hib (Haemophilus influenzae b) peds vaccines:
+    # Sanofi IPV + Hib portfolio (Pentacel, IPOL, ActHIB), GSK Pediarix.
+    # US 3.7M birth cohort routine; EU 4M; ROW 120M (WHO EPI). Class ~$2B
+    # globally, mature.
+    "infectious_disease.vaccines.polio_hib": {
+        "us":  {"patientsK": 3700,    "wtpPct": 75, "priceK": 0.18},
+        "eu":  {"patientsK": 4000,    "wtpPct": 60, "priceK": 0.12},
+        "row": {"patientsK": 120000,  "wtpPct": 18, "priceK": 0.03},
+    },
     # COVID mRNA vaccine: Comirnaty (Pfizer/BNT) + Spikevax (Moderna). Routine
     # 2024+ became seasonal annual booster (FDA + CDC ACIP recommendation,
     # adult >=65 + at-risk). Demand normalized post-pandemic: 2024-25 season
@@ -463,6 +492,9 @@ PEN_PCT = {
     "infectious_disease.vaccines.covid": 8,
     "infectious_disease.anti_infective.covid_treatment": 12,
     "infectious_disease.vaccines.rsv_adult": 25,
+    "infectious_disease.vaccines.influenza": 38,
+    "infectious_disease.vaccines.pertussis": 45,
+    "infectious_disease.vaccines.polio_hib": 75,
     "ophthalmology.anterior_neuro.deb_ocular": 25,
     "ophthalmology.anterior_neuro.dry_eye": 15,
     "ophthalmology.anterior_neuro.naion": 15,

@@ -586,6 +586,49 @@ REGIONS = {
         "eu":  {"patientsK": 800,  "wtpPct": 50, "priceK": 5},
         "row": {"patientsK": 3000, "wtpPct": 12, "priceK": 1.5},
     },
+    # Acute moderate-to-severe pain (post-surgical, dental, traumatic):
+    # ~80M US procedures/yr generating moderate-to-severe acute pain
+    # episodes; ~70M EU; ~300M ROW. Standard care: opioids (oxycodone,
+    # hydrocodone -- addiction crisis driving non-opioid alternatives) +
+    # NSAIDs (Toradol, ibuprofen) + acetaminophen. Branded class: Journavx
+    # (Vertex suzetrigine NaV1.8, FDA Jan 2025 first non-opioid in 25 yrs)
+    # ~$60M ramp 2025; emerging NaV1.8 class (Latigo LTG-001, SiteOne SOS).
+    # Net branded ~$1.5K/episode (4-week course).
+    "cns.pain.acute": {
+        "us":  {"patientsK": 80000,  "wtpPct": 60, "priceK": 1.5},
+        "eu":  {"patientsK": 70000,  "wtpPct": 45, "priceK": 0.9},
+        "row": {"patientsK": 300000, "wtpPct": 12, "priceK": 0.3},
+    },
+    # ADPKD (autosomal dominant polycystic kidney disease): ~140K US, 200K
+    # EU5, ~1M ROW prevalent on tx. Branded class: Jynarque (Otsuka
+    # tolvaptan V2 antagonist ~$1.5B, hepatotoxicity REMS), VX-407 (Vertex
+    # PC1 modulator Ph2). Net branded ~$50K/yr.
+    "nephrology.glomerular.adpkd": {
+        "us":  {"patientsK": 140,   "wtpPct": 50, "priceK": 50},
+        "eu":  {"patientsK": 200,   "wtpPct": 35, "priceK": 30},
+        "row": {"patientsK": 1000,  "wtpPct": 10, "priceK": 10},
+    },
+    # APOL1-mediated kidney disease (AMKD): proteinuric CKD in APOL1 G1/G2
+    # high-risk genotype carriers (~13% of Black Americans, ~1.5M US).
+    # Includes FSGS + collapsing glomerulopathy + HIV-associated nephropathy
+    # phenotypes. Branded class emerging: inaxaplin (Vertex VX-147 first-
+    # in-class APOL1 inhibitor, AMPLITUDE Ph2/3). Net branded peak ~$60K/yr.
+    "nephrology.glomerular.amkd": {
+        "us":  {"patientsK": 100,   "wtpPct": 55, "priceK": 60},
+        "eu":  {"patientsK": 50,    "wtpPct": 38, "priceK": 35},
+        "row": {"patientsK": 800,   "wtpPct": 12, "priceK": 12},
+    },
+    # Friedreich's ataxia (FA): rare autosomal recessive frataxin (FXN)
+    # deficiency; progressive ataxia + cardiomyopathy. ~5K US, ~7K EU5,
+    # ~25K ROW prevalent. Class: Skyclarys (Vertex/Reata omaveloxolone
+    # Nrf2 activator ~$165M, FDA approval Feb 2023; only approved drug),
+    # gene therapy + RNA pipeline (Lexeo LX2006, ELONA). Net branded
+    # ~$370K/yr orphan-priced.
+    "cns.neurodegeneration.friedreich": {
+        "us":  {"patientsK": 5,    "wtpPct": 80, "priceK": 370},
+        "eu":  {"patientsK": 7,    "wtpPct": 60, "priceK": 230},
+        "row": {"patientsK": 25,   "wtpPct": 18, "priceK": 80},
+    },
 }
 
 PEN_PCT = {
@@ -653,4 +696,8 @@ PEN_PCT = {
     "oncology.supportive_care.bone_metastases": 35,
     "oncology.hematology.b_all": 70,
     "oncology.supportive_care.neutropenia": 50,
+    "cns.pain.acute": 30,
+    "nephrology.glomerular.adpkd": 28,
+    "nephrology.glomerular.amkd": 25,
+    "cns.neurodegeneration.friedreich": 50,
 }

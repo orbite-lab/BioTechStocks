@@ -459,15 +459,15 @@
         {
           "id": "acute_pain",
           "name": "Moderate-to-severe acute pain (post-op, dental, traumatic)",
-          "area": "cns.pain.migraine",
+          "area": "cns.pain.acute",
           "market": {
             "tamB": 8,
-            "penPct": 35,
+            "penPct": 30,
             "salesM": 60,
             "salesYear": 2025,
             "peakYear": 2031,
             "cagrPct": 100,
-            "notes": "First-in-class peripheral NaV1.8 inhibitor for acute pain (FDA approved Jan 2025). Differentiated from opioids (no addiction/respiratory depression) and NSAIDs (selective sodium channel). Tagged migraine as proxy (no dedicated acute pain leaf). Chronic pain (DPN, lumbosacral radiculopathy) Ph3 ongoing.",
+            "notes": "First-in-class peripheral NaV1.8 inhibitor for acute pain (FDA approved Jan 2025). Differentiated from opioids (no addiction/respiratory depression) and NSAIDs (selective sodium channel). Correctly tagged cns.pain.acute (new authoritative area). Chronic pain (DPN, lumbosacral radiculopathy) Ph3 ongoing.",
             "company_slice": {
               "us": {
                 "reachPct": 1.9,
@@ -516,19 +516,19 @@
             },
             "regions": {
               "us": {
-                "patientsK": 4000,
-                "wtpPct": 30,
-                "priceK": 3
-              },
-              "eu": {
-                "patientsK": 6000,
-                "wtpPct": 18,
+                "patientsK": 80000,
+                "wtpPct": 60,
                 "priceK": 1.5
               },
+              "eu": {
+                "patientsK": 70000,
+                "wtpPct": 45,
+                "priceK": 0.9
+              },
               "row": {
-                "patientsK": 50000,
-                "wtpPct": 5,
-                "priceK": 0.4
+                "patientsK": 300000,
+                "wtpPct": 12,
+                "priceK": 0.3
               }
             }
           }
@@ -715,7 +715,7 @@
         {
           "id": "amkd",
           "name": "APOL1-mediated kidney disease (high-risk genotype G1/G2)",
-          "area": "immunology.autoimmune.fsgs",
+          "area": "nephrology.glomerular.amkd",
           "market": {
             "tamB": 8,
             "penPct": 25,
@@ -723,7 +723,7 @@
             "salesYear": 2025,
             "peakYear": 2031,
             "cagrPct": 80,
-            "notes": "First-in-class APOL1 inhibitor. AMPLITUDE Ph2/3 adaptive. Targets ~13% of Black Americans (G1/G2 carriers); proteinuric kidney disease subset. Phase 2a -47.6% UPCR reduction (NEJM 2023). Tagged FSGS as proxy.",
+            "notes": "First-in-class APOL1 inhibitor. AMPLITUDE Ph2/3 adaptive. Targets ~13% of Black Americans (G1/G2 carriers); proteinuric kidney disease (FSGS + collapsing glomerulopathy + HIV-associated nephropathy phenotypes). Phase 2a -47.6% UPCR reduction (NEJM 2023).",
             "company_slice": {
               "us": {
                 "reachPct": 4,
@@ -772,19 +772,19 @@
             },
             "regions": {
               "us": {
-                "patientsK": 40,
-                "wtpPct": 45,
-                "priceK": 90
+                "patientsK": 100,
+                "wtpPct": 55,
+                "priceK": 60
               },
               "eu": {
-                "patientsK": 45,
-                "wtpPct": 30,
-                "priceK": 45
+                "patientsK": 50,
+                "wtpPct": 38,
+                "priceK": 35
               },
               "row": {
-                "patientsK": 200,
-                "wtpPct": 8,
-                "priceK": 8
+                "patientsK": 800,
+                "wtpPct": 12,
+                "priceK": 12
               }
             }
           }
@@ -893,15 +893,15 @@
         {
           "id": "adpkd",
           "name": "Autosomal dominant polycystic kidney disease",
-          "area": "cardio_metabolic.liver.pld_adpkd",
+          "area": "nephrology.glomerular.adpkd",
           "market": {
             "tamB": 8,
-            "penPct": 15,
+            "penPct": 28,
             "salesM": 0,
             "salesYear": 2025,
             "peakYear": 2032,
             "cagrPct": 80,
-            "notes": "Small-molecule PC1 modulator addressing root cause of ADPKD. Class peer: Jynarque (Otsuka tolvaptan, V2 antagonist, has hepatotoxicity issues).",
+            "notes": "Small-molecule PC1 modulator addressing root cause of ADPKD (kidney pathology dominant). Class peer: Jynarque (Otsuka tolvaptan V2 antagonist, hepatotoxicity REMS).",
             "company_slice": {
               "us": {
                 "reachPct": 8,
@@ -950,19 +950,110 @@
             },
             "regions": {
               "us": {
-                "patientsK": 20,
-                "wtpPct": 65,
-                "priceK": 13
+                "patientsK": 140,
+                "wtpPct": 50,
+                "priceK": 50
               },
               "eu": {
-                "patientsK": 25,
-                "wtpPct": 55,
-                "priceK": 7
+                "patientsK": 200,
+                "wtpPct": 35,
+                "priceK": 30
               },
               "row": {
-                "patientsK": 30,
-                "wtpPct": 25,
-                "priceK": 4
+                "patientsK": 1000,
+                "wtpPct": 10,
+                "priceK": 10
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "skyclarys",
+      "name": "Skyclarys (omaveloxolone) — Nrf2 activator (Friedreich ataxia, ex-Reata $7.2B 2023)",
+      "stage": "Commercial (~$165M 2025; first & only Friedreich ataxia drug)",
+      "designations": [
+        "Orphan"
+      ],
+      "modality": "small_molecule.nuclear_receptor.nrf2_activator",
+      "targets": [
+        "NFE2L2"
+      ],
+      "indications": [
+        {
+          "id": "fa",
+          "name": "Friedreich ataxia (16+ years)",
+          "area": "cns.neurodegeneration.friedreich",
+          "market": {
+            "tamB": 2,
+            "penPct": 50,
+            "salesM": 165,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "cagrPct": 18,
+            "notes": "Nrf2 activator (anti-oxidative stress). Approved Feb 2023 for FA (16+ years; expanded to peds 2024). Reata $7.2B Aug 2023 acq. Class peers: gene therapy (Lexeo LX2006, ELONA) + RNA pipeline emerging.",
+            "company_slice": {
+              "us": {
+                "reachPct": 35,
+                "wtpPct": 80,
+                "priceK": 370
+              },
+              "eu": {
+                "reachPct": 22,
+                "wtpPct": 60,
+                "priceK": 230
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 18,
+                "priceK": 80
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Skyclarys FA dominant (only approved drug)"
+              },
+              "us.wtpPct": {
+                "note": "Skyclarys FA dominant (only approved drug)"
+              },
+              "us.priceK": {
+                "note": "Skyclarys FA dominant (only approved drug)"
+              },
+              "eu.reachPct": {
+                "note": "Skyclarys FA dominant (only approved drug)"
+              },
+              "eu.wtpPct": {
+                "note": "Skyclarys FA dominant (only approved drug)"
+              },
+              "eu.priceK": {
+                "note": "Skyclarys FA dominant (only approved drug)"
+              },
+              "row.reachPct": {
+                "note": "Skyclarys FA dominant (only approved drug)"
+              },
+              "row.wtpPct": {
+                "note": "Skyclarys FA dominant (only approved drug)"
+              },
+              "row.priceK": {
+                "note": "Skyclarys FA dominant (only approved drug)"
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 5,
+                "wtpPct": 80,
+                "priceK": 370
+              },
+              "eu": {
+                "patientsK": 7,
+                "wtpPct": 60,
+                "priceK": 230
+              },
+              "row": {
+                "patientsK": 25,
+                "wtpPct": 18,
+                "priceK": 80
               }
             }
           }
@@ -1087,6 +1178,13 @@
             "apr": 100,
             "pen": 0.4
           }
+        },
+        "skyclarys": {
+          "fa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
         }
       },
       "val": {
@@ -1186,6 +1284,13 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.55
+          }
+        },
+        "skyclarys": {
+          "fa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
           }
         }
       },
@@ -1289,6 +1394,13 @@
             "apr": 100,
             "pen": 0.7
           }
+        },
+        "skyclarys": {
+          "fa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
         }
       },
       "val": {
@@ -1390,6 +1502,13 @@
             "apr": 100,
             "pen": 0.85
           }
+        },
+        "skyclarys": {
+          "fa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
         }
       },
       "val": {
@@ -1488,6 +1607,13 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.0
+          }
+        },
+        "skyclarys": {
+          "fa": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
           }
         }
       },

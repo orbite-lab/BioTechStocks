@@ -2245,7 +2245,7 @@ async function main(){
       // Stage 1: time window + valid + unresolved (this defines the "universe" the sliders see)
       const timeFiltered=catZoom>=9999
         ?allCatsRaw.filter(c=>c.daysOut>0&&!c.resolved)
-        :allCatsRaw.filter(c=>c.daysOut<=catZoom&&c.daysOut>0&&!c.resolved);
+        :allCatsRaw.filter(c=>c.daysOut<=catZoom&&c.daysOut>0&&!c.resolved&&!c._resolvedAt);
       // Compute ER bounds from time-filtered set so the slider range is stable
       // as you move the materiality slider
       const erValues=timeFiltered.map(c=>c.expectedReturn).filter(v=>typeof v==='number');
@@ -2270,11 +2270,12 @@ async function main(){
       const overlapSet=new Set();
       for(const c of allCatsRaw){
         if(!c.options||!c.options.impliedMove)continue;
-        if(c.resolved||c.daysOut<=0)continue;
+        if(c.resolved||c._resolvedAt||c.daysOut<=0)continue;
         const hasNeighbor=allCatsRaw.some(other=>
           other!==c
           &&other.ticker===c.ticker
           &&!other.resolved
+          &&!other._resolvedAt
           &&other.daysOut>0
           &&Math.abs(other.daysOut-c.daysOut)<=OVERLAP_WINDOW_DAYS
         );

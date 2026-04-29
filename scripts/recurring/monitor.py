@@ -215,6 +215,19 @@ def deep_analyze(item, ticker, config):
 
 Be conservative — typical changes: 5-15pts for PoS/approval, 1-3pts for DR, 0.1-0.3 for pen mult.
 
+CATALYST RESOLUTION
+If the news clearly resolves an existing catalyst (e.g. Phase 3 readout reported, PDUFA decision, BLA accepted), you MUST also include path edits that update that catalyst:
+
+  catalysts.<index>.dateSort       → ISO date the event actually occurred
+  catalysts.<index>.date           → human-readable label, e.g. "Apr 27, 2026"
+  catalysts.<index>._resolvedAt    → today in ISO Z format
+  catalysts.<index>._outcome       → "success" | "fail" | "mixed"
+  catalysts.<index>._outcomeRationale → 1-line explanation
+  catalysts.<index>._outcomeSource    → URL of the press release
+  catalysts.<index>._outcomeConfidence → "high" | "medium" | "low"
+
+Find the matching catalyst index by scanning the config's catalysts[] for the one whose title best matches the news. Only emit these changes when confidence is HIGH (clear post-event press release + market reaction).
+
 Respond ONLY with JSON:
 {"news_summary": "one sentence", "source": "URL", "changes": [{"path": "scenarios.base.assumptions.asset_id.ind_id.pos", "old_value": 40, "new_value": 50, "reason": "why"}]}
 
@@ -222,6 +235,7 @@ Path rules:
 - scenarios.{bear|base|bull}.assumptions.{asset_id}.{ind_id}.{pos|apr|pen}
 - scenarios.{bear|base|bull}.val.{dr|pipelineDR|dil|mult|pipelineMult|commercialMult|commercialRevM|milestones|plat|exus}
 - scenarios.{bear|base|bull}.wt
+- catalysts.0.dateSort, catalysts.0._resolvedAt, catalysts.0._outcome (etc — see RESOLUTION above)
 - assets.0.indications.0.market.tamB (numeric indices for arrays)
 - company.currentPrice, company.cash""",
         messages=[{"role": "user", "content": f"Material news for {ticker} ({config['company']['name']}):\n{item['summary']}\nSource: {item.get('source', 'N/A')}\n\nConfig:\n{json.dumps(config, indent=2)}\n\nWhat changes?"}],

@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-29T08:47:34Z",
-    "target_count": 151,
-    "total_assets": 242,
-    "assets_with_targets": 237,
-    "multi_modality_count": 14,
-    "multi_disease_count": 53
+    "generated": "2026-04-29T08:59:23Z",
+    "target_count": 157,
+    "total_assets": 253,
+    "assets_with_targets": 248,
+    "multi_modality_count": 15,
+    "multi_disease_count": 56
   },
   "targets": {
     "ACVR1C": {
@@ -254,6 +254,52 @@
       "totalSOM": 3718.4,
       "totalSales": 800.0,
       "cagrPct": 0.0,
+      "peakYear": 2033
+    },
+    "AMYR": {
+      "companies": [
+        "NOVO"
+      ],
+      "modalities": [
+        "peptide.glp1.amycretin",
+        "peptide.glp1.cagrisema"
+      ],
+      "areas": [
+        "cardio_metabolic.diabetes.t2d",
+        "cardio_metabolic.obesity.general"
+      ],
+      "assets": [
+        {
+          "ticker": "NOVO",
+          "asset": "cagrisema",
+          "name": "CagriSema (cagrilintide + semaglutide) — obesity + T2D",
+          "modality": "peptide.glp1.cagrisema",
+          "areas": [
+            "cardio_metabolic.obesity.general"
+          ]
+        },
+        {
+          "ticker": "NOVO",
+          "asset": "amycretin",
+          "name": "Amycretin (subq + oral) — obesity + T2D",
+          "modality": "peptide.glp1.amycretin",
+          "areas": [
+            "cardio_metabolic.diabetes.t2d",
+            "cardio_metabolic.obesity.general"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "peptide"
+      ],
+      "totalTAM": 222550.0,
+      "totalSOM": 14567.0,
+      "totalSales": 0.0,
+      "cagrPct": 3.8,
       "peakYear": 2033
     },
     "ANGPTL3": {
@@ -2197,13 +2243,16 @@
     },
     "F10": {
       "companies": [
-        "4568"
+        "4568",
+        "NOVO"
       ],
       "modalities": [
+        "antibody.bispecific.fviiia_mimetic",
         "small_molecule.enzyme_inhibitor.factor_xa"
       ],
       "areas": [
-        "cardio_metabolic.thrombosis.anticoagulation"
+        "cardio_metabolic.thrombosis.anticoagulation",
+        "hematology.rare_blood.hemophilia_a"
       ],
       "assets": [
         {
@@ -2214,20 +2263,30 @@
           "areas": [
             "cardio_metabolic.thrombosis.anticoagulation"
           ]
+        },
+        {
+          "ticker": "NOVO",
+          "asset": "mim8",
+          "name": "Mim8 (denecimig) — FVIIIa-mimetic bispecific (hemophilia A)",
+          "modality": "antibody.bispecific.fviiia_mimetic",
+          "areas": [
+            "hematology.rare_blood.hemophilia_a"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
+      "areaCount": 2,
       "modalityClasses": [
+        "antibody",
         "small_molecule"
       ],
-      "totalTAM": 19650.0,
-      "totalSOM": 5920.8,
+      "totalTAM": 34350.0,
+      "totalSOM": 6870.9,
       "totalSales": 2000.0,
       "cagrPct": 0.0,
-      "peakYear": 2028
+      "peakYear": 2029
     },
     "F11": {
       "companies": [
@@ -2262,6 +2321,74 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2036
+    },
+    "F8": {
+      "companies": [
+        "NOVO"
+      ],
+      "modalities": [
+        "recombinant_protein.coagulation.factor_viii"
+      ],
+      "areas": [
+        "hematology.rare_blood.hemophilia_a"
+      ],
+      "assets": [
+        {
+          "ticker": "NOVO",
+          "asset": "hemophilia_legacy",
+          "name": "Rare blood (NovoSeven/Esperoct/Refixia/Concizumab)",
+          "modality": "recombinant_protein.coagulation.factor_viii",
+          "areas": [
+            "hematology.rare_blood.hemophilia_a"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 14700.0,
+      "totalSOM": 2552.2,
+      "totalSales": 1700.0,
+      "cagrPct": 0.0,
+      "peakYear": 2027
+    },
+    "F9": {
+      "companies": [
+        "NOVO"
+      ],
+      "modalities": [
+        "antibody.bispecific.fviiia_mimetic"
+      ],
+      "areas": [
+        "hematology.rare_blood.hemophilia_a"
+      ],
+      "assets": [
+        {
+          "ticker": "NOVO",
+          "asset": "mim8",
+          "name": "Mim8 (denecimig) — FVIIIa-mimetic bispecific (hemophilia A)",
+          "modality": "antibody.bispecific.fviiia_mimetic",
+          "areas": [
+            "hematology.rare_blood.hemophilia_a"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 14700.0,
+      "totalSOM": 950.1,
+      "totalSales": 0.0,
+      "cagrPct": 0.0,
+      "peakYear": 2032
     },
     "FCGRT": {
       "companies": [
@@ -2584,6 +2711,40 @@
       "cagrPct": 0.0,
       "peakYear": 2030
     },
+    "GHR": {
+      "companies": [
+        "NOVO"
+      ],
+      "modalities": [
+        "recombinant_protein.hormone.somatropin"
+      ],
+      "areas": [
+        "endocrine.pituitary.gh_deficiency"
+      ],
+      "assets": [
+        {
+          "ticker": "NOVO",
+          "asset": "gh",
+          "name": "Growth hormone (Norditropin + Sogroya)",
+          "modality": "recombinant_protein.hormone.somatropin",
+          "areas": [
+            "endocrine.pituitary.gh_deficiency"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 1563.0,
+      "totalSOM": 1289.3,
+      "totalSales": 860.0,
+      "cagrPct": 0.0,
+      "peakYear": 2030
+    },
     "GIPR": {
       "companies": [
         "LLY"
@@ -2631,15 +2792,21 @@
     "GLP1R": {
       "companies": [
         "CAMX",
-        "LLY"
+        "LLY",
+        "NOVO"
       ],
       "modalities": [
         "formulation_modifier.long_acting.fluidcrystal_incretin",
+        "peptide.glp1.amycretin",
+        "peptide.glp1.cagrisema",
+        "peptide.glp1.liraglutide",
+        "peptide.glp1.semaglutide",
         "peptide.incretin.glp1_gip",
         "peptide.incretin.glp1_gip_glucagon",
         "small_molecule.gpcr.glp1_oral_agonist"
       ],
       "areas": [
+        "cardio_metabolic.diabetes.t2d",
         "cardio_metabolic.obesity.general"
       ],
       "assets": [
@@ -2678,22 +2845,77 @@
           "areas": [
             "cardio_metabolic.obesity.general"
           ]
+        },
+        {
+          "ticker": "NOVO",
+          "asset": "wegovy",
+          "name": "Wegovy (semaglutide subq + oral) — obesity",
+          "modality": "peptide.glp1.semaglutide",
+          "areas": [
+            "cardio_metabolic.obesity.general"
+          ]
+        },
+        {
+          "ticker": "NOVO",
+          "asset": "ozempic",
+          "name": "Ozempic (semaglutide subq) — T2D",
+          "modality": "peptide.glp1.semaglutide",
+          "areas": [
+            "cardio_metabolic.diabetes.t2d"
+          ]
+        },
+        {
+          "ticker": "NOVO",
+          "asset": "rybelsus",
+          "name": "Rybelsus (oral semaglutide) — T2D",
+          "modality": "peptide.glp1.semaglutide",
+          "areas": [
+            "cardio_metabolic.diabetes.t2d"
+          ]
+        },
+        {
+          "ticker": "NOVO",
+          "asset": "saxenda",
+          "name": "Saxenda (liraglutide) — obesity legacy",
+          "modality": "peptide.glp1.liraglutide",
+          "areas": [
+            "cardio_metabolic.obesity.general"
+          ]
+        },
+        {
+          "ticker": "NOVO",
+          "asset": "cagrisema",
+          "name": "CagriSema (cagrilintide + semaglutide) — obesity + T2D",
+          "modality": "peptide.glp1.cagrisema",
+          "areas": [
+            "cardio_metabolic.obesity.general"
+          ]
+        },
+        {
+          "ticker": "NOVO",
+          "asset": "amycretin",
+          "name": "Amycretin (subq + oral) — obesity + T2D",
+          "modality": "peptide.glp1.amycretin",
+          "areas": [
+            "cardio_metabolic.diabetes.t2d",
+            "cardio_metabolic.obesity.general"
+          ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 4,
+      "assetCount": 10,
+      "modalityCount": 8,
       "modalityClassCount": 3,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "formulation_modifier",
         "peptide",
         "small_molecule"
       ],
-      "totalTAM": 144000.0,
-      "totalSOM": 105255.9,
-      "totalSales": 40000.0,
-      "cagrPct": 0.0,
-      "peakYear": 2034
+      "totalTAM": 222550.0,
+      "totalSOM": 169864.0,
+      "totalSales": 73370.0,
+      "cagrPct": 0.3,
+      "peakYear": 2033
     },
     "GRIA1": {
       "companies": [
@@ -3040,7 +3262,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -3488,6 +3710,40 @@
       "cagrPct": 8.9,
       "peakYear": 2030
     },
+    "IL6": {
+      "companies": [
+        "NOVO"
+      ],
+      "modalities": [
+        "antibody.cytokine.il6_blocker"
+      ],
+      "areas": [
+        "cardio_metabolic.cv_inflammation.atherothrombosis_ckd"
+      ],
+      "assets": [
+        {
+          "ticker": "NOVO",
+          "asset": "ziltivekimab",
+          "name": "Ziltivekimab (anti-IL-6) — CV inflammation/CKD",
+          "modality": "antibody.cytokine.il6_blocker",
+          "areas": [
+            "cardio_metabolic.cv_inflammation.atherothrombosis_ckd"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 3710.0,
+      "totalSOM": 147.7,
+      "totalSales": 0.0,
+      "cagrPct": 0.0,
+      "peakYear": 2034
+    },
     "INHBE": {
       "companies": [
         "ARWR"
@@ -3521,6 +3777,40 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2035
+    },
+    "INSR": {
+      "companies": [
+        "NOVO"
+      ],
+      "modalities": [
+        "recombinant_protein.insulin.long_acting"
+      ],
+      "areas": [
+        "cardio_metabolic.diabetes.t2d"
+      ],
+      "assets": [
+        {
+          "ticker": "NOVO",
+          "asset": "insulin",
+          "name": "Insulin franchise (Tresiba/NovoRapid/Fiasp/Awiqli)",
+          "modality": "recombinant_protein.insulin.long_acting",
+          "areas": [
+            "cardio_metabolic.diabetes.t2d"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 78550.0,
+      "totalSOM": 7505.0,
+      "totalSales": 5000.0,
+      "cagrPct": 0.0,
+      "peakYear": 2028
     },
     "IRAK4": {
       "companies": [
@@ -4008,7 +4298,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -4579,7 +4869,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -4720,7 +5010,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,

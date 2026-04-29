@@ -303,6 +303,20 @@ REGIONS = {
         "eu":  {"patientsK": 15,  "wtpPct": 55, "priceK": 110},
         "row": {"patientsK": 200, "wtpPct": 18, "priceK": 30},
     },
+    # Hemophilia A (Factor VIII deficiency): ~16K severe (FVIII <1%) + ~5K moderate
+    # in US (~20K total branded-eligible); ~25K EU5+UK; ~280K ROW dominated by China
+    # + India (high carrier rate, under-diagnosis). Branded class:
+    #   Hemlibra (emicizumab subq, Roche, ~$5.5B 2024) -- ~50% US share
+    #   Factor VIII concentrates (Eloctate, Adynovate, Esperoct, Jivi, Altuvoct,
+    #     Refixia, Novoeight) -- ~$300K/yr blended, prophylactic
+    #   Roctavian (BioMarin gene therapy, ~$2.9M one-time, slow uptake)
+    #   Mim8/denecimig (Novo BLA pending H2 2026 PDUFA, monthly subq) -- next entrant
+    # source: WFH 2024 registry, Roche FY24 10-K, NHF + EAHAD prevalence data.
+    "hematology.rare_blood.hemophilia_a": {
+        "us":  {"patientsK": 20,  "wtpPct": 85, "priceK": 300},
+        "eu":  {"patientsK": 25,  "wtpPct": 80, "priceK": 200},
+        "row": {"patientsK": 280, "wtpPct": 25, "priceK": 80},
+    },
 
     # ------------------------------------------------------------
     # SKIN ONCOLOGY (cscc / bcc / melanoma) -- IO regimens dominate
@@ -398,6 +412,7 @@ PEN_PCT = {
     "oncology.neuroendocrine.gepnet": 50,
     "hematology.rare_blood.hemoglobinopathy.scd": 15,
     "hematology.rare_blood.hemoglobinopathy.beta_thalassemia": 28,
+    "hematology.rare_blood.hemophilia_a": 65,
     "oncology.skin.melanoma": 65,
     "oncology.skin.cscc": 50,
     "oncology.skin.bcc": 45,

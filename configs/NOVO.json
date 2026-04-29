@@ -1,0 +1,1697 @@
+{
+  "company": {
+    "ticker": "NOVO",
+    "name": "Novo Nordisk A/S",
+    "subtitle": "GLP-1 franchise (Ozempic+Wegovy $30B 2025) | CagriSema NDA filed | Mim8 BLA H2 2026 PDUFA | Ziltivekimab ZEUS H2 2026 | Cash runway permanent",
+    "sharesOut": 4448,
+    "cash": 3800,
+    "currentPrice": 41.17,
+    "currency": "USD",
+    "yahooTicker": "NVO",
+    "cashRunway": "Self-funding (>$10B FCF)",
+    "phase": "commercial"
+  },
+  "valuationType": "SOTP",
+  "assets": [
+    {
+      "id": "wegovy",
+      "name": "Wegovy (semaglutide subq + oral) — obesity",
+      "stage": "Commercial ($11.4B 2025; oral approved Dec-2025)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "obesity",
+          "name": "Adult obesity (BMI ≥30 or ≥27 with comorbidity)",
+          "market": {
+            "tamB": 70,
+            "penPct": 5,
+            "salesM": 11400,
+            "salesYear": 2025,
+            "peakYear": 2031,
+            "notes": "Wegovy 2.4mg subq weekly approved Jun-2021; oral 25mg approved Dec-22-2025 (US first oral GLP-1 for obesity). 2025 sales DKK 79.1B (~$11.4B). Faces tirzepatide (LLY Zepbound) competition: SURMOUNT-5 head-to-head showed tirz ~47% greater weight loss vs sema. Compounded GLP-1s eroded share 2024 (FDA shortage de-listed Feb-2025). 2026 guidance reflects pricing pressure + slower obesity growth.",
+            "company_slice": {
+              "us": {
+                "reachPct": 7.9,
+                "wtpPct": 35,
+                "priceK": 14
+              },
+              "eu": {
+                "reachPct": 3.0,
+                "wtpPct": 22,
+                "priceK": 8
+              },
+              "row": {
+                "reachPct": 0.6,
+                "wtpPct": 8,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Wegovy 2.4mg subq + oral 25mg; ~3M US Wegovy patients on therapy 2025 / ~110M obese eligible = ~3% peak; oral launch Jan 2026 expected to extend reach to ~4% by 2027."
+              },
+              "us.priceK": {
+                "note": "$14K/yr Wegovy WAC ~$1349/month; net ~50% rebated post commercial coverage."
+              },
+              "us.wtpPct": {
+                "note": "35% -- Medicare excludes weight-loss (Part D statute); commercial expanding post-SELECT CV outcomes; PA + step edits common."
+              },
+              "eu.reachPct": {
+                "note": "1.5% -- EU launches uneven; UK NHS access gated by BMI ≥35 + comorbidities; private market dominant."
+              },
+              "eu.wtpPct": {
+                "note": "22% -- HTA cautious; AMNOG/NICE limit reimbursement to BMI ≥35; out-of-pocket dominant."
+              },
+              "eu.priceK": {
+                "note": "$8K/yr EU net post HTA negotiation."
+              },
+              "row.reachPct": {
+                "note": "0.3% -- semaglutide LOE in China/Brazil/Canada 2026 erodes branded share; APAC/LATAM private market only."
+              },
+              "row.wtpPct": {
+                "note": "8% -- Japan PMDA approved 2026 BMI ≥35; emerging markets self-pay."
+              },
+              "row.priceK": {
+                "note": "$4K blended -- Japan ~$9K, China private $3K, LATAM ~$2K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 40000,
+                "wtpPct": 30,
+                "priceK": 9
+              },
+              "eu": {
+                "patientsK": 30000,
+                "wtpPct": 20,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 6,
+                "priceK": 2
+              }
+            }
+          },
+          "area": "cardio_metabolic.obesity.general"
+        }
+      ],
+      "modality": "peptide.glp1.semaglutide",
+      "targets": [
+        "GLP1R"
+      ]
+    },
+    {
+      "id": "ozempic",
+      "name": "Ozempic (semaglutide subq) — T2D",
+      "stage": "Commercial ($18.3B 2025; LOE China/BR/CA 2026)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "t2d",
+          "name": "Type 2 diabetes (adult)",
+          "market": {
+            "tamB": 100,
+            "penPct": 10,
+            "salesM": 18300,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "notes": "Ozempic 0.5/1.0/2.0mg subq weekly approved 2017; SUSTAIN trials. 2025 sales DKK 127.1B (~$18.3B), +6%/+10% CER. SELECT CV outcomes positive 2023 expanded label. Semaglutide composition-of-matter LOE China/Brazil/Canada 2026 (already flagged in 2026 guidance cut). US LOE 2031-2032; EU 2031.",
+            "company_slice": {
+              "us": {
+                "reachPct": 13.4,
+                "wtpPct": 60,
+                "priceK": 11
+              },
+              "eu": {
+                "reachPct": 6.7,
+                "wtpPct": 50,
+                "priceK": 6
+              },
+              "row": {
+                "reachPct": 1.1,
+                "wtpPct": 18,
+                "priceK": 3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Ozempic ~5% reach of ~36M US T2D; mature class growing slower; tirzepatide competition limits incremental share."
+              },
+              "us.priceK": {
+                "note": "$11K/yr WAC Ozempic; net ~50% post Medicare/commercial rebate; 340B/PBM erosion."
+              },
+              "us.wtpPct": {
+                "note": "60% -- Medicare/Medicaid cover GLP-1 for T2D widely; PA on weight-related criteria."
+              },
+              "eu.reachPct": {
+                "note": "2.5% -- EU5 + UK; T2D class branded penetration ~25% of branded GLP-1 universe."
+              },
+              "eu.wtpPct": {
+                "note": "50% -- HTA covers GLP-1 second-line T2D; AMNOG-discounted."
+              },
+              "eu.priceK": {
+                "note": "$6K/yr EU net (~55% US list)."
+              },
+              "row.reachPct": {
+                "note": "0.4% -- China LOE 2026 erodes branded; Japan + Australia growing."
+              },
+              "row.wtpPct": {
+                "note": "18% -- Japan + AU reimbursed; emerging markets generic-bound post-LOE."
+              },
+              "row.priceK": {
+                "note": "$3K blended -- Japan $9K, post-LOE generic $0.5K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            }
+          },
+          "area": "cardio_metabolic.diabetes.t2d"
+        }
+      ],
+      "modality": "peptide.glp1.semaglutide",
+      "targets": [
+        "GLP1R"
+      ]
+    },
+    {
+      "id": "rybelsus",
+      "name": "Rybelsus (oral semaglutide) — T2D",
+      "stage": "Commercial ($3.2B 2025, declining -5%)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "t2d_oral",
+          "name": "T2D oral GLP-1",
+          "market": {
+            "tamB": 100,
+            "penPct": 10,
+            "salesM": 3200,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "Oral semaglutide tablet (3/7/14mg). 2025 sales DKK 22.1B (~$3.2B), -5% as oral Wegovy obesity launch (Jan 2026) cannibalizes Rybelsus T2D. Approved 2019.",
+            "company_slice": {
+              "us": {
+                "reachPct": 2.8,
+                "wtpPct": 50,
+                "priceK": 11
+              },
+              "eu": {
+                "reachPct": 1.4,
+                "wtpPct": 40,
+                "priceK": 6
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 15,
+                "priceK": 3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Rybelsus ~1% reach of US T2D; declining post oral Wegovy launch."
+              },
+              "us.priceK": {
+                "note": "$11K/yr WAC parity with Ozempic; net ~50% rebated."
+              },
+              "us.wtpPct": {
+                "note": "50% -- broad T2D coverage; same step-edit profile as Ozempic."
+              },
+              "eu.reachPct": {
+                "note": "0.5%."
+              },
+              "eu.wtpPct": {
+                "note": "40%."
+              },
+              "eu.priceK": {
+                "note": "$6K/yr."
+              },
+              "row.reachPct": {
+                "note": "0.1%."
+              },
+              "row.wtpPct": {
+                "note": "15%."
+              },
+              "row.priceK": {
+                "note": "$3K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            }
+          },
+          "area": "cardio_metabolic.diabetes.t2d"
+        }
+      ],
+      "modality": "peptide.glp1.semaglutide",
+      "targets": [
+        "GLP1R"
+      ]
+    },
+    {
+      "id": "saxenda",
+      "name": "Saxenda (liraglutide) — obesity legacy",
+      "stage": "Commercial ($470M 2025, declining -53%)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "obesity_legacy",
+          "name": "Adult obesity (legacy daily liraglutide)",
+          "market": {
+            "tamB": 70,
+            "penPct": 5,
+            "salesM": 470,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Daily liraglutide for obesity (2014); ~$1.4B peak. 2025 sales DKK 3.2B (~$470M), -53% as Wegovy + tirzepatide cannibalize. Tail product.",
+            "company_slice": {
+              "us": {
+                "reachPct": 0.4,
+                "wtpPct": 25,
+                "priceK": 14
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 18,
+                "priceK": 8
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 8,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Saxenda ~0.2% reach -- legacy daily injection, Wegovy cannibalization."
+              },
+              "us.priceK": {
+                "note": "$14K WAC parity; rebated heavily."
+              },
+              "us.wtpPct": {
+                "note": "25% -- declining; mostly switched to weekly."
+              },
+              "eu.reachPct": {
+                "note": "0.1%."
+              },
+              "eu.wtpPct": {
+                "note": "18%."
+              },
+              "eu.priceK": {
+                "note": "$8K."
+              },
+              "row.reachPct": {
+                "note": "0.05%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$4K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 40000,
+                "wtpPct": 30,
+                "priceK": 9
+              },
+              "eu": {
+                "patientsK": 30000,
+                "wtpPct": 20,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 6,
+                "priceK": 2
+              }
+            }
+          },
+          "area": "cardio_metabolic.obesity.general"
+        }
+      ],
+      "modality": "peptide.glp1.liraglutide",
+      "targets": [
+        "GLP1R"
+      ]
+    },
+    {
+      "id": "insulin",
+      "name": "Insulin franchise (Tresiba/NovoRapid/Fiasp/Awiqli)",
+      "stage": "Commercial (~$5.0B 2025, mature)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "t2d_insulin",
+          "name": "Insulin therapy (T1D + T2D)",
+          "market": {
+            "tamB": 100,
+            "penPct": 10,
+            "salesM": 5000,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "notes": "Long-acting Tresiba (degludec) + Levemir + Awiqli (icodec weekly basal, EU/JP/CA approved; FDA CRL 2024) + rapid-acting NovoRapid/Novolog/Fiasp + premix Ryzodeg/Xultophy. Mature class with biosimilar pressure (Semglee, Rezvoglar) + tirzepatide displacing basal in T2D. ~$5B 2025 NVO insulin total. IcoSema (icodec+sema weekly) filed.",
+            "company_slice": {
+              "us": {
+                "reachPct": 7.4,
+                "wtpPct": 70,
+                "priceK": 4
+              },
+              "eu": {
+                "reachPct": 5.0,
+                "wtpPct": 60,
+                "priceK": 2.5
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 25,
+                "priceK": 1.2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "NVO ~30% US insulin market share / ~7M insulin users / 36M T2D = ~1.5% reach of T2D pool; Lantus + biosim erode steady."
+              },
+              "us.priceK": {
+                "note": "$4K/yr blended -- Tresiba $4.5K, Awiqli premium ~$5K, NovoRapid $3.5K post Insulin price reform 2024."
+              },
+              "us.wtpPct": {
+                "note": "70% -- universal coverage; insulin price cap $35/mo Medicare; commercial varies."
+              },
+              "eu.reachPct": {
+                "note": "1.0% -- EU insulin biosim penetration high; NVO branded share ~25%."
+              },
+              "eu.wtpPct": {
+                "note": "60% -- universal HTA reimbursement."
+              },
+              "eu.priceK": {
+                "note": "$2.5K blended."
+              },
+              "row.reachPct": {
+                "note": "0.3% -- China + India insulin biosim dominant; LATAM private market."
+              },
+              "row.wtpPct": {
+                "note": "25%."
+              },
+              "row.priceK": {
+                "note": "$1.2K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            }
+          },
+          "area": "cardio_metabolic.diabetes.t2d"
+        }
+      ],
+      "modality": "recombinant_protein.insulin.long_acting",
+      "targets": [
+        "INSR"
+      ]
+    },
+    {
+      "id": "hemophilia_legacy",
+      "name": "Rare blood (NovoSeven/Esperoct/Refixia/Concizumab)",
+      "stage": "Commercial (~$1.7B 2025, declining)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "hema_legacy",
+          "name": "Hemophilia A/B + bleeding disorders",
+          "market": {
+            "tamB": 8,
+            "penPct": 65,
+            "salesM": 1700,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "notes": "NovoSeven (rFVIIa for hemophilia w/ inhibitors + congenital FVII deficiency) ~$1B; Esperoct (BAX855/N8-GP recombinant FVIII) + Refixia/Rebinyn (Factor IX) + Novoeight + Concizumab (Alhemo, anti-TFPI for hem A/B w/ inhibitors). 2025 ~DKK 12B (~$1.7B), -5%. Hemlibra cannibalizing FVIII concentrates; Mim8 (next-gen Novo) will eventually replace Esperoct.",
+            "company_slice": {
+              "us": {
+                "reachPct": 31.8,
+                "wtpPct": 80,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 26.0,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "row": {
+                "reachPct": 5.8,
+                "wtpPct": 22,
+                "priceK": 70
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Novo ~25% US hemophilia A market share via Esperoct; declining post-Hemlibra; concizumab small inhibitor niche."
+              },
+              "us.priceK": {
+                "note": "$280K/yr WAC blended -- Esperoct ~$300K, NovoSeven episodic ~$500K, concizumab ~$240K."
+              },
+              "us.wtpPct": {
+                "note": "80% -- well-covered specialty pharmacy class."
+              },
+              "eu.reachPct": {
+                "note": "18% -- EU hemophilia franchise ~25% market share."
+              },
+              "eu.wtpPct": {
+                "note": "75% -- HTA full reimbursement."
+              },
+              "eu.priceK": {
+                "note": "$180K EU net."
+              },
+              "row.reachPct": {
+                "note": "4% -- China/India growing branded access; otherwise plasma-derived dominant."
+              },
+              "row.wtpPct": {
+                "note": "22% -- emerging access uneven."
+              },
+              "row.priceK": {
+                "note": "$70K blended."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 85,
+                "priceK": 300
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "row": {
+                "patientsK": 280,
+                "wtpPct": 25,
+                "priceK": 80
+              }
+            }
+          },
+          "area": "hematology.rare_blood.hemophilia_a"
+        }
+      ],
+      "modality": "recombinant_protein.coagulation.factor_viii",
+      "targets": [
+        "F8"
+      ]
+    },
+    {
+      "id": "gh",
+      "name": "Growth hormone (Norditropin + Sogroya)",
+      "stage": "Commercial ($860M 2025, +19%)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "ghd",
+          "name": "Growth hormone deficiency (peds + adult)",
+          "market": {
+            "tamB": 3,
+            "penPct": 40,
+            "salesM": 860,
+            "salesYear": 2025,
+            "peakYear": 2030,
+            "notes": "Norditropin daily somatropin (peds + adult GHD, Turner, Noonan, ISS) + Sogroya (somapacitan, weekly long-acting somatropin). 2025 DKK 5.96B (~$860M), +19% driven by Sogroya growth + adult GHD. Skytrofa (Ascendis lonapegsomatropin weekly) competition.",
+            "company_slice": {
+              "us": {
+                "reachPct": 85.1,
+                "wtpPct": 65,
+                "priceK": 28
+              },
+              "eu": {
+                "reachPct": 66.2,
+                "wtpPct": 55,
+                "priceK": 17
+              },
+              "row": {
+                "reachPct": 18.9,
+                "wtpPct": 16,
+                "priceK": 9
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Norditropin ~30% US GHD share + Sogroya ramping; combined ~18% reach of 50K US GHD."
+              },
+              "us.priceK": {
+                "note": "$28K/yr blended -- Norditropin daily $25K, Sogroya weekly $42K."
+              },
+              "us.wtpPct": {
+                "note": "65% -- specialty pharmacy + commercial coverage; PA on growth response."
+              },
+              "eu.reachPct": {
+                "note": "14% -- EU somatropin biosimilar pressure (Omnitrope)."
+              },
+              "eu.wtpPct": {
+                "note": "55%."
+              },
+              "eu.priceK": {
+                "note": "$17K EU net."
+              },
+              "row.reachPct": {
+                "note": "4% -- Japan + AU + Korea reimbursed."
+              },
+              "row.wtpPct": {
+                "note": "16%."
+              },
+              "row.priceK": {
+                "note": "$9K blended."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 50,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 300,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            }
+          },
+          "area": "endocrine.pituitary.gh_deficiency"
+        }
+      ],
+      "modality": "recombinant_protein.hormone.somatropin",
+      "targets": [
+        "GHR"
+      ]
+    },
+    {
+      "id": "cagrisema",
+      "name": "CagriSema (cagrilintide + semaglutide) — obesity + T2D",
+      "stage": "NDA filed Q4 2025; PDUFA H2 2026",
+      "designations": [],
+      "indications": [
+        {
+          "id": "obesity_cs",
+          "name": "Adult obesity (GLP-1 + amylin combo)",
+          "market": {
+            "tamB": 70,
+            "penPct": 5,
+            "peakYear": 2032,
+            "cagrPct": 4,
+            "notes": "Cagrilintide (long-acting amylin analog) + semaglutide subq weekly. REDEFINE-1 Ph3 22.7% mean weight loss (vs 25% bull-case → stock dropped Dec 2024). NDA filed Q4 2025; FDA action H2 2026 (PDUFA). REDEFINE-3 CV outcomes ongoing. Positions vs LLY tirzepatide + retatrutide. First GLP-1 + amylin co-agonist if approved.",
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 35,
+                "priceK": 16
+              },
+              "eu": {
+                "reachPct": 0.6,
+                "wtpPct": 22,
+                "priceK": 9
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 7,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "CagriSema launches 2027 if approved; lower-tier vs Wegovy + tirzepatide given REDEFINE missed bull case; ~1.5% peak reach of US obese pool."
+              },
+              "us.priceK": {
+                "note": "$16K/yr WAC modeled -- premium to Wegovy ($14K) given combo + amylin."
+              },
+              "us.wtpPct": {
+                "note": "35% -- payors require BMI/comorbidity criteria; head-to-head vs Wegovy preferred without superiority."
+              },
+              "eu.reachPct": {
+                "note": "0.6% -- EU launches gated by HTA + tirzepatide competition."
+              },
+              "eu.wtpPct": {
+                "note": "22%."
+              },
+              "eu.priceK": {
+                "note": "$9K EU net."
+              },
+              "row.reachPct": {
+                "note": "0.1% -- semaglutide LOE 2026 in China makes branded combo less competitive."
+              },
+              "row.wtpPct": {
+                "note": "7%."
+              },
+              "row.priceK": {
+                "note": "$4K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 40000,
+                "wtpPct": 30,
+                "priceK": 9
+              },
+              "eu": {
+                "patientsK": 30000,
+                "wtpPct": 20,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 6,
+                "priceK": 2
+              }
+            }
+          },
+          "area": "cardio_metabolic.obesity.general"
+        }
+      ],
+      "modality": "peptide.glp1.cagrisema",
+      "targets": [
+        "GLP1R",
+        "AMYR"
+      ]
+    },
+    {
+      "id": "amycretin",
+      "name": "Amycretin (subq + oral) — obesity + T2D",
+      "stage": "Phase 3 (obesity + T2D, 2026 initiation)",
+      "designations": [],
+      "indications": [
+        {
+          "id": "obesity_amy",
+          "name": "Adult obesity (single-molecule GLP-1 + amylin)",
+          "market": {
+            "tamB": 70,
+            "penPct": 5,
+            "peakYear": 2034,
+            "cagrPct": 5,
+            "notes": "Single-molecule dual GLP-1 + amylin agonist (vs CagriSema's two molecules). Subq + oral formulations. Phase 2 oral 14.5% weight loss at 36w; T2D Ph2 1.8% A1c reduction. Phase 3 obesity + T2D launching early 2026. Considered the key pipeline asset post-CagriSema; differentiation = single molecule + oral path.",
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 38,
+                "priceK": 16
+              },
+              "eu": {
+                "reachPct": 1.2,
+                "wtpPct": 25,
+                "priceK": 9
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 8,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Amycretin 2029+ launch; single molecule + oral could drive 3% reach of US obese pool by peak."
+              },
+              "us.priceK": {
+                "note": "$16K/yr WAC modeled."
+              },
+              "us.wtpPct": {
+                "note": "38% -- next-gen GLP-1 access; H2H data needed for premium."
+              },
+              "eu.reachPct": {
+                "note": "1.2%."
+              },
+              "eu.wtpPct": {
+                "note": "25%."
+              },
+              "eu.priceK": {
+                "note": "$9K."
+              },
+              "row.reachPct": {
+                "note": "0.3%."
+              },
+              "row.wtpPct": {
+                "note": "8%."
+              },
+              "row.priceK": {
+                "note": "$4K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 40000,
+                "wtpPct": 30,
+                "priceK": 9
+              },
+              "eu": {
+                "patientsK": 30000,
+                "wtpPct": 20,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 6,
+                "priceK": 2
+              }
+            }
+          },
+          "area": "cardio_metabolic.obesity.general"
+        },
+        {
+          "id": "t2d_amy",
+          "name": "T2D (single-molecule GLP-1 + amylin)",
+          "market": {
+            "tamB": 100,
+            "penPct": 10,
+            "peakYear": 2034,
+            "notes": "Amycretin T2D Ph3 starting 2026. ~1.8% A1c reduction in Ph2 -- competitive with semaglutide.",
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 50,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 0.6,
+                "wtpPct": 40,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 14,
+                "priceK": 3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Amycretin T2D ~1.5% reach by peak 2030+."
+              },
+              "us.priceK": {
+                "note": "$12K/yr T2D pricing."
+              },
+              "us.wtpPct": {
+                "note": "50%."
+              },
+              "eu.reachPct": {
+                "note": "0.6%."
+              },
+              "eu.wtpPct": {
+                "note": "40%."
+              },
+              "eu.priceK": {
+                "note": "$7K."
+              },
+              "row.reachPct": {
+                "note": "0.1%."
+              },
+              "row.wtpPct": {
+                "note": "14%."
+              },
+              "row.priceK": {
+                "note": "$3K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            }
+          },
+          "area": "cardio_metabolic.diabetes.t2d"
+        }
+      ],
+      "modality": "peptide.glp1.amycretin",
+      "targets": [
+        "GLP1R",
+        "AMYR"
+      ]
+    },
+    {
+      "id": "mim8",
+      "name": "Mim8 (denecimig) — FVIIIa-mimetic bispecific (hemophilia A)",
+      "stage": "BLA filed Sept 2025; PDUFA H2 2026",
+      "designations": [
+        "Orphan (US + EU)"
+      ],
+      "indications": [
+        {
+          "id": "hema_mim8",
+          "name": "Hemophilia A prophylaxis (with/without inhibitors)",
+          "market": {
+            "tamB": 8,
+            "penPct": 65,
+            "peakYear": 2032,
+            "notes": "FVIIIa-mimetic bispecific antibody; subq monthly/biweekly/weekly options. Direct competitor to Roche Hemlibra ($5.5B 2024). FRONTIER 2/3/4 Ph3 program positive. BLA submitted FDA Sep 2025, EU + JP filed. PDUFA H2 2026.",
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 70,
+                "priceK": 320
+              },
+              "eu": {
+                "reachPct": 9,
+                "wtpPct": 65,
+                "priceK": 220
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 18,
+                "priceK": 90
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Mim8 captures 12% of 20K US hemophilia A pool by 2030; Hemlibra ~50% incumbent share, gradual switch on monthly dosing convenience."
+              },
+              "us.priceK": {
+                "note": "$320K/yr WAC -- Hemlibra parity (~$350K WAC); subq monthly differentiation."
+              },
+              "us.wtpPct": {
+                "note": "70% -- well-covered specialty class; payors accept subq prophylaxis."
+              },
+              "eu.reachPct": {
+                "note": "9% -- EU EMA filed; HTA cautious."
+              },
+              "eu.wtpPct": {
+                "note": "65%."
+              },
+              "eu.priceK": {
+                "note": "$220K EU net."
+              },
+              "row.reachPct": {
+                "note": "2% -- China + Japan launch 2027+; Hemlibra incumbent."
+              },
+              "row.wtpPct": {
+                "note": "18%."
+              },
+              "row.priceK": {
+                "note": "$90K blended."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 85,
+                "priceK": 300
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "row": {
+                "patientsK": 280,
+                "wtpPct": 25,
+                "priceK": 80
+              }
+            }
+          },
+          "area": "hematology.rare_blood.hemophilia_a"
+        }
+      ],
+      "modality": "antibody.bispecific.fviiia_mimetic",
+      "targets": [
+        "F9",
+        "F10"
+      ]
+    },
+    {
+      "id": "ziltivekimab",
+      "name": "Ziltivekimab (anti-IL-6) — CV inflammation/CKD",
+      "stage": "Phase 3 ZEUS readout H2 2026",
+      "designations": [],
+      "indications": [
+        {
+          "id": "cv_ckd",
+          "name": "Atherosclerotic CV in CKD (high CRP)",
+          "market": {
+            "tamB": 8,
+            "penPct": 12,
+            "peakYear": 2034,
+            "notes": "Anti-IL-6 monoclonal antibody. Phase 3 ZEUS in atherosclerotic CVD with elevated CRP + Stage 3-4 CKD. Readout H2 2026. If positive, opens novel CV inflammation category (canakinumab CANTOS proved POC but never approved). High-risk binary; high-reward if MACE/HF benefit clear.",
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 30,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 22,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 0.4,
+                "wtpPct": 7,
+                "priceK": 2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Ziltivekimab launches 2028+ if positive; 4% reach of 800K US addressable (CKD+CV+highCRP); cardiology + nephrology specialty."
+              },
+              "us.priceK": {
+                "note": "$12K/yr WAC -- PCSK9-style specialty pricing."
+              },
+              "us.wtpPct": {
+                "note": "30% -- payors require novel category establishment + outcome data."
+              },
+              "eu.reachPct": {
+                "note": "2%."
+              },
+              "eu.wtpPct": {
+                "note": "22%."
+              },
+              "eu.priceK": {
+                "note": "$7K."
+              },
+              "row.reachPct": {
+                "note": "0.4%."
+              },
+              "row.wtpPct": {
+                "note": "7%."
+              },
+              "row.priceK": {
+                "note": "$2K."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 800,
+                "wtpPct": 30,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 1000,
+                "wtpPct": 22,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 7,
+                "priceK": 1
+              }
+            }
+          },
+          "area": "cardio_metabolic.cv_inflammation.atherothrombosis_ckd"
+        }
+      ],
+      "modality": "antibody.cytokine.il6_blocker",
+      "targets": [
+        "IL6"
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "narrative": "GLP-1 share collapse to LLY + China LOE + CagriSema disappoints + Mim8 ZEUS fail",
+      "events": [
+        "X Wegovy share drops to <30% as tirzepatide + retatrutide dominate",
+        "X China/Brazil/Canada LOE 2026 hits semaglutide harder than expected",
+        "X CagriSema FDA delays / label restrictions",
+        "X Mim8 PDUFA delayed; ziltivekimab ZEUS misses",
+        "-> Stock to NVO ~$25 (cash + insulin floor)"
+      ],
+      "assumptions": {
+        "wegovy": {
+          "obesity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "ozempic": {
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "rybelsus": {
+          "t2d_oral": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "saxenda": {
+          "obesity_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "insulin": {
+          "t2d_insulin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "hemophilia_legacy": {
+          "hema_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "gh": {
+          "ghd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "cagrisema": {
+          "obesity_cs": {
+            "pos": 80,
+            "apr": 60,
+            "pen": 0.5
+          }
+        },
+        "amycretin": {
+          "obesity_amy": {
+            "pos": 30,
+            "apr": 35,
+            "pen": 0.4
+          },
+          "t2d_amy": {
+            "pos": 30,
+            "apr": 35,
+            "pen": 0.4
+          }
+        },
+        "mim8": {
+          "hema_mim8": {
+            "pos": 70,
+            "apr": 60,
+            "pen": 0.5
+          }
+        },
+        "ziltivekimab": {
+          "cv_ckd": {
+            "pos": 25,
+            "apr": 20,
+            "pen": 0.3
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 12,
+        "pipelineMult": 4,
+        "commercialMult": 4.0,
+        "commercialRevM": 38000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bear": {
+      "wt": 15,
+      "narrative": "Slow GLP-1 erosion + amycretin Ph3 mixed + Mim8 OK but slow ramp",
+      "events": [
+        "~ Wegovy holds ~40% share post-tirzepatide head-to-head",
+        "~ CagriSema approved but slower launch than expected",
+        "~ Amycretin Ph3 obesity OK; T2D mixed",
+        "~ Mim8 approved but Hemlibra incumbency limits",
+        "~ Ziltivekimab modest ZEUS hit"
+      ],
+      "assumptions": {
+        "wegovy": {
+          "obesity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "ozempic": {
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "rybelsus": {
+          "t2d_oral": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "saxenda": {
+          "obesity_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "insulin": {
+          "t2d_insulin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "hemophilia_legacy": {
+          "hema_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "gh": {
+          "ghd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "cagrisema": {
+          "obesity_cs": {
+            "pos": 90,
+            "apr": 85,
+            "pen": 0.7
+          }
+        },
+        "amycretin": {
+          "obesity_amy": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.6
+          },
+          "t2d_amy": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.6
+          }
+        },
+        "mim8": {
+          "hema_mim8": {
+            "pos": 92,
+            "apr": 88,
+            "pen": 0.7
+          }
+        },
+        "ziltivekimab": {
+          "cv_ckd": {
+            "pos": 45,
+            "apr": 40,
+            "pen": 0.5
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 5,
+        "commercialMult": 5.5,
+        "commercialRevM": 42000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "base": {
+      "wt": 50,
+      "narrative": "GLP-1 franchise stabilizes + CagriSema launches + amycretin Ph3 positive + Mim8 ramps + ZEUS hit",
+      "events": [
+        "V Wegovy + oral Wegovy hold ~45% obesity share",
+        "V CagriSema approved 2026; $3-5B by 2030",
+        "V Amycretin Ph3 obesity + T2D positive",
+        "V Mim8 approved + ramps vs Hemlibra",
+        "V Ziltivekimab ZEUS positive — opens new CV inflammation class"
+      ],
+      "assumptions": {
+        "wegovy": {
+          "obesity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "ozempic": {
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "rybelsus": {
+          "t2d_oral": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "saxenda": {
+          "obesity_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "insulin": {
+          "t2d_insulin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "hemophilia_legacy": {
+          "hema_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "gh": {
+          "ghd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "cagrisema": {
+          "obesity_cs": {
+            "pos": 95,
+            "apr": 92,
+            "pen": 0.9
+          }
+        },
+        "amycretin": {
+          "obesity_amy": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 0.85
+          },
+          "t2d_amy": {
+            "pos": 65,
+            "apr": 70,
+            "pen": 0.8
+          }
+        },
+        "mim8": {
+          "hema_mim8": {
+            "pos": 98,
+            "apr": 95,
+            "pen": 0.9
+          }
+        },
+        "ziltivekimab": {
+          "cv_ckd": {
+            "pos": 65,
+            "apr": 65,
+            "pen": 0.8
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 6,
+        "commercialMult": 7.0,
+        "commercialRevM": 48000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "narrative": "GLP-1 expansion (CV/HF/MASH/Alzheimer's) + amycretin oral wins + Mim8 displaces Hemlibra + ZEUS strong",
+      "events": [
+        "V Wegovy MASH + Alzheimer + HF labels expand TAM",
+        "V Amycretin oral validated as next-gen standard",
+        "V CagriSema $5-8B peak via T2D + obesity dual indication",
+        "V Mim8 captures 25%+ hemophilia A share via monthly dosing",
+        "V Ziltivekimab ZEUS strong → CV inflammation class established"
+      ],
+      "assumptions": {
+        "wegovy": {
+          "obesity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "ozempic": {
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "rybelsus": {
+          "t2d_oral": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "saxenda": {
+          "obesity_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "insulin": {
+          "t2d_insulin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "hemophilia_legacy": {
+          "hema_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "gh": {
+          "ghd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "cagrisema": {
+          "obesity_cs": {
+            "pos": 98,
+            "apr": 95,
+            "pen": 1.1
+          }
+        },
+        "amycretin": {
+          "obesity_amy": {
+            "pos": 85,
+            "apr": 88,
+            "pen": 1.1
+          },
+          "t2d_amy": {
+            "pos": 80,
+            "apr": 85,
+            "pen": 1.0
+          }
+        },
+        "mim8": {
+          "hema_mim8": {
+            "pos": 99,
+            "apr": 97,
+            "pen": 1.1
+          }
+        },
+        "ziltivekimab": {
+          "cv_ckd": {
+            "pos": 80,
+            "apr": 80,
+            "pen": 1.0
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 7,
+        "commercialMult": 9.5,
+        "commercialRevM": 55000,
+        "milestones": 0,
+        "dil": 0
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "narrative": "Obesity drug class becomes biggest in pharma history + Novo platform leadership + multi-indication GLP-1",
+      "events": [
+        "V Obesity becomes #1 pharma class globally — Novo + LLY duopoly",
+        "V Wegovy + amycretin franchise reaches $50B combined by 2032",
+        "V CagriSema + amycretin dual coverage in obesity + T2D + MASH + AD",
+        "V Mim8 dominates next-gen hemophilia A; ziltivekimab opens CV-inflammation class",
+        "V Multiple expansion to peak 2024 levels (P/E 35x)"
+      ],
+      "assumptions": {
+        "wegovy": {
+          "obesity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "ozempic": {
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "rybelsus": {
+          "t2d_oral": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "saxenda": {
+          "obesity_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "insulin": {
+          "t2d_insulin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "hemophilia_legacy": {
+          "hema_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "gh": {
+          "ghd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "cagrisema": {
+          "obesity_cs": {
+            "pos": 99,
+            "apr": 97,
+            "pen": 1.3
+          }
+        },
+        "amycretin": {
+          "obesity_amy": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.3
+          },
+          "t2d_amy": {
+            "pos": 90,
+            "apr": 92,
+            "pen": 1.2
+          }
+        },
+        "mim8": {
+          "hema_mim8": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.3
+          }
+        },
+        "ziltivekimab": {
+          "cv_ckd": {
+            "pos": 90,
+            "apr": 90,
+            "pen": 1.2
+          }
+        }
+      },
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 9,
+        "commercialMult": 13.0,
+        "commercialRevM": 70000,
+        "milestones": 0,
+        "dil": 0
+      }
+    }
+  },
+  "context": {
+    "lastData": {
+      "date": "Feb 4, 2026 (Q4 2025 / FY 2025)",
+      "title": "FY2025 DKK 309B sales (+10% CER); 2026 guidance -5% to -13% CER on China LOE + US pricing",
+      "points": [
+        "FY2025 sales DKK 309,064M (+6% reported, +10% CER)",
+        "GLP-1 obesity DKK 79.1B (Wegovy); GLP-1 T2D DKK 127.1B (Ozempic) + DKK 22.1B (Rybelsus)",
+        "Insulin franchise -4% Q4; rare blood -5%",
+        "Operating margin 46%; FCF DKK 80B (~$11.5B)",
+        "Cash + financial assets DKK 26.5B (~$3.8B)",
+        "Catalent fill-finish acquisition closed Dec 2024 ($16.5B by parent)",
+        "Oral Wegovy 25mg FDA approved Dec 22, 2025; US launch Jan 2026",
+        "CagriSema NDA filed Q4 2025 (FDA action H2 2026)",
+        "Mim8 (denecimig) BLA filed Sep 2025 (PDUFA H2 2026)",
+        "REDEFINE-1 22.7% weight loss missed 25% bull case (Dec 2024)",
+        "CEO Mike Doustdar replaced Lars Fruergaard Aug 2025",
+        "Stock -71% from Jun 2024 peak ($142 → $41)"
+      ]
+    },
+    "nextCatalyst": {
+      "date": "H2 2026",
+      "title": "CagriSema PDUFA + Mim8 PDUFA + ZEUS Ph3 readout — concentrated value-driving block",
+      "thresholds": [
+        "H2 2026: CagriSema FDA action (NDA filed Q4 2025)",
+        "H2 2026: Mim8 (denecimig) PDUFA (BLA Sep 2025)",
+        "H2 2026: Ziltivekimab Phase 3 ZEUS readout (CV/CKD inflammation)",
+        "2026: Amycretin Phase 3 obesity + T2D initiation",
+        "2027: REDEFINE-3 CagriSema CV outcomes",
+        "2027: Wegovy MASH + Alzheimer label expansions"
+      ]
+    },
+    "risks": [
+      "GLP-1 share war w/ LLY tirzepatide: SURMOUNT-5 H2H showed tirz +47% greater weight loss vs sema",
+      "Semaglutide composition LOE China/Brazil/Canada 2026 already cut 2026 guidance to -5% to -13% CER",
+      "US semaglutide LOE 2031-2032 — biosimilar wave material",
+      "CagriSema 22.7% missed 25% bull case (Dec 2024) — pipeline confidence damaged",
+      "Compounded GLP-1 (US shortage list de-listed Feb 2025) impacted 2024 share; 503A pharmacies still active",
+      "Catalent integration capacity ramp 2026+ — execution risk",
+      "Mim8 Hemlibra incumbency (Roche $5.5B 2024) — switching friction",
+      "Ziltivekimab ZEUS H2 2026 binary — new class, no precedent (CANTOS validated POC but never approved)",
+      "Stock -71% from peak; activist pressure / governance overhaul Nov 2025 (Novo Holdings still controls)",
+      "Amycretin oral path competitive vs LLY orforglipron"
+    ]
+  },
+  "catalysts": [
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-15",
+      "asset": "cagrisema",
+      "indication": "obesity_cs",
+      "title": "CagriSema FDA action (PDUFA, GLP-1 + amylin combo)",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 80,
+      "fail_apr": 5,
+      "success_pos": 95,
+      "success_apr": 100,
+      "_confidence": "medium",
+      "_rationale": "NDA filed Q4 2025 -- standard 10-month FDA review puts action Q3-Q4 2026."
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "mim8",
+      "indication": "hema_mim8",
+      "title": "Mim8 (denecimig) FDA PDUFA — hemophilia A prophylaxis",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 92,
+      "fail_apr": 5,
+      "success_pos": 98,
+      "success_apr": 100,
+      "_confidence": "high",
+      "_sourceUrl": "https://www.prnewswire.com/news-releases/novo-nordisk-submits-biologics-license-application-bla-to-fda-for-mim8-an-investigational-prophylaxis-treatment-for-people-living-with-hemophilia-a-with-or-without-inhibitors-302568838.html",
+      "_rationale": "BLA submitted Sep 29, 2025; standard 10-month PDUFA target H2 2026."
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-11-30",
+      "asset": "ziltivekimab",
+      "indication": "cv_ckd",
+      "title": "Ziltivekimab Phase 3 ZEUS readout (atherosclerotic CV in CKD)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 0,
+      "fail_apr": 0,
+      "success_pos": 80,
+      "success_apr": 80,
+      "_confidence": "medium",
+      "_rationale": "Q4 2025 call confirmed ZEUS readout H2 2026. High-risk binary; new CV-inflammation class."
+    },
+    {
+      "date": "2026",
+      "dateSort": "2026-06-30",
+      "asset": "amycretin",
+      "indication": "obesity_amy",
+      "title": "Amycretin Phase 3 obesity initiation (early 2026)",
+      "type": "phase3_start",
+      "binary": false,
+      "fail_pos": 60,
+      "fail_apr": 70,
+      "success_pos": 75,
+      "success_apr": 80,
+      "_confidence": "high",
+      "_rationale": "Q4 2025 call confirmed Phase 3 initiation early 2026."
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-06-30",
+      "asset": "cagrisema",
+      "indication": "obesity_cs",
+      "title": "REDEFINE-3 CagriSema CV outcomes readout",
+      "type": "phase3_data",
+      "binary": false,
+      "fail_pos": 90,
+      "fail_apr": 70,
+      "success_pos": 98,
+      "success_apr": 95,
+      "_confidence": "low",
+      "_rationale": "Long-duration CV outcomes trial; 2027+ readout uncertain."
+    }
+  ]
+}

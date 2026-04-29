@@ -222,11 +222,6 @@ REGIONS = {
         "eu":  {"patientsK": 28, "wtpPct": 46, "priceK": 110},
         "row": {"patientsK": 60, "wtpPct": 15, "priceK": 45},
     },
-    "oncology.lung.nsclc_driver.other": {
-        "us":  {"patientsK": 8,  "wtpPct": 65, "priceK": 210},
-        "eu":  {"patientsK": 10, "wtpPct": 48, "priceK": 125},
-        "row": {"patientsK": 25, "wtpPct": 16, "priceK": 50},
-    },
     "oncology.lung.nsclc_driver.ros1": {
         "us":  {"patientsK": 3, "wtpPct": 70, "priceK": 215},
         "eu":  {"patientsK": 3, "wtpPct": 52, "priceK": 125},
@@ -241,6 +236,16 @@ REGIONS = {
         "us":  {"patientsK": 30,  "wtpPct": 65, "priceK": 135},
         "eu":  {"patientsK": 45,  "wtpPct": 48, "priceK": 80},
         "row": {"patientsK": 180, "wtpPct": 18, "priceK": 30},
+    },
+    # Driver-agnostic IO-resistant NSCLC: pts who progressed on checkpoint
+    # inhibitors (~50% of advanced NSCLC progress within 1-2y on pembro/IO).
+    # US: ~70K incident io-progressors/yr; large unmet need bucket distinct
+    # from driver-mutation subtypes. Targets: oncolytic IO, novel checkpoints,
+    # bispecific T-cell engagers, intratumoral cytokine delivery (e.g. KRYS KB707).
+    "oncology.lung.nsclc_io_resistant": {
+        "us":  {"patientsK": 70,  "wtpPct": 60, "priceK": 180},
+        "eu":  {"patientsK": 95,  "wtpPct": 44, "priceK": 105},
+        "row": {"patientsK": 320, "wtpPct": 15, "priceK": 40},
     },
 
     # ------------------------------------------------------------
@@ -343,10 +348,10 @@ PEN_PCT = {
     "oncology.lung.nsclc_driver.her2": 48,
     "oncology.lung.nsclc_driver.her3": 42,
     "oncology.lung.nsclc_driver.kras": 50,
-    "oncology.lung.nsclc_driver.other": 55,
     "oncology.lung.nsclc_driver.ros1": 65,
     "oncology.lung.nsclc_driver.trop2": 45,
     "oncology.lung.nsclc_undruggable": 55,
+    "oncology.lung.nsclc_io_resistant": 35,
     "oncology.lung.sclc": 48,
     # (multi_tumor.* removed -- now _platform.*)
     "oncology.neuroendocrine.gepnet": 50,

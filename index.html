@@ -113,6 +113,7 @@ tbody tr:hover{background:#ffffff06}
 .sig-pdufa{color:#f59e0b}
 .sig-rr{color:#22c55e}
 .sig-hot{color:#60a5fa}
+.sig-late{color:#dc2626;font-weight:700}
 .sticky-filters{position:sticky;top:46px;z-index:190;background:#080b12ee;backdrop-filter:blur(12px);padding:6px 20px 0;border-bottom:1px solid var(--border);display:none}
 .sticky-filters .fbar{margin-bottom:6px;padding:6px 10px}
 .sticky-filters .fl2-row{margin-bottom:6px;padding:2px 10px 4px}
@@ -921,7 +922,8 @@ async function main(){
   // Signal badges: 4 auto-computed condition counts rendered into #topNav.
   // Click applies a filter (narrows every card to the matching tickers).
   function computeSignals(){
-    const cashT=new Set(), pdufaT=new Set(), rrT=new Set(), hotT=new Set();
+    const cashT=new Set(), pdufaT=new Set(), rrT=new Set(), hotT=new Set(), lateT=new Set();
+    const today=new Date();
     for(const r of rows){
       if(r.ev<0) cashT.add(r.ticker);
       // Match Catalyst Map filtering: exclude resolved + use strictly-future daysOut.
@@ -929,13 +931,20 @@ async function main(){
       // dateSort still within the window) and the map shows fewer rows than the badge.
       if(r.catalysts&&r.catalysts.some(c=>c.type==='pdufa'&&c.daysOut>0&&c.daysOut<=30&&!c.resolved&&!c._resolvedAt)) pdufaT.add(r.ticker);
       if(r.catalysts&&r.catalysts.some(c=>c.daysOut>0&&c.daysOut<=7&&!c.resolved&&!c._resolvedAt)) hotT.add(r.ticker);
+      // Late catalysts: dateSort in the past, still unresolved. Red-flag signal --
+      // the timeline slipped and no resolution was captured. Could be stalled program,
+      // missed deadline, or stale config.
+      if(r.catalysts&&r.catalysts.some(c=>{
+        if(!c.dateSort||c.resolved||c._resolvedAt) return false;
+        return new Date(c.dateSort)<today;
+      })) lateT.add(r.ticker);
       if(r.tps&&r.price>0){
         const bullUp=((r.tps.bull||0)-r.price)/r.price;
         const megaDn=(r.price-(r.tps.mega_bear||0))/r.price;
         if(bullUp>0&&megaDn>0&&(bullUp/megaDn)>=5) rrT.add(r.ticker);
       }
     }
-    return {cash:cashT,pdufa:pdufaT,rr:rrT,hot:hotT};
+    return {cash:cashT,pdufa:pdufaT,rr:rrT,hot:hotT,late:lateT};
   }
   function renderSignalBadges(){
     const nv=document.getElementById('topNav');if(!nv)return;
@@ -945,6 +954,7 @@ async function main(){
       {kind:'pdufa', cls:'sig-pdufa', label:'PDUFA 30d',     tickers:sig.pdufa},
       {kind:'rr',    cls:'sig-rr',    label:'R/R \u00b75',   tickers:sig.rr},
       {kind:'hot',   cls:'sig-hot',   label:'hot 7d',        tickers:sig.hot},
+      {kind:'late',  cls:'sig-late',  label:'⚠ late',   tickers:sig.late},
     ];
     const activeKind=filterSignal?filterSignal.kind:null;
     nv.innerHTML=defs.map(d=>{
@@ -962,7 +972,7 @@ async function main(){
       const sig=computeSignals();
       const tickers=sig[kind];
       if(!tickers||tickers.size===0)return;
-      const labels={cash:'< cash',pdufa:'PDUFA 30d',rr:'R/R \u00b75',hot:'hot 7d'};
+      const labels={cash:'< cash',pdufa:'PDUFA 30d',rr:'R/R \u00b75',hot:'hot 7d',late:'\u26a0 late'};
       filterSignal={kind,tickers:new Set(tickers),label:labels[kind]};
     }
     doSort();render();renderSignalBadges();
@@ -2305,6 +2315,37 @@ async function main(){
       });
       h+='</div></div>';
       h+='<div class="card-sub">Barbell = one catalyst. Top dot = swing %. Bottom dot = E[R] (size by materiality). Yellow dash = options-implied swing. Color = E[R] direction.</div>';
+      // ── Late catalysts panel: red flag for catalysts whose dateSort is in the past
+      // but no resolution was captured. These represent slipped timelines, missed
+      // deadlines, or stale config -- worth surfacing before any forward-looking analysis.
+      const _today=new Date();
+      const lateCats=allCatsRaw.filter(c=>{
+        if(!c.dateSort||c.resolved||c._resolvedAt) return false;
+        return new Date(c.dateSort)<_today;
+      }).map(c=>{
+        const d=new Date(c.dateSort);
+        const daysLate=Math.round((_today-d)/(1000*60*60*24));
+        return {...c,daysLate};
+      }).sort((a,b)=>b.daysLate-a.daysLate);
+      if(lateCats.length>0){
+        h+=`<div style="background:#dc262611;border:1px solid #dc262644;border-radius:6px;padding:8px 10px;margin:8px 0 10px">`;
+        h+=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">`;
+        h+=`<div style="font-size:.65rem;font-weight:700;color:#dc2626;letter-spacing:1px;text-transform:uppercase">⚠ ${lateCats.length} late catalyst${lateCats.length===1?'':'s'}</div>`;
+        h+=`<div style="font-size:.55rem;color:var(--text2)">overdue + unresolved → red flag (timeline slipped or stale config)</div>`;
+        h+=`</div>`;
+        h+=`<div style="display:flex;flex-direction:column;gap:3px;font-size:.62rem;font-family:var(--mono)">`;
+        for(const c of lateCats){
+          const dStr=(c.dateSort||'').slice(0,10);
+          const lateStr=c.daysLate>365?Math.round(c.daysLate/365*10)/10+'y':c.daysLate>30?Math.round(c.daysLate/30)+'mo':c.daysLate+'d';
+          h+=`<div style="display:grid;grid-template-columns:60px 90px 1fr 70px;gap:8px;align-items:baseline;padding:3px 6px;background:#0c0d10;border-radius:3px;cursor:pointer" onclick="window.location.href='model.html?ticker=${c.ticker}'" title="Click to inspect ${c.ticker} model">`;
+          h+=`<span style="color:#dc2626;font-weight:700">${c.ticker}</span>`;
+          h+=`<span style="color:var(--text2)">${dStr}</span>`;
+          h+=`<span style="color:#e2e4ea;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${(c.title||'').replace(/</g,'&lt;')}</span>`;
+          h+=`<span style="color:#dc2626;text-align:right;font-weight:700">−${lateStr}</span>`;
+          h+=`</div>`;
+        }
+        h+=`</div></div>`;
+      }
       // Filter row: ticker + materiality + expected return sliders
       h+='<div style="display:flex;gap:18px;align-items:center;margin:10px 0 6px;flex-wrap:wrap;font-size:.6rem;font-family:var(--mono);color:var(--text2)">';
       // Ticker isolation dropdown

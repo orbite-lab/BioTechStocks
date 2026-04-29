@@ -1606,13 +1606,71 @@
             // Computed by zeroing pos=apr=0 for the asset.indication across all scenarios
             // and comparing the new weighted TP to the base.
             const baseWTP = model.weightedTP;
+            // Detect SOTP commercial-bucket assets (mirror of computeScenario logic).
+            // For these, per-indication pos/apr don't drive TP -- value flows through
+            // the flat commercialRevM slider. Zeroing pos/apr would understate
+            // materiality of e.g. PDUFA on a partially-launched asset (CAMX Oczyesa).
+            const isSOTPCfg = !!state.scenarios[model.sks[0]]?.val?.pipelineDR;
+            const isBucketAsset = (a) => {
+              if (!isSOTPCfg) return false;
+              const stg = (a.stage || "").toLowerCase();
+              return a.id === "commercial" || stg.includes("commercial") || stg.includes("launched") || stg.includes("marketed");
+            };
+            // Compute peak SOM (same formula as engine SOM path) for share-of-bucket weighting.
+            const peakSOM = (ind) => {
+              const m = state.markets[(ind._assetId || "") + "_" + ind.id] || ind.market || {};
+              if (m.company_slice && m.regions) {
+                let som = 0;
+                for (const [rk, cs] of Object.entries(m.company_slice)) {
+                  const tr = m.regions[rk]; if (!tr || !cs) continue;
+                  som += (tr.patientsK || 0) * ((cs.reachPct || 0) / 100) * ((cs.wtpPct || 0) / 100) * (cs.priceK || 0);
+                }
+                return som;
+              }
+              if (m.regions) {
+                let addr = 0;
+                for (const r of Object.values(m.regions)) if (r) addr += (r.patientsK || 0) * ((r.wtpPct || 0) / 100) * (r.priceK || 0);
+                return addr * ((m.penPct || 0) / 100);
+              }
+              return (m.salesM || 0);
+            };
             const catMateriality = (cat) => {
               if (!cat.asset || !cat.indication || !baseWTP || !isFinite(baseWTP)) return null;
               const modState = JSON.parse(JSON.stringify(state));
-              for (const sk of model.sks) {
-                const asmp = modState.scenarios[sk].assumptions || (modState.scenarios[sk].assumptions = {});
-                asmp[cat.asset] = asmp[cat.asset] || {};
-                asmp[cat.asset][cat.indication] = { pos: 0, apr: 0, pen: 1 };
+              const targetAsset = config.assets.find(a => a.id === cat.asset);
+              const useBucketPath = targetAsset && isBucketAsset(targetAsset);
+              if (useBucketPath) {
+                // Sum peak across ALL commercial-bucket indications, then find this one's share.
+                let totalBucket = 0, thisShare = 0;
+                for (const a of config.assets) {
+                  if (!isBucketAsset(a)) continue;
+                  for (const ind of a.indications) {
+                    const p = peakSOM({ ...ind, _assetId: a.id });
+                    totalBucket += p;
+                    if (a.id === cat.asset && ind.id === cat.indication) thisShare += p;
+                  }
+                }
+                const share = totalBucket > 0 ? thisShare / totalBucket : 0;
+                if (share > 0) {
+                  for (const sk of model.sks) {
+                    const v = modState.scenarios[sk].val;
+                    if (v.commercialRevM) v.commercialRevM = v.commercialRevM * (1 - share);
+                  }
+                } else {
+                  // Fall back to pos/apr zeroing if no peak signal (rare).
+                  for (const sk of model.sks) {
+                    const asmp = modState.scenarios[sk].assumptions || (modState.scenarios[sk].assumptions = {});
+                    asmp[cat.asset] = asmp[cat.asset] || {};
+                    asmp[cat.asset][cat.indication] = { pos: 0, apr: 0, pen: 1 };
+                  }
+                }
+              } else {
+                // Pipeline path: zero pos/apr -- per-indication peakRev × composite vanishes.
+                for (const sk of model.sks) {
+                  const asmp = modState.scenarios[sk].assumptions || (modState.scenarios[sk].assumptions = {});
+                  asmp[cat.asset] = asmp[cat.asset] || {};
+                  asmp[cat.asset][cat.indication] = { pos: 0, apr: 0, pen: 1 };
+                }
               }
               let zeroWTP = 0;
               const co = { ...config.company, cash: state.cash, currentPrice: state.currentPrice };

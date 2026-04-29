@@ -2676,15 +2676,16 @@
       ],
       "indications": [
         {
-          "id": "thrombosis_lovenox",
-          "name": "Lovenox + Plavix antithrombotic legacy",
+          "id": "lovenox_anticoag",
+          "name": "Lovenox (enoxaparin LMWH) -- VTE + ACS anticoag",
+          "area": "cardio_metabolic.thrombosis.anticoagulation",
           "market": {
             "tamB": 25,
             "penPct": 4,
-            "salesM": 1200,
+            "salesM": 696,
             "salesYear": 2025,
             "peakYear": 2026,
-            "notes": "Lovenox LMWH (~$700M, mostly EM branded post US LOE 2010) + Plavix P2Y12 (~$500M, almost entirely EM/Asia branded). Mature legacy.",
+            "notes": "Lovenox (LMWH anticoagulant ~$700M Sanofi-share, mostly EM branded post US LOE 2010).",
             "company_slice": {
               "us": {
                 "reachPct": 14.5,
@@ -2748,8 +2749,83 @@
                 "priceK": 0.4
               }
             }
-          },
-          "area": "cardio_metabolic.thrombosis.anticoagulation"
+          }
+        },
+        {
+          "id": "plavix_antiplatelet",
+          "name": "Plavix (clopidogrel P2Y12) -- antiplatelet",
+          "area": "cardio_metabolic.thrombosis.antiplatelet",
+          "market": {
+            "tamB": 25,
+            "penPct": 20,
+            "salesM": 504,
+            "salesYear": 2025,
+            "peakYear": 2026,
+            "notes": "Plavix (P2Y12 antiplatelet ~$500M, almost entirely EM/Asia branded). Generic in DM markets.",
+            "company_slice": {
+              "us": {
+                "reachPct": 1.1,
+                "wtpPct": 18,
+                "priceK": 1
+              },
+              "eu": {
+                "reachPct": 1.1,
+                "wtpPct": 15,
+                "priceK": 0.5
+              },
+              "row": {
+                "reachPct": 6.8,
+                "wtpPct": 12,
+                "priceK": 0.4
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Lovenox+Plavix branded ~0.2% post-LOE; mostly EM volume."
+              },
+              "us.priceK": {
+                "note": "$1K/yr blended branded."
+              },
+              "us.wtpPct": {
+                "note": "18%."
+              },
+              "eu.reachPct": {
+                "note": "0.2%."
+              },
+              "eu.wtpPct": {
+                "note": "15%."
+              },
+              "eu.priceK": {
+                "note": "$500."
+              },
+              "row.reachPct": {
+                "note": "1.5% -- China + EM dominant."
+              },
+              "row.wtpPct": {
+                "note": "12%."
+              },
+              "row.priceK": {
+                "note": "$400."
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              },
+              "eu": {
+                "patientsK": 50000,
+                "wtpPct": 20,
+                "priceK": 0.25
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 12,
+                "priceK": 0.08
+              }
+            }
+          }
         }
       ]
     },
@@ -3530,7 +3606,12 @@
           }
         },
         "lovenox_plavix": {
-          "thrombosis_lovenox": {
+          "lovenox_anticoag": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "plavix_antiplatelet": {
             "pos": 100,
             "apr": 100,
             "pen": 0.6
@@ -3799,7 +3880,12 @@
           }
         },
         "lovenox_plavix": {
-          "thrombosis_lovenox": {
+          "lovenox_anticoag": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "plavix_antiplatelet": {
             "pos": 100,
             "apr": 100,
             "pen": 0.7
@@ -4070,7 +4156,12 @@
           }
         },
         "lovenox_plavix": {
-          "thrombosis_lovenox": {
+          "lovenox_anticoag": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "plavix_antiplatelet": {
             "pos": 100,
             "apr": 100,
             "pen": 0.8
@@ -4340,7 +4431,12 @@
           }
         },
         "lovenox_plavix": {
-          "thrombosis_lovenox": {
+          "lovenox_anticoag": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "plavix_antiplatelet": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
@@ -4609,7 +4705,12 @@
           }
         },
         "lovenox_plavix": {
-          "thrombosis_lovenox": {
+          "lovenox_anticoag": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "plavix_antiplatelet": {
             "pos": 100,
             "apr": 100,
             "pen": 0.9

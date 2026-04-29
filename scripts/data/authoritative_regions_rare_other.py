@@ -685,18 +685,6 @@ REGIONS = {
         "eu":  {"patientsK": 30000,  "wtpPct": 30, "priceK": 0.25},
         "row": {"patientsK": 150000, "wtpPct": 18, "priceK": 0.08},
     },
-    # NTRK fusion tumors (tumor-agnostic): rare oncogenic fusions in
-    # NTRK1/2/3. ~1% of solid tumors overall; enriched in salivary
-    # (60% MASC), thyroid (~25-60% pediatric papillary), secretory
-    # breast (~95%), infantile fibrosarcoma. US ~5K eligible/yr, EU 7K,
-    # ROW 30K. Class: Vitrakvi (Bayer larotrectinib), Rozlytrek (Roche
-    # entrectinib NTRK+ROS1), Augtyro (BMS/Mirati repotrectinib
-    # NTRK+ROS1 next-gen). Net branded ~$170K/yr.
-    "oncology.multi_tumor.ntrk_fusion": {
-        "us":  {"patientsK": 5,   "wtpPct": 70, "priceK": 175},
-        "eu":  {"patientsK": 7,   "wtpPct": 50, "priceK": 100},
-        "row": {"patientsK": 30,  "wtpPct": 14, "priceK": 35},
-    },
     # Antiplatelet therapy (CV prophylaxis post-MI/stroke + DAPT):
     # blocks platelet aggregation. US ~30M users (low-dose ASA + DAPT),
     # EU ~50M, ROW ~200M. Class: low-dose Aspirin (Bayer Cardio brand
@@ -784,6 +772,5 @@ PEN_PCT = {
     "nephrology.glomerular.lupus_nephritis": 40,
     "infectious_disease.vaccines.dengue": 22,
     "women_health.contraception.ocp": 25,
-    "oncology.multi_tumor.ntrk_fusion": 50,
     "cardio_metabolic.thrombosis.antiplatelet": 20,
 }

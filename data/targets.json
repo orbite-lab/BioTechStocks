@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-29T15:50:00Z",
-    "target_count": 292,
-    "total_assets": 539,
-    "assets_with_targets": 504,
+    "generated": "2026-04-29T15:55:47Z",
+    "target_count": 303,
+    "total_assets": 553,
+    "assets_with_targets": 517,
     "multi_modality_count": 36,
-    "multi_disease_count": 129
+    "multi_disease_count": 134
   },
   "targets": {
     "ABL1": {
@@ -1038,6 +1038,7 @@
     },
     "AR": {
       "companies": [
+        "BAYN",
         "JNJ",
         "PFE"
       ],
@@ -1049,6 +1050,15 @@
         "oncology.genitourinary.prostate"
       ],
       "assets": [
+        {
+          "ticker": "BAYN",
+          "asset": "nubeqa",
+          "name": "Nubeqa (darolutamide) — AR antagonist (mCRPC + mHSPC; w/ Orion 50/50)",
+          "modality": "small_molecule.nuclear_receptor.androgen_antagonist",
+          "areas": [
+            "oncology.genitourinary.prostate"
+          ]
+        },
         {
           "ticker": "JNJ",
           "asset": "erleada",
@@ -1077,7 +1087,7 @@
           ]
         }
       ],
-      "assetCount": 3,
+      "assetCount": 4,
       "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
@@ -1085,10 +1095,10 @@
         "small_molecule"
       ],
       "totalTAM": 10444.0,
-      "totalSOM": 8410.1,
-      "totalSales": 5750.0,
-      "cagrPct": 5.1,
-      "peakYear": 2028
+      "totalSOM": 11355.5,
+      "totalSales": 7990.0,
+      "cagrPct": 10.3,
+      "peakYear": 2029
     },
     "ATP2C1": {
       "companies": [
@@ -4384,6 +4394,7 @@
       "companies": [
         "AMGN",
         "AZN",
+        "BAYN",
         "JANX",
         "JNJ"
       ],
@@ -4391,11 +4402,13 @@
         "antibody.bispecific.egfr_met",
         "antibody.bispecific.tumor_activated_tce",
         "antibody.monoclonal.anti_egfr",
-        "small_molecule.kinase_inhibitor.egfr_tki"
+        "small_molecule.kinase_inhibitor.egfr_tki",
+        "small_molecule.kinase_inhibitor.her2_egfr"
       ],
       "areas": [
         "oncology.gi.colorectal",
-        "oncology.lung.nsclc_driver.egfr"
+        "oncology.lung.nsclc_driver.egfr",
+        "oncology.lung.nsclc_driver.her2"
       ],
       "assets": [
         {
@@ -4417,6 +4430,15 @@
           ]
         },
         {
+          "ticker": "BAYN",
+          "asset": "bay2927088",
+          "name": "BAY 2927088 — HER2 + EGFR mutant NSCLC (Ph2/3)",
+          "modality": "small_molecule.kinase_inhibitor.her2_egfr",
+          "areas": [
+            "oncology.lung.nsclc_driver.her2"
+          ]
+        },
+        {
           "ticker": "JANX",
           "asset": "janx008",
           "name": "JANX008 — EGFR-TRACTr (solid tumors)",
@@ -4435,18 +4457,18 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 4,
+      "assetCount": 5,
+      "modalityCount": 5,
       "modalityClassCount": 2,
-      "areaCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
         "antibody",
         "small_molecule"
       ],
-      "totalTAM": 23730.7,
-      "totalSOM": 20409.4,
+      "totalTAM": 24568.8,
+      "totalSOM": 20455.0,
       "totalSales": 9129.0,
-      "cagrPct": 6.7,
+      "cagrPct": 6.8,
       "peakYear": 2030
     },
     "EPHA2": {
@@ -4522,6 +4544,7 @@
         "4568",
         "6990",
         "AZN",
+        "BAYN",
         "NUVL",
         "RHHBY"
       ],
@@ -4530,7 +4553,8 @@
         "adc.her2.dm1_payload",
         "antibody.monoclonal.anti_her2",
         "antibody.monoclonal.anti_her2_combo",
-        "small_molecule.kinase_inhibitor.her2"
+        "small_molecule.kinase_inhibitor.her2",
+        "small_molecule.kinase_inhibitor.her2_egfr"
       ],
       "areas": [
         "oncology.breast.her2_pos",
@@ -4564,6 +4588,15 @@
           "areas": [
             "oncology.breast.her2_pos",
             "oncology.gi.gastric_esoph",
+            "oncology.lung.nsclc_driver.her2"
+          ]
+        },
+        {
+          "ticker": "BAYN",
+          "asset": "bay2927088",
+          "name": "BAY 2927088 — HER2 + EGFR mutant NSCLC (Ph2/3)",
+          "modality": "small_molecule.kinase_inhibitor.her2_egfr",
+          "areas": [
             "oncology.lung.nsclc_driver.her2"
           ]
         },
@@ -4613,8 +4646,8 @@
           ]
         }
       ],
-      "assetCount": 8,
-      "modalityCount": 5,
+      "assetCount": 9,
+      "modalityCount": 6,
       "modalityClassCount": 3,
       "areaCount": 3,
       "modalityClasses": [
@@ -4623,9 +4656,9 @@
         "small_molecule"
       ],
       "totalTAM": 30886.8,
-      "totalSOM": 29704.4,
+      "totalSOM": 29749.9,
       "totalSales": 17092.0,
-      "cagrPct": 2.9,
+      "cagrPct": 3.0,
       "peakYear": 2029
     },
     "ERBB3": {
@@ -4732,6 +4765,7 @@
     "F10": {
       "companies": [
         "4568",
+        "BAYN",
         "BMY",
         "JNJ",
         "NOVO",
@@ -4755,6 +4789,15 @@
           "asset": "japan_legacy",
           "name": "Japan pharma + other pipeline",
           "modality": "small_molecule.enzyme_inhibitor.factor_xa",
+          "areas": [
+            "cardio_metabolic.thrombosis.anticoagulation"
+          ]
+        },
+        {
+          "ticker": "BAYN",
+          "asset": "xarelto",
+          "name": "Xarelto (rivaroxaban) — Factor Xa inhibitor (Bayer ROW; JNJ US)",
+          "modality": "small_molecule.coagulation.factor_xa_inhibitor",
           "areas": [
             "cardio_metabolic.thrombosis.anticoagulation"
           ]
@@ -4814,7 +4857,7 @@
           ]
         }
       ],
-      "assetCount": 7,
+      "assetCount": 8,
       "modalityCount": 4,
       "modalityClassCount": 2,
       "areaCount": 2,
@@ -4823,9 +4866,9 @@
         "small_molecule"
       ],
       "totalTAM": 34350.0,
-      "totalSOM": 48564.7,
-      "totalSales": 31066.0,
-      "cagrPct": -0.0,
+      "totalSOM": 52494.0,
+      "totalSales": 33687.0,
+      "cagrPct": -2.7,
       "peakYear": 2027
     },
     "F11": {
@@ -5281,10 +5324,12 @@
     },
     "FLT1": {
       "companies": [
-        "4502"
+        "4502",
+        "BAYN"
       ],
       "modalities": [
-        "small_molecule.kinase_inhibitor.vegfr"
+        "small_molecule.kinase_inhibitor.vegfr",
+        "small_molecule.kinase_inhibitor.vegfr_multikinase"
       ],
       "areas": [
         "oncology.gi.colorectal"
@@ -5298,27 +5343,38 @@
           "areas": [
             "oncology.gi.colorectal"
           ]
+        },
+        {
+          "ticker": "BAYN",
+          "asset": "stivarga",
+          "name": "Stivarga (regorafenib) — multi-kinase inhibitor",
+          "modality": "small_molecule.kinase_inhibitor.vegfr_multikinase",
+          "areas": [
+            "oncology.gi.colorectal"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 6370.6,
-      "totalSOM": 466.6,
-      "totalSales": 200.0,
-      "cagrPct": 50.0,
-      "peakYear": 2031
+      "totalSOM": 1305.2,
+      "totalSales": 760.0,
+      "cagrPct": 15.9,
+      "peakYear": 2028
     },
     "FLT4": {
       "companies": [
-        "4502"
+        "4502",
+        "BAYN"
       ],
       "modalities": [
-        "small_molecule.kinase_inhibitor.vegfr"
+        "small_molecule.kinase_inhibitor.vegfr",
+        "small_molecule.kinase_inhibitor.vegfr_multikinase"
       ],
       "areas": [
         "oncology.gi.colorectal"
@@ -5332,20 +5388,29 @@
           "areas": [
             "oncology.gi.colorectal"
           ]
+        },
+        {
+          "ticker": "BAYN",
+          "asset": "stivarga",
+          "name": "Stivarga (regorafenib) — multi-kinase inhibitor",
+          "modality": "small_molecule.kinase_inhibitor.vegfr_multikinase",
+          "areas": [
+            "oncology.gi.colorectal"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 6370.6,
-      "totalSOM": 466.6,
-      "totalSales": 200.0,
-      "cagrPct": 50.0,
-      "peakYear": 2031
+      "totalSOM": 1305.2,
+      "totalSales": 760.0,
+      "cagrPct": 15.9,
+      "peakYear": 2028
     },
     "FOLH1": {
       "companies": [
@@ -5992,6 +6057,94 @@
       "totalSales": 480.0,
       "cagrPct": 0.0,
       "peakYear": 2032
+    },
+    "GUCY1A2": {
+      "companies": [
+        "BAYN"
+      ],
+      "modalities": [
+        "small_molecule.gpcr.sgc_stimulator"
+      ],
+      "areas": [
+        "cardio_metabolic.cardiopulmonary.pah",
+        "cardio_metabolic.heart_failure.hfref"
+      ],
+      "assets": [
+        {
+          "ticker": "BAYN",
+          "asset": "adempas",
+          "name": "Adempas (riociguat) — soluble guanylate cyclase (sGC) stimulator",
+          "modality": "small_molecule.gpcr.sgc_stimulator",
+          "areas": [
+            "cardio_metabolic.cardiopulmonary.pah"
+          ]
+        },
+        {
+          "ticker": "BAYN",
+          "asset": "verquvo",
+          "name": "Verquvo (vericiguat) — sGC stimulator (HFrEF; w/ MSD)",
+          "modality": "small_molecule.gpcr.sgc_stimulator",
+          "areas": [
+            "cardio_metabolic.heart_failure.hfref"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 21375.0,
+      "totalSOM": 1301.9,
+      "totalSales": 896.0,
+      "cagrPct": 6.9,
+      "peakYear": 2027
+    },
+    "GUCY1B1": {
+      "companies": [
+        "BAYN"
+      ],
+      "modalities": [
+        "small_molecule.gpcr.sgc_stimulator"
+      ],
+      "areas": [
+        "cardio_metabolic.cardiopulmonary.pah",
+        "cardio_metabolic.heart_failure.hfref"
+      ],
+      "assets": [
+        {
+          "ticker": "BAYN",
+          "asset": "adempas",
+          "name": "Adempas (riociguat) — soluble guanylate cyclase (sGC) stimulator",
+          "modality": "small_molecule.gpcr.sgc_stimulator",
+          "areas": [
+            "cardio_metabolic.cardiopulmonary.pah"
+          ]
+        },
+        {
+          "ticker": "BAYN",
+          "asset": "verquvo",
+          "name": "Verquvo (vericiguat) — sGC stimulator (HFrEF; w/ MSD)",
+          "modality": "small_molecule.gpcr.sgc_stimulator",
+          "areas": [
+            "cardio_metabolic.heart_failure.hfref"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 21375.0,
+      "totalSOM": 1301.9,
+      "totalSales": 896.0,
+      "cagrPct": 6.9,
+      "peakYear": 2027
     },
     "HAO1": {
       "companies": [
@@ -8143,10 +8296,12 @@
     },
     "KDR": {
       "companies": [
-        "4502"
+        "4502",
+        "BAYN"
       ],
       "modalities": [
-        "small_molecule.kinase_inhibitor.vegfr"
+        "small_molecule.kinase_inhibitor.vegfr",
+        "small_molecule.kinase_inhibitor.vegfr_multikinase"
       ],
       "areas": [
         "oncology.gi.colorectal"
@@ -8160,20 +8315,29 @@
           "areas": [
             "oncology.gi.colorectal"
           ]
+        },
+        {
+          "ticker": "BAYN",
+          "asset": "stivarga",
+          "name": "Stivarga (regorafenib) — multi-kinase inhibitor",
+          "modality": "small_molecule.kinase_inhibitor.vegfr_multikinase",
+          "areas": [
+            "oncology.gi.colorectal"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 6370.6,
-      "totalSOM": 466.6,
-      "totalSales": 200.0,
-      "cagrPct": 50.0,
-      "peakYear": 2031
+      "totalSOM": 1305.2,
+      "totalSales": 760.0,
+      "cagrPct": 15.9,
+      "peakYear": 2028
     },
     "KIF11": {
       "companies": [
@@ -9515,6 +9679,42 @@
       "cagrPct": -0.2,
       "peakYear": 2026
     },
+    "NR3C2": {
+      "companies": [
+        "BAYN"
+      ],
+      "modalities": [
+        "small_molecule.nuclear_receptor.ns_mra"
+      ],
+      "areas": [
+        "cardio_metabolic.heart_failure.hfpef",
+        "nephrology.ckd.cardiorenal_inflammation"
+      ],
+      "assets": [
+        {
+          "ticker": "BAYN",
+          "asset": "kerendia",
+          "name": "Kerendia (finerenone) — non-steroidal mineralocorticoid receptor antagonist",
+          "modality": "small_molecule.nuclear_receptor.ns_mra",
+          "areas": [
+            "cardio_metabolic.heart_failure.hfpef",
+            "nephrology.ckd.cardiorenal_inflammation"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 20080.0,
+      "totalSOM": 2884.4,
+      "totalSales": 1512.0,
+      "cagrPct": 42.1,
+      "peakYear": 2031
+    },
     "NRAS": {
       "companies": [
         "RVMD"
@@ -9589,15 +9789,26 @@
     },
     "NTRK1": {
       "companies": [
+        "BAYN",
         "BMY"
       ],
       "modalities": [
         "small_molecule.kinase_inhibitor.ros1_ntrk"
       ],
       "areas": [
-        "oncology.lung.nsclc_driver.ros1"
+        "oncology.lung.nsclc_driver.ros1",
+        "oncology.lung.nsclc_undruggable"
       ],
       "assets": [
+        {
+          "ticker": "BAYN",
+          "asset": "vitrakvi",
+          "name": "Vitrakvi (larotrectinib) — TRKA/B/C inhibitor (NTRK+ solid tumors)",
+          "modality": "small_molecule.kinase_inhibitor.ros1_ntrk",
+          "areas": [
+            "oncology.lung.nsclc_undruggable"
+          ]
+        },
         {
           "ticker": "BMY",
           "asset": "augtyro",
@@ -9608,6 +9819,40 @@
           ]
         }
       ],
+      "assetCount": 2,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 6056.0,
+      "totalSOM": 372.7,
+      "totalSales": 212.0,
+      "cagrPct": 19.3,
+      "peakYear": 2030
+    },
+    "NTRK2": {
+      "companies": [
+        "BAYN"
+      ],
+      "modalities": [
+        "small_molecule.kinase_inhibitor.ros1_ntrk"
+      ],
+      "areas": [
+        "oncology.lung.nsclc_undruggable"
+      ],
+      "assets": [
+        {
+          "ticker": "BAYN",
+          "asset": "vitrakvi",
+          "name": "Vitrakvi (larotrectinib) — TRKA/B/C inhibitor (NTRK+ solid tumors)",
+          "modality": "small_molecule.kinase_inhibitor.ros1_ntrk",
+          "areas": [
+            "oncology.lung.nsclc_undruggable"
+          ]
+        }
+      ],
       "assetCount": 1,
       "modalityCount": 1,
       "modalityClassCount": 1,
@@ -9615,10 +9860,44 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 723.5,
-      "totalSOM": 150.2,
-      "totalSales": 100.0,
-      "cagrPct": 30.0,
+      "totalTAM": 5332.5,
+      "totalSOM": 222.5,
+      "totalSales": 112.0,
+      "cagrPct": 12.0,
+      "peakYear": 2030
+    },
+    "NTRK3": {
+      "companies": [
+        "BAYN"
+      ],
+      "modalities": [
+        "small_molecule.kinase_inhibitor.ros1_ntrk"
+      ],
+      "areas": [
+        "oncology.lung.nsclc_undruggable"
+      ],
+      "assets": [
+        {
+          "ticker": "BAYN",
+          "asset": "vitrakvi",
+          "name": "Vitrakvi (larotrectinib) — TRKA/B/C inhibitor (NTRK+ solid tumors)",
+          "modality": "small_molecule.kinase_inhibitor.ros1_ntrk",
+          "areas": [
+            "oncology.lung.nsclc_undruggable"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 5332.5,
+      "totalSOM": 222.5,
+      "totalSales": 112.0,
+      "cagrPct": 12.0,
       "peakYear": 2030
     },
     "OPA1": {
@@ -10447,13 +10726,16 @@
     },
     "PGF": {
       "companies": [
-        "AMGN"
+        "AMGN",
+        "BAYN"
       ],
       "modalities": [
         "antibody.fusion.vegf_trap"
       ],
       "areas": [
-        "ophthalmology.retina.nvamd"
+        "ophthalmology.retina.dme",
+        "ophthalmology.retina.nvamd",
+        "ophthalmology.retina.rvo"
       ],
       "assets": [
         {
@@ -10464,32 +10746,54 @@
           "areas": [
             "ophthalmology.retina.nvamd"
           ]
+        },
+        {
+          "ticker": "BAYN",
+          "asset": "eylea",
+          "name": "Eylea (aflibercept) — anti-VEGF Fc fusion (Bayer ROW; REGN US)",
+          "modality": "antibody.fusion.vegf_trap",
+          "areas": [
+            "ophthalmology.retina.dme",
+            "ophthalmology.retina.nvamd",
+            "ophthalmology.retina.rvo"
+          ]
         }
       ],
-      "assetCount": 1,
+      "assetCount": 2,
       "modalityCount": 1,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 3,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 3630.0,
-      "totalSOM": 1050.6,
-      "totalSales": 700.0,
-      "cagrPct": 35.0,
-      "peakYear": 2028
+      "totalTAM": 15783.0,
+      "totalSOM": 6159.6,
+      "totalSales": 4172.0,
+      "cagrPct": -6.1,
+      "peakYear": 2026
     },
     "PGR": {
       "companies": [
+        "BAYN",
         "MRK"
       ],
       "modalities": [
+        "small_molecule.endocrine.progestogen_contraceptive",
         "small_molecule.steroid.progestin"
       ],
       "areas": [
         "women_health.contraception.larc_implant"
       ],
       "assets": [
+        {
+          "ticker": "BAYN",
+          "asset": "mirena_yaz",
+          "name": "Mirena IUD + Yaz franchise (oral contraceptives)",
+          "modality": "small_molecule.endocrine.progestogen_contraceptive",
+          "areas": [
+            "women_health.contraception.larc_implant"
+          ]
+        },
         {
           "ticker": "MRK",
           "asset": "nexplanon",
@@ -10500,34 +10804,46 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 19240.0,
-      "totalSOM": 2107.1,
-      "totalSales": 1400.0,
-      "cagrPct": 0.0,
+      "totalSOM": 2931.8,
+      "totalSales": 2004.0,
+      "cagrPct": 2.3,
       "peakYear": 2028
     },
     "PIK3CA": {
       "companies": [
+        "BAYN",
         "CELC",
         "NVS",
         "RHHBY"
       ],
       "modalities": [
         "small_molecule.kinase_inhibitor.pi3k",
-        "small_molecule.kinase_inhibitor.pi3k_alpha"
+        "small_molecule.kinase_inhibitor.pi3k_alpha",
+        "small_molecule.kinase_inhibitor.pi3k_alpha_delta"
       ],
       "areas": [
         "oncology.breast.hr_her2_neg",
-        "oncology.genitourinary.prostate"
+        "oncology.genitourinary.prostate",
+        "oncology.hematology.nhl.fl"
       ],
       "assets": [
+        {
+          "ticker": "BAYN",
+          "asset": "aliqopa",
+          "name": "Aliqopa (copanlisib) — PI3K alpha/delta inhibitor (FL)",
+          "modality": "small_molecule.kinase_inhibitor.pi3k_alpha_delta",
+          "areas": [
+            "oncology.hematology.nhl.fl"
+          ]
+        },
         {
           "ticker": "CELC",
           "asset": "geda_wt",
@@ -10583,18 +10899,52 @@
           ]
         }
       ],
-      "assetCount": 6,
-      "modalityCount": 2,
+      "assetCount": 7,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 28839.0,
-      "totalSOM": 12011.4,
-      "totalSales": 430.0,
-      "cagrPct": 23.1,
+      "totalTAM": 30047.0,
+      "totalSOM": 12095.3,
+      "totalSales": 486.0,
+      "cagrPct": 22.9,
       "peakYear": 2032
+    },
+    "PIK3CD": {
+      "companies": [
+        "BAYN"
+      ],
+      "modalities": [
+        "small_molecule.kinase_inhibitor.pi3k_alpha_delta"
+      ],
+      "areas": [
+        "oncology.hematology.nhl.fl"
+      ],
+      "assets": [
+        {
+          "ticker": "BAYN",
+          "asset": "aliqopa",
+          "name": "Aliqopa (copanlisib) — PI3K alpha/delta inhibitor (FL)",
+          "modality": "small_molecule.kinase_inhibitor.pi3k_alpha_delta",
+          "areas": [
+            "oncology.hematology.nhl.fl"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 1208.0,
+      "totalSOM": 83.9,
+      "totalSales": 56.0,
+      "cagrPct": -15.0,
+      "peakYear": 2025
     },
     "PKD1": {
       "companies": [
@@ -10948,6 +11298,74 @@
       "totalSales": 1850.0,
       "cagrPct": 0.0,
       "peakYear": 2030
+    },
+    "PTGS1": {
+      "companies": [
+        "BAYN"
+      ],
+      "modalities": [
+        "small_molecule.cox_inhibitor.aspirin"
+      ],
+      "areas": [
+        "cardio_metabolic.thrombosis.anticoagulation"
+      ],
+      "assets": [
+        {
+          "ticker": "BAYN",
+          "asset": "aspirin_cardio",
+          "name": "Aspirin Cardio (low-dose ASA) — antiplatelet",
+          "modality": "small_molecule.cox_inhibitor.aspirin",
+          "areas": [
+            "cardio_metabolic.thrombosis.anticoagulation"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 19650.0,
+      "totalSOM": 192.4,
+      "totalSales": 200.0,
+      "cagrPct": -2.0,
+      "peakYear": 2025
+    },
+    "PTGS2": {
+      "companies": [
+        "BAYN"
+      ],
+      "modalities": [
+        "small_molecule.cox_inhibitor.aspirin"
+      ],
+      "areas": [
+        "cardio_metabolic.thrombosis.anticoagulation"
+      ],
+      "assets": [
+        {
+          "ticker": "BAYN",
+          "asset": "aspirin_cardio",
+          "name": "Aspirin Cardio (low-dose ASA) — antiplatelet",
+          "modality": "small_molecule.cox_inhibitor.aspirin",
+          "areas": [
+            "cardio_metabolic.thrombosis.anticoagulation"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 19650.0,
+      "totalSOM": 192.4,
+      "totalSales": 200.0,
+      "cagrPct": -2.0,
+      "peakYear": 2025
     },
     "RAMP1": {
       "companies": [
@@ -12488,6 +12906,74 @@
       "cagrPct": 5.0,
       "peakYear": 2035
     },
+    "TACR1": {
+      "companies": [
+        "BAYN"
+      ],
+      "modalities": [
+        "small_molecule.gpcr.nk1_nk3_dual_antagonist"
+      ],
+      "areas": [
+        "women_health.menopause.hrt"
+      ],
+      "assets": [
+        {
+          "ticker": "BAYN",
+          "asset": "elinzanetant_lynkuet",
+          "name": "Lynkuet (elinzanetant) — NK1/NK3 dual antagonist (menopausal VMS)",
+          "modality": "small_molecule.gpcr.nk1_nk3_dual_antagonist",
+          "areas": [
+            "women_health.menopause.hrt"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 935.0,
+      "totalSOM": 449.1,
+      "totalSales": 56.0,
+      "cagrPct": 60.0,
+      "peakYear": 2031
+    },
+    "TACR3": {
+      "companies": [
+        "BAYN"
+      ],
+      "modalities": [
+        "small_molecule.gpcr.nk1_nk3_dual_antagonist"
+      ],
+      "areas": [
+        "women_health.menopause.hrt"
+      ],
+      "assets": [
+        {
+          "ticker": "BAYN",
+          "asset": "elinzanetant_lynkuet",
+          "name": "Lynkuet (elinzanetant) — NK1/NK3 dual antagonist (menopausal VMS)",
+          "modality": "small_molecule.gpcr.nk1_nk3_dual_antagonist",
+          "areas": [
+            "women_health.menopause.hrt"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 935.0,
+      "totalSOM": 449.1,
+      "totalSales": 56.0,
+      "cagrPct": 60.0,
+      "peakYear": 2031
+    },
     "TACSTD2": {
       "companies": [
         "4568",
@@ -12565,6 +13051,40 @@
       "totalSales": 628.0,
       "cagrPct": 6.1,
       "peakYear": 2032
+    },
+    "TEK": {
+      "companies": [
+        "BAYN"
+      ],
+      "modalities": [
+        "small_molecule.kinase_inhibitor.vegfr_multikinase"
+      ],
+      "areas": [
+        "oncology.gi.colorectal"
+      ],
+      "assets": [
+        {
+          "ticker": "BAYN",
+          "asset": "stivarga",
+          "name": "Stivarga (regorafenib) — multi-kinase inhibitor",
+          "modality": "small_molecule.kinase_inhibitor.vegfr_multikinase",
+          "areas": [
+            "oncology.gi.colorectal"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 6370.6,
+      "totalSOM": 838.6,
+      "totalSales": 560.0,
+      "cagrPct": -3.0,
+      "peakYear": 2027
     },
     "TFPI": {
       "companies": [
@@ -13585,6 +14105,7 @@
     "VEGFA": {
       "companies": [
         "AMGN",
+        "BAYN",
         "NVS",
         "REGN",
         "RHHBY"
@@ -13626,6 +14147,17 @@
             "oncology.gi.hcc",
             "oncology.gynecologic.ovarian",
             "oncology.lung.nsclc_io_combo"
+          ]
+        },
+        {
+          "ticker": "BAYN",
+          "asset": "eylea",
+          "name": "Eylea (aflibercept) — anti-VEGF Fc fusion (Bayer ROW; REGN US)",
+          "modality": "antibody.fusion.vegf_trap",
+          "areas": [
+            "ophthalmology.retina.dme",
+            "ophthalmology.retina.nvamd",
+            "ophthalmology.retina.rvo"
           ]
         },
         {
@@ -13692,7 +14224,7 @@
           ]
         }
       ],
-      "assetCount": 8,
+      "assetCount": 9,
       "modalityCount": 5,
       "modalityClassCount": 2,
       "areaCount": 8,
@@ -13701,10 +14233,10 @@
         "formulation_modifier"
       ],
       "totalTAM": 63738.4,
-      "totalSOM": 18155.0,
-      "totalSales": 12702.0,
-      "cagrPct": 5.6,
-      "peakYear": 2029
+      "totalSOM": 23264.0,
+      "totalSales": 16174.0,
+      "cagrPct": 1.2,
+      "peakYear": 2028
     },
     "VEGFR1": {
       "companies": [

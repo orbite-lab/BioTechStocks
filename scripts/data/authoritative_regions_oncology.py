@@ -359,6 +359,42 @@ REGIONS = {
         "eu":  {"patientsK": 7,   "wtpPct": 70, "priceK": 180},
         "row": {"patientsK": 80,  "wtpPct": 22, "priceK": 70},
     },
+    # Myelofibrosis (MF): primary + post-PV/post-ET. ~17K US prevalent,
+    # ~25K EU5, ~80K ROW. Branded class: Jakavi/Jakafi (ruxolitinib JAK1/2
+    # Novartis/Incyte ~$5B globally), Inrebic (fedratinib BMS), Vonjo
+    # (pacritinib SMPI/CTI), Ojjaara (momelotinib GSK 2023). Pelabresib
+    # (Novartis BET inhibitor) Ph3 ongoing. Net branded ~$170K/yr.
+    "hematology.myeloproliferative.mf": {
+        "us":  {"patientsK": 17,  "wtpPct": 72, "priceK": 170},
+        "eu":  {"patientsK": 25,  "wtpPct": 55, "priceK": 100},
+        "row": {"patientsK": 80,  "wtpPct": 15, "priceK": 35},
+    },
+    # Polycythemia vera (PV): ~70K US, ~100K EU5, ~250K ROW. Branded class:
+    # Jakavi/Jakafi 2L (HU intolerant ~$1B), Besremi (ropeginterferon
+    # PharmaEssentia/AOP), hydroxyurea (generic). Net branded ~$120K/yr.
+    "hematology.myeloproliferative.pv": {
+        "us":  {"patientsK": 70,  "wtpPct": 35, "priceK": 120},
+        "eu":  {"patientsK": 100, "wtpPct": 22, "priceK": 70},
+        "row": {"patientsK": 250, "wtpPct": 8,  "priceK": 25},
+    },
+    # Aplastic anemia (severe): ~3K US, ~4K EU5, ~30K ROW. Branded class:
+    # Promacta/Revolade (eltrombopag TPO mimetic Novartis ~$300M AA share)
+    # added to standard IST (cyclosporine + ATG). Net branded ~$110K/yr.
+    "hematology.rare_blood.aplastic_anemia": {
+        "us":  {"patientsK": 5,   "wtpPct": 80, "priceK": 140},
+        "eu":  {"patientsK": 6,   "wtpPct": 60, "priceK": 85},
+        "row": {"patientsK": 50,  "wtpPct": 18, "priceK": 30},
+    },
+    # C3 glomerulopathy (C3G): ultra-rare complement-mediated kidney
+    # disease, ~1K US prevalent, ~2K EU5, ~6K ROW. Branded class emerging:
+    # Fabhalta (iptacopan factor B inhibitor Novartis Ph3 APPEAR-C3G 2025
+    # positive), pegcetacoplan (Empaveli Apellis Ph3 VALIANT). Net branded
+    # peak ~$280K/yr orphan-priced.
+    "nephrology.glomerular.c3g": {
+        "us":  {"patientsK": 1,   "wtpPct": 65, "priceK": 280},
+        "eu":  {"patientsK": 2,   "wtpPct": 45, "priceK": 170},
+        "row": {"patientsK": 6,   "wtpPct": 10, "priceK": 60},
+    },
     # Acquired thrombotic thrombocytopenic purpura (aTTP): ultra-rare ADAMTS13
     # autoimmune deficiency. ~3K US incident/yr, ~4K EU, ~10K ROW. Class:
     # Cablivi (caplacizumab anti-vWF nanobody, Sanofi ~$300M), plasma exchange
@@ -492,6 +528,10 @@ PEN_PCT = {
     "hematology.rare_blood.ahus": 55,
     "hematology.rare_blood.attp": 70,
     "hematology.rare_blood.hemophilia_b": 60,
+    "hematology.myeloproliferative.mf": 65,
+    "hematology.myeloproliferative.pv": 25,
+    "hematology.rare_blood.aplastic_anemia": 60,
+    "nephrology.glomerular.c3g": 45,
     "oncology.skin.melanoma": 65,
     "oncology.skin.cscc": 50,
     "oncology.skin.bcc": 45,

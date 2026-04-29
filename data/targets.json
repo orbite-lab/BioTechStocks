@@ -1,13 +1,57 @@
 {
   "_meta": {
-    "generated": "2026-04-29T14:00:30Z",
-    "target_count": 223,
-    "total_assets": 396,
-    "assets_with_targets": 370,
-    "multi_modality_count": 21,
-    "multi_disease_count": 94
+    "generated": "2026-04-29T14:11:53Z",
+    "target_count": 235,
+    "total_assets": 423,
+    "assets_with_targets": 396,
+    "multi_modality_count": 24,
+    "multi_disease_count": 101
   },
   "targets": {
+    "ABL1": {
+      "companies": [
+        "NVS"
+      ],
+      "modalities": [
+        "small_molecule.kinase_inhibitor.bcr_abl_2nd_gen",
+        "small_molecule.kinase_inhibitor.bcr_abl_stamp"
+      ],
+      "areas": [
+        "oncology.hematology.cll"
+      ],
+      "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "scemblix",
+          "name": "Scemblix (asciminib) — BCR-ABL STAMP allosteric inhibitor",
+          "modality": "small_molecule.kinase_inhibitor.bcr_abl_stamp",
+          "areas": [
+            "oncology.hematology.cll"
+          ]
+        },
+        {
+          "ticker": "NVS",
+          "asset": "tasigna",
+          "name": "Tasigna (nilotinib) — BCR-ABL 2nd-gen TKI (declining post-LOE)",
+          "modality": "small_molecule.kinase_inhibitor.bcr_abl_2nd_gen",
+          "areas": [
+            "oncology.hematology.cll"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 8900.0,
+      "totalSOM": 4051.3,
+      "totalSales": 2390.0,
+      "cagrPct": 5.5,
+      "peakYear": 2028
+    },
     "ACVR1C": {
       "companies": [
         "ARWR"
@@ -190,19 +234,33 @@
     },
     "AGTR1": {
       "companies": [
+        "NVS",
         "SNY",
         "TVTX"
       ],
       "modalities": [
+        "small_molecule.cardio.arni",
         "small_molecule.gpcr.arb_at1",
         "small_molecule.gpcr.eta_at1_antagonist"
       ],
       "areas": [
+        "cardio_metabolic.heart_failure.hfpef",
+        "cardio_metabolic.heart_failure.hfref",
         "cardio_metabolic.hypertension.outpatient_generic",
         "immunology.autoimmune.fsgs",
         "immunology.autoimmune.iga_nephropathy"
       ],
       "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "entresto",
+          "name": "Entresto (sacubitril/valsartan) — ARNI for heart failure",
+          "modality": "small_molecule.cardio.arni",
+          "areas": [
+            "cardio_metabolic.heart_failure.hfpef",
+            "cardio_metabolic.heart_failure.hfref"
+          ]
+        },
         {
           "ticker": "SNY",
           "asset": "aprovel",
@@ -231,18 +289,18 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 2,
+      "assetCount": 4,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 3,
+      "areaCount": 5,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 10190.5,
-      "totalSOM": 2048.2,
-      "totalSales": 1100.0,
-      "cagrPct": 0.0,
-      "peakYear": 2029
+      "totalTAM": 42010.5,
+      "totalSOM": 15054.4,
+      "totalSales": 8850.0,
+      "cagrPct": -11.5,
+      "peakYear": 2025
     },
     "AKT1": {
       "companies": [
@@ -1002,16 +1060,32 @@
     },
     "BRAF": {
       "companies": [
+        "NVS",
         "PFE"
       ],
       "modalities": [
-        "small_molecule.kinase_inhibitor.braf_mek"
+        "small_molecule.kinase_inhibitor.braf_mek",
+        "small_molecule.kinase_inhibitor.braf_mek_combo"
       ],
       "areas": [
+        "oncology.endocrine.thyroid_cancer",
         "oncology.gi.colorectal",
+        "oncology.lung.nsclc_driver.kras",
         "oncology.skin.melanoma"
       ],
       "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "tafinlar_mekinist",
+          "name": "Tafinlar (dabrafenib BRAF) + Mekinist (trametinib MEK) combo",
+          "modality": "small_molecule.kinase_inhibitor.braf_mek_combo",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.gi.colorectal",
+            "oncology.lung.nsclc_driver.kras",
+            "oncology.skin.melanoma"
+          ]
+        },
         {
           "ticker": "PFE",
           "asset": "braftovi_mektovi",
@@ -1023,18 +1097,52 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 2,
+      "areaCount": 4,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 12904.6,
-      "totalSOM": 1049.5,
-      "totalSales": 700.0,
-      "cagrPct": 5.0,
-      "peakYear": 2028
+      "totalTAM": 18968.0,
+      "totalSOM": 4026.4,
+      "totalSales": 2915.0,
+      "cagrPct": 3.2,
+      "peakYear": 2027
+    },
+    "BRD4": {
+      "companies": [
+        "NVS"
+      ],
+      "modalities": [
+        "small_molecule.epigenetic.bet_inhibitor"
+      ],
+      "areas": [
+        "hematology.myeloproliferative.mf"
+      ],
+      "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "pelabresib",
+          "name": "Pelabresib — BET (BRD4) bromodomain inhibitor (myelofibrosis combo)",
+          "modality": "small_molecule.epigenetic.bet_inhibitor",
+          "areas": [
+            "hematology.myeloproliferative.mf"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 3875.8,
+      "totalSOM": 449.4,
+      "totalSales": 0.0,
+      "cagrPct": 45.0,
+      "peakYear": 2031
     },
     "BTK": {
       "companies": [
@@ -1042,6 +1150,7 @@
         "AZN",
         "JNJ",
         "MRK",
+        "NVS",
         "ONC",
         "SNY"
       ],
@@ -1052,6 +1161,7 @@
         "small_molecule.protein_degrader.btk_cdac"
       ],
       "areas": [
+        "dermatology.inflammatory_derm.csu",
         "immunology.demyelinating.multiple_sclerosis",
         "immunology.transplant.cgvhd",
         "oncology.gi.hcc",
@@ -1106,6 +1216,16 @@
           ]
         },
         {
+          "ticker": "NVS",
+          "asset": "remibrutinib",
+          "name": "Remibrutinib — covalent BTK inhibitor (CSU, MS, food allergy, HS)",
+          "modality": "small_molecule.kinase_inhibitor.btk_covalent",
+          "areas": [
+            "dermatology.inflammatory_derm.csu",
+            "immunology.demyelinating.multiple_sclerosis"
+          ]
+        },
+        {
           "ticker": "ONC",
           "asset": "commercial",
           "name": "Brukinsa (zanubrutinib)",
@@ -1145,17 +1265,17 @@
           ]
         }
       ],
-      "assetCount": 8,
+      "assetCount": 9,
       "modalityCount": 4,
       "modalityClassCount": 1,
-      "areaCount": 7,
+      "areaCount": 8,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 48135.9,
-      "totalSOM": 28982.9,
+      "totalTAM": 72035.9,
+      "totalSOM": 35766.9,
       "totalSales": 12880.0,
-      "cagrPct": 2.5,
+      "cagrPct": 12.1,
       "peakYear": 2029
     },
     "C1S": {
@@ -1332,9 +1452,11 @@
     "CALCRL": {
       "companies": [
         "ABBV",
+        "NVS",
         "PFE"
       ],
       "modalities": [
+        "antibody.cytokine.cgrpr_blocker",
         "small_molecule.gpcr.cgrp_antagonist"
       ],
       "areas": [
@@ -1351,6 +1473,15 @@
           ]
         },
         {
+          "ticker": "NVS",
+          "asset": "aimovig",
+          "name": "Aimovig (erenumab) — anti-CGRPR mAb (migraine, 50/50 w/ Amgen)",
+          "modality": "antibody.cytokine.cgrpr_blocker",
+          "areas": [
+            "cns.pain.migraine"
+          ]
+        },
+        {
           "ticker": "PFE",
           "asset": "nurtec",
           "name": "Nurtec ODT/Vydura (rimegepant, CGRP)",
@@ -1360,17 +1491,18 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
+      "assetCount": 3,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
       "areaCount": 1,
       "modalityClasses": [
+        "antibody",
         "small_molecule"
       ],
       "totalTAM": 6220.0,
-      "totalSOM": 4062.0,
-      "totalSales": 2700.0,
-      "cagrPct": 6.7,
+      "totalSOM": 4493.0,
+      "totalSales": 3000.0,
+      "cagrPct": 5.3,
       "peakYear": 2031
     },
     "CASR": {
@@ -2114,9 +2246,11 @@
     "CDK4": {
       "companies": [
         "LLY",
+        "NVS",
         "PFE"
       ],
       "modalities": [
+        "small_molecule.kinase_inhibitor.cdk46",
         "small_molecule.kinase_inhibitor.cdk4_6"
       ],
       "areas": [
@@ -2133,6 +2267,15 @@
           ]
         },
         {
+          "ticker": "NVS",
+          "asset": "kisqali",
+          "name": "Kisqali (ribociclib) — CDK4/6 inhibitor",
+          "modality": "small_molecule.kinase_inhibitor.cdk46",
+          "areas": [
+            "oncology.breast.hr_her2_neg"
+          ]
+        },
+        {
           "ticker": "PFE",
           "asset": "ibrance",
           "name": "Ibrance (palbociclib, CDK4/6) — breast",
@@ -2142,25 +2285,27 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 1,
+      "assetCount": 3,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 18395.0,
-      "totalSOM": 11785.6,
-      "totalSales": 6862.0,
-      "cagrPct": 0.0,
+      "totalSOM": 19658.9,
+      "totalSales": 11642.0,
+      "cagrPct": 10.0,
       "peakYear": 2030
     },
     "CDK6": {
       "companies": [
         "LLY",
+        "NVS",
         "PFE"
       ],
       "modalities": [
+        "small_molecule.kinase_inhibitor.cdk46",
         "small_molecule.kinase_inhibitor.cdk4_6"
       ],
       "areas": [
@@ -2177,6 +2322,15 @@
           ]
         },
         {
+          "ticker": "NVS",
+          "asset": "kisqali",
+          "name": "Kisqali (ribociclib) — CDK4/6 inhibitor",
+          "modality": "small_molecule.kinase_inhibitor.cdk46",
+          "areas": [
+            "oncology.breast.hr_her2_neg"
+          ]
+        },
+        {
           "ticker": "PFE",
           "asset": "ibrance",
           "name": "Ibrance (palbociclib, CDK4/6) — breast",
@@ -2186,17 +2340,17 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 1,
+      "assetCount": 3,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 18395.0,
-      "totalSOM": 11785.6,
-      "totalSales": 6862.0,
-      "cagrPct": 0.0,
+      "totalSOM": 19658.9,
+      "totalSales": 11642.0,
+      "cagrPct": 10.0,
       "peakYear": 2030
     },
     "CETP": {
@@ -2270,6 +2424,44 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2034
+    },
+    "CFB": {
+      "companies": [
+        "NVS"
+      ],
+      "modalities": [
+        "small_molecule.complement.factor_b_inhibitor"
+      ],
+      "areas": [
+        "hematology.rare_blood.pnh",
+        "immunology.autoimmune.iga_nephropathy",
+        "nephrology.glomerular.c3g"
+      ],
+      "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "fabhalta",
+          "name": "Fabhalta (iptacopan) — oral Factor B inhibitor (alternative complement)",
+          "modality": "small_molecule.complement.factor_b_inhibitor",
+          "areas": [
+            "hematology.rare_blood.pnh",
+            "immunology.autoimmune.iga_nephropathy",
+            "nephrology.glomerular.c3g"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 3,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 17822.0,
+      "totalSOM": 2790.9,
+      "totalSales": 505.0,
+      "cagrPct": 55.4,
+      "peakYear": 2031
     },
     "CFTR": {
       "companies": [
@@ -3024,9 +3216,11 @@
     "EDNRA": {
       "companies": [
         "JNJ",
+        "NVS",
         "TVTX"
       ],
       "modalities": [
+        "small_molecule.gpcr.endothelin_a_antagonist",
         "small_molecule.gpcr.endothelin_antagonist",
         "small_molecule.gpcr.eta_at1_antagonist"
       ],
@@ -3043,6 +3237,15 @@
           "modality": "small_molecule.gpcr.endothelin_antagonist",
           "areas": [
             "cardio_metabolic.cardiopulmonary.pah"
+          ]
+        },
+        {
+          "ticker": "NVS",
+          "asset": "atrasentan",
+          "name": "Atrasentan — ETA receptor antagonist (IgA nephropathy; Chinook acq)",
+          "modality": "small_molecule.gpcr.endothelin_a_antagonist",
+          "areas": [
+            "immunology.autoimmune.iga_nephropathy"
           ]
         },
         {
@@ -3064,17 +3267,17 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 2,
+      "assetCount": 4,
+      "modalityCount": 3,
       "modalityClassCount": 1,
       "areaCount": 3,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 15085.5,
-      "totalSOM": 4268.2,
+      "totalSOM": 4772.5,
       "totalSales": 2580.0,
-      "cagrPct": 6.1,
+      "cagrPct": 9.7,
       "peakYear": 2030
     },
     "EGFR": {
@@ -3886,10 +4089,12 @@
     },
     "FOLH1": {
       "companies": [
-        "JANX"
+        "JANX",
+        "NVS"
       ],
       "modalities": [
-        "antibody.bispecific.tumor_activated_tce"
+        "antibody.bispecific.tumor_activated_tce",
+        "radiopharmaceutical.radioligand.psma_lu177"
       ],
       "areas": [
         "oncology.genitourinary.prostate"
@@ -3912,20 +4117,30 @@
           "areas": [
             "oncology.genitourinary.prostate"
           ]
+        },
+        {
+          "ticker": "NVS",
+          "asset": "pluvicto",
+          "name": "Pluvicto (Lu-177 PSMA-617) — radioligand therapy mCRPC",
+          "modality": "radiopharmaceutical.radioligand.psma_lu177",
+          "areas": [
+            "oncology.genitourinary.prostate"
+          ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
+      "assetCount": 3,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
       "areaCount": 1,
       "modalityClasses": [
-        "antibody"
+        "antibody",
+        "radiopharmaceutical"
       ],
       "totalTAM": 10444.0,
-      "totalSOM": 214.0,
-      "totalSales": 0.0,
-      "cagrPct": 0.0,
-      "peakYear": 2033
+      "totalSOM": 3196.6,
+      "totalSales": 1990.0,
+      "cagrPct": 28.0,
+      "peakYear": 2031
     },
     "FOLR1": {
       "companies": [
@@ -4888,7 +5103,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -5067,6 +5282,7 @@
     },
     "IGHE": {
       "companies": [
+        "NVS",
         "RHHBY"
       ],
       "modalities": [
@@ -5078,6 +5294,15 @@
       ],
       "assets": [
         {
+          "ticker": "NVS",
+          "asset": "xolair_nvs",
+          "name": "Xolair (omalizumab) — anti-IgE Novartis-share (50/50 w/ Roche)",
+          "modality": "antibody.monoclonal.anti_ige",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe"
+          ]
+        },
+        {
           "ticker": "RHHBY",
           "asset": "xolair",
           "name": "Xolair (omalizumab) — anti-IgE mAb (50/50 w/ Novartis)",
@@ -5088,7 +5313,7 @@
           ]
         }
       ],
-      "assetCount": 1,
+      "assetCount": 2,
       "modalityCount": 1,
       "modalityClassCount": 1,
       "areaCount": 2,
@@ -5096,9 +5321,9 @@
         "antibody"
       ],
       "totalTAM": 41205.0,
-      "totalSOM": 10915.0,
-      "totalSales": 3475.0,
-      "cagrPct": -3.8,
+      "totalSOM": 13492.8,
+      "totalSales": 5195.0,
+      "cagrPct": -3.7,
       "peakYear": 2025
     },
     "IL12A": {
@@ -5248,9 +5473,11 @@
     "IL17A": {
       "companies": [
         "LLY",
+        "NVS",
         "UCB"
       ],
       "modalities": [
+        "antibody.cytokine.il17_blocker",
         "antibody.monoclonal.anti_il17a",
         "antibody.monoclonal.anti_il17a_f"
       ],
@@ -5271,6 +5498,18 @@
           ]
         },
         {
+          "ticker": "NVS",
+          "asset": "cosentyx",
+          "name": "Cosentyx (secukinumab) — anti-IL-17A mAb",
+          "modality": "antibody.cytokine.il17_blocker",
+          "areas": [
+            "dermatology.inflammatory_derm.hidradenitis_suppurativa",
+            "dermatology.inflammatory_derm.psoriasis_systemic",
+            "immunology.inflammatory_systemic.ankylosing_spondylitis",
+            "immunology.inflammatory_systemic.psoriatic_arthritis"
+          ]
+        },
+        {
           "ticker": "UCB",
           "asset": "commercial",
           "name": "Bimzelx (bimekizumab) - IL-17A/F",
@@ -5283,18 +5522,18 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
       "areaCount": 4,
       "modalityClasses": [
         "antibody"
       ],
       "totalTAM": 149890.0,
-      "totalSOM": 14465.1,
-      "totalSales": 4500.0,
-      "cagrPct": 15.6,
-      "peakYear": 2031
+      "totalSOM": 44144.2,
+      "totalSales": 11170.0,
+      "cagrPct": 12.0,
+      "peakYear": 2029
     },
     "IL17F": {
       "companies": [
@@ -5335,6 +5574,40 @@
       "totalSales": 1500.0,
       "cagrPct": 22.0,
       "peakYear": 2030
+    },
+    "IL1B": {
+      "companies": [
+        "NVS"
+      ],
+      "modalities": [
+        "antibody.cytokine.il1b_blocker"
+      ],
+      "areas": [
+        "immunology.autoimmune.hereditary_angioedema"
+      ],
+      "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "ilaris",
+          "name": "Ilaris (canakinumab) — anti-IL-1b mAb",
+          "modality": "antibody.cytokine.il1b_blocker",
+          "areas": [
+            "immunology.autoimmune.hereditary_angioedema"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 4202.5,
+      "totalSOM": 2131.0,
+      "totalSales": 1880.0,
+      "cagrPct": 10.0,
+      "peakYear": 2029
     },
     "IL1RL1": {
       "companies": [
@@ -5977,6 +6250,7 @@
       "companies": [
         "ABBV",
         "ARQT",
+        "NVS",
         "PFE"
       ],
       "modalities": [
@@ -5988,6 +6262,9 @@
         "dermatology.inflammatory_derm.atopic_dermatitis_systemic",
         "dermatology.rare_skin.alopecia_areata",
         "dermatology.rare_skin.vitiligo",
+        "hematology.myeloproliferative.mf",
+        "hematology.myeloproliferative.pv",
+        "immunology.autoimmune.sjogrens",
         "immunology.inflammatory_gi.crohns",
         "immunology.inflammatory_gi.ulcerative_colitis",
         "immunology.inflammatory_systemic.rheumatoid_arthritis"
@@ -6024,6 +6301,17 @@
           ]
         },
         {
+          "ticker": "NVS",
+          "asset": "jakavi",
+          "name": "Jakavi (ruxolitinib) — JAK1/2 inhibitor (ex-US; Incyte books US as Jakafi)",
+          "modality": "small_molecule.kinase_inhibitor.jak",
+          "areas": [
+            "hematology.myeloproliferative.mf",
+            "hematology.myeloproliferative.pv",
+            "immunology.autoimmune.sjogrens"
+          ]
+        },
+        {
           "ticker": "PFE",
           "asset": "im_jak_derm",
           "name": "JAK inflammation portfolio (Xeljanz + Cibinqo + Litfulo)",
@@ -6035,18 +6323,56 @@
           ]
         }
       ],
-      "assetCount": 4,
+      "assetCount": 5,
       "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 6,
+      "areaCount": 9,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 104628.0,
-      "totalSOM": 13300.3,
-      "totalSales": 7400.0,
-      "cagrPct": 1.1,
-      "peakYear": 2031
+      "totalTAM": 117673.8,
+      "totalSOM": 17133.3,
+      "totalSales": 9510.0,
+      "cagrPct": 2.2,
+      "peakYear": 2030
+    },
+    "JAK2": {
+      "companies": [
+        "NVS"
+      ],
+      "modalities": [
+        "small_molecule.kinase_inhibitor.jak"
+      ],
+      "areas": [
+        "hematology.myeloproliferative.mf",
+        "hematology.myeloproliferative.pv",
+        "immunology.autoimmune.sjogrens"
+      ],
+      "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "jakavi",
+          "name": "Jakavi (ruxolitinib) — JAK1/2 inhibitor (ex-US; Incyte books US as Jakafi)",
+          "modality": "small_molecule.kinase_inhibitor.jak",
+          "areas": [
+            "hematology.myeloproliferative.mf",
+            "hematology.myeloproliferative.pv",
+            "immunology.autoimmune.sjogrens"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 3,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 13045.8,
+      "totalSOM": 3833.1,
+      "totalSales": 2110.0,
+      "cagrPct": 5.8,
+      "peakYear": 2028
     },
     "JAK3": {
       "companies": [
@@ -6418,7 +6744,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -6460,10 +6786,12 @@
     },
     "LPA": {
       "companies": [
-        "IONS"
+        "IONS",
+        "NVS"
       ],
       "modalities": [
-        "nucleic_acid.antisense.galnac_aso"
+        "nucleic_acid.antisense.galnac_aso",
+        "nucleic_acid.aso.lpa_apolipoprotein"
       ],
       "areas": [
         "cardio_metabolic.lipids.lpa"
@@ -6477,20 +6805,29 @@
           "areas": [
             "cardio_metabolic.lipids.lpa"
           ]
+        },
+        {
+          "ticker": "NVS",
+          "asset": "pelacarsen",
+          "name": "Pelacarsen (TQJ230) — Lp(a)-lowering ASO (Ionis partner)",
+          "modality": "nucleic_acid.aso.lpa_apolipoprotein",
+          "areas": [
+            "cardio_metabolic.lipids.lpa"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "nucleic_acid"
       ],
       "totalTAM": 396.0,
-      "totalSOM": 8.4,
+      "totalSOM": 18.3,
       "totalSales": 0.0,
-      "cagrPct": 0.0,
-      "peakYear": 2034
+      "cagrPct": 32.6,
+      "peakYear": 2032
     },
     "MAGEA4": {
       "companies": [
@@ -6566,16 +6903,32 @@
     },
     "MAP2K1": {
       "companies": [
+        "NVS",
         "PFE"
       ],
       "modalities": [
-        "small_molecule.kinase_inhibitor.braf_mek"
+        "small_molecule.kinase_inhibitor.braf_mek",
+        "small_molecule.kinase_inhibitor.braf_mek_combo"
       ],
       "areas": [
+        "oncology.endocrine.thyroid_cancer",
         "oncology.gi.colorectal",
+        "oncology.lung.nsclc_driver.kras",
         "oncology.skin.melanoma"
       ],
       "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "tafinlar_mekinist",
+          "name": "Tafinlar (dabrafenib BRAF) + Mekinist (trametinib MEK) combo",
+          "modality": "small_molecule.kinase_inhibitor.braf_mek_combo",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.gi.colorectal",
+            "oncology.lung.nsclc_driver.kras",
+            "oncology.skin.melanoma"
+          ]
+        },
         {
           "ticker": "PFE",
           "asset": "braftovi_mektovi",
@@ -6587,18 +6940,58 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 2,
+      "areaCount": 4,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 12904.6,
-      "totalSOM": 1049.5,
-      "totalSales": 700.0,
-      "cagrPct": 5.0,
-      "peakYear": 2028
+      "totalTAM": 18968.0,
+      "totalSOM": 4026.4,
+      "totalSales": 2915.0,
+      "cagrPct": 3.2,
+      "peakYear": 2027
+    },
+    "MAP2K2": {
+      "companies": [
+        "NVS"
+      ],
+      "modalities": [
+        "small_molecule.kinase_inhibitor.braf_mek_combo"
+      ],
+      "areas": [
+        "oncology.endocrine.thyroid_cancer",
+        "oncology.gi.colorectal",
+        "oncology.lung.nsclc_driver.kras",
+        "oncology.skin.melanoma"
+      ],
+      "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "tafinlar_mekinist",
+          "name": "Tafinlar (dabrafenib BRAF) + Mekinist (trametinib MEK) combo",
+          "modality": "small_molecule.kinase_inhibitor.braf_mek_combo",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.gi.colorectal",
+            "oncology.lung.nsclc_driver.kras",
+            "oncology.skin.melanoma"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 4,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 18968.0,
+      "totalSOM": 2976.9,
+      "totalSales": 2215.0,
+      "cagrPct": 2.5,
+      "peakYear": 2027
     },
     "MAPK14": {
       "companies": [
@@ -6773,11 +7166,13 @@
     "MET": {
       "companies": [
         "ABBV",
-        "JNJ"
+        "JNJ",
+        "NVS"
       ],
       "modalities": [
         "adc.dxd_linker.cmet_adc",
-        "antibody.bispecific.egfr_met"
+        "antibody.bispecific.egfr_met",
+        "small_molecule.kinase_inhibitor.cmet"
       ],
       "areas": [
         "oncology.lung.nsclc_driver.cmet",
@@ -6801,21 +7196,67 @@
           "areas": [
             "oncology.lung.nsclc_driver.egfr"
           ]
+        },
+        {
+          "ticker": "NVS",
+          "asset": "tabrecta",
+          "name": "Tabrecta (capmatinib) — MET inhibitor NSCLC METex14",
+          "modality": "small_molecule.kinase_inhibitor.cmet",
+          "areas": [
+            "oncology.lung.nsclc_driver.cmet"
+          ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
-      "modalityClassCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
+      "modalityClassCount": 3,
       "areaCount": 2,
       "modalityClasses": [
         "adc",
-        "antibody"
+        "antibody",
+        "small_molecule"
       ],
       "totalTAM": 17990.0,
-      "totalSOM": 1124.2,
-      "totalSales": 700.0,
-      "cagrPct": 28.0,
-      "peakYear": 2032
+      "totalSOM": 1424.0,
+      "totalSales": 900.0,
+      "cagrPct": 23.2,
+      "peakYear": 2031
+    },
+    "MME": {
+      "companies": [
+        "NVS"
+      ],
+      "modalities": [
+        "small_molecule.cardio.arni"
+      ],
+      "areas": [
+        "cardio_metabolic.heart_failure.hfpef",
+        "cardio_metabolic.heart_failure.hfref"
+      ],
+      "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "entresto",
+          "name": "Entresto (sacubitril/valsartan) — ARNI for heart failure",
+          "modality": "small_molecule.cardio.arni",
+          "areas": [
+            "cardio_metabolic.heart_failure.hfpef",
+            "cardio_metabolic.heart_failure.hfref"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 31820.0,
+      "totalSOM": 13006.2,
+      "totalSales": 7750.0,
+      "cagrPct": -13.3,
+      "peakYear": 2025
     },
     "MMP14": {
       "companies": [
@@ -6851,8 +7292,47 @@
       "cagrPct": 0.0,
       "peakYear": 2036
     },
+    "MPL": {
+      "companies": [
+        "NVS"
+      ],
+      "modalities": [
+        "small_molecule.tpo_mimetic.thrombopoietin_receptor_agonist"
+      ],
+      "areas": [
+        "hematology.rare_blood.aplastic_anemia",
+        "immunology.neuromuscular_autoimmune.itp",
+        "infectious_disease.anti_infective.hiv_treatment"
+      ],
+      "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "promacta",
+          "name": "Promacta/Revolade (eltrombopag) — TPO mimetic",
+          "modality": "small_molecule.tpo_mimetic.thrombopoietin_receptor_agonist",
+          "areas": [
+            "hematology.rare_blood.aplastic_anemia",
+            "immunology.neuromuscular_autoimmune.itp",
+            "infectious_disease.anti_infective.hiv_treatment"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 3,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 32976.0,
+      "totalSOM": 3020.6,
+      "totalSales": 1640.0,
+      "cagrPct": -27.1,
+      "peakYear": 2025
+    },
     "MS4A1": {
       "companies": [
+        "NVS",
         "REGN",
         "RHHBY"
       ],
@@ -6868,6 +7348,15 @@
         "oncology.hematology.nhl.fl"
       ],
       "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "kesimpta",
+          "name": "Kesimpta (ofatumumab) — anti-CD20 mAb (subcutaneous)",
+          "modality": "antibody.monoclonal.anti_cd20",
+          "areas": [
+            "immunology.demyelinating.multiple_sclerosis"
+          ]
+        },
         {
           "ticker": "REGN",
           "asset": "odronextamab",
@@ -6926,7 +7415,7 @@
           ]
         }
       ],
-      "assetCount": 6,
+      "assetCount": 7,
       "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 5,
@@ -6934,10 +7423,10 @@
         "antibody"
       ],
       "totalTAM": 72977.0,
-      "totalSOM": 17242.3,
-      "totalSales": 10919.0,
-      "cagrPct": 5.7,
-      "peakYear": 2027
+      "totalSOM": 27711.1,
+      "totalSales": 15349.0,
+      "cagrPct": 10.3,
+      "peakYear": 2028
     },
     "MSTN": {
       "companies": [
@@ -7103,7 +7592,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -7244,7 +7733,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -7515,12 +8004,14 @@
       "companies": [
         "ARWR",
         "AZN",
+        "NVS",
         "REGN",
         "SNY"
       ],
       "modalities": [
         "antibody.cytokine.pcsk9_blocker",
         "antibody.monoclonal.anti_pcsk9",
+        "nucleic_acid.sirna.pcsk9_galnac",
         "nucleic_acid.trirna.pcsk9_apoc3_dual",
         "small_molecule.protein_protein_inhibitor.pcsk9_oral"
       ],
@@ -7547,6 +8038,15 @@
           ]
         },
         {
+          "ticker": "NVS",
+          "asset": "leqvio",
+          "name": "Leqvio (inclisiran) — GalNAc-siRNA PCSK9",
+          "modality": "nucleic_acid.sirna.pcsk9_galnac",
+          "areas": [
+            "cardio_metabolic.lipids.ldl_cv_risk"
+          ]
+        },
+        {
           "ticker": "REGN",
           "asset": "praluent",
           "name": "Praluent (alirocumab, PCSK9 mAb)",
@@ -7565,8 +8065,8 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 4,
+      "assetCount": 5,
+      "modalityCount": 5,
       "modalityClassCount": 3,
       "areaCount": 1,
       "modalityClasses": [
@@ -7575,10 +8075,10 @@
         "small_molecule"
       ],
       "totalTAM": 21450.0,
-      "totalSOM": 6323.0,
-      "totalSales": 700.0,
-      "cagrPct": 10.8,
-      "peakYear": 2032
+      "totalSOM": 9281.0,
+      "totalSales": 1900.0,
+      "cagrPct": 18.5,
+      "peakYear": 2031
     },
     "PDCD1": {
       "companies": [
@@ -8004,7 +8504,7 @@
         "recombinant_protein"
       ],
       "totalTAM": 5814.0,
-      "totalSOM": 1195.1,
+      "totalSOM": 1228.7,
       "totalSales": 1251.0,
       "cagrPct": 2.0,
       "peakYear": 2026
@@ -8285,12 +8785,14 @@
     "S1PR1": {
       "companies": [
         "ABVX",
+        "NVS",
         "PFE"
       ],
       "modalities": [
         "small_molecule.gpcr.s1p_modulator"
       ],
       "areas": [
+        "immunology.demyelinating.multiple_sclerosis",
         "immunology.inflammatory_gi.crohns",
         "immunology.inflammatory_gi.ulcerative_colitis"
       ],
@@ -8314,6 +8816,15 @@
           ]
         },
         {
+          "ticker": "NVS",
+          "asset": "mayzent",
+          "name": "Mayzent (siponimod) — S1P1/5 receptor modulator SPMS",
+          "modality": "small_molecule.gpcr.s1p_modulator",
+          "areas": [
+            "immunology.demyelinating.multiple_sclerosis"
+          ]
+        },
+        {
           "ticker": "PFE",
           "asset": "velsipity",
           "name": "Velsipity (etrasimod, S1P) — UC",
@@ -8323,18 +8834,52 @@
           ]
         }
       ],
-      "assetCount": 3,
+      "assetCount": 4,
       "modalityCount": 1,
       "modalityClassCount": 1,
-      "areaCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 37475.0,
-      "totalSOM": 4746.9,
-      "totalSales": 150.0,
+      "totalTAM": 60875.0,
+      "totalSOM": 5668.6,
+      "totalSales": 450.0,
       "cagrPct": 5.0,
       "peakYear": 2031
+    },
+    "S1PR5": {
+      "companies": [
+        "NVS"
+      ],
+      "modalities": [
+        "small_molecule.gpcr.s1p_modulator"
+      ],
+      "areas": [
+        "immunology.demyelinating.multiple_sclerosis"
+      ],
+      "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "mayzent",
+          "name": "Mayzent (siponimod) — S1P1/5 receptor modulator SPMS",
+          "modality": "small_molecule.gpcr.s1p_modulator",
+          "areas": [
+            "immunology.demyelinating.multiple_sclerosis"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 23400.0,
+      "totalSOM": 921.8,
+      "totalSales": 300.0,
+      "cagrPct": 5.0,
+      "peakYear": 2027
     },
     "SARSCOV2": {
       "companies": [
@@ -8914,6 +9459,40 @@
       "cagrPct": 0.0,
       "peakYear": 2030
     },
+    "SMN1": {
+      "companies": [
+        "NVS"
+      ],
+      "modalities": [
+        "gene_therapy.aav.aav9_smn1"
+      ],
+      "areas": [
+        "musculoskeletal.neuromuscular.sma"
+      ],
+      "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "zolgensma",
+          "name": "Zolgensma (onasemnogene abeparvovec) — AAV9 SMN1 gene therapy",
+          "modality": "gene_therapy.aav.aav9_smn1",
+          "areas": [
+            "musculoskeletal.neuromuscular.sma"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "gene_therapy"
+      ],
+      "totalTAM": 5193.0,
+      "totalSOM": 2099.5,
+      "totalSales": 1230.0,
+      "cagrPct": 0.0,
+      "peakYear": 2027
+    },
     "SMN2": {
       "companies": [
         "RHHBY"
@@ -9063,10 +9642,13 @@
     },
     "SSTR2": {
       "companies": [
-        "CAMX"
+        "CAMX",
+        "NVS"
       ],
       "modalities": [
-        "formulation_modifier.long_acting.fluidcrystal_sc"
+        "formulation_modifier.long_acting.fluidcrystal_sc",
+        "peptide.somatostatin_analog.octreotide",
+        "radiopharmaceutical.radioligand.sstr_lu177"
       ],
       "areas": [
         "cardio_metabolic.liver.pld_adpkd",
@@ -9100,20 +9682,77 @@
           "areas": [
             "cardio_metabolic.liver.pld_adpkd"
           ]
+        },
+        {
+          "ticker": "NVS",
+          "asset": "sandostatin",
+          "name": "Sandostatin (octreotide LAR) — somatostatin analog",
+          "modality": "peptide.somatostatin_analog.octreotide",
+          "areas": [
+            "endocrine.pituitary.acromegaly",
+            "oncology.neuroendocrine.gepnet"
+          ]
+        },
+        {
+          "ticker": "NVS",
+          "asset": "lutathera",
+          "name": "Lutathera (Lu-177 dotatate) — somatostatin receptor radioligand",
+          "modality": "radiopharmaceutical.radioligand.sstr_lu177",
+          "areas": [
+            "oncology.neuroendocrine.gepnet"
+          ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
+      "assetCount": 5,
+      "modalityCount": 3,
+      "modalityClassCount": 3,
       "areaCount": 3,
       "modalityClasses": [
-        "formulation_modifier"
+        "formulation_modifier",
+        "peptide",
+        "radiopharmaceutical"
       ],
       "totalTAM": 2599.9,
-      "totalSOM": 493.2,
-      "totalSales": 8.0,
-      "cagrPct": 0.0,
-      "peakYear": 2033
+      "totalSOM": 2308.4,
+      "totalSales": 1399.0,
+      "cagrPct": 2.2,
+      "peakYear": 2029
+    },
+    "SSTR5": {
+      "companies": [
+        "NVS"
+      ],
+      "modalities": [
+        "peptide.somatostatin_analog.octreotide"
+      ],
+      "areas": [
+        "endocrine.pituitary.acromegaly",
+        "oncology.neuroendocrine.gepnet"
+      ],
+      "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "sandostatin",
+          "name": "Sandostatin (octreotide LAR) — somatostatin analog",
+          "modality": "peptide.somatostatin_analog.octreotide",
+          "areas": [
+            "endocrine.pituitary.acromegaly",
+            "oncology.neuroendocrine.gepnet"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "peptide"
+      ],
+      "totalTAM": 2304.7,
+      "totalSOM": 590.9,
+      "totalSales": 575.0,
+      "cagrPct": -8.0,
+      "peakYear": 2025
     },
     "STAT6": {
       "companies": [
@@ -9529,6 +10168,42 @@
       "totalSales": 10200.0,
       "cagrPct": -1.7,
       "peakYear": 2030
+    },
+    "TNFRSF13C": {
+      "companies": [
+        "NVS"
+      ],
+      "modalities": [
+        "antibody.cytokine.baff_r_blocker"
+      ],
+      "areas": [
+        "immunology.autoimmune.sjogrens",
+        "immunology.autoimmune.sle"
+      ],
+      "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "ianalumab",
+          "name": "Ianalumab — anti-BAFF-R mAb (Sjögren's, SLE, ITP)",
+          "modality": "antibody.cytokine.baff_r_blocker",
+          "areas": [
+            "immunology.autoimmune.sjogrens",
+            "immunology.autoimmune.sle"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 16541.0,
+      "totalSOM": 2883.5,
+      "totalSales": 0.0,
+      "cagrPct": 48.7,
+      "peakYear": 2031
     },
     "TNFRSF17": {
       "companies": [
@@ -9988,11 +10663,13 @@
     },
     "VEGFA": {
       "companies": [
+        "NVS",
         "REGN",
         "RHHBY"
       ],
       "modalities": [
         "antibody.bispecific.vegf_ang2",
+        "antibody.fc_fragment.vegf_a",
         "antibody.fusion.vegf_trap",
         "antibody.monoclonal.anti_vegf_a",
         "formulation_modifier.ocular_implant.refillable_port"
@@ -10008,6 +10685,15 @@
         "ophthalmology.retina.rvo"
       ],
       "assets": [
+        {
+          "ticker": "NVS",
+          "asset": "lucentis_nvs",
+          "name": "Lucentis (ranibizumab) — anti-VEGF Fab Novartis-ROW (Roche US)",
+          "modality": "antibody.fc_fragment.vegf_a",
+          "areas": [
+            "ophthalmology.retina.nvamd"
+          ]
+        },
         {
           "ticker": "REGN",
           "asset": "eylea",
@@ -10054,8 +10740,8 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 4,
+      "assetCount": 5,
+      "modalityCount": 5,
       "modalityClassCount": 2,
       "areaCount": 8,
       "modalityClasses": [
@@ -10063,9 +10749,9 @@
         "formulation_modifier"
       ],
       "totalTAM": 63738.4,
-      "totalSOM": 14683.8,
-      "totalSales": 10388.0,
-      "cagrPct": 6.9,
+      "totalSOM": 15648.7,
+      "totalSales": 11031.0,
+      "cagrPct": 4.9,
       "peakYear": 2029
     },
     "VEGFR1": {

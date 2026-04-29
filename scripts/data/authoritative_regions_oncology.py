@@ -326,6 +326,34 @@ REGIONS = {
         "eu":  {"patientsK": 15,  "wtpPct": 55, "priceK": 110},
         "row": {"patientsK": 30,  "wtpPct": 10, "priceK": 40},
     },
+
+    # ------------------------------------------------------------
+    # EYE ONCOLOGY (uveal melanoma) -- biologically distinct from cutaneous
+    # GNAQ/GNA11 mutations, liver-met dominant, refractory to PD-1
+    # ------------------------------------------------------------
+    # source: AAO uveal melanoma US incidence ~2.5K/yr; ~50% develop mets;
+    # tebentafusp (Kimmtrak, gp100xCD3 ImmTAC) approved Jan-2022 for HLA-A*02:01+
+    # metastatic uveal mel; WAC ~$430K/yr (weekly IV, ~12 cycles); EU EMA approved
+    # Apr-2022. EU5 incidence ~3K. ROW ~6K (Asia/LATAM). Branded class peak ~$700M.
+    "oncology.eye.uveal_melanoma": {
+        "us":  {"patientsK": 2.5, "wtpPct": 70, "priceK": 410},
+        "eu":  {"patientsK": 3,   "wtpPct": 55, "priceK": 250},
+        "row": {"patientsK": 6,   "wtpPct": 10, "priceK": 80},
+    },
+
+    # ------------------------------------------------------------
+    # HEAD & NECK ONCOLOGY (HNSCC) -- IO + cetuximab dominate
+    # ------------------------------------------------------------
+    # source: NCI SEER head & neck SCC US incidence ~70K/yr (oral cavity + pharynx
+    # + larynx, excluding thyroid); EU5 ~80K (ECIS); ROW ~600K driven by India/SEA
+    # tobacco/betel-quid + China NPC. Branded mix: Keytruda+chemo 1L (~$190K/yr),
+    # cetuximab+chemo (~$130K/yr), Opdivo 2L. Class peak ~$5B globally.
+    # MAGEA4/8-positive subset ~20-30% (TCR-T addressable).
+    "oncology.head_neck.hnscc": {
+        "us":  {"patientsK": 70,  "wtpPct": 65, "priceK": 145},
+        "eu":  {"patientsK": 80,  "wtpPct": 50, "priceK": 85},
+        "row": {"patientsK": 600, "wtpPct": 12, "priceK": 25},
+    },
 }
 
 
@@ -373,6 +401,8 @@ PEN_PCT = {
     "oncology.skin.melanoma": 65,
     "oncology.skin.cscc": 50,
     "oncology.skin.bcc": 45,
+    "oncology.eye.uveal_melanoma": 35,
+    "oncology.head_neck.hnscc": 55,
 }
 
 

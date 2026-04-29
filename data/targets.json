@@ -1,15 +1,16 @@
 {
   "_meta": {
-    "generated": "2026-04-29T14:50:57Z",
-    "target_count": 254,
-    "total_assets": 465,
-    "assets_with_targets": 436,
-    "multi_modality_count": 29,
-    "multi_disease_count": 106
+    "generated": "2026-04-29T15:00:59Z",
+    "target_count": 262,
+    "total_assets": 489,
+    "assets_with_targets": 459,
+    "multi_modality_count": 31,
+    "multi_disease_count": 112
   },
   "targets": {
     "ABL1": {
       "companies": [
+        "BMY",
         "NVS"
       ],
       "modalities": [
@@ -22,6 +23,15 @@
         "oncology.hematology.cml"
       ],
       "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "sprycel",
+          "name": "Sprycel (dasatinib) — BCR-ABL 2nd-gen TKI (post-LOE)",
+          "modality": "small_molecule.kinase_inhibitor.bcr_abl_2nd_gen",
+          "areas": [
+            "oncology.hematology.cml"
+          ]
+        },
         {
           "ticker": "NVS",
           "asset": "scemblix",
@@ -50,7 +60,7 @@
           ]
         }
       ],
-      "assetCount": 3,
+      "assetCount": 4,
       "modalityCount": 3,
       "modalityClassCount": 1,
       "areaCount": 2,
@@ -58,10 +68,10 @@
         "small_molecule"
       ],
       "totalTAM": 20723.8,
-      "totalSOM": 4651.7,
-      "totalSales": 2790.0,
-      "cagrPct": 3.5,
-      "peakYear": 2028
+      "totalSOM": 5114.2,
+      "totalSales": 3100.0,
+      "cagrPct": 0.9,
+      "peakYear": 2027
     },
     "ACVR1C": {
       "companies": [
@@ -133,13 +143,17 @@
     },
     "ACVR2B": {
       "companies": [
-        "BHVN"
+        "BHVN",
+        "BMY"
       ],
       "modalities": [
+        "recombinant_protein.fusion.tgf_beta_trap",
         "small_molecule.protein_degrader.mode_platform"
       ],
       "areas": [
-        "cardio_metabolic.obesity.general"
+        "cardio_metabolic.obesity.general",
+        "hematology.myeloproliferative.mds",
+        "hematology.rare_blood.hemoglobinopathy.beta_thalassemia"
       ],
       "assets": [
         {
@@ -150,20 +164,31 @@
           "areas": [
             "cardio_metabolic.obesity.general"
           ]
+        },
+        {
+          "ticker": "BMY",
+          "asset": "reblozyl",
+          "name": "Reblozyl (luspatercept) — TGF-β superfamily trap",
+          "modality": "recombinant_protein.fusion.tgf_beta_trap",
+          "areas": [
+            "hematology.myeloproliferative.mds",
+            "hematology.rare_blood.hemoglobinopathy.beta_thalassemia"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
+        "recombinant_protein",
         "small_molecule"
       ],
-      "totalTAM": 144000.0,
-      "totalSOM": 411.1,
-      "totalSales": 0.0,
-      "cagrPct": 0.0,
-      "peakYear": 2034
+      "totalTAM": 155374.5,
+      "totalSOM": 4041.9,
+      "totalSales": 2400.0,
+      "cagrPct": 14.8,
+      "peakYear": 2030
     },
     "ADRB2": {
       "companies": [
@@ -1125,7 +1150,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 4026.4,
       "totalSales": 2915.0,
       "cagrPct": 3.2,
@@ -1642,6 +1667,7 @@
       "companies": [
         "ALLO",
         "AMGN",
+        "BMY",
         "CLYM",
         "CRSP",
         "GILD",
@@ -1669,6 +1695,7 @@
         "immunology.neuromuscular_autoimmune.myasthenia_gravis",
         "immunology.neuromuscular_autoimmune.sps",
         "oncology.hematology.b_all",
+        "oncology.hematology.cll",
         "oncology.hematology.nhl.dlbcl",
         "oncology.hematology.nhl.fl",
         "oncology.hematology.nhl.mcl"
@@ -1708,6 +1735,17 @@
           "modality": "antibody.monoclonal.anti_cd19",
           "areas": [
             "immunology.demyelinating.nmosd"
+          ]
+        },
+        {
+          "ticker": "BMY",
+          "asset": "breyanzi",
+          "name": "Breyanzi (lisocabtagene maraleucel) — CD19 CAR-T",
+          "modality": "cell_therapy.car_t_autologous.cd19_car_t",
+          "areas": [
+            "oncology.hematology.cll",
+            "oncology.hematology.nhl.dlbcl",
+            "oncology.hematology.nhl.fl"
           ]
         },
         {
@@ -1810,18 +1848,18 @@
           ]
         }
       ],
-      "assetCount": 14,
+      "assetCount": 15,
       "modalityCount": 7,
       "modalityClassCount": 2,
-      "areaCount": 12,
+      "areaCount": 13,
       "modalityClasses": [
         "antibody",
         "cell_therapy"
       ],
-      "totalTAM": 87040.5,
-      "totalSOM": 13955.3,
-      "totalSales": 4533.0,
-      "cagrPct": 3.3,
+      "totalTAM": 95940.5,
+      "totalSOM": 18357.2,
+      "totalSales": 5933.0,
+      "cagrPct": 9.6,
       "peakYear": 2030
     },
     "CD22": {
@@ -2343,6 +2381,78 @@
       "cagrPct": 18.0,
       "peakYear": 2030
     },
+    "CD80": {
+      "companies": [
+        "BMY"
+      ],
+      "modalities": [
+        "recombinant_protein.fusion.ctla4_ig"
+      ],
+      "areas": [
+        "immunology.inflammatory_systemic.rheumatoid_arthritis",
+        "immunology.transplant.cgvhd"
+      ],
+      "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "orencia",
+          "name": "Orencia (abatacept) — CTLA-4 Ig fusion (RA + JIA + GvHD)",
+          "modality": "recombinant_protein.fusion.ctla4_ig",
+          "areas": [
+            "immunology.inflammatory_systemic.rheumatoid_arthritis",
+            "immunology.transplant.cgvhd"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 35850.0,
+      "totalSOM": 5240.4,
+      "totalSales": 3500.0,
+      "cagrPct": -16.5,
+      "peakYear": 2025
+    },
+    "CD86": {
+      "companies": [
+        "BMY"
+      ],
+      "modalities": [
+        "recombinant_protein.fusion.ctla4_ig"
+      ],
+      "areas": [
+        "immunology.inflammatory_systemic.rheumatoid_arthritis",
+        "immunology.transplant.cgvhd"
+      ],
+      "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "orencia",
+          "name": "Orencia (abatacept) — CTLA-4 Ig fusion (RA + JIA + GvHD)",
+          "modality": "recombinant_protein.fusion.ctla4_ig",
+          "areas": [
+            "immunology.inflammatory_systemic.rheumatoid_arthritis",
+            "immunology.transplant.cgvhd"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 35850.0,
+      "totalSOM": 5240.4,
+      "totalSales": 3500.0,
+      "cagrPct": -16.5,
+      "peakYear": 2025
+    },
     "CDH6": {
       "companies": [
         "MRK"
@@ -2701,9 +2811,11 @@
     },
     "CHRM1": {
       "companies": [
+        "BMY",
         "NBIX"
       ],
       "modalities": [
+        "small_molecule.cns.muscarinic_agonist",
         "small_molecule.gpcr.muscarinic_agonist",
         "small_molecule.gpcr.muscarinic_m1_m4_agonist"
       ],
@@ -2711,6 +2823,15 @@
         "cns.psychiatry.schizophrenia"
       ],
       "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "cobenfy",
+          "name": "Cobenfy (xanomeline + trospium) — M1/M4 muscarinic agonist (schizophrenia)",
+          "modality": "small_molecule.cns.muscarinic_agonist",
+          "areas": [
+            "cns.psychiatry.schizophrenia"
+          ]
+        },
         {
           "ticker": "NBIX",
           "asset": "direc",
@@ -2730,17 +2851,17 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 27750.0,
-      "totalSOM": 2327.1,
-      "totalSales": 0.0,
-      "cagrPct": 0.0,
+      "totalSOM": 2776.2,
+      "totalSales": 140.0,
+      "cagrPct": 12.9,
       "peakYear": 2034
     },
     "CHRM3": {
@@ -2780,9 +2901,11 @@
     "CHRM4": {
       "companies": [
         "ABBV",
+        "BMY",
         "NBIX"
       ],
       "modalities": [
+        "small_molecule.cns.muscarinic_agonist",
         "small_molecule.gpcr.m4_muscarinic_agonist",
         "small_molecule.gpcr.muscarinic_agonist",
         "small_molecule.gpcr.muscarinic_m1_m4_agonist"
@@ -2796,6 +2919,15 @@
           "asset": "emraclidine",
           "name": "Emraclidine (Cerevel)",
           "modality": "small_molecule.gpcr.m4_muscarinic_agonist",
+          "areas": [
+            "cns.psychiatry.schizophrenia"
+          ]
+        },
+        {
+          "ticker": "BMY",
+          "asset": "cobenfy",
+          "name": "Cobenfy (xanomeline + trospium) — M1/M4 muscarinic agonist (schizophrenia)",
+          "modality": "small_molecule.cns.muscarinic_agonist",
           "areas": [
             "cns.psychiatry.schizophrenia"
           ]
@@ -2819,18 +2951,18 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 3,
+      "assetCount": 4,
+      "modalityCount": 4,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 27750.0,
-      "totalSOM": 4206.6,
-      "totalSales": 0.0,
-      "cagrPct": 0.0,
-      "peakYear": 2034
+      "totalSOM": 4655.7,
+      "totalSales": 140.0,
+      "cagrPct": 7.7,
+      "peakYear": 2033
     },
     "CLDN18": {
       "companies": [
@@ -2910,6 +3042,59 @@
       "cagrPct": 0.0,
       "peakYear": 2032
     },
+    "CRBN": {
+      "companies": [
+        "BMY"
+      ],
+      "modalities": [
+        "small_molecule.imid.cereblon_modulator",
+        "small_molecule.imid.cereblon_modulator_next_gen"
+      ],
+      "areas": [
+        "oncology.hematology.myeloma.2l_3l"
+      ],
+      "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "pomalyst",
+          "name": "Pomalyst (pomalidomide) — IMiD (myeloma)",
+          "modality": "small_molecule.imid.cereblon_modulator",
+          "areas": [
+            "oncology.hematology.myeloma.2l_3l"
+          ]
+        },
+        {
+          "ticker": "BMY",
+          "asset": "revlimid",
+          "name": "Revlimid (lenalidomide) — IMiD (heavy LOE decline)",
+          "modality": "small_molecule.imid.cereblon_modulator",
+          "areas": [
+            "oncology.hematology.myeloma.2l_3l"
+          ]
+        },
+        {
+          "ticker": "BMY",
+          "asset": "iberdomide",
+          "name": "Iberdomide (CC-220) — next-gen cereblon E3 ligase modulator",
+          "modality": "small_molecule.imid.cereblon_modulator_next_gen",
+          "areas": [
+            "oncology.hematology.myeloma.2l_3l"
+          ]
+        }
+      ],
+      "assetCount": 3,
+      "modalityCount": 2,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 13464.5,
+      "totalSOM": 8301.7,
+      "totalSales": 5200.0,
+      "cagrPct": -16.0,
+      "peakYear": 2025
+    },
     "CSF3R": {
       "companies": [
         "AMGN"
@@ -2946,10 +3131,12 @@
     },
     "CTLA4": {
       "companies": [
-        "AZN"
+        "AZN",
+        "BMY"
       ],
       "modalities": [
         "antibody.bispecific.pd1_ctla4",
+        "antibody.checkpoint.ctla4",
         "antibody.checkpoint.pdl1"
       ],
       "areas": [
@@ -2957,7 +3144,8 @@
         "oncology.gi.cholangiocarcinoma",
         "oncology.gi.hcc",
         "oncology.lung.nsclc_io_combo",
-        "oncology.lung.sclc"
+        "oncology.lung.sclc",
+        "oncology.skin.melanoma"
       ],
       "assets": [
         {
@@ -2981,20 +3169,29 @@
           "areas": [
             "oncology.lung.nsclc_io_combo"
           ]
+        },
+        {
+          "ticker": "BMY",
+          "asset": "yervoy",
+          "name": "Yervoy (ipilimumab) — anti-CTLA-4 mAb",
+          "modality": "antibody.checkpoint.ctla4",
+          "areas": [
+            "oncology.skin.melanoma"
+          ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 5,
+      "areaCount": 6,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 34908.2,
-      "totalSOM": 9193.7,
-      "totalSales": 6100.0,
-      "cagrPct": 5.6,
-      "peakYear": 2030
+      "totalTAM": 41442.2,
+      "totalSOM": 12943.0,
+      "totalSales": 8600.0,
+      "cagrPct": 4.9,
+      "peakYear": 2029
     },
     "CYP11B1": {
       "companies": [
@@ -3400,6 +3597,40 @@
       "totalSales": 541.0,
       "cagrPct": -3.0,
       "peakYear": 2025
+    },
+    "DNMT1": {
+      "companies": [
+        "BMY"
+      ],
+      "modalities": [
+        "small_molecule.epigenetic.dnmt_inhibitor"
+      ],
+      "areas": [
+        "oncology.hematology.aml"
+      ],
+      "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "onureg",
+          "name": "Onureg (CC-486) — oral azacitidine (AML maintenance)",
+          "modality": "small_molecule.epigenetic.dnmt_inhibitor",
+          "areas": [
+            "oncology.hematology.aml"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 4240.2,
+      "totalSOM": 299.7,
+      "totalSales": 200.0,
+      "cagrPct": 12.0,
+      "peakYear": 2030
     },
     "DPP4": {
       "companies": [
@@ -3982,6 +4213,7 @@
     "F10": {
       "companies": [
         "4568",
+        "BMY",
         "JNJ",
         "NOVO",
         "PFE",
@@ -4004,6 +4236,15 @@
           "asset": "japan_legacy",
           "name": "Japan pharma + other pipeline",
           "modality": "small_molecule.enzyme_inhibitor.factor_xa",
+          "areas": [
+            "cardio_metabolic.thrombosis.anticoagulation"
+          ]
+        },
+        {
+          "ticker": "BMY",
+          "asset": "eliquis",
+          "name": "Eliquis (apixaban) — Factor Xa inhibitor (w/ Pfizer 50/50)",
+          "modality": "small_molecule.coagulation.factor_xa_inhibitor",
           "areas": [
             "cardio_metabolic.thrombosis.anticoagulation"
           ]
@@ -4054,7 +4295,7 @@
           ]
         }
       ],
-      "assetCount": 6,
+      "assetCount": 7,
       "modalityCount": 4,
       "modalityClassCount": 2,
       "areaCount": 2,
@@ -4063,22 +4304,34 @@
         "small_molecule"
       ],
       "totalTAM": 34350.0,
-      "totalSOM": 28317.7,
-      "totalSales": 17566.0,
-      "cagrPct": 1.3,
+      "totalSOM": 48564.7,
+      "totalSales": 31066.0,
+      "cagrPct": -0.0,
       "peakYear": 2027
     },
     "F11": {
       "companies": [
+        "BMY",
         "CRSP"
       ],
       "modalities": [
-        "gene_editing.crispr_cas9.invivo"
+        "gene_editing.crispr_cas9.invivo",
+        "small_molecule.coagulation.factor_xia_inhibitor"
       ],
       "areas": [
-        "cardio_metabolic.diabetes.t1d"
+        "cardio_metabolic.diabetes.t1d",
+        "cardio_metabolic.thrombosis.anticoagulation"
       ],
       "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "milvexian",
+          "name": "Milvexian — oral Factor XIa inhibitor (w/ JNJ 50/50)",
+          "modality": "small_molecule.coagulation.factor_xia_inhibitor",
+          "areas": [
+            "cardio_metabolic.thrombosis.anticoagulation"
+          ]
+        },
         {
           "ticker": "CRSP",
           "asset": "discovery",
@@ -4089,18 +4342,19 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
+      "areaCount": 2,
       "modalityClasses": [
-        "gene_editing"
+        "gene_editing",
+        "small_molecule"
       ],
-      "totalTAM": 14275.0,
-      "totalSOM": 164.4,
+      "totalTAM": 33925.0,
+      "totalSOM": 845.7,
       "totalSales": 0.0,
-      "cagrPct": 0.0,
-      "peakYear": 2036
+      "cagrPct": 64.4,
+      "peakYear": 2033
     },
     "F8": {
       "companies": [
@@ -5535,7 +5789,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -5883,13 +6137,16 @@
     },
     "IL13": {
       "companies": [
-        "ARQT"
+        "ARQT",
+        "BMY"
       ],
       "modalities": [
+        "antibody.cytokine.il13_blocker",
         "antibody.monoclonal.anti_il13"
       ],
       "areas": [
-        "dermatology.inflammatory_derm.atopic_dermatitis_systemic"
+        "dermatology.inflammatory_derm.atopic_dermatitis_systemic",
+        "respiratory.inflammatory.crswnp"
       ],
       "assets": [
         {
@@ -5900,20 +6157,29 @@
           "areas": [
             "dermatology.inflammatory_derm.atopic_dermatitis_systemic"
           ]
+        },
+        {
+          "ticker": "BMY",
+          "asset": "cendakimab",
+          "name": "Cendakimab — anti-IL-13 mAb (eosinophilic esophagitis)",
+          "modality": "antibody.cytokine.il13_blocker",
+          "areas": [
+            "respiratory.inflammatory.crswnp"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 13755.0,
-      "totalSOM": 258.6,
+      "totalTAM": 34380.0,
+      "totalSOM": 1176.7,
       "totalSales": 0.0,
-      "cagrPct": 0.0,
-      "peakYear": 2034
+      "cagrPct": 39.0,
+      "peakYear": 2031
     },
     "IL15": {
       "companies": [
@@ -6830,10 +7096,12 @@
     },
     "JAK2": {
       "companies": [
+        "BMY",
         "NVS"
       ],
       "modalities": [
-        "small_molecule.kinase_inhibitor.jak"
+        "small_molecule.kinase_inhibitor.jak",
+        "small_molecule.kinase_inhibitor.jak2"
       ],
       "areas": [
         "hematology.myeloproliferative.mf",
@@ -6841,6 +7109,15 @@
         "immunology.autoimmune.sjogrens"
       ],
       "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "inrebic",
+          "name": "Inrebic (fedratinib) — JAK2-selective inhibitor (MF)",
+          "modality": "small_molecule.kinase_inhibitor.jak2",
+          "areas": [
+            "hematology.myeloproliferative.mf"
+          ]
+        },
         {
           "ticker": "NVS",
           "asset": "jakavi",
@@ -6853,17 +7130,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 3,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 13045.8,
-      "totalSOM": 3833.1,
-      "totalSales": 2110.0,
-      "cagrPct": 5.8,
+      "totalSOM": 4015.2,
+      "totalSales": 2260.0,
+      "cagrPct": 5.9,
       "peakYear": 2028
     },
     "JAK3": {
@@ -7185,6 +7462,7 @@
     "KRAS": {
       "companies": [
         "AMGN",
+        "BMY",
         "RVMD"
       ],
       "modalities": [
@@ -7201,6 +7479,16 @@
           "ticker": "AMGN",
           "asset": "lumakras",
           "name": "Lumakras/Lumykras (sotorasib) — KRAS G12C inhibitor",
+          "modality": "small_molecule.kinase_inhibitor.kras_g12c",
+          "areas": [
+            "oncology.gi.colorectal",
+            "oncology.lung.nsclc_driver.kras"
+          ]
+        },
+        {
+          "ticker": "BMY",
+          "asset": "krazati",
+          "name": "Krazati (adagrasib) — KRAS G12C inhibitor (Mirati acq)",
           "modality": "small_molecule.kinase_inhibitor.kras_g12c",
           "areas": [
             "oncology.gi.colorectal",
@@ -7253,7 +7541,7 @@
           ]
         }
       ],
-      "assetCount": 6,
+      "assetCount": 7,
       "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 3,
@@ -7261,22 +7549,33 @@
         "small_molecule"
       ],
       "totalTAM": 17761.5,
-      "totalSOM": 12862.9,
-      "totalSales": 363.0,
-      "cagrPct": 0.5,
+      "totalSOM": 13299.4,
+      "totalSales": 578.0,
+      "cagrPct": 0.7,
       "peakYear": 2032
     },
     "LAG3": {
       "companies": [
+        "BMY",
         "REGN"
       ],
       "modalities": [
+        "antibody.checkpoint.pd1_lag3_combo",
         "antibody.monoclonal.anti_lag3"
       ],
       "areas": [
         "oncology.skin.melanoma"
       ],
       "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "opdualag",
+          "name": "Opdualag (nivolumab + relatlimab) — PD-1 + LAG-3 FDC",
+          "modality": "antibody.checkpoint.pd1_lag3_combo",
+          "areas": [
+            "oncology.skin.melanoma"
+          ]
+        },
         {
           "ticker": "REGN",
           "asset": "fianlimab",
@@ -7287,18 +7586,18 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "antibody"
       ],
       "totalTAM": 6534.0,
-      "totalSOM": 2537.0,
-      "totalSales": 0.0,
-      "cagrPct": 5.0,
-      "peakYear": 2032
+      "totalSOM": 4637.7,
+      "totalSales": 1400.0,
+      "cagrPct": 14.1,
+      "peakYear": 2031
     },
     "LPA": {
       "companies": [
@@ -7474,7 +7773,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 4026.4,
       "totalSales": 2915.0,
       "cagrPct": 3.2,
@@ -7514,7 +7813,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 2976.9,
       "totalSales": 2215.0,
       "cagrPct": 2.5,
@@ -8035,6 +8334,40 @@
       "cagrPct": 0.0,
       "peakYear": 2032
     },
+    "MYH7": {
+      "companies": [
+        "BMY"
+      ],
+      "modalities": [
+        "small_molecule.cardiac.myosin_inhibitor"
+      ],
+      "areas": [
+        "cardio_metabolic.heart_failure.hcm"
+      ],
+      "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "camzyos",
+          "name": "Camzyos (mavacamten) — cardiac myosin inhibitor",
+          "modality": "small_molecule.cardiac.myosin_inhibitor",
+          "areas": [
+            "cardio_metabolic.heart_failure.hcm"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 23745.0,
+      "totalSOM": 4330.2,
+      "totalSales": 1300.0,
+      "cagrPct": 30.0,
+      "peakYear": 2030
+    },
     "NECTIN4": {
       "companies": [
         "6990",
@@ -8131,7 +8464,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -8272,11 +8605,45 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2032
+    },
+    "NTRK1": {
+      "companies": [
+        "BMY"
+      ],
+      "modalities": [
+        "small_molecule.kinase_inhibitor.ros1_ntrk"
+      ],
+      "areas": [
+        "oncology.lung.nsclc_driver.ros1"
+      ],
+      "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "augtyro",
+          "name": "Augtyro (repotrectinib) — ROS1 + NTRK1/2/3 TKI",
+          "modality": "small_molecule.kinase_inhibitor.ros1_ntrk",
+          "areas": [
+            "oncology.lung.nsclc_driver.ros1"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 723.5,
+      "totalSOM": 150.2,
+      "totalSales": 100.0,
+      "cagrPct": 30.0,
+      "peakYear": 2030
     },
     "OPA1": {
       "companies": [
@@ -8632,6 +8999,7 @@
     "PDCD1": {
       "companies": [
         "AZN",
+        "BMY",
         "MRK",
         "ONC",
         "PFE",
@@ -8640,14 +9008,18 @@
       "modalities": [
         "antibody.bispecific.pd1_ctla4",
         "antibody.checkpoint.pd1",
+        "antibody.checkpoint.pd1_lag3_combo",
         "antibody.monoclonal.anti_pd1"
       ],
       "areas": [
         "oncology.genitourinary.bladder",
         "oncology.genitourinary.rcc",
+        "oncology.gi.colorectal",
         "oncology.gi.gastric_esoph",
+        "oncology.gi.hcc",
         "oncology.gynecologic.ovarian",
         "oncology.head_neck.hnscc",
+        "oncology.hematology.nhl.dlbcl",
         "oncology.lung.nsclc_io_combo",
         "oncology.lung.nsclc_undruggable",
         "oncology.skin.bcc",
@@ -8662,6 +9034,31 @@
           "modality": "antibody.bispecific.pd1_ctla4",
           "areas": [
             "oncology.lung.nsclc_io_combo"
+          ]
+        },
+        {
+          "ticker": "BMY",
+          "asset": "opdivo",
+          "name": "Opdivo (nivolumab) — anti-PD-1 mAb",
+          "modality": "antibody.checkpoint.pd1",
+          "areas": [
+            "oncology.genitourinary.bladder",
+            "oncology.genitourinary.rcc",
+            "oncology.gi.colorectal",
+            "oncology.gi.gastric_esoph",
+            "oncology.gi.hcc",
+            "oncology.hematology.nhl.dlbcl",
+            "oncology.lung.nsclc_io_combo",
+            "oncology.skin.melanoma"
+          ]
+        },
+        {
+          "ticker": "BMY",
+          "asset": "opdualag",
+          "name": "Opdualag (nivolumab + relatlimab) — PD-1 + LAG-3 FDC",
+          "modality": "antibody.checkpoint.pd1_lag3_combo",
+          "areas": [
+            "oncology.skin.melanoma"
           ]
         },
         {
@@ -8708,17 +9105,17 @@
           ]
         }
       ],
-      "assetCount": 5,
-      "modalityCount": 3,
+      "assetCount": 7,
+      "modalityCount": 4,
       "modalityClassCount": 1,
-      "areaCount": 10,
+      "areaCount": 13,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 73766.9,
-      "totalSOM": 49009.0,
-      "totalSales": 33737.0,
-      "cagrPct": 0.6,
+      "totalTAM": 94867.6,
+      "totalSOM": 66105.1,
+      "totalSales": 45137.0,
+      "cagrPct": 1.9,
       "peakYear": 2028
     },
     "PDE3": {
@@ -9529,15 +9926,26 @@
     },
     "ROS1": {
       "companies": [
+        "BMY",
         "NUVL"
       ],
       "modalities": [
-        "small_molecule.kinase_inhibitor.ros1"
+        "small_molecule.kinase_inhibitor.ros1",
+        "small_molecule.kinase_inhibitor.ros1_ntrk"
       ],
       "areas": [
         "oncology.lung.nsclc_driver.ros1"
       ],
       "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "augtyro",
+          "name": "Augtyro (repotrectinib) — ROS1 + NTRK1/2/3 TKI",
+          "modality": "small_molecule.kinase_inhibitor.ros1_ntrk",
+          "areas": [
+            "oncology.lung.nsclc_driver.ros1"
+          ]
+        },
         {
           "ticker": "NUVL",
           "asset": "zides",
@@ -9548,17 +9956,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 723.5,
-      "totalSOM": 525.4,
-      "totalSales": 0.0,
-      "cagrPct": 0.0,
+      "totalSOM": 675.6,
+      "totalSales": 100.0,
+      "cagrPct": 6.7,
       "peakYear": 2031
     },
     "RXFP1": {
@@ -9602,6 +10010,7 @@
     "S1PR1": {
       "companies": [
         "ABVX",
+        "BMY",
         "NVS",
         "PFE"
       ],
@@ -9633,6 +10042,16 @@
           ]
         },
         {
+          "ticker": "BMY",
+          "asset": "zeposia",
+          "name": "Zeposia (ozanimod) — S1P1/5 modulator (oral)",
+          "modality": "small_molecule.gpcr.s1p_modulator",
+          "areas": [
+            "immunology.demyelinating.multiple_sclerosis",
+            "immunology.inflammatory_gi.ulcerative_colitis"
+          ]
+        },
+        {
           "ticker": "NVS",
           "asset": "mayzent",
           "name": "Mayzent (siponimod) — S1P1/5 receptor modulator SPMS",
@@ -9651,7 +10070,7 @@
           ]
         }
       ],
-      "assetCount": 4,
+      "assetCount": 5,
       "modalityCount": 1,
       "modalityClassCount": 1,
       "areaCount": 3,
@@ -9659,22 +10078,34 @@
         "small_molecule"
       ],
       "totalTAM": 60875.0,
-      "totalSOM": 5668.6,
-      "totalSales": 450.0,
-      "cagrPct": 5.0,
-      "peakYear": 2031
+      "totalSOM": 8074.9,
+      "totalSales": 1070.0,
+      "cagrPct": 5.5,
+      "peakYear": 2030
     },
     "S1PR5": {
       "companies": [
+        "BMY",
         "NVS"
       ],
       "modalities": [
         "small_molecule.gpcr.s1p_modulator"
       ],
       "areas": [
-        "immunology.demyelinating.multiple_sclerosis"
+        "immunology.demyelinating.multiple_sclerosis",
+        "immunology.inflammatory_gi.ulcerative_colitis"
       ],
       "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "zeposia",
+          "name": "Zeposia (ozanimod) — S1P1/5 modulator (oral)",
+          "modality": "small_molecule.gpcr.s1p_modulator",
+          "areas": [
+            "immunology.demyelinating.multiple_sclerosis",
+            "immunology.inflammatory_gi.ulcerative_colitis"
+          ]
+        },
         {
           "ticker": "NVS",
           "asset": "mayzent",
@@ -9685,17 +10116,17 @@
           ]
         }
       ],
-      "assetCount": 1,
+      "assetCount": 2,
       "modalityCount": 1,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 23400.0,
-      "totalSOM": 921.8,
-      "totalSales": 300.0,
-      "cagrPct": 5.0,
+      "totalTAM": 40000.0,
+      "totalSOM": 3328.1,
+      "totalSales": 920.0,
+      "cagrPct": 6.1,
       "peakYear": 2027
     },
     "SARSCOV2": {
@@ -10098,6 +10529,40 @@
       "totalSales": 480.0,
       "cagrPct": 0.0,
       "peakYear": 2033
+    },
+    "SLAMF7": {
+      "companies": [
+        "BMY"
+      ],
+      "modalities": [
+        "antibody.monoclonal.anti_slamf7"
+      ],
+      "areas": [
+        "oncology.hematology.myeloma.2l_3l"
+      ],
+      "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "empliciti",
+          "name": "Empliciti (elotuzumab) — anti-SLAMF7 mAb (myeloma)",
+          "modality": "antibody.monoclonal.anti_slamf7",
+          "areas": [
+            "oncology.hematology.myeloma.2l_3l"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 13464.5,
+      "totalSOM": 299.2,
+      "totalSales": 200.0,
+      "cagrPct": -10.0,
+      "peakYear": 2025
     },
     "SLC18A2": {
       "companies": [
@@ -11111,6 +11576,7 @@
     },
     "TNFRSF17": {
       "companies": [
+        "BMY",
         "GILD",
         "JNJ",
         "LEGN",
@@ -11127,6 +11593,15 @@
         "oncology.hematology.myeloma.4l_plus"
       ],
       "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "abecma",
+          "name": "Abecma (idecabtagene vicleucel) — BCMA CAR-T (w/ 2seventy bio)",
+          "modality": "cell_therapy.car_t_autologous.bcma_car_t",
+          "areas": [
+            "oncology.hematology.myeloma.4l_plus"
+          ]
+        },
         {
           "ticker": "GILD",
           "asset": "anito_cel",
@@ -11191,7 +11666,7 @@
           ]
         }
       ],
-      "assetCount": 7,
+      "assetCount": 8,
       "modalityCount": 3,
       "modalityClassCount": 2,
       "areaCount": 3,
@@ -11200,9 +11675,9 @@
         "cell_therapy"
       ],
       "totalTAM": 35942.6,
-      "totalSOM": 8316.0,
-      "totalSales": 2659.0,
-      "cagrPct": 8.2,
+      "totalSOM": 8916.4,
+      "totalSales": 3059.0,
+      "cagrPct": 7.1,
       "peakYear": 2032
     },
     "TNFRSF4": {
@@ -11618,6 +12093,40 @@
       "totalSales": 7757.0,
       "cagrPct": 0.7,
       "peakYear": 2032
+    },
+    "TYK2": {
+      "companies": [
+        "BMY"
+      ],
+      "modalities": [
+        "small_molecule.kinase_inhibitor.tyk2_allosteric"
+      ],
+      "areas": [
+        "dermatology.inflammatory_derm.psoriasis_systemic"
+      ],
+      "assets": [
+        {
+          "ticker": "BMY",
+          "asset": "sotyktu",
+          "name": "Sotyktu (deucravacitinib) — oral TYK2 allosteric inhibitor",
+          "modality": "small_molecule.kinase_inhibitor.tyk2_allosteric",
+          "areas": [
+            "dermatology.inflammatory_derm.psoriasis_systemic"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 30900.0,
+      "totalSOM": 1068.0,
+      "totalSales": 300.0,
+      "cagrPct": 60.0,
+      "peakYear": 2031
     },
     "UL56": {
       "companies": [

@@ -123,6 +123,18 @@ REGIONS = {
         "eu":  {"patientsK": 5000,  "wtpPct": 38, "priceK": 3},
         "row": {"patientsK": 16000, "wtpPct": 10, "priceK": 1.2},
     },
+    # Hypertrophic cardiomyopathy (HCM): obstructive (oHCM) ~250K US
+    # diagnosed, ~350K EU5, ~1M ROW. Branded class: Camzyos (BMS
+    # mavacamten cardiac myosin inhibitor, ~$1.3B 2025; first-in-class,
+    # approved oHCM 2022 + EXPLORER + VALOR), aficamten (Cytokinetics
+    # cardiac myosin Ph3 SEQUOIA + ACACIA, NDA accepted PDUFA 2025).
+    # Generic disopyramide + beta-blockers standard background. Net
+    # branded ~$90K/yr.
+    "cardio_metabolic.heart_failure.hcm": {
+        "us":  {"patientsK": 250,  "wtpPct": 60, "priceK": 90},
+        "eu":  {"patientsK": 350,  "wtpPct": 42, "priceK": 55},
+        "row": {"patientsK": 1000, "wtpPct": 12, "priceK": 18},
+    },
 
     # ==================== HYPERTENSION ====================
     # source: AGT knockdown is a brand-new RNAi class addressing resistant
@@ -426,6 +438,7 @@ PEN_PCT = {
     "cardio_metabolic.hypertension.agt_knockdown": 8,
     "cardio_metabolic.heart_failure.hfref": 25,
     "cardio_metabolic.heart_failure.hfpef": 18,
+    "cardio_metabolic.heart_failure.hcm": 35,
     "cardio_metabolic.hypertension.outpatient_generic": 8,
     "cardio_metabolic.hypertension.resistant": 18,
     "cardio_metabolic.lipids.statin_generic": 10,

@@ -377,6 +377,17 @@ REGIONS = {
         "eu":  {"patientsK": 100, "wtpPct": 22, "priceK": 70},
         "row": {"patientsK": 250, "wtpPct": 8,  "priceK": 25},
     },
+    # Myelodysplastic syndromes (MDS): bone-marrow failure with cytopenias.
+    # Lower-risk MDS-associated anemia ~50K US prevalent on tx, ~70K EU5,
+    # ~250K ROW. Class: Reblozyl (BMS luspatercept TGF-b trap, ~$2.4B 1L
+    # lower-risk MDS-anemia + beta-thal), Vidaza/azacitidine (generic
+    # hypomethylating), Onureg (BMS oral aza AML maintenance). Net branded
+    # ~$140K/yr.
+    "hematology.myeloproliferative.mds": {
+        "us":  {"patientsK": 50,  "wtpPct": 70, "priceK": 140},
+        "eu":  {"patientsK": 70,  "wtpPct": 50, "priceK": 85},
+        "row": {"patientsK": 250, "wtpPct": 14, "priceK": 30},
+    },
     # Aplastic anemia (severe): ~3K US, ~4K EU5, ~30K ROW. Branded class:
     # Promacta/Revolade (eltrombopag TPO mimetic Novartis ~$300M AA share)
     # added to standard IST (cyclosporine + ATG). Net branded ~$110K/yr.
@@ -540,6 +551,7 @@ PEN_PCT = {
     "hematology.rare_blood.hemophilia_b": 60,
     "hematology.myeloproliferative.mf": 65,
     "hematology.myeloproliferative.pv": 25,
+    "hematology.myeloproliferative.mds": 60,
     "hematology.rare_blood.aplastic_anemia": 60,
     "oncology.hematology.cml": 65,
     "nephrology.glomerular.c3g": 45,

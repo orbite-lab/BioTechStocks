@@ -661,9 +661,9 @@
         return { results, normW, weightedTP, upside, cashPS: co.cash / co.sharesOut, sks, todayImplied };
       }, [state, config]);
 
-      const CCY_MAP = { EUR: "\u20AC", USD: "$", HKD: "HK$", SEK: "kr", JPY: "\u00A5", GBP: "\u00A3", CHF: "CHF " };
+      const CCY_MAP = { EUR: "\u20AC", USD: "$", HKD: "HK$", SEK: "kr", DKK: "kr", JPY: "\u00A5", GBP: "\u00A3", CHF: "CHF " };
       const ccyOf = c => CCY_MAP[c] || "$";
-      const ccyDec = c => (c === "JPY" || c === "HKD" || c === "SEK") ? 0 : 2;
+      const ccyDec = c => (c === "JPY" || c === "HKD" || c === "SEK" || c === "DKK") ? 0 : 2;
       const ccy = ccyOf(config.company.currency);
       const dec = ccyDec(config.company.currency);
       // Market values (TAM/SOM/salesM/priceK) are stored in USD per CLAUDE.md convention,
@@ -671,7 +671,7 @@
       // Use `usd` for the former and `ccy` for the latter. For foreign-currency companies,
       // also surface the local-currency equivalent on sales-like cells (the user asked for both).
       const usd = "$";
-      const FX_LOCAL = { USD:1, EUR:1.08, GBP:1.27, CHF:1.12, JPY:1/150, HKD:1/7.8, SEK:1/10.5 };
+      const FX_LOCAL = { USD:1, EUR:1.08, GBP:1.27, CHF:1.12, JPY:1/150, HKD:1/7.8, SEK:1/10.5, DKK:1/6.95 };
       const fxL = FX_LOCAL[config.company.currency] || 1;
       const isForeignCcy = config.company.currency !== "USD";
       const fmtUSDM = v => v >= 1000 ? usd + (v/1000).toFixed(1) + "B" : usd + Math.round(v) + "M";
@@ -1037,7 +1037,7 @@
             };
             // Live EV/S: convert EV to USD using approximate FX, divide by company-level revenue (from financials.json,
             // which captures ALL revenue incl. products not broken out in config salesM like Daiichi Japan legacy).
-            const FX_TO_USD = { USD: 1, EUR: 1.08, JPY: 1/150, HKD: 1/7.8, SEK: 1/10.5, GBP: 1.28, CHF: 1.12 };
+            const FX_TO_USD = { USD: 1, EUR: 1.08, JPY: 1/150, HKD: 1/7.8, SEK: 1/10.5, DKK: 1/6.95, GBP: 1.28, CHF: 1.12 };
             const fx = FX_TO_USD[config.company.currency] || 1;
             const shares = config.company.sharesOut;
             const cash = state.cash;
@@ -1056,7 +1056,7 @@
             const capTierLabel = { mega_cap: "mega (>$100B)", large_cap: "large ($20-100B)", mid_cap: "mid ($5-20B)", small_cap: "small ($1-5B)", micro_cap: "micro (<$1B)" }[capTierKey];
             // Classify every peer (covered + external) by tier. For internal configs use live price * shares * FX;
             // for external peers (no config) use baked mcap_usd_M from financials.json.
-            const FX = { USD: 1, EUR: 1.08, JPY: 1/150, HKD: 1/7.8, SEK: 1/10.5, GBP: 1.28, CHF: 1.12 };
+            const FX = { USD: 1, EUR: 1.08, JPY: 1/150, HKD: 1/7.8, SEK: 1/10.5, DKK: 1/6.95, GBP: 1.28, CHF: 1.12 };
             const tierOf = (cfgT) => {
               let mc;
               if (configs[cfgT]?.company) {

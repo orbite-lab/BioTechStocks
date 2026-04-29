@@ -1,10 +1,10 @@
 {
   "_meta": {
-    "generated": "2026-04-29T13:47:04Z",
-    "target_count": 222,
-    "total_assets": 394,
-    "assets_with_targets": 368,
-    "multi_modality_count": 20,
+    "generated": "2026-04-29T13:55:46Z",
+    "target_count": 223,
+    "total_assets": 395,
+    "assets_with_targets": 369,
+    "multi_modality_count": 21,
     "multi_disease_count": 94
   },
   "targets": {
@@ -744,7 +744,7 @@
         "RHHBY"
       ],
       "modalities": [
-        "antibody.monoclonal.anti_amyloid_brainshuttle",
+        "antibody.bispecific.amyloid_tfr",
         "nucleic_acid.sirna.galnac_platform"
       ],
       "areas": [
@@ -765,7 +765,7 @@
           "ticker": "RHHBY",
           "asset": "trontinemab",
           "name": "Trontinemab — anti-amyloid brain-shuttle (Brainshuttle)",
-          "modality": "antibody.monoclonal.anti_amyloid_brainshuttle",
+          "modality": "antibody.bispecific.amyloid_tfr",
           "areas": [
             "cns.neurodegeneration.alzheimer"
           ]
@@ -1601,11 +1601,13 @@
         "antibody.checkpoint.pdl1"
       ],
       "areas": [
+        "oncology.breast.tnbc",
         "oncology.genitourinary.bladder",
         "oncology.gi.cholangiocarcinoma",
         "oncology.gi.hcc",
         "oncology.lung.nsclc_io_combo",
-        "oncology.lung.sclc"
+        "oncology.lung.sclc",
+        "oncology.neuroendocrine.gepnet"
       ],
       "assets": [
         {
@@ -1627,21 +1629,26 @@
           "name": "Tecentriq (atezolizumab) — anti-PD-L1 mAb",
           "modality": "antibody.checkpoint.pdl1",
           "areas": [
-            "oncology.lung.nsclc_io_combo"
+            "oncology.breast.tnbc",
+            "oncology.genitourinary.bladder",
+            "oncology.gi.hcc",
+            "oncology.lung.nsclc_io_combo",
+            "oncology.lung.sclc",
+            "oncology.neuroendocrine.gepnet"
           ]
         }
       ],
       "assetCount": 2,
       "modalityCount": 1,
       "modalityClassCount": 1,
-      "areaCount": 5,
+      "areaCount": 7,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 34908.2,
-      "totalSOM": 14853.9,
-      "totalSales": 10170.0,
-      "cagrPct": 1.6,
+      "totalTAM": 44831.4,
+      "totalSOM": 14314.0,
+      "totalSales": 9800.0,
+      "cagrPct": 1.7,
       "peakYear": 2028
     },
     "CD276": {
@@ -4881,7 +4888,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -5090,7 +5097,7 @@
       ],
       "totalTAM": 41205.0,
       "totalSOM": 10915.0,
-      "totalSales": 4400.0,
+      "totalSales": 3000.0,
       "cagrPct": -3.8,
       "peakYear": 2025
     },
@@ -6411,7 +6418,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -6855,6 +6862,8 @@
       ],
       "areas": [
         "immunology.demyelinating.multiple_sclerosis",
+        "immunology.inflammatory_systemic.rheumatoid_arthritis",
+        "oncology.hematology.cll",
         "oncology.hematology.nhl.dlbcl",
         "oncology.hematology.nhl.fl"
       ],
@@ -6901,6 +6910,9 @@
           "name": "Rituxan/MabThera (rituximab) — anti-CD20 mAb (biosim erosion)",
           "modality": "antibody.monoclonal.anti_cd20",
           "areas": [
+            "immunology.inflammatory_systemic.rheumatoid_arthritis",
+            "oncology.hematology.cll",
+            "oncology.hematology.nhl.dlbcl",
             "oncology.hematology.nhl.fl"
           ]
         }
@@ -6908,14 +6920,14 @@
       "assetCount": 5,
       "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 3,
+      "areaCount": 5,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 32817.0,
-      "totalSOM": 13841.2,
+      "totalTAM": 72977.0,
+      "totalSOM": 13947.3,
       "totalSales": 8140.0,
-      "cagrPct": 6.7,
+      "cagrPct": 6.6,
       "peakYear": 2027
     },
     "MSTN": {
@@ -7082,7 +7094,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -7223,7 +7235,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -9308,6 +9320,40 @@
       "cagrPct": 35.0,
       "peakYear": 2032
     },
+    "TFRC": {
+      "companies": [
+        "RHHBY"
+      ],
+      "modalities": [
+        "antibody.bispecific.amyloid_tfr"
+      ],
+      "areas": [
+        "cns.neurodegeneration.alzheimer"
+      ],
+      "assets": [
+        {
+          "ticker": "RHHBY",
+          "asset": "trontinemab",
+          "name": "Trontinemab — anti-amyloid brain-shuttle (Brainshuttle)",
+          "modality": "antibody.bispecific.amyloid_tfr",
+          "areas": [
+            "cns.neurodegeneration.alzheimer"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 10980.0,
+      "totalSOM": 9344.0,
+      "totalSales": 0.0,
+      "cagrPct": 50.0,
+      "peakYear": 2032
+    },
     "THRB": {
       "companies": [
         "MDGL"
@@ -9939,9 +9985,13 @@
       "modalities": [
         "antibody.bispecific.vegf_ang2",
         "antibody.fusion.vegf_trap",
-        "antibody.monoclonal.anti_vegf_a"
+        "antibody.monoclonal.anti_vegf_a",
+        "formulation_modifier.ocular_implant.refillable_port"
       ],
       "areas": [
+        "oncology.gi.colorectal",
+        "oncology.gi.hcc",
+        "oncology.gynecologic.ovarian",
         "oncology.lung.nsclc_io_combo",
         "ophthalmology.retina.dme",
         "ophthalmology.retina.dr",
@@ -9975,25 +10025,38 @@
         },
         {
           "ticker": "RHHBY",
+          "asset": "susvimo",
+          "name": "Susvimo (port delivery system) — refillable IVT for nAMD/DME",
+          "modality": "formulation_modifier.ocular_implant.refillable_port",
+          "areas": [
+            "ophthalmology.retina.nvamd"
+          ]
+        },
+        {
+          "ticker": "RHHBY",
           "asset": "avastin",
           "name": "Avastin (bevacizumab) — anti-VEGF mAb (biosim erosion)",
           "modality": "antibody.monoclonal.anti_vegf_a",
           "areas": [
+            "oncology.gi.colorectal",
+            "oncology.gi.hcc",
+            "oncology.gynecologic.ovarian",
             "oncology.lung.nsclc_io_combo"
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 3,
-      "modalityClassCount": 1,
-      "areaCount": 5,
+      "assetCount": 4,
+      "modalityCount": 4,
+      "modalityClassCount": 2,
+      "areaCount": 8,
       "modalityClasses": [
-        "antibody"
+        "antibody",
+        "formulation_modifier"
       ],
-      "totalTAM": 45843.0,
-      "totalSOM": 15351.9,
-      "totalSales": 10090.0,
-      "cagrPct": 5.7,
+      "totalTAM": 63738.4,
+      "totalSOM": 14683.8,
+      "totalSales": 10170.0,
+      "cagrPct": 6.9,
       "peakYear": 2029
     },
     "VEGFR1": {

@@ -3067,17 +3067,94 @@
       ],
       "indications": [
         {
-          "id": "b_all_dlbcl",
-          "name": "Pediatric B-ALL + adult R/R DLBCL + R/R FL",
+          "id": "b_all",
+          "name": "Pediatric/AYA B-ALL (R/R + 1L MRD+)",
+          "area": "oncology.hematology.b_all",
+          "market": {
+            "tamB": 4,
+            "penPct": 70,
+            "salesM": 250,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "cagrPct": 0,
+            "notes": "Kymriah B-ALL pediatric/AYA ~50% of brand. First indication approved 2017.",
+            "company_slice": {
+              "us": {
+                "reachPct": 10.9,
+                "wtpPct": 70,
+                "priceK": 380
+              },
+              "eu": {
+                "reachPct": 5.5,
+                "wtpPct": 50,
+                "priceK": 240
+              },
+              "row": {
+                "reachPct": 0.7,
+                "wtpPct": 12,
+                "priceK": 90
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "us.wtpPct": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "us.priceK": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "eu.reachPct": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "eu.wtpPct": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "eu.priceK": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "row.reachPct": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "row.wtpPct": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "row.priceK": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 75,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 12,
+                "wtpPct": 55,
+                "priceK": 120
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            }
+          }
+        },
+        {
+          "id": "dlbcl",
+          "name": "Adult R/R DLBCL 3L+",
           "area": "oncology.hematology.nhl.dlbcl",
           "market": {
             "tamB": 4,
             "penPct": 55,
-            "salesM": 500,
+            "salesM": 200,
             "salesYear": 2025,
             "peakYear": 2028,
             "cagrPct": 0,
-            "notes": "First FDA-approved CAR-T (2017 B-ALL pediatric; DLBCL 2018; FL 2022). Anti-CD19 autologous. Class peers: Yescarta/Tecartus (Gilead), Breyanzi (BMS). Lost share to Yescarta.",
+            "notes": "Kymriah DLBCL ~40% of brand (lost share to Yescarta).",
             "company_slice": {
               "us": {
                 "reachPct": 8,
@@ -3139,6 +3216,83 @@
                 "patientsK": 120,
                 "wtpPct": 15,
                 "priceK": 40
+              }
+            }
+          }
+        },
+        {
+          "id": "fl",
+          "name": "R/R follicular lymphoma",
+          "area": "oncology.hematology.nhl.fl",
+          "market": {
+            "tamB": 4,
+            "penPct": 45,
+            "salesM": 50,
+            "salesYear": 2025,
+            "peakYear": 2028,
+            "cagrPct": 0,
+            "notes": "Kymriah FL ~10% of brand (approved 2022).",
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 70,
+                "priceK": 380
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 50,
+                "priceK": 240
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 90
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "us.wtpPct": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "us.priceK": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "eu.reachPct": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "eu.wtpPct": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "eu.priceK": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "row.reachPct": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "row.wtpPct": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              },
+              "row.priceK": {
+                "note": "Kymriah CD19 CAR-T multi-indication"
+              }
+            },
+            "regions": {
+              "us": {
+                "patientsK": 14,
+                "wtpPct": 65,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 17,
+                "wtpPct": 48,
+                "priceK": 50
+              },
+              "row": {
+                "patientsK": 30,
+                "wtpPct": 12,
+                "priceK": 20
               }
             }
           }
@@ -4866,7 +5020,17 @@
           }
         },
         "kymriah": {
-          "b_all_dlbcl": {
+          "b_all": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "dlbcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "fl": {
             "pos": 100,
             "apr": 100,
             "pen": 0.4
@@ -5231,7 +5395,17 @@
           }
         },
         "kymriah": {
-          "b_all_dlbcl": {
+          "b_all": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "dlbcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "fl": {
             "pos": 100,
             "apr": 100,
             "pen": 0.55
@@ -5597,7 +5771,17 @@
           }
         },
         "kymriah": {
-          "b_all_dlbcl": {
+          "b_all": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "dlbcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "fl": {
             "pos": 100,
             "apr": 100,
             "pen": 0.7
@@ -5964,7 +6148,17 @@
           }
         },
         "kymriah": {
-          "b_all_dlbcl": {
+          "b_all": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "dlbcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "fl": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
@@ -6328,7 +6522,17 @@
           }
         },
         "kymriah": {
-          "b_all_dlbcl": {
+          "b_all": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "dlbcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "fl": {
             "pos": 100,
             "apr": 100,
             "pen": 1.0

@@ -492,9 +492,8 @@
       "indications": [
         {
           "id": "mcl_2l",
-          "name": "Mantle cell lymphoma 2L+ (post-BTK)",
+          "name": "R/R MCL 2L+ (ZUMA-2)",
           "area": "oncology.hematology.nhl.mcl",
-          "rare": false,
           "market": {
             "regions": {
               "us": {
@@ -537,9 +536,60 @@
             "penPct": 50,
             "cagrPct": -3,
             "peakYear": 2027,
-            "salesM": 340,
+            "salesM": 237,
             "salesYear": 2025,
-            "notes": "MCL is small market (~5K US/yr); Tecartus dominant CAR-T option but bispecifics encroaching."
+            "notes": "Tecartus R/R MCL ~70% of brand. First approved 2020."
+          }
+        },
+        {
+          "id": "b_all",
+          "name": "Adult B-ALL R/R (ZUMA-3)",
+          "area": "oncology.hematology.b_all",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 75,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 12,
+                "wtpPct": 55,
+                "priceK": 120
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 21.7,
+                "wtpPct": 70,
+                "priceK": 480
+              },
+              "eu": {
+                "reachPct": 14.4,
+                "wtpPct": 52,
+                "priceK": 320
+              },
+              "row": {
+                "reachPct": 1.2,
+                "wtpPct": 10,
+                "priceK": 150
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Tecartus first-in-class CAR-T for MCL post-BTK inhibitor failure; ~18% of post-BTKi MCL pts access",
+              "us.priceK": "WAC ~$465K"
+            },
+            "penPct": 70,
+            "cagrPct": -3,
+            "peakYear": 2027,
+            "salesM": 102,
+            "salesYear": 2025,
+            "notes": "Tecartus adult R/R B-ALL ~30% of brand. Approved 2021. Differentiated from Kymriah pediatric."
           }
         }
       ],
@@ -972,6 +1022,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.7
+          },
+          "b_all": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
           }
         }
       },
@@ -1050,6 +1105,11 @@
         },
         "tecartus": {
           "mcl_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "b_all": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
@@ -1134,6 +1194,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.0
+          },
+          "b_all": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
           }
         }
       },
@@ -1215,6 +1280,11 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.1
+          },
+          "b_all": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
           }
         }
       },
@@ -1293,6 +1363,11 @@
         },
         "tecartus": {
           "mcl_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "b_all": {
             "pos": 100,
             "apr": 100,
             "pen": 1.2

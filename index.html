@@ -924,8 +924,11 @@ async function main(){
     const cashT=new Set(), pdufaT=new Set(), rrT=new Set(), hotT=new Set();
     for(const r of rows){
       if(r.ev<0) cashT.add(r.ticker);
-      if(r.catalysts&&r.catalysts.some(c=>c.type==='pdufa'&&c.daysOut>=0&&c.daysOut<=30)) pdufaT.add(r.ticker);
-      if(r.catalysts&&r.catalysts.some(c=>c.daysOut>=0&&c.daysOut<=7)) hotT.add(r.ticker);
+      // Match Catalyst Map filtering: exclude resolved + use strictly-future daysOut.
+      // Otherwise the badge counts events that already happened (resolved but
+      // dateSort still within the window) and the map shows fewer rows than the badge.
+      if(r.catalysts&&r.catalysts.some(c=>c.type==='pdufa'&&c.daysOut>0&&c.daysOut<=30&&!c.resolved&&!c._resolvedAt)) pdufaT.add(r.ticker);
+      if(r.catalysts&&r.catalysts.some(c=>c.daysOut>0&&c.daysOut<=7&&!c.resolved&&!c._resolvedAt)) hotT.add(r.ticker);
       if(r.tps&&r.price>0){
         const bullUp=((r.tps.bull||0)-r.price)/r.price;
         const megaDn=(r.price-(r.tps.mega_bear||0))/r.price;

@@ -142,3 +142,108 @@ for t in manifest:
 print(f"\nFinal SOM >= sales check: {len(issues)} issues")
 for i in issues[:20]:
     print(f"  {i}")
+
+
+# ─── Catalyst dedup pass ─────────────────────────────────────────────
+# Catalogs accumulate near-duplicate catalyst rows when both monitor.py
+# (high-frequency news) and check_catalysts.py (bi-monthly LLM sweep) add
+# events that describe the same readout/PDUFA/BLA in slightly different
+# terms (e.g. NTLA Sep 30 'partnership'-typed BLA + Nov 1 'bla_submission'
+# for the same Lonvo-z BLA).
+#
+# Auto-merge requires (asset, indication) match + dates within window AND
+# EITHER:
+#   (a) same `type` field (the LLM agrees this is the same event class), OR
+#   (b) very-high title similarity >= 0.85 AND tight date window <= 45 days
+#       (catches the NTLA case: BLA submission mis-typed as 'partnership'
+#       vs correctly typed 'bla_submission' — titles >= 0.90 similar)
+#
+# Distinct trials sharing asset+indication (e.g. CAMX SORENTO Ph2 vs Ph3,
+# BBIO Infigratinib NDA vs Ph2 data, LLY Retatrutide T2D vs obesity) survive
+# because they have different `type` fields AND title similarity stays under
+# the 0.85 ceiling.
+from datetime import datetime as _dt
+from difflib import SequenceMatcher as _SM
+DEDUP_WINDOW_WIDE = 90       # for same-type merges (LLM consensus on event class)
+DEDUP_WINDOW_TIGHT = 45      # for cross-type merges (require very high title sim)
+DEDUP_TITLE_SIM_SAME_TYPE  = 0.75  # same type but different asset/trial -> still distinct
+DEDUP_TITLE_SIM_CROSS_TYPE = 0.85  # different types -- need near-identical titles
+
+
+def _title_sim(a, b):
+    return _SM(None, (a or "").lower(), (b or "").lower()).ratio()
+
+
+print("\nCatalyst dedup pass...")
+total_merged = 0
+for t in manifest:
+    path = CONFIGS / (t + ".json")
+    d = json.loads(path.read_text(encoding="utf-8"))
+    cats = d.get("catalysts", []) or []
+    if len(cats) < 2:
+        continue
+    parsed = []
+    for c in cats:
+        try:
+            dt = _dt.fromisoformat((c.get("dateSort") or "").replace("Z", "+00:00")).replace(tzinfo=None)
+        except (ValueError, AttributeError, TypeError):
+            dt = None
+        parsed.append(dt)
+    keep = [True] * len(cats)
+    merges = []
+    for i, ci in enumerate(cats):
+        if not keep[i]:
+            continue
+        for j in range(i + 1, len(cats)):
+            if not keep[j]:
+                continue
+            cj = cats[j]
+            if ci.get("asset") != cj.get("asset"):
+                continue
+            if ci.get("indication") != cj.get("indication"):
+                continue
+            if parsed[i] is None or parsed[j] is None:
+                continue
+            days = abs((parsed[i] - parsed[j]).days)
+            same_type = ci.get("type") == cj.get("type") and ci.get("type")
+            sim = _title_sim(ci.get("title", ""), cj.get("title", ""))
+            # Same-type path: same asset+indication+type → still need decent
+            #   title similarity to merge, since many configs have multiple
+            #   parallel trials sharing all three (e.g. RVMD RASolute 305
+            #   vs 309 are both phase3_start for the same asset/indication).
+            # Cross-type path: very high title similarity required (e.g.
+            #   NTLA BLA mis-typed as 'partnership' vs correctly 'bla_submission').
+            if same_type and days <= DEDUP_WINDOW_WIDE and sim >= DEDUP_TITLE_SIM_SAME_TYPE:
+                pass
+            elif (not same_type) and days <= DEDUP_WINDOW_TIGHT and sim >= DEDUP_TITLE_SIM_CROSS_TYPE:
+                pass
+            else:
+                continue
+            i_res = bool(ci.get("_resolvedAt") or ci.get("resolved"))
+            j_res = bool(cj.get("_resolvedAt") or cj.get("resolved"))
+            if i_res and not j_res:
+                keep[j] = False
+                merges.append((ci.get("title", "")[:50], cj.get("title", "")[:50], f"i resolved · sim {sim:.2f}"))
+            elif j_res and not i_res:
+                keep[i] = False
+                merges.append((cj.get("title", "")[:50], ci.get("title", "")[:50], f"j resolved · sim {sim:.2f}"))
+                break
+            else:
+                i_score = sum(1 for v in ci.values() if v not in (None, "", [], {}))
+                j_score = sum(1 for v in cj.values() if v not in (None, "", [], {}))
+                if i_score >= j_score:
+                    keep[j] = False
+                    merges.append((ci.get("title", "")[:50], cj.get("title", "")[:50], f"i fuller · sim {sim:.2f}"))
+                else:
+                    keep[i] = False
+                    merges.append((cj.get("title", "")[:50], ci.get("title", "")[:50], f"j fuller · sim {sim:.2f}"))
+                    break
+    if merges:
+        new_cats = [c for k, c in zip(keep, cats) if k]
+        d["catalysts"] = new_cats
+        path.write_text(json.dumps(d, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        total_merged += len(merges)
+        for kept, dropped, reason in merges:
+            print(f"  {t}: kept '{kept}' / dropped '{dropped}' ({reason})")
+
+print(f"Catalyst dedup: {total_merged} duplicate(s) auto-merged.")

@@ -529,23 +529,55 @@ def validate_subtitle_proposal(prop, company_name, current_subtitle):
     }, True, ""
 
 
+def _title_similarity(a: str, b: str) -> float:
+    """SequenceMatcher ratio on lowercased titles."""
+    from difflib import SequenceMatcher
+    return SequenceMatcher(None, (a or "").lower(), (b or "").lower()).ratio()
+
+
+# Widened from the original ±30d to ±90d. Late-stage regulatory events (BLA
+# filings, PDUFA dates, Ph3 readouts) routinely slip by a quarter; the prior
+# 30-day window let cosmetically-different copies of the same event slip
+# through (e.g. NTLA Sep 30 'partnership'-typed BLA + Nov 1 'bla_submission'-
+# typed BLA -- 32 days apart, both got added).
+DEDUP_DATE_WIDE_DAYS = 90
+TITLE_SIMILARITY_THRESHOLD = 0.65   # Jaccard-like fuzzy on lowercased titles
+
+
 def is_duplicate(prop, existing_catalysts):
+    """Treat as duplicate when any of these match within the wide date window:
+    1. Strict: same (asset, indication, type) within ±30d -- legacy safety.
+    2. Loose: same (asset, indication) within ±90d, regardless of type.
+       Covers the case where the LLM mis-types a known event (e.g.
+       'partnership' vs 'bla_submission' for the same BLA filing).
+    3. Title fuzzy: same (asset, indication) AND title similarity >= 0.65
+       within ±90d. Covers the case where titles describe the same event
+       in different words.
+    """
     try:
         prop_date = datetime.fromisoformat(prop["dateSort"])
     except (ValueError, TypeError):
         return False
+    prop_title = prop.get("title", "")
     for cat in existing_catalysts:
         if cat.get("asset") != prop["asset"]:
             continue
         if cat.get("indication") != prop["indication"]:
             continue
-        if cat.get("type") != prop["type"]:
-            continue
         try:
             cat_date = datetime.fromisoformat(cat.get("dateSort", ""))
         except (ValueError, TypeError):
             continue
-        if abs((cat_date - prop_date).days) <= DEDUP_DATE_TOLERANCE_DAYS:
+        days_apart = abs((cat_date - prop_date).days)
+        # Rule 1: strict legacy match
+        if days_apart <= DEDUP_DATE_TOLERANCE_DAYS and cat.get("type") == prop["type"]:
+            return True
+        # Rule 2: loose -- same drug+indication near in time, ignore type
+        if days_apart <= DEDUP_DATE_WIDE_DAYS:
+            return True
+        # Rule 3: fuzzy title even outside the wide window -- catches calendar
+        # year drift on the same event description
+        if _title_similarity(prop_title, cat.get("title", "")) >= TITLE_SIMILARITY_THRESHOLD:
             return True
     return False
 

@@ -251,13 +251,67 @@ Path rules:
 
 # ─── Apply changes ────────────────────────────────────────────
 
-def apply_changes(config, changes):
+# Resolution-class fields. Edits to catalysts.<idx>.<field> for these field
+# names get a guard rail: the asset/indication/title at <idx> must show up
+# in the news summary, otherwise we refuse to apply (avoids the LLM marking
+# the wrong catalyst resolved when there are multiple per asset).
+RESOLUTION_FIELDS = {
+    "_resolvedAt", "_outcome", "_outcomeRationale",
+    "_outcomeSource", "_outcomeConfidence",
+    "dateSort", "date",
+}
+
+
+def _news_mentions_catalyst(news_text: str, catalyst: dict) -> bool:
+    """Heuristic: news text must overlap with the catalyst's identity (asset
+    id, indication id, or significant words from the title). Filters out
+    LLM mis-pointing to an unrelated catalyst at index <idx>."""
+    if not catalyst or not news_text:
+        return False
+    nl = news_text.lower()
+    for k in ("asset", "indication"):
+        v = (catalyst.get(k) or "").lower().replace("_", " ").strip()
+        if v and len(v) >= 3 and v in nl:
+            return True
+    title = (catalyst.get("title") or "").lower()
+    # Strip very common stop-words; require >=2 substantive title words to appear
+    STOP = {"phase", "trial", "data", "topline", "of", "the", "for", "in",
+            "and", "to", "with", "vs", "fda", "ema", "study"}
+    words = [w for w in title.replace("(", " ").replace(")", " ")
+             .replace(",", " ").replace("-", " ").split()
+             if len(w) >= 4 and w not in STOP]
+    hits = sum(1 for w in words if w in nl)
+    return hits >= 2
+
+
+def apply_changes(config, changes, news_summary=""):
     updated = json.loads(json.dumps(config))
     applied = []
+    rejected = []
     for change in changes:
         path = change["path"]
         new_val = change["new_value"]
         keys = path.split(".")
+
+        # ─── Resolution guard rail ───
+        # Reject catalysts.<idx>.<resolution_field> edits if the catalyst at
+        # that index doesn't match the news subject.
+        if (len(keys) >= 3 and keys[0] == "catalysts" and keys[1].isdigit()
+                and keys[2] in RESOLUTION_FIELDS):
+            try:
+                idx = int(keys[1])
+                target_cat = updated.get("catalysts", [])[idx]
+                if not _news_mentions_catalyst(news_summary, target_cat):
+                    print(f"  ⚠ REJECT resolution edit at {path}: catalyst "
+                          f"'{(target_cat.get('title') or '')[:60]}' does not "
+                          f"appear in news summary -- LLM mis-pointed?")
+                    rejected.append({**change, "reject_reason": "news/catalyst mismatch"})
+                    continue
+            except (IndexError, KeyError, TypeError, ValueError):
+                print(f"  ⚠ REJECT resolution edit at {path}: catalyst index out of range")
+                rejected.append({**change, "reject_reason": "index out of range"})
+                continue
+
         try:
             obj = updated
             for k in keys[:-1]:
@@ -460,12 +514,13 @@ def main():
         changes = [c for c in result.get("changes", []) if isinstance(c, dict) and "path" in c and "new_value" in c]
 
         if changes:
-            updated_config, applied = apply_changes(config, changes)
+            news_summary_for_guard = result.get("news_summary", item.get("summary", ""))
+            updated_config, applied = apply_changes(config, changes, news_summary_for_guard)
             if applied:
                 cfg_path = CONFIGS_DIR / f"{ticker}.json"
                 cfg_path.write_text(json.dumps(updated_config, indent=2))
                 configs[ticker] = updated_config
-                news_summary = result.get("news_summary", item.get("summary", ""))
+                news_summary = news_summary_for_guard
                 source = result.get("source", item.get("source", ""))
                 log_changes(ticker, news_summary, source, applied, timestamp)
                 msg = format_telegram_alert(ticker, config["company"]["name"], news_summary, applied, source)

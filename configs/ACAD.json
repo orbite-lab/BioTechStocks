@@ -7,7 +7,7 @@
     "cash": 650,
     "currency": "USD",
     "phase": "commercial",
-    "subtitle": "Nuplazid (pimavanserin 5-HT2A inverse agonist) PDP + Daybue (trofinetide) Rett 1st-in-class + ACP-204 next-gen 5-HT2A (AD psychosis Ph3 + schizo Ph2) + ACP-101 carbetocin PWS Ph3",
+    "subtitle": "Nuplazid (pimavanserin 5-HT2A inverse agonist) PDP + Daybue (trofinetide GPE analog) Rett 1st-in-class + ACP-204 next-gen 5-HT2A (AD psychosis Ph3 + schizo Ph2 + DLB Ph2) + ACP-101 carbetocin PWS Ph3",
     "yahooTicker": "ACAD"
   },
   "assets": [
@@ -76,12 +76,10 @@
     },
     {
       "id": "daybue",
-      "name": "Daybue (trofinetide) - synthetic IGF-1 tripeptide (NNZ-2566; licensed Neuren 2018)",
+      "name": "Daybue (trofinetide) - synthetic GPE analog (glycyl-prolyl-glutamate; IGF-1 N-terminal tripeptide; non-IGF-1R glial mechanism); NNZ-2566 ex-Neuren",
       "stage": "Commercial (Rett syndrome FDA 2023, first ever Rett tx; EU partner expansion ongoing)",
-      "modality": "peptide.synthetic.igf1_tripeptide",
-      "targets": [
-        "IGF1R"
-      ],
+      "modality": "peptide.synthetic.gpe_analog",
+      "targets": [],
       "indications": [
         {
           "id": "rett",
@@ -240,6 +238,54 @@
             "cagrPct": 4,
             "peakYear": 2035
           }
+        },
+        {
+          "id": "dlb_psychosis",
+          "name": "Dementia with Lewy bodies psychosis (Ph2)",
+          "area": "cns.neurodegeneration.dlb",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1400,
+                "wtpPct": 55,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 1600,
+                "wtpPct": 40,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 7000,
+                "wtpPct": 12,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 60,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 40,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 8,
+                "priceK": 7
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "DLB psychosis ~80% of DLB pts; ACP-204 first-line if Ph3 successful (no approved DLB psychosis therapy); pimavanserin precedent",
+              "us.priceK": "Same ACP-204 expected pricing $35-50K/yr"
+            },
+            "penPct": 20,
+            "cagrPct": 5,
+            "peakYear": 2035
+          }
         }
       ]
     },
@@ -336,6 +382,11 @@
             "pos": 12,
             "apr": 35,
             "pen": 0.2
+          },
+          "dlb_psychosis": {
+            "pos": 10,
+            "apr": 30,
+            "pen": 0.2
           }
         },
         "acp_101": {
@@ -378,6 +429,11 @@
           "schizophrenia_adjunct": {
             "pos": 25,
             "apr": 50,
+            "pen": 0.35
+          },
+          "dlb_psychosis": {
+            "pos": 20,
+            "apr": 45,
             "pen": 0.35
           }
         },
@@ -422,6 +478,11 @@
             "pos": 40,
             "apr": 65,
             "pen": 0.55
+          },
+          "dlb_psychosis": {
+            "pos": 35,
+            "apr": 60,
+            "pen": 0.5
           }
         },
         "acp_101": {
@@ -465,6 +526,11 @@
             "pos": 60,
             "apr": 80,
             "pen": 0.75
+          },
+          "dlb_psychosis": {
+            "pos": 55,
+            "apr": 75,
+            "pen": 0.7
           }
         },
         "acp_101": {
@@ -508,6 +574,11 @@
             "pos": 80,
             "apr": 90,
             "pen": 1.0
+          },
+          "dlb_psychosis": {
+            "pos": 78,
+            "apr": 88,
+            "pen": 0.95
           }
         },
         "acp_101": {

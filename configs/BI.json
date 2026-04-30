@@ -1,0 +1,1676 @@
+{
+  "company": {
+    "ticker": "BI",
+    "name": "Boehringer Ingelheim International GmbH (private; family-owned since 1885)",
+    "currentPrice": 1,
+    "sharesOut": 1,
+    "cash": 0,
+    "currency": "EUR",
+    "phase": "commercial",
+    "subtitle": "PRIVATE REFERENCE -- World's largest privately-held pharma (Boehringer + Liebrecht/von Baumbach families). FY24 total revenue ~EUR 25B (~EUR 21B human pharma + EUR 4B animal health). Human-pharma scope only. Lilly-partnered SGLT2 + DPP-4 (Jardiance + Trajenta), wholly-owned Ofev (nintedanib IPF/SSc-ILD), Spiriva, Pradaxa, Spevigo (spesolimab GPP first-in-class IL-36R), Cyltezo (adalimumab biosimilar). Pipeline: survodutide GLP-1/glucagon dual Ph3 obesity+MASH; zongertinib Ph2 HER2-mutant NSCLC accelerated approval Aug 2025",
+    "yahooTicker": "",
+    "private": true,
+    "privateNote": "Family-owned since founding 1885 by Albert Boehringer; never IPO'd. ~36% Boehringer family + ~64% Liebrecht/von Baumbach branches via C.H. Boehringer Sohn AG & Co KG. Largest privately-held pharma globally. Modeled here for taxonomy + drug-portfolio reference only."
+  },
+  "assets": [
+    {
+      "id": "jardiance",
+      "name": "Jardiance/Synjardy/Glyxambi (empagliflozin) - SGLT2 inhibitor (BI/Lilly Diabetes Alliance 50/50 P&L)",
+      "stage": "Commercial (T2D 2014; HFrEF 2021; HFpEF 2022; CKD 2023; post-MI 2024)",
+      "modality": "small_molecule.transporter.sglt2_inhibitor",
+      "targets": [
+        "SLC5A2"
+      ],
+      "indications": [
+        {
+          "id": "t2d",
+          "name": "Type 2 diabetes (foundation indication; CV/renal benefit class)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 65,
+                "priceK": 6
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 50,
+                "priceK": 3.5
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 20,
+                "priceK": 1.2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Jardiance ~25% of US SGLT2 class share (vs Farxiga AZN, Invokana JNJ); ~6% of total T2D diagnosed",
+              "us.priceK": "Jardiance WAC ~$650/mo (~$8K WAC, ~$5K net post-PBM rebate)",
+              "us.note": "BI/Lilly Diabetes Alliance 50/50 profit-share since 2011; BI books 50% of global Jardiance"
+            },
+            "penPct": 10,
+            "cagrPct": 8,
+            "peakYear": 2031,
+            "salesM": 4500,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "hfref",
+          "name": "Heart failure with reduced ejection fraction (EMPEROR-Reduced; FDA 2021)",
+          "area": "cardio_metabolic.heart_failure.hfref",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3000,
+                "wtpPct": 55,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 42,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 15000,
+                "wtpPct": 12,
+                "priceK": 1.2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 60,
+                "priceK": 6
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 45,
+                "priceK": 3.5
+              },
+              "row": {
+                "reachPct": 1.0,
+                "wtpPct": 15,
+                "priceK": 1.2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Jardiance HFrEF ~6% of total HFrEF; competitive vs Farxiga (DAPA-HF AZN)",
+              "us.priceK": "Same Jardiance WAC; HF dosing 10mg QD"
+            },
+            "penPct": 25,
+            "cagrPct": 12,
+            "peakYear": 2031,
+            "salesM": 800,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "hfpef",
+          "name": "Heart failure with preserved ejection fraction (EMPEROR-Preserved; FDA 2022; first SGLT2 in HFpEF)",
+          "area": "cardio_metabolic.heart_failure.hfpef",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3500,
+                "wtpPct": 50,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 5000,
+                "wtpPct": 38,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 16000,
+                "wtpPct": 10,
+                "priceK": 1.2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 55,
+                "priceK": 6
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 40,
+                "priceK": 3.5
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 1.2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Jardiance first SGLT2 to demo HFpEF benefit; competitive parity with Farxiga DELIVER",
+              "us.priceK": "Same Jardiance WAC"
+            },
+            "penPct": 18,
+            "cagrPct": 15,
+            "peakYear": 2032,
+            "salesM": 600,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "ckd",
+          "name": "Chronic kidney disease (EMPA-KIDNEY; FDA 2023; with or without diabetes)",
+          "area": "nephrology.ckd.disease_modifying",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 15000,
+                "wtpPct": 30,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 18000,
+                "wtpPct": 22,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 80000,
+                "wtpPct": 7,
+                "priceK": 1.2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 60,
+                "priceK": 6
+              },
+              "eu": {
+                "reachPct": 2.5,
+                "wtpPct": 45,
+                "priceK": 3.5
+              },
+              "row": {
+                "reachPct": 0.4,
+                "wtpPct": 12,
+                "priceK": 1.2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Jardiance CKD slowed progression broadly; competitive vs Farxiga DAPA-CKD + Kerendia (BAYN finerenone) in DKD",
+              "us.priceK": "Same Jardiance WAC"
+            },
+            "penPct": 10,
+            "cagrPct": 12,
+            "peakYear": 2032,
+            "salesM": 400,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "ofev",
+      "name": "Ofev (nintedanib) - intracellular tyrosine kinase inhibitor (VEGFR1/2/3 + FGFR1/2/3 + PDGFRalpha/beta)",
+      "stage": "Commercial (IPF 2014; SSc-ILD 2019; chronic fibrosing ILD 2020; PPF 2024)",
+      "modality": "small_molecule.kinase.tki_anti_fibrotic",
+      "targets": [
+        "VEGFR1",
+        "VEGFR2",
+        "VEGFR3",
+        "FGFR1",
+        "FGFR2",
+        "FGFR3",
+        "PDGFRA",
+        "PDGFRB"
+      ],
+      "indications": [
+        {
+          "id": "ipf",
+          "name": "Idiopathic pulmonary fibrosis (foundation; OFFICEND ASCEND-IPF)",
+          "area": "respiratory.fibrotic.ipf",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 150,
+                "wtpPct": 65,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 200,
+                "wtpPct": 50,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 1000,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 35,
+                "wtpPct": 70,
+                "priceK": 110
+              },
+              "eu": {
+                "reachPct": 25,
+                "wtpPct": 50,
+                "priceK": 65
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Ofev + Esbriet (pirfenidone Roche) duopoly; Ofev ~50% IPF Rx share; ~35% of total IPF diagnosed treated",
+              "us.priceK": "Ofev WAC ~$110K/yr; Esbriet generic erosion driving Ofev share gain"
+            },
+            "penPct": 35,
+            "cagrPct": 4,
+            "peakYear": 2030,
+            "salesM": 2400,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "ssc_ild",
+          "name": "Systemic sclerosis with interstitial lung disease (SENSCIS; FDA 2019)",
+          "area": "immunology.autoimmune.systemic_sclerosis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80,
+                "wtpPct": 35,
+                "priceK": 28
+              },
+              "eu": {
+                "patientsK": 120,
+                "wtpPct": 22,
+                "priceK": 16
+              },
+              "row": {
+                "patientsK": 400,
+                "wtpPct": 6,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12.3,
+                "wtpPct": 60,
+                "priceK": 110
+              },
+              "eu": {
+                "reachPct": 7.7,
+                "wtpPct": 40,
+                "priceK": 65
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 10,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Ofev ~10% of SSc-ILD pts; competitive vs Actemra (Roche tocilizumab) + emerging dersimelagon (MTP)",
+              "us.priceK": "Same Ofev WAC ~$110K/yr"
+            },
+            "penPct": 30,
+            "cagrPct": 8,
+            "peakYear": 2031,
+            "salesM": 600,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "ppf",
+          "name": "Progressive pulmonary fibrosis (PPF; INBUILD; FDA 2020 chronic fibrosing ILD with PPF phenotype)",
+          "area": "respiratory.fibrotic.ppf",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 45,
+                "priceK": 50
+              },
+              "row": {
+                "patientsK": 300,
+                "wtpPct": 12,
+                "priceK": 18
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18.5,
+                "wtpPct": 65,
+                "priceK": 110
+              },
+              "eu": {
+                "reachPct": 10.8,
+                "wtpPct": 45,
+                "priceK": 65
+              },
+              "row": {
+                "reachPct": 2.3,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Ofev sole approved PPF therapy; ~12% of broad chronic fibrosing ILD population",
+              "us.priceK": "Same Ofev WAC"
+            },
+            "penPct": 35,
+            "cagrPct": 10,
+            "peakYear": 2032,
+            "salesM": 600,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "spiriva",
+      "name": "Spiriva (tiotropium) - long-acting muscarinic antagonist (LAMA; HandiHaler + Respimat soft mist)",
+      "stage": "Commercial (COPD 2004; asthma 2014; mature franchise, residual exclusivity)",
+      "modality": "small_molecule.gpcr.lama_anticholinergic",
+      "targets": [
+        "CHRM3"
+      ],
+      "indications": [
+        {
+          "id": "copd",
+          "name": "COPD maintenance bronchodilation (foundation LAMA inhaler)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 32.3,
+                "wtpPct": 50,
+                "priceK": 3.5
+              },
+              "eu": {
+                "reachPct": 38.8,
+                "wtpPct": 38,
+                "priceK": 2.0
+              },
+              "row": {
+                "reachPct": 9.7,
+                "wtpPct": 15,
+                "priceK": 0.7
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Spiriva ~10-12% of US COPD inhaler share post-LOE; declining vs LAMA/LABA combos (Trelegy, Anoro, Stiolto)",
+              "us.priceK": "Spiriva Respimat WAC ~$4K/yr; HandiHaler generic"
+            },
+            "penPct": 10,
+            "cagrPct": -8,
+            "peakYear": 2025,
+            "salesM": 1800,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "asthma",
+          "name": "Severe asthma maintenance add-on (Respimat formulation only)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 52.4,
+                "wtpPct": 50,
+                "priceK": 4
+              },
+              "eu": {
+                "reachPct": 65.5,
+                "wtpPct": 38,
+                "priceK": 2.2
+              },
+              "row": {
+                "reachPct": 13.1,
+                "wtpPct": 15,
+                "priceK": 0.8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Spiriva Respimat ~5% of severe asthma add-on (vs biologics + ICS-LABA combos)",
+              "us.priceK": "Spiriva Respimat WAC asthma indication ~$4K/yr"
+            },
+            "penPct": 25,
+            "cagrPct": -5,
+            "peakYear": 2025,
+            "salesM": 600,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "pradaxa",
+      "name": "Pradaxa (dabigatran etexilate) - direct thrombin (factor IIa) inhibitor",
+      "stage": "Commercial (AFib stroke prevention 2010; VTE/DVT/PE; LOE 2018+ in EU/JP, 2021 US)",
+      "modality": "small_molecule.serine_protease.thrombin_inhibitor",
+      "targets": [
+        "F2"
+      ],
+      "indications": [
+        {
+          "id": "afib_stroke",
+          "name": "Atrial fibrillation stroke/SE prevention + VTE treatment (oral DOAC)",
+          "area": "cardio_metabolic.thrombosis.anticoagulation",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 60,
+                "priceK": 3.5
+              },
+              "eu": {
+                "patientsK": 7000,
+                "wtpPct": 50,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 30000,
+                "wtpPct": 15,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 9.3,
+                "wtpPct": 55,
+                "priceK": 4.5
+              },
+              "eu": {
+                "reachPct": 7.0,
+                "wtpPct": 40,
+                "priceK": 2.5
+              },
+              "row": {
+                "reachPct": 2.3,
+                "wtpPct": 15,
+                "priceK": 0.8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Pradaxa post-LOE residual; competitive vs Eliquis (BMS apixaban) + Xarelto (BAYN/J&J) DOAC duopoly",
+              "us.priceK": "Pradaxa generic erosion to ~$4-5K/yr"
+            },
+            "penPct": 4,
+            "cagrPct": -10,
+            "peakYear": 2025,
+            "salesM": 1300,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "praxbind",
+      "name": "Praxbind (idarucizumab) - humanized Fab anti-dabigatran reversal antibody",
+      "stage": "Commercial (FDA 2015 emergency anticoagulant reversal)",
+      "modality": "antibody.fragment.fab_neutralizing",
+      "targets": [],
+      "indications": [
+        {
+          "id": "dabigatran_reversal",
+          "name": "Emergency reversal of dabigatran anticoagulation (life-threatening bleeding / urgent surgery)",
+          "area": "cardio_metabolic.thrombosis.reversal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 150,
+                "wtpPct": 80,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 200,
+                "wtpPct": 60,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 600,
+                "wtpPct": 18,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 17.7,
+                "wtpPct": 75,
+                "priceK": 4
+              },
+              "eu": {
+                "reachPct": 13.3,
+                "wtpPct": 55,
+                "priceK": 2.5
+              },
+              "row": {
+                "reachPct": 3.3,
+                "wtpPct": 18,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Praxbind sole specific dabigatran reversal; ~8% of anticoagulant reversal events tied to Pradaxa exposure",
+              "us.priceK": "Praxbind WAC ~$3.5K/dose IV"
+            },
+            "penPct": 70,
+            "cagrPct": -8,
+            "peakYear": 2025,
+            "salesM": 80,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "trajenta",
+      "name": "Trajenta/Jentadueto (linagliptin) - DPP-4 inhibitor (Lilly Diabetes Alliance)",
+      "stage": "Commercial (T2D 2011; LOE 2025-2026 composition)",
+      "modality": "small_molecule.enzyme.dpp4_inhibitor",
+      "targets": [
+        "DPP4"
+      ],
+      "indications": [
+        {
+          "id": "t2d_dpp4",
+          "name": "Type 2 diabetes (DPP-4 class; renal-friendly no dose adjustment)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 50,
+                "priceK": 4
+              },
+              "eu": {
+                "reachPct": 1.0,
+                "wtpPct": 38,
+                "priceK": 2.2
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 18,
+                "priceK": 0.8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Trajenta ~12% of US DPP-4 class (vs Januvia MRK, Tradjenta legacy); LOE imminent",
+              "us.priceK": "Trajenta WAC ~$5K/yr; LOE 2025-2026 will collapse pricing"
+            },
+            "penPct": 10,
+            "cagrPct": -15,
+            "peakYear": 2025,
+            "salesM": 900,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "spevigo",
+      "name": "Spevigo (spesolimab) - first-in-class anti-IL-36R humanized IgG1 mAb",
+      "stage": "Commercial (FDA 2022 GPP flare IV; 2023 SC maintenance); Phase 3 hidradenitis suppurativa",
+      "modality": "antibody.monoclonal.anti_il36r",
+      "targets": [
+        "IL1RL2"
+      ],
+      "indications": [
+        {
+          "id": "gpp",
+          "name": "Generalized pustular psoriasis (acute flare + maintenance; first-in-class)",
+          "area": "dermatology.inflammatory_derm.gpp",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 7,
+                "wtpPct": 60,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 10,
+                "wtpPct": 40,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 30,
+                "wtpPct": 8,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 60,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 40,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 8,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Spevigo sole approved GPP therapy; ~25% of US GPP diagnosed treated growing",
+              "us.priceK": "Spevigo WAC IV ~$25K/dose flare; SC maintenance ~$200K/yr"
+            },
+            "penPct": 35,
+            "cagrPct": 25,
+            "peakYear": 2031,
+            "salesM": 80,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "hs",
+          "name": "Hidradenitis suppurativa moderate-to-severe (Ph3; 2026-2027 readout)",
+          "area": "dermatology.inflammatory_derm.hidradenitis_suppurativa",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 200,
+                "wtpPct": 55,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 300,
+                "wtpPct": 40,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 2000,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 55,
+                "priceK": 50
+              },
+              "eu": {
+                "reachPct": 0.7,
+                "wtpPct": 38,
+                "priceK": 30
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 8,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "HS competitive vs Humira/Cosentyx/Bimzelx; spesolimab IL-36R first novel mechanism",
+              "us.priceK": "Biologic HS pricing $40-60K/yr"
+            },
+            "penPct": 25,
+            "cagrPct": 10,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "cyltezo",
+      "name": "Cyltezo (adalimumab-adbm) - first interchangeable Humira biosimilar (anti-TNF mAb)",
+      "stage": "Commercial (FDA approved 2017, US launch July 2023; first Humira interchangeable)",
+      "modality": "antibody.monoclonal.anti_tnf",
+      "targets": [
+        "TNF"
+      ],
+      "indications": [
+        {
+          "id": "ra_psoriasis_ibd",
+          "name": "Multi-indication anti-TNF biosimilar (RA + psoriasis + IBD + AS)",
+          "area": "dermatology.inflammatory_derm.psoriasis_systemic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.3,
+                "wtpPct": 50,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 30,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Cyltezo ~3-5% Humira biosimilar share; first-interchangeable vs 9 other Humira biosims (AbbVie's Humira + Amjevita Amgen + Hadlima Samsung etc)",
+              "us.priceK": "Adalimumab biosimilar net pricing ~$25-35K/yr post-rebate"
+            },
+            "penPct": 40,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 200,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "zongertinib",
+      "name": "Zongertinib (BI 1810631) - oral covalent HER2-mutant selective TKI (sparing wild-type EGFR)",
+      "stage": "Commercial (FDA accelerated approval Aug 2025 HER2-mutant NSCLC 2L+; Ph3 Beamion LUNG-2 confirmatory)",
+      "modality": "small_molecule.kinase.her2_mutant_tki",
+      "targets": [
+        "ERBB2"
+      ],
+      "indications": [
+        {
+          "id": "nsclc_her2",
+          "name": "HER2-mutant NSCLC 2L+ (oral selective; differentiated vs Enhertu ADC IV)",
+          "area": "oncology.lung.nsclc_driver.her2",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 4,
+                "wtpPct": 62,
+                "priceK": 195
+              },
+              "eu": {
+                "patientsK": 5,
+                "wtpPct": 46,
+                "priceK": 115
+              },
+              "row": {
+                "patientsK": 12,
+                "wtpPct": 15,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 65,
+                "priceK": 220
+              },
+              "eu": {
+                "reachPct": 10,
+                "wtpPct": 45,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Zongertinib first oral HER2-mutant NSCLC TKI; competitive vs Enhertu (DS-8201 ADC, AZN/Daiichi); ~18% of HER2m NSCLC if approved given oral convenience",
+              "us.priceK": "Oral targeted NSCLC pricing ~$200-250K/yr (similar to Lorbrena/Tagrisso anchor)"
+            },
+            "penPct": 48,
+            "cagrPct": 15,
+            "peakYear": 2031,
+            "salesM": 50,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "survodutide",
+      "name": "Survodutide (BI 456906) - GLP-1/glucagon dual receptor agonist (Zealand Pharma collaboration; subQ weekly)",
+      "stage": "Phase 3 SYNCHRONIZE-1/2 obesity (readouts 2025-2026); Phase 3 LIVERSTONE MASH",
+      "modality": "peptide.synthetic.glp1_glucagon_dual",
+      "targets": [
+        "GLP1R",
+        "GCGR"
+      ],
+      "indications": [
+        {
+          "id": "obesity",
+          "name": "Obesity / weight management (Ph3 SYNCHRONIZE; competitive vs Wegovy/Zepbound)",
+          "area": "cardio_metabolic.obesity",
+          "market": {
+            "regions": {},
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 55,
+                "priceK": 14
+              },
+              "eu": {
+                "reachPct": 0.7,
+                "wtpPct": 38,
+                "priceK": 8
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 10,
+                "priceK": 3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Survodutide GLP-1/glucagon dual; competitive vs Wegovy (NOVO semaglutide), Zepbound (LLY tirzepatide GLP-1/GIP), retatrutide (LLY GLP-1/GIP/GCG triple Ph3); ~3-5% of class share if approved",
+              "us.priceK": "Obesity GLP-1 net pricing ~$12-16K/yr"
+            },
+            "penPct": 6,
+            "cagrPct": 25,
+            "peakYear": 2033
+          }
+        },
+        {
+          "id": "mash",
+          "name": "MASH/NASH (metabolic dysfunction-associated steatohepatitis; Ph3 LIVERSTONE)",
+          "area": "cardio_metabolic.liver.mash",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3000,
+                "wtpPct": 35,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 25,
+                "priceK": 8
+              },
+              "row": {
+                "patientsK": 20000,
+                "wtpPct": 8,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 55,
+                "priceK": 18
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 38,
+                "priceK": 11
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Survodutide MASH competitive vs Rezdiffra (MDGL resmetirom THR-beta), semaglutide MASH (NOVO ESSENCE Ph3 positive 2024)",
+              "us.priceK": "MASH branded pricing $15-20K/yr"
+            },
+            "penPct": 8,
+            "cagrPct": 22,
+            "peakYear": 2034
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 4,
+        "commercialMult": 2,
+        "commercialRevM": 16000,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "jardiance": {
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "hfref": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "hfpef": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "ckd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "ofev": {
+          "ipf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "ssc_ild": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "ppf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "spiriva": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "pradaxa": {
+          "afib_stroke": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "praxbind": {
+          "dabigatran_reversal": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "trajenta": {
+          "t2d_dpp4": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "spevigo": {
+          "gpp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "hs": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.3
+          }
+        },
+        "cyltezo": {
+          "ra_psoriasis_ibd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "zongertinib": {
+          "nsclc_her2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "survodutide": {
+          "obesity": {
+            "pos": 30,
+            "apr": 60,
+            "pen": 0.3
+          },
+          "mash": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 5,
+        "commercialMult": 2.8,
+        "commercialRevM": 19000,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "jardiance": {
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "hfref": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          },
+          "hfpef": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          },
+          "ckd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "ofev": {
+          "ipf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "ssc_ild": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "ppf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "spiriva": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "pradaxa": {
+          "afib_stroke": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "praxbind": {
+          "dabigatran_reversal": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "trajenta": {
+          "t2d_dpp4": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "spevigo": {
+          "gpp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "hs": {
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.5
+          }
+        },
+        "cyltezo": {
+          "ra_psoriasis_ibd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "zongertinib": {
+          "nsclc_her2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "survodutide": {
+          "obesity": {
+            "pos": 50,
+            "apr": 75,
+            "pen": 0.5
+          },
+          "mash": {
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 35,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 7,
+        "commercialMult": 4,
+        "commercialRevM": 22000,
+        "milestones": 400,
+        "dil": 0
+      },
+      "assumptions": {
+        "jardiance": {
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "hfref": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "hfpef": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "ckd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "ofev": {
+          "ipf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "ssc_ild": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "ppf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "spiriva": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "pradaxa": {
+          "afib_stroke": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "praxbind": {
+          "dabigatran_reversal": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "trajenta": {
+          "t2d_dpp4": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "spevigo": {
+          "gpp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "hs": {
+            "pos": 65,
+            "apr": 82,
+            "pen": 0.7
+          }
+        },
+        "cyltezo": {
+          "ra_psoriasis_ibd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "zongertinib": {
+          "nsclc_her2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "survodutide": {
+          "obesity": {
+            "pos": 70,
+            "apr": 88,
+            "pen": 0.7
+          },
+          "mash": {
+            "pos": 65,
+            "apr": 82,
+            "pen": 0.7
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 10,
+        "commercialMult": 5.5,
+        "commercialRevM": 26000,
+        "milestones": 800,
+        "dil": 0
+      },
+      "assumptions": {
+        "jardiance": {
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "hfref": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "hfpef": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ckd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "ofev": {
+          "ipf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ssc_ild": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "ppf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "spiriva": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "pradaxa": {
+          "afib_stroke": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "praxbind": {
+          "dabigatran_reversal": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "trajenta": {
+          "t2d_dpp4": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "spevigo": {
+          "gpp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "hs": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 0.9
+          }
+        },
+        "cyltezo": {
+          "ra_psoriasis_ibd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "zongertinib": {
+          "nsclc_her2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "survodutide": {
+          "obesity": {
+            "pos": 85,
+            "apr": 94,
+            "pen": 0.95
+          },
+          "mash": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 0.9
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 14,
+        "commercialMult": 7,
+        "commercialRevM": 32000,
+        "milestones": 1500,
+        "dil": 0
+      },
+      "assumptions": {
+        "jardiance": {
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "hfref": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "hfpef": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          },
+          "ckd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "ofev": {
+          "ipf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "ssc_ild": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "ppf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "spiriva": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "pradaxa": {
+          "afib_stroke": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "praxbind": {
+          "dabigatran_reversal": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "trajenta": {
+          "t2d_dpp4": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "spevigo": {
+          "gpp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "hs": {
+            "pos": 92,
+            "apr": 96,
+            "pen": 1.15
+          }
+        },
+        "cyltezo": {
+          "ra_psoriasis_ibd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "zongertinib": {
+          "nsclc_her2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "survodutide": {
+          "obesity": {
+            "pos": 95,
+            "apr": 98,
+            "pen": 1.25
+          },
+          "mash": {
+            "pos": 92,
+            "apr": 96,
+            "pen": 1.2
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "survodutide",
+      "indication": "obesity",
+      "title": "Survodutide GLP-1/glucagon dual SYNCHRONIZE-1 Ph3 obesity topline",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 50,
+      "success_pos": 92,
+      "success_apr": 96,
+      "_source": "https://www.boehringer-ingelheim.com/clinical-trials",
+      "_confidence": "high"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-06-30",
+      "asset": "survodutide",
+      "indication": "mash",
+      "title": "Survodutide LIVERSTONE Ph3 MASH topline",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 25,
+      "fail_apr": 45,
+      "success_pos": 88,
+      "success_apr": 94,
+      "_source": "https://www.boehringer-ingelheim.com/clinical-trials",
+      "_confidence": "medium"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-12-15",
+      "asset": "spevigo",
+      "indication": "hs",
+      "title": "Spevigo Ph3 hidradenitis suppurativa topline (first-in-class IL-36R)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 35,
+      "fail_apr": 55,
+      "success_pos": 85,
+      "success_apr": 92,
+      "_source": "https://www.boehringer-ingelheim.com/clinical-trials",
+      "_confidence": "medium"
+    }
+  ]
+}

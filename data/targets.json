@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-30T15:17:44Z",
-    "target_count": 389,
-    "total_assets": 729,
-    "assets_with_targets": 674,
+    "generated": "2026-04-30T15:22:18Z",
+    "target_count": 391,
+    "total_assets": 739,
+    "assets_with_targets": 683,
     "multi_modality_count": 47,
-    "multi_disease_count": 174
+    "multi_disease_count": 177
   },
   "targets": {
     "ABL1": {
@@ -1815,7 +1815,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 4026.4,
       "totalSales": 2915.0,
       "cagrPct": 3.2,
@@ -3864,9 +3864,11 @@
     "CHRM3": {
       "companies": [
         "AZN",
+        "BI",
         "GSK"
       ],
       "modalities": [
+        "small_molecule.gpcr.lama_anticholinergic",
         "small_molecule.respiratory.ics_laba_lama_triple",
         "small_molecule.respiratory.ics_lama_laba_triple",
         "small_molecule.respiratory.legacy_inhaler"
@@ -3882,6 +3884,16 @@
           "name": "Breztri (BGF triple) — COPD",
           "modality": "small_molecule.respiratory.ics_laba_lama_triple",
           "areas": [
+            "respiratory.inflammatory.copd"
+          ]
+        },
+        {
+          "ticker": "BI",
+          "asset": "spiriva",
+          "name": "Spiriva (tiotropium) - long-acting muscarinic antagonist (LAMA; HandiHaler + Respimat soft mist)",
+          "modality": "small_molecule.gpcr.lama_anticholinergic",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe",
             "respiratory.inflammatory.copd"
           ]
         },
@@ -3906,18 +3918,18 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 3,
+      "assetCount": 4,
+      "modalityCount": 4,
       "modalityClassCount": 1,
       "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 41905.0,
-      "totalSOM": 11681.9,
-      "totalSales": 8160.0,
-      "cagrPct": 0.6,
-      "peakYear": 2027
+      "totalSOM": 15281.4,
+      "totalSales": 10560.0,
+      "cagrPct": -1.2,
+      "peakYear": 2026
     },
     "CHRM4": {
       "companies": [
@@ -4061,7 +4073,7 @@
         "antibody"
       ],
       "totalTAM": 19731.0,
-      "totalSOM": 189.7,
+      "totalSOM": 189.6,
       "totalSales": 0.0,
       "cagrPct": 54.4,
       "peakYear": 2031
@@ -5098,6 +5110,7 @@
     },
     "DPP4": {
       "companies": [
+        "BI",
         "MTP",
         "NVS"
       ],
@@ -5109,6 +5122,15 @@
         "cardio_metabolic.diabetes.t2d"
       ],
       "assets": [
+        {
+          "ticker": "BI",
+          "asset": "trajenta",
+          "name": "Trajenta/Jentadueto (linagliptin) - DPP-4 inhibitor (Lilly Diabetes Alliance)",
+          "modality": "small_molecule.enzyme.dpp4_inhibitor",
+          "areas": [
+            "cardio_metabolic.diabetes.t2d"
+          ]
+        },
         {
           "ticker": "MTP",
           "asset": "tenelia",
@@ -5128,7 +5150,7 @@
           ]
         }
       ],
-      "assetCount": 2,
+      "assetCount": 3,
       "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
@@ -5136,9 +5158,9 @@
         "small_molecule"
       ],
       "totalTAM": 78550.0,
-      "totalSOM": 930.9,
-      "totalSales": 590.0,
-      "cagrPct": -8.0,
+      "totalSOM": 1972.8,
+      "totalSales": 1490.0,
+      "cagrPct": -11.7,
       "peakYear": 2025
     },
     "DRD2": {
@@ -5640,6 +5662,7 @@
         "6990",
         "AZN",
         "BAYN",
+        "BI",
         "BNTX",
         "JAZZ",
         "NUVL",
@@ -5651,6 +5674,7 @@
         "antibody.bispecific.her2_biparatopic",
         "antibody.monoclonal.anti_her2",
         "antibody.monoclonal.anti_her2_combo",
+        "small_molecule.kinase.her2_mutant_tki",
         "small_molecule.kinase_inhibitor.her2",
         "small_molecule.kinase_inhibitor.her2_egfr"
       ],
@@ -5696,6 +5720,15 @@
           "asset": "bay2927088",
           "name": "BAY 2927088 — HER2 + EGFR mutant NSCLC (Ph2/3)",
           "modality": "small_molecule.kinase_inhibitor.her2_egfr",
+          "areas": [
+            "oncology.lung.nsclc_driver.her2"
+          ]
+        },
+        {
+          "ticker": "BI",
+          "asset": "zongertinib",
+          "name": "Zongertinib (BI 1810631) - oral covalent HER2-mutant selective TKI (sparing wild-type EGFR)",
+          "modality": "small_molecule.kinase.her2_mutant_tki",
           "areas": [
             "oncology.lung.nsclc_driver.her2"
           ]
@@ -5767,8 +5800,8 @@
           ]
         }
       ],
-      "assetCount": 11,
-      "modalityCount": 7,
+      "assetCount": 12,
+      "modalityCount": 8,
       "modalityClassCount": 3,
       "areaCount": 5,
       "modalityClasses": [
@@ -5777,9 +5810,9 @@
         "small_molecule"
       ],
       "totalTAM": 43583.9,
-      "totalSOM": 33450.5,
-      "totalSales": 17142.0,
-      "cagrPct": 3.2,
+      "totalSOM": 33583.9,
+      "totalSales": 17192.0,
+      "cagrPct": 3.3,
       "peakYear": 2029
     },
     "ERBB3": {
@@ -6103,15 +6136,18 @@
     "F2": {
       "companies": [
         "4151",
+        "BI",
         "CSL",
         "JAZZ"
       ],
       "modalities": [
         "nucleic_acid.oligonucleotide.mixed_ssdna_fragments",
         "recombinant_protein.coagulation.pcc_4factor",
-        "recombinant_protein.serpin.antithrombin"
+        "recombinant_protein.serpin.antithrombin",
+        "small_molecule.serine_protease.thrombin_inhibitor"
       ],
       "areas": [
+        "cardio_metabolic.thrombosis.anticoagulation",
         "cardio_metabolic.thrombosis.reversal",
         "hematology.rare_blood.antithrombin_deficiency",
         "hematology.rare_blood.vod_hsct"
@@ -6124,6 +6160,15 @@
           "modality": "recombinant_protein.serpin.antithrombin",
           "areas": [
             "hematology.rare_blood.antithrombin_deficiency"
+          ]
+        },
+        {
+          "ticker": "BI",
+          "asset": "pradaxa",
+          "name": "Pradaxa (dabigatran etexilate) - direct thrombin (factor IIa) inhibitor",
+          "modality": "small_molecule.serine_protease.thrombin_inhibitor",
+          "areas": [
+            "cardio_metabolic.thrombosis.anticoagulation"
           ]
         },
         {
@@ -6145,19 +6190,20 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 3,
-      "modalityClassCount": 2,
-      "areaCount": 3,
+      "assetCount": 4,
+      "modalityCount": 4,
+      "modalityClassCount": 3,
+      "areaCount": 4,
       "modalityClasses": [
         "nucleic_acid",
-        "recombinant_protein"
+        "recombinant_protein",
+        "small_molecule"
       ],
-      "totalTAM": 3181.6,
-      "totalSOM": 1310.6,
-      "totalSales": 930.0,
-      "cagrPct": 4.5,
-      "peakYear": 2029
+      "totalTAM": 22831.6,
+      "totalSOM": 3264.5,
+      "totalSales": 2230.0,
+      "cagrPct": -4.2,
+      "peakYear": 2026
     },
     "F3": {
       "companies": [
@@ -6650,11 +6696,13 @@
     "FGFR1": {
       "companies": [
         "4523",
+        "BI",
         "INCY",
         "JNJ",
         "MRK"
       ],
       "modalities": [
+        "small_molecule.kinase.tki_anti_fibrotic",
         "small_molecule.kinase_inhibitor.fgfr",
         "small_molecule.kinase_inhibitor.fgfr1_3",
         "small_molecule.kinase_inhibitor.fgfr_pan",
@@ -6662,13 +6710,16 @@
         "small_molecule.kinase_inhibitor.vegfr_multikinase"
       ],
       "areas": [
+        "immunology.autoimmune.systemic_sclerosis",
         "oncology.endocrine.thyroid_cancer",
         "oncology.genitourinary.bladder",
         "oncology.genitourinary.rcc",
         "oncology.gi.cholangiocarcinoma",
         "oncology.gi.hcc",
         "oncology.gynecologic.endometrial",
-        "oncology.gynecologic.ovarian"
+        "oncology.gynecologic.ovarian",
+        "respiratory.fibrotic.ipf",
+        "respiratory.fibrotic.ppf"
       ],
       "assets": [
         {
@@ -6690,6 +6741,17 @@
           "modality": "small_molecule.kinase_inhibitor.fgfr_pan",
           "areas": [
             "oncology.gi.cholangiocarcinoma"
+          ]
+        },
+        {
+          "ticker": "BI",
+          "asset": "ofev",
+          "name": "Ofev (nintedanib) - intracellular tyrosine kinase inhibitor (VEGFR1/2/3 + FGFR1/2/3 + PDGFRalpha/beta)",
+          "modality": "small_molecule.kinase.tki_anti_fibrotic",
+          "areas": [
+            "immunology.autoimmune.systemic_sclerosis",
+            "respiratory.fibrotic.ipf",
+            "respiratory.fibrotic.ppf"
           ]
         },
         {
@@ -6723,36 +6785,41 @@
           ]
         }
       ],
-      "assetCount": 5,
-      "modalityCount": 5,
+      "assetCount": 6,
+      "modalityCount": 6,
       "modalityClassCount": 1,
-      "areaCount": 7,
+      "areaCount": 10,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 36729.8,
-      "totalSOM": 5600.2,
-      "totalSales": 3218.0,
-      "cagrPct": 4.1,
-      "peakYear": 2027
+      "totalTAM": 60081.8,
+      "totalSOM": 13203.3,
+      "totalSales": 6818.0,
+      "cagrPct": 4.7,
+      "peakYear": 2029
     },
     "FGFR2": {
       "companies": [
         "4523",
         "AMGN",
+        "BI",
         "INCY",
         "JNJ"
       ],
       "modalities": [
         "antibody.cytokine.fgfr2b_blocker",
+        "small_molecule.kinase.tki_anti_fibrotic",
         "small_molecule.kinase_inhibitor.fgfr",
         "small_molecule.kinase_inhibitor.fgfr1_3",
         "small_molecule.kinase_inhibitor.fgfr_pan"
       ],
       "areas": [
+        "immunology.autoimmune.systemic_sclerosis",
         "oncology.genitourinary.bladder",
         "oncology.gi.cholangiocarcinoma",
-        "oncology.gi.gastric_esoph"
+        "oncology.gi.gastric_esoph",
+        "respiratory.fibrotic.ipf",
+        "respiratory.fibrotic.ppf"
       ],
       "assets": [
         {
@@ -6774,6 +6841,17 @@
           ]
         },
         {
+          "ticker": "BI",
+          "asset": "ofev",
+          "name": "Ofev (nintedanib) - intracellular tyrosine kinase inhibitor (VEGFR1/2/3 + FGFR1/2/3 + PDGFRalpha/beta)",
+          "modality": "small_molecule.kinase.tki_anti_fibrotic",
+          "areas": [
+            "immunology.autoimmune.systemic_sclerosis",
+            "respiratory.fibrotic.ipf",
+            "respiratory.fibrotic.ppf"
+          ]
+        },
+        {
           "ticker": "INCY",
           "asset": "pemazyre",
           "name": "Pemazyre (pemigatinib) - FGFR1-3 inhibitor",
@@ -6792,37 +6870,42 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 4,
+      "assetCount": 5,
+      "modalityCount": 5,
       "modalityClassCount": 2,
-      "areaCount": 3,
+      "areaCount": 6,
       "modalityClasses": [
         "antibody",
         "small_molecule"
       ],
-      "totalTAM": 14383.3,
-      "totalSOM": 1098.6,
-      "totalSales": 300.0,
-      "cagrPct": 18.2,
-      "peakYear": 2029
+      "totalTAM": 37735.2,
+      "totalSOM": 8701.7,
+      "totalSales": 3900.0,
+      "cagrPct": 6.8,
+      "peakYear": 2030
     },
     "FGFR3": {
       "companies": [
         "4523",
         "BBIO",
+        "BI",
         "INCY",
         "JNJ"
       ],
       "modalities": [
+        "small_molecule.kinase.tki_anti_fibrotic",
         "small_molecule.kinase_inhibitor.fgfr",
         "small_molecule.kinase_inhibitor.fgfr1_3",
         "small_molecule.kinase_inhibitor.fgfr3",
         "small_molecule.kinase_inhibitor.fgfr_pan"
       ],
       "areas": [
+        "immunology.autoimmune.systemic_sclerosis",
         "musculoskeletal.bone_cartilage.achondroplasia",
         "oncology.genitourinary.bladder",
-        "oncology.gi.cholangiocarcinoma"
+        "oncology.gi.cholangiocarcinoma",
+        "respiratory.fibrotic.ipf",
+        "respiratory.fibrotic.ppf"
       ],
       "assets": [
         {
@@ -6844,6 +6927,17 @@
           ]
         },
         {
+          "ticker": "BI",
+          "asset": "ofev",
+          "name": "Ofev (nintedanib) - intracellular tyrosine kinase inhibitor (VEGFR1/2/3 + FGFR1/2/3 + PDGFRalpha/beta)",
+          "modality": "small_molecule.kinase.tki_anti_fibrotic",
+          "areas": [
+            "immunology.autoimmune.systemic_sclerosis",
+            "respiratory.fibrotic.ipf",
+            "respiratory.fibrotic.ppf"
+          ]
+        },
+        {
           "ticker": "INCY",
           "asset": "pemazyre",
           "name": "Pemazyre (pemigatinib) - FGFR1-3 inhibitor",
@@ -6862,17 +6956,17 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 4,
+      "assetCount": 5,
+      "modalityCount": 5,
       "modalityClassCount": 1,
-      "areaCount": 3,
+      "areaCount": 6,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 10030.6,
-      "totalSOM": 1432.1,
-      "totalSales": 300.0,
-      "cagrPct": 4.7,
+      "totalTAM": 33382.5,
+      "totalSOM": 9035.2,
+      "totalSales": 3900.0,
+      "cagrPct": 5.1,
       "peakYear": 2030
     },
     "FGG": {
@@ -7448,15 +7542,29 @@
     },
     "GCGR": {
       "companies": [
+        "BI",
         "LLY"
       ],
       "modalities": [
-        "peptide.incretin.glp1_gip_glucagon"
+        "peptide.incretin.glp1_gip_glucagon",
+        "peptide.synthetic.glp1_glucagon_dual"
       ],
       "areas": [
+        "cardio_metabolic.liver.mash",
+        "cardio_metabolic.obesity",
         "cardio_metabolic.obesity.general"
       ],
       "assets": [
+        {
+          "ticker": "BI",
+          "asset": "survodutide",
+          "name": "Survodutide (BI 456906) - GLP-1/glucagon dual receptor agonist (Zealand Pharma collaboration; subQ weekly)",
+          "modality": "peptide.synthetic.glp1_glucagon_dual",
+          "areas": [
+            "cardio_metabolic.liver.mash",
+            "cardio_metabolic.obesity"
+          ]
+        },
         {
           "ticker": "LLY",
           "asset": "retatrutide",
@@ -7467,17 +7575,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 3,
       "modalityClasses": [
         "peptide"
       ],
-      "totalTAM": 144000.0,
-      "totalSOM": 22570.0,
+      "totalTAM": 167800.0,
+      "totalSOM": 24116.4,
       "totalSales": 0.0,
-      "cagrPct": 0.0,
+      "cagrPct": 1.4,
       "peakYear": 2035
     },
     "GFAP": {
@@ -7689,6 +7797,7 @@
       "companies": [
         "AMGN",
         "AZN",
+        "BI",
         "CAMX",
         "LLY",
         "NOVO"
@@ -7702,11 +7811,14 @@
         "peptide.glp1.semaglutide",
         "peptide.incretin.glp1_gip",
         "peptide.incretin.glp1_gip_glucagon",
+        "peptide.synthetic.glp1_glucagon_dual",
         "small_molecule.gpcr.glp1_agonist",
         "small_molecule.gpcr.glp1_oral_agonist"
       ],
       "areas": [
         "cardio_metabolic.diabetes.t2d",
+        "cardio_metabolic.liver.mash",
+        "cardio_metabolic.obesity",
         "cardio_metabolic.obesity.general"
       ],
       "assets": [
@@ -7726,6 +7838,16 @@
           "modality": "small_molecule.gpcr.glp1_agonist",
           "areas": [
             "cardio_metabolic.obesity.general"
+          ]
+        },
+        {
+          "ticker": "BI",
+          "asset": "survodutide",
+          "name": "Survodutide (BI 456906) - GLP-1/glucagon dual receptor agonist (Zealand Pharma collaboration; subQ weekly)",
+          "modality": "peptide.synthetic.glp1_glucagon_dual",
+          "areas": [
+            "cardio_metabolic.liver.mash",
+            "cardio_metabolic.obesity"
           ]
         },
         {
@@ -7821,20 +7943,20 @@
           ]
         }
       ],
-      "assetCount": 12,
-      "modalityCount": 10,
+      "assetCount": 13,
+      "modalityCount": 11,
       "modalityClassCount": 4,
-      "areaCount": 2,
+      "areaCount": 4,
       "modalityClasses": [
         "antibody",
         "formulation_modifier",
         "peptide",
         "small_molecule"
       ],
-      "totalTAM": 222550.0,
-      "totalSOM": 176310.9,
+      "totalTAM": 246350.0,
+      "totalSOM": 177857.3,
       "totalSales": 72970.0,
-      "cagrPct": 2.1,
+      "cagrPct": 2.3,
       "peakYear": 2032
     },
     "GNRHR": {
@@ -8755,7 +8877,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -9796,6 +9918,42 @@
       "totalSales": 0.0,
       "cagrPct": 39.2,
       "peakYear": 2030
+    },
+    "IL1RL2": {
+      "companies": [
+        "BI"
+      ],
+      "modalities": [
+        "antibody.monoclonal.anti_il36r"
+      ],
+      "areas": [
+        "dermatology.inflammatory_derm.gpp",
+        "dermatology.inflammatory_derm.hidradenitis_suppurativa"
+      ],
+      "assets": [
+        {
+          "ticker": "BI",
+          "asset": "spevigo",
+          "name": "Spevigo (spesolimab) - first-in-class anti-IL-36R humanized IgG1 mAb",
+          "modality": "antibody.monoclonal.anti_il36r",
+          "areas": [
+            "dermatology.inflammatory_derm.gpp",
+            "dermatology.inflammatory_derm.hidradenitis_suppurativa"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 10046.0,
+      "totalSOM": 398.6,
+      "totalSales": 80.0,
+      "cagrPct": 20.9,
+      "peakYear": 2032
     },
     "IL2": {
       "companies": [
@@ -11754,7 +11912,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 18252.4,
       "totalSales": 2971.0,
       "cagrPct": 47.5,
@@ -11806,7 +11964,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 17202.9,
       "totalSales": 2271.0,
       "cagrPct": 50.1,
@@ -12717,7 +12875,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -12966,7 +13124,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -14087,18 +14245,23 @@
     "PDGFRA": {
       "companies": [
         "4523",
+        "BI",
         "MRK"
       ],
       "modalities": [
+        "small_molecule.kinase.tki_anti_fibrotic",
         "small_molecule.kinase_inhibitor.multi_tki",
         "small_molecule.kinase_inhibitor.vegfr_multikinase"
       ],
       "areas": [
+        "immunology.autoimmune.systemic_sclerosis",
         "oncology.endocrine.thyroid_cancer",
         "oncology.genitourinary.rcc",
         "oncology.gi.hcc",
         "oncology.gynecologic.endometrial",
-        "oncology.gynecologic.ovarian"
+        "oncology.gynecologic.ovarian",
+        "respiratory.fibrotic.ipf",
+        "respiratory.fibrotic.ppf"
       ],
       "assets": [
         {
@@ -14114,6 +14277,17 @@
           ]
         },
         {
+          "ticker": "BI",
+          "asset": "ofev",
+          "name": "Ofev (nintedanib) - intracellular tyrosine kinase inhibitor (VEGFR1/2/3 + FGFR1/2/3 + PDGFRalpha/beta)",
+          "modality": "small_molecule.kinase.tki_anti_fibrotic",
+          "areas": [
+            "immunology.autoimmune.systemic_sclerosis",
+            "respiratory.fibrotic.ipf",
+            "respiratory.fibrotic.ppf"
+          ]
+        },
+        {
           "ticker": "MRK",
           "asset": "lenvima",
           "name": "Lenvima (lenvatinib, multi-TKI) — w/ Eisai profit-share",
@@ -14126,18 +14300,56 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 5,
+      "areaCount": 8,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 30625.2,
-      "totalSOM": 4833.8,
-      "totalSales": 2918.0,
-      "cagrPct": 3.4,
-      "peakYear": 2027
+      "totalTAM": 53977.2,
+      "totalSOM": 12436.9,
+      "totalSales": 6518.0,
+      "cagrPct": 4.5,
+      "peakYear": 2029
+    },
+    "PDGFRB": {
+      "companies": [
+        "BI"
+      ],
+      "modalities": [
+        "small_molecule.kinase.tki_anti_fibrotic"
+      ],
+      "areas": [
+        "immunology.autoimmune.systemic_sclerosis",
+        "respiratory.fibrotic.ipf",
+        "respiratory.fibrotic.ppf"
+      ],
+      "assets": [
+        {
+          "ticker": "BI",
+          "asset": "ofev",
+          "name": "Ofev (nintedanib) - intracellular tyrosine kinase inhibitor (VEGFR1/2/3 + FGFR1/2/3 + PDGFRalpha/beta)",
+          "modality": "small_molecule.kinase.tki_anti_fibrotic",
+          "areas": [
+            "immunology.autoimmune.systemic_sclerosis",
+            "respiratory.fibrotic.ipf",
+            "respiratory.fibrotic.ppf"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 3,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 23351.9,
+      "totalSOM": 7603.1,
+      "totalSales": 3600.0,
+      "cagrPct": 5.2,
+      "peakYear": 2030
     },
     "PGF": {
       "companies": [
@@ -16377,6 +16589,7 @@
     "SLC5A2": {
       "companies": [
         "AZN",
+        "BI",
         "LLY",
         "MTP"
       ],
@@ -16396,6 +16609,18 @@
           "asset": "farxiga",
           "name": "Farxiga/Forxiga (dapagliflozin, SGLT2)",
           "modality": "small_molecule.transporter_inhibitor.sglt2",
+          "areas": [
+            "cardio_metabolic.diabetes.t2d",
+            "cardio_metabolic.heart_failure.hfpef",
+            "cardio_metabolic.heart_failure.hfref",
+            "nephrology.ckd.disease_modifying"
+          ]
+        },
+        {
+          "ticker": "BI",
+          "asset": "jardiance",
+          "name": "Jardiance/Synjardy/Glyxambi (empagliflozin) - SGLT2 inhibitor (BI/Lilly Diabetes Alliance 50/50 P&L)",
+          "modality": "small_molecule.transporter.sglt2_inhibitor",
           "areas": [
             "cardio_metabolic.diabetes.t2d",
             "cardio_metabolic.heart_failure.hfpef",
@@ -16425,7 +16650,7 @@
           ]
         }
       ],
-      "assetCount": 3,
+      "assetCount": 4,
       "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 4,
@@ -16433,9 +16658,9 @@
         "small_molecule"
       ],
       "totalTAM": 151470.0,
-      "totalSOM": 37890.6,
-      "totalSales": 12103.0,
-      "cagrPct": 5.8,
+      "totalSOM": 50461.4,
+      "totalSales": 18403.0,
+      "cagrPct": 6.7,
       "peakYear": 2030
     },
     "SLC6A2": {
@@ -17603,6 +17828,7 @@
       "companies": [
         "ABBV",
         "AMGN",
+        "BI",
         "JNJ",
         "OCS",
         "UCB"
@@ -17663,6 +17889,15 @@
           ]
         },
         {
+          "ticker": "BI",
+          "asset": "cyltezo",
+          "name": "Cyltezo (adalimumab-adbm) - first interchangeable Humira biosimilar (anti-TNF mAb)",
+          "modality": "antibody.monoclonal.anti_tnf",
+          "areas": [
+            "dermatology.inflammatory_derm.psoriasis_systemic"
+          ]
+        },
+        {
           "ticker": "JNJ",
           "asset": "tnfi_legacy",
           "name": "Remicade + Simponi (anti-TNF) — declining post-biosimilars",
@@ -17694,7 +17929,7 @@
           ]
         }
       ],
-      "assetCount": 6,
+      "assetCount": 7,
       "modalityCount": 4,
       "modalityClassCount": 2,
       "areaCount": 8,
@@ -17703,9 +17938,9 @@
         "recombinant_protein"
       ],
       "totalTAM": 224165.0,
-      "totalSOM": 19597.2,
-      "totalSales": 13023.0,
-      "cagrPct": -5.3,
+      "totalSOM": 19895.9,
+      "totalSales": 13223.0,
+      "cagrPct": -5.1,
       "peakYear": 2029
     },
     "TNFRSF13C": {
@@ -18858,18 +19093,34 @@
     },
     "VEGFR1": {
       "companies": [
+        "BI",
         "MRK"
       ],
       "modalities": [
+        "small_molecule.kinase.tki_anti_fibrotic",
         "small_molecule.kinase_inhibitor.multi_tki"
       ],
       "areas": [
+        "immunology.autoimmune.systemic_sclerosis",
         "oncology.endocrine.thyroid_cancer",
         "oncology.genitourinary.rcc",
         "oncology.gi.hcc",
-        "oncology.gynecologic.ovarian"
+        "oncology.gynecologic.ovarian",
+        "respiratory.fibrotic.ipf",
+        "respiratory.fibrotic.ppf"
       ],
       "assets": [
+        {
+          "ticker": "BI",
+          "asset": "ofev",
+          "name": "Ofev (nintedanib) - intracellular tyrosine kinase inhibitor (VEGFR1/2/3 + FGFR1/2/3 + PDGFRalpha/beta)",
+          "modality": "small_molecule.kinase.tki_anti_fibrotic",
+          "areas": [
+            "immunology.autoimmune.systemic_sclerosis",
+            "respiratory.fibrotic.ipf",
+            "respiratory.fibrotic.ppf"
+          ]
+        },
         {
           "ticker": "MRK",
           "asset": "lenvima",
@@ -18883,33 +19134,49 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 4,
+      "areaCount": 7,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 19450.2,
-      "totalSOM": 1574.1,
-      "totalSales": 1050.0,
-      "cagrPct": 0.0,
-      "peakYear": 2027
+      "totalTAM": 42802.2,
+      "totalSOM": 9177.2,
+      "totalSales": 4650.0,
+      "cagrPct": 4.3,
+      "peakYear": 2030
     },
     "VEGFR2": {
       "companies": [
+        "BI",
         "MRK"
       ],
       "modalities": [
+        "small_molecule.kinase.tki_anti_fibrotic",
         "small_molecule.kinase_inhibitor.multi_tki"
       ],
       "areas": [
+        "immunology.autoimmune.systemic_sclerosis",
         "oncology.endocrine.thyroid_cancer",
         "oncology.genitourinary.rcc",
         "oncology.gi.hcc",
-        "oncology.gynecologic.ovarian"
+        "oncology.gynecologic.ovarian",
+        "respiratory.fibrotic.ipf",
+        "respiratory.fibrotic.ppf"
       ],
       "assets": [
+        {
+          "ticker": "BI",
+          "asset": "ofev",
+          "name": "Ofev (nintedanib) - intracellular tyrosine kinase inhibitor (VEGFR1/2/3 + FGFR1/2/3 + PDGFRalpha/beta)",
+          "modality": "small_molecule.kinase.tki_anti_fibrotic",
+          "areas": [
+            "immunology.autoimmune.systemic_sclerosis",
+            "respiratory.fibrotic.ipf",
+            "respiratory.fibrotic.ppf"
+          ]
+        },
         {
           "ticker": "MRK",
           "asset": "lenvima",
@@ -18923,33 +19190,49 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 4,
+      "areaCount": 7,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 19450.2,
-      "totalSOM": 1574.1,
-      "totalSales": 1050.0,
-      "cagrPct": 0.0,
-      "peakYear": 2027
+      "totalTAM": 42802.2,
+      "totalSOM": 9177.2,
+      "totalSales": 4650.0,
+      "cagrPct": 4.3,
+      "peakYear": 2030
     },
     "VEGFR3": {
       "companies": [
+        "BI",
         "MRK"
       ],
       "modalities": [
+        "small_molecule.kinase.tki_anti_fibrotic",
         "small_molecule.kinase_inhibitor.multi_tki"
       ],
       "areas": [
+        "immunology.autoimmune.systemic_sclerosis",
         "oncology.endocrine.thyroid_cancer",
         "oncology.genitourinary.rcc",
         "oncology.gi.hcc",
-        "oncology.gynecologic.ovarian"
+        "oncology.gynecologic.ovarian",
+        "respiratory.fibrotic.ipf",
+        "respiratory.fibrotic.ppf"
       ],
       "assets": [
+        {
+          "ticker": "BI",
+          "asset": "ofev",
+          "name": "Ofev (nintedanib) - intracellular tyrosine kinase inhibitor (VEGFR1/2/3 + FGFR1/2/3 + PDGFRalpha/beta)",
+          "modality": "small_molecule.kinase.tki_anti_fibrotic",
+          "areas": [
+            "immunology.autoimmune.systemic_sclerosis",
+            "respiratory.fibrotic.ipf",
+            "respiratory.fibrotic.ppf"
+          ]
+        },
         {
           "ticker": "MRK",
           "asset": "lenvima",
@@ -18963,18 +19246,18 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 4,
+      "areaCount": 7,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 19450.2,
-      "totalSOM": 1574.1,
-      "totalSales": 1050.0,
-      "cagrPct": 0.0,
-      "peakYear": 2027
+      "totalTAM": 42802.2,
+      "totalSOM": 9177.2,
+      "totalSales": 4650.0,
+      "cagrPct": 4.3,
+      "peakYear": 2030
     },
     "VIBRIO_CHOLERAE": {
       "companies": [

@@ -384,6 +384,19 @@ REGIONS = {
     # ============================================================
     # DERMATOLOGY - RARE SKIN
     # ============================================================
+    # Generalized pustular psoriasis (GPP): rare severe IL-36-driven
+    # autoinflammatory skin disease distinct from plaque psoriasis. Acute
+    # life-threatening flares with sterile pustules, fever, systemic
+    # inflammation. Prevalence ~1:10K-100K of psoriasis pts; ~7K US, ~10K EU,
+    # ~30K ROW. Sole approved therapy: Spevigo (spesolimab anti-IL-36R BI
+    # FDA 2022 IV flare + 2023 SC maintenance) ~$50M+. Pricing: ~$25K/dose
+    # IV flare; ~$200K/yr maintenance SC. Distinct mechanism from plaque
+    # (IL-17/IL-23) and AD (IL-4/13). source: NORD GPP; BI 10-K.
+    "dermatology.inflammatory_derm.gpp": {
+        "us":  {"patientsK": 7,    "wtpPct": 60, "priceK": 200},
+        "eu":  {"patientsK": 10,   "wtpPct": 40, "priceK": 130},
+        "row": {"patientsK": 30,   "wtpPct": 8,  "priceK": 40},
+    },
     "dermatology.rare_skin.alopecia_areata": {
         "us":  {"patientsK": 300,  "wtpPct": 45, "priceK": 42},
         "eu":  {"patientsK": 450,  "wtpPct": 32, "priceK": 22},
@@ -486,6 +499,7 @@ PEN_PCT = {
     "dermatology.inflammatory_derm.atopic_dermatitis_topical": 12,
     "dermatology.inflammatory_derm.hidradenitis_suppurativa": 25,
     "dermatology.inflammatory_derm.psoriasis_systemic": 40,
+    "dermatology.inflammatory_derm.gpp": 35,
     "dermatology.inflammatory_derm.psoriasis_topical": 10,
     "dermatology.inflammatory_derm.acne": 12,
     "dermatology.rare_skin.alopecia_areata": 20,

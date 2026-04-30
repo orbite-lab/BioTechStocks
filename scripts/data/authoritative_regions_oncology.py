@@ -511,6 +511,20 @@ REGIONS = {
     # EU 12K, ROW 50K. Class: Adcetris (Pfizer/Seagen brentuximab CD30
     # ADC ~$1.5B globally), Opdivo (BMS PD-1 ~$0.8B HL share), Keytruda
     # (Merck PD-1 KEYNOTE-204). Net branded ~$200K/yr.
+    # H3K27M-mutant diffuse midline glioma (DMG, includes DIPG): ultra-rare
+    # pediatric/young-adult brainstem/thalamic/spinal-cord glioma defined by
+    # H3-3A/H3C2 K27M oncohistone mutation. Universally fatal pre-2024 (median
+    # OS 9-11 mo). US incident ~400-500/yr (~80% pediatric DIPG + ~20% adult
+    # DMG); EU ~500; ROW ~1500. Sole branded therapy: Modeyso (dordaviprone,
+    # ONC201) imipridone ClpP activator -- FDA accelerated approval Aug 2024
+    # via ACTION trial (now Jazz post-Chimerix Mar 2025 acq). WAC ~$24K/mo
+    # ($288K/yr blended); ultra-orphan pricing.
+    # source: ACS 2024; Mackay 2017 Cancer Cell DMG epi; Chimerix/Jazz 10-K.
+    "oncology.brain.h3k27m_diffuse_midline_glioma": {
+        "us":  {"patientsK": 0.5, "wtpPct": 80, "priceK": 290},
+        "eu":  {"patientsK": 0.5, "wtpPct": 60, "priceK": 180},
+        "row": {"patientsK": 1.5, "wtpPct": 12, "priceK": 60},
+    },
     # Acute lymphoblastic leukemia (ALL): rare aggressive leukemia, mostly
     # pediatric (~3K US incident/yr children + ~2.5K adult). Branded class:
     # Blincyto (BMS/Amgen blinatumomab CD3xCD19 BiTE ~$1B), Besponsa (Pfizer
@@ -770,6 +784,7 @@ PEN_PCT = {
     "oncology.hematology.aml": 48,
     "oncology.hematology.all": 60,
     "hematology.rare_blood.vod_hsct": 55,
+    "oncology.brain.h3k27m_diffuse_midline_glioma": 50,
     "oncology.hematology.cll": 65,
     "oncology.hematology.nhl": 35,
     "oncology.hematology.nhl.dlbcl": 55,

@@ -7,7 +7,7 @@
     "cash": -2600,
     "currency": "USD",
     "phase": "commercial",
-    "subtitle": "Sleep franchise (Xywav narcolepsy/IH) + Epidiolex CBD (DEE/TSC) + oncology (Zepzelca SCLC, Vyxeos sAML, Rylaze ALL, Defitelio VOD, Ziihera HER2+ BTC/GEA)",
+    "subtitle": "Sleep franchise (Xywav narcolepsy/IH) + Epidiolex CBD (DEE/TSC) + oncology (Zepzelca SCLC, Vyxeos sAML, Rylaze ALL, Defitelio VOD, Modeyso H3K27M DMG, Ziihera HER2+ BTC/GEA)",
     "yahooTicker": "JAZZ"
   },
   "assets": [
@@ -18,7 +18,7 @@
       "modality": "small_molecule.gpcr.ghb_agonist",
       "targets": [
         "GABBR1",
-        "HCAR2"
+        "GABBR2"
       ],
       "indications": [
         {
@@ -130,7 +130,7 @@
       "modality": "small_molecule.gpcr.ghb_agonist",
       "targets": [
         "GABBR1",
-        "HCAR2"
+        "GABBR2"
       ],
       "indications": [
         {
@@ -412,7 +412,7 @@
       "id": "vyxeos",
       "name": "Vyxeos (CPX-351 daunorubicin+cytarabine liposomal) - cytotoxic combo",
       "stage": "Commercial (sAML/t-AML FDA 2017)",
-      "modality": "small_molecule.cytotoxic.liposomal_anthracycline",
+      "modality": "small_molecule.cytotoxic.liposomal_combo_chemo",
       "targets": [
         "TOP2A"
       ],
@@ -502,17 +502,17 @@
             },
             "company_slice": {
               "us": {
-                "reachPct": 50,
+                "reachPct": 68.4,
                 "wtpPct": 75,
                 "priceK": 175
               },
               "eu": {
-                "reachPct": 25,
+                "reachPct": 34.2,
                 "wtpPct": 55,
                 "priceK": 110
               },
               "row": {
-                "reachPct": 4,
+                "reachPct": 5.5,
                 "wtpPct": 12,
                 "priceK": 35
               }
@@ -524,7 +524,7 @@
             "penPct": 60,
             "cagrPct": 3,
             "peakYear": 2029,
-            "salesM": 410,
+            "salesM": 475,
             "salesYear": 2025
           }
         }
@@ -534,7 +534,7 @@
       "id": "defitelio",
       "name": "Defitelio (defibrotide sodium) - mixed single-strand DNA oligonucleotide",
       "stage": "Commercial (severe VOD/SOS post-HSCT FDA 2016, EU 2013)",
-      "modality": "nucleic_acid.oligonucleotide.defibrotide",
+      "modality": "nucleic_acid.oligonucleotide.mixed_ssdna_fragments",
       "targets": [
         "PLG",
         "F2"
@@ -587,6 +587,68 @@
             "cagrPct": 2,
             "peakYear": 2029,
             "salesM": 200,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "modeyso",
+      "name": "Modeyso (dordaviprone, ONC201) - imipridone ClpP mitochondrial protease activator (acquired Chimerix Mar 2025)",
+      "stage": "Commercial (FDA accelerated approval Aug 2024 H3K27M+ DMG; ACTION Ph3 confirmatory ongoing)",
+      "modality": "small_molecule.imipridone.clpp_activator",
+      "targets": [
+        "CLPP",
+        "DRD2"
+      ],
+      "indications": [
+        {
+          "id": "h3k27m_dmg",
+          "name": "H3K27M-mutant diffuse midline glioma (DMG, incl. DIPG; pediatric + adult)",
+          "area": "oncology.brain.h3k27m_diffuse_midline_glioma",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 0.5,
+                "wtpPct": 80,
+                "priceK": 290
+              },
+              "eu": {
+                "patientsK": 0.5,
+                "wtpPct": 60,
+                "priceK": 180
+              },
+              "row": {
+                "patientsK": 1.5,
+                "wtpPct": 12,
+                "priceK": 60
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 50,
+                "wtpPct": 75,
+                "priceK": 290
+              },
+              "eu": {
+                "reachPct": 25,
+                "wtpPct": 50,
+                "priceK": 180
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 12,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Modeyso sole FDA-approved H3K27M+ DMG therapy; ~50% of eligible H3K27M+ patients (genotyping rate rising)",
+              "us.priceK": "Dordaviprone WAC ~$24K/mo (~$290K/yr blended)"
+            },
+            "penPct": 50,
+            "cagrPct": 18,
+            "peakYear": 2032,
+            "salesM": 50,
             "salesYear": 2025
           }
         }
@@ -826,6 +888,13 @@
             "pen": 0.5
           }
         },
+        "modeyso": {
+          "h3k27m_dmg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
         "ziihera": {
           "btc_her2": {
             "pos": 100,
@@ -915,6 +984,13 @@
         },
         "defitelio": {
           "vod_hsct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "modeyso": {
+          "h3k27m_dmg": {
             "pos": 100,
             "apr": 100,
             "pen": 0.6
@@ -1014,6 +1090,13 @@
             "pen": 0.75
           }
         },
+        "modeyso": {
+          "h3k27m_dmg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
         "ziihera": {
           "btc_her2": {
             "pos": 100,
@@ -1108,6 +1191,13 @@
             "pen": 0.9
           }
         },
+        "modeyso": {
+          "h3k27m_dmg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
         "ziihera": {
           "btc_her2": {
             "pos": 100,
@@ -1200,6 +1290,13 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.1
+          }
+        },
+        "modeyso": {
+          "h3k27m_dmg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
           }
         },
         "ziihera": {

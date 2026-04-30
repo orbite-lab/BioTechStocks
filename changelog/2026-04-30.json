@@ -1,0 +1,332 @@
+[
+  {
+    "timestamp": "2026-04-30T14:30:35Z",
+    "ticker": "AZN",
+    "news": "AstraZeneca reported Q1 2026 results with 8% revenue growth, strong oncology sales of $6.8 billion, positive Phase III readouts for tozorakimab and efzimfotase alfa, and closed a $1.2 billion collaboration with CSPC Pharmaceuticals.",
+    "source": "https://www.businesswire.com/news/home/20260428491257/en/AstraZeneca-results-Q1-2026",
+    "changes": [
+      {
+        "path": "company.cash",
+        "old_value": 5700,
+        "new_value": 6900,
+        "reason": "$1.2B CSPC collaboration upfront payment increases cash position",
+        "old_actual": 5700
+      },
+      {
+        "path": "scenarios.base.val.commercialRevM",
+        "old_value": 67000,
+        "new_value": 68500,
+        "reason": "Strong Q1 oncology performance ($6.8B vs $6.4B prior quarter) suggests upward revision to commercial revenue expectations",
+        "old_actual": 67000
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-30T14:30:35Z",
+    "ticker": "GSK",
+    "news": "GSK reported Q1 2026 sales of GBP 7.6 billion with 5% growth, highlighting new approvals for asthma, COPD and multiple myeloma treatments, plus regulatory filings for bepirovirsen and breakthrough designation for efimosfermin.",
+    "source": "https://www.tipranks.com/news/company-announcements/gsk-starts-2026-with-strong-q1-backs-outlook-and-accelerates-rd-pipeline",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.blenrep.mm_rr.pos",
+        "old_value": 100,
+        "new_value": 100,
+        "reason": "News confirms new approvals for multiple myeloma treatments, supporting Blenrep approval trajectory",
+        "old_actual": 100
+      },
+      {
+        "path": "scenarios.base.assumptions.trelegy.asthma.pos",
+        "old_value": 100,
+        "new_value": 100,
+        "reason": "News mentions new approvals for asthma treatments, confirming Trelegy expansion",
+        "old_actual": 100
+      },
+      {
+        "path": "scenarios.base.assumptions.trelegy.copd.pos",
+        "old_value": 100,
+        "new_value": 100,
+        "reason": "News mentions new approvals for COPD treatments, supporting Trelegy franchise",
+        "old_actual": 100
+      },
+      {
+        "path": "scenarios.base.assumptions.bepirovirsen.hbv_cure.pos",
+        "old_value": 65,
+        "new_value": 70,
+        "reason": "News specifically mentions regulatory filings for bepirovirsen, indicating progression toward approval",
+        "old_actual": 65
+      },
+      {
+        "path": "scenarios.bear.assumptions.bepirovirsen.hbv_cure.pos",
+        "old_value": 50,
+        "new_value": 55,
+        "reason": "Regulatory filing progress supports modest PoS increase in bear case",
+        "old_actual": 50
+      },
+      {
+        "path": "scenarios.bull.assumptions.bepirovirsen.hbv_cure.pos",
+        "old_value": 78,
+        "new_value": 80,
+        "reason": "Strong regulatory progress supports higher confidence in bull scenario",
+        "old_actual": 78
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-30T14:30:35Z",
+    "ticker": "KYMR",
+    "news": "Gilead exercised its option to license KT-200 (CDK2 program), triggering a $45 million milestone payment to Kymera.",
+    "source": "https://www.manilatimes.net/2026/04/30/tmt-newswire/globenewswire/kymera-therapeutics-announces-first-quarter-2026-financial-results-and-provides-a-business-update/2332596",
+    "changes": [
+      {
+        "path": "company.cash",
+        "old_value": 1600,
+        "new_value": 1645,
+        "reason": "$45M milestone payment from Gilead option exercise increases cash position",
+        "old_actual": 1600
+      },
+      {
+        "path": "scenarios.base.assumptions.cdk2.onc.pos",
+        "old_value": 15,
+        "new_value": 25,
+        "reason": "Gilead option exercise validates CDK2 program - increases probability of success",
+        "old_actual": 15
+      },
+      {
+        "path": "scenarios.base.assumptions.cdk2.onc.apr",
+        "old_value": 25,
+        "new_value": 35,
+        "reason": "Big pharma validation increases approval probability",
+        "old_actual": 25
+      },
+      {
+        "path": "scenarios.bear.assumptions.cdk2.onc.pos",
+        "old_value": 10,
+        "new_value": 18,
+        "reason": "Even in bear case, option exercise reduces downside risk",
+        "old_actual": 10
+      },
+      {
+        "path": "scenarios.bull.assumptions.cdk2.onc.pos",
+        "old_value": 25,
+        "new_value": 35,
+        "reason": "Strong validation supports higher bull case probability",
+        "old_actual": 25
+      },
+      {
+        "path": "scenarios.bull.assumptions.cdk2.onc.apr",
+        "old_value": 35,
+        "new_value": 45,
+        "reason": "Gilead commitment increases bull case approval odds",
+        "old_actual": 35
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-30T14:30:35Z",
+    "ticker": "LLY",
+    "news": "Eli Lilly reported Q1 2026 revenue of $19.8B (+56% YoY) and raised 2026 guidance to $82-85B from $80-83B, with FDA approval of Foundayo (oral GLP-1).",
+    "source": "https://investor.lilly.com/news-releases/news-release-details/lilly-reports-first-quarter-2026-financial-results-raises-full",
+    "changes": [
+      {
+        "path": "scenarios.base.val.commercialRevM",
+        "old_value": 80000,
+        "new_value": 83500,
+        "reason": "Guidance raised to $82-85B from $80-83B - taking midpoint of new range",
+        "old_actual": 80000
+      },
+      {
+        "path": "scenarios.bear.val.commercialRevM",
+        "old_value": 72000,
+        "new_value": 75000,
+        "reason": "Bear case adjustment reflecting stronger-than-expected Q1 performance",
+        "old_actual": 72000
+      },
+      {
+        "path": "scenarios.bull.val.commercialRevM",
+        "old_value": 105000,
+        "new_value": 110000,
+        "reason": "Bull case uplift given beat and raise momentum",
+        "old_actual": 105000
+      },
+      {
+        "path": "scenarios.base.assumptions.orforglipron.oral_glp1.pos",
+        "old_value": 97,
+        "new_value": 100,
+        "reason": "FDA approval of Foundayo (oral GLP-1) confirmed - regulatory risk removed",
+        "old_actual": 97
+      },
+      {
+        "path": "scenarios.bear.assumptions.orforglipron.oral_glp1.pos",
+        "old_value": 95,
+        "new_value": 100,
+        "reason": "FDA approval confirmed across all scenarios",
+        "old_actual": 95
+      },
+      {
+        "path": "scenarios.bull.assumptions.orforglipron.oral_glp1.pos",
+        "old_value": 98,
+        "new_value": 100,
+        "reason": "FDA approval confirmed across all scenarios",
+        "old_actual": 98
+      },
+      {
+        "path": "company.subtitle",
+        "old_value": "Mounjaro+Zepbound $40B+ run-rate \u00b7 Orforglipron oral GLP-1 \u00b7 $80-83B 2026 guide",
+        "new_value": "Mounjaro+Zepbound $40B+ run-rate \u00b7 Foundayo FDA approved \u00b7 $82-85B 2026 guide",
+        "reason": "Updated to reflect FDA approval and new guidance range",
+        "old_actual": "Mounjaro+Zepbound $40B+ run-rate \u00b7 Orforglipron oral GLP-1 \u00b7 $80-83B 2026 guide"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-30T14:30:35Z",
+    "ticker": "NOVO",
+    "news": "Eli Lilly reported strong Q1 2026 results with 56% revenue growth and FDA approval of Foundayo, the first GLP-1 pill with no food/water restrictions, intensifying competition for Novo's GLP-1 franchise.",
+    "source": "https://investor.lilly.com/news-releases/news-release-details/lilly-reports-first-quarter-2026-financial-results-raises-full",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.wegovy.obesity.pen",
+        "old_value": 1.0,
+        "new_value": 0.9,
+        "reason": "Foundayo's convenience advantage (no food/water restrictions) vs oral Wegovy threatens market share",
+        "old_actual": 1.0
+      },
+      {
+        "path": "scenarios.base.assumptions.rybelsus.t2d_oral.pen",
+        "old_value": 0.85,
+        "new_value": 0.75,
+        "reason": "Foundayo's superior dosing convenience likely to erode Rybelsus market position in oral GLP-1 space",
+        "old_actual": 0.85
+      },
+      {
+        "path": "scenarios.bear.assumptions.wegovy.obesity.pen",
+        "old_value": 0.85,
+        "new_value": 0.75,
+        "reason": "In bear case, Foundayo's advantages accelerate Wegovy share erosion",
+        "old_actual": 0.85
+      },
+      {
+        "path": "scenarios.bull.assumptions.wegovy.obesity.pen",
+        "old_value": 1.2,
+        "new_value": 1.1,
+        "reason": "Even in bull case, Foundayo represents meaningful competitive threat to Wegovy franchise",
+        "old_actual": 1.2
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-30T14:30:35Z",
+    "ticker": "ONC",
+    "news": "BeOne Medicines secured a global exclusive option on HH160, a trispecific antibody targeting PD-1/CTLA-4/VEGF-A, for up to $2.02B total value with $20M upfront.",
+    "source": "https://allsci.com/news/licensing-deals/beone-medicines-secures-usd-2-02b-option-on-huahui-health-trispecific-antibody-hh160/",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.pipeline.onc_pipe.pos",
+        "old_value": 25,
+        "new_value": 30,
+        "reason": "HH160 trispecific adds novel IO asset to pipeline, increasing development probability",
+        "old_actual": 25
+      },
+      {
+        "path": "scenarios.bull.assumptions.pipeline.onc_pipe.pos",
+        "old_value": 35,
+        "new_value": 40,
+        "reason": "Trispecific IO combination could meaningfully expand solid tumor franchise",
+        "old_actual": 35
+      },
+      {
+        "path": "scenarios.base.val.milestones",
+        "old_value": 0,
+        "new_value": 50,
+        "reason": "Option exercise milestone ($100M) and development milestones from $2B+ deal structure",
+        "old_actual": 0
+      },
+      {
+        "path": "scenarios.bull.val.milestones",
+        "old_value": 0,
+        "new_value": 100,
+        "reason": "Higher probability of milestone achievement in bull scenario with novel trispecific",
+        "old_actual": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-30T14:30:35Z",
+    "ticker": "REGN",
+    "news": "REGN reported strong Q1 2026 results with 19% revenue growth driven by Dupixent's 33% growth to $4.9B and EYLEA HD's 52% jump, plus FDA approved Otarmeni gene therapy for genetic hearing loss.",
+    "source": "https://www.globenewswire.com/news-release/2026/04/29/3283560/0/en/Regeneron-Reports-First-Quarter-2026-Financial-and-Operating-Results.html",
+    "changes": [
+      {
+        "path": "scenarios.base.val.mult",
+        "old_value": 5.0,
+        "new_value": 5.3,
+        "reason": "Strong Q1 results with 19% revenue growth and robust franchise performance supports modest multiple expansion",
+        "old_actual": 5.0
+      },
+      {
+        "path": "scenarios.bull.val.mult",
+        "old_value": 7.0,
+        "new_value": 7.5,
+        "reason": "Exceptional EYLEA HD growth (+52%) and Dupixent momentum (+33%) validates bull case assumptions",
+        "old_actual": 7.0
+      },
+      {
+        "path": "scenarios.base.assumptions.eylea.wet_amd.pen",
+        "old_value": 1.0,
+        "new_value": 1.05,
+        "reason": "EYLEA HD's 52% growth demonstrates successful biosimilar defense and market recapture",
+        "old_actual": 1.0
+      },
+      {
+        "path": "scenarios.base.assumptions.dupixent.ad.pen",
+        "old_value": 1.0,
+        "new_value": 1.05,
+        "reason": "Dupixent's 33% growth pace exceeds expectations, supporting higher penetration assumptions",
+        "old_actual": 1.0
+      },
+      {
+        "path": "scenarios.base.assumptions.dupixent.asthma.pen",
+        "old_value": 1.0,
+        "new_value": 1.05,
+        "reason": "Strong Dupixent momentum across indications supports enhanced penetration",
+        "old_actual": 1.0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-30T14:30:35Z",
+    "ticker": "VLA",
+    "news": "Valneva completed \u20ac84 million reserved offering with \u20ac37 million immediate proceeds and up to \u20ac47 million from warrant exercises, strengthening balance sheet for pipeline advancement.",
+    "source": "https://www.manilatimes.net/2026/04/30/tmt-newswire/globenewswire/valneva-announces-the-successful-completion-of-an-84-million-reserved-offering/2332291",
+    "changes": [
+      {
+        "path": "company.cash",
+        "old_value": 110,
+        "new_value": 147,
+        "reason": "\u20ac37M immediate proceeds from offering received upon closing May 5, 2026",
+        "old_actual": 110
+      },
+      {
+        "path": "scenarios.bear.val.dil",
+        "old_value": 5,
+        "new_value": 10,
+        "reason": "Reserved offering increases dilution from warrant exercises and new equity issuance",
+        "old_actual": 5
+      },
+      {
+        "path": "scenarios.base.val.dil",
+        "old_value": 5,
+        "new_value": 8,
+        "reason": "Reserved offering increases dilution from warrant exercises and new equity issuance",
+        "old_actual": 5
+      },
+      {
+        "path": "scenarios.bull.val.dil",
+        "old_value": 3,
+        "new_value": 6,
+        "reason": "Reserved offering increases dilution from warrant exercises and new equity issuance",
+        "old_actual": 3
+      }
+    ]
+  }
+]

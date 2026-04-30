@@ -43,6 +43,18 @@ REGIONS = {
         "eu":  {"patientsK": 28, "wtpPct": 45, "priceK": 105},
         "row": {"patientsK": 80, "wtpPct": 14, "priceK": 35},
     },
+    # Adjuvant / peri-operative urothelial carcinoma (post-cystectomy MIBC):
+    # distinct competitive arena from advanced/metastatic. Standard of care:
+    # adjuvant Opdivo nivolumab (CheckMate 274, FDA 2021), Keytruda adjuvant
+    # under review. Emerging: ctDNA-MRD guided escalation, BNT122 autogene
+    # cevumeran (IMCODE004 Ph2), BMS bnt327 PD-L1xVEGF in adjuvant setting.
+    # source: NCI SEER bladder MIBC US ~20K cystectomies/yr -> ~15K eligible
+    # for adjuvant tx; EU5 ~20K; ROW ~50K. Net branded ~$170K/yr (1-year adj IO).
+    "oncology.genitourinary.bladder_adjuvant": {
+        "us":  {"patientsK": 15, "wtpPct": 70, "priceK": 170},
+        "eu":  {"patientsK": 20, "wtpPct": 50, "priceK": 100},
+        "row": {"patientsK": 50, "wtpPct": 14, "priceK": 35},
+    },
     "oncology.genitourinary.prostate": {
         "us":  {"patientsK": 100, "wtpPct": 70, "priceK": 95},
         "eu":  {"patientsK": 110, "wtpPct": 52, "priceK": 55},
@@ -67,6 +79,19 @@ REGIONS = {
         "eu":  {"patientsK": 70,  "wtpPct": 48, "priceK": 55},
         "row": {"patientsK": 320, "wtpPct": 16, "priceK": 22},
     },
+    # Adjuvant CRC (resected stage II-III, ctDNA-MRD-positive subset):
+    # distinct from advanced/metastatic. Currently SoC = adjuvant chemo
+    # (FOLFOX, CAPOX) generic; Keytruda adj for dMMR/MSI-H subset. Emerging:
+    # ctDNA-MRD-driven escalation (Natera/Guardant), individualized neoantigen
+    # vaccines (BNT122 autogene cevumeran Ph2 with Genentech), MRD+ targeted
+    # IO. source: NCI SEER CRC US ~150K/yr, ~50K stage II-III resected
+    # -> ~15-20K ctDNA-MRD-positive eligible/yr; EU5 ~25K; ROW ~80K. Net
+    # branded ~$170K/yr for 1-year adj IO/vaccine course.
+    "oncology.gi.colorectal_adjuvant": {
+        "us":  {"patientsK": 18, "wtpPct": 70, "priceK": 170},
+        "eu":  {"patientsK": 25, "wtpPct": 50, "priceK": 100},
+        "row": {"patientsK": 80, "wtpPct": 14, "priceK": 35},
+    },
     "oncology.gi.gastric_esoph": {
         "us":  {"patientsK": 25,  "wtpPct": 58, "priceK": 135},
         "eu":  {"patientsK": 35,  "wtpPct": 44, "priceK": 78},
@@ -84,6 +109,19 @@ REGIONS = {
         "us":  {"patientsK": 60,  "wtpPct": 60, "priceK": 110},
         "eu":  {"patientsK": 80,  "wtpPct": 45, "priceK": 60},
         "row": {"patientsK": 350, "wtpPct": 15, "priceK": 22},
+    },
+    # Adjuvant resected PDAC: post-Whipple/distal-pancreatectomy. Currently
+    # SoC = mFOLFIRINOX or gem+capecitabine (PRODIGE 24, ESPAC-4) -- all
+    # generic chemo. No approved IO or targeted adjuvant. BNT122 IMCODE003
+    # (autogene cevumeran + atezo + mFOLFIRINOX vs SOC) is first-in-class
+    # mRNA cancer vaccine in this setting. Genentech 50/50 partnership.
+    # source: NCI SEER PDAC US ~64K incidence/yr, ~20-25% surgically resectable
+    # -> ~13-15K resected/yr eligible for adj therapy; EU5 ~12K; ROW ~50K.
+    # Net branded aspirational ~$200K/yr (cancer vaccine premium).
+    "oncology.gi.pancreatic_adjuvant": {
+        "us":  {"patientsK": 13, "wtpPct": 65, "priceK": 200},
+        "eu":  {"patientsK": 12, "wtpPct": 45, "priceK": 120},
+        "row": {"patientsK": 50, "wtpPct": 12, "priceK": 40},
     },
 
     # ------------------------------------------------------------
@@ -524,6 +562,20 @@ REGIONS = {
         "eu":  {"patientsK": 35,  "wtpPct": 60, "priceK": 100},
         "row": {"patientsK": 80,  "wtpPct": 12, "priceK": 40},
     },
+    # Adjuvant resected melanoma (high-risk stage IIB-IV post-resection):
+    # distinct competitive arena from advanced/metastatic melanoma.
+    # SoC: Keytruda adj (KEYNOTE-054, KEYNOTE-716), Opdivo adj
+    # (CheckMate 238). Adjuvant peri-operative emerging: pembro + INT
+    # (MRNA-4157 INTerpath-001 fully enrolled, interim 2026), BNT316
+    # gotistobart pH-CTLA-4 in some adjuvant trials.
+    # source: SEER melanoma US ~100K incidence/yr, ~30% stage IIB+
+    # high-risk resected -> ~30K eligible; EU5 ~25K; ROW ~80K. Net
+    # branded ~$170K/yr (1-year adj IO) vs $180K advanced setting.
+    "oncology.skin.melanoma_adjuvant": {
+        "us":  {"patientsK": 30,  "wtpPct": 75, "priceK": 170},
+        "eu":  {"patientsK": 25,  "wtpPct": 60, "priceK": 100},
+        "row": {"patientsK": 80,  "wtpPct": 12, "priceK": 35},
+    },
     # source: Karia 2013 advanced cSCC US ~20K; Libtayo WAC ~$200K
     "oncology.skin.cscc": {
         "us":  {"patientsK": 20,  "wtpPct": 70, "priceK": 200},
@@ -643,13 +695,16 @@ PEN_PCT = {
     "oncology.breast.hr_her2_neg": 58,
     "oncology.breast.tnbc": 55,
     "oncology.genitourinary.bladder": 50,
+    "oncology.genitourinary.bladder_adjuvant": 50,
     "oncology.genitourinary.prostate": 60,
     "oncology.genitourinary.rcc": 58,
     "oncology.gi.cholangiocarcinoma": 42,
     "oncology.gi.colorectal": 50,
+    "oncology.gi.colorectal_adjuvant": 50,
     "oncology.gi.gastric_esoph": 48,
     "oncology.gi.hcc": 45,
     "oncology.gi.pancreatic": 40,
+    "oncology.gi.pancreatic_adjuvant": 50,
     "oncology.gynecologic.ovarian": 52,
     "oncology.gynecologic.endometrial": 60,
     "oncology.hematology.aml": 48,
@@ -699,6 +754,7 @@ PEN_PCT = {
     "oncology.hematology.cml": 65,
     "nephrology.glomerular.c3g": 45,
     "oncology.skin.melanoma": 65,
+    "oncology.skin.melanoma_adjuvant": 60,
     "oncology.skin.cscc": 50,
     "oncology.skin.bcc": 45,
     "oncology.skin.merkel_cell": 60,

@@ -10,7 +10,7 @@
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
-    "area_count_l3": 237,
+    "area_count_l3": 241,
     "area_count_l4": 28,
     "modality_count": 420,
     "companies": 74
@@ -1703,13 +1703,19 @@
             "AZN",
             "BCYC",
             "BMY",
-            "BNTX",
             "JNJ",
             "MRK_DE",
             "PFE",
             "RHHBY"
           ],
-          "count": 10,
+          "count": 9,
+          "rare": false
+        },
+        "bladder_adjuvant": {
+          "companies": [
+            "BNTX"
+          ],
+          "count": 1,
           "rare": false
         },
         "prostate": {
@@ -1758,7 +1764,6 @@
             "BAYN",
             "BHVN",
             "BMY",
-            "BNTX",
             "GLMD",
             "JANX",
             "MRK_DE",
@@ -1767,7 +1772,14 @@
             "RHHBY",
             "RVMD"
           ],
-          "count": 13,
+          "count": 12,
+          "rare": false
+        },
+        "colorectal_adjuvant": {
+          "companies": [
+            "BNTX"
+          ],
+          "count": 1,
           "rare": false
         },
         "gastric_esoph": {
@@ -1802,11 +1814,17 @@
           "companies": [
             "AZN",
             "BCYC",
-            "BNTX",
             "MRK",
             "RVMD"
           ],
-          "count": 5,
+          "count": 4,
+          "rare": false
+        },
+        "pancreatic_adjuvant": {
+          "companies": [
+            "BNTX"
+          ],
+          "count": 1,
           "rare": false
         }
       },
@@ -2251,12 +2269,18 @@
             "BNTX",
             "IMTX",
             "MRK",
-            "MRNA",
             "NVS",
             "PFE",
             "REGN"
           ],
-          "count": 8,
+          "count": 7,
+          "rare": false
+        },
+        "melanoma_adjuvant": {
+          "companies": [
+            "MRNA"
+          ],
+          "count": 1,
           "rare": false
         },
         "merkel_cell": {
@@ -5851,6 +5875,16 @@
         "cardio_metabolic.thrombosis.anticoagulation",
         "cardio_metabolic.thrombosis.thrombolytic",
         "cns.neurodegeneration.post_stroke_recovery"
+      ]
+    },
+    "cancer_vaccine_adjuvant": {
+      "description": "Adjuvant / peri-operative oncology arena: post-resection ctDNA-MRD-driven therapy across NSCLC + melanoma + CRC + PDAC + MIBC. Cancer vaccines (MRNA-4157 intismeran, BNT122 autogene cevumeran), 1-year IO adjuvants (Keytruda, Opdivo), peri-op IO+chemo. Distinct competitive set from advanced/metastatic disease in same organ.",
+      "areas": [
+        "oncology.lung.nsclc_adjuvant",
+        "oncology.skin.melanoma_adjuvant",
+        "oncology.gi.colorectal_adjuvant",
+        "oncology.gi.pancreatic_adjuvant",
+        "oncology.genitourinary.bladder_adjuvant"
       ]
     },
     "epilepsy_spectrum": {

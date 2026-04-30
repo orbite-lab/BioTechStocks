@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated": "2026-04-30T08:43:07Z",
+    "generated": "2026-04-30T08:52:32Z",
     "target_count": 343,
-    "total_assets": 627,
-    "assets_with_targets": 581,
+    "total_assets": 632,
+    "assets_with_targets": 585,
     "multi_modality_count": 40,
     "multi_disease_count": 152
   },
@@ -2395,10 +2395,12 @@
     "CD274": {
       "companies": [
         "AZN",
+        "BNTX",
         "MRK_DE",
         "RHHBY"
       ],
       "modalities": [
+        "antibody.bispecific.pdl1_vegf",
         "antibody.checkpoint.pdl1"
       ],
       "areas": [
@@ -2422,6 +2424,17 @@
             "oncology.genitourinary.bladder",
             "oncology.gi.cholangiocarcinoma",
             "oncology.gi.hcc",
+            "oncology.lung.nsclc_io_combo",
+            "oncology.lung.sclc"
+          ]
+        },
+        {
+          "ticker": "BNTX",
+          "asset": "bnt327",
+          "name": "BNT327 / pumitamig - PD-L1 x VEGF-A bispecific (BMS 50/50 partnership, $11B deal)",
+          "modality": "antibody.bispecific.pdl1_vegf",
+          "areas": [
+            "oncology.breast.tnbc",
             "oncology.lung.nsclc_io_combo",
             "oncology.lung.sclc"
           ]
@@ -2452,18 +2465,18 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 1,
+      "assetCount": 4,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 9,
       "modalityClasses": [
         "antibody"
       ],
       "totalTAM": 51428.9,
-      "totalSOM": 15489.5,
+      "totalSOM": 19025.1,
       "totalSales": 10914.0,
-      "cagrPct": 0.9,
-      "peakYear": 2028
+      "cagrPct": 1.4,
+      "peakYear": 2029
     },
     "CD276": {
       "companies": [
@@ -3839,7 +3852,8 @@
     "CTLA4": {
       "companies": [
         "AZN",
-        "BMY"
+        "BMY",
+        "BNTX"
       ],
       "modalities": [
         "antibody.bispecific.pd1_ctla4",
@@ -3848,6 +3862,7 @@
       ],
       "areas": [
         "oncology.genitourinary.bladder",
+        "oncology.genitourinary.prostate",
         "oncology.genitourinary.rcc",
         "oncology.gi.cholangiocarcinoma",
         "oncology.gi.colorectal",
@@ -3893,17 +3908,27 @@
             "oncology.lung.nsclc_io_combo",
             "oncology.skin.melanoma"
           ]
+        },
+        {
+          "ticker": "BNTX",
+          "asset": "bnt316",
+          "name": "BNT316 / gotistobart (ex-OncoC4 ONC-392) - next-gen pH-sensitive anti-CTLA-4",
+          "modality": "antibody.checkpoint.ctla4",
+          "areas": [
+            "oncology.genitourinary.prostate",
+            "oncology.skin.melanoma"
+          ]
         }
       ],
-      "assetCount": 3,
+      "assetCount": 4,
       "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 9,
+      "areaCount": 10,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 62069.6,
-      "totalSOM": 12943.7,
+      "totalTAM": 72513.6,
+      "totalSOM": 13369.8,
       "totalSales": 8600.0,
       "cagrPct": 5.0,
       "peakYear": 2029
@@ -5012,6 +5037,7 @@
         "6990",
         "AZN",
         "BAYN",
+        "BNTX",
         "NUVL",
         "RHHBY"
       ],
@@ -5026,6 +5052,7 @@
       "areas": [
         "oncology.breast.her2_pos",
         "oncology.gi.gastric_esoph",
+        "oncology.gynecologic.endometrial",
         "oncology.lung.nsclc_driver.her2"
       ],
       "assets": [
@@ -5065,6 +5092,16 @@
           "modality": "small_molecule.kinase_inhibitor.her2_egfr",
           "areas": [
             "oncology.lung.nsclc_driver.her2"
+          ]
+        },
+        {
+          "ticker": "BNTX",
+          "asset": "bnt323",
+          "name": "BNT323 / trastuzumab pamirtecan - HER2 ADC (TopoI payload, ex-MediLink)",
+          "modality": "adc.dxd_linker.her2_adc",
+          "areas": [
+            "oncology.breast.her2_pos",
+            "oncology.gynecologic.endometrial"
           ]
         },
         {
@@ -5113,19 +5150,19 @@
           ]
         }
       ],
-      "assetCount": 9,
+      "assetCount": 10,
       "modalityCount": 6,
       "modalityClassCount": 3,
-      "areaCount": 3,
+      "areaCount": 4,
       "modalityClasses": [
         "adc",
         "antibody",
         "small_molecule"
       ],
-      "totalTAM": 30886.8,
-      "totalSOM": 29749.9,
+      "totalTAM": 42061.8,
+      "totalSOM": 32087.9,
       "totalSales": 17092.0,
-      "cagrPct": 3.0,
+      "cagrPct": 3.1,
       "peakYear": 2029
     },
     "ERBB3": {
@@ -13471,6 +13508,7 @@
     },
     "SARS_COV2_SPIKE": {
       "companies": [
+        "BNTX",
         "MRNA"
       ],
       "modalities": [
@@ -13482,6 +13520,15 @@
         "infectious_disease.vaccines.influenza"
       ],
       "assets": [
+        {
+          "ticker": "BNTX",
+          "asset": "comirnaty",
+          "name": "Comirnaty (BNT162b2) - COVID-19 mRNA vaccine (Pfizer 50/50 ex-Germany)",
+          "modality": "vaccine.mrna.covid",
+          "areas": [
+            "infectious_disease.vaccines.covid"
+          ]
+        },
         {
           "ticker": "MRNA",
           "asset": "spikevax",
@@ -13510,7 +13557,7 @@
           ]
         }
       ],
-      "assetCount": 3,
+      "assetCount": 4,
       "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 2,
@@ -13518,9 +13565,9 @@
         "vaccine"
       ],
       "totalTAM": 17374.0,
-      "totalSOM": 3821.5,
-      "totalSales": 1900.0,
-      "cagrPct": -2.5,
+      "totalSOM": 6176.5,
+      "totalSales": 3400.0,
+      "cagrPct": -5.4,
       "peakYear": 2027
     },
     "SCD": {
@@ -16020,11 +16067,13 @@
       "companies": [
         "AMGN",
         "BAYN",
+        "BNTX",
         "NVS",
         "REGN",
         "RHHBY"
       ],
       "modalities": [
+        "antibody.bispecific.pdl1_vegf",
         "antibody.bispecific.vegf_ang2",
         "antibody.fc_fragment.vegf_a",
         "antibody.fusion.vegf_trap",
@@ -16032,10 +16081,12 @@
         "formulation_modifier.ocular_implant.refillable_port"
       ],
       "areas": [
+        "oncology.breast.tnbc",
         "oncology.gi.colorectal",
         "oncology.gi.hcc",
         "oncology.gynecologic.ovarian",
         "oncology.lung.nsclc_io_combo",
+        "oncology.lung.sclc",
         "ophthalmology.retina.dme",
         "ophthalmology.retina.dr",
         "ophthalmology.retina.nvamd",
@@ -16072,6 +16123,17 @@
             "ophthalmology.retina.dme",
             "ophthalmology.retina.nvamd",
             "ophthalmology.retina.rvo"
+          ]
+        },
+        {
+          "ticker": "BNTX",
+          "asset": "bnt327",
+          "name": "BNT327 / pumitamig - PD-L1 x VEGF-A bispecific (BMS 50/50 partnership, $11B deal)",
+          "modality": "antibody.bispecific.pdl1_vegf",
+          "areas": [
+            "oncology.breast.tnbc",
+            "oncology.lung.nsclc_io_combo",
+            "oncology.lung.sclc"
           ]
         },
         {
@@ -16138,19 +16200,19 @@
           ]
         }
       ],
-      "assetCount": 9,
-      "modalityCount": 5,
+      "assetCount": 10,
+      "modalityCount": 6,
       "modalityClassCount": 2,
-      "areaCount": 8,
+      "areaCount": 10,
       "modalityClasses": [
         "antibody",
         "formulation_modifier"
       ],
-      "totalTAM": 63738.4,
-      "totalSOM": 23264.0,
+      "totalTAM": 75477.0,
+      "totalSOM": 26799.6,
       "totalSales": 16174.0,
-      "cagrPct": 1.2,
-      "peakYear": 2028
+      "cagrPct": 1.6,
+      "peakYear": 2029
     },
     "VEGFR1": {
       "companies": [

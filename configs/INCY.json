@@ -1,0 +1,1512 @@
+{
+  "company": {
+    "ticker": "INCY",
+    "name": "Incyte Corporation",
+    "currentPrice": 97.66,
+    "sharesOut": 199,
+    "cash": 3600,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "JAK platform + heme/onc franchise: Jakafi (LOE Dec 2028) + Opzelura + Niktimvo + Monjuvi + Povorcitinib HS NDA + vitiligo/PN Ph3",
+    "yahooTicker": "INCY"
+  },
+  "assets": [
+    {
+      "id": "jakafi",
+      "name": "Jakafi (ruxolitinib) - oral JAK1/2 inhibitor [LOE Dec 2028]",
+      "stage": "Commercial (MF + PV + GVHD)",
+      "modality": "small_molecule.kinase_inhibitor.jak1_jak2",
+      "targets": [
+        "JAK1",
+        "JAK2"
+      ],
+      "indications": [
+        {
+          "id": "mf",
+          "name": "Myelofibrosis (intermediate/high-risk; primary, post-PV, post-ET)",
+          "area": "hematology.myeloproliferative.mf",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 17,
+                "wtpPct": 72,
+                "priceK": 170
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 55,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 15,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 65,
+                "wtpPct": 80,
+                "priceK": 220
+              },
+              "eu": {
+                "reachPct": 45,
+                "wtpPct": 60,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 12,
+                "wtpPct": 15,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Jakafi standard of care first-line MF (>70% US share) + Vonjo (CTI/Sumitomo) + Ojjaara (GSK momelotinib) competing",
+              "us.priceK": "Jakafi WAC ~$220K/yr; LOE Dec 2028"
+            },
+            "penPct": 65,
+            "cagrPct": -3,
+            "peakYear": 2027,
+            "salesM": 2200,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "pv",
+          "name": "Polycythemia vera (HU-resistant/intolerant)",
+          "area": "hematology.myeloproliferative.pv",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 70,
+                "wtpPct": 35,
+                "priceK": 120
+              },
+              "eu": {
+                "patientsK": 100,
+                "wtpPct": 22,
+                "priceK": 70
+              },
+              "row": {
+                "patientsK": 250,
+                "wtpPct": 8,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 75,
+                "priceK": 220
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 55,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Jakafi 2L+ PV vs HU + interferon (Besremi PharmaEssentia)",
+              "us.priceK": "Same Jakafi pricing"
+            },
+            "penPct": 25,
+            "cagrPct": 2,
+            "peakYear": 2027,
+            "salesM": 700,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "gvhd",
+          "name": "Graft-vs-host disease (steroid-refractory acute + chronic)",
+          "area": "immunology.transplant.cgvhd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 70,
+                "priceK": 150
+              },
+              "eu": {
+                "patientsK": 28,
+                "wtpPct": 50,
+                "priceK": 90
+              },
+              "row": {
+                "patientsK": 60,
+                "wtpPct": 10,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 7,
+                "wtpPct": 75,
+                "priceK": 220
+              },
+              "eu": {
+                "reachPct": 3.5,
+                "wtpPct": 55,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 0.8,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Jakafi 1L SR-aGVHD/cGVHD vs Imbruvica/Rezurock; ~30-40% share",
+              "us.priceK": "Same Jakafi pricing"
+            },
+            "penPct": 35,
+            "cagrPct": 5,
+            "peakYear": 2028,
+            "salesM": 190,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "opzelura",
+      "name": "Opzelura (ruxolitinib cream) - topical JAK1/2 inhibitor",
+      "stage": "Commercial (AD adult + pediatric, vitiligo)",
+      "modality": "small_molecule.kinase_inhibitor.jak1_jak2",
+      "targets": [
+        "JAK1",
+        "JAK2"
+      ],
+      "indications": [
+        {
+          "id": "atopic_dermatitis",
+          "name": "Mild-to-moderate atopic dermatitis (adult + pediatric 2-11, FDA Sep 2025)",
+          "area": "dermatology.inflammatory_derm.atopic_dermatitis_topical",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5000,
+                "wtpPct": 30,
+                "priceK": 2
+              },
+              "eu": {
+                "patientsK": 5000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 20000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2.5,
+                "wtpPct": 60,
+                "priceK": 8
+              },
+              "eu": {
+                "reachPct": 0.8,
+                "wtpPct": 30,
+                "priceK": 5
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 8,
+                "priceK": 2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Only approved JAK cream; expanding pediatric AD label boost 2026",
+              "us.priceK": "Opzelura ~$2K/60g tube; ~$8K/yr maintenance"
+            },
+            "penPct": 12,
+            "cagrPct": 25,
+            "peakYear": 2030,
+            "salesM": 300,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "vitiligo",
+          "name": "Nonsegmental vitiligo (adult + pediatric 12+) - first FDA-approved repigmentation tx",
+          "area": "dermatology.rare_skin.vitiligo",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 50,
+                "priceK": 8
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 35,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 60000,
+                "wtpPct": 12,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 65,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 35,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 0.4,
+                "wtpPct": 8,
+                "priceK": 3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "First-in-class FDA-approved vitiligo cream; sole branded SoC",
+              "us.priceK": "Opzelura vitiligo ~$12K/yr (longer course)"
+            },
+            "penPct": 15,
+            "cagrPct": 35,
+            "peakYear": 2032,
+            "salesM": 378,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "niktimvo",
+      "name": "Niktimvo (axatilimab) - anti-CSF-1R mAb (Syndax-partnered cGVHD)",
+      "stage": "Commercial (cGVHD 3L+ post 2 prior systemic Tx; FDA approved Aug 2024)",
+      "modality": "antibody.monoclonal.anti_csf1r",
+      "targets": [
+        "CSF1R"
+      ],
+      "indications": [
+        {
+          "id": "cgvhd",
+          "name": "Chronic GVHD 3L+ (post 2 prior systemic therapies)",
+          "area": "immunology.transplant.cgvhd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 70,
+                "priceK": 150
+              },
+              "eu": {
+                "patientsK": 28,
+                "wtpPct": 50,
+                "priceK": 90
+              },
+              "row": {
+                "patientsK": 60,
+                "wtpPct": 10,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 75,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 55,
+                "priceK": 120
+              },
+              "row": {
+                "reachPct": 0.6,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Syndax 50/50 partnership; first-in-class CSF-1R for late-line cGVHD",
+              "us.priceK": "Niktimvo WAC ~$200K/yr"
+            },
+            "penPct": 35,
+            "cagrPct": 30,
+            "peakYear": 2030,
+            "salesM": 152,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "monjuvi",
+      "name": "Monjuvi/Minjuvi (tafasitamab) - anti-CD19 mAb (full rights ex-MorphoSys)",
+      "stage": "Commercial (DLBCL R/R + FL R/R w/ R-len)",
+      "modality": "antibody.monoclonal.anti_cd19",
+      "targets": [
+        "CD19"
+      ],
+      "indications": [
+        {
+          "id": "dlbcl_rr",
+          "name": "R/R DLBCL 2L+ with lenalidomide (L-MIND)",
+          "area": "oncology.hematology.nhl.dlbcl",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 68,
+                "priceK": 195
+              },
+              "eu": {
+                "patientsK": 38,
+                "wtpPct": 50,
+                "priceK": 115
+              },
+              "row": {
+                "patientsK": 120,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 15,
+                "wtpPct": 75,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 10,
+                "wtpPct": 55,
+                "priceK": 160
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 14,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Tafasitamab+len 2L DLBCL competing vs Polivy and bispecifics",
+              "us.priceK": "Monjuvi WAC ~$280K/course"
+            },
+            "penPct": 55,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 400,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "fl_rr",
+          "name": "R/R FL 2L+ w/ R-len + R (inMIND; FDA Jul 2025)",
+          "area": "oncology.hematology.nhl.fl",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 14,
+                "wtpPct": 65,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 17,
+                "wtpPct": 48,
+                "priceK": 50
+              },
+              "row": {
+                "patientsK": 30,
+                "wtpPct": 12,
+                "priceK": 20
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 75,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 55,
+                "priceK": 160
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 14,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "inMIND-driven launch 2025; FL R-len triplet",
+              "us.priceK": "Monjuvi pricing"
+            },
+            "penPct": 45,
+            "cagrPct": 30,
+            "peakYear": 2031,
+            "salesM": 180,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "pemazyre",
+      "name": "Pemazyre (pemigatinib) - FGFR1-3 inhibitor",
+      "stage": "Commercial (cholangiocarcinoma FGFR2 fusion 2L+)",
+      "modality": "small_molecule.kinase_inhibitor.fgfr1_3",
+      "targets": [
+        "FGFR1",
+        "FGFR2",
+        "FGFR3"
+      ],
+      "indications": [
+        {
+          "id": "cholangio",
+          "name": "Cholangiocarcinoma 2L+ (FGFR2 fusion/rearrangement)",
+          "area": "oncology.gi.cholangiocarcinoma",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 55,
+                "priceK": 155
+              },
+              "eu": {
+                "patientsK": 12,
+                "wtpPct": 42,
+                "priceK": 90
+              },
+              "row": {
+                "patientsK": 60,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 20,
+                "wtpPct": 60,
+                "priceK": 220
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 45,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "FGFR2-fusion cholangio (~10-15% of CCA pts) vs Truseltiq (futibatinib)",
+              "us.priceK": "Pemazyre WAC ~$220K/yr"
+            },
+            "penPct": 42,
+            "cagrPct": 3,
+            "peakYear": 2027,
+            "salesM": 120,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "iclusig",
+      "name": "Iclusig (ponatinib) - BCR-ABL TKI (T315I + 3L+ Ph+ CML)",
+      "stage": "Commercial",
+      "modality": "small_molecule.kinase_inhibitor.bcr_abl",
+      "targets": [
+        "ABL1",
+        "BCR"
+      ],
+      "indications": [
+        {
+          "id": "cml",
+          "name": "CML (T315I-mutant + post-multiple TKI failures) and Ph+ ALL",
+          "area": "oncology.hematology.cml",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 70,
+                "wtpPct": 60,
+                "priceK": 160
+              },
+              "eu": {
+                "patientsK": 85,
+                "wtpPct": 45,
+                "priceK": 95
+              },
+              "row": {
+                "patientsK": 350,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 70,
+                "priceK": 220
+              },
+              "eu": {
+                "reachPct": 1.2,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 0.25,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Niche T315I + 3L+ CML; Scemblix asciminib expanding",
+              "us.priceK": "Iclusig WAC ~$220K/yr"
+            },
+            "penPct": 65,
+            "cagrPct": -2,
+            "peakYear": 2025,
+            "salesM": 130,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "zynyz",
+      "name": "Zynyz (retifanlimab) - anti-PD-1 mAb",
+      "stage": "Commercial (Merkel cell + endometrial dMMR)",
+      "modality": "antibody.checkpoint.pd1",
+      "targets": [
+        "PDCD1"
+      ],
+      "indications": [
+        {
+          "id": "merkel",
+          "name": "Metastatic Merkel cell carcinoma (FDA Mar 2023)",
+          "area": "oncology.skin.merkel_cell",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3,
+                "wtpPct": 75,
+                "priceK": 165
+              },
+              "eu": {
+                "patientsK": 4,
+                "wtpPct": 55,
+                "priceK": 95
+              },
+              "row": {
+                "patientsK": 8,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 75,
+                "priceK": 170
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 55,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Niche MCC competing vs Bavencio + Keytruda",
+              "us.priceK": "Anti-PD-1 class pricing"
+            },
+            "penPct": 60,
+            "cagrPct": 10,
+            "peakYear": 2028,
+            "salesM": 30,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "endometrial",
+          "name": "Endometrial cancer dMMR/MSI-H (FDA Aug 2025)",
+          "area": "oncology.gynecologic.endometrial",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 70,
+                "priceK": 170
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 250,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 70,
+                "priceK": 170
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "dMMR endometrial ~25% subset vs Keytruda dominance",
+              "us.priceK": "Class pricing"
+            },
+            "penPct": 60,
+            "cagrPct": 25,
+            "peakYear": 2030,
+            "salesM": 20,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "povorcitinib",
+      "name": "Povorcitinib (INCB-54707) - oral JAK1-selective inhibitor",
+      "stage": "NDA filed HS (Q4 2025); Ph3 vitiligo + prurigo nodularis (2026 readouts); Ph2 asthma",
+      "modality": "small_molecule.kinase_inhibitor.jak1_selective",
+      "targets": [
+        "JAK1"
+      ],
+      "indications": [
+        {
+          "id": "hs",
+          "name": "Hidradenitis suppurativa moderate-severe (NDA + MAA filed; STOP-HS1+2)",
+          "area": "dermatology.inflammatory_derm.hidradenitis_suppurativa",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 200,
+                "wtpPct": 55,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 300,
+                "wtpPct": 40,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 2000,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 65,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 45,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.7,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "First oral JAK in HS; competes vs Humira + Cosentyx (IL-17) + bimekizumab",
+              "us.priceK": "Oral JAK1 in derm class ~$35K/yr (vs IL-17/23 biologics)"
+            },
+            "penPct": 25,
+            "cagrPct": 8,
+            "peakYear": 2032
+          }
+        },
+        {
+          "id": "vitiligo_oral",
+          "name": "Nonsegmental vitiligo systemic (Ph3 STOP-V1+2; topline mid-2026)",
+          "area": "dermatology.rare_skin.vitiligo",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 50,
+                "priceK": 8
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 35,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 60000,
+                "wtpPct": 12,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 65,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 45,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.4,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "First systemic vitiligo therapy (vs Opzelura cream limited to <10% BSA)",
+              "us.priceK": "JAK1 oral pricing"
+            },
+            "penPct": 15,
+            "cagrPct": 12,
+            "peakYear": 2033
+          }
+        },
+        {
+          "id": "prurigo_nodularis",
+          "name": "Prurigo nodularis Ph3 STOP-PN1+2 (topline Q4 2026)",
+          "area": "dermatology.inflammatory_derm.prurigo_nodularis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 150,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 180,
+                "wtpPct": 35,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 5,
+                "priceK": 4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 60,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 1.2,
+                "wtpPct": 40,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.25,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Oral JAK1 alternative to Dupixent injectable in PN",
+              "us.priceK": "JAK1 oral pricing"
+            },
+            "penPct": 30,
+            "cagrPct": 10,
+            "peakYear": 2033
+          }
+        },
+        {
+          "id": "asthma",
+          "name": "Severe asthma Ph2 (oral JAK1 alt to biologics)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 0.3,
+                "wtpPct": 38,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Aspirational oral alternative to anti-IL-5/IL-4R biologics",
+              "us.priceK": "JAK1 oral pricing"
+            },
+            "penPct": 25,
+            "cagrPct": 6,
+            "peakYear": 2035
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 3,
+        "commercialMult": 1.2,
+        "commercialRevM": 2000,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "jakafi": {
+          "mf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "pv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "gvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "opzelura": {
+          "atopic_dermatitis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "vitiligo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "niktimvo": {
+          "cgvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "monjuvi": {
+          "dlbcl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "fl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "pemazyre": {
+          "cholangio": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "iclusig": {
+          "cml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "zynyz": {
+          "merkel": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "endometrial": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "povorcitinib": {
+          "hs": {
+            "pos": 70,
+            "apr": 80,
+            "pen": 0.5
+          },
+          "vitiligo_oral": {
+            "pos": 35,
+            "apr": 65,
+            "pen": 0.4
+          },
+          "prurigo_nodularis": {
+            "pos": 30,
+            "apr": 60,
+            "pen": 0.4
+          },
+          "asthma": {
+            "pos": 15,
+            "apr": 45,
+            "pen": 0.2
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 5,
+        "commercialMult": 1.8,
+        "commercialRevM": 2800,
+        "milestones": 50,
+        "dil": 0
+      },
+      "assumptions": {
+        "jakafi": {
+          "mf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "pv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "gvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "opzelura": {
+          "atopic_dermatitis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "vitiligo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "niktimvo": {
+          "cgvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "monjuvi": {
+          "dlbcl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "fl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "pemazyre": {
+          "cholangio": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "iclusig": {
+          "cml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "zynyz": {
+          "merkel": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "endometrial": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "povorcitinib": {
+          "hs": {
+            "pos": 88,
+            "apr": 92,
+            "pen": 0.7
+          },
+          "vitiligo_oral": {
+            "pos": 55,
+            "apr": 80,
+            "pen": 0.6
+          },
+          "prurigo_nodularis": {
+            "pos": 50,
+            "apr": 75,
+            "pen": 0.6
+          },
+          "asthma": {
+            "pos": 30,
+            "apr": 60,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 40,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 7,
+        "commercialMult": 2.5,
+        "commercialRevM": 3500,
+        "milestones": 150,
+        "dil": 0
+      },
+      "assumptions": {
+        "jakafi": {
+          "mf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "pv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "gvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "opzelura": {
+          "atopic_dermatitis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "vitiligo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "niktimvo": {
+          "cgvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "monjuvi": {
+          "dlbcl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "fl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "pemazyre": {
+          "cholangio": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "iclusig": {
+          "cml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "zynyz": {
+          "merkel": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "endometrial": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "povorcitinib": {
+          "hs": {
+            "pos": 95,
+            "apr": 96,
+            "pen": 0.95
+          },
+          "vitiligo_oral": {
+            "pos": 75,
+            "apr": 90,
+            "pen": 0.85
+          },
+          "prurigo_nodularis": {
+            "pos": 65,
+            "apr": 85,
+            "pen": 0.8
+          },
+          "asthma": {
+            "pos": 45,
+            "apr": 75,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 9,
+        "commercialMult": 3.5,
+        "commercialRevM": 4500,
+        "milestones": 300,
+        "dil": 0
+      },
+      "assumptions": {
+        "jakafi": {
+          "mf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "pv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "gvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "opzelura": {
+          "atopic_dermatitis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "vitiligo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "niktimvo": {
+          "cgvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "monjuvi": {
+          "dlbcl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "fl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "pemazyre": {
+          "cholangio": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "iclusig": {
+          "cml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "zynyz": {
+          "merkel": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "endometrial": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "povorcitinib": {
+          "hs": {
+            "pos": 98,
+            "apr": 98,
+            "pen": 1.15
+          },
+          "vitiligo_oral": {
+            "pos": 88,
+            "apr": 95,
+            "pen": 1.05
+          },
+          "prurigo_nodularis": {
+            "pos": 80,
+            "apr": 92,
+            "pen": 1.0
+          },
+          "asthma": {
+            "pos": 60,
+            "apr": 85,
+            "pen": 0.7
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 12,
+        "commercialMult": 4.5,
+        "commercialRevM": 5500,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "jakafi": {
+          "mf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "pv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "gvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "opzelura": {
+          "atopic_dermatitis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "vitiligo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "niktimvo": {
+          "cgvhd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "monjuvi": {
+          "dlbcl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "fl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "pemazyre": {
+          "cholangio": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "iclusig": {
+          "cml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "zynyz": {
+          "merkel": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "endometrial": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "povorcitinib": {
+          "hs": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.4
+          },
+          "vitiligo_oral": {
+            "pos": 95,
+            "apr": 98,
+            "pen": 1.3
+          },
+          "prurigo_nodularis": {
+            "pos": 92,
+            "apr": 97,
+            "pen": 1.2
+          },
+          "asthma": {
+            "pos": 80,
+            "apr": 92,
+            "pen": 1.0
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Q3 2026",
+      "dateSort": "2026-09-15",
+      "asset": "povorcitinib",
+      "indication": "hs",
+      "title": "Povorcitinib hidradenitis suppurativa PDUFA (NDA filed Q4 2025)",
+      "type": "pdufa",
+      "binary": false,
+      "_source": "https://investor.incyte.com/news-releases/news-release-details/incyte-announces-new-positive-54-week-late-breaking-data",
+      "_confidence": "high"
+    },
+    {
+      "date": "Mid 2026",
+      "dateSort": "2026-06-30",
+      "asset": "povorcitinib",
+      "indication": "vitiligo_oral",
+      "title": "Povorcitinib STOP-V Phase 3 vitiligo topline (oral systemic)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 35,
+      "fail_apr": 70,
+      "success_pos": 92,
+      "success_apr": 96,
+      "_source": "https://investor.incyte.com/static-files/f0037aa1-59bf-467c-a2cd-59fff2c6393c",
+      "_confidence": "high"
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "povorcitinib",
+      "indication": "prurigo_nodularis",
+      "title": "Povorcitinib STOP-PN Phase 3 prurigo nodularis topline",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 65,
+      "success_pos": 88,
+      "success_apr": 95,
+      "_source": "https://investor.incyte.com/static-files/f0037aa1-59bf-467c-a2cd-59fff2c6393c",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "niktimvo",
+      "indication": "cgvhd",
+      "title": "Axatilimab + ruxolitinib Phase 2 newly diagnosed cGVHD combo data",
+      "type": "phase2_data",
+      "binary": false,
+      "_source": "https://investor.incyte.com/news-releases/news-release-details/incyte-reports-fourth-quarter-and-full-year-2025-financial",
+      "_confidence": "medium"
+    },
+    {
+      "date": "Dec 2028",
+      "dateSort": "2028-12-31",
+      "asset": "jakafi",
+      "indication": "mf",
+      "title": "Jakafi LOE (composition-of-matter patent expiration; generic ruxolitinib 2029)",
+      "type": "loe",
+      "binary": false,
+      "_source": "https://www.drugpatentwatch.com/p/tradename/JAKAFI",
+      "_confidence": "high"
+    }
+  ]
+}

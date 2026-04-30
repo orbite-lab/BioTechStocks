@@ -3,23 +3,25 @@ import sys, io
 if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
-"""Find disease end-leaves that have NO commercial product -- pure pipeline only.
+"""Find disease end-leaves that have NO commercial product in our coverage.
+
+Each leaf is classified into one of four marketStatus values:
+  branded_incumbent          -- AUTO-DERIVED: any covered drug has commercial revenue
+  branded_incumbent_external -- override list: branded drug exists, sponsor not in coverage
+  generic_incumbent          -- override list: generic SoC dominates
+  novel                      -- no commercial drug anywhere (truly uncontested)
+
+branded_incumbent (from coverage data) takes precedence over overrides, so the
+status auto-flips when a new commercial drug is added to a leaf.
 
 Usage:
-    py scripts/ops/find_pipeline_only_leaves.py
-    py scripts/ops/find_pipeline_only_leaves.py --l1 oncology
-    py scripts/ops/find_pipeline_only_leaves.py --csv reports/pipeline_only_leaves.csv
+    py scripts/ops/find_pipeline_only_leaves.py             # all non-branded
+    py scripts/ops/find_pipeline_only_leaves.py --strict    # novel only
+    py scripts/ops/find_pipeline_only_leaves.py --l1 cns
+    py scripts/ops/find_pipeline_only_leaves.py --status novel
+    py scripts/ops/find_pipeline_only_leaves.py --csv reports/pipeline.csv
 
-A "leaf" is a deepest-level area path that has at least one indication tagged
-to it. A leaf is "pipeline-only" if every indication tagged there has:
-  - salesM == 0 or absent, AND
-  - asset.stage not in {commercial, nda_filed}
-
-For each pipeline-only leaf the script lists the candidates competing there
-(ticker, asset, stage, modality, targets), sorted by stage maturity.
-
-Pseudo-areas (`_*` prefix) are excluded -- they are platform/discovery tags,
-not real markets.
+Pseudo-areas (`_*` prefix) are excluded.
 """
 import json, glob, os, argparse, csv
 from pathlib import Path
@@ -83,29 +85,62 @@ def is_pipeline_only(entries):
         if "commercial" in st or "nda_filed" in st or "approved" in st: return False
     return True
 
+def load_overrides():
+    p = ROOT / "data" / "market_status_overrides.json"
+    if not p.exists(): return {}, {}
+    try:
+        d = json.loads(p.read_text(encoding="utf-8"))
+        return d.get("generic_incumbent", {}), d.get("branded_incumbent_external", {})
+    except Exception:
+        return {}, {}
+
+def derive_status(area, entries, gen_ov, ext_ov):
+    if not is_pipeline_only(entries): return "branded_incumbent"
+    if area in ext_ov: return "branded_incumbent_external"
+    if area in gen_ov: return "generic_incumbent"
+    return "novel"
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--l1", help="Filter to one L1 (e.g. oncology, immunology)")
     ap.add_argument("--csv", help="Write results to CSV")
     ap.add_argument("--counts", action="store_true", help="Print summary counts only")
+    ap.add_argument("--strict", action="store_true", help="Show only marketStatus=novel (alias for --status novel)")
+    ap.add_argument("--status", choices=["novel","generic_incumbent","branded_incumbent_external","all_pipeline"],
+                    default="all_pipeline", help="Filter by marketStatus (default: all non-branded)")
     args = ap.parse_args()
+
+    if args.strict: args.status = "novel"
+
+    gen_ov, ext_ov = load_overrides()
 
     configs = load_configs()
     leaves = collect_leaves(configs, l1_filter=args.l1)
-    pipeline_leaves = {a: es for a, es in leaves.items() if is_pipeline_only(es)}
+    # Tag every leaf with its marketStatus
+    statuses = {a: derive_status(a, es, gen_ov, ext_ov) for a, es in leaves.items()}
+    if args.status == "all_pipeline":
+        pipeline_leaves = {a: es for a, es in leaves.items() if statuses[a] != "branded_incumbent"}
+    else:
+        pipeline_leaves = {a: es for a, es in leaves.items() if statuses[a] == args.status}
 
     n_total = len(leaves)
     n_pipe = len(pipeline_leaves)
     n_indications = sum(len(es) for es in pipeline_leaves.values())
 
+    # Counts by status
+    status_counts = {"novel": 0, "generic_incumbent": 0, "branded_incumbent_external": 0, "branded_incumbent": 0}
+    for a, s in statuses.items(): status_counts[s] = status_counts.get(s, 0) + 1
+
     print()
-    if args.l1:
-        print(f"=== Pipeline-only leaves under L1='{args.l1}' ===")
-    else:
-        print("=== Pipeline-only leaves (all L1s) ===")
-    print(f"Total leaves with any indication:    {n_total}")
-    print(f"Pipeline-only leaves (no commercial): {n_pipe}  ({100*n_pipe/max(1,n_total):.0f}%)")
-    print(f"Total pipeline indication entries:   {n_indications}")
+    scope = f" under L1='{args.l1}'" if args.l1 else " (all L1s)"
+    print(f"=== Disease leaves{scope} ===")
+    print(f"Total leaves with any indication:           {n_total}")
+    print(f"  branded_incumbent (commercial in coverage): {status_counts['branded_incumbent']}")
+    print(f"  branded_incumbent_external (override):      {status_counts['branded_incumbent_external']}")
+    print(f"  generic_incumbent (override):               {status_counts['generic_incumbent']}")
+    print(f"  novel (truly uncontested):                  {status_counts['novel']}  <-- 🌱")
+    print()
+    print(f"Showing status='{args.status}': {n_pipe} leaves, {n_indications} indication entries")
     print()
 
     # By L1 breakdown
@@ -125,10 +160,20 @@ def main():
     # Detail
     sorted_leaves = sorted(pipeline_leaves.items(),
                            key=lambda kv: (-len(kv[1]), kv[0]))
+    STATUS_BADGE = {
+        "novel": "🌱 novel",
+        "generic_incumbent": "💊 generic_SoC",
+        "branded_incumbent_external": "🏷️  ext_branded",
+        "branded_incumbent": "✅ commercial",
+    }
     for area, entries in sorted_leaves:
         depth = area.count(".") + 1
         entries_sorted = sorted(entries, key=lambda e: stage_key(e["stage"]))
-        print(f"  [{area}] (L{depth}) -- {len(entries)} pipeline candidate(s):")
+        badge = STATUS_BADGE.get(statuses[area], statuses[area])
+        ov_note = ""
+        if statuses[area] == "generic_incumbent": ov_note = f" -- {gen_ov.get(area,'')}"
+        elif statuses[area] == "branded_incumbent_external": ov_note = f" -- {ext_ov.get(area,'')}"
+        print(f"  [{area}] (L{depth}) [{badge}]{ov_note} -- {len(entries)} pipeline candidate(s):")
         for e in entries_sorted:
             tgts = ", ".join(e["targets"]) if e["targets"] else "-"
             mod = e["modality"] or "-"

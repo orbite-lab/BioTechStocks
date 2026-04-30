@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "description": "Manual overrides for disease leaves where the dominant standard-of-care exists OUTSIDE our 72-config coverage universe. Pure-derived status (branded_incumbent when any covered drug has salesM>0) overrides these. Anything not listed defaults to 'novel' (no approved drug exists for this leaf in any company).",
+    "rules": [
+      "generic_incumbent: dominant SoC is generic / off-patent (e.g. levodopa for PD)",
+      "branded_incumbent_external: approved branded drug(s) exist for this leaf but the sponsor is not in our coverage manifest",
+      "Audit guardrail: a leaf flagged here should have >=1 pipeline candidate in coverage; otherwise the leaf shouldn't exist in the data at all"
+    ]
+  },
+  "generic_incumbent": {
+    "cardio_metabolic.hypertension.resistant": "ACE / ARB / CCB / thiazide generics",
+    "cns.movement.essential_tremor": "propranolol, primidone (generics)",
+    "cns.neurodegeneration.parkinson_disease": "levodopa / carbidopa, dopamine agonists, MAO-B inhibitors (generics)",
+    "cns.neurodegeneration.stroke": "tPA / alteplase generic; DOACs branded but not commercial PD-specific",
+    "cns.psychiatry.pain_fibromyalgia": "pregabalin, duloxetine, gabapentin (generics)",
+    "cns.epilepsy.generalized": "valproate, levetiracetam, lamotrigine (generics)",
+    "cns.psychiatry.asd": "risperidone, aripiprazole (generic; for irritability only)",
+    "cns.neurodegeneration.dlb": "donepezil, rivastigmine (generics)",
+    "dermatology.inflammatory_derm.atopic_dermatitis_topical": "topical corticosteroids, tacrolimus (generics)",
+    "dermatology.inflammatory_derm.cle": "hydroxychloroquine (generic)",
+    "endocrine.thyroid.graves": "methimazole, propylthiouracil (generics)",
+    "respiratory.inflammatory.cough_chronic": "codeine, dextromethorphan, benzonatate (generics)",
+    "oncology.lung.nsclc_io_resistant": "pemetrexed, docetaxel (generics)",
+    "musculoskeletal.neuromuscular.cms": "pyridostigmine, salbutamol (generics)",
+    "immunology.neuromuscular_autoimmune.mmn": "IVIG (generic biologic)",
+    "immunology.neuromuscular_autoimmune.sps": "IVIG, diazepam, baclofen (generics)",
+    "immunology.neuromuscular_autoimmune.myositis": "corticosteroids, MTX, IVIG (generics)"
+  },
+  "branded_incumbent_external": {
+    "musculoskeletal.bone_cartilage.achondroplasia": "Voxzogo / vosoritide (BioMarin -- not in coverage)",
+    "nephrology.glomerular.adpkd": "Jynarque / tolvaptan (Otsuka -- not in coverage)",
+    "oncology.eye.uveal_melanoma": "Kimmtrak / tebentafusp (Immunocore -- not in coverage)",
+    "oncology.hematology.bpdcn": "Elzonris / tagraxofusp (Stemline / Menarini -- not in coverage)",
+    "oncology.musculoskeletal.tgct": "Turalio / pexidartinib (Daiichi -- in coverage but TGCT-tagged at pipeline-stage Pimicotinib)",
+    "ophthalmology.anterior_neuro.uveitis": "Yutiq / Humira (multiple branded -- limited coverage)",
+    "ophthalmology.anterior_neuro.dry_eye": "Restasis, Xiidra, Miebo (multiple -- generic + branded mix)",
+    "ophthalmology.anterior_neuro.neurotrophic_keratitis": "Oxervate / cenegermin (Dompé -- not in coverage)",
+    "respiratory.inflammatory.severe_asthma": "Dupixent, Tezspire, Nucala, Xolair, Fasenra (branded biologics, partial coverage)",
+    "cns.epilepsy.dee.dravet": "Diacomit / stiripentol, Epidiolex / cannabidiol, Fintepla / fenfluramine (multiple)",
+    "cns.sleep.narcolepsy_hypersomnia": "Xywav / Xyrem (Jazz -- not in coverage), modafinil generic",
+    "cardio_metabolic.cardiopulmonary.ph_ild": "Ofev / nintedanib (Boehringer -- not in coverage)",
+    "cardio_metabolic.obesity.rare_genetic.hypothalamic_obesity": "Imcivree / setmelanotide (Rhythm -- not in coverage)",
+    "dermatology.rare_skin.vitiligo": "Opzelura / ruxolitinib (Incyte -- not in coverage as commercial vitiligo asset)",
+    "oncology.hematology.nhl.tcell": "Adcetris / brentuximab vedotin, Beleodaq / belinostat (multiple, partial coverage)"
+  }
+}

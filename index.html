@@ -849,6 +849,7 @@ async function main(){
   // Load taxonomy display_names for friendly UI labels + disease synonym groups
   let displayNames={};
   let diseaseSynonymGroups={};
+  let marketStatusOverrides={generic_incumbent:{}, branded_incumbent_external:{}};
   try{
     const tr=await fetch("data/taxonomy.json?v="+Date.now());
     if(tr.ok){
@@ -857,7 +858,16 @@ async function main(){
       diseaseSynonymGroups=tx.disease_synonym_groups||{};
     }
   }catch{/* ok if missing -- nice() falls back to underscore replace */}
+  try{
+    const mr=await fetch("data/market_status_overrides.json?v="+Date.now());
+    if(mr.ok){
+      const mo=await mr.json();
+      marketStatusOverrides.generic_incumbent=mo.generic_incumbent||{};
+      marketStatusOverrides.branded_incumbent_external=mo.branded_incumbent_external||{};
+    }
+  }catch{/* ok if missing -- everything defaults to novel */}
   window._diseaseSynonymGroups=diseaseSynonymGroups;
+  window._marketStatusOverrides=marketStatusOverrides;
   // Friendly label helper: prefer display_names map, fall back to last-segment underscore-replace
   window._nicelabel=function(key){
     if(!key) return '';
@@ -1704,7 +1714,13 @@ async function main(){
         }
       });
       // Mark each leaf area as "pipeline-only" if no entry has salesM>0 and no
-      // entry has a commercial/nda_filed stage.
+      // entry has a commercial/nda_filed stage. Then derive marketStatus per leaf:
+      //   branded_incumbent          -- any covered drug has commercial revenue
+      //   branded_incumbent_external -- override list (branded drug exists, sponsor not in coverage)
+      //   generic_incumbent          -- override list (generic SoC dominates)
+      //   novel                      -- no commercial drug anywhere
+      // branded_incumbent (auto-derived from coverage data) takes precedence over overrides:
+      //   if a covered drug ships, the leaf is contested whether or not external generics exist.
       const isPipelineOnlyLeaf = (entries) => {
         if (!entries || entries.length === 0) return false;
         for (const e of entries) {
@@ -1714,38 +1730,62 @@ async function main(){
         }
         return true;
       };
+      const _ovGen = (window._marketStatusOverrides && window._marketStatusOverrides.generic_incumbent) || {};
+      const _ovExt = (window._marketStatusOverrides && window._marketStatusOverrides.branded_incumbent_external) || {};
       Object.keys(areaData).forEach(p => {
-        areaData[p].pipelineOnly = isPipelineOnlyLeaf(areaData[p].companies);
+        const entries = areaData[p].companies || [];
+        const pipe = isPipelineOnlyLeaf(entries);
+        areaData[p].pipelineOnly = pipe;
+        // Only assign marketStatus for actual leaves (paths with entries)
+        if (entries.length > 0) {
+          if (!pipe) areaData[p].marketStatus = 'branded_incumbent';
+          else if (p in _ovExt) areaData[p].marketStatus = 'branded_incumbent_external';
+          else if (p in _ovGen) areaData[p].marketStatus = 'generic_incumbent';
+          else areaData[p].marketStatus = 'novel';
+        }
       });
-      // For each path, compute (a) leafCount = number of distinct leaf areas (areas
-      // that actually carry companies) beneath it, (b) pipelineLeafCount = subset of
-      // those that are pipeline-only, and (c) maxDepth = depth of the deepest descendant.
+      // For each path, compute leafCount, pipelineLeafCount, novelLeafCount, maxDepth,
+      // PLUS filtered TAM/SOM/sales subtotals that aggregate ONLY over novel-status
+      // leaves under that path (used when the pipeline-only filter is active so the
+      // top stats and child cards reflect the filtered subset, not the parent total).
       const _allPaths = Object.keys(areaData);
       Object.keys(areaData).forEach(p => {
         const pref = p + '.';
         const leafSet = new Set();
         const pipeSet = new Set();
+        const novelSet = new Set();
         let maxD = p.split('.').length;
-        if ((areaData[p].companies || []).length > 0) {
-          leafSet.add(p);
-          if (areaData[p].pipelineOnly) pipeSet.add(p);
-        }
+        let novelTam = 0, novelSom = 0, novelSales = 0;
+        const _accum = (k) => {
+          if ((areaData[k].companies || []).length === 0) return;
+          leafSet.add(k);
+          if (areaData[k].pipelineOnly) pipeSet.add(k);
+          if (areaData[k].marketStatus === 'novel') {
+            novelSet.add(k);
+            novelTam += areaData[k].tam || 0;
+            novelSom += areaData[k].somRaw || areaData[k].som || 0;
+            novelSales += areaData[k].sales || 0;
+          }
+        };
+        _accum(p);
         for (const k of _allPaths) {
           if (!k.startsWith(pref)) continue;
           const d = k.split('.').length;
           if (d > maxD) maxD = d;
-          if ((areaData[k].companies || []).length > 0) {
-            leafSet.add(k);
-            if (areaData[k].pipelineOnly) pipeSet.add(k);
-          }
+          _accum(k);
         }
         areaData[p].leafCount = leafSet.size;
         areaData[p].pipelineLeafCount = pipeSet.size;
+        areaData[p].novelLeafCount = novelSet.size;
+        areaData[p].novelTam = novelTam;
+        areaData[p].novelSom = novelTam > 0 && novelSom > novelTam ? novelTam : novelSom;
+        areaData[p].novelSales = novelSales;
         areaData[p].maxDepth = maxD;
       });
-      // Total end-leaf counts (root level)
+      // Root totals
       const _rootLeafCount = Object.keys(areaData).filter(k => (areaData[k].companies || []).length > 0).length;
       const _rootPipeLeafCount = Object.keys(areaData).filter(k => (areaData[k].companies || []).length > 0 && areaData[k].pipelineOnly).length;
+      const _rootNovelLeafCount = Object.keys(areaData).filter(k => (areaData[k].companies || []).length > 0 && areaData[k].marketStatus === 'novel').length;
       const _rootMaxDepth = Object.keys(areaData).reduce((m,k) => Math.max(m, k.split('.').length), 1);
 
       const fmtB = v => v >= 1000 ? '$'+(v/1000).toFixed(1)+'B' : '$'+Math.round(v)+'M';
@@ -1797,14 +1837,22 @@ async function main(){
         children = [...matchedLeafPaths].map(k => ({ path: k, name: k, ...areaData[k] }));
         // Sort by current sort mode (re-applied below)
       }
-      // Pipeline-only filter: keep branches that contain at least one pipeline-only leaf.
-      // At a leaf node, keep only if it is itself pipeline-only.
+      // Pipeline-only (novel) filter: keep branches that contain at least one
+      // truly-novel leaf (marketStatus === 'novel'), i.e. no covered drug AND no
+      // known external incumbent. At a leaf, keep only if itself novel.
+      // When active, swap each child's TAM/SOM/sales for novel-only subtotals so
+      // the stats reflect the filtered subset, not the parent totals.
       if (mktPipelineOnly) {
         children = children.filter(c => {
           const hasComps = (c.companies || []).length > 0;
-          if (hasComps) return !!c.pipelineOnly;
-          return (c.pipelineLeafCount || 0) > 0;
-        });
+          if (hasComps) return c.marketStatus === 'novel';
+          return (c.novelLeafCount || 0) > 0;
+        }).map(c => ({
+          ...c,
+          tam:   c.novelTam   != null ? c.novelTam   : c.tam,
+          som:   c.novelSom   != null ? c.novelSom   : c.som,
+          sales: c.novelSales != null ? c.novelSales : c.sales,
+        }));
       }
       children.sort((a,b) => {
         if (mktSortMode === 'tam') return b.tam - a.tam;
@@ -1825,8 +1873,8 @@ async function main(){
         h+=`<span class="fchip ${active?'active':''}" onclick="window._mktSort('${k}')" style="padding:2px 8px;font-size:.65rem">${lbl}</span>`;
       });
       h+='</div>';
-      // Pipeline-only filter chip
-      h+=`<span class="fchip ${mktPipelineOnly?'active':''}" onclick="window._mktTogglePipelineOnly()" title="Show only end-leaves with no commercial product (pure pipeline)" style="padding:2px 8px;font-size:.65rem;border-color:${mktPipelineOnly?'#22d3ee':'#ffffff22'};color:${mktPipelineOnly?'#22d3ee':''}">⚗️ Pipeline only</span>`;
+      // Novel-only filter chip (truly uncontested -- no covered drug + no known external incumbent)
+      h+=`<span class="fchip ${mktPipelineOnly?'active':''}" onclick="window._mktTogglePipelineOnly()" title="Show only TRULY NOVEL leaves: no commercial drug in coverage AND no known generic/branded SoC outside coverage. Excludes leaves where covered pipeline competes against external incumbents." style="padding:2px 8px;font-size:.65rem;border-color:${mktPipelineOnly?'#a3e635':'#ffffff22'};color:${mktPipelineOnly?'#a3e635':''}">🌱 Novel only</span>`;
       h+='</div></div>';
 
       // Breadcrumb
@@ -1843,20 +1891,28 @@ async function main(){
       // At root (mktNavPath=[]), currentData is null so we synthesize totals from L1
       // children -- safe because L1 trees don't share leaves so sums don't double-count.
       let statsTam, statsSom, statsSales, statsCount, statsLabel, somCapped = false, somRaw = 0;
-      let statsLeaves = 0, statsMaxDepth = 0, statsPipeLeaves = 0;
+      let statsLeaves = 0, statsMaxDepth = 0, statsPipeLeaves = 0, statsNovelLeaves = 0;
       if (currentData) {
-        statsTam = currentData.tam;
-        statsSom = currentData.som;
-        statsSales = currentData.sales;
+        // When filter is on, swap to novel-only subtotals so stats reflect filtered set
+        if (mktPipelineOnly) {
+          statsTam = currentData.novelTam || 0;
+          statsSom = currentData.novelSom || 0;
+          statsSales = currentData.novelSales || 0;
+        } else {
+          statsTam = currentData.tam;
+          statsSom = currentData.som;
+          statsSales = currentData.sales;
+        }
         statsCount = isLeaf ? currentData.companies.length : children.length;
         statsLabel = isLeaf ? 'Drugs' : 'Sub-markets';
-        somCapped = !!currentData.somCapped;
+        somCapped = !mktPipelineOnly && !!currentData.somCapped;
         somRaw = currentData.somRaw || 0;
         statsLeaves = currentData.leafCount || 0;
         statsPipeLeaves = currentData.pipelineLeafCount || 0;
+        statsNovelLeaves = currentData.novelLeafCount || 0;
         statsMaxDepth = currentData.maxDepth || mktNavPath.length;
       } else {
-        // Root view: aggregate across all L1s
+        // Root view: aggregate across visible (post-filter) children
         statsTam = children.reduce((s,c) => s + (c.tam || 0), 0);
         statsSom = children.reduce((s,c) => s + (c.som || 0), 0);
         statsSales = children.reduce((s,c) => s + (c.sales || 0), 0);
@@ -1864,6 +1920,7 @@ async function main(){
         statsLabel = 'L1 markets';
         statsLeaves = _rootLeafCount;
         statsPipeLeaves = _rootPipeLeafCount;
+        statsNovelLeaves = _rootNovelLeafCount;
         statsMaxDepth = _rootMaxDepth;
       }
       const penOfTam = statsTam > 0 ? (statsSales/statsTam*100).toFixed(1) : 0;
@@ -1878,8 +1935,7 @@ async function main(){
       if (!isLeaf) {
         const _curDepth = mktNavPath.length;
         const _depthRange = statsMaxDepth > _curDepth ? `L${_curDepth+1}–L${statsMaxDepth}` : `L${statsMaxDepth}`;
-        const _pipePct = statsLeaves > 0 ? Math.round(100*statsPipeLeaves/statsLeaves) : 0;
-        h+=`<div title="Distinct disease leaves (deepest tagged areas) reachable from here"><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">End leaves</div><div style="font-size:1rem;font-weight:700;color:#22d3ee;font-family:var(--mono)">${statsLeaves} <span style="color:#a3e635;font-size:.7rem" title="Pipeline-only leaves (no commercial product yet)">(⚗️ ${statsPipeLeaves})</span></div></div>`;
+        h+=`<div title="Distinct disease leaves reachable from here.  🌱 = truly novel (no covered drug + no known external incumbent); ⚗️ = no covered drug (may have external incumbent)"><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">End leaves</div><div style="font-size:1rem;font-weight:700;color:#22d3ee;font-family:var(--mono)">${statsLeaves} <span style="color:#a3e635;font-size:.7rem">(🌱 ${statsNovelLeaves})</span> <span style="color:#94a3b8;font-size:.65rem">(⚗️ ${statsPipeLeaves})</span></div></div>`;
         h+=`<div title="Depth range of descendants (L1=root, L4=deepest sub-segment)"><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">Depth</div><div style="font-size:1rem;font-weight:700;color:#94a3b8;font-family:var(--mono)">${_depthRange}</div></div>`;
       }
       h+='</div>';
@@ -1928,9 +1984,19 @@ async function main(){
           // When searching, show full path (e.g. "oncology › hematology › cml") for clarity
           const cardLabel = searchActive ? c.path.split('.').map(seg => nice(seg)).join(' › ') : nice(c.name);
           h+=`<div style="font-size:${tierTitle}rem;font-weight:700;margin-bottom:4px;color:#e2e4ea">${cardLabel}</div>`;
+          // Status badge -- only meaningful at leaf cards (no sub-areas)
+          const statusBadge = (() => {
+            if (subAreas > 0) return '';  // branch node, no single status
+            const ms = c.marketStatus;
+            if (ms === 'novel') return ' <span style="color:#a3e635;font-weight:700" title="Truly novel: no covered drug + no known external incumbent">🌱 Novel</span>';
+            if (ms === 'generic_incumbent') return ' <span style="color:#94a3b8" title="Pipeline-only in coverage; generic SoC dominates">💊 Generic SoC</span>';
+            if (ms === 'branded_incumbent_external') return ' <span style="color:#fbbf24" title="Pipeline-only in coverage; branded incumbent exists outside coverage">🏷️ Ext. branded</span>';
+            if (ms === 'branded_incumbent') return ' <span style="color:#22c55e" title="Has commercial drug in coverage">✅ Commercial</span>';
+            return '';
+          })();
           const subTxt = subAreas > 0
             ? `${subAreas} sub · ${cardLeaves} leaves${cardDepthTxt?' '+cardDepthTxt:''} · ${coCount} drugs`
-            : `${coCount} drugs`;
+            : `${coCount} drugs${statusBadge}`;
           h+=`<div style="font-size:${tierSub}rem;color:var(--text2);font-family:var(--mono);margin-bottom:10px">${subTxt}</div>`;
           h+='</div>';
           h+=`<div>`;

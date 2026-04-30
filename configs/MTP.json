@@ -1,0 +1,579 @@
+{
+  "company": {
+    "ticker": "MTP",
+    "name": "Mitsubishi Tanabe Pharma Corp. (private; wholly-owned by Mitsubishi Chemical Group, ex-TSE 4508 delisted Mar 2020)",
+    "currentPrice": 1,
+    "sharesOut": 1,
+    "cash": 0,
+    "currency": "JPY",
+    "phase": "commercial",
+    "subtitle": "PRIVATE REFERENCE -- Japanese pharma owned 100% by Mitsubishi Chemical Group (4188.T) since Mar 2020 take-private. Commercial: Radicava (edaravone ALS US/JP/EU) + Canaglu (canagliflozin T2D Japan) + Tenelia (teneligliptin DPP4 JP) + Imusera (fingolimod MS biosimilar JP); flagship pipeline MT-3921 anti-RGMa mAb spinal cord injury Ph3",
+    "yahooTicker": "",
+    "private": true,
+    "privateNote": "Delisted from TSE Mar 2020 via Mitsubishi Chemical tender offer at JPY 2,070/share. Pharma now operates as MCG segment. No tradeable equity. Modeled here for taxonomy + drug-portfolio reference only."
+  },
+  "assets": [
+    {
+      "id": "radicava",
+      "name": "Radicava (edaravone) - small-molecule free-radical scavenger / antioxidant (IV + oral suspension)",
+      "stage": "Commercial (ALS Japan 2015 IV, US 2017 IV + 2022 oral, EU 2024)",
+      "modality": "small_molecule.antioxidant.free_radical_scavenger",
+      "targets": [],
+      "indications": [
+        {
+          "id": "als",
+          "name": "Amyotrophic lateral sclerosis (ALS) - reduce functional decline",
+          "area": "cns.neurodegeneration.als",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 70,
+                "priceK": 40
+              },
+              "eu": {
+                "patientsK": 40,
+                "wtpPct": 45,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 220,
+                "wtpPct": 20,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 65,
+                "priceK": 170
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 40,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 18,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Radicava ~12% of US ALS prevalent treated; competitive vs Riluzole (generic) + Relyvrio (Amylyx -- failed Ph3 confirm 2024 + withdrew US 2024)",
+              "us.priceK": "Radicava IV WAC ~$170K/yr (~$15K/14-day cycle); oral suspension RoP launched 2022"
+            },
+            "penPct": 25,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 420,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "canaglu",
+      "name": "Canaglu (canagliflozin) - SGLT2 inhibitor (Janssen-licensed Japan rights)",
+      "stage": "Commercial (T2D Japan; CV/renal benefit class effect)",
+      "modality": "small_molecule.transporter.sglt2_inhibitor",
+      "targets": [
+        "SLC5A2"
+      ],
+      "indications": [
+        {
+          "id": "t2d_japan",
+          "name": "Type 2 diabetes (Japan; CV/renal indications)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 35,
+                "priceK": 1.2
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Canaglu Japan-only (MTP via Janssen license); J&J Invokana US/EU",
+              "row.priceK": "Japan SGLT2 generic-pressured ~¥150K/yr (~$1K)"
+            },
+            "penPct": 10,
+            "cagrPct": -3,
+            "peakYear": 2025,
+            "salesM": 200,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "tenelia",
+      "name": "Tenelia (teneligliptin) - DPP-4 inhibitor (MTP discovery)",
+      "stage": "Commercial (T2D Japan + Asia; LOE-aged)",
+      "modality": "small_molecule.enzyme.dpp4_inhibitor",
+      "targets": [
+        "DPP4"
+      ],
+      "indications": [
+        {
+          "id": "t2d_japan_dpp4",
+          "name": "Type 2 diabetes (Japan/Asia; DPP-4 class)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0.8,
+                "wtpPct": 30,
+                "priceK": 0.5
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Tenelia Japan + Asia; competitive vs Januvia/Trajenta/Onglyza class generics",
+              "row.priceK": "Japan DPP-4 generic ~¥80K/yr"
+            },
+            "penPct": 10,
+            "cagrPct": -8,
+            "peakYear": 2025,
+            "salesM": 90,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "imusera",
+      "name": "Imusera (fingolimod) - S1P receptor modulator (MTP biosimilar Japan; Novartis Gilenya original)",
+      "stage": "Commercial (Japan multiple sclerosis; biosimilar/generic-aged)",
+      "modality": "small_molecule.gpcr.s1p_modulator",
+      "targets": [
+        "S1PR1",
+        "S1PR5"
+      ],
+      "indications": [
+        {
+          "id": "ms_japan",
+          "name": "Relapsing multiple sclerosis (Japan)",
+          "area": "immunology.demyelinating.multiple_sclerosis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 900,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 40,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 1500,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 1.7,
+                "wtpPct": 30,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Imusera Japan (MTP); ~5% Japan MS share post Gilenya LOE",
+              "row.priceK": "Japan S1P modulator ~¥1.5M/yr (~$10K)"
+            },
+            "penPct": 25,
+            "cagrPct": -5,
+            "peakYear": 2025,
+            "salesM": 60,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "mt_3921",
+      "name": "MT-3921 - anti-RGMa (Repulsive Guidance Molecule a) humanized mAb (axonal regeneration)",
+      "stage": "Phase 3 (acute spinal cord injury; readout 2026-2027); Ph2 stroke recovery",
+      "modality": "antibody.monoclonal.anti_rgma",
+      "targets": [
+        "RGMA"
+      ],
+      "indications": [
+        {
+          "id": "sci",
+          "name": "Acute spinal cord injury (axonal regeneration / functional recovery; first-in-class)",
+          "area": "cns.neurodegeneration.post_stroke_recovery",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 800,
+                "wtpPct": 90,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1100,
+                "wtpPct": 80,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 12000,
+                "wtpPct": 35,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 60,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 40,
+                "priceK": 150
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 10,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "MT-3921 first-in-class RGMa-mediated axonal regeneration; addressable acute SCI ~17K US incident/yr; ~12% reach if approved",
+              "us.priceK": "Acute SCI orphan one-time IV course $200-300K (Spinraza/Casgevy precedents adjusted for acute)",
+              "us.note": "Tagged under post_stroke_recovery as closest matching CNS rehab/recovery area; SCI is distinct disease but same pharmacological recovery class"
+            },
+            "penPct": 40,
+            "cagrPct": 8,
+            "peakYear": 2032
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 15,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 3,
+        "commercialMult": 1.5,
+        "commercialRevM": 100000,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "radicava": {
+          "als": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "canaglu": {
+          "t2d_japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "tenelia": {
+          "t2d_japan_dpp4": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "imusera": {
+          "ms_japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "mt_3921": {
+          "sci": {
+            "pos": 12,
+            "apr": 30,
+            "pen": 0.2
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 4,
+        "commercialMult": 1.8,
+        "commercialRevM": 130000,
+        "milestones": 50,
+        "dil": 0
+      },
+      "assumptions": {
+        "radicava": {
+          "als": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "canaglu": {
+          "t2d_japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "tenelia": {
+          "t2d_japan_dpp4": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "imusera": {
+          "ms_japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "mt_3921": {
+          "sci": {
+            "pos": 28,
+            "apr": 50,
+            "pen": 0.4
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 35,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 5,
+        "commercialMult": 2.2,
+        "commercialRevM": 160000,
+        "milestones": 150,
+        "dil": 0
+      },
+      "assumptions": {
+        "radicava": {
+          "als": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "canaglu": {
+          "t2d_japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "tenelia": {
+          "t2d_japan_dpp4": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "imusera": {
+          "ms_japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "mt_3921": {
+          "sci": {
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.6
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 7,
+        "commercialMult": 3,
+        "commercialRevM": 200000,
+        "milestones": 300,
+        "dil": 0
+      },
+      "assumptions": {
+        "radicava": {
+          "als": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "canaglu": {
+          "t2d_japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "tenelia": {
+          "t2d_japan_dpp4": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "imusera": {
+          "ms_japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "mt_3921": {
+          "sci": {
+            "pos": 65,
+            "apr": 82,
+            "pen": 0.85
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 11,
+        "commercialMult": 4.5,
+        "commercialRevM": 270000,
+        "milestones": 600,
+        "dil": 0
+      },
+      "assumptions": {
+        "radicava": {
+          "als": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "canaglu": {
+          "t2d_japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "tenelia": {
+          "t2d_japan_dpp4": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "imusera": {
+          "ms_japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "mt_3921": {
+          "sci": {
+            "pos": 85,
+            "apr": 92,
+            "pen": 1.2
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "mt_3921",
+      "indication": "sci",
+      "title": "MT-3921 anti-RGMa Ph3 acute spinal cord injury topline (first-in-class regeneration)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 15,
+      "fail_apr": 30,
+      "success_pos": 85,
+      "success_apr": 92,
+      "_source": "https://www.mt-pharma.co.jp/e/news/",
+      "_confidence": "medium"
+    }
+  ]
+}

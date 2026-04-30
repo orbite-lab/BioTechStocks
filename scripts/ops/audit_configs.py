@@ -14,7 +14,8 @@ def audit_one(tk, cfg):
     issues = []
     co = cfg["company"]
     price = co["currentPrice"]
-    if price <= 0:
+    is_private = bool(co.get("private", False))
+    if not is_private and price <= 0:
         issues.append(("CRIT", "price <= 0"))
         return issues
 
@@ -32,11 +33,11 @@ def audit_one(tk, cfg):
             issues.append(("WARN", f"scenario TPs non-monotonic: {SCEN_ORDER[i]}={a:.1f} > {SCEN_ORDER[i+1]}={b:.1f}"))
 
     # 3. mega_bear > current price (bearish case that's still upside)
-    if tps[0] is not None and tps[0] > price * 1.05:
+    if not is_private and tps[0] is not None and tps[0] > price * 1.05:
         issues.append(("FLAG", f"mega_bear TP ${tps[0]:.1f} > price ${price} (+{(tps[0]-price)/price*100:.0f}%) -- bear isn't bearish"))
 
     # 4. All scenarios > price (never a downside)
-    if all(t is not None and t > price * 1.05 for t in tps):
+    if not is_private and all(t is not None and t > price * 1.05 for t in tps):
         issues.append(("FLAG", f"every scenario is +5%+ upside -- probably miscalibrated"))
 
     # 5. psy_bull < bear (pure inversion)
@@ -44,13 +45,14 @@ def audit_one(tk, cfg):
         issues.append(("CRIT", f"psychedelic_bull TP ${tps[-1]:.1f} < bear TP ${tps[1]:.1f}"))
 
     # 6. Wild weighted-TP upside
-    norm_wts = [w/s for w in wts] if s > 0 else [0]*5
-    wtp = sum((t or 0) * w for t, w in zip(tps, norm_wts))
-    up = (wtp - price) / price * 100
-    if up > 300:
-        issues.append(("FLAG", f"weighted TP upside +{up:.0f}% -- extreme, likely over-optimistic"))
-    elif up < -50:
-        issues.append(("FLAG", f"weighted TP downside {up:.0f}% -- extreme, likely over-pessimistic"))
+    if not is_private:
+        norm_wts = [w/s for w in wts] if s > 0 else [0]*5
+        wtp = sum((t or 0) * w for t, w in zip(tps, norm_wts))
+        up = (wtp - price) / price * 100
+        if up > 300:
+            issues.append(("FLAG", f"weighted TP upside +{up:.0f}% -- extreme, likely over-optimistic"))
+        elif up < -50:
+            issues.append(("FLAG", f"weighted TP downside {up:.0f}% -- extreme, likely over-pessimistic"))
 
     # 7. Per indication: SOM > TAM, SOM missing, missing regions
     for a in cfg["assets"]:

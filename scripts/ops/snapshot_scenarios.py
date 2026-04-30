@@ -36,6 +36,9 @@ def compute_all():
         if not path.exists():
             continue
         cfg = json.loads(path.read_text(encoding="utf-8"))
+        # Skip private (non-tradeable reference) configs -- TPs are meaningless
+        if cfg.get("company", {}).get("private"):
+            continue
         tps = compute_all_scenarios(cfg)
         # Round to 2 decimals to suppress floating-point noise
         out[tk] = {k: (round(v, 2) if v is not None else None) for k, v in tps.items()}

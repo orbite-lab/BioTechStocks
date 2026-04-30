@@ -207,6 +207,15 @@ module with curated patientsK / wtpPct / priceK + sources. Then run
   `sharesOut` in millions.
 - **Dates**: ISO format in `dateSort` (for sorting); human-readable in `date`
   ("Q1 2026", "H2 2026").
+- **Private companies** (delisted / wholly-owned subsidiaries / family
+  conglomerates like Servier, Boehringer, Mitsubishi Tanabe): set
+  `company.private: true` and use placeholder `currentPrice: 1`,
+  `sharesOut: 1`, `yahooTicker: ""`. Add a `privateNote` field
+  describing why no equity is tradeable. Audit skips price-relative
+  flags; snapshot excludes them; `fetch_prices.py` skips the feed. The
+  config still contributes to taxonomy / Market Explorer / Technology
+  Explorer / drug-target indexes -- the point is to track drugs and
+  competitive landscape without forcing meaningless TPs.
 - **Encoding**: UTF-8 everywhere. Avoid em-dashes (--) in Python source on
   Windows — use `-- ` or `—` via `u"\u2014"`.
 

@@ -118,6 +118,10 @@ def main():
             continue
 
         co = cfg.get("company", {})
+        # Skip private (non-tradeable reference) configs -- no price feed
+        if co.get("private"):
+            print(f"  {ct:8} PRIV  — private reference, skipping price fetch")
+            continue
         yt = co.get("yahooTicker") or ct
         result, err = fetch_one(ct, yt)
 

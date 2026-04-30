@@ -1,0 +1,490 @@
+{
+  "company": {
+    "ticker": "MENARINI",
+    "name": "A. Menarini Industrie Farmaceutiche Riunite Srl (private; Aleotti family)",
+    "currentPrice": 1,
+    "sharesOut": 1,
+    "cash": 0,
+    "currency": "EUR",
+    "phase": "commercial",
+    "subtitle": "PRIVATE REFERENCE -- Italian family-owned pharma (Aleotti family; Florence HQ since 1886). FY24 total revenue ~EUR 4.4B; large EU/MEA/LATAM/APAC commercial footprint (140+ countries). Innovative oncology via Stemline Therapeutics acquisition May 2020 (~$677M): Orserdu (elacestrant first oral SERD ER+/HER2- mBC ESR1m FDA Jan 2023; flagship growth) + Elzonris (tagraxofusp first-in-class CD123-targeted cytotoxin BPDCN FDA 2018). Legacy commercial: cardiometabolic (bisoprolol, ramipril generics), GI (Tachipirina paracetamol Italy OTC, Dexilant PPI), respiratory (Rinazina decongestant)",
+    "yahooTicker": "",
+    "private": true,
+    "privateNote": "Family-owned by Aleotti family since 1986 (Lucia Aleotti + Alberto Giovanni Aleotti). Largest Italian pharma. Founded 1886 in Naples by Archimede Menarini; relocated to Florence 1915. Acquired Stemline Therapeutics May 2020 (~$677M) for innovative oncology pivot. No equity tradeable. Modeled here for taxonomy + drug-portfolio reference only."
+  },
+  "assets": [
+    {
+      "id": "orserdu",
+      "name": "Orserdu (elacestrant) - oral selective estrogen receptor degrader (SERD) (ex-Radius Health 2020 deal; via Stemline acq)",
+      "stage": "Commercial (FDA Jan 2023 ER+/HER2- mBC with ESR1m post-CDK4/6; EMA 2023; flagship growth driver)",
+      "modality": "small_molecule.nuclear_receptor.serd",
+      "targets": [
+        "ESR1"
+      ],
+      "indications": [
+        {
+          "id": "hr_breast_esr1m",
+          "name": "ER+/HER2- metastatic breast cancer with ESR1 mutation post-CDK4/6 (EMERALD Ph3)",
+          "area": "oncology.breast.hr_her2_neg",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 250,
+                "wtpPct": 65,
+                "priceK": 70
+              },
+              "eu": {
+                "patientsK": 350,
+                "wtpPct": 45,
+                "priceK": 40
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 12,
+                "priceK": 12
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 60,
+                "priceK": 240
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 42,
+                "priceK": 145
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 10,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Orserdu first oral SERD; addressable = ESR1m subset (~30-40% of ER+/HER2- mBC post-CDK4/6 progression); ~6% of total HR+/HER2- diagnosed",
+              "us.priceK": "Orserdu WAC ~$20K/mo (~$240K/yr)",
+              "us.note": "Competitive vs Camizestrant (AZN oral SERD Ph3 SERENA-6 positive 2025) + Vepdegestrant (PFE/ARV oral PROTAC Ph3) + injectable Faslodex/fulvestrant (off-patent)"
+            },
+            "penPct": 58,
+            "cagrPct": 35,
+            "peakYear": 2032,
+            "salesM": 250,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "elzonris",
+      "name": "Elzonris (tagraxofusp-erzs) - first-in-class CD123-directed cytotoxin (recombinant IL-3 fusion + truncated diphtheria toxin)",
+      "stage": "Commercial (FDA Dec 2018 BPDCN ages 2+ adult + pediatric; EMA 2021); CMML + AML pipeline expansion",
+      "modality": "recombinant_protein.fusion_toxin.cd123_diphtheria",
+      "targets": [
+        "IL3RA"
+      ],
+      "indications": [
+        {
+          "id": "bpdcn",
+          "name": "Blastic plasmacytoid dendritic cell neoplasm (BPDCN; rare CD123+ hematologic cancer)",
+          "area": "oncology.hematology.bpdcn",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 70,
+                "priceK": 280
+              },
+              "eu": {
+                "patientsK": 1.5,
+                "wtpPct": 50,
+                "priceK": 170
+              },
+              "row": {
+                "patientsK": 5,
+                "wtpPct": 14,
+                "priceK": 60
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 50,
+                "wtpPct": 70,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 30,
+                "wtpPct": 45,
+                "priceK": 220
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 12,
+                "priceK": 70
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Elzonris sole approved BPDCN therapy; ~50% of US BPDCN diagnosed treated (rare ~1K US incident/yr)",
+              "us.priceK": "Elzonris WAC ~$350K/induction course"
+            },
+            "penPct": 65,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 110,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "men1611",
+      "name": "MEN1611 (PI3K-alpha-selective mutant inhibitor) - oral selective PI3Kalpha inhibitor sparing wild-type",
+      "stage": "Phase 2 (HR+/HER2- breast cancer with PIK3CA mutation; competitive vs Itovebi/Truqap class)",
+      "modality": "small_molecule.kinase.pi3k_alpha_inhibitor",
+      "targets": [
+        "PIK3CA"
+      ],
+      "indications": [
+        {
+          "id": "hr_breast_pik3ca",
+          "name": "HR+/HER2- breast cancer PIK3CA-mutant (Ph2)",
+          "area": "oncology.breast.hr_her2_neg",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 250,
+                "wtpPct": 65,
+                "priceK": 70
+              },
+              "eu": {
+                "patientsK": 350,
+                "wtpPct": 45,
+                "priceK": 40
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 12,
+                "priceK": 12
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 55,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 0.7,
+                "wtpPct": 40,
+                "priceK": 120
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "MEN1611 PI3Kalpha-mutant niche; competitive vs Itovebi (RHHBY inavolisib FDA 2024) + Truqap (AZN capivasertib AKT) + Piqray (alpelisib NVS)",
+              "us.priceK": "PI3Kalpha class pricing ~$200K/yr"
+            },
+            "penPct": 58,
+            "cagrPct": 12,
+            "peakYear": 2034
+          }
+        }
+      ]
+    },
+    {
+      "id": "menarini_legacy",
+      "name": "Menarini legacy commercial portfolio - cardiometabolic + GI + respiratory + OTC (EU/MEA/LATAM/APAC; ~140 countries)",
+      "stage": "Commercial (mature franchise; bisoprolol generics, ACE inhibitors, PPIs Dexilant, Tachipirina paracetamol Italy OTC, Rinazina, etc.)",
+      "modality": "small_molecule.mixed.legacy_portfolio",
+      "targets": [],
+      "indications": [
+        {
+          "id": "legacy_htn",
+          "name": "Cardiometabolic legacy generics (bisoprolol beta-blocker + ramipril ACE-i + simvastatin etc; ex-US generics)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 29.9,
+                "wtpPct": 18,
+                "priceK": 0.3
+              },
+              "row": {
+                "reachPct": 15.9,
+                "wtpPct": 8,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "eu.reachPct": "Menarini cardiometabolic generics ~major Italy/EU/MEA presence (ramipril/bisoprolol/simvastatin); ~EUR 1.5B aggregate franchise",
+              "eu.priceK": "Generic cardiometabolic ~EUR 30/mo blended",
+              "us.note": "Not US-marketed"
+            },
+            "penPct": 8,
+            "cagrPct": -2,
+            "peakYear": 2027,
+            "salesM": 1500,
+            "salesYear": 2025
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 4,
+        "commercialMult": 2.5,
+        "commercialRevM": 3500,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "orserdu": {
+          "hr_breast_esr1m": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "elzonris": {
+          "bpdcn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "men1611": {
+          "hr_breast_pik3ca": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.3
+          }
+        },
+        "menarini_legacy": {
+          "legacy_htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 5,
+        "commercialMult": 3,
+        "commercialRevM": 4000,
+        "milestones": 100,
+        "dil": 0
+      },
+      "assumptions": {
+        "orserdu": {
+          "hr_breast_esr1m": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "elzonris": {
+          "bpdcn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "men1611": {
+          "hr_breast_pik3ca": {
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.5
+          }
+        },
+        "menarini_legacy": {
+          "legacy_htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 35,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 7,
+        "commercialMult": 4,
+        "commercialRevM": 4500,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "orserdu": {
+          "hr_breast_esr1m": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "elzonris": {
+          "bpdcn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "men1611": {
+          "hr_breast_pik3ca": {
+            "pos": 65,
+            "apr": 82,
+            "pen": 0.7
+          }
+        },
+        "menarini_legacy": {
+          "legacy_htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 10,
+        "commercialMult": 5.5,
+        "commercialRevM": 5200,
+        "milestones": 400,
+        "dil": 0
+      },
+      "assumptions": {
+        "orserdu": {
+          "hr_breast_esr1m": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "elzonris": {
+          "bpdcn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "men1611": {
+          "hr_breast_pik3ca": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 0.9
+          }
+        },
+        "menarini_legacy": {
+          "legacy_htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 14,
+        "commercialMult": 7.5,
+        "commercialRevM": 6500,
+        "milestones": 800,
+        "dil": 0
+      },
+      "assumptions": {
+        "orserdu": {
+          "hr_breast_esr1m": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "elzonris": {
+          "bpdcn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "men1611": {
+          "hr_breast_pik3ca": {
+            "pos": 92,
+            "apr": 96,
+            "pen": 1.2
+          }
+        },
+        "menarini_legacy": {
+          "legacy_htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "orserdu",
+      "indication": "hr_breast_esr1m",
+      "title": "Orserdu ELEVATE Ph3 readout (CDK4/6 + Orserdu 1L combo expansion) + global launch ramp update",
+      "type": "phase3_data",
+      "binary": false,
+      "_source": "https://www.menarini.com/en-us/group/news",
+      "_confidence": "high"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-06-30",
+      "asset": "men1611",
+      "indication": "hr_breast_pik3ca",
+      "title": "MEN1611 PI3K-alpha-mutant breast Ph2 readout (post-Itovebi competitive landscape)",
+      "type": "phase2_data",
+      "binary": false,
+      "_source": "https://www.menarini.com/en-us/group/news",
+      "_confidence": "medium"
+    }
+  ]
+}

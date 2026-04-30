@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-30T07:13:14Z",
-    "target_count": 332,
-    "total_assets": 606,
-    "assets_with_targets": 562,
-    "multi_modality_count": 39,
-    "multi_disease_count": 148
+    "generated": "2026-04-30T07:19:56Z",
+    "target_count": 335,
+    "total_assets": 619,
+    "assets_with_targets": 574,
+    "multi_modality_count": 40,
+    "multi_disease_count": 151
   },
   "targets": {
     "ABL1": {
@@ -1129,6 +1129,7 @@
       "companies": [
         "4523",
         "ALNY",
+        "BIIB",
         "RHHBY"
       ],
       "modalities": [
@@ -1169,6 +1170,15 @@
           ]
         },
         {
+          "ticker": "BIIB",
+          "asset": "leqembi",
+          "name": "Leqembi (lecanemab) — anti-amyloid mAb (early AD; w/ Eisai 50/50)",
+          "modality": "antibody.monoclonal.anti_amyloid",
+          "areas": [
+            "cns.neurodegeneration.alzheimer"
+          ]
+        },
+        {
           "ticker": "RHHBY",
           "asset": "trontinemab",
           "name": "Trontinemab — anti-amyloid brain-shuttle (Brainshuttle)",
@@ -1178,7 +1188,7 @@
           ]
         }
       ],
-      "assetCount": 4,
+      "assetCount": 5,
       "modalityCount": 3,
       "modalityClassCount": 2,
       "areaCount": 2,
@@ -1187,9 +1197,9 @@
         "nucleic_acid"
       ],
       "totalTAM": 11195.0,
-      "totalSOM": 17600.3,
-      "totalSales": 510.0,
-      "cagrPct": 61.5,
+      "totalSOM": 18746.5,
+      "totalSales": 910.0,
+      "cagrPct": 61.4,
       "peakYear": 2032
     },
     "AR": {
@@ -2701,6 +2711,7 @@
     "CD38": {
       "companies": [
         "4502",
+        "BIIB",
         "JNJ",
         "SNY"
       ],
@@ -2708,7 +2719,9 @@
         "antibody.monoclonal.anti_cd38"
       ],
       "areas": [
+        "immunology.autoimmune.iga_nephropathy",
         "immunology.neuromuscular_autoimmune.itp",
+        "immunology.transplant.solid_organ",
         "oncology.hematology.myeloma.1l",
         "oncology.hematology.myeloma.2l_3l",
         "oncology.hematology.myeloma.4l_plus"
@@ -2721,6 +2734,16 @@
           "modality": "antibody.monoclonal.anti_cd38",
           "areas": [
             "immunology.neuromuscular_autoimmune.itp"
+          ]
+        },
+        {
+          "ticker": "BIIB",
+          "asset": "felzartamab",
+          "name": "Felzartamab — anti-CD38 mAb (IgAN + AMR transplant; ex-HiBio acq 2024)",
+          "modality": "antibody.monoclonal.anti_cd38",
+          "areas": [
+            "immunology.autoimmune.iga_nephropathy",
+            "immunology.transplant.solid_organ"
           ]
         },
         {
@@ -2744,17 +2767,17 @@
           ]
         }
       ],
-      "assetCount": 3,
+      "assetCount": 4,
       "modalityCount": 1,
       "modalityClassCount": 1,
-      "areaCount": 4,
+      "areaCount": 6,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 41162.6,
-      "totalSOM": 20963.2,
+      "totalTAM": 53378.6,
+      "totalSOM": 22264.1,
       "totalSales": 14950.0,
-      "cagrPct": 7.9,
+      "cagrPct": 11.5,
       "peakYear": 2029
     },
     "CD3E": {
@@ -3608,6 +3631,42 @@
       "totalSales": 421.0,
       "cagrPct": 37.3,
       "peakYear": 2032
+    },
+    "CLEC4C": {
+      "companies": [
+        "BIIB"
+      ],
+      "modalities": [
+        "antibody.monoclonal.anti_bdca2"
+      ],
+      "areas": [
+        "dermatology.inflammatory_derm.csu",
+        "immunology.autoimmune.sle"
+      ],
+      "assets": [
+        {
+          "ticker": "BIIB",
+          "asset": "litifilimab",
+          "name": "Litifilimab (BIIB059) — anti-BDCA2 mAb (SLE + cutaneous lupus)",
+          "modality": "antibody.monoclonal.anti_bdca2",
+          "areas": [
+            "dermatology.inflammatory_derm.csu",
+            "immunology.autoimmune.sle"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 36251.0,
+      "totalSOM": 600.3,
+      "totalSales": 0.0,
+      "cagrPct": 58.2,
+      "peakYear": 2031
     },
     "COL7A1": {
       "companies": [
@@ -6321,13 +6380,16 @@
     },
     "GABRA1": {
       "companies": [
-        "AXSM"
+        "AXSM",
+        "BIIB"
       ],
       "modalities": [
+        "small_molecule.gpcr.gaba_a_modulator",
         "small_molecule.ion_channel.gaba_modulator"
       ],
       "areas": [
-        "cns.psychiatry.anxiety"
+        "cns.psychiatry.anxiety",
+        "cns.psychiatry.depression"
       ],
       "assets": [
         {
@@ -6338,20 +6400,29 @@
           "areas": [
             "cns.psychiatry.anxiety"
           ]
+        },
+        {
+          "ticker": "BIIB",
+          "asset": "zurzuvae",
+          "name": "Zurzuvae (zuranolone) — GABA-A neurosteroid (postpartum depression; w/ Sage)",
+          "modality": "small_molecule.gpcr.gaba_a_modulator",
+          "areas": [
+            "cns.psychiatry.depression"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 20680.0,
-      "totalSOM": 333.4,
-      "totalSales": 50.0,
-      "cagrPct": 0.0,
-      "peakYear": 2033
+      "totalTAM": 56740.0,
+      "totalSOM": 793.4,
+      "totalSales": 250.0,
+      "cagrPct": 11.6,
+      "peakYear": 2031
     },
     "GCGR": {
       "companies": [
@@ -7610,6 +7681,7 @@
     },
     "IFNB1": {
       "companies": [
+        "BIIB",
         "MRK_DE"
       ],
       "modalities": [
@@ -7620,6 +7692,15 @@
       ],
       "assets": [
         {
+          "ticker": "BIIB",
+          "asset": "interferon_ms",
+          "name": "Avonex (IFN-β1a) + Plegridy (PEG-IFN-β1a) — MS injectables (declining)",
+          "modality": "recombinant_protein.cytokine.ifn_beta",
+          "areas": [
+            "immunology.demyelinating.multiple_sclerosis"
+          ]
+        },
+        {
           "ticker": "MRK_DE",
           "asset": "rebif",
           "name": "Rebif (interferon-β1a) — MS injectable (declining)",
@@ -7629,7 +7710,7 @@
           ]
         }
       ],
-      "assetCount": 1,
+      "assetCount": 2,
       "modalityCount": 1,
       "modalityClassCount": 1,
       "areaCount": 1,
@@ -7637,9 +7718,9 @@
         "recombinant_protein"
       ],
       "totalTAM": 23400.0,
-      "totalSOM": 590.6,
-      "totalSales": 392.0,
-      "cagrPct": -25.0,
+      "totalSOM": 2147.6,
+      "totalSales": 1392.0,
+      "cagrPct": -17.8,
       "peakYear": 2025
     },
     "IGA1_GAL_DEF": {
@@ -8805,12 +8886,15 @@
     },
     "ITGA4": {
       "companies": [
-        "4502"
+        "4502",
+        "BIIB"
       ],
       "modalities": [
+        "antibody.cell_adhesion.alpha4_integrin",
         "antibody.cell_adhesion.alpha4beta7"
       ],
       "areas": [
+        "immunology.demyelinating.multiple_sclerosis",
         "immunology.inflammatory_gi.crohns",
         "immunology.inflammatory_gi.ulcerative_colitis"
       ],
@@ -8824,20 +8908,29 @@
             "immunology.inflammatory_gi.crohns",
             "immunology.inflammatory_gi.ulcerative_colitis"
           ]
+        },
+        {
+          "ticker": "BIIB",
+          "asset": "tysabri",
+          "name": "Tysabri (natalizumab) — anti-α4 integrin mAb (MS) — biosim threat",
+          "modality": "antibody.cell_adhesion.alpha4_integrin",
+          "areas": [
+            "immunology.demyelinating.multiple_sclerosis"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 37475.0,
-      "totalSOM": 9036.0,
-      "totalSales": 6300.0,
-      "cagrPct": 6.0,
-      "peakYear": 2030
+      "totalTAM": 60875.0,
+      "totalSOM": 13763.5,
+      "totalSales": 8000.0,
+      "cagrPct": 1.2,
+      "peakYear": 2028
     },
     "ITGB6": {
       "companies": [
@@ -9205,6 +9298,40 @@
       "totalSales": 155.0,
       "cagrPct": 0.0,
       "peakYear": 2033
+    },
+    "KCNA1": {
+      "companies": [
+        "BIIB"
+      ],
+      "modalities": [
+        "small_molecule.ion_channel.potassium_blocker"
+      ],
+      "areas": [
+        "immunology.demyelinating.multiple_sclerosis"
+      ],
+      "assets": [
+        {
+          "ticker": "BIIB",
+          "asset": "fampyra",
+          "name": "Fampyra (dalfampridine, 4-aminopyridine ER) — MS walking impairment",
+          "modality": "small_molecule.ion_channel.potassium_blocker",
+          "areas": [
+            "immunology.demyelinating.multiple_sclerosis"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 23400.0,
+      "totalSOM": 144.8,
+      "totalSales": 100.0,
+      "cagrPct": -8.0,
+      "peakYear": 2025
     },
     "KCNJ11": {
       "companies": [
@@ -10011,9 +10138,11 @@
     },
     "MAPT": {
       "companies": [
-        "ARWR"
+        "ARWR",
+        "BIIB"
       ],
       "modalities": [
+        "nucleic_acid.aso.tau_targeting",
         "nucleic_acid.trirna.arrow_trirna"
       ],
       "areas": [
@@ -10028,20 +10157,29 @@
           "areas": [
             "cns.neurodegeneration.alzheimer"
           ]
+        },
+        {
+          "ticker": "BIIB",
+          "asset": "biib080_tau",
+          "name": "BIIB080 — anti-tau ASO (Alzheimer's disease; w/ Ionis)",
+          "modality": "nucleic_acid.aso.tau_targeting",
+          "areas": [
+            "cns.neurodegeneration.alzheimer"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "nucleic_acid"
       ],
       "totalTAM": 10980.0,
-      "totalSOM": 1074.4,
+      "totalSOM": 4918.0,
       "totalSales": 0.0,
-      "cagrPct": 0.0,
-      "peakYear": 2036
+      "cagrPct": 62.5,
+      "peakYear": 2033
     },
     "MC4R": {
       "companies": [
@@ -10584,37 +10722,48 @@
     },
     "NFE2L2": {
       "companies": [
-        "VRTX"
+        "BIIB"
       ],
       "modalities": [
+        "small_molecule.fumarate.dmf_oral",
         "small_molecule.nuclear_receptor.nrf2_activator"
       ],
       "areas": [
-        "cns.neurodegeneration.friedreich"
+        "cns.neurodegeneration.friedreich",
+        "immunology.demyelinating.multiple_sclerosis"
       ],
       "assets": [
         {
-          "ticker": "VRTX",
+          "ticker": "BIIB",
+          "asset": "fumarate_franchise",
+          "name": "Tecfidera (DMF) + Vumerity (diroximel fumarate, DMF prodrug) — oral MS",
+          "modality": "small_molecule.fumarate.dmf_oral",
+          "areas": [
+            "immunology.demyelinating.multiple_sclerosis"
+          ]
+        },
+        {
+          "ticker": "BIIB",
           "asset": "skyclarys",
-          "name": "Skyclarys (omaveloxolone) — Nrf2 activator (Friedreich ataxia, ex-Reata $7.2B 2023)",
+          "name": "Skyclarys (omaveloxolone) — Nrf2 activator (Friedreich ataxia; ex-Reata $7.3B 2023)",
           "modality": "small_molecule.nuclear_receptor.nrf2_activator",
           "areas": [
             "cns.neurodegeneration.friedreich"
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 2806.0,
-      "totalSOM": 737.7,
-      "totalSales": 165.0,
-      "cagrPct": 18.0,
-      "peakYear": 2030
+      "totalTAM": 26206.0,
+      "totalSOM": 4520.6,
+      "totalSales": 2025.0,
+      "cagrPct": -5.2,
+      "peakYear": 2026
     },
     "NGF": {
       "companies": [
@@ -13810,15 +13959,26 @@
     },
     "SMN2": {
       "companies": [
+        "BIIB",
         "RHHBY"
       ],
       "modalities": [
+        "nucleic_acid.aso.smn2_splice_modulator",
         "small_molecule.rna_splicing.smn2_modulator"
       ],
       "areas": [
         "musculoskeletal.neuromuscular.sma"
       ],
       "assets": [
+        {
+          "ticker": "BIIB",
+          "asset": "spinraza",
+          "name": "Spinraza (nusinersen) — SMN2-targeting ASO (SMA; w/ Ionis 50/50)",
+          "modality": "nucleic_acid.aso.smn2_splice_modulator",
+          "areas": [
+            "musculoskeletal.neuromuscular.sma"
+          ]
+        },
         {
           "ticker": "RHHBY",
           "asset": "evrysdi",
@@ -13829,17 +13989,18 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
       "areaCount": 1,
       "modalityClasses": [
+        "nucleic_acid",
         "small_molecule"
       ],
       "totalTAM": 5193.0,
-      "totalSOM": 2476.9,
-      "totalSales": 1985.0,
-      "cagrPct": 8.0,
+      "totalSOM": 4727.8,
+      "totalSales": 3485.0,
+      "cagrPct": 2.8,
       "peakYear": 2028
     },
     "SNAP25": {
@@ -13920,6 +14081,50 @@
       "totalSales": 0.0,
       "cagrPct": 40.0,
       "peakYear": 2032
+    },
+    "SOD1": {
+      "companies": [
+        "BIIB"
+      ],
+      "modalities": [
+        "nucleic_acid.aso.sod1_targeting",
+        "nucleic_acid.aso.sod1_targeting_next_gen"
+      ],
+      "areas": [
+        "cns.neurodegeneration.als"
+      ],
+      "assets": [
+        {
+          "ticker": "BIIB",
+          "asset": "qalsody",
+          "name": "Qalsody (tofersen) — SOD1-targeting ASO (SOD1-ALS; w/ Ionis 50/50)",
+          "modality": "nucleic_acid.aso.sod1_targeting",
+          "areas": [
+            "cns.neurodegeneration.als"
+          ]
+        },
+        {
+          "ticker": "BIIB",
+          "asset": "salanersen",
+          "name": "Salanersen (BIIB078) — next-gen SOD1-ASO (SOD1-ALS; w/ Ionis)",
+          "modality": "nucleic_acid.aso.sod1_targeting_next_gen",
+          "areas": [
+            "cns.neurodegeneration.als"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "nucleic_acid"
+      ],
+      "totalTAM": 1420.0,
+      "totalSOM": 1184.0,
+      "totalSales": 50.0,
+      "cagrPct": 39.8,
+      "peakYear": 2031
     },
     "SOST": {
       "companies": [

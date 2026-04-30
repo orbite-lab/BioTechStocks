@@ -898,15 +898,16 @@ async function main(){
       const wtUp=((weightedTP-price)/price*100);
       const meta=deriveCompanyMeta(cfg);
       const catalysts=computeCatalysts(cfg,price);
-      // Sum reported drug sales 2025 across all indications (in local config currency, then convert to USD M)
-      let salesLocal=0;
+      // Sum reported drug sales 2025 across all indications. Per CLAUDE.md convention,
+      // m.salesM is in USD $M for ALL configs (regardless of company.currency). Same
+      // basis Market Explorer uses, so totals match.
+      let salesM2025USD=0;
       for(const a of cfg.assets||[]){
         for(const ind of a.indications||[]){
           const m=ind.market||{};
-          if(m.salesM&&(!m.salesYear||m.salesYear===2025)) salesLocal+=m.salesM;
+          if(m.salesM&&(!m.salesYear||m.salesYear===2025)) salesM2025USD+=m.salesM;
         }
       }
-      const salesM2025USD=toUSD(salesLocal,co.currency||'USD');
       r.push({ticker:tk,name:co.name,ccy:ccySym(co.currency),dec:ccyDec(co.currency),
         price,prevClose,configPrice:co.currentPrice,live:!!lp,cashPS,ev,evUSD,mcapUSDB,mcapTier,tps,weightedTP,wtUp,currency:co.currency,subtitle:co.subtitle||"",yahooTicker:co.yahooTicker||tk,meta,catalysts,salesM2025:salesM2025USD});
     }

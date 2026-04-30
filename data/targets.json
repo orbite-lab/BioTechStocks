@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-30T07:02:38Z",
-    "target_count": 329,
-    "total_assets": 596,
-    "assets_with_targets": 553,
+    "generated": "2026-04-30T07:07:36Z",
+    "target_count": 332,
+    "total_assets": 606,
+    "assets_with_targets": 562,
     "multi_modality_count": 39,
-    "multi_disease_count": 144
+    "multi_disease_count": 148
   },
   "targets": {
     "ABL1": {
@@ -1127,11 +1127,13 @@
     },
     "APP": {
       "companies": [
+        "4523",
         "ALNY",
         "RHHBY"
       ],
       "modalities": [
         "antibody.bispecific.amyloid_tfr",
+        "antibody.monoclonal.anti_amyloid",
         "nucleic_acid.sirna.galnac_platform"
       ],
       "areas": [
@@ -1139,6 +1141,24 @@
         "cns.neurodegeneration.caa"
       ],
       "assets": [
+        {
+          "ticker": "4523",
+          "asset": "leqembi",
+          "name": "Leqembi (lecanemab) -- anti-amyloid mAb (early AD; w/ Biogen 50/50)",
+          "modality": "antibody.monoclonal.anti_amyloid",
+          "areas": [
+            "cns.neurodegeneration.alzheimer"
+          ]
+        },
+        {
+          "ticker": "4523",
+          "asset": "leqembi_sc",
+          "name": "Leqembi SC formulation (lecanemab subcutaneous Q-weekly)",
+          "modality": "antibody.monoclonal.anti_amyloid",
+          "areas": [
+            "cns.neurodegeneration.alzheimer"
+          ]
+        },
         {
           "ticker": "ALNY",
           "asset": "mivelsiran",
@@ -1158,8 +1178,8 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 4,
+      "modalityCount": 3,
       "modalityClassCount": 2,
       "areaCount": 2,
       "modalityClasses": [
@@ -1167,9 +1187,9 @@
         "nucleic_acid"
       ],
       "totalTAM": 11195.0,
-      "totalSOM": 9548.3,
-      "totalSales": 0.0,
-      "cagrPct": 48.9,
+      "totalSOM": 17600.3,
+      "totalSales": 510.0,
+      "cagrPct": 61.5,
       "peakYear": 2032
     },
     "AR": {
@@ -1279,6 +1299,40 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2032
+    },
+    "ATP4A": {
+      "companies": [
+        "4523"
+      ],
+      "modalities": [
+        "small_molecule.proton_pump_inhibitor.rabeprazole"
+      ],
+      "areas": [
+        "immunology.inflammatory_gi.eoe"
+      ],
+      "assets": [
+        {
+          "ticker": "4523",
+          "asset": "aciphex",
+          "name": "Aciphex/Pariet (rabeprazole) -- PPI (GERD; mostly Japan/Asia legacy)",
+          "modality": "small_molecule.proton_pump_inhibitor.rabeprazole",
+          "areas": [
+            "immunology.inflammatory_gi.eoe"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 3802.5,
+      "totalSOM": 89.4,
+      "totalSales": 80.0,
+      "cagrPct": -5.0,
+      "peakYear": 2025
     },
     "BCL11A": {
       "companies": [
@@ -1533,7 +1587,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 4026.4,
       "totalSales": 2915.0,
       "cagrPct": 3.2,
@@ -5683,21 +5737,47 @@
     },
     "FGFR1": {
       "companies": [
+        "4523",
         "JNJ",
         "MRK"
       ],
       "modalities": [
         "small_molecule.kinase_inhibitor.fgfr",
-        "small_molecule.kinase_inhibitor.multi_tki"
+        "small_molecule.kinase_inhibitor.fgfr_pan",
+        "small_molecule.kinase_inhibitor.multi_tki",
+        "small_molecule.kinase_inhibitor.vegfr_multikinase"
       ],
       "areas": [
         "oncology.endocrine.thyroid_cancer",
         "oncology.genitourinary.bladder",
         "oncology.genitourinary.rcc",
+        "oncology.gi.cholangiocarcinoma",
         "oncology.gi.hcc",
+        "oncology.gynecologic.endometrial",
         "oncology.gynecologic.ovarian"
       ],
       "assets": [
+        {
+          "ticker": "4523",
+          "asset": "lenvima",
+          "name": "Lenvima (lenvatinib) -- multi-kinase TKI (w/ Merck 50/50 globally)",
+          "modality": "small_molecule.kinase_inhibitor.vegfr_multikinase",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.genitourinary.rcc",
+            "oncology.gi.hcc",
+            "oncology.gynecologic.endometrial"
+          ]
+        },
+        {
+          "ticker": "4523",
+          "asset": "tasurgratinib",
+          "name": "Tasurgratinib (E7090) -- pan-FGFR inhibitor",
+          "modality": "small_molecule.kinase_inhibitor.fgfr_pan",
+          "areas": [
+            "oncology.gi.cholangiocarcinoma"
+          ]
+        },
         {
           "ticker": "JNJ",
           "asset": "balversa",
@@ -5720,33 +5800,45 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 4,
+      "modalityCount": 4,
       "modalityClassCount": 1,
-      "areaCount": 5,
+      "areaCount": 7,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 24032.8,
-      "totalSOM": 1873.3,
-      "totalSales": 1250.0,
-      "cagrPct": 0.0,
+      "totalTAM": 36729.8,
+      "totalSOM": 5246.2,
+      "totalSales": 3118.0,
+      "cagrPct": 4.2,
       "peakYear": 2027
     },
     "FGFR2": {
       "companies": [
+        "4523",
         "AMGN",
         "JNJ"
       ],
       "modalities": [
         "antibody.cytokine.fgfr2b_blocker",
-        "small_molecule.kinase_inhibitor.fgfr"
+        "small_molecule.kinase_inhibitor.fgfr",
+        "small_molecule.kinase_inhibitor.fgfr_pan"
       ],
       "areas": [
         "oncology.genitourinary.bladder",
+        "oncology.gi.cholangiocarcinoma",
         "oncology.gi.gastric_esoph"
       ],
       "assets": [
+        {
+          "ticker": "4523",
+          "asset": "tasurgratinib",
+          "name": "Tasurgratinib (E7090) -- pan-FGFR inhibitor",
+          "modality": "small_molecule.kinase_inhibitor.fgfr_pan",
+          "areas": [
+            "oncology.gi.cholangiocarcinoma"
+          ]
+        },
         {
           "ticker": "AMGN",
           "asset": "bemarituzumab",
@@ -5766,34 +5858,46 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 2,
-      "areaCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
         "antibody",
         "small_molecule"
       ],
-      "totalTAM": 12861.2,
-      "totalSOM": 631.4,
+      "totalTAM": 14383.3,
+      "totalSOM": 744.6,
       "totalSales": 200.0,
-      "cagrPct": 21.0,
+      "cagrPct": 25.4,
       "peakYear": 2029
     },
     "FGFR3": {
       "companies": [
+        "4523",
         "BBIO",
         "JNJ"
       ],
       "modalities": [
         "small_molecule.kinase_inhibitor.fgfr",
-        "small_molecule.kinase_inhibitor.fgfr3"
+        "small_molecule.kinase_inhibitor.fgfr3",
+        "small_molecule.kinase_inhibitor.fgfr_pan"
       ],
       "areas": [
         "musculoskeletal.bone_cartilage.achondroplasia",
-        "oncology.genitourinary.bladder"
+        "oncology.genitourinary.bladder",
+        "oncology.gi.cholangiocarcinoma"
       ],
       "assets": [
+        {
+          "ticker": "4523",
+          "asset": "tasurgratinib",
+          "name": "Tasurgratinib (E7090) -- pan-FGFR inhibitor",
+          "modality": "small_molecule.kinase_inhibitor.fgfr_pan",
+          "areas": [
+            "oncology.gi.cholangiocarcinoma"
+          ]
+        },
         {
           "ticker": "BBIO",
           "asset": "infig",
@@ -5813,17 +5917,17 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 8508.5,
-      "totalSOM": 964.9,
+      "totalTAM": 10030.6,
+      "totalSOM": 1078.1,
       "totalSales": 200.0,
-      "cagrPct": 0.0,
+      "cagrPct": 5.3,
       "peakYear": 2031
     },
     "FKRP": {
@@ -5897,6 +6001,7 @@
     "FLT1": {
       "companies": [
         "4502",
+        "4523",
         "BAYN"
       ],
       "modalities": [
@@ -5904,9 +6009,12 @@
         "small_molecule.kinase_inhibitor.vegfr_multikinase"
       ],
       "areas": [
+        "oncology.endocrine.thyroid_cancer",
+        "oncology.genitourinary.rcc",
         "oncology.gi.colorectal",
         "oncology.gi.gastric_esoph",
-        "oncology.gi.hcc"
+        "oncology.gi.hcc",
+        "oncology.gynecologic.endometrial"
       ],
       "assets": [
         {
@@ -5916,6 +6024,18 @@
           "modality": "small_molecule.kinase_inhibitor.vegfr",
           "areas": [
             "oncology.gi.colorectal"
+          ]
+        },
+        {
+          "ticker": "4523",
+          "asset": "lenvima",
+          "name": "Lenvima (lenvatinib) -- multi-kinase TKI (w/ Merck 50/50 globally)",
+          "modality": "small_molecule.kinase_inhibitor.vegfr_multikinase",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.genitourinary.rcc",
+            "oncology.gi.hcc",
+            "oncology.gynecologic.endometrial"
           ]
         },
         {
@@ -5930,18 +6050,18 @@
           ]
         }
       ],
-      "assetCount": 2,
+      "assetCount": 3,
       "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 3,
+      "areaCount": 6,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 21170.3,
-      "totalSOM": 2030.0,
-      "totalSales": 759.0,
-      "cagrPct": 9.2,
-      "peakYear": 2028
+      "totalTAM": 40270.8,
+      "totalSOM": 5289.7,
+      "totalSales": 2627.0,
+      "cagrPct": 6.6,
+      "peakYear": 2027
     },
     "FLT3": {
       "companies": [
@@ -5980,6 +6100,7 @@
     "FLT4": {
       "companies": [
         "4502",
+        "4523",
         "BAYN"
       ],
       "modalities": [
@@ -5987,9 +6108,12 @@
         "small_molecule.kinase_inhibitor.vegfr_multikinase"
       ],
       "areas": [
+        "oncology.endocrine.thyroid_cancer",
+        "oncology.genitourinary.rcc",
         "oncology.gi.colorectal",
         "oncology.gi.gastric_esoph",
-        "oncology.gi.hcc"
+        "oncology.gi.hcc",
+        "oncology.gynecologic.endometrial"
       ],
       "assets": [
         {
@@ -5999,6 +6123,18 @@
           "modality": "small_molecule.kinase_inhibitor.vegfr",
           "areas": [
             "oncology.gi.colorectal"
+          ]
+        },
+        {
+          "ticker": "4523",
+          "asset": "lenvima",
+          "name": "Lenvima (lenvatinib) -- multi-kinase TKI (w/ Merck 50/50 globally)",
+          "modality": "small_molecule.kinase_inhibitor.vegfr_multikinase",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.genitourinary.rcc",
+            "oncology.gi.hcc",
+            "oncology.gynecologic.endometrial"
           ]
         },
         {
@@ -6013,18 +6149,18 @@
           ]
         }
       ],
-      "assetCount": 2,
+      "assetCount": 3,
       "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 3,
+      "areaCount": 6,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 21170.3,
-      "totalSOM": 2030.0,
-      "totalSales": 759.0,
-      "cagrPct": 9.2,
-      "peakYear": 2028
+      "totalTAM": 40270.8,
+      "totalSOM": 5289.7,
+      "totalSales": 2627.0,
+      "cagrPct": 6.6,
+      "peakYear": 2027
     },
     "FLU_HA": {
       "companies": [
@@ -6692,15 +6828,27 @@
     },
     "GRIA1": {
       "companies": [
+        "4523",
         "NBIX"
       ],
       "modalities": [
+        "small_molecule.glutamate_antagonist.ampa_antagonist",
         "small_molecule.ion_channel.ampa_modulator"
       ],
       "areas": [
+        "cns.epilepsy.focal",
         "cns.psychiatry.depression"
       ],
       "assets": [
+        {
+          "ticker": "4523",
+          "asset": "fycompa",
+          "name": "Fycompa (perampanel) -- AMPA receptor antagonist (epilepsy)",
+          "modality": "small_molecule.glutamate_antagonist.ampa_antagonist",
+          "areas": [
+            "cns.epilepsy.focal"
+          ]
+        },
         {
           "ticker": "NBIX",
           "asset": "osav",
@@ -6711,18 +6859,18 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 36060.0,
-      "totalSOM": 1223.2,
-      "totalSales": 0.0,
-      "cagrPct": 0.0,
-      "peakYear": 2034
+      "totalTAM": 48680.0,
+      "totalSOM": 1622.9,
+      "totalSales": 267.0,
+      "cagrPct": -0.7,
+      "peakYear": 2032
     },
     "GRIN1": {
       "companies": [
@@ -6992,59 +7140,25 @@
     },
     "HCRTR1": {
       "companies": [
+        "4523",
         "MRK"
       ],
       "modalities": [
-        "small_molecule.gpcr.orexin_antagonist"
-      ],
-      "areas": [
-        "cns.sleep.insomnia"
-      ],
-      "assets": [
-        {
-          "ticker": "MRK",
-          "asset": "belsomra",
-          "name": "Belsomra (suvorexant) — orexin antagonist (insomnia)",
-          "modality": "small_molecule.gpcr.orexin_antagonist",
-          "areas": [
-            "cns.sleep.insomnia"
-          ]
-        }
-      ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 1,
-      "modalityClasses": [
-        "small_molecule"
-      ],
-      "totalTAM": 3310.0,
-      "totalSOM": 450.6,
-      "totalSales": 300.0,
-      "cagrPct": 0.0,
-      "peakYear": 2026
-    },
-    "HCRTR2": {
-      "companies": [
-        "LLY",
-        "MRK"
-      ],
-      "modalities": [
-        "small_molecule.gpcr.orexin_agonist",
+        "small_molecule.gpcr.dora_orexin_antagonist",
         "small_molecule.gpcr.orexin_antagonist"
       ],
       "areas": [
         "cns.sleep.insomnia",
-        "cns.sleep.narcolepsy_hypersomnia"
+        "cns.sleep.insomnia_narcolepsy_hypersomnia"
       ],
       "assets": [
         {
-          "ticker": "LLY",
-          "asset": "orx750",
-          "name": "Cleminorexton (ORX750) — OX2R agonist (Centessa $7.8B Mar-2026)",
-          "modality": "small_molecule.gpcr.orexin_agonist",
+          "ticker": "4523",
+          "asset": "dayvigo",
+          "name": "Dayvigo (lemborexant) -- dual orexin receptor antagonist (DORA, insomnia)",
+          "modality": "small_molecule.gpcr.dora_orexin_antagonist",
           "areas": [
-            "cns.sleep.narcolepsy_hypersomnia"
+            "cns.sleep.insomnia_narcolepsy_hypersomnia"
           ]
         },
         {
@@ -7064,9 +7178,76 @@
       "modalityClasses": [
         "small_molecule"
       ],
+      "totalTAM": 3310.0,
+      "totalSOM": 450.6,
+      "totalSales": 687.0,
+      "cagrPct": 0.0,
+      "peakYear": 2026
+    },
+    "HCRTR2": {
+      "companies": [
+        "4523",
+        "LLY",
+        "MRK"
+      ],
+      "modalities": [
+        "small_molecule.gpcr.dora_orexin_antagonist",
+        "small_molecule.gpcr.orexin_agonist",
+        "small_molecule.gpcr.orexin_antagonist"
+      ],
+      "areas": [
+        "cns.sleep.insomnia",
+        "cns.sleep.insomnia_narcolepsy_hypersomnia",
+        "cns.sleep.narcolepsy_hypersomnia"
+      ],
+      "assets": [
+        {
+          "ticker": "4523",
+          "asset": "dayvigo",
+          "name": "Dayvigo (lemborexant) -- dual orexin receptor antagonist (DORA, insomnia)",
+          "modality": "small_molecule.gpcr.dora_orexin_antagonist",
+          "areas": [
+            "cns.sleep.insomnia_narcolepsy_hypersomnia"
+          ]
+        },
+        {
+          "ticker": "4523",
+          "asset": "e2086_orexin_agonist",
+          "name": "E2086 -- orexin 2 receptor agonist (narcolepsy)",
+          "modality": "small_molecule.gpcr.orexin_agonist",
+          "areas": [
+            "cns.sleep.insomnia_narcolepsy_hypersomnia"
+          ]
+        },
+        {
+          "ticker": "LLY",
+          "asset": "orx750",
+          "name": "Cleminorexton (ORX750) — OX2R agonist (Centessa $7.8B Mar-2026)",
+          "modality": "small_molecule.gpcr.orexin_agonist",
+          "areas": [
+            "cns.sleep.narcolepsy_hypersomnia"
+          ]
+        },
+        {
+          "ticker": "MRK",
+          "asset": "belsomra",
+          "name": "Belsomra (suvorexant) — orexin antagonist (insomnia)",
+          "modality": "small_molecule.gpcr.orexin_antagonist",
+          "areas": [
+            "cns.sleep.insomnia"
+          ]
+        }
+      ],
+      "assetCount": 4,
+      "modalityCount": 3,
+      "modalityClassCount": 1,
+      "areaCount": 3,
+      "modalityClasses": [
+        "small_molecule"
+      ],
       "totalTAM": 9232.0,
       "totalSOM": 1354.7,
-      "totalSales": 300.0,
+      "totalSales": 687.0,
       "cagrPct": 4.0,
       "peakYear": 2030
     },
@@ -7316,7 +7497,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -9130,6 +9311,7 @@
     "KDR": {
       "companies": [
         "4502",
+        "4523",
         "BAYN"
       ],
       "modalities": [
@@ -9137,9 +9319,12 @@
         "small_molecule.kinase_inhibitor.vegfr_multikinase"
       ],
       "areas": [
+        "oncology.endocrine.thyroid_cancer",
+        "oncology.genitourinary.rcc",
         "oncology.gi.colorectal",
         "oncology.gi.gastric_esoph",
-        "oncology.gi.hcc"
+        "oncology.gi.hcc",
+        "oncology.gynecologic.endometrial"
       ],
       "assets": [
         {
@@ -9149,6 +9334,18 @@
           "modality": "small_molecule.kinase_inhibitor.vegfr",
           "areas": [
             "oncology.gi.colorectal"
+          ]
+        },
+        {
+          "ticker": "4523",
+          "asset": "lenvima",
+          "name": "Lenvima (lenvatinib) -- multi-kinase TKI (w/ Merck 50/50 globally)",
+          "modality": "small_molecule.kinase_inhibitor.vegfr_multikinase",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.genitourinary.rcc",
+            "oncology.gi.hcc",
+            "oncology.gynecologic.endometrial"
           ]
         },
         {
@@ -9163,18 +9360,18 @@
           ]
         }
       ],
-      "assetCount": 2,
+      "assetCount": 3,
       "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 3,
+      "areaCount": 6,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 21170.3,
-      "totalSOM": 2030.0,
-      "totalSales": 759.0,
-      "cagrPct": 9.2,
-      "peakYear": 2028
+      "totalTAM": 40270.8,
+      "totalSOM": 5289.7,
+      "totalSales": 2627.0,
+      "cagrPct": 6.6,
+      "peakYear": 2027
     },
     "KIF11": {
       "companies": [
@@ -9690,7 +9887,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 18252.4,
       "totalSales": 2971.0,
       "cagrPct": 47.5,
@@ -9742,7 +9939,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 17202.9,
       "totalSales": 2271.0,
       "cagrPct": 50.1,
@@ -10448,7 +10645,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -10697,7 +10894,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -11656,18 +11853,33 @@
     },
     "PDGFRA": {
       "companies": [
+        "4523",
         "MRK"
       ],
       "modalities": [
-        "small_molecule.kinase_inhibitor.multi_tki"
+        "small_molecule.kinase_inhibitor.multi_tki",
+        "small_molecule.kinase_inhibitor.vegfr_multikinase"
       ],
       "areas": [
         "oncology.endocrine.thyroid_cancer",
         "oncology.genitourinary.rcc",
         "oncology.gi.hcc",
+        "oncology.gynecologic.endometrial",
         "oncology.gynecologic.ovarian"
       ],
       "assets": [
+        {
+          "ticker": "4523",
+          "asset": "lenvima",
+          "name": "Lenvima (lenvatinib) -- multi-kinase TKI (w/ Merck 50/50 globally)",
+          "modality": "small_molecule.kinase_inhibitor.vegfr_multikinase",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.genitourinary.rcc",
+            "oncology.gi.hcc",
+            "oncology.gynecologic.endometrial"
+          ]
+        },
         {
           "ticker": "MRK",
           "asset": "lenvima",
@@ -11681,17 +11893,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 4,
+      "areaCount": 5,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 19450.2,
-      "totalSOM": 1574.1,
-      "totalSales": 1050.0,
-      "cagrPct": 0.0,
+      "totalTAM": 30625.2,
+      "totalSOM": 4833.8,
+      "totalSales": 2918.0,
+      "cagrPct": 3.4,
       "peakYear": 2027
     },
     "PGF": {
@@ -12463,18 +12675,33 @@
     },
     "RET": {
       "companies": [
+        "4523",
         "MRK"
       ],
       "modalities": [
-        "small_molecule.kinase_inhibitor.multi_tki"
+        "small_molecule.kinase_inhibitor.multi_tki",
+        "small_molecule.kinase_inhibitor.vegfr_multikinase"
       ],
       "areas": [
         "oncology.endocrine.thyroid_cancer",
         "oncology.genitourinary.rcc",
         "oncology.gi.hcc",
+        "oncology.gynecologic.endometrial",
         "oncology.gynecologic.ovarian"
       ],
       "assets": [
+        {
+          "ticker": "4523",
+          "asset": "lenvima",
+          "name": "Lenvima (lenvatinib) -- multi-kinase TKI (w/ Merck 50/50 globally)",
+          "modality": "small_molecule.kinase_inhibitor.vegfr_multikinase",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.genitourinary.rcc",
+            "oncology.gi.hcc",
+            "oncology.gynecologic.endometrial"
+          ]
+        },
         {
           "ticker": "MRK",
           "asset": "lenvima",
@@ -12488,17 +12715,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 4,
+      "areaCount": 5,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 19450.2,
-      "totalSOM": 1574.1,
-      "totalSales": 1050.0,
-      "cagrPct": 0.0,
+      "totalTAM": 30625.2,
+      "totalSOM": 4833.8,
+      "totalSales": 2918.0,
+      "cagrPct": 3.4,
       "peakYear": 2027
     },
     "ROCK2": {
@@ -15096,6 +15323,78 @@
       "totalSales": 7757.0,
       "cagrPct": 0.7,
       "peakYear": 2032
+    },
+    "TUBA1A": {
+      "companies": [
+        "4523"
+      ],
+      "modalities": [
+        "small_molecule.microtubule_inhibitor.eribulin_halichondrin"
+      ],
+      "areas": [
+        "oncology.breast.tnbc",
+        "oncology.musculoskeletal.desmoid"
+      ],
+      "assets": [
+        {
+          "ticker": "4523",
+          "asset": "halaven",
+          "name": "Halaven (eribulin) -- microtubule inhibitor (TNBC + liposarcoma)",
+          "modality": "small_molecule.microtubule_inhibitor.eribulin_halichondrin",
+          "areas": [
+            "oncology.breast.tnbc",
+            "oncology.musculoskeletal.desmoid"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 9753.5,
+      "totalSOM": 613.5,
+      "totalSales": 333.0,
+      "cagrPct": -3.0,
+      "peakYear": 2027
+    },
+    "TUBB": {
+      "companies": [
+        "4523"
+      ],
+      "modalities": [
+        "small_molecule.microtubule_inhibitor.eribulin_halichondrin"
+      ],
+      "areas": [
+        "oncology.breast.tnbc",
+        "oncology.musculoskeletal.desmoid"
+      ],
+      "assets": [
+        {
+          "ticker": "4523",
+          "asset": "halaven",
+          "name": "Halaven (eribulin) -- microtubule inhibitor (TNBC + liposarcoma)",
+          "modality": "small_molecule.microtubule_inhibitor.eribulin_halichondrin",
+          "areas": [
+            "oncology.breast.tnbc",
+            "oncology.musculoskeletal.desmoid"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 9753.5,
+      "totalSOM": 613.5,
+      "totalSales": 333.0,
+      "cagrPct": -3.0,
+      "peakYear": 2027
     },
     "TYK2": {
       "companies": [

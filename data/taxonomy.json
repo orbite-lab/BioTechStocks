@@ -10,7 +10,7 @@
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
-    "area_count_l3": 233,
+    "area_count_l3": 234,
     "area_count_l4": 28,
     "modality_count": 414,
     "companies": 72
@@ -2156,6 +2156,13 @@
           "count": 1,
           "rare": false
         },
+        "gist": {
+          "companies": [
+            "BAYN"
+          ],
+          "count": 1,
+          "rare": false
+        },
         "nf1_pn": {
           "companies": [
             "MRK_DE"
@@ -2165,10 +2172,9 @@
         },
         "sts": {
           "companies": [
-            "4523",
-            "BAYN"
+            "4523"
           ],
-          "count": 2,
+          "count": 1,
           "rare": false
         },
         "tgct": {
@@ -5643,6 +5649,57 @@
       "areas": [
         "hematology.rare_blood.hemophilia_a",
         "hematology.rare_blood.hemophilia_b"
+      ]
+    },
+    "sarcoma_all": {
+      "description": "All sarcomas / mesenchymal tumors (GIST + classical STS + TGCT + desmoid + NF1-PN)",
+      "areas": [
+        "oncology.musculoskeletal.gist",
+        "oncology.musculoskeletal.sts",
+        "oncology.musculoskeletal.tgct",
+        "oncology.musculoskeletal.desmoid",
+        "oncology.musculoskeletal.nf1_pn"
+      ]
+    },
+    "autoimmune_glomerulopathy": {
+      "description": "Antibody / immune-complex mediated kidney diseases (clinically nephrology, mechanistically autoimmune)",
+      "areas": [
+        "nephrology.glomerular.iga_nephropathy",
+        "nephrology.glomerular.fsgs",
+        "nephrology.glomerular.pmn",
+        "nephrology.glomerular.lupus_nephritis",
+        "nephrology.glomerular.aav_anca",
+        "nephrology.glomerular.c3g"
+      ]
+    },
+    "autoimmune_spectrum": {
+      "description": "Cross-organ autoimmune diseases (immunology + derm autoimmune + autoimmune glomerulopathies + neuromuscular autoimmune)",
+      "areas": [
+        "immunology.autoimmune.sle",
+        "immunology.autoimmune.sjogrens",
+        "immunology.autoimmune.egpa",
+        "immunology.inflammatory_systemic.rheumatoid_arthritis",
+        "immunology.inflammatory_systemic.psoriatic_arthritis",
+        "immunology.inflammatory_systemic.ankylosing_spondylitis",
+        "immunology.inflammatory_gi.crohns",
+        "immunology.inflammatory_gi.ulcerative_colitis",
+        "immunology.demyelinating.multiple_sclerosis",
+        "immunology.demyelinating.nmosd",
+        "immunology.neuromuscular_autoimmune.myasthenia_gravis",
+        "immunology.neuromuscular_autoimmune.cidp",
+        "immunology.neuromuscular_autoimmune.itp",
+        "immunology.neuromuscular_autoimmune.myositis",
+        "dermatology.inflammatory_derm.cle",
+        "dermatology.inflammatory_derm.psoriasis_systemic",
+        "dermatology.inflammatory_derm.atopic_dermatitis_systemic",
+        "dermatology.rare_skin.alopecia_areata",
+        "dermatology.rare_skin.vitiligo",
+        "nephrology.glomerular.iga_nephropathy",
+        "nephrology.glomerular.fsgs",
+        "nephrology.glomerular.pmn",
+        "nephrology.glomerular.lupus_nephritis",
+        "nephrology.glomerular.aav_anca",
+        "nephrology.glomerular.c3g"
       ]
     }
   }

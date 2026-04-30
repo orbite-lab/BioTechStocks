@@ -564,20 +564,32 @@ REGIONS = {
         "eu":  {"patientsK": 15,  "wtpPct": 45, "priceK": 100},
         "row": {"patientsK": 50,  "wtpPct": 12, "priceK": 35},
     },
-    # Soft tissue sarcoma (STS): heterogeneous group of malignant
-    # mesenchymal tumors -- liposarcoma (well-diff/dediff/myxoid/
-    # pleomorphic), leiomyosarcoma, GIST, undifferentiated pleomorphic
-    # sarcoma, synovial sarcoma, etc. ~13K US new cases/yr, ~80K
-    # prevalent on tx (incl. GIST). EU 18K, ROW 80K. Class: Stivarga
-    # (Bayer regorafenib GIST 3L+), Sutent (Pfizer sunitinib GIST 2L),
-    # Halaven (Eisai eribulin liposarcoma), Yondelis (Lilly trabectedin
-    # L-sarcoma), Doxil (doxorubicin generic), Vimseltinib (Deciphera
-    # CSF1R post-Turalio acq AbbV), Qinlock (Deciphera ripretinib GIST 4L+).
-    # Net branded ~$160K/yr.
+    # GIST (gastrointestinal stromal tumor): KIT/PDGFRA-driven mesenchymal
+    # tumor of the GI tract. Molecularly distinct from classical STS;
+    # treatment is sequential TKI (imatinib 1L -> sunitinib 2L -> regorafenib
+    # 3L -> ripretinib/Qinlock 4L; bezuclastinib Ph3 ongoing for D842V).
+    # source: NCCN/NIH SEER ~5-6K US new cases/yr (~14K prevalent on tx).
+    # EU5 ~5K incidence (~12K prevalent). ROW ~10K incidence (~25K prevalent).
+    # Net branded ~$120K/yr (post-Gleevec generic; Stivarga ~$15K/mo,
+    # Qinlock ~$35K/mo).
+    "oncology.musculoskeletal.gist": {
+        "us":  {"patientsK": 14,  "wtpPct": 70, "priceK": 120},
+        "eu":  {"patientsK": 12,  "wtpPct": 50, "priceK": 75},
+        "row": {"patientsK": 25,  "wtpPct": 15, "priceK": 30},
+    },
+    # Soft tissue sarcoma (STS, non-GIST): heterogeneous histology-agnostic
+    # umbrella -- liposarcoma (well-diff/dediff/myxoid/pleomorphic),
+    # leiomyosarcoma, undifferentiated pleomorphic sarcoma, synovial
+    # sarcoma, angiosarcoma, etc. Treatment is doxorubicin/ifosfamide
+    # backbone -> Halaven (eribulin, liposarcoma) / Yondelis (trabectedin,
+    # L-sarcomas) / Votrient (pazopanib, non-adipocytic) / TCR-T
+    # (afami-cel synovial). source: NCI SEER ~13K US new cases/yr ex-GIST;
+    # ~70K prevalent on tx. EU5 ~18K incidence (~95K prevalent). ROW ~70K
+    # incidence (~330K prevalent). Net branded ~$170K/yr.
     "oncology.musculoskeletal.sts": {
-        "us":  {"patientsK": 80,  "wtpPct": 65, "priceK": 160},
-        "eu":  {"patientsK": 100, "wtpPct": 48, "priceK": 95},
-        "row": {"patientsK": 350, "wtpPct": 14, "priceK": 35},
+        "us":  {"patientsK": 70,  "wtpPct": 65, "priceK": 170},
+        "eu":  {"patientsK": 95,  "wtpPct": 48, "priceK": 100},
+        "row": {"patientsK": 330, "wtpPct": 14, "priceK": 35},
     },
 
     # ------------------------------------------------------------
@@ -676,7 +688,8 @@ PEN_PCT = {
     "oncology.musculoskeletal.desmoid": 50,
     "oncology.musculoskeletal.nf1_pn": 30,
     "oncology.musculoskeletal.tgct": 40,
-    "oncology.musculoskeletal.sts": 40,
+    "oncology.musculoskeletal.gist": 50,
+    "oncology.musculoskeletal.sts": 35,
     "oncology.eye.uveal_melanoma": 35,
     "oncology.head_neck.hnscc": 55,
 }

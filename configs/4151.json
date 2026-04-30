@@ -7,7 +7,7 @@
     "cash": 250000,
     "currency": "JPY",
     "phase": "commercial",
-    "subtitle": "Specialty pharma: Crysvita (burosumab anti-FGF23 XLH/TIO) + Poteligeo (mogamulizumab anti-CCR4 CTCL) + Nourianz (istradefylline A2A PD adjunct) + nephrology legacy (Nesp/Regpara); rocatinlimab (anti-OX40 atopic dermatitis Ph3, Amgen-partnered $1.25B+) flagship pipeline",
+    "subtitle": "Specialty pharma: Crysvita (burosumab anti-FGF23 XLH/TIO) + Poteligeo (mogamulizumab anti-CCR4 CTCL) + Nourianz (istradefylline A2A PD; US LOE 2025) + Lumicef (brodalumab IL-17RA Asia psoriasis) + Phozevel (tenapanor NHE3 Japan hyperphosphatemia) + nephrology legacy (Nesp/Regpara); rocatinlimab (anti-OX40 atopic dermatitis Ph3, Amgen-partnered $1.25B+) flagship pipeline",
     "yahooTicker": "4151.T"
   },
   "assets": [
@@ -77,7 +77,7 @@
       "id": "poteligeo",
       "name": "Poteligeo (mogamulizumab) - defucosylated anti-CCR4 humanized IgG1 mAb (POTELLIGENT ADCC platform)",
       "stage": "Commercial (CTCL Mycosis fungoides + Sezary FDA 2018; ATL Japan only)",
-      "modality": "antibody.monoclonal.anti_ccr4",
+      "modality": "antibody.monoclonal.anti_ccr4_defucosylated",
       "targets": [
         "CCR4"
       ],
@@ -137,7 +137,7 @@
     {
       "id": "nourianz",
       "name": "Nourianz/Nouriast (istradefylline) - selective adenosine A2A receptor antagonist",
-      "stage": "Commercial (PD off-episodes adjunct to L-DOPA FDA 2019, Japan 2013; US LOE 2026-2027)",
+      "stage": "Commercial (PD off-episodes adjunct to L-DOPA FDA 2019, Japan 2013; US LOE mid-2025 active generic challenge)",
       "modality": "small_molecule.gpcr.adenosine_a2a_antagonist",
       "targets": [
         "ADORA2A"
@@ -184,11 +184,11 @@
             },
             "company_slice_sources": {
               "us.reachPct": "Nourianz US first-in-class A2A antagonist for off-episodes; competitive vs Gocovri (amantadine ER) + apomorphine + safinamide",
-              "us.priceK": "Nourianz WAC ~$22K/yr; LOE 2026-2027 in US"
+              "us.priceK": "Nourianz WAC ~$22K/yr; US LOE mid-2025 (generic challenges active); ex-US Japan/Asia branded continues"
             },
             "penPct": 50,
-            "cagrPct": -8,
-            "peakYear": 2026,
+            "cagrPct": -18,
+            "peakYear": 2025,
             "salesM": 140,
             "salesYear": 2025
           }
@@ -318,6 +318,130 @@
       ]
     },
     {
+      "id": "lumicef",
+      "name": "Lumicef (brodalumab) - anti-IL-17RA human IgG2 mAb (Asia rights only; ex-Asia LEO Pharma Kyntheum/Siliq)",
+      "stage": "Commercial (Japan plaque psoriasis + GPP + erythrodermic + PsA; launched 2016)",
+      "modality": "antibody.monoclonal.anti_il17ra",
+      "targets": [
+        "IL17RA"
+      ],
+      "indications": [
+        {
+          "id": "psoriasis",
+          "name": "Plaque psoriasis + generalized pustular psoriasis (Japan)",
+          "area": "dermatology.inflammatory_derm.psoriasis_systemic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 35,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Lumicef Japan + Asia (KKD); ~5-7% Japan biologic psoriasis share vs Cosentyx/Taltz/Bimzelx",
+              "row.priceK": "Japan biologic psoriasis pricing ~¥1.5-2M/yr (~$12-15K)",
+              "us.note": "Ex-Asia rights with LEO Pharma (Kyntheum EU + Siliq US Bausch); KKD has Japan + Asia commercial only"
+            },
+            "penPct": 40,
+            "cagrPct": -2,
+            "peakYear": 2027,
+            "salesM": 90,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "phozevel",
+      "name": "Phozevel (tenapanor) - intestinal NHE3 inhibitor (Ardelyx Japan license)",
+      "stage": "Commercial (Japan hyperphosphatemia in CKD dialysis; launched 2024)",
+      "modality": "small_molecule.transporter.nhe3_inhibitor",
+      "targets": [
+        "SLC9A3"
+      ],
+      "indications": [
+        {
+          "id": "hyperphosphatemia",
+          "name": "Hyperphosphatemia in CKD on dialysis (novel non-binder mechanism; Japan only)",
+          "area": "nephrology.ckd.hyperphosphatemia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 70,
+                "priceK": 6
+              },
+              "eu": {
+                "patientsK": 700,
+                "wtpPct": 50,
+                "priceK": 4
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 30,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Phozevel Japan-only (KKD via Ardelyx license); first non-binder phosphate management therapy",
+              "row.priceK": "Japan tenapanor pricing ~¥600K/yr (~$4K)",
+              "us.note": "US tenapanor (IBSRELA hyperphosphatemia) marketed by Ardelyx; KKD Japan only"
+            },
+            "penPct": 60,
+            "cagrPct": 25,
+            "peakYear": 2031,
+            "salesM": 40,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
       "id": "rocatinlimab",
       "name": "Rocatinlimab (KHK4083) - anti-OX40 humanized IgG1 mAb (Amgen license 2021: $1.25B upfront + $850M milestones + tiered royalties)",
       "stage": "Phase 3 ROCKET program (atopic dermatitis adult + pediatric; Amgen-led; readouts 2026-2027)",
@@ -382,7 +506,8 @@
       "stage": "Commercial (Japan congenital antithrombin deficiency; small)",
       "modality": "recombinant_protein.serpin.antithrombin",
       "targets": [
-        "SERPINC1"
+        "F2",
+        "F10"
       ],
       "indications": [
         {
@@ -485,6 +610,20 @@
             "pen": 0.3
           }
         },
+        "lumicef": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "phozevel": {
+          "hyperphosphatemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
         "rocatinlimab": {
           "atopic_dermatitis": {
             "pos": 25,
@@ -545,6 +684,20 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.35
+          }
+        },
+        "lumicef": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "phozevel": {
+          "hyperphosphatemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.45
           }
         },
         "rocatinlimab": {
@@ -609,6 +762,20 @@
             "pen": 0.4
           }
         },
+        "lumicef": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "phozevel": {
+          "hyperphosphatemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
         "rocatinlimab": {
           "atopic_dermatitis": {
             "pos": 65,
@@ -671,6 +838,20 @@
             "pen": 0.45
           }
         },
+        "lumicef": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "phozevel": {
+          "hyperphosphatemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
         "rocatinlimab": {
           "atopic_dermatitis": {
             "pos": 80,
@@ -731,6 +912,20 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.55
+          }
+        },
+        "lumicef": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "phozevel": {
+          "hyperphosphatemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
           }
         },
         "rocatinlimab": {

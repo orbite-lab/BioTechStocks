@@ -1,10 +1,10 @@
 {
   "_meta": {
-    "generated": "2026-04-30T14:50:21Z",
-    "target_count": 385,
-    "total_assets": 721,
-    "assets_with_targets": 667,
-    "multi_modality_count": 48,
+    "generated": "2026-04-30T14:54:27Z",
+    "target_count": 387,
+    "total_assets": 723,
+    "assets_with_targets": 669,
+    "multi_modality_count": 47,
     "multi_disease_count": 173
   },
   "targets": {
@@ -323,8 +323,8 @@
       "totalTAM": 14941.0,
       "totalSOM": 632.3,
       "totalSales": 373.0,
-      "cagrPct": -4.7,
-      "peakYear": 2027
+      "cagrPct": -9.2,
+      "peakYear": 2026
     },
     "ADRB1": {
       "companies": [
@@ -2426,7 +2426,7 @@
         "4151"
       ],
       "modalities": [
-        "antibody.monoclonal.anti_ccr4"
+        "antibody.monoclonal.anti_ccr4_defucosylated"
       ],
       "areas": [
         "oncology.hematology.nhl.tcell"
@@ -2436,7 +2436,7 @@
           "ticker": "4151",
           "asset": "poteligeo",
           "name": "Poteligeo (mogamulizumab) - defucosylated anti-CCR4 humanized IgG1 mAb (POTELLIGENT ADCC platform)",
-          "modality": "antibody.monoclonal.anti_ccr4",
+          "modality": "antibody.monoclonal.anti_ccr4_defucosylated",
           "areas": [
             "oncology.hematology.nhl.tcell"
           ]
@@ -5874,6 +5874,7 @@
     },
     "F10": {
       "companies": [
+        "4151",
         "4568",
         "BAYN",
         "BMY",
@@ -5887,6 +5888,7 @@
       "modalities": [
         "antibody.bispecific.fviiia_mimetic",
         "recombinant_protein.coagulation.pcc_4factor",
+        "recombinant_protein.serpin.antithrombin",
         "small_molecule.coagulation.factor_xa_inhibitor",
         "small_molecule.coagulation.legacy_antithrombotic",
         "small_molecule.enzyme_inhibitor.factor_xa"
@@ -5895,9 +5897,19 @@
         "cardio_metabolic.thrombosis.anticoagulation",
         "cardio_metabolic.thrombosis.antiplatelet",
         "cardio_metabolic.thrombosis.reversal",
+        "hematology.rare_blood.antithrombin_deficiency",
         "hematology.rare_blood.hemophilia_a"
       ],
       "assets": [
+        {
+          "ticker": "4151",
+          "asset": "kw_3357",
+          "name": "Acoalan (antithrombin gamma) - recombinant antithrombin III (Japan-only)",
+          "modality": "recombinant_protein.serpin.antithrombin",
+          "areas": [
+            "hematology.rare_blood.antithrombin_deficiency"
+          ]
+        },
         {
           "ticker": "4568",
           "asset": "japan_legacy",
@@ -5981,18 +5993,18 @@
           ]
         }
       ],
-      "assetCount": 9,
-      "modalityCount": 5,
+      "assetCount": 10,
+      "modalityCount": 6,
       "modalityClassCount": 3,
-      "areaCount": 4,
+      "areaCount": 5,
       "modalityClasses": [
         "antibody",
         "recombinant_protein",
         "small_molecule"
       ],
-      "totalTAM": 42892.0,
-      "totalSOM": 54066.0,
-      "totalSales": 34387.0,
+      "totalTAM": 44529.8,
+      "totalSOM": 54258.0,
+      "totalSales": 34417.0,
       "cagrPct": -2.5,
       "peakYear": 2027
     },
@@ -6079,18 +6091,30 @@
     },
     "F2": {
       "companies": [
+        "4151",
         "CSL",
         "JAZZ"
       ],
       "modalities": [
         "nucleic_acid.oligonucleotide.mixed_ssdna_fragments",
-        "recombinant_protein.coagulation.pcc_4factor"
+        "recombinant_protein.coagulation.pcc_4factor",
+        "recombinant_protein.serpin.antithrombin"
       ],
       "areas": [
         "cardio_metabolic.thrombosis.reversal",
+        "hematology.rare_blood.antithrombin_deficiency",
         "hematology.rare_blood.vod_hsct"
       ],
       "assets": [
+        {
+          "ticker": "4151",
+          "asset": "kw_3357",
+          "name": "Acoalan (antithrombin gamma) - recombinant antithrombin III (Japan-only)",
+          "modality": "recombinant_protein.serpin.antithrombin",
+          "areas": [
+            "hematology.rare_blood.antithrombin_deficiency"
+          ]
+        },
         {
           "ticker": "CSL",
           "asset": "kcentra",
@@ -6110,19 +6134,19 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 2,
-      "areaCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
         "nucleic_acid",
         "recombinant_protein"
       ],
-      "totalTAM": 1543.8,
-      "totalSOM": 1118.6,
-      "totalSales": 900.0,
-      "cagrPct": 4.9,
-      "peakYear": 2028
+      "totalTAM": 3181.6,
+      "totalSOM": 1310.6,
+      "totalSales": 930.0,
+      "cagrPct": 4.5,
+      "peakYear": 2029
     },
     "F3": {
       "companies": [
@@ -9657,6 +9681,40 @@
       "totalSales": 1500.0,
       "cagrPct": 22.0,
       "peakYear": 2030
+    },
+    "IL17RA": {
+      "companies": [
+        "4151"
+      ],
+      "modalities": [
+        "antibody.monoclonal.anti_il17ra"
+      ],
+      "areas": [
+        "dermatology.inflammatory_derm.psoriasis_systemic"
+      ],
+      "assets": [
+        {
+          "ticker": "4151",
+          "asset": "lumicef",
+          "name": "Lumicef (brodalumab) - anti-IL-17RA human IgG2 mAb (Asia rights only; ex-Asia LEO Pharma Kyntheum/Siliq)",
+          "modality": "antibody.monoclonal.anti_il17ra",
+          "areas": [
+            "dermatology.inflammatory_derm.psoriasis_systemic"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 30900.0,
+      "totalSOM": 945.0,
+      "totalSales": 90.0,
+      "cagrPct": -2.0,
+      "peakYear": 2027
     },
     "IL1B": {
       "companies": [
@@ -15933,26 +15991,15 @@
     },
     "SERPINC1": {
       "companies": [
-        "4151",
         "GRF"
       ],
       "modalities": [
-        "plasma_protein.serpin.antithrombin",
-        "recombinant_protein.serpin.antithrombin"
+        "plasma_protein.serpin.antithrombin"
       ],
       "areas": [
         "hematology.rare_blood.antithrombin_deficiency"
       ],
       "assets": [
-        {
-          "ticker": "4151",
-          "asset": "kw_3357",
-          "name": "Acoalan (antithrombin gamma) - recombinant antithrombin III (Japan-only)",
-          "modality": "recombinant_protein.serpin.antithrombin",
-          "areas": [
-            "hematology.rare_blood.antithrombin_deficiency"
-          ]
-        },
         {
           "ticker": "GRF",
           "asset": "thrombate",
@@ -15963,19 +16010,18 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
-      "modalityClassCount": 2,
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
-        "plasma_protein",
-        "recombinant_protein"
+        "plasma_protein"
       ],
       "totalTAM": 1637.8,
-      "totalSOM": 332.0,
-      "totalSales": 63.0,
-      "cagrPct": 1.2,
-      "peakYear": 2028
+      "totalSOM": 140.0,
+      "totalSales": 33.0,
+      "cagrPct": 0.0,
+      "peakYear": 2026
     },
     "SERPING1": {
       "companies": [
@@ -16461,6 +16507,40 @@
       "totalSales": 1130.0,
       "cagrPct": -5.0,
       "peakYear": 2025
+    },
+    "SLC9A3": {
+      "companies": [
+        "4151"
+      ],
+      "modalities": [
+        "small_molecule.transporter.nhe3_inhibitor"
+      ],
+      "areas": [
+        "nephrology.ckd.hyperphosphatemia"
+      ],
+      "assets": [
+        {
+          "ticker": "4151",
+          "asset": "phozevel",
+          "name": "Phozevel (tenapanor) - intestinal NHE3 inhibitor (Ardelyx Japan license)",
+          "modality": "small_molecule.transporter.nhe3_inhibitor",
+          "areas": [
+            "nephrology.ckd.hyperphosphatemia"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 4040.0,
+      "totalSOM": 144.0,
+      "totalSales": 40.0,
+      "cagrPct": 25.0,
+      "peakYear": 2031
     },
     "SMN1": {
       "companies": [

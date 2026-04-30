@@ -789,6 +789,20 @@ REGIONS = {
         "eu":  {"patientsK": 800,   "wtpPct": 50, "priceK": 11},
         "row": {"patientsK": 3000,  "wtpPct": 12, "priceK": 4},
     },
+    # Hyperphosphatemia in CKD (dialysis): elevated serum phosphate from
+    # impaired renal clearance in dialysis pts. ~500K US dialysis, ~700K EU,
+    # ~3M ROW; ~85% require phosphate binder therapy. Class: sevelamer
+    # (Renvela/Renagel; Sanofi/generic ~$200M residual), lanthanum carbonate
+    # (Fosrenol; Shire/Takeda generic), calcium acetate (PhosLo; generic),
+    # ferric citrate (Auryxia; Akebia ~$130M), sucroferric oxyhydroxide
+    # (Velphoro; Vifor ~$200M), Phozevel (tenapanor NHE3 inhibitor; Ardelyx
+    # IBSRELA US + Japan KKD) novel mechanism. Class peak ~$2-3B globally.
+    # source: USRDS dialysis registry; KDIGO CKD-MBD guidelines; Ardelyx 10-K.
+    "nephrology.ckd.hyperphosphatemia": {
+        "us":  {"patientsK": 500,   "wtpPct": 70, "priceK": 6},
+        "eu":  {"patientsK": 700,   "wtpPct": 50, "priceK": 4},
+        "row": {"patientsK": 3000,  "wtpPct": 12, "priceK": 1.5},
+    },
     # Secondary hyperparathyroidism (SHPT) in CKD: elevated PTH from impaired
     # vitamin D activation + hyperphosphatemia in dialysis-dependent CKD.
     # ~500K US dialysis pts, ~700K EU, ~3M ROW; ~70% develop SHPT requiring
@@ -968,6 +982,7 @@ PEN_PCT = {
     "nephrology.ckd.pruritus": 25,
     "nephrology.ckd.anemia": 60,
     "nephrology.ckd.shpt": 55,
+    "nephrology.ckd.hyperphosphatemia": 60,
     "cardio_metabolic.thrombosis.reversal": 70,
     "urology.lower_tract.oab": 35,
     "cardio_metabolic.imaging.cardiac_stress": 30,

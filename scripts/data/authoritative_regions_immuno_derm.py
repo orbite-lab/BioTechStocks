@@ -50,6 +50,38 @@ REGIONS = {
     # franchises as Crohn's (Entyvio + Stelara + Skyrizi-UC + Humira + Rinvoq
     # + Tremfya + Zeposia + Velsipity), totalling ~$15-18B current global,
     # peak ~$20B. Same $25K net pricing pattern. Prior $46B inflated 3x.
+    # IBS-D (irritable bowel syndrome with diarrhea): functional GI disorder.
+    # Branded class: Xifaxan (Bausch rifaximin ~$1.5B IBS-D), Viberzi
+    # (AbbVie eluxadoline), alosetron generic. Most patients on OTC/diet/
+    # generic; branded ~5-7% of diagnosed. source: AGA IBS-D US ~5M
+    # diagnosed (1/3 of IBS pool ~15M), EU5 ~7M; ROW ~50M. Net branded ~$5K
+    # (rifaximin pulse therapy 3-4 courses/yr) per pt.
+    "immunology.inflammatory_gi.ibs_d": {
+        "us":  {"patientsK": 5000,   "wtpPct": 25, "priceK": 5},
+        "eu":  {"patientsK": 7000,   "wtpPct": 15, "priceK": 3},
+        "row": {"patientsK": 50000,  "wtpPct": 4,  "priceK": 1},
+    },
+    # Chronic constipation (CIC + IBS-C): functional GI disorder broadly
+    # under-treated. Branded specialty: Linzess (AbbVie+Ironwood linaclotide
+    # ~$1B), Trulance (Bausch plecanatide ~$200M), Motegrity (Allergan/AbbVie
+    # prucalopride), Amitiza (Sucampo lubiprostone -- generic). source:
+    # AGA CIC US ~16M, IBS-C ~5M (combined ~21M); EU ~25M; ROW ~200M.
+    # Branded ~5% of pool at ~$2.5K/yr blended.
+    "immunology.inflammatory_gi.constipation_chronic": {
+        "us":  {"patientsK": 21000,  "wtpPct": 10, "priceK": 2.5},
+        "eu":  {"patientsK": 25000,  "wtpPct": 6,  "priceK": 1.5},
+        "row": {"patientsK": 200000, "wtpPct": 2,  "priceK": 0.5},
+    },
+    # Opioid-induced constipation (OIC): chronic opioid users (~20M US),
+    # OIC affects ~40% (~8M). Branded class: Movantik (Daiichi Sankyo/Astra
+    # naloxegol ~$120M), Symproic (Shionogi/BHC naldemedine), Relistor (Bausch
+    # methylnaltrexone -- mature). source: ACG OIC US ~8M, EU ~5M, ROW ~30M.
+    # Branded ~10% pool at ~$3K/yr.
+    "immunology.inflammatory_gi.constipation_opioid": {
+        "us":  {"patientsK": 8000,   "wtpPct": 12, "priceK": 3},
+        "eu":  {"patientsK": 5000,   "wtpPct": 8,  "priceK": 1.8},
+        "row": {"patientsK": 30000,  "wtpPct": 3,  "priceK": 0.6},
+    },
     "immunology.inflammatory_gi.ulcerative_colitis": {
         "us":  {"patientsK": 1000, "wtpPct": 50, "priceK": 20},
         "eu":  {"patientsK": 1500, "wtpPct": 30, "priceK": 12},
@@ -321,6 +353,18 @@ REGIONS = {
         "eu":  {"patientsK": 4000,   "wtpPct": 20, "priceK": 1},
         "row": {"patientsK": 20000,  "wtpPct": 8,  "priceK": 0.2},
     },
+    # Acne vulgaris: most common derm condition. Most pts use OTC + generic
+    # topicals; branded specialty class ~$1.5B globally for moderate-severe.
+    # Class: Cabtreo (Bausch fixed-dose triple, ~$100M and growing fast),
+    # Aklief (Galderma trifarotene), Twyneo (Sol-Gel), Winlevi (Sun Pharma
+    # clascoterone), Seysara (Almirall sarecycline oral). source: AAD acne
+    # US ~50M total, ~5M moderate-severe branded-eligible; EU5 ~7M; ROW ~50M.
+    # Net branded ~$0.5K/yr (topical cream).
+    "dermatology.inflammatory_derm.acne": {
+        "us":  {"patientsK": 5000,   "wtpPct": 30, "priceK": 0.5},
+        "eu":  {"patientsK": 7000,   "wtpPct": 18, "priceK": 0.3},
+        "row": {"patientsK": 50000,  "wtpPct": 5,  "priceK": 0.1},
+    },
 
     # ============================================================
     # DERMATOLOGY - RARE SKIN
@@ -384,6 +428,9 @@ PEN_PCT = {
     "immunology.inflammatory_gi.crohns": 38,
     "immunology.inflammatory_gi.ulcerative_colitis": 35,
     "immunology.inflammatory_gi.eoe": 35,
+    "immunology.inflammatory_gi.ibs_d": 7,
+    "immunology.inflammatory_gi.constipation_chronic": 10,
+    "immunology.inflammatory_gi.constipation_opioid": 12,
     "immunology.inflammatory_gi.gerd_peptic": 30,
     "dermatology.inflammatory_derm.cle": 30,
     "immunology.inflammatory_systemic.rheumatoid_arthritis": 28,
@@ -408,6 +455,7 @@ PEN_PCT = {
     "dermatology.inflammatory_derm.hidradenitis_suppurativa": 25,
     "dermatology.inflammatory_derm.psoriasis_systemic": 40,
     "dermatology.inflammatory_derm.psoriasis_topical": 10,
+    "dermatology.inflammatory_derm.acne": 12,
     "dermatology.rare_skin.alopecia_areata": 20,
     "dermatology.rare_skin.deb": 60,
     "dermatology.rare_skin.hailey_hailey": 10,

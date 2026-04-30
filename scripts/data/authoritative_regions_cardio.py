@@ -252,6 +252,17 @@ REGIONS = {
         "eu":  {"patientsK": 8,    "wtpPct": 55, "priceK": 120},
         "row": {"patientsK": 30,   "wtpPct": 14, "priceK": 40},
     },
+    # Hepatic encephalopathy (HE): neuropsychiatric complication of decompensated
+    # cirrhosis (~50% of cirrhosis pts develop HE). Branded class: Xifaxan
+    # (Bausch rifaximin ~$700M HE share; reduces recurrence) + lactulose
+    # generic 1L. SoC = chronic Xifaxan + lactulose. source: AASLD HE US
+    # ~150K branded-treated, EU5 ~200K; ROW ~1.5M (large viral hepatitis
+    # burden). Net branded ~$20K/yr (chronic rifaximin).
+    "cardio_metabolic.liver.hepatic_encephalopathy": {
+        "us":  {"patientsK": 150,   "wtpPct": 60, "priceK": 20},
+        "eu":  {"patientsK": 200,   "wtpPct": 45, "priceK": 12},
+        "row": {"patientsK": 1500,  "wtpPct": 12, "priceK": 4},
+    },
     # Decompensated cirrhosis (advanced liver disease with ascites, hepatorenal
     # syndrome, hepatic encephalopathy): heterogeneous etiologies (alcohol,
     # MASH, viral hepatitis, autoimmune). SoC: albumin infusions (Grifols,
@@ -517,6 +528,7 @@ PEN_PCT = {
     "cardio_metabolic.liver.mash": 8,
     "cardio_metabolic.liver.pld_adpkd": 15,
     "cardio_metabolic.liver.cirrhosis_decompensated": 30,
+    "cardio_metabolic.liver.hepatic_encephalopathy": 35,
     "cardio_metabolic.liver.pbc": 25,
     "cardio_metabolic.liver.pediatric_cholestasis": 50,
     "cardio_metabolic.obesity.general": 5,

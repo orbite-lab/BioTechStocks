@@ -1,0 +1,684 @@
+{
+  "company": {
+    "ticker": "BHC",
+    "name": "Bausch Health Companies Inc.",
+    "currentPrice": 5.63,
+    "sharesOut": 373,
+    "cash": -8000,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "RemainCo focus (B+L spinoff pending): Salix GI (Xifaxan LOE 2028) + Solta + Diversified; heavily levered (-$14B net debt); Xifaxan successor RED-C Ph3 FAILED Q1 2026",
+    "yahooTicker": "BHC"
+  },
+  "assets": [
+    {
+      "id": "xifaxan",
+      "name": "Xifaxan (rifaximin) - non-systemic antibiotic [LOE Jan 2028, Teva first generic]",
+      "stage": "Commercial (IBS-D + HE; key franchise driver)",
+      "modality": "small_molecule.antibiotic.rifamycin",
+      "targets": [
+        "RPOB"
+      ],
+      "indications": [
+        {
+          "id": "ibs_d",
+          "name": "IBS-D (irritable bowel syndrome diarrhea-predominant)",
+          "area": "immunology.inflammatory_gi.ibs_d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5000,
+                "wtpPct": 25,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 7000,
+                "wtpPct": 15,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 4,
+                "priceK": 1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 33.5,
+                "wtpPct": 25,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 4.2,
+                "wtpPct": 15,
+                "priceK": 3
+              },
+              "row": {
+                "reachPct": 1.3,
+                "wtpPct": 4,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Xifaxan ~70% US IBS-D branded share (sole non-systemic abx); generic Teva Jan 2028 LOE",
+              "us.priceK": "Xifaxan IBS-D 14-day course pulse therapy ~$5K/yr"
+            },
+            "penPct": 7,
+            "cagrPct": -8,
+            "peakYear": 2027,
+            "salesM": 1500,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "he",
+          "name": "Hepatic encephalopathy (overt HE recurrence reduction)",
+          "area": "cardio_metabolic.liver.hepatic_encephalopathy",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 150,
+                "wtpPct": 60,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 200,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 1500,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 51.5,
+                "wtpPct": 60,
+                "priceK": 20
+              },
+              "eu": {
+                "reachPct": 10.3,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "row": {
+                "reachPct": 1.7,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Xifaxan ~85% US HE share (sole branded; lactulose generic SoC adjunct)",
+              "us.priceK": "Xifaxan chronic HE ~$20K/yr"
+            },
+            "penPct": 35,
+            "cagrPct": -8,
+            "peakYear": 2027,
+            "salesM": 700,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "trulance",
+      "name": "Trulance (plecanatide) - GC-C agonist for chronic constipation",
+      "stage": "Commercial (CIC + IBS-C)",
+      "modality": "peptide.gc_c_agonist.plecanatide",
+      "targets": [
+        "GUCY2C"
+      ],
+      "indications": [
+        {
+          "id": "cic_ibsc",
+          "name": "Chronic idiopathic constipation + IBS-C",
+          "area": "immunology.inflammatory_gi.constipation_chronic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 21000,
+                "wtpPct": 10,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 25000,
+                "wtpPct": 6,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 2,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 25,
+                "priceK": 2.5
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 8,
+                "priceK": 1.5
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 3,
+                "priceK": 0.5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Trulance ~12% US branded CIC/IBS-C share vs Linzess (AbbVie) dominant",
+              "us.priceK": "Plecanatide ~$2.5K/yr"
+            },
+            "penPct": 10,
+            "cagrPct": 6,
+            "peakYear": 2030,
+            "salesM": 200,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "relistor",
+      "name": "Relistor (methylnaltrexone) - peripheral mu-opioid antagonist for OIC",
+      "stage": "Commercial (OIC; mature, declining)",
+      "modality": "small_molecule.gpcr.opioid_antagonist_peripheral",
+      "targets": [
+        "OPRM1"
+      ],
+      "indications": [
+        {
+          "id": "oic",
+          "name": "Opioid-induced constipation (chronic non-cancer pain)",
+          "area": "immunology.inflammatory_gi.constipation_opioid",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 12,
+                "priceK": 3
+              },
+              "eu": {
+                "patientsK": 5000,
+                "wtpPct": 8,
+                "priceK": 1.8
+              },
+              "row": {
+                "patientsK": 30000,
+                "wtpPct": 3,
+                "priceK": 0.6
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 22,
+                "priceK": 4
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 8,
+                "priceK": 2.5
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 3,
+                "priceK": 0.8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Relistor declining vs Movantik (Daiichi naloxegol) + Symproic; ~30% branded OIC share",
+              "us.priceK": "Methylnaltrexone SC + oral ~$4K/yr"
+            },
+            "penPct": 12,
+            "cagrPct": -9,
+            "peakYear": 2025,
+            "salesM": 100,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "cabtreo",
+      "name": "Cabtreo (clindamycin/adapalene/benzoyl peroxide) - fixed-dose triple acne topical",
+      "stage": "Commercial (FDA Oct 2023; #1 prescribed topical acne in new starts)",
+      "modality": "small_molecule.topical.fixed_combination",
+      "targets": [
+        "RARG"
+      ],
+      "indications": [
+        {
+          "id": "acne",
+          "name": "Acne vulgaris (moderate-severe; fixed-dose triple gel)",
+          "area": "dermatology.inflammatory_derm.acne",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5000,
+                "wtpPct": 30,
+                "priceK": 0.5
+              },
+              "eu": {
+                "patientsK": 7000,
+                "wtpPct": 18,
+                "priceK": 0.3
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 5,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 17.3,
+                "wtpPct": 30,
+                "priceK": 0.5
+              },
+              "eu": {
+                "reachPct": 4.3,
+                "wtpPct": 18,
+                "priceK": 0.3
+              },
+              "row": {
+                "reachPct": 1.4,
+                "wtpPct": 5,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Cabtreo #1 new patient starts (105K patients; +69% YoY); ~12% branded specialty share",
+              "us.priceK": "Topical fixed-dose ~$500/yr"
+            },
+            "penPct": 12,
+            "cagrPct": 30,
+            "peakYear": 2032,
+            "salesM": 100,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "wellbutrin_legacy",
+      "name": "Wellbutrin XL (bupropion) + Diversified mature brands",
+      "stage": "Commercial (mature; declining)",
+      "modality": "small_molecule.cns.dopamine_norepi_reuptake",
+      "targets": [
+        "SLC6A2",
+        "SLC6A3"
+      ],
+      "indications": [
+        {
+          "id": "depression",
+          "name": "Major depressive disorder + smoking cessation (Wellbutrin + others)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 15.3,
+                "wtpPct": 30,
+                "priceK": 1
+              },
+              "eu": {
+                "reachPct": 3.8,
+                "wtpPct": 18,
+                "priceK": 0.5
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 5,
+                "priceK": 0.2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Wellbutrin XL mature SSRI/atypical antidepressant; bupropion generic competition; ~3% US branded MDD share",
+              "us.priceK": "Wellbutrin XL maintenance"
+            },
+            "penPct": 60,
+            "cagrPct": -10,
+            "peakYear": 2025,
+            "salesM": 300,
+            "salesYear": 2025
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 2,
+        "commercialMult": 1.3,
+        "commercialRevM": 3000,
+        "milestones": 0,
+        "dil": 30
+      },
+      "assumptions": {
+        "xifaxan": {
+          "ibs_d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          },
+          "he": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "trulance": {
+          "cic_ibsc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "relistor": {
+          "oic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "cabtreo": {
+          "acne": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "wellbutrin_legacy": {
+          "depression": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 3,
+        "commercialMult": 1.8,
+        "commercialRevM": 4000,
+        "milestones": 50,
+        "dil": 15
+      },
+      "assumptions": {
+        "xifaxan": {
+          "ibs_d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "he": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "trulance": {
+          "cic_ibsc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "relistor": {
+          "oic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "cabtreo": {
+          "acne": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "wellbutrin_legacy": {
+          "depression": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 40,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 4,
+        "commercialMult": 2.5,
+        "commercialRevM": 5000,
+        "milestones": 100,
+        "dil": 5
+      },
+      "assumptions": {
+        "xifaxan": {
+          "ibs_d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          },
+          "he": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "trulance": {
+          "cic_ibsc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "relistor": {
+          "oic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "cabtreo": {
+          "acne": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "wellbutrin_legacy": {
+          "depression": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 6,
+        "commercialMult": 3.5,
+        "commercialRevM": 6000,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "xifaxan": {
+          "ibs_d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "he": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "trulance": {
+          "cic_ibsc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "relistor": {
+          "oic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "cabtreo": {
+          "acne": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "wellbutrin_legacy": {
+          "depression": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 9,
+        "commercialMult": 5,
+        "commercialRevM": 7500,
+        "milestones": 400,
+        "dil": 0
+      },
+      "assumptions": {
+        "xifaxan": {
+          "ibs_d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "he": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "trulance": {
+          "cic_ibsc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "relistor": {
+          "oic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "cabtreo": {
+          "acne": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "wellbutrin_legacy": {
+          "depression": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Jan 2028",
+      "dateSort": "2028-01-15",
+      "asset": "xifaxan",
+      "indication": "ibs_d",
+      "title": "Xifaxan US LOE (Teva first generic; ~85% sales erosion within 24 months)",
+      "type": "loe",
+      "binary": false,
+      "_source": "https://seekingalpha.com/article/4862327-bausch-health-red-c-failure-leaves-blockbuster-xifaxan-without-a-successor",
+      "_confidence": "high"
+    },
+    {
+      "date": "Q1 2026",
+      "dateSort": "2026-01-24",
+      "asset": "xifaxan",
+      "indication": "he",
+      "title": "RED-C Phase 3 FAILED (next-gen rifaximin successor): no Xifaxan replacement",
+      "type": "phase3_data",
+      "binary": false,
+      "_source": "https://www.fiercepharma.com/pharma/bausch-healths-2b-pursuit-xifaxan-successor-hits-wall-phase-3-failure",
+      "_confidence": "high"
+    },
+    {
+      "date": "2026-2027",
+      "dateSort": "2026-12-31",
+      "asset": "xifaxan",
+      "indication": "ibs_d",
+      "title": "Bausch + Lomb spinoff completion (88% stake distribution; pending leverage targets)",
+      "type": "other",
+      "binary": false,
+      "_source": "https://news.bloomberglaw.com/bankruptcy-law/bausch-health-taps-jefferies-to-refinance-debt-aid-spinoff",
+      "_confidence": "medium"
+    },
+    {
+      "date": "2027-2028",
+      "dateSort": "2027-12-31",
+      "asset": "xifaxan",
+      "indication": "ibs_d",
+      "title": "Debt refinancing wall (2028 senior notes maturity; covenant pressure)",
+      "type": "other",
+      "binary": false,
+      "_source": "https://everyticker.com/quote/BHC/news/bausch-health-offers-exchange-of-2028-senior-secured-notes-for-new-2032-debt",
+      "_confidence": "high"
+    }
+  ]
+}

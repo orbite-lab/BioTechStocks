@@ -708,6 +708,37 @@ REGIONS = {
         "eu":  {"patientsK": 1000,  "wtpPct": 55, "priceK": 4},
         "row": {"patientsK": 3000,  "wtpPct": 18, "priceK": 1.5},
     },
+    # CKD-associated pruritus (CKD-aP, uremic itch): chronic itch in
+    # dialysis patients. ~400K US dialysis patients, ~30-50% with
+    # moderate-severe pruritus = ~150K eligible. EU ~200K, ROW ~1M.
+    # Class: Korsuva (CSL Vifor difelikefalin kappa-opioid agonist
+    # ~$50M, KALM-1/-2 Ph3). Net branded ~$12K/yr.
+    "nephrology.ckd.pruritus": {
+        "us":  {"patientsK": 150,   "wtpPct": 55, "priceK": 12},
+        "eu":  {"patientsK": 200,   "wtpPct": 38, "priceK": 7},
+        "row": {"patientsK": 1000,  "wtpPct": 10, "priceK": 2.5},
+    },
+    # CKD anemia (EPO-stimulating agents + iron + HIF-PHI): chronic anemia
+    # in dialysis + non-dialysis CKD. US ~600K dialysis + ~3M non-dialysis
+    # CKD with anemia, EU ~800K, ROW ~3M. Class: Aranesp (Amgen darbepoetin
+    # ~$1.4B), Mircera (CSL Vifor CERA EPO ~$200M), Procrit/Eprex (legacy),
+    # Pelmeg/Udenyca biosims, HIF-PHI (Vafseo/vadadustat AKBA, Jesduvroq
+    # GSK daprodustat, Roxadustat AZN/Astellas). Net branded ~$18K/yr.
+    "nephrology.ckd.anemia": {
+        "us":  {"patientsK": 600,   "wtpPct": 65, "priceK": 18},
+        "eu":  {"patientsK": 800,   "wtpPct": 50, "priceK": 11},
+        "row": {"patientsK": 3000,  "wtpPct": 12, "priceK": 4},
+    },
+    # Anticoagulant reversal (warfarin/DOAC bleeding emergencies):
+    # ~150K US emergency reversal events/yr, ~200K EU, ~600K ROW. Class:
+    # Kcentra/Beriplex (CSL 4F-PCC ~$700M), Andexxa (Astellas/Portola
+    # andexanet alfa Factor Xa-specific reversal ~$200M), Praxbind
+    # (BI idarucizumab anti-dabigatran ~$50M). Net branded ~$5-15K/event.
+    "cardio_metabolic.thrombosis.reversal": {
+        "us":  {"patientsK": 150,   "wtpPct": 80, "priceK": 5},
+        "eu":  {"patientsK": 200,   "wtpPct": 60, "priceK": 3},
+        "row": {"patientsK": 600,   "wtpPct": 18, "priceK": 1.5},
+    },
 }
 
 PEN_PCT = {
@@ -786,4 +817,7 @@ PEN_PCT = {
     "women_health.contraception.ocp": 25,
     "cardio_metabolic.thrombosis.antiplatelet": 20,
     "women_health.fertility.ivf": 35,
+    "nephrology.ckd.pruritus": 25,
+    "nephrology.ckd.anemia": 60,
+    "cardio_metabolic.thrombosis.reversal": 70,
 }

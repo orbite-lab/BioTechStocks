@@ -379,6 +379,26 @@ REGIONS = {
         "eu":  {"patientsK": 40,   "wtpPct": 55, "priceK": 160},
         "row": {"patientsK": 200,  "wtpPct": 18, "priceK": 60},
     },
+    # Congenital fibrinogen deficiency (afibrinogenemia + hypofibrinogenemia
+    # + dysfibrinogenemia): rare bleeding disorder. ~1K US, ~1.5K EU5, ~10K
+    # ROW. Class: Riastap (CSL plasma fibrinogen ~$200M), Fibryga (Octapharma),
+    # cryoprecipitate (off-label). Net branded ~$200K/yr orphan-priced.
+    "hematology.rare_blood.fibrinogen_deficiency": {
+        "us":  {"patientsK": 1,    "wtpPct": 70, "priceK": 200},
+        "eu":  {"patientsK": 1.5,  "wtpPct": 55, "priceK": 130},
+        "row": {"patientsK": 10,   "wtpPct": 14, "priceK": 50},
+    },
+    # Plasma volume expansion / supportive care (cirrhosis ascites, burns,
+    # cardiac surgery, hypovolemic shock, neonatal): broad supportive care
+    # use of human serum albumin. US ~3M annual treated episodes, EU ~5M,
+    # ROW ~30M (mostly hospital). Class: CSL Behring Albuminex/Plasbumin
+    # (~$1.2B), Octapharma Albunorm + Grifols Albutein. Class globally
+    # ~$3-4B branded. Net branded ~$5K/episode.
+    "hematology.supportive_care.volume_expander": {
+        "us":  {"patientsK": 3000,  "wtpPct": 60, "priceK": 5},
+        "eu":  {"patientsK": 5000,  "wtpPct": 45, "priceK": 3},
+        "row": {"patientsK": 30000, "wtpPct": 14, "priceK": 1},
+    },
     # Myelofibrosis (MF): primary + post-PV/post-ET. ~17K US prevalent,
     # ~25K EU5, ~80K ROW. Branded class: Jakavi/Jakafi (ruxolitinib JAK1/2
     # Novartis/Incyte ~$5B globally), Inrebic (fedratinib BMS), Vonjo
@@ -625,6 +645,8 @@ PEN_PCT = {
     "hematology.rare_blood.attp": 70,
     "hematology.rare_blood.hemophilia_b": 60,
     "hematology.rare_blood.vwd": 50,
+    "hematology.rare_blood.fibrinogen_deficiency": 55,
+    "hematology.supportive_care.volume_expander": 40,
     "hematology.myeloproliferative.mf": 65,
     "hematology.myeloproliferative.pv": 25,
     "hematology.myeloproliferative.mds": 60,

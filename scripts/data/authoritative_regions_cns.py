@@ -181,6 +181,19 @@ REGIONS = {
         "eu":  {"patientsK": 1100,  "wtpPct": 80, "priceK": 7},
         "row": {"patientsK": 12000, "wtpPct": 35, "priceK": 2},
     },
+    # source: NSCISC US SCI ~17K incident/yr, ~300K prevalent; EU5 ~22K
+    # incident; ROW ~250K incident (LMIC trauma rates higher). No approved
+    # neuroprotective/regenerative pharmacotherapy globally; SoC =
+    # methylprednisolone (off-label, declining) + surgical decompression +
+    # rehab. Pipeline: Mitsubishi Tanabe MT-3921 (anti-RGMa Ph3 acute),
+    # Asubio/AbbVie elezanumab (anti-RGMa Ph2), various stem cell programs
+    # (Asterias AST-OPC1, NeuralStem). Branded peak forecast ~$2-3B if
+    # regenerative tx succeeds (one-time IV ~$200-300K acute dose).
+    "cns.neurodegeneration.spinal_cord_injury": {
+        "us":  {"patientsK": 17,   "wtpPct": 60, "priceK": 200},
+        "eu":  {"patientsK": 22,   "wtpPct": 40, "priceK": 120},
+        "row": {"patientsK": 250,  "wtpPct": 10, "priceK": 35},
+    },
 
     # PAIN
     # source: US migraine ~40M (AMF) but branded-Rx subset ~4M (the chronic +
@@ -323,6 +336,7 @@ PEN_PCT = {
     "cns.neurodegeneration.msa": 55,
     "cns.neurodegeneration.ppa": 15,
     "cns.neurodegeneration.post_stroke_recovery": 40,
+    "cns.neurodegeneration.spinal_cord_injury": 25,
     "cns.pain.migraine": 35,
     "cns.psychiatry.adhd": 55,
     "cns.psychiatry.anxiety": 70,

@@ -19,6 +19,21 @@ REGIONS = {
         "eu":  {"patientsK": 10,   "wtpPct": 55, "priceK": 280},
         "row": {"patientsK": 20,   "wtpPct": 15, "priceK": 100},
     },
+    # Systemic sclerosis (SSc; scleroderma): rare connective-tissue disease
+    # with progressive fibrosis of skin + internal organs (lungs, kidneys,
+    # heart, GI). Subtypes: limited cutaneous (lcSSc; CREST) + diffuse
+    # cutaneous (dcSSc; rapid progression). ~80K US, ~120K EU, ~400K ROW
+    # prevalent (Scleroderma Foundation; EUSTAR). SSc-ILD (interstitial lung
+    # disease) is the leading cause of mortality (~50% of SSc pts).
+    # Branded class: Ofev (BI nintedanib SSc-ILD ~$300M of $4B Ofev franchise),
+    # Actemra (Roche tocilizumab SSc-ILD label), CellCept/MMF off-label.
+    # Pipeline: MTP dersimelagon Ph2/Ph3 ssc; Boehringer; Horizon; Genentech.
+    # Net branded peak ~$30K/yr. source: NORD SSc; ACR; BI/Roche 10-Ks.
+    "immunology.autoimmune.systemic_sclerosis": {
+        "us":  {"patientsK": 80,   "wtpPct": 35, "priceK": 28},
+        "eu":  {"patientsK": 120,  "wtpPct": 22, "priceK": 16},
+        "row": {"patientsK": 400,  "wtpPct": 6,  "priceK": 5},
+    },
     "immunology.autoimmune.sjogrens": {
         "us":  {"patientsK": 1000,  "wtpPct": 25, "priceK": 8},
         "eu":  {"patientsK": 2000,  "wtpPct": 18, "priceK": 4},
@@ -389,6 +404,21 @@ REGIONS = {
         "eu":  {"patientsK": 2000,  "wtpPct": 35, "priceK": 3},
         "row": {"patientsK": 60000, "wtpPct": 12, "priceK": 0.5},
     },
+    # Erythropoietic protoporphyria (EPP; FECH LoF + X-linked ALAS2 form):
+    # rare metabolic-cutaneous disorder with extreme painful photosensitivity
+    # from protoporphyrin IX accumulation. ~5K US prevalent (American
+    # Porphyria Foundation; ~1:75K-200K), ~7K EU, ~25K ROW (largely
+    # undiagnosed). Sole branded therapy: Scenesse (afamelanotide MC1R
+    # agonist; Clinuvel CUV) ~$80M; Disc Medicine bitopertin Ph3 readout
+    # 2026; MTP dersimelagon (MT-7117 oral MC1R agonist) Ph3 ENDEAVOR
+    # mixed-results 2024. Pricing: Scenesse implant ~$190K/yr; oral MC1R
+    # class peak ~$200-300K.
+    # source: NORD EPP; Clinuvel 10-K; Disc Medicine 10-K; MTP releases.
+    "dermatology.rare_skin.epp": {
+        "us":  {"patientsK": 5,    "wtpPct": 70, "priceK": 200},
+        "eu":  {"patientsK": 7,    "wtpPct": 50, "priceK": 130},
+        "row": {"patientsK": 25,   "wtpPct": 10, "priceK": 45},
+    },
     # source: Dellon 2022 EoE diagnosed prevalence ~150K US (rising); Dupixent EoE WAC ~$35K
     "immunology.inflammatory_gi.eoe": {
         "us":  {"patientsK": 150,  "wtpPct": 55, "priceK": 35},
@@ -424,6 +454,8 @@ REGIONS = {
 PEN_PCT = {
     "immunology.autoimmune.hereditary_angioedema": 70,
     "immunology.autoimmune.sjogrens": 15,
+    "immunology.autoimmune.systemic_sclerosis": 30,
+    "dermatology.rare_skin.epp": 50,
     "immunology.autoimmune.sle": 25,
     "immunology.inflammatory_gi.crohns": 38,
     "immunology.inflammatory_gi.ulcerative_colitis": 35,

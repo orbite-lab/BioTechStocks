@@ -78,6 +78,45 @@ exist, do **not** invent it without coordination:
 3. If approved, add to the relevant authoritative module AND document in
    the taxonomy.
 
+### Step 3.5 — Append the new area to relevant disease synonym groups
+
+If the new L3 belongs to an established cross-cutting disease family that
+already has a `disease_synonym_groups` entry in `data/taxonomy.json`,
+**append the new area path to the group's `areas` array**. This is what
+makes cross-L1 disease views (Market Explorer search, find_disease_family)
+auto-include the new area.
+
+Current groups (25 as of latest update) -- check whether the new area fits any:
+- `sle_spectrum`, `ibd_spectrum`, `prostate_cancer`, `breast_cancer_all`,
+  `multiple_myeloma_all`, `nsclc_all`, `hemoglobinopathy_all`,
+  `hereditary_angioedema_all`, `amyloid_alzheimers_disease`,
+  `kidney_disease_specialty`, `hemophilia_all`, `polycystic_disease`,
+  `attr_amyloidosis`, `amyloidosis_all`, `complement_mediated`,
+  `heart_failure_spectrum`, `pulmonary_hypertension`, `anemia_spectrum`,
+  `lysosomal_storage_disease`, `muscular_dystrophy`, `obesity_all`,
+  `thrombosis_spectrum`, `epilepsy_spectrum`, `sarcoma_all`,
+  `autoimmune_glomerulopathy`, `autoimmune_spectrum`
+
+Common triggers:
+- New amyloidosis area (AL, AA, hereditary apoA-I, etc.) → append to
+  `amyloidosis_all`; if TTR-specific also `attr_amyloidosis`
+- New autoimmune disease (any L1) → append to `autoimmune_spectrum`; if
+  glomerular also `autoimmune_glomerulopathy`
+- New complement-driven disease → append to `complement_mediated`
+- New muscular dystrophy / SMA-adjacent → append to `muscular_dystrophy`
+- New NSCLC driver / breast subtype / myeloma line → append to the
+  matching cancer-spectrum group
+- New rare anemia / hemoglobinopathy → `anemia_spectrum`
+- New cardiomyopathy / HF subtype → `heart_failure_spectrum`
+- New PH subtype → `pulmonary_hypertension`
+- New LSD → `lysosomal_storage_disease`
+- New rare epilepsy / DEE → `epilepsy_spectrum`
+
+If the new area belongs to a *new* cross-cutting family (no existing group
+fits), propose a new `disease_synonym_groups` entry to the user. Don't
+create one without confirmation -- single-area "spectrums" add noise, not
+signal.
+
 **Pseudo-areas (`_*` prefix)** for assets that genuinely have no specific
 disease (pure platform / discovery — typically pre-clinical R&D):
 - `_platform.adc_discovery`, `_platform.bicycle_discovery` (current examples)
@@ -267,6 +306,7 @@ NEW COMPANY: TICKER — <Name>
   Markets covered: <list of L3 areas>
   New authoritative regions added: <list or "none">
   New taxonomy areas proposed: <list or "none">
+  Synonym groups updated: <list or "none">
   Catalysts next 18m: <count>
   Scenario returns at base: <-x% to +y%>
   All CI checks: PASS
@@ -286,6 +326,7 @@ git commit -m "feat(configs): add TICKER (<Name>)
 - <N> assets: <comma-separated asset names with stages>
 - Markets: <L3 areas>
 - New epi: <list or 'none; all areas already covered'>
+- Synonym groups: <list of groups updated, or 'none'>
 - Current price <ccy><X>, weighted TP <ccy><Y> (<upside>%)
 
 Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"

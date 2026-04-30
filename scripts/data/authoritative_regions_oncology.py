@@ -703,6 +703,20 @@ REGIONS = {
     # ~25K ROW. Class: Ogsiveo (Merck KGaA/SpringWorks nirogacestat
     # gamma-secretase inhibitor first-in-class ~$200M, DEFI Ph3
     # positive 2023). Net branded ~$175K/yr orphan-priced.
+    # Primary bone sarcomas (chondrosarcoma + osteosarcoma + Ewing sarcoma):
+    # heterogeneous primary bone-origin malignancies, distinct from STS
+    # (soft tissue) per WHO classification. ~3.5K US incident bone sarcoma/yr
+    # (NCI SEER): chondrosarcoma ~1.6K (40-50%), osteosarcoma ~1K (Ewing
+    # 0.5K, others 0.4K). EU 5K, ROW 25K. Branded class: Tibsovo (ivosidenib
+    # IDH1m chondrosarcoma FDA 2024 first targeted), mifamurtide (Mepact
+    # Takeda osteosarcoma EU only), historical ifosfamide/doxorubicin
+    # backbone (generic). Net branded ~$280K/yr (Tibsovo orphan pricing).
+    # source: NCI SEER bone tumors; AAOS; Servier 10-K.
+    "oncology.musculoskeletal.bone_sarcoma": {
+        "us":  {"patientsK": 3.5, "wtpPct": 60, "priceK": 200},
+        "eu":  {"patientsK": 5,   "wtpPct": 42, "priceK": 120},
+        "row": {"patientsK": 25,  "wtpPct": 12, "priceK": 40},
+    },
     "oncology.musculoskeletal.desmoid": {
         "us":  {"patientsK": 6,   "wtpPct": 70, "priceK": 175},
         "eu":  {"patientsK": 8,   "wtpPct": 50, "priceK": 100},
@@ -865,6 +879,7 @@ PEN_PCT = {
     "oncology.skin.merkel_cell": 60,
     "oncology.pediatric.neuroblastoma": 60,
     "oncology.musculoskeletal.desmoid": 50,
+    "oncology.musculoskeletal.bone_sarcoma": 35,
     "oncology.musculoskeletal.nf1_pn": 30,
     "oncology.musculoskeletal.tgct": 40,
     "oncology.musculoskeletal.gist": 50,

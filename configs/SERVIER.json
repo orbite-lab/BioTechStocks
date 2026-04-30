@@ -7,7 +7,7 @@
     "cash": 0,
     "currency": "EUR",
     "phase": "commercial",
-    "subtitle": "PRIVATE REFERENCE -- French foundation-controlled pharma (Fondation Internationale de Recherche Servier; founded 1954). FY24 total revenue ~EUR 5.9B (+8.5%); EUR 850M R&D investment. Strategic shift to oncology innovation post-Agios acquisition Apr 2021 ($1.8B + milestones). Oncology portfolio: Tibsovo (ivosidenib IDH1 AML/cholangio/chondrosarcoma) + Voranigo (vorasidenib IDH1/2 LGG FDA Aug 2024 first targeted therapy) + Onivyde (nal-IRI pancreatic 1L NAPOLI-3) + Lonsurf (TAS-102 mCRC/gastric Taiho-licensed ex-Asia). Cardiometabolic legacy: Daflon (CVD venotonic) + Procoralan (ivabradine HF/angina) + Coversyl (perindopril HTN) + Diamicron (gliclazide T2D)",
+    "subtitle": "PRIVATE REFERENCE -- French foundation-controlled pharma (Fondation Internationale de Recherche Servier; founded 1954). FY24 total revenue ~EUR 5.9B (+8.5%); EUR 850M R&D investment. Strategic shift to oncology innovation post-Agios acquisition Apr 2021 ($1.8B + milestones). Oncology portfolio: Tibsovo (ivosidenib IDH1 AML/cholangio/chondrosarcoma) + Voranigo (vorasidenib IDH1/2 LGG FDA Aug 2024 first targeted therapy) + Onivyde (nal-IRI pancreatic 1L NAPOLI-3) + Lonsurf (TAS-102 mCRC/gastric Taiho-licensed ex-Asia ex-US). Cardiometabolic legacy: Daflon (CVD venotonic) + Procoralan (ivabradine HF/angina) + Coversyl (perindopril HTN) + Diamicron (gliclazide T2D)",
     "yahooTicker": "",
     "private": true,
     "privateNote": "Foundation-controlled since 1954 by Dr Jacques Servier; ownership held by Fondation Internationale de Recherche Servier (non-profit Dutch foundation since 2002 succession). No equity tradeable. Modeled here for taxonomy + drug-portfolio reference only."
@@ -125,38 +125,38 @@
         {
           "id": "chondrosarcoma_idh1",
           "name": "IDH1-mutant chondrosarcoma (FDA 2024)",
-          "area": "oncology.musculoskeletal.sts",
+          "area": "oncology.musculoskeletal.bone_sarcoma",
           "market": {
             "regions": {
               "us": {
-                "patientsK": 70,
-                "wtpPct": 65,
-                "priceK": 170
+                "patientsK": 3.5,
+                "wtpPct": 60,
+                "priceK": 200
               },
               "eu": {
-                "patientsK": 95,
-                "wtpPct": 48,
-                "priceK": 100
+                "patientsK": 5,
+                "wtpPct": 42,
+                "priceK": 120
               },
               "row": {
-                "patientsK": 330,
-                "wtpPct": 14,
-                "priceK": 35
+                "patientsK": 25,
+                "wtpPct": 12,
+                "priceK": 40
               }
             },
             "company_slice": {
               "us": {
-                "reachPct": 0.4,
+                "reachPct": 5.8,
                 "wtpPct": 60,
                 "priceK": 280
               },
               "eu": {
-                "reachPct": 0.2,
+                "reachPct": 2.9,
                 "wtpPct": 40,
                 "priceK": 170
               },
               "row": {
-                "reachPct": 0.05,
+                "reachPct": 0.7,
                 "wtpPct": 10,
                 "priceK": 55
               }
@@ -230,7 +230,7 @@
             "penPct": 35,
             "cagrPct": 35,
             "peakYear": 2032,
-            "salesM": 200,
+            "salesM": 400,
             "salesYear": 2025
           }
         }
@@ -291,7 +291,7 @@
             "penPct": 40,
             "cagrPct": 18,
             "peakYear": 2031,
-            "salesM": 380,
+            "salesM": 490,
             "salesYear": 2025
           }
         }
@@ -303,8 +303,7 @@
       "stage": "Commercial (mCRC 3L FDA 2015; mCRC + bevacizumab combo SUNLIGHT FDA 2023; gastric 3L)",
       "modality": "small_molecule.cytotoxic.nucleoside_analog",
       "targets": [
-        "TYMP",
-        "POLD1"
+        "TYMP"
       ],
       "indications": [
         {
@@ -406,68 +405,6 @@
             "cagrPct": 3,
             "peakYear": 2029,
             "salesM": 50,
-            "salesYear": 2025
-          }
-        }
-      ]
-    },
-    {
-      "id": "vanflyta",
-      "name": "Vanflyta (quizartinib) - oral selective FLT3-ITD type II tyrosine kinase inhibitor (Daiichi-originated; Servier ex-US ex-JP rights)",
-      "stage": "Commercial (FLT3-ITD AML 1L + maintenance FDA Jul 2023; QuANTUM-First Ph3)",
-      "modality": "small_molecule.kinase.flt3_inhibitor",
-      "targets": [
-        "FLT3"
-      ],
-      "indications": [
-        {
-          "id": "flt3_aml",
-          "name": "FLT3-ITD AML 1L + post-HSCT maintenance (~25-30% of AML)",
-          "area": "oncology.hematology.aml",
-          "market": {
-            "regions": {
-              "us": {
-                "patientsK": 22,
-                "wtpPct": 62,
-                "priceK": 185
-              },
-              "eu": {
-                "patientsK": 27,
-                "wtpPct": 45,
-                "priceK": 105
-              },
-              "row": {
-                "patientsK": 90,
-                "wtpPct": 14,
-                "priceK": 35
-              }
-            },
-            "company_slice": {
-              "us": {
-                "reachPct": 0,
-                "wtpPct": 0,
-                "priceK": 0
-              },
-              "eu": {
-                "reachPct": 6,
-                "wtpPct": 50,
-                "priceK": 200
-              },
-              "row": {
-                "reachPct": 1,
-                "wtpPct": 12,
-                "priceK": 50
-              }
-            },
-            "company_slice_sources": {
-              "eu.reachPct": "Vanflyta EU FLT3-ITD ~30% AML pts; competitive vs Rydapt (NVS midostaurin generic class)",
-              "eu.priceK": "Vanflyta EU WAC ~EUR 200K/yr",
-              "us.note": "Daiichi US directly markets Vanflyta; Servier ex-US ex-Asia"
-            },
-            "penPct": 48,
-            "cagrPct": 12,
-            "peakYear": 2031,
-            "salesM": 80,
             "salesYear": 2025
           }
         }
@@ -661,7 +598,7 @@
       "id": "diamicron",
       "name": "Diamicron (gliclazide) - sulfonylurea (insulin secretagogue)",
       "stage": "Commercial (T2D; mature, generic-aged; major in EU/Russia/Asia/LATAM)",
-      "modality": "small_molecule.transporter.sulfonylurea",
+      "modality": "small_molecule.ion_channel.k_atp_inhibitor",
       "targets": [
         "ABCC8"
       ],
@@ -775,13 +712,6 @@
             "pen": 0.3
           }
         },
-        "vanflyta": {
-          "flt3_aml": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.3
-          }
-        },
         "daflon": {
           "cvd": {
             "pos": 100,
@@ -864,13 +794,6 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.45
-          }
-        },
-        "vanflyta": {
-          "flt3_aml": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.5
           }
         },
         "daflon": {
@@ -957,13 +880,6 @@
             "pen": 0.6
           }
         },
-        "vanflyta": {
-          "flt3_aml": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.7
-          }
-        },
         "daflon": {
           "cvd": {
             "pos": 100,
@@ -1048,13 +964,6 @@
             "pen": 0.8
           }
         },
-        "vanflyta": {
-          "flt3_aml": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 0.9
-          }
-        },
         "daflon": {
           "cvd": {
             "pos": 100,
@@ -1137,13 +1046,6 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.05
-          }
-        },
-        "vanflyta": {
-          "flt3_aml": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1.2
           }
         },
         "daflon": {

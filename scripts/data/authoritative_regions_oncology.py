@@ -532,6 +532,19 @@ REGIONS = {
     # via ACTION trial (now Jazz post-Chimerix Mar 2025 acq). WAC ~$24K/mo
     # ($288K/yr blended); ultra-orphan pricing.
     # source: ACS 2024; Mackay 2017 Cancer Cell DMG epi; Chimerix/Jazz 10-K.
+    # IDH1/2-mutant grade 2 glioma (low-grade glioma): astrocytoma + 1p/19q-
+    # codeleted oligodendroglioma. Distinct from H3K27M high-grade glioma.
+    # ~25K US prevalent (CBTRUS), ~30K EU, ~80K ROW. Voranigo (vorasidenib
+    # IDH1/2 dual inhibitor; Servier ex-Agios deal 2021) first FDA-approved
+    # targeted therapy for IDH-mutant LGG (FDA Aug 2024 INDIGO Ph3 positive).
+    # SoC pre-2024 = surgery + radiotherapy + temozolomide. Class peak
+    # forecast ~$2-3B globally (Voranigo ~$300K/yr WAC).
+    # source: CBTRUS 2024; Servier press; INDIGO NEJM 2023.
+    "oncology.brain.idh_mutant_lgg": {
+        "us":  {"patientsK": 25,  "wtpPct": 60, "priceK": 280},
+        "eu":  {"patientsK": 30,  "wtpPct": 42, "priceK": 170},
+        "row": {"patientsK": 80,  "wtpPct": 10, "priceK": 50},
+    },
     "oncology.brain.h3k27m_diffuse_midline_glioma": {
         "us":  {"patientsK": 0.5, "wtpPct": 80, "priceK": 290},
         "eu":  {"patientsK": 0.5, "wtpPct": 60, "priceK": 180},
@@ -797,6 +810,7 @@ PEN_PCT = {
     "oncology.hematology.all": 60,
     "hematology.rare_blood.vod_hsct": 55,
     "oncology.brain.h3k27m_diffuse_midline_glioma": 50,
+    "oncology.brain.idh_mutant_lgg": 35,
     "oncology.hematology.cll": 65,
     "oncology.hematology.nhl": 35,
     "oncology.hematology.nhl.dlbcl": 55,

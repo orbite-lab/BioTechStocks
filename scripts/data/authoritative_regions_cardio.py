@@ -155,6 +155,20 @@ REGIONS = {
     # (propranolol ER), Cardura/Cardura XL (doxazosin), Vasotec/Vaseretic.
     # Total US branded HTN ~$1.5B, declining. Class peak ~$3B globally with
     # biosimilar/branded combo erosion. Distinct from agt_knockdown niche.
+    # Chronic venous insufficiency / venous disease (CVD): chronic venous
+    # reflux + valve incompetence in lower extremities; symptoms = leg
+    # heaviness, edema, varicose veins, ulcers (advanced CEAP C5-C6).
+    # ~25M US adults symptomatic, ~50M EU, ~300M ROW. Branded class:
+    # Daflon (diosmin/hesperidin micronized purified flavonoid fraction;
+    # Servier ~EUR 600M+ legacy in EU/Asia/LATAM); compression therapy +
+    # surgical/endovenous interventions are non-pharma SoC. Net branded
+    # ~EUR 50/mo (~$0.6K/yr).
+    # source: ACOG/SVS CVD epi; Servier 10-K; AAFP review.
+    "cardio_metabolic.vascular.chronic_venous_disease": {
+        "us":  {"patientsK": 25000,  "wtpPct": 8,  "priceK": 0.6},
+        "eu":  {"patientsK": 50000,  "wtpPct": 6,  "priceK": 0.4},
+        "row": {"patientsK": 300000, "wtpPct": 2,  "priceK": 0.15},
+    },
     "cardio_metabolic.hypertension.outpatient_generic": {
         # Bumped to reflect branded ARB / ARB-CCB FDC / aliskiren residuals:
         # Diovan/Exforge (Novartis ~$1.3B), Benicar/Edarbi/Atacand/Avapro
@@ -527,6 +541,7 @@ PEN_PCT = {
     "cardio_metabolic.heart_failure.hfpef": 18,
     "cardio_metabolic.heart_failure.hcm": 35,
     "cardio_metabolic.hypertension.outpatient_generic": 8,
+    "cardio_metabolic.vascular.chronic_venous_disease": 12,
     "cardio_metabolic.hypertension.resistant": 18,
     "cardio_metabolic.lipids.statin_generic": 10,
     "endocrine.calcium.hypophosphatasia": 60,

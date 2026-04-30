@@ -1,0 +1,1204 @@
+{
+  "company": {
+    "ticker": "SERVIER",
+    "name": "Les Laboratoires Servier (private; foundation-controlled)",
+    "currentPrice": 1,
+    "sharesOut": 1,
+    "cash": 0,
+    "currency": "EUR",
+    "phase": "commercial",
+    "subtitle": "PRIVATE REFERENCE -- French foundation-controlled pharma (Fondation Internationale de Recherche Servier; founded 1954). FY24 total revenue ~EUR 5.9B (+8.5%); EUR 850M R&D investment. Strategic shift to oncology innovation post-Agios acquisition Apr 2021 ($1.8B + milestones). Oncology portfolio: Tibsovo (ivosidenib IDH1 AML/cholangio/chondrosarcoma) + Voranigo (vorasidenib IDH1/2 LGG FDA Aug 2024 first targeted therapy) + Onivyde (nal-IRI pancreatic 1L NAPOLI-3) + Lonsurf (TAS-102 mCRC/gastric Taiho-licensed ex-Asia). Cardiometabolic legacy: Daflon (CVD venotonic) + Procoralan (ivabradine HF/angina) + Coversyl (perindopril HTN) + Diamicron (gliclazide T2D)",
+    "yahooTicker": "",
+    "private": true,
+    "privateNote": "Foundation-controlled since 1954 by Dr Jacques Servier; ownership held by Fondation Internationale de Recherche Servier (non-profit Dutch foundation since 2002 succession). No equity tradeable. Modeled here for taxonomy + drug-portfolio reference only."
+  },
+  "assets": [
+    {
+      "id": "tibsovo",
+      "name": "Tibsovo (ivosidenib) - oral selective IDH1-mutant inhibitor (Servier ex-Agios deal Apr 2021)",
+      "stage": "Commercial (R/R AML IDH1m FDA 2018; 1L AML 2019; cholangiocarcinoma IDH1m FDA 2021; chondrosarcoma IDH1m FDA 2024; MDS in development)",
+      "modality": "small_molecule.enzyme.idh1_inhibitor",
+      "targets": [
+        "IDH1"
+      ],
+      "indications": [
+        {
+          "id": "aml_idh1",
+          "name": "AML IDH1-mutant 1L (frontline + R/R; ~6-10% of AML)",
+          "area": "oncology.hematology.aml",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 22,
+                "wtpPct": 62,
+                "priceK": 185
+              },
+              "eu": {
+                "patientsK": 27,
+                "wtpPct": 45,
+                "priceK": 105
+              },
+              "row": {
+                "patientsK": 90,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8.2,
+                "wtpPct": 65,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 4.1,
+                "wtpPct": 45,
+                "priceK": 170
+              },
+              "row": {
+                "reachPct": 1.0,
+                "wtpPct": 12,
+                "priceK": 55
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Tibsovo IDH1m AML ~4-5% AML pts (IDH1m subset); competitive vs Idhifa enasidenib AGIO/BMS IDH2m, Venclexta venetoclax + chemo",
+              "us.priceK": "Tibsovo WAC ~$280K/yr (~$23K/mo)"
+            },
+            "penPct": 48,
+            "cagrPct": 8,
+            "peakYear": 2031,
+            "salesM": 280,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "cholangio_idh1",
+          "name": "IDH1-mutant cholangiocarcinoma (ClarIDHy Ph3; FDA 2021 first targeted therapy)",
+          "area": "oncology.gi.cholangiocarcinoma",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 55,
+                "priceK": 155
+              },
+              "eu": {
+                "patientsK": 12,
+                "wtpPct": 42,
+                "priceK": 90
+              },
+              "row": {
+                "patientsK": 60,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10.5,
+                "wtpPct": 60,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 5.3,
+                "wtpPct": 42,
+                "priceK": 170
+              },
+              "row": {
+                "reachPct": 0.9,
+                "wtpPct": 10,
+                "priceK": 55
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Tibsovo IDH1m cholangio ~10-15% of cholangio (IDH1m subset); competitive vs Pemazyre (FGFR2 INCY), Lytgobi (Taiho)",
+              "us.priceK": "Same Tibsovo WAC ~$280K/yr"
+            },
+            "penPct": 42,
+            "cagrPct": 10,
+            "peakYear": 2031,
+            "salesM": 150,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "chondrosarcoma_idh1",
+          "name": "IDH1-mutant chondrosarcoma (FDA 2024)",
+          "area": "oncology.musculoskeletal.sts",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 70,
+                "wtpPct": 65,
+                "priceK": 170
+              },
+              "eu": {
+                "patientsK": 95,
+                "wtpPct": 48,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 330,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.4,
+                "wtpPct": 60,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 40,
+                "priceK": 170
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 10,
+                "priceK": 55
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Tibsovo chondrosarcoma niche (IDH1m subset of chondrosarcoma which is rare bone sarcoma); ~0.4% of broader STS area",
+              "us.priceK": "Same Tibsovo WAC"
+            },
+            "penPct": 35,
+            "cagrPct": 12,
+            "peakYear": 2032,
+            "salesM": 30,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "voranigo",
+      "name": "Voranigo (vorasidenib) - oral brain-penetrant IDH1/2 dual mutant inhibitor (Servier ex-Agios)",
+      "stage": "Commercial (FDA Aug 2024 grade 2 IDH-mutant LGG astrocytoma + oligodendroglioma; INDIGO Ph3 positive); EU MAA pending; major recent launch",
+      "modality": "small_molecule.enzyme.idh1_idh2_dual_inhibitor",
+      "targets": [
+        "IDH1",
+        "IDH2"
+      ],
+      "indications": [
+        {
+          "id": "lgg",
+          "name": "IDH-mutant grade 2 low-grade glioma (post-surgery; first targeted therapy ever)",
+          "area": "oncology.brain.idh_mutant_lgg",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 60,
+                "priceK": 280
+              },
+              "eu": {
+                "patientsK": 30,
+                "wtpPct": 42,
+                "priceK": 170
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 10,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 65,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 42,
+                "priceK": 170
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 10,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Voranigo first FDA-approved targeted therapy for IDH-mutant LGG; ~18% reach if approved given delaying-progression value (INDIGO PFS HR 0.39); rapidly growing post Aug 2024 launch",
+              "us.priceK": "Voranigo WAC ~$280-300K/yr"
+            },
+            "penPct": 35,
+            "cagrPct": 35,
+            "peakYear": 2032,
+            "salesM": 200,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "onivyde",
+      "name": "Onivyde (irinotecan liposomal; nal-IRI; PEP-02) - PEGylated nanoliposomal irinotecan (acquired Ipsen 2017)",
+      "stage": "Commercial (mPDAC 2L+ FDA 2015; 1L mPDAC NAPOLI-3 FDA 2024; new gemcitabine + nal-IRI + 5FU/LV regimen)",
+      "modality": "small_molecule.cytotoxic.liposomal_irinotecan",
+      "targets": [
+        "TOP1"
+      ],
+      "indications": [
+        {
+          "id": "pancreatic",
+          "name": "Metastatic pancreatic cancer 1L (NALIRIFOX) + 2L (post-gemcitabine)",
+          "area": "oncology.gi.pancreatic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60,
+                "wtpPct": 60,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 45,
+                "priceK": 60
+              },
+              "row": {
+                "patientsK": 350,
+                "wtpPct": 15,
+                "priceK": 22
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 13.5,
+                "wtpPct": 60,
+                "priceK": 90
+              },
+              "eu": {
+                "reachPct": 6.8,
+                "wtpPct": 42,
+                "priceK": 55
+              },
+              "row": {
+                "reachPct": 1.0,
+                "wtpPct": 10,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Onivyde NAPOLI-3 1L NALIRIFOX regimen rapidly displacing gem-Abrax; ~5-7% of mPDAC reach if 1L NALIRIFOX adoption strong",
+              "us.priceK": "Onivyde WAC ~$8K/cycle (~$90K/yr)"
+            },
+            "penPct": 40,
+            "cagrPct": 18,
+            "peakYear": 2031,
+            "salesM": 380,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "lonsurf",
+      "name": "Lonsurf (trifluridine/tipiracil; TAS-102) - thymidine-based nucleoside antimetabolite + thymidine phosphorylase inhibitor (Taiho-originated; Servier ex-Asia + LATAM license)",
+      "stage": "Commercial (mCRC 3L FDA 2015; mCRC + bevacizumab combo SUNLIGHT FDA 2023; gastric 3L)",
+      "modality": "small_molecule.cytotoxic.nucleoside_analog",
+      "targets": [
+        "TYMP",
+        "POLD1"
+      ],
+      "indications": [
+        {
+          "id": "mcrc",
+          "name": "Metastatic colorectal cancer 3L+ (Lonsurf + bev SUNLIGHT regimen)",
+          "area": "oncology.gi.colorectal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 55,
+                "wtpPct": 65,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 48,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 320,
+                "wtpPct": 16,
+                "priceK": 22
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 17.8,
+                "wtpPct": 38,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 4.8,
+                "wtpPct": 12,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "eu.reachPct": "Lonsurf EU 3L+ mCRC; competitive vs Stivarga (BAYN regorafenib), Fruzaqla (HUTCHMED fruquintinib)",
+              "eu.priceK": "Lonsurf EU pricing ~EUR 50K/yr",
+              "us.note": "Taiho US directly markets Lonsurf US (TPI partnership); Servier ex-Asia/US"
+            },
+            "penPct": 50,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 180,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "gastric",
+          "name": "Metastatic gastric cancer 3L+ (TAGS Ph3)",
+          "area": "oncology.gi.gastric_esoph",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 58,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 44,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 20,
+                "priceK": 32
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 7.0,
+                "wtpPct": 38,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 2.0,
+                "wtpPct": 10,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "eu.reachPct": "Lonsurf gastric EU niche; competitive vs Cyramza (LLY ramucirumab) + Keytruda HER2+",
+              "eu.priceK": "Same Lonsurf pricing",
+              "us.note": "Taiho US territory"
+            },
+            "penPct": 48,
+            "cagrPct": 3,
+            "peakYear": 2029,
+            "salesM": 50,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "vanflyta",
+      "name": "Vanflyta (quizartinib) - oral selective FLT3-ITD type II tyrosine kinase inhibitor (Daiichi-originated; Servier ex-US ex-JP rights)",
+      "stage": "Commercial (FLT3-ITD AML 1L + maintenance FDA Jul 2023; QuANTUM-First Ph3)",
+      "modality": "small_molecule.kinase.flt3_inhibitor",
+      "targets": [
+        "FLT3"
+      ],
+      "indications": [
+        {
+          "id": "flt3_aml",
+          "name": "FLT3-ITD AML 1L + post-HSCT maintenance (~25-30% of AML)",
+          "area": "oncology.hematology.aml",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 22,
+                "wtpPct": 62,
+                "priceK": 185
+              },
+              "eu": {
+                "patientsK": 27,
+                "wtpPct": 45,
+                "priceK": 105
+              },
+              "row": {
+                "patientsK": 90,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 50,
+                "priceK": 200
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "eu.reachPct": "Vanflyta EU FLT3-ITD ~30% AML pts; competitive vs Rydapt (NVS midostaurin generic class)",
+              "eu.priceK": "Vanflyta EU WAC ~EUR 200K/yr",
+              "us.note": "Daiichi US directly markets Vanflyta; Servier ex-US ex-Asia"
+            },
+            "penPct": 48,
+            "cagrPct": 12,
+            "peakYear": 2031,
+            "salesM": 80,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "daflon",
+      "name": "Daflon (diosmin / hesperidin micronized purified flavonoid fraction MPFF) - venotonic / venoactive flavonoid",
+      "stage": "Commercial (chronic venous insufficiency CEAP C0-C6; mature franchise; large in EU/Asia/LATAM/Russia)",
+      "modality": "small_molecule.flavonoid.venotonic",
+      "targets": [],
+      "indications": [
+        {
+          "id": "cvd",
+          "name": "Chronic venous disease (lower extremity reflux + symptoms; venotonic/anti-edema/varicose vein-symptomatic)",
+          "area": "cardio_metabolic.vascular.chronic_venous_disease",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 8,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 50000,
+                "wtpPct": 6,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 2,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 12.9,
+                "wtpPct": 25,
+                "priceK": 0.5
+              },
+              "row": {
+                "reachPct": 3.5,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice_sources": {
+              "eu.reachPct": "Daflon Servier flagship in EU/LATAM/Asia/Russia ~EUR 600M+ legacy; non-US (no FDA label)",
+              "eu.priceK": "Daflon ~EUR 50/mo (~$0.6K/yr)",
+              "us.note": "Daflon not FDA-approved; US CVD Rx market dominated by compression + interventions"
+            },
+            "penPct": 12,
+            "cagrPct": 2,
+            "peakYear": 2030,
+            "salesM": 650,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "procoralan",
+      "name": "Procoralan/Corlanor (ivabradine) - selective HCN4 (funny current If) channel blocker",
+      "stage": "Commercial (chronic HFrEF 2005 EU, 2015 US; chronic stable angina; LOE ongoing)",
+      "modality": "small_molecule.ion_channel.hcn_blocker",
+      "targets": [
+        "HCN4"
+      ],
+      "indications": [
+        {
+          "id": "hf_angina",
+          "name": "Chronic HFrEF (heart rate >70 bpm, sinus rhythm) + chronic stable angina",
+          "area": "cardio_metabolic.heart_failure.hfref",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3000,
+                "wtpPct": 55,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 42,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 15000,
+                "wtpPct": 12,
+                "priceK": 1.2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.7,
+                "wtpPct": 35,
+                "priceK": 4
+              },
+              "eu": {
+                "reachPct": 5.0,
+                "wtpPct": 28,
+                "priceK": 2.5
+              },
+              "row": {
+                "reachPct": 1.0,
+                "wtpPct": 10,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Procoralan/Corlanor niche HFrEF pts with elevated HR; competitive vs SGLT2 + ARNI + beta-blockers (foundational therapies)",
+              "us.priceK": "Procoralan WAC ~$4K/yr; LOE-aged",
+              "us.note": "Amgen has ex-EU Corlanor US license"
+            },
+            "penPct": 25,
+            "cagrPct": -8,
+            "peakYear": 2025,
+            "salesM": 150,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "coversyl",
+      "name": "Coversyl/Preterax/Triplixam (perindopril +/- amlodipine +/- indapamide) - ACE inhibitor combinations",
+      "stage": "Commercial (HTN; mature, generic-aged; major in EU/Russia/Asia/LATAM)",
+      "modality": "small_molecule.enzyme.ace_inhibitor",
+      "targets": [
+        "ACE"
+      ],
+      "indications": [
+        {
+          "id": "htn",
+          "name": "Hypertension + cardiovascular protection (mono + combo; outpatient generic)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 4.8,
+                "wtpPct": 18,
+                "priceK": 0.3
+              },
+              "row": {
+                "reachPct": 1.8,
+                "wtpPct": 8,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "eu.reachPct": "Coversyl/Preterax/Triplixam EU/Russia/Asia/LATAM legacy; generic-aged",
+              "eu.priceK": "Generic ACE pricing ~EUR 30/mo",
+              "us.note": "Not US-marketed"
+            },
+            "penPct": 8,
+            "cagrPct": -5,
+            "peakYear": 2025,
+            "salesM": 220,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "diamicron",
+      "name": "Diamicron (gliclazide) - sulfonylurea (insulin secretagogue)",
+      "stage": "Commercial (T2D; mature, generic-aged; major in EU/Russia/Asia/LATAM)",
+      "modality": "small_molecule.transporter.sulfonylurea",
+      "targets": [
+        "ABCC8"
+      ],
+      "indications": [
+        {
+          "id": "t2d",
+          "name": "Type 2 diabetes (sulfonylurea legacy; declining vs SGLT2/GLP-1)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 14.4,
+                "wtpPct": 18,
+                "priceK": 0.3
+              },
+              "row": {
+                "reachPct": 8.6,
+                "wtpPct": 10,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "eu.reachPct": "Diamicron EU/Russia/Asia/LATAM legacy SU; declining vs SGLT2 + GLP-1 class transition",
+              "eu.priceK": "Generic SU pricing ~EUR 20/mo",
+              "us.note": "Not US-marketed"
+            },
+            "penPct": 10,
+            "cagrPct": -8,
+            "peakYear": 2025,
+            "salesM": 200,
+            "salesYear": 2025
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 4,
+        "commercialMult": 2,
+        "commercialRevM": 4500,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "tibsovo": {
+          "aml_idh1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "cholangio_idh1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "chondrosarcoma_idh1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "voranigo": {
+          "lgg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "onivyde": {
+          "pancreatic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "lonsurf": {
+          "mcrc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "vanflyta": {
+          "flt3_aml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "daflon": {
+          "cvd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "procoralan": {
+          "hf_angina": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "coversyl": {
+          "htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "diamicron": {
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 5,
+        "commercialMult": 2.8,
+        "commercialRevM": 5300,
+        "milestones": 100,
+        "dil": 0
+      },
+      "assumptions": {
+        "tibsovo": {
+          "aml_idh1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "cholangio_idh1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "chondrosarcoma_idh1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "voranigo": {
+          "lgg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "onivyde": {
+          "pancreatic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "lonsurf": {
+          "mcrc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.45
+          }
+        },
+        "vanflyta": {
+          "flt3_aml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "daflon": {
+          "cvd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "procoralan": {
+          "hf_angina": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "coversyl": {
+          "htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "diamicron": {
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 35,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 7,
+        "commercialMult": 4,
+        "commercialRevM": 6200,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "tibsovo": {
+          "aml_idh1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "cholangio_idh1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "chondrosarcoma_idh1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "voranigo": {
+          "lgg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "onivyde": {
+          "pancreatic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "lonsurf": {
+          "mcrc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "vanflyta": {
+          "flt3_aml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "daflon": {
+          "cvd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "procoralan": {
+          "hf_angina": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "coversyl": {
+          "htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "diamicron": {
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 10,
+        "commercialMult": 5.5,
+        "commercialRevM": 7400,
+        "milestones": 400,
+        "dil": 0
+      },
+      "assumptions": {
+        "tibsovo": {
+          "aml_idh1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "cholangio_idh1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "chondrosarcoma_idh1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "voranigo": {
+          "lgg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "onivyde": {
+          "pancreatic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "lonsurf": {
+          "mcrc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "vanflyta": {
+          "flt3_aml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "daflon": {
+          "cvd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "procoralan": {
+          "hf_angina": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "coversyl": {
+          "htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "diamicron": {
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 14,
+        "commercialMult": 7,
+        "commercialRevM": 9000,
+        "milestones": 800,
+        "dil": 0
+      },
+      "assumptions": {
+        "tibsovo": {
+          "aml_idh1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "cholangio_idh1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "chondrosarcoma_idh1": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "voranigo": {
+          "lgg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          }
+        },
+        "onivyde": {
+          "pancreatic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          }
+        },
+        "lonsurf": {
+          "mcrc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "vanflyta": {
+          "flt3_aml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "daflon": {
+          "cvd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "procoralan": {
+          "hf_angina": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "coversyl": {
+          "htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "diamicron": {
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "voranigo",
+      "indication": "lgg",
+      "title": "Voranigo EU MAA decision (IDH-mutant low-grade glioma) + global launch ramp update",
+      "type": "regulatory",
+      "binary": false,
+      "_source": "https://servier.com/en/newsroom/",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "onivyde",
+      "indication": "pancreatic",
+      "title": "Onivyde NALIRIFOX 1L mPDAC market share update vs gem-Abrax adoption",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://servier.com/en/newsroom/",
+      "_confidence": "medium"
+    }
+  ]
+}

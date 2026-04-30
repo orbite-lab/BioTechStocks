@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-30T14:16:53Z",
-    "target_count": 382,
-    "total_assets": 702,
-    "assets_with_targets": 651,
-    "multi_modality_count": 46,
-    "multi_disease_count": 169
+    "generated": "2026-04-30T14:24:05Z",
+    "target_count": 383,
+    "total_assets": 706,
+    "assets_with_targets": 655,
+    "multi_modality_count": 47,
+    "multi_disease_count": 170
   },
   "targets": {
     "ABL1": {
@@ -8653,6 +8653,7 @@
     "HTR2A": {
       "companies": [
         "4578",
+        "ACAD",
         "DFTX",
         "HLUN_B",
         "JNJ"
@@ -8661,10 +8662,12 @@
         "small_molecule.cns.dopamine_serotonin_antagonist",
         "small_molecule.cns.serotonin_dopamine_modulator",
         "small_molecule.gpcr.5ht2a_agonist",
-        "small_molecule.gpcr.atypical_antipsychotic"
+        "small_molecule.gpcr.atypical_antipsychotic",
+        "small_molecule.gpcr.serotonin_inverse_agonist"
       ],
       "areas": [
         "cns.neurodegeneration.alzheimer",
+        "cns.neurodegeneration.parkinson_disease",
         "cns.psychiatry.anxiety",
         "cns.psychiatry.asd",
         "cns.psychiatry.bipolar",
@@ -8691,6 +8694,25 @@
           "areas": [
             "cns.neurodegeneration.alzheimer",
             "cns.psychiatry.depression",
+            "cns.psychiatry.schizophrenia"
+          ]
+        },
+        {
+          "ticker": "ACAD",
+          "asset": "nuplazid",
+          "name": "Nuplazid (pimavanserin) - selective 5-HT2A inverse agonist (no D2 binding)",
+          "modality": "small_molecule.gpcr.serotonin_inverse_agonist",
+          "areas": [
+            "cns.neurodegeneration.parkinson_disease"
+          ]
+        },
+        {
+          "ticker": "ACAD",
+          "asset": "acp_204",
+          "name": "ACP-204 - next-gen 5-HT2A inverse agonist (improved PK + 5-HT2C; pimavanserin successor)",
+          "modality": "small_molecule.gpcr.serotonin_inverse_agonist",
+          "areas": [
+            "cns.neurodegeneration.alzheimer",
             "cns.psychiatry.schizophrenia"
           ]
         },
@@ -8752,31 +8774,55 @@
           ]
         }
       ],
-      "assetCount": 8,
-      "modalityCount": 4,
+      "assetCount": 10,
+      "modalityCount": 5,
       "modalityClassCount": 1,
-      "areaCount": 6,
+      "areaCount": 7,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 159145.0,
-      "totalSOM": 30105.2,
-      "totalSales": 9842.0,
-      "cagrPct": 7.4,
-      "peakYear": 2029
+      "totalTAM": 173165.0,
+      "totalSOM": 35352.7,
+      "totalSales": 10442.0,
+      "cagrPct": 7.0,
+      "peakYear": 2030
     },
     "HTR2C": {
       "companies": [
+        "ACAD",
         "HLUN_B"
       ],
       "modalities": [
-        "small_molecule.gpcr.5ht2c_agonist"
+        "small_molecule.gpcr.5ht2c_agonist",
+        "small_molecule.gpcr.serotonin_inverse_agonist"
       ],
       "areas": [
         "cns.epilepsy.dee",
-        "cns.epilepsy.dee.dravet"
+        "cns.epilepsy.dee.dravet",
+        "cns.neurodegeneration.alzheimer",
+        "cns.neurodegeneration.parkinson_disease",
+        "cns.psychiatry.schizophrenia"
       ],
       "assets": [
+        {
+          "ticker": "ACAD",
+          "asset": "nuplazid",
+          "name": "Nuplazid (pimavanserin) - selective 5-HT2A inverse agonist (no D2 binding)",
+          "modality": "small_molecule.gpcr.serotonin_inverse_agonist",
+          "areas": [
+            "cns.neurodegeneration.parkinson_disease"
+          ]
+        },
+        {
+          "ticker": "ACAD",
+          "asset": "acp_204",
+          "name": "ACP-204 - next-gen 5-HT2A inverse agonist (improved PK + 5-HT2C; pimavanserin successor)",
+          "modality": "small_molecule.gpcr.serotonin_inverse_agonist",
+          "areas": [
+            "cns.neurodegeneration.alzheimer",
+            "cns.psychiatry.schizophrenia"
+          ]
+        },
         {
           "ticker": "HLUN_B",
           "asset": "bexicaserin",
@@ -8788,18 +8834,18 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 3,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 2,
+      "areaCount": 5,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 5845.8,
-      "totalSOM": 1945.8,
-      "totalSales": 0.0,
-      "cagrPct": 5.2,
-      "peakYear": 2032
+      "totalTAM": 58595.8,
+      "totalSOM": 7193.4,
+      "totalSales": 600.0,
+      "cagrPct": 4.8,
+      "peakYear": 2033
     },
     "HTR3A": {
       "companies": [
@@ -9019,16 +9065,28 @@
     },
     "IGF1R": {
       "companies": [
+        "ACAD",
         "AMGN",
         "GMAB"
       ],
       "modalities": [
-        "antibody.monoclonal.anti_igf1r"
+        "antibody.monoclonal.anti_igf1r",
+        "peptide.synthetic.igf1_tripeptide"
       ],
       "areas": [
+        "cns.psychiatry.rett_syndrome",
         "ophthalmology.anterior_neuro.ted"
       ],
       "assets": [
+        {
+          "ticker": "ACAD",
+          "asset": "daybue",
+          "name": "Daybue (trofinetide) - synthetic IGF-1 tripeptide (NNZ-2566; licensed Neuren 2018)",
+          "modality": "peptide.synthetic.igf1_tripeptide",
+          "areas": [
+            "cns.psychiatry.rett_syndrome"
+          ]
+        },
         {
           "ticker": "AMGN",
           "asset": "tepezza",
@@ -9048,17 +9106,18 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 1,
+      "assetCount": 3,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
+      "areaCount": 2,
       "modalityClasses": [
-        "antibody"
+        "antibody",
+        "peptide"
       ],
-      "totalTAM": 9900.0,
-      "totalSOM": 3008.5,
-      "totalSales": 1978.0,
-      "cagrPct": 7.4,
+      "totalTAM": 13014.0,
+      "totalSOM": 3741.5,
+      "totalSales": 2378.0,
+      "cagrPct": 8.3,
       "peakYear": 2030
     },
     "IGG": {
@@ -12869,6 +12928,40 @@
       "totalSales": 500.0,
       "cagrPct": -3.1,
       "peakYear": 2030
+    },
+    "OXTR": {
+      "companies": [
+        "ACAD"
+      ],
+      "modalities": [
+        "peptide.synthetic.oxytocin_analog"
+      ],
+      "areas": [
+        "cardio_metabolic.obesity.rare_genetic.prader_willi"
+      ],
+      "assets": [
+        {
+          "ticker": "ACAD",
+          "asset": "acp_101",
+          "name": "ACP-101 (carbetocin intranasal) - oxytocin receptor agonist (Levo Therapeutics acq Jun 2023)",
+          "modality": "peptide.synthetic.oxytocin_analog",
+          "areas": [
+            "cardio_metabolic.obesity.rare_genetic.prader_willi"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "peptide"
+      ],
+      "totalTAM": 5715.0,
+      "totalSOM": 809.1,
+      "totalSales": 0.0,
+      "cagrPct": 6.0,
+      "peakYear": 2032
     },
     "P2RX3": {
       "companies": [

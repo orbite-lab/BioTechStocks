@@ -238,6 +238,22 @@ REGIONS = {
         "eu":  {"patientsK": 5000,  "wtpPct": 40, "priceK": 0.6},
         "row": {"patientsK": 80000, "wtpPct": 15, "priceK": 0.3},
     },
+    # Rett syndrome (MECP2 LoF X-linked dominant): rare neurodevelopmental
+    # regression in females (X-linked dominant; males usually lethal in
+    # utero). Loss of speech, hand use, mobility post-normal infancy.
+    # Prevalence ~1:10,000 girls -> ~6K US, ~9K EU, ~30K ROW diagnosed.
+    # First-in-class: Daybue (trofinetide IGF-1 tripeptide, Acadia FDA
+    # 2023 ages 2+). Pricing: Daybue WAC ~$575K/yr at max weight (weight-
+    # based); blended ~$375K. Pipeline: Anavex blarcamesine (sigma-1 Ph3
+    # mixed), Taysha TSHA-102 (AAV9-MECP2 gene therapy Ph1/2), Neurogene
+    # NGN-401 (AAV9-MECP2 Ph1 -- patient death halt 2024).
+    # source: Neul 2010 Ann Neurol consensus; Rett Syndrome Foundation;
+    # Acadia 10-K (Daybue $348M FY24).
+    "cns.psychiatry.rett_syndrome": {
+        "us":  {"patientsK": 6,    "wtpPct": 75, "priceK": 375},
+        "eu":  {"patientsK": 9,    "wtpPct": 55, "priceK": 230},
+        "row": {"patientsK": 30,   "wtpPct": 12, "priceK": 80},
+    },
     "cns.psychiatry.schizophrenia": {
         "us":  {"patientsK": 1500,  "wtpPct": 75, "priceK": 10},
         "eu":  {"patientsK": 2500,  "wtpPct": 60, "priceK": 5},
@@ -316,6 +332,7 @@ PEN_PCT = {
     "cns.psychiatry.opioid_dependence": 25,
     "cns.psychiatry.pain_fibromyalgia": 30,
     "cns.psychiatry.schizophrenia": 60,
+    "cns.psychiatry.rett_syndrome": 50,
     "cns.sleep.insomnia": 12,
     "cns.sleep.narcolepsy_hypersomnia": 35,
     "cns.sleep.narcolepsy": 45,

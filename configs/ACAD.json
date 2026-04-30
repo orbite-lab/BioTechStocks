@@ -1,0 +1,566 @@
+{
+  "company": {
+    "ticker": "ACAD",
+    "name": "Acadia Pharmaceuticals Inc.",
+    "currentPrice": 20,
+    "sharesOut": 167,
+    "cash": 650,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Nuplazid (pimavanserin 5-HT2A inverse agonist) PDP + Daybue (trofinetide) Rett 1st-in-class + ACP-204 next-gen 5-HT2A (AD psychosis Ph3 + schizo Ph2) + ACP-101 carbetocin PWS Ph3",
+    "yahooTicker": "ACAD"
+  },
+  "assets": [
+    {
+      "id": "nuplazid",
+      "name": "Nuplazid (pimavanserin) - selective 5-HT2A inverse agonist (no D2 binding)",
+      "stage": "Commercial (Parkinson disease psychosis FDA 2016; HARMONY DRP failed 2019; LOE ~2030 composition)",
+      "modality": "small_molecule.gpcr.serotonin_inverse_agonist",
+      "targets": [
+        "HTR2A",
+        "HTR2C"
+      ],
+      "indications": [
+        {
+          "id": "pdp",
+          "name": "Parkinson disease psychosis (hallucinations + delusions; only FDA-approved tx)",
+          "area": "cns.neurodegeneration.parkinson_disease",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1000,
+                "wtpPct": 80,
+                "priceK": 8
+              },
+              "eu": {
+                "patientsK": 1200,
+                "wtpPct": 65,
+                "priceK": 4
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 30,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 70,
+                "priceK": 40
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Nuplazid sole FDA-approved PDP therapy; ~25-40% of PD pts develop psychosis; ~6% of total PD diagnosed treated",
+              "us.priceK": "Nuplazid WAC ~$40K/yr; rejected by EMA 2018, US-only commercial",
+              "eu.note": "EMA rejected pimavanserin PDP filing 2018; no EU revenue"
+            },
+            "penPct": 50,
+            "cagrPct": 4,
+            "peakYear": 2030,
+            "salesM": 600,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "daybue",
+      "name": "Daybue (trofinetide) - synthetic IGF-1 tripeptide (NNZ-2566; licensed Neuren 2018)",
+      "stage": "Commercial (Rett syndrome FDA 2023, first ever Rett tx; EU partner expansion ongoing)",
+      "modality": "peptide.synthetic.igf1_tripeptide",
+      "targets": [
+        "IGF1R"
+      ],
+      "indications": [
+        {
+          "id": "rett",
+          "name": "Rett syndrome (ages 2+ female; 1st-in-class; EU MAA 2025)",
+          "area": "cns.psychiatry.rett_syndrome",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6,
+                "wtpPct": 75,
+                "priceK": 375
+              },
+              "eu": {
+                "patientsK": 9,
+                "wtpPct": 55,
+                "priceK": 230
+              },
+              "row": {
+                "patientsK": 30,
+                "wtpPct": 12,
+                "priceK": 80
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 35,
+                "wtpPct": 75,
+                "priceK": 375
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 55,
+                "priceK": 230
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 12,
+                "priceK": 80
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Daybue ~35% of US Rett diagnosed treated (peak ~50%); GI tolerability + weight-based dosing limits adherence",
+              "us.priceK": "Daybue WAC ~$200-575K/yr weight-banded; blended ~$375K"
+            },
+            "penPct": 50,
+            "cagrPct": 12,
+            "peakYear": 2031,
+            "salesM": 400,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "acp_204",
+      "name": "ACP-204 - next-gen 5-HT2A inverse agonist (improved PK + 5-HT2C; pimavanserin successor)",
+      "stage": "Phase 3 ADP (Alzheimer disease psychosis ADVANCE-2 + ADVANCE-3 Ph3); Phase 2 schizo + LBD",
+      "modality": "small_molecule.gpcr.serotonin_inverse_agonist",
+      "targets": [
+        "HTR2A",
+        "HTR2C"
+      ],
+      "indications": [
+        {
+          "id": "ad_psychosis",
+          "name": "Alzheimer disease psychosis (Ph3 ADVANCE-2/3; readouts 2027-2028)",
+          "area": "cns.neurodegeneration.alzheimer",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 25,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 12,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 40000,
+                "wtpPct": 3,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 60,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 40,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 8,
+                "priceK": 7
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "AD psychosis ~30% of AD pts but most managed with off-label antipsychotics (BBW); ACP-204 ~2% of total AD diagnosed if approved",
+              "us.priceK": "ACP-204 expected pricing $35-50K/yr (Nuplazid premium for cleaner PK)"
+            },
+            "penPct": 12,
+            "cagrPct": 5,
+            "peakYear": 2034
+          }
+        },
+        {
+          "id": "schizophrenia_adjunct",
+          "name": "Schizophrenia adjunctive Ph2 (negative symptoms)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 60,
+                "priceK": 18
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 40,
+                "priceK": 10
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 8,
+                "priceK": 3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Negative symptom adjunct niche (~3% if Ph2 positive); Cobenfy KarXT (BMS) competitive",
+              "us.priceK": "Branded atypical class pricing $15-25K/yr"
+            },
+            "penPct": 60,
+            "cagrPct": 4,
+            "peakYear": 2035
+          }
+        }
+      ]
+    },
+    {
+      "id": "acp_101",
+      "name": "ACP-101 (carbetocin intranasal) - oxytocin receptor agonist (Levo Therapeutics acq Jun 2023)",
+      "stage": "Phase 3 COMPASS-PWS (Prader-Willi hyperphagia; readout 2026; prior Levo Ph3 missed primary)",
+      "modality": "peptide.synthetic.oxytocin_analog",
+      "targets": [
+        "OXTR"
+      ],
+      "indications": [
+        {
+          "id": "pws_hyperphagia",
+          "name": "Prader-Willi syndrome hyperphagia (Ph3 COMPASS-PWS readout 2026)",
+          "area": "cardio_metabolic.obesity.rare_genetic.prader_willi",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 15,
+                "wtpPct": 75,
+                "priceK": 300
+              },
+              "eu": {
+                "patientsK": 15,
+                "wtpPct": 60,
+                "priceK": 180
+              },
+              "row": {
+                "patientsK": 30,
+                "wtpPct": 30,
+                "priceK": 80
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 30,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 18,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 10,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "PWS hyperphagia no approved tx; carbetocin first-in-class if Ph3 hits; ~30% reach if approved",
+              "us.priceK": "PWS orphan pricing $150-250K/yr (precedent: somatropin GH chronic pediatric)"
+            },
+            "penPct": 40,
+            "cagrPct": 6,
+            "peakYear": 2032
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "mult": 2.5,
+        "dr": 14,
+        "cannib": 12
+      },
+      "assumptions": {
+        "nuplazid": {
+          "pdp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "daybue": {
+          "rett": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "acp_204": {
+          "ad_psychosis": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.3
+          },
+          "schizophrenia_adjunct": {
+            "pos": 12,
+            "apr": 35,
+            "pen": 0.2
+          }
+        },
+        "acp_101": {
+          "pws_hyperphagia": {
+            "pos": 20,
+            "apr": 45,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "mult": 3.5,
+        "dr": 12,
+        "cannib": 6
+      },
+      "assumptions": {
+        "nuplazid": {
+          "pdp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "daybue": {
+          "rett": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "acp_204": {
+          "ad_psychosis": {
+            "pos": 40,
+            "apr": 65,
+            "pen": 0.5
+          },
+          "schizophrenia_adjunct": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.35
+          }
+        },
+        "acp_101": {
+          "pws_hyperphagia": {
+            "pos": 35,
+            "apr": 60,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 40,
+      "val": {
+        "mult": 5,
+        "dr": 10,
+        "cannib": 2
+      },
+      "assumptions": {
+        "nuplazid": {
+          "pdp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "daybue": {
+          "rett": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "acp_204": {
+          "ad_psychosis": {
+            "pos": 55,
+            "apr": 78,
+            "pen": 0.7
+          },
+          "schizophrenia_adjunct": {
+            "pos": 40,
+            "apr": 65,
+            "pen": 0.55
+          }
+        },
+        "acp_101": {
+          "pws_hyperphagia": {
+            "pos": 50,
+            "apr": 75,
+            "pen": 0.7
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "mult": 6,
+        "dr": 9,
+        "cannib": 0
+      },
+      "assumptions": {
+        "nuplazid": {
+          "pdp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "daybue": {
+          "rett": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "acp_204": {
+          "ad_psychosis": {
+            "pos": 72,
+            "apr": 87,
+            "pen": 0.9
+          },
+          "schizophrenia_adjunct": {
+            "pos": 60,
+            "apr": 80,
+            "pen": 0.75
+          }
+        },
+        "acp_101": {
+          "pws_hyperphagia": {
+            "pos": 70,
+            "apr": 85,
+            "pen": 0.9
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "mult": 8,
+        "dr": 8,
+        "cannib": 0
+      },
+      "assumptions": {
+        "nuplazid": {
+          "pdp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "daybue": {
+          "rett": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "acp_204": {
+          "ad_psychosis": {
+            "pos": 90,
+            "apr": 95,
+            "pen": 1.2
+          },
+          "schizophrenia_adjunct": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 1.0
+          }
+        },
+        "acp_101": {
+          "pws_hyperphagia": {
+            "pos": 88,
+            "apr": 92,
+            "pen": 1.15
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "acp_101",
+      "indication": "pws_hyperphagia",
+      "title": "ACP-101 carbetocin COMPASS-PWS Ph3 topline (Prader-Willi hyperphagia)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 10,
+      "fail_apr": 25,
+      "success_pos": 80,
+      "success_apr": 88,
+      "_source": "https://ir.acadia.com/news-releases/news-release-details/acadia-pharmaceuticals-announces-completion-enrollment-compass",
+      "_confidence": "high"
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "daybue",
+      "indication": "rett",
+      "title": "Daybue EU MAA decision (Rett syndrome; CHMP opinion expected H2 2026)",
+      "type": "regulatory",
+      "binary": false,
+      "_source": "https://ir.acadia.com/news-releases",
+      "_confidence": "medium"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-06-30",
+      "asset": "acp_204",
+      "indication": "ad_psychosis",
+      "title": "ACP-204 ADVANCE-2 Ph3 topline (AD psychosis)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 15,
+      "fail_apr": 30,
+      "success_pos": 85,
+      "success_apr": 92,
+      "_source": "https://ir.acadia.com/news-releases",
+      "_confidence": "high"
+    }
+  ]
+}

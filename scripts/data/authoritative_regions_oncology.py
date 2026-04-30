@@ -511,6 +511,30 @@ REGIONS = {
     # EU 12K, ROW 50K. Class: Adcetris (Pfizer/Seagen brentuximab CD30
     # ADC ~$1.5B globally), Opdivo (BMS PD-1 ~$0.8B HL share), Keytruda
     # (Merck PD-1 KEYNOTE-204). Net branded ~$200K/yr.
+    # Acute lymphoblastic leukemia (ALL): rare aggressive leukemia, mostly
+    # pediatric (~3K US incident/yr children + ~2.5K adult). Branded class:
+    # Blincyto (BMS/Amgen blinatumomab CD3xCD19 BiTE ~$1B), Besponsa (Pfizer
+    # inotuzumab CD22 ADC), Rylaze/Erwinaze (Jazz asparaginase pediatric
+    # frontline ~$400M), Iclusig (Takeda ponatinib Ph+ ALL), Kymriah
+    # (Novartis CAR-T pediatric R/R). Class peak ~$3-4B globally.
+    # source: SEER 2024; Jazz/BMS/Pfizer 10-Ks; ALL Foundation.
+    "oncology.hematology.all": {
+        "us":  {"patientsK": 6,   "wtpPct": 80, "priceK": 200},
+        "eu":  {"patientsK": 8,   "wtpPct": 60, "priceK": 130},
+        "row": {"patientsK": 35,  "wtpPct": 15, "priceK": 45},
+    },
+    # Hepatic veno-occlusive disease (VOD/SOS) post-HSCT: rare life-
+    # threatening complication of myeloablative conditioning, severe form
+    # ~30% mortality without tx. Incidence ~5-15% of HSCT pts (~22K US HSCT
+    # /yr → ~2K severe VOD/yr; EU ~3K; ROW ~4K). Sole branded therapy:
+    # Defitelio (Jazz defibrotide, EU + US accel approval) ~$200M.
+    # Pricing reflects $25K-50K/course IV inpatient orphan ultra-rare.
+    # source: CIBMTR HSCT registry; Jazz 10-K; Richardson 2017 Blood.
+    "hematology.rare_blood.vod_hsct": {
+        "us":  {"patientsK": 2,   "wtpPct": 75, "priceK": 160},
+        "eu":  {"patientsK": 3,   "wtpPct": 55, "priceK": 100},
+        "row": {"patientsK": 4,   "wtpPct": 12, "priceK": 35},
+    },
     "oncology.hematology.hodgkin": {
         "us":  {"patientsK": 9,   "wtpPct": 75, "priceK": 200},
         "eu":  {"patientsK": 12,  "wtpPct": 55, "priceK": 120},
@@ -744,6 +768,8 @@ PEN_PCT = {
     "oncology.gynecologic.endometrial": 60,
     "oncology.gynecologic.cervical": 50,
     "oncology.hematology.aml": 48,
+    "oncology.hematology.all": 60,
+    "hematology.rare_blood.vod_hsct": 55,
     "oncology.hematology.cll": 65,
     "oncology.hematology.nhl": 35,
     "oncology.hematology.nhl.dlbcl": 55,

@@ -1,0 +1,1264 @@
+{
+  "company": {
+    "ticker": "JAZZ",
+    "name": "Jazz Pharmaceuticals plc",
+    "currentPrice": 120,
+    "sharesOut": 62,
+    "cash": -2600,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Sleep franchise (Xywav narcolepsy/IH) + Epidiolex CBD (DEE/TSC) + oncology (Zepzelca SCLC, Vyxeos sAML, Rylaze ALL, Defitelio VOD, Ziihera HER2+ BTC/GEA)",
+    "yahooTicker": "JAZZ"
+  },
+  "assets": [
+    {
+      "id": "xywav",
+      "name": "Xywav (low-sodium calcium/magnesium/potassium/sodium oxybates) - GHB receptor agonist",
+      "stage": "Commercial (narcolepsy 2020 + idiopathic hypersomnia 2021)",
+      "modality": "small_molecule.gpcr.ghb_agonist",
+      "targets": [
+        "GABBR1",
+        "HCAR2"
+      ],
+      "indications": [
+        {
+          "id": "narcolepsy",
+          "name": "Narcolepsy with cataplexy + EDS (adult + pediatric)",
+          "area": "cns.sleep.narcolepsy",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 200,
+                "wtpPct": 80,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 250,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 20,
+                "priceK": 6
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 70,
+                "priceK": 75
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 35
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Xywav ~70% US oxybate share post-Xyrem AG erosion; ~18% of US narcolepsy diagnosed Rx'd",
+              "us.priceK": "Xywav WAC ~$75-90K/yr (2025); J-codes Medicare Part B"
+            },
+            "penPct": 45,
+            "cagrPct": 4,
+            "peakYear": 2030,
+            "salesM": 1100,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "ih",
+          "name": "Idiopathic hypersomnia (first FDA-approved IH therapy 2021)",
+          "area": "cns.sleep.narcolepsy_hypersomnia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 200,
+                "wtpPct": 50,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 250,
+                "wtpPct": 35,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 12,
+                "priceK": 7
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 60,
+                "priceK": 75
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 35,
+                "priceK": 35
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 8,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "First-in-class IH (37K US treated baseline; growing 25%/yr); Xywav only oxybate IH-approved",
+              "us.priceK": "Same WAC as narcolepsy"
+            },
+            "penPct": 35,
+            "cagrPct": 12,
+            "peakYear": 2031,
+            "salesM": 600,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "xyrem",
+      "name": "Xyrem (sodium oxybate) - GHB receptor agonist (legacy high-sodium)",
+      "stage": "Commercial (declining post-AG entry 2023)",
+      "modality": "small_molecule.gpcr.ghb_agonist",
+      "targets": [
+        "GABBR1",
+        "HCAR2"
+      ],
+      "indications": [
+        {
+          "id": "narcolepsy_legacy",
+          "name": "Narcolepsy (residual brand pre-LOE Jan 2023; AG cannibalization)",
+          "area": "cns.sleep.narcolepsy",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 200,
+                "wtpPct": 80,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 250,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 20,
+                "priceK": 6
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "eu": {
+                "reachPct": 0.3,
+                "wtpPct": 30,
+                "priceK": 25
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 8,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Residual Xyrem brand post-Hikma/Lupin AG entry 2023",
+              "us.priceK": "Xyrem brand WAC pre-discount ~$60K/yr"
+            },
+            "penPct": 45,
+            "cagrPct": -25,
+            "peakYear": 2025,
+            "salesM": 60,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "epidiolex",
+      "name": "Epidiolex (cannabidiol/CBD) - endocannabinoid modulator (acquired GW Pharma May 2021)",
+      "stage": "Commercial (Dravet 2018 + LGS 2018 + TSC 2020)",
+      "modality": "small_molecule.endocannabinoid.cannabidiol",
+      "targets": [
+        "TRPV1",
+        "GPR55"
+      ],
+      "indications": [
+        {
+          "id": "dravet",
+          "name": "Dravet syndrome (FDA 2018 ages 1+)",
+          "area": "cns.epilepsy.dee.dravet",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 38,
+                "wtpPct": 80,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 50
+              },
+              "row": {
+                "patientsK": 60,
+                "wtpPct": 25,
+                "priceK": 12
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 75,
+                "priceK": 32
+              },
+              "eu": {
+                "reachPct": 18,
+                "wtpPct": 55,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Epidiolex ~25% US Dravet share (vs Diacomit BIO, Fintepla UCB)",
+              "us.priceK": "Epidiolex WAC ~$32K/yr (weight-based dosing)"
+            },
+            "penPct": 50,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 250,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "lgs",
+          "name": "Lennox-Gastaut Syndrome (FDA 2018 ages 1+)",
+          "area": "cns.epilepsy.dee.lgs",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 80,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 40,
+                "wtpPct": 60,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 22,
+                "priceK": 8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 70.4,
+                "wtpPct": 75,
+                "priceK": 32
+              },
+              "eu": {
+                "reachPct": 46.9,
+                "wtpPct": 55,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 9.4,
+                "wtpPct": 14,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Epidiolex ~30% US LGS share (largest LGS branded vs Banzel, Onfi)",
+              "us.priceK": "Same WAC ~$32K/yr"
+            },
+            "penPct": 55,
+            "cagrPct": 4,
+            "peakYear": 2030,
+            "salesM": 500,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "tsc",
+          "name": "Tuberous sclerosis complex epilepsy (FDA 2020 ages 1+)",
+          "area": "cns.epilepsy.tsc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 75,
+                "priceK": 40
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 55,
+                "priceK": 25
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 20,
+                "priceK": 9
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 70,
+                "priceK": 32
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 50,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Epidiolex one of two TSC-approved (vs Afinitor/everolimus mTOR)",
+              "us.priceK": "Same WAC ~$32K/yr"
+            },
+            "penPct": 50,
+            "cagrPct": 6,
+            "peakYear": 2030,
+            "salesM": 250,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "zepzelca",
+      "name": "Zepzelca (lurbinectedin) - DNA minor groove binder (PharmaMar partnership)",
+      "stage": "Commercial (SCLC 2L+ accel approval 2020; ph3 IMforte combo confirmatory 2025)",
+      "modality": "small_molecule.alkylator.minor_groove_binder",
+      "targets": [
+        "POLR2A"
+      ],
+      "indications": [
+        {
+          "id": "sclc",
+          "name": "Small-cell lung cancer 2L+ (post-platinum)",
+          "area": "oncology.lung.sclc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 22,
+                "wtpPct": 60,
+                "priceK": 125
+              },
+              "eu": {
+                "patientsK": 28,
+                "wtpPct": 44,
+                "priceK": 72
+              },
+              "row": {
+                "patientsK": 180,
+                "wtpPct": 14,
+                "priceK": 28
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 34.9,
+                "wtpPct": 65,
+                "priceK": 90
+              },
+              "eu": {
+                "reachPct": 15.5,
+                "wtpPct": 45,
+                "priceK": 55
+              },
+              "row": {
+                "reachPct": 3.9,
+                "wtpPct": 10,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Zepzelca leading branded 2L SCLC; competitive vs topotecan generic + Tarlatamab (Imdelltra Amgen DLL3 BiTE 2024)",
+              "us.priceK": "Zepzelca WAC ~$90K/course"
+            },
+            "penPct": 48,
+            "cagrPct": 6,
+            "peakYear": 2031,
+            "salesM": 380,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "vyxeos",
+      "name": "Vyxeos (CPX-351 daunorubicin+cytarabine liposomal) - cytotoxic combo",
+      "stage": "Commercial (sAML/t-AML FDA 2017)",
+      "modality": "small_molecule.cytotoxic.liposomal_anthracycline",
+      "targets": [
+        "TOP2A"
+      ],
+      "indications": [
+        {
+          "id": "saml",
+          "name": "Secondary/therapy-related acute myeloid leukemia (adults + pediatric)",
+          "area": "oncology.hematology.aml",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 22,
+                "wtpPct": 62,
+                "priceK": 185
+              },
+              "eu": {
+                "patientsK": 27,
+                "wtpPct": 45,
+                "priceK": 105
+              },
+              "row": {
+                "patientsK": 90,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 14.5,
+                "wtpPct": 60,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 7.2,
+                "wtpPct": 40,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 1.8,
+                "wtpPct": 10,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Vyxeos s/t-AML niche ~4% US AML share; competitive vs azacitidine+ven generic-like + Vidaza/Onureg",
+              "us.priceK": "Vyxeos WAC ~$80K/induction course"
+            },
+            "penPct": 48,
+            "cagrPct": 2,
+            "peakYear": 2029,
+            "salesM": 130,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "rylaze",
+      "name": "Rylaze (asparaginase erwinia chrysanthemi recombinant) - enzyme replacement",
+      "stage": "Commercial (pediatric+adult ALL/LBL FDA 2021; first recombinant Erwinia)",
+      "modality": "recombinant_protein.enzyme.asparaginase",
+      "targets": [
+        "ASNS"
+      ],
+      "indications": [
+        {
+          "id": "all_pediatric",
+          "name": "Pediatric/AYA ALL + LBL (Erwinia component of multi-agent regimen)",
+          "area": "oncology.hematology.all",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 8,
+                "wtpPct": 60,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 35,
+                "wtpPct": 15,
+                "priceK": 45
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 50,
+                "wtpPct": 75,
+                "priceK": 175
+              },
+              "eu": {
+                "reachPct": 25,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Rylaze sole branded recombinant Erwinia post-Erwinaze supply gap; ~50% of pediatric ALL Erwinia subset",
+              "us.priceK": "Rylaze WAC ~$175K/course (multi-dose IM regimen)"
+            },
+            "penPct": 60,
+            "cagrPct": 3,
+            "peakYear": 2029,
+            "salesM": 410,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "defitelio",
+      "name": "Defitelio (defibrotide sodium) - mixed single-strand DNA oligonucleotide",
+      "stage": "Commercial (severe VOD/SOS post-HSCT FDA 2016, EU 2013)",
+      "modality": "nucleic_acid.oligonucleotide.defibrotide",
+      "targets": [
+        "PLG",
+        "F2"
+      ],
+      "indications": [
+        {
+          "id": "vod_hsct",
+          "name": "Severe hepatic veno-occlusive disease (sinusoidal obstruction syndrome) post-HSCT",
+          "area": "hematology.rare_blood.vod_hsct",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2,
+                "wtpPct": 75,
+                "priceK": 160
+              },
+              "eu": {
+                "patientsK": 3,
+                "wtpPct": 55,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 4,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 88.6,
+                "wtpPct": 70,
+                "priceK": 160
+              },
+              "eu": {
+                "reachPct": 66.4,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 11.8,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Defitelio sole branded severe VOD therapy (no competitor)",
+              "us.priceK": "Defitelio WAC ~$160K/21-day IV course"
+            },
+            "penPct": 55,
+            "cagrPct": 2,
+            "peakYear": 2029,
+            "salesM": 200,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "ziihera",
+      "name": "Ziihera (zanidatamab) - HER2-biparatopic bispecific antibody (Zymeworks license)",
+      "stage": "Commercial (HER2+ BTC accel 2024) + Ph3 HERIZON-GEA-01 PDUFA Aug 25 2026 + Ph2 HER2+ breast",
+      "modality": "antibody.bispecific.her2_biparatopic",
+      "targets": [
+        "ERBB2"
+      ],
+      "indications": [
+        {
+          "id": "btc_her2",
+          "name": "HER2+ biliary tract cancer 2L+ (commercial accel 2024)",
+          "area": "oncology.gi.cholangiocarcinoma",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 55,
+                "priceK": 155
+              },
+              "eu": {
+                "patientsK": 12,
+                "wtpPct": 42,
+                "priceK": 90
+              },
+              "row": {
+                "patientsK": 60,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 65,
+                "priceK": 180
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 45,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "HER2+ subset ~5-8% of BTC; Ziihera first HER2-targeted accelerated approval",
+              "us.priceK": "Ziihera WAC ~$180K/yr"
+            },
+            "penPct": 42,
+            "cagrPct": 8,
+            "peakYear": 2031,
+            "salesM": 50,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "gea_her2",
+          "name": "HER2+ gastric/GEJ adenocarcinoma 1L (HERIZON-GEA-01 Ph3 positive; PDUFA Aug 25 2026)",
+          "area": "oncology.gi.gastric_esoph",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 58,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 44,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 20,
+                "priceK": 32
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 65,
+                "priceK": 180
+              },
+              "eu": {
+                "reachPct": 7,
+                "wtpPct": 45,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "HER2+ ~15-20% of GEA; Ziihera competing vs Herceptin+chemo + Enhertu (DS-8201) 2L",
+              "us.priceK": "Same Ziihera WAC ~$180K/yr"
+            },
+            "penPct": 48,
+            "cagrPct": 6,
+            "peakYear": 2032
+          }
+        },
+        {
+          "id": "breast_her2",
+          "name": "HER2+ metastatic breast cancer 3L+ (Ph2 expansion)",
+          "area": "oncology.breast.her2_pos",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 120,
+                "wtpPct": 70,
+                "priceK": 165
+              },
+              "eu": {
+                "patientsK": 140,
+                "wtpPct": 50,
+                "priceK": 95
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 65,
+                "priceK": 180
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 45,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 10,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "HER2+ breast crowded (Enhertu, Kadcyla, Tukysa); Ziihera ~3-5% share if approved 3L+",
+              "us.priceK": "Same Ziihera WAC ~$180K/yr"
+            },
+            "penPct": 65,
+            "cagrPct": 5,
+            "peakYear": 2033
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 4,
+        "commercialMult": 2.5,
+        "commercialRevM": 3500,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "xywav": {
+          "narcolepsy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "ih": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "xyrem": {
+          "narcolepsy_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.2
+          }
+        },
+        "epidiolex": {
+          "dravet": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "lgs": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "tsc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "zepzelca": {
+          "sclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "vyxeos": {
+          "saml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "rylaze": {
+          "all_pediatric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "defitelio": {
+          "vod_hsct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "ziihera": {
+          "btc_her2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          },
+          "gea_her2": {
+            "pos": 60,
+            "apr": 80,
+            "pen": 0.3
+          },
+          "breast_her2": {
+            "pos": 20,
+            "apr": 40,
+            "pen": 0.2
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 5,
+        "commercialMult": 3.0,
+        "commercialRevM": 4000,
+        "milestones": 100,
+        "dil": 0
+      },
+      "assumptions": {
+        "xywav": {
+          "narcolepsy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "ih": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "xyrem": {
+          "narcolepsy_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.25
+          }
+        },
+        "epidiolex": {
+          "dravet": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          },
+          "lgs": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "tsc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "zepzelca": {
+          "sclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "vyxeos": {
+          "saml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "rylaze": {
+          "all_pediatric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "defitelio": {
+          "vod_hsct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "ziihera": {
+          "btc_her2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "gea_her2": {
+            "pos": 75,
+            "apr": 88,
+            "pen": 0.5
+          },
+          "breast_her2": {
+            "pos": 35,
+            "apr": 55,
+            "pen": 0.35
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 40,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 7,
+        "commercialMult": 4.0,
+        "commercialRevM": 4500,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "xywav": {
+          "narcolepsy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "ih": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "xyrem": {
+          "narcolepsy_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "epidiolex": {
+          "dravet": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "lgs": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "tsc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "zepzelca": {
+          "sclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "vyxeos": {
+          "saml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "rylaze": {
+          "all_pediatric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "defitelio": {
+          "vod_hsct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "ziihera": {
+          "btc_her2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "gea_her2": {
+            "pos": 88,
+            "apr": 92,
+            "pen": 0.75
+          },
+          "breast_her2": {
+            "pos": 55,
+            "apr": 70,
+            "pen": 0.55
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 10,
+        "commercialMult": 5.5,
+        "commercialRevM": 5500,
+        "milestones": 400,
+        "dil": 0
+      },
+      "assumptions": {
+        "xywav": {
+          "narcolepsy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "ih": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "xyrem": {
+          "narcolepsy_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.35
+          }
+        },
+        "epidiolex": {
+          "dravet": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "lgs": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "tsc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "zepzelca": {
+          "sclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "vyxeos": {
+          "saml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "rylaze": {
+          "all_pediatric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "defitelio": {
+          "vod_hsct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "ziihera": {
+          "btc_her2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "gea_her2": {
+            "pos": 95,
+            "apr": 96,
+            "pen": 1.0
+          },
+          "breast_her2": {
+            "pos": 70,
+            "apr": 82,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 14,
+        "commercialMult": 7.5,
+        "commercialRevM": 7000,
+        "milestones": 800,
+        "dil": 0
+      },
+      "assumptions": {
+        "xywav": {
+          "narcolepsy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "ih": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "xyrem": {
+          "narcolepsy_legacy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "epidiolex": {
+          "dravet": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          },
+          "lgs": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "tsc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "zepzelca": {
+          "sclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "vyxeos": {
+          "saml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "rylaze": {
+          "all_pediatric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "defitelio": {
+          "vod_hsct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "ziihera": {
+          "btc_her2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "gea_her2": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.3
+          },
+          "breast_her2": {
+            "pos": 88,
+            "apr": 92,
+            "pen": 1.05
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Aug 25, 2026",
+      "dateSort": "2026-08-25",
+      "asset": "ziihera",
+      "indication": "gea_her2",
+      "title": "Ziihera HERIZON-GEA-01 PDUFA: HER2+ 1L gastric/GEJ adenocarcinoma",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 50,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "https://www.jazzpharma.com/news/zanidatamab-pdufa-herizon-gea-01",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "ziihera",
+      "indication": "breast_her2",
+      "title": "Ziihera HER2+ metastatic breast cancer Ph2 expansion readout",
+      "type": "phase2_data",
+      "binary": false,
+      "_source": "https://www.jazzpharma.com/pipeline",
+      "_confidence": "medium"
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "xywav",
+      "indication": "ih",
+      "title": "Xywav IH demand growth + reimbursement coverage expansion update",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.jazzpharma.com/investors",
+      "_confidence": "high"
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-30T14:00:19Z",
-    "target_count": 373,
-    "total_assets": 693,
-    "assets_with_targets": 642,
-    "multi_modality_count": 45,
-    "multi_disease_count": 164
+    "generated": "2026-04-30T14:10:26Z",
+    "target_count": 381,
+    "total_assets": 701,
+    "assets_with_targets": 650,
+    "multi_modality_count": 46,
+    "multi_disease_count": 169
   },
   "targets": {
     "ABL1": {
@@ -1287,6 +1287,40 @@
       "cagrPct": 4.7,
       "peakYear": 2028
     },
+    "ASNS": {
+      "companies": [
+        "JAZZ"
+      ],
+      "modalities": [
+        "recombinant_protein.enzyme.asparaginase"
+      ],
+      "areas": [
+        "oncology.hematology.all"
+      ],
+      "assets": [
+        {
+          "ticker": "JAZZ",
+          "asset": "rylaze",
+          "name": "Rylaze (asparaginase erwinia chrysanthemi recombinant) - enzyme replacement",
+          "modality": "recombinant_protein.enzyme.asparaginase",
+          "areas": [
+            "oncology.hematology.all"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 1820.2,
+      "totalSOM": 520.6,
+      "totalSales": 410.0,
+      "cagrPct": 3.0,
+      "peakYear": 2029
+    },
     "ATP2C1": {
       "companies": [
         "KRYS"
@@ -1748,7 +1782,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 4026.4,
       "totalSales": 2915.0,
       "cagrPct": 3.2,
@@ -3948,7 +3982,7 @@
         "antibody"
       ],
       "totalTAM": 19731.0,
-      "totalSOM": 189.7,
+      "totalSOM": 189.6,
       "totalSales": 0.0,
       "cagrPct": 54.4,
       "peakYear": 2031
@@ -5449,12 +5483,14 @@
         "AZN",
         "BAYN",
         "BNTX",
+        "JAZZ",
         "NUVL",
         "RHHBY"
       ],
       "modalities": [
         "adc.dxd_linker.her2_adc",
         "adc.her2.dm1_payload",
+        "antibody.bispecific.her2_biparatopic",
         "antibody.monoclonal.anti_her2",
         "antibody.monoclonal.anti_her2_combo",
         "small_molecule.kinase_inhibitor.her2",
@@ -5462,6 +5498,7 @@
       ],
       "areas": [
         "oncology.breast.her2_pos",
+        "oncology.gi.cholangiocarcinoma",
         "oncology.gi.gastric_esoph",
         "oncology.gynecologic.endometrial",
         "oncology.lung.nsclc_driver.her2"
@@ -5516,6 +5553,17 @@
           ]
         },
         {
+          "ticker": "JAZZ",
+          "asset": "ziihera",
+          "name": "Ziihera (zanidatamab) - HER2-biparatopic bispecific antibody (Zymeworks license)",
+          "modality": "antibody.bispecific.her2_biparatopic",
+          "areas": [
+            "oncology.breast.her2_pos",
+            "oncology.gi.cholangiocarcinoma",
+            "oncology.gi.gastric_esoph"
+          ]
+        },
+        {
           "ticker": "NUVL",
           "asset": "nvl330",
           "name": "NVL-330 â€” HER2-selective (NSCLC)",
@@ -5561,19 +5609,19 @@
           ]
         }
       ],
-      "assetCount": 10,
-      "modalityCount": 6,
+      "assetCount": 11,
+      "modalityCount": 7,
       "modalityClassCount": 3,
-      "areaCount": 4,
+      "areaCount": 5,
       "modalityClasses": [
         "adc",
         "antibody",
         "small_molecule"
       ],
-      "totalTAM": 42061.8,
-      "totalSOM": 32087.9,
-      "totalSales": 17092.0,
-      "cagrPct": 3.1,
+      "totalTAM": 43583.9,
+      "totalSOM": 33450.5,
+      "totalSales": 17142.0,
+      "cagrPct": 3.2,
       "peakYear": 2029
     },
     "ERBB3": {
@@ -5884,13 +5932,16 @@
     },
     "F2": {
       "companies": [
-        "CSL"
+        "CSL",
+        "JAZZ"
       ],
       "modalities": [
+        "nucleic_acid.oligonucleotide.defibrotide",
         "recombinant_protein.coagulation.pcc_4factor"
       ],
       "areas": [
-        "cardio_metabolic.thrombosis.reversal"
+        "cardio_metabolic.thrombosis.reversal",
+        "hematology.rare_blood.vod_hsct"
       ],
       "assets": [
         {
@@ -5901,19 +5952,29 @@
           "areas": [
             "cardio_metabolic.thrombosis.reversal"
           ]
+        },
+        {
+          "ticker": "JAZZ",
+          "asset": "defitelio",
+          "name": "Defitelio (defibrotide sodium) - mixed single-strand DNA oligonucleotide",
+          "modality": "nucleic_acid.oligonucleotide.defibrotide",
+          "areas": [
+            "hematology.rare_blood.vod_hsct"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
-      "areaCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
+      "areaCount": 2,
       "modalityClasses": [
+        "nucleic_acid",
         "recombinant_protein"
       ],
-      "totalTAM": 1122.0,
-      "totalSOM": 818.6,
-      "totalSales": 700.0,
-      "cagrPct": 6.0,
+      "totalTAM": 1543.8,
+      "totalSOM": 1118.6,
+      "totalSales": 900.0,
+      "cagrPct": 4.9,
       "peakYear": 2028
     },
     "F3": {
@@ -7033,6 +7094,51 @@
       "cagrPct": 4.0,
       "peakYear": 2030
     },
+    "GABBR1": {
+      "companies": [
+        "JAZZ"
+      ],
+      "modalities": [
+        "small_molecule.gpcr.ghb_agonist"
+      ],
+      "areas": [
+        "cns.sleep.narcolepsy",
+        "cns.sleep.narcolepsy_hypersomnia"
+      ],
+      "assets": [
+        {
+          "ticker": "JAZZ",
+          "asset": "xywav",
+          "name": "Xywav (low-sodium calcium/magnesium/potassium/sodium oxybates) - GHB receptor agonist",
+          "modality": "small_molecule.gpcr.ghb_agonist",
+          "areas": [
+            "cns.sleep.narcolepsy",
+            "cns.sleep.narcolepsy_hypersomnia"
+          ]
+        },
+        {
+          "ticker": "JAZZ",
+          "asset": "xyrem",
+          "name": "Xyrem (sodium oxybate) - GHB receptor agonist (legacy high-sodium)",
+          "modality": "small_molecule.gpcr.ghb_agonist",
+          "areas": [
+            "cns.sleep.narcolepsy"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 20472.0,
+      "totalSOM": 3017.2,
+      "totalSales": 1760.0,
+      "cagrPct": 5.1,
+      "peakYear": 2030
+    },
     "GABRA1": {
       "companies": [
         "AXSM",
@@ -7534,6 +7640,44 @@
       "cagrPct": 0.3,
       "peakYear": 2028
     },
+    "GPR55": {
+      "companies": [
+        "JAZZ"
+      ],
+      "modalities": [
+        "small_molecule.endocannabinoid.cannabidiol"
+      ],
+      "areas": [
+        "cns.epilepsy.dee.dravet",
+        "cns.epilepsy.dee.lgs",
+        "cns.epilepsy.tsc"
+      ],
+      "assets": [
+        {
+          "ticker": "JAZZ",
+          "asset": "epidiolex",
+          "name": "Epidiolex (cannabidiol/CBD) - endocannabinoid modulator (acquired GW Pharma May 2021)",
+          "modality": "small_molecule.endocannabinoid.cannabidiol",
+          "areas": [
+            "cns.epilepsy.dee.dravet",
+            "cns.epilepsy.dee.lgs",
+            "cns.epilepsy.tsc"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 3,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 8476.5,
+      "totalSOM": 1386.6,
+      "totalSales": 1000.0,
+      "cagrPct": 4.7,
+      "peakYear": 2030
+    },
     "GPRC5D": {
       "companies": [
         "GMAB",
@@ -7969,6 +8113,51 @@
       "cagrPct": 3.5,
       "peakYear": 2033
     },
+    "HCAR2": {
+      "companies": [
+        "JAZZ"
+      ],
+      "modalities": [
+        "small_molecule.gpcr.ghb_agonist"
+      ],
+      "areas": [
+        "cns.sleep.narcolepsy",
+        "cns.sleep.narcolepsy_hypersomnia"
+      ],
+      "assets": [
+        {
+          "ticker": "JAZZ",
+          "asset": "xywav",
+          "name": "Xywav (low-sodium calcium/magnesium/potassium/sodium oxybates) - GHB receptor agonist",
+          "modality": "small_molecule.gpcr.ghb_agonist",
+          "areas": [
+            "cns.sleep.narcolepsy",
+            "cns.sleep.narcolepsy_hypersomnia"
+          ]
+        },
+        {
+          "ticker": "JAZZ",
+          "asset": "xyrem",
+          "name": "Xyrem (sodium oxybate) - GHB receptor agonist (legacy high-sodium)",
+          "modality": "small_molecule.gpcr.ghb_agonist",
+          "areas": [
+            "cns.sleep.narcolepsy"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 20472.0,
+      "totalSOM": 3017.2,
+      "totalSales": 1760.0,
+      "cagrPct": 5.1,
+      "peakYear": 2030
+    },
     "HCRTR1": {
       "companies": [
         "4523",
@@ -8328,7 +8517,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -11207,7 +11396,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 18252.4,
       "totalSales": 2971.0,
       "cagrPct": 47.5,
@@ -11259,7 +11448,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 17202.9,
       "totalSales": 2271.0,
       "cagrPct": 50.1,
@@ -12134,7 +12323,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -12383,7 +12572,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -13813,6 +14002,74 @@
       "totalSales": 1251.0,
       "cagrPct": 2.0,
       "peakYear": 2026
+    },
+    "PLG": {
+      "companies": [
+        "JAZZ"
+      ],
+      "modalities": [
+        "nucleic_acid.oligonucleotide.defibrotide"
+      ],
+      "areas": [
+        "hematology.rare_blood.vod_hsct"
+      ],
+      "assets": [
+        {
+          "ticker": "JAZZ",
+          "asset": "defitelio",
+          "name": "Defitelio (defibrotide sodium) - mixed single-strand DNA oligonucleotide",
+          "modality": "nucleic_acid.oligonucleotide.defibrotide",
+          "areas": [
+            "hematology.rare_blood.vod_hsct"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "nucleic_acid"
+      ],
+      "totalTAM": 421.8,
+      "totalSOM": 300.0,
+      "totalSales": 200.0,
+      "cagrPct": 2.0,
+      "peakYear": 2029
+    },
+    "POLR2A": {
+      "companies": [
+        "JAZZ"
+      ],
+      "modalities": [
+        "small_molecule.alkylator.minor_groove_binder"
+      ],
+      "areas": [
+        "oncology.lung.sclc"
+      ],
+      "assets": [
+        {
+          "ticker": "JAZZ",
+          "asset": "zepzelca",
+          "name": "Zepzelca (lurbinectedin) - DNA minor groove binder (PharmaMar partnership)",
+          "modality": "small_molecule.alkylator.minor_groove_binder",
+          "areas": [
+            "oncology.lung.sclc"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 3242.6,
+      "totalSOM": 569.2,
+      "totalSales": 380.0,
+      "cagrPct": 6.0,
+      "peakYear": 2031
     },
     "PPARA": {
       "companies": [
@@ -17422,6 +17679,78 @@
       "totalSales": 100.0,
       "cagrPct": -0.6,
       "peakYear": 2026
+    },
+    "TOP2A": {
+      "companies": [
+        "JAZZ"
+      ],
+      "modalities": [
+        "small_molecule.cytotoxic.liposomal_anthracycline"
+      ],
+      "areas": [
+        "oncology.hematology.aml"
+      ],
+      "assets": [
+        {
+          "ticker": "JAZZ",
+          "asset": "vyxeos",
+          "name": "Vyxeos (CPX-351 daunorubicin+cytarabine liposomal) - cytotoxic combo",
+          "modality": "small_molecule.cytotoxic.liposomal_anthracycline",
+          "areas": [
+            "oncology.hematology.aml"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 4240.2,
+      "totalSOM": 194.9,
+      "totalSales": 130.0,
+      "cagrPct": 2.0,
+      "peakYear": 2029
+    },
+    "TRPV1": {
+      "companies": [
+        "JAZZ"
+      ],
+      "modalities": [
+        "small_molecule.endocannabinoid.cannabidiol"
+      ],
+      "areas": [
+        "cns.epilepsy.dee.dravet",
+        "cns.epilepsy.dee.lgs",
+        "cns.epilepsy.tsc"
+      ],
+      "assets": [
+        {
+          "ticker": "JAZZ",
+          "asset": "epidiolex",
+          "name": "Epidiolex (cannabidiol/CBD) - endocannabinoid modulator (acquired GW Pharma May 2021)",
+          "modality": "small_molecule.endocannabinoid.cannabidiol",
+          "areas": [
+            "cns.epilepsy.dee.dravet",
+            "cns.epilepsy.dee.lgs",
+            "cns.epilepsy.tsc"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 3,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 8476.5,
+      "totalSOM": 1386.6,
+      "totalSales": 1000.0,
+      "cagrPct": 4.7,
+      "peakYear": 2030
     },
     "TSLP": {
       "companies": [

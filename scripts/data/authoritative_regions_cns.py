@@ -37,6 +37,28 @@ REGIONS = {
         "eu":  {"patientsK": 7,   "wtpPct": 50, "priceK": 35},
         "row": {"patientsK": 15,  "wtpPct": 18, "priceK": 10},
     },
+    # source: Lennox-Gastaut Syndrome (LGS), severe childhood-onset DEE with
+    # multiple seizure types. Prevalence ~0.026% of all epilepsy → ~30K US,
+    # ~40K EU, ~150K ROW prevalent (Epilepsy Foundation; Cross 2017 review;
+    # Orphanet ORPHA:2382). Pricing reflects Epidiolex (~$32K) + Banzel
+    # (~$18K) + Onfi (~$15K) blended; addressable subset on branded
+    # adjunctive therapy. WTP high in US/EU due to refractory severity.
+    "cns.epilepsy.dee.lgs": {
+        "us":  {"patientsK": 30,   "wtpPct": 80, "priceK": 35},
+        "eu":  {"patientsK": 40,   "wtpPct": 60, "priceK": 22},
+        "row": {"patientsK": 150,  "wtpPct": 22, "priceK": 8},
+    },
+    # source: Tuberous Sclerosis Complex (TSC), genetic disorder with
+    # epilepsy in ~85% of pts. Prevalence ~1:6,000-10,000 → ~50K US, ~70K EU
+    # diagnosed (TSC Alliance; Orphanet ORPHA:805); ROW ~150K (largely
+    # underdiagnosed). Refractory epilepsy in TSC is the addressable subset
+    # for Epidiolex (TSC label) + Afinitor (everolimus mTOR for SEGA/TSC).
+    # Pricing pegs to Epidiolex $32K + everolimus orphan oncology premium.
+    "cns.epilepsy.tsc": {
+        "us":  {"patientsK": 50,   "wtpPct": 75, "priceK": 40},
+        "eu":  {"patientsK": 70,   "wtpPct": 55, "priceK": 25},
+        "row": {"patientsK": 150,  "wtpPct": 20, "priceK": 9},
+    },
     "cns.epilepsy.focal": {
         "us":  {"patientsK": 1200,  "wtpPct": 85, "priceK": 4},
         "eu":  {"patientsK": 2500,  "wtpPct": 70, "priceK": 2},
@@ -268,6 +290,8 @@ PEN_PCT = {
     "cns.epilepsy.dee": 40,
     "cns.epilepsy.dee.dravet": 50,
     "cns.epilepsy.dee.syngap1": 35,
+    "cns.epilepsy.dee.lgs": 55,
+    "cns.epilepsy.tsc": 50,
     "cns.epilepsy.focal": 70,
     "cns.epilepsy.generalized": 65,
     "cns.movement.essential_tremor": 25,

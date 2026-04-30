@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-30T09:02:29Z",
-    "target_count": 343,
-    "total_assets": 632,
-    "assets_with_targets": 585,
+    "generated": "2026-04-30T09:16:33Z",
+    "target_count": 345,
+    "total_assets": 641,
+    "assets_with_targets": 594,
     "multi_modality_count": 40,
-    "multi_disease_count": 152
+    "multi_disease_count": 154
   },
   "targets": {
     "ABL1": {
@@ -2559,6 +2559,7 @@
     "CD3": {
       "companies": [
         "AMGN",
+        "GMAB",
         "JNJ",
         "REGN",
         "RHHBY",
@@ -2577,6 +2578,7 @@
         "cardio_metabolic.diabetes.t1d",
         "oncology.genitourinary.prostate",
         "oncology.hematology.b_all",
+        "oncology.hematology.myeloma.2l_3l",
         "oncology.hematology.myeloma.4l_plus",
         "oncology.hematology.nhl.dlbcl",
         "oncology.hematology.nhl.fl",
@@ -2608,6 +2610,26 @@
           "modality": "antibody.bispecific.steap1_cd3",
           "areas": [
             "oncology.genitourinary.prostate"
+          ]
+        },
+        {
+          "ticker": "GMAB",
+          "asset": "jnj_bispecific_royalties",
+          "name": "Tecvayli + Talvey royalties - JNJ commercialized myeloma bispecifics (~5-6% royalty)",
+          "modality": "antibody.bispecific.bcma_cd3",
+          "areas": [
+            "oncology.hematology.myeloma.2l_3l",
+            "oncology.hematology.myeloma.4l_plus"
+          ]
+        },
+        {
+          "ticker": "GMAB",
+          "asset": "epkinly",
+          "name": "Epkinly / Tepkinly (epcoritamab) - CD3xCD20 bispecific (AbbVie 50/50 US+JP)",
+          "modality": "antibody.bispecific.cd20_cd3",
+          "areas": [
+            "oncology.hematology.nhl.dlbcl",
+            "oncology.hematology.nhl.fl"
           ]
         },
         {
@@ -2674,17 +2696,17 @@
           ]
         }
       ],
-      "assetCount": 10,
+      "assetCount": 12,
       "modalityCount": 7,
       "modalityClassCount": 1,
-      "areaCount": 7,
+      "areaCount": 8,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 44024.2,
-      "totalSOM": 10642.2,
-      "totalSales": 3980.0,
-      "cagrPct": 30.5,
+      "totalTAM": 57488.7,
+      "totalSOM": 16772.6,
+      "totalSales": 4483.0,
+      "cagrPct": 22.8,
       "peakYear": 2031
     },
     "CD30": {
@@ -2725,6 +2747,7 @@
       "companies": [
         "4502",
         "BIIB",
+        "GMAB",
         "JNJ",
         "SNY"
       ],
@@ -2760,6 +2783,17 @@
           ]
         },
         {
+          "ticker": "GMAB",
+          "asset": "darzalex_royalty",
+          "name": "Darzalex (daratumumab) royalty - J&J commercialized, Genmab originator (~12% royalty)",
+          "modality": "antibody.monoclonal.anti_cd38",
+          "areas": [
+            "oncology.hematology.myeloma.1l",
+            "oncology.hematology.myeloma.2l_3l",
+            "oncology.hematology.myeloma.4l_plus"
+          ]
+        },
+        {
           "ticker": "JNJ",
           "asset": "darzalex",
           "name": "Darzalex (daratumumab, anti-CD38) — myeloma",
@@ -2780,7 +2814,7 @@
           ]
         }
       ],
-      "assetCount": 4,
+      "assetCount": 5,
       "modalityCount": 1,
       "modalityClassCount": 1,
       "areaCount": 6,
@@ -2788,9 +2822,9 @@
         "antibody"
       ],
       "totalTAM": 53378.6,
-      "totalSOM": 22264.1,
-      "totalSales": 14950.0,
-      "cagrPct": 11.5,
+      "totalSOM": 26929.3,
+      "totalSales": 16665.0,
+      "cagrPct": 10.0,
       "peakYear": 2029
     },
     "CD3E": {
@@ -4865,11 +4899,13 @@
         "AMGN",
         "AZN",
         "BAYN",
+        "GMAB",
         "JANX",
         "JNJ",
         "MRK_DE"
       ],
       "modalities": [
+        "antibody.bispecific.egfr_lgr5",
         "antibody.bispecific.egfr_met",
         "antibody.bispecific.tumor_activated_tce",
         "antibody.monoclonal.anti_egfr",
@@ -4921,6 +4957,24 @@
           ]
         },
         {
+          "ticker": "GMAB",
+          "asset": "rybrevant_royalty",
+          "name": "Rybrevant (amivantamab) royalty - JNJ commercialized EGFRxMET bispecific (~5-7% royalty)",
+          "modality": "antibody.bispecific.egfr_met",
+          "areas": [
+            "oncology.lung.nsclc_driver.egfr"
+          ]
+        },
+        {
+          "ticker": "GMAB",
+          "asset": "petosemtamab",
+          "name": "Petosemtamab (MCLA-158) - EGFRxLGR5 bispecific (Merus acq Dec 2025; 100% Genmab)",
+          "modality": "antibody.bispecific.egfr_lgr5",
+          "areas": [
+            "oncology.head_neck.hnscc"
+          ]
+        },
+        {
           "ticker": "JANX",
           "asset": "janx008",
           "name": "JANX008 — EGFR-TRACTr (solid tumors)",
@@ -4949,8 +5003,8 @@
           ]
         }
       ],
-      "assetCount": 7,
-      "modalityCount": 6,
+      "assetCount": 9,
+      "modalityCount": 7,
       "modalityClassCount": 2,
       "areaCount": 4,
       "modalityClasses": [
@@ -4958,9 +5012,9 @@
         "small_molecule"
       ],
       "totalTAM": 36366.2,
-      "totalSOM": 22612.6,
-      "totalSales": 10361.0,
-      "cagrPct": 6.8,
+      "totalSOM": 25338.8,
+      "totalSales": 10401.0,
+      "cagrPct": 6.6,
       "peakYear": 2030
     },
     "EPHA2": {
@@ -5504,6 +5558,40 @@
       "totalSales": 700.0,
       "cagrPct": 6.0,
       "peakYear": 2028
+    },
+    "F3": {
+      "companies": [
+        "GMAB"
+      ],
+      "modalities": [
+        "adc.tissue_factor.mmae"
+      ],
+      "areas": [
+        "oncology.gynecologic.cervical"
+      ],
+      "assets": [
+        {
+          "ticker": "GMAB",
+          "asset": "tivdak",
+          "name": "Tivdak (tisotumab vedotin) - tissue factor ADC MMAE (Pfizer 50/50 US+CN; Genmab solo ex-rest 2025)",
+          "modality": "adc.tissue_factor.mmae",
+          "areas": [
+            "oncology.gynecologic.cervical"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "adc"
+      ],
+      "totalTAM": 1527.0,
+      "totalSOM": 397.9,
+      "totalSales": 250.0,
+      "cagrPct": 15.0,
+      "peakYear": 2032
     },
     "F7": {
       "companies": [
@@ -6349,12 +6437,14 @@
     },
     "FOLR1": {
       "companies": [
-        "ABBV"
+        "ABBV",
+        "GMAB"
       ],
       "modalities": [
         "adc.dxd_linker.folr1_adc"
       ],
       "areas": [
+        "oncology.gynecologic.endometrial",
         "oncology.gynecologic.ovarian"
       ],
       "assets": [
@@ -6366,19 +6456,29 @@
           "areas": [
             "oncology.gynecologic.ovarian"
           ]
+        },
+        {
+          "ticker": "GMAB",
+          "asset": "rina_s",
+          "name": "Rina-S (rinatabart sesutecan) - FRα ADC TopoI payload (ex-ProfoundBio acq)",
+          "modality": "adc.dxd_linker.folr1_adc",
+          "areas": [
+            "oncology.gynecologic.endometrial",
+            "oncology.gynecologic.ovarian"
+          ]
         }
       ],
-      "assetCount": 1,
+      "assetCount": 2,
       "modalityCount": 1,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "adc"
       ],
-      "totalTAM": 5003.8,
-      "totalSOM": 478.1,
+      "totalTAM": 16178.8,
+      "totalSOM": 2980.0,
       "totalSales": 320.0,
-      "cagrPct": 0.0,
+      "cagrPct": 4.7,
       "peakYear": 2033
     },
     "FSHB": {
@@ -6858,15 +6958,28 @@
     },
     "GPRC5D": {
       "companies": [
+        "GMAB",
         "JNJ"
       ],
       "modalities": [
+        "antibody.bispecific.bcma_cd3",
         "antibody.bispecific.gprc5d_cd3"
       ],
       "areas": [
+        "oncology.hematology.myeloma.2l_3l",
         "oncology.hematology.myeloma.4l_plus"
       ],
       "assets": [
+        {
+          "ticker": "GMAB",
+          "asset": "jnj_bispecific_royalties",
+          "name": "Tecvayli + Talvey royalties - JNJ commercialized myeloma bispecifics (~5-6% royalty)",
+          "modality": "antibody.bispecific.bcma_cd3",
+          "areas": [
+            "oncology.hematology.myeloma.2l_3l",
+            "oncology.hematology.myeloma.4l_plus"
+          ]
+        },
         {
           "ticker": "JNJ",
           "asset": "talvey",
@@ -6877,17 +6990,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 3961.6,
-      "totalSOM": 637.5,
-      "totalSales": 425.0,
-      "cagrPct": 35.0,
+      "totalTAM": 17426.1,
+      "totalSOM": 888.4,
+      "totalSales": 460.0,
+      "cagrPct": 30.3,
       "peakYear": 2030
     },
     "GR": {
@@ -7796,7 +7909,8 @@
     },
     "IGF1R": {
       "companies": [
-        "AMGN"
+        "AMGN",
+        "GMAB"
       ],
       "modalities": [
         "antibody.monoclonal.anti_igf1r"
@@ -7813,9 +7927,18 @@
           "areas": [
             "ophthalmology.anterior_neuro.ted"
           ]
+        },
+        {
+          "ticker": "GMAB",
+          "asset": "tepezza_royalty",
+          "name": "Tepezza (teprotumumab) royalty - Amgen (Horizon legacy) (~4% royalty)",
+          "modality": "antibody.monoclonal.anti_igf1r",
+          "areas": [
+            "ophthalmology.anterior_neuro.ted"
+          ]
         }
       ],
-      "assetCount": 1,
+      "assetCount": 2,
       "modalityCount": 1,
       "modalityClassCount": 1,
       "areaCount": 1,
@@ -7823,10 +7946,10 @@
         "antibody"
       ],
       "totalTAM": 9900.0,
-      "totalSOM": 2851.6,
-      "totalSales": 1903.0,
-      "cagrPct": 8.0,
-      "peakYear": 2030
+      "totalSOM": 3463.1,
+      "totalSales": 1978.0,
+      "cagrPct": 6.1,
+      "peakYear": 2029
     },
     "IGG": {
       "companies": [
@@ -9875,6 +9998,40 @@
       "cagrPct": 14.1,
       "peakYear": 2031
     },
+    "LGR5": {
+      "companies": [
+        "GMAB"
+      ],
+      "modalities": [
+        "antibody.bispecific.egfr_lgr5"
+      ],
+      "areas": [
+        "oncology.head_neck.hnscc"
+      ],
+      "assets": [
+        {
+          "ticker": "GMAB",
+          "asset": "petosemtamab",
+          "name": "Petosemtamab (MCLA-158) - EGFRxLGR5 bispecific (Merus acq Dec 2025; 100% Genmab)",
+          "modality": "antibody.bispecific.egfr_lgr5",
+          "areas": [
+            "oncology.head_neck.hnscc"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 11797.5,
+      "totalSOM": 2375.2,
+      "totalSales": 0.0,
+      "cagrPct": 3.6,
+      "peakYear": 2032
+    },
     "LHB": {
       "companies": [
         "MRK_DE"
@@ -10337,6 +10494,7 @@
     "MET": {
       "companies": [
         "ABBV",
+        "GMAB",
         "JNJ",
         "MRK_DE",
         "NVS"
@@ -10358,6 +10516,15 @@
           "modality": "adc.dxd_linker.cmet_adc",
           "areas": [
             "oncology.lung.nsclc_driver.cmet"
+          ]
+        },
+        {
+          "ticker": "GMAB",
+          "asset": "rybrevant_royalty",
+          "name": "Rybrevant (amivantamab) royalty - JNJ commercialized EGFRxMET bispecific (~5-7% royalty)",
+          "modality": "antibody.bispecific.egfr_met",
+          "areas": [
+            "oncology.lung.nsclc_driver.egfr"
           ]
         },
         {
@@ -10388,7 +10555,7 @@
           ]
         }
       ],
-      "assetCount": 4,
+      "assetCount": 5,
       "modalityCount": 3,
       "modalityClassCount": 3,
       "areaCount": 2,
@@ -10398,9 +10565,9 @@
         "small_molecule"
       ],
       "totalTAM": 17990.0,
-      "totalSOM": 1675.9,
-      "totalSales": 1068.0,
-      "cagrPct": 22.0,
+      "totalSOM": 2026.9,
+      "totalSales": 1108.0,
+      "cagrPct": 20.8,
       "peakYear": 2031
     },
     "MMAA": {
@@ -10593,6 +10760,7 @@
     },
     "MS4A1": {
       "companies": [
+        "GMAB",
         "NVS",
         "REGN",
         "RHHBY"
@@ -10609,6 +10777,25 @@
         "oncology.hematology.nhl.fl"
       ],
       "assets": [
+        {
+          "ticker": "GMAB",
+          "asset": "kesimpta_royalty",
+          "name": "Kesimpta (ofatumumab) royalty - Novartis commercialized (~10% royalty)",
+          "modality": "antibody.monoclonal.anti_cd20",
+          "areas": [
+            "immunology.demyelinating.multiple_sclerosis"
+          ]
+        },
+        {
+          "ticker": "GMAB",
+          "asset": "epkinly",
+          "name": "Epkinly / Tepkinly (epcoritamab) - CD3xCD20 bispecific (AbbVie 50/50 US+JP)",
+          "modality": "antibody.bispecific.cd20_cd3",
+          "areas": [
+            "oncology.hematology.nhl.dlbcl",
+            "oncology.hematology.nhl.fl"
+          ]
+        },
         {
           "ticker": "NVS",
           "asset": "kesimpta",
@@ -10676,7 +10863,7 @@
           ]
         }
       ],
-      "assetCount": 7,
+      "assetCount": 9,
       "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 5,
@@ -10684,10 +10871,10 @@
         "antibody"
       ],
       "totalTAM": 72977.0,
-      "totalSOM": 27711.1,
-      "totalSales": 15349.0,
-      "cagrPct": 10.3,
-      "peakYear": 2028
+      "totalSOM": 35164.8,
+      "totalSales": 16217.0,
+      "cagrPct": 10.0,
+      "peakYear": 2029
     },
     "MSTN": {
       "companies": [
@@ -15281,6 +15468,7 @@
       "companies": [
         "BMY",
         "GILD",
+        "GMAB",
         "GSK",
         "JNJ",
         "LEGN",
@@ -15313,6 +15501,16 @@
           "name": "Anito-cel â€” CAR-T (multiple myeloma)",
           "modality": "cell_therapy.car_t_autologous.bcma_car_t",
           "areas": [
+            "oncology.hematology.myeloma.4l_plus"
+          ]
+        },
+        {
+          "ticker": "GMAB",
+          "asset": "jnj_bispecific_royalties",
+          "name": "Tecvayli + Talvey royalties - JNJ commercialized myeloma bispecifics (~5-6% royalty)",
+          "modality": "antibody.bispecific.bcma_cd3",
+          "areas": [
+            "oncology.hematology.myeloma.2l_3l",
             "oncology.hematology.myeloma.4l_plus"
           ]
         },
@@ -15380,7 +15578,7 @@
           ]
         }
       ],
-      "assetCount": 9,
+      "assetCount": 10,
       "modalityCount": 4,
       "modalityClassCount": 3,
       "areaCount": 3,
@@ -15390,9 +15588,9 @@
         "cell_therapy"
       ],
       "totalTAM": 35942.6,
-      "totalSOM": 9145.4,
-      "totalSales": 3211.0,
-      "cagrPct": 8.1,
+      "totalSOM": 9396.2,
+      "totalSales": 3246.0,
+      "cagrPct": 8.4,
       "peakYear": 2032
     },
     "TNFRSF4": {

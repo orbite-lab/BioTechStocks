@@ -10,7 +10,7 @@
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
-    "area_count_l3": 226,
+    "area_count_l3": 229,
     "area_count_l4": 28,
     "modality_count": 401,
     "companies": 70
@@ -1193,13 +1193,19 @@
       "transplant": {
         "cgvhd": {
           "companies": [
-            "4503",
             "ABBV",
             "BMY",
-            "NVS",
             "SNY"
           ],
-          "count": 5,
+          "count": 3,
+          "rare": false
+        },
+        "solid_organ": {
+          "companies": [
+            "4503",
+            "NVS"
+          ],
+          "count": 2,
           "rare": false
         }
       }
@@ -1208,13 +1214,12 @@
       "anti_infective": {
         "bacterial_hospital": {
           "companies": [
-            "4503",
             "GSK",
             "MRK",
             "NVS",
             "PFE"
           ],
-          "count": 5,
+          "count": 4,
           "rare": false
         },
         "cmv": {
@@ -1248,6 +1253,13 @@
             "NVS"
           ],
           "count": 4,
+          "rare": false
+        },
+        "invasive_fungal": {
+          "companies": [
+            "4503"
+          ],
+          "count": 1,
           "rare": false
         }
       },
@@ -1792,6 +1804,13 @@
             "PFE"
           ],
           "count": 4,
+          "rare": false
+        },
+        "bpdcn": {
+          "companies": [
+            "4503"
+          ],
+          "count": 1,
           "rare": false
         },
         "cll": {
@@ -2789,12 +2808,6 @@
           ],
           "count": 1
         },
-        "claudin182_blocker": {
-          "companies": [
-            "4503"
-          ],
-          "count": 1
-        },
         "fgfr2b_blocker": {
           "companies": [
             "AMGN"
@@ -3209,6 +3222,14 @@
           ],
           "count": 1
         }
+      },
+      "tumor_antigen": {
+        "claudin18_2": {
+          "companies": [
+            "4503"
+          ],
+          "count": 1
+        }
       }
     },
     "cell_therapy": {
@@ -3526,6 +3547,14 @@
         "semaglutide": {
           "companies": [
             "NOVO"
+          ],
+          "count": 1
+        }
+      },
+      "gpcr": {
+        "lhrh_agonist": {
+          "companies": [
+            "4503"
           ],
           "count": 1
         }
@@ -4272,12 +4301,6 @@
         "kappa_opioid_agonist": {
           "companies": [
             "CSL"
-          ],
-          "count": 1
-        },
-        "lhrh_agonist": {
-          "companies": [
-            "4503"
           ],
           "count": 1
         },

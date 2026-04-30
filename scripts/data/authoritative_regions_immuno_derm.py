@@ -148,6 +148,19 @@ REGIONS = {
         "eu":  {"patientsK": 350,  "wtpPct": 60, "priceK": 70},
         "row": {"patientsK": 2000, "wtpPct": 18, "priceK": 22},
     },
+    # Solid organ transplant rejection prophylaxis (kidney + liver +
+    # heart + lung): chronic immunosuppression. US ~250K transplant
+    # recipients on tx, EU ~350K, ROW ~600K. Class: tacrolimus
+    # (Astellas Astagraf XL + Prograf ~$400M brand + generics dominant),
+    # cyclosporine (Sandimmune NVS legacy generic), mycophenolate
+    # (CellCept generic), Envarsus XR (Veloxis tac MR), everolimus
+    # (Zortress Novartis), belatacept (Nulojix BMS). Net branded
+    # ~$18K/yr (mostly generics).
+    "immunology.transplant.solid_organ": {
+        "us":  {"patientsK": 250,  "wtpPct": 70, "priceK": 18},
+        "eu":  {"patientsK": 350,  "wtpPct": 50, "priceK": 11},
+        "row": {"patientsK": 600,  "wtpPct": 14, "priceK": 4},
+    },
     # Ankylosing spondylitis (AS) + axial spondyloarthritis (axSpA): chronic
     # inflammatory spinal arthritis. ~1M US AS + ~2M nr-axSpA, ~1.5M EU AS,
     # ~10M ROW. Class: Cosentyx/Bimzelx (IL-17), TNFi legacy (Humira/Enbrel/
@@ -372,6 +385,7 @@ PEN_PCT = {
     "immunology.autoinflammatory.periodic_fever": 65,
     "immunology.autoimmune.egpa": 60,
     "immunology.autoimmune.primary_immunodeficiency": 35,
+    "immunology.transplant.solid_organ": 60,
     "immunology.inflammatory_systemic.ankylosing_spondylitis": 25,
     "immunology.neuromuscular_autoimmune.itp": 35,
     "immunology.neuromuscular_autoimmune.mmn": 65,

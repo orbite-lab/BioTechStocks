@@ -760,6 +760,28 @@ REGIONS = {
         "eu":  {"patientsK": 2000,   "wtpPct": 50, "priceK": 0.3},
         "row": {"patientsK": 8000,   "wtpPct": 12, "priceK": 0.1},
     },
+    # Invasive fungal disease (IFD): hospital antifungal therapy for
+    # aspergillosis, candidiasis, mucormycosis, cryptococcosis. US ~150K
+    # IFD episodes/yr, EU ~200K, ROW ~800K. Class: Cresemba (Astellas/
+    # Pfizer/Merck KGaA isavuconazole triazole), Mycamine (Astellas
+    # micafungin echinocandin), Cancidas (caspofungin Merck generic),
+    # Eraxis (anidulafungin Pfizer), voriconazole/posaconazole (generics).
+    # Net branded ~$15K/episode (1-3 wk IV course).
+    "infectious_disease.anti_infective.invasive_fungal": {
+        "us":  {"patientsK": 150,   "wtpPct": 70, "priceK": 15},
+        "eu":  {"patientsK": 200,   "wtpPct": 50, "priceK": 9},
+        "row": {"patientsK": 800,   "wtpPct": 14, "priceK": 3},
+    },
+    # Blastic plasmacytoid dendritic cell neoplasm (BPDCN): ultra-rare
+    # CD123-driven myeloid-adjacent neoplasm; ~1K US, ~1.5K EU, ~5K ROW.
+    # Class: Elzonris (Stemline tagraxofusp first-in-class CD123
+    # diphtheria toxin fusion), Pivekimab sunirine (Astellas/AbbVie/
+    # ImmunoGen CD123 ADC Ph2/3). Net branded ~$280K/yr orphan-priced.
+    "oncology.hematology.bpdcn": {
+        "us":  {"patientsK": 1,    "wtpPct": 70, "priceK": 280},
+        "eu":  {"patientsK": 1.5,  "wtpPct": 50, "priceK": 170},
+        "row": {"patientsK": 5,    "wtpPct": 14, "priceK": 60},
+    },
 }
 
 PEN_PCT = {
@@ -843,4 +865,6 @@ PEN_PCT = {
     "cardio_metabolic.thrombosis.reversal": 70,
     "urology.lower_tract.oab": 35,
     "cardio_metabolic.imaging.cardiac_stress": 30,
+    "infectious_disease.anti_infective.invasive_fungal": 50,
+    "oncology.hematology.bpdcn": 65,
 }

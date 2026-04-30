@@ -1,0 +1,853 @@
+{
+  "company": {
+    "ticker": "4506",
+    "name": "Sumitomo Pharma Co., Ltd.",
+    "currentPrice": 1800,
+    "sharesOut": 398,
+    "cash": -150000,
+    "currency": "JPY",
+    "phase": "commercial",
+    "subtitle": "Post-Latuda LOE restructuring; SPA franchise: Orgovyx (relugolix prostate ADT) + Myfembree/Ryeqo (UF/endo) + Gemtesa (vibegron OAB) + Aptiom (focal epilepsy); regen med pipeline: iPSC-derived dopaminergic neurons (DSP-1083 PD Ph2)",
+    "yahooTicker": "4506.T"
+  },
+  "assets": [
+    {
+      "id": "latuda",
+      "name": "Latuda (lurasidone) - atypical antipsychotic (D2/5-HT2A/5-HT7 antagonist; 5-HT1A partial agonist)",
+      "stage": "Commercial (US LOE Feb 2023; EU + Japan still patent; declining residual)",
+      "modality": "small_molecule.gpcr.atypical_antipsychotic",
+      "targets": [
+        "DRD2",
+        "HTR2A",
+        "HTR7",
+        "HTR1A"
+      ],
+      "indications": [
+        {
+          "id": "schizophrenia",
+          "name": "Schizophrenia (adult + adolescent; US LOE Feb 2023, ex-US still patent)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.2,
+                "wtpPct": 30,
+                "priceK": 4
+              },
+              "eu": {
+                "reachPct": 3.6,
+                "wtpPct": 50,
+                "priceK": 6
+              },
+              "row": {
+                "reachPct": 0.7,
+                "wtpPct": 25,
+                "priceK": 2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Latuda US generic post Feb 2023; brand residual <1%",
+              "us.priceK": "Latuda generic erosion to ~$4K/yr from $15K WAC",
+              "eu.note": "EU patent through 2026"
+            },
+            "penPct": 60,
+            "cagrPct": -15,
+            "peakYear": 2025,
+            "salesM": 250,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "bipolar",
+          "name": "Bipolar I depression (adult + pediatric)",
+          "area": "cns.psychiatry.bipolar",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 10000,
+                "wtpPct": 28,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 8,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.3,
+                "wtpPct": 25,
+                "priceK": 4
+              },
+              "eu": {
+                "reachPct": 0.8,
+                "wtpPct": 35,
+                "priceK": 6
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 20,
+                "priceK": 2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Latuda bipolar residual post-LOE",
+              "us.priceK": "Generic pricing"
+            },
+            "penPct": 30,
+            "cagrPct": -15,
+            "peakYear": 2025,
+            "salesM": 100,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "orgovyx",
+      "name": "Orgovyx (relugolix) - oral GnRH receptor antagonist (Myovant subsidiary; SPA fully consolidated 2023)",
+      "stage": "Commercial (FDA 2020 advanced prostate cancer ADT; only oral GnRH antagonist for PCa)",
+      "modality": "small_molecule.gpcr.gnrh_antagonist",
+      "targets": [
+        "GNRHR"
+      ],
+      "indications": [
+        {
+          "id": "prostate_adt",
+          "name": "Advanced prostate cancer androgen-deprivation therapy (oral, replacing leuprolide depot)",
+          "area": "oncology.genitourinary.prostate",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 100,
+                "wtpPct": 70,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 110,
+                "wtpPct": 52,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 18
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 37.5,
+                "wtpPct": 65,
+                "priceK": 30
+              },
+              "eu": {
+                "reachPct": 15.0,
+                "wtpPct": 45,
+                "priceK": 18
+              },
+              "row": {
+                "reachPct": 3.7,
+                "wtpPct": 12,
+                "priceK": 6
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Orgovyx ~5-7% of US ADT prescriptions; fastest-growing oral ADT vs leuprolide depot (Lupron); convenience + faster T recovery driver",
+              "us.priceK": "Orgovyx WAC ~$2.4K/mo (~$30K/yr)"
+            },
+            "penPct": 60,
+            "cagrPct": 15,
+            "peakYear": 2032,
+            "salesM": 580,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "myfembree",
+      "name": "Myfembree/Ryeqo (relugolix + estradiol + norethindrone acetate FDC) - GnRH antagonist combo (Pfizer co-promo US)",
+      "stage": "Commercial (US Myfembree UF 2021 + endometriosis 2022; EU Ryeqo partner Gedeon Richter)",
+      "modality": "small_molecule.gpcr.gnrh_antagonist",
+      "targets": [
+        "GNRHR",
+        "ESR1",
+        "PGR"
+      ],
+      "indications": [
+        {
+          "id": "uterine_fibroids",
+          "name": "Heavy menstrual bleeding from uterine fibroids (premenopausal women)",
+          "area": "women_health.gyn_disorders.uterine_fibroids",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5000,
+                "wtpPct": 18,
+                "priceK": 8
+              },
+              "eu": {
+                "patientsK": 7000,
+                "wtpPct": 12,
+                "priceK": 4.5
+              },
+              "row": {
+                "patientsK": 40000,
+                "wtpPct": 3,
+                "priceK": 1.2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 35,
+                "priceK": 6
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 10,
+                "priceK": 2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Myfembree competitive vs Oriahnn (AbbVie elagolix combo), Lupron Depot; co-promo Pfizer US",
+              "us.priceK": "Myfembree WAC ~$1K/mo"
+            },
+            "penPct": 8,
+            "cagrPct": 10,
+            "peakYear": 2031,
+            "salesM": 80,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "endometriosis",
+          "name": "Moderate-to-severe endometriosis pain (premenopausal women)",
+          "area": "women_health.gyn_disorders.endometriosis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6500,
+                "wtpPct": 22,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 9000,
+                "wtpPct": 15,
+                "priceK": 0.8
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 4,
+                "priceK": 0.25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 35,
+                "priceK": 6
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 10,
+                "priceK": 2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Myfembree Endo ~ Orilissa (AbbVie elagolix) competitive class",
+              "us.priceK": "Myfembree WAC ~$1K/mo"
+            },
+            "penPct": 8,
+            "cagrPct": 12,
+            "peakYear": 2031,
+            "salesM": 60,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "gemtesa",
+      "name": "Gemtesa (vibegron) - β3-adrenergic receptor agonist (Urovant subsidiary)",
+      "stage": "Commercial (FDA 2020 OAB; Ph3 OAB-BPH 2026 readout)",
+      "modality": "small_molecule.gpcr.beta3_agonist",
+      "targets": [
+        "ADRB3"
+      ],
+      "indications": [
+        {
+          "id": "oab",
+          "name": "Overactive bladder (urgency, frequency, incontinence)",
+          "area": "urology.lower_tract.oab",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 33000,
+                "wtpPct": 25,
+                "priceK": 1.0
+              },
+              "eu": {
+                "patientsK": 50000,
+                "wtpPct": 18,
+                "priceK": 0.6
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.0,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 35,
+                "priceK": 2
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 8,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Gemtesa ~10% US OAB Rx share post-Myrbetriq LOE 2024; competitive in β3 class",
+              "us.priceK": "Gemtesa WAC ~$5K/yr"
+            },
+            "penPct": 35,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 360,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "aptiom",
+      "name": "Aptiom (eslicarbazepine acetate) - sodium channel inhibitor (Na+ slow inactivation enhancer)",
+      "stage": "Commercial (focal epilepsy adjunct + monotherapy adult + pediatric; LOE 2025-2026)",
+      "modality": "small_molecule.ion_channel.sodium_blocker",
+      "targets": [
+        "SCN1A",
+        "SCN2A"
+      ],
+      "indications": [
+        {
+          "id": "focal_epilepsy",
+          "name": "Partial-onset (focal) seizures (LOE 2025-2026)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4.0,
+                "wtpPct": 65,
+                "priceK": 8
+              },
+              "eu": {
+                "reachPct": 1.3,
+                "wtpPct": 45,
+                "priceK": 4
+              },
+              "row": {
+                "reachPct": 0.7,
+                "wtpPct": 15,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Aptiom niche ~$300M peak pre-LOE; declining post 2025-2026 generic entry",
+              "us.priceK": "Aptiom WAC ~$8K/yr brand pre-LOE"
+            },
+            "penPct": 70,
+            "cagrPct": -20,
+            "peakYear": 2025,
+            "salesM": 220,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "dsp_1083",
+      "name": "DSP-1083 / CT1-DAP001 - iPSC-derived dopaminergic progenitor cell therapy (Kyoto Univ collab)",
+      "stage": "Phase 2 PD (Japan PMDA priority review; US Ph1/2 planned)",
+      "modality": "cell_therapy.allogeneic.ipsc_derived",
+      "targets": [
+        "TH",
+        "FOXA2"
+      ],
+      "indications": [
+        {
+          "id": "parkinson",
+          "name": "Parkinson disease (intracerebral allogeneic iPSC dopamine neurons)",
+          "area": "cns.neurodegeneration.parkinson_disease",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1000,
+                "wtpPct": 80,
+                "priceK": 8
+              },
+              "eu": {
+                "patientsK": 1200,
+                "wtpPct": 65,
+                "priceK": 4
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 30,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 55,
+                "priceK": 800
+              },
+              "eu": {
+                "reachPct": 0.8,
+                "wtpPct": 35,
+                "priceK": 500
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 8,
+                "priceK": 150
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "iPSC PD cell therapy first-in-class; addressable to advanced/refractory PD ~10-15% of total PD",
+              "us.priceK": "Cell therapy one-time pricing $500K-1M (Carvykti $465K + Casgevy $2.2M precedents); PD allogeneic likely $700-900K"
+            },
+            "penPct": 50,
+            "cagrPct": 10,
+            "peakYear": 2034
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 15,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 3,
+        "commercialMult": 1.5,
+        "commercialRevM": 195000,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "latuda": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          },
+          "bipolar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "orgovyx": {
+          "prostate_adt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "myfembree": {
+          "uterine_fibroids": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "endometriosis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "gemtesa": {
+          "oab": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "aptiom": {
+          "focal_epilepsy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "dsp_1083": {
+          "parkinson": {
+            "pos": 8,
+            "apr": 30,
+            "pen": 0.2
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 4,
+        "commercialMult": 1.8,
+        "commercialRevM": 230000,
+        "milestones": 50,
+        "dil": 0
+      },
+      "assumptions": {
+        "latuda": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "bipolar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "orgovyx": {
+          "prostate_adt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "myfembree": {
+          "uterine_fibroids": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "endometriosis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "gemtesa": {
+          "oab": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "aptiom": {
+          "focal_epilepsy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "dsp_1083": {
+          "parkinson": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.4
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 35,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 5,
+        "commercialMult": 2.2,
+        "commercialRevM": 270000,
+        "milestones": 150,
+        "dil": 0
+      },
+      "assumptions": {
+        "latuda": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "bipolar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "orgovyx": {
+          "prostate_adt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "myfembree": {
+          "uterine_fibroids": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "endometriosis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "gemtesa": {
+          "oab": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "aptiom": {
+          "focal_epilepsy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "dsp_1083": {
+          "parkinson": {
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.6
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 7,
+        "commercialMult": 3,
+        "commercialRevM": 320000,
+        "milestones": 300,
+        "dil": 0
+      },
+      "assumptions": {
+        "latuda": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "bipolar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "orgovyx": {
+          "prostate_adt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "myfembree": {
+          "uterine_fibroids": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "endometriosis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "gemtesa": {
+          "oab": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "aptiom": {
+          "focal_epilepsy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "dsp_1083": {
+          "parkinson": {
+            "pos": 65,
+            "apr": 82,
+            "pen": 0.85
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 11,
+        "commercialMult": 4.5,
+        "commercialRevM": 400000,
+        "milestones": 600,
+        "dil": 0
+      },
+      "assumptions": {
+        "latuda": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "bipolar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "orgovyx": {
+          "prostate_adt": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "myfembree": {
+          "uterine_fibroids": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "endometriosis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "gemtesa": {
+          "oab": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "aptiom": {
+          "focal_epilepsy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "dsp_1083": {
+          "parkinson": {
+            "pos": 85,
+            "apr": 92,
+            "pen": 1.2
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "gemtesa",
+      "indication": "oab",
+      "title": "Gemtesa OAB-BPH Ph3 readout (combo with α-blocker for OAB+BPH)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 50,
+      "success_pos": 95,
+      "success_apr": 95,
+      "_source": "https://www.sumitomo-pharma.com/ir/library/quarterly_report",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-12-15",
+      "asset": "dsp_1083",
+      "indication": "parkinson",
+      "title": "DSP-1083 iPSC dopaminergic Ph2 PD readout (Japan PMDA priority filing track)",
+      "type": "phase2_data",
+      "binary": false,
+      "_source": "https://www.sumitomo-pharma.com/news",
+      "_confidence": "medium"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-06-30",
+      "asset": "orgovyx",
+      "indication": "prostate_adt",
+      "title": "Orgovyx EU label expansion + Japan launch (full geo footprint)",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.sumitomo-pharma.com/news",
+      "_confidence": "medium"
+    }
+  ]
+}

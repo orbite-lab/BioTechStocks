@@ -1236,9 +1236,25 @@
         {
           "id": "obesity",
           "name": "Obesity / weight management (Ph3 SYNCHRONIZE; competitive vs Wegovy/Zepbound)",
-          "area": "cardio_metabolic.obesity",
+          "area": "cardio_metabolic.obesity.general",
           "market": {
-            "regions": {},
+            "regions": {
+              "us": {
+                "patientsK": 40000,
+                "wtpPct": 30,
+                "priceK": 9
+              },
+              "eu": {
+                "patientsK": 30000,
+                "wtpPct": 20,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 6,
+                "priceK": 2
+              }
+            },
             "company_slice": {
               "us": {
                 "reachPct": 1.5,
@@ -1260,7 +1276,7 @@
               "us.reachPct": "Survodutide GLP-1/glucagon dual; competitive vs Wegovy (NOVO semaglutide), Zepbound (LLY tirzepatide GLP-1/GIP), retatrutide (LLY GLP-1/GIP/GCG triple Ph3); ~3-5% of class share if approved",
               "us.priceK": "Obesity GLP-1 net pricing ~$12-16K/yr"
             },
-            "penPct": 6,
+            "penPct": 5,
             "cagrPct": 25,
             "peakYear": 2033
           }

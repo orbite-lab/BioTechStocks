@@ -230,10 +230,10 @@ tbody tr:hover{background:#ffffff06}
 <div id="app"><div class="loading">Loading configs&hellip;</div></div>
 </div>
 <script>
-const CCY={EUR:"\u20AC",USD:"$",HKD:"HK$",SEK:"kr",DKK:"kr",JPY:"\u00A5",GBP:"\u00A3",CHF:"CHF "};
+const CCY={EUR:"\u20AC",USD:"$",HKD:"HK$",SEK:"kr",DKK:"kr",JPY:"\u00A5",GBP:"\u00A3",CHF:"CHF ",AUD:"A$"};
 const ccySym=c=>CCY[c]||"$";
 const ccyDec=c=>(c==="JPY"||c==="HKD"||c==="SEK"||c==="DKK")?0:2;
-const FX_TO_USD={USD:1,EUR:1.08,GBP:1.27,CHF:1.12,JPY:0.0067,HKD:0.128,SEK:0.095,DKK:0.144}; // approximate rates
+const FX_TO_USD={USD:1,EUR:1.08,GBP:1.27,CHF:1.12,JPY:0.0067,HKD:0.128,SEK:0.095,DKK:0.144,AUD:0.66}; // approximate rates
 const toUSD=(val,ccy)=>val*(FX_TO_USD[ccy]||1);
 const SK=["mega_bear","bear","base","bull","psychedelic_bull"];
 const SN={mega_bear:"Mega Bear",bear:"Bear",base:"Base",bull:"Bull",psychedelic_bull:"Psych Bull"};

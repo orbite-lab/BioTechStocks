@@ -16,7 +16,7 @@
         "currentPrice": {"type": "number", "exclusiveMinimum": 0},
         "sharesOut": {"type": "number", "exclusiveMinimum": 0, "description": "Millions of shares"},
         "cash": {"type": "number", "description": "Cash in $M (can be negative for net debt)"},
-        "currency": {"enum": ["USD", "EUR", "GBP", "CHF", "JPY", "HKD", "SEK", "DKK", "CNY"]},
+        "currency": {"enum": ["USD", "EUR", "GBP", "CHF", "JPY", "HKD", "SEK", "DKK", "CNY", "AUD"]},
         "phase": {"enum": ["commercial", "nda_filed", "phase3", "phase2", "phase1", "preclinical"]},
         "subtitle": {"type": "string"},
         "yahooTicker": {"type": "string"}

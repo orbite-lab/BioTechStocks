@@ -294,6 +294,18 @@ REGIONS = {
         "eu":  {"patientsK": 9000,   "wtpPct": 15, "priceK": 0.8},
         "row": {"patientsK": 50000,  "wtpPct": 4,  "priceK": 0.25},
     },
+    # Uterine fibroids (leiomyomas): benign smooth-muscle tumors of uterus.
+    # Branded specialty class: Myfembree (Pfizer relugolix combo), Oriahnn
+    # (AbbVie elagolix combo), Esmya (CDXC ulipristal -- restricted),
+    # Decapeptyl (Ipsen triptorelin pre-op shrinkage). Most patients managed
+    # via OCP + surgery (myomectomy/hysterectomy); branded ~5% of symptomatic
+    # at ~$8K/yr blended. source: ACOG fibroid prevalence US ~5M symptomatic,
+    # EU5 ~7M; ROW ~40M.
+    "women_health.gyn_disorders.uterine_fibroids": {
+        "us":  {"patientsK": 5000,   "wtpPct": 18, "priceK": 8},
+        "eu":  {"patientsK": 7000,   "wtpPct": 12, "priceK": 4.5},
+        "row": {"patientsK": 40000,  "wtpPct": 3,  "priceK": 1.2},
+    },
     # Long-acting reversible contraception (LARC) implant: Nexplanon (Merck
     # etonogestrel ~$1.4B 2025) dominates implant subclass. Broader LARC also
     # includes IUDs (Mirena/Liletta/Skyla) -- this entry is the implant subclass
@@ -852,6 +864,7 @@ PEN_PCT = {
     "women_health.contraception.larc_implant": 18,
     "women_health.menopause.hrt": 10,
     "women_health.gyn_disorders.endometriosis": 8,
+    "women_health.gyn_disorders.uterine_fibroids": 8,
     "oncology.endocrine.thyroid_cancer": 35,
     "infectious_disease.vaccines.covid": 8,
     "infectious_disease.anti_infective.covid_treatment": 12,

@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated": "2026-04-30T12:40:07Z",
-    "target_count": 356,
-    "total_assets": 663,
-    "assets_with_targets": 616,
+    "generated": "2026-04-30T12:46:45Z",
+    "target_count": 357,
+    "total_assets": 665,
+    "assets_with_targets": 617,
     "multi_modality_count": 41,
     "multi_disease_count": 160
   },
@@ -1646,7 +1646,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 4026.4,
       "totalSales": 2915.0,
       "cagrPct": 3.2,
@@ -3846,7 +3846,7 @@
         "antibody"
       ],
       "totalTAM": 19731.0,
-      "totalSOM": 189.7,
+      "totalSOM": 189.6,
       "totalSales": 0.0,
       "cagrPct": 54.4,
       "peakYear": 2031
@@ -6850,15 +6850,26 @@
     },
     "GH1": {
       "companies": [
+        "IPN",
         "MRK_DE"
       ],
       "modalities": [
+        "recombinant_protein.growth_factor.somatropin_igf1",
         "recombinant_protein.hormone.growth_hormone"
       ],
       "areas": [
         "endocrine.pituitary.gh_deficiency"
       ],
       "assets": [
+        {
+          "ticker": "IPN",
+          "asset": "growth_hormone",
+          "name": "Increlex (mecasermin IGF-1) + NutropinAq (somatropin) - growth hormone replacement",
+          "modality": "recombinant_protein.growth_factor.somatropin_igf1",
+          "areas": [
+            "endocrine.pituitary.gh_deficiency"
+          ]
+        },
         {
           "ticker": "MRK_DE",
           "asset": "saizen",
@@ -6869,17 +6880,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "recombinant_protein"
       ],
       "totalTAM": 3136.0,
-      "totalSOM": 839.7,
-      "totalSales": 560.0,
-      "cagrPct": 8.0,
+      "totalSOM": 960.7,
+      "totalSales": 640.0,
+      "cagrPct": 6.7,
       "peakYear": 2028
     },
     "GHR": {
@@ -7141,7 +7152,8 @@
         "oncology.genitourinary.prostate",
         "urology.lower_tract.oab",
         "women_health.fertility.ivf",
-        "women_health.gyn_disorders.endometriosis"
+        "women_health.gyn_disorders.endometriosis",
+        "women_health.gyn_disorders.uterine_fibroids"
       ],
       "assets": [
         {
@@ -7161,7 +7173,8 @@
           "modality": "peptide.depot.gnrh_agonist",
           "areas": [
             "oncology.genitourinary.prostate",
-            "women_health.gyn_disorders.endometriosis"
+            "women_health.gyn_disorders.endometriosis",
+            "women_health.gyn_disorders.uterine_fibroids"
           ]
         },
         {
@@ -7177,13 +7190,13 @@
       "assetCount": 3,
       "modalityCount": 3,
       "modalityClassCount": 2,
-      "areaCount": 4,
+      "areaCount": 5,
       "modalityClasses": [
         "peptide",
         "recombinant_protein"
       ],
-      "totalTAM": 35709.0,
-      "totalSOM": 3681.6,
+      "totalTAM": 48129.0,
+      "totalSOM": 3692.8,
       "totalSales": 2937.0,
       "cagrPct": 0.3,
       "peakYear": 2028
@@ -7948,7 +7961,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -8320,6 +8333,40 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2033
+    },
+    "IGF1": {
+      "companies": [
+        "IPN"
+      ],
+      "modalities": [
+        "recombinant_protein.growth_factor.somatropin_igf1"
+      ],
+      "areas": [
+        "endocrine.pituitary.gh_deficiency"
+      ],
+      "assets": [
+        {
+          "ticker": "IPN",
+          "asset": "growth_hormone",
+          "name": "Increlex (mecasermin IGF-1) + NutropinAq (somatropin) - growth hormone replacement",
+          "modality": "recombinant_protein.growth_factor.somatropin_igf1",
+          "areas": [
+            "endocrine.pituitary.gh_deficiency"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 3136.0,
+      "totalSOM": 120.9,
+      "totalSales": 80.0,
+      "cagrPct": -2.0,
+      "peakYear": 2025
     },
     "IGF1R": {
       "companies": [
@@ -10123,9 +10170,11 @@
       "companies": [
         "4502",
         "4523",
-        "BAYN"
+        "BAYN",
+        "IPN"
       ],
       "modalities": [
+        "small_molecule.kinase_inhibitor.multi_kinase",
         "small_molecule.kinase_inhibitor.vegfr",
         "small_molecule.kinase_inhibitor.vegfr_multikinase"
       ],
@@ -10135,7 +10184,8 @@
         "oncology.gi.colorectal",
         "oncology.gi.hcc",
         "oncology.gynecologic.endometrial",
-        "oncology.musculoskeletal.gist"
+        "oncology.musculoskeletal.gist",
+        "oncology.neuroendocrine.gepnet"
       ],
       "assets": [
         {
@@ -10169,20 +10219,31 @@
             "oncology.gi.hcc",
             "oncology.musculoskeletal.gist"
           ]
+        },
+        {
+          "ticker": "IPN",
+          "asset": "cabometyx",
+          "name": "Cabometyx (cabozantinib) - multi-kinase inhibitor (Exelixis-licensed ex-US)",
+          "modality": "small_molecule.kinase_inhibitor.multi_kinase",
+          "areas": [
+            "oncology.genitourinary.rcc",
+            "oncology.gi.hcc",
+            "oncology.neuroendocrine.gepnet"
+          ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 2,
+      "assetCount": 4,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 6,
+      "areaCount": 7,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 33730.7,
-      "totalSOM": 5081.0,
-      "totalSales": 2627.0,
+      "totalTAM": 35157.8,
+      "totalSOM": 6278.2,
+      "totalSales": 3240.0,
       "cagrPct": 7.0,
-      "peakYear": 2027
+      "peakYear": 2028
     },
     "KIF11": {
       "companies": [
@@ -10732,7 +10793,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 18252.4,
       "totalSales": 2971.0,
       "cagrPct": 47.5,
@@ -10784,7 +10845,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 17202.9,
       "totalSales": 2271.0,
       "cagrPct": 50.1,
@@ -11659,7 +11720,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -11908,7 +11969,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -15452,9 +15513,9 @@
         "radiopharmaceutical"
       ],
       "totalTAM": 2599.9,
-      "totalSOM": 2988.4,
-      "totalSales": 1849.0,
-      "cagrPct": -0.4,
+      "totalSOM": 3288.6,
+      "totalSales": 2049.0,
+      "cagrPct": -1.2,
       "peakYear": 2028
     },
     "SSTR5": {
@@ -17163,32 +17224,18 @@
     },
     "VEGFR2": {
       "companies": [
-        "IPN",
         "MRK"
       ],
       "modalities": [
-        "small_molecule.kinase_inhibitor.multi_kinase",
         "small_molecule.kinase_inhibitor.multi_tki"
       ],
       "areas": [
         "oncology.endocrine.thyroid_cancer",
         "oncology.genitourinary.rcc",
         "oncology.gi.hcc",
-        "oncology.gynecologic.ovarian",
-        "oncology.neuroendocrine.gepnet"
+        "oncology.gynecologic.ovarian"
       ],
       "assets": [
-        {
-          "ticker": "IPN",
-          "asset": "cabometyx",
-          "name": "Cabometyx (cabozantinib) - multi-kinase inhibitor (Exelixis-licensed ex-US)",
-          "modality": "small_molecule.kinase_inhibitor.multi_kinase",
-          "areas": [
-            "oncology.genitourinary.rcc",
-            "oncology.gi.hcc",
-            "oncology.neuroendocrine.gepnet"
-          ]
-        },
         {
           "ticker": "MRK",
           "asset": "lenvima",
@@ -17202,18 +17249,18 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 1,
+      "modalityCount": 1,
       "modalityClassCount": 1,
-      "areaCount": 5,
+      "areaCount": 4,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 20877.5,
-      "totalSOM": 2771.3,
-      "totalSales": 1663.0,
-      "cagrPct": 3.0,
-      "peakYear": 2028
+      "totalTAM": 19450.2,
+      "totalSOM": 1574.1,
+      "totalSales": 1050.0,
+      "cagrPct": 0.0,
+      "peakYear": 2027
     },
     "VEGFR3": {
       "companies": [

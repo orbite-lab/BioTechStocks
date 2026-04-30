@@ -739,6 +739,27 @@ REGIONS = {
         "eu":  {"patientsK": 200,   "wtpPct": 60, "priceK": 3},
         "row": {"patientsK": 600,   "wtpPct": 18, "priceK": 1.5},
     },
+    # Overactive bladder (OAB): chronic urinary urgency/frequency.
+    # ~33M US adults (mostly women), ~50M EU, ~200M ROW. Branded class:
+    # Myrbetriq/Betmiga (Astellas mirabegron beta-3 ~$2B), Vesicare
+    # (Astellas solifenacin generic), Detrol (generic), Toviaz (Pfizer
+    # fesoterodine), vibegron (Sumitomo Gemtesa), oxybutynin (generic).
+    # Class branded ~$3-4B; generic dominant. Net branded ~$1K/yr.
+    "urology.lower_tract.oab": {
+        "us":  {"patientsK": 33000,  "wtpPct": 25, "priceK": 1.0},
+        "eu":  {"patientsK": 50000,  "wtpPct": 18, "priceK": 0.6},
+        "row": {"patientsK": 200000, "wtpPct": 8,  "priceK": 0.2},
+    },
+    # Cardiac stress imaging pharmacological agents: used during myocardial
+    # perfusion imaging (MPI) for patients unable to exercise. US ~5M MPI
+    # studies/yr, ~30% pharmacological stress. EU ~7M, ROW ~25M. Class:
+    # Lexiscan (Astellas regadenoson A2A agonist ~$300M), Adenoscan
+    # (adenosine generic), dobutamine (generic). Net branded ~$0.5K/study.
+    "cardio_metabolic.imaging.cardiac_stress": {
+        "us":  {"patientsK": 1500,   "wtpPct": 70, "priceK": 0.5},
+        "eu":  {"patientsK": 2000,   "wtpPct": 50, "priceK": 0.3},
+        "row": {"patientsK": 8000,   "wtpPct": 12, "priceK": 0.1},
+    },
 }
 
 PEN_PCT = {
@@ -820,4 +841,6 @@ PEN_PCT = {
     "nephrology.ckd.pruritus": 25,
     "nephrology.ckd.anemia": 60,
     "cardio_metabolic.thrombosis.reversal": 70,
+    "urology.lower_tract.oab": 35,
+    "cardio_metabolic.imaging.cardiac_stress": 30,
 }

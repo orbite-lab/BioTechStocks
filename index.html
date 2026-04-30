@@ -898,8 +898,17 @@ async function main(){
       const wtUp=((weightedTP-price)/price*100);
       const meta=deriveCompanyMeta(cfg);
       const catalysts=computeCatalysts(cfg,price);
+      // Sum reported drug sales 2025 across all indications (in local config currency, then convert to USD M)
+      let salesLocal=0;
+      for(const a of cfg.assets||[]){
+        for(const ind of a.indications||[]){
+          const m=ind.market||{};
+          if(m.salesM&&(!m.salesYear||m.salesYear===2025)) salesLocal+=m.salesM;
+        }
+      }
+      const salesM2025USD=toUSD(salesLocal,co.currency||'USD');
       r.push({ticker:tk,name:co.name,ccy:ccySym(co.currency),dec:ccyDec(co.currency),
-        price,prevClose,configPrice:co.currentPrice,live:!!lp,cashPS,ev,evUSD,mcapUSDB,mcapTier,tps,weightedTP,wtUp,currency:co.currency,subtitle:co.subtitle||"",yahooTicker:co.yahooTicker||tk,meta,catalysts});
+        price,prevClose,configPrice:co.currentPrice,live:!!lp,cashPS,ev,evUSD,mcapUSDB,mcapTier,tps,weightedTP,wtUp,currency:co.currency,subtitle:co.subtitle||"",yahooTicker:co.yahooTicker||tk,meta,catalysts,salesM2025:salesM2025USD});
     }
     return r;
   }
@@ -3036,6 +3045,12 @@ async function main(){
     // Table
     h+=`<div class="card${secCls('sec-table')}" id="sec-table"><div class="card-title" ${titleAttrs('sec-table')}>${chev('sec-table')}<div class="dot" style="background:linear-gradient(180deg,#10b981,#14b8a6)"></div>Company Analysis`;
     if(activeFilter)h+=`<span style="font-size:.75rem;font-weight:500;color:var(--text2);margin-left:10px">(${visibleRows.length} of ${rows.length} — filtered)</span>`;
+    // Total drug sales 2025 across visible rows (USD $M)
+    const totalSales2025=visibleRows.reduce((s,r)=>s+(r.salesM2025||0),0);
+    if(totalSales2025>0){
+      const sB=totalSales2025/1000;
+      h+=`<span style="font-size:.78rem;font-weight:600;color:#22c55e;margin-left:14px;padding:3px 9px;background:#22c55e15;border:1px solid #22c55e44;border-radius:6px" title="Sum of reported drug sales 2025 across visible rows, converted to USD">\u03a3 Sales 2025: $${sB>=10?sB.toFixed(0):sB.toFixed(1)}B</span>`;
+    }
     h+='</div>';
     h+='<div class="card-sub">Click ticker for full 5-scenario model \u00b7 Check box to add to portfolio \u00b7 Click headers to sort</div>';
     h+='<div class="tbl-wrap"><table><thead><tr>';
@@ -3045,6 +3060,7 @@ async function main(){
     h+='<th class="r" onclick="window._sort(\'price\')">Price</th>';
     h+='<th class="r" onclick="window._sort(\'ev\')">EV ($M)</th>';
     h+='<th class="r" onclick="window._sort(\'cashPS\')">Cash/Sh</th>';
+    h+='<th class="r" onclick="window._sort(\'salesM2025\')" title="Sum of reported drug sales 2025 across all indications, USD $M">Sales 2025 ($M)</th>';
     SK.forEach(sk=>{h+=`<th class="r" style="color:${SC[sk]}" onclick="window._sort('${sk}')">${SN[sk]}</th>`;});
     h+='<th class="r" onclick="window._sort(\'wtUp\')">Wtd Up%</th>';
     h+='</tr></thead><tbody>';
@@ -3073,6 +3089,7 @@ async function main(){
       h+=`</td>`;
       h+=`<td class="r mono" style="color:var(--text2)">${Math.round(r.ev).toLocaleString()}</td>`;
       h+=`<td class="r mono" style="color:#c084fc">${c}${r.cashPS.toFixed(d)}</td>`;
+      h+=`<td class="r mono" style="color:#22c55e">${r.salesM2025>0?Math.round(r.salesM2025).toLocaleString():'—'}</td>`;
       SK.forEach(sk=>{
         const tp=r.tps[sk];if(tp==null){h+='<td class="r" style="opacity:.3">\u2014</td>';return;}
         const up=((tp-r.price)/r.price*100);

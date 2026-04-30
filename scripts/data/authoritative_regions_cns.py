@@ -110,7 +110,16 @@ REGIONS = {
         "eu":  {"patientsK": 40,    "wtpPct": 20, "priceK": 1.5},
         "row": {"patientsK": 200,   "wtpPct": 8,  "priceK": 0.5},
     },
-    "cns.neurodegeneration.stroke": {
+    # Post-stroke recovery / neuroprotection: chronic neuroinflammation + axonal
+    # repair window AFTER acute ischemic stroke event (distinct from acute
+    # thrombolytic setting in cardio_metabolic.thrombosis.thrombolytic and
+    # AFib-driven stroke prevention in cardio_metabolic.thrombosis.anticoagulation).
+    # No approved disease-modifying neuroprotectant globally (edaravone Japan
+    # only, weak evidence; nerinetide/NA-1 Ph3 failed; 3K3A-APC Ph3 controversial).
+    # source: AHA stroke incidence US ~800K/yr (~600K ischemic survivors eligible
+    # for recovery window); EU5 ~900K; ROW ~10M. CRVO neflamapimod p38 MAPK
+    # inhibitor Ph2a only material covered candidate.
+    "cns.neurodegeneration.post_stroke_recovery": {
         "us":  {"patientsK": 800,   "wtpPct": 90, "priceK": 12},
         "eu":  {"patientsK": 1100,  "wtpPct": 80, "priceK": 7},
         "row": {"patientsK": 12000, "wtpPct": 35, "priceK": 2},
@@ -235,7 +244,7 @@ PEN_PCT = {
     "cns.neurodegeneration.dlb": 20,
     "cns.neurodegeneration.parkinson_disease": 50,
     "cns.neurodegeneration.ppa": 15,
-    "cns.neurodegeneration.stroke": 40,
+    "cns.neurodegeneration.post_stroke_recovery": 40,
     "cns.pain.migraine": 35,
     "cns.psychiatry.adhd": 55,
     "cns.psychiatry.anxiety": 70,

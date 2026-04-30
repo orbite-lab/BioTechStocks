@@ -485,19 +485,19 @@
           "count": 2,
           "rare": false
         },
+        "post_stroke_recovery": {
+          "companies": [
+            "CRVO"
+          ],
+          "count": 1,
+          "rare": false
+        },
         "ppa": {
           "companies": [
             "CRVO"
           ],
           "count": 1,
           "rare": true
-        },
-        "stroke": {
-          "companies": [
-            "CRVO"
-          ],
-          "count": 1,
-          "rare": false
         }
       },
       "pain": {
@@ -5822,6 +5822,14 @@
       "areas": [
         "cardio_metabolic.rare_metabolic.propionic_acidemia",
         "cardio_metabolic.rare_metabolic.methylmalonic_acidemia"
+      ]
+    },
+    "stroke_spectrum": {
+      "description": "All stroke clinical settings: prevention (AFib-driven embolic via anticoagulation), acute treatment (thrombolytic <4.5h window), and post-stroke recovery / neuroprotection. NOTE: anticoagulation + thrombolytic L3s are broader than just stroke (also cover VTE / PE / MI) -- this group surfaces drugs across stroke settings, not stroke-only sales aggregates.",
+      "areas": [
+        "cardio_metabolic.thrombosis.anticoagulation",
+        "cardio_metabolic.thrombosis.thrombolytic",
+        "cns.neurodegeneration.post_stroke_recovery"
       ]
     },
     "epilepsy_spectrum": {

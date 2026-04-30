@@ -3045,14 +3045,19 @@ async function main(){
     // Table
     h+=`<div class="card${secCls('sec-table')}" id="sec-table"><div class="card-title" ${titleAttrs('sec-table')}>${chev('sec-table')}<div class="dot" style="background:linear-gradient(180deg,#10b981,#14b8a6)"></div>Company Analysis`;
     if(activeFilter)h+=`<span style="font-size:.75rem;font-weight:500;color:var(--text2);margin-left:10px">(${visibleRows.length} of ${rows.length} — filtered)</span>`;
-    // Total drug sales 2025 across visible rows (USD $M)
-    const totalSales2025=visibleRows.reduce((s,r)=>s+(r.salesM2025||0),0);
-    if(totalSales2025>0){
-      const sB=totalSales2025/1000;
-      h+=`<span style="font-size:.78rem;font-weight:600;color:#22c55e;margin-left:14px;padding:3px 9px;background:#22c55e15;border:1px solid #22c55e44;border-radius:6px" title="Sum of reported drug sales 2025 across visible rows, converted to USD">\u03a3 Sales 2025: $${sB>=10?sB.toFixed(0):sB.toFixed(1)}B</span>`;
-    }
     h+='</div>';
     h+='<div class="card-sub">Click ticker for full 5-scenario model \u00b7 Check box to add to portfolio \u00b7 Click headers to sort</div>';
+    // Prominent total banner: sum of reported drug sales 2025 across visible rows (USD $M)
+    const totalSales2025=visibleRows.reduce((s,r)=>s+(r.salesM2025||0),0);
+    const rowsWithSales=visibleRows.filter(r=>r.salesM2025>0).length;
+    if(totalSales2025>0){
+      const sB=totalSales2025/1000;
+      const sumLabel=sB>=10?sB.toFixed(0):sB.toFixed(1);
+      h+=`<div style="display:flex;align-items:center;gap:14px;padding:10px 14px;margin:8px 0 12px;background:linear-gradient(90deg,#22c55e18,#10b98112);border:1px solid #22c55e55;border-radius:8px;font-size:.85rem">`;
+      h+=`<span style="font-size:1.05rem;font-weight:800;color:#22c55e">\u03a3 Sales 2025: $${sumLabel}B</span>`;
+      h+=`<span style="color:var(--text2);font-size:.78rem">across ${rowsWithSales} commercial-stage ${rowsWithSales===1?'company':'companies'}${activeFilter||rowsWithSales!==rows.length?' (filtered subset)':''}</span>`;
+      h+=`</div>`;
+    }
     h+='<div class="tbl-wrap"><table><thead><tr>';
     h+='<th style="width:28px">Ptf</th>';
     h+='<th onclick="window._sort(\'ticker\')">Ticker</th>';

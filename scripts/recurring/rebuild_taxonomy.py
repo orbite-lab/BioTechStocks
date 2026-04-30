@@ -68,12 +68,15 @@ def rebuild():
     l4_count = len([k for k in areas if len(k.split(".")) == 4])
     mod3_count = len([k for k in mods if len(k.split(".")) == 3])
 
-    # Preserve display_names map across rebuilds (manually curated UI labels)
+    # Preserve display_names + disease_synonym_groups across rebuilds
+    # (manually curated; not derivable from configs)
     existing_display_names = {}
+    existing_synonym_groups = {}
     if OUT.exists():
         try:
             existing = json.loads(OUT.read_text(encoding="utf-8"))
             existing_display_names = existing.get("display_names", {})
+            existing_synonym_groups = existing.get("disease_synonym_groups", {})
         except Exception:
             pass
 
@@ -96,7 +99,8 @@ def rebuild():
         },
         "therapeutic_areas": build_tree(areas, is_area=True),
         "modalities": build_tree(mods),
-        **({"display_names": existing_display_names} if existing_display_names else {})
+        **({"display_names": existing_display_names} if existing_display_names else {}),
+        **({"disease_synonym_groups": existing_synonym_groups} if existing_synonym_groups else {})
     }
 
     OUT.write_text(json.dumps(taxonomy, indent=2, ensure_ascii=False), encoding="utf-8")

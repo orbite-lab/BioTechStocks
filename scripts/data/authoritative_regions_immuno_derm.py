@@ -14,8 +14,6 @@ REGIONS = {
     # ============================================================
     # IMMUNOLOGY - AUTOIMMUNE
     # ============================================================
-    "immunology.autoimmune.fsgs": {
-        "us":  {"patientsK": 40,   "wtpPct": 45, "priceK": 90},
         "eu":  {"patientsK": 45,   "wtpPct": 30, "priceK": 45},
         "row": {"patientsK": 200,  "wtpPct": 8,  "priceK": 8},
     },
@@ -24,8 +22,6 @@ REGIONS = {
         "eu":  {"patientsK": 10,   "wtpPct": 55, "priceK": 280},
         "row": {"patientsK": 20,   "wtpPct": 15, "priceK": 100},
     },
-    "immunology.autoimmune.iga_nephropathy": {
-        "us":  {"patientsK": 130,  "wtpPct": 50, "priceK": 65},
         "eu":  {"patientsK": 150,  "wtpPct": 35, "priceK": 32},
         "row": {"patientsK": 1500, "wtpPct": 10, "priceK": 6},
     },
@@ -44,8 +40,6 @@ REGIONS = {
     # rituximab off-label + cyclophosphamide. Emerging branded class (anti-CD19
     # / anti-CD20 / APRIL inhibitors); peak class TAM ~$2-3B globally with
     # first-line label. Orphan-priced specialty nephrology channel.
-    "immunology.autoimmune.pmn": {
-        "us":  {"patientsK": 30,  "wtpPct": 60, "priceK": 90},
         "eu":  {"patientsK": 50,  "wtpPct": 40, "priceK": 50},
         "row": {"patientsK": 150, "wtpPct": 8,  "priceK": 15},
     },
@@ -396,10 +390,7 @@ REGIONS = {
 
 # Peak penetration (%) per disease area, from the penPct tooltip note.
 PEN_PCT = {
-    "immunology.autoimmune.fsgs": 25,
     "immunology.autoimmune.hereditary_angioedema": 70,
-    "immunology.autoimmune.iga_nephropathy": 30,
-    "immunology.autoimmune.pmn": 30,
     "immunology.autoimmune.sjogrens": 15,
     "immunology.autoimmune.sle": 25,
     "immunology.inflammatory_gi.crohns": 38,

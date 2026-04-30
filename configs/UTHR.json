@@ -1,0 +1,1041 @@
+{
+  "company": {
+    "ticker": "UTHR",
+    "name": "United Therapeutics Corporation",
+    "currentPrice": 570,
+    "sharesOut": 46,
+    "cash": 4500,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "PAH leader: Tyvaso franchise ($1.88B; PAH+PH-ILD+IPF Ph3 POSITIVE 2026) + Remodulin + Orenitram + Unituxin neuroblastoma; Ralinepag PAH Ph3 POSITIVE Mar 2026; UKidney xenotransplant Ph1",
+    "yahooTicker": "UTHR"
+  },
+  "assets": [
+    {
+      "id": "tyvaso",
+      "name": "Tyvaso DPI + Nebulized Tyvaso (treprostinil inhaled) - prostacyclin analog",
+      "stage": "Commercial (PAH + PH-ILD); Ph3 POSITIVE TETON-1+TETON-2 IPF; sNDA H2 2026 IPF; TETON-PPF enrolling",
+      "modality": "small_molecule.gpcr.prostacyclin_analog",
+      "targets": [
+        "PTGIR"
+      ],
+      "indications": [
+        {
+          "id": "pah",
+          "name": "Pulmonary arterial hypertension (WHO Group 1)",
+          "area": "cardio_metabolic.cardiopulmonary.pah",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 75,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 18,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 35,
+                "wtpPct": 80,
+                "priceK": 110
+              },
+              "eu": {
+                "reachPct": 22,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "row": {
+                "reachPct": 6,
+                "wtpPct": 16,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Tyvaso franchise ~50% US PAH share (DPI fast adoption); vs Uptravi (JNJ), Veletri/Flolan generics",
+              "us.priceK": "Tyvaso DPI WAC ~$185K/yr"
+            },
+            "penPct": 65,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 1100,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "ph_ild",
+          "name": "PH associated with interstitial lung disease (PH-ILD)",
+          "area": "cardio_metabolic.cardiopulmonary.ph_ild",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 50,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 30,
+                "priceK": 50
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 8,
+                "priceK": 15
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 65,
+                "wtpPct": 70,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 30,
+                "wtpPct": 50,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 6,
+                "wtpPct": 12,
+                "priceK": 15
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Tyvaso INCREASE Ph3 sole branded PH-ILD therapy; ~70% US share; Sotatercept Winrevair entering",
+              "us.priceK": "Tyvaso DPI pricing"
+            },
+            "penPct": 30,
+            "cagrPct": 12,
+            "peakYear": 2030,
+            "salesM": 778,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "ipf",
+          "name": "Idiopathic pulmonary fibrosis (Ph3 TETON-1+2 POSITIVE; sNDA H2 2026)",
+          "area": "respiratory.fibrotic.ipf",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 150,
+                "wtpPct": 65,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 200,
+                "wtpPct": 50,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 1000,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 65,
+                "priceK": 95
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 55
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Tyvaso IPF launch projected ~10% share vs Ofev/Esbriet incumbents; combo platform",
+              "us.priceK": "Tyvaso pricing premium to oral antifibrotics"
+            },
+            "penPct": 35,
+            "cagrPct": 25,
+            "peakYear": 2034
+          }
+        },
+        {
+          "id": "ppf",
+          "name": "Progressive pulmonary fibrosis (TETON-PPF Ph3 enrolling; non-IPF fibrosing ILDs)",
+          "area": "respiratory.fibrotic.ppf",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 45,
+                "priceK": 50
+              },
+              "row": {
+                "patientsK": 300,
+                "wtpPct": 12,
+                "priceK": 18
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 60,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 45,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Tyvaso PPF aspirational; smaller pool than IPF; competitive with Ofev only branded",
+              "us.priceK": "Same Tyvaso pricing"
+            },
+            "penPct": 35,
+            "cagrPct": 30,
+            "peakYear": 2035
+          }
+        }
+      ]
+    },
+    {
+      "id": "remodulin",
+      "name": "Remodulin (treprostinil IV/SC continuous) - prostacyclin analog",
+      "stage": "Commercial (PAH; mature; generic competition since 2018)",
+      "modality": "small_molecule.gpcr.prostacyclin_analog",
+      "targets": [
+        "PTGIR"
+      ],
+      "indications": [
+        {
+          "id": "pah",
+          "name": "Severe PAH (continuous IV/SC infusion)",
+          "area": "cardio_metabolic.cardiopulmonary.pah",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 75,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 18,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 80,
+                "priceK": 110
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 16,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Remodulin severe PAH legacy; generic Sandoz competition since 2018; declining",
+              "us.priceK": "Remodulin pricing legacy"
+            },
+            "penPct": 65,
+            "cagrPct": -5,
+            "peakYear": 2025,
+            "salesM": 527,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "orenitram",
+      "name": "Orenitram (treprostinil oral extended-release) - prostacyclin analog",
+      "stage": "Commercial (PAH; mature; ralinepag competitor coming)",
+      "modality": "small_molecule.gpcr.prostacyclin_analog",
+      "targets": [
+        "PTGIR"
+      ],
+      "indications": [
+        {
+          "id": "pah",
+          "name": "PAH FREEDOM-EV (oral treprostinil)",
+          "area": "cardio_metabolic.cardiopulmonary.pah",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 75,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 18,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 80,
+                "priceK": 110
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 16,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Orenitram oral treprostinil; ~10-15% PAH oral prostacyclin share; competing vs Uptravi + future ralinepag",
+              "us.priceK": "Orenitram pricing"
+            },
+            "penPct": 65,
+            "cagrPct": 0,
+            "peakYear": 2026,
+            "salesM": 497,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "unituxin",
+      "name": "Unituxin (dinutuximab) - anti-GD2 mAb for high-risk pediatric neuroblastoma",
+      "stage": "Commercial (post-induction maintenance high-risk neuroblastoma)",
+      "modality": "antibody.monoclonal.anti_gd2",
+      "targets": [
+        "B4GALNT1"
+      ],
+      "indications": [
+        {
+          "id": "neuroblastoma",
+          "name": "High-risk pediatric neuroblastoma (post-induction; FDA 2015)",
+          "area": "oncology.pediatric.neuroblastoma",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 4,
+                "wtpPct": 60,
+                "priceK": 120
+              },
+              "row": {
+                "patientsK": 15,
+                "wtpPct": 14,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 60,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 30,
+                "wtpPct": 60,
+                "priceK": 120
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 14,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Unituxin sole branded high-risk neuroblastoma post-induction; vs Qarziba (EUSA dinutuximab-beta EU only)",
+              "us.priceK": "Unituxin WAC ~$200K/course (5 cycles)"
+            },
+            "penPct": 60,
+            "cagrPct": 2,
+            "peakYear": 2028,
+            "salesM": 227,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "adcirca",
+      "name": "Adcirca (tadalafil) - PDE5 inhibitor for PAH (mature, generic dominant)",
+      "stage": "Commercial (PAH; ~95% generic erosion since 2018)",
+      "modality": "small_molecule.pde5_inhibitor.tadalafil",
+      "targets": [
+        "PDE5A"
+      ],
+      "indications": [
+        {
+          "id": "pah",
+          "name": "PAH (residual branded post-generic erosion)",
+          "area": "cardio_metabolic.cardiopulmonary.pah",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 75,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 18,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2.4,
+                "wtpPct": 75,
+                "priceK": 110
+              },
+              "eu": {
+                "reachPct": 1.0,
+                "wtpPct": 55,
+                "priceK": 65
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 14,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Adcirca residual branded; >95% generic since 2018; declining tail",
+              "us.priceK": "Pre-generic legacy pricing residual"
+            },
+            "penPct": 65,
+            "cagrPct": -15,
+            "peakYear": 2025,
+            "salesM": 30,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "ralinepag",
+      "name": "Ralinepag - oral once-daily prostacyclin (IP) receptor agonist (Ph3 POSITIVE Mar 2026)",
+      "stage": "Phase 3 ADVANCE OUTCOMES POSITIVE (March 2 2026); FDA NDA filing pending",
+      "modality": "small_molecule.gpcr.prostacyclin_receptor_agonist",
+      "targets": [
+        "PTGIR"
+      ],
+      "indications": [
+        {
+          "id": "pah",
+          "name": "PAH (oral once-daily; vs Uptravi twice-daily)",
+          "area": "cardio_metabolic.cardiopulmonary.pah",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 75,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 18,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 80,
+                "priceK": 110
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 16,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Ralinepag once-daily convenience advantage vs Uptravi BID; will cannibalize Orenitram + share Tyvaso",
+              "us.priceK": "Premium PAH oral pricing"
+            },
+            "penPct": 65,
+            "cagrPct": 15,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukidney",
+      "name": "UKidney - gene-edited porcine kidney xenotransplant (UThymoKidney variant)",
+      "stage": "Phase 1 EXPAND (first human transplants late 2025; <5 patients; long-tail)",
+      "modality": "xenotransplant.gene_edited.porcine_kidney",
+      "targets": [
+        "GGTA1",
+        "B4GALNT2",
+        "CMAH"
+      ],
+      "indications": [
+        {
+          "id": "esrd",
+          "name": "End-stage renal disease (dialysis-dependent; transplant waiting list)",
+          "area": "nephrology.ckd.esrd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 750,
+                "wtpPct": 40,
+                "priceK": 50
+              },
+              "eu": {
+                "patientsK": 500,
+                "wtpPct": 28,
+                "priceK": 28
+              },
+              "row": {
+                "patientsK": 3500,
+                "wtpPct": 8,
+                "priceK": 8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 50,
+                "priceK": 500
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 30,
+                "priceK": 300
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 6,
+                "priceK": 80
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "UKidney aspirational xenotransplant; addresses ~90K US transplant waiting list; very long-tail commercial",
+              "us.priceK": "Aspirational $500K/transplant (org procurement + immunosuppression bundle)"
+            },
+            "penPct": 30,
+            "cagrPct": 30,
+            "peakYear": 2038
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 3,
+        "commercialMult": 3,
+        "commercialRevM": 2800,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "tyvaso": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "ph_ild": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "ipf": {
+            "pos": 70,
+            "apr": 85,
+            "pen": 0.4
+          },
+          "ppf": {
+            "pos": 30,
+            "apr": 60,
+            "pen": 0.3
+          }
+        },
+        "remodulin": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "orenitram": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "unituxin": {
+          "neuroblastoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "adcirca": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "ralinepag": {
+          "pah": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 0.4
+          }
+        },
+        "ukidney": {
+          "esrd": {
+            "pos": 5,
+            "apr": 25,
+            "pen": 0.2
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 5,
+        "commercialMult": 4,
+        "commercialRevM": 3200,
+        "milestones": 50,
+        "dil": 0
+      },
+      "assumptions": {
+        "tyvaso": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "ph_ild": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "ipf": {
+            "pos": 88,
+            "apr": 92,
+            "pen": 0.6
+          },
+          "ppf": {
+            "pos": 50,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "remodulin": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "orenitram": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "unituxin": {
+          "neuroblastoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "adcirca": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "ralinepag": {
+          "pah": {
+            "pos": 92,
+            "apr": 95,
+            "pen": 0.6
+          }
+        },
+        "ukidney": {
+          "esrd": {
+            "pos": 12,
+            "apr": 40,
+            "pen": 0.35
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 40,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 7,
+        "commercialMult": 5.5,
+        "commercialRevM": 3800,
+        "milestones": 150,
+        "dil": 0
+      },
+      "assumptions": {
+        "tyvaso": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "ph_ild": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "ipf": {
+            "pos": 96,
+            "apr": 97,
+            "pen": 0.85
+          },
+          "ppf": {
+            "pos": 70,
+            "apr": 88,
+            "pen": 0.75
+          }
+        },
+        "remodulin": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "orenitram": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "unituxin": {
+          "neuroblastoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "adcirca": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "ralinepag": {
+          "pah": {
+            "pos": 96,
+            "apr": 97,
+            "pen": 0.85
+          }
+        },
+        "ukidney": {
+          "esrd": {
+            "pos": 25,
+            "apr": 55,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 10,
+        "commercialMult": 7,
+        "commercialRevM": 4800,
+        "milestones": 300,
+        "dil": 0
+      },
+      "assumptions": {
+        "tyvaso": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "ph_ild": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "ipf": {
+            "pos": 98,
+            "apr": 99,
+            "pen": 1.1
+          },
+          "ppf": {
+            "pos": 85,
+            "apr": 95,
+            "pen": 0.95
+          }
+        },
+        "remodulin": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "orenitram": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "unituxin": {
+          "neuroblastoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "adcirca": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "ralinepag": {
+          "pah": {
+            "pos": 98,
+            "apr": 99,
+            "pen": 1.05
+          }
+        },
+        "ukidney": {
+          "esrd": {
+            "pos": 45,
+            "apr": 75,
+            "pen": 0.7
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 14,
+        "commercialMult": 9,
+        "commercialRevM": 6500,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "tyvaso": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          },
+          "ph_ild": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "ipf": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.4
+          },
+          "ppf": {
+            "pos": 95,
+            "apr": 98,
+            "pen": 1.25
+          }
+        },
+        "remodulin": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "orenitram": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "unituxin": {
+          "neuroblastoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "adcirca": {
+          "pah": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "ralinepag": {
+          "pah": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.3
+          }
+        },
+        "ukidney": {
+          "esrd": {
+            "pos": 70,
+            "apr": 90,
+            "pen": 1.0
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Mar 2 2026",
+      "dateSort": "2026-03-02",
+      "asset": "ralinepag",
+      "indication": "pah",
+      "title": "Ralinepag ADVANCE OUTCOMES Ph3 PAH POSITIVE (already realized; +14% stock)",
+      "type": "phase3_data",
+      "binary": false,
+      "_source": "https://www.tikr.com/blog/united-therapeutics-crosses-3-billion-in-revenue-as-ralinepag-data-reshapes-the-investment-case",
+      "_confidence": "high"
+    },
+    {
+      "date": "Mar 30 2026",
+      "dateSort": "2026-03-30",
+      "asset": "tyvaso",
+      "indication": "ipf",
+      "title": "Tyvaso TETON-1 Ph3 IPF POSITIVE (already realized; complementing TETON-2 Sep 2025)",
+      "type": "phase3_data",
+      "binary": false,
+      "_source": "https://ir.unither.com/press-releases/2026/03-30-2026-120037465",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "tyvaso",
+      "indication": "ipf",
+      "title": "Tyvaso sNDA filing for IPF (label expansion)",
+      "type": "nda_submission",
+      "binary": false,
+      "_source": "https://ir.unither.com/press-releases/2026/03-30-2026-120037465",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2027",
+      "dateSort": "2027-09-30",
+      "asset": "tyvaso",
+      "indication": "ipf",
+      "title": "Tyvaso IPF PDUFA decision",
+      "type": "pdufa",
+      "binary": false,
+      "_source": "https://ir.unither.com/press-releases/2026/03-30-2026-120037465",
+      "_confidence": "medium"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-03-31",
+      "asset": "ralinepag",
+      "indication": "pah",
+      "title": "Ralinepag NDA filing PAH",
+      "type": "nda_submission",
+      "binary": false,
+      "_source": "https://www.tikr.com/blog/united-therapeutics-crosses-3-billion-in-revenue-as-ralinepag-data-reshapes-the-investment-case",
+      "_confidence": "high"
+    },
+    {
+      "date": "Ongoing",
+      "dateSort": "2026-12-31",
+      "asset": "ukidney",
+      "indication": "esrd",
+      "title": "UKidney EXPAND Ph1 enrollment progress (xenotransplant; long-tail to 2030+ launch)",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://pipeline.unither.com/",
+      "_confidence": "low"
+    }
+  ]
+}

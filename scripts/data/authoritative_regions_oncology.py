@@ -623,6 +623,17 @@ REGIONS = {
         "eu":  {"patientsK": 4,   "wtpPct": 55, "priceK": 95},
         "row": {"patientsK": 8,   "wtpPct": 14, "priceK": 35},
     },
+    # High-risk pediatric neuroblastoma: rare aggressive pediatric solid tumor
+    # (peripheral nervous system origin). Branded class: Unituxin (UTHR
+    # dinutuximab anti-GD2 ~$230M, FDA 2015 high-risk post-induction),
+    # Qarziba (EUSA Pharma dinutuximab beta EU). source: NCI SEER neuroblastoma
+    # US ~700 incident/yr, ~3K prevalent on tx (high-risk subset ~50%);
+    # EU5 ~1K; ROW ~5K. Net branded ~$200K/course (5-cycle GD2 immunotherapy).
+    "oncology.pediatric.neuroblastoma": {
+        "us":  {"patientsK": 3,   "wtpPct": 80, "priceK": 200},
+        "eu":  {"patientsK": 4,   "wtpPct": 60, "priceK": 120},
+        "row": {"patientsK": 15,  "wtpPct": 14, "priceK": 40},
+    },
     # Desmoid tumors (aggressive fibromatosis): rare soft-tissue tumor
     # from connective tissue; can occur anywhere (abdominal wall,
     # extremity, intra-abdominal). ~6K US prevalent on tx, ~8K EU,
@@ -784,6 +795,7 @@ PEN_PCT = {
     "oncology.skin.cscc": 50,
     "oncology.skin.bcc": 45,
     "oncology.skin.merkel_cell": 60,
+    "oncology.pediatric.neuroblastoma": 60,
     "oncology.musculoskeletal.desmoid": 50,
     "oncology.musculoskeletal.nf1_pn": 30,
     "oncology.musculoskeletal.tgct": 40,

@@ -459,6 +459,41 @@ REGIONS = {
     # combined inhaled+biologic spend. Prior values ($40K priceK, full 3M US)
     # assumed uniform biologic pricing for all COPD which is not the franchise
     # structure -- ~4x off on US, ~6x off on EU.
+    # Idiopathic pulmonary fibrosis (IPF): progressive scarring lung disease.
+    # SoC: Ofev (Boehringer nintedanib ~$4B) + Esbriet (Roche pirfenidone
+    # ~$1B; on-patent). Emerging: Tyvaso (UTHR Ph3 TETON-1+2 POSITIVE 2025-26;
+    # sNDA H2 2026), BMS-986278 (BMY LPA1 antagonist), Pliant aldeferon.
+    # source: ATS/ERS IPF prevalence US ~150K, EU5 ~200K, ROW ~1M. Net branded
+    # ~$95K/yr (oral antifibrotics + emerging inhaled).
+    "respiratory.fibrotic.ipf": {
+        "us":  {"patientsK": 150,   "wtpPct": 65, "priceK": 95},
+        "eu":  {"patientsK": 200,   "wtpPct": 50, "priceK": 55},
+        "row": {"patientsK": 1000,  "wtpPct": 12, "priceK": 22},
+    },
+    # Progressive pulmonary fibrosis (PPF, non-IPF progressive ILDs):
+    # heterogeneous fibrosing ILDs incl. systemic sclerosis-ILD, chronic HP,
+    # CTD-ILD. SoC: Ofev (Boehringer; FDA 2020 PPF expansion). Emerging:
+    # Tyvaso (UTHR Ph3 TETON-PPF enrolling). source: ATS PPF subset ~50K
+    # US, EU 70K, ROW 300K. Net branded ~$80K/yr.
+    "respiratory.fibrotic.ppf": {
+        "us":  {"patientsK": 50,    "wtpPct": 60, "priceK": 80},
+        "eu":  {"patientsK": 70,    "wtpPct": 45, "priceK": 50},
+        "row": {"patientsK": 300,   "wtpPct": 12, "priceK": 18},
+    },
+    # End-stage renal disease (ESRD) / dialysis-dependent CKD: ~750K US on
+    # dialysis (USRDS), waiting list ~90K for kidney transplant; <30K
+    # cadaveric kidneys/yr. Major unmet need; xenotransplant emerging
+    # (UTHR UKidney gene-edited porcine kidney Ph1 EXPAND first human
+    # transplants late 2025). Class: dialysis $30B+ globally (services);
+    # transplant immunosuppressants generic. Branded specialty therapy
+    # for kidney failure largely absent. source: USRDS 2024 + WHO ESRD
+    # registry. ESRD US ~750K, EU 500K, ROW 3.5M. Net branded ~$50K/yr
+    # (immunosuppression post-tx; xenotransplant aspirational $500K/course).
+    "nephrology.ckd.esrd": {
+        "us":  {"patientsK": 750,   "wtpPct": 40, "priceK": 50},
+        "eu":  {"patientsK": 500,   "wtpPct": 28, "priceK": 28},
+        "row": {"patientsK": 3500,  "wtpPct": 8,  "priceK": 8},
+    },
     "respiratory.inflammatory.copd": {
         "us":  {"patientsK": 2500,  "wtpPct": 45, "priceK": 12},
         "eu":  {"patientsK": 3500,  "wtpPct": 30, "priceK": 7},
@@ -889,6 +924,9 @@ PEN_PCT = {
     "ophthalmology.optic_nerve.nmosd": 40,
     "respiratory.inflammatory.asthma_severe": 25,
     "respiratory.inflammatory.copd": 10,
+    "respiratory.fibrotic.ipf": 35,
+    "respiratory.fibrotic.ppf": 35,
+    "nephrology.ckd.esrd": 30,
     "ophthalmology.retina.rvo": 35,
     "respiratory.inflammatory.crswnp": 25,
     "nephrology.ckd.cardiorenal_inflammation": 12,

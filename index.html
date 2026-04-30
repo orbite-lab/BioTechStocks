@@ -899,11 +899,15 @@ async function main(){
       const meta=deriveCompanyMeta(cfg);
       const catalysts=computeCatalysts(cfg,price);
       // Sum reported drug sales 2025 across all indications. Per CLAUDE.md convention,
-      // m.salesM is in USD $M for ALL configs (regardless of company.currency). Same
-      // basis Market Explorer uses, so totals match.
+      // m.salesM is in USD $M for ALL configs (regardless of company.currency). Skip
+      // pseudo-areas (_*) so this aggregation matches the Market Explorer total --
+      // pseudo-areas like _established_products.*_heritage are mature pharma legacy
+      // tail buckets that don't fit disease taxonomy and are excluded by design.
       let salesM2025USD=0;
       for(const a of cfg.assets||[]){
         for(const ind of a.indications||[]){
+          const area=ind.area||'';
+          if(area.startsWith('_')) continue;
           const m=ind.market||{};
           if(m.salesM&&(!m.salesYear||m.salesYear===2025)) salesM2025USD+=m.salesM;
         }

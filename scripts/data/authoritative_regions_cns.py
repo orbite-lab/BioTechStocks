@@ -60,6 +60,28 @@ REGIONS = {
     # peak. Class peak ~$7-8B globally. Prior US TAM 600K x 65% x $70K = $27B
     # priced every TD patient as if on Ingrezza; net realized prices are
     # ~$25-30K/yr after PBM rebates. Right-sizing to ~$7B total.
+    # Cervical dystonia (CD): involuntary neck muscle contractions causing
+    # head twisting/tilting. SoC botulinum toxin injection (Botox AbbVie,
+    # Dysport Ipsen, Xeomin Merz, Myobloc Solstice). source: NORD CD
+    # prevalence ~80K US; EU5 ~120K; ROW ~400K. Net branded ~$4K/yr
+    # (3-4 injection cycles/yr).
+    "cns.movement.cervical_dystonia": {
+        "us":  {"patientsK": 80,    "wtpPct": 65, "priceK": 4},
+        "eu":  {"patientsK": 120,   "wtpPct": 50, "priceK": 2.5},
+        "row": {"patientsK": 400,   "wtpPct": 12, "priceK": 1},
+    },
+    # Spasticity (post-stroke + MS + CP + spinal cord injury): hypertonic
+    # muscle disorder. Branded interventions limited: botulinum toxin
+    # injection (Botox + Dysport + Xeomin) for focal; oral baclofen + ITB pump
+    # for generalized; phenol nerve blocks. source: AAN spasticity prevalence
+    # ~1.5M US (mostly post-stroke 1M + MS 200K + CP 200K + SCI 100K);
+    # EU5 ~2M; ROW ~8M. Most are NOT on branded therapy (low penetration);
+    # branded utilized ~10% of pool at $3K/yr blended.
+    "cns.movement.spasticity": {
+        "us":  {"patientsK": 1500,  "wtpPct": 35, "priceK": 3},
+        "eu":  {"patientsK": 2000,  "wtpPct": 22, "priceK": 1.8},
+        "row": {"patientsK": 8000,  "wtpPct": 8,  "priceK": 0.6},
+    },
     "cns.movement.tardive_dyskinesia": {
         "us":  {"patientsK": 500,   "wtpPct": 50, "priceK": 25},
         "eu":  {"patientsK": 500,   "wtpPct": 25, "priceK": 5},
@@ -249,6 +271,8 @@ PEN_PCT = {
     "cns.epilepsy.focal": 70,
     "cns.epilepsy.generalized": 65,
     "cns.movement.essential_tremor": 25,
+    "cns.movement.cervical_dystonia": 60,
+    "cns.movement.spasticity": 25,
     "cns.movement.tardive_dyskinesia": 30,
     "cns.neurodegeneration.alexander": 60,
     "cns.neurodegeneration.als": 25,

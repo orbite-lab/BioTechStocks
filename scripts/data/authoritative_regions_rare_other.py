@@ -281,6 +281,19 @@ REGIONS = {
         "eu":  {"patientsK": 7000,   "wtpPct": 18, "priceK": 0.25},
         "row": {"patientsK": 30000,  "wtpPct": 5,  "priceK": 0.08},
     },
+    # Endometriosis: chronic gynecologic pain disorder, ~10-15% of repro-age
+    # women. SoC mostly NSAIDs + OCP (generic). Branded specialty class:
+    # Orilissa/Oriahnn (AbbVie elagolix GnRH antagonist), Myfembree (Pfizer
+    # relugolix combo), Decapeptyl/Trelstar (Ipsen triptorelin GnRH agonist
+    # depot), Lupron generics. Most patients DON'T receive branded therapy
+    # (low penetration); branded utilization ~5% of diagnosed at ~$1.5K/yr
+    # blended. source: ACOG endometriosis prevalence ~6.5M US (11% repro-age),
+    # EU5 ~9M; ROW ~50M (under-diagnosed in LMIC).
+    "women_health.gyn_disorders.endometriosis": {
+        "us":  {"patientsK": 6500,   "wtpPct": 22, "priceK": 1.5},
+        "eu":  {"patientsK": 9000,   "wtpPct": 15, "priceK": 0.8},
+        "row": {"patientsK": 50000,  "wtpPct": 4,  "priceK": 0.25},
+    },
     # Long-acting reversible contraception (LARC) implant: Nexplanon (Merck
     # etonogestrel ~$1.4B 2025) dominates implant subclass. Broader LARC also
     # includes IUDs (Mirena/Liletta/Skyla) -- this entry is the implant subclass
@@ -838,6 +851,7 @@ PEN_PCT = {
     "perioperative.anesthesia.nmb_reversal": 30,
     "women_health.contraception.larc_implant": 18,
     "women_health.menopause.hrt": 10,
+    "women_health.gyn_disorders.endometriosis": 8,
     "oncology.endocrine.thyroid_cancer": 35,
     "infectious_disease.vaccines.covid": 8,
     "infectious_disease.anti_infective.covid_treatment": 12,

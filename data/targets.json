@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-30T11:46:51Z",
-    "target_count": 351,
-    "total_assets": 656,
-    "assets_with_targets": 609,
+    "generated": "2026-04-30T12:39:51Z",
+    "target_count": 356,
+    "total_assets": 663,
+    "assets_with_targets": 616,
     "multi_modality_count": 41,
-    "multi_disease_count": 158
+    "multi_disease_count": 160
   },
   "targets": {
     "ABL1": {
@@ -1355,6 +1355,44 @@
       "cagrPct": -5.0,
       "peakYear": 2025
     },
+    "AXL": {
+      "companies": [
+        "IPN"
+      ],
+      "modalities": [
+        "small_molecule.kinase_inhibitor.multi_kinase"
+      ],
+      "areas": [
+        "oncology.genitourinary.rcc",
+        "oncology.gi.hcc",
+        "oncology.neuroendocrine.gepnet"
+      ],
+      "assets": [
+        {
+          "ticker": "IPN",
+          "asset": "cabometyx",
+          "name": "Cabometyx (cabozantinib) - multi-kinase inhibitor (Exelixis-licensed ex-US)",
+          "modality": "small_molecule.kinase_inhibitor.multi_kinase",
+          "areas": [
+            "oncology.genitourinary.rcc",
+            "oncology.gi.hcc",
+            "oncology.neuroendocrine.gepnet"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 3,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 13926.2,
+      "totalSOM": 1197.2,
+      "totalSales": 613.0,
+      "cagrPct": 6.9,
+      "peakYear": 2030
+    },
     "BCL11A": {
       "companies": [
         "CRSP",
@@ -1608,7 +1646,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 4026.4,
       "totalSales": 2915.0,
       "cagrPct": 3.2,
@@ -3808,7 +3846,7 @@
         "antibody"
       ],
       "totalTAM": 19731.0,
-      "totalSOM": 189.7,
+      "totalSOM": 189.6,
       "totalSales": 0.0,
       "cagrPct": 54.4,
       "peakYear": 2031
@@ -7091,16 +7129,19 @@
     "GNRHR": {
       "companies": [
         "4503",
+        "IPN",
         "MRK_DE"
       ],
       "modalities": [
+        "peptide.depot.gnrh_agonist",
         "peptide.gpcr.lhrh_agonist",
         "recombinant_protein.hormone.gonadotropin"
       ],
       "areas": [
         "oncology.genitourinary.prostate",
         "urology.lower_tract.oab",
-        "women_health.fertility.ivf"
+        "women_health.fertility.ivf",
+        "women_health.gyn_disorders.endometriosis"
       ],
       "assets": [
         {
@@ -7114,6 +7155,16 @@
           ]
         },
         {
+          "ticker": "IPN",
+          "asset": "decapeptyl",
+          "name": "Decapeptyl/Trelstar (triptorelin) - GnRH agonist depot",
+          "modality": "peptide.depot.gnrh_agonist",
+          "areas": [
+            "oncology.genitourinary.prostate",
+            "women_health.gyn_disorders.endometriosis"
+          ]
+        },
+        {
           "ticker": "MRK_DE",
           "asset": "fertility",
           "name": "Fertility franchise (Gonal-f + Pergoveris + Cetrotide + Ovitrelle)",
@@ -7123,19 +7174,19 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 2,
-      "areaCount": 3,
+      "areaCount": 4,
       "modalityClasses": [
         "peptide",
         "recombinant_protein"
       ],
-      "totalTAM": 31984.0,
-      "totalSOM": 2970.3,
-      "totalSales": 2437.0,
-      "cagrPct": 1.1,
-      "peakYear": 2029
+      "totalTAM": 35709.0,
+      "totalSOM": 3681.6,
+      "totalSales": 2937.0,
+      "cagrPct": 0.3,
+      "peakYear": 2028
     },
     "GPRC5D": {
       "companies": [
@@ -7897,7 +7948,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -10681,7 +10732,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 18252.4,
       "totalSales": 2971.0,
       "cagrPct": 47.5,
@@ -10733,7 +10784,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 17202.9,
       "totalSales": 2271.0,
       "cagrPct": 50.1,
@@ -10924,6 +10975,7 @@
       "companies": [
         "ABBV",
         "GMAB",
+        "IPN",
         "JNJ",
         "MRK_DE",
         "NVS"
@@ -10931,11 +10983,15 @@
       "modalities": [
         "adc.dxd_linker.cmet_adc",
         "antibody.bispecific.egfr_met",
-        "small_molecule.kinase_inhibitor.cmet"
+        "small_molecule.kinase_inhibitor.cmet",
+        "small_molecule.kinase_inhibitor.multi_kinase"
       ],
       "areas": [
+        "oncology.genitourinary.rcc",
+        "oncology.gi.hcc",
         "oncology.lung.nsclc_driver.cmet",
-        "oncology.lung.nsclc_driver.egfr"
+        "oncology.lung.nsclc_driver.egfr",
+        "oncology.neuroendocrine.gepnet"
       ],
       "assets": [
         {
@@ -10954,6 +11010,17 @@
           "modality": "antibody.bispecific.egfr_met",
           "areas": [
             "oncology.lung.nsclc_driver.egfr"
+          ]
+        },
+        {
+          "ticker": "IPN",
+          "asset": "cabometyx",
+          "name": "Cabometyx (cabozantinib) - multi-kinase inhibitor (Exelixis-licensed ex-US)",
+          "modality": "small_molecule.kinase_inhibitor.multi_kinase",
+          "areas": [
+            "oncology.genitourinary.rcc",
+            "oncology.gi.hcc",
+            "oncology.neuroendocrine.gepnet"
           ]
         },
         {
@@ -10984,20 +11051,20 @@
           ]
         }
       ],
-      "assetCount": 5,
-      "modalityCount": 3,
+      "assetCount": 6,
+      "modalityCount": 4,
       "modalityClassCount": 3,
-      "areaCount": 2,
+      "areaCount": 5,
       "modalityClasses": [
         "adc",
         "antibody",
         "small_molecule"
       ],
-      "totalTAM": 17990.0,
-      "totalSOM": 1767.7,
-      "totalSales": 1108.0,
-      "cagrPct": 21.6,
-      "peakYear": 2031
+      "totalTAM": 31916.2,
+      "totalSOM": 2964.9,
+      "totalSales": 1721.0,
+      "cagrPct": 15.7,
+      "peakYear": 2030
     },
     "MMAA": {
       "companies": [
@@ -11592,7 +11659,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -11841,7 +11908,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -13225,6 +13292,74 @@
       "cagrPct": 2.0,
       "peakYear": 2026
     },
+    "PPARA": {
+      "companies": [
+        "IPN"
+      ],
+      "modalities": [
+        "small_molecule.gpcr.ppar_agonist"
+      ],
+      "areas": [
+        "cardio_metabolic.liver.pbc"
+      ],
+      "assets": [
+        {
+          "ticker": "IPN",
+          "asset": "iqirvo",
+          "name": "Iqirvo (elafibranor) - PPAR α/δ agonist (ex-Genfit; FDA Jun 2024)",
+          "modality": "small_molecule.gpcr.ppar_agonist",
+          "areas": [
+            "cardio_metabolic.liver.pbc"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 3168.0,
+      "totalSOM": 546.7,
+      "totalSales": 100.0,
+      "cagrPct": 25.0,
+      "peakYear": 2032
+    },
+    "PPARD": {
+      "companies": [
+        "IPN"
+      ],
+      "modalities": [
+        "small_molecule.gpcr.ppar_agonist"
+      ],
+      "areas": [
+        "cardio_metabolic.liver.pbc"
+      ],
+      "assets": [
+        {
+          "ticker": "IPN",
+          "asset": "iqirvo",
+          "name": "Iqirvo (elafibranor) - PPAR α/δ agonist (ex-Genfit; FDA Jun 2024)",
+          "modality": "small_molecule.gpcr.ppar_agonist",
+          "areas": [
+            "cardio_metabolic.liver.pbc"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 3168.0,
+      "totalSOM": 546.7,
+      "totalSales": 100.0,
+      "cagrPct": 25.0,
+      "peakYear": 2032
+    },
     "PPIA": {
       "companies": [
         "4503",
@@ -13703,9 +13838,11 @@
     "RET": {
       "companies": [
         "4523",
+        "IPN",
         "MRK"
       ],
       "modalities": [
+        "small_molecule.kinase_inhibitor.multi_kinase",
         "small_molecule.kinase_inhibitor.multi_tki",
         "small_molecule.kinase_inhibitor.vegfr_multikinase"
       ],
@@ -13714,7 +13851,8 @@
         "oncology.genitourinary.rcc",
         "oncology.gi.hcc",
         "oncology.gynecologic.endometrial",
-        "oncology.gynecologic.ovarian"
+        "oncology.gynecologic.ovarian",
+        "oncology.neuroendocrine.gepnet"
       ],
       "assets": [
         {
@@ -13730,6 +13868,17 @@
           ]
         },
         {
+          "ticker": "IPN",
+          "asset": "cabometyx",
+          "name": "Cabometyx (cabozantinib) - multi-kinase inhibitor (Exelixis-licensed ex-US)",
+          "modality": "small_molecule.kinase_inhibitor.multi_kinase",
+          "areas": [
+            "oncology.genitourinary.rcc",
+            "oncology.gi.hcc",
+            "oncology.neuroendocrine.gepnet"
+          ]
+        },
+        {
           "ticker": "MRK",
           "asset": "lenvima",
           "name": "Lenvima (lenvatinib, multi-TKI) — w/ Eisai profit-share",
@@ -13742,18 +13891,18 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 5,
+      "areaCount": 6,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 30625.2,
-      "totalSOM": 4833.8,
-      "totalSales": 2918.0,
-      "cagrPct": 3.4,
-      "peakYear": 2027
+      "totalTAM": 32052.5,
+      "totalSOM": 6031.0,
+      "totalSales": 3531.0,
+      "cagrPct": 4.1,
+      "peakYear": 2028
     },
     "ROCK2": {
       "companies": [
@@ -14665,6 +14814,40 @@
       "cagrPct": -10.0,
       "peakYear": 2025
     },
+    "SLC10A2": {
+      "companies": [
+        "IPN"
+      ],
+      "modalities": [
+        "small_molecule.transporter_inhibitor.ibat"
+      ],
+      "areas": [
+        "cardio_metabolic.liver.pediatric_cholestasis"
+      ],
+      "assets": [
+        {
+          "ticker": "IPN",
+          "asset": "bylvay",
+          "name": "Bylvay (odevixibat) - IBAT inhibitor for cholestatic pruritus (ex-Albireo $1.3B 2023)",
+          "modality": "small_molecule.transporter_inhibitor.ibat",
+          "areas": [
+            "cardio_metabolic.liver.pediatric_cholestasis"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 1446.0,
+      "totalSOM": 385.4,
+      "totalSales": 200.0,
+      "cagrPct": 15.0,
+      "peakYear": 2030
+    },
     "SLC18A2": {
       "companies": [
         "NBIX"
@@ -14992,13 +15175,17 @@
     },
     "SNAP25": {
       "companies": [
-        "ABBV"
+        "ABBV",
+        "IPN"
       ],
       "modalities": [
+        "recombinant_protein.toxin.botulinum_a",
         "recombinant_protein.toxin.botulinum_cosmetic",
         "recombinant_protein.toxin.botulinum_type_a"
       ],
       "areas": [
+        "cns.movement.cervical_dystonia",
+        "cns.movement.spasticity",
         "cns.pain.migraine",
         "dermatology.aesthetics.neurotoxin"
       ],
@@ -15020,19 +15207,30 @@
           "areas": [
             "dermatology.aesthetics.neurotoxin"
           ]
+        },
+        {
+          "ticker": "IPN",
+          "asset": "dysport",
+          "name": "Dysport (abobotulinumtoxinA) - botulinum toxin type A",
+          "modality": "recombinant_protein.toxin.botulinum_a",
+          "areas": [
+            "cns.movement.cervical_dystonia",
+            "cns.movement.spasticity",
+            "dermatology.aesthetics.neurotoxin"
+          ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 2,
+      "areaCount": 4,
       "modalityClasses": [
         "recombinant_protein"
       ],
-      "totalTAM": 14598.0,
-      "totalSOM": 9475.1,
-      "totalSales": 6300.0,
-      "cagrPct": 0.0,
+      "totalTAM": 17755.0,
+      "totalSOM": 10390.1,
+      "totalSales": 6910.0,
+      "cagrPct": 0.6,
       "peakYear": 2033
     },
     "SNCA": {
@@ -15172,10 +15370,12 @@
     "SSTR2": {
       "companies": [
         "CAMX",
+        "IPN",
         "NVS"
       ],
       "modalities": [
         "formulation_modifier.long_acting.fluidcrystal_sc",
+        "peptide.depot.somatostatin_analog",
         "peptide.somatostatin_analog.octreotide",
         "radiopharmaceutical.radioligand.sstr_lu177"
       ],
@@ -15213,6 +15413,16 @@
           ]
         },
         {
+          "ticker": "IPN",
+          "asset": "somatuline",
+          "name": "Somatuline (lanreotide) - somatostatin analog (depot; generic erosion)",
+          "modality": "peptide.depot.somatostatin_analog",
+          "areas": [
+            "endocrine.pituitary.acromegaly",
+            "oncology.neuroendocrine.gepnet"
+          ]
+        },
+        {
           "ticker": "NVS",
           "asset": "sandostatin",
           "name": "Sandostatin (octreotide LAR) — somatostatin analog",
@@ -15232,8 +15442,8 @@
           ]
         }
       ],
-      "assetCount": 5,
-      "modalityCount": 3,
+      "assetCount": 6,
+      "modalityCount": 4,
       "modalityClassCount": 3,
       "areaCount": 3,
       "modalityClasses": [
@@ -15242,10 +15452,10 @@
         "radiopharmaceutical"
       ],
       "totalTAM": 2599.9,
-      "totalSOM": 2313.6,
-      "totalSales": 1399.0,
-      "cagrPct": 2.2,
-      "peakYear": 2029
+      "totalSOM": 2988.4,
+      "totalSales": 1849.0,
+      "cagrPct": -0.4,
+      "peakYear": 2028
     },
     "SSTR5": {
       "companies": [
@@ -16369,6 +16579,42 @@
       "cagrPct": 4.0,
       "peakYear": 2032
     },
+    "TOP1": {
+      "companies": [
+        "IPN"
+      ],
+      "modalities": [
+        "formulation_modifier.liposomal.irinotecan"
+      ],
+      "areas": [
+        "oncology.gi.colorectal",
+        "oncology.gi.pancreatic"
+      ],
+      "assets": [
+        {
+          "ticker": "IPN",
+          "asset": "onivyde",
+          "name": "Onivyde (irinotecan liposomal) - chemo for metastatic pancreatic + mCRC",
+          "modality": "formulation_modifier.liposomal.irinotecan",
+          "areas": [
+            "oncology.gi.colorectal",
+            "oncology.gi.pancreatic"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 2,
+      "modalityClasses": [
+        "formulation_modifier"
+      ],
+      "totalTAM": 13645.6,
+      "totalSOM": 143.5,
+      "totalSales": 100.0,
+      "cagrPct": -0.6,
+      "peakYear": 2026
+    },
     "TSLP": {
       "companies": [
         "AMGN",
@@ -16917,18 +17163,32 @@
     },
     "VEGFR2": {
       "companies": [
+        "IPN",
         "MRK"
       ],
       "modalities": [
+        "small_molecule.kinase_inhibitor.multi_kinase",
         "small_molecule.kinase_inhibitor.multi_tki"
       ],
       "areas": [
         "oncology.endocrine.thyroid_cancer",
         "oncology.genitourinary.rcc",
         "oncology.gi.hcc",
-        "oncology.gynecologic.ovarian"
+        "oncology.gynecologic.ovarian",
+        "oncology.neuroendocrine.gepnet"
       ],
       "assets": [
+        {
+          "ticker": "IPN",
+          "asset": "cabometyx",
+          "name": "Cabometyx (cabozantinib) - multi-kinase inhibitor (Exelixis-licensed ex-US)",
+          "modality": "small_molecule.kinase_inhibitor.multi_kinase",
+          "areas": [
+            "oncology.genitourinary.rcc",
+            "oncology.gi.hcc",
+            "oncology.neuroendocrine.gepnet"
+          ]
+        },
         {
           "ticker": "MRK",
           "asset": "lenvima",
@@ -16942,18 +17202,18 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 4,
+      "areaCount": 5,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 19450.2,
-      "totalSOM": 1574.1,
-      "totalSales": 1050.0,
-      "cagrPct": 0.0,
-      "peakYear": 2027
+      "totalTAM": 20877.5,
+      "totalSOM": 2771.3,
+      "totalSales": 1663.0,
+      "cagrPct": 3.0,
+      "peakYear": 2028
     },
     "VEGFR3": {
       "companies": [

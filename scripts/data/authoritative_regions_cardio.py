@@ -231,6 +231,27 @@ REGIONS = {
         "eu":  {"patientsK": 4000,  "wtpPct": 25, "priceK": 8},
         "row": {"patientsK": 20000, "wtpPct": 8,  "priceK": 2},
     },
+    # Primary biliary cholangitis (PBC): chronic autoimmune cholestatic liver
+    # disease, mostly women 40-60. Anti-AMA-positive in ~95%. Standard care
+    # ursodeoxycholic acid (UDCA) generic 1L; 2L PPAR Iqirvo (Ipsen elafibranor
+    # FDA Jun 2024) and OCA (Ocaliva, Intercept). source: AASLD PBC US ~60K
+    # diagnosed; EU5 ~80K; ROW ~200K. Net branded 2L tx ~$50K/yr (Iqirvo $60K WAC).
+    "cardio_metabolic.liver.pbc": {
+        "us":  {"patientsK": 60,   "wtpPct": 60, "priceK": 50},
+        "eu":  {"patientsK": 80,   "wtpPct": 45, "priceK": 30},
+        "row": {"patientsK": 200,  "wtpPct": 12, "priceK": 12},
+    },
+    # Pediatric cholestatic liver disease: rare genetic/cholestatic conditions
+    # affecting infants/children incl. PFIC (~2K US progressive familial intra-
+    # hepatic cholestasis), Alagille syndrome (~3K, JAG1/NOTCH2), biliary atresia
+    # (~0.5K/yr incidence). SoC liver transplant; Bylvay (Ipsen odevixibat IBAT
+    # inhibitor, ex-Albireo $1.3B 2023) is first FDA-approved targeted therapy.
+    # source: NORD/Orphanet rare cholestasis epi. Net branded ~$200K/yr orphan.
+    "cardio_metabolic.liver.pediatric_cholestasis": {
+        "us":  {"patientsK": 5,    "wtpPct": 75, "priceK": 200},
+        "eu":  {"patientsK": 8,    "wtpPct": 55, "priceK": 120},
+        "row": {"patientsK": 30,   "wtpPct": 14, "priceK": 40},
+    },
     "cardio_metabolic.liver.pld_adpkd": {
         "us":  {"patientsK": 20,    "wtpPct": 65, "priceK": 13},
         "eu":  {"patientsK": 25,    "wtpPct": 55, "priceK": 7},
@@ -482,6 +503,8 @@ PEN_PCT = {
     "cardio_metabolic.liver.hbv_functional_cure": 4,
     "cardio_metabolic.liver.mash": 8,
     "cardio_metabolic.liver.pld_adpkd": 15,
+    "cardio_metabolic.liver.pbc": 25,
+    "cardio_metabolic.liver.pediatric_cholestasis": 50,
     "cardio_metabolic.obesity.general": 5,
     "cardio_metabolic.obesity.rare_genetic.hypothalamic_obesity": 30,
     "cardio_metabolic.obesity.rare_genetic.monogenic_mc4r": 35,

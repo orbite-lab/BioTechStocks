@@ -10,7 +10,7 @@
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
-    "area_count_l3": 236,
+    "area_count_l3": 237,
     "area_count_l4": 28,
     "modality_count": 419,
     "companies": 73
@@ -2033,6 +2033,13 @@
         }
       },
       "lung": {
+        "nsclc_adjuvant": {
+          "companies": [
+            "MRNA"
+          ],
+          "count": 1,
+          "rare": false
+        },
         "nsclc_driver": {
           "companies": [
             "4502",
@@ -2130,11 +2137,10 @@
             "AZN",
             "BMY",
             "MRK",
-            "MRNA",
             "PFE",
             "RHHBY"
           ],
-          "count": 7,
+          "count": 6,
           "rare": false
         },
         "nsclc_io_resistant": {
@@ -5648,8 +5654,9 @@
       ]
     },
     "nsclc_all": {
-      "description": "NSCLC all driver/IO subtypes",
+      "description": "NSCLC all driver/IO subtypes + adjuvant peri-operative",
       "areas": [
+        "oncology.lung.nsclc_adjuvant",
         "oncology.lung.nsclc_io_combo",
         "oncology.lung.nsclc_io_resistant",
         "oncology.lung.nsclc_undruggable",

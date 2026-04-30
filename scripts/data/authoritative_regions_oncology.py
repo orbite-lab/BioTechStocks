@@ -278,6 +278,22 @@ REGIONS = {
         "eu":  {"patientsK": 100, "wtpPct": 60, "priceK": 100},
         "row": {"patientsK": 400, "wtpPct": 16, "priceK": 35},
     },
+    # Adjuvant / peri-operative NSCLC (resectable stage I-III): distinct
+    # competitive setting from advanced disease. Standard of care is
+    # Keytruda adjuvant (KEYNOTE-091, FDA 2023) +/- chemo neoadjuvant
+    # (KEYNOTE-671). Tecentriq adjuvant (IMpower010), Imfinzi PACIFIC
+    # (stage III chemoradiation). Emerging: cancer vaccines (Moderna INT
+    # mRNA-4157 INTerpath-009, BioNTech BNT122 autogene cevumeran),
+    # ctDNA MRD-guided escalation. Patient pool ~70K resected NSCLC/yr US
+    # (SEER stage I-III ~50% receive surgery), EU5 ~90K, ROW ~250K.
+    # Blended branded ~$170K/yr (1-year adjuvant Keytruda + perioperative chemo).
+    # source: NCI SEER NSCLC stage at diagnosis; Merck/Roche/AZ adjuvant
+    # NSCLC Ph3 trials + 10-Ks; ESMO/ASCO 2024-25 adjuvant updates.
+    "oncology.lung.nsclc_adjuvant": {
+        "us":  {"patientsK": 70,  "wtpPct": 75, "priceK": 170},
+        "eu":  {"patientsK": 90,  "wtpPct": 60, "priceK": 95},
+        "row": {"patientsK": 250, "wtpPct": 16, "priceK": 35},
+    },
     # Driver-agnostic IO-resistant NSCLC: pts who progressed on checkpoint
     # inhibitors (~50% of advanced NSCLC progress within 1-2y on pembro/IO).
     # US: ~70K incident io-progressors/yr; large unmet need bucket distinct
@@ -660,6 +676,7 @@ PEN_PCT = {
     "oncology.lung.nsclc_driver.trop2": 45,
     "oncology.lung.nsclc_undruggable": 55,
     "oncology.lung.nsclc_io_combo": 60,
+    "oncology.lung.nsclc_adjuvant": 50,
     "oncology.lung.nsclc_io_resistant": 35,
     "oncology.lung.sclc": 48,
     # (multi_tumor.* removed -- now _platform.*)

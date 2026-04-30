@@ -388,6 +388,21 @@ REGIONS = {
         "eu":  {"patientsK": 5,   "wtpPct": 80, "priceK": 480},
         "row": {"patientsK": 15,  "wtpPct": 22, "priceK": 200},
     },
+    # X-linked hypophosphatemia (XLH; PHEX LoF) + tumor-induced osteomalacia
+    # (TIO; benign mesenchymal tumor secreting FGF23): FGF23-driven phosphate-
+    # wasting disorders causing rickets/osteomalacia. XLH prevalence ~1:20,000
+    # -> ~25K US, ~30K EU diagnosed (Ultragenyx/KKD; XLH Network registry);
+    # ROW ~80K (largely undiagnosed). TIO ultra-rare ~1K US prevalent.
+    # Sole branded therapy: Crysvita (burosumab anti-FGF23 mAb, Kyowa Kirin +
+    # Ultragenyx ex-Asia) FDA 2018; SoC pre-2018 = oral phosphate + calcitriol
+    # (high adherence burden + nephrocalcinosis). Pricing: Crysvita WAC ~$200K
+    # pediatric, ~$300K adult (weight-based).
+    # source: NORD XLH; KKD 10-K (Crysvita ~$540M FY24); Ultragenyx 10-K.
+    "endocrine.calcium.xlh": {
+        "us":  {"patientsK": 25,  "wtpPct": 80, "priceK": 250},
+        "eu":  {"patientsK": 30,  "wtpPct": 60, "priceK": 150},
+        "row": {"patientsK": 80,  "wtpPct": 14, "priceK": 50},
+    },
     "endocrine.calcium.adh1": {
         "us":  {"patientsK": 10,    "wtpPct": 70, "priceK": 250},
         "eu":  {"patientsK": 12,    "wtpPct": 55, "priceK": 150},
@@ -515,6 +530,7 @@ PEN_PCT = {
     "cardio_metabolic.hypertension.resistant": 18,
     "cardio_metabolic.lipids.statin_generic": 10,
     "endocrine.calcium.hypophosphatasia": 60,
+    "endocrine.calcium.xlh": 65,
     "endocrine.lysosomal_storage.gaucher": 60,
     "endocrine.lysosomal_storage.fabry": 55,
     "endocrine.lysosomal_storage.pompe": 55,

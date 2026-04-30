@@ -1,0 +1,792 @@
+{
+  "company": {
+    "ticker": "4151",
+    "name": "Kyowa Kirin Co., Ltd.",
+    "currentPrice": 2400,
+    "sharesOut": 530,
+    "cash": 250000,
+    "currency": "JPY",
+    "phase": "commercial",
+    "subtitle": "Specialty pharma: Crysvita (burosumab anti-FGF23 XLH/TIO) + Poteligeo (mogamulizumab anti-CCR4 CTCL) + Nourianz (istradefylline A2A PD adjunct) + nephrology legacy (Nesp/Regpara); rocatinlimab (anti-OX40 atopic dermatitis Ph3, Amgen-partnered $1.25B+) flagship pipeline",
+    "yahooTicker": "4151.T"
+  },
+  "assets": [
+    {
+      "id": "crysvita",
+      "name": "Crysvita (burosumab) - anti-FGF23 humanized IgG1 mAb (KKD discovery; Ultragenyx ex-Asia license)",
+      "stage": "Commercial (XLH FDA 2018 ages 6mo+; TIO FDA 2020; full geo footprint)",
+      "modality": "antibody.monoclonal.anti_fgf23",
+      "targets": [
+        "FGF23"
+      ],
+      "indications": [
+        {
+          "id": "xlh_tio",
+          "name": "X-linked hypophosphatemia (XLH) + tumor-induced osteomalacia (TIO; FGF23-driven phosphate wasting)",
+          "area": "endocrine.calcium.xlh",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 80,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 30,
+                "wtpPct": 60,
+                "priceK": 150
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 14,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 18,
+                "wtpPct": 55,
+                "priceK": 150
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Crysvita ~25-30% of US XLH diagnosed treated (peak ~50%); growing on adult conversion + TIO label",
+              "us.priceK": "Crysvita WAC weight-banded ~$200-300K/yr blended (~$250K)",
+              "us.note": "KKD books Asia revenue + 50% Ultragenyx profit-share US/EU. Rough Crysvita full-geo run rate ~$540M FY24"
+            },
+            "penPct": 65,
+            "cagrPct": 8,
+            "peakYear": 2031,
+            "salesM": 540,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "poteligeo",
+      "name": "Poteligeo (mogamulizumab) - defucosylated anti-CCR4 humanized IgG1 mAb (POTELLIGENT ADCC platform)",
+      "stage": "Commercial (CTCL Mycosis fungoides + Sezary FDA 2018; ATL Japan only)",
+      "modality": "antibody.monoclonal.anti_ccr4",
+      "targets": [
+        "CCR4"
+      ],
+      "indications": [
+        {
+          "id": "ctcl",
+          "name": "Cutaneous T-cell lymphoma (Mycosis fungoides + Sezary syndrome 2L+)",
+          "area": "oncology.hematology.nhl.tcell",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8,
+                "wtpPct": 60,
+                "priceK": 130
+              },
+              "eu": {
+                "patientsK": 10,
+                "wtpPct": 42,
+                "priceK": 75
+              },
+              "row": {
+                "patientsK": 20,
+                "wtpPct": 10,
+                "priceK": 28
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 19.1,
+                "wtpPct": 65,
+                "priceK": 220
+              },
+              "eu": {
+                "reachPct": 12.7,
+                "wtpPct": 45,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 6.4,
+                "wtpPct": 12,
+                "priceK": 45
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Poteligeo CTCL ~$200M; competitive vs Targretin (bexarotene), Adcetris (BV CD30), HDAC inhibitors",
+              "us.priceK": "Poteligeo WAC ~$220K/yr (~$18K/mo)"
+            },
+            "penPct": 40,
+            "cagrPct": 4,
+            "peakYear": 2030,
+            "salesM": 200,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "nourianz",
+      "name": "Nourianz/Nouriast (istradefylline) - selective adenosine A2A receptor antagonist",
+      "stage": "Commercial (PD off-episodes adjunct to L-DOPA FDA 2019, Japan 2013; US LOE 2026-2027)",
+      "modality": "small_molecule.gpcr.adenosine_a2a_antagonist",
+      "targets": [
+        "ADORA2A"
+      ],
+      "indications": [
+        {
+          "id": "parkinson_off",
+          "name": "Parkinson disease 'off' episodes (L-DOPA adjunct)",
+          "area": "cns.neurodegeneration.parkinson_disease",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1000,
+                "wtpPct": 80,
+                "priceK": 8
+              },
+              "eu": {
+                "patientsK": 1200,
+                "wtpPct": 65,
+                "priceK": 4
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 30,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 60,
+                "priceK": 22
+              },
+              "eu": {
+                "reachPct": 0.3,
+                "wtpPct": 30,
+                "priceK": 12
+              },
+              "row": {
+                "reachPct": 0.8,
+                "wtpPct": 15,
+                "priceK": 6
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Nourianz US first-in-class A2A antagonist for off-episodes; competitive vs Gocovri (amantadine ER) + apomorphine + safinamide",
+              "us.priceK": "Nourianz WAC ~$22K/yr; LOE 2026-2027 in US"
+            },
+            "penPct": 50,
+            "cagrPct": -8,
+            "peakYear": 2026,
+            "salesM": 140,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "nesp",
+      "name": "Nesp/Espogen (darbepoetin alfa) - hyperglycosylated recombinant erythropoietin (Amgen license JP)",
+      "stage": "Commercial (Japan/Asia ESRD anemia; biosimilar erosion ongoing)",
+      "modality": "recombinant_protein.cytokine.erythropoietin",
+      "targets": [
+        "EPOR"
+      ],
+      "indications": [
+        {
+          "id": "ckd_anemia",
+          "name": "Anemia of chronic kidney disease (dialysis + non-dialysis CKD)",
+          "area": "nephrology.ckd.anemia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 600,
+                "wtpPct": 65,
+                "priceK": 18
+              },
+              "eu": {
+                "patientsK": 800,
+                "wtpPct": 50,
+                "priceK": 11
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 25,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Nesp Asia (Japan + Korea) market only; Aranesp/Mircera dominate ex-Asia; biosimilar erosion in Japan",
+              "row.priceK": "Asia ESA pricing $6-10K/yr blended"
+            },
+            "penPct": 60,
+            "cagrPct": -10,
+            "peakYear": 2025,
+            "salesM": 130,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "regpara",
+      "name": "Regpara (cinacalcet) - calcimimetic CaSR allosteric activator (Amgen Sensipar JP partnership; LOE)",
+      "stage": "Commercial (Japan/Asia SHPT in dialysis CKD; generic erosion)",
+      "modality": "small_molecule.gpcr.casr_calcimimetic",
+      "targets": [
+        "CASR"
+      ],
+      "indications": [
+        {
+          "id": "shpt_dialysis",
+          "name": "Secondary hyperparathyroidism in CKD on dialysis",
+          "area": "nephrology.ckd.shpt",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 350,
+                "wtpPct": 55,
+                "priceK": 8
+              },
+              "eu": {
+                "patientsK": 500,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 2000,
+                "wtpPct": 10,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 6,
+                "wtpPct": 30,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Regpara Asia commercial (Japan/Korea); Sensipar US Amgen, generic post-2018",
+              "row.priceK": "Asia generic pricing $3-5K/yr"
+            },
+            "penPct": 55,
+            "cagrPct": -5,
+            "peakYear": 2025,
+            "salesM": 90,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "rocatinlimab",
+      "name": "Rocatinlimab (KHK4083) - anti-OX40 humanized IgG1 mAb (Amgen license 2021: $1.25B upfront + $850M milestones + tiered royalties)",
+      "stage": "Phase 3 ROCKET program (atopic dermatitis adult + pediatric; Amgen-led; readouts 2026-2027)",
+      "modality": "antibody.monoclonal.anti_ox40",
+      "targets": [
+        "TNFRSF4"
+      ],
+      "indications": [
+        {
+          "id": "atopic_dermatitis",
+          "name": "Moderate-to-severe atopic dermatitis (Ph3 ROCKET-1/2/3; first-in-class T-cell depleting)",
+          "area": "dermatology.inflammatory_derm.atopic_dermatitis_systemic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 700,
+                "wtpPct": 40,
+                "priceK": 16
+              },
+              "row": {
+                "patientsK": 4000,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 65,
+                "priceK": 50
+              },
+              "eu": {
+                "reachPct": 0.7,
+                "wtpPct": 45,
+                "priceK": 30
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 12,
+                "priceK": 10
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Rocatinlimab competitive vs Dupixent (REGN/SNY ~$13B), Adbry (LEO), Cibinqo (PFE oral), Rinvoq (ABBV oral); ~3-5% share if approved given OX40 disease-modification narrative",
+              "us.priceK": "Biologic AD pricing $40-60K/yr; KKD 50/50 profit-share economics with Amgen post-launch"
+            },
+            "penPct": 35,
+            "cagrPct": 12,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "kw_3357",
+      "name": "Acoalan (antithrombin gamma) - recombinant antithrombin III (Japan-only)",
+      "stage": "Commercial (Japan congenital antithrombin deficiency; small)",
+      "modality": "recombinant_protein.serpin.antithrombin",
+      "targets": [
+        "SERPINC1"
+      ],
+      "indications": [
+        {
+          "id": "at_deficiency",
+          "name": "Congenital antithrombin III deficiency (Japan only)",
+          "area": "hematology.rare_blood.antithrombin_deficiency",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 15,
+                "wtpPct": 70,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 50,
+                "priceK": 50
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 12,
+                "priceK": 18
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 8,
+                "wtpPct": 30,
+                "priceK": 100
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Acoalan Japan-only (KKD originated); ex-JP ATIII = Grifols Thrombate III + Anthrombin",
+              "row.priceK": "Japan recombinant ATIII pricing ¥10-15M per acute course"
+            },
+            "penPct": 60,
+            "cagrPct": 2,
+            "peakYear": 2030,
+            "salesM": 30,
+            "salesYear": 2025
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 4,
+        "commercialMult": 2,
+        "commercialRevM": 380000,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "crysvita": {
+          "xlh_tio": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "poteligeo": {
+          "ctcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "nourianz": {
+          "parkinson_off": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "nesp": {
+          "ckd_anemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.2
+          }
+        },
+        "regpara": {
+          "shpt_dialysis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "rocatinlimab": {
+          "atopic_dermatitis": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.3
+          }
+        },
+        "kw_3357": {
+          "at_deficiency": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 5,
+        "commercialMult": 2.8,
+        "commercialRevM": 430000,
+        "milestones": 100,
+        "dil": 0
+      },
+      "assumptions": {
+        "crysvita": {
+          "xlh_tio": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "poteligeo": {
+          "ctcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "nourianz": {
+          "parkinson_off": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "nesp": {
+          "ckd_anemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.25
+          }
+        },
+        "regpara": {
+          "shpt_dialysis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.35
+          }
+        },
+        "rocatinlimab": {
+          "atopic_dermatitis": {
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.5
+          }
+        },
+        "kw_3357": {
+          "at_deficiency": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 40,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 7,
+        "commercialMult": 3.5,
+        "commercialRevM": 480000,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "crysvita": {
+          "xlh_tio": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "poteligeo": {
+          "ctcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "nourianz": {
+          "parkinson_off": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "nesp": {
+          "ckd_anemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "regpara": {
+          "shpt_dialysis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "rocatinlimab": {
+          "atopic_dermatitis": {
+            "pos": 65,
+            "apr": 82,
+            "pen": 0.7
+          }
+        },
+        "kw_3357": {
+          "at_deficiency": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 10,
+        "commercialMult": 5,
+        "commercialRevM": 560000,
+        "milestones": 400,
+        "dil": 0
+      },
+      "assumptions": {
+        "crysvita": {
+          "xlh_tio": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "poteligeo": {
+          "ctcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "nourianz": {
+          "parkinson_off": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "nesp": {
+          "ckd_anemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.35
+          }
+        },
+        "regpara": {
+          "shpt_dialysis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.45
+          }
+        },
+        "rocatinlimab": {
+          "atopic_dermatitis": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 0.95
+          }
+        },
+        "kw_3357": {
+          "at_deficiency": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 14,
+        "commercialMult": 7,
+        "commercialRevM": 700000,
+        "milestones": 800,
+        "dil": 0
+      },
+      "assumptions": {
+        "crysvita": {
+          "xlh_tio": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "poteligeo": {
+          "ctcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "nourianz": {
+          "parkinson_off": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "nesp": {
+          "ckd_anemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "regpara": {
+          "shpt_dialysis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "rocatinlimab": {
+          "atopic_dermatitis": {
+            "pos": 92,
+            "apr": 96,
+            "pen": 1.25
+          }
+        },
+        "kw_3357": {
+          "at_deficiency": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "rocatinlimab",
+      "indication": "atopic_dermatitis",
+      "title": "Rocatinlimab ROCKET-1 Ph3 topline (atopic dermatitis adult; Amgen-led)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 50,
+      "success_pos": 90,
+      "success_apr": 95,
+      "_source": "https://www.kyowakirin.com/news_releases",
+      "_confidence": "high"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-06-30",
+      "asset": "rocatinlimab",
+      "indication": "atopic_dermatitis",
+      "title": "Rocatinlimab ROCKET-2/3 Ph3 readouts + monotherapy/combo data package for FDA filing",
+      "type": "phase3_data",
+      "binary": false,
+      "_source": "https://www.kyowakirin.com/news_releases",
+      "_confidence": "medium"
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "crysvita",
+      "indication": "xlh_tio",
+      "title": "Crysvita FY26 revenue restatement / Ultragenyx royalty audit clarification",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.kyowakirin.com/ir",
+      "_confidence": "medium"
+    }
+  ]
+}

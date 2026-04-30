@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-30T14:44:44Z",
-    "target_count": 383,
-    "total_assets": 714,
-    "assets_with_targets": 660,
-    "multi_modality_count": 47,
-    "multi_disease_count": 171
+    "generated": "2026-04-30T14:48:52Z",
+    "target_count": 385,
+    "total_assets": 721,
+    "assets_with_targets": 667,
+    "multi_modality_count": 48,
+    "multi_disease_count": 173
   },
   "targets": {
     "ABL1": {
@@ -282,15 +282,27 @@
     },
     "ADORA2A": {
       "companies": [
+        "4151",
         "4503"
       ],
       "modalities": [
-        "small_molecule.gpcr.a2a_adenosine_agonist"
+        "small_molecule.gpcr.a2a_adenosine_agonist",
+        "small_molecule.gpcr.adenosine_a2a_antagonist"
       ],
       "areas": [
-        "cardio_metabolic.imaging.cardiac_stress"
+        "cardio_metabolic.imaging.cardiac_stress",
+        "cns.neurodegeneration.parkinson_disease"
       ],
       "assets": [
+        {
+          "ticker": "4151",
+          "asset": "nourianz",
+          "name": "Nourianz/Nouriast (istradefylline) - selective adenosine A2A receptor antagonist",
+          "modality": "small_molecule.gpcr.adenosine_a2a_antagonist",
+          "areas": [
+            "cns.neurodegeneration.parkinson_disease"
+          ]
+        },
         {
           "ticker": "4503",
           "asset": "lexiscan",
@@ -301,17 +313,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 921.0,
-      "totalSOM": 349.3,
-      "totalSales": 233.0,
-      "cagrPct": -2.0,
+      "totalTAM": 14941.0,
+      "totalSOM": 632.3,
+      "totalSales": 373.0,
+      "cagrPct": -4.7,
       "peakYear": 2027
     },
     "ADRB1": {
@@ -2331,15 +2343,27 @@
     },
     "CASR": {
       "companies": [
+        "4151",
         "BBIO"
       ],
       "modalities": [
-        "small_molecule.gpcr.casr_antagonist"
+        "small_molecule.gpcr.casr_antagonist",
+        "small_molecule.gpcr.casr_calcimimetic"
       ],
       "areas": [
-        "endocrine.calcium.adh1"
+        "endocrine.calcium.adh1",
+        "nephrology.ckd.shpt"
       ],
       "assets": [
+        {
+          "ticker": "4151",
+          "asset": "regpara",
+          "name": "Regpara (cinacalcet) - calcimimetic CaSR allosteric activator (Amgen Sensipar JP partnership; LOE)",
+          "modality": "small_molecule.gpcr.casr_calcimimetic",
+          "areas": [
+            "nephrology.ckd.shpt"
+          ]
+        },
         {
           "ticker": "BBIO",
           "asset": "encal",
@@ -2350,17 +2374,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 3040.0,
-      "totalSOM": 1650.5,
-      "totalSales": 0.0,
-      "cagrPct": 0.0,
+      "totalTAM": 5980.0,
+      "totalSOM": 1794.5,
+      "totalSales": 90.0,
+      "cagrPct": -0.4,
       "peakYear": 2031
     },
     "CBS": {
@@ -2396,6 +2420,40 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2032
+    },
+    "CCR4": {
+      "companies": [
+        "4151"
+      ],
+      "modalities": [
+        "antibody.monoclonal.anti_ccr4"
+      ],
+      "areas": [
+        "oncology.hematology.nhl.tcell"
+      ],
+      "assets": [
+        {
+          "ticker": "4151",
+          "asset": "poteligeo",
+          "name": "Poteligeo (mogamulizumab) - defucosylated anti-CCR4 humanized IgG1 mAb (POTELLIGENT ADCC platform)",
+          "modality": "antibody.monoclonal.anti_ccr4",
+          "areas": [
+            "oncology.hematology.nhl.tcell"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 995.0,
+      "totalSOM": 299.7,
+      "totalSales": 200.0,
+      "cagrPct": 4.0,
+      "peakYear": 2030
     },
     "CCR5": {
       "companies": [
@@ -5522,15 +5580,26 @@
     },
     "EPOR": {
       "companies": [
+        "4151",
         "AMGN"
       ],
       "modalities": [
-        "recombinant_protein.cytokine.epo_long_acting"
+        "recombinant_protein.cytokine.epo_long_acting",
+        "recombinant_protein.cytokine.erythropoietin"
       ],
       "areas": [
         "nephrology.ckd.anemia"
       ],
       "assets": [
+        {
+          "ticker": "4151",
+          "asset": "nesp",
+          "name": "Nesp/Espogen (darbepoetin alfa) - hyperglycosylated recombinant erythropoietin (Amgen license JP)",
+          "modality": "recombinant_protein.cytokine.erythropoietin",
+          "areas": [
+            "nephrology.ckd.anemia"
+          ]
+        },
         {
           "ticker": "AMGN",
           "asset": "aranesp",
@@ -5541,16 +5610,16 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "recombinant_protein"
       ],
       "totalTAM": 12860.0,
-      "totalSOM": 2084.3,
-      "totalSales": 1389.0,
+      "totalSOM": 2324.3,
+      "totalSales": 1519.0,
       "cagrPct": -10.0,
       "peakYear": 2025
     },
@@ -6508,6 +6577,40 @@
       "totalSales": 0.0,
       "cagrPct": 50.0,
       "peakYear": 2032
+    },
+    "FGF23": {
+      "companies": [
+        "4151"
+      ],
+      "modalities": [
+        "antibody.monoclonal.anti_fgf23"
+      ],
+      "areas": [
+        "endocrine.calcium.xlh"
+      ],
+      "assets": [
+        {
+          "ticker": "4151",
+          "asset": "crysvita",
+          "name": "Crysvita (burosumab) - anti-FGF23 humanized IgG1 mAb (KKD discovery; Ultragenyx ex-Asia license)",
+          "modality": "antibody.monoclonal.anti_fgf23",
+          "areas": [
+            "endocrine.calcium.xlh"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "antibody"
+      ],
+      "totalTAM": 8260.0,
+      "totalSOM": 1636.6,
+      "totalSales": 540.0,
+      "cagrPct": 8.0,
+      "peakYear": 2031
     },
     "FGFR1": {
       "companies": [
@@ -15830,15 +15933,26 @@
     },
     "SERPINC1": {
       "companies": [
+        "4151",
         "GRF"
       ],
       "modalities": [
-        "plasma_protein.serpin.antithrombin"
+        "plasma_protein.serpin.antithrombin",
+        "recombinant_protein.serpin.antithrombin"
       ],
       "areas": [
         "hematology.rare_blood.antithrombin_deficiency"
       ],
       "assets": [
+        {
+          "ticker": "4151",
+          "asset": "kw_3357",
+          "name": "Acoalan (antithrombin gamma) - recombinant antithrombin III (Japan-only)",
+          "modality": "recombinant_protein.serpin.antithrombin",
+          "areas": [
+            "hematology.rare_blood.antithrombin_deficiency"
+          ]
+        },
         {
           "ticker": "GRF",
           "asset": "thrombate",
@@ -15849,18 +15963,19 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
-      "modalityClassCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
       "areaCount": 1,
       "modalityClasses": [
-        "plasma_protein"
+        "plasma_protein",
+        "recombinant_protein"
       ],
       "totalTAM": 1637.8,
-      "totalSOM": 140.0,
-      "totalSales": 33.0,
-      "cagrPct": 0.0,
-      "peakYear": 2026
+      "totalSOM": 332.0,
+      "totalSales": 63.0,
+      "cagrPct": 1.2,
+      "peakYear": 2028
     },
     "SERPING1": {
       "companies": [
@@ -17567,15 +17682,26 @@
     },
     "TNFRSF4": {
       "companies": [
+        "4151",
         "AMGN"
       ],
       "modalities": [
-        "antibody.cytokine.ox40_blocker"
+        "antibody.cytokine.ox40_blocker",
+        "antibody.monoclonal.anti_ox40"
       ],
       "areas": [
         "dermatology.inflammatory_derm.atopic_dermatitis_systemic"
       ],
       "assets": [
+        {
+          "ticker": "4151",
+          "asset": "rocatinlimab",
+          "name": "Rocatinlimab (KHK4083) - anti-OX40 humanized IgG1 mAb (Amgen license 2021: $1.25B upfront + $850M milestones + tiered royalties)",
+          "modality": "antibody.monoclonal.anti_ox40",
+          "areas": [
+            "dermatology.inflammatory_derm.atopic_dermatitis_systemic"
+          ]
+        },
         {
           "ticker": "AMGN",
           "asset": "rocatinlimab",
@@ -17586,17 +17712,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "antibody"
       ],
       "totalTAM": 13755.0,
-      "totalSOM": 717.6,
+      "totalSOM": 1037.1,
       "totalSales": 0.0,
-      "cagrPct": 45.0,
+      "cagrPct": 34.8,
       "peakYear": 2031
     },
     "TNFRSF8": {

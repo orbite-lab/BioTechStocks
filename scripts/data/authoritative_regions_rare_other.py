@@ -789,6 +789,19 @@ REGIONS = {
         "eu":  {"patientsK": 800,   "wtpPct": 50, "priceK": 11},
         "row": {"patientsK": 3000,  "wtpPct": 12, "priceK": 4},
     },
+    # Secondary hyperparathyroidism (SHPT) in CKD: elevated PTH from impaired
+    # vitamin D activation + hyperphosphatemia in dialysis-dependent CKD.
+    # ~500K US dialysis pts, ~700K EU, ~3M ROW; ~70% develop SHPT requiring
+    # treatment. Class: Sensipar (cinacalcet AMGN; generic 2018 ~$200M
+    # residual), Parsabiv (etelcalcetide AMGN IV ~$700M), Regpara (KKD JP),
+    # active vitamin D analogs (paricalcitol/Zemplar, calcitriol generic).
+    # Class peak ~$2-3B globally; generic erosion ongoing.
+    # source: USRDS dialysis registry; Amgen 10-K; KDIGO CKD-MBD guidelines.
+    "nephrology.ckd.shpt": {
+        "us":  {"patientsK": 350,   "wtpPct": 55, "priceK": 8},
+        "eu":  {"patientsK": 500,   "wtpPct": 40, "priceK": 5},
+        "row": {"patientsK": 2000,  "wtpPct": 10, "priceK": 2},
+    },
     # Anticoagulant reversal (warfarin/DOAC bleeding emergencies):
     # ~150K US emergency reversal events/yr, ~200K EU, ~600K ROW. Class:
     # Kcentra/Beriplex (CSL 4F-PCC ~$700M), Andexxa (Astellas/Portola
@@ -954,6 +967,7 @@ PEN_PCT = {
     "women_health.fertility.ivf": 35,
     "nephrology.ckd.pruritus": 25,
     "nephrology.ckd.anemia": 60,
+    "nephrology.ckd.shpt": 55,
     "cardio_metabolic.thrombosis.reversal": 70,
     "urology.lower_tract.oab": 35,
     "cardio_metabolic.imaging.cardiac_stress": 30,

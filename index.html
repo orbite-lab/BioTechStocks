@@ -1010,6 +1010,7 @@ async function main(){
   let mktNavPath=[]; // Market explorer drill-down path (e.g. ["oncology","hematology","cll_nhl"])
   let mktSortMode="tam"; // tam | som | sales | pen
   let mktSearch=""; // Market explorer search query (matches disease names + synonym groups + drug names)
+  let mktPipelineOnly=false; // Market explorer: filter to leaves with no commercial product
   let techNavPath=[]; // Tech explorer drill-down path (e.g. ["cell_therapy","car_t_autologous"])
   let techSortMode="som"; // tam | som | sales | count
   let targetSort="companies"; // companies | modalities | diseases | name
@@ -1702,6 +1703,50 @@ async function main(){
           areaData[p].somCapped = true;
         }
       });
+      // Mark each leaf area as "pipeline-only" if no entry has salesM>0 and no
+      // entry has a commercial/nda_filed stage.
+      const isPipelineOnlyLeaf = (entries) => {
+        if (!entries || entries.length === 0) return false;
+        for (const e of entries) {
+          if ((e.sales || 0) > 0) return false;
+          const st = (e.stage || '').toLowerCase();
+          if (st.includes('commercial') || st.includes('nda_filed') || st.includes('approved')) return false;
+        }
+        return true;
+      };
+      Object.keys(areaData).forEach(p => {
+        areaData[p].pipelineOnly = isPipelineOnlyLeaf(areaData[p].companies);
+      });
+      // For each path, compute (a) leafCount = number of distinct leaf areas (areas
+      // that actually carry companies) beneath it, (b) pipelineLeafCount = subset of
+      // those that are pipeline-only, and (c) maxDepth = depth of the deepest descendant.
+      const _allPaths = Object.keys(areaData);
+      Object.keys(areaData).forEach(p => {
+        const pref = p + '.';
+        const leafSet = new Set();
+        const pipeSet = new Set();
+        let maxD = p.split('.').length;
+        if ((areaData[p].companies || []).length > 0) {
+          leafSet.add(p);
+          if (areaData[p].pipelineOnly) pipeSet.add(p);
+        }
+        for (const k of _allPaths) {
+          if (!k.startsWith(pref)) continue;
+          const d = k.split('.').length;
+          if (d > maxD) maxD = d;
+          if ((areaData[k].companies || []).length > 0) {
+            leafSet.add(k);
+            if (areaData[k].pipelineOnly) pipeSet.add(k);
+          }
+        }
+        areaData[p].leafCount = leafSet.size;
+        areaData[p].pipelineLeafCount = pipeSet.size;
+        areaData[p].maxDepth = maxD;
+      });
+      // Total end-leaf counts (root level)
+      const _rootLeafCount = Object.keys(areaData).filter(k => (areaData[k].companies || []).length > 0).length;
+      const _rootPipeLeafCount = Object.keys(areaData).filter(k => (areaData[k].companies || []).length > 0 && areaData[k].pipelineOnly).length;
+      const _rootMaxDepth = Object.keys(areaData).reduce((m,k) => Math.max(m, k.split('.').length), 1);
 
       const fmtB = v => v >= 1000 ? '$'+(v/1000).toFixed(1)+'B' : '$'+Math.round(v)+'M';
       const nice = s => window._nicelabel ? window._nicelabel(s) : s.replace(/_/g,' ');
@@ -1752,6 +1797,15 @@ async function main(){
         children = [...matchedLeafPaths].map(k => ({ path: k, name: k, ...areaData[k] }));
         // Sort by current sort mode (re-applied below)
       }
+      // Pipeline-only filter: keep branches that contain at least one pipeline-only leaf.
+      // At a leaf node, keep only if it is itself pipeline-only.
+      if (mktPipelineOnly) {
+        children = children.filter(c => {
+          const hasComps = (c.companies || []).length > 0;
+          if (hasComps) return !!c.pipelineOnly;
+          return (c.pipelineLeafCount || 0) > 0;
+        });
+      }
       children.sort((a,b) => {
         if (mktSortMode === 'tam') return b.tam - a.tam;
         if (mktSortMode === 'som') return b.som - a.som;
@@ -1770,7 +1824,10 @@ async function main(){
         const active = mktSortMode===k;
         h+=`<span class="fchip ${active?'active':''}" onclick="window._mktSort('${k}')" style="padding:2px 8px;font-size:.65rem">${lbl}</span>`;
       });
-      h+='</div></div></div>';
+      h+='</div>';
+      // Pipeline-only filter chip
+      h+=`<span class="fchip ${mktPipelineOnly?'active':''}" onclick="window._mktTogglePipelineOnly()" title="Show only end-leaves with no commercial product (pure pipeline)" style="padding:2px 8px;font-size:.65rem;border-color:${mktPipelineOnly?'#22d3ee':'#ffffff22'};color:${mktPipelineOnly?'#22d3ee':''}">⚗️ Pipeline only</span>`;
+      h+='</div></div>';
 
       // Breadcrumb
       h+='<div style="display:flex;flex-wrap:wrap;align-items:center;gap:4px;padding:10px 0;font-size:.75rem;font-family:var(--mono)">';
@@ -1786,6 +1843,7 @@ async function main(){
       // At root (mktNavPath=[]), currentData is null so we synthesize totals from L1
       // children -- safe because L1 trees don't share leaves so sums don't double-count.
       let statsTam, statsSom, statsSales, statsCount, statsLabel, somCapped = false, somRaw = 0;
+      let statsLeaves = 0, statsMaxDepth = 0, statsPipeLeaves = 0;
       if (currentData) {
         statsTam = currentData.tam;
         statsSom = currentData.som;
@@ -1794,6 +1852,9 @@ async function main(){
         statsLabel = isLeaf ? 'Drugs' : 'Sub-markets';
         somCapped = !!currentData.somCapped;
         somRaw = currentData.somRaw || 0;
+        statsLeaves = currentData.leafCount || 0;
+        statsPipeLeaves = currentData.pipelineLeafCount || 0;
+        statsMaxDepth = currentData.maxDepth || mktNavPath.length;
       } else {
         // Root view: aggregate across all L1s
         statsTam = children.reduce((s,c) => s + (c.tam || 0), 0);
@@ -1801,6 +1862,9 @@ async function main(){
         statsSales = children.reduce((s,c) => s + (c.sales || 0), 0);
         statsCount = children.length;
         statsLabel = 'L1 markets';
+        statsLeaves = _rootLeafCount;
+        statsPipeLeaves = _rootPipeLeafCount;
+        statsMaxDepth = _rootMaxDepth;
       }
       const penOfTam = statsTam > 0 ? (statsSales/statsTam*100).toFixed(1) : 0;
       h+='<div style="display:flex;gap:16px;padding:8px 12px;background:#0f1117;border-radius:6px;margin-bottom:12px;flex-wrap:wrap">';
@@ -1811,6 +1875,13 @@ async function main(){
       h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">${currentData?'2025 Sales':'Total Sales'}</div><div style="font-size:1rem;font-weight:700;color:#22c55e;font-family:var(--mono)">${fmtB(statsSales)}</div></div>`;
       h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">Market penetration</div><div style="font-size:1rem;font-weight:700;color:#fbbf24;font-family:var(--mono)">${penOfTam}%</div></div>`;
       h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">${statsLabel}</div><div style="font-size:1rem;font-weight:700;color:#e2e4ea;font-family:var(--mono)">${statsCount}</div></div>`;
+      if (!isLeaf) {
+        const _curDepth = mktNavPath.length;
+        const _depthRange = statsMaxDepth > _curDepth ? `L${_curDepth+1}–L${statsMaxDepth}` : `L${statsMaxDepth}`;
+        const _pipePct = statsLeaves > 0 ? Math.round(100*statsPipeLeaves/statsLeaves) : 0;
+        h+=`<div title="Distinct disease leaves (deepest tagged areas) reachable from here"><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">End leaves</div><div style="font-size:1rem;font-weight:700;color:#22d3ee;font-family:var(--mono)">${statsLeaves} <span style="color:#a3e635;font-size:.7rem" title="Pipeline-only leaves (no commercial product yet)">(⚗️ ${statsPipeLeaves})</span></div></div>`;
+        h+=`<div title="Depth range of descendants (L1=root, L4=deepest sub-segment)"><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">Depth</div><div style="font-size:1rem;font-weight:700;color:#94a3b8;font-family:var(--mono)">${_depthRange}</div></div>`;
+      }
       h+='</div>';
 
       // Search synonym group banner
@@ -1847,6 +1918,9 @@ async function main(){
           const coCount = areaData[c.path]?.companies?.length || 0;
           const level = c.path.split('.').length;
           const subAreas = Object.keys(areaData).filter(k => k.startsWith(c.path + '.') && k.split('.').length === level+1).length;
+          const cardLeaves = areaData[c.path]?.leafCount || 0;
+          const cardMaxD = areaData[c.path]?.maxDepth || level;
+          const cardDepthTxt = cardMaxD > level ? `→L${cardMaxD}` : '';
           const cardFlag = c.somCapped ? '*' : '';
           const cardTitle = c.somCapped ? `title="Drug SOMs overlap -- capped at TAM (raw sum was ${fmtB(c.somRaw)})"` : '';
           h+=`<div onclick="window._mktDrill('${c.path}')" style="grid-column:span ${colSpan};background:#0f1117;border:1px solid #ffffff12;border-radius:8px;padding:${tierPad}px;cursor:pointer;transition:border-color 0.15s;display:flex;flex-direction:column;justify-content:space-between;min-height:${tierPad*6}px" onmouseover="this.style.borderColor='#f97316'" onmouseout="this.style.borderColor='#ffffff12'">`;
@@ -1854,7 +1928,10 @@ async function main(){
           // When searching, show full path (e.g. "oncology › hematology › cml") for clarity
           const cardLabel = searchActive ? c.path.split('.').map(seg => nice(seg)).join(' › ') : nice(c.name);
           h+=`<div style="font-size:${tierTitle}rem;font-weight:700;margin-bottom:4px;color:#e2e4ea">${cardLabel}</div>`;
-          h+=`<div style="font-size:${tierSub}rem;color:var(--text2);font-family:var(--mono);margin-bottom:10px">${subAreas>0?subAreas+' sub-markets':coCount+' drugs'}</div>`;
+          const subTxt = subAreas > 0
+            ? `${subAreas} sub · ${cardLeaves} leaves${cardDepthTxt?' '+cardDepthTxt:''} · ${coCount} drugs`
+            : `${coCount} drugs`;
+          h+=`<div style="font-size:${tierSub}rem;color:var(--text2);font-family:var(--mono);margin-bottom:10px">${subTxt}</div>`;
           h+='</div>';
           h+=`<div>`;
           h+=`<div style="display:flex;justify-content:space-between;font-size:${tierNum}rem;font-family:var(--mono);font-weight:700;margin-bottom:4px"><span style="color:#f97316">${fmtB(c.tam)}</span><span style="color:#a855f7" ${cardTitle}>${fmtB(c.som)}${cardFlag}</span></div>`;
@@ -3092,6 +3169,7 @@ async function main(){
   window._stripSort=function(s){stripSort=s;render();};
   window._mktSort=function(s){mktSortMode=s;render();};
   window._mktDrill=function(path){mktNavPath=path.split('.');mktSearch="";activeNavSec='sec-markets';render();window.scrollTo({top:0,behavior:'smooth'});};
+  window._mktTogglePipelineOnly=function(){mktPipelineOnly=!mktPipelineOnly;render();};
   window._mktGo=function(depth){mktNavPath=typeof depth==='number'?mktNavPath.slice(0,depth):depth;mktSearch="";render();};
   // Debounced search; preserve focus + cursor position across re-render
   let _mktSearchDebounce=null;

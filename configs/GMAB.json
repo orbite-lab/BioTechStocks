@@ -267,23 +267,23 @@
             },
             "company_slice": {
               "us": {
-                "reachPct": 3,
+                "reachPct": 0.8,
                 "wtpPct": 80,
                 "priceK": 200
               },
               "eu": {
-                "reachPct": 2,
+                "reachPct": 0.5,
                 "wtpPct": 65,
                 "priceK": 110
               },
               "row": {
-                "reachPct": 1,
+                "reachPct": 0.25,
                 "wtpPct": 18,
                 "priceK": 40
               }
             },
             "company_slice_sources": {
-              "us.reachPct": "JNJ Rybrevant small share (Tagrisso dominant) + 5-7% Genmab royalty",
+              "us.reachPct": "Effective ~0.8% (JNJ Rybrevant small EGFR share × 5-7% royalty); SOM compressed to ~2x sales",
               "us.priceK": "Rybrevant pricing"
             },
             "penPct": 70,
@@ -296,19 +296,18 @@
       ]
     },
     {
-      "id": "jnj_bispecific_royalties",
-      "name": "Tecvayli + Talvey royalties - JNJ commercialized myeloma bispecifics (~5-6% royalty)",
-      "stage": "Commercial (R/R MM late lines)",
+      "id": "tecvayli_royalty",
+      "name": "Tecvayli (teclistamab) royalty - JNJ commercialized BCMAxCD3 bispecific (~5% royalty)",
+      "stage": "Commercial (R/R MM 4L+)",
       "modality": "antibody.bispecific.bcma_cd3",
       "targets": [
         "TNFRSF17",
-        "CD3",
-        "GPRC5D"
+        "CD3"
       ],
       "indications": [
         {
-          "id": "myeloma_4l_tcv",
-          "name": "Tecvayli (teclistamab) - BCMA x CD3 in R/R MM 4L+",
+          "id": "myeloma_4l",
+          "name": "Tecvayli BCMAxCD3 R/R MM 4L+",
           "area": "oncology.hematology.myeloma.4l_plus",
           "market": {
             "regions": {
@@ -330,23 +329,23 @@
             },
             "company_slice": {
               "us": {
-                "reachPct": 3,
+                "reachPct": 1.2,
                 "wtpPct": 75,
                 "priceK": 360
               },
               "eu": {
-                "reachPct": 2,
+                "reachPct": 0.8,
                 "wtpPct": 55,
                 "priceK": 200
               },
               "row": {
-                "reachPct": 0.5,
+                "reachPct": 0.2,
                 "wtpPct": 14,
                 "priceK": 70
               }
             },
             "company_slice_sources": {
-              "us.reachPct": "JNJ Tecvayli ~30% 4L+ MM bispecific share + 5% Genmab royalty",
+              "us.reachPct": "Effective ~1.2% (JNJ Tecvayli ~25% 4L+ bispecific share × 5% royalty)",
               "us.priceK": "Tecvayli WAC ~$360K/yr"
             },
             "penPct": 35,
@@ -355,10 +354,22 @@
             "salesM": 25,
             "salesYear": 2025
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "talvey_royalty",
+      "name": "Talvey (talquetamab) royalty - JNJ commercialized GPRC5DxCD3 bispecific (~5% royalty)",
+      "stage": "Commercial (R/R MM 2L-3L post-Tecvayli)",
+      "modality": "antibody.bispecific.gprc5d_cd3",
+      "targets": [
+        "GPRC5D",
+        "CD3"
+      ],
+      "indications": [
         {
-          "id": "myeloma_3l_tlv",
-          "name": "Talvey (talquetamab) - GPRC5D x CD3 in R/R MM 2L-3L (post-Tecvayli)",
+          "id": "myeloma_3l",
+          "name": "Talvey GPRC5DxCD3 R/R MM 2L-3L",
           "area": "oncology.hematology.myeloma.2l_3l",
           "market": {
             "regions": {
@@ -380,23 +391,23 @@
             },
             "company_slice": {
               "us": {
-                "reachPct": 1,
+                "reachPct": 0.2,
                 "wtpPct": 75,
                 "priceK": 360
               },
               "eu": {
-                "reachPct": 0.5,
+                "reachPct": 0.1,
                 "wtpPct": 55,
                 "priceK": 200
               },
               "row": {
-                "reachPct": 0.2,
+                "reachPct": 0.05,
                 "wtpPct": 14,
                 "priceK": 70
               }
             },
             "company_slice_sources": {
-              "us.reachPct": "JNJ Talvey small early-line share + 5% Genmab royalty",
+              "us.reachPct": "Effective ~0.2% (Talvey small mid-line share × 5% royalty); SOM ~2x sales",
               "us.priceK": "Talvey WAC ~$360K"
             },
             "penPct": 55,
@@ -441,23 +452,23 @@
             },
             "company_slice": {
               "us": {
-                "reachPct": 4,
+                "reachPct": 1,
                 "wtpPct": 70,
                 "priceK": 380
               },
               "eu": {
-                "reachPct": 1,
+                "reachPct": 0.3,
                 "wtpPct": 50,
                 "priceK": 220
               },
               "row": {
-                "reachPct": 0.3,
+                "reachPct": 0.1,
                 "wtpPct": 12,
                 "priceK": 70
               }
             },
             "company_slice_sources": {
-              "us.reachPct": "Tepezza ~80% US TED share (sole approved IGF-1R) + 4% Genmab royalty",
+              "us.reachPct": "Effective ~1% (Tepezza ~80% US TED share × 4% Genmab royalty); franchise in decline",
               "us.priceK": "Tepezza WAC ~$385K/course"
             },
             "penPct": 30,
@@ -997,13 +1008,15 @@
             "pen": 0.5
           }
         },
-        "jnj_bispecific_royalties": {
-          "myeloma_4l_tcv": {
+        "tecvayli_royalty": {
+          "myeloma_4l": {
             "pos": 100,
             "apr": 100,
             "pen": 0.5
-          },
-          "myeloma_3l_tlv": {
+          }
+        },
+        "talvey_royalty": {
+          "myeloma_3l": {
             "pos": 100,
             "apr": 100,
             "pen": 0.4
@@ -1113,13 +1126,15 @@
             "pen": 0.7
           }
         },
-        "jnj_bispecific_royalties": {
-          "myeloma_4l_tcv": {
+        "tecvayli_royalty": {
+          "myeloma_4l": {
             "pos": 100,
             "apr": 100,
             "pen": 0.7
-          },
-          "myeloma_3l_tlv": {
+          }
+        },
+        "talvey_royalty": {
+          "myeloma_3l": {
             "pos": 100,
             "apr": 100,
             "pen": 0.6
@@ -1229,13 +1244,15 @@
             "pen": 0.95
           }
         },
-        "jnj_bispecific_royalties": {
-          "myeloma_4l_tcv": {
+        "tecvayli_royalty": {
+          "myeloma_4l": {
             "pos": 100,
             "apr": 100,
             "pen": 0.95
-          },
-          "myeloma_3l_tlv": {
+          }
+        },
+        "talvey_royalty": {
+          "myeloma_3l": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
@@ -1345,13 +1362,15 @@
             "pen": 1.2
           }
         },
-        "jnj_bispecific_royalties": {
-          "myeloma_4l_tcv": {
+        "tecvayli_royalty": {
+          "myeloma_4l": {
             "pos": 100,
             "apr": 100,
             "pen": 1.2
-          },
-          "myeloma_3l_tlv": {
+          }
+        },
+        "talvey_royalty": {
+          "myeloma_3l": {
             "pos": 100,
             "apr": 100,
             "pen": 1.1
@@ -1461,13 +1480,15 @@
             "pen": 1.4
           }
         },
-        "jnj_bispecific_royalties": {
-          "myeloma_4l_tcv": {
+        "tecvayli_royalty": {
+          "myeloma_4l": {
             "pos": 100,
             "apr": 100,
             "pen": 1.4
-          },
-          "myeloma_3l_tlv": {
+          }
+        },
+        "talvey_royalty": {
+          "myeloma_3l": {
             "pos": 100,
             "apr": 100,
             "pen": 1.3

@@ -1,0 +1,1394 @@
+{
+  "company": {
+    "ticker": "GRF",
+    "name": "Grifols S.A.",
+    "currentPrice": 8.81,
+    "sharesOut": 687,
+    "cash": -8000,
+    "currency": "EUR",
+    "phase": "commercial",
+    "subtitle": "Spanish plasma-derived therapeutics: IVIG/SCIG (€4.5B) + Albumin + Coagulation factors + Specialty proteins; AMBAR Alzheimer's plasma exchange Ph3",
+    "yahooTicker": "GRF.MC"
+  },
+  "assets": [
+    {
+      "id": "immunoglobulin",
+      "name": "Immunoglobulin franchise (Gamunex-C IVIG + Flebogamma + Xembify SCIG)",
+      "stage": "Commercial (PID + CIDP + MMN + ITP + Kawasaki + secondary)",
+      "modality": "recombinant_protein.plasma_derived.immunoglobulin",
+      "targets": [
+        "FCGR1A",
+        "FCGR2A"
+      ],
+      "indications": [
+        {
+          "id": "pid",
+          "name": "Primary immunodeficiency (Xembify SCIG + Gamunex IVIG)",
+          "area": "immunology.autoimmune.primary_immunodeficiency",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 250,
+                "wtpPct": 80,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 350,
+                "wtpPct": 60,
+                "priceK": 70
+              },
+              "row": {
+                "patientsK": 2000,
+                "wtpPct": 18,
+                "priceK": 22
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 30,
+                "wtpPct": 75,
+                "priceK": 90
+              },
+              "eu": {
+                "reachPct": 25,
+                "wtpPct": 55,
+                "priceK": 55
+              },
+              "row": {
+                "reachPct": 8,
+                "wtpPct": 14,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Grifols ~30% global IG share for PID (Takeda largest competitor); Xembify +59.5% CER",
+              "us.priceK": "IG monthly replacement ~$90K/yr"
+            },
+            "penPct": 35,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 2500,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "cidp",
+          "name": "Chronic inflammatory demyelinating polyneuropathy (IVIG)",
+          "area": "immunology.neuromuscular_autoimmune.cidp",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 64.9,
+                "wtpPct": 75,
+                "priceK": 90
+              },
+              "eu": {
+                "reachPct": 57.1,
+                "wtpPct": 55,
+                "priceK": 55
+              },
+              "row": {
+                "reachPct": 15.6,
+                "wtpPct": 14,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Grifols IVIG dominant CIDP (vs Argenx Vyvgart now competing)",
+              "us.priceK": "IVIG CIDP pricing"
+            },
+            "penPct": 35,
+            "cagrPct": 5,
+            "peakYear": 2028,
+            "salesM": 1500,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "mmn",
+          "name": "Multifocal motor neuropathy (IVIG)",
+          "area": "immunology.neuromuscular_autoimmune.mmn",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5,
+                "wtpPct": 70,
+                "priceK": 150
+              },
+              "eu": {
+                "patientsK": 7,
+                "wtpPct": 55,
+                "priceK": 80
+              },
+              "row": {
+                "patientsK": 20,
+                "wtpPct": 20,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 75,
+                "priceK": 90
+              },
+              "eu": {
+                "reachPct": 94.3,
+                "wtpPct": 55,
+                "priceK": 55
+              },
+              "row": {
+                "reachPct": 30.2,
+                "wtpPct": 14,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Grifols ~30% MMN IVIG share; standard chronic therapy",
+              "us.priceK": "IVIG MMN pricing"
+            },
+            "penPct": 65,
+            "cagrPct": 4,
+            "peakYear": 2028,
+            "salesM": 400,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "itp",
+          "name": "Idiopathic thrombocytopenic purpura (acute IVIG)",
+          "area": "immunology.neuromuscular_autoimmune.itp",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60,
+                "wtpPct": 60,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 45,
+                "priceK": 45
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 12,
+                "priceK": 12
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 70,
+                "priceK": 90
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 50,
+                "priceK": 55
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "ITP acute IVIG niche (vs TPO-RA chronic)",
+              "us.priceK": "Same IVIG pricing"
+            },
+            "penPct": 35,
+            "cagrPct": 3,
+            "peakYear": 2028,
+            "salesM": 100,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "albumin",
+      "name": "Albumin franchise (Albutein, Plasbumin) - human serum albumin",
+      "stage": "Commercial (cirrhosis ascites + cardiac surgery + burn shock; -5.1% China headwind)",
+      "modality": "recombinant_protein.plasma_derived.albumin",
+      "targets": [
+        "ALB"
+      ],
+      "indications": [
+        {
+          "id": "cirrhosis_ascites",
+          "name": "Decompensated cirrhosis ascites + HRS + supportive (multi-use; primary use)",
+          "area": "cardio_metabolic.liver.cirrhosis_decompensated",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 250,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 350,
+                "wtpPct": 45,
+                "priceK": 14
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 31.9,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 40.6,
+                "wtpPct": 45,
+                "priceK": 14
+              },
+              "row": {
+                "reachPct": 8.7,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Grifols ~30% global albumin share vs CSL/Octapharma; commodity-ish but high-volume",
+              "us.priceK": "Albumin ~$25K/yr per pt (volume-dependent)"
+            },
+            "penPct": 30,
+            "cagrPct": -3,
+            "peakYear": 2025,
+            "salesM": 1500,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "alphanate",
+      "name": "Alphanate (Factor VIII / VWF complex) - hemophilia A + VWD",
+      "stage": "Commercial (mature; biosim/recombinant pressure)",
+      "modality": "recombinant_protein.plasma_derived.coagulation_factor",
+      "targets": [
+        "F8",
+        "VWF"
+      ],
+      "indications": [
+        {
+          "id": "hemophilia_a",
+          "name": "Hemophilia A (FVIII replacement therapy)",
+          "area": "hematology.rare_blood.hemophilia_a",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 85,
+                "priceK": 300
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "row": {
+                "patientsK": 280,
+                "wtpPct": 25,
+                "priceK": 80
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 80,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 60,
+                "priceK": 200
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 14,
+                "priceK": 70
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Plasma-derived FVIII niche vs recombinant (Eloctate/Hemlibra dominance); ~3-5% share",
+              "us.priceK": "FVIII pricing $300-400K/yr prophylaxis"
+            },
+            "penPct": 65,
+            "cagrPct": -5,
+            "peakYear": 2025,
+            "salesM": 280,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "vwd",
+          "name": "Von Willebrand disease (FVIII/VWF combo)",
+          "area": "hematology.rare_blood.vwd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 70,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 40,
+                "wtpPct": 55,
+                "priceK": 160
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 60
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 70,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 50,
+                "priceK": 150
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Alphanate VWD niche vs Humate-P (CSL) + Wilate (Octapharma)",
+              "us.priceK": "VWD on-demand + prophylaxis pricing"
+            },
+            "penPct": 50,
+            "cagrPct": -2,
+            "peakYear": 2026,
+            "salesM": 100,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "alphanine",
+      "name": "AlphaNine + Profilnine - Factor IX (hemophilia B)",
+      "stage": "Commercial (mature; recombinant pressure)",
+      "modality": "recombinant_protein.plasma_derived.coagulation_factor",
+      "targets": [
+        "F9"
+      ],
+      "indications": [
+        {
+          "id": "hemophilia_b",
+          "name": "Hemophilia B (FIX replacement)",
+          "area": "hematology.rare_blood.hemophilia_b",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5,
+                "wtpPct": 80,
+                "priceK": 280
+              },
+              "eu": {
+                "patientsK": 7,
+                "wtpPct": 70,
+                "priceK": 180
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 22,
+                "priceK": 70
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10.8,
+                "wtpPct": 80,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 14.5,
+                "wtpPct": 60,
+                "priceK": 200
+              },
+              "row": {
+                "reachPct": 7.2,
+                "wtpPct": 14,
+                "priceK": 70
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Plasma-derived FIX niche vs recombinant + Hemgenix gene therapy",
+              "us.priceK": "FIX prophylaxis ~$350K/yr"
+            },
+            "penPct": 60,
+            "cagrPct": -3,
+            "peakYear": 2025,
+            "salesM": 220,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "prolastin",
+      "name": "Prolastin (alpha-1 antitrypsin) - augmentation therapy for AATD",
+      "stage": "Commercial (AATD lung disease)",
+      "modality": "recombinant_protein.plasma_derived.serpin",
+      "targets": [
+        "SERPINA1"
+      ],
+      "indications": [
+        {
+          "id": "a1at",
+          "name": "Alpha-1 antitrypsin deficiency (AATD lung)",
+          "area": "cardio_metabolic.liver.a1at",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 70,
+                "priceK": 150
+              },
+              "eu": {
+                "patientsK": 20,
+                "wtpPct": 55,
+                "priceK": 90
+              },
+              "row": {
+                "patientsK": 8,
+                "wtpPct": 30,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 43.2,
+                "wtpPct": 65,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 35.4,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "row": {
+                "reachPct": 7.9,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Prolastin ~30% AATD augmentation share vs Glassia (Takeda) + Aralast/Zemaira (CSL)",
+              "us.priceK": "AATD augmentation ~$100K/yr weekly IV"
+            },
+            "penPct": 15,
+            "cagrPct": 4,
+            "peakYear": 2030,
+            "salesM": 330,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "cinryze",
+      "name": "Cinryze (C1 esterase inhibitor) - HAE prophylaxis (acquired ex-Shire)",
+      "stage": "Commercial (HAE prophylaxis + acute)",
+      "modality": "recombinant_protein.plasma_derived.serpin",
+      "targets": [
+        "SERPING1"
+      ],
+      "indications": [
+        {
+          "id": "hae",
+          "name": "Hereditary angioedema (prophylaxis + acute attacks)",
+          "area": "immunology.autoimmune.hereditary_angioedema",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 7,
+                "wtpPct": 75,
+                "priceK": 450
+              },
+              "eu": {
+                "patientsK": 10,
+                "wtpPct": 55,
+                "priceK": 280
+              },
+              "row": {
+                "patientsK": 20,
+                "wtpPct": 15,
+                "priceK": 100
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 75,
+                "priceK": 450
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 55,
+                "priceK": 280
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 14,
+                "priceK": 100
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Cinryze C1-INH HAE prophylaxis vs Takhzyro (BIIB lanadelumab) + Berinert + Orladeyo",
+              "us.priceK": "C1-INH HAE prophylaxis pricing"
+            },
+            "penPct": 70,
+            "cagrPct": -2,
+            "peakYear": 2025,
+            "salesM": 165,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "tavlesse",
+      "name": "Tavlesse (fostamatinib) - SYK inhibitor (Rigel-licensed EU only)",
+      "stage": "Commercial EU (chronic ITP)",
+      "modality": "small_molecule.kinase_inhibitor.syk",
+      "targets": [
+        "SYK"
+      ],
+      "indications": [
+        {
+          "id": "itp_chronic",
+          "name": "Chronic immune thrombocytopenia (refractory adults)",
+          "area": "immunology.neuromuscular_autoimmune.itp",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60,
+                "wtpPct": 60,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 45,
+                "priceK": 45
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 12,
+                "priceK": 12
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 70,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 50,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "eu.reachPct": "Grifols EU-only license (Rigel retains US); chronic ITP niche post-TPO-RA",
+              "eu.priceK": "Fostamatinib oral ~$50K/yr"
+            },
+            "penPct": 35,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 22,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "fesilty",
+      "name": "FESILTY (fibrinogen concentrate) - FDA approved 2025; H1 2026 launch",
+      "stage": "Commercial launch H1 2026 (congenital fibrinogen deficiency)",
+      "modality": "recombinant_protein.plasma_derived.coagulation_factor",
+      "targets": [
+        "FGA",
+        "FGB",
+        "FGG"
+      ],
+      "indications": [
+        {
+          "id": "fibrinogen_deficiency",
+          "name": "Acute bleeding in congenital fibrinogen deficiency (peds + adult)",
+          "area": "hematology.rare_blood.fibrinogen_deficiency",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 1.5,
+                "wtpPct": 55,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 10,
+                "wtpPct": 14,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 55,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 14,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Launching FY26 vs Riastap (CSL) + Fibryga (Octapharma); orphan competitive split",
+              "us.priceK": "Fibrinogen orphan ~$200K/yr"
+            },
+            "penPct": 55,
+            "cagrPct": 25,
+            "peakYear": 2032,
+            "salesM": 0,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "thrombate",
+      "name": "Thrombate III (antithrombin) - hereditary AT deficiency",
+      "stage": "Commercial",
+      "modality": "recombinant_protein.plasma_derived.serpin",
+      "targets": [
+        "SERPINC1"
+      ],
+      "indications": [
+        {
+          "id": "antithrombin_deficiency",
+          "name": "Hereditary antithrombin deficiency (surgical/peripartum cover)",
+          "area": "hematology.rare_blood.antithrombin_deficiency",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 15,
+                "wtpPct": 70,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 50,
+                "priceK": 50
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 12,
+                "priceK": 18
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 70,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 50,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Thrombate III ~50% US AT-conc share vs ATryn recombinant",
+              "us.priceK": "AT concentrate ~$80K/yr"
+            },
+            "penPct": 60,
+            "cagrPct": 0,
+            "peakYear": 2026,
+            "salesM": 33,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "ambar",
+      "name": "AMBAR plasma exchange + albumin replacement (Alzheimer's disease)",
+      "stage": "Phase 3 ongoing (long-tail; readout 2027+)",
+      "modality": "recombinant_protein.plasma_derived.albumin",
+      "targets": [
+        "ALB"
+      ],
+      "indications": [
+        {
+          "id": "alzheimer_pe",
+          "name": "Mild-to-moderate Alzheimer's disease (therapeutic plasma exchange)",
+          "area": "cns.neurodegeneration.alzheimer",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 25,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 12,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 40000,
+                "wtpPct": 3,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1,
+                "wtpPct": 30,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 15,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 4,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "AMBAR Ph3 (post-original Ph2 positive); niche even if positive (vs Leqembi/Kisunla anti-amyloid)",
+              "us.priceK": "Plasma exchange + albumin course ~$80K/yr"
+            },
+            "penPct": 12,
+            "cagrPct": 5,
+            "peakYear": 2034
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 4,
+        "commercialMult": 1.5,
+        "commercialRevM": 6500,
+        "milestones": 0,
+        "dil": 10
+      },
+      "assumptions": {
+        "immunoglobulin": {
+          "pid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "cidp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "mmn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "itp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "albumin": {
+          "cirrhosis_ascites": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "alphanate": {
+          "hemophilia_a": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          },
+          "vwd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "alphanine": {
+          "hemophilia_b": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "prolastin": {
+          "a1at": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "cinryze": {
+          "hae": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "tavlesse": {
+          "itp_chronic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "fesilty": {
+          "fibrinogen_deficiency": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "thrombate": {
+          "antithrombin_deficiency": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "ambar": {
+          "alzheimer_pe": {
+            "pos": 15,
+            "apr": 40,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 5,
+        "commercialMult": 2,
+        "commercialRevM": 7000,
+        "milestones": 50,
+        "dil": 5
+      },
+      "assumptions": {
+        "immunoglobulin": {
+          "pid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "cidp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "mmn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "itp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "albumin": {
+          "cirrhosis_ascites": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "alphanate": {
+          "hemophilia_a": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "vwd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "alphanine": {
+          "hemophilia_b": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "prolastin": {
+          "a1at": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "cinryze": {
+          "hae": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "tavlesse": {
+          "itp_chronic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "fesilty": {
+          "fibrinogen_deficiency": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "thrombate": {
+          "antithrombin_deficiency": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "ambar": {
+          "alzheimer_pe": {
+            "pos": 25,
+            "apr": 55,
+            "pen": 0.45
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 40,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 6,
+        "commercialMult": 2.5,
+        "commercialRevM": 7800,
+        "milestones": 100,
+        "dil": 0
+      },
+      "assumptions": {
+        "immunoglobulin": {
+          "pid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "cidp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "mmn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "itp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "albumin": {
+          "cirrhosis_ascites": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "alphanate": {
+          "hemophilia_a": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "vwd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "alphanine": {
+          "hemophilia_b": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "prolastin": {
+          "a1at": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "cinryze": {
+          "hae": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "tavlesse": {
+          "itp_chronic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "fesilty": {
+          "fibrinogen_deficiency": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "thrombate": {
+          "antithrombin_deficiency": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "ambar": {
+          "alzheimer_pe": {
+            "pos": 35,
+            "apr": 65,
+            "pen": 0.6
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 8,
+        "commercialMult": 3.5,
+        "commercialRevM": 8800,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "immunoglobulin": {
+          "pid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "cidp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mmn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "itp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "albumin": {
+          "cirrhosis_ascites": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "alphanate": {
+          "hemophilia_a": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "vwd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "alphanine": {
+          "hemophilia_b": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "prolastin": {
+          "a1at": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "cinryze": {
+          "hae": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "tavlesse": {
+          "itp_chronic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "fesilty": {
+          "fibrinogen_deficiency": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "thrombate": {
+          "antithrombin_deficiency": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "ambar": {
+          "alzheimer_pe": {
+            "pos": 55,
+            "apr": 80,
+            "pen": 0.85
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 11,
+        "commercialMult": 5,
+        "commercialRevM": 10000,
+        "milestones": 400,
+        "dil": 0
+      },
+      "assumptions": {
+        "immunoglobulin": {
+          "pid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          },
+          "cidp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "mmn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "itp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "albumin": {
+          "cirrhosis_ascites": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "alphanate": {
+          "hemophilia_a": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "vwd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "alphanine": {
+          "hemophilia_b": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "prolastin": {
+          "a1at": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          }
+        },
+        "cinryze": {
+          "hae": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "tavlesse": {
+          "itp_chronic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "fesilty": {
+          "fibrinogen_deficiency": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "thrombate": {
+          "antithrombin_deficiency": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "ambar": {
+          "alzheimer_pe": {
+            "pos": 80,
+            "apr": 92,
+            "pen": 1.1
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-30",
+      "asset": "fesilty",
+      "indication": "fibrinogen_deficiency",
+      "title": "FESILTY commercial launch (US fibrinogen concentrate, FDA approved 2025)",
+      "type": "launch",
+      "binary": false,
+      "_source": "https://www.grifols.com/en/view-news/-/news/grifols-receives-us-fda-approval-for-new-fibrinogen-concentrate-fesiltytm-fibrinogen-human-chmt",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-12-15",
+      "asset": "albumin",
+      "indication": "cirrhosis_ascites",
+      "title": "China albumin pricing/volume recovery test (FY26 guidance dependency)",
+      "type": "other",
+      "binary": false,
+      "_source": "https://www.investing.com/news/company-news/grifols-fy-2025-slides-ig-growth-drives-guidance-beat-despite-albumin-drag-93CH-4529303",
+      "_confidence": "medium"
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-06-30",
+      "asset": "ambar",
+      "indication": "alzheimer_pe",
+      "title": "AMBAR Phase 3 plasma exchange Alzheimer's readout",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 20,
+      "fail_apr": 50,
+      "success_pos": 75,
+      "success_apr": 88,
+      "_source": "https://www.grifols.com/en/biopharma",
+      "_confidence": "low"
+    },
+    {
+      "date": "Ongoing",
+      "dateSort": "2026-12-31",
+      "asset": "albumin",
+      "indication": "cirrhosis_ascites",
+      "title": "Net debt deleveraging (4.2x leverage YE2025; refinancing 2027-2028)",
+      "type": "other",
+      "binary": false,
+      "_source": "https://www.grifols.com/en/view-news/-/news/grifols-reports-revenues-of-eur-7524m-up-7-and-more-than-doubles-group-profit-to-eur-402m",
+      "_confidence": "high"
+    }
+  ]
+}

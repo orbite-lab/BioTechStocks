@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-30T12:47:02Z",
-    "target_count": 357,
-    "total_assets": 665,
-    "assets_with_targets": 617,
-    "multi_modality_count": 41,
-    "multi_disease_count": 160
+    "generated": "2026-04-30T12:58:42Z",
+    "target_count": 364,
+    "total_assets": 675,
+    "assets_with_targets": 627,
+    "multi_modality_count": 42,
+    "multi_disease_count": 163
   },
   "targets": {
     "ABL1": {
@@ -702,12 +702,15 @@
     },
     "ALB": {
       "companies": [
-        "CSL"
+        "CSL",
+        "GRF"
       ],
       "modalities": [
         "recombinant_protein.plasma_derived.albumin"
       ],
       "areas": [
+        "cardio_metabolic.liver.cirrhosis_decompensated",
+        "cns.neurodegeneration.alzheimer",
         "hematology.supportive_care.volume_expander"
       ],
       "assets": [
@@ -719,20 +722,38 @@
           "areas": [
             "hematology.supportive_care.volume_expander"
           ]
+        },
+        {
+          "ticker": "GRF",
+          "asset": "albumin",
+          "name": "Albumin franchise (Albutein, Plasbumin) - human serum albumin",
+          "modality": "recombinant_protein.plasma_derived.albumin",
+          "areas": [
+            "cardio_metabolic.liver.cirrhosis_decompensated"
+          ]
+        },
+        {
+          "ticker": "GRF",
+          "asset": "ambar",
+          "name": "AMBAR plasma exchange + albumin replacement (Alzheimer's disease)",
+          "modality": "recombinant_protein.plasma_derived.albumin",
+          "areas": [
+            "cns.neurodegeneration.alzheimer"
+          ]
         }
       ],
-      "assetCount": 1,
+      "assetCount": 3,
       "modalityCount": 1,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 3,
       "modalityClasses": [
         "recombinant_protein"
       ],
-      "totalTAM": 19950.0,
-      "totalSOM": 1804.0,
-      "totalSales": 1200.0,
-      "cagrPct": 3.0,
-      "peakYear": 2027
+      "totalTAM": 38685.0,
+      "totalSOM": 5820.9,
+      "totalSales": 2700.0,
+      "cagrPct": 1.3,
+      "peakYear": 2028
     },
     "ALK": {
       "companies": [
@@ -1646,7 +1667,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 4026.4,
       "totalSales": 2915.0,
       "cagrPct": 3.2,
@@ -3846,7 +3867,7 @@
         "antibody"
       ],
       "totalTAM": 19731.0,
-      "totalSOM": 189.7,
+      "totalSOM": 189.6,
       "totalSales": 0.0,
       "cagrPct": 54.4,
       "peakYear": 2031
@@ -5816,17 +5837,20 @@
     "F8": {
       "companies": [
         "4502",
+        "GRF",
         "NOVO",
         "SNY"
       ],
       "modalities": [
         "recombinant_protein.coagulation.factor_fc_fusion",
         "recombinant_protein.coagulation.factor_viii",
-        "recombinant_protein.coagulation.fviii"
+        "recombinant_protein.coagulation.fviii",
+        "recombinant_protein.plasma_derived.coagulation_factor"
       ],
       "areas": [
         "hematology.rare_blood.hemophilia_a",
-        "hematology.rare_blood.hemophilia_b"
+        "hematology.rare_blood.hemophilia_b",
+        "hematology.rare_blood.vwd"
       ],
       "assets": [
         {
@@ -5836,6 +5860,16 @@
           "modality": "recombinant_protein.coagulation.fviii",
           "areas": [
             "hematology.rare_blood.hemophilia_a"
+          ]
+        },
+        {
+          "ticker": "GRF",
+          "asset": "alphanate",
+          "name": "Alphanate (Factor VIII / VWF complex) - hemophilia A + VWD",
+          "modality": "recombinant_protein.plasma_derived.coagulation_factor",
+          "areas": [
+            "hematology.rare_blood.hemophilia_a",
+            "hematology.rare_blood.vwd"
           ]
         },
         {
@@ -5867,22 +5901,23 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 3,
+      "assetCount": 5,
+      "modalityCount": 4,
       "modalityClassCount": 1,
-      "areaCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
         "recombinant_protein"
       ],
-      "totalTAM": 17934.0,
-      "totalSOM": 5398.2,
-      "totalSales": 3600.0,
-      "cagrPct": 2.1,
+      "totalTAM": 28864.0,
+      "totalSOM": 6359.5,
+      "totalSales": 3980.0,
+      "cagrPct": 1.3,
       "peakYear": 2027
     },
     "F9": {
       "companies": [
         "CSL",
+        "GRF",
         "NOVO",
         "RHHBY",
         "SNY"
@@ -5892,7 +5927,8 @@
         "gene_therapy.aav.aav5_fix",
         "recombinant_protein.coagulation.factor_fc_fusion",
         "recombinant_protein.coagulation.pcc_4factor",
-        "recombinant_protein.fusion.fix_fc_long_acting"
+        "recombinant_protein.fusion.fix_fc_long_acting",
+        "recombinant_protein.plasma_derived.coagulation_factor"
       ],
       "areas": [
         "cardio_metabolic.thrombosis.reversal",
@@ -5928,6 +5964,15 @@
           ]
         },
         {
+          "ticker": "GRF",
+          "asset": "alphanine",
+          "name": "AlphaNine + Profilnine - Factor IX (hemophilia B)",
+          "modality": "recombinant_protein.plasma_derived.coagulation_factor",
+          "areas": [
+            "hematology.rare_blood.hemophilia_b"
+          ]
+        },
+        {
           "ticker": "NOVO",
           "asset": "mim8",
           "name": "Mim8 (denecimig) — FVIIIa-mimetic bispecific (hemophilia A)",
@@ -5956,8 +6001,8 @@
           ]
         }
       ],
-      "assetCount": 6,
-      "modalityCount": 5,
+      "assetCount": 7,
+      "modalityCount": 6,
       "modalityClassCount": 3,
       "areaCount": 3,
       "modalityClasses": [
@@ -5966,10 +6011,90 @@
         "recombinant_protein"
       ],
       "totalTAM": 19056.0,
-      "totalSOM": 10453.9,
-      "totalSales": 7522.0,
-      "cagrPct": 6.0,
+      "totalSOM": 10783.4,
+      "totalSales": 7742.0,
+      "cagrPct": 5.7,
       "peakYear": 2028
+    },
+    "FCGR1A": {
+      "companies": [
+        "GRF"
+      ],
+      "modalities": [
+        "recombinant_protein.plasma_derived.immunoglobulin"
+      ],
+      "areas": [
+        "immunology.autoimmune.primary_immunodeficiency",
+        "immunology.neuromuscular_autoimmune.cidp",
+        "immunology.neuromuscular_autoimmune.itp",
+        "immunology.neuromuscular_autoimmune.mmn"
+      ],
+      "assets": [
+        {
+          "ticker": "GRF",
+          "asset": "immunoglobulin",
+          "name": "Immunoglobulin franchise (Gamunex-C IVIG + Flebogamma + Xembify SCIG)",
+          "modality": "recombinant_protein.plasma_derived.immunoglobulin",
+          "areas": [
+            "immunology.autoimmune.primary_immunodeficiency",
+            "immunology.neuromuscular_autoimmune.cidp",
+            "immunology.neuromuscular_autoimmune.itp",
+            "immunology.neuromuscular_autoimmune.mmn"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 4,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 58873.0,
+      "totalSOM": 12054.2,
+      "totalSales": 4500.0,
+      "cagrPct": 6.8,
+      "peakYear": 2029
+    },
+    "FCGR2A": {
+      "companies": [
+        "GRF"
+      ],
+      "modalities": [
+        "recombinant_protein.plasma_derived.immunoglobulin"
+      ],
+      "areas": [
+        "immunology.autoimmune.primary_immunodeficiency",
+        "immunology.neuromuscular_autoimmune.cidp",
+        "immunology.neuromuscular_autoimmune.itp",
+        "immunology.neuromuscular_autoimmune.mmn"
+      ],
+      "assets": [
+        {
+          "ticker": "GRF",
+          "asset": "immunoglobulin",
+          "name": "Immunoglobulin franchise (Gamunex-C IVIG + Flebogamma + Xembify SCIG)",
+          "modality": "recombinant_protein.plasma_derived.immunoglobulin",
+          "areas": [
+            "immunology.autoimmune.primary_immunodeficiency",
+            "immunology.neuromuscular_autoimmune.cidp",
+            "immunology.neuromuscular_autoimmune.itp",
+            "immunology.neuromuscular_autoimmune.mmn"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 4,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 58873.0,
+      "totalSOM": 12054.2,
+      "totalSales": 4500.0,
+      "cagrPct": 6.8,
+      "peakYear": 2029
     },
     "FCGRT": {
       "companies": [
@@ -6070,6 +6195,74 @@
       "totalSales": 4400.0,
       "cagrPct": 7.5,
       "peakYear": 2033
+    },
+    "FGA": {
+      "companies": [
+        "GRF"
+      ],
+      "modalities": [
+        "recombinant_protein.plasma_derived.coagulation_factor"
+      ],
+      "areas": [
+        "hematology.rare_blood.fibrinogen_deficiency"
+      ],
+      "assets": [
+        {
+          "ticker": "GRF",
+          "asset": "fesilty",
+          "name": "FESILTY (fibrinogen concentrate) - FDA approved 2025; H1 2026 launch",
+          "modality": "recombinant_protein.plasma_derived.coagulation_factor",
+          "areas": [
+            "hematology.rare_blood.fibrinogen_deficiency"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 317.2,
+      "totalSOM": 50.0,
+      "totalSales": 0.0,
+      "cagrPct": 25.0,
+      "peakYear": 2032
+    },
+    "FGB": {
+      "companies": [
+        "GRF"
+      ],
+      "modalities": [
+        "recombinant_protein.plasma_derived.coagulation_factor"
+      ],
+      "areas": [
+        "hematology.rare_blood.fibrinogen_deficiency"
+      ],
+      "assets": [
+        {
+          "ticker": "GRF",
+          "asset": "fesilty",
+          "name": "FESILTY (fibrinogen concentrate) - FDA approved 2025; H1 2026 launch",
+          "modality": "recombinant_protein.plasma_derived.coagulation_factor",
+          "areas": [
+            "hematology.rare_blood.fibrinogen_deficiency"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 317.2,
+      "totalSOM": 50.0,
+      "totalSales": 0.0,
+      "cagrPct": 25.0,
+      "peakYear": 2032
     },
     "FGF21": {
       "companies": [
@@ -6332,6 +6525,40 @@
       "totalSales": 300.0,
       "cagrPct": 4.7,
       "peakYear": 2030
+    },
+    "FGG": {
+      "companies": [
+        "GRF"
+      ],
+      "modalities": [
+        "recombinant_protein.plasma_derived.coagulation_factor"
+      ],
+      "areas": [
+        "hematology.rare_blood.fibrinogen_deficiency"
+      ],
+      "assets": [
+        {
+          "ticker": "GRF",
+          "asset": "fesilty",
+          "name": "FESILTY (fibrinogen concentrate) - FDA approved 2025; H1 2026 launch",
+          "modality": "recombinant_protein.plasma_derived.coagulation_factor",
+          "areas": [
+            "hematology.rare_blood.fibrinogen_deficiency"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 317.2,
+      "totalSOM": 50.0,
+      "totalSales": 0.0,
+      "cagrPct": 25.0,
+      "peakYear": 2032
     },
     "FKRP": {
       "companies": [
@@ -7961,7 +8188,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -10793,7 +11020,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 18252.4,
       "totalSales": 2971.0,
       "cagrPct": 47.5,
@@ -10845,7 +11072,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 17202.9,
       "totalSales": 2271.0,
       "cagrPct": 50.1,
@@ -11720,7 +11947,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -11969,7 +12196,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -14673,10 +14900,12 @@
     },
     "SERPINA1": {
       "companies": [
-        "CRSP"
+        "CRSP",
+        "GRF"
       ],
       "modalities": [
-        "gene_editing.crispr_cas9.invivo"
+        "gene_editing.crispr_cas9.invivo",
+        "recombinant_protein.plasma_derived.serpin"
       ],
       "areas": [
         "cardio_metabolic.liver.a1at"
@@ -14690,6 +14919,50 @@
           "areas": [
             "cardio_metabolic.liver.a1at"
           ]
+        },
+        {
+          "ticker": "GRF",
+          "asset": "prolastin",
+          "name": "Prolastin (alpha-1 antitrypsin) - augmentation therapy for AATD",
+          "modality": "recombinant_protein.plasma_derived.serpin",
+          "areas": [
+            "cardio_metabolic.liver.a1at"
+          ]
+        }
+      ],
+      "assetCount": 2,
+      "modalityCount": 2,
+      "modalityClassCount": 2,
+      "areaCount": 1,
+      "modalityClasses": [
+        "gene_editing",
+        "recombinant_protein"
+      ],
+      "totalTAM": 2160.0,
+      "totalSOM": 555.1,
+      "totalSales": 330.0,
+      "cagrPct": 3.6,
+      "peakYear": 2030
+    },
+    "SERPINC1": {
+      "companies": [
+        "GRF"
+      ],
+      "modalities": [
+        "recombinant_protein.plasma_derived.serpin"
+      ],
+      "areas": [
+        "hematology.rare_blood.antithrombin_deficiency"
+      ],
+      "assets": [
+        {
+          "ticker": "GRF",
+          "asset": "thrombate",
+          "name": "Thrombate III (antithrombin) - hereditary AT deficiency",
+          "modality": "recombinant_protein.plasma_derived.serpin",
+          "areas": [
+            "hematology.rare_blood.antithrombin_deficiency"
+          ]
         }
       ],
       "assetCount": 1,
@@ -14697,20 +14970,22 @@
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
-        "gene_editing"
+        "recombinant_protein"
       ],
-      "totalTAM": 2160.0,
-      "totalSOM": 60.2,
-      "totalSales": 0.0,
+      "totalTAM": 1637.8,
+      "totalSOM": 140.0,
+      "totalSales": 33.0,
       "cagrPct": 0.0,
-      "peakYear": 2034
+      "peakYear": 2026
     },
     "SERPING1": {
       "companies": [
-        "CSL"
+        "CSL",
+        "GRF"
       ],
       "modalities": [
-        "recombinant_protein.complement.c1_esterase_inhibitor"
+        "recombinant_protein.complement.c1_esterase_inhibitor",
+        "recombinant_protein.plasma_derived.serpin"
       ],
       "areas": [
         "immunology.autoimmune.hereditary_angioedema"
@@ -14724,20 +14999,29 @@
           "areas": [
             "immunology.autoimmune.hereditary_angioedema"
           ]
+        },
+        {
+          "ticker": "GRF",
+          "asset": "cinryze",
+          "name": "Cinryze (C1 esterase inhibitor) - HAE prophylaxis (acquired ex-Shire)",
+          "modality": "recombinant_protein.plasma_derived.serpin",
+          "areas": [
+            "immunology.autoimmune.hereditary_angioedema"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "recombinant_protein"
       ],
       "totalTAM": 4202.5,
-      "totalSOM": 641.5,
-      "totalSales": 400.0,
-      "cagrPct": 4.0,
-      "peakYear": 2030
+      "totalSOM": 824.0,
+      "totalSales": 565.0,
+      "cagrPct": 2.7,
+      "peakYear": 2029
     },
     "SGCB": {
       "companies": [
@@ -15667,6 +15951,40 @@
       "totalSales": 900.0,
       "cagrPct": 0.0,
       "peakYear": 2033
+    },
+    "SYK": {
+      "companies": [
+        "GRF"
+      ],
+      "modalities": [
+        "small_molecule.kinase_inhibitor.syk"
+      ],
+      "areas": [
+        "immunology.neuromuscular_autoimmune.itp"
+      ],
+      "assets": [
+        {
+          "ticker": "GRF",
+          "asset": "tavlesse",
+          "name": "Tavlesse (fostamatinib) - SYK inhibitor (Rigel-licensed EU only)",
+          "modality": "small_molecule.kinase_inhibitor.syk",
+          "areas": [
+            "immunology.neuromuscular_autoimmune.itp"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 5220.0,
+      "totalSOM": 65.4,
+      "totalSales": 22.0,
+      "cagrPct": 8.0,
+      "peakYear": 2030
     },
     "SYNGAP1": {
       "companies": [
@@ -17339,14 +17657,17 @@
     "VWF": {
       "companies": [
         "4502",
+        "GRF",
         "SNY"
       ],
       "modalities": [
         "antibody.fragment.vwf",
-        "recombinant_protein.coagulation.recombinant_vwf"
+        "recombinant_protein.coagulation.recombinant_vwf",
+        "recombinant_protein.plasma_derived.coagulation_factor"
       ],
       "areas": [
         "hematology.rare_blood.attp",
+        "hematology.rare_blood.hemophilia_a",
         "hematology.rare_blood.vwd"
       ],
       "assets": [
@@ -17360,6 +17681,16 @@
           ]
         },
         {
+          "ticker": "GRF",
+          "asset": "alphanate",
+          "name": "Alphanate (Factor VIII / VWF complex) - hemophilia A + VWD",
+          "modality": "recombinant_protein.plasma_derived.coagulation_factor",
+          "areas": [
+            "hematology.rare_blood.hemophilia_a",
+            "hematology.rare_blood.vwd"
+          ]
+        },
+        {
           "ticker": "SNY",
           "asset": "cablivi",
           "name": "Cablivi (caplacizumab, anti-vWF) — aTTP",
@@ -17369,19 +17700,19 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 2,
-      "areaCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
         "antibody",
         "recombinant_protein"
       ],
-      "totalTAM": 12047.5,
-      "totalSOM": 750.6,
-      "totalSales": 500.0,
-      "cagrPct": 3.2,
-      "peakYear": 2030
+      "totalTAM": 26747.5,
+      "totalSOM": 1712.0,
+      "totalSales": 880.0,
+      "cagrPct": -0.4,
+      "peakYear": 2028
     },
     "VZV": {
       "companies": [

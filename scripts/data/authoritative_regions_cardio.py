@@ -252,6 +252,19 @@ REGIONS = {
         "eu":  {"patientsK": 8,    "wtpPct": 55, "priceK": 120},
         "row": {"patientsK": 30,   "wtpPct": 14, "priceK": 40},
     },
+    # Decompensated cirrhosis (advanced liver disease with ascites, hepatorenal
+    # syndrome, hepatic encephalopathy): heterogeneous etiologies (alcohol,
+    # MASH, viral hepatitis, autoimmune). SoC: albumin infusions (Grifols,
+    # CSL, Baxter), terlipressin (Mallinckrodt Terlivaz for HRS-1 FDA 2022),
+    # lactulose (HE), liver tx ultimate. Branded class ~$4-5B globally
+    # (mostly albumin commodity ~$300/g x 100g/yr per pt = $30K). source:
+    # AASLD decompensated cirrhosis prevalence ~250K US, ~350K EU5; ROW
+    # ~3M (huge LMIC viral hep burden). Net branded ~$25K/yr blended.
+    "cardio_metabolic.liver.cirrhosis_decompensated": {
+        "us":  {"patientsK": 250,   "wtpPct": 60, "priceK": 25},
+        "eu":  {"patientsK": 350,   "wtpPct": 45, "priceK": 14},
+        "row": {"patientsK": 3000,  "wtpPct": 12, "priceK": 5},
+    },
     "cardio_metabolic.liver.pld_adpkd": {
         "us":  {"patientsK": 20,    "wtpPct": 65, "priceK": 13},
         "eu":  {"patientsK": 25,    "wtpPct": 55, "priceK": 7},
@@ -503,6 +516,7 @@ PEN_PCT = {
     "cardio_metabolic.liver.hbv_functional_cure": 4,
     "cardio_metabolic.liver.mash": 8,
     "cardio_metabolic.liver.pld_adpkd": 15,
+    "cardio_metabolic.liver.cirrhosis_decompensated": 30,
     "cardio_metabolic.liver.pbc": 25,
     "cardio_metabolic.liver.pediatric_cholestasis": 50,
     "cardio_metabolic.obesity.general": 5,

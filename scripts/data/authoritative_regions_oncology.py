@@ -454,6 +454,18 @@ REGIONS = {
         "eu":  {"patientsK": 1.5,  "wtpPct": 55, "priceK": 130},
         "row": {"patientsK": 10,   "wtpPct": 14, "priceK": 50},
     },
+    # Antithrombin deficiency: rare hereditary thrombophilia (1:5000 prevalence).
+    # Increases venous thromboembolism risk significantly. SoC: anticoagulants
+    # (DOACs, warfarin) for prevention; antithrombin concentrate for surgical/
+    # peripartum cover or AT-resistant heparin. Branded class: Thrombate III
+    # (Grifols plasma-derived ~$60M), ATryn (rEVO Biologics recombinant ~$30M).
+    # source: NORD AT deficiency US ~15K diagnosed; EU5 ~25K; ROW ~80K.
+    # Net branded ~$80K/yr orphan-priced.
+    "hematology.rare_blood.antithrombin_deficiency": {
+        "us":  {"patientsK": 15,   "wtpPct": 70, "priceK": 80},
+        "eu":  {"patientsK": 25,   "wtpPct": 50, "priceK": 50},
+        "row": {"patientsK": 80,   "wtpPct": 12, "priceK": 18},
+    },
     # Plasma volume expansion / supportive care (cirrhosis ascites, burns,
     # cardiac surgery, hypovolemic shock, neonatal): broad supportive care
     # use of human serum albumin. US ~3M annual treated episodes, EU ~5M,
@@ -758,6 +770,7 @@ PEN_PCT = {
     "hematology.rare_blood.hemophilia_b": 60,
     "hematology.rare_blood.vwd": 50,
     "hematology.rare_blood.fibrinogen_deficiency": 55,
+    "hematology.rare_blood.antithrombin_deficiency": 60,
     "hematology.supportive_care.volume_expander": 40,
     "hematology.myeloproliferative.mf": 65,
     "hematology.myeloproliferative.pv": 25,

@@ -267,6 +267,18 @@ REGIONS = {
         "eu":  {"patientsK": 15, "wtpPct": 55, "priceK": 120},
         "row": {"patientsK": 50, "wtpPct": 22, "priceK": 55},
     },
+    # ROS1+ NSCLC: ~1-2% of NSCLC, distinct fusion driver from ALK. ~3K US
+    # incident, ~4K EU, ~25K ROW. Branded class: Rozlytrek (entrectinib
+    # Chugai/Roche), Augtyro (repotrectinib BMS, FDA 2023 ROS1 + 2024 NTRK),
+    # Xalkori (crizotinib legacy off-label), Lorbrena (lorlatinib PFE off-
+    # label after ROS1 progression). NTRK fusion tissue-agnostic also
+    # addressed by Rozlytrek + Vitrakvi (Bayer larotrectinib). Pricing
+    # parity with ALK class ~$200-220K/yr.
+    "oncology.lung.nsclc_driver.ros1": {
+        "us":  {"patientsK": 3, "wtpPct": 70, "priceK": 200},
+        "eu":  {"patientsK": 4, "wtpPct": 50, "priceK": 120},
+        "row": {"patientsK": 25, "wtpPct": 18, "priceK": 50},
+    },
     # EGFR-mutant NSCLC: largest driver subtype (~15% Caucasian, ~50% Asian
     # NSCLC). US ~50K eligible; EU 65K; ROW 250K (China dominant). Class:
     # Tagrisso (osimertinib AZ ~$7B near-monopoly), Iressa/Tarceva legacy,
@@ -799,6 +811,7 @@ PEN_PCT = {
     "oncology.hematology.myeloma.4l_plus": 35,
     # tcell_lymphoma renamed -> nhl.tcell (above)
     "oncology.lung.nsclc_driver.alk": 68,
+    "oncology.lung.nsclc_driver.ros1": 60,
     "oncology.lung.nsclc_driver.egfr": 70,
     "oncology.lung.nsclc_driver.cmet": 50,
     "oncology.lung.nsclc_driver.her2": 48,

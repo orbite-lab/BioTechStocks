@@ -77,7 +77,7 @@
     {
       "id": "actemra",
       "name": "Actemra/RoActemra (tocilizumab) - anti-IL-6R humanized IgG1 mAb (Chugai-originated)",
-      "stage": "Commercial (RA 2010; sJIA 2011; GCA 2017; CAR-T CRS 2017; COVID-19 2021; SSc-ILD 2024); biosimilar entry 2025+",
+      "stage": "Commercial (RA 2010; sJIA 2011; GCA 2017; CAR-T CRS 2017; COVID-19 2021; SSc-ILD 2024); biosimilar entry 2024+ (Tyenne Bioepis/Fresenius FDA Mar 2024)",
       "modality": "antibody.monoclonal.anti_il6r",
       "targets": [
         "IL6R"
@@ -241,8 +241,7 @@
       "stage": "Commercial (ALK+ NSCLC 2L+ FDA 2015; 1L 2017; adjuvant ALINA Ph3 FDA 2024)",
       "modality": "small_molecule.kinase.alk_inhibitor",
       "targets": [
-        "ALK",
-        "RET"
+        "ALK"
       ],
       "indications": [
         {
@@ -475,7 +474,7 @@
       "id": "evrysdi",
       "name": "Evrysdi (risdiplam) - oral SMN2 mRNA splicing modifier (small molecule; Chugai/Roche/PTC discovery)",
       "stage": "Commercial (SMA FDA 2020 ages 2mo+; FIREFISH/SUNFISH/JEWELFISH; oral solution)",
-      "modality": "small_molecule.nucleic_acid.splice_modifier",
+      "modality": "small_molecule.rna_modulator.splice_modifier",
       "targets": [
         "SMN2"
       ],
@@ -672,38 +671,38 @@
         {
           "id": "ros1_ntrk",
           "name": "ROS1+ NSCLC + NTRK fusion solid tumors (tissue-agnostic)",
-          "area": "oncology.lung.nsclc_driver.alk",
+          "area": "oncology.lung.nsclc_driver.ros1",
           "market": {
             "regions": {
               "us": {
-                "patientsK": 12,
-                "wtpPct": 72,
-                "priceK": 205
+                "patientsK": 3,
+                "wtpPct": 70,
+                "priceK": 215
               },
               "eu": {
-                "patientsK": 15,
-                "wtpPct": 55,
-                "priceK": 120
+                "patientsK": 3,
+                "wtpPct": 52,
+                "priceK": 125
               },
               "row": {
-                "patientsK": 50,
-                "wtpPct": 22,
+                "patientsK": 7,
+                "wtpPct": 20,
                 "priceK": 55
               }
             },
             "company_slice": {
               "us": {
-                "reachPct": 5.6,
+                "reachPct": 23.9,
                 "wtpPct": 65,
                 "priceK": 200
               },
               "eu": {
-                "reachPct": 3.7,
+                "reachPct": 15.8,
                 "wtpPct": 45,
                 "priceK": 120
               },
               "row": {
-                "reachPct": 0.9,
+                "reachPct": 3.8,
                 "wtpPct": 12,
                 "priceK": 40
               }
@@ -712,11 +711,131 @@
               "us.reachPct": "Rozlytrek ROS1 ~3% of ALK-driver NSCLC (proxy area); NTRK fusion ultra-rare tissue-agnostic",
               "us.priceK": "Rozlytrek WAC ~$200K/yr"
             },
-            "penPct": 68,
+            "penPct": 65,
             "cagrPct": 5,
             "peakYear": 2030,
             "salesM": 80,
             "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "edirol",
+      "name": "Edirol (eldecalcitol) - 2-beta-3-hydroxypropyloxy active vitamin D3 analog (Chugai-discovered)",
+      "stage": "Commercial (Japan osteoporosis 2011; Chugai-originated, Japan only)",
+      "modality": "small_molecule.nuclear_receptor.vdr_agonist",
+      "targets": [
+        "VDR"
+      ],
+      "indications": [
+        {
+          "id": "osteoporosis_japan",
+          "name": "Osteoporosis (post-menopausal + age-related; Japan only)",
+          "area": "musculoskeletal.bone_cartilage.osteoporosis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5000,
+                "wtpPct": 35,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 25,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 80000,
+                "wtpPct": 10,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 1.4,
+                "wtpPct": 30,
+                "priceK": 1.0
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Edirol Japan only (Chugai-discovered active vitamin D3); ~5% of Japan osteoporosis Rx share",
+              "row.priceK": "Japan oral vitamin D analog ~¥150K/yr (~$1K)"
+            },
+            "penPct": 25,
+            "cagrPct": -3,
+            "peakYear": 2025,
+            "salesM": 230,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "amy109",
+      "name": "AMY109 - anti-MIF (macrophage migration inhibitory factor) humanized mAb (Chugai-originated, first-in-class)",
+      "stage": "Phase 2 (endometriosis pain; novel anti-inflammatory target)",
+      "modality": "antibody.monoclonal.anti_mif",
+      "targets": [
+        "MIF"
+      ],
+      "indications": [
+        {
+          "id": "endometriosis",
+          "name": "Endometriosis pain (Ph2; first-in-class anti-MIF cytokine targeting macrophage axis)",
+          "area": "women_health.gyn_disorders.endometriosis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6500,
+                "wtpPct": 22,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 9000,
+                "wtpPct": 15,
+                "priceK": 0.8
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 4,
+                "priceK": 0.25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 55,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 0.7,
+                "wtpPct": 38,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "AMY109 first-in-class anti-MIF for endometriosis; competitive vs Orilissa (elagolix AbbVie GnRH antag) + Myfembree (Sumitomo); novel mechanism if Ph2 positive",
+              "us.priceK": "Endometriosis branded biologic pricing ~$25-35K/yr"
+            },
+            "penPct": 8,
+            "cagrPct": 12,
+            "peakYear": 2034
           }
         }
       ]
@@ -872,6 +991,20 @@
             "pen": 0.4
           }
         },
+        "edirol": {
+          "osteoporosis_japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "amy109": {
+          "endometriosis": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.3
+          }
+        },
         "nxt007": {
           "hema_next": {
             "pos": 25,
@@ -968,6 +1101,20 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.55
+          }
+        },
+        "edirol": {
+          "osteoporosis_japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "amy109": {
+          "endometriosis": {
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.4
           }
         },
         "nxt007": {
@@ -1068,6 +1215,20 @@
             "pen": 0.7
           }
         },
+        "edirol": {
+          "osteoporosis_japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "amy109": {
+          "endometriosis": {
+            "pos": 60,
+            "apr": 82,
+            "pen": 0.55
+          }
+        },
         "nxt007": {
           "hema_next": {
             "pos": 65,
@@ -1166,6 +1327,20 @@
             "pen": 0.85
           }
         },
+        "edirol": {
+          "osteoporosis_japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "amy109": {
+          "endometriosis": {
+            "pos": 75,
+            "apr": 88,
+            "pen": 0.7
+          }
+        },
         "nxt007": {
           "hema_next": {
             "pos": 80,
@@ -1262,6 +1437,20 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.1
+          }
+        },
+        "edirol": {
+          "osteoporosis_japan": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "amy109": {
+          "endometriosis": {
+            "pos": 90,
+            "apr": 95,
+            "pen": 1.0
           }
         },
         "nxt007": {

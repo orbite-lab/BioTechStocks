@@ -97,6 +97,19 @@ REGIONS = {
         "eu":  {"patientsK": 80000,  "wtpPct": 18, "priceK": 0.4},
         "row": {"patientsK": 400000, "wtpPct": 8,  "priceK": 0.15},
     },
+    # Cutaneous lupus erythematosus (CLE): cutaneous manifestation of
+    # lupus -- discoid LE (DLE), subacute cutaneous LE (SCLE), acute
+    # cutaneous LE (ACLE). ~70% of SLE patients have skin involvement.
+    # US ~250K CLE diagnosed (NIH; not all SLE), EU ~350K, ROW ~1.5M.
+    # Class: hydroxychloroquine generic standard; emerging biologics:
+    # Litifilimab (Biogen anti-BDCA2 LILAC Ph3), Saphnelo (AZN
+    # anifrolumab Ph2/3 CLE expansion), Benlysta (GSK SLE Ph3 with
+    # cutaneous endpoints). Net branded peak ~$45K/yr.
+    "dermatology.inflammatory_derm.cle": {
+        "us":  {"patientsK": 250,  "wtpPct": 35, "priceK": 45},
+        "eu":  {"patientsK": 350,  "wtpPct": 25, "priceK": 27},
+        "row": {"patientsK": 1500, "wtpPct": 8,  "priceK": 9},
+    },
 
     # ============================================================
     # IMMUNOLOGY - INFLAMMATORY SYSTEMIC
@@ -393,6 +406,7 @@ PEN_PCT = {
     "immunology.inflammatory_gi.ulcerative_colitis": 35,
     "immunology.inflammatory_gi.eoe": 35,
     "immunology.inflammatory_gi.gerd_peptic": 30,
+    "dermatology.inflammatory_derm.cle": 30,
     "immunology.inflammatory_systemic.rheumatoid_arthritis": 28,
     "immunology.inflammatory_systemic.psoriatic_arthritis": 30,
     "immunology.inflammatory_systemic.gca_pmr": 18,

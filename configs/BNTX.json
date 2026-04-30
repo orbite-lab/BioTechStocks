@@ -1,0 +1,1076 @@
+{
+  "company": {
+    "ticker": "BNTX",
+    "name": "BioNTech SE",
+    "currentPrice": 108.4,
+    "sharesOut": 251,
+    "cash": 18700,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "mRNA platform pivoting to oncology: Comirnaty (Pfizer 50/50) + BNT327 PD-L1xVEGF (BMS) + BNT122 neoantigen (Roche) + BNT323 HER2 ADC + BNT316 CTLA-4",
+    "yahooTicker": "BNTX"
+  },
+  "assets": [
+    {
+      "id": "comirnaty",
+      "name": "Comirnaty (BNT162b2) - COVID-19 mRNA vaccine (Pfizer 50/50 ex-Germany)",
+      "stage": "Commercial (>40 countries)",
+      "modality": "vaccine.mrna.covid",
+      "targets": [
+        "SARS_COV2_SPIKE"
+      ],
+      "indications": [
+        {
+          "id": "covid",
+          "name": "COVID-19 prophylaxis (BNTX share = Germany direct + 50% Pfizer ex-Germany gross profit)",
+          "area": "infectious_disease.vaccines.covid",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 100000,
+                "wtpPct": 25,
+                "priceK": 0.13
+              },
+              "eu": {
+                "patientsK": 200000,
+                "wtpPct": 22,
+                "priceK": 0.09
+              },
+              "row": {
+                "patientsK": 1500000,
+                "wtpPct": 8,
+                "priceK": 0.04
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 25,
+                "priceK": 0.13
+              },
+              "eu": {
+                "reachPct": 35,
+                "wtpPct": 22,
+                "priceK": 0.09
+              },
+              "row": {
+                "reachPct": 8,
+                "wtpPct": 8,
+                "priceK": 0.04
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "BNTX gets 50% of Pfizer ex-Germany economics on Comirnaty (~30-35% global share)",
+              "eu.reachPct": "Germany direct sales (BNTX 100%) + EU other 50% Pfizer split",
+              "us.priceK": "Comirnaty US WAC ~$130/dose"
+            },
+            "penPct": 8,
+            "cagrPct": -10,
+            "peakYear": 2026,
+            "salesM": 1500,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "bnt327",
+      "name": "BNT327 / pumitamig - PD-L1 x VEGF-A bispecific (BMS 50/50 partnership, $11B deal)",
+      "stage": "Phase 3 (TNBC 1L ROSETTA-BREAST-01, NSCLC 1L, ES-SCLC 1L)",
+      "modality": "antibody.bispecific.pdl1_vegf",
+      "targets": [
+        "CD274",
+        "VEGFA"
+      ],
+      "indications": [
+        {
+          "id": "tnbc_1l",
+          "name": "Triple-negative breast cancer 1L (Ph3 ROSETTA-BREAST-01, PD-L1 negative)",
+          "area": "oncology.breast.tnbc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60,
+                "wtpPct": 65,
+                "priceK": 140
+              },
+              "eu": {
+                "patientsK": 65,
+                "wtpPct": 48,
+                "priceK": 80
+              },
+              "row": {
+                "patientsK": 120,
+                "wtpPct": 15,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 70,
+                "priceK": 180
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 50,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "BMS 50/50 economics; targets PD-L1-low/neg TNBC subset (~50% of advanced TNBC)",
+              "us.priceK": "Class pricing ~$180K/yr (Keytruda+chemo benchmark)"
+            },
+            "penPct": 55,
+            "cagrPct": 4,
+            "peakYear": 2032
+          }
+        },
+        {
+          "id": "nsclc_1l",
+          "name": "NSCLC 1L (Ph3 advanced/metastatic, IO-naive)",
+          "area": "oncology.lung.nsclc_io_combo",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 100,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 400,
+                "wtpPct": 16,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 16,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Massive TAM (advanced NSCLC); BNTX share post-50/50 BMS = challenging to displace Keytruda",
+              "us.priceK": "Keytruda+chemo benchmark"
+            },
+            "penPct": 60,
+            "cagrPct": 4,
+            "peakYear": 2034
+          }
+        },
+        {
+          "id": "sclc_1l",
+          "name": "Extensive-stage SCLC 1L (Ph3)",
+          "area": "oncology.lung.sclc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 22,
+                "wtpPct": 60,
+                "priceK": 125
+              },
+              "eu": {
+                "patientsK": 28,
+                "wtpPct": 44,
+                "priceK": 72
+              },
+              "row": {
+                "patientsK": 180,
+                "wtpPct": 14,
+                "priceK": 28
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 22,
+                "wtpPct": 70,
+                "priceK": 170
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "ES-SCLC 1L is current Tecentriq/Imfinzi+chemo; smaller pool more capturable",
+              "us.priceK": "Atezolizumab+chemo benchmark"
+            },
+            "penPct": 48,
+            "cagrPct": 3,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "bnt122",
+      "name": "BNT122 / autogene cevumeran - individualized neoantigen mRNA (Genentech 50/50)",
+      "stage": "Phase 2 (CRC adjuvant, urothelial adjuvant, pancreatic, melanoma)",
+      "modality": "vaccine.mrna.individualized_neoantigen",
+      "targets": [],
+      "indications": [
+        {
+          "id": "crc_adj",
+          "name": "Adjuvant ctDNA+ stage II/III colorectal cancer (Ph2 with Genentech)",
+          "area": "oncology.gi.colorectal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 55,
+                "wtpPct": 65,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 48,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 320,
+                "wtpPct": 16,
+                "priceK": 22
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 65,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 45,
+                "priceK": 150
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Roche 50/50 split; ctDNA-MRD-positive subset of resected CRC stage II/III",
+              "us.priceK": "Personalized neoantigen course ~$250K"
+            },
+            "penPct": 50,
+            "cagrPct": 5,
+            "peakYear": 2034
+          }
+        },
+        {
+          "id": "panc_adj",
+          "name": "1L pancreatic adenocarcinoma (Ph2 with atezo + chemo)",
+          "area": "oncology.gi.pancreatic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60,
+                "wtpPct": 60,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 45,
+                "priceK": 60
+              },
+              "row": {
+                "patientsK": 350,
+                "wtpPct": 15,
+                "priceK": 22
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 55,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 38,
+                "priceK": 150
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 10,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Pancreatic adenocarcinoma high unmet; small TAM; Roche 50/50",
+              "us.priceK": "Same personalized pricing ~$250K"
+            },
+            "penPct": 40,
+            "cagrPct": 6,
+            "peakYear": 2034
+          }
+        },
+        {
+          "id": "muc_adj",
+          "name": "Adjuvant high-risk muscle-invasive urothelial carcinoma (Ph2 IMCODE004)",
+          "area": "oncology.genitourinary.bladder",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 62,
+                "priceK": 185
+              },
+              "eu": {
+                "patientsK": 28,
+                "wtpPct": 45,
+                "priceK": 105
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 60,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 42,
+                "priceK": 150
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Adjuvant resected MIBC subset; small share of bladder TAM",
+              "us.priceK": "Personalized pricing"
+            },
+            "penPct": 50,
+            "cagrPct": 4,
+            "peakYear": 2035
+          }
+        }
+      ]
+    },
+    {
+      "id": "bnt323",
+      "name": "BNT323 / trastuzumab pamirtecan - HER2 ADC (TopoI payload, ex-MediLink)",
+      "stage": "BLA filing 2026 (HER2+ endometrial); Ph3 HER2+ breast post-T-DXd",
+      "modality": "adc.dxd_linker.her2_adc",
+      "targets": [
+        "ERBB2"
+      ],
+      "indications": [
+        {
+          "id": "endometrial_her2",
+          "name": "HER2+ advanced/recurrent endometrial cancer (BLA 2026)",
+          "area": "oncology.gynecologic.endometrial",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 70,
+                "priceK": 170
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 250,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 65,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 45,
+                "priceK": 120
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "First-in-class HER2 ADC for endometrial; competes vs Enhertu cross-tumor",
+              "us.priceK": "ADC class pricing ~$200K/yr"
+            },
+            "penPct": 60,
+            "cagrPct": 5,
+            "peakYear": 2032
+          }
+        },
+        {
+          "id": "her2_breast",
+          "name": "HER2+ metastatic breast cancer post-T-DXd (Ph3)",
+          "area": "oncology.breast.her2_pos",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 120,
+                "wtpPct": 70,
+                "priceK": 165
+              },
+              "eu": {
+                "patientsK": 140,
+                "wtpPct": 50,
+                "priceK": 95
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 75,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 55,
+                "priceK": 120
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 14,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Post-Enhertu HER2+ MBC niche; second-line ADC differentiation needed",
+              "us.priceK": "Same ADC pricing"
+            },
+            "penPct": 65,
+            "cagrPct": 4,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "bnt316",
+      "name": "BNT316 / gotistobart (ex-OncoC4 ONC-392) - next-gen pH-sensitive anti-CTLA-4",
+      "stage": "Phase 2 (PRESERVE-001 melanoma, PRESERVE-006 mCRPC)",
+      "modality": "antibody.checkpoint.ctla4",
+      "targets": [
+        "CTLA4"
+      ],
+      "indications": [
+        {
+          "id": "melanoma_adv",
+          "name": "Advanced melanoma post-IO (Ph2 PRESERVE-001)",
+          "area": "oncology.skin.melanoma",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 65,
+                "priceK": 150
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 45,
+                "priceK": 90
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Differentiated CTLA-4 (pH-sensitive, lower toxicity vs Yervoy); 2L+ niche",
+              "us.priceK": "Yervoy class benchmark ~$150K"
+            },
+            "penPct": 65,
+            "cagrPct": 4,
+            "peakYear": 2034
+          }
+        },
+        {
+          "id": "mcrpc",
+          "name": "Metastatic castration-resistant prostate cancer (Ph2 PRESERVE-006)",
+          "area": "oncology.genitourinary.prostate",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 100,
+                "wtpPct": 70,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 110,
+                "wtpPct": 52,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 18
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 70,
+                "priceK": 150
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 50,
+                "priceK": 90
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 14,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "mCRPC very competitive; CTLA-4 historically modest in prostate",
+              "us.priceK": "Class pricing"
+            },
+            "penPct": 60,
+            "cagrPct": 4,
+            "peakYear": 2035
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 4,
+        "commercialMult": 1,
+        "commercialRevM": 1500,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "comirnaty": {
+          "covid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "bnt327": {
+          "tnbc_1l": {
+            "pos": 30,
+            "apr": 65,
+            "pen": 0.5
+          },
+          "nsclc_1l": {
+            "pos": 25,
+            "apr": 60,
+            "pen": 0.4
+          },
+          "sclc_1l": {
+            "pos": 30,
+            "apr": 65,
+            "pen": 0.5
+          }
+        },
+        "bnt122": {
+          "crc_adj": {
+            "pos": 15,
+            "apr": 45,
+            "pen": 0.4
+          },
+          "panc_adj": {
+            "pos": 10,
+            "apr": 35,
+            "pen": 0.3
+          },
+          "muc_adj": {
+            "pos": 12,
+            "apr": 40,
+            "pen": 0.4
+          }
+        },
+        "bnt323": {
+          "endometrial_her2": {
+            "pos": 60,
+            "apr": 80,
+            "pen": 0.6
+          },
+          "her2_breast": {
+            "pos": 25,
+            "apr": 55,
+            "pen": 0.4
+          }
+        },
+        "bnt316": {
+          "melanoma_adv": {
+            "pos": 18,
+            "apr": 50,
+            "pen": 0.4
+          },
+          "mcrpc": {
+            "pos": 12,
+            "apr": 40,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 6,
+        "commercialMult": 1.5,
+        "commercialRevM": 1500,
+        "milestones": 50,
+        "dil": 0
+      },
+      "assumptions": {
+        "comirnaty": {
+          "covid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "bnt327": {
+          "tnbc_1l": {
+            "pos": 50,
+            "apr": 78,
+            "pen": 0.7
+          },
+          "nsclc_1l": {
+            "pos": 45,
+            "apr": 75,
+            "pen": 0.6
+          },
+          "sclc_1l": {
+            "pos": 50,
+            "apr": 78,
+            "pen": 0.7
+          }
+        },
+        "bnt122": {
+          "crc_adj": {
+            "pos": 30,
+            "apr": 60,
+            "pen": 0.6
+          },
+          "panc_adj": {
+            "pos": 20,
+            "apr": 50,
+            "pen": 0.5
+          },
+          "muc_adj": {
+            "pos": 25,
+            "apr": 55,
+            "pen": 0.6
+          }
+        },
+        "bnt323": {
+          "endometrial_her2": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 0.8
+          },
+          "her2_breast": {
+            "pos": 45,
+            "apr": 72,
+            "pen": 0.6
+          }
+        },
+        "bnt316": {
+          "melanoma_adv": {
+            "pos": 35,
+            "apr": 65,
+            "pen": 0.6
+          },
+          "mcrpc": {
+            "pos": 25,
+            "apr": 55,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 40,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 8,
+        "commercialMult": 2.5,
+        "commercialRevM": 1500,
+        "milestones": 150,
+        "dil": 0
+      },
+      "assumptions": {
+        "comirnaty": {
+          "covid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "bnt327": {
+          "tnbc_1l": {
+            "pos": 70,
+            "apr": 88,
+            "pen": 0.95
+          },
+          "nsclc_1l": {
+            "pos": 65,
+            "apr": 85,
+            "pen": 0.85
+          },
+          "sclc_1l": {
+            "pos": 70,
+            "apr": 88,
+            "pen": 0.95
+          }
+        },
+        "bnt122": {
+          "crc_adj": {
+            "pos": 50,
+            "apr": 75,
+            "pen": 0.85
+          },
+          "panc_adj": {
+            "pos": 35,
+            "apr": 65,
+            "pen": 0.75
+          },
+          "muc_adj": {
+            "pos": 42,
+            "apr": 70,
+            "pen": 0.85
+          }
+        },
+        "bnt323": {
+          "endometrial_her2": {
+            "pos": 92,
+            "apr": 95,
+            "pen": 1.0
+          },
+          "her2_breast": {
+            "pos": 65,
+            "apr": 85,
+            "pen": 0.85
+          }
+        },
+        "bnt316": {
+          "melanoma_adv": {
+            "pos": 55,
+            "apr": 78,
+            "pen": 0.85
+          },
+          "mcrpc": {
+            "pos": 40,
+            "apr": 70,
+            "pen": 0.75
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 11,
+        "commercialMult": 3.5,
+        "commercialRevM": 1500,
+        "milestones": 300,
+        "dil": 0
+      },
+      "assumptions": {
+        "comirnaty": {
+          "covid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "bnt327": {
+          "tnbc_1l": {
+            "pos": 85,
+            "apr": 95,
+            "pen": 1.2
+          },
+          "nsclc_1l": {
+            "pos": 80,
+            "apr": 92,
+            "pen": 1.1
+          },
+          "sclc_1l": {
+            "pos": 85,
+            "apr": 95,
+            "pen": 1.2
+          }
+        },
+        "bnt122": {
+          "crc_adj": {
+            "pos": 70,
+            "apr": 88,
+            "pen": 1.1
+          },
+          "panc_adj": {
+            "pos": 55,
+            "apr": 80,
+            "pen": 0.95
+          },
+          "muc_adj": {
+            "pos": 62,
+            "apr": 85,
+            "pen": 1.1
+          }
+        },
+        "bnt323": {
+          "endometrial_her2": {
+            "pos": 96,
+            "apr": 98,
+            "pen": 1.2
+          },
+          "her2_breast": {
+            "pos": 82,
+            "apr": 92,
+            "pen": 1.0
+          }
+        },
+        "bnt316": {
+          "melanoma_adv": {
+            "pos": 75,
+            "apr": 90,
+            "pen": 1.0
+          },
+          "mcrpc": {
+            "pos": 58,
+            "apr": 85,
+            "pen": 0.95
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 14,
+        "commercialMult": 4.5,
+        "commercialRevM": 1500,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "comirnaty": {
+          "covid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "bnt327": {
+          "tnbc_1l": {
+            "pos": 95,
+            "apr": 98,
+            "pen": 1.4
+          },
+          "nsclc_1l": {
+            "pos": 92,
+            "apr": 97,
+            "pen": 1.3
+          },
+          "sclc_1l": {
+            "pos": 95,
+            "apr": 98,
+            "pen": 1.4
+          }
+        },
+        "bnt122": {
+          "crc_adj": {
+            "pos": 88,
+            "apr": 95,
+            "pen": 1.3
+          },
+          "panc_adj": {
+            "pos": 75,
+            "apr": 90,
+            "pen": 1.2
+          },
+          "muc_adj": {
+            "pos": 80,
+            "apr": 92,
+            "pen": 1.3
+          }
+        },
+        "bnt323": {
+          "endometrial_her2": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.4
+          },
+          "her2_breast": {
+            "pos": 93,
+            "apr": 97,
+            "pen": 1.3
+          }
+        },
+        "bnt316": {
+          "melanoma_adv": {
+            "pos": 90,
+            "apr": 96,
+            "pen": 1.2
+          },
+          "mcrpc": {
+            "pos": 78,
+            "apr": 92,
+            "pen": 1.2
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "2026",
+      "dateSort": "2026-06-30",
+      "asset": "bnt323",
+      "indication": "endometrial_her2",
+      "title": "BNT323 (trastuzumab pamirtecan) BLA filing for HER2+ endometrial",
+      "type": "bla_submission",
+      "binary": false,
+      "_source": "https://www.biontech.com/int/en/home/pipeline-and-products/pipeline.html",
+      "_confidence": "high"
+    },
+    {
+      "date": "2026",
+      "dateSort": "2026-09-30",
+      "asset": "bnt327",
+      "indication": "tnbc_1l",
+      "title": "BNT327 ROSETTA-BREAST-01 Ph3 1L TNBC China readout",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 60,
+      "success_pos": 88,
+      "success_apr": 95,
+      "_source": "https://news.bms.com/news/details/2025/BioNTech-and-Bristol-Myers-Squibb-Present-First-Global-Phase-2-Data-for-PD-L1xVEGF-A-Bispecific-Antibody-Pumitamig-Showing-Encouraging-Efficacy-in-Advanced-Triple-Negative-Breast-Cancer/default.aspx",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-12-15",
+      "asset": "bnt122",
+      "indication": "crc_adj",
+      "title": "BNT122 / autogene cevumeran Ph2 adjuvant CRC ctDNA+ interim",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 25,
+      "fail_apr": 55,
+      "success_pos": 75,
+      "success_apr": 88,
+      "_source": "https://investors.biontech.de/news-releases/news-release-details/biontech-provides-business-and-pipeline-updates-43rd-annual-jp",
+      "_confidence": "medium"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-03-31",
+      "asset": "bnt327",
+      "indication": "nsclc_1l",
+      "title": "BNT327 Ph3 1L NSCLC interim",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 25,
+      "fail_apr": 55,
+      "success_pos": 80,
+      "success_apr": 90,
+      "_source": "https://clinicaltrials.biontech.com/trials/BNT324-01",
+      "_confidence": "medium"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-06-30",
+      "asset": "bnt327",
+      "indication": "sclc_1l",
+      "title": "BNT327 Ph3 ES-SCLC 1L interim",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 55,
+      "success_pos": 85,
+      "success_apr": 92,
+      "_source": "https://clinicaltrials.biontech.com/trials/BNT324-01",
+      "_confidence": "medium"
+    },
+    {
+      "date": "2026",
+      "dateSort": "2026-12-31",
+      "asset": "comirnaty",
+      "indication": "covid",
+      "title": "Co-founders Sahin + Türeci announced departure end-2026 (operational transition risk)",
+      "type": "other",
+      "binary": false,
+      "_source": "https://capital.com/en-int/market-updates/biontech-stock-forecast-28-04-2026",
+      "_confidence": "high"
+    }
+  ]
+}

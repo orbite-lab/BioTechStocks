@@ -142,6 +142,18 @@ REGIONS = {
         "eu":  {"patientsK": 80,  "wtpPct": 50, "priceK": 100},
         "row": {"patientsK": 250, "wtpPct": 14, "priceK": 35},
     },
+    # Cervical cancer (advanced/recurrent/metastatic): branded ADC era opened
+    # with Tivdak (tisotumab vedotin, Pfizer/Genmab) FDA full approval 2024,
+    # EMA 2025. SoC: Keytruda+chemo 1L (KEYNOTE-826), Tivdak 2L+ ADC.
+    # Most cervical cancer is LMIC (HPV-driven, prevention-focused). source:
+    # NCI SEER cervical US ~13K incidence/yr -> ~7K advanced/recurrent eligible
+    # for branded systemic therapy; EU5 ~30K incidence -> ~8K advanced; ROW
+    # ~600K incidence -> ~70K advanced. Net branded ~$170K/yr (ADC + IO).
+    "oncology.gynecologic.cervical": {
+        "us":  {"patientsK": 7,   "wtpPct": 70, "priceK": 170},
+        "eu":  {"patientsK": 8,   "wtpPct": 50, "priceK": 100},
+        "row": {"patientsK": 70,  "wtpPct": 14, "priceK": 30},
+    },
 
     # ------------------------------------------------------------
     # HEMATOLOGY
@@ -707,6 +719,7 @@ PEN_PCT = {
     "oncology.gi.pancreatic_adjuvant": 50,
     "oncology.gynecologic.ovarian": 52,
     "oncology.gynecologic.endometrial": 60,
+    "oncology.gynecologic.cervical": 50,
     "oncology.hematology.aml": 48,
     "oncology.hematology.cll": 65,
     "oncology.hematology.nhl": 35,

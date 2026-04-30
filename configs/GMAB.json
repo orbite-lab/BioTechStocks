@@ -1,0 +1,1616 @@
+{
+  "company": {
+    "ticker": "GMAB",
+    "name": "Genmab A/S",
+    "currentPrice": 26.87,
+    "sharesOut": 616,
+    "cash": -3800,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Antibody platform: Darzalex/Kesimpta/JNJ trio royalties + Epkinly + Tivdak commercial + Petosemtamab (Merus acq Dec 2025) + Rina-S Ph3",
+    "yahooTicker": "GMAB"
+  },
+  "assets": [
+    {
+      "id": "darzalex_royalty",
+      "name": "Darzalex (daratumumab) royalty - J&J commercialized, Genmab originator (~12% royalty)",
+      "stage": "Commercial (multi-line MM globally)",
+      "modality": "antibody.monoclonal.anti_cd38",
+      "targets": [
+        "CD38"
+      ],
+      "indications": [
+        {
+          "id": "myeloma_1l",
+          "name": "Multiple myeloma 1L (newly diagnosed, transplant-eligible + ineligible)",
+          "area": "oncology.hematology.myeloma.1l",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 80,
+                "priceK": 280
+              },
+              "eu": {
+                "patientsK": 55,
+                "wtpPct": 62,
+                "priceK": 165
+              },
+              "row": {
+                "patientsK": 130,
+                "wtpPct": 20,
+                "priceK": 65
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 80,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 14,
+                "wtpPct": 60,
+                "priceK": 160
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 18,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "J&J Darzalex ~70% 1L MM share post-DREAMM-7/8 + 12% Genmab royalty rate",
+              "us.priceK": "Darzalex IV+SC pricing ~$280K/yr"
+            },
+            "penPct": 70,
+            "cagrPct": 4,
+            "peakYear": 2030,
+            "salesM": 1030,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "myeloma_2l_3l",
+          "name": "Multiple myeloma 2L-3L (R/R, lenalidomide-refractory)",
+          "area": "oncology.hematology.myeloma.2l_3l",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 36,
+                "wtpPct": 70,
+                "priceK": 320
+              },
+              "eu": {
+                "patientsK": 42,
+                "wtpPct": 55,
+                "priceK": 195
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 16,
+                "priceK": 70
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 14,
+                "wtpPct": 80,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 11,
+                "wtpPct": 60,
+                "priceK": 160
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 18,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "J&J share + 12% royalty rate; mid-line declining vs T-cell engagers/CAR-T",
+              "us.priceK": "Darzalex IV+SC pricing"
+            },
+            "penPct": 55,
+            "cagrPct": 1,
+            "peakYear": 2028,
+            "salesM": 515,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "myeloma_4l_plus",
+          "name": "Multiple myeloma 4L+ (R/R quad-refractory, post-CAR-T or post-bispecific)",
+          "area": "oncology.hematology.myeloma.4l_plus",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 55,
+                "priceK": 380
+              },
+              "eu": {
+                "patientsK": 14,
+                "wtpPct": 42,
+                "priceK": 220
+              },
+              "row": {
+                "patientsK": 20,
+                "wtpPct": 10,
+                "priceK": 80
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 80,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 60,
+                "priceK": 160
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 18,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "J&J small share late lines (CAR-T + bispecific dominant); 12% royalty",
+              "us.priceK": "Darzalex pricing"
+            },
+            "penPct": 35,
+            "cagrPct": -2,
+            "peakYear": 2026,
+            "salesM": 170,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "kesimpta_royalty",
+      "name": "Kesimpta (ofatumumab) royalty - Novartis commercialized (~10% royalty)",
+      "stage": "Commercial (RMS)",
+      "modality": "antibody.monoclonal.anti_cd20",
+      "targets": [
+        "MS4A1"
+      ],
+      "indications": [
+        {
+          "id": "rms",
+          "name": "Relapsing multiple sclerosis (RMS, self-administered SC monthly)",
+          "area": "immunology.demyelinating.multiple_sclerosis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 900,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 40,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 1500,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 75,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 60,
+                "priceK": 45
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 16,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Effective ~2% (NVS Kesimpta ~12% RMS share × 10% Genmab royalty rate)",
+              "us.priceK": "Kesimpta US WAC ~$95K/yr"
+            },
+            "penPct": 25,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 400,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "rybrevant_royalty",
+      "name": "Rybrevant (amivantamab) royalty - JNJ commercialized EGFRxMET bispecific (~5-7% royalty)",
+      "stage": "Commercial (NSCLC EGFR exon 20 + 1L)",
+      "modality": "antibody.bispecific.egfr_met",
+      "targets": [
+        "EGFR",
+        "MET"
+      ],
+      "indications": [
+        {
+          "id": "nsclc_egfr",
+          "name": "NSCLC EGFR-mutant (exon 20 ins + 1L w/ Lazcluze)",
+          "area": "oncology.lung.nsclc_driver.egfr",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 78,
+                "priceK": 230
+              },
+              "eu": {
+                "patientsK": 65,
+                "wtpPct": 60,
+                "priceK": 135
+              },
+              "row": {
+                "patientsK": 250,
+                "wtpPct": 25,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 65,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 18,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "JNJ Rybrevant small share (Tagrisso dominant) + 5-7% Genmab royalty",
+              "us.priceK": "Rybrevant pricing"
+            },
+            "penPct": 70,
+            "cagrPct": 15,
+            "peakYear": 2032,
+            "salesM": 40,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "jnj_bispecific_royalties",
+      "name": "Tecvayli + Talvey royalties - JNJ commercialized myeloma bispecifics (~5-6% royalty)",
+      "stage": "Commercial (R/R MM late lines)",
+      "modality": "antibody.bispecific.bcma_cd3",
+      "targets": [
+        "TNFRSF17",
+        "CD3",
+        "GPRC5D"
+      ],
+      "indications": [
+        {
+          "id": "myeloma_4l_tcv",
+          "name": "Tecvayli (teclistamab) - BCMA x CD3 in R/R MM 4L+",
+          "area": "oncology.hematology.myeloma.4l_plus",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 55,
+                "priceK": 380
+              },
+              "eu": {
+                "patientsK": 14,
+                "wtpPct": 42,
+                "priceK": 220
+              },
+              "row": {
+                "patientsK": 20,
+                "wtpPct": 10,
+                "priceK": 80
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 75,
+                "priceK": 360
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 55,
+                "priceK": 200
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 14,
+                "priceK": 70
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "JNJ Tecvayli ~30% 4L+ MM bispecific share + 5% Genmab royalty",
+              "us.priceK": "Tecvayli WAC ~$360K/yr"
+            },
+            "penPct": 35,
+            "cagrPct": 12,
+            "peakYear": 2030,
+            "salesM": 25,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "myeloma_3l_tlv",
+          "name": "Talvey (talquetamab) - GPRC5D x CD3 in R/R MM 2L-3L (post-Tecvayli)",
+          "area": "oncology.hematology.myeloma.2l_3l",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 36,
+                "wtpPct": 70,
+                "priceK": 320
+              },
+              "eu": {
+                "patientsK": 42,
+                "wtpPct": 55,
+                "priceK": 195
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 16,
+                "priceK": 70
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1,
+                "wtpPct": 75,
+                "priceK": 360
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 55,
+                "priceK": 200
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 14,
+                "priceK": 70
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "JNJ Talvey small early-line share + 5% Genmab royalty",
+              "us.priceK": "Talvey WAC ~$360K"
+            },
+            "penPct": 55,
+            "cagrPct": 25,
+            "peakYear": 2032,
+            "salesM": 10,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "tepezza_royalty",
+      "name": "Tepezza (teprotumumab) royalty - Amgen (Horizon legacy) (~4% royalty)",
+      "stage": "Commercial (TED moderate-severe)",
+      "modality": "antibody.monoclonal.anti_igf1r",
+      "targets": [
+        "IGF1R"
+      ],
+      "indications": [
+        {
+          "id": "ted",
+          "name": "Thyroid eye disease (active moderate-to-severe TED)",
+          "area": "ophthalmology.anterior_neuro.ted",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 50,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 30,
+                "priceK": 150
+              },
+              "row": {
+                "patientsK": 100,
+                "wtpPct": 10,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 70,
+                "priceK": 380
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 50,
+                "priceK": 220
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 12,
+                "priceK": 70
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Tepezza ~80% US TED share (sole approved IGF-1R) + 4% Genmab royalty",
+              "us.priceK": "Tepezza WAC ~$385K/course"
+            },
+            "penPct": 30,
+            "cagrPct": -3,
+            "peakYear": 2025,
+            "salesM": 75,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "epkinly",
+      "name": "Epkinly / Tepkinly (epcoritamab) - CD3xCD20 bispecific (AbbVie 50/50 US+JP)",
+      "stage": "Commercial R/R DLBCL + R/R FL; Ph3 1L line extensions",
+      "modality": "antibody.bispecific.cd20_cd3",
+      "targets": [
+        "CD3",
+        "MS4A1"
+      ],
+      "indications": [
+        {
+          "id": "dlbcl_rr",
+          "name": "R/R DLBCL 3L+ (commercial; full FDA approval 2024)",
+          "area": "oncology.hematology.nhl.dlbcl",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 68,
+                "priceK": 195
+              },
+              "eu": {
+                "patientsK": 38,
+                "wtpPct": 50,
+                "priceK": 115
+              },
+              "row": {
+                "patientsK": 120,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 75,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 55,
+                "priceK": 160
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 14,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "AbbVie 50/50 US+JP, AbbVie ex-US; Epkinly competing vs Columvi (Roche bispecific)",
+              "us.priceK": "Epkinly WAC ~$280K/course"
+            },
+            "penPct": 55,
+            "cagrPct": 12,
+            "peakYear": 2030,
+            "salesM": 300,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "fl_rr",
+          "name": "R/R FL 2L+ with R-len (full approval Nov 2025; EPCORE FL-1)",
+          "area": "oncology.hematology.nhl.fl",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 14,
+                "wtpPct": 65,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 17,
+                "wtpPct": 48,
+                "priceK": 50
+              },
+              "row": {
+                "patientsK": 30,
+                "wtpPct": 12,
+                "priceK": 20
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 75,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 55,
+                "priceK": 160
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 14,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Epkinly+R-len first-in-class bispecific combo for R/R FL post-CAR-T",
+              "us.priceK": "Epkinly pricing"
+            },
+            "penPct": 45,
+            "cagrPct": 25,
+            "peakYear": 2032,
+            "salesM": 168,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "dlbcl_1l",
+          "name": "1L DLBCL fixed-duration (Ph3 EPCORE DLBCL-2)",
+          "area": "oncology.hematology.nhl.dlbcl",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 68,
+                "priceK": 195
+              },
+              "eu": {
+                "patientsK": 38,
+                "wtpPct": 50,
+                "priceK": 115
+              },
+              "row": {
+                "patientsK": 120,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 75,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 18,
+                "wtpPct": 55,
+                "priceK": 160
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 14,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Aspirational displacement of R-CHOP regimen with bispecific-based 1L",
+              "us.priceK": "Epkinly pricing"
+            },
+            "penPct": 55,
+            "cagrPct": 5,
+            "peakYear": 2034
+          }
+        },
+        {
+          "id": "fl_1l",
+          "name": "1L FL fixed-duration (Ph3)",
+          "area": "oncology.hematology.nhl.fl",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 14,
+                "wtpPct": 65,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 17,
+                "wtpPct": 48,
+                "priceK": 50
+              },
+              "row": {
+                "patientsK": 30,
+                "wtpPct": 12,
+                "priceK": 20
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 75,
+                "priceK": 280
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 55,
+                "priceK": 160
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 14,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Aspirational 1L FL bispecific replacing R-CHOP/BR",
+              "us.priceK": "Epkinly pricing"
+            },
+            "penPct": 45,
+            "cagrPct": 6,
+            "peakYear": 2035
+          }
+        }
+      ]
+    },
+    {
+      "id": "tivdak",
+      "name": "Tivdak (tisotumab vedotin) - tissue factor ADC MMAE (Pfizer 50/50 US+CN; Genmab solo ex-rest 2025)",
+      "stage": "Commercial (R/M cervical)",
+      "modality": "adc.tissue_factor.mmae",
+      "targets": [
+        "F3"
+      ],
+      "indications": [
+        {
+          "id": "cervical",
+          "name": "Recurrent/metastatic cervical cancer post-platinum (FDA full approval 2024)",
+          "area": "oncology.gynecologic.cervical",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 7,
+                "wtpPct": 70,
+                "priceK": 170
+              },
+              "eu": {
+                "patientsK": 8,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 70,
+                "wtpPct": 14,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 30,
+                "wtpPct": 75,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "First-in-class tissue factor ADC for cervical 2L+; Pfizer 50/50 US+CN",
+              "us.priceK": "Tivdak WAC ~$200K/course"
+            },
+            "penPct": 50,
+            "cagrPct": 15,
+            "peakYear": 2032,
+            "salesM": 250,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "petosemtamab",
+      "name": "Petosemtamab (MCLA-158) - EGFRxLGR5 bispecific (Merus acq Dec 2025; 100% Genmab)",
+      "stage": "Phase 3 LiGeR-HN-1 (1L HNSCC + Keytruda) + LiGeR-HN-2 (2/3L+ mono); 2 BTDs",
+      "modality": "antibody.bispecific.egfr_lgr5",
+      "targets": [
+        "EGFR",
+        "LGR5"
+      ],
+      "indications": [
+        {
+          "id": "hnscc_1l",
+          "name": "1L recurrent/metastatic HNSCC + Keytruda (Ph3 LiGeR-HN-1)",
+          "area": "oncology.head_neck.hnscc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 70,
+                "wtpPct": 65,
+                "priceK": 145
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 50,
+                "priceK": 85
+              },
+              "row": {
+                "patientsK": 600,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 65,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 50,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Targets ~30% of 1L HNSCC eligible (PD-L1+ Keytruda combo); 100% Genmab post-Merus",
+              "us.priceK": "Bispecific class pricing ~$200K/yr"
+            },
+            "penPct": 55,
+            "cagrPct": 4,
+            "peakYear": 2032
+          }
+        },
+        {
+          "id": "hnscc_2l_plus",
+          "name": "2/3L+ HNSCC monotherapy post-IO (Ph3 LiGeR-HN-2)",
+          "area": "oncology.head_neck.hnscc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 70,
+                "wtpPct": 65,
+                "priceK": 145
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 50,
+                "priceK": 85
+              },
+              "row": {
+                "patientsK": 600,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 60,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 45,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 10,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Post-IO niche; smaller but FIC ADC alternative to chemotherapy",
+              "us.priceK": "Same bispecific pricing"
+            },
+            "penPct": 55,
+            "cagrPct": 3,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "rina_s",
+      "name": "Rina-S (rinatabart sesutecan) - FRα ADC TopoI payload (ex-ProfoundBio acq)",
+      "stage": "Phase 3 RAINFOL-02 PROC (readout 2026); RAINFOL-03 endometrial (BTD); RAINFOL-04 platinum-sensitive ovarian",
+      "modality": "adc.dxd_linker.folr1_adc",
+      "targets": [
+        "FOLR1"
+      ],
+      "indications": [
+        {
+          "id": "ovarian_proc",
+          "name": "Platinum-resistant ovarian cancer (Ph3 RAINFOL-02; readout 2026)",
+          "area": "oncology.gynecologic.ovarian",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 35,
+                "wtpPct": 65,
+                "priceK": 125
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 50,
+                "priceK": 72
+              },
+              "row": {
+                "patientsK": 90,
+                "wtpPct": 16,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 14,
+                "wtpPct": 70,
+                "priceK": 220
+              },
+              "eu": {
+                "reachPct": 9,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Targets PROC subset (~50% of advanced ovarian) competing vs Elahere mirvetuximab",
+              "us.priceK": "FRα ADC class ~$220K (Elahere benchmark $200K)"
+            },
+            "penPct": 52,
+            "cagrPct": 5,
+            "peakYear": 2032
+          }
+        },
+        {
+          "id": "endometrial_rs",
+          "name": "Recurrent/progressive endometrial cancer (Ph3 RAINFOL-03; FDA BTD 2025)",
+          "area": "oncology.gynecologic.endometrial",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 70,
+                "priceK": 170
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 250,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 14,
+                "wtpPct": 65,
+                "priceK": 220
+              },
+              "eu": {
+                "reachPct": 9,
+                "wtpPct": 45,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Post-PD-1+platinum endometrial; novel ADC class (no FRα ADC approved here)",
+              "us.priceK": "Same FRα ADC pricing"
+            },
+            "penPct": 60,
+            "cagrPct": 6,
+            "peakYear": 2033
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 4,
+        "commercialMult": 3,
+        "commercialRevM": 3000,
+        "milestones": 0,
+        "dil": 5
+      },
+      "assumptions": {
+        "darzalex_royalty": {
+          "myeloma_1l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "myeloma_2l_3l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "myeloma_4l_plus": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "kesimpta_royalty": {
+          "rms": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "rybrevant_royalty": {
+          "nsclc_egfr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "jnj_bispecific_royalties": {
+          "myeloma_4l_tcv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "myeloma_3l_tlv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "tepezza_royalty": {
+          "ted": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "epkinly": {
+          "dlbcl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "fl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "dlbcl_1l": {
+            "pos": 30,
+            "apr": 60,
+            "pen": 0.4
+          },
+          "fl_1l": {
+            "pos": 25,
+            "apr": 55,
+            "pen": 0.4
+          }
+        },
+        "tivdak": {
+          "cervical": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "petosemtamab": {
+          "hnscc_1l": {
+            "pos": 30,
+            "apr": 65,
+            "pen": 0.5
+          },
+          "hnscc_2l_plus": {
+            "pos": 25,
+            "apr": 60,
+            "pen": 0.4
+          }
+        },
+        "rina_s": {
+          "ovarian_proc": {
+            "pos": 35,
+            "apr": 70,
+            "pen": 0.5
+          },
+          "endometrial_rs": {
+            "pos": 25,
+            "apr": 60,
+            "pen": 0.4
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 6,
+        "commercialMult": 4,
+        "commercialRevM": 3000,
+        "milestones": 50,
+        "dil": 0
+      },
+      "assumptions": {
+        "darzalex_royalty": {
+          "myeloma_1l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "myeloma_2l_3l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "myeloma_4l_plus": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.45
+          }
+        },
+        "kesimpta_royalty": {
+          "rms": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "rybrevant_royalty": {
+          "nsclc_egfr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "jnj_bispecific_royalties": {
+          "myeloma_4l_tcv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "myeloma_3l_tlv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "tepezza_royalty": {
+          "ted": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "epkinly": {
+          "dlbcl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "fl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "dlbcl_1l": {
+            "pos": 50,
+            "apr": 75,
+            "pen": 0.6
+          },
+          "fl_1l": {
+            "pos": 45,
+            "apr": 72,
+            "pen": 0.6
+          }
+        },
+        "tivdak": {
+          "cervical": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "petosemtamab": {
+          "hnscc_1l": {
+            "pos": 50,
+            "apr": 78,
+            "pen": 0.7
+          },
+          "hnscc_2l_plus": {
+            "pos": 45,
+            "apr": 75,
+            "pen": 0.6
+          }
+        },
+        "rina_s": {
+          "ovarian_proc": {
+            "pos": 55,
+            "apr": 82,
+            "pen": 0.7
+          },
+          "endometrial_rs": {
+            "pos": 45,
+            "apr": 75,
+            "pen": 0.6
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 40,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 8,
+        "commercialMult": 5.5,
+        "commercialRevM": 3000,
+        "milestones": 150,
+        "dil": 0
+      },
+      "assumptions": {
+        "darzalex_royalty": {
+          "myeloma_1l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "myeloma_2l_3l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "myeloma_4l_plus": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "kesimpta_royalty": {
+          "rms": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "rybrevant_royalty": {
+          "nsclc_egfr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "jnj_bispecific_royalties": {
+          "myeloma_4l_tcv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "myeloma_3l_tlv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "tepezza_royalty": {
+          "ted": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "epkinly": {
+          "dlbcl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "fl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "dlbcl_1l": {
+            "pos": 70,
+            "apr": 88,
+            "pen": 0.85
+          },
+          "fl_1l": {
+            "pos": 65,
+            "apr": 85,
+            "pen": 0.85
+          }
+        },
+        "tivdak": {
+          "cervical": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "petosemtamab": {
+          "hnscc_1l": {
+            "pos": 70,
+            "apr": 88,
+            "pen": 0.9
+          },
+          "hnscc_2l_plus": {
+            "pos": 65,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "rina_s": {
+          "ovarian_proc": {
+            "pos": 75,
+            "apr": 90,
+            "pen": 0.95
+          },
+          "endometrial_rs": {
+            "pos": 65,
+            "apr": 85,
+            "pen": 0.85
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 11,
+        "commercialMult": 7.5,
+        "commercialRevM": 3000,
+        "milestones": 300,
+        "dil": 0
+      },
+      "assumptions": {
+        "darzalex_royalty": {
+          "myeloma_1l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "myeloma_2l_3l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "myeloma_4l_plus": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "kesimpta_royalty": {
+          "rms": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "rybrevant_royalty": {
+          "nsclc_egfr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "jnj_bispecific_royalties": {
+          "myeloma_4l_tcv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "myeloma_3l_tlv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "tepezza_royalty": {
+          "ted": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "epkinly": {
+          "dlbcl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "fl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "dlbcl_1l": {
+            "pos": 85,
+            "apr": 95,
+            "pen": 1.0
+          },
+          "fl_1l": {
+            "pos": 80,
+            "apr": 92,
+            "pen": 1.0
+          }
+        },
+        "tivdak": {
+          "cervical": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "petosemtamab": {
+          "hnscc_1l": {
+            "pos": 85,
+            "apr": 95,
+            "pen": 1.1
+          },
+          "hnscc_2l_plus": {
+            "pos": 80,
+            "apr": 92,
+            "pen": 1.0
+          }
+        },
+        "rina_s": {
+          "ovarian_proc": {
+            "pos": 88,
+            "apr": 96,
+            "pen": 1.15
+          },
+          "endometrial_rs": {
+            "pos": 80,
+            "apr": 92,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 14,
+        "commercialMult": 10,
+        "commercialRevM": 3000,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "darzalex_royalty": {
+          "myeloma_1l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "myeloma_2l_3l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "myeloma_4l_plus": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "kesimpta_royalty": {
+          "rms": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "rybrevant_royalty": {
+          "nsclc_egfr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "jnj_bispecific_royalties": {
+          "myeloma_4l_tcv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          },
+          "myeloma_3l_tlv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "tepezza_royalty": {
+          "ted": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "epkinly": {
+          "dlbcl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          },
+          "fl_rr": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "dlbcl_1l": {
+            "pos": 95,
+            "apr": 98,
+            "pen": 1.3
+          },
+          "fl_1l": {
+            "pos": 92,
+            "apr": 97,
+            "pen": 1.3
+          }
+        },
+        "tivdak": {
+          "cervical": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "petosemtamab": {
+          "hnscc_1l": {
+            "pos": 95,
+            "apr": 98,
+            "pen": 1.3
+          },
+          "hnscc_2l_plus": {
+            "pos": 92,
+            "apr": 97,
+            "pen": 1.3
+          }
+        },
+        "rina_s": {
+          "ovarian_proc": {
+            "pos": 95,
+            "apr": 98,
+            "pen": 1.4
+          },
+          "endometrial_rs": {
+            "pos": 92,
+            "apr": 97,
+            "pen": 1.3
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "2026",
+      "dateSort": "2026-09-30",
+      "asset": "rina_s",
+      "indication": "ovarian_proc",
+      "title": "Rina-S RAINFOL-02 Phase 3 platinum-resistant ovarian cancer readout",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 35,
+      "fail_apr": 70,
+      "success_pos": 90,
+      "success_apr": 95,
+      "_source": "https://www.oncologypipeline.com/apexonco/genmab-pushes-rina-s-its-third-phase-3",
+      "_confidence": "high"
+    },
+    {
+      "date": "2026",
+      "dateSort": "2026-12-31",
+      "asset": "petosemtamab",
+      "indication": "hnscc_2l_plus",
+      "title": "Petosemtamab LiGeR-HN-2 Phase 3 interim (2/3L+ HNSCC monotherapy)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 65,
+      "success_pos": 88,
+      "success_apr": 95,
+      "_source": "https://www.statnews.com/2025/09/29/genmab-merus-head-and-neck-cancer-acquisition-petosemtamab/",
+      "_confidence": "high"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-03-31",
+      "asset": "petosemtamab",
+      "indication": "hnscc_1l",
+      "title": "Petosemtamab LiGeR-HN-1 Phase 3 1L HNSCC + Keytruda interim",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 65,
+      "success_pos": 90,
+      "success_apr": 96,
+      "_source": "https://ir.genmab.com/news-releases/news-release-details/genmab-acquire-merus-expanding-late-stage-pipeline-and/",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-15",
+      "asset": "epkinly",
+      "indication": "dlbcl_1l",
+      "title": "Epkinly EPCORE DLBCL-2 Ph3 1L DLBCL fixed-duration interim",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 35,
+      "fail_apr": 65,
+      "success_pos": 85,
+      "success_apr": 95,
+      "_source": "https://ir.genmab.com/news-releases/news-release-details/genmab-publishes-2025-annual-report/",
+      "_confidence": "medium"
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-06-30",
+      "asset": "rina_s",
+      "indication": "endometrial_rs",
+      "title": "Rina-S RAINFOL-03 Ph3 endometrial readout (BTD)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 60,
+      "success_pos": 85,
+      "success_apr": 95,
+      "_source": "https://ir.genmab.com/news-releases/news-release-details/genmab-receives-fda-breakthrough-therapy-designation-rinatabart/",
+      "_confidence": "medium"
+    }
+  ]
+}

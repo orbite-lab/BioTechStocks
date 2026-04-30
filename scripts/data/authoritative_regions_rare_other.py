@@ -588,6 +588,19 @@ REGIONS = {
     # ~$10B) for ~90% of patients with eligible mutations. Adjuncts include
     # Pulmozyme (Roche dornase alfa), Tobi (inhaled tobramycin). Net branded
     # ~$320K/yr Trikafta; mucolytic adjuncts ~$13K/yr.
+    # Preterm respiratory distress syndrome (RDS / hyaline membrane disease):
+    # surfactant deficiency in premature neonates, primary cause of preterm
+    # mortality. ~50K US preterm RDS/yr (~10% of <34wk births), ~75K EU,
+    # ~500K ROW. Sole branded class: animal-derived surfactant
+    # (Curosurf/poractant alfa Chiesi market leader; Survanta/beractam Abbvie;
+    # Infasurf/calfactant ONY; Surfaxin/lucinactant Discovery Labs; Alveofact
+    # Boehringer). Class peak ~$700-800M globally; Curosurf ~50% share.
+    # source: NICU registries; Vermont Oxford Network; Chiesi 10-K.
+    "respiratory.genetic.preterm_rds": {
+        "us":  {"patientsK": 50,    "wtpPct": 85, "priceK": 7},
+        "eu":  {"patientsK": 75,    "wtpPct": 70, "priceK": 4.5},
+        "row": {"patientsK": 500,   "wtpPct": 25, "priceK": 1.5},
+    },
     "respiratory.genetic.cystic_fibrosis": {
         "us":  {"patientsK": 40,  "wtpPct": 80, "priceK": 280},
         "eu":  {"patientsK": 50,  "wtpPct": 60, "priceK": 170},
@@ -962,6 +975,7 @@ PEN_PCT = {
     "ophthalmology.anterior_neuro.uveitis": 18,
     "cardio_metabolic.thrombosis.thrombolytic": 70,
     "respiratory.genetic.cystic_fibrosis": 80,
+    "respiratory.genetic.preterm_rds": 70,
     "musculoskeletal.crystal_arthropathy.gout": 35,
     "nephrology.glomerular.aav_anca": 45,
     "immunology.demyelinating.nmosd": 50,

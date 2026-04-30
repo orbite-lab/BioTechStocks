@@ -1,0 +1,1052 @@
+{
+  "company": {
+    "ticker": "CHIESI",
+    "name": "Chiesi Farmaceutici S.p.A. (private; Chiesi family)",
+    "currentPrice": 1,
+    "sharesOut": 1,
+    "cash": 0,
+    "currency": "EUR",
+    "phase": "commercial",
+    "subtitle": "PRIVATE REFERENCE -- Italian family-owned pharma since 1935 (Chiesi family; Parma HQ). FY24 total revenue ~EUR 3.0B; ~EUR 700M+ R&D. Three pillars: AIR (respiratory: Trimbow ICS/LABA/LAMA triple + Foster/Fostair ICS/LABA + Atimos), CARE (special care/NICU: Curosurf porcine surfactant ~$400M+ market leader + Peyona caffeine apnea), and RARE (Chiesi Global Rare Diseases: Lamzede alpha-mannosidosis ERT + post-Amryt Jan 2023 acquisition $1.25B brought Filsuvez EB + Mycapssa oral octreotide acromegaly + Myalepta metreleptin lipodystrophy + Lojuxta lomitapide HoFH)",
+    "yahooTicker": "",
+    "private": true,
+    "privateNote": "Family-owned by Chiesi family since founding 1935 by Giacomo Chiesi (now 3rd generation: Alberto + Andrea + Maria Paola Chiesi). Italian B-Corp certified pharma. Acquired Amryt Pharma Jan 2023 ($1.25B + CVR) for rare disease pivot. No equity tradeable. Modeled here for taxonomy + drug-portfolio reference only."
+  },
+  "assets": [
+    {
+      "id": "trimbow",
+      "name": "Trimbow / Trydonis (beclomethasone + formoterol + glycopyrronium) - first-in-class ICS/LABA/LAMA triple combination MDI",
+      "stage": "Commercial (COPD 2017 EU, 2020 US; severe asthma triple FDA Aug 2024); Chiesi-discovered NEXThaler + Modulite delivery platforms",
+      "modality": "small_molecule.gpcr.ics_laba_lama_triple",
+      "targets": [
+        "NR3C1",
+        "ADRB2",
+        "CHRM3"
+      ],
+      "indications": [
+        {
+          "id": "copd",
+          "name": "COPD severe (triple therapy maintenance bronchodilation + anti-inflammatory)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 7.1,
+                "wtpPct": 50,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 23.6,
+                "wtpPct": 38,
+                "priceK": 3
+              },
+              "row": {
+                "reachPct": 7.1,
+                "wtpPct": 15,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Trimbow US ~1-2% COPD share post-2020 launch (later entry vs Trelegy GSK/Anoro/Stiolto BI); EU/Italy stronger ~10% share",
+              "us.priceK": "Trimbow WAC ~$4-5K/yr"
+            },
+            "penPct": 10,
+            "cagrPct": 12,
+            "peakYear": 2031,
+            "salesM": 1100,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "asthma",
+          "name": "Severe asthma (ICS/LABA/LAMA triple FDA Aug 2024)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3.7,
+                "wtpPct": 50,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 9.3,
+                "wtpPct": 38,
+                "priceK": 3
+              },
+              "row": {
+                "reachPct": 2.3,
+                "wtpPct": 15,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Trimbow asthma triple US Aug 2024 launch; competitive vs Breztri (AZN budesonide/glycopyrrolate/formoterol triple)",
+              "us.priceK": "Same Trimbow WAC"
+            },
+            "penPct": 25,
+            "cagrPct": 25,
+            "peakYear": 2032,
+            "salesM": 80,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "foster",
+      "name": "Foster / Fostair (beclomethasone + formoterol) - extra-fine ICS/LABA combination MDI (Modulite platform)",
+      "stage": "Commercial (asthma + COPD; mature franchise; LOE-aged in EU)",
+      "modality": "small_molecule.gpcr.ics_laba",
+      "targets": [
+        "NR3C1",
+        "ADRB2"
+      ],
+      "indications": [
+        {
+          "id": "asthma_copd",
+          "name": "Asthma + COPD (extra-fine particle ICS/LABA dual; Modulite platform)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 95,
+                "wtpPct": 35,
+                "priceK": 2.5
+              },
+              "row": {
+                "reachPct": 40.3,
+                "wtpPct": 12,
+                "priceK": 0.8
+              }
+            },
+            "company_slice_sources": {
+              "eu.reachPct": "Foster/Fostair mature EU franchise; competitive vs Symbicort (AZN) + Seretide (GSK)",
+              "eu.priceK": "Foster ~EUR 30/mo (~$2.5K/yr)",
+              "us.note": "Not US-marketed (Trimbow extends Foster franchise)"
+            },
+            "penPct": 25,
+            "cagrPct": -3,
+            "peakYear": 2026,
+            "salesM": 500,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "curosurf",
+      "name": "Curosurf (poractant alfa) - natural porcine pulmonary surfactant (intratracheal)",
+      "stage": "Commercial (preterm infant RDS; market leader globally; FDA 1999, EU 1992)",
+      "modality": "recombinant_protein.surfactant.porcine_natural",
+      "targets": [
+        "SFTPB",
+        "SFTPC"
+      ],
+      "indications": [
+        {
+          "id": "preterm_rds",
+          "name": "Preterm respiratory distress syndrome (RDS / hyaline membrane disease; intratracheal)",
+          "area": "respiratory.genetic.preterm_rds",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 85,
+                "priceK": 7
+              },
+              "eu": {
+                "patientsK": 75,
+                "wtpPct": 70,
+                "priceK": 4.5
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 80,
+                "priceK": 7
+              },
+              "eu": {
+                "reachPct": 95,
+                "wtpPct": 70,
+                "priceK": 4.5
+              },
+              "row": {
+                "reachPct": 29.4,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Curosurf ~50% global preterm RDS share (vs Survanta/beractant Abbvie + Infasurf/calfactant ONY); Chiesi market leader",
+              "us.priceK": "Curosurf WAC ~$3.5K/dose; ~$7K/treatment course (multi-dose)"
+            },
+            "penPct": 70,
+            "cagrPct": 2,
+            "peakYear": 2030,
+            "salesM": 420,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "filsuvez",
+      "name": "Filsuvez (birch bark extract; oleogel-S10; betulin-rich) - topical triterpene gel (ex-Amryt)",
+      "stage": "Commercial (FDA Dec 2023 dystrophic + junctional EB ages 6mo+; first-ever EB therapy; via Amryt acq Jan 2023)",
+      "modality": "small_molecule.triterpene.betulin_topical",
+      "targets": [],
+      "indications": [
+        {
+          "id": "deb",
+          "name": "Dystrophic + junctional epidermolysis bullosa (DEB + JEB; partial-thickness wound healing)",
+          "area": "dermatology.rare_skin.deb",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3,
+                "wtpPct": 80,
+                "priceK": 800
+              },
+              "eu": {
+                "patientsK": 4,
+                "wtpPct": 65,
+                "priceK": 300
+              },
+              "row": {
+                "patientsK": 20,
+                "wtpPct": 15,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 30,
+                "wtpPct": 75,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 22,
+                "wtpPct": 55,
+                "priceK": 150
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Filsuvez first-ever EB therapy FDA 2023; competitive vs Vyjuvek (KRYS B-VEC HSV-1 gene therapy 2023); ~30% reach combined",
+              "us.priceK": "Filsuvez WAC ~$250K/yr blended weight-based"
+            },
+            "penPct": 60,
+            "cagrPct": 18,
+            "peakYear": 2031,
+            "salesM": 80,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "mycapssa",
+      "name": "Mycapssa (octreotide oral capsule) - first oral somatostatin analog (Transient Permeability Enhancer technology; ex-Amryt ex-Chiasma)",
+      "stage": "Commercial (acromegaly maintenance FDA 2020 ages 18+; oral alternative to monthly IM Sandostatin LAR)",
+      "modality": "peptide.oral.somatostatin_analog",
+      "targets": [
+        "SSTR2",
+        "SSTR5"
+      ],
+      "indications": [
+        {
+          "id": "acromegaly",
+          "name": "Acromegaly maintenance (oral; replacing IM injection)",
+          "area": "endocrine.pituitary.acromegaly",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8,
+                "wtpPct": 75,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 10,
+                "wtpPct": 65,
+                "priceK": 45
+              },
+              "row": {
+                "patientsK": 15,
+                "wtpPct": 35,
+                "priceK": 20
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 22.8,
+                "wtpPct": 65,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 11.4,
+                "wtpPct": 45,
+                "priceK": 60
+              },
+              "row": {
+                "reachPct": 2.3,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Mycapssa ~10% acromegaly maintenance share; oral convenience vs IM Sandostatin LAR + Somatuline (Ipsen) injections",
+              "us.priceK": "Mycapssa WAC ~$100K/yr; oral convenience premium"
+            },
+            "penPct": 20,
+            "cagrPct": 18,
+            "peakYear": 2031,
+            "salesM": 100,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "myalepta",
+      "name": "Myalepta (metreleptin) - recombinant human leptin analog (subQ; ex-Amryt)",
+      "stage": "Commercial (generalized lipodystrophy congenital + acquired FDA 2014; partial lipodystrophy 2022 expansion)",
+      "modality": "recombinant_protein.cytokine.leptin_analog",
+      "targets": [
+        "LEPR"
+      ],
+      "indications": [
+        {
+          "id": "lipodystrophy",
+          "name": "Generalized lipodystrophy (Berardinelli-Seip + Lawrence; partial lipodystrophy)",
+          "area": "cardio_metabolic.lipids.lipodystrophy",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 0.5,
+                "wtpPct": 80,
+                "priceK": 700
+              },
+              "eu": {
+                "patientsK": 0.7,
+                "wtpPct": 60,
+                "priceK": 450
+              },
+              "row": {
+                "patientsK": 2,
+                "wtpPct": 15,
+                "priceK": 130
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 35,
+                "wtpPct": 80,
+                "priceK": 700
+              },
+              "eu": {
+                "reachPct": 25,
+                "wtpPct": 60,
+                "priceK": 450
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 14,
+                "priceK": 130
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Myalepta sole approved generalized lipodystrophy therapy; ~35% of US prevalent treated",
+              "us.priceK": "Myalepta WAC ~$700K/yr ultra-orphan"
+            },
+            "penPct": 50,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 75,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "lojuxta",
+      "name": "Lojuxta / Juxtapid (lomitapide) - oral microsomal triglyceride transfer protein (MTP) inhibitor (ex-Amryt)",
+      "stage": "Commercial (HoFH adult; FDA 2012 Juxtapid US discontinued; EU Lojuxta retained)",
+      "modality": "small_molecule.transporter.mtp_inhibitor",
+      "targets": [
+        "MTTP"
+      ],
+      "indications": [
+        {
+          "id": "hofh",
+          "name": "Homozygous familial hypercholesterolemia (HoFH; oral adjunct LDL-lowering)",
+          "area": "cardio_metabolic.lipids.hofh",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1.5,
+                "wtpPct": 75,
+                "priceK": 450
+              },
+              "eu": {
+                "patientsK": 2,
+                "wtpPct": 60,
+                "priceK": 300
+              },
+              "row": {
+                "patientsK": 10,
+                "wtpPct": 8,
+                "priceK": 80
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 20.1,
+                "wtpPct": 60,
+                "priceK": 350
+              },
+              "row": {
+                "reachPct": 3.8,
+                "wtpPct": 15,
+                "priceK": 100
+              }
+            },
+            "company_slice_sources": {
+              "eu.reachPct": "Lojuxta EU HoFH ~8% share; competitive vs Repatha/Praluent PCSK9 + Evkeeza (REGN evinacumab anti-ANGPTL3); legacy oral adjunct",
+              "eu.priceK": "Lojuxta WAC ~EUR 350K/yr",
+              "us.note": "Juxtapid US was discontinued by Aegerion (now Amryt) in 2018; Lojuxta EU retained"
+            },
+            "penPct": 35,
+            "cagrPct": -3,
+            "peakYear": 2027,
+            "salesM": 60,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "lamzede",
+      "name": "Lamzede (velmanase alfa) - recombinant human alpha-mannosidase enzyme replacement therapy (ERT)",
+      "stage": "Commercial (alpha-mannosidosis FDA 2023 ages 5+; EU 2018 first ERT approved for non-CNS symptoms)",
+      "modality": "recombinant_protein.enzyme.alpha_mannosidase",
+      "targets": [
+        "MAN2B1"
+      ],
+      "indications": [
+        {
+          "id": "alpha_mannosidosis",
+          "name": "Alpha-mannosidosis ERT (non-CNS manifestations; ages 5+)",
+          "area": "endocrine.lysosomal_storage.alpha_mannosidosis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 0.5,
+                "wtpPct": 80,
+                "priceK": 650
+              },
+              "eu": {
+                "patientsK": 0.7,
+                "wtpPct": 60,
+                "priceK": 400
+              },
+              "row": {
+                "patientsK": 3,
+                "wtpPct": 18,
+                "priceK": 130
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 80,
+                "priceK": 650
+              },
+              "eu": {
+                "reachPct": 35,
+                "wtpPct": 60,
+                "priceK": 400
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 14,
+                "priceK": 130
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Lamzede sole approved alpha-mannosidosis ERT; ~25% reach in tiny US prevalent population",
+              "us.priceK": "Lamzede WAC ~$650K/yr ultra-orphan ERT"
+            },
+            "penPct": 55,
+            "cagrPct": 8,
+            "peakYear": 2031,
+            "salesM": 50,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "peyona",
+      "name": "Peyona (caffeine citrate) - methylxanthine adenosine receptor antagonist (NICU)",
+      "stage": "Commercial (apnea of prematurity NICU oral/IV; mature)",
+      "modality": "small_molecule.gpcr.adenosine_a2a_antagonist",
+      "targets": [
+        "ADORA2A"
+      ],
+      "indications": [
+        {
+          "id": "aop",
+          "name": "Apnea of prematurity (NICU; methylxanthine respiratory stimulant)",
+          "area": "respiratory.genetic.preterm_rds",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 85,
+                "priceK": 7
+              },
+              "eu": {
+                "patientsK": 75,
+                "wtpPct": 70,
+                "priceK": 4.5
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 50,
+                "priceK": 0.5
+              },
+              "eu": {
+                "reachPct": 95,
+                "wtpPct": 45,
+                "priceK": 0.3
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 18,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Peyona ~10% global apnea of prematurity share; competitive vs caffeine citrate generics post-LOE",
+              "us.priceK": "Peyona ~EUR 50/dose generic-pressured"
+            },
+            "penPct": 70,
+            "cagrPct": -2,
+            "peakYear": 2027,
+            "salesM": 30,
+            "salesYear": 2025
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 4,
+        "commercialMult": 2.5,
+        "commercialRevM": 2350,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "trimbow": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "foster": {
+          "asthma_copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "curosurf": {
+          "preterm_rds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "filsuvez": {
+          "deb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "mycapssa": {
+          "acromegaly": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "myalepta": {
+          "lipodystrophy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "lojuxta": {
+          "hofh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "lamzede": {
+          "alpha_mannosidosis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "peyona": {
+          "aop": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 5,
+        "commercialMult": 3,
+        "commercialRevM": 2700,
+        "milestones": 50,
+        "dil": 0
+      },
+      "assumptions": {
+        "trimbow": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "foster": {
+          "asthma_copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "curosurf": {
+          "preterm_rds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "filsuvez": {
+          "deb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "mycapssa": {
+          "acromegaly": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "myalepta": {
+          "lipodystrophy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "lojuxta": {
+          "hofh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "lamzede": {
+          "alpha_mannosidosis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "peyona": {
+          "aop": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 35,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 7,
+        "commercialMult": 4,
+        "commercialRevM": 3000,
+        "milestones": 150,
+        "dil": 0
+      },
+      "assumptions": {
+        "trimbow": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "foster": {
+          "asthma_copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "curosurf": {
+          "preterm_rds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "filsuvez": {
+          "deb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "mycapssa": {
+          "acromegaly": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "myalepta": {
+          "lipodystrophy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "lojuxta": {
+          "hofh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "lamzede": {
+          "alpha_mannosidosis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "peyona": {
+          "aop": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 10,
+        "commercialMult": 5.5,
+        "commercialRevM": 3500,
+        "milestones": 300,
+        "dil": 0
+      },
+      "assumptions": {
+        "trimbow": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "foster": {
+          "asthma_copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "curosurf": {
+          "preterm_rds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "filsuvez": {
+          "deb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "mycapssa": {
+          "acromegaly": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "myalepta": {
+          "lipodystrophy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "lojuxta": {
+          "hofh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "lamzede": {
+          "alpha_mannosidosis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "peyona": {
+          "aop": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 14,
+        "commercialMult": 7,
+        "commercialRevM": 4400,
+        "milestones": 600,
+        "dil": 0
+      },
+      "assumptions": {
+        "trimbow": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "asthma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "foster": {
+          "asthma_copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "curosurf": {
+          "preterm_rds": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "filsuvez": {
+          "deb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "mycapssa": {
+          "acromegaly": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "myalepta": {
+          "lipodystrophy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "lojuxta": {
+          "hofh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "lamzede": {
+          "alpha_mannosidosis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "peyona": {
+          "aop": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "trimbow",
+      "indication": "asthma",
+      "title": "Trimbow severe asthma triple US launch ramp + Breztri competitive market share update",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.chiesi.com/en/press/",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "filsuvez",
+      "indication": "deb",
+      "title": "Filsuvez EB launch trajectory + Vyjuvek (KRYS) competitive dynamics",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.chiesi.com/en/press/",
+      "_confidence": "medium"
+    }
+  ]
+}

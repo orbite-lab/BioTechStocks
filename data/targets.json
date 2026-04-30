@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated": "2026-04-30T16:19:36Z",
-    "target_count": 399,
-    "total_assets": 765,
-    "assets_with_targets": 706,
+    "generated": "2026-04-30T16:26:33Z",
+    "target_count": 404,
+    "total_assets": 773,
+    "assets_with_targets": 713,
     "multi_modality_count": 49,
     "multi_disease_count": 181
   },
@@ -351,7 +351,8 @@
     "ADORA2A": {
       "companies": [
         "4151",
-        "4503"
+        "4503",
+        "CHIESI"
       ],
       "modalities": [
         "small_molecule.gpcr.a2a_adenosine_agonist",
@@ -359,7 +360,8 @@
       ],
       "areas": [
         "cardio_metabolic.imaging.cardiac_stress",
-        "cns.neurodegeneration.parkinson_disease"
+        "cns.neurodegeneration.parkinson_disease",
+        "respiratory.genetic.preterm_rds"
       ],
       "assets": [
         {
@@ -379,19 +381,28 @@
           "areas": [
             "cardio_metabolic.imaging.cardiac_stress"
           ]
+        },
+        {
+          "ticker": "CHIESI",
+          "asset": "peyona",
+          "name": "Peyona (caffeine citrate) - methylxanthine adenosine receptor antagonist (NICU)",
+          "modality": "small_molecule.gpcr.adenosine_a2a_antagonist",
+          "areas": [
+            "respiratory.genetic.preterm_rds"
+          ]
         }
       ],
-      "assetCount": 2,
+      "assetCount": 3,
       "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 14941.0,
-      "totalSOM": 632.3,
-      "totalSales": 373.0,
-      "cagrPct": -9.2,
+      "totalTAM": 15662.2,
+      "totalSOM": 662.3,
+      "totalSales": 403.0,
+      "cagrPct": -8.8,
       "peakYear": 2026
     },
     "ADRB1": {
@@ -432,10 +443,13 @@
       "companies": [
         "4506",
         "AZN",
+        "CHIESI",
         "GSK"
       ],
       "modalities": [
         "small_molecule.gpcr.beta2_agonist",
+        "small_molecule.gpcr.ics_laba",
+        "small_molecule.gpcr.ics_laba_lama_triple",
         "small_molecule.respiratory.ics_laba_combo",
         "small_molecule.respiratory.ics_laba_lama_triple",
         "small_molecule.respiratory.ics_lama_laba_triple",
@@ -474,6 +488,25 @@
           ]
         },
         {
+          "ticker": "CHIESI",
+          "asset": "trimbow",
+          "name": "Trimbow / Trydonis (beclomethasone + formoterol + glycopyrronium) - first-in-class ICS/LABA/LAMA triple combination MDI",
+          "modality": "small_molecule.gpcr.ics_laba_lama_triple",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe",
+            "respiratory.inflammatory.copd"
+          ]
+        },
+        {
+          "ticker": "CHIESI",
+          "asset": "foster",
+          "name": "Foster / Fostair (beclomethasone + formoterol) - extra-fine ICS/LABA combination MDI (Modulite platform)",
+          "modality": "small_molecule.gpcr.ics_laba",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe"
+          ]
+        },
+        {
           "ticker": "GSK",
           "asset": "trelegy",
           "name": "Trelegy Ellipta (FF/UMEC/VI) — ICS/LAMA/LABA triple inhaler",
@@ -494,18 +527,18 @@
           ]
         }
       ],
-      "assetCount": 5,
-      "modalityCount": 5,
+      "assetCount": 7,
+      "modalityCount": 7,
       "modalityClassCount": 1,
       "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 41905.0,
-      "totalSOM": 23123.5,
-      "totalSales": 11115.0,
-      "cagrPct": 0.3,
-      "peakYear": 2026
+      "totalSOM": 25510.2,
+      "totalSales": 12795.0,
+      "cagrPct": 1.1,
+      "peakYear": 2027
     },
     "ADRB3": {
       "companies": [
@@ -3988,9 +4021,11 @@
       "companies": [
         "AZN",
         "BI",
+        "CHIESI",
         "GSK"
       ],
       "modalities": [
+        "small_molecule.gpcr.ics_laba_lama_triple",
         "small_molecule.gpcr.lama_anticholinergic",
         "small_molecule.respiratory.ics_laba_lama_triple",
         "small_molecule.respiratory.ics_lama_laba_triple",
@@ -4021,6 +4056,16 @@
           ]
         },
         {
+          "ticker": "CHIESI",
+          "asset": "trimbow",
+          "name": "Trimbow / Trydonis (beclomethasone + formoterol + glycopyrronium) - first-in-class ICS/LABA/LAMA triple combination MDI",
+          "modality": "small_molecule.gpcr.ics_laba_lama_triple",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe",
+            "respiratory.inflammatory.copd"
+          ]
+        },
+        {
           "ticker": "GSK",
           "asset": "trelegy",
           "name": "Trelegy Ellipta (FF/UMEC/VI) — ICS/LAMA/LABA triple inhaler",
@@ -4041,18 +4086,18 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 4,
+      "assetCount": 5,
+      "modalityCount": 5,
       "modalityClassCount": 1,
       "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 41905.0,
-      "totalSOM": 15281.4,
-      "totalSales": 10560.0,
-      "cagrPct": -1.2,
-      "peakYear": 2026
+      "totalSOM": 17053.3,
+      "totalSales": 11740.0,
+      "cagrPct": 0.2,
+      "peakYear": 2027
     },
     "CHRM4": {
       "companies": [
@@ -12030,6 +12075,40 @@
       "cagrPct": 14.1,
       "peakYear": 2031
     },
+    "LEPR": {
+      "companies": [
+        "CHIESI"
+      ],
+      "modalities": [
+        "recombinant_protein.cytokine.leptin_analog"
+      ],
+      "areas": [
+        "cardio_metabolic.lipids.lipodystrophy"
+      ],
+      "assets": [
+        {
+          "ticker": "CHIESI",
+          "asset": "myalepta",
+          "name": "Myalepta (metreleptin) - recombinant human leptin analog (subQ; ex-Amryt)",
+          "modality": "recombinant_protein.cytokine.leptin_analog",
+          "areas": [
+            "cardio_metabolic.lipids.lipodystrophy"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 508.0,
+      "totalSOM": 147.1,
+      "totalSales": 75.0,
+      "cagrPct": 8.0,
+      "peakYear": 2030
+    },
     "LGR5": {
       "companies": [
         "GMAB"
@@ -12225,6 +12304,40 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2035
+    },
+    "MAN2B1": {
+      "companies": [
+        "CHIESI"
+      ],
+      "modalities": [
+        "recombinant_protein.enzyme.alpha_mannosidase"
+      ],
+      "areas": [
+        "endocrine.lysosomal_storage.alpha_mannosidosis"
+      ],
+      "assets": [
+        {
+          "ticker": "CHIESI",
+          "asset": "lamzede",
+          "name": "Lamzede (velmanase alfa) - recombinant human alpha-mannosidase enzyme replacement therapy (ERT)",
+          "modality": "recombinant_protein.enzyme.alpha_mannosidase",
+          "areas": [
+            "endocrine.lysosomal_storage.alpha_mannosidosis"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 498.2,
+      "totalSOM": 126.0,
+      "totalSales": 50.0,
+      "cagrPct": 8.0,
+      "peakYear": 2031
     },
     "MAP2K1": {
       "companies": [
@@ -13028,6 +13141,40 @@
       "cagrPct": 0.0,
       "peakYear": 2034
     },
+    "MTTP": {
+      "companies": [
+        "CHIESI"
+      ],
+      "modalities": [
+        "small_molecule.transporter.mtp_inhibitor"
+      ],
+      "areas": [
+        "cardio_metabolic.lipids.hofh"
+      ],
+      "assets": [
+        {
+          "ticker": "CHIESI",
+          "asset": "lojuxta",
+          "name": "Lojuxta / Juxtapid (lomitapide) - oral microsomal triglyceride transfer protein (MTP) inhibitor (ex-Amryt)",
+          "modality": "small_molecule.transporter.mtp_inhibitor",
+          "areas": [
+            "cardio_metabolic.lipids.hofh"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 930.2,
+      "totalSOM": 90.1,
+      "totalSales": 60.0,
+      "cagrPct": -3.0,
+      "peakYear": 2027
+    },
     "MUSK": {
       "companies": [
         "ARGX"
@@ -13359,12 +13506,15 @@
     "NR3C1": {
       "companies": [
         "4502",
+        "CHIESI",
         "GSK",
         "OCS"
       ],
       "modalities": [
         "formulation_modifier.ocular.dex_cyclodextrin",
         "small_molecule.corticosteroid.budesonide_oral",
+        "small_molecule.gpcr.ics_laba",
+        "small_molecule.gpcr.ics_laba_lama_triple",
         "small_molecule.respiratory.ics_lama_laba_triple",
         "small_molecule.respiratory.legacy_inhaler"
       ],
@@ -13382,6 +13532,25 @@
           "modality": "small_molecule.corticosteroid.budesonide_oral",
           "areas": [
             "immunology.inflammatory_gi.eoe"
+          ]
+        },
+        {
+          "ticker": "CHIESI",
+          "asset": "trimbow",
+          "name": "Trimbow / Trydonis (beclomethasone + formoterol + glycopyrronium) - first-in-class ICS/LABA/LAMA triple combination MDI",
+          "modality": "small_molecule.gpcr.ics_laba_lama_triple",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe",
+            "respiratory.inflammatory.copd"
+          ]
+        },
+        {
+          "ticker": "CHIESI",
+          "asset": "foster",
+          "name": "Foster / Fostair (beclomethasone + formoterol) - extra-fine ICS/LABA combination MDI (Modulite platform)",
+          "modality": "small_molecule.gpcr.ics_laba",
+          "areas": [
+            "respiratory.inflammatory.asthma_severe"
           ]
         },
         {
@@ -13414,8 +13583,8 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 4,
+      "assetCount": 6,
+      "modalityCount": 6,
       "modalityClassCount": 2,
       "areaCount": 4,
       "modalityClasses": [
@@ -13423,10 +13592,10 @@
         "small_molecule"
       ],
       "totalTAM": 55082.5,
-      "totalSOM": 10114.6,
-      "totalSales": 7011.0,
-      "cagrPct": -0.2,
-      "peakYear": 2026
+      "totalSOM": 12501.3,
+      "totalSales": 8691.0,
+      "cagrPct": 1.5,
+      "peakYear": 2027
     },
     "NR3C2": {
       "companies": [
@@ -16857,6 +17026,74 @@
       "cagrPct": 2.7,
       "peakYear": 2029
     },
+    "SFTPB": {
+      "companies": [
+        "CHIESI"
+      ],
+      "modalities": [
+        "recombinant_protein.surfactant.porcine_natural"
+      ],
+      "areas": [
+        "respiratory.genetic.preterm_rds"
+      ],
+      "assets": [
+        {
+          "ticker": "CHIESI",
+          "asset": "curosurf",
+          "name": "Curosurf (poractant alfa) - natural porcine pulmonary surfactant (intratracheal)",
+          "modality": "recombinant_protein.surfactant.porcine_natural",
+          "areas": [
+            "respiratory.genetic.preterm_rds"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 721.2,
+      "totalSOM": 545.6,
+      "totalSales": 420.0,
+      "cagrPct": 2.0,
+      "peakYear": 2030
+    },
+    "SFTPC": {
+      "companies": [
+        "CHIESI"
+      ],
+      "modalities": [
+        "recombinant_protein.surfactant.porcine_natural"
+      ],
+      "areas": [
+        "respiratory.genetic.preterm_rds"
+      ],
+      "assets": [
+        {
+          "ticker": "CHIESI",
+          "asset": "curosurf",
+          "name": "Curosurf (poractant alfa) - natural porcine pulmonary surfactant (intratracheal)",
+          "modality": "recombinant_protein.surfactant.porcine_natural",
+          "areas": [
+            "respiratory.genetic.preterm_rds"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "recombinant_protein"
+      ],
+      "totalTAM": 721.2,
+      "totalSOM": 545.6,
+      "totalSales": 420.0,
+      "cagrPct": 2.0,
+      "peakYear": 2030
+    },
     "SGCB": {
       "companies": [
         "SRPT"
@@ -17640,8 +17877,8 @@
     },
     "SSTR2": {
       "companies": [
-        "4578",
         "CAMX",
+        "CHIESI",
         "IPN",
         "NVS"
       ],
@@ -17658,15 +17895,6 @@
         "oncology.neuroendocrine.gepnet"
       ],
       "assets": [
-        {
-          "ticker": "4578",
-          "asset": "mycapssa",
-          "name": "Mycapssa (oral octreotide) - somatostatin analog (ex-Chiasma)",
-          "modality": "peptide.oral.somatostatin_analog",
-          "areas": [
-            "endocrine.pituitary.acromegaly"
-          ]
-        },
         {
           "ticker": "CAMX",
           "asset": "oczyesa",
@@ -17692,6 +17920,15 @@
           "modality": "formulation_modifier.long_acting.fluidcrystal_sc",
           "areas": [
             "cardio_metabolic.liver.pld_adpkd"
+          ]
+        },
+        {
+          "ticker": "CHIESI",
+          "asset": "mycapssa",
+          "name": "Mycapssa (octreotide oral capsule) - first oral somatostatin analog (Transient Permeability Enhancer technology; ex-Amryt ex-Chiasma)",
+          "modality": "peptide.oral.somatostatin_analog",
+          "areas": [
+            "endocrine.pituitary.acromegaly"
           ]
         },
         {
@@ -17734,16 +17971,18 @@
         "radiopharmaceutical"
       ],
       "totalTAM": 2599.9,
-      "totalSOM": 3363.6,
-      "totalSales": 2099.0,
-      "cagrPct": -1.0,
+      "totalSOM": 3438.9,
+      "totalSales": 2149.0,
+      "cagrPct": -0.3,
       "peakYear": 2028
     },
     "SSTR5": {
       "companies": [
+        "CHIESI",
         "NVS"
       ],
       "modalities": [
+        "peptide.oral.somatostatin_analog",
         "peptide.somatostatin_analog.octreotide",
         "small_molecule.gpcr.somatostatin_agonist_combined"
       ],
@@ -17753,6 +17992,15 @@
         "oncology.neuroendocrine.gepnet"
       ],
       "assets": [
+        {
+          "ticker": "CHIESI",
+          "asset": "mycapssa",
+          "name": "Mycapssa (octreotide oral capsule) - first oral somatostatin analog (Transient Permeability Enhancer technology; ex-Amryt ex-Chiasma)",
+          "modality": "peptide.oral.somatostatin_analog",
+          "areas": [
+            "endocrine.pituitary.acromegaly"
+          ]
+        },
         {
           "ticker": "NVS",
           "asset": "sandostatin",
@@ -17773,8 +18021,8 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 2,
       "areaCount": 3,
       "modalityClasses": [
@@ -17782,10 +18030,10 @@
         "small_molecule"
       ],
       "totalTAM": 2723.7,
-      "totalSOM": 878.8,
-      "totalSales": 775.0,
-      "cagrPct": -3.8,
-      "peakYear": 2026
+      "totalSOM": 1029.0,
+      "totalSales": 875.0,
+      "cagrPct": -0.6,
+      "peakYear": 2027
     },
     "STAT6": {
       "companies": [

@@ -520,6 +520,31 @@ REGIONS = {
     # ASMD (acid sphingomyelinase deficiency, formerly Niemann-Pick A/B):
     # ultra-rare. ~1K US, ~1.5K EU, ~5K ROW. Class: Xenpozyme (olipudase alfa,
     # Sanofi only approved ERT). Class peak ~$300M.
+    # Alpha-mannosidosis (MAN2B1 LoF; lysosomal storage disorder): rare
+    # autosomal recessive deficiency of lysosomal alpha-mannosidase causing
+    # progressive intellectual disability + hearing loss + skeletal/immune
+    # abnormalities. ~500 US prevalent, ~700 EU, ~3K ROW (NORD; Chiesi
+    # GRD). Sole branded therapy: Lamzede (velmanase alfa ERT; Chiesi
+    # FDA 2023 EU 2018). WAC ~$650K/yr. Distinct from MPS lysosomal
+    # disorders (Hunter/Hurler/Sanfilippo/Morquio).
+    # source: Borgwardt 2015 J Inherit Metab Dis; NORD; Chiesi 10-K.
+    "endocrine.lysosomal_storage.alpha_mannosidosis": {
+        "us":  {"patientsK": 0.5,  "wtpPct": 80, "priceK": 650},
+        "eu":  {"patientsK": 0.7,  "wtpPct": 60, "priceK": 400},
+        "row": {"patientsK": 3,    "wtpPct": 18, "priceK": 130},
+    },
+    # Generalized lipodystrophy (congenital + acquired; Berardinelli-Seip,
+    # Lawrence syndrome, partial subtypes): rare metabolic disorder with
+    # near-total loss of adipose tissue + leptin deficiency + severe
+    # insulin resistance. ~500 US prevalent, ~700 EU, ~2K ROW. Sole
+    # branded therapy: Myalepta (metreleptin recombinant leptin; Chiesi
+    # via Amryt; FDA 2014). Pricing: Myalepta WAC ~$700K/yr.
+    # source: NORD lipodystrophy; Lipodystrophy United registry.
+    "cardio_metabolic.lipids.lipodystrophy": {
+        "us":  {"patientsK": 0.5,  "wtpPct": 80, "priceK": 700},
+        "eu":  {"patientsK": 0.7,  "wtpPct": 60, "priceK": 450},
+        "row": {"patientsK": 2,    "wtpPct": 15, "priceK": 130},
+    },
     "endocrine.lysosomal_storage.asmd": {
         "us":  {"patientsK": 1,   "wtpPct": 90, "priceK": 600},
         "eu":  {"patientsK": 1.5, "wtpPct": 80, "priceK": 400},
@@ -551,6 +576,8 @@ PEN_PCT = {
     "endocrine.lysosomal_storage.pompe": 55,
     "endocrine.lysosomal_storage.mps1": 50,
     "endocrine.lysosomal_storage.asmd": 50,
+    "endocrine.lysosomal_storage.alpha_mannosidosis": 55,
+    "cardio_metabolic.lipids.lipodystrophy": 50,
     "cardio_metabolic.lipids.ldl_cv_risk": 6,
     "cardio_metabolic.lipids.lpa": 3,
     "cardio_metabolic.lipids.triglycerides": 25,

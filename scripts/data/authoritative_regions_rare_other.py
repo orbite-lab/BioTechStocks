@@ -787,27 +787,27 @@ REGIONS = {
     # Tarpeyo (Calliditas budesonide ~00M), atrasentan (Novartis ETA),
     # Filspari (Travere sparsentan ETA+ARB), Fabhalta (Novartis Factor B),
     # Povetacicept (Vertex BAFF+APRIL Ph3), Felzartamab (Biogen anti-CD38).
-    nephrology.glomerular.iga_nephropathy: {
-        us:  {patientsK: 130,  wtpPct: 50, priceK: 65},
-        eu:  {patientsK: 150,  wtpPct: 35, priceK: 32},
-        row: {patientsK: 1500, wtpPct: 10, priceK: 6},
+    "nephrology.glomerular.iga_nephropathy": {
+        "us":  {"patientsK": 130,  "wtpPct": 50, "priceK": 65},
+        "eu":  {"patientsK": 150,  "wtpPct": 35, "priceK": 32},
+        "row": {"patientsK": 1500, "wtpPct": 10, "priceK": 6},
     },
     # Focal segmental glomerulosclerosis (FSGS): ~40K US, ~45K EU,
     # ~200K ROW. Class: Filspari (Travere sparsentan dual ETA+ARB),
     # Mircera/EPO supportive, off-label tac/rituximab. Net branded ~0K/yr.
-    nephrology.glomerular.fsgs: {
-        us:  {patientsK: 40,   wtpPct: 45, priceK: 90},
-        eu:  {patientsK: 45,   wtpPct: 30, priceK: 45},
-        row: {patientsK: 200,  wtpPct: 8,  priceK: 8},
+    "nephrology.glomerular.fsgs": {
+        "us":  {"patientsK": 40,   "wtpPct": 45, "priceK": 90},
+        "eu":  {"patientsK": 45,   "wtpPct": 30, "priceK": 45},
+        "row": {"patientsK": 200,  "wtpPct": 8,  "priceK": 8},
     },
     # Primary membranous nephropathy (pMN): ~30K US, ~50K EU, ~150K ROW.
     # Anti-PLA2R-driven autoimmune kidney. Class: rituximab off-label
     # standard, emerging anti-CD20/CD19/APRIL inhibitors (povetacicept,
     # budoprutug, felzartamab). Net branded ~0K/yr.
-    nephrology.glomerular.pmn: {
-        us:  {patientsK: 30,  wtpPct: 60, priceK: 90},
-        eu:  {patientsK: 50,  wtpPct: 40, priceK: 50},
-        row: {patientsK: 150, wtpPct: 8,  priceK: 15},
+    "nephrology.glomerular.pmn": {
+        "us":  {"patientsK": 30,  "wtpPct": 60, "priceK": 90},
+        "eu":  {"patientsK": 50,  "wtpPct": 40, "priceK": 50},
+        "row": {"patientsK": 150, "wtpPct": 8,  "priceK": 15},
     },
 }
 

@@ -1,0 +1,986 @@
+{
+  "company": {
+    "ticker": "MRNA",
+    "name": "Moderna, Inc.",
+    "currentPrice": 50.68,
+    "sharesOut": 390,
+    "cash": 5750,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "mRNA platform: COVID + RSV + flu vaccines + intismeran (cancer) + rare metabolic mRNA replacement",
+    "yahooTicker": "MRNA"
+  },
+  "assets": [
+    {
+      "id": "spikevax",
+      "name": "Spikevax (mRNA-1273) - COVID-19 mRNA vaccine",
+      "stage": "Commercial (40+ countries)",
+      "modality": "vaccine.mrna.covid",
+      "targets": [
+        "SARS_COV2_SPIKE"
+      ],
+      "indications": [
+        {
+          "id": "covid",
+          "name": "COVID-19 prophylaxis (seasonal booster)",
+          "area": "infectious_disease.vaccines.covid",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 100000,
+                "wtpPct": 25,
+                "priceK": 0.13
+              },
+              "eu": {
+                "patientsK": 200000,
+                "wtpPct": 22,
+                "priceK": 0.09
+              },
+              "row": {
+                "patientsK": 1500000,
+                "wtpPct": 8,
+                "priceK": 0.04
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 25,
+                "priceK": 0.13
+              },
+              "eu": {
+                "reachPct": 18,
+                "wtpPct": 22,
+                "priceK": 0.09
+              },
+              "row": {
+                "reachPct": 6,
+                "wtpPct": 8,
+                "priceK": 0.04
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Spikevax + mNEXSPIKE combined hold ~40% US adult COVID vax share post-PFE",
+              "us.priceK": "Spikevax US WAC ~$130/dose net 2025"
+            },
+            "penPct": 8,
+            "cagrPct": -8,
+            "peakYear": 2026,
+            "salesM": 1600,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "mnexspike",
+      "name": "mNEXSPIKE (mRNA-1283) - next-gen COVID mRNA vaccine",
+      "stage": "Commercial (launched 2025)",
+      "modality": "vaccine.mrna.covid",
+      "targets": [
+        "SARS_COV2_SPIKE"
+      ],
+      "indications": [
+        {
+          "id": "covid",
+          "name": "COVID-19 prophylaxis (refrigerator-stable, lower-dose)",
+          "area": "infectious_disease.vaccines.covid",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 100000,
+                "wtpPct": 25,
+                "priceK": 0.13
+              },
+              "eu": {
+                "patientsK": 200000,
+                "wtpPct": 22,
+                "priceK": 0.09
+              },
+              "row": {
+                "patientsK": 1500000,
+                "wtpPct": 8,
+                "priceK": 0.04
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 25,
+                "priceK": 0.13
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 22,
+                "priceK": 0.09
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 8,
+                "priceK": 0.04
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "mNEXSPIKE positioned to displace Spikevax 2026-28 (lower volume, refrig stable)",
+              "us.priceK": "Targets parity with Spikevax WAC ~$130/dose"
+            },
+            "penPct": 8,
+            "cagrPct": 12,
+            "peakYear": 2030,
+            "salesM": 300,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "mresvia",
+      "name": "mRESVIA (mRNA-1345) - RSV mRNA vaccine adults 60+",
+      "stage": "Commercial (40+ countries adults 60+; 18-59 high-risk in 31)",
+      "modality": "vaccine.mrna.rsv",
+      "targets": [
+        "RSV_F"
+      ],
+      "indications": [
+        {
+          "id": "rsv_adult",
+          "name": "RSV prevention adults 60+ (and 18-59 high-risk)",
+          "area": "infectious_disease.vaccines.rsv_adult",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 25,
+                "priceK": 0.27
+              },
+              "eu": {
+                "patientsK": 120000,
+                "wtpPct": 18,
+                "priceK": 0.18
+              },
+              "row": {
+                "patientsK": 600000,
+                "wtpPct": 5,
+                "priceK": 0.06
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 25,
+                "priceK": 0.27
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 18,
+                "priceK": 0.18
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 5,
+                "priceK": 0.06
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Third entrant behind Arexvy (GSK) + Abrysvo (PFE); ramping <5% share",
+              "us.priceK": "mRESVIA US WAC ~$295/dose"
+            },
+            "penPct": 25,
+            "cagrPct": 25,
+            "peakYear": 2032,
+            "salesM": 30,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "mrna_1010",
+      "name": "mRNA-1010 - seasonal influenza vaccine",
+      "stage": "BLA filed (PDUFA Aug 5, 2026)",
+      "modality": "vaccine.mrna.influenza",
+      "targets": [
+        "INFLUENZA_HA"
+      ],
+      "indications": [
+        {
+          "id": "flu",
+          "name": "Seasonal influenza vaccine (adults)",
+          "area": "infectious_disease.vaccines.influenza",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 150000,
+                "wtpPct": 35,
+                "priceK": 0.05
+              },
+              "eu": {
+                "patientsK": 250000,
+                "wtpPct": 25,
+                "priceK": 0.03
+              },
+              "row": {
+                "patientsK": 600000,
+                "wtpPct": 12,
+                "priceK": 0.012
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 35,
+                "priceK": 0.05
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 25,
+                "priceK": 0.03
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 12,
+                "priceK": 0.012
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Targets ~8-12% adult flu share at maturity vs Sanofi/GSK/CSL/Pfizer",
+              "us.priceK": "Premium-positioned mRNA flu ~$25-30/dose net"
+            },
+            "penPct": 38,
+            "cagrPct": 3,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "mrna_1083",
+      "name": "mRNA-1083 - flu/COVID combination vaccine",
+      "stage": "Phase 3 done; EMA review; FDA refile pending",
+      "modality": "vaccine.mrna.combination",
+      "targets": [
+        "INFLUENZA_HA",
+        "SARS_COV2_SPIKE"
+      ],
+      "indications": [
+        {
+          "id": "combo",
+          "name": "Flu + COVID combination vaccine (single dose)",
+          "area": "infectious_disease.vaccines.influenza",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 150000,
+                "wtpPct": 35,
+                "priceK": 0.05
+              },
+              "eu": {
+                "patientsK": 250000,
+                "wtpPct": 25,
+                "priceK": 0.03
+              },
+              "row": {
+                "patientsK": 600000,
+                "wtpPct": 12,
+                "priceK": 0.012
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 30,
+                "priceK": 0.1
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 22,
+                "priceK": 0.07
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 10,
+                "priceK": 0.025
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Cannibalizes both standalone Spikevax + mRNA-1010; combo premium pricing",
+              "us.priceK": "Combo WAC ~$170-200/dose targets"
+            },
+            "penPct": 38,
+            "cagrPct": 10,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "intismeran",
+      "name": "Intismeran autogene (mRNA-4157 / V940) - individualized neoantigen therapy",
+      "stage": "Phase 3 INTerpath-001 (melanoma adj fully enrolled, interim 2026); INTerpath-002/009 NSCLC adj",
+      "modality": "vaccine.mrna.individualized_neoantigen",
+      "targets": [
+        "TUMOR_NEOANTIGEN"
+      ],
+      "indications": [
+        {
+          "id": "melanoma_adj",
+          "name": "Adjuvant high-risk melanoma stage III/IV (post-resection, w/ Keytruda)",
+          "area": "oncology.skin.melanoma",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 15,
+                "wtpPct": 65,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 10,
+                "wtpPct": 45,
+                "priceK": 150
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Adjuvant high-risk melanoma ~30K US/yr; INT addresses resected stage III/IV ~50% of pool",
+              "us.priceK": "Personalized neoantigen course $200-300K per patient (similar tumor vaccine peers)"
+            },
+            "penPct": 65,
+            "cagrPct": 4,
+            "peakYear": 2032
+          }
+        },
+        {
+          "id": "nsclc_adj",
+          "name": "Adjuvant NSCLC (post-resection, w/ Keytruda) - INTerpath-009",
+          "area": "oncology.lung.nsclc_io_combo",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 100,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 400,
+                "wtpPct": 16,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 65,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 45,
+                "priceK": 150
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Adjuvant NSCLC much larger pool (~70K stage I-III resected) but earlier-stage Ph3 (POS 2027+)",
+              "us.priceK": "Same personalized neoantigen pricing ~$250K"
+            },
+            "penPct": 60,
+            "cagrPct": 5,
+            "peakYear": 2034
+          }
+        }
+      ]
+    },
+    {
+      "id": "mrna_3927",
+      "name": "mRNA-3927 - propionic acidemia (PA) mRNA replacement",
+      "stage": "Phase 2 registrational (data 2026; partnered Recordati Jan 2026)",
+      "modality": "nucleic_acid.mrna_replacement.lnp",
+      "targets": [
+        "PCCA",
+        "PCCB"
+      ],
+      "indications": [
+        {
+          "id": "pa",
+          "name": "Propionic acidemia (PCCA / PCCB deficiency, organic acidemia)",
+          "area": "cardio_metabolic.rare_metabolic.propionic_acidemia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3,
+                "wtpPct": 75,
+                "priceK": 450
+              },
+              "eu": {
+                "patientsK": 5,
+                "wtpPct": 60,
+                "priceK": 275
+              },
+              "row": {
+                "patientsK": 10,
+                "wtpPct": 25,
+                "priceK": 130
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 50,
+                "wtpPct": 75,
+                "priceK": 450
+              },
+              "eu": {
+                "reachPct": 35,
+                "wtpPct": 60,
+                "priceK": 275
+              },
+              "row": {
+                "reachPct": 10,
+                "wtpPct": 25,
+                "priceK": 130
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Recordati partnership covers global ex-US commercialization; Moderna retains US",
+              "us.priceK": "Aspirational mRNA replacement pricing $400-500K/yr (similar ASO orphan rare metabolic)"
+            },
+            "penPct": 35,
+            "cagrPct": 5,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "mrna_3705",
+      "name": "mRNA-3705 - methylmalonic acidemia (MMA) mRNA replacement",
+      "stage": "Phase 2 (FDA START program; reg study starts 2026)",
+      "modality": "nucleic_acid.mrna_replacement.lnp",
+      "targets": [
+        "MUT",
+        "MMAA",
+        "MMAB"
+      ],
+      "indications": [
+        {
+          "id": "mma",
+          "name": "Methylmalonic acidemia (MUT / MMAA / MMAB deficiency)",
+          "area": "cardio_metabolic.rare_metabolic.methylmalonic_acidemia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5,
+                "wtpPct": 75,
+                "priceK": 450
+              },
+              "eu": {
+                "patientsK": 8,
+                "wtpPct": 60,
+                "priceK": 275
+              },
+              "row": {
+                "patientsK": 15,
+                "wtpPct": 25,
+                "priceK": 130
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 45,
+                "wtpPct": 75,
+                "priceK": 450
+              },
+              "eu": {
+                "reachPct": 30,
+                "wtpPct": 60,
+                "priceK": 275
+              },
+              "row": {
+                "reachPct": 8,
+                "wtpPct": 25,
+                "priceK": 130
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Earlier-stage than PA; FDA START fast-track pilot accelerates path",
+              "us.priceK": "Same orphan rare metabolic pricing ~$450K/yr blended"
+            },
+            "penPct": 35,
+            "cagrPct": 5,
+            "peakYear": 2034
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 4,
+        "commercialMult": 1.5,
+        "commercialRevM": 1930,
+        "milestones": 0,
+        "dil": 30
+      },
+      "assumptions": {
+        "spikevax": {
+          "covid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "mnexspike": {
+          "covid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "mresvia": {
+          "rsv_adult": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "mrna_1010": {
+          "flu": {
+            "pos": 70,
+            "apr": 80,
+            "pen": 0.5
+          }
+        },
+        "mrna_1083": {
+          "combo": {
+            "pos": 30,
+            "apr": 50,
+            "pen": 0.4
+          }
+        },
+        "intismeran": {
+          "melanoma_adj": {
+            "pos": 25,
+            "apr": 60,
+            "pen": 0.5
+          },
+          "nsclc_adj": {
+            "pos": 15,
+            "apr": 50,
+            "pen": 0.4
+          }
+        },
+        "mrna_3927": {
+          "pa": {
+            "pos": 25,
+            "apr": 60,
+            "pen": 0.7
+          }
+        },
+        "mrna_3705": {
+          "mma": {
+            "pos": 15,
+            "apr": 40,
+            "pen": 0.6
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 6,
+        "commercialMult": 2,
+        "commercialRevM": 1930,
+        "milestones": 25,
+        "dil": 20
+      },
+      "assumptions": {
+        "spikevax": {
+          "covid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "mnexspike": {
+          "covid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "mresvia": {
+          "rsv_adult": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "mrna_1010": {
+          "flu": {
+            "pos": 85,
+            "apr": 90,
+            "pen": 0.7
+          }
+        },
+        "mrna_1083": {
+          "combo": {
+            "pos": 50,
+            "apr": 70,
+            "pen": 0.6
+          }
+        },
+        "intismeran": {
+          "melanoma_adj": {
+            "pos": 45,
+            "apr": 75,
+            "pen": 0.7
+          },
+          "nsclc_adj": {
+            "pos": 30,
+            "apr": 65,
+            "pen": 0.6
+          }
+        },
+        "mrna_3927": {
+          "pa": {
+            "pos": 45,
+            "apr": 75,
+            "pen": 0.85
+          }
+        },
+        "mrna_3705": {
+          "mma": {
+            "pos": 30,
+            "apr": 55,
+            "pen": 0.75
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 40,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 8,
+        "commercialMult": 3,
+        "commercialRevM": 1930,
+        "milestones": 50,
+        "dil": 10
+      },
+      "assumptions": {
+        "spikevax": {
+          "covid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "mnexspike": {
+          "covid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "mresvia": {
+          "rsv_adult": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "mrna_1010": {
+          "flu": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 0.9
+          }
+        },
+        "mrna_1083": {
+          "combo": {
+            "pos": 70,
+            "apr": 85,
+            "pen": 0.85
+          }
+        },
+        "intismeran": {
+          "melanoma_adj": {
+            "pos": 65,
+            "apr": 85,
+            "pen": 0.9
+          },
+          "nsclc_adj": {
+            "pos": 50,
+            "apr": 78,
+            "pen": 0.8
+          }
+        },
+        "mrna_3927": {
+          "pa": {
+            "pos": 65,
+            "apr": 85,
+            "pen": 1.0
+          }
+        },
+        "mrna_3705": {
+          "mma": {
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.9
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 11,
+        "commercialMult": 4,
+        "commercialRevM": 1930,
+        "milestones": 100,
+        "dil": 5
+      },
+      "assumptions": {
+        "spikevax": {
+          "covid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "mnexspike": {
+          "covid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "mresvia": {
+          "rsv_adult": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.6
+          }
+        },
+        "mrna_1010": {
+          "flu": {
+            "pos": 98,
+            "apr": 98,
+            "pen": 1.1
+          }
+        },
+        "mrna_1083": {
+          "combo": {
+            "pos": 85,
+            "apr": 95,
+            "pen": 1.1
+          }
+        },
+        "intismeran": {
+          "melanoma_adj": {
+            "pos": 80,
+            "apr": 92,
+            "pen": 1.1
+          },
+          "nsclc_adj": {
+            "pos": 65,
+            "apr": 88,
+            "pen": 1.0
+          }
+        },
+        "mrna_3927": {
+          "pa": {
+            "pos": 80,
+            "apr": 92,
+            "pen": 1.2
+          }
+        },
+        "mrna_3705": {
+          "mma": {
+            "pos": 60,
+            "apr": 85,
+            "pen": 1.1
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 14,
+        "commercialMult": 5,
+        "commercialRevM": 1930,
+        "milestones": 150,
+        "dil": 0
+      },
+      "assumptions": {
+        "spikevax": {
+          "covid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "mnexspike": {
+          "covid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "mresvia": {
+          "rsv_adult": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 2.0
+          }
+        },
+        "mrna_1010": {
+          "flu": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.4
+          }
+        },
+        "mrna_1083": {
+          "combo": {
+            "pos": 95,
+            "apr": 98,
+            "pen": 1.4
+          }
+        },
+        "intismeran": {
+          "melanoma_adj": {
+            "pos": 92,
+            "apr": 97,
+            "pen": 1.4
+          },
+          "nsclc_adj": {
+            "pos": 80,
+            "apr": 92,
+            "pen": 1.3
+          }
+        },
+        "mrna_3927": {
+          "pa": {
+            "pos": 92,
+            "apr": 97,
+            "pen": 1.4
+          }
+        },
+        "mrna_3705": {
+          "mma": {
+            "pos": 80,
+            "apr": 92,
+            "pen": 1.3
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Jun 12, 2026",
+      "dateSort": "2026-06-12",
+      "asset": "mresvia",
+      "indication": "rsv_adult",
+      "title": "mRESVIA age expansion 18-59 high-risk PDUFA",
+      "type": "pdufa",
+      "binary": false,
+      "_source": "https://www.modernatx.com/en-US/research/product-pipeline",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "intismeran",
+      "indication": "melanoma_adj",
+      "title": "INTerpath-001 Phase 3 interim analysis (adjuvant melanoma RFS)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 25,
+      "fail_apr": 50,
+      "success_pos": 90,
+      "success_apr": 95,
+      "_source": "https://www.merck.com/news/moderna-merck-announce-5-year-data-for-intismeran-autogene-in-combination-with-keytruda-pembrolizumab-demonstrated-sustained-improvement-in-the-primary-endpoint-of-recurrence-free-survival-i/",
+      "_confidence": "high"
+    },
+    {
+      "date": "Aug 5, 2026",
+      "dateSort": "2026-08-05",
+      "asset": "mrna_1010",
+      "indication": "flu",
+      "title": "mRNA-1010 seasonal flu vaccine PDUFA",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 50,
+      "fail_apr": 60,
+      "success_pos": 99,
+      "success_apr": 99,
+      "_source": "https://www.patientcareonline.com/view/moderna-investigational-influenza-vaccine-meets-safety-efficacy-endpoints-across-phase-3-trials",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-12-15",
+      "asset": "mrna_3927",
+      "indication": "pa",
+      "title": "mRNA-3927 pivotal Phase 2 propionic acidemia data (Recordati partnership)",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 50,
+      "success_pos": 85,
+      "success_apr": 92,
+      "_source": "https://www.geneonline.com/moderna-recordati-strategic-alliance-mrna3927-propionic-acidemia/",
+      "_confidence": "medium"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-03-31",
+      "asset": "mrna_1083",
+      "indication": "combo",
+      "title": "mRNA-1083 EMA decision (flu/COVID combo) + FDA refile path",
+      "type": "ema_approval",
+      "binary": false,
+      "_source": "https://www.modernatx.com/en-US/research/product-pipeline",
+      "_confidence": "medium"
+    }
+  ]
+}

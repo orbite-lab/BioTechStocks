@@ -283,6 +283,33 @@ REGIONS = {
         "eu":  {"patientsK": 4,     "wtpPct": 60, "priceK": 350},
         "row": {"patientsK": 2,     "wtpPct": 30, "priceK": 200},
     },
+    # Propionic acidemia (PA): autosomal recessive organic acidemia caused by
+    # propionyl-CoA carboxylase deficiency (PCCA / PCCB). Severe metabolic
+    # decompensations w/ hyperammonemia, neurologic injury, cardiomyopathy.
+    # source: NORD / Orphanet PA prevalence US ~3K diagnosed (incidence 1:50K),
+    # EU5 ~5K, ROW ~10K (under-diagnosed in low-income settings).
+    # No approved disease-modifying therapy today (SoC = protein-restricted
+    # diet, carnitine, biotin, liver tx). Moderna mRNA-3927 Ph2 registrational
+    # in 2026, partnered Recordati Jan 2026. Aspirational pricing similar to
+    # other ultra-rare mRNA therapeutics ~$450K/yr blended.
+    "cardio_metabolic.rare_metabolic.propionic_acidemia": {
+        "us":  {"patientsK": 3,     "wtpPct": 75, "priceK": 450},
+        "eu":  {"patientsK": 5,     "wtpPct": 60, "priceK": 275},
+        "row": {"patientsK": 10,    "wtpPct": 25, "priceK": 130},
+    },
+    # Methylmalonic acidemia (MMA): autosomal recessive organic acidemia
+    # caused by methylmalonyl-CoA mutase deficiency (MUT, MMAA, MMAB).
+    # Similar phenotype to PA -- metabolic crises, renal failure, NDD.
+    # source: NORD / Orphanet MMA prevalence US ~5K diagnosed (incidence
+    # 1:30K-50K, isolated MMA), EU5 ~8K, ROW ~15K. No approved disease-
+    # modifying therapy (SoC = diet + B12 for cobalamin-responsive subset).
+    # Moderna mRNA-3705 Ph2, FDA START program 2026 reg study.
+    # Aspirational pricing ~$450K/yr blended.
+    "cardio_metabolic.rare_metabolic.methylmalonic_acidemia": {
+        "us":  {"patientsK": 5,     "wtpPct": 75, "priceK": 450},
+        "eu":  {"patientsK": 8,     "wtpPct": 60, "priceK": 275},
+        "row": {"patientsK": 15,    "wtpPct": 25, "priceK": 130},
+    },
 
     # ==================== THROMBOSIS ====================
     # source: US AFib + VTE patients on anticoagulation ~6M (CDC + AHA
@@ -462,6 +489,8 @@ PEN_PCT = {
     "cardio_metabolic.rare_metabolic.homocystinuria": 30,
     "cardio_metabolic.rare_metabolic.hyperoxaluria": 50,
     "cardio_metabolic.rare_metabolic.porphyria": 40,
+    "cardio_metabolic.rare_metabolic.propionic_acidemia": 35,
+    "cardio_metabolic.rare_metabolic.methylmalonic_acidemia": 35,
     "cardio_metabolic.thrombosis.anticoagulation": 4,
     "endocrine.adrenal.cah": 35,
     "endocrine.calcium.adh1": 25,

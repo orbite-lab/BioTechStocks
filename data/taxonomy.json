@@ -10,10 +10,10 @@
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
-    "area_count_l3": 234,
+    "area_count_l3": 236,
     "area_count_l4": 28,
-    "modality_count": 414,
-    "companies": 72
+    "modality_count": 419,
+    "companies": 73
   },
   "therapeutic_areas": {
     "cardio_metabolic": {
@@ -306,12 +306,26 @@
           "count": 1,
           "rare": true
         },
+        "methylmalonic_acidemia": {
+          "companies": [
+            "MRNA"
+          ],
+          "count": 1,
+          "rare": false
+        },
         "porphyria": {
           "companies": [
             "ALNY"
           ],
           "count": 1,
           "rare": true
+        },
+        "propionic_acidemia": {
+          "companies": [
+            "MRNA"
+          ],
+          "count": 1,
+          "rare": false
         }
       },
       "thrombosis": {
@@ -1276,9 +1290,10 @@
         },
         "covid": {
           "companies": [
+            "MRNA",
             "PFE"
           ],
-          "count": 1,
+          "count": 2,
           "rare": false
         },
         "dengue": {
@@ -1300,9 +1315,10 @@
           "companies": [
             "CSL",
             "GSK",
+            "MRNA",
             "SNY"
           ],
-          "count": 3,
+          "count": 4,
           "rare": false
         },
         "lyme": {
@@ -1369,9 +1385,10 @@
         "rsv_adult": {
           "companies": [
             "GSK",
+            "MRNA",
             "PFE"
           ],
-          "count": 2,
+          "count": 3,
           "rare": false
         },
         "shigella_zika": {
@@ -2113,10 +2130,11 @@
             "AZN",
             "BMY",
             "MRK",
+            "MRNA",
             "PFE",
             "RHHBY"
           ],
-          "count": 6,
+          "count": 7,
           "rare": false
         },
         "nsclc_io_resistant": {
@@ -2216,11 +2234,12 @@
             "BMY",
             "IMTX",
             "MRK",
+            "MRNA",
             "NVS",
             "PFE",
             "REGN"
           ],
-          "count": 6,
+          "count": 7,
           "rare": false
         },
         "merkel_cell": {
@@ -3528,6 +3547,14 @@
         "ttr_aso": {
           "companies": [
             "AZN"
+          ],
+          "count": 1
+        }
+      },
+      "mrna_replacement": {
+        "lnp": {
+          "companies": [
+            "MRNA"
           ],
           "count": 1
         }
@@ -5258,9 +5285,34 @@
         }
       },
       "mrna": {
+        "combination": {
+          "companies": [
+            "MRNA"
+          ],
+          "count": 1
+        },
         "covid": {
           "companies": [
+            "MRNA",
             "PFE"
+          ],
+          "count": 2
+        },
+        "individualized_neoantigen": {
+          "companies": [
+            "MRNA"
+          ],
+          "count": 1
+        },
+        "influenza": {
+          "companies": [
+            "MRNA"
+          ],
+          "count": 1
+        },
+        "rsv": {
+          "companies": [
+            "MRNA"
           ],
           "count": 1
         }
@@ -5756,6 +5808,13 @@
         "cardio_metabolic.thrombosis.antiplatelet",
         "cardio_metabolic.thrombosis.reversal",
         "cardio_metabolic.thrombosis.thrombolytic"
+      ]
+    },
+    "organic_acidemia": {
+      "description": "Organic acidemias (PA + MMA + future MSUD/IVA/glutaric) -- branched-chain amino acid catabolism disorders, ultra-rare, no DMT today, mRNA replacement and GT platforms emerging",
+      "areas": [
+        "cardio_metabolic.rare_metabolic.propionic_acidemia",
+        "cardio_metabolic.rare_metabolic.methylmalonic_acidemia"
       ]
     },
     "epilepsy_spectrum": {

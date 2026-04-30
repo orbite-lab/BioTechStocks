@@ -7,7 +7,7 @@
     "cash": -150000,
     "currency": "JPY",
     "phase": "commercial",
-    "subtitle": "Post-Latuda LOE restructuring; SPA franchise: Orgovyx (relugolix prostate ADT) + Myfembree/Ryeqo (UF/endo) + Gemtesa (vibegron OAB) + Aptiom (focal epilepsy); regen med pipeline: iPSC-derived dopaminergic neurons (DSP-1083 PD Ph2)",
+    "subtitle": "Post-Latuda LOE restructuring; SPA franchise: Orgovyx (relugolix prostate ADT) + Myfembree/Ryeqo (UF/endo) + Gemtesa (vibegron OAB) + Aptiom (focal epilepsy) + Brovana (COPD); regen med pipeline: iPSC-derived dopaminergic neurons (DSP-1083 PD Ph2) + iPSC RPE for dry AMD/GA (DSP-RPE-001 Ph1/2)",
     "yahooTicker": "4506.T"
   },
   "assets": [
@@ -70,7 +70,7 @@
             "penPct": 60,
             "cagrPct": -15,
             "peakYear": 2025,
-            "salesM": 250,
+            "salesM": 90,
             "salesYear": 2025
           }
         },
@@ -120,7 +120,7 @@
             "penPct": 30,
             "cagrPct": -15,
             "peakYear": 2025,
-            "salesM": 100,
+            "salesM": 35,
             "salesYear": 2025
           }
         }
@@ -193,9 +193,7 @@
       "stage": "Commercial (US Myfembree UF 2021 + endometriosis 2022; EU Ryeqo partner Gedeon Richter)",
       "modality": "small_molecule.gpcr.gnrh_antagonist",
       "targets": [
-        "GNRHR",
-        "ESR1",
-        "PGR"
+        "GNRHR"
       ],
       "indications": [
         {
@@ -428,10 +426,7 @@
       "name": "DSP-1083 / CT1-DAP001 - iPSC-derived dopaminergic progenitor cell therapy (Kyoto Univ collab)",
       "stage": "Phase 2 PD (Japan PMDA priority review; US Ph1/2 planned)",
       "modality": "cell_therapy.allogeneic.ipsc_derived",
-      "targets": [
-        "TH",
-        "FOXA2"
-      ],
+      "targets": [],
       "indications": [
         {
           "id": "parkinson",
@@ -479,6 +474,124 @@
             "penPct": 50,
             "cagrPct": 10,
             "peakYear": 2034
+          }
+        }
+      ]
+    },
+    {
+      "id": "dsp_rpe_001",
+      "name": "DSP-RPE-001 - allogeneic iPSC-derived retinal pigment epithelium cell sheet (Helios collab; Riken)",
+      "stage": "Phase 1/2 (Japan; dry AMD geographic atrophy; subretinal transplant)",
+      "modality": "cell_therapy.allogeneic.ipsc_derived",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ga_amd",
+          "name": "Geographic atrophy (advanced dry AMD; subretinal iPSC RPE allograft)",
+          "area": "ophthalmology.retina.ga",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1000,
+                "wtpPct": 35,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 10,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 50,
+                "priceK": 600
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 30,
+                "priceK": 380
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 8,
+                "priceK": 120
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "iPSC RPE first-in-class regenerative AMD; addressable late-stage GA pts (~1.5M US prevalent); ~0.5% if approved",
+              "us.priceK": "One-time cell therapy pricing $400-800K (subretinal surgical procedure premium)"
+            },
+            "penPct": 10,
+            "cagrPct": 8,
+            "peakYear": 2034
+          }
+        }
+      ]
+    },
+    {
+      "id": "brovana",
+      "name": "Brovana (arformoterol) - long-acting beta2-adrenergic agonist (nebulized)",
+      "stage": "Commercial (COPD maintenance bronchodilation; declining)",
+      "modality": "small_molecule.gpcr.beta2_agonist",
+      "targets": [
+        "ADRB2"
+      ],
+      "indications": [
+        {
+          "id": "copd",
+          "name": "COPD maintenance bronchodilation (nebulized BID; declining)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2.1,
+                "wtpPct": 50,
+                "priceK": 4
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Brovana niche nebulized LABA for severe COPD pts unable to use inhalers; declining vs newer LAMA/LABA combos",
+              "us.priceK": "Brovana WAC ~$4K/yr"
+            },
+            "penPct": 10,
+            "cagrPct": -8,
+            "peakYear": 2025,
+            "salesM": 70,
+            "salesYear": 2025
           }
         }
       ]
@@ -547,6 +660,20 @@
             "apr": 30,
             "pen": 0.2
           }
+        },
+        "dsp_rpe_001": {
+          "ga_amd": {
+            "pos": 5,
+            "apr": 25,
+            "pen": 0.15
+          }
+        },
+        "brovana": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
         }
       }
     },
@@ -612,6 +739,20 @@
             "apr": 50,
             "pen": 0.4
           }
+        },
+        "dsp_rpe_001": {
+          "ga_amd": {
+            "pos": 15,
+            "apr": 45,
+            "pen": 0.3
+          }
+        },
+        "brovana": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
         }
       }
     },
@@ -675,6 +816,20 @@
           "parkinson": {
             "pos": 45,
             "apr": 70,
+            "pen": 0.6
+          }
+        },
+        "dsp_rpe_001": {
+          "ga_amd": {
+            "pos": 30,
+            "apr": 65,
+            "pen": 0.5
+          }
+        },
+        "brovana": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
             "pen": 0.6
           }
         }
@@ -742,6 +897,20 @@
             "apr": 82,
             "pen": 0.85
           }
+        },
+        "dsp_rpe_001": {
+          "ga_amd": {
+            "pos": 50,
+            "apr": 80,
+            "pen": 0.7
+          }
+        },
+        "brovana": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
         }
       }
     },
@@ -806,6 +975,20 @@
             "pos": 85,
             "apr": 92,
             "pen": 1.2
+          }
+        },
+        "dsp_rpe_001": {
+          "ga_amd": {
+            "pos": 72,
+            "apr": 90,
+            "pen": 0.95
+          }
+        },
+        "brovana": {
+          "copd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
           }
         }
       }

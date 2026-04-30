@@ -1,0 +1,1075 @@
+{
+  "company": {
+    "ticker": "4578",
+    "name": "Otsuka Holdings Co., Ltd.",
+    "currentPrice": 10530,
+    "sharesOut": 527,
+    "cash": 800000,
+    "currency": "JPY",
+    "phase": "commercial",
+    "subtitle": "Japanese pharma + nutraceuticals conglomerate; pharma franchise: Abilify LAI + Rexulti (Lundbeck) + Jynarque ADPKD + Lonsurf (Servier); sibeprenlimab IgAN Ph3 lead pipeline catalyst",
+    "yahooTicker": "4578.T"
+  },
+  "assets": [
+    {
+      "id": "abilify_family",
+      "name": "Abilify Maintena (1-mo LAI) + Abilify Asimtufii (2-mo LAI) - aripiprazole (Lundbeck partnership)",
+      "stage": "Commercial (post-generic immediate-release; LAI franchise growing)",
+      "modality": "small_molecule.gpcr.atypical_antipsychotic",
+      "targets": [
+        "DRD2",
+        "HTR1A",
+        "HTR2A"
+      ],
+      "indications": [
+        {
+          "id": "schizophrenia",
+          "name": "Schizophrenia (LAI maintenance; 1-mo + 2-mo formulations)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 65,
+                "priceK": 24
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 45,
+                "priceK": 14
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 14,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Abilify Maintena+Asimtufii combined LAI share; Asimtufii 2-mo unique vs Aristada/Invega Sustenna",
+              "us.priceK": "LAI maintenance ~$24K/yr (pre-generic premium pricing)"
+            },
+            "penPct": 60,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 1750,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "bipolar",
+          "name": "Bipolar I disorder maintenance (LAI)",
+          "area": "cns.psychiatry.bipolar",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 10000,
+                "wtpPct": 28,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 8,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 60,
+                "priceK": 24
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 40,
+                "priceK": 14
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Bipolar I LAI niche (smaller vs schizo); Maintena bipolar approval + Asimtufii expansion 2024",
+              "us.priceK": "Same LAI pricing"
+            },
+            "penPct": 30,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 625,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "mdd_adjunct",
+          "name": "MDD adjunct (oral aripiprazole; mostly generic post-2015)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 50,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 0.3,
+                "wtpPct": 30,
+                "priceK": 3
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 8,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Generic aripiprazole oral dominant; small branded residual ex-US Japan",
+              "us.priceK": "Branded residual pricing"
+            },
+            "penPct": 60,
+            "cagrPct": -8,
+            "peakYear": 2025,
+            "salesM": 125,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "rexulti",
+      "name": "Rexulti (brexpiprazole) - atypical antipsychotic (Lundbeck partnership)",
+      "stage": "Commercial (schizophrenia + MDD adjunct + AD agitation FIC)",
+      "modality": "small_molecule.gpcr.atypical_antipsychotic",
+      "targets": [
+        "DRD2",
+        "DRD3",
+        "HTR1A",
+        "HTR2A"
+      ],
+      "indications": [
+        {
+          "id": "schizophrenia",
+          "name": "Schizophrenia (oral atypical antipsychotic)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 60,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 40,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Otsuka share of co-promotion with Lundbeck; oral schizo niche",
+              "us.priceK": "Rexulti WAC ~$15K/yr (Otsuka share)"
+            },
+            "penPct": 60,
+            "cagrPct": 5,
+            "peakYear": 2028,
+            "salesM": 400,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "mdd_adjunct",
+          "name": "MDD adjunctive therapy (largest Rexulti indication)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 35,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Rexulti adjunct MDD (largest indication; ~50% of Rexulti revenue)",
+              "us.priceK": "Same Rexulti pricing"
+            },
+            "penPct": 60,
+            "cagrPct": 6,
+            "peakYear": 2028,
+            "salesM": 700,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "ad_agitation",
+          "name": "Agitation associated with Alzheimer's dementia (FDA May 2023, FIC)",
+          "area": "cns.neurodegeneration.alzheimer",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 25,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 12,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 40000,
+                "wtpPct": 3,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 50,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 8,
+                "priceK": 3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "First-in-class FDA approval AD agitation; ~13% of Rexulti scripts (growing)",
+              "us.priceK": "Same Rexulti pricing"
+            },
+            "penPct": 12,
+            "cagrPct": 30,
+            "peakYear": 2032,
+            "salesM": 400,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "jynarque_tolvaptan",
+      "name": "Jynarque + Samsca (tolvaptan) - vasopressin V2 receptor antagonist",
+      "stage": "Commercial (ADPKD + hyponatremia)",
+      "modality": "small_molecule.gpcr.vasopressin_v2_antagonist",
+      "targets": [
+        "AVPR2"
+      ],
+      "indications": [
+        {
+          "id": "adpkd",
+          "name": "ADPKD slowing (Jynarque US; ex-US Samsca/Jinarc) + hyponatremia (Samsca SIADH/HF)",
+          "area": "nephrology.glomerular.adpkd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 140,
+                "wtpPct": 50,
+                "priceK": 50
+              },
+              "eu": {
+                "patientsK": 200,
+                "wtpPct": 35,
+                "priceK": 30
+              },
+              "row": {
+                "patientsK": 1000,
+                "wtpPct": 10,
+                "priceK": 10
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 75,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 55,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 14,
+                "priceK": 20
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Jynarque ~50% ADPKD branded penetration; sole approved DMT for ADPKD progression",
+              "us.priceK": "Jynarque US WAC ~$200K/yr (REMS program oversight)"
+            },
+            "penPct": 28,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 1400,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "lonsurf",
+      "name": "Lonsurf (trifluridine/tipiracil; TAS-102) - oral chemo (Servier partnership ex-Asia)",
+      "stage": "Commercial (mCRC 3L+ + gastric)",
+      "modality": "small_molecule.chemotherapy.thymidine_analog",
+      "targets": [
+        "TYMS"
+      ],
+      "indications": [
+        {
+          "id": "mcrc",
+          "name": "mCRC 3L+ (with bevacizumab combo per SUNLIGHT)",
+          "area": "oncology.gi.colorectal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 55,
+                "wtpPct": 65,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 48,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 320,
+                "wtpPct": 16,
+                "priceK": 22
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 7.2,
+                "wtpPct": 65,
+                "priceK": 95
+              },
+              "eu": {
+                "reachPct": 1.4,
+                "wtpPct": 48,
+                "priceK": 55
+              },
+              "row": {
+                "reachPct": 2.4,
+                "wtpPct": 16,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Lonsurf 3L+ mCRC niche; Otsuka books Asia, Servier ex-Asia (50/50 profit share)",
+              "us.priceK": "Lonsurf pricing class ~$95K/course"
+            },
+            "penPct": 50,
+            "cagrPct": 4,
+            "peakYear": 2028,
+            "salesM": 200,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "gastric",
+          "name": "Gastric/GEJ adenocarcinoma 3L+",
+          "area": "oncology.gi.gastric_esoph",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 58,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 44,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 20,
+                "priceK": 32
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4.0,
+                "wtpPct": 58,
+                "priceK": 95
+              },
+              "eu": {
+                "reachPct": 1.0,
+                "wtpPct": 44,
+                "priceK": 55
+              },
+              "row": {
+                "reachPct": 2.5,
+                "wtpPct": 20,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Lonsurf 3L gastric niche post-IO failure; small US share; bigger Asia",
+              "us.priceK": "Same Lonsurf pricing"
+            },
+            "penPct": 48,
+            "cagrPct": 3,
+            "peakYear": 2028,
+            "salesM": 100,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "mycapssa",
+      "name": "Mycapssa (oral octreotide) - somatostatin analog (ex-Chiasma)",
+      "stage": "Commercial US (acromegaly maintenance)",
+      "modality": "peptide.depot.somatostatin_analog",
+      "targets": [
+        "SSTR2"
+      ],
+      "indications": [
+        {
+          "id": "acromegaly",
+          "name": "Acromegaly maintenance (post-injectable octreotide/lanreotide responders)",
+          "area": "endocrine.pituitary.acromegaly",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8,
+                "wtpPct": 75,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 10,
+                "wtpPct": 65,
+                "priceK": 45
+              },
+              "row": {
+                "patientsK": 15,
+                "wtpPct": 35,
+                "priceK": 20
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 15.7,
+                "wtpPct": 75,
+                "priceK": 75
+              },
+              "eu": {
+                "reachPct": 1.6,
+                "wtpPct": 55,
+                "priceK": 45
+              },
+              "row": {
+                "reachPct": 1.0,
+                "wtpPct": 14,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Mycapssa first oral octreotide niche; EU MA withdrawn Feb 2025; small US share vs injectables",
+              "us.priceK": "Oral octreotide ~$75K/yr"
+            },
+            "penPct": 20,
+            "cagrPct": 5,
+            "peakYear": 2028,
+            "salesM": 50,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "sibeprenlimab",
+      "name": "Sibeprenlimab - anti-APRIL mAb (ex-Visterra acq)",
+      "stage": "Phase 3 ENVISION (positive interim 2025; potential 2026 accelerated approval submission)",
+      "modality": "antibody.monoclonal.anti_april",
+      "targets": [
+        "TNFSF13"
+      ],
+      "indications": [
+        {
+          "id": "iga_nephropathy",
+          "name": "IgA nephropathy (proteinuria reduction; eGFR slope)",
+          "area": "nephrology.glomerular.iga_nephropathy",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 130,
+                "wtpPct": 50,
+                "priceK": 65
+              },
+              "eu": {
+                "patientsK": 150,
+                "wtpPct": 35,
+                "priceK": 32
+              },
+              "row": {
+                "patientsK": 1500,
+                "wtpPct": 10,
+                "priceK": 6
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 50,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 35,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 10,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Anti-APRIL mAb competing vs Filspari (Travere)/Fabhalta (NVS)/povetacicept (Vertex)/BHV-1400; share post-launch",
+              "us.priceK": "Anti-APRIL biologic ~$80K/yr orphan-priced"
+            },
+            "penPct": 50,
+            "cagrPct": 25,
+            "peakYear": 2032
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 4,
+        "commercialMult": 1.5,
+        "commercialRevM": 1900000,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "abilify_family": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "bipolar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "mdd_adjunct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "rexulti": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "mdd_adjunct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "ad_agitation": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "jynarque_tolvaptan": {
+          "adpkd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "lonsurf": {
+          "mcrc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "mycapssa": {
+          "acromegaly": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "sibeprenlimab": {
+          "iga_nephropathy": {
+            "pos": 60,
+            "apr": 80,
+            "pen": 0.4
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 5,
+        "commercialMult": 2,
+        "commercialRevM": 2200000,
+        "milestones": 50,
+        "dil": 0
+      },
+      "assumptions": {
+        "abilify_family": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "bipolar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "mdd_adjunct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "rexulti": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "mdd_adjunct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "ad_agitation": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "jynarque_tolvaptan": {
+          "adpkd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "lonsurf": {
+          "mcrc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "mycapssa": {
+          "acromegaly": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "sibeprenlimab": {
+          "iga_nephropathy": {
+            "pos": 78,
+            "apr": 90,
+            "pen": 0.6
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 40,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 7,
+        "commercialMult": 2.7,
+        "commercialRevM": 2500000,
+        "milestones": 150,
+        "dil": 0
+      },
+      "assumptions": {
+        "abilify_family": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "bipolar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "mdd_adjunct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "rexulti": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "mdd_adjunct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "ad_agitation": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "jynarque_tolvaptan": {
+          "adpkd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "lonsurf": {
+          "mcrc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "mycapssa": {
+          "acromegaly": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "sibeprenlimab": {
+          "iga_nephropathy": {
+            "pos": 90,
+            "apr": 96,
+            "pen": 0.85
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 10,
+        "commercialMult": 3.5,
+        "commercialRevM": 2900000,
+        "milestones": 300,
+        "dil": 0
+      },
+      "assumptions": {
+        "abilify_family": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "bipolar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mdd_adjunct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "rexulti": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "mdd_adjunct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "ad_agitation": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "jynarque_tolvaptan": {
+          "adpkd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "lonsurf": {
+          "mcrc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "mycapssa": {
+          "acromegaly": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "sibeprenlimab": {
+          "iga_nephropathy": {
+            "pos": 96,
+            "apr": 98,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 14,
+        "commercialMult": 5,
+        "commercialRevM": 3500000,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "abilify_family": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          },
+          "bipolar": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "mdd_adjunct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "rexulti": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          },
+          "mdd_adjunct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "ad_agitation": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "jynarque_tolvaptan": {
+          "adpkd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "lonsurf": {
+          "mcrc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "gastric": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "mycapssa": {
+          "acromegaly": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "sibeprenlimab": {
+          "iga_nephropathy": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.3
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Q2 2026",
+      "dateSort": "2026-06-30",
+      "asset": "sibeprenlimab",
+      "indication": "iga_nephropathy",
+      "title": "Sibeprenlimab ENVISION Ph3 IgAN final analysis + potential accelerated approval submission",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 60,
+      "success_pos": 92,
+      "success_apr": 96,
+      "_source": "https://www.otsuka-us.com/news/otsuka-announces-positive-interim-results-phase-3-trial-sibeprenlimab-treatment-immunoglobulin",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "abilify_family",
+      "indication": "schizophrenia",
+      "title": "Abilify Asimtufii (2-mo LAI) continued ramp + potential ex-US expansion",
+      "type": "launch",
+      "binary": false,
+      "_source": "https://otsuka-us.com/news/fda-approves-otsuka-and-lundbecks-abilify-asimtufiir-aripiprazole-first-once-every-two-months",
+      "_confidence": "high"
+    },
+    {
+      "date": "Q3 2026",
+      "dateSort": "2026-09-15",
+      "asset": "rexulti",
+      "indication": "ad_agitation",
+      "title": "Rexulti AD agitation continued growth (~13% of Rexulti scripts)",
+      "type": "launch",
+      "binary": false,
+      "_source": "https://www.smartkarma.com/insights/otsuka-holdings-4578-jp-rexulti-abilify-drive-2025-guidance-upward-all-eyes-on-sibeprenlimab",
+      "_confidence": "high"
+    }
+  ]
+}

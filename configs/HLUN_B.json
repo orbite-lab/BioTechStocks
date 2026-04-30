@@ -1,0 +1,1020 @@
+{
+  "company": {
+    "ticker": "HLUN_B",
+    "name": "H. Lundbeck A/S",
+    "currentPrice": 42.98,
+    "sharesOut": 992,
+    "cash": -10000,
+    "currency": "DKK",
+    "phase": "commercial",
+    "subtitle": "CNS-focused: Vyepti (CGRP migraine) + Rexulti + Trintellix + Abilify Maintena commercial; Amlenetug MSA Ph3 + Bexicaserin Dravet Ph3 (Longboard $2.6B Dec 2024)",
+    "yahooTicker": "HLUN-B.CO"
+  },
+  "assets": [
+    {
+      "id": "vyepti",
+      "name": "Vyepti (eptinezumab) - anti-CGRP IV mAb (q3mo migraine prophylaxis)",
+      "stage": "Commercial (30+ countries; +59% CER FY25)",
+      "modality": "antibody.monoclonal.anti_cgrp",
+      "targets": [
+        "CALCA",
+        "CALCB"
+      ],
+      "indications": [
+        {
+          "id": "migraine",
+          "name": "Migraine prophylaxis (chronic + episodic; 4+ MMD)",
+          "area": "cns.pain.migraine",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 4000,
+                "wtpPct": 30,
+                "priceK": 3
+              },
+              "eu": {
+                "patientsK": 6000,
+                "wtpPct": 18,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 5,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2.5,
+                "wtpPct": 65,
+                "priceK": 18
+              },
+              "eu": {
+                "reachPct": 1.6,
+                "wtpPct": 45,
+                "priceK": 11
+              },
+              "row": {
+                "reachPct": 0.4,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Vyepti ~12% US anti-CGRP class share (vs Aimovig/Ajovy/Emgality + oral CGRP); IV-only differentiation",
+              "us.priceK": "Vyepti WAC ~$15-18K/yr (q3mo dosing)"
+            },
+            "penPct": 35,
+            "cagrPct": 25,
+            "peakYear": 2030,
+            "salesM": 785,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "rexulti",
+      "name": "Rexulti (brexpiprazole) - atypical antipsychotic (Otsuka co-promotion)",
+      "stage": "Commercial (schizophrenia + MDD adjunct + AD agitation)",
+      "modality": "small_molecule.gpcr.atypical_antipsychotic",
+      "targets": [
+        "DRD2",
+        "DRD3",
+        "HTR1A",
+        "HTR2A"
+      ],
+      "indications": [
+        {
+          "id": "schizophrenia",
+          "name": "Schizophrenia (adult + adolescent)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 60,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 40,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Rexulti competing vs generic atypicals + Vraylar; Lundbeck's share of Otsuka co-promo",
+              "us.priceK": "Rexulti WAC ~$15K/yr"
+            },
+            "penPct": 60,
+            "cagrPct": 5,
+            "peakYear": 2028,
+            "salesM": 350,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "mdd_adjunct",
+          "name": "MDD adjunctive therapy (inadequate antidepressant response)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.8,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 0.3,
+                "wtpPct": 35,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 10,
+                "priceK": 3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Rexulti adjunct MDD niche vs Vraylar/Trintellix",
+              "us.priceK": "Same Rexulti pricing"
+            },
+            "penPct": 60,
+            "cagrPct": 6,
+            "peakYear": 2028,
+            "salesM": 280,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "ad_agitation",
+          "name": "Agitation associated with Alzheimer's dementia (FDA May 2023, FIC)",
+          "area": "cns.neurodegeneration.alzheimer",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 25,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 12,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 40000,
+                "wtpPct": 3,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 50,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 8,
+                "priceK": 3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "First-in-class for AD agitation (no approved competitor; off-label antipsychotics)",
+              "us.priceK": "Same Rexulti pricing"
+            },
+            "penPct": 12,
+            "cagrPct": 30,
+            "peakYear": 2032,
+            "salesM": 227,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "trintellix",
+      "name": "Trintellix / Brintellix (vortioxetine) - serotonin modulator MDD (Takeda co-promo US)",
+      "stage": "Commercial (MDD; brand mature/strategic)",
+      "modality": "small_molecule.gpcr.serotonin_modulator",
+      "targets": [
+        "SLC6A4",
+        "HTR1A",
+        "HTR3A",
+        "HTR7"
+      ],
+      "indications": [
+        {
+          "id": "mdd",
+          "name": "Major depressive disorder (adult + cognitive symptoms)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 55,
+                "priceK": 7
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 35,
+                "priceK": 4
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Trintellix ~3% MDD branded share vs SSRI generics + Spravato + Auvelity",
+              "us.priceK": "Trintellix WAC ~$8K/yr; brand erodes 2026 LOE risk"
+            },
+            "penPct": 60,
+            "cagrPct": -5,
+            "peakYear": 2025,
+            "salesM": 430,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "abilify_maintena",
+      "name": "Abilify Maintena (aripiprazole LAI) - schizophrenia long-acting depot",
+      "stage": "Commercial (mature; Otsuka partnership; generic erosion 2026+)",
+      "modality": "small_molecule.gpcr.atypical_antipsychotic",
+      "targets": [
+        "DRD2",
+        "HTR1A",
+        "HTR2A"
+      ],
+      "indications": [
+        {
+          "id": "schizophrenia_lai",
+          "name": "Schizophrenia + bipolar I maintenance (monthly LAI)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 60,
+                "priceK": 24
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 40,
+                "priceK": 14
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Abilify Maintena LAI niche; declining vs generic aripiprazole + Aristada + Invega Hafyera",
+              "us.priceK": "LAI premium pricing ~$24K/yr; generic Q3 2026 risk"
+            },
+            "penPct": 60,
+            "cagrPct": -15,
+            "peakYear": 2025,
+            "salesM": 285,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "amlenetug",
+      "name": "Amlenetug (Lu AF82422) - anti-aggregated alpha-synuclein mAb",
+      "stage": "Phase 3 MASCOT in MSA (initiated 2025); Parkinson Ph3 planned",
+      "modality": "antibody.monoclonal.anti_alpha_synuclein",
+      "targets": [
+        "SNCA"
+      ],
+      "indications": [
+        {
+          "id": "msa",
+          "name": "Multiple System Atrophy (MASCOT Ph3, first DMT candidate globally)",
+          "area": "cns.neurodegeneration.msa",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 70,
+                "priceK": 300
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 50,
+                "priceK": 180
+              },
+              "row": {
+                "patientsK": 250,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 35,
+                "wtpPct": 70,
+                "priceK": 300
+              },
+              "eu": {
+                "reachPct": 25,
+                "wtpPct": 50,
+                "priceK": 180
+              },
+              "row": {
+                "reachPct": 6,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "First-in-class disease-modifying MSA tx; no approved competitor; orphan single-source",
+              "us.priceK": "Aspirational orphan rare neuro pricing ~$300K/yr"
+            },
+            "penPct": 55,
+            "cagrPct": 5,
+            "peakYear": 2034
+          }
+        },
+        {
+          "id": "parkinson",
+          "name": "Parkinson's disease (Ph3 planned, follow-on to MSA)",
+          "area": "cns.neurodegeneration.parkinson_disease",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1000,
+                "wtpPct": 80,
+                "priceK": 8
+              },
+              "eu": {
+                "patientsK": 1200,
+                "wtpPct": 65,
+                "priceK": 4
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 30,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 70,
+                "priceK": 60
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 50,
+                "priceK": 35
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "PD DMT competitive landscape (Roche prasinezumab, BIIB, etc.); ~3% share if approved",
+              "us.priceK": "PD DMT pricing $40-80K/yr"
+            },
+            "penPct": 50,
+            "cagrPct": 5,
+            "peakYear": 2036
+          }
+        }
+      ]
+    },
+    {
+      "id": "bexicaserin",
+      "name": "Bexicaserin (LP352) - 5-HT2C-selective agonist (Longboard acq Dec 2024)",
+      "stage": "Phase 3 DEEp SEA Dravet (initiated Sep 2024); LGS + DEE Ph3 expected; FDA BTD",
+      "modality": "small_molecule.gpcr.5ht2c_agonist",
+      "targets": [
+        "HTR2C"
+      ],
+      "indications": [
+        {
+          "id": "dravet",
+          "name": "Dravet syndrome (Ph3 DEEp SEA; ~160 pts, BTD)",
+          "area": "cns.epilepsy.dee.dravet",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 38,
+                "wtpPct": 80,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 50
+              },
+              "row": {
+                "patientsK": 60,
+                "wtpPct": 25,
+                "priceK": 12
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 22,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 50,
+                "priceK": 120
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Dravet competitive vs Diacomit (BIO), Epidiolex (Jazz CBD), Fintepla (UCB fenfluramine); ~25% share post-launch",
+              "us.priceK": "DEE class pricing ~$200K/yr (Fintepla benchmark)"
+            },
+            "penPct": 50,
+            "cagrPct": 5,
+            "peakYear": 2032
+          }
+        },
+        {
+          "id": "dee_broad",
+          "name": "Broad DEE (LGS + other rare DEEs Ph3)",
+          "area": "cns.epilepsy.dee",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 75,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 55,
+                "priceK": 25
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 20,
+                "priceK": 8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 65,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 45,
+                "priceK": 120
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Broad DEE expansion includes LGS; competitive vs Epidiolex + Fintepla",
+              "us.priceK": "Same DEE class pricing"
+            },
+            "penPct": 40,
+            "cagrPct": 6,
+            "peakYear": 2034
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 4,
+        "commercialMult": 2,
+        "commercialRevM": 15400,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "vyepti": {
+          "migraine": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "rexulti": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "mdd_adjunct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "ad_agitation": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "trintellix": {
+          "mdd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "abilify_maintena": {
+          "schizophrenia_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "amlenetug": {
+          "msa": {
+            "pos": 25,
+            "apr": 60,
+            "pen": 0.4
+          },
+          "parkinson": {
+            "pos": 12,
+            "apr": 40,
+            "pen": 0.3
+          }
+        },
+        "bexicaserin": {
+          "dravet": {
+            "pos": 60,
+            "apr": 80,
+            "pen": 0.5
+          },
+          "dee_broad": {
+            "pos": 30,
+            "apr": 60,
+            "pen": 0.4
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 6,
+        "commercialMult": 2.8,
+        "commercialRevM": 20300,
+        "milestones": 50,
+        "dil": 0
+      },
+      "assumptions": {
+        "vyepti": {
+          "migraine": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "rexulti": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "mdd_adjunct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "ad_agitation": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "trintellix": {
+          "mdd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "abilify_maintena": {
+          "schizophrenia_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.45
+          }
+        },
+        "amlenetug": {
+          "msa": {
+            "pos": 45,
+            "apr": 75,
+            "pen": 0.6
+          },
+          "parkinson": {
+            "pos": 25,
+            "apr": 55,
+            "pen": 0.45
+          }
+        },
+        "bexicaserin": {
+          "dravet": {
+            "pos": 78,
+            "apr": 90,
+            "pen": 0.7
+          },
+          "dee_broad": {
+            "pos": 50,
+            "apr": 75,
+            "pen": 0.6
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 40,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 8,
+        "commercialMult": 4,
+        "commercialRevM": 24500,
+        "milestones": 150,
+        "dil": 0
+      },
+      "assumptions": {
+        "vyepti": {
+          "migraine": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "rexulti": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "mdd_adjunct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "ad_agitation": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "trintellix": {
+          "mdd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "abilify_maintena": {
+          "schizophrenia_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "amlenetug": {
+          "msa": {
+            "pos": 65,
+            "apr": 85,
+            "pen": 0.85
+          },
+          "parkinson": {
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.65
+          }
+        },
+        "bexicaserin": {
+          "dravet": {
+            "pos": 90,
+            "apr": 95,
+            "pen": 0.95
+          },
+          "dee_broad": {
+            "pos": 70,
+            "apr": 88,
+            "pen": 0.85
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 11,
+        "commercialMult": 5.5,
+        "commercialRevM": 29400,
+        "milestones": 300,
+        "dil": 0
+      },
+      "assumptions": {
+        "vyepti": {
+          "migraine": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "rexulti": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "mdd_adjunct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ad_agitation": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "trintellix": {
+          "mdd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "abilify_maintena": {
+          "schizophrenia_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "amlenetug": {
+          "msa": {
+            "pos": 82,
+            "apr": 93,
+            "pen": 1.05
+          },
+          "parkinson": {
+            "pos": 65,
+            "apr": 85,
+            "pen": 0.85
+          }
+        },
+        "bexicaserin": {
+          "dravet": {
+            "pos": 96,
+            "apr": 98,
+            "pen": 1.15
+          },
+          "dee_broad": {
+            "pos": 85,
+            "apr": 95,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 14,
+        "commercialMult": 7,
+        "commercialRevM": 35000,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "vyepti": {
+          "migraine": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "rexulti": {
+          "schizophrenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "mdd_adjunct": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "ad_agitation": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "trintellix": {
+          "mdd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "abilify_maintena": {
+          "schizophrenia_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "amlenetug": {
+          "msa": {
+            "pos": 92,
+            "apr": 97,
+            "pen": 1.3
+          },
+          "parkinson": {
+            "pos": 80,
+            "apr": 92,
+            "pen": 1.1
+          }
+        },
+        "bexicaserin": {
+          "dravet": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.3
+          },
+          "dee_broad": {
+            "pos": 95,
+            "apr": 98,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "amlenetug",
+      "indication": "msa",
+      "title": "Amlenetug MASCOT Ph3 MSA enrollment milestone (interim 2027+)",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.neurologylive.com/view/inside-the-phase-3-mascot-trial-lundbeck-push-first-disease-modifying-msa-therapy",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "bexicaserin",
+      "indication": "dravet",
+      "title": "Bexicaserin DEEp SEA Ph3 Dravet enrollment + interim safety",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.lundbeck.com/us/newsroom/2025/lundbeck-announces-positive-results-from-12-month-open-label-ext",
+      "_confidence": "high"
+    },
+    {
+      "date": "Q3 2026",
+      "dateSort": "2026-09-30",
+      "asset": "abilify_maintena",
+      "indication": "schizophrenia_lai",
+      "title": "Abilify Maintena generic LAI entry (US patent erosion)",
+      "type": "loe",
+      "binary": false,
+      "_source": "https://www.morningstar.com/stocks/lundbeck-earnings-demand-strategic-brands-helps-offset-generic-erosion-mature-portfolio",
+      "_confidence": "high"
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-06-30",
+      "asset": "trintellix",
+      "indication": "mdd",
+      "title": "Trintellix LOE (composition-of-matter expiration)",
+      "type": "loe",
+      "binary": false,
+      "_source": "https://www.morningstar.com/stocks/lundbeck-earnings-demand-strategic-brands-helps-offset-generic-erosion-mature-portfolio",
+      "_confidence": "high"
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-09-30",
+      "asset": "bexicaserin",
+      "indication": "dravet",
+      "title": "Bexicaserin DEEp SEA Ph3 Dravet topline readout",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 35,
+      "fail_apr": 70,
+      "success_pos": 92,
+      "success_apr": 96,
+      "_source": "https://www.biopharmadive.com/news/lundbeck-longboard-acquisition-deal-seizures-epilepsy-rare-drug/729745/",
+      "_confidence": "medium"
+    }
+  ]
+}

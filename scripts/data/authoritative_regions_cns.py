@@ -105,6 +105,19 @@ REGIONS = {
         "eu":  {"patientsK": 1200,  "wtpPct": 65, "priceK": 4},
         "row": {"patientsK": 10000, "wtpPct": 30, "priceK": 1.5},
     },
+    # Multiple System Atrophy (MSA): rare alpha-synucleinopathy distinct from
+    # PD / DLB. Parkinsonian + autonomic (orthostatic hypotension, urinary)
+    # + cerebellar features. Median survival 6-9y from onset. No approved
+    # disease-modifying therapy globally; supportive only (levodopa partial,
+    # midodrine for OH). Lundbeck amlenetug MASCOT Ph3 first DMT candidate
+    # (anti-aggregated alpha-synuclein mAb). source: NORD/Orphanet MSA prevalence
+    # 3-5/100K -> US ~50K, EU5 ~80K, ROW ~250K. Aspirational orphan pricing
+    # for first-in-class DMT $300K US blended.
+    "cns.neurodegeneration.msa": {
+        "us":  {"patientsK": 50,   "wtpPct": 70, "priceK": 300},
+        "eu":  {"patientsK": 80,   "wtpPct": 50, "priceK": 180},
+        "row": {"patientsK": 250,  "wtpPct": 12, "priceK": 50},
+    },
     "cns.neurodegeneration.ppa": {
         "us":  {"patientsK": 30,    "wtpPct": 30, "priceK": 3},
         "eu":  {"patientsK": 40,    "wtpPct": 20, "priceK": 1.5},
@@ -243,6 +256,7 @@ PEN_PCT = {
     "cns.neurodegeneration.caa": 8,
     "cns.neurodegeneration.dlb": 20,
     "cns.neurodegeneration.parkinson_disease": 50,
+    "cns.neurodegeneration.msa": 55,
     "cns.neurodegeneration.ppa": 15,
     "cns.neurodegeneration.post_stroke_recovery": 40,
     "cns.pain.migraine": 35,

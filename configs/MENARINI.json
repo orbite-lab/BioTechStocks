@@ -7,10 +7,10 @@
     "cash": 0,
     "currency": "EUR",
     "phase": "commercial",
-    "subtitle": "PRIVATE REFERENCE -- Italian family-owned pharma (Aleotti family; Florence HQ since 1886). FY24 total revenue ~EUR 4.4B; large EU/MEA/LATAM/APAC commercial footprint (140+ countries). Innovative oncology via Stemline Therapeutics acquisition May 2020 (~$677M): Orserdu (elacestrant first oral SERD ER+/HER2- mBC ESR1m FDA Jan 2023; flagship growth) + Elzonris (tagraxofusp first-in-class CD123-targeted cytotoxin BPDCN FDA 2018). Legacy commercial: cardiometabolic (bisoprolol, ramipril generics), GI (Tachipirina paracetamol Italy OTC, Dexilant PPI), respiratory (Rinazina decongestant)",
+    "subtitle": "PRIVATE REFERENCE -- Italian family-owned pharma (Aleotti family; Florence HQ since 1886). FY24 total revenue ~EUR 4.4B; large EU/MEA/LATAM/APAC commercial footprint (140+ countries). Innovative oncology via Stemline Therapeutics acquisition Jul 2020 (~$677M): Orserdu (elacestrant first oral SERD ER+/HER2- mBC ESR1m FDA Jan 2023; flagship growth) + Elzonris (tagraxofusp first-in-class CD123-targeted cytotoxin BPDCN FDA 2018). Legacy commercial: cardiometabolic (bisoprolol, ramipril generics), GI (Tachipirina paracetamol Italy OTC, Dexilant PPI), respiratory (Rinazina decongestant)",
     "yahooTicker": "",
     "private": true,
-    "privateNote": "Family-owned by Aleotti family since 1986 (Lucia Aleotti + Alberto Giovanni Aleotti). Largest Italian pharma. Founded 1886 in Naples by Archimede Menarini; relocated to Florence 1915. Acquired Stemline Therapeutics May 2020 (~$677M) for innovative oncology pivot. No equity tradeable. Modeled here for taxonomy + drug-portfolio reference only."
+    "privateNote": "Family-owned by Aleotti family since 1986 (Lucia Aleotti + Alberto Giovanni Aleotti). Largest Italian pharma. Founded 1886 in Naples by Archimede Menarini; relocated to Florence 1915. Acquired Stemline Therapeutics Jul 2020 (~$677M) for innovative oncology pivot. No equity tradeable. Modeled here for taxonomy + drug-portfolio reference only."
   },
   "assets": [
     {
@@ -130,7 +130,7 @@
             "penPct": 65,
             "cagrPct": 5,
             "peakYear": 2030,
-            "salesM": 110,
+            "salesM": 45,
             "salesYear": 2025
           }
         }
@@ -139,7 +139,7 @@
     {
       "id": "men1611",
       "name": "MEN1611 (PI3K-alpha-selective mutant inhibitor) - oral selective PI3Kalpha inhibitor sparing wild-type",
-      "stage": "Phase 2 (HR+/HER2- breast cancer with PIK3CA mutation; competitive vs Itovebi/Truqap class)",
+      "stage": "Phase 1/2 (HR+/HER2- breast cancer with PIK3CA mutation; status uncertain post-Itovebi class consolidation; private company sparse disclosure)",
       "modality": "small_molecule.kinase.pi3k_alpha_inhibitor",
       "targets": [
         "PIK3CA"
@@ -203,8 +203,8 @@
       "targets": [],
       "indications": [
         {
-          "id": "legacy_htn",
-          "name": "Cardiometabolic legacy generics (bisoprolol beta-blocker + ramipril ACE-i + simvastatin etc; ex-US generics)",
+          "id": "legacy_htn_cv",
+          "name": "Cardiometabolic legacy generics (bisoprolol + ramipril + simvastatin etc; ex-US)",
           "area": "cardio_metabolic.hypertension.outpatient_generic",
           "market": {
             "regions": {
@@ -231,25 +231,183 @@
                 "priceK": 0
               },
               "eu": {
-                "reachPct": 29.9,
+                "reachPct": 16.2,
                 "wtpPct": 18,
                 "priceK": 0.3
               },
               "row": {
-                "reachPct": 15.9,
+                "reachPct": 8.1,
                 "wtpPct": 8,
                 "priceK": 0.1
               }
             },
             "company_slice_sources": {
-              "eu.reachPct": "Menarini cardiometabolic generics ~major Italy/EU/MEA presence (ramipril/bisoprolol/simvastatin); ~EUR 1.5B aggregate franchise",
-              "eu.priceK": "Generic cardiometabolic ~EUR 30/mo blended",
-              "us.note": "Not US-marketed"
+              "eu.reachPct": "Menarini CV legacy ~$800M (bisoprolol + ramipril + simvastatin)",
+              "eu.priceK": "Generic ~EUR 30/mo blended"
             },
             "penPct": 8,
             "cagrPct": -2,
             "peakYear": 2027,
-            "salesM": 1500,
+            "salesM": 800,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "legacy_gi",
+          "name": "GI legacy + Italy OTC analgesic franchise (Tachipirina paracetamol + Dexilant PPI + Pizensy lactitol)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 6.8,
+                "wtpPct": 20,
+                "priceK": 0.4
+              },
+              "row": {
+                "reachPct": 3.4,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice_sources": {
+              "eu.reachPct": "Menarini Italy GI/OTC ~$400M (Tachipirina ~$300M Italy paracetamol #1 + Dexilant PPI residual)",
+              "eu.priceK": "OTC + generic Rx blended ~EUR 25/mo"
+            },
+            "penPct": 30,
+            "cagrPct": -1,
+            "peakYear": 2027,
+            "salesM": 400,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "legacy_respiratory",
+          "name": "Respiratory + ENT legacy (Rinazina nasal decongestant + Mucosolvan ambroxol + bronchodilators)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 95,
+                "wtpPct": 18,
+                "priceK": 0.3
+              },
+              "row": {
+                "reachPct": 51.9,
+                "wtpPct": 8,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "eu.reachPct": "Menarini respiratory + ENT OTC + Rx ~$200M (Rinazina decongestant + Mucosolvan ambroxol)",
+              "eu.priceK": "OTC respiratory ~EUR 15/mo blended"
+            },
+            "penPct": 10,
+            "cagrPct": -3,
+            "peakYear": 2027,
+            "salesM": 200,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "pizensy",
+      "name": "Pizensy (lactitol) - osmotic laxative (sugar alcohol)",
+      "stage": "Commercial (chronic idiopathic constipation FDA 2020; ex-Sebela acquisition)",
+      "modality": "small_molecule.osmotic.sugar_alcohol",
+      "targets": [],
+      "indications": [
+        {
+          "id": "cic",
+          "name": "Chronic idiopathic constipation (CIC; oral powder)",
+          "area": "immunology.inflammatory_gi.constipation_chronic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 21000,
+                "wtpPct": 10,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 25000,
+                "wtpPct": 6,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 2,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 38,
+                "priceK": 1.5
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 22,
+                "priceK": 0.8
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 8,
+                "priceK": 0.3
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Pizensy CIC niche; competitive vs Linzess (IRWD/AbbVie linaclotide), Trulance (BHC plecanatide), Motegrity (Takeda prucalopride)",
+              "us.priceK": "Pizensy WAC ~$1.5K/yr"
+            },
+            "penPct": 10,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 20,
             "salesYear": 2025
           }
         }
@@ -290,7 +448,24 @@
           }
         },
         "menarini_legacy": {
-          "legacy_htn": {
+          "legacy_htn_cv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "legacy_gi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "legacy_respiratory": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "pizensy": {
+          "cic": {
             "pos": 100,
             "apr": 100,
             "pen": 0.4
@@ -331,7 +506,24 @@
           }
         },
         "menarini_legacy": {
-          "legacy_htn": {
+          "legacy_htn_cv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "legacy_gi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "legacy_respiratory": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "pizensy": {
+          "cic": {
             "pos": 100,
             "apr": 100,
             "pen": 0.5
@@ -372,7 +564,24 @@
           }
         },
         "menarini_legacy": {
-          "legacy_htn": {
+          "legacy_htn_cv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "legacy_gi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "legacy_respiratory": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "pizensy": {
+          "cic": {
             "pos": 100,
             "apr": 100,
             "pen": 0.6
@@ -413,7 +622,24 @@
           }
         },
         "menarini_legacy": {
-          "legacy_htn": {
+          "legacy_htn_cv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "legacy_gi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "legacy_respiratory": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "pizensy": {
+          "cic": {
             "pos": 100,
             "apr": 100,
             "pen": 0.7
@@ -454,7 +680,24 @@
           }
         },
         "menarini_legacy": {
-          "legacy_htn": {
+          "legacy_htn_cv": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "legacy_gi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          },
+          "legacy_respiratory": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "pizensy": {
+          "cic": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85

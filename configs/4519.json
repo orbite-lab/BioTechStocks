@@ -1,0 +1,1312 @@
+{
+  "company": {
+    "ticker": "4519",
+    "name": "Chugai Pharmaceutical Co., Ltd.",
+    "currentPrice": 7800,
+    "sharesOut": 1679,
+    "cash": 1200000,
+    "currency": "JPY",
+    "phase": "commercial",
+    "subtitle": "Roche-majority Japanese specialty pharma (~62% Roche stake; ~38% free float). Self-discovered global blockbusters: Hemlibra (emicizumab bispecific factor IXa/X hemophilia A) + Actemra (tocilizumab anti-IL-6R RA/GCA/COVID/CRS) + Alecensa (alectinib ALK NSCLC); plus Polivy (polatuzumab CD79b ADC DLBCL), Vabysmo (faricimab VEGF/Ang2 nAMD/DME co-discovered), Evrysdi (risdiplam SMA), Crovalimab (anti-C5 PNH recycling Ab); Japan distributor of Roche oncology franchise (Avastin/Tecentriq/Perjeta/Herceptin/Phesgo/Kadcyla/Rozlytrek)",
+    "yahooTicker": "4519.T"
+  },
+  "assets": [
+    {
+      "id": "hemlibra",
+      "name": "Hemlibra (emicizumab) - bispecific anti-FIXa/FX humanized IgG4 mAb (Chugai-discovered ART-Ig recycling Ab)",
+      "stage": "Commercial (FDA 2017 hemophilia A with inhibitors; 2018 without inhibitors; pediatric 2018)",
+      "modality": "antibody.bispecific.fixa_fx",
+      "targets": [
+        "F9",
+        "F10"
+      ],
+      "indications": [
+        {
+          "id": "hema",
+          "name": "Hemophilia A (with + without FVIII inhibitors; subQ q1-4 wk prophylaxis)",
+          "area": "hematology.rare_blood.hemophilia_a",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 85,
+                "priceK": 300
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "row": {
+                "patientsK": 280,
+                "wtpPct": 25,
+                "priceK": 80
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 30.7,
+                "wtpPct": 75,
+                "priceK": 480
+              },
+              "eu": {
+                "reachPct": 25.1,
+                "wtpPct": 55,
+                "priceK": 320
+              },
+              "row": {
+                "reachPct": 8.4,
+                "wtpPct": 12,
+                "priceK": 100
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Hemlibra ~50% global hemA prophylaxis share post-launch (vs FVIII replacement Adynovate/Eloctate/Esperoct + Roctavian gene therapy); ~22% of total hemA diagnosed treated",
+              "us.priceK": "Hemlibra WAC ~$480K/yr blended adult; weight-based",
+              "us.note": "Chugai books Japan direct sales + global royalties from Roche (Genentech US/Roche ex-US); ~$5B global brand, ~$2.4B Chugai-recognized"
+            },
+            "penPct": 65,
+            "cagrPct": 12,
+            "peakYear": 2031,
+            "salesM": 2400,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "actemra",
+      "name": "Actemra/RoActemra (tocilizumab) - anti-IL-6R humanized IgG1 mAb (Chugai-originated)",
+      "stage": "Commercial (RA 2010; sJIA 2011; GCA 2017; CAR-T CRS 2017; COVID-19 2021; SSc-ILD 2024); biosimilar entry 2025+",
+      "modality": "antibody.monoclonal.anti_il6r",
+      "targets": [
+        "IL6R"
+      ],
+      "indications": [
+        {
+          "id": "ra",
+          "name": "Rheumatoid arthritis (foundational IL-6R indication)",
+          "area": "immunology.inflammatory_systemic.rheumatoid_arthritis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 50,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 35,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 12000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 65,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 45,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 15,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Actemra ~5% RA biologic share; competitive vs anti-TNFs (Humira biosims) + JAK inhibitors; biosimilar entry 2025+",
+              "us.priceK": "Actemra WAC ~$35K/yr; net post-rebate ~$25K"
+            },
+            "penPct": 28,
+            "cagrPct": -8,
+            "peakYear": 2025,
+            "salesM": 800,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "gca",
+          "name": "Giant cell arteritis (GIACTA Ph3; FDA 2017 first-in-class GCA)",
+          "area": "immunology.inflammatory_systemic.gca_pmr",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 940,
+                "wtpPct": 25,
+                "priceK": 30
+              },
+              "eu": {
+                "patientsK": 1300,
+                "wtpPct": 18,
+                "priceK": 18
+              },
+              "row": {
+                "patientsK": 4000,
+                "wtpPct": 6,
+                "priceK": 7
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2.5,
+                "wtpPct": 65,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 45,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 15,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Actemra GCA first-in-class; addressable subset = GCA only (~25% of gca_pmr broader area which includes PMR); ~12% of GCA pts treated; net ~2.5% of broad gca_pmr universe",
+              "us.priceK": "Same Actemra WAC"
+            },
+            "penPct": 18,
+            "cagrPct": -5,
+            "peakYear": 2026,
+            "salesM": 250,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "ssc_ild",
+          "name": "Systemic sclerosis with interstitial lung disease (focuSSced Ph3; FDA 2024)",
+          "area": "immunology.autoimmune.systemic_sclerosis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80,
+                "wtpPct": 35,
+                "priceK": 28
+              },
+              "eu": {
+                "patientsK": 120,
+                "wtpPct": 22,
+                "priceK": 16
+              },
+              "row": {
+                "patientsK": 400,
+                "wtpPct": 6,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 13.8,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 8.3,
+                "wtpPct": 38,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 1.4,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Actemra SSc-ILD complementary to Ofev (BI nintedanib); ~5% combined penetration",
+              "us.priceK": "Same Actemra WAC"
+            },
+            "penPct": 30,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 200,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "alecensa",
+      "name": "Alecensa (alectinib) - oral selective ALK + RET tyrosine kinase inhibitor (Chugai-originated)",
+      "stage": "Commercial (ALK+ NSCLC 2L+ FDA 2015; 1L 2017; adjuvant ALINA Ph3 FDA 2024)",
+      "modality": "small_molecule.kinase.alk_inhibitor",
+      "targets": [
+        "ALK",
+        "RET"
+      ],
+      "indications": [
+        {
+          "id": "alk_nsclc",
+          "name": "ALK+ NSCLC 1L + 2L + adjuvant (resected stage IB-IIIA ALINA)",
+          "area": "oncology.lung.nsclc_driver.alk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 72,
+                "priceK": 205
+              },
+              "eu": {
+                "patientsK": 15,
+                "wtpPct": 55,
+                "priceK": 120
+              },
+              "row": {
+                "patientsK": 50,
+                "wtpPct": 22,
+                "priceK": 55
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 70,
+                "priceK": 220
+              },
+              "eu": {
+                "reachPct": 69.5,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 22.2,
+                "wtpPct": 15,
+                "priceK": 45
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Alecensa ~35% of ALK+ NSCLC; competitive vs Lorbrena (PFE lorlatinib 1L), Brigatinib (Takeda), Xalkori (PFE crizotinib legacy)",
+              "us.priceK": "Alecensa WAC ~$220K/yr"
+            },
+            "penPct": 68,
+            "cagrPct": 8,
+            "peakYear": 2031,
+            "salesM": 1700,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "polivy",
+      "name": "Polivy (polatuzumab vedotin) - anti-CD79b ADC (MMAE payload, vc-MMAE linker; Chugai-originated)",
+      "stage": "Commercial (R/R DLBCL FDA 2019 accel; 1L DLBCL POLARIX FDA 2023)",
+      "modality": "adc.cd79b.mmae",
+      "targets": [
+        "CD79B"
+      ],
+      "indications": [
+        {
+          "id": "dlbcl",
+          "name": "Diffuse large B-cell lymphoma (1L POLARIX + 2L+ R/R; in combination with R-CHP/BR)",
+          "area": "oncology.hematology.nhl.dlbcl",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 68,
+                "priceK": 195
+              },
+              "eu": {
+                "patientsK": 38,
+                "wtpPct": 50,
+                "priceK": 115
+              },
+              "row": {
+                "patientsK": 120,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 24.9,
+                "wtpPct": 65,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 16.6,
+                "wtpPct": 45,
+                "priceK": 120
+              },
+              "row": {
+                "reachPct": 2.8,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Polivy 1L DLBCL ~20% post-POLARIX; 2L+ residual; competitive vs Columvi (glofitamab Roche), Epkinly (epcoritamab GMAB), CAR-Ts (Yescarta/Breyanzi)",
+              "us.priceK": "Polivy WAC ~$200K/course (6-cycle)"
+            },
+            "penPct": 55,
+            "cagrPct": 12,
+            "peakYear": 2031,
+            "salesM": 1100,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "vabysmo",
+      "name": "Vabysmo (faricimab) - bispecific anti-VEGF-A + anti-Ang-2 humanized mAb (Roche/Chugai co-developed)",
+      "stage": "Commercial (nAMD + DME FDA 2022; RVO 2023; uveitic macular edema 2024)",
+      "modality": "antibody.bispecific.vegf_ang2",
+      "targets": [
+        "VEGFA",
+        "ANGPT2"
+      ],
+      "indications": [
+        {
+          "id": "nvamd",
+          "name": "Neovascular (wet) age-related macular degeneration",
+          "area": "ophthalmology.retina.nvamd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 200,
+                "wtpPct": 80,
+                "priceK": 11
+              },
+              "eu": {
+                "patientsK": 300,
+                "wtpPct": 65,
+                "priceK": 6
+              },
+              "row": {
+                "patientsK": 1000,
+                "wtpPct": 35,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18.1,
+                "wtpPct": 65,
+                "priceK": 32
+              },
+              "eu": {
+                "reachPct": 11.3,
+                "wtpPct": 45,
+                "priceK": 18
+              },
+              "row": {
+                "reachPct": 3.4,
+                "wtpPct": 12,
+                "priceK": 6
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Vabysmo ~25% US nAMD share post-launch (vs Eylea/Eylea HD REGN, Lucentis); extended q16wk dosing differentiator",
+              "us.priceK": "Vabysmo WAC ~$2.4K/dose; ~$32K/yr q4wk loading then q8-16wk",
+              "us.note": "Chugai Japan distribution + global royalty from Roche; ~$3.7B global FY24, ~$700M Chugai-recognized"
+            },
+            "penPct": 50,
+            "cagrPct": 30,
+            "peakYear": 2031,
+            "salesM": 700,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "dme",
+          "name": "Diabetic macular edema (DME)",
+          "area": "ophthalmology.retina.dme",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 750,
+                "wtpPct": 70,
+                "priceK": 11
+              },
+              "eu": {
+                "patientsK": 1000,
+                "wtpPct": 55,
+                "priceK": 6
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 30,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 60,
+                "priceK": 32
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 40,
+                "priceK": 18
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 10,
+                "priceK": 6
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Vabysmo DME ~20% share; competitive vs Eylea + bevacizumab off-label",
+              "us.priceK": "Same Vabysmo WAC"
+            },
+            "penPct": 35,
+            "cagrPct": 28,
+            "peakYear": 2032,
+            "salesM": 350,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "evrysdi",
+      "name": "Evrysdi (risdiplam) - oral SMN2 mRNA splicing modifier (small molecule; Chugai/Roche/PTC discovery)",
+      "stage": "Commercial (SMA FDA 2020 ages 2mo+; FIREFISH/SUNFISH/JEWELFISH; oral solution)",
+      "modality": "small_molecule.nucleic_acid.splice_modifier",
+      "targets": [
+        "SMN2"
+      ],
+      "indications": [
+        {
+          "id": "sma",
+          "name": "Spinal muscular atrophy (SMA Type 1, 2, 3 + presymptomatic; oral daily)",
+          "area": "musculoskeletal.neuromuscular.sma",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 75,
+                "priceK": 350
+              },
+              "eu": {
+                "patientsK": 14,
+                "wtpPct": 60,
+                "priceK": 220
+              },
+              "row": {
+                "patientsK": 50,
+                "wtpPct": 18,
+                "priceK": 80
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 75,
+                "priceK": 340
+              },
+              "eu": {
+                "reachPct": 18,
+                "wtpPct": 55,
+                "priceK": 220
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 15,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Evrysdi ~30% global SMA share post-launch (vs Spinraza ASO BIIB intrathecal, Zolgensma AAV9 NVS one-shot); oral convenience differentiator",
+              "us.priceK": "Evrysdi WAC ~$340K/yr weight-based",
+              "us.note": "Chugai Japan distribution + global royalty from Roche; ~$1.6B global FY24"
+            },
+            "penPct": 55,
+            "cagrPct": 12,
+            "peakYear": 2031,
+            "salesM": 350,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "crovalimab",
+      "name": "Crovalimab (PiaSky) - recycling anti-C5 humanized mAb (SMART-Ig pH-dependent; Chugai-originated)",
+      "stage": "Commercial (PNH Japan + China + EU 2024; FDA 2024; subQ q4wk; weight-based)",
+      "modality": "antibody.monoclonal.anti_c5_recycling",
+      "targets": [
+        "C5"
+      ],
+      "indications": [
+        {
+          "id": "pnh",
+          "name": "Paroxysmal nocturnal hemoglobinuria (PNH; subQ q4wk; first recycling anti-C5)",
+          "area": "hematology.rare_blood.pnh",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 85,
+                "priceK": 480
+              },
+              "eu": {
+                "patientsK": 18,
+                "wtpPct": 75,
+                "priceK": 320
+              },
+              "row": {
+                "patientsK": 50,
+                "wtpPct": 22,
+                "priceK": 130
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 70,
+                "priceK": 480
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 55,
+                "priceK": 320
+              },
+              "row": {
+                "reachPct": 8,
+                "wtpPct": 20,
+                "priceK": 130
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Crovalimab ~5-8% PNH share if launches successfully; competitive vs Soliris/Ultomiris (AZN) C5 + Empaveli/Fabhalta (Apellis/Novartis complement)",
+              "us.priceK": "Crovalimab WAC ~$480K/yr; SMART-Ig recycling reduces dosing frequency"
+            },
+            "penPct": 60,
+            "cagrPct": 30,
+            "peakYear": 2032,
+            "salesM": 80,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "phesgo",
+      "name": "Phesgo (pertuzumab + trastuzumab + hyaluronidase FDC) - subQ HER2-targeted combo (Roche-led, Chugai Japan)",
+      "stage": "Commercial (HER2+ breast 2020 subQ; replaces IV Perjeta+Herceptin)",
+      "modality": "antibody.monoclonal.anti_her2_combo",
+      "targets": [
+        "ERBB2"
+      ],
+      "indications": [
+        {
+          "id": "her2_breast",
+          "name": "HER2+ early + metastatic breast cancer (subQ FDC replacing IV Perjeta+Herceptin)",
+          "area": "oncology.breast.her2_pos",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 120,
+                "wtpPct": 70,
+                "priceK": 165
+              },
+              "eu": {
+                "patientsK": 140,
+                "wtpPct": 50,
+                "priceK": 95
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 65,
+                "priceK": 180
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 45,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Phesgo subQ replacing IV Perjeta+Herceptin in HER2+ early breast; ~25% conversion to subQ achieved",
+              "us.priceK": "Phesgo WAC ~$180K/yr; subQ premium",
+              "us.note": "Chugai Japan distribution + global royalty"
+            },
+            "penPct": 65,
+            "cagrPct": 6,
+            "peakYear": 2030,
+            "salesM": 350,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "rozlytrek",
+      "name": "Rozlytrek (entrectinib) - oral pan-TRK + ROS1 + ALK TKI (Ignyta acq Roche; Chugai Japan)",
+      "stage": "Commercial (ROS1+ NSCLC 2019; NTRK fusion solid tumors tissue-agnostic 2019)",
+      "modality": "small_molecule.kinase.trk_ros1_inhibitor",
+      "targets": [
+        "NTRK1",
+        "NTRK2",
+        "NTRK3",
+        "ROS1",
+        "ALK"
+      ],
+      "indications": [
+        {
+          "id": "ros1_ntrk",
+          "name": "ROS1+ NSCLC + NTRK fusion solid tumors (tissue-agnostic)",
+          "area": "oncology.lung.nsclc_driver.alk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 72,
+                "priceK": 205
+              },
+              "eu": {
+                "patientsK": 15,
+                "wtpPct": 55,
+                "priceK": 120
+              },
+              "row": {
+                "patientsK": 50,
+                "wtpPct": 22,
+                "priceK": 55
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5.6,
+                "wtpPct": 65,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 3.7,
+                "wtpPct": 45,
+                "priceK": 120
+              },
+              "row": {
+                "reachPct": 0.9,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Rozlytrek ROS1 ~3% of ALK-driver NSCLC (proxy area); NTRK fusion ultra-rare tissue-agnostic",
+              "us.priceK": "Rozlytrek WAC ~$200K/yr"
+            },
+            "penPct": 68,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 80,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "nxt007",
+      "name": "NXT007 - next-gen anti-FIXa/FX bispecific (Hemlibra successor; SMART-Ig improved PK + efficacy)",
+      "stage": "Phase 2 (hemophilia A; aim to reduce inhibitor risk + further extend dosing)",
+      "modality": "antibody.bispecific.fixa_fx",
+      "targets": [
+        "F9",
+        "F10"
+      ],
+      "indications": [
+        {
+          "id": "hema_next",
+          "name": "Hemophilia A next-gen prophylaxis (reduced thrombotic risk, longer half-life)",
+          "area": "hematology.rare_blood.hemophilia_a",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 85,
+                "priceK": 300
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "row": {
+                "patientsK": 280,
+                "wtpPct": 25,
+                "priceK": 80
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 70,
+                "priceK": 480
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 50,
+                "priceK": 320
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 100
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "NXT007 successor to Hemlibra; ~5% reach if approved (cannibalizes Hemlibra share at higher net economics)",
+              "us.priceK": "Premium pricing precedent ~$480K/yr"
+            },
+            "penPct": 65,
+            "cagrPct": 15,
+            "peakYear": 2034
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 4,
+        "commercialMult": 3.5,
+        "commercialRevM": 1150000,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "hemlibra": {
+          "hema": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "actemra": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          },
+          "gca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "ssc_ild": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "alecensa": {
+          "alk_nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "polivy": {
+          "dlbcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "vabysmo": {
+          "nvamd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "dme": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "evrysdi": {
+          "sma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "crovalimab": {
+          "pnh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "phesgo": {
+          "her2_breast": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "rozlytrek": {
+          "ros1_ntrk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "nxt007": {
+          "hema_next": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 5,
+        "commercialMult": 4.5,
+        "commercialRevM": 1300000,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "hemlibra": {
+          "hema": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "actemra": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "gca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "ssc_ild": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.45
+          }
+        },
+        "alecensa": {
+          "alk_nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "polivy": {
+          "dlbcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "vabysmo": {
+          "nvamd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "dme": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "evrysdi": {
+          "sma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "crovalimab": {
+          "pnh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "phesgo": {
+          "her2_breast": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "rozlytrek": {
+          "ros1_ntrk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "nxt007": {
+          "hema_next": {
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 35,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 7,
+        "commercialMult": 6.5,
+        "commercialRevM": 1450000,
+        "milestones": 400,
+        "dil": 0
+      },
+      "assumptions": {
+        "hemlibra": {
+          "hema": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "actemra": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "gca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "ssc_ild": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "alecensa": {
+          "alk_nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "polivy": {
+          "dlbcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "vabysmo": {
+          "nvamd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "dme": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "evrysdi": {
+          "sma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "crovalimab": {
+          "pnh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "phesgo": {
+          "her2_breast": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "rozlytrek": {
+          "ros1_ntrk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "nxt007": {
+          "hema_next": {
+            "pos": 65,
+            "apr": 82,
+            "pen": 0.7
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 10,
+        "commercialMult": 9,
+        "commercialRevM": 1700000,
+        "milestones": 800,
+        "dil": 0
+      },
+      "assumptions": {
+        "hemlibra": {
+          "hema": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "actemra": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          },
+          "gca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "ssc_ild": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "alecensa": {
+          "alk_nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "polivy": {
+          "dlbcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "vabysmo": {
+          "nvamd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          },
+          "dme": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "evrysdi": {
+          "sma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "crovalimab": {
+          "pnh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "phesgo": {
+          "her2_breast": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "rozlytrek": {
+          "ros1_ntrk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "nxt007": {
+          "hema_next": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 0.9
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 14,
+        "commercialMult": 14,
+        "commercialRevM": 2100000,
+        "milestones": 1500,
+        "dil": 0
+      },
+      "assumptions": {
+        "hemlibra": {
+          "hema": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "actemra": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          },
+          "gca": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "ssc_ild": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "alecensa": {
+          "alk_nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "polivy": {
+          "dlbcl": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "vabysmo": {
+          "nvamd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.35
+          },
+          "dme": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "evrysdi": {
+          "sma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "crovalimab": {
+          "pnh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "phesgo": {
+          "her2_breast": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "rozlytrek": {
+          "ros1_ntrk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "nxt007": {
+          "hema_next": {
+            "pos": 92,
+            "apr": 96,
+            "pen": 1.2
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "actemra",
+      "indication": "ra",
+      "title": "Actemra biosimilar erosion update + 10-K Japan/global revenue impact",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.chugai-pharm.co.jp/english/ir/",
+      "_confidence": "high"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-06-30",
+      "asset": "nxt007",
+      "indication": "hema_next",
+      "title": "NXT007 next-gen Hemlibra successor Ph2/3 readout (recycling Ab platform)",
+      "type": "phase2_data",
+      "binary": false,
+      "_source": "https://www.chugai-pharm.co.jp/english/profile/research/",
+      "_confidence": "medium"
+    },
+    {
+      "date": "Q3 2026",
+      "dateSort": "2026-09-30",
+      "asset": "vabysmo",
+      "indication": "nvamd",
+      "title": "Vabysmo nAMD market share + revenue ramp update vs Eylea HD competitive dynamics",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.chugai-pharm.co.jp/english/ir/",
+      "_confidence": "high"
+    }
+  ]
+}

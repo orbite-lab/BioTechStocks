@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-04-30T15:33:12Z",
+    "generated": "2026-04-30T15:40:25Z",
     "target_count": 391,
-    "total_assets": 740,
-    "assets_with_targets": 684,
+    "total_assets": 750,
+    "assets_with_targets": 694,
     "multi_modality_count": 47,
-    "multi_disease_count": 177
+    "multi_disease_count": 179
   },
   "targets": {
     "ABL1": {
@@ -770,11 +770,14 @@
     "ALK": {
       "companies": [
         "4502",
+        "4519",
         "NUVL",
         "PFE",
         "RHHBY"
       ],
       "modalities": [
+        "small_molecule.kinase.alk_inhibitor",
+        "small_molecule.kinase.trk_ros1_inhibitor",
         "small_molecule.kinase_inhibitor.alk",
         "small_molecule.kinase_inhibitor.alk_2nd_gen"
       ],
@@ -787,6 +790,24 @@
           "asset": "alunbrig",
           "name": "Alunbrig (brigatinib) — ALK 2nd-gen TKI",
           "modality": "small_molecule.kinase_inhibitor.alk_2nd_gen",
+          "areas": [
+            "oncology.lung.nsclc_driver.alk"
+          ]
+        },
+        {
+          "ticker": "4519",
+          "asset": "alecensa",
+          "name": "Alecensa (alectinib) - oral selective ALK + RET tyrosine kinase inhibitor (Chugai-originated)",
+          "modality": "small_molecule.kinase.alk_inhibitor",
+          "areas": [
+            "oncology.lung.nsclc_driver.alk"
+          ]
+        },
+        {
+          "ticker": "4519",
+          "asset": "rozlytrek",
+          "name": "Rozlytrek (entrectinib) - oral pan-TRK + ROS1 + ALK TKI (Ignyta acq Roche; Chugai Japan)",
+          "modality": "small_molecule.kinase.trk_ros1_inhibitor",
           "areas": [
             "oncology.lung.nsclc_driver.alk"
           ]
@@ -819,18 +840,18 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 2,
+      "assetCount": 6,
+      "modalityCount": 4,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 3366.2,
-      "totalSOM": 7187.8,
-      "totalSales": 2965.0,
-      "cagrPct": 3.8,
-      "peakYear": 2029
+      "totalSOM": 9815.4,
+      "totalSales": 4745.0,
+      "cagrPct": 4.9,
+      "peakYear": 2030
     },
     "ALPL": {
       "companies": [
@@ -948,6 +969,7 @@
     },
     "ANGPT2": {
       "companies": [
+        "4519",
         "RHHBY"
       ],
       "modalities": [
@@ -961,6 +983,16 @@
       ],
       "assets": [
         {
+          "ticker": "4519",
+          "asset": "vabysmo",
+          "name": "Vabysmo (faricimab) - bispecific anti-VEGF-A + anti-Ang-2 humanized mAb (Roche/Chugai co-developed)",
+          "modality": "antibody.bispecific.vegf_ang2",
+          "areas": [
+            "ophthalmology.retina.dme",
+            "ophthalmology.retina.nvamd"
+          ]
+        },
+        {
           "ticker": "RHHBY",
           "asset": "vabysmo",
           "name": "Vabysmo (faricimab) — VEGF-A/Ang-2 bispecific (retina)",
@@ -973,7 +1005,7 @@
           ]
         }
       ],
-      "assetCount": 1,
+      "assetCount": 2,
       "modalityCount": 1,
       "modalityClassCount": 1,
       "areaCount": 4,
@@ -981,9 +1013,9 @@
         "antibody"
       ],
       "totalTAM": 26803.0,
-      "totalSOM": 6167.1,
-      "totalSales": 4635.0,
-      "cagrPct": 14.1,
+      "totalSOM": 8374.1,
+      "totalSales": 5685.0,
+      "cagrPct": 18.0,
       "peakYear": 2030
     },
     "ANGPTL3": {
@@ -2060,6 +2092,7 @@
     "C5": {
       "companies": [
         "4503",
+        "4519",
         "AZN",
         "REGN",
         "RHHBY"
@@ -2067,6 +2100,7 @@
       "modalities": [
         "antibody.complement.c5_inhibitor",
         "antibody.monoclonal.anti_c5",
+        "antibody.monoclonal.anti_c5_recycling",
         "nucleic_acid.aptamer.c5_pegylated"
       ],
       "areas": [
@@ -2083,6 +2117,15 @@
           "modality": "nucleic_acid.aptamer.c5_pegylated",
           "areas": [
             "ophthalmology.retina.ga"
+          ]
+        },
+        {
+          "ticker": "4519",
+          "asset": "crovalimab",
+          "name": "Crovalimab (PiaSky) - recycling anti-C5 humanized mAb (SMART-Ig pH-dependent; Chugai-originated)",
+          "modality": "antibody.monoclonal.anti_c5_recycling",
+          "areas": [
+            "hematology.rare_blood.pnh"
           ]
         },
         {
@@ -2115,8 +2158,8 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 3,
+      "assetCount": 5,
+      "modalityCount": 4,
       "modalityClassCount": 2,
       "areaCount": 4,
       "modalityClasses": [
@@ -2124,10 +2167,10 @@
         "nucleic_acid"
       ],
       "totalTAM": 48559.0,
-      "totalSOM": 14146.1,
-      "totalSales": 5937.0,
-      "cagrPct": 14.1,
-      "peakYear": 2030
+      "totalSOM": 14601.4,
+      "totalSales": 6017.0,
+      "cagrPct": 14.6,
+      "peakYear": 2031
     },
     "C5AR1": {
       "companies": [
@@ -3315,15 +3358,26 @@
     },
     "CD79B": {
       "companies": [
+        "4519",
         "RHHBY"
       ],
       "modalities": [
+        "adc.cd79b.mmae",
         "adc.cd79b.mmae_payload"
       ],
       "areas": [
         "oncology.hematology.nhl.dlbcl"
       ],
       "assets": [
+        {
+          "ticker": "4519",
+          "asset": "polivy",
+          "name": "Polivy (polatuzumab vedotin) - anti-CD79b ADC (MMAE payload, vc-MMAE linker; Chugai-originated)",
+          "modality": "adc.cd79b.mmae",
+          "areas": [
+            "oncology.hematology.nhl.dlbcl"
+          ]
+        },
         {
           "ticker": "RHHBY",
           "asset": "polivy",
@@ -3334,17 +3388,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "adc"
       ],
       "totalTAM": 8209.0,
-      "totalSOM": 2492.6,
-      "totalSales": 1661.0,
-      "cagrPct": 18.0,
+      "totalSOM": 4144.2,
+      "totalSales": 2761.0,
+      "cagrPct": 15.6,
       "peakYear": 2030
     },
     "CD80": {
@@ -5657,6 +5711,7 @@
     },
     "ERBB2": {
       "companies": [
+        "4519",
         "4568",
         "6990",
         "AZN",
@@ -5685,6 +5740,15 @@
         "oncology.lung.nsclc_driver.her2"
       ],
       "assets": [
+        {
+          "ticker": "4519",
+          "asset": "phesgo",
+          "name": "Phesgo (pertuzumab + trastuzumab + hyaluronidase FDC) - subQ HER2-targeted combo (Roche-led, Chugai Japan)",
+          "modality": "antibody.monoclonal.anti_her2_combo",
+          "areas": [
+            "oncology.breast.her2_pos"
+          ]
+        },
         {
           "ticker": "4568",
           "asset": "commercial",
@@ -5799,7 +5863,7 @@
           ]
         }
       ],
-      "assetCount": 12,
+      "assetCount": 13,
       "modalityCount": 8,
       "modalityClassCount": 3,
       "areaCount": 5,
@@ -5809,9 +5873,9 @@
         "small_molecule"
       ],
       "totalTAM": 43583.9,
-      "totalSOM": 33583.9,
-      "totalSales": 17192.0,
-      "cagrPct": 3.3,
+      "totalSOM": 35131.3,
+      "totalSales": 17542.0,
+      "cagrPct": 3.4,
       "peakYear": 2029
     },
     "ERBB3": {
@@ -5918,6 +5982,7 @@
     "F10": {
       "companies": [
         "4151",
+        "4519",
         "4568",
         "BAYN",
         "BMY",
@@ -5929,6 +5994,7 @@
         "SNY"
       ],
       "modalities": [
+        "antibody.bispecific.fixa_fx",
         "antibody.bispecific.fviiia_mimetic",
         "recombinant_protein.coagulation.pcc_4factor",
         "recombinant_protein.serpin.antithrombin",
@@ -5951,6 +6017,24 @@
           "modality": "recombinant_protein.serpin.antithrombin",
           "areas": [
             "hematology.rare_blood.antithrombin_deficiency"
+          ]
+        },
+        {
+          "ticker": "4519",
+          "asset": "hemlibra",
+          "name": "Hemlibra (emicizumab) - bispecific anti-FIXa/FX humanized IgG4 mAb (Chugai-discovered ART-Ig recycling Ab)",
+          "modality": "antibody.bispecific.fixa_fx",
+          "areas": [
+            "hematology.rare_blood.hemophilia_a"
+          ]
+        },
+        {
+          "ticker": "4519",
+          "asset": "nxt007",
+          "name": "NXT007 - next-gen anti-FIXa/FX bispecific (Hemlibra successor; SMART-Ig improved PK + efficacy)",
+          "modality": "antibody.bispecific.fixa_fx",
+          "areas": [
+            "hematology.rare_blood.hemophilia_a"
           ]
         },
         {
@@ -6036,8 +6120,8 @@
           ]
         }
       ],
-      "assetCount": 10,
-      "modalityCount": 6,
+      "assetCount": 12,
+      "modalityCount": 7,
       "modalityClassCount": 3,
       "areaCount": 5,
       "modalityClasses": [
@@ -6046,9 +6130,9 @@
         "small_molecule"
       ],
       "totalTAM": 44529.8,
-      "totalSOM": 54258.0,
-      "totalSales": 34417.0,
-      "cagrPct": -2.5,
+      "totalSOM": 58384.7,
+      "totalSales": 36817.0,
+      "cagrPct": -1.4,
       "peakYear": 2027
     },
     "F11": {
@@ -6355,6 +6439,7 @@
     },
     "F9": {
       "companies": [
+        "4519",
         "CSL",
         "GRF",
         "NOVO",
@@ -6362,6 +6447,7 @@
         "SNY"
       ],
       "modalities": [
+        "antibody.bispecific.fixa_fx",
         "antibody.bispecific.fviiia_mimetic",
         "gene_therapy.aav.aav5_fix",
         "plasma_protein.coagulation_factor.f9",
@@ -6375,6 +6461,24 @@
         "hematology.rare_blood.hemophilia_b"
       ],
       "assets": [
+        {
+          "ticker": "4519",
+          "asset": "hemlibra",
+          "name": "Hemlibra (emicizumab) - bispecific anti-FIXa/FX humanized IgG4 mAb (Chugai-discovered ART-Ig recycling Ab)",
+          "modality": "antibody.bispecific.fixa_fx",
+          "areas": [
+            "hematology.rare_blood.hemophilia_a"
+          ]
+        },
+        {
+          "ticker": "4519",
+          "asset": "nxt007",
+          "name": "NXT007 - next-gen anti-FIXa/FX bispecific (Hemlibra successor; SMART-Ig improved PK + efficacy)",
+          "modality": "antibody.bispecific.fixa_fx",
+          "areas": [
+            "hematology.rare_blood.hemophilia_a"
+          ]
+        },
         {
           "ticker": "CSL",
           "asset": "idelvion",
@@ -6440,8 +6544,8 @@
           ]
         }
       ],
-      "assetCount": 7,
-      "modalityCount": 6,
+      "assetCount": 9,
+      "modalityCount": 7,
       "modalityClassCount": 4,
       "areaCount": 3,
       "modalityClasses": [
@@ -6451,10 +6555,10 @@
         "recombinant_protein"
       ],
       "totalTAM": 19056.0,
-      "totalSOM": 10783.4,
-      "totalSales": 7742.0,
-      "cagrPct": 5.7,
-      "peakYear": 2028
+      "totalSOM": 14910.0,
+      "totalSales": 10142.0,
+      "cagrPct": 7.6,
+      "peakYear": 2029
     },
     "FCGRT": {
       "companies": [
@@ -10402,15 +10506,30 @@
     },
     "IL6R": {
       "companies": [
+        "4519",
         "RHHBY"
       ],
       "modalities": [
-        "antibody.cytokine.il6r_blocker"
+        "antibody.cytokine.il6r_blocker",
+        "antibody.monoclonal.anti_il6r"
       ],
       "areas": [
+        "immunology.autoimmune.systemic_sclerosis",
+        "immunology.inflammatory_systemic.gca_pmr",
         "immunology.inflammatory_systemic.rheumatoid_arthritis"
       ],
       "assets": [
+        {
+          "ticker": "4519",
+          "asset": "actemra",
+          "name": "Actemra/RoActemra (tocilizumab) - anti-IL-6R humanized IgG1 mAb (Chugai-originated)",
+          "modality": "antibody.monoclonal.anti_il6r",
+          "areas": [
+            "immunology.autoimmune.systemic_sclerosis",
+            "immunology.inflammatory_systemic.gca_pmr",
+            "immunology.inflammatory_systemic.rheumatoid_arthritis"
+          ]
+        },
         {
           "ticker": "RHHBY",
           "asset": "actemra",
@@ -10421,17 +10540,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 3,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 31260.0,
-      "totalSOM": 3388.8,
-      "totalSales": 2791.0,
-      "cagrPct": -8.0,
+      "totalTAM": 45528.4,
+      "totalSOM": 6764.2,
+      "totalSales": 4041.0,
+      "cagrPct": -7.1,
       "peakYear": 2025
     },
     "INFLUENZA_HA": {
@@ -13177,10 +13296,12 @@
     },
     "NTRK1": {
       "companies": [
+        "4519",
         "BAYN",
         "BMY"
       ],
       "modalities": [
+        "small_molecule.kinase.trk_ros1_inhibitor",
         "small_molecule.kinase_inhibitor.ntrk_selective",
         "small_molecule.kinase_inhibitor.ros1_ntrk"
       ],
@@ -13188,9 +13309,19 @@
         "oncology.breast.tnbc",
         "oncology.endocrine.thyroid_cancer",
         "oncology.head_neck.hnscc",
+        "oncology.lung.nsclc_driver.alk",
         "oncology.lung.nsclc_driver.ros1"
       ],
       "assets": [
+        {
+          "ticker": "4519",
+          "asset": "rozlytrek",
+          "name": "Rozlytrek (entrectinib) - oral pan-TRK + ROS1 + ALK TKI (Ignyta acq Roche; Chugai Japan)",
+          "modality": "small_molecule.kinase.trk_ros1_inhibitor",
+          "areas": [
+            "oncology.lung.nsclc_driver.alk"
+          ]
+        },
         {
           "ticker": "BAYN",
           "asset": "vitrakvi",
@@ -13213,33 +13344,45 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 4,
+      "areaCount": 5,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 22964.5,
-      "totalSOM": 4743.1,
-      "totalSales": 210.0,
-      "cagrPct": 12.6,
+      "totalTAM": 26330.7,
+      "totalSOM": 4862.6,
+      "totalSales": 290.0,
+      "cagrPct": 12.4,
       "peakYear": 2030
     },
     "NTRK2": {
       "companies": [
+        "4519",
         "BAYN"
       ],
       "modalities": [
+        "small_molecule.kinase.trk_ros1_inhibitor",
         "small_molecule.kinase_inhibitor.ntrk_selective"
       ],
       "areas": [
         "oncology.breast.tnbc",
         "oncology.endocrine.thyroid_cancer",
         "oncology.head_neck.hnscc",
+        "oncology.lung.nsclc_driver.alk",
         "oncology.lung.nsclc_driver.ros1"
       ],
       "assets": [
+        {
+          "ticker": "4519",
+          "asset": "rozlytrek",
+          "name": "Rozlytrek (entrectinib) - oral pan-TRK + ROS1 + ALK TKI (Ignyta acq Roche; Chugai Japan)",
+          "modality": "small_molecule.kinase.trk_ros1_inhibitor",
+          "areas": [
+            "oncology.lung.nsclc_driver.alk"
+          ]
+        },
         {
           "ticker": "BAYN",
           "asset": "vitrakvi",
@@ -13253,33 +13396,45 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 4,
+      "areaCount": 5,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 22964.5,
-      "totalSOM": 4592.9,
-      "totalSales": 110.0,
-      "cagrPct": 12.0,
+      "totalTAM": 26330.7,
+      "totalSOM": 4712.4,
+      "totalSales": 190.0,
+      "cagrPct": 11.8,
       "peakYear": 2030
     },
     "NTRK3": {
       "companies": [
+        "4519",
         "BAYN"
       ],
       "modalities": [
+        "small_molecule.kinase.trk_ros1_inhibitor",
         "small_molecule.kinase_inhibitor.ntrk_selective"
       ],
       "areas": [
         "oncology.breast.tnbc",
         "oncology.endocrine.thyroid_cancer",
         "oncology.head_neck.hnscc",
+        "oncology.lung.nsclc_driver.alk",
         "oncology.lung.nsclc_driver.ros1"
       ],
       "assets": [
+        {
+          "ticker": "4519",
+          "asset": "rozlytrek",
+          "name": "Rozlytrek (entrectinib) - oral pan-TRK + ROS1 + ALK TKI (Ignyta acq Roche; Chugai Japan)",
+          "modality": "small_molecule.kinase.trk_ros1_inhibitor",
+          "areas": [
+            "oncology.lung.nsclc_driver.alk"
+          ]
+        },
         {
           "ticker": "BAYN",
           "asset": "vitrakvi",
@@ -13293,17 +13448,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 4,
+      "areaCount": 5,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 22964.5,
-      "totalSOM": 4592.9,
-      "totalSales": 110.0,
-      "cagrPct": 12.0,
+      "totalTAM": 26330.7,
+      "totalSOM": 4712.4,
+      "totalSales": 190.0,
+      "cagrPct": 11.8,
       "peakYear": 2030
     },
     "OPA1": {
@@ -15428,11 +15583,13 @@
     },
     "RET": {
       "companies": [
+        "4519",
         "4523",
         "IPN",
         "MRK"
       ],
       "modalities": [
+        "small_molecule.kinase.alk_inhibitor",
         "small_molecule.kinase_inhibitor.multi_kinase",
         "small_molecule.kinase_inhibitor.multi_tki",
         "small_molecule.kinase_inhibitor.vegfr_multikinase"
@@ -15443,9 +15600,19 @@
         "oncology.gi.hcc",
         "oncology.gynecologic.endometrial",
         "oncology.gynecologic.ovarian",
+        "oncology.lung.nsclc_driver.alk",
         "oncology.neuroendocrine.gepnet"
       ],
       "assets": [
+        {
+          "ticker": "4519",
+          "asset": "alecensa",
+          "name": "Alecensa (alectinib) - oral selective ALK + RET tyrosine kinase inhibitor (Chugai-originated)",
+          "modality": "small_molecule.kinase.alk_inhibitor",
+          "areas": [
+            "oncology.lung.nsclc_driver.alk"
+          ]
+        },
         {
           "ticker": "4523",
           "asset": "lenvima",
@@ -15482,18 +15649,18 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 3,
+      "assetCount": 4,
+      "modalityCount": 4,
       "modalityClassCount": 1,
-      "areaCount": 6,
+      "areaCount": 7,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 32052.5,
-      "totalSOM": 6031.0,
-      "totalSales": 3531.0,
-      "cagrPct": 4.1,
-      "peakYear": 2028
+      "totalTAM": 35418.7,
+      "totalSOM": 8539.1,
+      "totalSales": 5231.0,
+      "cagrPct": 5.2,
+      "peakYear": 2029
     },
     "RGMA": {
       "companies": [
@@ -15565,17 +15732,29 @@
     },
     "ROS1": {
       "companies": [
+        "4519",
         "BMY",
         "NUVL"
       ],
       "modalities": [
+        "small_molecule.kinase.trk_ros1_inhibitor",
         "small_molecule.kinase_inhibitor.ros1",
         "small_molecule.kinase_inhibitor.ros1_ntrk"
       ],
       "areas": [
+        "oncology.lung.nsclc_driver.alk",
         "oncology.lung.nsclc_driver.ros1"
       ],
       "assets": [
+        {
+          "ticker": "4519",
+          "asset": "rozlytrek",
+          "name": "Rozlytrek (entrectinib) - oral pan-TRK + ROS1 + ALK TKI (Ignyta acq Roche; Chugai Japan)",
+          "modality": "small_molecule.kinase.trk_ros1_inhibitor",
+          "areas": [
+            "oncology.lung.nsclc_driver.alk"
+          ]
+        },
         {
           "ticker": "BMY",
           "asset": "augtyro",
@@ -15595,17 +15774,17 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 723.5,
-      "totalSOM": 675.6,
-      "totalSales": 100.0,
-      "cagrPct": 6.7,
+      "totalTAM": 4089.7,
+      "totalSOM": 795.1,
+      "totalSales": 180.0,
+      "cagrPct": 6.4,
       "peakYear": 2031
     },
     "RPOB": {
@@ -16973,17 +17152,28 @@
     },
     "SMN2": {
       "companies": [
+        "4519",
         "BIIB",
         "RHHBY"
       ],
       "modalities": [
         "nucleic_acid.aso.smn2_splice_modulator",
+        "small_molecule.nucleic_acid.splice_modifier",
         "small_molecule.rna_splicing.smn2_modulator"
       ],
       "areas": [
         "musculoskeletal.neuromuscular.sma"
       ],
       "assets": [
+        {
+          "ticker": "4519",
+          "asset": "evrysdi",
+          "name": "Evrysdi (risdiplam) - oral SMN2 mRNA splicing modifier (small molecule; Chugai/Roche/PTC discovery)",
+          "modality": "small_molecule.nucleic_acid.splice_modifier",
+          "areas": [
+            "musculoskeletal.neuromuscular.sma"
+          ]
+        },
         {
           "ticker": "BIIB",
           "asset": "spinraza",
@@ -17003,8 +17193,8 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 2,
       "areaCount": 1,
       "modalityClasses": [
@@ -17012,9 +17202,9 @@
         "small_molecule"
       ],
       "totalTAM": 5193.0,
-      "totalSOM": 4727.8,
-      "totalSales": 3485.0,
-      "cagrPct": 2.8,
+      "totalSOM": 5692.7,
+      "totalSales": 3835.0,
+      "cagrPct": 4.3,
       "peakYear": 2028
     },
     "SNAP25": {
@@ -19004,6 +19194,7 @@
     },
     "VEGFA": {
       "companies": [
+        "4519",
         "AMGN",
         "BAYN",
         "BNTX",
@@ -19032,6 +19223,16 @@
         "ophthalmology.retina.rvo"
       ],
       "assets": [
+        {
+          "ticker": "4519",
+          "asset": "vabysmo",
+          "name": "Vabysmo (faricimab) - bispecific anti-VEGF-A + anti-Ang-2 humanized mAb (Roche/Chugai co-developed)",
+          "modality": "antibody.bispecific.vegf_ang2",
+          "areas": [
+            "ophthalmology.retina.dme",
+            "ophthalmology.retina.nvamd"
+          ]
+        },
         {
           "ticker": "AMGN",
           "asset": "pavblu",
@@ -19139,7 +19340,7 @@
           ]
         }
       ],
-      "assetCount": 10,
+      "assetCount": 11,
       "modalityCount": 6,
       "modalityClassCount": 2,
       "areaCount": 10,
@@ -19148,9 +19349,9 @@
         "formulation_modifier"
       ],
       "totalTAM": 75477.0,
-      "totalSOM": 26799.6,
-      "totalSales": 16174.0,
-      "cagrPct": 1.6,
+      "totalSOM": 29006.7,
+      "totalSales": 17224.0,
+      "cagrPct": 3.6,
       "peakYear": 2029
     },
     "VEGFR1": {

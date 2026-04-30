@@ -246,6 +246,38 @@ def validate():
         if len(parents) > 1:
             errors.append(f"DUPLICATE area L3 '{l3}' under multiple parents: {sorted(parents)}")
 
+    # market_status_overrides hygiene: flag override entries that are now redundant
+    # because a covered drug ships commercially at that leaf (auto-derived
+    # branded_incumbent already wins, so the override is dead weight).
+    try:
+        from pathlib import Path as _P
+        ov_path = _P(__file__).resolve().parents[2] / "data" / "market_status_overrides.json"
+        if ov_path.exists():
+            ov = json.loads(ov_path.read_text(encoding="utf-8"))
+            # Build set of leaves that have any commercial drug across coverage
+            commercial_leaves = set()
+            for tk in manifest:
+                cfg_path = CONFIGS / f"{tk}.json"
+                if not cfg_path.exists(): continue
+                try:
+                    c = json.loads(cfg_path.read_text(encoding="utf-8"))
+                except Exception:
+                    continue
+                for a in c.get("assets", []):
+                    stg = (a.get("stage", "") or "").lower()
+                    is_commercial_stage = any(k in stg for k in ("commercial", "nda_filed", "approved"))
+                    for ind in a.get("indications", []):
+                        sales = (ind.get("market", {}) or {}).get("salesM", 0) or 0
+                        if sales > 0 or is_commercial_stage:
+                            ar = ind.get("area", "")
+                            if ar: commercial_leaves.add(ar)
+            for cat in ("generic_incumbent", "branded_incumbent_external"):
+                for leaf in (ov.get(cat) or {}):
+                    if leaf in commercial_leaves:
+                        warnings.append(f"market_status_overrides[{cat}]: '{leaf}' is now redundant -- a covered drug ships commercially at this leaf (auto-derived 'branded_incumbent' already wins). Remove the override entry.")
+    except Exception as e:
+        warnings.append(f"market_status_overrides check skipped: {e}")
+
     for l3, parents in l3_mod_parents.items():
         if len(parents) > 1:
             warnings.append(f"Modality L3 '{l3}' under multiple parents: {sorted(parents)} -- verify intentional")

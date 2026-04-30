@@ -846,15 +846,18 @@ async function main(){
     }
   }catch{/* ok if missing -- Target Explorer will show empty */}
 
-  // Load taxonomy display_names for friendly UI labels
+  // Load taxonomy display_names for friendly UI labels + disease synonym groups
   let displayNames={};
+  let diseaseSynonymGroups={};
   try{
     const tr=await fetch("data/taxonomy.json?v="+Date.now());
     if(tr.ok){
       const tx=await tr.json();
       displayNames=tx.display_names||{};
+      diseaseSynonymGroups=tx.disease_synonym_groups||{};
     }
   }catch{/* ok if missing -- nice() falls back to underscore replace */}
+  window._diseaseSynonymGroups=diseaseSynonymGroups;
   // Friendly label helper: prefer display_names map, fall back to last-segment underscore-replace
   window._nicelabel=function(key){
     if(!key) return '';
@@ -1006,6 +1009,7 @@ async function main(){
   let purityMode="wtd";
   let mktNavPath=[]; // Market explorer drill-down path (e.g. ["oncology","hematology","cll_nhl"])
   let mktSortMode="tam"; // tam | som | sales | pen
+  let mktSearch=""; // Market explorer search query (matches disease names + synonym groups + drug names)
   let techNavPath=[]; // Tech explorer drill-down path (e.g. ["cell_therapy","car_t_autologous"])
   let techSortMode="som"; // tam | som | sales | count
   let targetSort="companies"; // companies | modalities | diseases | name
@@ -1699,14 +1703,55 @@ async function main(){
         }
       });
 
+      const fmtB = v => v >= 1000 ? '$'+(v/1000).toFixed(1)+'B' : '$'+Math.round(v)+'M';
+      const nice = s => window._nicelabel ? window._nicelabel(s) : s.replace(/_/g,' ');
+
       // Determine current level children
       const currentPath = mktNavPath.join('.');
       const currentData = currentPath ? areaData[currentPath] : null;
       const childPrefix = currentPath ? currentPath + '.' : '';
       const childDepth = mktNavPath.length + 1;
-      const children = Object.keys(areaData)
+      let children = Object.keys(areaData)
         .filter(k => k.startsWith(childPrefix) && k.split('.').length === childDepth)
         .map(k => ({ path: k, name: k.slice(childPrefix.length), ...areaData[k] }));
+
+      // ===== SEARCH FILTER =====
+      // When search is active, ignore drill-down + show flat list of L3 (leaf) areas
+      // matching the query. Matches against:
+      //  - area path / nice name
+      //  - drug names within indications
+      //  - disease synonym group names + descriptions (expands to all linked areas)
+      let searchActive = false;
+      let synonymGroupHits = [];
+      if (mktSearch && mktSearch.trim().length >= 2) {
+        searchActive = true;
+        const q = mktSearch.trim().toLowerCase();
+        // Find matching synonym groups
+        const matchedGroupAreas = new Set();
+        for (const [gname, gmeta] of Object.entries(diseaseSynonymGroups)) {
+          const gdesc = (gmeta.description || '').toLowerCase();
+          if (gname.toLowerCase().includes(q) || gdesc.includes(q)) {
+            synonymGroupHits.push({ name: gname, description: gmeta.description || '', areas: gmeta.areas || [] });
+            (gmeta.areas || []).forEach(a => matchedGroupAreas.add(a));
+          }
+        }
+        // Get all leaf area paths that match by name OR by drug OR by synonym group
+        const allLeafPaths = Object.keys(areaData).filter(k => (areaData[k].companies || []).length > 0);
+        const matchedLeafPaths = new Set();
+        for (const path of allLeafPaths) {
+          if (path.toLowerCase().includes(q)) { matchedLeafPaths.add(path); continue; }
+          if (nice(path.split('.').pop()).toLowerCase().includes(q)) { matchedLeafPaths.add(path); continue; }
+          if (matchedGroupAreas.has(path)) { matchedLeafPaths.add(path); continue; }
+          // Drug name search
+          for (const co of areaData[path].companies || []) {
+            if ((co.asset || '').toLowerCase().includes(q) || (co.assetId || '').toLowerCase().includes(q) || (co.ticker || '').toLowerCase().includes(q)) {
+              matchedLeafPaths.add(path); break;
+            }
+          }
+        }
+        children = [...matchedLeafPaths].map(k => ({ path: k, name: k, ...areaData[k] }));
+        // Sort by current sort mode (re-applied below)
+      }
       children.sort((a,b) => {
         if (mktSortMode === 'tam') return b.tam - a.tam;
         if (mktSortMode === 'som') return b.som - a.som;
@@ -1714,19 +1759,18 @@ async function main(){
         if (mktSortMode === 'pen') return (b.tam>0?b.sales/b.tam:0) - (a.tam>0?a.sales/a.tam:0);
         return 0;
       });
-      const isLeaf = children.length === 0 && currentData;
-
-      const fmtB = v => v >= 1000 ? '$'+(v/1000).toFixed(1)+'B' : '$'+Math.round(v)+'M';
-      const nice = s => window._nicelabel ? window._nicelabel(s) : s.replace(/_/g,' ');
+      const isLeaf = children.length === 0 && currentData && !searchActive;
 
       h+=`<div class="card${secCls('sec-markets')}" id="sec-markets"><div class="card-title" ${titleAttrsFlex('sec-markets')}><div>${chev('sec-markets')}<div class="dot" style="background:linear-gradient(180deg,#f97316,#a855f7);display:inline-block;vertical-align:middle;margin-right:8px"></div>Market Explorer</div>`;
-      // Sort chips
+      // Search + sort chips
+      h+='<div style="display:flex;gap:8px;align-items:center" onclick="event.stopPropagation()">';
+      h+=`<input id="_mktSearchInput" type="search" placeholder="🔎 disease, drug, or family (e.g. sle, lupus, leqembi)" value="${mktSearch.replace(/"/g,'&quot;')}" oninput="window._mktSetSearch(this.value)" onclick="event.stopPropagation()" style="background:#0f1117;border:1px solid #ffffff22;border-radius:6px;padding:4px 8px;font-size:.7rem;color:#e2e4ea;width:280px;font-family:var(--mono)">`;
       h+='<div style="display:flex;gap:4px">';
       [['tam','TAM'],['som','SOM'],['sales','Sales'],['pen','Penetration']].forEach(([k,lbl])=>{
         const active = mktSortMode===k;
         h+=`<span class="fchip ${active?'active':''}" onclick="window._mktSort('${k}')" style="padding:2px 8px;font-size:.65rem">${lbl}</span>`;
       });
-      h+='</div></div>';
+      h+='</div></div></div>';
 
       // Breadcrumb
       h+='<div style="display:flex;flex-wrap:wrap;align-items:center;gap:4px;padding:10px 0;font-size:.75rem;font-family:var(--mono)">';
@@ -1769,7 +1813,24 @@ async function main(){
       h+=`<div><div style="font-size:.6rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px">${statsLabel}</div><div style="font-size:1rem;font-weight:700;color:#e2e4ea;font-family:var(--mono)">${statsCount}</div></div>`;
       h+='</div>';
 
-      if (!isLeaf) {
+      // Search synonym group banner
+      if (searchActive && synonymGroupHits.length > 0) {
+        h+='<div style="margin-bottom:12px;padding:10px 12px;background:#a855f714;border:1px solid #a855f733;border-radius:6px;font-size:.7rem">';
+        h+='<div style="font-weight:700;color:#d8b4fe;margin-bottom:6px">📚 Disease synonym group matches:</div>';
+        synonymGroupHits.forEach(g => {
+          h+=`<div style="margin-bottom:4px;color:#e2e4ea">`;
+          h+=`<span style="font-family:var(--mono);font-weight:600;color:#a855f7">${g.name}</span>`;
+          h+=`<span style="color:var(--text2);font-size:.65rem"> — ${g.description} (${g.areas.length} areas)</span>`;
+          h+=`</div>`;
+        });
+        h+='</div>';
+      }
+      // Search empty-state
+      if (searchActive && children.length === 0) {
+        h+=`<div style="padding:20px;text-align:center;color:var(--text2);font-size:.8rem">No disease, drug, or family matches "<span style="color:#f97316">${mktSearch}</span>". Try shorter query or check spelling.</div>`;
+      }
+
+      if (!isLeaf && children.length > 0) {
         // Child cards grid -- card size scales with TAM (no separate bar)
         const maxTam = Math.max(...children.map(c => c.tam || 1), 1);
         // 12-column grid; cards span more columns proportionally to TAM
@@ -1790,7 +1851,9 @@ async function main(){
           const cardTitle = c.somCapped ? `title="Drug SOMs overlap -- capped at TAM (raw sum was ${fmtB(c.somRaw)})"` : '';
           h+=`<div onclick="window._mktDrill('${c.path}')" style="grid-column:span ${colSpan};background:#0f1117;border:1px solid #ffffff12;border-radius:8px;padding:${tierPad}px;cursor:pointer;transition:border-color 0.15s;display:flex;flex-direction:column;justify-content:space-between;min-height:${tierPad*6}px" onmouseover="this.style.borderColor='#f97316'" onmouseout="this.style.borderColor='#ffffff12'">`;
           h+=`<div>`;
-          h+=`<div style="font-size:${tierTitle}rem;font-weight:700;margin-bottom:4px;color:#e2e4ea">${nice(c.name)}</div>`;
+          // When searching, show full path (e.g. "oncology › hematology › cml") for clarity
+          const cardLabel = searchActive ? c.path.split('.').map(seg => nice(seg)).join(' › ') : nice(c.name);
+          h+=`<div style="font-size:${tierTitle}rem;font-weight:700;margin-bottom:4px;color:#e2e4ea">${cardLabel}</div>`;
           h+=`<div style="font-size:${tierSub}rem;color:var(--text2);font-family:var(--mono);margin-bottom:10px">${subAreas>0?subAreas+' sub-markets':coCount+' drugs'}</div>`;
           h+='</div>';
           h+=`<div>`;
@@ -3028,8 +3091,23 @@ async function main(){
   window._fMod3=function(m3){filterMod3=m3;render();};
   window._stripSort=function(s){stripSort=s;render();};
   window._mktSort=function(s){mktSortMode=s;render();};
-  window._mktDrill=function(path){mktNavPath=path.split('.');activeNavSec='sec-markets';render();window.scrollTo({top:0,behavior:'smooth'});};
-  window._mktGo=function(depth){mktNavPath=typeof depth==='number'?mktNavPath.slice(0,depth):depth;render();};
+  window._mktDrill=function(path){mktNavPath=path.split('.');mktSearch="";activeNavSec='sec-markets';render();window.scrollTo({top:0,behavior:'smooth'});};
+  window._mktGo=function(depth){mktNavPath=typeof depth==='number'?mktNavPath.slice(0,depth):depth;mktSearch="";render();};
+  // Debounced search; preserve focus + cursor position across re-render
+  let _mktSearchDebounce=null;
+  window._mktSetSearch=function(v){
+    mktSearch=v;
+    clearTimeout(_mktSearchDebounce);
+    _mktSearchDebounce=setTimeout(()=>{
+      const cursor=document.getElementById('_mktSearchInput')?.selectionStart;
+      render();
+      // Re-focus input + restore cursor position after render swaps DOM
+      requestAnimationFrame(()=>{
+        const el=document.getElementById('_mktSearchInput');
+        if(el){el.focus();if(cursor!=null){try{el.setSelectionRange(cursor,cursor);}catch(e){}}}
+      });
+    },180);
+  };
   window._techSort=function(s){techSortMode=s;render();};
   window._techDrill=function(path){techNavPath=path.split('.');activeNavSec='sec-tech';render();window.scrollTo({top:0,behavior:'smooth'});};
   window._techGo=function(depth){techNavPath=typeof depth==='number'?techNavPath.slice(0,depth):depth;render();};

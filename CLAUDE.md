@@ -263,6 +263,15 @@ py scripts/recurring/rebuild_taxonomy.py
 6. **Multi-indication assets** (Imbruvica, Brukinsa, Dupixent, Darzalex, etc.)
    should split `salesM` across their actual approved indications as separate
    indication entries, not lumped into one.
+7. **Commit reconcile drift in the same commit as the feature**. When
+   `reconcile_sliders.py` runs it walks every config and may rewrite
+   `company_slice` values on tickers other than the one you're working on
+   (whenever authoritative regions or salesM cap-recalibration produces a
+   small numeric drift). Always `git add configs/` (the whole dir) and
+   include the drift in the same commit -- never leave it as uncommitted
+   working-tree noise. Otherwise the next `git pull --rebase` requires a
+   stash dance because GHA bots will have committed the same drift to
+   remote in parallel. Same rule for `data/targets.json` rebuilds.
 
 ## Where edits happen
 

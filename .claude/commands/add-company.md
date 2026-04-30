@@ -312,13 +312,20 @@ NEW COMPANY: TICKER — <Name>
   All CI checks: PASS
 ```
 
-Then stage and commit:
+Then stage and commit. **Important: include all reconciliation drift in
+the same commit** -- when reconcile_sliders runs it may touch other configs
+beyond TICKER (calibrating SOMs against updated authoritative regions).
+Commit those alongside the feature, never leave them as uncommitted drift
+that would force a stash dance on the next push.
 
 ```bash
-git add configs/TICKER.json configs/manifest.json \
+# Stage everything modified -- TICKER plus any drift on other configs from
+# reconcile, plus targets/taxonomy auto-rebuilds.
+git add configs/ \
         scripts/data/authoritative_regions_*.py \
-        data/taxonomy.json \
+        data/taxonomy.json data/targets.json \
         snapshots/scenarios.json
+# (Verify with `git status` that no sensitive/unintended files snuck in.)
 git commit -m "feat(configs): add TICKER (<Name>)
 
 <one-paragraph company description>
@@ -328,6 +335,8 @@ git commit -m "feat(configs): add TICKER (<Name>)
 - New epi: <list or 'none; all areas already covered'>
 - Synonym groups: <list of groups updated, or 'none'>
 - Current price <ccy><X>, weighted TP <ccy><Y> (<upside>%)
+- (If reconcile drifted other configs: 'Auto-reconcile drift on N other
+  configs from updated authoritative regions: TK1, TK2, ...')
 
 Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ```

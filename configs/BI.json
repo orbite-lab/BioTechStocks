@@ -7,7 +7,7 @@
     "cash": 0,
     "currency": "EUR",
     "phase": "commercial",
-    "subtitle": "PRIVATE REFERENCE -- World's largest privately-held pharma (Boehringer + Liebrecht/von Baumbach families). FY24 total revenue ~EUR 25B (~EUR 21B human pharma + EUR 4B animal health). Human-pharma scope only. Lilly-partnered SGLT2 + DPP-4 (Jardiance + Trajenta), wholly-owned Ofev (nintedanib IPF/SSc-ILD), Spiriva, Pradaxa, Spevigo (spesolimab GPP first-in-class IL-36R), Cyltezo (adalimumab biosimilar). Pipeline: survodutide GLP-1/glucagon dual Ph3 obesity+MASH; zongertinib Ph2 HER2-mutant NSCLC accelerated approval Aug 2025",
+    "subtitle": "PRIVATE REFERENCE -- World's largest privately-held pharma (Boehringer + Liebrecht/von Baumbach families). FY24 total revenue ~EUR 25B (~EUR 21B human pharma + EUR 4B animal health). Human-pharma scope only. Lilly-partnered SGLT2 + DPP-4 (Jardiance + Trajenta), wholly-owned Ofev (nintedanib IPF/SSc-ILD/PPF), Spiriva, Pradaxa, Spevigo (spesolimab GPP first-in-class IL-36R), Cyltezo (adalimumab biosimilar). Pipeline: nerandomilast PDE4B Ph3 IPF POSITIVE 2024 + PPF; survodutide GLP-1/glucagon dual Ph3 obesity+MASH; zongertinib HER2-mutant NSCLC FDA accel Aug 2025",
     "yahooTicker": "",
     "private": true,
     "privateNote": "Family-owned since founding 1885 by Albert Boehringer; never IPO'd. ~36% Boehringer family + ~64% Liebrecht/von Baumbach branches via C.H. Boehringer Sohn AG & Co KG. Largest privately-held pharma globally. Modeled here for taxonomy + drug-portfolio reference only."
@@ -69,7 +69,7 @@
             "penPct": 10,
             "cagrPct": 8,
             "peakYear": 2031,
-            "salesM": 4500,
+            "salesM": 2800,
             "salesYear": 2025
           }
         },
@@ -231,9 +231,9 @@
       "stage": "Commercial (IPF 2014; SSc-ILD 2019; chronic fibrosing ILD 2020; PPF 2024)",
       "modality": "small_molecule.kinase.tki_anti_fibrotic",
       "targets": [
-        "VEGFR1",
-        "VEGFR2",
-        "VEGFR3",
+        "FLT1",
+        "KDR",
+        "FLT4",
         "FGFR1",
         "FGFR2",
         "FGFR3",
@@ -396,7 +396,7 @@
     {
       "id": "spiriva",
       "name": "Spiriva (tiotropium) - long-acting muscarinic antagonist (LAMA; HandiHaler + Respimat soft mist)",
-      "stage": "Commercial (COPD 2004; asthma 2014; mature franchise, residual exclusivity)",
+      "stage": "Commercial (COPD 2004; asthma 2014; HandiHaler generic 2017-2018; Respimat soft-mist residual exclusivity to ~2026)",
       "modality": "small_molecule.gpcr.lama_anticholinergic",
       "targets": [
         "CHRM3"
@@ -804,8 +804,58 @@
       ],
       "indications": [
         {
-          "id": "ra_psoriasis_ibd",
-          "name": "Multi-indication anti-TNF biosimilar (RA + psoriasis + IBD + AS)",
+          "id": "ra",
+          "name": "Rheumatoid arthritis (anti-TNF biosimilar)",
+          "area": "immunology.inflammatory_systemic.rheumatoid_arthritis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 50,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 35,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 12000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.6,
+                "wtpPct": 50,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 30,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Cyltezo RA ~3-5% Humira biosimilar share; first-interchangeable vs 9 other Humira biosims",
+              "us.priceK": "Adalimumab biosimilar net pricing ~$25K/yr"
+            },
+            "penPct": 28,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 80,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "psoriasis",
+          "name": "Plaque psoriasis (anti-TNF biosimilar)",
           "area": "dermatology.inflammatory_derm.psoriasis_systemic",
           "market": {
             "regions": {
@@ -827,29 +877,179 @@
             },
             "company_slice": {
               "us": {
-                "reachPct": 1.3,
+                "reachPct": 0.3,
                 "wtpPct": 50,
                 "priceK": 25
               },
               "eu": {
-                "reachPct": 0.5,
+                "reachPct": 0.1,
                 "wtpPct": 30,
                 "priceK": 15
               },
               "row": {
-                "reachPct": 0.2,
+                "reachPct": 0.05,
                 "wtpPct": 10,
                 "priceK": 5
               }
             },
             "company_slice_sources": {
-              "us.reachPct": "Cyltezo ~3-5% Humira biosimilar share; first-interchangeable vs 9 other Humira biosims (AbbVie's Humira + Amjevita Amgen + Hadlima Samsung etc)",
-              "us.priceK": "Adalimumab biosimilar net pricing ~$25-35K/yr post-rebate"
+              "us.reachPct": "Cyltezo psoriasis biosimilar share",
+              "us.priceK": "Adalimumab biosimilar net pricing"
             },
             "penPct": 40,
             "cagrPct": 8,
             "peakYear": 2030,
-            "salesM": 200,
+            "salesM": 40,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "crohns",
+          "name": "Crohn's disease (anti-TNF biosimilar)",
+          "area": "immunology.inflammatory_gi.crohns",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 800,
+                "wtpPct": 55,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 35,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 5000,
+                "wtpPct": 10,
+                "priceK": 4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.6,
+                "wtpPct": 50,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 30,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Cyltezo Crohn's biosimilar share",
+              "us.priceK": "Adalimumab biosimilar net pricing"
+            },
+            "penPct": 38,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 35,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "uc",
+          "name": "Ulcerative colitis (anti-TNF biosimilar)",
+          "area": "immunology.inflammatory_gi.ulcerative_colitis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1000,
+                "wtpPct": 50,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 30,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 5000,
+                "wtpPct": 8,
+                "priceK": 3
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 50,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 0.15,
+                "wtpPct": 30,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Cyltezo UC biosimilar share",
+              "us.priceK": "Adalimumab biosimilar net pricing"
+            },
+            "penPct": 35,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 25,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "psa_as",
+          "name": "Psoriatic arthritis + ankylosing spondylitis + HS + JIA + uveitis (other anti-TNF labels)",
+          "area": "immunology.inflammatory_systemic.psoriatic_arthritis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 50,
+                "priceK": 50
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 35,
+                "priceK": 30
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 8,
+                "priceK": 10
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.4,
+                "wtpPct": 50,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 0.15,
+                "wtpPct": 30,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 0.03,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Cyltezo PsA + AS + HS + JIA + uveitis combined biosimilar share",
+              "us.priceK": "Adalimumab biosimilar net pricing"
+            },
+            "penPct": 30,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 20,
             "salesYear": 2025
           }
         }
@@ -912,6 +1112,113 @@
             "peakYear": 2031,
             "salesM": 50,
             "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "nerandomilast",
+      "name": "Nerandomilast (BI 1015550) - oral selective phosphodiesterase-4B (PDE4B) inhibitor",
+      "stage": "Phase 3 FIBRONEER-IPF POSITIVE Sept 2024 (FVC primary endpoint hit); Ph3 FIBRONEER-PPF readout 2025; FDA filing 2025-2026",
+      "modality": "small_molecule.enzyme.pde4b_inhibitor",
+      "targets": [
+        "PDE4B"
+      ],
+      "indications": [
+        {
+          "id": "ipf",
+          "name": "Idiopathic pulmonary fibrosis (Ph3 FIBRONEER-IPF positive 2024; first novel oral fibrosis MoA in 10+ years)",
+          "area": "respiratory.fibrotic.ipf",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 150,
+                "wtpPct": 65,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 200,
+                "wtpPct": 50,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 1000,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 20,
+                "wtpPct": 65,
+                "priceK": 110
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 45,
+                "priceK": 65
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Nerandomilast as add-on to Ofev/Esbriet OR monotherapy; expected to take ~20% of IPF Rx mix at peak (additive to Ofev franchise)",
+              "us.priceK": "Oral fibrosis pricing parity with Ofev ~$110K/yr"
+            },
+            "penPct": 35,
+            "cagrPct": 18,
+            "peakYear": 2033
+          }
+        },
+        {
+          "id": "ppf",
+          "name": "Progressive pulmonary fibrosis (Ph3 FIBRONEER-PPF readout 2025)",
+          "area": "respiratory.fibrotic.ppf",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 45,
+                "priceK": 50
+              },
+              "row": {
+                "patientsK": 300,
+                "wtpPct": 12,
+                "priceK": 18
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 60,
+                "priceK": 110
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 42,
+                "priceK": 65
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Nerandomilast PPF expansion if Ph3 FIBRONEER-PPF positive 2025; complementary to Ofev",
+              "us.priceK": "Same parity ~$110K/yr"
+            },
+            "penPct": 35,
+            "cagrPct": 15,
+            "peakYear": 2034
           }
         }
       ]
@@ -1106,7 +1413,27 @@
           }
         },
         "cyltezo": {
-          "ra_psoriasis_ibd": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "crohns": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "psa_as": {
             "pos": 100,
             "apr": 100,
             "pen": 0.4
@@ -1117,6 +1444,18 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.4
+          }
+        },
+        "nerandomilast": {
+          "ipf": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 0.3
+          },
+          "ppf": {
+            "pos": 30,
+            "apr": 50,
+            "pen": 0.2
           }
         },
         "survodutide": {
@@ -1229,7 +1568,27 @@
           }
         },
         "cyltezo": {
-          "ra_psoriasis_ibd": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "crohns": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "psa_as": {
             "pos": 100,
             "apr": 100,
             "pen": 0.55
@@ -1240,6 +1599,18 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.55
+          }
+        },
+        "nerandomilast": {
+          "ipf": {
+            "pos": 92,
+            "apr": 95,
+            "pen": 0.5
+          },
+          "ppf": {
+            "pos": 50,
+            "apr": 70,
+            "pen": 0.4
           }
         },
         "survodutide": {
@@ -1352,7 +1723,27 @@
           }
         },
         "cyltezo": {
-          "ra_psoriasis_ibd": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "crohns": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "psa_as": {
             "pos": 100,
             "apr": 100,
             "pen": 0.75
@@ -1363,6 +1754,18 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.75
+          }
+        },
+        "nerandomilast": {
+          "ipf": {
+            "pos": 96,
+            "apr": 97,
+            "pen": 0.7
+          },
+          "ppf": {
+            "pos": 70,
+            "apr": 82,
+            "pen": 0.6
           }
         },
         "survodutide": {
@@ -1475,7 +1878,27 @@
           }
         },
         "cyltezo": {
-          "ra_psoriasis_ibd": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "crohns": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "psa_as": {
             "pos": 100,
             "apr": 100,
             "pen": 0.95
@@ -1486,6 +1909,18 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.0
+          }
+        },
+        "nerandomilast": {
+          "ipf": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 0.9
+          },
+          "ppf": {
+            "pos": 85,
+            "apr": 92,
+            "pen": 0.8
           }
         },
         "survodutide": {
@@ -1598,7 +2033,27 @@
           }
         },
         "cyltezo": {
-          "ra_psoriasis_ibd": {
+          "ra": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "crohns": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "uc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "psa_as": {
             "pos": 100,
             "apr": 100,
             "pen": 1.15
@@ -1609,6 +2064,18 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.25
+          }
+        },
+        "nerandomilast": {
+          "ipf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          },
+          "ppf": {
+            "pos": 92,
+            "apr": 96,
+            "pen": 1.05
           }
         },
         "survodutide": {

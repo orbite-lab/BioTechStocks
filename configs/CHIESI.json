@@ -17,7 +17,7 @@
       "id": "trimbow",
       "name": "Trimbow / Trydonis (beclomethasone + formoterol + glycopyrronium) - first-in-class ICS/LABA/LAMA triple combination MDI",
       "stage": "Commercial (COPD 2017 EU, 2020 US; severe asthma triple FDA Aug 2024); Chiesi-discovered NEXThaler + Modulite delivery platforms",
-      "modality": "small_molecule.gpcr.ics_laba_lama_triple",
+      "modality": "small_molecule.combination.ics_laba_lama",
       "targets": [
         "NR3C1",
         "ADRB2",
@@ -130,7 +130,7 @@
       "id": "foster",
       "name": "Foster / Fostair (beclomethasone + formoterol) - extra-fine ICS/LABA combination MDI (Modulite platform)",
       "stage": "Commercial (asthma + COPD; mature franchise; LOE-aged in EU)",
-      "modality": "small_molecule.gpcr.ics_laba",
+      "modality": "small_molecule.combination.ics_laba",
       "targets": [
         "NR3C1",
         "ADRB2"
@@ -193,11 +193,8 @@
       "id": "curosurf",
       "name": "Curosurf (poractant alfa) - natural porcine pulmonary surfactant (intratracheal)",
       "stage": "Commercial (preterm infant RDS; market leader globally; FDA 1999, EU 1992)",
-      "modality": "recombinant_protein.surfactant.porcine_natural",
-      "targets": [
-        "SFTPB",
-        "SFTPC"
-      ],
+      "modality": "biological_extract.surfactant.porcine_natural",
+      "targets": [],
       "indications": [
         {
           "id": "preterm_rds",
@@ -304,7 +301,7 @@
             "penPct": 60,
             "cagrPct": 18,
             "peakYear": 2031,
-            "salesM": 80,
+            "salesM": 25,
             "salesYear": 2025
           }
         }
@@ -366,7 +363,7 @@
             "penPct": 20,
             "cagrPct": 18,
             "peakYear": 2031,
-            "salesM": 100,
+            "salesM": 55,
             "salesYear": 2025
           }
         }
@@ -557,6 +554,124 @@
       ]
     },
     {
+      "id": "tanimilast",
+      "name": "Tanimilast (CHF6001) - inhaled selective phosphodiesterase-4 inhibitor (Chiesi-discovered)",
+      "stage": "Phase 3 PILLAR (COPD; mixed Ph3 results 2024 -- some endpoints met; FDA filing path under assessment)",
+      "modality": "small_molecule.enzyme.pde4_inhibitor",
+      "targets": [
+        "PDE4B"
+      ],
+      "indications": [
+        {
+          "id": "copd",
+          "name": "COPD severe (inhaled PDE4 anti-inflammatory; Ph3 PILLAR mixed 2024)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 50,
+                "priceK": 6
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 38,
+                "priceK": 4
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 12,
+                "priceK": 1.5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Tanimilast inhaled PDE4 first localized topical lung delivery; competitive vs Daliresp (PDE4 oral roflumilast generic-aged) + Ohtuvayre (Verona ensifentrine PDE3/4 dual inhaled)",
+              "us.priceK": "Inhaled PDE4 pricing ~$6K/yr"
+            },
+            "penPct": 10,
+            "cagrPct": 12,
+            "peakYear": 2034
+          }
+        }
+      ]
+    },
+    {
+      "id": "bronchitol",
+      "name": "Bronchitol (mannitol inhalation powder) - osmotic mucolytic dehydrant (sputum hydration / clearance)",
+      "stage": "Commercial (cystic fibrosis FDA 2020 ages 18+; EU 2012)",
+      "modality": "small_molecule.osmotic.sugar_alcohol",
+      "targets": [],
+      "indications": [
+        {
+          "id": "cf",
+          "name": "Cystic fibrosis adjunctive mucociliary clearance (inhaled dry powder; ages 18+)",
+          "area": "respiratory.genetic.cystic_fibrosis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 80,
+                "priceK": 280
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 170
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 18,
+                "priceK": 60
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3.7,
+                "wtpPct": 60,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 7.4,
+                "wtpPct": 45,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 1.2,
+                "wtpPct": 12,
+                "priceK": 2.5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Bronchitol CF mucolytic adjunct; small share vs Pulmozyme (RHHBY dornase alfa) + hypertonic saline; ~5-10% of CF Rx mix",
+              "us.priceK": "Bronchitol WAC ~$12K/yr"
+            },
+            "penPct": 80,
+            "cagrPct": 2,
+            "peakYear": 2030,
+            "salesM": 15,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
       "id": "peyona",
       "name": "Peyona (caffeine citrate) - methylxanthine adenosine receptor antagonist (NICU)",
       "stage": "Commercial (apnea of prematurity NICU oral/IV; mature)",
@@ -691,6 +806,20 @@
             "pen": 0.4
           }
         },
+        "tanimilast": {
+          "copd": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.2
+          }
+        },
+        "bronchitol": {
+          "cf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
         "peyona": {
           "aop": {
             "pos": 100,
@@ -770,6 +899,20 @@
             "pos": 100,
             "apr": 100,
             "pen": 0.55
+          }
+        },
+        "tanimilast": {
+          "copd": {
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.4
+          }
+        },
+        "bronchitol": {
+          "cf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
           }
         },
         "peyona": {
@@ -853,6 +996,20 @@
             "pen": 0.75
           }
         },
+        "tanimilast": {
+          "copd": {
+            "pos": 60,
+            "apr": 80,
+            "pen": 0.6
+          }
+        },
+        "bronchitol": {
+          "cf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
         "peyona": {
           "aop": {
             "pos": 100,
@@ -934,6 +1091,20 @@
             "pen": 0.95
           }
         },
+        "tanimilast": {
+          "copd": {
+            "pos": 75,
+            "apr": 88,
+            "pen": 0.85
+          }
+        },
+        "bronchitol": {
+          "cf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
         "peyona": {
           "aop": {
             "pos": 100,
@@ -1013,6 +1184,20 @@
             "pos": 100,
             "apr": 100,
             "pen": 1.2
+          }
+        },
+        "tanimilast": {
+          "copd": {
+            "pos": 90,
+            "apr": 95,
+            "pen": 1.15
+          }
+        },
+        "bronchitol": {
+          "cf": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
           }
         },
         "peyona": {

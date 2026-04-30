@@ -114,20 +114,23 @@ proper disease L3 (`oncology.lung.nsclc_driver.her2` etc.) and populate market.
 Each asset has a `modality` field with `L1.L2.L3` path. Auto-aggregated into
 `data/taxonomy.json modalities` by `scripts/recurring/rebuild_taxonomy.py`.
 
-13 L1 modality classes (each represents a structurally distinct production class):
+16 L1 modality classes (each represents a structurally distinct production class):
 1. `small_molecule` — organic synthesis (kinase, GPCR, ion-channel, PPI, transporter, etc.)
 2. `peptide` — solid-phase synthesis (incretins, hormones, cyclic peptides)
 3. `antibody` — mAb / bispecific / fragment / fusion (Eylea is `antibody.fusion.vegf_trap`)
 4. `adc` — antibody-drug conjugates (DXd-linker, multi-payload, peptide-drug)
 5. `recombinant_protein` — non-antibody therapeutic proteins (cytokines, enzymes, toxins)
-6. `cell_therapy` — autologous / allogeneic / in vivo CAR-T (NK, TCR slots reserved)
-7. `gene_therapy` — DNA delivery one-shot (AAV, lentivirus reserved)
-8. `gene_editing` — CRISPR / base / prime editing (own L1, distinct production from AAV)
-9. `nucleic_acid` — RNA-modulating (ASO, siRNA, splice modulator, mRNA reserved)
-10. `radiopharmaceutical` — radioligand / radioconjugate / alpha-emitter
-11. `vaccine` — protein subunit / VLP / mRNA reserved
-12. `formulation_modifier` — long-acting depot, half-life extender, ocular sustained, etc.
-13. `aesthetic_or_other` — hyaluronic filler, etc.
+6. `plasma_protein` — blood plasma fractionation derivatives (IVIG, albumin, antithrombin, FVIII)
+7. `biological_extract` — animal/plant tissue extracts (porcine surfactant Curosurf, betulin Filsuvez, heparin)
+8. `cell_therapy` — autologous / allogeneic / in vivo CAR-T (NK, TCR slots reserved)
+9. `gene_therapy` — DNA delivery one-shot (AAV, lentivirus reserved)
+10. `gene_editing` — CRISPR / base / prime editing (own L1, distinct production from AAV)
+11. `nucleic_acid` — RNA-modulating (ASO, siRNA, splice modulator, mRNA reserved)
+12. `radiopharmaceutical` — radioligand / radioconjugate / alpha-emitter
+13. `vaccine` — protein subunit / VLP / mRNA reserved
+14. `xenotransplant` — gene-edited porcine organs (kidney, heart)
+15. `formulation_modifier` — long-acting depot, half-life extender, ocular sustained, etc.
+16. `aesthetic_or_other` — hyaluronic filler, etc.
 
 **Convention notes:**
 - Mechanism (agonist/antagonist) lives in L3, never as a sister L2 to structural class

@@ -518,15 +518,15 @@
         {
           "id": "liposarcoma",
           "name": "Liposarcoma (soft tissue sarcoma)",
-          "area": "oncology.musculoskeletal.desmoid",
+          "area": "oncology.musculoskeletal.sts",
           "market": {
             "tamB": 8,
-            "penPct": 50,
+            "penPct": 40,
             "salesM": 100,
             "salesYear": 2025,
             "peakYear": 2027,
             "cagrPct": -3,
-            "notes": "Halaven liposarcoma 2L+. Tagged desmoid as soft-tissue sarcoma proxy (no STS leaf).",
+            "notes": "Halaven liposarcoma (myxoid + dediff subtypes) ~30% of brand. Soft-tissue sarcoma class. Class peers: Yondelis (Lilly trabectedin), Doxil (doxorubicin generic).",
             "company_slice": {
               "us": {
                 "reachPct": 24.4,
@@ -575,17 +575,17 @@
             },
             "regions": {
               "us": {
-                "patientsK": 6,
-                "wtpPct": 70,
-                "priceK": 175
+                "patientsK": 80,
+                "wtpPct": 65,
+                "priceK": 160
               },
               "eu": {
-                "patientsK": 8,
-                "wtpPct": 50,
-                "priceK": 100
+                "patientsK": 100,
+                "wtpPct": 48,
+                "priceK": 95
               },
               "row": {
-                "patientsK": 25,
+                "patientsK": 350,
                 "wtpPct": 14,
                 "priceK": 35
               }
@@ -689,7 +689,7 @@
       "name": "Fycompa (perampanel) -- AMPA receptor antagonist (epilepsy)",
       "stage": "Commercial (~$267M 2025; mature)",
       "designations": [],
-      "modality": "small_molecule.glutamate_antagonist.ampa_antagonist",
+      "modality": "small_molecule.ion_channel.ampa_antagonist",
       "targets": [
         "GRIA1"
       ],
@@ -778,7 +778,7 @@
       "name": "Aciphex/Pariet (rabeprazole) -- PPI (GERD; mostly Japan/Asia legacy)",
       "stage": "Commercial (~$335M 2025; ROW/Japan brand-loyal post-LOE)",
       "designations": [],
-      "modality": "small_molecule.proton_pump_inhibitor.rabeprazole",
+      "modality": "small_molecule.enzyme_inhibitor.h_k_atpase",
       "targets": [
         "ATP4A"
       ],
@@ -786,7 +786,7 @@
         {
           "id": "gerd",
           "name": "GERD + erosive esophagitis + duodenal ulcer",
-          "area": "immunology.inflammatory_gi.eoe",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
           "market": {
             "tamB": 8,
             "penPct": 30,
@@ -794,22 +794,22 @@
             "salesYear": 2025,
             "peakYear": 2025,
             "cagrPct": -5,
-            "notes": "PPI legacy. Off-patent globally; brand-loyal Japan/Asia. Tagged EoE as closest GI inflammation proxy.",
+            "notes": "PPI for GERD + erosive esophagitis + peptic ulcer + H. pylori. Off-patent globally. Class peers: Nexium AZN, Prilosec, Dexilant Takeda, Voquezna PCAB next-gen.",
             "company_slice": {
               "us": {
-                "reachPct": 95,
+                "reachPct": 0.5,
                 "wtpPct": 40,
-                "priceK": 1
+                "priceK": 0.5
               },
               "eu": {
-                "reachPct": 95,
+                "reachPct": 0.3,
                 "wtpPct": 30,
-                "priceK": 0.6
+                "priceK": 0.3
               },
               "row": {
-                "reachPct": 95,
+                "reachPct": 0.4,
                 "wtpPct": 25,
-                "priceK": 0.2
+                "priceK": 0.1
               }
             },
             "company_slice_sources": {
@@ -843,19 +843,19 @@
             },
             "regions": {
               "us": {
-                "patientsK": 150,
-                "wtpPct": 55,
-                "priceK": 35
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
               },
               "eu": {
-                "patientsK": 120,
-                "wtpPct": 35,
-                "priceK": 20
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
               },
               "row": {
-                "patientsK": 250,
-                "wtpPct": 6,
-                "priceK": 5
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
               }
             }
           }

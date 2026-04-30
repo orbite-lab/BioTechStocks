@@ -564,6 +564,21 @@ REGIONS = {
         "eu":  {"patientsK": 15,  "wtpPct": 45, "priceK": 100},
         "row": {"patientsK": 50,  "wtpPct": 12, "priceK": 35},
     },
+    # Soft tissue sarcoma (STS): heterogeneous group of malignant
+    # mesenchymal tumors -- liposarcoma (well-diff/dediff/myxoid/
+    # pleomorphic), leiomyosarcoma, GIST, undifferentiated pleomorphic
+    # sarcoma, synovial sarcoma, etc. ~13K US new cases/yr, ~80K
+    # prevalent on tx (incl. GIST). EU 18K, ROW 80K. Class: Stivarga
+    # (Bayer regorafenib GIST 3L+), Sutent (Pfizer sunitinib GIST 2L),
+    # Halaven (Eisai eribulin liposarcoma), Yondelis (Lilly trabectedin
+    # L-sarcoma), Doxil (doxorubicin generic), Vimseltinib (Deciphera
+    # CSF1R post-Turalio acq AbbV), Qinlock (Deciphera ripretinib GIST 4L+).
+    # Net branded ~$160K/yr.
+    "oncology.musculoskeletal.sts": {
+        "us":  {"patientsK": 80,  "wtpPct": 65, "priceK": 160},
+        "eu":  {"patientsK": 100, "wtpPct": 48, "priceK": 95},
+        "row": {"patientsK": 350, "wtpPct": 14, "priceK": 35},
+    },
 
     # ------------------------------------------------------------
     # EYE ONCOLOGY (uveal melanoma) -- biologically distinct from cutaneous
@@ -661,6 +676,7 @@ PEN_PCT = {
     "oncology.musculoskeletal.desmoid": 50,
     "oncology.musculoskeletal.nf1_pn": 30,
     "oncology.musculoskeletal.tgct": 40,
+    "oncology.musculoskeletal.sts": 40,
     "oncology.eye.uveal_melanoma": 35,
     "oncology.head_neck.hnscc": 55,
 }

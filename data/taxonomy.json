@@ -10,7 +10,7 @@
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
-    "area_count_l3": 230,
+    "area_count_l3": 232,
     "area_count_l4": 28,
     "modality_count": 406,
     "companies": 71
@@ -1085,12 +1085,18 @@
         "eoe": {
           "companies": [
             "4502",
-            "4523",
             "BMY",
             "REGN",
             "SNY"
           ],
-          "count": 5,
+          "count": 4,
+          "rare": false
+        },
+        "gerd_peptic": {
+          "companies": [
+            "4523"
+          ],
+          "count": 1,
           "rare": false
         },
         "ulcerative_colitis": {
@@ -1732,12 +1738,11 @@
             "6990",
             "AMGN",
             "AZN",
-            "BAYN",
             "BMY",
             "MRK",
             "ONC"
           ],
-          "count": 8,
+          "count": 7,
           "rare": false
         },
         "hcc": {
@@ -2131,10 +2136,9 @@
       "musculoskeletal": {
         "desmoid": {
           "companies": [
-            "4523",
             "MRK_DE"
           ],
-          "count": 2,
+          "count": 1,
           "rare": false
         },
         "nf1_pn": {
@@ -2142,6 +2146,14 @@
             "MRK_DE"
           ],
           "count": 1,
+          "rare": false
+        },
+        "sts": {
+          "companies": [
+            "4523",
+            "BAYN"
+          ],
+          "count": 2,
           "rare": false
         },
         "tgct": {
@@ -4173,6 +4185,12 @@
           ],
           "count": 1
         },
+        "h_k_atpase": {
+          "companies": [
+            "4523"
+          ],
+          "count": 1
+        },
         "integrase": {
           "companies": [
             "GILD"
@@ -4214,14 +4232,6 @@
         "prmt5_mta_inhibitor": {
           "companies": [
             "AMGN"
-          ],
-          "count": 1
-        }
-      },
-      "glutamate_antagonist": {
-        "ampa_antagonist": {
-          "companies": [
-            "4523"
           ],
           "count": 1
         }
@@ -4426,6 +4436,12 @@
         }
       },
       "ion_channel": {
+        "ampa_antagonist": {
+          "companies": [
+            "4523"
+          ],
+          "count": 1
+        },
         "ampa_modulator": {
           "companies": [
             "NBIX"
@@ -4975,14 +4991,6 @@
         "transthyretin": {
           "companies": [
             "PFE"
-          ],
-          "count": 1
-        }
-      },
-      "proton_pump_inhibitor": {
-        "rabeprazole": {
-          "companies": [
-            "4523"
           ],
           "count": 1
         }

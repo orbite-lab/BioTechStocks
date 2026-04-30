@@ -84,6 +84,19 @@ REGIONS = {
         "eu":  {"patientsK": 250,  "wtpPct": 35, "priceK": 22},
         "row": {"patientsK": 1000, "wtpPct": 8,  "priceK": 8},
     },
+    # GERD + erosive esophagitis + peptic ulcer disease + H. pylori
+    # eradication: PPI / H+/K+ ATPase inhibitor + H2-blocker class.
+    # US ~60M GERD treated, EU ~80M, ROW ~400M. Class: Nexium (AZN
+    # esomeprazole generic), Prilosec (omeprazole generic), Aciphex
+    # (Eisai rabeprazole), Dexilant (Takeda dexlansoprazole), Protonix
+    # (pantoprazole generic), Voquezna (Phathom vonoprazan PCAB next-gen).
+    # Class is mostly generic; branded residual ~$5B globally + Voquezna
+    # PCAB launch. Net branded ~$0.6K/yr.
+    "immunology.inflammatory_gi.gerd_peptic": {
+        "us":  {"patientsK": 60000,  "wtpPct": 25, "priceK": 0.6},
+        "eu":  {"patientsK": 80000,  "wtpPct": 18, "priceK": 0.4},
+        "row": {"patientsK": 400000, "wtpPct": 8,  "priceK": 0.15},
+    },
 
     # ============================================================
     # IMMUNOLOGY - INFLAMMATORY SYSTEMIC
@@ -379,6 +392,7 @@ PEN_PCT = {
     "immunology.inflammatory_gi.crohns": 38,
     "immunology.inflammatory_gi.ulcerative_colitis": 35,
     "immunology.inflammatory_gi.eoe": 35,
+    "immunology.inflammatory_gi.gerd_peptic": 30,
     "immunology.inflammatory_systemic.rheumatoid_arthritis": 28,
     "immunology.inflammatory_systemic.psoriatic_arthritis": 30,
     "immunology.inflammatory_systemic.gca_pmr": 18,

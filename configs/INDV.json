@@ -1,13 +1,13 @@
 {
   "company": {
     "ticker": "INDV",
-    "name": "Indivior plc",
-    "currentPrice": 14,
-    "sharesOut": 131,
-    "cash": 100,
+    "name": "Indivior Pharmaceuticals, Inc.",
+    "currentPrice": 37.8,
+    "sharesOut": 122,
+    "cash": 50,
     "currency": "USD",
     "phase": "commercial",
-    "subtitle": "Opioid use disorder franchise (NASDAQ since Jun 2024; LSE delisted Jul 2024). FY25 revenue ~$1.22B: Sublocade SC monthly buprenorphine ER $850M (~85% LAI share; competing with Brixadi weekly+monthly Camurus/Braeburn taking ~10-15%), Suboxone film $140M post-LOE residual + AG, Opvee nalmefene nasal $20M (FDA May 2023 opioid overdose). Perseris divested to Genus mid-2024. Pipeline: INDV-2000 (Aelis-acquired) orexin OX1R antagonist Ph2 alcohol use disorder + AEF0117 CB1 NAM Ph2b cannabis use disorder. Net cash ~$100M post-buybacks.",
+    "subtitle": "Opioid use disorder franchise (re-domiciled US + renamed Jan 2026 from Indivior plc; NASDAQ since Jun 2024). FY25 revenue $1.239B (+10%): Sublocade SC monthly buprenorphine ER $856M (+13%; ~70% US LAI share, ceding to Brixadi which crossed 30% YE25 from Camurus/Braeburn) + Suboxone film $300M post-LOE residual (declining 15%/yr) + Opvee nalmefene nasal $12M (marketing halted Sep 30 2025 post NY AG settlement; divestiture exploration). FDA Feb 2025 Sublocade label expansion: 1-hour rapid induction + alt injection sites. FY26 guidance: net revenue $1,125-1,195M (DOWN 5-9% on continued Suboxone decline + Brixadi share). FY25 capital return: $295M DOJ payment + $400M buyback. Pipeline: INDV-2000 orexin OX1R Ph2 OUD non-opioid maintenance (NOT alcohol; first patient Jun 2024). AEF0117 CB1 NAM CUD Ph2b FAILED Sep 2024 (Indivior unlikely to opt in).",
     "yahooTicker": "INDV"
   },
   "assets": [
@@ -64,9 +64,9 @@
               "us.priceK": "Sublocade WAC ~$1.6K/mo × 12 = $18K/yr"
             },
             "penPct": 18,
-            "cagrPct": 10,
+            "cagrPct": 8,
             "peakYear": 2030,
-            "salesM": 850,
+            "salesM": 856,
             "salesYear": 2025
           }
         }
@@ -103,17 +103,17 @@
             },
             "company_slice": {
               "us": {
-                "reachPct": 3,
+                "reachPct": 7.2,
                 "wtpPct": 30,
                 "priceK": 8
               },
               "eu": {
-                "reachPct": 0.5,
+                "reachPct": 1.2,
                 "wtpPct": 18,
                 "priceK": 5
               },
               "row": {
-                "reachPct": 0,
+                "reachPct": 0.0,
                 "wtpPct": 0,
                 "priceK": 0
               }
@@ -124,7 +124,7 @@
             "penPct": 18,
             "cagrPct": -15,
             "peakYear": 2025,
-            "salesM": 140,
+            "salesM": 300,
             "salesYear": 2025
           }
         }
@@ -133,13 +133,13 @@
     {
       "id": "opvee",
       "name": "Opvee (nalmefene nasal spray) - long-acting opioid antagonist for opioid overdose reversal",
-      "stage": "Commercial (FDA May 2023; harm-reduction channel; competing with naloxone)",
+      "stage": "Commercial-discontinued (FDA May 2023; marketing halted Sep 30 2025 post NY AG settlement; divestiture exploration)",
       "modality": "small_molecule.opioid.antagonist",
       "targets": [],
       "indications": [
         {
           "id": "opioid_overdose",
-          "name": "Opioid overdose emergency rescue (longer half-life vs naloxone for fentanyl)",
+          "name": "Opioid overdose emergency rescue (mostly BARDA orders post Sept 2025 marketing halt)",
           "area": "cns.psychiatry.substance_use.opioid",
           "market": {
             "regions": {
@@ -161,8 +161,8 @@
             },
             "company_slice": {
               "us": {
-                "reachPct": 8.6,
-                "wtpPct": 35,
+                "reachPct": 9.0,
+                "wtpPct": 20,
                 "priceK": 0.4
               },
               "eu": {
@@ -177,12 +177,12 @@
               }
             },
             "company_slice_sources": {
-              "us.priceK": "Opvee WAC ~$400/2pk; harm-reduction channel"
+              "us.priceK": "Opvee WAC ~$400/2pk; pending divestiture"
             },
-            "penPct": 15,
-            "cagrPct": 20,
-            "peakYear": 2030,
-            "salesM": 20,
+            "penPct": 10,
+            "cagrPct": -30,
+            "peakYear": 2025,
+            "salesM": 12,
             "salesYear": 2025
           }
         }
@@ -191,111 +191,54 @@
     {
       "id": "indv_2000",
       "name": "INDV-2000 - selective orexin-1 OX1R antagonist (Aelis Farma acquisition)",
-      "stage": "Phase 2 (alcohol use disorder; readout 2026)",
+      "stage": "Phase 2 (opioid use disorder non-opioid maintenance; first patient Jun 2024; readout 2026/27)",
       "modality": "small_molecule.gpcr.orexin_antagonist",
       "targets": [],
       "indications": [
         {
-          "id": "aud",
-          "name": "Alcohol use disorder (novel orexin-1 mechanism for craving reduction)",
-          "area": "cns.psychiatry.substance_use.alcohol",
+          "id": "oud_orexin",
+          "name": "Opioid use disorder maintenance (novel orexin-1 mechanism; non-opioid-based MAT)",
+          "area": "cns.psychiatry.substance_use.opioid",
           "market": {
             "regions": {
               "us": {
-                "patientsK": 15000,
-                "wtpPct": 8,
-                "priceK": 3
+                "patientsK": 2500,
+                "wtpPct": 25,
+                "priceK": 8
               },
               "eu": {
-                "patientsK": 20000,
+                "patientsK": 1500,
+                "wtpPct": 18,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 5000,
                 "wtpPct": 5,
                 "priceK": 2
-              },
-              "row": {
-                "patientsK": 60000,
-                "wtpPct": 2,
-                "priceK": 1
               }
             },
             "company_slice": {
               "us": {
-                "reachPct": 0.3,
-                "wtpPct": 25,
-                "priceK": 5
+                "reachPct": 0.5,
+                "wtpPct": 30,
+                "priceK": 8
               },
               "eu": {
                 "reachPct": 0.1,
                 "wtpPct": 18,
-                "priceK": 3
+                "priceK": 5
               },
               "row": {
                 "reachPct": 0.01,
-                "wtpPct": 4,
-                "priceK": 1
+                "wtpPct": 5,
+                "priceK": 2
               }
             },
             "company_slice_sources": {
-              "us.reachPct": "AUD treatment uptake low (<10% diagnosed); novel orexin niche",
-              "us.priceK": "Estimated WAC $5K/yr if approved"
+              "us.reachPct": "INDV-2000 novel non-opioid MAT for OUD; differentiated from buprenorphine class",
+              "us.priceK": "Estimated WAC $8K/yr if approved (parallel to oral OUD Rx)"
             },
             "penPct": 10,
-            "cagrPct": 0,
-            "peakYear": 2032
-          }
-        }
-      ]
-    },
-    {
-      "id": "aef0117",
-      "name": "AEF0117 - CB1 receptor negative allosteric modulator (Aelis Farma collaboration)",
-      "stage": "Phase 2b (cannabis use disorder; readout 2026)",
-      "modality": "small_molecule.gpcr.cb1_nam",
-      "targets": [],
-      "indications": [
-        {
-          "id": "cud",
-          "name": "Cannabis use disorder (first-in-class CB1 NAM for craving + reward signaling)",
-          "area": "cns.psychiatry.substance_use.cannabis",
-          "market": {
-            "regions": {
-              "us": {
-                "patientsK": 5000,
-                "wtpPct": 6,
-                "priceK": 3
-              },
-              "eu": {
-                "patientsK": 8000,
-                "wtpPct": 4,
-                "priceK": 2
-              },
-              "row": {
-                "patientsK": 30000,
-                "wtpPct": 1,
-                "priceK": 1
-              }
-            },
-            "company_slice": {
-              "us": {
-                "reachPct": 0.3,
-                "wtpPct": 25,
-                "priceK": 5
-              },
-              "eu": {
-                "reachPct": 0.1,
-                "wtpPct": 18,
-                "priceK": 3
-              },
-              "row": {
-                "reachPct": 0.01,
-                "wtpPct": 3,
-                "priceK": 1
-              }
-            },
-            "company_slice_sources": {
-              "us.reachPct": "CUD has no approved Rx; AEF0117 first-in-class NAM",
-              "us.priceK": "Estimated WAC $5K/yr if approved"
-            },
-            "penPct": 8,
             "cagrPct": 0,
             "peakYear": 2032
           }
@@ -309,8 +252,8 @@
       "val": {
         "pipelineDR": 9,
         "pipelineMult": 2,
-        "commercialMult": 0.9,
-        "commercialRevM": 1100,
+        "commercialMult": 1.8,
+        "commercialRevM": 1080,
         "milestones": 0,
         "dil": 0
       },
@@ -337,15 +280,8 @@
           }
         },
         "indv_2000": {
-          "aud": {
+          "oud_orexin": {
             "pos": 10,
-            "apr": 55,
-            "pen": 0.3
-          }
-        },
-        "aef0117": {
-          "cud": {
-            "pos": 12,
             "apr": 55,
             "pen": 0.3
           }
@@ -357,8 +293,8 @@
       "val": {
         "pipelineDR": 8,
         "pipelineMult": 3,
-        "commercialMult": 1.4,
-        "commercialRevM": 1180,
+        "commercialMult": 2.5,
+        "commercialRevM": 1130,
         "milestones": 0,
         "dil": 0
       },
@@ -385,15 +321,8 @@
           }
         },
         "indv_2000": {
-          "aud": {
+          "oud_orexin": {
             "pos": 20,
-            "apr": 70,
-            "pen": 0.5
-          }
-        },
-        "aef0117": {
-          "cud": {
-            "pos": 22,
             "apr": 70,
             "pen": 0.5
           }
@@ -405,9 +334,9 @@
       "val": {
         "pipelineDR": 7,
         "pipelineMult": 5,
-        "commercialMult": 2.0,
-        "commercialRevM": 1250,
-        "milestones": 50,
+        "commercialMult": 3.2,
+        "commercialRevM": 1180,
+        "milestones": 25,
         "dil": 0
       },
       "assumptions": {
@@ -433,15 +362,8 @@
           }
         },
         "indv_2000": {
-          "aud": {
+          "oud_orexin": {
             "pos": 35,
-            "apr": 82,
-            "pen": 0.8
-          }
-        },
-        "aef0117": {
-          "cud": {
-            "pos": 38,
             "apr": 82,
             "pen": 0.8
           }
@@ -453,9 +375,9 @@
       "val": {
         "pipelineDR": 6,
         "pipelineMult": 8,
-        "commercialMult": 2.8,
-        "commercialRevM": 1400,
-        "milestones": 150,
+        "commercialMult": 4.2,
+        "commercialRevM": 1300,
+        "milestones": 100,
         "dil": 0
       },
       "assumptions": {
@@ -481,15 +403,8 @@
           }
         },
         "indv_2000": {
-          "aud": {
+          "oud_orexin": {
             "pos": 50,
-            "apr": 90,
-            "pen": 1.05
-          }
-        },
-        "aef0117": {
-          "cud": {
-            "pos": 55,
             "apr": 90,
             "pen": 1.05
           }
@@ -501,9 +416,9 @@
       "val": {
         "pipelineDR": 5,
         "pipelineMult": 12,
-        "commercialMult": 4.0,
-        "commercialRevM": 1700,
-        "milestones": 350,
+        "commercialMult": 5.5,
+        "commercialRevM": 1500,
+        "milestones": 250,
         "dil": 0
       },
       "assumptions": {
@@ -529,15 +444,8 @@
           }
         },
         "indv_2000": {
-          "aud": {
+          "oud_orexin": {
             "pos": 65,
-            "apr": 95,
-            "pen": 1.25
-          }
-        },
-        "aef0117": {
-          "cud": {
-            "pos": 70,
             "apr": 95,
             "pen": 1.25
           }
@@ -547,33 +455,33 @@
   },
   "catalysts": [
     {
-      "date": "2026",
-      "dateSort": "2026-06-30",
-      "asset": "aef0117",
-      "indication": "cud",
-      "title": "AEF0117 cannabis use disorder Ph2b topline (Aelis collaboration)",
-      "type": "phase2_data",
-      "binary": true,
-      "fail_pos": 12,
-      "fail_apr": 60,
-      "success_pos": 55,
-      "success_apr": 85,
-      "_source": "Indivior pipeline; Aelis Farma",
-      "_confidence": "low"
+      "date": "Feb 2025",
+      "dateSort": "2025-02-24",
+      "asset": "sublocade",
+      "indication": "oud_lai",
+      "title": "Sublocade label expansion: 1-hour rapid induction + alt injection sites (FDA approved)",
+      "type": "label_expansion",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "FDA label 209819s031; Indivior PR Feb 24 2025",
+      "_confidence": "high"
     },
     {
       "date": "H2 2026",
       "dateSort": "2026-12-15",
       "asset": "indv_2000",
-      "indication": "aud",
-      "title": "INDV-2000 orexin-1 alcohol use disorder Ph2 readout",
+      "indication": "oud_orexin",
+      "title": "INDV-2000 orexin-1 OUD Ph2 readout (3-mo dose-ranging post-buprenorphine withdrawal)",
       "type": "phase2_data",
       "binary": true,
       "fail_pos": 10,
       "fail_apr": 55,
       "success_pos": 50,
       "success_apr": 82,
-      "_source": "Indivior pipeline",
+      "_source": "Indivior pipeline; first patient Jun 2024",
       "_confidence": "low"
     },
     {
@@ -581,14 +489,14 @@
       "dateSort": "2026-12-15",
       "asset": "sublocade",
       "indication": "oud_lai",
-      "title": "Sublocade vs Brixadi US LAI share dynamics (Symphony/IQVIA tracking)",
+      "title": "Sublocade vs Brixadi US LAI share dynamics (Brixadi crossed 30% YE25)",
       "type": "milestone",
       "binary": false,
       "fail_pos": 100,
       "fail_apr": 100,
       "success_pos": 100,
       "success_apr": 100,
-      "_source": "Indivior IR",
+      "_source": "Camurus FY25 report; IQVIA tracking",
       "_confidence": "high"
     }
   ]

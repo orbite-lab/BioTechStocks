@@ -84,12 +84,12 @@ def build_APLS():
     co = od(
         ("ticker", "APLS"),
         ("name", "Apellis Pharmaceuticals, Inc."),
-        ("currentPrice", 27),
-        ("sharesOut", 125),
-        ("cash", -400),  # net debt: $340M cash - $747M converts (2026 + 2027)
+        ("currentPrice", 41),
+        ("sharesOut", 128),
+        ("cash", 11),  # net cash ~flat: $466M cash - $455M debt (converts + credit facility)
         ("currency", "USD"),
         ("phase", "commercial"),
-        ("subtitle", "Complement C3 platform leader. FY25 revenue ~$800M: Syfovre GA $635M (FDA Feb 2023; ~60-65% GA share vs Astellas Izervay), Empaveli PNH US $115M + Sobi ex-US royalty $50M (2nd-gen C3 inhibitor vs AZ Soliris/Ultomiris C5), Empaveli C3G/IC-MPGN US launch FY25 $20M (FDA Jul 2025; competing with Novartis Fabhalta iptacopan). Pipeline: APL-3007 siRNA C3 (Ph1; q-quarterly potential), APL-1030 oral C3 (preclinical). Net debt ~$400M (cash $340M, $747M converts maturing 2026/27)."),
+        ("subtitle", "Complement C3 platform leader. FY25 reported revenue $1.0B (incl. $275M one-time Sobi royalty monetization Jul 2025; underlying product $689M). Syfovre GA $587M (FDA Feb 2023; ~60% GA share vs Astellas Izervay $440M run-rate post-FDA Feb 2025 dose-duration label expansion). Empaveli US $102M (PNH + new C3G/IC-MPGN ramp FDA Jul 2025; vs Novartis Fabhalta iptacopan in C3G). Sold 90% ex-US Aspaveli royalties to Sobi Jul 2025 for $275M up + $25M EC milestone. FY25 first profitable year: net income +$22.4M. Pipeline: APL-3007 siRNA C3 Ph2 combo with Syfovre (readout 2027), APL-90992 FcRn gene-editing IND H2 2026, Syfovre PFS sBLA H1 2026, Empaveli FSGS + DGF Ph3."),
         ("yahooTicker", "APLS"),
     )
 
@@ -106,7 +106,7 @@ def build_APLS():
                    slice_((10, 65, 25), (4, 50, 15), (0.3, 8, 5)),
                    {"us.reachPct": "Syfovre ~60-65% US GA market share vs Astellas Izervay (avacincaptad C5)",
                     "us.priceK": "Syfovre WAC ~$2.1K/dose × 12/yr = ~$25K/yr"},
-                   salesM=635, salesYear=2025, peakYear=2030, cagrPct=10, penPct=35)],
+                   salesM=587, salesYear=2025, peakYear=2030, cagrPct=8, penPct=35)],
         targets=["C3"]))
 
     # Empaveli PNH
@@ -120,7 +120,7 @@ def build_APLS():
                    slice_((20, 60, 450), (15, 60, 280), (1, 20, 80)),
                    {"us.reachPct": "Empaveli ~10-15% PNH share vs Soliris/Ultomiris (~85% AZ Alexion C5 dominance)",
                     "us.priceK": "Empaveli WAC ~$450K/yr (parallel to Ultomiris ~$540K)"},
-                   salesM=165, salesYear=2025, peakYear=2030, cagrPct=15, penPct=20)],
+                   salesM=82, salesYear=2025, peakYear=2030, cagrPct=12, penPct=20)],
         targets=["C3"]))
 
     # Empaveli C3G - new launch (FDA Jul 2025)
@@ -137,10 +137,10 @@ def build_APLS():
                    salesM=20, salesYear=2025, peakYear=2031, cagrPct=80, penPct=30)],
         targets=["C3"]))
 
-    # APL-3007 siRNA pipeline
+    # APL-3007 siRNA pipeline (now Ph2 combo)
     assets.append(asset(
         "apl_3007", "APL-3007 - siRNA targeting complement C3 (q-quarterly/biannual dosing)",
-        "Phase 1 (PK/PD data 2026/27; next-gen complement convenience)",
+        "Phase 2 (combo with Syfovre in GA; topline 2027; next-gen complement convenience)",
         "nucleic_acid.sirna.c3_silencer",
         [innov_ind("c3_sirna", "Complement-driven diseases (PNH + C3G + GA potential; SC q3-6mo dosing)",
                    "hematology.rare_blood.pnh",
@@ -226,11 +226,11 @@ def build_ASND():
         ("ticker", "ASND"),
         ("name", "Ascendis Pharma A/S"),
         ("currentPrice", 229.40),
-        ("sharesOut", 62),
+        ("sharesOut", 60.5),
         ("cash", 665),  # net cash: €616M @ 1.08
-        ("currency", "USD"),  # ADR; reports EUR but trades USD
+        ("currency", "USD"),  # post Apr 20 2026 ADR conversion to direct Nasdaq listing
         ("phase", "commercial"),
-        ("subtitle", "Danish-domiciled rare-disease specialty (NASDAQ ADR). FY25 revenue €720M / ~$778M (+98%): Yorvipath palopegteriparatide adult hypoparathyroidism €477M (FDA Aug 2024; first long-acting PTH post-Takeda Natpara recall), Skytrofa lonapegsomatropin pediatric GHD €206M (vs Pfizer Ngenla weekly + daily GHs), royalty/license €37M. Yuviwel/navepegritide CNP achondroplasia FDA APPROVED Feb 27 2026 (Q2 launch, vs BMRN Voxzogo daily). Q4 2025 first profitable qtr; FY26 op-CF guide €500M. TransCon platform pipeline: IL-2 β/γ Ph1/2 IL-Believe (mono+combo), TLR7/8 intratumoral Ph2 transcendIT-101. Net cash ~$665M; $120M buyback FY26."),
+        ("subtitle", "Danish-domiciled rare-disease specialty (Nasdaq direct listing post Apr 20 2026 ADR conversion). FY25 revenue €720M / ~$778M (+98%): Yorvipath palopegteriparatide adult hypoparathyroidism €477M (FDA Aug 2024; first long-acting PTH post-Takeda Natpara recall), Skytrofa lonapegsomatropin pediatric GHD €206M (vs Pfizer Ngenla weekly), royalty/license €37M. Yuviwel/navepegritide CNP achondroplasia FDA APPROVED Feb 27 2026 accelerated + 7-yr orphan exclusivity + Rare Pediatric Disease PRV; Q2 2026 US launch; EU CHMP Q4 2026 (vs BMRN Voxzogo daily). Q4 2025 first profitable qtr (€10M op profit). TransCon platform pipeline: IL-2 β/γ Ph1/2 IL-Believe (mono+pembro+chemo combos), TLR7/8 intratumoral combo Cohort 4 (post-PD-1 melanoma). Net cash €616M / ~$665M; €120M buyback FY26; $575M 2028 convertible redemption pending (up to 3.6M dilutive)."),
         ("yahooTicker", "ASND"),
     )
 
@@ -353,18 +353,18 @@ def build_ASND():
            ("type", "launch"), ("binary", False),
            ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
            ("_source", "Ascendis FY25 results; FDA approval Feb 27 2026"), ("_confidence", "high")),
-        od(("date", "H2 2026"), ("dateSort", "2026-09-30"), ("asset", "yuviwel_cnp"),
+        od(("date", "Q4 2026"), ("dateSort", "2026-11-30"), ("asset", "yuviwel_cnp"),
            ("indication", "achondroplasia"),
            ("title", "Yuviwel EU CHMP opinion (TransCon CNP achondroplasia)"),
            ("type", "ema_approval"), ("binary", True),
            ("fail_pos", 80), ("fail_apr", 85), ("success_pos", 98), ("success_apr", 95),
            ("_source", "Ascendis pipeline"), ("_confidence", "high")),
-        od(("date", "Q1 2027"), ("dateSort", "2027-03-31"), ("asset", "yorvipath"),
+        od(("date", "Q4 2025"), ("dateSort", "2025-12-31"), ("asset", "yorvipath"),
            ("indication", "hypoparathyroidism"),
-           ("title", "Yorvipath pediatric label submission"),
-           ("type", "bla_submission"), ("binary", False),
+           ("title", "PaTHway Adolescent trial initiation (pediatric label expansion in 12-<18yr)"),
+           ("type", "phase3_start"), ("binary", False),
            ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
-           ("_source", "Ascendis pipeline"), ("_confidence", "medium")),
+           ("_source", "Ascendis Q3 2025 results"), ("_confidence", "high")),
         od(("date", "2026-2027"), ("dateSort", "2027-06-30"), ("asset", "transcon_il2"),
            ("indication", "io_combo"),
            ("title", "TransCon IL-2 β/γ Ph2 readouts (mono + pembro combos)"),
@@ -384,13 +384,13 @@ def build_ASND():
 def build_INDV():
     co = od(
         ("ticker", "INDV"),
-        ("name", "Indivior plc"),
-        ("currentPrice", 14),
-        ("sharesOut", 131),
-        ("cash", 100),  # net cash: ~$340M cash - $240M term loan
-        ("currency", "USD"),  # post-NASDAQ relisting Jun 2024
+        ("name", "Indivior Pharmaceuticals, Inc."),
+        ("currentPrice", 37.80),
+        ("sharesOut", 122),
+        ("cash", 50),  # net cash post $295M DOJ payment + $400M buyback authorized
+        ("currency", "USD"),
         ("phase", "commercial"),
-        ("subtitle", "Opioid use disorder franchise (NASDAQ since Jun 2024; LSE delisted Jul 2024). FY25 revenue ~$1.22B: Sublocade SC monthly buprenorphine ER $850M (~85% LAI share; competing with Brixadi weekly+monthly Camurus/Braeburn taking ~10-15%), Suboxone film $140M post-LOE residual + AG, Opvee nalmefene nasal $20M (FDA May 2023 opioid overdose). Perseris divested to Genus mid-2024. Pipeline: INDV-2000 (Aelis-acquired) orexin OX1R antagonist Ph2 alcohol use disorder + AEF0117 CB1 NAM Ph2b cannabis use disorder. Net cash ~$100M post-buybacks."),
+        ("subtitle", "Opioid use disorder franchise (re-domiciled US + renamed Jan 2026 from Indivior plc; NASDAQ since Jun 2024). FY25 revenue $1.239B (+10%): Sublocade SC monthly buprenorphine ER $856M (+13%; ~70% US LAI share, ceding to Brixadi which crossed 30% YE25 from Camurus/Braeburn) + Suboxone film $300M post-LOE residual (declining 15%/yr) + Opvee nalmefene nasal $12M (marketing halted Sep 30 2025 post NY AG settlement; divestiture exploration). FDA Feb 2025 Sublocade label expansion: 1-hour rapid induction + alt injection sites. FY26 guidance: net revenue $1,125-1,195M (DOWN 5-9% on continued Suboxone decline + Brixadi share). FY25 capital return: $295M DOJ payment + $400M buyback. Pipeline: INDV-2000 orexin OX1R Ph2 OUD non-opioid maintenance (NOT alcohol; first patient Jun 2024). AEF0117 CB1 NAM CUD Ph2b FAILED Sep 2024 (Indivior unlikely to opt in)."),
         ("yahooTicker", "INDV"),
     )
 
@@ -407,7 +407,7 @@ def build_INDV():
                    slice_((20, 35, 18), (3, 25, 12), (0.2, 5, 5)),
                    {"us.reachPct": "Sublocade ~10-15% US OUD treated population on LAI vs daily Suboxone film",
                     "us.priceK": "Sublocade WAC ~$1.6K/mo × 12 = $18K/yr"},
-                   salesM=850, salesYear=2025, peakYear=2030, cagrPct=10, penPct=18)],
+                   salesM=856, salesYear=2025, peakYear=2030, cagrPct=8, penPct=18)],
         targets=["OPRM1"]))
 
     # Suboxone film - residual post-LOE
@@ -420,64 +420,57 @@ def build_INDV():
                    regions((2500, 25, 8), (1500, 18, 5), (5000, 5, 2)),
                    slice_((3, 30, 8), (0.5, 18, 5), (0, 0, 0)),
                    {"us.priceK": "Suboxone film WAC ~$8K/yr; AG/branded blended"},
-                   salesM=140, salesYear=2025, peakYear=2025, cagrPct=-15, penPct=18)]))
+                   salesM=300, salesYear=2025, peakYear=2025, cagrPct=-15, penPct=18)]))
 
-    # Opvee - opioid overdose reversal
+    # Opvee - marketing halted Sep 30 2025 post NY AG settlement; divestiture exploration
     assets.append(asset(
         "opvee", "Opvee (nalmefene nasal spray) - long-acting opioid antagonist for opioid overdose reversal",
-        "Commercial (FDA May 2023; harm-reduction channel; competing with naloxone)",
+        "Commercial-discontinued (FDA May 2023; marketing halted Sep 30 2025 post NY AG settlement; divestiture exploration)",
         "small_molecule.opioid.antagonist",
-        [innov_ind("opioid_overdose", "Opioid overdose emergency rescue (longer half-life vs naloxone for fentanyl)",
+        [innov_ind("opioid_overdose", "Opioid overdose emergency rescue (mostly BARDA orders post Sept 2025 marketing halt)",
                    "cns.psychiatry.substance_use.opioid",
                    regions((2500, 50, 0.4), (1500, 30, 0.2), (5000, 8, 0.1)),
-                   slice_((0.3, 35, 0.4), (0, 0, 0), (0, 0, 0)),
-                   {"us.priceK": "Opvee WAC ~$400/2pk; harm-reduction channel"},
-                   salesM=20, salesYear=2025, peakYear=2030, cagrPct=20, penPct=15)]))
+                   slice_((0.05, 20, 0.4), (0, 0, 0), (0, 0, 0)),
+                   {"us.priceK": "Opvee WAC ~$400/2pk; pending divestiture"},
+                   salesM=12, salesYear=2025, peakYear=2025, cagrPct=-30, penPct=10)]))
 
-    # Pipeline: INDV-2000 orexin alcohol use disorder
+    # INDV-2000: Phase 2 in OPIOID USE DISORDER (not AUD as originally tagged)
+    # First patient dosed Jun 2024; 3-month dose-ranging in OUD post-buprenorphine withdrawal
     assets.append(asset(
         "indv_2000", "INDV-2000 - selective orexin-1 OX1R antagonist (Aelis Farma acquisition)",
-        "Phase 2 (alcohol use disorder; readout 2026)",
+        "Phase 2 (opioid use disorder non-opioid maintenance; first patient Jun 2024; readout 2026/27)",
         "small_molecule.gpcr.orexin_antagonist",
-        [innov_ind("aud", "Alcohol use disorder (novel orexin-1 mechanism for craving reduction)",
-                   "cns.psychiatry.substance_use.alcohol",
-                   regions((15000, 8, 3), (20000, 5, 2), (60000, 2, 1)),
-                   slice_((0.3, 25, 5), (0.1, 18, 3), (0.01, 4, 1)),
-                   {"us.reachPct": "AUD treatment uptake low (<10% diagnosed); novel orexin niche",
-                    "us.priceK": "Estimated WAC $5K/yr if approved"},
+        [innov_ind("oud_orexin", "Opioid use disorder maintenance (novel orexin-1 mechanism; non-opioid-based MAT)",
+                   "cns.psychiatry.substance_use.opioid",
+                   regions((2500, 25, 8), (1500, 18, 5), (5000, 5, 2)),
+                   slice_((0.5, 30, 8), (0.1, 18, 5), (0.01, 5, 2)),
+                   {"us.reachPct": "INDV-2000 novel non-opioid MAT for OUD; differentiated from buprenorphine class",
+                    "us.priceK": "Estimated WAC $8K/yr if approved (parallel to oral OUD Rx)"},
                    peakYear=2032, cagrPct=0, penPct=10)]))
 
-    # AEF0117 cannabis use disorder
-    assets.append(asset(
-        "aef0117", "AEF0117 - CB1 receptor negative allosteric modulator (Aelis Farma collaboration)",
-        "Phase 2b (cannabis use disorder; readout 2026)",
-        "small_molecule.gpcr.cb1_nam",
-        [innov_ind("cud", "Cannabis use disorder (first-in-class CB1 NAM for craving + reward signaling)",
-                   "cns.psychiatry.substance_use.cannabis",
-                   regions((5000, 6, 3), (8000, 4, 2), (30000, 1, 1)),
-                   slice_((0.3, 25, 5), (0.1, 18, 3), (0.01, 3, 1)),
-                   {"us.reachPct": "CUD has no approved Rx; AEF0117 first-in-class NAM",
-                    "us.priceK": "Estimated WAC $5K/yr if approved"},
-                   peakYear=2032, cagrPct=0, penPct=8)]))
+    # NOTE: AEF0117 (CB1 NAM, cannabis use disorder) Ph2b FAILED Sep 2024
+    # (primary endpoint missed; final Mar 2025 confirmed 1mg trended -16% but p=0.077).
+    # Indivior PR'd it does not expect to opt-in. Asset removed from this config.
+    # Aelis Farma pursuing higher doses independently.
 
     # SOTP scenarios -- single-franchise commercial w/ Brixadi competition overhang
+    # FY26 guide $1,125-1,195M (DECLINING); use as anchor
     weights = {"mega_bear": 12, "bear": 25, "base": 38, "bull": 20, "psychedelic_bull": 5}
-    crev = {"mega_bear": 1100, "bear": 1180, "base": 1250, "bull": 1400, "psychedelic_bull": 1700}
-    # Conservative multiples: opioid sector ESG overhang + single-franchise + Brixadi
-    # share loss + DOJ residual. Market trades INDV ~1.4x EV/sales currently.
-    cmult = {"mega_bear": 0.9, "bear": 1.4, "base": 2.0, "bull": 2.8, "psychedelic_bull": 4.0}
+    crev = {"mega_bear": 1080, "bear": 1130, "base": 1180, "bull": 1300, "psychedelic_bull": 1500}
+    # Multiples reflect: post-rerating to ~$37 mcap, Brixadi at 30% LAI share, declining
+    # FY26 guide, plus offsetting label expansion + buyback yield. Market ~3x EV/sales.
+    cmult = {"mega_bear": 1.8, "bear": 2.5, "base": 3.2, "bull": 4.2, "psychedelic_bull": 5.5}
     pmult = {"mega_bear": 2, "bear": 3, "base": 5, "bull": 8, "psychedelic_bull": 12}
     pdr = {"mega_bear": 9, "bear": 8, "base": 7, "bull": 6, "psychedelic_bull": 5}
-    milestones = {"mega_bear": 0, "bear": 0, "base": 50, "bull": 150, "psychedelic_bull": 350}
+    milestones = {"mega_bear": 0, "bear": 0, "base": 25, "bull": 100, "psychedelic_bull": 250}
 
     SCEN = ["mega_bear", "bear", "base", "bull", "psychedelic_bull"]
     pos_grid = {
         "indv_2000": {"mega_bear": 10, "bear": 20, "base": 35, "bull": 50, "psychedelic_bull": 65},
-        "aef0117":   {"mega_bear": 12, "bear": 22, "base": 38, "bull": 55, "psychedelic_bull": 70},
     }
     apr_grid = {a: {"mega_bear": 55, "bear": 70, "base": 82, "bull": 90, "psychedelic_bull": 95} for a in pos_grid}
     pen_grid = {a: {"mega_bear": 0.3, "bear": 0.5, "base": 0.8, "bull": 1.05, "psychedelic_bull": 1.25} for a in pos_grid}
-    ind_map = {"indv_2000": "aud", "aef0117": "cud"}
+    ind_map = {"indv_2000": "oud_orexin"}
 
     scenarios = od()
     commercial_inert = [
@@ -507,24 +500,24 @@ def build_INDV():
         )
 
     catalysts = [
-        od(("date", "2026"), ("dateSort", "2026-06-30"), ("asset", "aef0117"),
-           ("indication", "cud"),
-           ("title", "AEF0117 cannabis use disorder Ph2b topline (Aelis collaboration)"),
-           ("type", "phase2_data"), ("binary", True),
-           ("fail_pos", 12), ("fail_apr", 60), ("success_pos", 55), ("success_apr", 85),
-           ("_source", "Indivior pipeline; Aelis Farma"), ("_confidence", "low")),
+        od(("date", "Feb 2025"), ("dateSort", "2025-02-24"), ("asset", "sublocade"),
+           ("indication", "oud_lai"),
+           ("title", "Sublocade label expansion: 1-hour rapid induction + alt injection sites (FDA approved)"),
+           ("type", "label_expansion"), ("binary", False),
+           ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
+           ("_source", "FDA label 209819s031; Indivior PR Feb 24 2025"), ("_confidence", "high")),
         od(("date", "H2 2026"), ("dateSort", "2026-12-15"), ("asset", "indv_2000"),
-           ("indication", "aud"),
-           ("title", "INDV-2000 orexin-1 alcohol use disorder Ph2 readout"),
+           ("indication", "oud_orexin"),
+           ("title", "INDV-2000 orexin-1 OUD Ph2 readout (3-mo dose-ranging post-buprenorphine withdrawal)"),
            ("type", "phase2_data"), ("binary", True),
            ("fail_pos", 10), ("fail_apr", 55), ("success_pos", 50), ("success_apr", 82),
-           ("_source", "Indivior pipeline"), ("_confidence", "low")),
+           ("_source", "Indivior pipeline; first patient Jun 2024"), ("_confidence", "low")),
         od(("date", "Q4 2026"), ("dateSort", "2026-12-15"), ("asset", "sublocade"),
            ("indication", "oud_lai"),
-           ("title", "Sublocade vs Brixadi US LAI share dynamics (Symphony/IQVIA tracking)"),
+           ("title", "Sublocade vs Brixadi US LAI share dynamics (Brixadi crossed 30% YE25)"),
            ("type", "milestone"), ("binary", False),
            ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
-           ("_source", "Indivior IR"), ("_confidence", "high")),
+           ("_source", "Camurus FY25 report; IQVIA tracking"), ("_confidence", "high")),
     ]
 
     return od(("company", co), ("assets", assets),

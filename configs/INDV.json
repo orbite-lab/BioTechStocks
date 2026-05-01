@@ -1,0 +1,595 @@
+{
+  "company": {
+    "ticker": "INDV",
+    "name": "Indivior plc",
+    "currentPrice": 14,
+    "sharesOut": 131,
+    "cash": 100,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Opioid use disorder franchise (NASDAQ since Jun 2024; LSE delisted Jul 2024). FY25 revenue ~$1.22B: Sublocade SC monthly buprenorphine ER $850M (~85% LAI share; competing with Brixadi weekly+monthly Camurus/Braeburn taking ~10-15%), Suboxone film $140M post-LOE residual + AG, Opvee nalmefene nasal $20M (FDA May 2023 opioid overdose). Perseris divested to Genus mid-2024. Pipeline: INDV-2000 (Aelis-acquired) orexin OX1R antagonist Ph2 alcohol use disorder + AEF0117 CB1 NAM Ph2b cannabis use disorder. Net cash ~$100M post-buybacks.",
+    "yahooTicker": "INDV"
+  },
+  "assets": [
+    {
+      "id": "sublocade",
+      "name": "Sublocade (buprenorphine extended-release SC monthly) - depot LAI for opioid use disorder",
+      "stage": "Commercial (FDA Nov 2017; flagship growth driver; ~85% LAI buprenorphine share)",
+      "modality": "small_molecule.opioid.partial_agonist_depot",
+      "targets": [
+        "OPRM1"
+      ],
+      "indications": [
+        {
+          "id": "oud_lai",
+          "name": "Opioid use disorder maintenance (long-acting injectable buprenorphine)",
+          "area": "cns.psychiatry.substance_use.opioid",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 25,
+                "priceK": 8
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 18,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 5000,
+                "wtpPct": 5,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 20,
+                "wtpPct": 35,
+                "priceK": 18
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 25,
+                "priceK": 12
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 5,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Sublocade ~10-15% US OUD treated population on LAI vs daily Suboxone film",
+              "us.priceK": "Sublocade WAC ~$1.6K/mo × 12 = $18K/yr"
+            },
+            "penPct": 18,
+            "cagrPct": 10,
+            "peakYear": 2030,
+            "salesM": 850,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "suboxone",
+      "name": "Suboxone film (buprenorphine + naloxone sublingual) - daily MAT for opioid use disorder",
+      "stage": "Commercial (post-LOE residual brand + AG economics; declining ~20%/yr)",
+      "modality": "small_molecule.opioid.partial_agonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "oud_daily",
+          "name": "Opioid use disorder daily MAT (post-LOE branded share + AG)",
+          "area": "cns.psychiatry.substance_use.opioid",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 25,
+                "priceK": 8
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 18,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 5000,
+                "wtpPct": 5,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 30,
+                "priceK": 8
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 18,
+                "priceK": 5
+              },
+              "row": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Suboxone film WAC ~$8K/yr; AG/branded blended"
+            },
+            "penPct": 18,
+            "cagrPct": -15,
+            "peakYear": 2025,
+            "salesM": 140,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "opvee",
+      "name": "Opvee (nalmefene nasal spray) - long-acting opioid antagonist for opioid overdose reversal",
+      "stage": "Commercial (FDA May 2023; harm-reduction channel; competing with naloxone)",
+      "modality": "small_molecule.opioid.antagonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "opioid_overdose",
+          "name": "Opioid overdose emergency rescue (longer half-life vs naloxone for fentanyl)",
+          "area": "cns.psychiatry.substance_use.opioid",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 50,
+                "priceK": 0.4
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 30,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 5000,
+                "wtpPct": 8,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8.6,
+                "wtpPct": 35,
+                "priceK": 0.4
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Opvee WAC ~$400/2pk; harm-reduction channel"
+            },
+            "penPct": 15,
+            "cagrPct": 20,
+            "peakYear": 2030,
+            "salesM": 20,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "indv_2000",
+      "name": "INDV-2000 - selective orexin-1 OX1R antagonist (Aelis Farma acquisition)",
+      "stage": "Phase 2 (alcohol use disorder; readout 2026)",
+      "modality": "small_molecule.gpcr.orexin_antagonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "aud",
+          "name": "Alcohol use disorder (novel orexin-1 mechanism for craving reduction)",
+          "area": "cns.psychiatry.substance_use.alcohol",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 15000,
+                "wtpPct": 8,
+                "priceK": 3
+              },
+              "eu": {
+                "patientsK": 20000,
+                "wtpPct": 5,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 60000,
+                "wtpPct": 2,
+                "priceK": 1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.3,
+                "wtpPct": 25,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 0.1,
+                "wtpPct": 18,
+                "priceK": 3
+              },
+              "row": {
+                "reachPct": 0.01,
+                "wtpPct": 4,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "AUD treatment uptake low (<10% diagnosed); novel orexin niche",
+              "us.priceK": "Estimated WAC $5K/yr if approved"
+            },
+            "penPct": 10,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "aef0117",
+      "name": "AEF0117 - CB1 receptor negative allosteric modulator (Aelis Farma collaboration)",
+      "stage": "Phase 2b (cannabis use disorder; readout 2026)",
+      "modality": "small_molecule.gpcr.cb1_nam",
+      "targets": [],
+      "indications": [
+        {
+          "id": "cud",
+          "name": "Cannabis use disorder (first-in-class CB1 NAM for craving + reward signaling)",
+          "area": "cns.psychiatry.substance_use.cannabis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5000,
+                "wtpPct": 6,
+                "priceK": 3
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 4,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 30000,
+                "wtpPct": 1,
+                "priceK": 1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.3,
+                "wtpPct": 25,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 0.1,
+                "wtpPct": 18,
+                "priceK": 3
+              },
+              "row": {
+                "reachPct": 0.01,
+                "wtpPct": 3,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "CUD has no approved Rx; AEF0117 first-in-class NAM",
+              "us.priceK": "Estimated WAC $5K/yr if approved"
+            },
+            "penPct": 8,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 12,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 2,
+        "commercialMult": 0.9,
+        "commercialRevM": 1100,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "sublocade": {
+          "oud_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "suboxone": {
+          "oud_daily": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "opvee": {
+          "opioid_overdose": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "indv_2000": {
+          "aud": {
+            "pos": 10,
+            "apr": 55,
+            "pen": 0.3
+          }
+        },
+        "aef0117": {
+          "cud": {
+            "pos": 12,
+            "apr": 55,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 3,
+        "commercialMult": 1.4,
+        "commercialRevM": 1180,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "sublocade": {
+          "oud_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "suboxone": {
+          "oud_daily": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "opvee": {
+          "opioid_overdose": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "indv_2000": {
+          "aud": {
+            "pos": 20,
+            "apr": 70,
+            "pen": 0.5
+          }
+        },
+        "aef0117": {
+          "cud": {
+            "pos": 22,
+            "apr": 70,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 38,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 5,
+        "commercialMult": 2.0,
+        "commercialRevM": 1250,
+        "milestones": 50,
+        "dil": 0
+      },
+      "assumptions": {
+        "sublocade": {
+          "oud_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "suboxone": {
+          "oud_daily": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "opvee": {
+          "opioid_overdose": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "indv_2000": {
+          "aud": {
+            "pos": 35,
+            "apr": 82,
+            "pen": 0.8
+          }
+        },
+        "aef0117": {
+          "cud": {
+            "pos": 38,
+            "apr": 82,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 8,
+        "commercialMult": 2.8,
+        "commercialRevM": 1400,
+        "milestones": 150,
+        "dil": 0
+      },
+      "assumptions": {
+        "sublocade": {
+          "oud_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "suboxone": {
+          "oud_daily": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "opvee": {
+          "opioid_overdose": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "indv_2000": {
+          "aud": {
+            "pos": 50,
+            "apr": 90,
+            "pen": 1.05
+          }
+        },
+        "aef0117": {
+          "cud": {
+            "pos": 55,
+            "apr": 90,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 12,
+        "commercialMult": 4.0,
+        "commercialRevM": 1700,
+        "milestones": 350,
+        "dil": 0
+      },
+      "assumptions": {
+        "sublocade": {
+          "oud_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "suboxone": {
+          "oud_daily": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "opvee": {
+          "opioid_overdose": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "indv_2000": {
+          "aud": {
+            "pos": 65,
+            "apr": 95,
+            "pen": 1.25
+          }
+        },
+        "aef0117": {
+          "cud": {
+            "pos": 70,
+            "apr": 95,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "2026",
+      "dateSort": "2026-06-30",
+      "asset": "aef0117",
+      "indication": "cud",
+      "title": "AEF0117 cannabis use disorder Ph2b topline (Aelis collaboration)",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 12,
+      "fail_apr": 60,
+      "success_pos": 55,
+      "success_apr": 85,
+      "_source": "Indivior pipeline; Aelis Farma",
+      "_confidence": "low"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-12-15",
+      "asset": "indv_2000",
+      "indication": "aud",
+      "title": "INDV-2000 orexin-1 alcohol use disorder Ph2 readout",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 10,
+      "fail_apr": 55,
+      "success_pos": 50,
+      "success_apr": 82,
+      "_source": "Indivior pipeline",
+      "_confidence": "low"
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "sublocade",
+      "indication": "oud_lai",
+      "title": "Sublocade vs Brixadi US LAI share dynamics (Symphony/IQVIA tracking)",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Indivior IR",
+      "_confidence": "high"
+    }
+  ]
+}

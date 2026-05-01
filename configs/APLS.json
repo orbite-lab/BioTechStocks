@@ -1,0 +1,509 @@
+{
+  "company": {
+    "ticker": "APLS",
+    "name": "Apellis Pharmaceuticals, Inc.",
+    "currentPrice": 27,
+    "sharesOut": 125,
+    "cash": -400,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Complement C3 platform leader. FY25 revenue ~$800M: Syfovre GA $635M (FDA Feb 2023; ~60-65% GA share vs Astellas Izervay), Empaveli PNH US $115M + Sobi ex-US royalty $50M (2nd-gen C3 inhibitor vs AZ Soliris/Ultomiris C5), Empaveli C3G/IC-MPGN US launch FY25 $20M (FDA Jul 2025; competing with Novartis Fabhalta iptacopan). Pipeline: APL-3007 siRNA C3 (Ph1; q-quarterly potential), APL-1030 oral C3 (preclinical). Net debt ~$400M (cash $340M, $747M converts maturing 2026/27).",
+    "yahooTicker": "APLS"
+  },
+  "assets": [
+    {
+      "id": "syfovre",
+      "name": "Syfovre (pegcetacoplan intravitreal) - PEGylated cyclic peptide C3 inhibitor for geographic atrophy",
+      "stage": "Commercial (FDA Feb 2023; intravitreal q1mo or q2mo)",
+      "modality": "peptide.cyclic.complement_c3",
+      "targets": [
+        "C3"
+      ],
+      "indications": [
+        {
+          "id": "ga_amd",
+          "name": "Geographic atrophy secondary to AMD",
+          "area": "ophthalmology.retina.ga",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1000,
+                "wtpPct": 35,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 10,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 65,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 50,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 8,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Syfovre ~60-65% US GA market share vs Astellas Izervay (avacincaptad C5)",
+              "us.priceK": "Syfovre WAC ~$2.1K/dose × 12/yr = ~$25K/yr"
+            },
+            "penPct": 10,
+            "cagrPct": 10,
+            "peakYear": 2030,
+            "salesM": 635,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "empaveli_pnh",
+      "name": "Empaveli (pegcetacoplan SC) - subcutaneous C3 inhibitor for PNH",
+      "stage": "Commercial (FDA May 2021; SC infusion 2-3x/week; Sobi ex-US partner as Aspaveli)",
+      "modality": "peptide.cyclic.complement_c3",
+      "targets": [
+        "C3"
+      ],
+      "indications": [
+        {
+          "id": "pnh",
+          "name": "Paroxysmal nocturnal hemoglobinuria (proximal C3 inhibition; PEGASUS Ph3 superiority over eculizumab)",
+          "area": "hematology.rare_blood.pnh",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 85,
+                "priceK": 480
+              },
+              "eu": {
+                "patientsK": 18,
+                "wtpPct": 75,
+                "priceK": 320
+              },
+              "row": {
+                "patientsK": 50,
+                "wtpPct": 22,
+                "priceK": 130
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 20,
+                "wtpPct": 60,
+                "priceK": 450
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 60,
+                "priceK": 280
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 20,
+                "priceK": 80
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Empaveli ~10-15% PNH share vs Soliris/Ultomiris (~85% AZ Alexion C5 dominance)",
+              "us.priceK": "Empaveli WAC ~$450K/yr (parallel to Ultomiris ~$540K)"
+            },
+            "penPct": 60,
+            "cagrPct": 15,
+            "peakYear": 2030,
+            "salesM": 165,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "empaveli_c3g",
+      "name": "Empaveli (pegcetacoplan SC) - C3G + IC-MPGN expansion (FDA Jul 2025 sBLA)",
+      "stage": "Commercial (FDA Jul 2025 C3G + primary IC-MPGN; first SC complement therapy in nephrology)",
+      "modality": "peptide.cyclic.complement_c3",
+      "targets": [
+        "C3"
+      ],
+      "indications": [
+        {
+          "id": "c3g",
+          "name": "C3 glomerulopathy (rare progressive glomerular disease; complement-driven)",
+          "area": "nephrology.glomerular.c3g",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 65,
+                "priceK": 280
+              },
+              "eu": {
+                "patientsK": 2,
+                "wtpPct": 45,
+                "priceK": 170
+              },
+              "row": {
+                "patientsK": 6,
+                "wtpPct": 10,
+                "priceK": 60
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 50,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 10,
+                "wtpPct": 50,
+                "priceK": 220
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 18,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Empaveli vs Novartis Fabhalta iptacopan (oral factor B) -- SC dosing competitive disadvantage but proximal C3",
+              "us.priceK": "Empaveli C3G WAC ~$350K/yr"
+            },
+            "penPct": 45,
+            "cagrPct": 80,
+            "peakYear": 2031,
+            "salesM": 20,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "apl_3007",
+      "name": "APL-3007 - siRNA targeting complement C3 (q-quarterly/biannual dosing)",
+      "stage": "Phase 1 (PK/PD data 2026/27; next-gen complement convenience)",
+      "modality": "nucleic_acid.sirna.c3_silencer",
+      "targets": [],
+      "indications": [
+        {
+          "id": "c3_sirna",
+          "name": "Complement-driven diseases (PNH + C3G + GA potential; SC q3-6mo dosing)",
+          "area": "hematology.rare_blood.pnh",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 85,
+                "priceK": 480
+              },
+              "eu": {
+                "patientsK": 18,
+                "wtpPct": 75,
+                "priceK": 320
+              },
+              "row": {
+                "patientsK": 50,
+                "wtpPct": 22,
+                "priceK": 130
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 50,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 220
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 18,
+                "priceK": 80
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $350K/yr q-quarterly siRNA",
+              "us.reachPct": "APL-3007 broad complement franchise share if approved"
+            },
+            "penPct": 60,
+            "cagrPct": 0,
+            "peakYear": 2034
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 12,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 2,
+        "commercialMult": 2.0,
+        "commercialRevM": 700,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "syfovre": {
+          "ga_amd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "empaveli_pnh": {
+          "pnh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "empaveli_c3g": {
+          "c3g": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "apl_3007": {
+          "c3_sirna": {
+            "pos": 15,
+            "apr": 60,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 3,
+        "commercialMult": 3.0,
+        "commercialRevM": 800,
+        "milestones": 25,
+        "dil": 0
+      },
+      "assumptions": {
+        "syfovre": {
+          "ga_amd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "empaveli_pnh": {
+          "pnh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "empaveli_c3g": {
+          "c3g": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "apl_3007": {
+          "c3_sirna": {
+            "pos": 25,
+            "apr": 75,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 38,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 5,
+        "commercialMult": 4.5,
+        "commercialRevM": 900,
+        "milestones": 75,
+        "dil": 0
+      },
+      "assumptions": {
+        "syfovre": {
+          "ga_amd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "empaveli_pnh": {
+          "pnh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "empaveli_c3g": {
+          "c3g": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "apl_3007": {
+          "c3_sirna": {
+            "pos": 40,
+            "apr": 85,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 8,
+        "commercialMult": 6.0,
+        "commercialRevM": 1100,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "syfovre": {
+          "ga_amd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "empaveli_pnh": {
+          "pnh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "empaveli_c3g": {
+          "c3g": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "apl_3007": {
+          "c3_sirna": {
+            "pos": 55,
+            "apr": 92,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 13,
+        "commercialMult": 9.0,
+        "commercialRevM": 1500,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "syfovre": {
+          "ga_amd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "empaveli_pnh": {
+          "pnh": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "empaveli_c3g": {
+          "c3g": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "apl_3007": {
+          "c3_sirna": {
+            "pos": 70,
+            "apr": 96,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "empaveli_c3g",
+      "indication": "c3g",
+      "title": "Empaveli C3G/IC-MPGN EU CHMP opinion + US ramp",
+      "type": "ema_approval",
+      "binary": true,
+      "fail_pos": 70,
+      "fail_apr": 80,
+      "success_pos": 95,
+      "success_apr": 95,
+      "_source": "Apellis pipeline disclosure",
+      "_confidence": "high"
+    },
+    {
+      "date": "Sept 2026",
+      "dateSort": "2026-09-15",
+      "asset": "syfovre",
+      "indication": "ga_amd",
+      "title": "Convertible note refinancing ($402.5M 2026 notes maturity)",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "APLS 10-K",
+      "_confidence": "high"
+    },
+    {
+      "date": "2026-2027",
+      "dateSort": "2027-06-30",
+      "asset": "apl_3007",
+      "indication": "c3_sirna",
+      "title": "APL-3007 siRNA C3 Ph1 PK/PD data",
+      "type": "phase1_data",
+      "binary": true,
+      "fail_pos": 15,
+      "fail_apr": 60,
+      "success_pos": 50,
+      "success_apr": 85,
+      "_source": "Apellis pipeline",
+      "_confidence": "low"
+    }
+  ]
+}

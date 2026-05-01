@@ -1,0 +1,608 @@
+{
+  "company": {
+    "ticker": "ASND",
+    "name": "Ascendis Pharma A/S",
+    "currentPrice": 229.4,
+    "sharesOut": 62,
+    "cash": 665,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Danish-domiciled rare-disease specialty (NASDAQ ADR). FY25 revenue €720M / ~$778M (+98%): Yorvipath palopegteriparatide adult hypoparathyroidism €477M (FDA Aug 2024; first long-acting PTH post-Takeda Natpara recall), Skytrofa lonapegsomatropin pediatric GHD €206M (vs Pfizer Ngenla weekly + daily GHs), royalty/license €37M. Yuviwel/navepegritide CNP achondroplasia FDA APPROVED Feb 27 2026 (Q2 launch, vs BMRN Voxzogo daily). Q4 2025 first profitable qtr; FY26 op-CF guide €500M. TransCon platform pipeline: IL-2 β/γ Ph1/2 IL-Believe (mono+combo), TLR7/8 intratumoral Ph2 transcendIT-101. Net cash ~$665M; $120M buyback FY26.",
+    "yahooTicker": "ASND"
+  },
+  "assets": [
+    {
+      "id": "yorvipath",
+      "name": "Yorvipath (palopegteriparatide) - long-acting PTH(1-34) prodrug for adult hypoparathyroidism",
+      "stage": "Commercial (FDA Aug 2024; EU Nov 2023; pediatric submission targeted Q1 2027)",
+      "modality": "peptide.long_acting.pth_analog",
+      "targets": [],
+      "indications": [
+        {
+          "id": "hypoparathyroidism",
+          "name": "Adult chronic hypoparathyroidism (insufficient PTH; calcium/phosphate dysregulation)",
+          "area": "rare_disease.endocrine.hypoparathyroidism",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 90,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 130,
+                "wtpPct": 60,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 300,
+                "wtpPct": 18,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 65,
+                "priceK": 180
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 55,
+                "priceK": 110
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 18,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Yorvipath only long-acting PTH post-Takeda Natpara recall 2019; first-in-class adult HP",
+              "us.priceK": "Yorvipath WAC ~$180K/yr (parallel to Natpara historical pricing)"
+            },
+            "penPct": 30,
+            "cagrPct": 35,
+            "peakYear": 2031,
+            "salesM": 515,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "skytrofa",
+      "name": "Skytrofa (lonapegsomatropin) - long-acting weekly GH analog (TransCon hGH)",
+      "stage": "Commercial (FDA Aug 2021; EU 2022; adult GHD label expansion in development)",
+      "modality": "peptide.long_acting.gh_analog",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ped_ghd",
+          "name": "Pediatric growth hormone deficiency (TransCon weekly hGH)",
+          "area": "endocrine.pituitary.gh_deficiency",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80,
+                "wtpPct": 60,
+                "priceK": 32
+              },
+              "eu": {
+                "patientsK": 100,
+                "wtpPct": 50,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 400,
+                "wtpPct": 15,
+                "priceK": 10
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 15.6,
+                "wtpPct": 60,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 6.2,
+                "wtpPct": 50,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Skytrofa ~15% pediatric GHD share vs Pfizer Ngenla weekly + daily GHs (Genotropin/Norditropin/Humatrope)",
+              "us.priceK": "Skytrofa WAC ~$35K/yr blended pediatric"
+            },
+            "penPct": 35,
+            "cagrPct": 10,
+            "peakYear": 2030,
+            "salesM": 222,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "yuviwel_cnp",
+      "name": "Yuviwel (navepegritide) - long-acting weekly CNP analog (TransCon CNP)",
+      "stage": "Commercial FDA Feb 27 2026 accelerated approval (Q2 2026 US launch); EU CHMP H2 2026",
+      "modality": "peptide.long_acting.cnp_analog",
+      "targets": [],
+      "indications": [
+        {
+          "id": "achondroplasia",
+          "name": "Achondroplasia age 2+ (vs BMRN Voxzogo daily; weekly dosing convenience)",
+          "area": "musculoskeletal.bone_cartilage.achondroplasia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 70,
+                "priceK": 320
+              },
+              "eu": {
+                "patientsK": 12,
+                "wtpPct": 55,
+                "priceK": 210
+              },
+              "row": {
+                "patientsK": 8,
+                "wtpPct": 25,
+                "priceK": 150
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 40,
+                "wtpPct": 65,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 55,
+                "priceK": 150
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 18,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Yuviwel weekly vs Voxzogo daily; ~30-40% achondroplasia share post-launch",
+              "us.priceK": "Yuviwel WAC ~$250K/yr (parallel to Voxzogo)"
+            },
+            "penPct": 40,
+            "cagrPct": 80,
+            "peakYear": 2032,
+            "salesM": 15,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "transcon_il2",
+      "name": "TransCon IL-2 β/γ - long-acting biased IL-2 cytokine (TransCon platform)",
+      "stage": "Phase 1/2 IL-Believe (RP2D 120ug/kg q3w; mono + pembro + chemo combos)",
+      "modality": "recombinant_protein.cytokine.il2",
+      "targets": [],
+      "indications": [
+        {
+          "id": "io_combo",
+          "name": "IO-eligible solid tumors (multi-tumor IL-2 + checkpoint combos)",
+          "area": "oncology.multi_tumor_io.pd1_pdl1_eligible",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 80,
+                "priceK": 150
+              },
+              "eu": {
+                "patientsK": 700,
+                "wtpPct": 70,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 50,
+                "priceK": 70
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $100K/yr in IO combo"
+            },
+            "penPct": 10,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "transcon_tlr78",
+      "name": "TransCon TLR7/8 - intratumoral long-acting innate immunity agonist",
+      "stage": "Phase 2 transcendIT-101 (HNSCC + cSCC + melanoma + HPV+ tumors)",
+      "modality": "small_molecule.tlr_agonist.intratumoral",
+      "targets": [],
+      "indications": [
+        {
+          "id": "io_intratumoral",
+          "name": "Intratumoral immunotherapy in advanced solid tumors (HNSCC + cSCC + melanoma)",
+          "area": "oncology.head_neck.hnscc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 70,
+                "wtpPct": 65,
+                "priceK": 145
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 50,
+                "priceK": 85
+              },
+              "row": {
+                "patientsK": 600,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1,
+                "wtpPct": 50,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 50,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 18,
+                "priceK": 15
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $80K/course intratumoral"
+            },
+            "penPct": 55,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 8,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 3,
+        "commercialMult": 4.0,
+        "commercialRevM": 850,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "yorvipath": {
+          "hypoparathyroidism": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "skytrofa": {
+          "ped_ghd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "yuviwel_cnp": {
+          "achondroplasia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "transcon_il2": {
+          "io_combo": {
+            "pos": 12,
+            "apr": 60,
+            "pen": 0.3
+          }
+        },
+        "transcon_tlr78": {
+          "io_intratumoral": {
+            "pos": 10,
+            "apr": 60,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 22,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 5,
+        "commercialMult": 6.0,
+        "commercialRevM": 1000,
+        "milestones": 50,
+        "dil": 0
+      },
+      "assumptions": {
+        "yorvipath": {
+          "hypoparathyroidism": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "skytrofa": {
+          "ped_ghd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "yuviwel_cnp": {
+          "achondroplasia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "transcon_il2": {
+          "io_combo": {
+            "pos": 22,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "transcon_tlr78": {
+          "io_intratumoral": {
+            "pos": 20,
+            "apr": 75,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 40,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 7,
+        "commercialMult": 8.5,
+        "commercialRevM": 1200,
+        "milestones": 150,
+        "dil": 0
+      },
+      "assumptions": {
+        "yorvipath": {
+          "hypoparathyroidism": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "skytrofa": {
+          "ped_ghd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "yuviwel_cnp": {
+          "achondroplasia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "transcon_il2": {
+          "io_combo": {
+            "pos": 35,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "transcon_tlr78": {
+          "io_intratumoral": {
+            "pos": 32,
+            "apr": 85,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 10,
+        "commercialMult": 11.0,
+        "commercialRevM": 1500,
+        "milestones": 400,
+        "dil": 0
+      },
+      "assumptions": {
+        "yorvipath": {
+          "hypoparathyroidism": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "skytrofa": {
+          "ped_ghd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "yuviwel_cnp": {
+          "achondroplasia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "transcon_il2": {
+          "io_combo": {
+            "pos": 50,
+            "apr": 92,
+            "pen": 1.05
+          }
+        },
+        "transcon_tlr78": {
+          "io_intratumoral": {
+            "pos": 48,
+            "apr": 92,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 15,
+        "commercialMult": 15.0,
+        "commercialRevM": 2200,
+        "milestones": 800,
+        "dil": 0
+      },
+      "assumptions": {
+        "yorvipath": {
+          "hypoparathyroidism": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "skytrofa": {
+          "ped_ghd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "yuviwel_cnp": {
+          "achondroplasia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "transcon_il2": {
+          "io_combo": {
+            "pos": 65,
+            "apr": 96,
+            "pen": 1.25
+          }
+        },
+        "transcon_tlr78": {
+          "io_intratumoral": {
+            "pos": 62,
+            "apr": 96,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Q2 2026",
+      "dateSort": "2026-06-30",
+      "asset": "yuviwel_cnp",
+      "indication": "achondroplasia",
+      "title": "Yuviwel (TransCon CNP) US commercial launch",
+      "type": "launch",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Ascendis FY25 results; FDA approval Feb 27 2026",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "yuviwel_cnp",
+      "indication": "achondroplasia",
+      "title": "Yuviwel EU CHMP opinion (TransCon CNP achondroplasia)",
+      "type": "ema_approval",
+      "binary": true,
+      "fail_pos": 80,
+      "fail_apr": 85,
+      "success_pos": 98,
+      "success_apr": 95,
+      "_source": "Ascendis pipeline",
+      "_confidence": "high"
+    },
+    {
+      "date": "Q1 2027",
+      "dateSort": "2027-03-31",
+      "asset": "yorvipath",
+      "indication": "hypoparathyroidism",
+      "title": "Yorvipath pediatric label submission",
+      "type": "bla_submission",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Ascendis pipeline",
+      "_confidence": "medium"
+    },
+    {
+      "date": "2026-2027",
+      "dateSort": "2027-06-30",
+      "asset": "transcon_il2",
+      "indication": "io_combo",
+      "title": "TransCon IL-2 β/γ Ph2 readouts (mono + pembro combos)",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 12,
+      "fail_apr": 60,
+      "success_pos": 50,
+      "success_apr": 85,
+      "_source": "Ascendis pipeline",
+      "_confidence": "low"
+    }
+  ]
+}

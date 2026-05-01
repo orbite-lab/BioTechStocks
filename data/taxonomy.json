@@ -10,10 +10,10 @@
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
-    "area_count_l3": 307,
-    "area_count_l4": 30,
-    "modality_count": 611,
-    "companies": 114
+    "area_count_l3": 308,
+    "area_count_l4": 32,
+    "modality_count": 621,
+    "companies": 117
   },
   "therapeutic_areas": {
     "cardio_metabolic": {
@@ -892,16 +892,32 @@
         },
         "substance_use": {
           "companies": [
-            "HIK"
+            "HIK",
+            "INDV"
           ],
-          "count": 1,
+          "count": 2,
           "rare": false,
           "sub": {
-            "opioid": {
+            "alcohol": {
               "companies": [
-                "HIK"
+                "INDV"
               ],
               "count": 1,
+              "rare": false
+            },
+            "cannabis": {
+              "companies": [
+                "INDV"
+              ],
+              "count": 1,
+              "rare": false
+            },
+            "opioid": {
+              "companies": [
+                "HIK",
+                "INDV"
+              ],
+              "count": 2,
               "rare": false
             }
           }
@@ -1244,12 +1260,13 @@
         },
         "gh_deficiency": {
           "companies": [
+            "ASND",
             "IPN",
             "MRK_DE",
             "NOVO",
             "SDZ"
           ],
-          "count": 4,
+          "count": 5,
           "rare": false
         }
       },
@@ -1384,11 +1401,12 @@
         "pnh": {
           "companies": [
             "4519",
+            "APLS",
             "AZN",
             "NVS",
             "RHHBY"
           ],
-          "count": 4,
+          "count": 5,
           "rare": true
         },
         "vod_hsct": {
@@ -1984,10 +2002,11 @@
       "bone_cartilage": {
         "achondroplasia": {
           "companies": [
+            "ASND",
             "BBIO",
             "BMRN"
           ],
-          "count": 2,
+          "count": 3,
           "rare": true
         },
         "osteoporosis": {
@@ -2194,9 +2213,10 @@
         },
         "c3g": {
           "companies": [
+            "APLS",
             "NVS"
           ],
-          "count": 1,
+          "count": 2,
           "rare": false
         },
         "fsgs": {
@@ -2522,13 +2542,14 @@
         "hnscc": {
           "companies": [
             "4503",
+            "ASND",
             "BAYN",
             "GMAB",
             "IMTX",
             "MRK",
             "MRK_DE"
           ],
-          "count": 6,
+          "count": 7,
           "rare": false
         },
         "npc": {
@@ -2947,9 +2968,10 @@
         "pd1_pdl1_eligible": {
           "companies": [
             "4528",
+            "ASND",
             "SDZ"
           ],
-          "count": 2,
+          "count": 3,
           "rare": false
         }
       },
@@ -3185,9 +3207,10 @@
         "ga": {
           "companies": [
             "4503",
-            "4506"
+            "4506",
+            "APLS"
           ],
-          "count": 2,
+          "count": 3,
           "rare": false
         },
         "nvamd": {
@@ -3234,6 +3257,13 @@
         "congenital_hyperinsulinism": {
           "companies": [
             "HANMI"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "hypoparathyroidism": {
+          "companies": [
+            "ASND"
           ],
           "count": 1,
           "rare": false
@@ -4831,6 +4861,12 @@
         }
       },
       "sirna": {
+        "c3_silencer": {
+          "companies": [
+            "APLS"
+          ],
+          "count": 1
+        },
         "dmpk": {
           "companies": [
             "SRPT"
@@ -4904,6 +4940,14 @@
       }
     },
     "peptide": {
+      "cyclic": {
+        "complement_c3": {
+          "companies": [
+            "APLS"
+          ],
+          "count": 1
+        }
+      },
       "cytokine": {
         "il23_oral": {
           "companies": [
@@ -5000,6 +5044,26 @@
         "glp1_gip_glucagon": {
           "companies": [
             "LLY"
+          ],
+          "count": 1
+        }
+      },
+      "long_acting": {
+        "cnp_analog": {
+          "companies": [
+            "ASND"
+          ],
+          "count": 1
+        },
+        "gh_analog": {
+          "companies": [
+            "ASND"
+          ],
+          "count": 1
+        },
+        "pth_analog": {
+          "companies": [
+            "ASND"
           ],
           "count": 1
         }
@@ -5271,9 +5335,10 @@
         },
         "il2": {
           "companies": [
+            "ASND",
             "NKTR"
           ],
-          "count": 1
+          "count": 2
         },
         "leptin_analog": {
           "companies": [
@@ -6210,6 +6275,12 @@
           ],
           "count": 1
         },
+        "cb1_nam": {
+          "companies": [
+            "INDV"
+          ],
+          "count": 1
+        },
         "cgrp_antagonist": {
           "companies": [
             "ABBV",
@@ -6368,9 +6439,10 @@
         },
         "orexin_antagonist": {
           "companies": [
+            "INDV",
             "MRK"
           ],
-          "count": 1
+          "count": 2
         },
         "p2y12_antagonist": {
           "companies": [
@@ -7141,6 +7213,26 @@
           "count": 1
         }
       },
+      "opioid": {
+        "antagonist": {
+          "companies": [
+            "INDV"
+          ],
+          "count": 1
+        },
+        "partial_agonist": {
+          "companies": [
+            "INDV"
+          ],
+          "count": 1
+        },
+        "partial_agonist_depot": {
+          "companies": [
+            "INDV"
+          ],
+          "count": 1
+        }
+      },
       "osmotic": {
         "sugar_alcohol": {
           "companies": [
@@ -7401,6 +7493,14 @@
         "ribitol": {
           "companies": [
             "BBIO"
+          ],
+          "count": 1
+        }
+      },
+      "tlr_agonist": {
+        "intratumoral": {
+          "companies": [
+            "ASND"
           ],
           "count": 1
         }

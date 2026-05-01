@@ -122,13 +122,13 @@ def build_HALO():
         ("ticker", "HALO"),
         ("name", "Halozyme Therapeutics, Inc."),
         ("currentPrice", 64.29),
-        ("sharesOut", 117.6),
+        ("sharesOut", 118.47),
         # Net debt post Elektrofi $750M close + $1.5B convert refi: cash $145M
         # vs ~$2B+ converts -> net debt ~-$1,800M
         ("cash", -1800),
         ("currency", "USD"),
         ("phase", "commercial"),
-        ("subtitle", "ENHANZE rHuPH20 SC delivery royalty platform + Hypercon (Elektrofi acq Nov 2025 $750M+$150M). FY25 record revenue $1.397B (+38% YoY): royalty $868M (+52% on Darzalex Faspro/Phesgo/Vyvgart Hytrulo) + product/other $529M (Hylenex, XYOSTED testosterone, OTREXUP methotrexate via Antares 2022 $960M acq, manufacturing, milestones). Approved partner programs: J&J Darzalex Faspro (myeloma), Roche Phesgo (HER2 breast) + Tecentriq SC, argenx Vyvgart Hytrulo (gMG/CIDP), Takeda Hyqvia (PI/CIDP), BMS Opdivo Qvantig (FDA Dec 2024 multi-tumor IO). Pending: Merck Keytruda Qlex SC pembrolizumab (FDA filing pending), AZ Imfinzi SC durvalumab. 2026 guide: +23-30% revenue; >$2B by 2028. Net debt ~$1.8B post-Nov 2025 $1.5B convert refi (issued $750M 2031 + $750M 2032 notes; partial repurchase 2027/2028 converts). 3 new ENHANZE deals 2025 (Takeda, Merus, Skye Bio)."),
+        ("subtitle", "ENHANZE rHuPH20 SC delivery royalty platform + Hypercon (Elektrofi acq Nov 18 2025 $750M+$150M) + Surf Bio (Dec 2025 add'l platform). FY25 record revenue $1.397B (+38% YoY): royalty $868M (+52% on Darzalex Faspro/Phesgo/Vyvgart Hytrulo) + product/other $529M (Hylenex, XYOSTED, OTREXUP via Antares 2022 $960M acq, manufacturing). Approved ENHANZE partner programs: J&J Darzalex Faspro (myeloma), Roche Phesgo (HER2) + Tecentriq SC, argenx Vyvgart Hytrulo (gMG/CIDP), Takeda Hyqvia (PI/CIDP), BMS Opdivo Qvantig (FDA Dec 2024; Q1'25 only $9M pre-J-code, permanent J-code Jul 2025). LITIGATION: Halozyme sued Merck Apr 2025 alleging 15 MDASE patent infringement on Keytruda Qlex SC (FDA approved Sep 19 2025; uses ALTEOGEN Hybrozyme NOT ENHANZE) -- treat as litigation upside, not royalty asset. Imfinzi SC: no AZ filing exists. 2026 guide: +23-30% revenue; >$2B by 2028. 3 new ENHANZE deals 2025 (Takeda + Merus + Skye Bio); Surf Bio acq Dec 2025."),
         ("yahooTicker", "HALO"),
     )
 
@@ -329,12 +329,12 @@ def build_EXEL():
         "Phase 3 (STELLAR-303 mCRC NDA accepted PDUFA Dec 3 2026; STELLAR-304 nccRCC topline H1 2026)",
         "small_molecule.kinase.multi_tki",
         [
-            innov_ind("crc_2l", "2L+ mCRC + atezolizumab combo (STELLAR-303 met OS in ITT; PDUFA Dec 3 2026)",
+            innov_ind("crc_2l", "2L+ mCRC + atezolizumab combo (STELLAR-303 OS hit ITT 10.9m vs 9.4m regorafenib; NDA accepted Feb 2 2026; PDUFA Dec 3 2026)",
                       "oncology.gi.colorectal",
                       regions((150, 80, 30), (250, 70, 20), (1500, 15, 6)),
-                      slice_((10, 60, 80), (5, 50, 50), (0.3, 18, 12)),
-                      {"us.priceK": "Estimated zanzalintinib WAC ~$200K/yr (parallel to Cabometyx)",
-                       "us.reachPct": "Zanza CRC niche post-FOLFIRI/Stivarga/Lonsurf; ~10-15% 2L+ mCRC"},
+                      slice_((15, 65, 150), (8, 55, 100), (0.5, 18, 25)),
+                      {"us.priceK": "Zanzalintinib WAC ~$150K/yr blended (parallel to Cabometyx ~$200K)",
+                       "us.reachPct": "Zanza CRC ~12-15% 2L+ mCRC post-FOLFIRI/Stivarga/Lonsurf; mgmt guides $5B US peak by 2033 across CRC+RCC; William Blair $875M risk-adj US CRC peak alone"},
                       peakYear=2031, cagrPct=0, penPct=18),
             innov_ind("nccrcc_1l", "1L non-clear cell RCC + nivolumab combo (STELLAR-304 topline H1 2026)",
                       "oncology.genitourinary.rcc",
@@ -396,18 +396,24 @@ def build_EXEL():
                                      pipeline_asmp_by_scen=pipeline_asmps)
 
     catalysts = [
-        od(("date", "H1 2026"), ("dateSort", "2026-04-30"), ("asset", "zanzalintinib"),
+        od(("date", "Mid 2026"), ("dateSort", "2026-07-15"), ("asset", "zanzalintinib"),
            ("indication", "nccrcc_1l"),
-           ("title", "Zanzalintinib STELLAR-304 nccRCC + nivo Ph3 topline (H1 2026)"),
+           ("title", "Zanzalintinib STELLAR-304 nccRCC + nivo Ph3 topline (mid-2026; enrollment complete May 2025)"),
            ("type", "phase3_data"), ("binary", True),
            ("fail_pos", 35), ("fail_apr", 70), ("success_pos", 88), ("success_apr", 92),
-           ("_source", "Exelixis pipeline; STELLAR-304"), ("_confidence", "high")),
+           ("_source", "Exelixis Jan 2026 prelim FY25 release"), ("_confidence", "high")),
+        od(("date", "Mid 2026"), ("dateSort", "2026-08-15"), ("asset", "zanzalintinib"),
+           ("indication", "crc_2l"),
+           ("title", "STELLAR-316 (CRC adjuvant MRD+ Natera ctDNA; DFS primary) + STELLAR-201 (recurrent meningioma) Ph3 initiations"),
+           ("type", "phase3_start"), ("binary", False),
+           ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
+           ("_source", "Exelixis Q4 2025 IR + Natera collaboration"), ("_confidence", "high")),
         od(("date", "Dec 3 2026"), ("dateSort", "2026-12-03"), ("asset", "zanzalintinib"),
            ("indication", "crc_2l"),
-           ("title", "Zanzalintinib STELLAR-303 mCRC + atezo PDUFA (NDA accepted; OS hit ITT)"),
+           ("title", "Zanzalintinib STELLAR-303 mCRC + atezo PDUFA (NDA accepted Feb 2 2026; OS 10.9m vs 9.4m regorafenib ITT)"),
            ("type", "pdufa"), ("binary", True),
-           ("fail_pos", 60), ("fail_apr", 75), ("success_pos", 95), ("success_apr", 95),
-           ("_source", "FDA NDA acceptance; Exelixis pipeline"), ("_confidence", "high")),
+           ("fail_pos", 70), ("fail_apr", 80), ("success_pos", 96), ("success_apr", 96),
+           ("_source", "FDA NDA acceptance Feb 2 2026"), ("_confidence", "high")),
         od(("date", "Mar 2025"), ("dateSort", "2025-03-15"), ("asset", "cabometyx_other"),
            ("indication", "net_pnet"),
            ("title", "Cabometyx CABINET NET FDA approval (pNET + epNET expansion)"),
@@ -430,11 +436,12 @@ def build_ALKS():
         ("name", "Alkermes plc"),
         ("currentPrice", 34.53),
         ("sharesOut", 166),
-        # Cash $1.32B YE25 minus Avadel $2.1B (Feb 2026) = ~-$800M post-deal
-        ("cash", -800),
+        # YE25 cash+inv $1.32B; Avadel $2.1B financing = $775M cash + $1.525B new
+        # term loans -> post-close net debt ~ -$980M
+        ("cash", -980),
         ("currency", "USD"),
         ("phase", "commercial"),
-        ("subtitle", "CNS specialty (LAI psychiatry + addiction + sleep). FY25 revenue ~$1.5B: Vivitrol naltrexone monthly LAI (OUD+AUD) $468M; Aristada/Aristada Initio aripiprazole monthly+bi-monthly LAI (schizo) $370M; Lybalvi olanzapine+samidorphan (schizo+bipolar I) $347M; Vumerity Biogen royalty (MS) $130.5M; Invega Sustenna/Trinza J&J royalty $109.6M; Risperdal Consta + others ~$50M. Avadel acq closed Feb 12 2026 ($2.1B + $1.50/sh CVR on IH approval by 2028) added LUMRYZ sodium oxybate ER (narcolepsy ~$275M FY25 growing; IH filing pursued). Mural Oncology fully spun off Nov 2023 (no economic interest). FY26 guide $1.73-1.84B. ALKS net debt now ~$0.8B post-Avadel; pre-deal $1.3B net cash. PIPELINE: alixorexton (ALKS 2680) selective OX2R agonist VIBRANCE-1 NT1 Ph2 hit 2025; Ph3 narcolepsy starts Q1 2026; VIBRANCE-2 NT2 + VIBRANCE-3 IH ongoing."),
+        ("subtitle", "CNS specialty (LAI psychiatry + addiction + sleep). FY25 revenue ~$1.5B: Vivitrol naltrexone monthly LAI (OUD+AUD) $467.9M; Aristada/Initio aripiprazole LAI $370.0M (schizo); Lybalvi olanzapine+samidorphan $346.7M (schizo+bipolar I); Vumerity Biogen MS royalty $130.5M; Invega Sustenna/Trinza J&J royalty $109.6M (declining XEPLION LOE); Risperdal Consta + other ~$50M. Avadel acq closed Feb 12 2026 ($2.1B = $775M cash + $1.525B new term loans + $1.50/sh CVR on FDA approval of LUMRYZ for IH by end-2028) added LUMRYZ sodium oxybate ER ($275M FY25 narco; FY26 guide $315-335M; once-nightly differentiated vs Xyrem twice-nightly). Mural Oncology fully spun off Nov 2023 (no economic interest retained). FY26 guide $1.73-1.84B incl Lumryz. CEO transition: Richard Pops retires Jul 31 2026; Blair Jackson (COO) becomes CEO Aug 1 2026. PIPELINE: alixorexton (ALKS 2680) selective OX2R agonist -- VIBRANCE-1 NT1 Ph2 hit primary 2025; VIBRANCE-2 NT2 hit dual primary (MWT + ESS) 2025; FDA Breakthrough Therapy Designation NT1 Jan 6 2026; BRILLIANCE Ph3 program initiated Apr 1 2026 (3 studies: 302+304 NT1, 303 NT2; topline 2027/2028)."),
         ("yahooTicker", "ALKS"),
     )
 
@@ -528,20 +535,20 @@ def build_ALKS():
                    salesM=110, salesYear=2025, peakYear=2026, cagrPct=-30, penPct=20,
                    generic_bucket=True)]))
 
-    # Alixorexton (ALKS 2680) - OX2R agonist Ph3 narcolepsy
+    # Alixorexton (ALKS 2680) - OX2R agonist; BRILLIANCE Ph3 NT1+NT2 initiated Apr 1 2026
     assets.append(asset(
-        "alixorexton", "Alixorexton (ALKS 2680) - selective orexin-2 receptor (OX2R) agonist for narcolepsy",
-        "Phase 3 (VIBRANCE-1 NT1 Ph2 hit primary 2025; Ph3 NT1 initiated Q1 2026; VIBRANCE-2 NT2 + VIBRANCE-3 IH ongoing)",
+        "alixorexton", "Alixorexton (ALKS 2680) - selective orexin-2 receptor (OX2R) agonist; BRILLIANCE Ph3 program",
+        "Phase 3 BRILLIANCE (initiated Apr 1 2026; Studies 302+304 NT1 + Study 303 NT2; FDA Breakthrough NT1 Jan 6 2026; VIBRANCE-1 NT1 + VIBRANCE-2 NT2 Ph2 both hit primary 2025)",
         "small_molecule.gpcr.orexin_2_agonist",
         [
-            innov_ind("nt1_alix", "Narcolepsy type 1 (with cataplexy; selective OX2R agonist)",
+            innov_ind("nt1_alix", "Narcolepsy type 1 (with cataplexy; selective OX2R agonist; FDA Breakthrough Designation Jan 2026)",
                       "cns.sleep.narcolepsy",
                       regions((25, 80, 50), (40, 65, 30), (150, 18, 8)),
                       slice_((15, 70, 100), (3, 50, 60), (0.2, 18, 15)),
                       {"us.reachPct": "Alixorexton vs Lumryz/Xywav/Xyrem; first selective OX2R disease-modifying for cataplexy",
                        "us.priceK": "Estimated WAC $100K/yr (vs Lumryz $90K)"},
                       peakYear=2032, cagrPct=0, penPct=20),
-            innov_ind("nt2_ih_alix", "Narcolepsy type 2 + idiopathic hypersomnia (without cataplexy)",
+            innov_ind("nt2_alix", "Narcolepsy type 2 (without cataplexy; VIBRANCE-2 hit dual primary MWT+ESS)",
                       "cns.sleep.narcolepsy",
                       regions((30, 70, 50), (50, 55, 30), (200, 15, 8)),
                       slice_((8, 60, 100), (2, 45, 60), (0.1, 15, 15)),
@@ -567,8 +574,9 @@ def build_ALKS():
     ]
 
     pos_grid = {
-        "alixorexton_nt1":  {"mega_bear": 50, "bear": 70, "base": 85, "bull": 92, "psychedelic_bull": 97},
-        "alixorexton_nt2":  {"mega_bear": 30, "bear": 50, "base": 70, "bull": 85, "psychedelic_bull": 92},
+        # NT1 PoS bumped post Breakthrough Designation Jan 2026 + dual Ph2 hits
+        "alixorexton_nt1":  {"mega_bear": 55, "bear": 75, "base": 88, "bull": 95, "psychedelic_bull": 98},
+        "alixorexton_nt2":  {"mega_bear": 40, "bear": 60, "base": 78, "bull": 90, "psychedelic_bull": 95},
     }
     apr_default = {"mega_bear": 65, "bear": 78, "base": 88, "bull": 93, "psychedelic_bull": 97}
     pen_default = {"mega_bear": 0.3, "bear": 0.5, "base": 0.8, "bull": 1.05, "psychedelic_bull": 1.25}
@@ -578,7 +586,7 @@ def build_ALKS():
         pipeline_asmps[sk] = {
             "alixorexton": OrderedDict([
                 ("nt1_alix", od(("pos", pos_grid["alixorexton_nt1"][sk]), ("apr", apr_default[sk]), ("pen", pen_default[sk]))),
-                ("nt2_ih_alix", od(("pos", pos_grid["alixorexton_nt2"][sk]), ("apr", apr_default[sk]), ("pen", pen_default[sk]))),
+                ("nt2_alix", od(("pos", pos_grid["alixorexton_nt2"][sk]), ("apr", apr_default[sk]), ("pen", pen_default[sk]))),
             ]),
         }
 
@@ -592,12 +600,18 @@ def build_ALKS():
            ("type", "ma_close"), ("binary", False),
            ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
            ("_source", "Alkermes Feb 12 2026 PR"), ("_confidence", "high")),
-        od(("date", "Q1 2026"), ("dateSort", "2026-03-31"), ("asset", "alixorexton"),
+        od(("date", "Jan 6 2026"), ("dateSort", "2026-01-06"), ("asset", "alixorexton"),
            ("indication", "nt1_alix"),
-           ("title", "Alixorexton (OX2R agonist) Ph3 narcolepsy NT1 program initiation"),
+           ("title", "FDA Breakthrough Therapy Designation -- alixorexton in narcolepsy type 1 (de-risking event)"),
+           ("type", "regulatory"), ("binary", False),
+           ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
+           ("_source", "Alkermes Jan 6 2026 PR"), ("_confidence", "high")),
+        od(("date", "Apr 1 2026"), ("dateSort", "2026-04-01"), ("asset", "alixorexton"),
+           ("indication", "nt1_alix"),
+           ("title", "BRILLIANCE Ph3 program initiated (Studies 302+304 NT1, Study 303 NT2)"),
            ("type", "phase3_start"), ("binary", False),
            ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
-           ("_source", "Alkermes pipeline"), ("_confidence", "high")),
+           ("_source", "Alkermes Apr 2026 PR"), ("_confidence", "high")),
         od(("date", "2027-2028"), ("dateSort", "2028-06-30"), ("asset", "lumryz"),
            ("indication", "narcolepsy_lumryz"),
            ("title", "Lumryz IH (idiopathic hypersomnia) approval (CVR $1.50/sh trigger)"),

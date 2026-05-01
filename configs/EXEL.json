@@ -344,7 +344,7 @@
       "indications": [
         {
           "id": "crc_2l",
-          "name": "2L+ mCRC + atezolizumab combo (STELLAR-303 met OS in ITT; PDUFA Dec 3 2026)",
+          "name": "2L+ mCRC + atezolizumab combo (STELLAR-303 OS hit ITT 10.9m vs 9.4m regorafenib; NDA accepted Feb 2 2026; PDUFA Dec 3 2026)",
           "area": "oncology.gi.colorectal",
           "market": {
             "regions": {
@@ -366,24 +366,24 @@
             },
             "company_slice": {
               "us": {
-                "reachPct": 10,
-                "wtpPct": 60,
-                "priceK": 80
+                "reachPct": 15,
+                "wtpPct": 65,
+                "priceK": 150
               },
               "eu": {
-                "reachPct": 5,
-                "wtpPct": 50,
-                "priceK": 50
+                "reachPct": 8,
+                "wtpPct": 55,
+                "priceK": 100
               },
               "row": {
-                "reachPct": 0.3,
+                "reachPct": 0.5,
                 "wtpPct": 18,
-                "priceK": 12
+                "priceK": 25
               }
             },
             "company_slice_sources": {
-              "us.priceK": "Estimated zanzalintinib WAC ~$200K/yr (parallel to Cabometyx)",
-              "us.reachPct": "Zanza CRC niche post-FOLFIRI/Stivarga/Lonsurf; ~10-15% 2L+ mCRC"
+              "us.priceK": "Zanzalintinib WAC ~$150K/yr blended (parallel to Cabometyx ~$200K)",
+              "us.reachPct": "Zanza CRC ~12-15% 2L+ mCRC post-FOLFIRI/Stivarga/Lonsurf; mgmt guides $5B US peak by 2033 across CRC+RCC; William Blair $875M risk-adj US CRC peak alone"
             },
             "penPct": 50,
             "cagrPct": 0,
@@ -841,18 +841,33 @@
   },
   "catalysts": [
     {
-      "date": "H1 2026",
-      "dateSort": "2026-04-30",
+      "date": "Mid 2026",
+      "dateSort": "2026-07-15",
       "asset": "zanzalintinib",
       "indication": "nccrcc_1l",
-      "title": "Zanzalintinib STELLAR-304 nccRCC + nivo Ph3 topline (H1 2026)",
+      "title": "Zanzalintinib STELLAR-304 nccRCC + nivo Ph3 topline (mid-2026; enrollment complete May 2025)",
       "type": "phase3_data",
       "binary": true,
       "fail_pos": 35,
       "fail_apr": 70,
       "success_pos": 88,
       "success_apr": 92,
-      "_source": "Exelixis pipeline; STELLAR-304",
+      "_source": "Exelixis Jan 2026 prelim FY25 release",
+      "_confidence": "high"
+    },
+    {
+      "date": "Mid 2026",
+      "dateSort": "2026-08-15",
+      "asset": "zanzalintinib",
+      "indication": "crc_2l",
+      "title": "STELLAR-316 (CRC adjuvant MRD+ Natera ctDNA; DFS primary) + STELLAR-201 (recurrent meningioma) Ph3 initiations",
+      "type": "phase3_start",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Exelixis Q4 2025 IR + Natera collaboration",
       "_confidence": "high"
     },
     {
@@ -860,14 +875,14 @@
       "dateSort": "2026-12-03",
       "asset": "zanzalintinib",
       "indication": "crc_2l",
-      "title": "Zanzalintinib STELLAR-303 mCRC + atezo PDUFA (NDA accepted; OS hit ITT)",
+      "title": "Zanzalintinib STELLAR-303 mCRC + atezo PDUFA (NDA accepted Feb 2 2026; OS 10.9m vs 9.4m regorafenib ITT)",
       "type": "pdufa",
       "binary": true,
-      "fail_pos": 60,
-      "fail_apr": 75,
-      "success_pos": 95,
-      "success_apr": 95,
-      "_source": "FDA NDA acceptance; Exelixis pipeline",
+      "fail_pos": 70,
+      "fail_apr": 80,
+      "success_pos": 96,
+      "success_apr": 96,
+      "_source": "FDA NDA acceptance Feb 2 2026",
       "_confidence": "high"
     },
     {

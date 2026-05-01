@@ -1,0 +1,937 @@
+{
+  "company": {
+    "ticker": "ALKS",
+    "name": "Alkermes plc",
+    "currentPrice": 34.53,
+    "sharesOut": 166,
+    "cash": -800,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "CNS specialty (LAI psychiatry + addiction + sleep). FY25 revenue ~$1.5B: Vivitrol naltrexone monthly LAI (OUD+AUD) $468M; Aristada/Aristada Initio aripiprazole monthly+bi-monthly LAI (schizo) $370M; Lybalvi olanzapine+samidorphan (schizo+bipolar I) $347M; Vumerity Biogen royalty (MS) $130.5M; Invega Sustenna/Trinza J&J royalty $109.6M; Risperdal Consta + others ~$50M. Avadel acq closed Feb 12 2026 ($2.1B + $1.50/sh CVR on IH approval by 2028) added LUMRYZ sodium oxybate ER (narcolepsy ~$275M FY25 growing; IH filing pursued). Mural Oncology fully spun off Nov 2023 (no economic interest). FY26 guide $1.73-1.84B. ALKS net debt now ~$0.8B post-Avadel; pre-deal $1.3B net cash. PIPELINE: alixorexton (ALKS 2680) selective OX2R agonist VIBRANCE-1 NT1 Ph2 hit 2025; Ph3 narcolepsy starts Q1 2026; VIBRANCE-2 NT2 + VIBRANCE-3 IH ongoing.",
+    "yahooTicker": "ALKS"
+  },
+  "assets": [
+    {
+      "id": "vivitrol",
+      "name": "Vivitrol (naltrexone monthly extramuscular depot) - opioid antagonist for OUD + AUD",
+      "stage": "Commercial (FDA AUD 2006; OUD 2010; monthly IM injection)",
+      "modality": "small_molecule.opioid.antagonist_depot",
+      "targets": [
+        "OPRM1"
+      ],
+      "indications": [
+        {
+          "id": "aud_oud_lai",
+          "name": "Alcohol use disorder + opioid use disorder (long-acting injectable naltrexone)",
+          "area": "cns.psychiatry.substance_use.opioid",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 25,
+                "priceK": 8
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 18,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 5000,
+                "wtpPct": 5,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 35,
+                "priceK": 18
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 25,
+                "priceK": 12
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 5,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Vivitrol ~5% AUD/OUD treated population on monthly LAI",
+              "us.priceK": "Vivitrol WAC ~$1.5K/mo × 12 = $18K/yr"
+            },
+            "penPct": 15,
+            "cagrPct": 2,
+            "peakYear": 2030,
+            "salesM": 468,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "aristada",
+      "name": "Aristada / Aristada Initio (aripiprazole lauroxil) - dopamine partial agonist monthly + bi-monthly LAI for schizophrenia",
+      "stage": "Commercial (FDA Oct 2015 monthly; Initio start 2018)",
+      "modality": "small_molecule.gpcr.atypical_antipsychotic_depot",
+      "targets": [
+        "DRD2"
+      ],
+      "indications": [
+        {
+          "id": "schizo_lai",
+          "name": "Schizophrenia long-acting injectable (1-2 monthly)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 50,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Aristada ~12% US schizo LAI share (vs Invega Sustenna/Trinza, Risperdal Consta, Uzedy)",
+              "us.priceK": "Aristada WAC ~$25K/yr"
+            },
+            "penPct": 60,
+            "cagrPct": 2,
+            "peakYear": 2028,
+            "salesM": 370,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "lybalvi",
+      "name": "Lybalvi (olanzapine + samidorphan) - olanzapine + opioid antagonist combo for schizo + bipolar I",
+      "stage": "Commercial (FDA May 2021; addresses olanzapine weight gain via samidorphan)",
+      "modality": "small_molecule.gpcr.atypical_combo",
+      "targets": [
+        "DRD2",
+        "OPRM1"
+      ],
+      "indications": [
+        {
+          "id": "schizo_oral",
+          "name": "Schizophrenia oral (olanzapine reformulation with weight-mitigating samidorphan)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4.8,
+                "wtpPct": 50,
+                "priceK": 10
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Lybalvi WAC ~$10K/yr"
+            },
+            "penPct": 60,
+            "cagrPct": 15,
+            "peakYear": 2030,
+            "salesM": 240,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "bipolar_lybalvi",
+          "name": "Bipolar I disorder (acute + maintenance)",
+          "area": "cns.psychiatry.bipolar",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 10000,
+                "wtpPct": 28,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 8,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 50,
+                "priceK": 10
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Lybalvi WAC ~$10K/yr"
+            },
+            "penPct": 30,
+            "cagrPct": 15,
+            "peakYear": 2030,
+            "salesM": 107,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "lumryz",
+      "name": "LUMRYZ (sodium oxybate ER) - GHB receptor agonist once-nightly for narcolepsy (Avadel acq Feb 2026)",
+      "stage": "Commercial (FDA NT1+NT2 2023; IH filing pursued; CVR $1.50/sh tied to IH approval by 2028)",
+      "modality": "small_molecule.gpcr.gabab_agonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "narcolepsy_lumryz",
+          "name": "Narcolepsy type 1+2 (cataplexy + EDS); IH expansion pursued",
+          "area": "cns.sleep.narcolepsy",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 200,
+                "wtpPct": 80,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 250,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 20,
+                "priceK": 6
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 60,
+                "priceK": 60
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 40,
+                "priceK": 40
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 18,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Lumryz once-nightly differentiated vs Xyrem twice-nightly; ~10% narcolepsy GHB share",
+              "us.priceK": "Lumryz WAC ~$60K/yr blended"
+            },
+            "penPct": 45,
+            "cagrPct": 25,
+            "peakYear": 2031,
+            "salesM": 275,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "vumerity_royalty",
+      "name": "Vumerity (diroximel fumarate) Biogen MS royalty stream (Tecfidera follow-on)",
+      "stage": "Commercial royalty (Biogen license; FDA Oct 2019)",
+      "modality": "small_molecule.fumarate.dimethyl_fumarate",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ms_vumerity",
+          "name": "Relapsing MS Vumerity Biogen royalty",
+          "area": "_platform.alks_biogen_royalty",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 1,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "ALKS receives blended ~15% royalty on Biogen Vumerity net sales"
+            },
+            "penPct": 20,
+            "cagrPct": -3,
+            "peakYear": 2027,
+            "salesM": 131,
+            "salesYear": 2025,
+            "_genericBucket": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "invega_royalty",
+      "name": "Invega Sustenna + Trinza (paliperidone palmitate) - J&J royalty stream (LAI schizo)",
+      "stage": "Commercial royalty (mature; XEPLION generic competition; royalty phasing out H2 2026)",
+      "modality": "small_molecule.gpcr.atypical_antipsychotic_depot",
+      "targets": [],
+      "indications": [
+        {
+          "id": "schizo_invega_royalty",
+          "name": "Invega Sustenna/Trinza J&J LAI schizo royalty",
+          "area": "_platform.alks_jnj_royalty",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 1,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "ALKS Invega royalty winding down on XEPLION LOE"
+            },
+            "penPct": 20,
+            "cagrPct": -30,
+            "peakYear": 2026,
+            "salesM": 110,
+            "salesYear": 2025,
+            "_genericBucket": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "alixorexton",
+      "name": "Alixorexton (ALKS 2680) - selective orexin-2 receptor (OX2R) agonist for narcolepsy",
+      "stage": "Phase 3 (VIBRANCE-1 NT1 Ph2 hit primary 2025; Ph3 NT1 initiated Q1 2026; VIBRANCE-2 NT2 + VIBRANCE-3 IH ongoing)",
+      "modality": "small_molecule.gpcr.orexin_2_agonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "nt1_alix",
+          "name": "Narcolepsy type 1 (with cataplexy; selective OX2R agonist)",
+          "area": "cns.sleep.narcolepsy",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 200,
+                "wtpPct": 80,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 250,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 20,
+                "priceK": 6
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 15,
+                "wtpPct": 70,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 18,
+                "priceK": 15
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Alixorexton vs Lumryz/Xywav/Xyrem; first selective OX2R disease-modifying for cataplexy",
+              "us.priceK": "Estimated WAC $100K/yr (vs Lumryz $90K)"
+            },
+            "penPct": 45,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        },
+        {
+          "id": "nt2_ih_alix",
+          "name": "Narcolepsy type 2 + idiopathic hypersomnia (without cataplexy)",
+          "area": "cns.sleep.narcolepsy",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 200,
+                "wtpPct": 80,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 250,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 20,
+                "priceK": 6
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 45,
+                "priceK": 60
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 15,
+                "priceK": 15
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $100K/yr"
+            },
+            "penPct": 45,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 10,
+        "pipelineMult": 2,
+        "commercialMult": 1.8,
+        "commercialRevM": 1700,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "vivitrol": {
+          "aud_oud_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "aristada": {
+          "schizo_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lybalvi": {
+          "schizo_oral": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "bipolar_lybalvi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lumryz": {
+          "narcolepsy_lumryz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "vumerity_royalty": {
+          "ms_vumerity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "invega_royalty": {
+          "schizo_invega_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "alixorexton": {
+          "nt1_alix": {
+            "pos": 50,
+            "apr": 65,
+            "pen": 0.3
+          },
+          "nt2_ih_alix": {
+            "pos": 30,
+            "apr": 65,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 22,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 3,
+        "commercialMult": 2.5,
+        "commercialRevM": 1850,
+        "milestones": 25,
+        "dil": 0
+      },
+      "assumptions": {
+        "vivitrol": {
+          "aud_oud_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "aristada": {
+          "schizo_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lybalvi": {
+          "schizo_oral": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "bipolar_lybalvi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lumryz": {
+          "narcolepsy_lumryz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "vumerity_royalty": {
+          "ms_vumerity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "invega_royalty": {
+          "schizo_invega_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "alixorexton": {
+          "nt1_alix": {
+            "pos": 70,
+            "apr": 78,
+            "pen": 0.5
+          },
+          "nt2_ih_alix": {
+            "pos": 50,
+            "apr": 78,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 38,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 5,
+        "commercialMult": 3.5,
+        "commercialRevM": 2000,
+        "milestones": 75,
+        "dil": 0
+      },
+      "assumptions": {
+        "vivitrol": {
+          "aud_oud_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "aristada": {
+          "schizo_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lybalvi": {
+          "schizo_oral": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "bipolar_lybalvi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lumryz": {
+          "narcolepsy_lumryz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "vumerity_royalty": {
+          "ms_vumerity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "invega_royalty": {
+          "schizo_invega_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "alixorexton": {
+          "nt1_alix": {
+            "pos": 85,
+            "apr": 88,
+            "pen": 0.8
+          },
+          "nt2_ih_alix": {
+            "pos": 70,
+            "apr": 88,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 7,
+        "commercialMult": 5.0,
+        "commercialRevM": 2300,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "vivitrol": {
+          "aud_oud_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "aristada": {
+          "schizo_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lybalvi": {
+          "schizo_oral": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "bipolar_lybalvi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lumryz": {
+          "narcolepsy_lumryz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "vumerity_royalty": {
+          "ms_vumerity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "invega_royalty": {
+          "schizo_invega_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "alixorexton": {
+          "nt1_alix": {
+            "pos": 92,
+            "apr": 93,
+            "pen": 1.05
+          },
+          "nt2_ih_alix": {
+            "pos": 85,
+            "apr": 93,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 10,
+        "commercialMult": 7.0,
+        "commercialRevM": 2800,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "vivitrol": {
+          "aud_oud_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "aristada": {
+          "schizo_lai": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lybalvi": {
+          "schizo_oral": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "bipolar_lybalvi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lumryz": {
+          "narcolepsy_lumryz": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "vumerity_royalty": {
+          "ms_vumerity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "invega_royalty": {
+          "schizo_invega_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "alixorexton": {
+          "nt1_alix": {
+            "pos": 97,
+            "apr": 97,
+            "pen": 1.25
+          },
+          "nt2_ih_alix": {
+            "pos": 92,
+            "apr": 97,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Feb 12 2026",
+      "dateSort": "2026-02-12",
+      "asset": "lumryz",
+      "indication": "narcolepsy_lumryz",
+      "title": "Avadel acquisition closed ($2.1B + $1.50 CVR; Lumryz sodium oxybate ER added)",
+      "type": "ma_close",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Alkermes Feb 12 2026 PR",
+      "_confidence": "high"
+    },
+    {
+      "date": "Q1 2026",
+      "dateSort": "2026-03-31",
+      "asset": "alixorexton",
+      "indication": "nt1_alix",
+      "title": "Alixorexton (OX2R agonist) Ph3 narcolepsy NT1 program initiation",
+      "type": "phase3_start",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Alkermes pipeline",
+      "_confidence": "high"
+    },
+    {
+      "date": "2027-2028",
+      "dateSort": "2028-06-30",
+      "asset": "lumryz",
+      "indication": "narcolepsy_lumryz",
+      "title": "Lumryz IH (idiopathic hypersomnia) approval (CVR $1.50/sh trigger)",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 50,
+      "fail_apr": 75,
+      "success_pos": 90,
+      "success_apr": 92,
+      "_source": "Avadel deal CVR mechanics",
+      "_confidence": "medium"
+    }
+  ]
+}

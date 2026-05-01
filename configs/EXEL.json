@@ -1,0 +1,889 @@
+{
+  "company": {
+    "ticker": "EXEL",
+    "name": "Exelixis, Inc.",
+    "currentPrice": 44.46,
+    "sharesOut": 254,
+    "cash": 1660,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Multi-tumor TKI specialty. FY25 revenue $2.32B (+7%): Cabometyx US net product ~$2.12B (+17% YoY; ~99% of product) + Cabometyx Ipsen ex-US + Takeda Japan royalties $179M. Indication mix US: RCC ~80% (1L combo with Opdivo + 2L+ mono) / HCC ~10% / DTC 3-4% / NET 4% (CABINET FDA Mar 2025 pNET+epNET ramping). Net cash $1.66B; ~24M shares repurchased FY25 ($954M of $1.5B+ authorization); 254M shares (was ~278M). NOT selected for IPAY 2027 (small biotech exception); IPAY 2028+ risk. PIPELINE: Zanzalintinib (XL092) next-gen VEGFR/MET/AXL TKI: STELLAR-303 (2L+ mCRC + atezo) NDA accepted, PDUFA Dec 3 2026 (CRITICAL CATALYST); STELLAR-304 (1L nccRCC + nivo) topline H1 2026; STELLAR-305 HNSCC discontinued. XL309 (USP1 BRCA-mut Ph1).",
+    "yahooTicker": "EXEL"
+  },
+  "assets": [
+    {
+      "id": "cabometyx_rcc",
+      "name": "Cabometyx (cabozantinib) - multi-target TKI (VEGFR/MET/AXL); RCC franchise",
+      "stage": "Commercial (FDA RCC 2L+ Apr 2016; 1L combo with Opdivo Jan 2021; Ipsen ex-US partner)",
+      "modality": "small_molecule.kinase.multi_tki",
+      "targets": [],
+      "indications": [
+        {
+          "id": "rcc_1l",
+          "name": "Renal cell carcinoma 1L (combo with Opdivo)",
+          "area": "oncology.genitourinary.rcc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 68,
+                "priceK": 215
+              },
+              "eu": {
+                "patientsK": 30,
+                "wtpPct": 50,
+                "priceK": 125
+              },
+              "row": {
+                "patientsK": 70,
+                "wtpPct": 16,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 41.7,
+                "wtpPct": 60,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 20.0,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 1.7,
+                "wtpPct": 18,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Cabometyx ~30% 1L RCC TKI share (vs Lenvima+Keytruda + Inlyta+Pembro)",
+              "us.priceK": "Cabometyx WAC ~$200K/yr"
+            },
+            "penPct": 58,
+            "cagrPct": 5,
+            "peakYear": 2028,
+            "salesM": 1100,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "rcc_2l",
+          "name": "Renal cell carcinoma 2L+ (post-IO/TKI; mono)",
+          "area": "oncology.genitourinary.rcc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 68,
+                "priceK": 215
+              },
+              "eu": {
+                "patientsK": 30,
+                "wtpPct": 50,
+                "priceK": 125
+              },
+              "row": {
+                "patientsK": 70,
+                "wtpPct": 16,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 20,
+                "wtpPct": 60,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 10,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 18,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Cabometyx ~50% 2L+ RCC mono share post-IO failure"
+            },
+            "penPct": 58,
+            "cagrPct": -5,
+            "peakYear": 2027,
+            "salesM": 600,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "cabometyx_other",
+      "name": "Cabometyx other indications (HCC + DTC + pNET/epNET)",
+      "stage": "Commercial (HCC 2018; DTC 2021; NET CABINET FDA Mar 2025 pNET+epNET expansion)",
+      "modality": "small_molecule.kinase.multi_tki",
+      "targets": [],
+      "indications": [
+        {
+          "id": "hcc_2l",
+          "name": "Hepatocellular carcinoma 2L (post-sorafenib)",
+          "area": "oncology.gi.hcc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 60,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 46,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 650,
+                "wtpPct": 22,
+                "priceK": 28
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 13.8,
+                "wtpPct": 50,
+                "priceK": 150
+              },
+              "eu": {
+                "reachPct": 6.9,
+                "wtpPct": 40,
+                "priceK": 90
+              },
+              "row": {
+                "reachPct": 1.0,
+                "wtpPct": 18,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Cabometyx HCC WAC ~$150K/yr"
+            },
+            "penPct": 45,
+            "cagrPct": 2,
+            "peakYear": 2027,
+            "salesM": 200,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "net_pnet",
+          "name": "Pancreatic + extra-pancreatic neuroendocrine tumors (CABINET pivotal)",
+          "area": "oncology.neuroendocrine.gi_pancreatic_net",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 90,
+                "priceK": 60
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 85,
+                "priceK": 40
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 25,
+                "priceK": 12
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 18,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Cabometyx NET first systemic post-Lutathera/Sandostatin",
+              "us.priceK": "Cabometyx NET WAC ~$100K/yr"
+            },
+            "penPct": 20,
+            "cagrPct": 40,
+            "peakYear": 2030,
+            "salesM": 80,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "dtc_2l",
+          "name": "Differentiated thyroid cancer 2L (post-RAI refractory)",
+          "area": "oncology.endocrine.thyroid",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 80,
+                "priceK": 100
+              },
+              "eu": {
+                "patientsK": 15,
+                "wtpPct": 70,
+                "priceK": 60
+              },
+              "row": {
+                "patientsK": 60,
+                "wtpPct": 25,
+                "priceK": 18
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 4,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 25,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Cabometyx DTC WAC ~$100K/yr"
+            },
+            "penPct": 15,
+            "cagrPct": 2,
+            "peakYear": 2027,
+            "salesM": 60,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "cabometyx_royalty",
+      "name": "Cabometyx ex-US royalty stream (Ipsen Europe + Takeda Japan)",
+      "stage": "Commercial royalty (Ipsen ex-US partnership 2016; Takeda Japan)",
+      "modality": "small_molecule.kinase.multi_tki",
+      "targets": [],
+      "indications": [
+        {
+          "id": "cabo_ex_us_royalty",
+          "name": "Cabometyx ex-US royalty (Ipsen + Takeda) on global net sales",
+          "area": "_platform.exelixis_cabo_royalty",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 1,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "Royalty proxy: ~22% ex-US Cabometyx net sales"
+            },
+            "penPct": 25,
+            "cagrPct": 5,
+            "peakYear": 2028,
+            "salesM": 179,
+            "salesYear": 2025,
+            "_genericBucket": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "zanzalintinib",
+      "name": "Zanzalintinib (XL092) - next-gen VEGFR/MET/AXL/MER multi-target TKI (Cabometyx successor)",
+      "stage": "Phase 3 (STELLAR-303 mCRC NDA accepted PDUFA Dec 3 2026; STELLAR-304 nccRCC topline H1 2026)",
+      "modality": "small_molecule.kinase.multi_tki",
+      "targets": [],
+      "indications": [
+        {
+          "id": "crc_2l",
+          "name": "2L+ mCRC + atezolizumab combo (STELLAR-303 met OS in ITT; PDUFA Dec 3 2026)",
+          "area": "oncology.gi.colorectal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 55,
+                "wtpPct": 65,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 48,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 320,
+                "wtpPct": 16,
+                "priceK": 22
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 60,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 18,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated zanzalintinib WAC ~$200K/yr (parallel to Cabometyx)",
+              "us.reachPct": "Zanza CRC niche post-FOLFIRI/Stivarga/Lonsurf; ~10-15% 2L+ mCRC"
+            },
+            "penPct": 50,
+            "cagrPct": 0,
+            "peakYear": 2031
+          }
+        },
+        {
+          "id": "nccrcc_1l",
+          "name": "1L non-clear cell RCC + nivolumab combo (STELLAR-304 topline H1 2026)",
+          "area": "oncology.genitourinary.rcc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 68,
+                "priceK": 215
+              },
+              "eu": {
+                "patientsK": 30,
+                "wtpPct": 50,
+                "priceK": 125
+              },
+              "row": {
+                "patientsK": 70,
+                "wtpPct": 16,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 55,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 10,
+                "wtpPct": 45,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 15,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Zanza+Nivo nccRCC ~25-30% 1L share if approved (vs current TKI mono)",
+              "us.priceK": "Zanza WAC ~$200K/yr"
+            },
+            "penPct": 58,
+            "cagrPct": 0,
+            "peakYear": 2031
+          }
+        }
+      ]
+    },
+    {
+      "id": "xl309",
+      "name": "XL309 - USP1 inhibitor (BRCA1/2-mutant tumors; PARP/topo combo)",
+      "stage": "Phase 1 (BRCA-mutant ovarian + breast + prostate; mono + combo)",
+      "modality": "small_molecule.enzyme.usp1_inhibitor",
+      "targets": [],
+      "indications": [
+        {
+          "id": "brca_ovarian",
+          "name": "BRCA1/2-mutant ovarian + breast cancer (USP1 inhibitor)",
+          "area": "oncology.gynecologic.ovarian",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 35,
+                "wtpPct": 65,
+                "priceK": 125
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 50,
+                "priceK": 72
+              },
+              "row": {
+                "patientsK": 90,
+                "wtpPct": 16,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 40,
+                "priceK": 60
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 25,
+                "priceK": 20
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $100K/yr"
+            },
+            "penPct": 52,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 3,
+        "commercialMult": 4,
+        "commercialRevM": 2200,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "cabometyx_rcc": {
+          "rcc_1l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "rcc_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "cabometyx_other": {
+          "hcc_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "net_pnet": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "dtc_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "cabometyx_royalty": {
+          "cabo_ex_us_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "zanzalintinib": {
+          "crc_2l": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 0.3
+          },
+          "nccrcc_1l": {
+            "pos": 35,
+            "apr": 65,
+            "pen": 0.3
+          }
+        },
+        "xl309": {
+          "brca_ovarian": {
+            "pos": 15,
+            "apr": 65,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 22,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 5,
+        "commercialMult": 5.5,
+        "commercialRevM": 2400,
+        "milestones": 25,
+        "dil": 0
+      },
+      "assumptions": {
+        "cabometyx_rcc": {
+          "rcc_1l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "rcc_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "cabometyx_other": {
+          "hcc_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "net_pnet": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "dtc_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "cabometyx_royalty": {
+          "cabo_ex_us_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "zanzalintinib": {
+          "crc_2l": {
+            "pos": 75,
+            "apr": 78,
+            "pen": 0.5
+          },
+          "nccrcc_1l": {
+            "pos": 55,
+            "apr": 78,
+            "pen": 0.5
+          }
+        },
+        "xl309": {
+          "brca_ovarian": {
+            "pos": 25,
+            "apr": 78,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 38,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 7,
+        "commercialMult": 7,
+        "commercialRevM": 2600,
+        "milestones": 75,
+        "dil": 0
+      },
+      "assumptions": {
+        "cabometyx_rcc": {
+          "rcc_1l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "rcc_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "cabometyx_other": {
+          "hcc_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "net_pnet": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "dtc_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "cabometyx_royalty": {
+          "cabo_ex_us_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "zanzalintinib": {
+          "crc_2l": {
+            "pos": 88,
+            "apr": 88,
+            "pen": 0.8
+          },
+          "nccrcc_1l": {
+            "pos": 75,
+            "apr": 88,
+            "pen": 0.8
+          }
+        },
+        "xl309": {
+          "brca_ovarian": {
+            "pos": 40,
+            "apr": 88,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 10,
+        "commercialMult": 9,
+        "commercialRevM": 3000,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "cabometyx_rcc": {
+          "rcc_1l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "rcc_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "cabometyx_other": {
+          "hcc_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "net_pnet": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "dtc_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "cabometyx_royalty": {
+          "cabo_ex_us_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "zanzalintinib": {
+          "crc_2l": {
+            "pos": 95,
+            "apr": 93,
+            "pen": 1.05
+          },
+          "nccrcc_1l": {
+            "pos": 88,
+            "apr": 93,
+            "pen": 1.05
+          }
+        },
+        "xl309": {
+          "brca_ovarian": {
+            "pos": 55,
+            "apr": 93,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 14,
+        "commercialMult": 12,
+        "commercialRevM": 3700,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "cabometyx_rcc": {
+          "rcc_1l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "rcc_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "cabometyx_other": {
+          "hcc_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "net_pnet": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "dtc_2l": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "cabometyx_royalty": {
+          "cabo_ex_us_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "zanzalintinib": {
+          "crc_2l": {
+            "pos": 99,
+            "apr": 97,
+            "pen": 1.25
+          },
+          "nccrcc_1l": {
+            "pos": 95,
+            "apr": 97,
+            "pen": 1.25
+          }
+        },
+        "xl309": {
+          "brca_ovarian": {
+            "pos": 70,
+            "apr": 97,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-04-30",
+      "asset": "zanzalintinib",
+      "indication": "nccrcc_1l",
+      "title": "Zanzalintinib STELLAR-304 nccRCC + nivo Ph3 topline (H1 2026)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 35,
+      "fail_apr": 70,
+      "success_pos": 88,
+      "success_apr": 92,
+      "_source": "Exelixis pipeline; STELLAR-304",
+      "_confidence": "high"
+    },
+    {
+      "date": "Dec 3 2026",
+      "dateSort": "2026-12-03",
+      "asset": "zanzalintinib",
+      "indication": "crc_2l",
+      "title": "Zanzalintinib STELLAR-303 mCRC + atezo PDUFA (NDA accepted; OS hit ITT)",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 60,
+      "fail_apr": 75,
+      "success_pos": 95,
+      "success_apr": 95,
+      "_source": "FDA NDA acceptance; Exelixis pipeline",
+      "_confidence": "high"
+    },
+    {
+      "date": "Mar 2025",
+      "dateSort": "2025-03-15",
+      "asset": "cabometyx_other",
+      "indication": "net_pnet",
+      "title": "Cabometyx CABINET NET FDA approval (pNET + epNET expansion)",
+      "type": "label_expansion",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Exelixis Mar 2025 PR",
+      "_confidence": "high"
+    }
+  ]
+}

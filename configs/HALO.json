@@ -1,0 +1,504 @@
+{
+  "company": {
+    "ticker": "HALO",
+    "name": "Halozyme Therapeutics, Inc.",
+    "currentPrice": 64.29,
+    "sharesOut": 117.6,
+    "cash": -1800,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "ENHANZE rHuPH20 SC delivery royalty platform + Hypercon (Elektrofi acq Nov 2025 $750M+$150M). FY25 record revenue $1.397B (+38% YoY): royalty $868M (+52% on Darzalex Faspro/Phesgo/Vyvgart Hytrulo) + product/other $529M (Hylenex, XYOSTED testosterone, OTREXUP methotrexate via Antares 2022 $960M acq, manufacturing, milestones). Approved partner programs: J&J Darzalex Faspro (myeloma), Roche Phesgo (HER2 breast) + Tecentriq SC, argenx Vyvgart Hytrulo (gMG/CIDP), Takeda Hyqvia (PI/CIDP), BMS Opdivo Qvantig (FDA Dec 2024 multi-tumor IO). Pending: Merck Keytruda Qlex SC pembrolizumab (FDA filing pending), AZ Imfinzi SC durvalumab. 2026 guide: +23-30% revenue; >$2B by 2028. Net debt ~$1.8B post-Nov 2025 $1.5B convert refi (issued $750M 2031 + $750M 2032 notes; partial repurchase 2027/2028 converts). 3 new ENHANZE deals 2025 (Takeda, Merus, Skye Bio).",
+    "yahooTicker": "HALO"
+  },
+  "assets": [
+    {
+      "id": "enhanze_royalty",
+      "name": "ENHANZE rHuPH20 SC delivery royalty platform (Darzalex Faspro + Phesgo + Vyvgart Hytrulo + Opdivo Qvantig + Tecentriq SC + Hyqvia)",
+      "stage": "Commercial (royalty stream from 6+ approved partner SC formulations; growing pipeline of pending Keytruda + Imfinzi SC)",
+      "modality": "formulation_modifier.subcutaneous_enhancer.rhuph20",
+      "targets": [
+        "SC_DELIVERY"
+      ],
+      "indications": [
+        {
+          "id": "enhanze_io_oncology",
+          "name": "Multi-tumor IO + oncology + immunology SC formulations royalty exposure",
+          "area": "_platform.enhanze_royalty",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 1,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "ENHANZE royalty rate ~3-7% on partner SC product net sales (blended ~5%)"
+            },
+            "penPct": 30,
+            "cagrPct": 25,
+            "peakYear": 2032,
+            "salesM": 868,
+            "salesYear": 2025,
+            "_genericBucket": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "xyosted",
+      "name": "XYOSTED (testosterone enanthate weekly SC autoinjector) - hypogonadism",
+      "stage": "Commercial (FDA Sep 2018; Antares Pharma acq May 2022)",
+      "modality": "small_molecule.steroid.testosterone",
+      "targets": [],
+      "indications": [
+        {
+          "id": "hypogonadism",
+          "name": "Adult male hypogonadism (low T replacement therapy)",
+          "area": "endocrine.gonadal.hypogonadism",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 4000,
+                "wtpPct": 35,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 5000,
+                "wtpPct": 25,
+                "priceK": 0.8
+              },
+              "row": {
+                "patientsK": 15000,
+                "wtpPct": 8,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6.4,
+                "wtpPct": 35,
+                "priceK": 2
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "XYOSTED WAC ~$2K/yr",
+              "us.reachPct": "XYOSTED ~3% testosterone Rx volume share"
+            },
+            "penPct": 18,
+            "cagrPct": 5,
+            "peakYear": 2028,
+            "salesM": 120,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "otrexup",
+      "name": "OTREXUP (methotrexate weekly SC autoinjector) - RA + JIA + psoriasis",
+      "stage": "Commercial (FDA Oct 2013; Antares Pharma acq May 2022)",
+      "modality": "small_molecule.antimetabolite.methotrexate",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ra_methotrexate",
+          "name": "RA + JIA + severe psoriasis (SC methotrexate convenience)",
+          "area": "immunology.inflammatory_systemic.rheumatoid_arthritis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 50,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 35,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 12000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 15.6,
+                "wtpPct": 30,
+                "priceK": 1.5
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "OTREXUP WAC ~$1.5K/yr",
+              "us.reachPct": "OTREXUP ~2% MTX Rx volume share"
+            },
+            "penPct": 28,
+            "cagrPct": 2,
+            "peakYear": 2027,
+            "salesM": 70,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "hypercon",
+      "name": "Hypercon ultra-high-concentration microparticle SC platform (Elektrofi acq Nov 2025; argenx + Lilly + J&J partnered programs)",
+      "stage": "Pre-revenue (royalties expected 2030+; up to $275M milestones from 2 programs entering clinic by YE2026)",
+      "modality": "formulation_modifier.microparticle.hypercon",
+      "targets": [],
+      "indications": [
+        {
+          "id": "hypercon_pipeline",
+          "name": "Multi-product SC microparticle delivery (long-acting oncology + autoimmune)",
+          "area": "_platform.hypercon_royalty",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 1,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 30,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "Hypercon royalty rate similar to ENHANZE ~3-7%"
+            },
+            "penPct": 10,
+            "cagrPct": 0,
+            "peakYear": 2034
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 3,
+        "commercialMult": 4,
+        "commercialRevM": 1450,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "enhanze_royalty": {
+          "enhanze_io_oncology": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "xyosted": {
+          "hypogonadism": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "otrexup": {
+          "ra_methotrexate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "hypercon": {
+          "hypercon_pipeline": {
+            "pos": 25,
+            "apr": 60,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 22,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 5,
+        "commercialMult": 6,
+        "commercialRevM": 1600,
+        "milestones": 25,
+        "dil": 0
+      },
+      "assumptions": {
+        "enhanze_royalty": {
+          "enhanze_io_oncology": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "xyosted": {
+          "hypogonadism": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "otrexup": {
+          "ra_methotrexate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "hypercon": {
+          "hypercon_pipeline": {
+            "pos": 40,
+            "apr": 75,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 38,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 7,
+        "commercialMult": 8,
+        "commercialRevM": 1750,
+        "milestones": 75,
+        "dil": 0
+      },
+      "assumptions": {
+        "enhanze_royalty": {
+          "enhanze_io_oncology": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "xyosted": {
+          "hypogonadism": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "otrexup": {
+          "ra_methotrexate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "hypercon": {
+          "hypercon_pipeline": {
+            "pos": 55,
+            "apr": 85,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 10,
+        "commercialMult": 11,
+        "commercialRevM": 2000,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "enhanze_royalty": {
+          "enhanze_io_oncology": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "xyosted": {
+          "hypogonadism": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "otrexup": {
+          "ra_methotrexate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "hypercon": {
+          "hypercon_pipeline": {
+            "pos": 70,
+            "apr": 92,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 14,
+        "commercialMult": 15,
+        "commercialRevM": 2500,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "enhanze_royalty": {
+          "enhanze_io_oncology": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "xyosted": {
+          "hypogonadism": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "otrexup": {
+          "ra_methotrexate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "hypercon": {
+          "hypercon_pipeline": {
+            "pos": 82,
+            "apr": 96,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-30",
+      "asset": "enhanze_royalty",
+      "indication": "enhanze_io_oncology",
+      "title": "Merck Keytruda Qlex SC FDA decision (pembrolizumab SC; major royalty unlock)",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 70,
+      "fail_apr": 80,
+      "success_pos": 95,
+      "success_apr": 95,
+      "_source": "Merck Keytruda SC filing",
+      "_confidence": "high"
+    },
+    {
+      "date": "2026",
+      "dateSort": "2026-12-15",
+      "asset": "enhanze_royalty",
+      "indication": "enhanze_io_oncology",
+      "title": "AZ Imfinzi SC durvalumab + new ENHANZE deal flow",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Halozyme FY25 IR",
+      "_confidence": "medium"
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-06-30",
+      "asset": "hypercon",
+      "indication": "hypercon_pipeline",
+      "title": "Hypercon first 2 partner programs enter clinic (milestone trigger up to $275M)",
+      "type": "phase1_start",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Halozyme Elektrofi integration",
+      "_confidence": "medium"
+    }
+  ]
+}

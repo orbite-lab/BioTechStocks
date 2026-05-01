@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated": "2026-05-01T13:52:35Z",
-    "target_count": 417,
-    "total_assets": 1007,
-    "assets_with_targets": 764,
+    "generated": "2026-05-01T14:15:34Z",
+    "target_count": 418,
+    "total_assets": 1023,
+    "assets_with_targets": 768,
     "multi_modality_count": 51,
     "multi_disease_count": 185
   },
@@ -2016,7 +2016,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 25488.9,
+      "totalTAM": 25489.0,
       "totalSOM": 4146.5,
       "totalSales": 2995.0,
       "cagrPct": 3.2,
@@ -4448,7 +4448,7 @@
         "antibody"
       ],
       "totalTAM": 19731.0,
-      "totalSOM": 189.7,
+      "totalSOM": 189.6,
       "totalSales": 0.0,
       "cagrPct": 54.4,
       "peakYear": 2031
@@ -5645,6 +5645,7 @@
         "4506",
         "4578",
         "ABBV",
+        "ALKS",
         "HLUN_B",
         "JAZZ",
         "JNJ",
@@ -5656,6 +5657,8 @@
         "small_molecule.cns.dopamine_serotonin_antagonist",
         "small_molecule.cns.serotonin_dopamine_modulator",
         "small_molecule.gpcr.atypical_antipsychotic",
+        "small_molecule.gpcr.atypical_antipsychotic_depot",
+        "small_molecule.gpcr.atypical_combo",
         "small_molecule.gpcr.d2_d3_partial_agonist",
         "small_molecule.gpcr.dopamine_agonist",
         "small_molecule.imipridone.clpp_activator"
@@ -5708,6 +5711,25 @@
           "modality": "small_molecule.gpcr.d2_d3_partial_agonist",
           "areas": [
             "cns.psychiatry.depression",
+            "cns.psychiatry.schizophrenia"
+          ]
+        },
+        {
+          "ticker": "ALKS",
+          "asset": "aristada",
+          "name": "Aristada / Aristada Initio (aripiprazole lauroxil) - dopamine partial agonist monthly + bi-monthly LAI for schizophrenia",
+          "modality": "small_molecule.gpcr.atypical_antipsychotic_depot",
+          "areas": [
+            "cns.psychiatry.schizophrenia"
+          ]
+        },
+        {
+          "ticker": "ALKS",
+          "asset": "lybalvi",
+          "name": "Lybalvi (olanzapine + samidorphan) - olanzapine + opioid antagonist combo for schizo + bipolar I",
+          "modality": "small_molecule.gpcr.atypical_combo",
+          "areas": [
+            "cns.psychiatry.bipolar",
             "cns.psychiatry.schizophrenia"
           ]
         },
@@ -5786,16 +5808,16 @@
           ]
         }
       ],
-      "assetCount": 12,
-      "modalityCount": 6,
+      "assetCount": 14,
+      "modalityCount": 8,
       "modalityClassCount": 1,
       "areaCount": 6,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 145390.8,
-      "totalSOM": 34782.1,
-      "totalSales": 14637.0,
+      "totalSOM": 36293.1,
+      "totalSales": 15354.0,
       "cagrPct": 6.4,
       "peakYear": 2030
     },
@@ -9789,7 +9811,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -13195,7 +13217,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 18252.4,
       "totalSales": 2971.0,
       "cagrPct": 47.5,
@@ -13247,7 +13269,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 17202.9,
       "totalSales": 2271.0,
       "cagrPct": 50.1,
@@ -14226,7 +14248,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -14541,7 +14563,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -14781,21 +14803,45 @@
     },
     "OPRM1": {
       "companies": [
+        "ALKS",
         "BHC",
         "CAMX",
         "INDV"
       ],
       "modalities": [
         "formulation_modifier.long_acting.fluidcrystal_sc",
+        "small_molecule.gpcr.atypical_combo",
         "small_molecule.gpcr.opioid_antagonist_peripheral",
+        "small_molecule.opioid.antagonist_depot",
         "small_molecule.opioid.partial_agonist_depot"
       ],
       "areas": [
+        "cns.psychiatry.bipolar",
         "cns.psychiatry.opioid_dependence",
+        "cns.psychiatry.schizophrenia",
         "cns.psychiatry.substance_use.opioid",
         "immunology.inflammatory_gi.constipation_opioid"
       ],
       "assets": [
+        {
+          "ticker": "ALKS",
+          "asset": "vivitrol",
+          "name": "Vivitrol (naltrexone monthly extramuscular depot) - opioid antagonist for OUD + AUD",
+          "modality": "small_molecule.opioid.antagonist_depot",
+          "areas": [
+            "cns.psychiatry.substance_use.opioid"
+          ]
+        },
+        {
+          "ticker": "ALKS",
+          "asset": "lybalvi",
+          "name": "Lybalvi (olanzapine + samidorphan) - olanzapine + opioid antagonist combo for schizo + bipolar I",
+          "modality": "small_molecule.gpcr.atypical_combo",
+          "areas": [
+            "cns.psychiatry.bipolar",
+            "cns.psychiatry.schizophrenia"
+          ]
+        },
         {
           "ticker": "BHC",
           "asset": "relistor",
@@ -14824,18 +14870,18 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 3,
+      "assetCount": 5,
+      "modalityCount": 5,
       "modalityClassCount": 2,
-      "areaCount": 3,
+      "areaCount": 5,
       "modalityClasses": [
         "formulation_modifier",
         "small_molecule"
       ],
-      "totalTAM": 24740.0,
-      "totalSOM": 4142.1,
-      "totalSales": 1356.0,
-      "cagrPct": 5.7,
+      "totalTAM": 108890.0,
+      "totalSOM": 5643.4,
+      "totalSales": 2171.0,
+      "cagrPct": 5.9,
       "peakYear": 2030
     },
     "OXTR": {
@@ -18035,6 +18081,40 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2033
+    },
+    "SC_DELIVERY": {
+      "companies": [
+        "HALO"
+      ],
+      "modalities": [
+        "formulation_modifier.subcutaneous_enhancer.rhuph20"
+      ],
+      "areas": [
+        "_platform.enhanze_royalty"
+      ],
+      "assets": [
+        {
+          "ticker": "HALO",
+          "asset": "enhanze_royalty",
+          "name": "ENHANZE rHuPH20 SC delivery royalty platform (Darzalex Faspro + Phesgo + Vyvgart Hytrulo + Opdivo Qvantig + Tecentriq SC + Hyqvia)",
+          "modality": "formulation_modifier.subcutaneous_enhancer.rhuph20",
+          "areas": [
+            "_platform.enhanze_royalty"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "formulation_modifier"
+      ],
+      "totalTAM": 0.1,
+      "totalSOM": 0.0,
+      "totalSales": 868.0,
+      "cagrPct": 25.0,
+      "peakYear": 2032
     },
     "SERPINA1": {
       "companies": [

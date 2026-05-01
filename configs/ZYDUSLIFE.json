@@ -1,0 +1,2103 @@
+{
+  "company": {
+    "ticker": "ZYDUSLIFE",
+    "name": "Zydus Lifesciences Ltd.",
+    "currentPrice": 925,
+    "sharesOut": 1010,
+    "cash": 29400,
+    "currency": "INR",
+    "phase": "commercial",
+    "subtitle": "Indian pharma with strong US generics franchise + innovative pipeline. FY25 revenue INR 23,242 Cr / ~$2.78B (+19% YoY): US generics ~50% (~$1.39B; gVyvanse FDA Aug 2023 major contributor), India branded ~25-29% (~$700M; #6 in IPM), Consumer Wellness ~14% (Zydus Wellness consol), Emerging Markets + Europe + API ~11%. Net cash ~$350M; debt-free. Innovation pipeline: Saroglitazar (Lipaglyn) PPAR-α/γ -- EPICS-III Ph3 PBC HIT primary, US NDA Q1 2026; MASH Ph2b ongoing. Desidustat (Oxemia) HIF-PHI CKD anemia (India 2022, China NMPA Mar 2026). ZYIL1 NLRP3 Ph2 ALS/CAPS. ZyCoV-D DNA COVID vaccine (first DNA vaccine globally). Biosimilars: bevacizumab (Lucent), trastuzumab, ranibizumab, adalimumab (Exemptia).",
+    "yahooTicker": "ZYDUSLIFE.NS"
+  },
+  "assets": [
+    {
+      "id": "g_vyvanse",
+      "name": "gVyvanse (lisdexamfetamine) - amphetamine prodrug for ADHD; US authorized generic + own ANDA",
+      "stage": "Commercial (FDA Aug 2023; ~$300M FY25 contribution; 6-mo exclusivity exhausted)",
+      "modality": "small_molecule.gpcr.amphetamine_prodrug",
+      "targets": [],
+      "indications": [
+        {
+          "id": "adhd_stim",
+          "name": "ADHD stimulant therapy (US generic share)",
+          "area": "cns.psychiatry.adhd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 55,
+                "priceK": 1.2
+              },
+              "row": {
+                "patientsK": 35000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8.3,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "gVyvanse blended ~$1.5K/yr post-LOE",
+              "us.reachPct": "Zydus ~15-20% gVyvanse volume share"
+            },
+            "penPct": 55,
+            "cagrPct": -15,
+            "peakYear": 2027,
+            "salesM": 300,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "zydus_us_generics",
+      "name": "Zydus US generics franchise ex-gVyvanse",
+      "stage": "Commercial (FY25 ~$1.09B US oral + injectable + complex generics ex-Vyvanse)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "totalSalesM": 1090,
+      "mixTemplate": "us_generics_developed_v1",
+      "indications": [
+        {
+          "id": "zydus_us_generics_outpatient_generic",
+          "name": "zydus_us_generics - outpatient generic (generic share)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 196,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 8,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "zydus_us_generics_ldl_cv_risk",
+          "name": "zydus_us_generics - ldl cv risk (generic share)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 142,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 6,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "zydus_us_generics_t2d",
+          "name": "zydus_us_generics - t2d (generic share)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 109,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "zydus_us_generics_depression",
+          "name": "zydus_us_generics - depression (generic share)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 98,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "zydus_us_generics_anxiety",
+          "name": "zydus_us_generics - anxiety (generic share)",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 65,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 25,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 44,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "zydus_us_generics_schizophrenia",
+          "name": "zydus_us_generics - schizophrenia (generic share)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 44,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "zydus_us_generics_bipolar",
+          "name": "zydus_us_generics - bipolar (generic share)",
+          "area": "cns.psychiatry.bipolar",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 10000,
+                "wtpPct": 28,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 8,
+                "priceK": 2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 22,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "zydus_us_generics_focal",
+          "name": "zydus_us_generics - focal (generic share)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 44,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "zydus_us_generics_generalized",
+          "name": "zydus_us_generics - generalized (generic share)",
+          "area": "cns.epilepsy.generalized",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 400,
+                "wtpPct": 85,
+                "priceK": 3
+              },
+              "eu": {
+                "patientsK": 900,
+                "wtpPct": 70,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 9000,
+                "wtpPct": 35,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 22,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 65,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "zydus_us_generics_migraine",
+          "name": "zydus_us_generics - migraine (generic share)",
+          "area": "cns.pain.migraine",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 4000,
+                "wtpPct": 30,
+                "priceK": 3
+              },
+              "eu": {
+                "patientsK": 6000,
+                "wtpPct": 18,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 5,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 22,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 35,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "zydus_us_generics_copd",
+          "name": "zydus_us_generics - copd (generic share)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 44,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "zydus_us_generics_asthma_severe",
+          "name": "zydus_us_generics - asthma severe (generic share)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 44,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "zydus_us_generics_gerd_peptic",
+          "name": "zydus_us_generics - gerd peptic (generic share)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 76,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "zydus_us_generics_other",
+          "name": "zydus_us_generics other / un-mappable generics residual",
+          "area": "_established_products.zyduslife_zydus_us_generics_other",
+          "market": {
+            "regions": {},
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 185,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 0,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "zydus_india",
+      "name": "Zydus India branded formulations + ATM franchise",
+      "stage": "Commercial (FY25 ~$700M India; #6 in IPM)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "totalSalesM": 700,
+      "mixTemplate": "emerging_markets_generics_v1",
+      "indications": [
+        {
+          "id": "zydus_india_outpatient_generic",
+          "name": "zydus_india - outpatient generic (generic share)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 154,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 8,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_india_ldl_cv_risk",
+          "name": "zydus_india - ldl cv risk (generic share)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 70,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 6,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_india_t2d",
+          "name": "zydus_india - t2d (generic share)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 91,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_india_depression",
+          "name": "zydus_india - depression (generic share)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 28,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_india_schizophrenia",
+          "name": "zydus_india - schizophrenia (generic share)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 21,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_india_anxiety",
+          "name": "zydus_india - anxiety (generic share)",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 65,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 25,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 14,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_india_focal",
+          "name": "zydus_india - focal (generic share)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 21,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_india_copd",
+          "name": "zydus_india - copd (generic share)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 28,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_india_asthma_severe",
+          "name": "zydus_india - asthma severe (generic share)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 28,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_india_gerd_peptic",
+          "name": "zydus_india - gerd peptic (generic share)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 56,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_india_other",
+          "name": "zydus_india other / un-mappable generics residual",
+          "area": "_established_products.zyduslife_zydus_india_other",
+          "market": {
+            "regions": {},
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 189,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 0,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "zydus_consumer",
+      "name": "Zydus Consumer Wellness franchise (Zydus Wellness consol)",
+      "stage": "Commercial (FY25 ~$390M consumer)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "totalSalesM": 390,
+      "mixTemplate": "emerging_markets_generics_v1",
+      "indications": [
+        {
+          "id": "zydus_consumer_outpatient_generic",
+          "name": "zydus_consumer - outpatient generic (generic share)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 86,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 8,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_consumer_ldl_cv_risk",
+          "name": "zydus_consumer - ldl cv risk (generic share)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 39,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 6,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_consumer_t2d",
+          "name": "zydus_consumer - t2d (generic share)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 51,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_consumer_depression",
+          "name": "zydus_consumer - depression (generic share)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 16,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_consumer_schizophrenia",
+          "name": "zydus_consumer - schizophrenia (generic share)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 12,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_consumer_anxiety",
+          "name": "zydus_consumer - anxiety (generic share)",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 65,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 25,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 8,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_consumer_focal",
+          "name": "zydus_consumer - focal (generic share)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 12,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_consumer_copd",
+          "name": "zydus_consumer - copd (generic share)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 16,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_consumer_asthma_severe",
+          "name": "zydus_consumer - asthma severe (generic share)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 16,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_consumer_gerd_peptic",
+          "name": "zydus_consumer - gerd peptic (generic share)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 31,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_consumer_other",
+          "name": "zydus_consumer other / un-mappable generics residual",
+          "area": "_established_products.zyduslife_zydus_consumer_other",
+          "market": {
+            "regions": {},
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 105,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 0,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "zydus_em_eu",
+      "name": "Zydus Emerging Markets + Europe + API franchise",
+      "stage": "Commercial (FY25 ~$300M)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "totalSalesM": 300,
+      "mixTemplate": "emerging_markets_generics_v1",
+      "indications": [
+        {
+          "id": "zydus_em_eu_outpatient_generic",
+          "name": "zydus_em_eu - outpatient generic (generic share)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 66,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 8,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_em_eu_ldl_cv_risk",
+          "name": "zydus_em_eu - ldl cv risk (generic share)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 30,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 6,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_em_eu_t2d",
+          "name": "zydus_em_eu - t2d (generic share)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 39,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_em_eu_depression",
+          "name": "zydus_em_eu - depression (generic share)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 12,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_em_eu_schizophrenia",
+          "name": "zydus_em_eu - schizophrenia (generic share)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 9,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_em_eu_anxiety",
+          "name": "zydus_em_eu - anxiety (generic share)",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 65,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 25,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 6,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_em_eu_focal",
+          "name": "zydus_em_eu - focal (generic share)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 9,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_em_eu_copd",
+          "name": "zydus_em_eu - copd (generic share)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 12,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_em_eu_asthma_severe",
+          "name": "zydus_em_eu - asthma severe (generic share)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 12,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_em_eu_gerd_peptic",
+          "name": "zydus_em_eu - gerd peptic (generic share)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 24,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "zydus_em_eu_other",
+          "name": "zydus_em_eu other / un-mappable generics residual",
+          "area": "_established_products.zyduslife_zydus_em_eu_other",
+          "market": {
+            "regions": {},
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 81,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 0,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "saroglitazar",
+      "name": "Saroglitazar (Lipaglyn / Bilypsa) - PPAR-alpha/gamma dual agonist (Zydus discovery)",
+      "stage": "Phase 3 PBC EPICS-III HIT primary 2025; US NDA Q1 2026; MASH Ph2b; India approved NASH/dyslipidemia",
+      "modality": "small_molecule.nuclear_receptor.ppar_dual",
+      "targets": [],
+      "indications": [
+        {
+          "id": "pbc",
+          "name": "Primary biliary cholangitis (anti-cholestatic)",
+          "area": "cardio_metabolic.liver.pbc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60,
+                "wtpPct": 60,
+                "priceK": 50
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 45,
+                "priceK": 30
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 12,
+                "priceK": 12
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 60,
+                "priceK": 70
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 40
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 18,
+                "priceK": 10
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $70K/yr (vs Ocaliva obeticholic acid ~$92K)",
+              "us.reachPct": "Saroglitazar PBC if approved ~10% PBC Rx (vs Ocaliva, Iqirvo elafibranor)"
+            },
+            "penPct": 25,
+            "cagrPct": 0,
+            "peakYear": 2031
+          }
+        },
+        {
+          "id": "mash",
+          "name": "Metabolic dysfunction-associated steatohepatitis (MASH F2-F3)",
+          "area": "cardio_metabolic.liver.mash",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3000,
+                "wtpPct": 35,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 25,
+                "priceK": 8
+              },
+              "row": {
+                "patientsK": 20000,
+                "wtpPct": 8,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.3,
+                "wtpPct": 35,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 0.1,
+                "wtpPct": 25,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 0.02,
+                "wtpPct": 8,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $25K/yr if approved (post-Resmetirom + GLP-1 class competition)"
+            },
+            "penPct": 8,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "desidustat",
+      "name": "Desidustat (Oxemia) - HIF-prolyl hydroxylase inhibitor for CKD anemia",
+      "stage": "Commercial India 2022; China NMPA approval Mar 2026",
+      "modality": "small_molecule.enzyme.hif_phi",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ckd_anemia",
+          "name": "CKD anemia (HIF-PHI oral; vs ESA injectable)",
+          "area": "nephrology.ckd.anemia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 600,
+                "wtpPct": 65,
+                "priceK": 18
+              },
+              "eu": {
+                "patientsK": 800,
+                "wtpPct": 50,
+                "priceK": 11
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.2,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "reachPct": 2.5,
+                "wtpPct": 30,
+                "priceK": 1.0
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "Desidustat India + China WAC ~$1K/yr",
+              "row.reachPct": "Niche India + China HIF-PHI; ~1% CKD anemia Rx"
+            },
+            "penPct": 60,
+            "cagrPct": 20,
+            "peakYear": 2030,
+            "salesM": 15,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "zyil1",
+      "name": "ZYIL1 - selective oral NLRP3 inflammasome inhibitor",
+      "stage": "Phase 2 (CAPS rare autoinflammatory + ALS exploratory)",
+      "modality": "small_molecule.various.nlrp3_inhibitor",
+      "targets": [],
+      "indications": [
+        {
+          "id": "als",
+          "name": "Amyotrophic lateral sclerosis (NLRP3 inflammasome neuroinflammation)",
+          "area": "cns.neurodegeneration.als",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 70,
+                "priceK": 40
+              },
+              "eu": {
+                "patientsK": 40,
+                "wtpPct": 45,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 220,
+                "wtpPct": 20,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1,
+                "wtpPct": 35,
+                "priceK": 20
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 30,
+                "priceK": 12
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 18,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $20K/yr"
+            },
+            "penPct": 25,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 12,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 3,
+        "commercialMult": 4,
+        "commercialRevM": 218400,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "g_vyvanse": {
+          "adhd_stim": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "desidustat": {
+          "ckd_anemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "saroglitazar": {
+          "pbc": {
+            "pos": 60,
+            "apr": 60,
+            "pen": 0.3
+          },
+          "mash": {
+            "pos": 15,
+            "apr": 60,
+            "pen": 0.3
+          }
+        },
+        "zyil1": {
+          "als": {
+            "pos": 8,
+            "apr": 60,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 4,
+        "commercialMult": 5.5,
+        "commercialRevM": 231000,
+        "milestones": 25,
+        "dil": 0
+      },
+      "assumptions": {
+        "g_vyvanse": {
+          "adhd_stim": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "desidustat": {
+          "ckd_anemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "saroglitazar": {
+          "pbc": {
+            "pos": 75,
+            "apr": 75,
+            "pen": 0.5
+          },
+          "mash": {
+            "pos": 25,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "zyil1": {
+          "als": {
+            "pos": 18,
+            "apr": 75,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 38,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 5,
+        "commercialMult": 7,
+        "commercialRevM": 243600,
+        "milestones": 75,
+        "dil": 0
+      },
+      "assumptions": {
+        "g_vyvanse": {
+          "adhd_stim": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "desidustat": {
+          "ckd_anemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "saroglitazar": {
+          "pbc": {
+            "pos": 88,
+            "apr": 85,
+            "pen": 0.8
+          },
+          "mash": {
+            "pos": 40,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "zyil1": {
+          "als": {
+            "pos": 32,
+            "apr": 85,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 7,
+        "commercialMult": 9,
+        "commercialRevM": 268800,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "g_vyvanse": {
+          "adhd_stim": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "desidustat": {
+          "ckd_anemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "saroglitazar": {
+          "pbc": {
+            "pos": 95,
+            "apr": 92,
+            "pen": 1.05
+          },
+          "mash": {
+            "pos": 55,
+            "apr": 92,
+            "pen": 1.05
+          }
+        },
+        "zyil1": {
+          "als": {
+            "pos": 48,
+            "apr": 92,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 10,
+        "commercialMult": 12,
+        "commercialRevM": 310800,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "g_vyvanse": {
+          "adhd_stim": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "desidustat": {
+          "ckd_anemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "saroglitazar": {
+          "pbc": {
+            "pos": 99,
+            "apr": 96,
+            "pen": 1.25
+          },
+          "mash": {
+            "pos": 70,
+            "apr": 96,
+            "pen": 1.25
+          }
+        },
+        "zyil1": {
+          "als": {
+            "pos": 65,
+            "apr": 96,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Q1 2026",
+      "dateSort": "2026-03-31",
+      "asset": "saroglitazar",
+      "indication": "pbc",
+      "title": "Saroglitazar PBC US NDA filing (post EPICS-III Ph3 hit)",
+      "type": "nda_submission",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Zydus FY25 release",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-12-15",
+      "asset": "saroglitazar",
+      "indication": "pbc",
+      "title": "Saroglitazar PBC FDA acceptance + PDUFA 2027",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 50,
+      "fail_apr": 75,
+      "success_pos": 92,
+      "success_apr": 92,
+      "_source": "Zydus pipeline",
+      "_confidence": "medium"
+    },
+    {
+      "date": "2026-2027",
+      "dateSort": "2027-06-30",
+      "asset": "saroglitazar",
+      "indication": "mash",
+      "title": "Saroglitazar MASH Ph2b biopsy readout",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 15,
+      "fail_apr": 60,
+      "success_pos": 50,
+      "success_apr": 85,
+      "_source": "Zydus pipeline",
+      "_confidence": "low"
+    }
+  ]
+}

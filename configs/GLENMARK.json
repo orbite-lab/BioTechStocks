@@ -1,0 +1,1934 @@
+{
+  "company": {
+    "ticker": "GLENMARK",
+    "name": "Glenmark Pharmaceuticals Ltd.",
+    "currentPrice": 2403.7,
+    "sharesOut": 282.3,
+    "cash": -5040,
+    "currency": "INR",
+    "phase": "commercial",
+    "subtitle": "Indian formulations specialist (post-Glenmark Life Sciences API divestment Nirma 2023). FY25 revenue INR 13,322 Cr / ~$1.60B (+13%): India 33% (~$540M; +32% YoY; derm + respiratory + cardio franchises), Europe 21% (~$343M; Ryaltris driver, +18% YoY), RoW 21% (~$339M), North America 19% (~$310M; -5% Q4 pricing pressure). Net debt $60M; deleveraged post-Nirma sale. INNOVATION: ISB 2001 (CD38xBCMAxCD3 trispecific T-cell engager via Ichnos Glenmark Innovation IGI NJ subsidiary) -- ASCO 2025 Ph1 r/r MM 79% ORR / 30% CR; FDA Fast Track May 2025; Orphan; AbbVie GLOBAL LICENSING DEAL Jul 2025 (oncology + autoimmune; milestones + royalties). Ryaltris (mometasone+olopatadine FDC nasal) FDA Jan 2022; commercialized 45+ markets.",
+    "yahooTicker": "GLENMARK.NS"
+  },
+  "assets": [
+    {
+      "id": "ryaltris",
+      "name": "Ryaltris (mometasone furoate + olopatadine HCl FDC nasal spray) - Glenmark's first US NDA",
+      "stage": "Commercial (FDA Jan 2022; commercialized 45+ markets; key EU growth driver +18% FY25)",
+      "modality": "small_molecule.combo.intranasal_steroid_antihistamine",
+      "targets": [],
+      "indications": [
+        {
+          "id": "allergic_rhinitis",
+          "name": "Allergic rhinitis (seasonal + perennial; FDC topical nasal)",
+          "area": "respiratory.allergy.allergic_rhinitis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              },
+              "eu": {
+                "patientsK": 40000,
+                "wtpPct": 20,
+                "priceK": 0.3
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 5,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.4,
+                "wtpPct": 30,
+                "priceK": 0.6
+              },
+              "eu": {
+                "reachPct": 2.8,
+                "wtpPct": 35,
+                "priceK": 0.5
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Ryaltris US WAC ~$600/yr",
+              "eu.reachPct": "Ryaltris EU 45+ market commercialization; Glenmark first NDA driving ex-US royalty + direct sales"
+            },
+            "penPct": 22,
+            "cagrPct": 18,
+            "peakYear": 2030,
+            "salesM": 180,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "isb_2001",
+      "name": "ISB 2001 - CD38 x BCMA x CD3 trispecific T-cell engager (Ichnos Glenmark Innovation BEAT platform)",
+      "stage": "Phase 1/2 (ASCO 2025 r/r MM 79% ORR / 30% CR/sCR; FDA Fast Track May 2025; AbbVie global licensing Jul 2025)",
+      "modality": "antibody.bispecific.tce_trispecific",
+      "targets": [],
+      "indications": [
+        {
+          "id": "rrmm_isb",
+          "name": "Relapsed/refractory multiple myeloma 4L+ (post BCMA CAR-T + bispecific)",
+          "area": "oncology.hematology.myeloma.4l_plus",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 12,
+                "wtpPct": 55,
+                "priceK": 380
+              },
+              "eu": {
+                "patientsK": 14,
+                "wtpPct": 42,
+                "priceK": 220
+              },
+              "row": {
+                "patientsK": 20,
+                "wtpPct": 10,
+                "priceK": 80
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 60,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 50,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 18,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $80K/yr (vs Carvykti BCMA CAR-T $465K + Tecvayli bispecific $42K)",
+              "us.reachPct": "ISB 2001 ~10-15% R/R MM trispecific share if approved; AbbVie commercializes"
+            },
+            "penPct": 35,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "glenmark_india",
+      "name": "Glenmark India branded formulations (derm + respi + cardio leadership)",
+      "stage": "Commercial (FY25 ~$540M India; +32% YoY; ~14% IPM growth)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "totalSalesM": 540,
+      "mixTemplate": "emerging_markets_generics_v1",
+      "mixOverrides": {
+        "dermatology.inflammatory_derm.psoriasis_systemic": 0.1,
+        "respiratory.inflammatory.asthma_severe": 0.1
+      },
+      "indications": [
+        {
+          "id": "glenmark_india_outpatient_generic",
+          "name": "glenmark_india - outpatient generic (generic share)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 97,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 8,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_india_ldl_cv_risk",
+          "name": "glenmark_india - ldl cv risk (generic share)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 44,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 6,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_india_t2d",
+          "name": "glenmark_india - t2d (generic share)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 58,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_india_depression",
+          "name": "glenmark_india - depression (generic share)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 18,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_india_schizophrenia",
+          "name": "glenmark_india - schizophrenia (generic share)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 13,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_india_anxiety",
+          "name": "glenmark_india - anxiety (generic share)",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 65,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 25,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 9,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_india_focal",
+          "name": "glenmark_india - focal (generic share)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 13,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_india_copd",
+          "name": "glenmark_india - copd (generic share)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 18,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_india_asthma_severe",
+          "name": "glenmark_india - asthma severe (generic share)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 44,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_india_gerd_peptic",
+          "name": "glenmark_india - gerd peptic (generic share)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 35,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_india_other",
+          "name": "glenmark_india other / un-mappable generics residual",
+          "area": "_established_products.glenmark_glenmark_india_other",
+          "market": {
+            "regions": {},
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 146,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 0,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_india_psoriasis_systemic",
+          "name": "glenmark_india - psoriasis systemic (generic share)",
+          "area": "dermatology.inflammatory_derm.psoriasis_systemic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 44,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 40,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "glenmark_eu_ex_ryaltris",
+      "name": "Glenmark Europe ex-Ryaltris franchise",
+      "stage": "Commercial (FY25 ~$163M EU)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "totalSalesM": 163,
+      "mixTemplate": "eu_generics_developed_v1",
+      "indications": [
+        {
+          "id": "glenmark_eu_ex_ryaltris_outpatient_generic",
+          "name": "glenmark_eu_ex_ryaltris - outpatient generic (generic share)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 33,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 8,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_eu_ex_ryaltris_ldl_cv_risk",
+          "name": "glenmark_eu_ex_ryaltris - ldl cv risk (generic share)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 20,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 6,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_eu_ex_ryaltris_t2d",
+          "name": "glenmark_eu_ex_ryaltris - t2d (generic share)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 15,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_eu_ex_ryaltris_depression",
+          "name": "glenmark_eu_ex_ryaltris - depression (generic share)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 11,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_eu_ex_ryaltris_anxiety",
+          "name": "glenmark_eu_ex_ryaltris - anxiety (generic share)",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 65,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 25,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 5,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_eu_ex_ryaltris_schizophrenia",
+          "name": "glenmark_eu_ex_ryaltris - schizophrenia (generic share)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 5,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_eu_ex_ryaltris_focal",
+          "name": "glenmark_eu_ex_ryaltris - focal (generic share)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 7,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_eu_ex_ryaltris_generalized",
+          "name": "glenmark_eu_ex_ryaltris - generalized (generic share)",
+          "area": "cns.epilepsy.generalized",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 400,
+                "wtpPct": 85,
+                "priceK": 3
+              },
+              "eu": {
+                "patientsK": 900,
+                "wtpPct": 70,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 9000,
+                "wtpPct": 35,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 3,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 65,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_eu_ex_ryaltris_copd",
+          "name": "glenmark_eu_ex_ryaltris - copd (generic share)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 8,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_eu_ex_ryaltris_asthma_severe",
+          "name": "glenmark_eu_ex_ryaltris - asthma severe (generic share)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 7,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_eu_ex_ryaltris_gerd_peptic",
+          "name": "glenmark_eu_ex_ryaltris - gerd peptic (generic share)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 13,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_eu_ex_ryaltris_osteoporosis",
+          "name": "glenmark_eu_ex_ryaltris - osteoporosis (generic share)",
+          "area": "musculoskeletal.bone_cartilage.osteoporosis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5000,
+                "wtpPct": 35,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 25,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 80000,
+                "wtpPct": 10,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 3,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_eu_ex_ryaltris_other",
+          "name": "glenmark_eu_ex_ryaltris other / un-mappable generics residual",
+          "area": "_established_products.glenmark_glenmark_eu_ex_ryaltris_other",
+          "market": {
+            "regions": {},
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 34,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 0,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "glenmark_row",
+      "name": "Glenmark RoW + Emerging Markets franchise",
+      "stage": "Commercial (FY25 ~$339M)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "totalSalesM": 339,
+      "mixTemplate": "emerging_markets_generics_v1",
+      "indications": [
+        {
+          "id": "glenmark_row_outpatient_generic",
+          "name": "glenmark_row - outpatient generic (generic share)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 75,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 8,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_row_ldl_cv_risk",
+          "name": "glenmark_row - ldl cv risk (generic share)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 34,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 6,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_row_t2d",
+          "name": "glenmark_row - t2d (generic share)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 44,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_row_depression",
+          "name": "glenmark_row - depression (generic share)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 14,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_row_schizophrenia",
+          "name": "glenmark_row - schizophrenia (generic share)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 10,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_row_anxiety",
+          "name": "glenmark_row - anxiety (generic share)",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 65,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 25,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 7,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_row_focal",
+          "name": "glenmark_row - focal (generic share)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 10,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_row_copd",
+          "name": "glenmark_row - copd (generic share)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 14,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_row_asthma_severe",
+          "name": "glenmark_row - asthma severe (generic share)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 14,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_row_gerd_peptic",
+          "name": "glenmark_row - gerd peptic (generic share)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 27,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "glenmark_row_other",
+          "name": "glenmark_row other / un-mappable generics residual",
+          "area": "_established_products.glenmark_glenmark_row_other",
+          "market": {
+            "regions": {},
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 92,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 0,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "glenmark_na",
+      "name": "Glenmark North America generics franchise",
+      "stage": "Commercial (FY25 ~$310M; Q4 -5% on pricing pressure; 51 ANDAs pending)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "totalSalesM": 310,
+      "mixTemplate": "us_generics_developed_v1",
+      "indications": [
+        {
+          "id": "glenmark_na_outpatient_generic",
+          "name": "glenmark_na - outpatient generic (generic share)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 56,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 8,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_na_ldl_cv_risk",
+          "name": "glenmark_na - ldl cv risk (generic share)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 40,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 6,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_na_t2d",
+          "name": "glenmark_na - t2d (generic share)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 31,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_na_depression",
+          "name": "glenmark_na - depression (generic share)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 28,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_na_anxiety",
+          "name": "glenmark_na - anxiety (generic share)",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 65,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 25,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 12,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_na_schizophrenia",
+          "name": "glenmark_na - schizophrenia (generic share)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 12,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_na_bipolar",
+          "name": "glenmark_na - bipolar (generic share)",
+          "area": "cns.psychiatry.bipolar",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 10000,
+                "wtpPct": 28,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 8,
+                "priceK": 2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 6,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_na_focal",
+          "name": "glenmark_na - focal (generic share)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 12,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_na_generalized",
+          "name": "glenmark_na - generalized (generic share)",
+          "area": "cns.epilepsy.generalized",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 400,
+                "wtpPct": 85,
+                "priceK": 3
+              },
+              "eu": {
+                "patientsK": 900,
+                "wtpPct": 70,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 9000,
+                "wtpPct": 35,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 6,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 65,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_na_migraine",
+          "name": "glenmark_na - migraine (generic share)",
+          "area": "cns.pain.migraine",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 4000,
+                "wtpPct": 30,
+                "priceK": 3
+              },
+              "eu": {
+                "patientsK": 6000,
+                "wtpPct": 18,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 5,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 6,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 35,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_na_copd",
+          "name": "glenmark_na - copd (generic share)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 12,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_na_asthma_severe",
+          "name": "glenmark_na - asthma severe (generic share)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 12,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_na_gerd_peptic",
+          "name": "glenmark_na - gerd peptic (generic share)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 22,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "glenmark_na_other",
+          "name": "glenmark_na other / un-mappable generics residual",
+          "area": "_established_products.glenmark_glenmark_na_other",
+          "market": {
+            "regions": {},
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 53,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 0,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 4,
+        "commercialMult": 5,
+        "commercialRevM": 126000,
+        "milestones": 4200,
+        "dil": 0
+      },
+      "assumptions": {
+        "ryaltris": {
+          "allergic_rhinitis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "isb_2001": {
+          "rrmm_isb": {
+            "pos": 25,
+            "apr": 60,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 22,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 6,
+        "commercialMult": 7,
+        "commercialRevM": 138600,
+        "milestones": 12600,
+        "dil": 0
+      },
+      "assumptions": {
+        "ryaltris": {
+          "allergic_rhinitis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "isb_2001": {
+          "rrmm_isb": {
+            "pos": 40,
+            "apr": 75,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 38,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 9,
+        "commercialMult": 9,
+        "commercialRevM": 151200,
+        "milestones": 29400,
+        "dil": 0
+      },
+      "assumptions": {
+        "ryaltris": {
+          "allergic_rhinitis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "isb_2001": {
+          "rrmm_isb": {
+            "pos": 55,
+            "apr": 85,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 13,
+        "commercialMult": 12,
+        "commercialRevM": 172200,
+        "milestones": 58800,
+        "dil": 0
+      },
+      "assumptions": {
+        "ryaltris": {
+          "allergic_rhinitis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "isb_2001": {
+          "rrmm_isb": {
+            "pos": 70,
+            "apr": 92,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 18,
+        "commercialMult": 16,
+        "commercialRevM": 201600,
+        "milestones": 100800,
+        "dil": 0
+      },
+      "assumptions": {
+        "ryaltris": {
+          "allergic_rhinitis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "isb_2001": {
+          "rrmm_isb": {
+            "pos": 82,
+            "apr": 96,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "isb_2001",
+      "indication": "rrmm_isb",
+      "title": "ISB 2001 Ph2 expansion data + AbbVie Ph2 start (CD38xBCMAxCD3 trispecific)",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 70,
+      "success_pos": 75,
+      "success_apr": 90,
+      "_source": "ASCO 2025 + AbbVie deal Jul 2025",
+      "_confidence": "medium"
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "ryaltris",
+      "indication": "allergic_rhinitis",
+      "title": "Ryaltris ex-US royalty + 45+ market expansion ramp",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Glenmark FY25 IR",
+      "_confidence": "high"
+    }
+  ]
+}

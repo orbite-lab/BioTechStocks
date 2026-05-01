@@ -891,6 +891,7 @@ async function main(){
       const price=isPrivate?null:(lp?lp.price:co.currentPrice);
       const prevClose=lp?lp.prevClose:null;
       let tps={},weightedTP=null,wtUp=null,cashPS=null,ev=null,evUSD=null,mcapUSDB=null,mcapTier='private';
+      let chg1D=null,chg1W=null,chg1M=null,chgYTD=null;
       if(!isPrivate){
         const r2=computeAll(cfg);
         SK.forEach(s=>{tps[s]=r2.results[s]?r2.results[s].tp:null;});
@@ -901,6 +902,13 @@ async function main(){
         mcapUSDB=toUSD(price*co.sharesOut,co.currency||'USD')/1000;
         mcapTier=mcapUSDB>=100?'mega':mcapUSDB>=20?'large':mcapUSDB>=5?'mid':mcapUSDB>=1?'small':'micro';
         wtUp=((weightedTP-price)/price*100);
+        // Period changes (require live + historical from prices.json)
+        if(lp){
+          if(lp.prevClose>0) chg1D=((price-lp.prevClose)/lp.prevClose)*100;
+          if(lp.price1W>0)   chg1W=((price-lp.price1W)/lp.price1W)*100;
+          if(lp.price1M>0)   chg1M=((price-lp.price1M)/lp.price1M)*100;
+          if(lp.priceYTD>0)  chgYTD=((price-lp.priceYTD)/lp.priceYTD)*100;
+        }
       }
       const meta=deriveCompanyMeta(cfg);
       const catalysts=isPrivate?[]:computeCatalysts(cfg,price);
@@ -917,7 +925,7 @@ async function main(){
         }
       }
       r.push({ticker:tk,name:co.name,ccy:ccySym(co.currency),dec:ccyDec(co.currency),
-        isPrivate,price,prevClose,configPrice:co.currentPrice,live:!!lp,cashPS,ev,evUSD,mcapUSDB,mcapTier,tps,weightedTP,wtUp,currency:co.currency,subtitle:co.subtitle||"",yahooTicker:co.yahooTicker||tk,meta,catalysts,salesM2025:salesM2025USD});
+        isPrivate,price,prevClose,configPrice:co.currentPrice,live:!!lp,chg1D,chg1W,chg1M,chgYTD,cashPS,ev,evUSD,mcapUSDB,mcapTier,tps,weightedTP,wtUp,currency:co.currency,subtitle:co.subtitle||"",yahooTicker:co.yahooTicker||tk,meta,catalysts,salesM2025:salesM2025USD});
     }
     return r;
   }
@@ -3103,6 +3111,10 @@ async function main(){
     h+='<th onclick="window._sort(\'ticker\')">Ticker</th>';
     h+='<th onclick="window._sort(\'name\')">Company</th>';
     h+='<th class="r" onclick="window._sort(\'price\')">Price</th>';
+    h+='<th class="r" onclick="window._sort(\'chg1D\')" title="1-day price change (% vs prior close)">1D %</th>';
+    h+='<th class="r" onclick="window._sort(\'chg1W\')" title="1-week price change (% vs ~5 trading days ago)">1W %</th>';
+    h+='<th class="r" onclick="window._sort(\'chg1M\')" title="1-month price change (% vs ~21 trading days ago)">1M %</th>';
+    h+='<th class="r" onclick="window._sort(\'chgYTD\')" title="Year-to-date price change (% vs first trading day of current year)">YTD %</th>';
     h+='<th class="r" onclick="window._sort(\'ev\')">EV ($M)</th>';
     h+='<th class="r" onclick="window._sort(\'cashPS\')">Cash/Sh</th>';
     h+='<th class="r" onclick="window._sort(\'salesM2025\')" title="Sum of reported drug sales 2025 across all indications, USD $M">Sales 2025 ($M)</th>';
@@ -3131,6 +3143,12 @@ async function main(){
       if(r.isPrivate){
         // Private: no price/EV/TP. Show "Private" badge; only sales 2025 visible.
         h+=`<td class="r mono"><span style="font-size:.6rem;font-weight:700;padding:2px 6px;border-radius:3px;background:#94a3b822;color:#94a3b8" title="Private company / wholly-owned subsidiary -- no public equity tradeable">Private</span></td>`;
+        // 1D / 1W / 1M / YTD: not applicable
+        h+=`<td class="r mono" style="opacity:.3">\u2014</td>`;
+        h+=`<td class="r mono" style="opacity:.3">\u2014</td>`;
+        h+=`<td class="r mono" style="opacity:.3">\u2014</td>`;
+        h+=`<td class="r mono" style="opacity:.3">\u2014</td>`;
+        // EV / Cash/sh
         h+=`<td class="r mono" style="opacity:.3">\u2014</td>`;
         h+=`<td class="r mono" style="opacity:.3">\u2014</td>`;
         h+=`<td class="r mono" style="color:#22c55e">${r.salesM2025>0?Math.round(r.salesM2025).toLocaleString():'—'}</td>`;
@@ -3138,9 +3156,18 @@ async function main(){
         h+=`<td class="r mono" style="opacity:.3">\u2014</td>`;
       }else{
       h+=`<td class="r mono">${c}${r.price.toFixed(d)}`;
-      if(r.live&&r.prevClose){const chg=((r.price-r.prevClose)/r.prevClose*100);h+=`<span style="font-size:.65rem;margin-left:3px;color:${chg>=0?'#86efac':'#fca5a5'}">${chg>=0?'+':''}${chg.toFixed(1)}%</span>`;}
       if(r.live)h+=`<span style="font-size:.55rem;color:#22c55e;margin-left:2px" title="Live price">\u25CF</span>`;
       h+=`</td>`;
+      // 1D / 1W / 1M / YTD %
+      const _chgCell=(v)=>{
+        if(v==null||!isFinite(v)) return '<td class="r mono" style="opacity:.3">\u2014</td>';
+        const col=v>=0?'#86efac':'#fca5a5';
+        return `<td class="r mono" style="color:${col}">${v>=0?'+':''}${v.toFixed(1)}%</td>`;
+      };
+      h+=_chgCell(r.chg1D);
+      h+=_chgCell(r.chg1W);
+      h+=_chgCell(r.chg1M);
+      h+=_chgCell(r.chgYTD);
       h+=`<td class="r mono" style="color:var(--text2)">${Math.round(r.ev).toLocaleString()}</td>`;
       h+=`<td class="r mono" style="color:#c084fc">${c}${r.cashPS.toFixed(d)}</td>`;
       h+=`<td class="r mono" style="color:#22c55e">${r.salesM2025>0?Math.round(r.salesM2025).toLocaleString():'—'}</td>`;

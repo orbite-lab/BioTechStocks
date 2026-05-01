@@ -44,10 +44,13 @@ def load_existing():
 
 
 def fetch_one(config_ticker, yahoo_ticker):
-    """Fetch price + prev close for a single ticker. Returns dict or None on failure."""
+    """Fetch price + prev close + 1W/1M/YTD historicals. Returns dict or None on failure."""
     try:
         tk = yf.Ticker(yahoo_ticker)
-        hist = tk.history(period="5d", auto_adjust=False)
+        # Fetch from start of last calendar year to "now" -- gives us YTD anchor
+        # plus enough trailing history for 1W/1M lookback. Using "ytd" alone misses
+        # the prior-year anchor; "1y" + manual filter handles year-boundary safely.
+        hist = tk.history(period="1y", auto_adjust=False)
         if hist.empty or len(hist) == 0:
             return None, "empty history"
 
@@ -62,8 +65,6 @@ def fetch_one(config_ticker, yahoo_ticker):
             lp = fi.get("last_price") if hasattr(fi, "get") else getattr(fi, "last_price", None)
             if lp and lp > 0:
                 price = float(lp)
-                # In that case, last_close from history is actually today's close candidate;
-                # prev_close should be the previous row
                 if len(hist) >= 2:
                     prev_close = float(hist["Close"].iloc[-1])
         except Exception:
@@ -72,11 +73,42 @@ def fetch_one(config_ticker, yahoo_ticker):
         if price <= 0:
             return None, "price <= 0"
 
-        return {
+        # Helper: lookup close N trading days back (positive N)
+        def close_n_back(n):
+            try:
+                if len(hist) > n:
+                    return float(hist["Close"].iloc[-(n + 1)])
+            except Exception:
+                pass
+            return None
+
+        # 1W ~ 5 trading days, 1M ~ 21 trading days
+        price_1w = close_n_back(5)
+        price_1m = close_n_back(21)
+
+        # YTD: first close of current calendar year (last close of prior year as fallback)
+        price_ytd = None
+        try:
+            from datetime import datetime as _dt
+            year = _dt.now().year
+            year_start = hist[hist.index.year == year]
+            if len(year_start) > 0:
+                price_ytd = float(year_start["Close"].iloc[0])
+            else:
+                # If no current-year prints yet (early Jan), use prior-year last close
+                price_ytd = float(hist["Close"].iloc[0])
+        except Exception:
+            pass
+
+        out = {
             "price": round(price, 4),
             "prevClose": round(prev_close, 4),
             "yahooTicker": yahoo_ticker,
-        }, None
+        }
+        if price_1w is not None: out["price1W"] = round(price_1w, 4)
+        if price_1m is not None: out["price1M"] = round(price_1m, 4)
+        if price_ytd is not None: out["priceYTD"] = round(price_ytd, 4)
+        return out, None
     except Exception as e:
         return None, str(e)[:80]
 

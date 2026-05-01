@@ -435,9 +435,9 @@ REGIONS = {
     # hydroxylase inhibitor ~$200M), Korlym (mifepristone Corcept ~$500M),
     # Mifepristone Recorlev (Xeris ~$50M). Class globally ~$0.8B branded.
     "endocrine.pituitary.cushings": {
-        "us":  {"patientsK": 3,     "wtpPct": 70, "priceK": 110},
-        "eu":  {"patientsK": 4,     "wtpPct": 55, "priceK": 65},
-        "row": {"patientsK": 10,    "wtpPct": 18, "priceK": 25},
+        "us":  {"patientsK": 3,     "wtpPct": 70, "priceK": 180},
+        "eu":  {"patientsK": 4,     "wtpPct": 55, "priceK": 110},
+        "row": {"patientsK": 10,    "wtpPct": 18, "priceK": 35},
     },
 
     # ==================== ENDOCRINE: THYROID ====================

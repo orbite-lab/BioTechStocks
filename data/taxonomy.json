@@ -10,10 +10,10 @@
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
-    "area_count_l3": 300,
+    "area_count_l3": 307,
     "area_count_l4": 30,
-    "modality_count": 596,
-    "companies": 112
+    "modality_count": 612,
+    "companies": 114
   },
   "therapeutic_areas": {
     "cardio_metabolic": {
@@ -106,6 +106,7 @@
         "t2d": {
           "companies": [
             "1801",
+            "4528",
             "AUROBINDO",
             "AZN",
             "BI",
@@ -127,7 +128,7 @@
             "TEVA",
             "VTRS"
           ],
-          "count": 21,
+          "count": 22,
           "rare": false
         }
       },
@@ -491,6 +492,15 @@
       }
     },
     "cns": {
+      "cerebrovascular": {
+        "acute_ischemic_stroke": {
+          "companies": [
+            "4507"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
       "epilepsy": {
         "dee": {
           "companies": [
@@ -623,6 +633,7 @@
         },
         "alzheimer": {
           "companies": [
+            "4507",
             "4523",
             "4578",
             "ACAD",
@@ -635,7 +646,7 @@
             "NAMS",
             "RHHBY"
           ],
-          "count": 11,
+          "count": 12,
           "rare": false
         },
         "caa": {
@@ -744,16 +755,24 @@
           ],
           "count": 1,
           "rare": false
+        },
+        "opioid_induced_constipation": {
+          "companies": [
+            "4507"
+          ],
+          "count": 1,
+          "rare": false
         }
       },
       "psychiatry": {
         "adhd": {
           "companies": [
             "4502",
+            "4507",
             "AXSM",
             "JNJ"
           ],
-          "count": 3,
+          "count": 4,
           "rare": false
         },
         "anxiety": {
@@ -1025,6 +1044,7 @@
             "1801",
             "4151",
             "4502",
+            "4528",
             "ABBV",
             "AMGN",
             "BI",
@@ -1039,7 +1059,7 @@
             "TEVA",
             "UCB"
           ],
-          "count": 16,
+          "count": 17,
           "rare": false
         },
         "psoriasis_topical": {
@@ -1584,6 +1604,7 @@
         "ulcerative_colitis": {
           "companies": [
             "4502",
+            "4528",
             "ABBV",
             "ABVX",
             "AMGN",
@@ -1595,7 +1616,7 @@
             "STADA",
             "TEVA"
           ],
-          "count": 11,
+          "count": 12,
           "rare": false
         }
       },
@@ -1786,9 +1807,25 @@
         }
       },
       "bacterial": {
+        "mdr_resistant": {
+          "companies": [
+            "4507"
+          ],
+          "count": 1,
+          "rare": false
+        },
         "vaginosis": {
           "companies": [
             "LUPIN"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "fungal": {
+        "invasive_systemic": {
+          "companies": [
+            "4507"
           ],
           "count": 1,
           "rare": false
@@ -1923,6 +1960,22 @@
         "zoster": {
           "companies": [
             "GSK"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "viral": {
+        "hiv": {
+          "companies": [
+            "4507"
+          ],
+          "count": 1,
+          "rare": false
+        },
+        "respiratory": {
+          "companies": [
+            "4507"
           ],
           "count": 1,
           "rare": false
@@ -2413,6 +2466,7 @@
         },
         "pancreatic": {
           "companies": [
+            "4528",
             "AZN",
             "BCYC",
             "IPN",
@@ -2420,7 +2474,7 @@
             "RVMD",
             "SERVIER"
           ],
-          "count": 6,
+          "count": 7,
           "rare": false
         },
         "pancreatic_adjuvant": {
@@ -2550,11 +2604,12 @@
         "cml": {
           "companies": [
             "4502",
+            "4528",
             "BMY",
             "INCY",
             "NVS"
           ],
-          "count": 4,
+          "count": 5,
           "rare": false
         },
         "hodgkin": {
@@ -2570,6 +2625,7 @@
         "myeloma": {
           "companies": [
             "4502",
+            "4528",
             "AMGN",
             "BMY",
             "CIPLA",
@@ -2582,7 +2638,7 @@
             "REGN",
             "SNY"
           ],
-          "count": 12,
+          "count": 13,
           "rare": false,
           "sub": {
             "1l": {
@@ -2597,6 +2653,7 @@
             "2l_3l": {
               "companies": [
                 "4502",
+                "4528",
                 "AMGN",
                 "BMY",
                 "DRREDDY",
@@ -2605,7 +2662,7 @@
                 "LEGN",
                 "SNY"
               ],
-              "count": 8,
+              "count": 9,
               "rare": false
             },
             "4l_plus": {
@@ -2628,6 +2685,7 @@
           "companies": [
             "4151",
             "4519",
+            "4528",
             "ABBV",
             "ALLO",
             "AZN",
@@ -2650,12 +2708,13 @@
             "SNY",
             "TEVA"
           ],
-          "count": 23,
+          "count": 24,
           "rare": true,
           "sub": {
             "dlbcl": {
               "companies": [
                 "4519",
+                "4528",
                 "ALLO",
                 "BMY",
                 "CELLTRION",
@@ -2668,7 +2727,7 @@
                 "RHHBY",
                 "TEVA"
               ],
-              "count": 12,
+              "count": 13,
               "rare": false
             },
             "fl": {
@@ -2711,9 +2770,10 @@
             "tcell": {
               "companies": [
                 "4151",
+                "4528",
                 "CRVS"
               ],
-              "count": 2,
+              "count": 3,
               "rare": true
             },
             "wm": {
@@ -2888,9 +2948,10 @@
       "multi_tumor_io": {
         "pd1_pdl1_eligible": {
           "companies": [
+            "4528",
             "SDZ"
           ],
-          "count": 1,
+          "count": 2,
           "rare": false
         }
       },
@@ -2911,9 +2972,10 @@
         },
         "gist": {
           "companies": [
+            "4528",
             "BAYN"
           ],
-          "count": 1,
+          "count": 2,
           "rare": false
         },
         "nf1_pn": {
@@ -2933,9 +2995,10 @@
         },
         "tgct": {
           "companies": [
+            "4528",
             "MRK_DE"
           ],
-          "count": 1,
+          "count": 2,
           "rare": false
         }
       },
@@ -3189,6 +3252,15 @@
         "short_bowel_syndrome": {
           "companies": [
             "HANMI"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "hematology": {
+        "thrombocytopenia": {
+          "companies": [
+            "4507"
           ],
           "count": 1,
           "rare": false
@@ -3737,6 +3809,12 @@
         "steap1_cd3": {
           "companies": [
             "AMGN"
+          ],
+          "count": 1
+        },
+        "tce_pd1_cd3": {
+          "companies": [
+            "4528"
           ],
           "count": 1
         },
@@ -4322,13 +4400,14 @@
         "anti_pd1": {
           "companies": [
             "1801",
+            "4528",
             "600276",
             "DRREDDY",
             "ONC",
             "REGN",
             "SDZ"
           ],
-          "count": 6
+          "count": 7
         },
         "anti_pdl1": {
           "companies": [
@@ -4654,6 +4733,12 @@
         "micro_dystrophin": {
           "companies": [
             "SRPT"
+          ],
+          "count": 1
+        },
+        "zfp_tf": {
+          "companies": [
+            "4507"
           ],
           "count": 1
         }
@@ -4994,6 +5079,12 @@
         "gpe_analog": {
           "companies": [
             "ACAD"
+          ],
+          "count": 1
+        },
+        "neuroprotectant": {
+          "companies": [
+            "4507"
           ],
           "count": 1
         },
@@ -5508,6 +5599,18 @@
         }
       },
       "antimicrobial": {
+        "antifungal": {
+          "companies": [
+            "4507"
+          ],
+          "count": 1
+        },
+        "cephalosporin": {
+          "companies": [
+            "4507"
+          ],
+          "count": 1
+        },
         "nitroimidazole": {
           "companies": [
             "LUPIN"
@@ -5869,6 +5972,12 @@
           ],
           "count": 1
         },
+        "integrase_inhibitor": {
+          "companies": [
+            "4507"
+          ],
+          "count": 1
+        },
         "nlrp3_inhibitor": {
           "companies": [
             "BIOA"
@@ -5890,6 +5999,18 @@
         "pde5": {
           "companies": [
             "VTRS"
+          ],
+          "count": 1
+        },
+        "protease_inhibitor": {
+          "companies": [
+            "4507"
+          ],
+          "count": 1
+        },
+        "proteasome_inhibitor": {
+          "companies": [
+            "4528"
           ],
           "count": 1
         }
@@ -6029,6 +6150,12 @@
         "adrenergic": {
           "companies": [
             "VTRS"
+          ],
+          "count": 1
+        },
+        "alpha2a_agonist": {
+          "companies": [
+            "4507"
           ],
           "count": 1
         },
@@ -6229,9 +6356,10 @@
         },
         "opioid_antagonist": {
           "companies": [
+            "4507",
             "HIK"
           ],
-          "count": 1
+          "count": 2
         },
         "opioid_antagonist_peripheral": {
           "companies": [
@@ -6292,13 +6420,14 @@
         },
         "s1p_modulator": {
           "companies": [
+            "4528",
             "ABVX",
             "BMY",
             "MTP",
             "NVS",
             "PFE"
           ],
-          "count": 5
+          "count": 6
         },
         "saba": {
           "companies": [
@@ -6328,6 +6457,12 @@
         "somatostatin_agonist_combined": {
           "companies": [
             "NVS"
+          ],
+          "count": 1
+        },
+        "tpo_agonist": {
+          "companies": [
+            "4507"
           ],
           "count": 1
         },
@@ -6491,9 +6626,27 @@
           ],
           "count": 1
         },
+        "bcr_abl": {
+          "companies": [
+            "4528"
+          ],
+          "count": 1
+        },
+        "btk": {
+          "companies": [
+            "4528"
+          ],
+          "count": 1
+        },
         "cdk46_inhibitor": {
           "companies": [
             "1177"
+          ],
+          "count": 1
+        },
+        "csf1r": {
+          "companies": [
+            "4528"
           ],
           "count": 1
         },
@@ -6506,6 +6659,12 @@
         "jak1_tyk2": {
           "companies": [
             "SUN"
+          ],
+          "count": 1
+        },
+        "kit_pdgfra": {
+          "companies": [
+            "4528"
           ],
           "count": 1
         },
@@ -6543,6 +6702,18 @@
         "trk_ros1_inhibitor": {
           "companies": [
             "4519"
+          ],
+          "count": 1
+        },
+        "tyk2_jak1": {
+          "companies": [
+            "4528"
+          ],
+          "count": 1
+        },
+        "ulk1_2": {
+          "companies": [
+            "4528"
           ],
           "count": 1
         },
@@ -7282,10 +7453,11 @@
         },
         "sglt2_inhibitor": {
           "companies": [
+            "4528",
             "BI",
             "MTP"
           ],
-          "count": 2
+          "count": 3
         },
         "vmat2_inhibitor": {
           "companies": [
@@ -7338,7 +7510,9 @@
             "1177",
             "4502",
             "4503",
+            "4507",
             "4523",
+            "4528",
             "600276",
             "AUROBINDO",
             "BAYN",
@@ -7365,7 +7539,7 @@
             "VRTX",
             "VTRS"
           ],
-          "count": 30
+          "count": 32
         }
       },
       "veterinary": {

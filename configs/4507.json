@@ -1,0 +1,1258 @@
+{
+  "company": {
+    "ticker": "4507",
+    "name": "Shionogi & Co. Ltd.",
+    "currentPrice": 2150,
+    "sharesOut": 298,
+    "cash": 350000,
+    "currency": "JPY",
+    "phase": "commercial",
+    "subtitle": "Japanese pharma + ViiV royalty franchise. FY25 (Mar25) revenue ~¥450B / ~$3.0B: own products ~¥190B (Xocova ensitrelvir COVID, Mulpleta thrombocytopenia, Fetroja cefiderocol MDR Gram-neg, Symproic OIC, Intuniv ADHD JP) + ViiV royalty stream ~¥185B (10% equity stake in ViiV; dolutegravir/cabotegravir HIV) + contract ~¥30B. Net cash ~¥350B. Pipeline: Ensitrelvir SCORPIO global Ph3, S-892216 next-gen antiviral, Sangamo ST-501 tau, fosmanogepix invasive fungal Ph3, redasemtide stroke Ph3.",
+    "yahooTicker": "4507.T"
+  },
+  "assets": [
+    {
+      "id": "viiv_royalty",
+      "name": "ViiV Healthcare 10% equity stake + dolutegravir/cabotegravir royalty stream (GSK 78.3% / Pfizer 11.7% / Shionogi 10%)",
+      "stage": "Commercial (preferred dividends + royalty income on Tivicay/Triumeq/Dovato/Apretude/Cabenuva)",
+      "modality": "small_molecule.enzyme.integrase_inhibitor",
+      "targets": [
+        "INSTI"
+      ],
+      "indications": [
+        {
+          "id": "hiv_ins",
+          "name": "HIV (integrase strand transfer inhibitor + long-acting cabotegravir LAI)",
+          "area": "infectious_disease.viral.hiv",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 80,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 35000,
+                "wtpPct": 55,
+                "priceK": 6
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 15.8,
+                "wtpPct": 50,
+                "priceK": 8
+              },
+              "eu": {
+                "reachPct": 12.6,
+                "wtpPct": 50,
+                "priceK": 5
+              },
+              "row": {
+                "reachPct": 2.4,
+                "wtpPct": 50,
+                "priceK": 1.5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "ViiV royalty income proxy: blended ~$8K/yr/patient at Shionogi share",
+              "us.reachPct": "Dolutegravir-based regimens ~50% global HIV ARV market share"
+            },
+            "penPct": 40,
+            "cagrPct": 3,
+            "peakYear": 2030,
+            "salesM": 1233,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "xocova",
+      "name": "Xocova (ensitrelvir) - oral 3CL protease inhibitor SARS-CoV-2 (Shionogi-discovered)",
+      "stage": "Commercial (Japan emergency authorization Nov 2022; commercial launch Mar 2024; SCORPIO global Ph3 ongoing)",
+      "modality": "small_molecule.enzyme.protease_inhibitor",
+      "targets": [],
+      "indications": [
+        {
+          "id": "covid_treat",
+          "name": "COVID-19 mild-to-moderate symptomatic + post-exposure prophylaxis",
+          "area": "infectious_disease.viral.respiratory",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50000,
+                "wtpPct": 25,
+                "priceK": 0.5
+              },
+              "eu": {
+                "patientsK": 75000,
+                "wtpPct": 20,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 5,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.7,
+                "wtpPct": 30,
+                "priceK": 1.2
+              },
+              "eu": {
+                "reachPct": 0.4,
+                "wtpPct": 20,
+                "priceK": 0.6
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Xocova Japan post-pandemic commercial demand ~5-10% symptomatic COVID Rx",
+              "row.priceK": "Xocova WAC ~¥50K/course (~$350)"
+            },
+            "penPct": 15,
+            "cagrPct": 10,
+            "peakYear": 2028,
+            "salesM": 233,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "fetroja",
+      "name": "Fetroja / Fetcroja (cefiderocol) - siderophore cephalosporin for MDR Gram-negative infections (carbapenem-resistant)",
+      "stage": "Commercial (FDA Nov 2019 cUTI; HABP/VABP 2020; ex-US via GSK partnership)",
+      "modality": "small_molecule.antimicrobial.cephalosporin",
+      "targets": [],
+      "indications": [
+        {
+          "id": "mdr_gramneg",
+          "name": "MDR Gram-negative infections (CR-Acinetobacter, CR-Pseudomonas, ESBL/CRE-Enterobacterales)",
+          "area": "infectious_disease.bacterial.mdr_resistant",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 150,
+                "wtpPct": 80,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 200,
+                "wtpPct": 70,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 25,
+                "priceK": 4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 60,
+                "priceK": 18
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 50,
+                "priceK": 10
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 25,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Fetroja WAC ~$18K/course",
+              "us.reachPct": "Fetroja ~25% MDR Gram-neg directed therapy share (vs polymyxins, Recarbrio, Xerava)"
+            },
+            "penPct": 30,
+            "cagrPct": 12,
+            "peakYear": 2031,
+            "salesM": 180,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "mulpleta",
+      "name": "Mulpleta (lusutrombopag) - oral thrombopoietin receptor agonist for chronic liver disease thrombocytopenia",
+      "stage": "Commercial (FDA Jul 2018; ex-US partnership)",
+      "modality": "small_molecule.gpcr.tpo_agonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "itp_cld",
+          "name": "Thrombocytopenia in chronic liver disease (procedure-related)",
+          "area": "rare_disease.hematology.thrombocytopenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 70,
+                "priceK": 30
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 60,
+                "priceK": 18
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 6
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 20,
+                "wtpPct": 55,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 10,
+                "wtpPct": 45,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 18,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Mulpleta WAC ~$25K/course"
+            },
+            "penPct": 22,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 73,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "symproic",
+      "name": "Symproic (naldemedine) - peripherally-acting mu-opioid antagonist for opioid-induced constipation (BMS US partner)",
+      "stage": "Commercial (FDA Mar 2017; BMS commercializes US)",
+      "modality": "small_molecule.gpcr.opioid_antagonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "oic",
+          "name": "Opioid-induced constipation (chronic non-cancer pain)",
+          "area": "cns.pain.opioid_induced_constipation",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 4000,
+                "wtpPct": 35,
+                "priceK": 1.2
+              },
+              "eu": {
+                "patientsK": 6000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "row": {
+                "patientsK": 15000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3.6,
+                "wtpPct": 35,
+                "priceK": 1.5
+              },
+              "eu": {
+                "reachPct": 1.2,
+                "wtpPct": 25,
+                "priceK": 0.8
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 8,
+                "priceK": 0.3
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Symproic WAC ~$1.5K/yr"
+            },
+            "penPct": 18,
+            "cagrPct": 2,
+            "peakYear": 2028,
+            "salesM": 60,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "intuniv_jp",
+      "name": "Intuniv (guanfacine) - alpha-2A adrenergic agonist for ADHD (Japan rights from Takeda)",
+      "stage": "Commercial (Japan only; ex-Takeda)",
+      "modality": "small_molecule.gpcr.alpha2a_agonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "adhd_jp",
+          "name": "ADHD pediatric + adult (Japan)",
+          "area": "cns.psychiatry.adhd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 55,
+                "priceK": 1.2
+              },
+              "row": {
+                "patientsK": 35000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 1.4,
+                "wtpPct": 30,
+                "priceK": 1.0
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Intuniv JP ~10% ADHD Rx; Shionogi exclusive Japan",
+              "row.priceK": "Intuniv JP WAC ~¥150K/yr"
+            },
+            "penPct": 55,
+            "cagrPct": 2,
+            "peakYear": 2028,
+            "salesM": 100,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "jp_heritage",
+      "name": "Shionogi Japan heritage portfolio (Crestor JP, Pirespa, Differin JP, Cymbalta JP authorized generic, Irbetan, etc.)",
+      "stage": "Commercial (mature JP portfolio ~¥55B)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "indications": [
+        {
+          "id": "jp_heritage_mix",
+          "name": "Japan mature portfolio (cardio + dermatology + GI + IPF)",
+          "area": "_established_products.shionogi_jp_heritage",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 1000,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "Bucket avg ~¥50-100K/yr blended"
+            },
+            "penPct": 20,
+            "cagrPct": -3,
+            "peakYear": 2026,
+            "salesM": 367,
+            "salesYear": 2025,
+            "_genericBucket": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "ensitrelvir_global",
+      "name": "Ensitrelvir global expansion (SCORPIO-PEP post-exposure prophylaxis Ph3 + SCORPIO-SR severe-risk Ph3)",
+      "stage": "Phase 3 (SCORPIO-PEP positive topline late 2024; FDA filing path 2026; SCORPIO-SR ongoing)",
+      "modality": "small_molecule.enzyme.protease_inhibitor",
+      "targets": [],
+      "indications": [
+        {
+          "id": "covid_pep",
+          "name": "COVID post-exposure prophylaxis (household contacts; high-risk severe disease prevention)",
+          "area": "infectious_disease.viral.respiratory",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50000,
+                "wtpPct": 30,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 75000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.3,
+                "wtpPct": 35,
+                "priceK": 0.8
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 30,
+                "priceK": 0.5
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 12,
+                "priceK": 0.2
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Ensitrelvir PEP WAC ~$500/course",
+              "us.reachPct": "Niche post-exposure prophylaxis market (vs Paxlovid)"
+            },
+            "penPct": 15,
+            "cagrPct": 10,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "s892216",
+      "name": "S-892216 - second-generation oral 3CL protease inhibitor SARS-CoV-2 (improved PK + RVPV resistance coverage)",
+      "stage": "Phase 1/2 (next-gen antiviral; readouts 2026/27)",
+      "modality": "small_molecule.enzyme.protease_inhibitor",
+      "targets": [],
+      "indications": [
+        {
+          "id": "covid_next",
+          "name": "COVID-19 next-gen oral antiviral (improved PK)",
+          "area": "infectious_disease.viral.respiratory",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50000,
+                "wtpPct": 25,
+                "priceK": 0.5
+              },
+              "eu": {
+                "patientsK": 75000,
+                "wtpPct": 20,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 5,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.2,
+                "wtpPct": 30,
+                "priceK": 0.6
+              },
+              "eu": {
+                "reachPct": 0.1,
+                "wtpPct": 25,
+                "priceK": 0.4
+              },
+              "row": {
+                "reachPct": 0.02,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated $400/course follow-on antiviral"
+            },
+            "penPct": 12,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "redasemtide",
+      "name": "Redasemtide (S-005151) - peptide neuroprotectant for acute ischemic stroke (post-rTPA)",
+      "stage": "Phase 3 (post-stroke; readout 2026/27)",
+      "modality": "peptide.synthetic.neuroprotectant",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ais_neuro",
+          "name": "Acute ischemic stroke neuroprotection (post-thrombolysis)",
+          "area": "cns.cerebrovascular.acute_ischemic_stroke",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 800,
+                "wtpPct": 50,
+                "priceK": 8
+              },
+              "eu": {
+                "patientsK": 1200,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 15000,
+                "wtpPct": 12,
+                "priceK": 1.2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1,
+                "wtpPct": 35,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 30,
+                "priceK": 3
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 12,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $5K/course"
+            },
+            "penPct": 10,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "fosmanogepix",
+      "name": "Fosmanogepix - GWT1 inhibitor antifungal (Basilea-licensed JP; broad-spectrum invasive fungal)",
+      "stage": "Phase 3 invasive candidiasis + aspergillosis",
+      "modality": "small_molecule.antimicrobial.antifungal",
+      "targets": [],
+      "indications": [
+        {
+          "id": "invasive_fungal",
+          "name": "Invasive candidiasis + aspergillosis (broad-spectrum systemic antifungal)",
+          "area": "infectious_disease.fungal.invasive_systemic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 80,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 70,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 25,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 60,
+                "priceK": 18
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 12
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 25,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $18K/course"
+            },
+            "penPct": 15,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "st501_tau",
+      "name": "Sangamo ST-501 - zinc-finger transcription factor (ZFP-TF) repressor for tau lowering (Sangamo collaboration)",
+      "stage": "Phase 1 (Alzheimer's tauopathies; AAV-delivered ZFP-TF)",
+      "modality": "gene_therapy.aav.zfp_tf",
+      "targets": [],
+      "indications": [
+        {
+          "id": "tauopathy_ad",
+          "name": "Alzheimer's disease tauopathies (one-time AAV ZFP-TF tau repression)",
+          "area": "cns.neurodegeneration.alzheimer",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 25,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 12,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 40000,
+                "wtpPct": 3,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.3,
+                "wtpPct": 30,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 0.1,
+                "wtpPct": 25,
+                "priceK": 200
+              },
+              "row": {
+                "reachPct": 0.01,
+                "wtpPct": 5,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated AAV gene therapy WAC ~$350K one-time"
+            },
+            "penPct": 12,
+            "cagrPct": 0,
+            "peakYear": 2034
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 2,
+        "commercialMult": 0.5,
+        "commercialRevM": 420000,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "viiv_royalty": {
+          "hiv_ins": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "xocova": {
+          "covid_treat": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "fetroja": {
+          "mdr_gramneg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "mulpleta": {
+          "itp_cld": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "symproic": {
+          "oic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "intuniv_jp": {
+          "adhd_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "jp_heritage": {
+          "jp_heritage_mix": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ensitrelvir_global": {
+          "covid_pep": {
+            "pos": 35,
+            "apr": 60,
+            "pen": 0.3
+          }
+        },
+        "s892216": {
+          "covid_next": {
+            "pos": 15,
+            "apr": 60,
+            "pen": 0.3
+          }
+        },
+        "redasemtide": {
+          "ais_neuro": {
+            "pos": 10,
+            "apr": 60,
+            "pen": 0.3
+          }
+        },
+        "fosmanogepix": {
+          "invasive_fungal": {
+            "pos": 30,
+            "apr": 60,
+            "pen": 0.3
+          }
+        },
+        "st501_tau": {
+          "tauopathy_ad": {
+            "pos": 5,
+            "apr": 60,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 22,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 3,
+        "commercialMult": 0.9,
+        "commercialRevM": 440000,
+        "milestones": 3000,
+        "dil": 0
+      },
+      "assumptions": {
+        "viiv_royalty": {
+          "hiv_ins": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "xocova": {
+          "covid_treat": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "fetroja": {
+          "mdr_gramneg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "mulpleta": {
+          "itp_cld": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "symproic": {
+          "oic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "intuniv_jp": {
+          "adhd_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "jp_heritage": {
+          "jp_heritage_mix": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ensitrelvir_global": {
+          "covid_pep": {
+            "pos": 55,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "s892216": {
+          "covid_next": {
+            "pos": 25,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "redasemtide": {
+          "ais_neuro": {
+            "pos": 18,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "fosmanogepix": {
+          "invasive_fungal": {
+            "pos": 50,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "st501_tau": {
+          "tauopathy_ad": {
+            "pos": 10,
+            "apr": 75,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 38,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 5,
+        "commercialMult": 1.4,
+        "commercialRevM": 460000,
+        "milestones": 10000,
+        "dil": 0
+      },
+      "assumptions": {
+        "viiv_royalty": {
+          "hiv_ins": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "xocova": {
+          "covid_treat": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "fetroja": {
+          "mdr_gramneg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "mulpleta": {
+          "itp_cld": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "symproic": {
+          "oic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "intuniv_jp": {
+          "adhd_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "jp_heritage": {
+          "jp_heritage_mix": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ensitrelvir_global": {
+          "covid_pep": {
+            "pos": 75,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "s892216": {
+          "covid_next": {
+            "pos": 40,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "redasemtide": {
+          "ais_neuro": {
+            "pos": 30,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "fosmanogepix": {
+          "invasive_fungal": {
+            "pos": 70,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "st501_tau": {
+          "tauopathy_ad": {
+            "pos": 22,
+            "apr": 85,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 8,
+        "commercialMult": 2.2,
+        "commercialRevM": 500000,
+        "milestones": 25000,
+        "dil": 0
+      },
+      "assumptions": {
+        "viiv_royalty": {
+          "hiv_ins": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "xocova": {
+          "covid_treat": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "fetroja": {
+          "mdr_gramneg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "mulpleta": {
+          "itp_cld": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "symproic": {
+          "oic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "intuniv_jp": {
+          "adhd_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "jp_heritage": {
+          "jp_heritage_mix": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ensitrelvir_global": {
+          "covid_pep": {
+            "pos": 88,
+            "apr": 92,
+            "pen": 1.05
+          }
+        },
+        "s892216": {
+          "covid_next": {
+            "pos": 55,
+            "apr": 92,
+            "pen": 1.05
+          }
+        },
+        "redasemtide": {
+          "ais_neuro": {
+            "pos": 45,
+            "apr": 92,
+            "pen": 1.05
+          }
+        },
+        "fosmanogepix": {
+          "invasive_fungal": {
+            "pos": 85,
+            "apr": 92,
+            "pen": 1.05
+          }
+        },
+        "st501_tau": {
+          "tauopathy_ad": {
+            "pos": 38,
+            "apr": 92,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 12,
+        "commercialMult": 3.5,
+        "commercialRevM": 580000,
+        "milestones": 50000,
+        "dil": 0
+      },
+      "assumptions": {
+        "viiv_royalty": {
+          "hiv_ins": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "xocova": {
+          "covid_treat": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "fetroja": {
+          "mdr_gramneg": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "mulpleta": {
+          "itp_cld": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "symproic": {
+          "oic": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "intuniv_jp": {
+          "adhd_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "jp_heritage": {
+          "jp_heritage_mix": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ensitrelvir_global": {
+          "covid_pep": {
+            "pos": 95,
+            "apr": 96,
+            "pen": 1.25
+          }
+        },
+        "s892216": {
+          "covid_next": {
+            "pos": 70,
+            "apr": 96,
+            "pen": 1.25
+          }
+        },
+        "redasemtide": {
+          "ais_neuro": {
+            "pos": 60,
+            "apr": 96,
+            "pen": 1.25
+          }
+        },
+        "fosmanogepix": {
+          "invasive_fungal": {
+            "pos": 92,
+            "apr": 96,
+            "pen": 1.25
+          }
+        },
+        "st501_tau": {
+          "tauopathy_ad": {
+            "pos": 55,
+            "apr": 96,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "2026",
+      "dateSort": "2026-09-30",
+      "asset": "ensitrelvir_global",
+      "indication": "covid_pep",
+      "title": "Ensitrelvir SCORPIO-PEP FDA filing decision",
+      "type": "bla_submission",
+      "binary": true,
+      "fail_pos": 35,
+      "fail_apr": 60,
+      "success_pos": 85,
+      "success_apr": 90,
+      "_source": "Shionogi pipeline disclosure",
+      "_confidence": "medium"
+    },
+    {
+      "date": "H2 2027",
+      "dateSort": "2027-09-30",
+      "asset": "ensitrelvir_global",
+      "indication": "covid_pep",
+      "title": "Ensitrelvir SCORPIO-SR severe-risk Ph3 readout",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 55,
+      "success_pos": 80,
+      "success_apr": 88,
+      "_source": "Shionogi pipeline",
+      "_confidence": "medium"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-12-15",
+      "asset": "redasemtide",
+      "indication": "ais_neuro",
+      "title": "Redasemtide post-stroke Ph3 readout",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 8,
+      "fail_apr": 50,
+      "success_pos": 60,
+      "success_apr": 85,
+      "_source": "Shionogi pipeline",
+      "_confidence": "medium"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-04-30",
+      "asset": "fosmanogepix",
+      "indication": "invasive_fungal",
+      "title": "Fosmanogepix invasive candidiasis Ph3 readout",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 65,
+      "success_pos": 85,
+      "success_apr": 90,
+      "_source": "Basilea/Shionogi",
+      "_confidence": "medium"
+    }
+  ]
+}

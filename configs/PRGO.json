@@ -4,10 +4,10 @@
     "name": "Perrigo Company plc",
     "currentPrice": 25,
     "sharesOut": 136,
-    "cash": -2100,
+    "cash": -3200,
     "currency": "USD",
     "phase": "commercial",
-    "subtitle": "Pure consumer self-care company post-Rx divestiture 2021. CSCA (Consumer Self-Care Americas ~$2.6B) + CSCI (International ~$1.8B) = ~$4.4B FY24 total. Largest US store-brand OTC manufacturer (Walmart Equate / CVS / Target). Innovative growth: Opill (norgestrel) first OTC daily oral contraceptive in US (FDA Jul 2023, launched Mar 2024). Branded OTC: Prevacid 24HR, ScarAway, Mederma. Heavy net debt ~$2.1B; turnaround in progress",
+    "subtitle": "Pure consumer self-care company post-Rx divestiture 2021. CSCA (Consumer Self-Care Americas ~$2.6B) + CSCI (International ~$1.8B) = ~$4.4B FY24 total. Largest US store-brand OTC manufacturer (Walmart Equate / CVS / Target). Innovative growth: Opill (norgestrel) first OTC daily oral contraceptive in US (FDA Jul 2023, launched Mar 2024). Branded OTC: Prevacid 24HR, ScarAway, Mederma. Heavy net debt ~$3.2B; turnaround in progress",
     "yahooTicker": "PRGO"
   },
   "assets": [
@@ -81,17 +81,33 @@
       "targets": [],
       "indications": [
         {
-          "id": "csca_otc_bulk",
-          "name": "CSCA OTC bulk (allergy/cough-cold/digestive/pain/skincare/nutrition; store-brand + branded)",
+          "id": "csca_store_brand",
+          "name": "CSCA store-brand OTC (~70% of CSCA): Walmart Equate + CVS + Target + others; allergy/cough-cold/digestive/analgesics/skincare/nutrition",
           "area": "_established_products.perrigo_csca_otc",
           "market": {
-            "tamB": 30,
+            "tamB": 25,
             "penPct": 0,
-            "salesM": 2600,
+            "salesM": 1800,
             "salesYear": 2025,
             "peakYear": 2027,
-            "cagrPct": -1,
-            "notes": "Heterogeneous OTC bucket: store-brand contracts (Walmart Equate top-line ~30% of CSCA, CVS/Target/etc) covering allergy (loratadine/cetirizine/fluticasone), cough-cold (DXM/guaifenesin), digestive (PPI omeprazole, antacids, laxatives), analgesics (acetaminophen, ibuprofen), skincare (sunscreens), infant nutrition (post-divestiture residual). Branded: Prevacid 24HR (lansoprazole OTC PPI), ScarAway (silicone gel), Mederma (scar gel). All non-disease-specific consumer self-care.",
+            "cagrPct": -2,
+            "notes": "Store-brand contract manufacturing: largest US store-brand OTC manufacturer. Walmart Equate ~30% of CSCA, plus CVS Health/Target/Walgreens/Kroger/Rite Aid contracts. Categories: allergy (loratadine/cetirizine/fluticasone), cough-cold (DXM/guaifenesin), digestive (omeprazole, antacids, laxatives), analgesics (acetaminophen, ibuprofen), skincare (sunscreens). Margin compression from retailer pricing pressure.",
+            "company_slice": {},
+            "company_slice_sources": {}
+          }
+        },
+        {
+          "id": "csca_branded",
+          "name": "CSCA branded OTC (~30% of CSCA): Prevacid 24HR + ScarAway + Mederma + others",
+          "area": "_established_products.perrigo_csca_otc",
+          "market": {
+            "tamB": 8,
+            "penPct": 0,
+            "salesM": 800,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 1,
+            "notes": "Branded OTC franchises: Prevacid 24HR (lansoprazole OTC PPI), ScarAway (silicone gel scar treatment), Mederma (scar gel), plus various smaller brands. Higher-margin than store-brand; modest growth via brand equity + premium positioning.",
             "company_slice": {},
             "company_slice_sources": {}
           }
@@ -130,8 +146,8 @@
       "val": {
         "pipelineDR": 8,
         "pipelineMult": 3,
-        "commercialMult": 0.8,
-        "commercialRevM": 3500,
+        "commercialMult": 1.0,
+        "commercialRevM": 3800,
         "milestones": 0,
         "dil": 0
       },
@@ -144,10 +160,15 @@
           }
         },
         "csca_portfolio": {
-          "csca_otc_bulk": {
+          "csca_store_brand": {
             "pos": 100,
             "apr": 100,
             "pen": 0.4
+          },
+          "csca_branded": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
           }
         },
         "csci_portfolio": {
@@ -178,10 +199,15 @@
           }
         },
         "csca_portfolio": {
-          "csca_otc_bulk": {
+          "csca_store_brand": {
             "pos": 100,
             "apr": 100,
             "pen": 0.5
+          },
+          "csca_branded": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
           }
         },
         "csci_portfolio": {
@@ -212,10 +238,15 @@
           }
         },
         "csca_portfolio": {
-          "csca_otc_bulk": {
+          "csca_store_brand": {
             "pos": 100,
             "apr": 100,
             "pen": 0.6
+          },
+          "csca_branded": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
           }
         },
         "csci_portfolio": {
@@ -246,10 +277,15 @@
           }
         },
         "csca_portfolio": {
-          "csca_otc_bulk": {
+          "csca_store_brand": {
             "pos": 100,
             "apr": 100,
             "pen": 0.7
+          },
+          "csca_branded": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
           }
         },
         "csci_portfolio": {
@@ -280,10 +316,15 @@
           }
         },
         "csca_portfolio": {
-          "csca_otc_bulk": {
+          "csca_store_brand": {
             "pos": 100,
             "apr": 100,
             "pen": 0.85
+          },
+          "csca_branded": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
           }
         },
         "csci_portfolio": {
@@ -312,7 +353,7 @@
       "date": "H2 2026",
       "dateSort": "2026-09-30",
       "asset": "csca_portfolio",
-      "indication": "csca_otc_bulk",
+      "indication": "csca_store_brand",
       "title": "Perrigo Project Energize cost-out + margin expansion track update",
       "type": "milestone",
       "binary": false,

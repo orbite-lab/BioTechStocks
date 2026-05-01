@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated": "2026-05-01T08:24:31Z",
-    "target_count": 405,
-    "total_assets": 793,
-    "assets_with_targets": 724,
+    "generated": "2026-05-01T08:34:34Z",
+    "target_count": 407,
+    "total_assets": 800,
+    "assets_with_targets": 730,
     "multi_modality_count": 49,
     "multi_disease_count": 182
   },
@@ -1916,20 +1916,32 @@
     },
     "BRAF": {
       "companies": [
+        "600276",
         "NVS",
         "PFE"
       ],
       "modalities": [
+        "small_molecule.kinase.multi_tki",
         "small_molecule.kinase_inhibitor.braf_mek",
         "small_molecule.kinase_inhibitor.braf_mek_combo"
       ],
       "areas": [
         "oncology.endocrine.thyroid_cancer",
         "oncology.gi.colorectal",
+        "oncology.gi.hcc",
         "oncology.lung.nsclc_driver.kras",
         "oncology.skin.melanoma"
       ],
       "assets": [
+        {
+          "ticker": "600276",
+          "asset": "donafenib",
+          "name": "Donafenib (Zepzhuang; CM4307) - oral BRAF/RAF + VEGFR + PDGFR multi-kinase inhibitor (sorafenib derivative)",
+          "modality": "small_molecule.kinase.multi_tki",
+          "areas": [
+            "oncology.gi.hcc"
+          ]
+        },
         {
           "ticker": "NVS",
           "asset": "tafinlar_mekinist",
@@ -1953,16 +1965,16 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 4,
+      "areaCount": 5,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
-      "totalSOM": 4026.4,
-      "totalSales": 2915.0,
+      "totalTAM": 25489.0,
+      "totalSOM": 4146.5,
+      "totalSales": 2995.0,
       "cagrPct": 3.2,
       "peakYear": 2027
     },
@@ -2894,6 +2906,7 @@
     "CD274": {
       "companies": [
         "1177",
+        "600276",
         "AZN",
         "BNTX",
         "MRK_DE",
@@ -2924,6 +2937,15 @@
           "modality": "antibody.monoclonal.anti_pdl1",
           "areas": [
             "oncology.lung.nsclc_io_resistant"
+          ]
+        },
+        {
+          "ticker": "600276",
+          "asset": "adebrelimab",
+          "name": "Adebrelimab (Erelmosa; SHR-1316; HRP-2058) - anti-PD-L1 humanized IgG1 mAb",
+          "modality": "antibody.monoclonal.anti_pdl1",
+          "areas": [
+            "oncology.lung.sclc"
           ]
         },
         {
@@ -2976,7 +2998,7 @@
           ]
         }
       ],
-      "assetCount": 5,
+      "assetCount": 6,
       "modalityCount": 3,
       "modalityClassCount": 1,
       "areaCount": 10,
@@ -2984,9 +3006,9 @@
         "antibody"
       ],
       "totalTAM": 65297.9,
-      "totalSOM": 19145.1,
-      "totalSales": 10994.0,
-      "cagrPct": 1.5,
+      "totalSOM": 19294.8,
+      "totalSales": 11094.0,
+      "cagrPct": 1.7,
       "peakYear": 2029
     },
     "CD276": {
@@ -4286,7 +4308,7 @@
         "antibody"
       ],
       "totalTAM": 19731.0,
-      "totalSOM": 189.7,
+      "totalSOM": 189.6,
       "totalSales": 0.0,
       "cagrPct": 54.4,
       "peakYear": 2031
@@ -5761,6 +5783,7 @@
     "EGFR": {
       "companies": [
         "4503",
+        "600276",
         "AMGN",
         "AZN",
         "BAYN",
@@ -5775,10 +5798,12 @@
         "antibody.bispecific.tumor_activated_tce",
         "antibody.monoclonal.anti_egfr",
         "antibody.photoimmunotherapy.cetuximab_ir700",
+        "small_molecule.kinase.pan_her_tki",
         "small_molecule.kinase_inhibitor.egfr_tki",
         "small_molecule.kinase_inhibitor.her2_egfr"
       ],
       "areas": [
+        "oncology.breast.her2_pos",
         "oncology.gi.colorectal",
         "oncology.head_neck.hnscc",
         "oncology.lung.nsclc_driver.egfr",
@@ -5792,6 +5817,15 @@
           "modality": "antibody.photoimmunotherapy.cetuximab_ir700",
           "areas": [
             "oncology.head_neck.hnscc"
+          ]
+        },
+        {
+          "ticker": "600276",
+          "asset": "pyrotinib",
+          "name": "Pyrotinib (Aikai; SHR-1258) - oral irreversible pan-HER tyrosine kinase inhibitor (HER1/HER2/HER4)",
+          "modality": "small_molecule.kinase.pan_her_tki",
+          "areas": [
+            "oncology.breast.her2_pos"
           ]
         },
         {
@@ -5868,18 +5902,18 @@
           ]
         }
       ],
-      "assetCount": 9,
-      "modalityCount": 7,
+      "assetCount": 10,
+      "modalityCount": 8,
       "modalityClassCount": 2,
-      "areaCount": 4,
+      "areaCount": 5,
       "modalityClasses": [
         "antibody",
         "small_molecule"
       ],
-      "totalTAM": 36366.2,
-      "totalSOM": 25079.6,
-      "totalSales": 10401.0,
-      "cagrPct": 6.5,
+      "totalTAM": 58136.2,
+      "totalSOM": 25649.1,
+      "totalSales": 10781.0,
+      "cagrPct": 6.6,
       "peakYear": 2030
     },
     "EPHA2": {
@@ -5965,6 +5999,7 @@
       "companies": [
         "4519",
         "4568",
+        "600276",
         "6990",
         "AZN",
         "BAYN",
@@ -5981,6 +6016,7 @@
         "antibody.monoclonal.anti_her2",
         "antibody.monoclonal.anti_her2_combo",
         "small_molecule.kinase.her2_mutant_tki",
+        "small_molecule.kinase.pan_her_tki",
         "small_molecule.kinase_inhibitor.her2",
         "small_molecule.kinase_inhibitor.her2_egfr"
       ],
@@ -6006,6 +6042,15 @@
           "asset": "commercial",
           "name": "Enhertu (T-DXd) - HER2 ADC",
           "modality": "adc.dxd_linker.her2_adc",
+          "areas": [
+            "oncology.breast.her2_pos"
+          ]
+        },
+        {
+          "ticker": "600276",
+          "asset": "pyrotinib",
+          "name": "Pyrotinib (Aikai; SHR-1258) - oral irreversible pan-HER tyrosine kinase inhibitor (HER1/HER2/HER4)",
+          "modality": "small_molecule.kinase.pan_her_tki",
           "areas": [
             "oncology.breast.her2_pos"
           ]
@@ -6115,8 +6160,8 @@
           ]
         }
       ],
-      "assetCount": 13,
-      "modalityCount": 8,
+      "assetCount": 14,
+      "modalityCount": 9,
       "modalityClassCount": 3,
       "areaCount": 5,
       "modalityClasses": [
@@ -6125,9 +6170,9 @@
         "small_molecule"
       ],
       "totalTAM": 43583.9,
-      "totalSOM": 35131.3,
-      "totalSales": 17542.0,
-      "cagrPct": 3.4,
+      "totalSOM": 35700.8,
+      "totalSales": 17922.0,
+      "cagrPct": 3.5,
       "peakYear": 2029
     },
     "ERBB3": {
@@ -6163,6 +6208,40 @@
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2034
+    },
+    "ERBB4": {
+      "companies": [
+        "600276"
+      ],
+      "modalities": [
+        "small_molecule.kinase.pan_her_tki"
+      ],
+      "areas": [
+        "oncology.breast.her2_pos"
+      ],
+      "assets": [
+        {
+          "ticker": "600276",
+          "asset": "pyrotinib",
+          "name": "Pyrotinib (Aikai; SHR-1258) - oral irreversible pan-HER tyrosine kinase inhibitor (HER1/HER2/HER4)",
+          "modality": "small_molecule.kinase.pan_her_tki",
+          "areas": [
+            "oncology.breast.her2_pos"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 21770.0,
+      "totalSOM": 569.5,
+      "totalSales": 380.0,
+      "cagrPct": 12.0,
+      "peakYear": 2031
     },
     "ESR1": {
       "companies": [
@@ -7494,6 +7573,7 @@
         "1177",
         "4502",
         "4523",
+        "600276",
         "BAYN",
         "BI"
       ],
@@ -7552,6 +7632,15 @@
           ]
         },
         {
+          "ticker": "600276",
+          "asset": "donafenib",
+          "name": "Donafenib (Zepzhuang; CM4307) - oral BRAF/RAF + VEGFR + PDGFR multi-kinase inhibitor (sorafenib derivative)",
+          "modality": "small_molecule.kinase.multi_tki",
+          "areas": [
+            "oncology.gi.hcc"
+          ]
+        },
+        {
           "ticker": "BAYN",
           "asset": "stivarga",
           "name": "Stivarga (regorafenib) — multi-kinase inhibitor",
@@ -7574,7 +7663,7 @@
           ]
         }
       ],
-      "assetCount": 5,
+      "assetCount": 6,
       "modalityCount": 4,
       "modalityClassCount": 1,
       "areaCount": 12,
@@ -7582,9 +7671,9 @@
         "small_molecule"
       ],
       "totalTAM": 88106.2,
-      "totalSOM": 13714.5,
-      "totalSales": 6997.0,
-      "cagrPct": 6.1,
+      "totalSOM": 13834.6,
+      "totalSales": 7077.0,
+      "cagrPct": 6.0,
       "peakYear": 2029
     },
     "FLT3": {
@@ -8026,11 +8115,13 @@
     },
     "GCGR": {
       "companies": [
+        "600276",
         "BI",
         "LLY"
       ],
       "modalities": [
         "peptide.incretin.glp1_gip_glucagon",
+        "peptide.synthetic.glp1_gip_glucagon_triple",
         "peptide.synthetic.glp1_glucagon_dual"
       ],
       "areas": [
@@ -8038,6 +8129,15 @@
         "cardio_metabolic.obesity.general"
       ],
       "assets": [
+        {
+          "ticker": "600276",
+          "asset": "hrs9531",
+          "name": "HRS9531 (mazdutide-like) - GLP-1 / GIP / glucagon multi-receptor agonist (subQ weekly)",
+          "modality": "peptide.synthetic.glp1_gip_glucagon_triple",
+          "areas": [
+            "cardio_metabolic.obesity.general"
+          ]
+        },
         {
           "ticker": "BI",
           "asset": "survodutide",
@@ -8058,17 +8158,17 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
       "areaCount": 2,
       "modalityClasses": [
         "peptide"
       ],
       "totalTAM": 167800.0,
-      "totalSOM": 29389.8,
+      "totalSOM": 29479.8,
       "totalSales": 0.0,
-      "cagrPct": 5.6,
+      "cagrPct": 5.7,
       "peakYear": 2035
     },
     "GFAP": {
@@ -8220,19 +8320,30 @@
     },
     "GIPR": {
       "companies": [
+        "600276",
         "AMGN",
         "LLY"
       ],
       "modalities": [
         "antibody.peptide_conjugate.gipr_glp1_incretin",
         "peptide.incretin.glp1_gip",
-        "peptide.incretin.glp1_gip_glucagon"
+        "peptide.incretin.glp1_gip_glucagon",
+        "peptide.synthetic.glp1_gip_glucagon_triple"
       ],
       "areas": [
         "cardio_metabolic.diabetes.t2d",
         "cardio_metabolic.obesity.general"
       ],
       "assets": [
+        {
+          "ticker": "600276",
+          "asset": "hrs9531",
+          "name": "HRS9531 (mazdutide-like) - GLP-1 / GIP / glucagon multi-receptor agonist (subQ weekly)",
+          "modality": "peptide.synthetic.glp1_gip_glucagon_triple",
+          "areas": [
+            "cardio_metabolic.obesity.general"
+          ]
+        },
         {
           "ticker": "AMGN",
           "asset": "maritide",
@@ -8262,8 +8373,8 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 3,
+      "assetCount": 4,
+      "modalityCount": 4,
       "modalityClassCount": 2,
       "areaCount": 2,
       "modalityClasses": [
@@ -8271,13 +8382,14 @@
         "peptide"
       ],
       "totalTAM": 222550.0,
-      "totalSOM": 83569.2,
+      "totalSOM": 83659.2,
       "totalSales": 39600.0,
       "cagrPct": 3.2,
       "peakYear": 2032
     },
     "GLP1R": {
       "companies": [
+        "600276",
         "AMGN",
         "AZN",
         "BI",
@@ -8294,6 +8406,7 @@
         "peptide.glp1.semaglutide",
         "peptide.incretin.glp1_gip",
         "peptide.incretin.glp1_gip_glucagon",
+        "peptide.synthetic.glp1_gip_glucagon_triple",
         "peptide.synthetic.glp1_glucagon_dual",
         "small_molecule.gpcr.glp1_agonist",
         "small_molecule.gpcr.glp1_oral_agonist"
@@ -8304,6 +8417,15 @@
         "cardio_metabolic.obesity.general"
       ],
       "assets": [
+        {
+          "ticker": "600276",
+          "asset": "hrs9531",
+          "name": "HRS9531 (mazdutide-like) - GLP-1 / GIP / glucagon multi-receptor agonist (subQ weekly)",
+          "modality": "peptide.synthetic.glp1_gip_glucagon_triple",
+          "areas": [
+            "cardio_metabolic.obesity.general"
+          ]
+        },
         {
           "ticker": "AMGN",
           "asset": "maritide",
@@ -8425,8 +8547,8 @@
           ]
         }
       ],
-      "assetCount": 13,
-      "modalityCount": 11,
+      "assetCount": 14,
+      "modalityCount": 12,
       "modalityClassCount": 4,
       "areaCount": 3,
       "modalityClasses": [
@@ -8436,9 +8558,9 @@
         "small_molecule"
       ],
       "totalTAM": 246350.0,
-      "totalSOM": 183130.7,
+      "totalSOM": 183220.7,
       "totalSales": 72970.0,
-      "cagrPct": 2.9,
+      "cagrPct": 3.0,
       "peakYear": 2032
     },
     "GNRHR": {
@@ -9393,7 +9515,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -11916,6 +12038,7 @@
         "1177",
         "4502",
         "4523",
+        "600276",
         "BAYN",
         "BI",
         "IPN"
@@ -11923,6 +12046,7 @@
       "modalities": [
         "small_molecule.kinase.multi_tki",
         "small_molecule.kinase.tki_anti_fibrotic",
+        "small_molecule.kinase.vegfr_inhibitor",
         "small_molecule.kinase_inhibitor.multi_kinase",
         "small_molecule.kinase_inhibitor.vegfr",
         "small_molecule.kinase_inhibitor.vegfr_multikinase"
@@ -11932,6 +12056,7 @@
         "oncology.endocrine.thyroid_cancer",
         "oncology.genitourinary.rcc",
         "oncology.gi.colorectal",
+        "oncology.gi.gastric_esoph",
         "oncology.gi.hcc",
         "oncology.gynecologic.endometrial",
         "oncology.lung.nsclc_io_resistant",
@@ -11977,6 +12102,24 @@
           ]
         },
         {
+          "ticker": "600276",
+          "asset": "apatinib",
+          "name": "Apatinib (Aitan; YN-968) - oral selective VEGFR-2 (KDR) tyrosine kinase inhibitor",
+          "modality": "small_molecule.kinase.vegfr_inhibitor",
+          "areas": [
+            "oncology.gi.gastric_esoph"
+          ]
+        },
+        {
+          "ticker": "600276",
+          "asset": "donafenib",
+          "name": "Donafenib (Zepzhuang; CM4307) - oral BRAF/RAF + VEGFR + PDGFR multi-kinase inhibitor (sorafenib derivative)",
+          "modality": "small_molecule.kinase.multi_tki",
+          "areas": [
+            "oncology.gi.hcc"
+          ]
+        },
+        {
           "ticker": "BAYN",
           "asset": "stivarga",
           "name": "Stivarga (regorafenib) — multi-kinase inhibitor",
@@ -12010,17 +12153,17 @@
           ]
         }
       ],
-      "assetCount": 6,
-      "modalityCount": 5,
+      "assetCount": 8,
+      "modalityCount": 6,
       "modalityClassCount": 1,
-      "areaCount": 13,
+      "areaCount": 14,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 89533.4,
-      "totalSOM": 14911.7,
-      "totalSales": 7610.0,
-      "cagrPct": 6.1,
+      "totalTAM": 97812.1,
+      "totalSOM": 15361.4,
+      "totalSales": 7910.0,
+      "cagrPct": 5.9,
       "peakYear": 2029
     },
     "KIF11": {
@@ -12656,7 +12799,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 18252.4,
       "totalSales": 2971.0,
       "cagrPct": 47.5,
@@ -12708,7 +12851,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 17202.9,
       "totalSales": 2271.0,
       "cagrPct": 50.1,
@@ -13687,7 +13830,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -13958,7 +14101,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -14723,6 +14866,7 @@
     "PDCD1": {
       "companies": [
         "1177",
+        "600276",
         "AZN",
         "BMY",
         "GSK",
@@ -14744,9 +14888,11 @@
         "oncology.gi.colorectal",
         "oncology.gi.gastric_esoph",
         "oncology.gi.hcc",
+        "oncology.gynecologic.cervical",
         "oncology.gynecologic.endometrial",
         "oncology.gynecologic.ovarian",
         "oncology.head_neck.hnscc",
+        "oncology.head_neck.npc",
         "oncology.hematology.hodgkin",
         "oncology.lung.nsclc_io_combo",
         "oncology.lung.nsclc_io_resistant",
@@ -14763,6 +14909,20 @@
           "name": "TQB2858 - PD-1 / CTLA-4 bispecific antibody (CTTQ-discovered)",
           "modality": "antibody.bispecific.pd1_ctla4",
           "areas": [
+            "oncology.lung.nsclc_io_resistant"
+          ]
+        },
+        {
+          "ticker": "600276",
+          "asset": "camrelizumab",
+          "name": "Camrelizumab (Airuika; SHR-1210) - anti-PD-1 humanized IgG4 mAb (Hengrui flagship IO; multiple Chinese tumor types)",
+          "modality": "antibody.monoclonal.anti_pd1",
+          "areas": [
+            "oncology.gi.gastric_esoph",
+            "oncology.gi.hcc",
+            "oncology.gynecologic.cervical",
+            "oncology.head_neck.npc",
+            "oncology.hematology.hodgkin",
             "oncology.lung.nsclc_io_resistant"
           ]
         },
@@ -14863,17 +15023,17 @@
           ]
         }
       ],
-      "assetCount": 10,
+      "assetCount": 11,
       "modalityCount": 4,
       "modalityClassCount": 1,
-      "areaCount": 16,
+      "areaCount": 18,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 114709.1,
-      "totalSOM": 67362.5,
-      "totalSales": 46056.0,
-      "cagrPct": 2.6,
+      "totalTAM": 117226.1,
+      "totalSOM": 69237.1,
+      "totalSales": 47306.0,
+      "cagrPct": 2.8,
       "peakYear": 2028
     },
     "PDE3": {
@@ -15237,6 +15397,7 @@
     "PDGFRB": {
       "companies": [
         "1177",
+        "600276",
         "BI"
       ],
       "modalities": [
@@ -15246,6 +15407,7 @@
       "areas": [
         "immunology.autoimmune.systemic_sclerosis",
         "oncology.endocrine.thyroid_cancer",
+        "oncology.gi.hcc",
         "oncology.lung.nsclc_io_resistant",
         "oncology.lung.sclc",
         "oncology.musculoskeletal.sts",
@@ -15266,6 +15428,15 @@
           ]
         },
         {
+          "ticker": "600276",
+          "asset": "donafenib",
+          "name": "Donafenib (Zepzhuang; CM4307) - oral BRAF/RAF + VEGFR + PDGFR multi-kinase inhibitor (sorafenib derivative)",
+          "modality": "small_molecule.kinase.multi_tki",
+          "areas": [
+            "oncology.gi.hcc"
+          ]
+        },
+        {
           "ticker": "BI",
           "asset": "ofev",
           "name": "Ofev (nintedanib) - intracellular tyrosine kinase inhibitor (VEGFR1/2/3 + FGFR1/2/3 + PDGFRalpha/beta)",
@@ -15277,16 +15448,16 @@
           ]
         }
       ],
-      "assetCount": 2,
+      "assetCount": 3,
       "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 7,
+      "areaCount": 8,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 56323.0,
-      "totalSOM": 8633.5,
-      "totalSales": 4370.0,
+      "totalTAM": 62844.0,
+      "totalSOM": 8753.6,
+      "totalSales": 4450.0,
       "cagrPct": 5.5,
       "peakYear": 2030
     },
@@ -16270,6 +16441,40 @@
       "totalSales": 40.0,
       "cagrPct": 2.0,
       "peakYear": 2028
+    },
+    "RAF1": {
+      "companies": [
+        "600276"
+      ],
+      "modalities": [
+        "small_molecule.kinase.multi_tki"
+      ],
+      "areas": [
+        "oncology.gi.hcc"
+      ],
+      "assets": [
+        {
+          "ticker": "600276",
+          "asset": "donafenib",
+          "name": "Donafenib (Zepzhuang; CM4307) - oral BRAF/RAF + VEGFR + PDGFR multi-kinase inhibitor (sorafenib derivative)",
+          "modality": "small_molecule.kinase.multi_tki",
+          "areas": [
+            "oncology.gi.hcc"
+          ]
+        }
+      ],
+      "assetCount": 1,
+      "modalityCount": 1,
+      "modalityClassCount": 1,
+      "areaCount": 1,
+      "modalityClasses": [
+        "small_molecule"
+      ],
+      "totalTAM": 6521.0,
+      "totalSOM": 120.1,
+      "totalSales": 80.0,
+      "cagrPct": 5.0,
+      "peakYear": 2029
     },
     "RAMP1": {
       "companies": [

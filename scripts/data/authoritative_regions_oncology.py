@@ -799,6 +799,19 @@ REGIONS = {
         "eu":  {"patientsK": 80,  "wtpPct": 50, "priceK": 85},
         "row": {"patientsK": 600, "wtpPct": 12, "priceK": 25},
     },
+    # Nasopharyngeal carcinoma (NPC): EBV-associated head & neck cancer
+    # heavily concentrated in southern China + SEA (endemic ~80K cases/yr
+    # China alone). ~3K US incident, ~2K EU, ~150K ROW (China-dominant).
+    # Distinct biology vs HNSCC (EBV-driven, differentiated histology).
+    # Branded class: anti-PD-1 (camrelizumab Hengrui ~RMB 1B+ NPC; tisleli
+    # zumab BeiGene; toripalimab Junshi/Coherus US Loqtorzi 2024) +
+    # chemo backbone (cisplatin + gemcitabine). Net branded ~$50K/yr in
+    # China; ~$200K/yr in US for Loqtorzi. Class peak ~$2-3B globally.
+    "oncology.head_neck.npc": {
+        "us":  {"patientsK": 3,   "wtpPct": 70, "priceK": 200},
+        "eu":  {"patientsK": 2,   "wtpPct": 50, "priceK": 120},
+        "row": {"patientsK": 150, "wtpPct": 25, "priceK": 12},
+    },
 }
 
 
@@ -886,6 +899,7 @@ PEN_PCT = {
     "oncology.musculoskeletal.sts": 35,
     "oncology.eye.uveal_melanoma": 35,
     "oncology.head_neck.hnscc": 55,
+    "oncology.head_neck.npc": 60,
 }
 
 

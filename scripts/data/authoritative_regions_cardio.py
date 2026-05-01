@@ -545,6 +545,43 @@ REGIONS = {
         "eu":  {"patientsK": 0.7,  "wtpPct": 60, "priceK": 450},
         "row": {"patientsK": 2,    "wtpPct": 15, "priceK": 130},
     },
+    # MPS IVA / Morquio A syndrome (GALNS LoF; N-acetylgalactosamine-6-
+    # sulfatase deficiency): rare LSD with skeletal dysplasia, short stature,
+    # respiratory + cardiac complications. Prevalence ~1:200K-300K. ~1.2K
+    # US, ~2K EU, ~6K ROW prevalent (NORD; National MPS Society). Sole
+    # branded therapy: Vimizim (elosulfase alfa ERT, BioMarin FDA Feb 2014;
+    # ~$700M FY24). WAC ~$650K/yr weight-banded. Class peak $700-800M
+    # globally (single asset). source: NORD MPS IVA; BioMarin 10-K.
+    "endocrine.lysosomal_storage.mps_iva": {
+        "us":  {"patientsK": 1.2, "wtpPct": 80, "priceK": 650},
+        "eu":  {"patientsK": 2,   "wtpPct": 65, "priceK": 420},
+        "row": {"patientsK": 6,   "wtpPct": 18, "priceK": 130},
+    },
+    # MPS VI / Maroteaux-Lamy syndrome (ARSB LoF; arylsulfatase B
+    # deficiency): rare LSD with skeletal dysplasia + cardiac valve disease
+    # + corneal clouding. Prevalence ~1:215K-250K. ~0.7K US, ~1K EU,
+    # ~3K ROW. Sole branded therapy: Naglazyme (galsulfase ERT, BioMarin
+    # FDA May 2005; ~$400M FY24). WAC ~$700K/yr. Class peak ~$400-500M.
+    # source: NORD MPS VI; BioMarin 10-K.
+    "endocrine.lysosomal_storage.mps_vi": {
+        "us":  {"patientsK": 0.7, "wtpPct": 80, "priceK": 700},
+        "eu":  {"patientsK": 1,   "wtpPct": 65, "priceK": 450},
+        "row": {"patientsK": 3,   "wtpPct": 18, "priceK": 140},
+    },
+    # Phenylketonuria (PKU; PAH LoF): rare inborn error of metabolism;
+    # toxic phenylalanine accumulation -> intellectual disability if
+    # untreated. Universal newborn screening; lifelong dietary Phe
+    # restriction is foundational. ~16K US, ~25K EU, ~100K ROW
+    # diagnosed; ~50% adherent to diet. Branded class: Palynziq (pegvaliase
+    # SC PEGylated PAL enzyme replacement, BioMarin FDA May 2018; adults
+    # only; ~$340M growing); Kuvan (sapropterin BH4 cofactor BioMarin
+    # FDA 2007; generic 2020 ~$190M residual). Class peak ~$700-900M.
+    # source: NORD PKU; BioMarin 10-K; National PKU Alliance.
+    "endocrine.metabolic.pku": {
+        "us":  {"patientsK": 16,  "wtpPct": 70, "priceK": 250},
+        "eu":  {"patientsK": 25,  "wtpPct": 50, "priceK": 150},
+        "row": {"patientsK": 100, "wtpPct": 12, "priceK": 50},
+    },
     "endocrine.lysosomal_storage.asmd": {
         "us":  {"patientsK": 1,   "wtpPct": 90, "priceK": 600},
         "eu":  {"patientsK": 1.5, "wtpPct": 80, "priceK": 400},
@@ -577,6 +614,9 @@ PEN_PCT = {
     "endocrine.lysosomal_storage.mps1": 50,
     "endocrine.lysosomal_storage.asmd": 50,
     "endocrine.lysosomal_storage.alpha_mannosidosis": 55,
+    "endocrine.lysosomal_storage.mps_iva": 60,
+    "endocrine.lysosomal_storage.mps_vi": 55,
+    "endocrine.metabolic.pku": 30,
     "cardio_metabolic.lipids.lipodystrophy": 50,
     "cardio_metabolic.lipids.ldl_cv_risk": 6,
     "cardio_metabolic.lipids.lpa": 3,

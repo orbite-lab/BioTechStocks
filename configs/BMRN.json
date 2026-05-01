@@ -1,0 +1,964 @@
+{
+  "company": {
+    "ticker": "BMRN",
+    "name": "BioMarin Pharmaceutical Inc.",
+    "currentPrice": 60,
+    "sharesOut": 191,
+    "cash": 1000,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "US rare-disease specialty pharma; San Rafael CA; founded 1997. FY24 ~$2.85B revenue (+18%); +$700M net income (turnaround under Alex Hardy CEO). Flagship growth: Voxzogo (vosoritide CNP analog achondroplasia FDA Nov 2021; ages 0+ expansion 2024; ~$700M+ FY24 → $850M-1B FY25). Mature ERT franchise: Vimizim (MPS IVA), Naglazyme (MPS VI), Aldurazyme (MPS I, Sanofi co-marketed). PKU franchise: Palynziq (PEGylated PAL) + Kuvan (BH4 cofactor; generic). Brineura (CLN2 Batten ERT). Roctavian (AAV5 hemophilia A gene tx FDA 2023; commercial flop, restructuring). Pipeline: BMN 333 next-gen CNP achondroplasia + skeletal/metabolic rare disease",
+    "yahooTicker": "BMRN"
+  },
+  "assets": [
+    {
+      "id": "voxzogo",
+      "name": "Voxzogo (vosoritide) - C-type natriuretic peptide (CNP) analog (subQ daily)",
+      "stage": "Commercial (achondroplasia FDA Nov 2021 ages 5+; expanded 2024 ages 0+; flagship growth driver)",
+      "modality": "peptide.synthetic.cnp_analog",
+      "targets": [
+        "NPR2"
+      ],
+      "indications": [
+        {
+          "id": "achondroplasia",
+          "name": "Achondroplasia (FGFR3 GoF; bone growth restoration; ages 0+ post-2024 label expansion)",
+          "area": "musculoskeletal.bone_cartilage.achondroplasia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 70,
+                "priceK": 320
+              },
+              "eu": {
+                "patientsK": 12,
+                "wtpPct": 55,
+                "priceK": 210
+              },
+              "row": {
+                "patientsK": 8,
+                "wtpPct": 25,
+                "priceK": 150
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 38.4,
+                "wtpPct": 75,
+                "priceK": 320
+              },
+              "eu": {
+                "reachPct": 29.9,
+                "wtpPct": 55,
+                "priceK": 200
+              },
+              "row": {
+                "reachPct": 6.4,
+                "wtpPct": 12,
+                "priceK": 65
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Voxzogo first-in-class achondroplasia therapy; ~18% US achondroplasia diagnosed treated; growing on infant/toddler expansion (under-5)",
+              "us.priceK": "Voxzogo WAC ~$320K/yr weight-banded daily SC"
+            },
+            "penPct": 40,
+            "cagrPct": 22,
+            "peakYear": 2032,
+            "salesM": 880,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "vimizim",
+      "name": "Vimizim (elosulfase alfa) - recombinant N-acetylgalactosamine-6-sulfatase (GALNS) ERT (IV weekly)",
+      "stage": "Commercial (MPS IVA Morquio A FDA Feb 2014; mature ERT)",
+      "modality": "recombinant_protein.enzyme.galns",
+      "targets": [
+        "GALNS"
+      ],
+      "indications": [
+        {
+          "id": "mps_iva",
+          "name": "MPS IVA / Morquio A syndrome (skeletal dysplasia + respiratory + cardiac complications)",
+          "area": "endocrine.lysosomal_storage.mps_iva",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1.2,
+                "wtpPct": 80,
+                "priceK": 650
+              },
+              "eu": {
+                "patientsK": 2,
+                "wtpPct": 65,
+                "priceK": 420
+              },
+              "row": {
+                "patientsK": 6,
+                "wtpPct": 18,
+                "priceK": 130
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 80,
+                "priceK": 650
+              },
+              "eu": {
+                "reachPct": 74.5,
+                "wtpPct": 65,
+                "priceK": 420
+              },
+              "row": {
+                "reachPct": 16.6,
+                "wtpPct": 18,
+                "priceK": 130
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Vimizim sole approved Morquio A ERT; ~60% US prevalent treated",
+              "us.priceK": "Vimizim WAC ~$650K/yr"
+            },
+            "penPct": 60,
+            "cagrPct": 3,
+            "peakYear": 2030,
+            "salesM": 700,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "naglazyme",
+      "name": "Naglazyme (galsulfase) - recombinant arylsulfatase B (ARSB) ERT (IV weekly)",
+      "stage": "Commercial (MPS VI Maroteaux-Lamy FDA May 2005; mature)",
+      "modality": "recombinant_protein.enzyme.arsb",
+      "targets": [
+        "ARSB"
+      ],
+      "indications": [
+        {
+          "id": "mps_vi",
+          "name": "MPS VI / Maroteaux-Lamy syndrome (skeletal + cardiac valve + corneal clouding)",
+          "area": "endocrine.lysosomal_storage.mps_vi",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 0.7,
+                "wtpPct": 80,
+                "priceK": 700
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 65,
+                "priceK": 450
+              },
+              "row": {
+                "patientsK": 3,
+                "wtpPct": 18,
+                "priceK": 140
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 80,
+                "priceK": 700
+              },
+              "eu": {
+                "reachPct": 72.1,
+                "wtpPct": 65,
+                "priceK": 450
+              },
+              "row": {
+                "reachPct": 16.0,
+                "wtpPct": 18,
+                "priceK": 140
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Naglazyme sole approved MPS VI ERT",
+              "us.priceK": "Naglazyme WAC ~$700K/yr"
+            },
+            "penPct": 55,
+            "cagrPct": 1,
+            "peakYear": 2030,
+            "salesM": 400,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "aldurazyme",
+      "name": "Aldurazyme (laronidase) - recombinant alpha-L-iduronidase (IDUA) ERT (Sanofi co-marketed; BioMarin manufactures + 50% royalty)",
+      "stage": "Commercial (MPS I Hurler/Hurler-Scheie/Scheie FDA 2003; mature; Sanofi/BMRN profit-share)",
+      "modality": "recombinant_protein.enzyme.idua",
+      "targets": [
+        "IDUA"
+      ],
+      "indications": [
+        {
+          "id": "mps_i",
+          "name": "MPS I / Hurler / Hurler-Scheie / Scheie syndrome",
+          "area": "endocrine.lysosomal_storage.mps1",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1.5,
+                "wtpPct": 85,
+                "priceK": 400
+              },
+              "eu": {
+                "patientsK": 2,
+                "wtpPct": 75,
+                "priceK": 270
+              },
+              "row": {
+                "patientsK": 8,
+                "wtpPct": 18,
+                "priceK": 100
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 30,
+                "wtpPct": 75,
+                "priceK": 600
+              },
+              "eu": {
+                "reachPct": 22,
+                "wtpPct": 60,
+                "priceK": 380
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 15,
+                "priceK": 120
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Aldurazyme MPS I; BioMarin recognizes 50% profit-share with Sanofi (manufacturer + royalty)",
+              "us.priceK": "Aldurazyme WAC ~$600K/yr (BMRN-recognized portion)"
+            },
+            "penPct": 50,
+            "cagrPct": 0,
+            "peakYear": 2027,
+            "salesM": 130,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "palynziq",
+      "name": "Palynziq (pegvaliase-pqpz) - PEGylated phenylalanine ammonia lyase (PAL) enzyme replacement (subQ daily)",
+      "stage": "Commercial (PKU adults FDA May 2018; growing)",
+      "modality": "recombinant_protein.enzyme.pegylated_pal",
+      "targets": [
+        "PAH"
+      ],
+      "indications": [
+        {
+          "id": "pku_adult",
+          "name": "PKU adult (Phe lowering; alternative to lifelong dietary Phe restriction)",
+          "area": "endocrine.metabolic.pku",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 16,
+                "wtpPct": 70,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 50,
+                "priceK": 150
+              },
+              "row": {
+                "patientsK": 100,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 15.1,
+                "wtpPct": 70,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 7.5,
+                "wtpPct": 50,
+                "priceK": 150
+              },
+              "row": {
+                "reachPct": 0.9,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Palynziq ~8% US PKU diagnosed treated (adult subset only); growing 25%/yr",
+              "us.priceK": "Palynziq WAC ~$250K/yr blended (loading + maintenance)"
+            },
+            "penPct": 30,
+            "cagrPct": 22,
+            "peakYear": 2032,
+            "salesM": 380,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "kuvan",
+      "name": "Kuvan (sapropterin dihydrochloride) - synthetic tetrahydrobiopterin (BH4) cofactor (PAH activator)",
+      "stage": "Commercial (PKU FDA 2007; LOE 2020; generic dominant)",
+      "modality": "small_molecule.cofactor.bh4_analog",
+      "targets": [
+        "PAH"
+      ],
+      "indications": [
+        {
+          "id": "pku_bh4",
+          "name": "PKU BH4-responsive subset (Phe lowering)",
+          "area": "endocrine.metabolic.pku",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 16,
+                "wtpPct": 70,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 50,
+                "priceK": 150
+              },
+              "row": {
+                "patientsK": 100,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 46.6,
+                "wtpPct": 50,
+                "priceK": 50
+              },
+              "eu": {
+                "reachPct": 29.1,
+                "wtpPct": 35,
+                "priceK": 30
+              },
+              "row": {
+                "reachPct": 5.8,
+                "wtpPct": 10,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Kuvan ~8% PKU BH4-responsive subset; mature franchise post-LOE 2020",
+              "us.priceK": "Kuvan brand residual ~$50K/yr; generics dominant"
+            },
+            "penPct": 30,
+            "cagrPct": -10,
+            "peakYear": 2025,
+            "salesM": 180,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "brineura",
+      "name": "Brineura (cerliponase alfa) - recombinant tripeptidyl peptidase-1 (TPP1) ERT (intracerebroventricular q2wk)",
+      "stage": "Commercial (CLN2 Batten / Late-Infantile NCL FDA Apr 2017)",
+      "modality": "recombinant_protein.enzyme.tpp1",
+      "targets": [
+        "TPP1"
+      ],
+      "indications": [
+        {
+          "id": "cln2",
+          "name": "CLN2 / Late-Infantile Neuronal Ceroid Lipofuscinosis (Batten disease)",
+          "area": "cns.neurodegeneration.cln2_batten",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 0.6,
+                "wtpPct": 75,
+                "priceK": 700
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 60,
+                "priceK": 450
+              },
+              "row": {
+                "patientsK": 3,
+                "wtpPct": 15,
+                "priceK": 130
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 50,
+                "wtpPct": 75,
+                "priceK": 700
+              },
+              "eu": {
+                "reachPct": 35,
+                "wtpPct": 60,
+                "priceK": 450
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 15,
+                "priceK": 130
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Brineura sole approved CLN2 ERT; ~50% US prevalent treated; ICV delivery via Ommaya port",
+              "us.priceK": "Brineura WAC ~$700K/yr"
+            },
+            "penPct": 60,
+            "cagrPct": 3,
+            "peakYear": 2030,
+            "salesM": 185,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "roctavian",
+      "name": "Roctavian (valoctocogene roxaparvovec) - AAV5-FVIII gene therapy (one-time IV infusion)",
+      "stage": "Commercial (severe hemophilia A FDA Jun 2023, EU Aug 2022; commercial flop ~$30M cumulative; HCC concerns + payer issues + restructuring)",
+      "modality": "gene_therapy.aav5.fviii",
+      "targets": [
+        "F8"
+      ],
+      "indications": [
+        {
+          "id": "hemophilia_a",
+          "name": "Severe hemophilia A (one-time AAV5 gene therapy)",
+          "area": "hematology.rare_blood.hemophilia_a",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 85,
+                "priceK": 300
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "row": {
+                "patientsK": 280,
+                "wtpPct": 25,
+                "priceK": 80
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 50,
+                "priceK": 2900
+              },
+              "eu": {
+                "reachPct": 0.3,
+                "wtpPct": 35,
+                "priceK": 1800
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 8,
+                "priceK": 600
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Roctavian severely underperformed; <50 patients treated cumulatively; HCC monitoring concerns + payer reimbursement issues + 1-time pricing model challenges",
+              "us.priceK": "Roctavian WAC ~$2.9M one-time"
+            },
+            "penPct": 65,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 50,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "bmn333",
+      "name": "BMN 333 - long-acting CNP analog (next-gen vosoritide; weekly subQ vs daily Voxzogo)",
+      "stage": "Phase 2/3 (achondroplasia next-gen; weekly dosing convenience)",
+      "modality": "peptide.synthetic.cnp_analog_long_acting",
+      "targets": [
+        "NPR2"
+      ],
+      "indications": [
+        {
+          "id": "achondroplasia_lai",
+          "name": "Achondroplasia next-gen weekly (Ph2/3; convenience differentiator)",
+          "area": "musculoskeletal.bone_cartilage.achondroplasia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 70,
+                "priceK": 320
+              },
+              "eu": {
+                "patientsK": 12,
+                "wtpPct": 55,
+                "priceK": 210
+              },
+              "row": {
+                "patientsK": 8,
+                "wtpPct": 25,
+                "priceK": 150
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8,
+                "wtpPct": 75,
+                "priceK": 320
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 55,
+                "priceK": 200
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 65
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "BMN 333 cannibalizes Voxzogo via weekly convenience; addressable existing Voxzogo patients + new starts",
+              "us.priceK": "Same achondroplasia pricing"
+            },
+            "penPct": 40,
+            "cagrPct": 25,
+            "peakYear": 2034
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "val": {
+        "mult": 3,
+        "dr": 13,
+        "cannib": 10
+      },
+      "assumptions": {
+        "voxzogo": {
+          "achondroplasia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "vimizim": {
+          "mps_iva": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "naglazyme": {
+          "mps_vi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "aldurazyme": {
+          "mps_i": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "palynziq": {
+          "pku_adult": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "kuvan": {
+          "pku_bh4": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "brineura": {
+          "cln2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "roctavian": {
+          "hemophilia_a": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.2
+          }
+        },
+        "bmn333": {
+          "achondroplasia_lai": {
+            "pos": 35,
+            "apr": 65,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 20,
+      "val": {
+        "mult": 4,
+        "dr": 11,
+        "cannib": 6
+      },
+      "assumptions": {
+        "voxzogo": {
+          "achondroplasia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "vimizim": {
+          "mps_iva": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "naglazyme": {
+          "mps_vi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "aldurazyme": {
+          "mps_i": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "palynziq": {
+          "pku_adult": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "kuvan": {
+          "pku_bh4": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "brineura": {
+          "cln2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "roctavian": {
+          "hemophilia_a": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "bmn333": {
+          "achondroplasia_lai": {
+            "pos": 55,
+            "apr": 78,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 45,
+      "val": {
+        "mult": 6,
+        "dr": 10,
+        "cannib": 3
+      },
+      "assumptions": {
+        "voxzogo": {
+          "achondroplasia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "vimizim": {
+          "mps_iva": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "naglazyme": {
+          "mps_vi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "aldurazyme": {
+          "mps_i": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "palynziq": {
+          "pku_adult": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "kuvan": {
+          "pku_bh4": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "brineura": {
+          "cln2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "roctavian": {
+          "hemophilia_a": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "bmn333": {
+          "achondroplasia_lai": {
+            "pos": 75,
+            "apr": 88,
+            "pen": 0.7
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "mult": 9,
+        "dr": 9,
+        "cannib": 0
+      },
+      "assumptions": {
+        "voxzogo": {
+          "achondroplasia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "vimizim": {
+          "mps_iva": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "naglazyme": {
+          "mps_vi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "aldurazyme": {
+          "mps_i": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "palynziq": {
+          "pku_adult": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "kuvan": {
+          "pku_bh4": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "brineura": {
+          "cln2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "roctavian": {
+          "hemophilia_a": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "bmn333": {
+          "achondroplasia_lai": {
+            "pos": 88,
+            "apr": 94,
+            "pen": 0.9
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "mult": 14,
+        "dr": 8,
+        "cannib": 0
+      },
+      "assumptions": {
+        "voxzogo": {
+          "achondroplasia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "vimizim": {
+          "mps_iva": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "naglazyme": {
+          "mps_vi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "aldurazyme": {
+          "mps_i": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "palynziq": {
+          "pku_adult": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "kuvan": {
+          "pku_bh4": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "brineura": {
+          "cln2": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "roctavian": {
+          "hemophilia_a": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "bmn333": {
+          "achondroplasia_lai": {
+            "pos": 96,
+            "apr": 98,
+            "pen": 1.2
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "voxzogo",
+      "indication": "achondroplasia",
+      "title": "Voxzogo infant/toddler (ages 0+) global label expansion + revenue inflection",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.biomarin.com/news",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "bmn333",
+      "indication": "achondroplasia_lai",
+      "title": "BMN 333 next-gen long-acting CNP Ph2/3 readout (weekly vs daily Voxzogo)",
+      "type": "phase3_data",
+      "binary": false,
+      "_source": "https://www.biomarin.com/news",
+      "_confidence": "medium"
+    },
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-30",
+      "asset": "roctavian",
+      "indication": "hemophilia_a",
+      "title": "Roctavian commercial restructuring decision: continued investment, partner-out, or discontinuation",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.biomarin.com/news",
+      "_confidence": "high"
+    }
+  ]
+}

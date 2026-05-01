@@ -116,6 +116,18 @@ REGIONS = {
         "eu":  {"patientsK": 0.6,   "wtpPct": 70, "priceK": 250},
         "row": {"patientsK": 3,     "wtpPct": 30, "priceK": 80},
     },
+    # CLN2 / Late-Infantile Neuronal Ceroid Lipofuscinosis (TPP1 LoF;
+    # tripeptidyl peptidase 1 deficiency): rare pediatric neurodegeneration
+    # with seizures + motor decline + blindness + early death. Prevalence
+    # ~1:200K live births. ~0.6K US, ~1K EU, ~3K ROW. Sole branded therapy:
+    # Brineura (cerliponase alfa ERT intracerebroventricular, BioMarin FDA
+    # Apr 2017; ~$185M). WAC ~$700K/yr. Class peak ~$200-250M.
+    # source: NORD CLN2; BioMarin 10-K; Batten Disease Support.
+    "cns.neurodegeneration.cln2_batten": {
+        "us":  {"patientsK": 0.6, "wtpPct": 75, "priceK": 700},
+        "eu":  {"patientsK": 1,   "wtpPct": 60, "priceK": 450},
+        "row": {"patientsK": 3,   "wtpPct": 15, "priceK": 130},
+    },
     "cns.neurodegeneration.als": {
         "us":  {"patientsK": 30,    "wtpPct": 70, "priceK": 40},
         "eu":  {"patientsK": 40,    "wtpPct": 45, "priceK": 20},
@@ -329,6 +341,7 @@ PEN_PCT = {
     "cns.movement.tardive_dyskinesia": 30,
     "cns.neurodegeneration.alexander": 60,
     "cns.neurodegeneration.als": 25,
+    "cns.neurodegeneration.cln2_batten": 60,
     "cns.neurodegeneration.alzheimer": 12,
     "cns.neurodegeneration.caa": 8,
     "cns.neurodegeneration.dlb": 20,

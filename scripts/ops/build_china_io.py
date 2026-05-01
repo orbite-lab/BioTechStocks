@@ -124,7 +124,7 @@ def build_AKESO():
         ("cash", 11700),  # HKD M
         ("currency", "HKD"),
         ("phase", "commercial"),
-        ("subtitle", "China IO bispecific platform leader. FY25 revenue RMB 3,056M (+44% YoY) / ~$425M / ~HKD 3,400M: commercial product RMB 3,033M (+51%; ivonescimab + cadonilimab) + license RMB 23M residual. Net loss RMB 1,141M; R&D RMB 1,575M. Two flagship bispecifics: CADONILIMAB (AK104, PD-1/CTLA-4) approved China cervical 2022 + gastric 2024 1L combo + HCC + NSCLC label expansion (~120K patients cumulative); IVONESCIMAB (AK112, PD-1/VEGF) approved China May 2024 1L EGFRm NSCLC (HARMONi-A + chemo) + Mar 2025 1L PD-L1+ NSCLC monotherapy. HARMONi-2 (1L PD-L1+ NSCLC mono vs Keytruda) Sep 2024: PFS HR 0.49 (game-changer; first PD-1 mono comparator beat). HARMONi US BLA accepted; FDA decision pending 2026. SUMMIT THERAPEUTICS Dec 2022 ex-China deal: $500M up + $4.5B milestones + low double-digit royalties; territory US/Canada/EU/Japan/LatAm/MENA/Africa. Feb 2025: Summit-Pfizer collab to study ivonescimab + Pfizer ADCs. PIPELINE: 15 ivonescimab Ph3 (5 global, 7 head-to-head); HARMONi-3 (1L NSCLC + chemo all-comer) readout 2025/2026; HARMONi-6 (1L sqNSCLC); HARMONi-7 (1L PDL1 high mono). Cadonilimab gastric IO-resistant + cervical international H2H vs nivo. Pipeline: AK109 anti-VEGFR2, AK129 PD-1/LAG3, AK117 anti-CD47, AK111 IL-17, penpulimab (PD-1), ebdarokimab, ebronucimab."),
+        ("subtitle", "China IO bispecific platform leader. FY25 commercial revenue RMB 3,033M (+51% YoY) / ~$420M / ~HKD 3,400M (commercial product +51%; ivonescimab + cadonilimab) + license residual ~RMB 23M. Net loss RMB 1,113M; R&D RMB 1,575M. Two flagship bispecifics: CADONILIMAB (AK104, PD-1/CTLA-4) approved China cervical 2022 + cervical 1L May 2025 + gastric 2024 1L NRDL + HCC + NSCLC (~120K patients cumulative); IVONESCIMAB (AK112, PD-1/VEGF) approved China May 2024 1L EGFRm NSCLC + Mar 2025 1L PD-L1+ NSCLC monotherapy + 1L sqNSCLC sNDA under review. HARMONi-2 Sep 2024: PFS HR 0.51 (49% reduction; first PD-1 mono comparator beat Keytruda). HARMONi-6 sqNSCLC vs tislelizumab+chemo POSITIVE Lancet 2025. HARMONi-3 (1L NSCLC + chemo all-comer) NOT yet readout. HARMONi US BLA accepted Jan 29 2026; **PDUFA Nov 14 2026** (EGFRm NSCLC post-TKI + chemo). SUMMIT THERAPEUTICS Dec 2022 ex-China deal: $500M up + $4.5B milestones + low double-digit royalties (US/Canada/EU/Japan/LatAm). Feb 2025: Summit-Pfizer collab on ivonescimab + Pfizer vedotin ADCs. CADONILIMAB Ph3: COMPASSION-37 (gastric vs nivo+chemo) FDA IND Dec 2025; COMPASSION-36 (PD-1-resistant HCC + lenvatinib) global registrational. AK117 LIGUFALIMAB UPGRADE: Ph3 AK117-302 (1L HNSCC; ivo+ligu vs pembro) -- first global Ph3 of CD47 in solid tumors enrolling Oct 2024; FDA ODD AML Sep 2025; Ph2 AML CR 50%."),
         ("yahooTicker", "9926.HK"),
     )
 
@@ -201,17 +201,25 @@ def build_AKESO():
                    {"row.priceK": "Estimated WAC $12K/yr China launch"},
                    peakYear=2034, cagrPct=0, penPct=8)]))
 
-    # Pipeline: AK117 anti-CD47
+    # AK117 (ligufalimab) - anti-CD47; Ph3 1L HNSCC + AML ODD
     assets.append(asset(
-        "ak117", "AK117 (ligufalimab) - anti-CD47 mAb",
-        "Phase 2/3 (myeloid checkpoint; combo with PD-1 in solid tumors + HCC + leukemia)",
+        "ak117", "AK117 (ligufalimab) - anti-CD47 mAb (first global CD47 Ph3 in solid tumors)",
+        "Phase 3 AK117-302 (1L HNSCC ivo+ligu vs pembro; enrolling Oct 2024) + Ph2 AML+ven+aza CR 50%; FDA ODD AML Sep 2025",
         "antibody.monoclonal.anti_cd47",
-        [innov_ind("io_cd47", "Solid tumors + leukemia (CD47 myeloid checkpoint; combo with cadonilimab/ivonescimab)",
-                   "oncology.multi_tumor_io.pd1_pdl1_eligible",
-                   regions((500, 80, 150), (700, 70, 100), (3000, 12, 30)),
-                   slice_((0.1, 1, 0.1), (0.1, 1, 0.1), (1, 40, 10)),
-                   {"row.priceK": "Estimated WAC $10K/yr"},
-                   peakYear=2033, cagrPct=0, penPct=6)]))
+        [
+            innov_ind("hnscc_cd47", "1L HNSCC head and neck (CD47 myeloid checkpoint; ivo+ligu vs pembro Ph3 AK117-302)",
+                      "oncology.head_neck.hnscc",
+                      regions((30, 80, 100), (45, 70, 65), (250, 18, 18)),
+                      slice_((0.1, 1, 0.1), (0.1, 1, 0.1), (3, 50, 12)),
+                      {"row.priceK": "Estimated WAC $12K/yr China combo therapy"},
+                      peakYear=2033, cagrPct=0, penPct=10),
+            innov_ind("aml_cd47", "AML + venetoclax + azacitidine (FDA ODD Sep 2025; Ph2 CR 50%)",
+                      "oncology.hematology.aml",
+                      regions((20, 80, 80), (30, 70, 50), (120, 18, 15)),
+                      slice_((0.1, 1, 0.1), (0.1, 1, 0.1), (5, 50, 12)),
+                      {"row.priceK": "Estimated WAC $12K/yr China"},
+                      peakYear=2034, cagrPct=0, penPct=8),
+        ]))
 
     # Premium scenarios -- ivonescimab is the value driver
     weights = {"mega_bear": 8, "bear": 18, "base": 38, "bull": 28, "psychedelic_bull": 8}
@@ -241,7 +249,10 @@ def build_AKESO():
         pipeline_asmps[sk] = {
             "summit_royalty": OrderedDict([("ivone_ex_china", od(("pos", pos_grid["summit_royalty"][sk]), ("apr", apr_default[sk]), ("pen", pen_default[sk])))]),
             "ak129":          OrderedDict([("io_lag3_combo",  od(("pos", pos_grid["ak129"][sk]),          ("apr", apr_default[sk]), ("pen", pen_default[sk])))]),
-            "ak117":          OrderedDict([("io_cd47",        od(("pos", pos_grid["ak117"][sk]),          ("apr", apr_default[sk]), ("pen", pen_default[sk])))]),
+            "ak117":          OrderedDict([
+                ("hnscc_cd47", od(("pos", pos_grid["ak117"][sk]), ("apr", apr_default[sk]), ("pen", pen_default[sk]))),
+                ("aml_cd47",   od(("pos", max(0, pos_grid["ak117"][sk]-10)), ("apr", apr_default[sk]), ("pen", pen_default[sk]))),
+            ]),
         }
 
     scenarios = commercial_scenarios(crev, cmult, pmult, pdr, weights, asset_inds,
@@ -251,22 +262,28 @@ def build_AKESO():
     catalysts = [
         od(("date", "Sep 2024"), ("dateSort", "2024-09-15"), ("asset", "ivonescimab"),
            ("indication", "nsclc_pdl1"),
-           ("title", "HARMONi-2: ivonescimab beat Keytruda 1L PD-L1+ NSCLC mono PFS HR 0.49 (game-changer)"),
+           ("title", "HARMONi-2: ivonescimab beat Keytruda 1L PD-L1+ NSCLC mono PFS HR 0.51 (49% reduction)"),
            ("type", "phase3_data"), ("binary", False),
            ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
-           ("_source", "Akeso Sep 2024 PR; HARMONi-2"), ("_confidence", "high")),
-        od(("date", "H2 2026"), ("dateSort", "2026-09-30"), ("asset", "summit_royalty"),
+           ("_source", "WCLC 2024; Lancet PubMed 40057343"), ("_confidence", "high")),
+        od(("date", "Nov 14 2026"), ("dateSort", "2026-11-14"), ("asset", "summit_royalty"),
            ("indication", "ivone_ex_china"),
-           ("title", "Summit ivonescimab HARMONi US FDA decision (BLA accepted)"),
+           ("title", "Summit ivonescimab HARMONi US PDUFA (EGFRm NSCLC post-TKI + chemo; BLA accepted Jan 29 2026)"),
            ("type", "pdufa"), ("binary", True),
-           ("fail_pos", 60), ("fail_apr", 80), ("success_pos", 92), ("success_apr", 95),
-           ("_source", "Summit-Akeso Dec 2022 partnership; HARMONi BLA"), ("_confidence", "medium")),
-        od(("date", "2026"), ("dateSort", "2026-12-15"), ("asset", "ivonescimab"),
+           ("fail_pos", 70), ("fail_apr", 80), ("success_pos", 95), ("success_apr", 95),
+           ("_source", "Summit Jan 29 2026 PR"), ("_confidence", "high")),
+        od(("date", "Dec 2025"), ("dateSort", "2025-12-15"), ("asset", "cadonilimab"),
+           ("indication", "gastric_cad"),
+           ("title", "COMPASSION-37 (cadonilimab gastric vs nivo+chemo) FDA IND clearance"),
+           ("type", "phase3_start"), ("binary", False),
+           ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
+           ("_source", "Akeso Dec 2025 PR"), ("_confidence", "high")),
+        od(("date", "2026-2027"), ("dateSort", "2026-12-15"), ("asset", "ivonescimab"),
            ("indication", "nsclc_pdl1"),
-           ("title", "HARMONi-3 (1L NSCLC + chemo all-comer) Ph3 readout 2025/2026"),
+           ("title", "HARMONi-3 (1L NSCLC + chemo all-comer) Ph3 readout (still pending as of ELCC Mar 2026)"),
            ("type", "phase3_data"), ("binary", True),
            ("fail_pos", 50), ("fail_apr", 75), ("success_pos", 90), ("success_apr", 92),
-           ("_source", "Akeso pipeline"), ("_confidence", "high")),
+           ("_source", "Akeso/Summit pipeline"), ("_confidence", "medium")),
     ]
 
     return od(("company", co), ("assets", assets),
@@ -286,7 +303,7 @@ def build_HCM():
         ("cash", 1367),  # USD M YE2025; net cash positive post SHPL divest
         ("currency", "USD"),
         ("phase", "commercial"),
-        ("subtitle", "China oncology + Takeda Fruzaqla ex-China royalty. FY25 revenue $548.5M (vs $630M FY24 -- lumpy milestones); oncology/immunology consolidated $285.5M; FY26 oncology guide $330-450M. Products: FRUZAQLA (Takeda ex-China royalty + manufacturing + milestones) HCM rev $89.4M; global in-market $366.2M (+26% YoY). ELUNATE (fruquintinib China) $76.9M (-11%). SULANDA (surufatinib NETs) $27M (-45%). ORPATHYS (savolitinib AZ-partnered) $18.6M + AZ milestones $11M. TAZVERIK (tazemetostat) $2.5M (+158%). R&D services + milestones $71M. April 2025: SHPL JV divestment $608M ($416M after-tax gain) -- refocused on innovation; cash $1.367B (vs $836M YE24). Net profit FY25 $456.9M (one-time aided). PIPELINE: SAFFRON Ph3 (savolitinib + osimertinib post-Tagrisso MET-amp/over-expressed EGFRm NSCLC) -- enrollment complete Oct 2025; topline H1 2026 KEY CATALYST. SANOVO Ph3 (savolitinib + osimertinib 1L EGFRm/MET+ NSCLC) within 12 mo. FRUSICA-2 RCC 2L Ph3 POSITIVE PFS HR 0.37 ESMO 2025. Fanregratinib FGFR ihCC NDA accepted China priority. Sovleplenib (HMPL-523 SYK) ITP NDA accepted Feb 2026. Surufatinib PDAC Ph3 initiated. ATTC platform (PI3K/PIKK conjugates) HMPL-A251/A580 Ph1."),
+        ("subtitle", "China oncology + Takeda Fruzaqla ex-China royalty. FY25 revenue $548.5M (vs $630M FY24 lumpy milestones): consolidated oncology proper $214.4M (-21% YoY) + Other Oncology/Immunology $71.1M (R&D services + licensing + milestones) = $285.5M oncology+other; FY26 oncology guide $330-450M. PRODUCTS: FRUZAQLA (Takeda ex-China royalty + manufacturing + milestones) HCM rev $89.4M; global in-market $366.2M (+26% YoY); 38 countries launched. ELUNATE (fruquintinib China) HCM-booked $76.9M (in-market $100.1M; -13%; net of Lilly distribution share). SULANDA (surufatinib NETs) $27M (-45%). ORPATHYS (savolitinib AZ-partnered) $18.6M + AZ milestone $11.0M (3rd China lung indication). TAZVERIK (tazemetostat) $2.5M (+158%). Dec 23 2024 announce: SHPL JV divestment $608M ($416M after-tax gain; close end Q1 2025); HCM retains 5%; cash $1.367B (vs $836M YE24); net profit FY25 $456.9M (one-time aided). PIPELINE: SAFFRON Ph3 (savolitinib + osimertinib post-Tagrisso MET-amp/over-expressed EGFRm NSCLC; AZ-partnered; enrollment complete Oct 31 2025 = 338 pts/230+ sites/29 countries; topline H1 2026 KEY CATALYST). SANOVO Ph3 (1L EGFRm/MET+) within 12 mo. FRUSICA-2 RCC 2L (fruquintinib + sintilimab) POSITIVE: mPFS 22.2 vs 6.9 mo (HR 0.373), ORR 60.5% vs 24.3% ESMO Berlin Oct 17 2025. Sovleplenib (HMPL-523 SYK) ITP NDA accepted China priority Feb 2026; **wAIHA NDA accepted + Breakthrough Designation Apr 29 2026** (ESLIM-02 Ph3 met primary Jan 2026). Fanregratinib FGFR ihCC NDA accepted China priority. ATTC platform: HMPL-A580 (PI3K/PIKK-EGFR ATTC) Ph1/IIa first patient dosed Mar 4 2026 (global China + US)."),
         ("yahooTicker", "HCM"),
     )
 
@@ -447,12 +464,12 @@ def build_JUNSHI():
         ("ticker", "JUNSHI"),
         ("name", "Shanghai Junshi Biosciences Co. Ltd."),
         ("currentPrice", 20.96),
-        ("sharesOut", 1030),
+        ("sharesOut", 985),
         # Cash RMB 3,195M ~= HKD 3,500M / $440M
         ("cash", 3500),  # HKD M
         ("currency", "HKD"),
         ("phase", "commercial"),
-        ("subtitle", "China PD-1 originator (toripalimab; Loqtorzi US via Coherus). FY25 revenue RMB 2,498M / ~$345M / ~HKD 2,750M (+28% YoY): Tuoyi (toripalimab China) RMB 2,068M (+38%) ~$285M dominant; VV116 oral COVID antiviral + Coherus Loqtorzi US royalty 20% (~$8M FY25 from Coherus' $40.8M) + LEO Pharma EU/UK distribution deal 2025. Toripalimab China: 12 approved indications -- NPC (2L+ + 1L combo), ESCC 1L combo, NSCLC 1L combo (sq+non-sq), urothelial 2L, melanoma 2L, perioperative NSCLC (neoadjuvant+adjuvant), HCC, RCC, TNBC, SCLC, GC/GEJ. R&D RMB 1,384M (+9%); net loss narrowing materially toward profitability inflection 2027/2028. PIPELINE: Tifcemalimab (TAB001 anti-BTLA, first-in-class checkpoint; sublicensed to Coherus US/Canada Mar 2024); JS001sc toripalimab subcutaneous Ph3 met primary 2025; JS207 PD-1xVEGF bispecific (competing Akeso ivonescimab) Ph2/3; JS212 EGFR/HER3 bispecific ADC FDA IND clearance Dec 2025; JS213 PD-1/IL-2 fusion; JS018-1 anti-IL-21; JT118 monkeypox vaccine NMPA-approved."),
+        ("subtitle", "China PD-1 originator (toripalimab; Loqtorzi US via Coherus). FY25 revenue RMB 2,498M / ~$345M / ~HKD 2,750M (+28% YoY): Tuoyi (toripalimab China) RMB 2,068M (+38%) ~$285M dominant; VV116 oral COVID antiviral + Coherus Loqtorzi US royalty 20% (~$8M FY25 from Coherus' $40.8M). LEO Pharma EU/UK distribution deal Jan 2025: EUR 15M up + milestones + double-digit royalty (32 countries). Toripalimab China: 12 NRDL indications (4 new in 2025 NRDL edition) -- NPC 2L+ + 1L combo, ESCC 1L combo, NSCLC 1L (sq+non-sq), urothelial 2L, melanoma 2L, perioperative NSCLC, HCC, RCC, TNBC, SCLC, GC/GEJ. R&D RMB 1,384M (+9%); profitability inflection 2027/2028. PIPELINE: Tifcemalimab (TAB001 anti-BTLA first-in-class checkpoint) NOW PHASE 3 CONFIRMATORY -- 756 pts LS-SCLC consolidation post-CRT, multi-regional China/US/EU; first global BTLA-targeted Ph3; Coherus US/CA license Mar 2024. JS001sc toripalimab subQ Ph3 met primary Nov 2025 (1L recurrent/metastatic non-sq NSCLC); NMPA NDA accepted across 12 indications Mar 9 2026 (lifecycle extension defending vs PD-1 biosimilars). JS207 PD-1xVEGF bispecific (vs Akeso ivonescimab) -- 11 ongoing Ph2 across CRC/TNBC/HCC/NSCLC; FDA Ph2/3 IND Oct 2025 (neoadjuvant NSCLC). JS212 EGFR/HER3 bispecific ADC FDA IND Dec 2025. JS213 PD-1/IL-2 fusion. JT118 monkeypox vaccine NMPA Sep 2025."),
         ("yahooTicker", "1877.HK"),
     )
 
@@ -506,18 +523,19 @@ def build_JUNSHI():
                    {"row.priceK": "VV116 China WAC ~$400/course"},
                    salesM=30, salesYear=2025, peakYear=2027, cagrPct=-10, penPct=12)]))
 
-    # Tifcemalimab (TAB001 anti-BTLA)
+    # Tifcemalimab (TAB001 anti-BTLA) - NOW PHASE 3 CONFIRMATORY in LS-SCLC
     assets.append(asset(
         "tifcemalimab", "Tifcemalimab (TAB001) - first-in-class anti-BTLA checkpoint mAb (Coherus US/CA license Mar 2024)",
-        "Phase 2/3 (China + US development; combo with toripalimab)",
+        "Phase 3 confirmatory (LS-SCLC consolidation post-CRT; 756 pts multi-regional China/US/EU; first global BTLA-targeted Ph3)",
         "antibody.monoclonal.anti_btla",
-        [innov_ind("io_btla", "Solid tumors + lymphoma (BTLA checkpoint; combo with PD-1)",
-                   "oncology.multi_tumor_io.pd1_pdl1_eligible",
-                   regions((500, 80, 150), (700, 70, 100), (3000, 12, 30)),
-                   slice_((1, 50, 100), (0.5, 40, 70), (1, 40, 12)),
-                   {"us.priceK": "Estimated WAC $100K/yr in IO combo",
-                    "row.priceK": "China NRDL ~$12K/yr"},
-                   peakYear=2033, cagrPct=0, penPct=10)]))
+        [innov_ind("lssclc_btla", "Limited-stage small cell lung cancer consolidation post-chemoradiotherapy (combo with toripalimab)",
+                   "oncology.lung.sclc",
+                   regions((30, 80, 150), (45, 70, 100), (200, 18, 30)),
+                   slice_((2, 50, 120), (1, 40, 80), (3, 50, 12)),
+                   {"us.priceK": "Estimated WAC $120K/yr in IO combo (US/CA via Coherus)",
+                    "row.priceK": "China NRDL ~$12K/yr",
+                    "us.reachPct": "Tifcemalimab + toripalimab post-CRT LS-SCLC consolidation; first BTLA Ph3 globally"},
+                   peakYear=2033, cagrPct=0, penPct=15)]))
 
     # JS207 PD-1/VEGF bispecific (competing ivonescimab)
     assets.append(asset(
@@ -558,7 +576,8 @@ def build_JUNSHI():
     ]
 
     pos_grid = {
-        "tifcemalimab": {"mega_bear": 18, "bear": 30, "base": 48, "bull": 65, "psychedelic_bull": 78},
+        # Tifcemalimab now Ph3 confirmatory LS-SCLC -> bumped vs prior Ph2/3 estimate
+        "tifcemalimab": {"mega_bear": 25, "bear": 40, "base": 58, "bull": 75, "psychedelic_bull": 85},
         "js207":        {"mega_bear": 15, "bear": 28, "base": 45, "bull": 60, "psychedelic_bull": 75},
         "js212":        {"mega_bear": 5,  "bear": 12, "base": 25, "bull": 40, "psychedelic_bull": 55},
     }
@@ -568,7 +587,7 @@ def build_JUNSHI():
     pipeline_asmps = {}
     for sk in ["mega_bear", "bear", "base", "bull", "psychedelic_bull"]:
         pipeline_asmps[sk] = {
-            "tifcemalimab": OrderedDict([("io_btla",      od(("pos", pos_grid["tifcemalimab"][sk]), ("apr", apr_default[sk]), ("pen", pen_default[sk])))]),
+            "tifcemalimab": OrderedDict([("lssclc_btla",  od(("pos", pos_grid["tifcemalimab"][sk]), ("apr", apr_default[sk]), ("pen", pen_default[sk])))]),
             "js207":        OrderedDict([("nsclc_js207",  od(("pos", pos_grid["js207"][sk]),        ("apr", apr_default[sk]), ("pen", pen_default[sk])))]),
             "js212":        OrderedDict([("solid_js212",  od(("pos", pos_grid["js212"][sk]),        ("apr", apr_default[sk]), ("pen", pen_default[sk])))]),
         }
@@ -577,21 +596,27 @@ def build_JUNSHI():
                                      pipeline_asmp_by_scen=pipeline_asmps)
 
     catalysts = [
-        od(("date", "2025"), ("dateSort", "2025-12-15"), ("asset", "tuoyi"),
+        od(("date", "Mar 9 2026"), ("dateSort", "2026-03-09"), ("asset", "tuoyi"),
            ("indication", "escc_nsclc_tori"),
-           ("title", "Toripalimab China NRDL expansion (12 indications cumulative; perioperative + GC + RCC + TNBC)"),
-           ("type", "label_expansion"), ("binary", False),
+           ("title", "JS001sc toripalimab subQ NMPA NDA accepted across 12 indications (lifecycle extension vs PD-1 biosimilar pressure)"),
+           ("type", "nda_submission"), ("binary", False),
            ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
-           ("_source", "Junshi FY25 release"), ("_confidence", "high")),
+           ("_source", "Junshi Mar 9 2026 PR"), ("_confidence", "high")),
         od(("date", "Dec 2025"), ("dateSort", "2025-12-15"), ("asset", "js212"),
            ("indication", "solid_js212"),
            ("title", "JS212 EGFR/HER3 bispecific ADC FDA IND clearance"),
            ("type", "phase1_start"), ("binary", False),
            ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
            ("_source", "Junshi Dec 2025 PR"), ("_confidence", "high")),
+        od(("date", "2026-2027"), ("dateSort", "2026-12-15"), ("asset", "tifcemalimab"),
+           ("indication", "lssclc_btla"),
+           ("title", "Tifcemalimab Ph3 confirmatory LS-SCLC enrollment + interim (first global BTLA Ph3)"),
+           ("type", "phase3_data"), ("binary", True),
+           ("fail_pos", 25), ("fail_apr", 65), ("success_pos", 75), ("success_apr", 90),
+           ("_source", "Junshi/Coherus pipeline"), ("_confidence", "medium")),
         od(("date", "2026-2027"), ("dateSort", "2027-06-30"), ("asset", "js207"),
            ("indication", "nsclc_js207"),
-           ("title", "JS207 PD-1xVEGF bispecific Ph2/3 readouts (vs Akeso ivonescimab)"),
+           ("title", "JS207 PD-1xVEGF bispecific Ph2/3 readouts (11 ongoing Ph2; FDA Ph2/3 IND Oct 2025; vs Akeso ivonescimab)"),
            ("type", "phase3_data"), ("binary", True),
            ("fail_pos", 15), ("fail_apr", 60), ("success_pos", 60), ("success_apr", 88),
            ("_source", "Junshi pipeline"), ("_confidence", "low")),

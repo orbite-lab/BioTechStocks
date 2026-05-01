@@ -3,11 +3,11 @@
     "ticker": "JUNSHI",
     "name": "Shanghai Junshi Biosciences Co. Ltd.",
     "currentPrice": 20.96,
-    "sharesOut": 1030,
+    "sharesOut": 985,
     "cash": 3500,
     "currency": "HKD",
     "phase": "commercial",
-    "subtitle": "China PD-1 originator (toripalimab; Loqtorzi US via Coherus). FY25 revenue RMB 2,498M / ~$345M / ~HKD 2,750M (+28% YoY): Tuoyi (toripalimab China) RMB 2,068M (+38%) ~$285M dominant; VV116 oral COVID antiviral + Coherus Loqtorzi US royalty 20% (~$8M FY25 from Coherus' $40.8M) + LEO Pharma EU/UK distribution deal 2025. Toripalimab China: 12 approved indications -- NPC (2L+ + 1L combo), ESCC 1L combo, NSCLC 1L combo (sq+non-sq), urothelial 2L, melanoma 2L, perioperative NSCLC (neoadjuvant+adjuvant), HCC, RCC, TNBC, SCLC, GC/GEJ. R&D RMB 1,384M (+9%); net loss narrowing materially toward profitability inflection 2027/2028. PIPELINE: Tifcemalimab (TAB001 anti-BTLA, first-in-class checkpoint; sublicensed to Coherus US/Canada Mar 2024); JS001sc toripalimab subcutaneous Ph3 met primary 2025; JS207 PD-1xVEGF bispecific (competing Akeso ivonescimab) Ph2/3; JS212 EGFR/HER3 bispecific ADC FDA IND clearance Dec 2025; JS213 PD-1/IL-2 fusion; JS018-1 anti-IL-21; JT118 monkeypox vaccine NMPA-approved.",
+    "subtitle": "China PD-1 originator (toripalimab; Loqtorzi US via Coherus). FY25 revenue RMB 2,498M / ~$345M / ~HKD 2,750M (+28% YoY): Tuoyi (toripalimab China) RMB 2,068M (+38%) ~$285M dominant; VV116 oral COVID antiviral + Coherus Loqtorzi US royalty 20% (~$8M FY25 from Coherus' $40.8M). LEO Pharma EU/UK distribution deal Jan 2025: EUR 15M up + milestones + double-digit royalty (32 countries). Toripalimab China: 12 NRDL indications (4 new in 2025 NRDL edition) -- NPC 2L+ + 1L combo, ESCC 1L combo, NSCLC 1L (sq+non-sq), urothelial 2L, melanoma 2L, perioperative NSCLC, HCC, RCC, TNBC, SCLC, GC/GEJ. R&D RMB 1,384M (+9%); profitability inflection 2027/2028. PIPELINE: Tifcemalimab (TAB001 anti-BTLA first-in-class checkpoint) NOW PHASE 3 CONFIRMATORY -- 756 pts LS-SCLC consolidation post-CRT, multi-regional China/US/EU; first global BTLA-targeted Ph3; Coherus US/CA license Mar 2024. JS001sc toripalimab subQ Ph3 met primary Nov 2025 (1L recurrent/metastatic non-sq NSCLC); NMPA NDA accepted across 12 indications Mar 9 2026 (lifecycle extension defending vs PD-1 biosimilars). JS207 PD-1xVEGF bispecific (vs Akeso ivonescimab) -- 11 ongoing Ph2 across CRC/TNBC/HCC/NSCLC; FDA Ph2/3 IND Oct 2025 (neoadjuvant NSCLC). JS212 EGFR/HER3 bispecific ADC FDA IND Dec 2025. JS213 PD-1/IL-2 fusion. JT118 monkeypox vaccine NMPA Sep 2025.",
     "yahooTicker": "1877.HK"
   },
   "assets": [
@@ -242,54 +242,55 @@
     {
       "id": "tifcemalimab",
       "name": "Tifcemalimab (TAB001) - first-in-class anti-BTLA checkpoint mAb (Coherus US/CA license Mar 2024)",
-      "stage": "Phase 2/3 (China + US development; combo with toripalimab)",
+      "stage": "Phase 3 confirmatory (LS-SCLC consolidation post-CRT; 756 pts multi-regional China/US/EU; first global BTLA-targeted Ph3)",
       "modality": "antibody.monoclonal.anti_btla",
       "targets": [],
       "indications": [
         {
-          "id": "io_btla",
-          "name": "Solid tumors + lymphoma (BTLA checkpoint; combo with PD-1)",
-          "area": "oncology.multi_tumor_io.pd1_pdl1_eligible",
+          "id": "lssclc_btla",
+          "name": "Limited-stage small cell lung cancer consolidation post-chemoradiotherapy (combo with toripalimab)",
+          "area": "oncology.lung.sclc",
           "market": {
             "regions": {
               "us": {
-                "patientsK": 500,
-                "wtpPct": 80,
-                "priceK": 150
+                "patientsK": 22,
+                "wtpPct": 60,
+                "priceK": 125
               },
               "eu": {
-                "patientsK": 700,
-                "wtpPct": 70,
-                "priceK": 100
+                "patientsK": 28,
+                "wtpPct": 44,
+                "priceK": 72
               },
               "row": {
-                "patientsK": 3000,
-                "wtpPct": 12,
-                "priceK": 30
+                "patientsK": 180,
+                "wtpPct": 14,
+                "priceK": 28
               }
             },
             "company_slice": {
               "us": {
-                "reachPct": 1,
+                "reachPct": 2,
                 "wtpPct": 50,
-                "priceK": 100
+                "priceK": 120
               },
               "eu": {
-                "reachPct": 0.5,
-                "wtpPct": 40,
-                "priceK": 70
-              },
-              "row": {
                 "reachPct": 1,
                 "wtpPct": 40,
+                "priceK": 80
+              },
+              "row": {
+                "reachPct": 3,
+                "wtpPct": 50,
                 "priceK": 12
               }
             },
             "company_slice_sources": {
-              "us.priceK": "Estimated WAC $100K/yr in IO combo",
-              "row.priceK": "China NRDL ~$12K/yr"
+              "us.priceK": "Estimated WAC $120K/yr in IO combo (US/CA via Coherus)",
+              "row.priceK": "China NRDL ~$12K/yr",
+              "us.reachPct": "Tifcemalimab + toripalimab post-CRT LS-SCLC consolidation; first BTLA Ph3 globally"
             },
-            "penPct": 10,
+            "penPct": 48,
             "cagrPct": 0,
             "peakYear": 2033
           }
@@ -449,8 +450,8 @@
           }
         },
         "tifcemalimab": {
-          "io_btla": {
-            "pos": 18,
+          "lssclc_btla": {
+            "pos": 25,
             "apr": 60,
             "pen": 0.3
           }
@@ -509,8 +510,8 @@
           }
         },
         "tifcemalimab": {
-          "io_btla": {
-            "pos": 30,
+          "lssclc_btla": {
+            "pos": 40,
             "apr": 75,
             "pen": 0.5
           }
@@ -569,8 +570,8 @@
           }
         },
         "tifcemalimab": {
-          "io_btla": {
-            "pos": 48,
+          "lssclc_btla": {
+            "pos": 58,
             "apr": 85,
             "pen": 0.8
           }
@@ -629,8 +630,8 @@
           }
         },
         "tifcemalimab": {
-          "io_btla": {
-            "pos": 65,
+          "lssclc_btla": {
+            "pos": 75,
             "apr": 92,
             "pen": 1.05
           }
@@ -689,8 +690,8 @@
           }
         },
         "tifcemalimab": {
-          "io_btla": {
-            "pos": 78,
+          "lssclc_btla": {
+            "pos": 85,
             "apr": 96,
             "pen": 1.25
           }
@@ -714,18 +715,18 @@
   },
   "catalysts": [
     {
-      "date": "2025",
-      "dateSort": "2025-12-15",
+      "date": "Mar 9 2026",
+      "dateSort": "2026-03-09",
       "asset": "tuoyi",
       "indication": "escc_nsclc_tori",
-      "title": "Toripalimab China NRDL expansion (12 indications cumulative; perioperative + GC + RCC + TNBC)",
-      "type": "label_expansion",
+      "title": "JS001sc toripalimab subQ NMPA NDA accepted across 12 indications (lifecycle extension vs PD-1 biosimilar pressure)",
+      "type": "nda_submission",
       "binary": false,
       "fail_pos": 100,
       "fail_apr": 100,
       "success_pos": 100,
       "success_apr": 100,
-      "_source": "Junshi FY25 release",
+      "_source": "Junshi Mar 9 2026 PR",
       "_confidence": "high"
     },
     {
@@ -745,10 +746,25 @@
     },
     {
       "date": "2026-2027",
+      "dateSort": "2026-12-15",
+      "asset": "tifcemalimab",
+      "indication": "lssclc_btla",
+      "title": "Tifcemalimab Ph3 confirmatory LS-SCLC enrollment + interim (first global BTLA Ph3)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 25,
+      "fail_apr": 65,
+      "success_pos": 75,
+      "success_apr": 90,
+      "_source": "Junshi/Coherus pipeline",
+      "_confidence": "medium"
+    },
+    {
+      "date": "2026-2027",
       "dateSort": "2027-06-30",
       "asset": "js207",
       "indication": "nsclc_js207",
-      "title": "JS207 PD-1xVEGF bispecific Ph2/3 readouts (vs Akeso ivonescimab)",
+      "title": "JS207 PD-1xVEGF bispecific Ph2/3 readouts (11 ongoing Ph2; FDA Ph2/3 IND Oct 2025; vs Akeso ivonescimab)",
       "type": "phase3_data",
       "binary": true,
       "fail_pos": 15,

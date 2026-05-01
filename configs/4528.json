@@ -4,10 +4,10 @@
     "name": "Ono Pharmaceutical Co. Ltd.",
     "currentPrice": 2300,
     "sharesOut": 470,
-    "cash": 175000,
+    "cash": 75000,
     "currency": "JPY",
     "phase": "commercial",
-    "subtitle": "Japanese innovative pharma; Opdivo originator (BMS-licensed). FY24 (Mar25) revenue ~¥487B / ~$3.3B: Opdivo JP ~¥80B + Opdivo BMS ex-JP royalty ~¥115B + Forxiga JP ~¥62B (AZ co-promo) + Kyprolis JP ~¥18B + Qinlock ~¥15B (Deciphera close Jun24) + Romvimza pre-launch + tirabrutinib JP + heritage ~¥197B. Acquired Deciphera $2.4B Jun 2024: gained Qinlock GIST 4L + Romvimza (vimseltinib) TGCT FDA Feb 2025. Pipeline: ONO-4685 PD-1xCD3 bispecific Ph1 TCL, ONO-2920 TYK2/JAK1 psoriasis Ph2, DCC-3116 ULK1/2 Ph1.",
+    "subtitle": "Japanese innovative pharma; Opdivo originator (BMS-licensed ex-JP/KR/TW). FY24 (yr Mar25) revenue ¥487B / ~$3.3B: Opdivo JP/KR/TW ¥96B (NHI price cut -16.5% YoY), Opdivo BMS royalty ~¥115B, Forxiga JP ¥69B (+19.5% on CHF/CKD label expansion; AZ co-promo), Kyprolis JP ¥18B, Qinlock ¥25.5B (9-mo Deciphera close Jun 2024), Romvimza pre-launch (US Feb25/EU Sep25), tirabrutinib JP ~¥8B (US PDUFA 2026 PCNSL), heritage bucket ~¥150B. Deciphera $2.4B acquisition funded with cash + bank loans. Pipeline: ONO-4685 PD-1xCD3 bispecific Ph1 TCL (ASCO 2025 readout), ONO-2920 TYK2/JAK1 psoriasis Ph2, DCC-3116 ULK1/2 Ph1 (KRAS pan-tumor), olverembatinib JP T315I CML Ph2.",
     "yahooTicker": "4528.T"
   },
   "assets": [
@@ -64,9 +64,9 @@
               "row.priceK": "Opdivo JP WAC ~¥3M/yr (~$20K)"
             },
             "penPct": 35,
-            "cagrPct": 2,
+            "cagrPct": -3,
             "peakYear": 2029,
-            "salesM": 870,
+            "salesM": 640,
             "salesYear": 2025
           }
         }
@@ -182,9 +182,9 @@
               "row.priceK": "Forxiga JP WAC ~¥40K/yr blended"
             },
             "penPct": 10,
-            "cagrPct": 10,
+            "cagrPct": 15,
             "peakYear": 2030,
-            "salesM": 413,
+            "salesM": 458,
             "salesYear": 2025
           }
         }
@@ -280,17 +280,17 @@
             },
             "company_slice": {
               "us": {
-                "reachPct": 25,
+                "reachPct": 42.3,
                 "wtpPct": 60,
                 "priceK": 60
               },
               "eu": {
-                "reachPct": 10,
+                "reachPct": 16.9,
                 "wtpPct": 50,
                 "priceK": 40
               },
               "row": {
-                "reachPct": 1,
+                "reachPct": 1.7,
                 "wtpPct": 18,
                 "priceK": 12
               }
@@ -300,9 +300,9 @@
               "us.priceK": "Qinlock WAC ~$60K/yr"
             },
             "penPct": 50,
-            "cagrPct": 10,
+            "cagrPct": 15,
             "peakYear": 2030,
-            "salesM": 100,
+            "salesM": 170,
             "salesYear": 2025
           }
         }
@@ -709,62 +709,6 @@
           }
         }
       ]
-    },
-    {
-      "id": "velsipity_jp",
-      "name": "Velsipity (ozanimod) JP - S1P1/5 modulator (JP UC filing; Pfizer ex-JP)",
-      "stage": "JP filed (UC moderate-severe; pending PMDA decision)",
-      "modality": "small_molecule.gpcr.s1p_modulator",
-      "targets": [],
-      "indications": [
-        {
-          "id": "uc_jp",
-          "name": "Ulcerative colitis moderate-severe Japan",
-          "area": "immunology.inflammatory_gi.ulcerative_colitis",
-          "market": {
-            "regions": {
-              "us": {
-                "patientsK": 1000,
-                "wtpPct": 50,
-                "priceK": 20
-              },
-              "eu": {
-                "patientsK": 1500,
-                "wtpPct": 30,
-                "priceK": 12
-              },
-              "row": {
-                "patientsK": 5000,
-                "wtpPct": 8,
-                "priceK": 3
-              }
-            },
-            "company_slice": {
-              "us": {
-                "reachPct": 0,
-                "wtpPct": 0,
-                "priceK": 0
-              },
-              "eu": {
-                "reachPct": 0,
-                "wtpPct": 0,
-                "priceK": 0
-              },
-              "row": {
-                "reachPct": 3,
-                "wtpPct": 40,
-                "priceK": 25
-              }
-            },
-            "company_slice_sources": {
-              "row.priceK": "Velsipity JP WAC ~¥2.5M/yr"
-            },
-            "penPct": 35,
-            "cagrPct": 15,
-            "peakYear": 2030
-          }
-        }
-      ]
     }
   ],
   "scenarios": {
@@ -859,13 +803,6 @@
         "dcc_3116": {
           "kras_combo": {
             "pos": 5,
-            "apr": 60,
-            "pen": 0.3
-          }
-        },
-        "velsipity_jp": {
-          "uc_jp": {
-            "pos": 70,
             "apr": 60,
             "pen": 0.3
           }
@@ -966,13 +903,6 @@
             "apr": 75,
             "pen": 0.5
           }
-        },
-        "velsipity_jp": {
-          "uc_jp": {
-            "pos": 85,
-            "apr": 75,
-            "pen": 0.5
-          }
         }
       }
     },
@@ -1067,13 +997,6 @@
         "dcc_3116": {
           "kras_combo": {
             "pos": 25,
-            "apr": 85,
-            "pen": 0.8
-          }
-        },
-        "velsipity_jp": {
-          "uc_jp": {
-            "pos": 95,
             "apr": 85,
             "pen": 0.8
           }
@@ -1174,13 +1097,6 @@
             "apr": 92,
             "pen": 1.05
           }
-        },
-        "velsipity_jp": {
-          "uc_jp": {
-            "pos": 99,
-            "apr": 92,
-            "pen": 1.05
-          }
         }
       }
     },
@@ -1278,13 +1194,6 @@
             "apr": 96,
             "pen": 1.25
           }
-        },
-        "velsipity_jp": {
-          "uc_jp": {
-            "pos": 100,
-            "apr": 96,
-            "pen": 1.25
-          }
         }
       }
     }
@@ -1310,29 +1219,14 @@
       "dateSort": "2026-09-30",
       "asset": "tirabrutinib",
       "indication": "pcnsl",
-      "title": "Tirabrutinib US PCNSL Ph2 PROSPECT readout (ASCO 2025/26)",
-      "type": "phase2_data",
+      "title": "Tirabrutinib US PCNSL FDA PDUFA decision (NDA accepted Feb 2025; Ph2 PROSPECT ASCO 2025: ORR 67%, CR 44%, mPFS 6.0M)",
+      "type": "pdufa",
       "binary": true,
-      "fail_pos": 60,
-      "fail_apr": 75,
-      "success_pos": 92,
-      "success_apr": 92,
-      "_source": "Ono pipeline",
-      "_confidence": "medium"
-    },
-    {
-      "date": "2026",
-      "dateSort": "2026-12-30",
-      "asset": "velsipity_jp",
-      "indication": "uc_jp",
-      "title": "Velsipity JP UC PMDA approval",
-      "type": "registration",
-      "binary": true,
-      "fail_pos": 60,
-      "fail_apr": 70,
-      "success_pos": 98,
+      "fail_pos": 70,
+      "fail_apr": 80,
+      "success_pos": 95,
       "success_apr": 95,
-      "_source": "Ono FY25 IR",
+      "_source": "FDA NDA acceptance Feb 16 2025; ASCO 2025 PROSPECT data",
       "_confidence": "high"
     },
     {

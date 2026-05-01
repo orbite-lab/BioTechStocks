@@ -81,12 +81,12 @@ def build_4507():
     co = od(
         ("ticker", "4507"),
         ("name", "Shionogi & Co. Ltd."),
-        ("currentPrice", 2150),
-        ("sharesOut", 298),
+        ("currentPrice", 3220),
+        ("sharesOut", 851),
         ("cash", 350000),  # JPY M; net cash ~¥350B
         ("currency", "JPY"),
         ("phase", "commercial"),
-        ("subtitle", "Japanese pharma + ViiV royalty franchise. FY25 (Mar25) revenue ~¥450B / ~$3.0B: own products ~¥190B (Xocova ensitrelvir COVID, Mulpleta thrombocytopenia, Fetroja cefiderocol MDR Gram-neg, Symproic OIC, Intuniv ADHD JP) + ViiV royalty stream ~¥185B (10% equity stake in ViiV; dolutegravir/cabotegravir HIV) + contract ~¥30B. Net cash ~¥350B. Pipeline: Ensitrelvir SCORPIO global Ph3, S-892216 next-gen antiviral, Sangamo ST-501 tau, fosmanogepix invasive fungal Ph3, redasemtide stroke Ph3."),
+        ("subtitle", "Japanese pharma + ViiV royalty franchise (post 1:3 stock split Oct 2024). FY24 (yr Mar25) revenue ¥450B / ~$3.0B; FY25 forecast ¥530B. ViiV-related income (preferred dividend ¥40B + dolutegravir/cabotegravir royalties ~¥245B) ~¥285B FY24 (record). Own products: Xocova/ensitrelvir ¥70B (post-stockpile rebound, FY25 ¥85.8B forecast), Fetroja cefiderocol ~¥30B (US direct + GSK ex-US), Mulpleta lusutrombopag ~¥11B, Symproic naldemedine ~¥9B (BMS US partner), Intuniv ADHD JP ~¥15B, JP heritage (Crestor/Cymbalta JP-AG/Pirespa/Differin/Irbetan) ~¥55B. Net cash ~¥350B. Pipeline: ensitrelvir SCORPIO-PEP NDA accepted (PDUFA Jun 16 2026), SCORPIO-SR Ph3 ongoing 2027 readout, S-892216 next-gen 3CL Ph1/2, redasemtide Ph2b stroke, fosmanogepix Ph3 invasive fungal (Basilea-licensed JP)."),
         ("yahooTicker", "4507.T"),
     )
 
@@ -104,7 +104,7 @@ def build_4507():
                    slice_((10, 50, 8), (8, 50, 5), (1.5, 50, 1.5)),
                    {"us.priceK": "ViiV royalty income proxy: blended ~$8K/yr/patient at Shionogi share",
                     "us.reachPct": "Dolutegravir-based regimens ~50% global HIV ARV market share"},
-                   salesM=1233, salesYear=2025, peakYear=2030, cagrPct=3, penPct=40)],
+                   salesM=1900, salesYear=2025, peakYear=2030, cagrPct=3, penPct=40)],
         targets=["INSTI"]))
 
     # Xocova (ensitrelvir) -- COVID antiviral
@@ -118,7 +118,7 @@ def build_4507():
                    slice_((0.4, 30, 1.2), (0.1, 20, 0.6), (0.02, 8, 0.2)),
                    {"row.reachPct": "Xocova Japan post-pandemic commercial demand ~5-10% symptomatic COVID Rx",
                     "row.priceK": "Xocova WAC ~¥50K/course (~$350)"},
-                   salesM=233, salesYear=2025, peakYear=2028, cagrPct=10, penPct=15)]))
+                   salesM=467, salesYear=2025, peakYear=2028, cagrPct=10, penPct=15)]))
 
     # Cefiderocol (Fetroja/Fetcroja)
     assets.append(asset(
@@ -207,7 +207,7 @@ def build_4507():
                    peakYear=2033, cagrPct=0, penPct=12)]))
     assets.append(asset(
         "redasemtide", "Redasemtide (S-005151) - peptide neuroprotectant for acute ischemic stroke (post-rTPA)",
-        "Phase 3 (post-stroke; readout 2026/27)",
+        "Phase 2b (global late-Ph2 dose-finding initiated Apr 2023; 627 patients; Ph3 plan revised post regulatory feedback)",
         "peptide.synthetic.neuroprotectant",
         [innov_ind("ais_neuro", "Acute ischemic stroke neuroprotection (post-thrombolysis)",
                    "cns.cerebrovascular.acute_ischemic_stroke",
@@ -225,24 +225,17 @@ def build_4507():
                    slice_((10, 60, 18), (5, 50, 12), (0.5, 25, 4)),
                    {"us.priceK": "Estimated WAC $18K/course"},
                    peakYear=2032, cagrPct=0, penPct=15)]))
-    assets.append(asset(
-        "st501_tau", "Sangamo ST-501 - zinc-finger transcription factor (ZFP-TF) repressor for tau lowering (Sangamo collaboration)",
-        "Phase 1 (Alzheimer's tauopathies; AAV-delivered ZFP-TF)",
-        "gene_therapy.aav.zfp_tf",
-        [innov_ind("tauopathy_ad", "Alzheimer's disease tauopathies (one-time AAV ZFP-TF tau repression)",
-                   "cns.neurodegeneration.alzheimer",
-                   regions((6500, 35, 50), (10000, 25, 30), (40000, 5, 8)),
-                   slice_((0.3, 30, 350), (0.1, 25, 200), (0.01, 5, 50)),
-                   {"us.priceK": "Estimated AAV gene therapy WAC ~$350K one-time"},
-                   peakYear=2034, cagrPct=0, penPct=8)]))
+    # NOTE: ST-501 ZFP-TF tau is Sangamo-Biogen partnership ($2.7B Feb 2020),
+    # NOT Shionogi. Removed from this config.
 
     # SOTP scenarios -- big royalty franchise + diverse own + pipeline
     weights = {"mega_bear": 10, "bear": 22, "base": 38, "bull": 25, "psychedelic_bull": 5}
-    crev = {"mega_bear": 420000, "bear": 440000, "base": 460000,
-            "bull": 500000, "psychedelic_bull": 580000}
-    # Shionogi trades at low EV/sales (~0.6-0.8x) due to Xocova one-time stockpile
-    # roll-off + ViiV royalty maturing. Calibrate multiples accordingly.
-    cmult = {"mega_bear": 0.5, "bear": 0.9, "base": 1.4, "bull": 2.2, "psychedelic_bull": 3.5}
+    # FY24 actual ¥450B; FY25 forecast ¥530B; calibrated around forecast +/- macro
+    crev = {"mega_bear": 480000, "bear": 510000, "base": 540000,
+            "bull": 600000, "psychedelic_bull": 700000}
+    # Shionogi trades ~5x EV/sales (mcap ¥2.74T, cash ¥350B, sales ¥450B-530B).
+    # Royalty franchise (¥285B ViiV) supports premium vs pure-pharma generics.
+    cmult = {"mega_bear": 3.0, "bear": 4.0, "base": 5.0, "bull": 6.5, "psychedelic_bull": 9.0}
     pmult = {"mega_bear": 2, "bear": 3, "base": 5, "bull": 8, "psychedelic_bull": 12}
     pdr = {"mega_bear": 9, "bear": 8, "base": 7, "bull": 6, "psychedelic_bull": 5}
     milestones = {"mega_bear": 0, "bear": 3000, "base": 10000, "bull": 25000, "psychedelic_bull": 50000}
@@ -253,7 +246,6 @@ def build_4507():
         "s892216":            {"mega_bear": 15, "bear": 25, "base": 40, "bull": 55, "psychedelic_bull": 70},
         "redasemtide":        {"mega_bear": 10, "bear": 18, "base": 30, "bull": 45, "psychedelic_bull": 60},
         "fosmanogepix":       {"mega_bear": 30, "bear": 50, "base": 70, "bull": 85, "psychedelic_bull": 92},
-        "st501_tau":          {"mega_bear": 5,  "bear": 10, "base": 22, "bull": 38, "psychedelic_bull": 55},
     }
     apr_grid = {a: {"mega_bear": 60, "bear": 75, "base": 85, "bull": 92, "psychedelic_bull": 96} for a in pos_grid}
     pen_grid = {a: {"mega_bear": 0.3, "bear": 0.5, "base": 0.8, "bull": 1.05, "psychedelic_bull": 1.25} for a in pos_grid}
@@ -262,7 +254,6 @@ def build_4507():
         "s892216": "covid_next",
         "redasemtide": "ais_neuro",
         "fosmanogepix": "invasive_fungal",
-        "st501_tau": "tauopathy_ad",
     }
 
     scenarios = od()
@@ -296,12 +287,12 @@ def build_4507():
         )
 
     catalysts = [
-        od(("date", "2026"), ("dateSort", "2026-09-30"), ("asset", "ensitrelvir_global"),
+        od(("date", "Jun 16 2026"), ("dateSort", "2026-06-16"), ("asset", "ensitrelvir_global"),
            ("indication", "covid_pep"),
-           ("title", "Ensitrelvir SCORPIO-PEP FDA filing decision"),
-           ("type", "bla_submission"), ("binary", True),
-           ("fail_pos", 35), ("fail_apr", 60), ("success_pos", 85), ("success_apr", 90),
-           ("_source", "Shionogi pipeline disclosure"), ("_confidence", "medium")),
+           ("title", "Ensitrelvir SCORPIO-PEP NDA PDUFA (post-exposure prophylaxis; SCORPIO-HR treatment NDA path dead after Ph3 primary miss May 2024)"),
+           ("type", "pdufa"), ("binary", True),
+           ("fail_pos", 35), ("fail_apr", 60), ("success_pos", 90), ("success_apr", 95),
+           ("_source", "FDA NDA acceptance; Shionogi Apr 2025 announcement"), ("_confidence", "high")),
         od(("date", "H2 2027"), ("dateSort", "2027-09-30"), ("asset", "ensitrelvir_global"),
            ("indication", "covid_pep"),
            ("title", "Ensitrelvir SCORPIO-SR severe-risk Ph3 readout"),
@@ -336,10 +327,10 @@ def build_4528():
         ("name", "Ono Pharmaceutical Co. Ltd."),
         ("currentPrice", 2300),
         ("sharesOut", 470),
-        ("cash", 175000),  # JPY M; net cash post-Deciphera ~¥175B
+        ("cash", 75000),  # JPY M; net cash post-Deciphera ~¥75B (with bank loans offsetting)
         ("currency", "JPY"),
         ("phase", "commercial"),
-        ("subtitle", "Japanese innovative pharma; Opdivo originator (BMS-licensed). FY24 (Mar25) revenue ~¥487B / ~$3.3B: Opdivo JP ~¥80B + Opdivo BMS ex-JP royalty ~¥115B + Forxiga JP ~¥62B (AZ co-promo) + Kyprolis JP ~¥18B + Qinlock ~¥15B (Deciphera close Jun24) + Romvimza pre-launch + tirabrutinib JP + heritage ~¥197B. Acquired Deciphera $2.4B Jun 2024: gained Qinlock GIST 4L + Romvimza (vimseltinib) TGCT FDA Feb 2025. Pipeline: ONO-4685 PD-1xCD3 bispecific Ph1 TCL, ONO-2920 TYK2/JAK1 psoriasis Ph2, DCC-3116 ULK1/2 Ph1."),
+        ("subtitle", "Japanese innovative pharma; Opdivo originator (BMS-licensed ex-JP/KR/TW). FY24 (yr Mar25) revenue ¥487B / ~$3.3B: Opdivo JP/KR/TW ¥96B (NHI price cut -16.5% YoY), Opdivo BMS royalty ~¥115B, Forxiga JP ¥69B (+19.5% on CHF/CKD label expansion; AZ co-promo), Kyprolis JP ¥18B, Qinlock ¥25.5B (9-mo Deciphera close Jun 2024), Romvimza pre-launch (US Feb25/EU Sep25), tirabrutinib JP ~¥8B (US PDUFA 2026 PCNSL), heritage bucket ~¥150B. Deciphera $2.4B acquisition funded with cash + bank loans. Pipeline: ONO-4685 PD-1xCD3 bispecific Ph1 TCL (ASCO 2025 readout), ONO-2920 TYK2/JAK1 psoriasis Ph2, DCC-3116 ULK1/2 Ph1 (KRAS pan-tumor), olverembatinib JP T315I CML Ph2."),
         ("yahooTicker", "4528.T"),
     )
 
@@ -356,7 +347,7 @@ def build_4528():
                    slice_((0, 0, 0), (0, 0, 0), (1.5, 40, 60)),
                    {"row.reachPct": "Opdivo JP/KR/TW ~50% PD-1 share competing with Keytruda + Tecentriq",
                     "row.priceK": "Opdivo JP WAC ~¥3M/yr (~$20K)"},
-                   salesM=870, salesYear=2025, peakYear=2029, cagrPct=2, penPct=35)],
+                   salesM=640, salesYear=2025, peakYear=2029, cagrPct=-3, penPct=35)],
         targets=["PDCD1"]))
 
     # Opdivo BMS royalty stream (ex-JP)
@@ -383,7 +374,7 @@ def build_4528():
                    slice_((0, 0, 0), (0, 0, 0), (1.5, 50, 1.3)),
                    {"row.reachPct": "Forxiga JP ~40% SGLT2 class share (vs Jardiance, Kanaglu, Suglat)",
                     "row.priceK": "Forxiga JP WAC ~¥40K/yr blended"},
-                   salesM=413, salesYear=2025, peakYear=2030, cagrPct=10, penPct=25)]))
+                   salesM=458, salesYear=2025, peakYear=2030, cagrPct=15, penPct=25)]))
 
     # Kyprolis JP (carfilzomib)
     assets.append(asset(
@@ -409,7 +400,7 @@ def build_4528():
                    slice_((25, 60, 60), (10, 50, 40), (1, 18, 12)),
                    {"us.reachPct": "Qinlock ~40% 4L GIST share (only approved 4L)",
                     "us.priceK": "Qinlock WAC ~$60K/yr"},
-                   salesM=100, salesYear=2025, peakYear=2030, cagrPct=10, penPct=35)]))
+                   salesM=170, salesYear=2025, peakYear=2030, cagrPct=15, penPct=35)]))
 
     # Romvimza (vimseltinib) - TGCT, FDA Feb 2025
     assets.append(asset(
@@ -492,16 +483,8 @@ def build_4528():
                    slice_((1, 50, 80), (0.5, 40, 50), (0.05, 18, 15)),
                    {"us.priceK": "Estimated WAC $80K/yr in combination"},
                    peakYear=2034, cagrPct=0, penPct=8)]))
-    assets.append(asset(
-        "velsipity_jp", "Velsipity (ozanimod) JP - S1P1/5 modulator (JP UC filing; Pfizer ex-JP)",
-        "JP filed (UC moderate-severe; pending PMDA decision)",
-        "small_molecule.gpcr.s1p_modulator",
-        [innov_ind("uc_jp", "Ulcerative colitis moderate-severe Japan",
-                   "immunology.inflammatory_gi.ulcerative_colitis",
-                   regions((0, 0, 0), (0, 0, 0), (350, 60, 35)),
-                   slice_((0, 0, 0), (0, 0, 0), (3, 40, 25)),
-                   {"row.priceK": "Velsipity JP WAC ~¥2.5M/yr"},
-                   peakYear=2030, cagrPct=15, penPct=18)]))
+    # NOTE: Velsipity = Pfizer's etrasimod (not Ono's ozanimod). Pfizer launched
+    # directly in Japan Sep 2025 -- Ono has no role in Velsipity. Asset removed.
 
     # SOTP scenarios
     weights = {"mega_bear": 10, "bear": 22, "base": 38, "bull": 25, "psychedelic_bull": 5}
@@ -518,7 +501,6 @@ def build_4528():
         "ono_2920":            {"mega_bear": 18, "bear": 30, "base": 48, "bull": 65, "psychedelic_bull": 78},
         "olverembatinib_jp":   {"mega_bear": 35, "bear": 55, "base": 75, "bull": 88, "psychedelic_bull": 95},
         "dcc_3116":            {"mega_bear": 5,  "bear": 12, "base": 25, "bull": 40, "psychedelic_bull": 55},
-        "velsipity_jp":        {"mega_bear": 70, "bear": 85, "base": 95, "bull": 99, "psychedelic_bull": 100},
     }
     apr_grid = {a: {"mega_bear": 60, "bear": 75, "base": 85, "bull": 92, "psychedelic_bull": 96} for a in pos_grid}
     pen_grid = {a: {"mega_bear": 0.3, "bear": 0.5, "base": 0.8, "bull": 1.05, "psychedelic_bull": 1.25} for a in pos_grid}
@@ -527,7 +509,6 @@ def build_4528():
         "ono_2920": "psoriasis_systemic",
         "olverembatinib_jp": "cml_t315i",
         "dcc_3116": "kras_combo",
-        "velsipity_jp": "uc_jp",
     }
 
     scenarios = od()
@@ -569,16 +550,10 @@ def build_4528():
            ("_source", "Ono FY25 IR"), ("_confidence", "high")),
         od(("date", "H2 2026"), ("dateSort", "2026-09-30"), ("asset", "tirabrutinib"),
            ("indication", "pcnsl"),
-           ("title", "Tirabrutinib US PCNSL Ph2 PROSPECT readout (ASCO 2025/26)"),
-           ("type", "phase2_data"), ("binary", True),
-           ("fail_pos", 60), ("fail_apr", 75), ("success_pos", 92), ("success_apr", 92),
-           ("_source", "Ono pipeline"), ("_confidence", "medium")),
-        od(("date", "2026"), ("dateSort", "2026-12-30"), ("asset", "velsipity_jp"),
-           ("indication", "uc_jp"),
-           ("title", "Velsipity JP UC PMDA approval"),
-           ("type", "registration"), ("binary", True),
-           ("fail_pos", 60), ("fail_apr", 70), ("success_pos", 98), ("success_apr", 95),
-           ("_source", "Ono FY25 IR"), ("_confidence", "high")),
+           ("title", "Tirabrutinib US PCNSL FDA PDUFA decision (NDA accepted Feb 2025; Ph2 PROSPECT ASCO 2025: ORR 67%, CR 44%, mPFS 6.0M)"),
+           ("type", "pdufa"), ("binary", True),
+           ("fail_pos", 70), ("fail_apr", 80), ("success_pos", 95), ("success_apr", 95),
+           ("_source", "FDA NDA acceptance Feb 16 2025; ASCO 2025 PROSPECT data"), ("_confidence", "high")),
         od(("date", "H1 2027"), ("dateSort", "2027-04-30"), ("asset", "ono_4685"),
            ("indication", "tcl_rr"),
            ("title", "ONO-4685 PD-1xCD3 Ph1 expansion data (T-cell lymphoma)"),

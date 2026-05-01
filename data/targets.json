@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated": "2026-05-01T08:15:06Z",
+    "generated": "2026-05-01T08:19:47Z",
     "target_count": 405,
-    "total_assets": 787,
-    "assets_with_targets": 719,
+    "total_assets": 792,
+    "assets_with_targets": 723,
     "multi_modality_count": 49,
     "multi_disease_count": 182
   },
@@ -1746,12 +1746,14 @@
     },
     "BCL2": {
       "companies": [
+        "1177",
         "ABBV",
         "ONC"
       ],
       "modalities": [
         "small_molecule.kinase_inhibitor.btk_bcl2_next_gen",
-        "small_molecule.protein_protein_inhibitor.bcl2"
+        "small_molecule.protein_protein_inhibitor.bcl2",
+        "small_molecule.protein_protein_inhibitor.bcl2_inhibitor"
       ],
       "areas": [
         "oncology.gi.hcc",
@@ -1759,6 +1761,15 @@
         "oncology.hematology.cll"
       ],
       "assets": [
+        {
+          "ticker": "1177",
+          "asset": "tqb3909",
+          "name": "TQB3909 - oral selective Bcl-2 inhibitor (CTTQ; venetoclax-class)",
+          "modality": "small_molecule.protein_protein_inhibitor.bcl2_inhibitor",
+          "areas": [
+            "oncology.hematology.cll"
+          ]
+        },
         {
           "ticker": "ABBV",
           "asset": "venclexta",
@@ -1788,15 +1799,15 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 2,
+      "assetCount": 4,
+      "modalityCount": 3,
       "modalityClassCount": 1,
       "areaCount": 3,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 19661.2,
-      "totalSOM": 4870.9,
+      "totalSOM": 4878.3,
       "totalSales": 2500.0,
       "cagrPct": 0.0,
       "peakYear": 2033
@@ -1949,7 +1960,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 18967.9,
+      "totalTAM": 18968.0,
       "totalSOM": 4026.4,
       "totalSales": 2915.0,
       "cagrPct": 3.2,
@@ -2882,6 +2893,7 @@
     },
     "CD274": {
       "companies": [
+        "1177",
         "AZN",
         "BNTX",
         "MRK_DE",
@@ -2889,7 +2901,8 @@
       ],
       "modalities": [
         "antibody.bispecific.pdl1_vegf",
-        "antibody.checkpoint.pdl1"
+        "antibody.checkpoint.pdl1",
+        "antibody.monoclonal.anti_pdl1"
       ],
       "areas": [
         "oncology.breast.tnbc",
@@ -2898,11 +2911,21 @@
         "oncology.gi.cholangiocarcinoma",
         "oncology.gi.hcc",
         "oncology.lung.nsclc_io_combo",
+        "oncology.lung.nsclc_io_resistant",
         "oncology.lung.sclc",
         "oncology.neuroendocrine.gepnet",
         "oncology.skin.merkel_cell"
       ],
       "assets": [
+        {
+          "ticker": "1177",
+          "asset": "benmelstobart",
+          "name": "Benmelstobart (TQB2450) - anti-PD-L1 humanized IgG1 mAb (CTTQ-discovered)",
+          "modality": "antibody.monoclonal.anti_pdl1",
+          "areas": [
+            "oncology.lung.nsclc_io_resistant"
+          ]
+        },
         {
           "ticker": "AZN",
           "asset": "imfinzi",
@@ -2953,17 +2976,17 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 2,
+      "assetCount": 5,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 9,
+      "areaCount": 10,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 51428.9,
-      "totalSOM": 19025.1,
-      "totalSales": 10914.0,
-      "cagrPct": 1.4,
+      "totalTAM": 65297.9,
+      "totalSOM": 19145.1,
+      "totalSales": 10994.0,
+      "cagrPct": 1.5,
       "peakYear": 2029
     },
     "CD276": {
@@ -4241,7 +4264,7 @@
         "antibody"
       ],
       "totalTAM": 19731.0,
-      "totalSOM": 189.7,
+      "totalSOM": 189.6,
       "totalSales": 0.0,
       "cagrPct": 54.4,
       "peakYear": 2031
@@ -4497,6 +4520,7 @@
     },
     "CTLA4": {
       "companies": [
+        "1177",
         "AZN",
         "BMY",
         "BNTX"
@@ -4515,10 +4539,20 @@
         "oncology.gi.gastric_esoph",
         "oncology.gi.hcc",
         "oncology.lung.nsclc_io_combo",
+        "oncology.lung.nsclc_io_resistant",
         "oncology.lung.sclc",
         "oncology.skin.melanoma"
       ],
       "assets": [
+        {
+          "ticker": "1177",
+          "asset": "tqb2858",
+          "name": "TQB2858 - PD-1 / CTLA-4 bispecific antibody (CTTQ-discovered)",
+          "modality": "antibody.bispecific.pd1_ctla4",
+          "areas": [
+            "oncology.lung.nsclc_io_resistant"
+          ]
+        },
         {
           "ticker": "AZN",
           "asset": "imfinzi",
@@ -4566,15 +4600,15 @@
           ]
         }
       ],
-      "assetCount": 4,
+      "assetCount": 5,
       "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 10,
+      "areaCount": 11,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 72513.6,
-      "totalSOM": 13369.8,
+      "totalTAM": 86382.6,
+      "totalSOM": 13376.2,
       "totalSales": 8600.0,
       "cagrPct": 5.0,
       "peakYear": 2029
@@ -7004,6 +7038,7 @@
     },
     "FGFR1": {
       "companies": [
+        "1177",
         "4523",
         "BI",
         "INCY",
@@ -7011,6 +7046,7 @@
         "MRK"
       ],
       "modalities": [
+        "small_molecule.kinase.multi_tki",
         "small_molecule.kinase.tki_anti_fibrotic",
         "small_molecule.kinase_inhibitor.fgfr",
         "small_molecule.kinase_inhibitor.fgfr1_3",
@@ -7027,10 +7063,25 @@
         "oncology.gi.hcc",
         "oncology.gynecologic.endometrial",
         "oncology.gynecologic.ovarian",
+        "oncology.lung.nsclc_io_resistant",
+        "oncology.lung.sclc",
+        "oncology.musculoskeletal.sts",
         "respiratory.fibrotic.ipf",
         "respiratory.fibrotic.ppf"
       ],
       "assets": [
+        {
+          "ticker": "1177",
+          "asset": "anlotinib",
+          "name": "Anlotinib (Focus V; AL3818) - oral multi-targeted TKI (VEGFR1/2/3 + FGFR1/2/3 + PDGFR-alpha/beta + c-Kit + RET)",
+          "modality": "small_molecule.kinase.multi_tki",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.lung.nsclc_io_resistant",
+            "oncology.lung.sclc",
+            "oncology.musculoskeletal.sts"
+          ]
+        },
         {
           "ticker": "4523",
           "asset": "lenvima",
@@ -7094,21 +7145,22 @@
           ]
         }
       ],
-      "assetCount": 6,
-      "modalityCount": 6,
+      "assetCount": 7,
+      "modalityCount": 7,
       "modalityClassCount": 1,
-      "areaCount": 10,
+      "areaCount": 13,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 60081.8,
-      "totalSOM": 13203.3,
-      "totalSales": 6818.0,
-      "cagrPct": 4.7,
+      "totalTAM": 91105.4,
+      "totalSOM": 14045.9,
+      "totalSales": 7378.0,
+      "cagrPct": 4.9,
       "peakYear": 2029
     },
     "FGFR2": {
       "companies": [
+        "1177",
         "4523",
         "AMGN",
         "BI",
@@ -7117,6 +7169,7 @@
       ],
       "modalities": [
         "antibody.cytokine.fgfr2b_blocker",
+        "small_molecule.kinase.multi_tki",
         "small_molecule.kinase.tki_anti_fibrotic",
         "small_molecule.kinase_inhibitor.fgfr",
         "small_molecule.kinase_inhibitor.fgfr1_3",
@@ -7124,13 +7177,29 @@
       ],
       "areas": [
         "immunology.autoimmune.systemic_sclerosis",
+        "oncology.endocrine.thyroid_cancer",
         "oncology.genitourinary.bladder",
         "oncology.gi.cholangiocarcinoma",
         "oncology.gi.gastric_esoph",
+        "oncology.lung.nsclc_io_resistant",
+        "oncology.lung.sclc",
+        "oncology.musculoskeletal.sts",
         "respiratory.fibrotic.ipf",
         "respiratory.fibrotic.ppf"
       ],
       "assets": [
+        {
+          "ticker": "1177",
+          "asset": "anlotinib",
+          "name": "Anlotinib (Focus V; AL3818) - oral multi-targeted TKI (VEGFR1/2/3 + FGFR1/2/3 + PDGFR-alpha/beta + c-Kit + RET)",
+          "modality": "small_molecule.kinase.multi_tki",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.lung.nsclc_io_resistant",
+            "oncology.lung.sclc",
+            "oncology.musculoskeletal.sts"
+          ]
+        },
         {
           "ticker": "4523",
           "asset": "tasurgratinib",
@@ -7179,22 +7248,23 @@
           ]
         }
       ],
-      "assetCount": 5,
-      "modalityCount": 5,
+      "assetCount": 6,
+      "modalityCount": 6,
       "modalityClassCount": 2,
-      "areaCount": 6,
+      "areaCount": 10,
       "modalityClasses": [
         "antibody",
         "small_molecule"
       ],
-      "totalTAM": 37735.2,
-      "totalSOM": 8701.7,
-      "totalSales": 3900.0,
-      "cagrPct": 6.8,
+      "totalTAM": 70706.3,
+      "totalSOM": 9544.3,
+      "totalSales": 4460.0,
+      "cagrPct": 6.9,
       "peakYear": 2030
     },
     "FGFR3": {
       "companies": [
+        "1177",
         "4523",
         "BBIO",
         "BI",
@@ -7202,6 +7272,7 @@
         "JNJ"
       ],
       "modalities": [
+        "small_molecule.kinase.multi_tki",
         "small_molecule.kinase.tki_anti_fibrotic",
         "small_molecule.kinase_inhibitor.fgfr",
         "small_molecule.kinase_inhibitor.fgfr1_3",
@@ -7211,12 +7282,28 @@
       "areas": [
         "immunology.autoimmune.systemic_sclerosis",
         "musculoskeletal.bone_cartilage.achondroplasia",
+        "oncology.endocrine.thyroid_cancer",
         "oncology.genitourinary.bladder",
         "oncology.gi.cholangiocarcinoma",
+        "oncology.lung.nsclc_io_resistant",
+        "oncology.lung.sclc",
+        "oncology.musculoskeletal.sts",
         "respiratory.fibrotic.ipf",
         "respiratory.fibrotic.ppf"
       ],
       "assets": [
+        {
+          "ticker": "1177",
+          "asset": "anlotinib",
+          "name": "Anlotinib (Focus V; AL3818) - oral multi-targeted TKI (VEGFR1/2/3 + FGFR1/2/3 + PDGFR-alpha/beta + c-Kit + RET)",
+          "modality": "small_molecule.kinase.multi_tki",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.lung.nsclc_io_resistant",
+            "oncology.lung.sclc",
+            "oncology.musculoskeletal.sts"
+          ]
+        },
         {
           "ticker": "4523",
           "asset": "tasurgratinib",
@@ -7265,17 +7352,17 @@
           ]
         }
       ],
-      "assetCount": 5,
-      "modalityCount": 5,
+      "assetCount": 6,
+      "modalityCount": 6,
       "modalityClassCount": 1,
-      "areaCount": 6,
+      "areaCount": 10,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 33382.5,
-      "totalSOM": 9035.2,
-      "totalSales": 3900.0,
-      "cagrPct": 5.1,
+      "totalTAM": 66353.6,
+      "totalSOM": 9877.7,
+      "totalSales": 4460.0,
+      "cagrPct": 5.3,
       "peakYear": 2030
     },
     "FGG": {
@@ -7382,12 +7469,14 @@
     },
     "FLT1": {
       "companies": [
+        "1177",
         "4502",
         "4523",
         "BAYN",
         "BI"
       ],
       "modalities": [
+        "small_molecule.kinase.multi_tki",
         "small_molecule.kinase.tki_anti_fibrotic",
         "small_molecule.kinase_inhibitor.vegfr",
         "small_molecule.kinase_inhibitor.vegfr_multikinase"
@@ -7399,11 +7488,26 @@
         "oncology.gi.colorectal",
         "oncology.gi.hcc",
         "oncology.gynecologic.endometrial",
+        "oncology.lung.nsclc_io_resistant",
+        "oncology.lung.sclc",
         "oncology.musculoskeletal.gist",
+        "oncology.musculoskeletal.sts",
         "respiratory.fibrotic.ipf",
         "respiratory.fibrotic.ppf"
       ],
       "assets": [
+        {
+          "ticker": "1177",
+          "asset": "anlotinib",
+          "name": "Anlotinib (Focus V; AL3818) - oral multi-targeted TKI (VEGFR1/2/3 + FGFR1/2/3 + PDGFR-alpha/beta + c-Kit + RET)",
+          "modality": "small_molecule.kinase.multi_tki",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.lung.nsclc_io_resistant",
+            "oncology.lung.sclc",
+            "oncology.musculoskeletal.sts"
+          ]
+        },
         {
           "ticker": "4502",
           "asset": "fruzaqla",
@@ -7448,17 +7552,17 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 3,
+      "assetCount": 5,
+      "modalityCount": 4,
       "modalityClassCount": 1,
-      "areaCount": 9,
+      "areaCount": 12,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 57082.6,
-      "totalSOM": 12684.1,
-      "totalSales": 6227.0,
-      "cagrPct": 5.9,
+      "totalTAM": 88106.2,
+      "totalSOM": 13526.7,
+      "totalSales": 6787.0,
+      "cagrPct": 6.0,
       "peakYear": 2029
     },
     "FLT3": {
@@ -7497,12 +7601,14 @@
     },
     "FLT4": {
       "companies": [
+        "1177",
         "4502",
         "4523",
         "BAYN",
         "BI"
       ],
       "modalities": [
+        "small_molecule.kinase.multi_tki",
         "small_molecule.kinase.tki_anti_fibrotic",
         "small_molecule.kinase_inhibitor.vegfr",
         "small_molecule.kinase_inhibitor.vegfr_multikinase"
@@ -7514,11 +7620,26 @@
         "oncology.gi.colorectal",
         "oncology.gi.hcc",
         "oncology.gynecologic.endometrial",
+        "oncology.lung.nsclc_io_resistant",
+        "oncology.lung.sclc",
         "oncology.musculoskeletal.gist",
+        "oncology.musculoskeletal.sts",
         "respiratory.fibrotic.ipf",
         "respiratory.fibrotic.ppf"
       ],
       "assets": [
+        {
+          "ticker": "1177",
+          "asset": "anlotinib",
+          "name": "Anlotinib (Focus V; AL3818) - oral multi-targeted TKI (VEGFR1/2/3 + FGFR1/2/3 + PDGFR-alpha/beta + c-Kit + RET)",
+          "modality": "small_molecule.kinase.multi_tki",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.lung.nsclc_io_resistant",
+            "oncology.lung.sclc",
+            "oncology.musculoskeletal.sts"
+          ]
+        },
         {
           "ticker": "4502",
           "asset": "fruzaqla",
@@ -7563,17 +7684,17 @@
           ]
         }
       ],
-      "assetCount": 4,
-      "modalityCount": 3,
+      "assetCount": 5,
+      "modalityCount": 4,
       "modalityClassCount": 1,
-      "areaCount": 9,
+      "areaCount": 12,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 57082.6,
-      "totalSOM": 12684.1,
-      "totalSales": 6227.0,
-      "cagrPct": 5.9,
+      "totalTAM": 88106.2,
+      "totalSOM": 13526.7,
+      "totalSales": 6787.0,
+      "cagrPct": 6.0,
       "peakYear": 2029
     },
     "FLU_HA": {
@@ -9250,7 +9371,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -11770,6 +11891,7 @@
     },
     "KDR": {
       "companies": [
+        "1177",
         "4502",
         "4523",
         "BAYN",
@@ -11777,6 +11899,7 @@
         "IPN"
       ],
       "modalities": [
+        "small_molecule.kinase.multi_tki",
         "small_molecule.kinase.tki_anti_fibrotic",
         "small_molecule.kinase_inhibitor.multi_kinase",
         "small_molecule.kinase_inhibitor.vegfr",
@@ -11789,12 +11912,27 @@
         "oncology.gi.colorectal",
         "oncology.gi.hcc",
         "oncology.gynecologic.endometrial",
+        "oncology.lung.nsclc_io_resistant",
+        "oncology.lung.sclc",
         "oncology.musculoskeletal.gist",
+        "oncology.musculoskeletal.sts",
         "oncology.neuroendocrine.gepnet",
         "respiratory.fibrotic.ipf",
         "respiratory.fibrotic.ppf"
       ],
       "assets": [
+        {
+          "ticker": "1177",
+          "asset": "anlotinib",
+          "name": "Anlotinib (Focus V; AL3818) - oral multi-targeted TKI (VEGFR1/2/3 + FGFR1/2/3 + PDGFR-alpha/beta + c-Kit + RET)",
+          "modality": "small_molecule.kinase.multi_tki",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.lung.nsclc_io_resistant",
+            "oncology.lung.sclc",
+            "oncology.musculoskeletal.sts"
+          ]
+        },
         {
           "ticker": "4502",
           "asset": "fruzaqla",
@@ -11850,17 +11988,17 @@
           ]
         }
       ],
-      "assetCount": 5,
-      "modalityCount": 4,
+      "assetCount": 6,
+      "modalityCount": 5,
       "modalityClassCount": 1,
-      "areaCount": 10,
+      "areaCount": 13,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 58509.8,
-      "totalSOM": 13881.3,
-      "totalSales": 6840.0,
-      "cagrPct": 6.0,
+      "totalTAM": 89533.4,
+      "totalSOM": 14723.9,
+      "totalSales": 7400.0,
+      "cagrPct": 6.1,
       "peakYear": 2029
     },
     "KIF11": {
@@ -11909,10 +12047,12 @@
     },
     "KIT": {
       "companies": [
+        "1177",
         "MRK",
         "NVS"
       ],
       "modalities": [
+        "small_molecule.kinase.multi_tki",
         "small_molecule.kinase_inhibitor.bcr_abl_1st_gen",
         "small_molecule.kinase_inhibitor.multi_tki"
       ],
@@ -11921,9 +12061,24 @@
         "oncology.genitourinary.rcc",
         "oncology.gi.hcc",
         "oncology.gynecologic.ovarian",
-        "oncology.hematology.cml"
+        "oncology.hematology.cml",
+        "oncology.lung.nsclc_io_resistant",
+        "oncology.lung.sclc",
+        "oncology.musculoskeletal.sts"
       ],
       "assets": [
+        {
+          "ticker": "1177",
+          "asset": "anlotinib",
+          "name": "Anlotinib (Focus V; AL3818) - oral multi-targeted TKI (VEGFR1/2/3 + FGFR1/2/3 + PDGFR-alpha/beta + c-Kit + RET)",
+          "modality": "small_molecule.kinase.multi_tki",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.lung.nsclc_io_resistant",
+            "oncology.lung.sclc",
+            "oncology.musculoskeletal.sts"
+          ]
+        },
         {
           "ticker": "MRK",
           "asset": "lenvima",
@@ -11946,18 +12101,18 @@
           ]
         }
       ],
-      "assetCount": 2,
-      "modalityCount": 2,
+      "assetCount": 3,
+      "modalityCount": 3,
       "modalityClassCount": 1,
-      "areaCount": 5,
+      "areaCount": 8,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 31274.0,
-      "totalSOM": 2174.5,
-      "totalSales": 1450.0,
-      "cagrPct": -2.8,
-      "peakYear": 2026
+      "totalTAM": 62297.6,
+      "totalSOM": 3017.0,
+      "totalSales": 2010.0,
+      "cagrPct": 0.2,
+      "peakYear": 2027
     },
     "KLKB1": {
       "companies": [
@@ -12479,7 +12634,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 18252.4,
       "totalSales": 2971.0,
       "cagrPct": 47.5,
@@ -12531,7 +12686,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 43968.0,
+      "totalTAM": 43967.9,
       "totalSOM": 17202.9,
       "totalSales": 2271.0,
       "cagrPct": 50.1,
@@ -13510,7 +13665,7 @@
         "gene_therapy"
       ],
       "totalTAM": 505.0,
-      "totalSOM": 307.5,
+      "totalSOM": 307.6,
       "totalSales": 0.0,
       "cagrPct": 0.0,
       "peakYear": 2031
@@ -13781,7 +13936,7 @@
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 17761.4,
+      "totalTAM": 17761.5,
       "totalSOM": 12080.7,
       "totalSales": 0.0,
       "cagrPct": 0.0,
@@ -14545,6 +14700,7 @@
     },
     "PDCD1": {
       "companies": [
+        "1177",
         "AZN",
         "BMY",
         "GSK",
@@ -14571,6 +14727,7 @@
         "oncology.head_neck.hnscc",
         "oncology.hematology.hodgkin",
         "oncology.lung.nsclc_io_combo",
+        "oncology.lung.nsclc_io_resistant",
         "oncology.lung.nsclc_undruggable",
         "oncology.skin.bcc",
         "oncology.skin.cscc",
@@ -14578,6 +14735,15 @@
         "oncology.skin.merkel_cell"
       ],
       "assets": [
+        {
+          "ticker": "1177",
+          "asset": "tqb2858",
+          "name": "TQB2858 - PD-1 / CTLA-4 bispecific antibody (CTTQ-discovered)",
+          "modality": "antibody.bispecific.pd1_ctla4",
+          "areas": [
+            "oncology.lung.nsclc_io_resistant"
+          ]
+        },
         {
           "ticker": "AZN",
           "asset": "volrustomig",
@@ -14675,15 +14841,15 @@
           ]
         }
       ],
-      "assetCount": 9,
+      "assetCount": 10,
       "modalityCount": 4,
       "modalityClassCount": 1,
-      "areaCount": 15,
+      "areaCount": 16,
       "modalityClasses": [
         "antibody"
       ],
-      "totalTAM": 100840.1,
-      "totalSOM": 67356.1,
+      "totalTAM": 114709.1,
+      "totalSOM": 67362.5,
       "totalSales": 46056.0,
       "cagrPct": 2.6,
       "peakYear": 2028
@@ -14960,11 +15126,13 @@
     },
     "PDGFRA": {
       "companies": [
+        "1177",
         "4523",
         "BI",
         "MRK"
       ],
       "modalities": [
+        "small_molecule.kinase.multi_tki",
         "small_molecule.kinase.tki_anti_fibrotic",
         "small_molecule.kinase_inhibitor.multi_tki",
         "small_molecule.kinase_inhibitor.vegfr_multikinase"
@@ -14976,10 +15144,25 @@
         "oncology.gi.hcc",
         "oncology.gynecologic.endometrial",
         "oncology.gynecologic.ovarian",
+        "oncology.lung.nsclc_io_resistant",
+        "oncology.lung.sclc",
+        "oncology.musculoskeletal.sts",
         "respiratory.fibrotic.ipf",
         "respiratory.fibrotic.ppf"
       ],
       "assets": [
+        {
+          "ticker": "1177",
+          "asset": "anlotinib",
+          "name": "Anlotinib (Focus V; AL3818) - oral multi-targeted TKI (VEGFR1/2/3 + FGFR1/2/3 + PDGFR-alpha/beta + c-Kit + RET)",
+          "modality": "small_molecule.kinase.multi_tki",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.lung.nsclc_io_resistant",
+            "oncology.lung.sclc",
+            "oncology.musculoskeletal.sts"
+          ]
+        },
         {
           "ticker": "4523",
           "asset": "lenvima",
@@ -15016,32 +15199,50 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 3,
+      "assetCount": 4,
+      "modalityCount": 4,
       "modalityClassCount": 1,
-      "areaCount": 8,
+      "areaCount": 11,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 53977.2,
-      "totalSOM": 12436.9,
-      "totalSales": 6518.0,
-      "cagrPct": 4.5,
+      "totalTAM": 85000.8,
+      "totalSOM": 13279.4,
+      "totalSales": 7078.0,
+      "cagrPct": 4.7,
       "peakYear": 2029
     },
     "PDGFRB": {
       "companies": [
+        "1177",
         "BI"
       ],
       "modalities": [
+        "small_molecule.kinase.multi_tki",
         "small_molecule.kinase.tki_anti_fibrotic"
       ],
       "areas": [
         "immunology.autoimmune.systemic_sclerosis",
+        "oncology.endocrine.thyroid_cancer",
+        "oncology.lung.nsclc_io_resistant",
+        "oncology.lung.sclc",
+        "oncology.musculoskeletal.sts",
         "respiratory.fibrotic.ipf",
         "respiratory.fibrotic.ppf"
       ],
       "assets": [
+        {
+          "ticker": "1177",
+          "asset": "anlotinib",
+          "name": "Anlotinib (Focus V; AL3818) - oral multi-targeted TKI (VEGFR1/2/3 + FGFR1/2/3 + PDGFR-alpha/beta + c-Kit + RET)",
+          "modality": "small_molecule.kinase.multi_tki",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.lung.nsclc_io_resistant",
+            "oncology.lung.sclc",
+            "oncology.musculoskeletal.sts"
+          ]
+        },
         {
           "ticker": "BI",
           "asset": "ofev",
@@ -15054,17 +15255,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 3,
+      "areaCount": 7,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 23351.9,
-      "totalSOM": 7603.1,
-      "totalSales": 3600.0,
-      "cagrPct": 5.2,
+      "totalTAM": 56323.0,
+      "totalSOM": 8445.6,
+      "totalSales": 4160.0,
+      "cagrPct": 5.4,
       "peakYear": 2030
     },
     "PGF": {
@@ -16152,11 +16353,13 @@
     },
     "RET": {
       "companies": [
+        "1177",
         "4523",
         "IPN",
         "MRK"
       ],
       "modalities": [
+        "small_molecule.kinase.multi_tki",
         "small_molecule.kinase_inhibitor.multi_kinase",
         "small_molecule.kinase_inhibitor.multi_tki",
         "small_molecule.kinase_inhibitor.vegfr_multikinase"
@@ -16167,9 +16370,24 @@
         "oncology.gi.hcc",
         "oncology.gynecologic.endometrial",
         "oncology.gynecologic.ovarian",
+        "oncology.lung.nsclc_io_resistant",
+        "oncology.lung.sclc",
+        "oncology.musculoskeletal.sts",
         "oncology.neuroendocrine.gepnet"
       ],
       "assets": [
+        {
+          "ticker": "1177",
+          "asset": "anlotinib",
+          "name": "Anlotinib (Focus V; AL3818) - oral multi-targeted TKI (VEGFR1/2/3 + FGFR1/2/3 + PDGFR-alpha/beta + c-Kit + RET)",
+          "modality": "small_molecule.kinase.multi_tki",
+          "areas": [
+            "oncology.endocrine.thyroid_cancer",
+            "oncology.lung.nsclc_io_resistant",
+            "oncology.lung.sclc",
+            "oncology.musculoskeletal.sts"
+          ]
+        },
         {
           "ticker": "4523",
           "asset": "lenvima",
@@ -16206,17 +16424,17 @@
           ]
         }
       ],
-      "assetCount": 3,
-      "modalityCount": 3,
+      "assetCount": 4,
+      "modalityCount": 4,
       "modalityClassCount": 1,
-      "areaCount": 6,
+      "areaCount": 9,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 32052.5,
-      "totalSOM": 6031.0,
-      "totalSales": 3531.0,
-      "cagrPct": 4.1,
+      "totalTAM": 63076.1,
+      "totalSOM": 6873.5,
+      "totalSales": 4091.0,
+      "cagrPct": 4.5,
       "peakYear": 2028
     },
     "RGMA": {

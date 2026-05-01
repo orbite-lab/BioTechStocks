@@ -829,7 +829,13 @@ async function main(){
       for(const[tk,rec]of Object.entries(pj)){
         if(tk==="_meta"||!configs[tk])continue;
         if(rec&&typeof rec.price==="number"&&rec.price>0){
-          livePrices[tk]={price:rec.price,prevClose:rec.prevClose||null};
+          livePrices[tk]={
+            price:rec.price,
+            prevClose:rec.prevClose||null,
+            price1W:rec.price1W||null,
+            price1M:rec.price1M||null,
+            priceYTD:rec.priceYTD||null,
+          };
         }
       }
       if(Object.keys(livePrices).length>0)pricesLoaded=true;
@@ -2954,7 +2960,7 @@ async function main(){
     ptfSet.forEach(tk=>{h+=`<span class="ptf-tag" onclick="window._toggle('${tk}')">${tk}<span class="x">\u00d7</span></span>`;});
     h+='<div class="dd-wrap"><input class="dd-input" id="ddIn" placeholder="+ Add ticker\u2026" onfocus="window._ddOpen()" oninput="window._ddFilter(this.value)" onblur="setTimeout(()=>window._ddClose(),200)"/>';
     h+='<div class="dd-list" id="ddList">';
-    rows.forEach(r=>{if(!ptfSet.has(r.ticker))h+=`<div class="dd-item" onmousedown="window._toggle('${r.ticker}')"><span><span class="t">${r.ticker}</span>${r.name}</span><span style="color:var(--text2);font-size:.7rem">${r.ccy}${r.price.toFixed(r.dec)}</span></div>`;});
+    rows.forEach(r=>{if(!ptfSet.has(r.ticker)&&!r.isPrivate)h+=`<div class="dd-item" onmousedown="window._toggle('${r.ticker}')"><span><span class="t">${r.ticker}</span>${r.name}</span><span style="color:var(--text2);font-size:.7rem">${r.ccy}${r.price.toFixed(r.dec)}</span></div>`;});
     h+='</div></div></div>';
     h+='<div class="ptf-results">';
     SK.forEach(sk=>{

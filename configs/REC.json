@@ -1,0 +1,727 @@
+{
+  "company": {
+    "ticker": "REC",
+    "name": "Recordati S.p.A.",
+    "currentPrice": 52,
+    "sharesOut": 209,
+    "cash": -800,
+    "currency": "EUR",
+    "phase": "commercial",
+    "subtitle": "Italian rare-disease + primary-care specialty pharma; family-controlled (Recordati family); Milan HQ since 1926. Listed Borsa Italiana REC.MI. FY24 revenue EUR 2.3B (+9%); two segments: Rare Diseases ~EUR 800M (Signifor + Isturisa Cushing's/acromegaly + Sylvant iMCD via EUSA acq 2022 + Qarziba neuroblastoma + Carbaglu NAGS + Cystadrops cystinosis) and Specialty + Primary Care ~EUR 1.5B (Reagila cariprazine antipsychotic ex-AbbVie EU/RoW + Hepamerz + Urorec BPH + Livazo statin + Zanidip CCB)",
+    "yahooTicker": "REC.MI"
+  },
+  "assets": [
+    {
+      "id": "signifor",
+      "name": "Signifor / Signifor LAR (pasireotide) - cyclic hexapeptide somatostatin analog (SSTR1/2/3/5; broader binding than octreotide)",
+      "stage": "Commercial (acromegaly + Cushing's disease; FDA 2012 + 2014; ex-NVS acquisition 2020 EUR 390M)",
+      "modality": "peptide.synthetic.somatostatin_analog",
+      "targets": [
+        "SSTR1",
+        "SSTR2",
+        "SSTR3",
+        "SSTR5"
+      ],
+      "indications": [
+        {
+          "id": "cushing",
+          "name": "Cushing's disease (ACTH-secreting pituitary adenoma; subQ + LAR)",
+          "area": "endocrine.pituitary.cushings",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3,
+                "wtpPct": 70,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 4,
+                "wtpPct": 55,
+                "priceK": 65
+              },
+              "row": {
+                "patientsK": 10,
+                "wtpPct": 18,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 36.5,
+                "wtpPct": 65,
+                "priceK": 110
+              },
+              "eu": {
+                "reachPct": 54.7,
+                "wtpPct": 55,
+                "priceK": 70
+              },
+              "row": {
+                "reachPct": 9.1,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Signifor Cushing's ~12% reach; competitive vs Isturisa (Recordati internal) + Korlym + ketoconazole",
+              "us.priceK": "Signifor LAR ~$110K/yr"
+            },
+            "penPct": 35,
+            "cagrPct": 3,
+            "peakYear": 2030,
+            "salesM": 110,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "acromegaly",
+          "name": "Acromegaly (LAR; somatostatin analog 2L)",
+          "area": "endocrine.pituitary.acromegaly",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8,
+                "wtpPct": 75,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 10,
+                "wtpPct": 65,
+                "priceK": 45
+              },
+              "row": {
+                "patientsK": 15,
+                "wtpPct": 35,
+                "priceK": 20
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10.8,
+                "wtpPct": 65,
+                "priceK": 110
+              },
+              "eu": {
+                "reachPct": 16.3,
+                "wtpPct": 50,
+                "priceK": 70
+              },
+              "row": {
+                "reachPct": 2.7,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Signifor LAR acromegaly 2L; competitive vs Sandostatin LAR + Somatuline + Mycapssa oral",
+              "us.priceK": "Same Signifor pricing"
+            },
+            "penPct": 20,
+            "cagrPct": 2,
+            "peakYear": 2028,
+            "salesM": 80,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "isturisa",
+      "name": "Isturisa (osilodrostat) - oral 11-beta hydroxylase (CYP11B1) inhibitor",
+      "stage": "Commercial (Cushing's disease FDA Mar 2020; ex-NVS acquisition 2020)",
+      "modality": "small_molecule.enzyme.cyp11b1_inhibitor",
+      "targets": [
+        "CYP11B1"
+      ],
+      "indications": [
+        {
+          "id": "cushing",
+          "name": "Cushing's disease (cortisol-lowering oral)",
+          "area": "endocrine.pituitary.cushings",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3,
+                "wtpPct": 70,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 4,
+                "wtpPct": 55,
+                "priceK": 65
+              },
+              "row": {
+                "patientsK": 10,
+                "wtpPct": 18,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 65,
+                "priceK": 90
+              },
+              "eu": {
+                "reachPct": 85.2,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "row": {
+                "reachPct": 14.2,
+                "wtpPct": 12,
+                "priceK": 20
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Isturisa oral cortisol-lowering Cushing's; growing share; competitive vs Korlym + Signifor + ketoconazole",
+              "us.priceK": "Isturisa WAC ~$90K/yr oral"
+            },
+            "penPct": 35,
+            "cagrPct": 18,
+            "peakYear": 2031,
+            "salesM": 220,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "sylvant",
+      "name": "Sylvant (siltuximab) - chimeric anti-IL-6 mAb (ex-J&J via EUSA Pharma acquisition Mar 2022)",
+      "stage": "Commercial (idiopathic multicentric Castleman disease iMCD FDA 2014; ex-EUSA Pharma acq EUR 750M Mar 2022)",
+      "modality": "antibody.monoclonal.anti_il6",
+      "targets": [
+        "IL6"
+      ],
+      "indications": [
+        {
+          "id": "castleman",
+          "name": "Idiopathic multicentric Castleman disease (iMCD; HHV-8-negative; IL-6-driven lymphoproliferative)",
+          "area": "oncology.hematology.castleman",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5,
+                "wtpPct": 70,
+                "priceK": 220
+              },
+              "eu": {
+                "patientsK": 7,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 25,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 30,
+                "wtpPct": 70,
+                "priceK": 220
+              },
+              "eu": {
+                "reachPct": 22,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 4,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Sylvant sole approved iMCD therapy; ~30% of US iMCD diagnosed treated",
+              "us.priceK": "Sylvant WAC ~$220K/yr"
+            },
+            "penPct": 40,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 100,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "qarziba",
+      "name": "Qarziba (dinutuximab beta) - anti-GD2 chimeric IgG1 mAb (CHO cells; ex-EUSA Pharma acquisition Mar 2022)",
+      "stage": "Commercial (high-risk neuroblastoma EU 2017; ex-EUSA acq; competitive vs Unituxin US/UTHR)",
+      "modality": "antibody.monoclonal.anti_gd2",
+      "targets": [
+        "B4GALNT1"
+      ],
+      "indications": [
+        {
+          "id": "neuroblastoma",
+          "name": "High-risk neuroblastoma (pediatric maintenance post-myeloablative therapy; EU/RoW)",
+          "area": "oncology.pediatric.neuroblastoma",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 4,
+                "wtpPct": 60,
+                "priceK": 120
+              },
+              "row": {
+                "patientsK": 15,
+                "wtpPct": 14,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 50,
+                "wtpPct": 60,
+                "priceK": 200
+              },
+              "row": {
+                "reachPct": 8,
+                "wtpPct": 14,
+                "priceK": 60
+              }
+            },
+            "company_slice_sources": {
+              "eu.reachPct": "Qarziba EU + RoW neuroblastoma maintenance; ~50% of EU pediatric high-risk neuroblastoma; competitive vs Unituxin (UTHR US-only)",
+              "eu.priceK": "Qarziba EU ~EUR 180K/cycle (~$200K)",
+              "us.note": "Not US-marketed; US territory belongs to UTHR Unituxin"
+            },
+            "penPct": 60,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 220,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "reagila",
+      "name": "Reagila / Vraylar (cariprazine) - oral D2/D3 partial agonist atypical antipsychotic (AbbVie ex-US partnership)",
+      "stage": "Commercial (schizophrenia + bipolar I + MDD adjunct; ABBV markets US Vraylar; Recordati EU/RoW + Latin America Reagila)",
+      "modality": "small_molecule.gpcr.atypical_antipsychotic",
+      "targets": [
+        "DRD2",
+        "DRD3",
+        "HTR1A"
+      ],
+      "indications": [
+        {
+          "id": "schizophrenia_eu",
+          "name": "Schizophrenia + bipolar (EU/RoW; Reagila brand; ABBV pays Recordati on net sales)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 2.7,
+                "wtpPct": 50,
+                "priceK": 7
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 18,
+                "priceK": 2.5
+              }
+            },
+            "company_slice_sources": {
+              "eu.reachPct": "Reagila Recordati EU/Latin America brand of cariprazine; ABBV partnership (Vraylar US); ~3-5% EU schizophrenia atypical share",
+              "eu.priceK": "Reagila EU ~EUR 5-8K/yr branded atypical"
+            },
+            "penPct": 60,
+            "cagrPct": 8,
+            "peakYear": 2031,
+            "salesM": 200,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "rec_specialty",
+      "name": "Recordati specialty + primary care portfolio - Hepamerz + Urorec + Livazo + Zanidip + Carbaglu + Cystadrops + Pedea",
+      "stage": "Commercial (multi-product specialty + primary care + ultra-orphan; FY24 ~EUR 1.0B+)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "indications": [
+        {
+          "id": "specialty_bulk",
+          "name": "Recordati specialty + primary care bulk (Hepamerz LOLA + Urorec BPH + Livazo statin + Zanidip CCB + Carbaglu NAGS + Cystadrops cystinosis + Pedea NICU)",
+          "area": "_established_products.recordati_heritage",
+          "market": {
+            "tamB": 25,
+            "penPct": 0,
+            "salesM": 1100,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 4,
+            "notes": "Recordati specialty + primary care heritage: Hepamerz (L-ornithine L-aspartate; hepatic encephalopathy ~EUR 250M), Urorec (silodosin; BPH alpha-1A antagonist), Livazo (pitavastatin; lipids), Zanidip (lercanidipine; CCB HTN), Carbaglu (carglumic acid; NAGS deficiency + organic acidemia ultra-orphan), Cystadrops (cysteamine eye drops; cystinosis corneal crystals), Pedea (ibuprofen IV; preterm infant patent ductus arteriosus PDA), various local-market specialty + generics. Mid-single-digit growth via brand mix.",
+            "company_slice": {},
+            "company_slice_sources": {}
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 4,
+        "commercialMult": 3,
+        "commercialRevM": 2100,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "signifor": {
+          "cushing": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "acromegaly": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "isturisa": {
+          "cushing": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "sylvant": {
+          "castleman": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "qarziba": {
+          "neuroblastoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "reagila": {
+          "schizophrenia_eu": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "rec_specialty": {
+          "specialty_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 5,
+        "commercialMult": 4,
+        "commercialRevM": 2300,
+        "milestones": 50,
+        "dil": 0
+      },
+      "assumptions": {
+        "signifor": {
+          "cushing": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "acromegaly": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "isturisa": {
+          "cushing": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "sylvant": {
+          "castleman": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "qarziba": {
+          "neuroblastoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "reagila": {
+          "schizophrenia_eu": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "rec_specialty": {
+          "specialty_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 35,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 7,
+        "commercialMult": 6,
+        "commercialRevM": 2500,
+        "milestones": 100,
+        "dil": 0
+      },
+      "assumptions": {
+        "signifor": {
+          "cushing": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "acromegaly": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "isturisa": {
+          "cushing": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "sylvant": {
+          "castleman": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "qarziba": {
+          "neuroblastoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "reagila": {
+          "schizophrenia_eu": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "rec_specialty": {
+          "specialty_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 10,
+        "commercialMult": 8,
+        "commercialRevM": 2800,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "signifor": {
+          "cushing": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "acromegaly": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "isturisa": {
+          "cushing": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "sylvant": {
+          "castleman": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "qarziba": {
+          "neuroblastoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "reagila": {
+          "schizophrenia_eu": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "rec_specialty": {
+          "specialty_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 14,
+        "commercialMult": 12,
+        "commercialRevM": 3200,
+        "milestones": 400,
+        "dil": 0
+      },
+      "assumptions": {
+        "signifor": {
+          "cushing": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "acromegaly": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "isturisa": {
+          "cushing": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "sylvant": {
+          "castleman": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "qarziba": {
+          "neuroblastoma": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "reagila": {
+          "schizophrenia_eu": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "rec_specialty": {
+          "specialty_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "isturisa",
+      "indication": "cushing",
+      "title": "Isturisa Cushing's disease global launch trajectory + Korlym competitive dynamics",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.recordati.com/en/investors",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "reagila",
+      "indication": "schizophrenia_eu",
+      "title": "Reagila EU/RoW market share update + AbbVie Vraylar US growth dynamics",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.recordati.com/en/investors",
+      "_confidence": "high"
+    }
+  ]
+}

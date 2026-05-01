@@ -807,6 +807,17 @@ REGIONS = {
     # zumab BeiGene; toripalimab Junshi/Coherus US Loqtorzi 2024) +
     # chemo backbone (cisplatin + gemcitabine). Net branded ~$50K/yr in
     # China; ~$200K/yr in US for Loqtorzi. Class peak ~$2-3B globally.
+    # Idiopathic multicentric Castleman disease (iMCD; HHV-8-negative):
+    # rare lymphoproliferative disorder with multifocal lymphadenopathy +
+    # systemic inflammation (IL-6 driven). ~5K US, ~7K EU prevalent.
+    # Sole branded therapy: Sylvant (siltuximab anti-IL-6 mAb; Recordati
+    # ex-EUSA acquisition 2022; FDA 2014). WAC ~$220K/yr.
+    # source: NORD Castleman; CDCN registry; Recordati 10-K.
+    "oncology.hematology.castleman": {
+        "us":  {"patientsK": 5,   "wtpPct": 70, "priceK": 220},
+        "eu":  {"patientsK": 7,   "wtpPct": 50, "priceK": 130},
+        "row": {"patientsK": 25,  "wtpPct": 12, "priceK": 40},
+    },
     "oncology.head_neck.npc": {
         "us":  {"patientsK": 3,   "wtpPct": 70, "priceK": 200},
         "eu":  {"patientsK": 2,   "wtpPct": 50, "priceK": 120},
@@ -900,6 +911,7 @@ PEN_PCT = {
     "oncology.eye.uveal_melanoma": 35,
     "oncology.head_neck.hnscc": 55,
     "oncology.head_neck.npc": 60,
+    "oncology.hematology.castleman": 40,
 }
 
 

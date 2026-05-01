@@ -123,8 +123,8 @@
           }
         },
         {
-          "id": "ibd",
-          "name": "IBD (Crohn's + UC anti-TNF biosimilar; EU)",
+          "id": "crohns",
+          "name": "Crohn's disease (anti-TNF biosimilar; EU)",
           "area": "immunology.inflammatory_gi.crohns",
           "market": {
             "regions": {
@@ -146,29 +146,79 @@
             },
             "company_slice": {
               "us": {
-                "reachPct": 0.0,
+                "reachPct": 0,
                 "wtpPct": 0,
                 "priceK": 0
               },
               "eu": {
-                "reachPct": 1.1,
+                "reachPct": 0.5,
                 "wtpPct": 30,
                 "priceK": 15
               },
               "row": {
-                "reachPct": 0.1,
+                "reachPct": 0.05,
                 "wtpPct": 10,
                 "priceK": 5
               }
             },
             "company_slice_sources": {
-              "eu.reachPct": "Hukyndra IBD biosim combined Crohn's + UC EU",
+              "eu.reachPct": "Hukyndra Crohn's biosim share EU",
               "eu.priceK": "Adalimumab biosim pricing"
             },
             "penPct": 38,
             "cagrPct": 5,
             "peakYear": 2030,
-            "salesM": 50,
+            "salesM": 30,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "uc",
+          "name": "Ulcerative colitis (anti-TNF biosimilar; EU)",
+          "area": "immunology.inflammatory_gi.ulcerative_colitis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1000,
+                "wtpPct": 50,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 30,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 5000,
+                "wtpPct": 8,
+                "priceK": 3
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.4,
+                "wtpPct": 30,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "eu.reachPct": "Hukyndra UC biosim share EU",
+              "eu.priceK": "Adalimumab biosim pricing"
+            },
+            "penPct": 35,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 20,
             "salesYear": 2025
           }
         }
@@ -311,11 +361,11 @@
           "market": {
             "tamB": 30,
             "penPct": 0,
-            "salesM": 2000,
+            "salesM": 2400,
             "salesYear": 2025,
             "peakYear": 2027,
             "cagrPct": 3,
-            "notes": "Largest EU + CIS + MENA generics player. Categories: cardiometabolic (bisoprolol, ramipril, simvastatin, metformin, amlodipine), CNS (sertraline, venlafaxine, citalopram), GI (omeprazole, pantoprazole), antibiotics (amoxicillin, ciprofloxacin), analgesics (paracetamol). German + UK + Italy + Spain + Russia + Serbia + Vietnam top markets. Mid-single-digit growth via market expansion + new generic launches.",
+            "notes": "Largest EU + CIS + MENA generics player ~EUR 2.2B. Categories: cardiometabolic (bisoprolol, ramipril, simvastatin, metformin, amlodipine), CNS (sertraline, venlafaxine, citalopram), GI (omeprazole, pantoprazole), antibiotics (amoxicillin, ciprofloxacin), analgesics (paracetamol). German + UK + Italy + Spain + Russia (Nizhpharm acquisition 2005, ~EUR 500M+) + Serbia + Vietnam top markets. Mid-single-digit growth via market expansion + new generic launches.",
             "company_slice": {},
             "company_slice_sources": {}
           }
@@ -351,7 +401,7 @@
       "id": "stada_biosim_residual",
       "name": "STADA biosimilars residual portfolio - Oyavas + Pelmeg + ranibizumab + others (~$0.5B)",
       "stage": "Commercial (oncology + supportive care biosimilars; EU/RoW)",
-      "modality": "antibody.monoclonal.various_biosimilar",
+      "modality": "recombinant_protein.various.heritage_biosimilar",
       "targets": [],
       "indications": [
         {
@@ -396,7 +446,12 @@
             "apr": 100,
             "pen": 0.4
           },
-          "ibd": {
+          "crohns": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "uc": {
             "pos": 100,
             "apr": 100,
             "pen": 0.4
@@ -461,7 +516,12 @@
             "apr": 100,
             "pen": 0.55
           },
-          "ibd": {
+          "crohns": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          },
+          "uc": {
             "pos": 100,
             "apr": 100,
             "pen": 0.55
@@ -526,7 +586,12 @@
             "apr": 100,
             "pen": 0.75
           },
-          "ibd": {
+          "crohns": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "uc": {
             "pos": 100,
             "apr": 100,
             "pen": 0.75
@@ -591,7 +656,12 @@
             "apr": 100,
             "pen": 0.95
           },
-          "ibd": {
+          "crohns": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          },
+          "uc": {
             "pos": 100,
             "apr": 100,
             "pen": 0.95
@@ -656,7 +726,12 @@
             "apr": 100,
             "pen": 1.2
           },
-          "ibd": {
+          "crohns": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "uc": {
             "pos": 100,
             "apr": 100,
             "pen": 1.2

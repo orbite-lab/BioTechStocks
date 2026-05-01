@@ -1,0 +1,1325 @@
+{
+  "company": {
+    "ticker": "HANMI",
+    "name": "Hanmi Pharmaceutical Co. Ltd.",
+    "currentPrice": 295000,
+    "sharesOut": 12.6,
+    "cash": 246600,
+    "currency": "KRW",
+    "phase": "commercial",
+    "subtitle": "Korean innovative pharma. FY25 revenue KRW 1.65T / ~$1.20B: Korea Rx 58% (Rosuzet, Amosartan, Esomezol franchises); Beijing Hanmi pediatric JV 22%; royalties 8%; OTC + exports 12%. LAPS platform (long-acting peptide). Pipeline: efpeglenatide GLP-1 obesity Ph3 H.O.P.E., efocipegtrutide MASH Ph2, HM15136 CHI Ph2, HM15912 SBS Ph2. Belvarafenib partnered Roche.",
+    "yahooTicker": "128940.KS"
+  },
+  "assets": [
+    {
+      "id": "hanmi_korea_rx",
+      "name": "Hanmi Korea Rx franchise (Rosuzet+Amosartan+Esomezol+Pidogul+Naxozole+OTC)",
+      "stage": "Commercial (FY25 KRW 960B / ~$700M Korea + KRW 200B / ~$150M OTC)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "totalSalesM": 850,
+      "mixTemplate": "emerging_markets_generics_v1",
+      "mixOverrides": {
+        "cardio_metabolic.lipids.ldl_cv_risk": 0.2,
+        "cardio_metabolic.hypertension.outpatient_generic": 0.16,
+        "immunology.inflammatory_gi.gerd_peptic": 0.1
+      },
+      "indications": [
+        {
+          "id": "hanmi_korea_rx_outpatient_generic",
+          "name": "hanmi_korea_rx - outpatient generic (generic share)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 126,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 8,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_korea_rx_ldl_cv_risk",
+          "name": "hanmi_korea_rx - ldl cv risk (generic share)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 157,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 6,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_korea_rx_t2d",
+          "name": "hanmi_korea_rx - t2d (generic share)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 102,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_korea_rx_depression",
+          "name": "hanmi_korea_rx - depression (generic share)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 31,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_korea_rx_schizophrenia",
+          "name": "hanmi_korea_rx - schizophrenia (generic share)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 24,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_korea_rx_anxiety",
+          "name": "hanmi_korea_rx - anxiety (generic share)",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 65,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 25,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 16,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_korea_rx_focal",
+          "name": "hanmi_korea_rx - focal (generic share)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 24,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_korea_rx_copd",
+          "name": "hanmi_korea_rx - copd (generic share)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 31,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_korea_rx_asthma_severe",
+          "name": "hanmi_korea_rx - asthma severe (generic share)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 31,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_korea_rx_gerd_peptic",
+          "name": "hanmi_korea_rx - gerd peptic (generic share)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 79,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_korea_rx_other",
+          "name": "hanmi_korea_rx other / un-mappable generics residual",
+          "area": "_established_products.hanmi_hanmi_korea_rx_other",
+          "market": {
+            "regions": {},
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 230,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 0,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hanmi_china_jv",
+      "name": "Beijing Hanmi pediatric JV (China)",
+      "stage": "Commercial (FY25 KRW 365B / ~$270M China pediatric)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "totalSalesM": 270,
+      "mixTemplate": "emerging_markets_generics_v1",
+      "indications": [
+        {
+          "id": "hanmi_china_jv_outpatient_generic",
+          "name": "hanmi_china_jv - outpatient generic (generic share)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 59,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 8,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_china_jv_ldl_cv_risk",
+          "name": "hanmi_china_jv - ldl cv risk (generic share)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 27,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 6,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_china_jv_t2d",
+          "name": "hanmi_china_jv - t2d (generic share)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 35,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_china_jv_depression",
+          "name": "hanmi_china_jv - depression (generic share)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 11,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_china_jv_schizophrenia",
+          "name": "hanmi_china_jv - schizophrenia (generic share)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 8,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_china_jv_anxiety",
+          "name": "hanmi_china_jv - anxiety (generic share)",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 65,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 25,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 5,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_china_jv_focal",
+          "name": "hanmi_china_jv - focal (generic share)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 8,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_china_jv_copd",
+          "name": "hanmi_china_jv - copd (generic share)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 11,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_china_jv_asthma_severe",
+          "name": "hanmi_china_jv - asthma severe (generic share)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 11,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_china_jv_gerd_peptic",
+          "name": "hanmi_china_jv - gerd peptic (generic share)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 22,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "hanmi_china_jv_other",
+          "name": "hanmi_china_jv other / un-mappable generics residual",
+          "area": "_established_products.hanmi_hanmi_china_jv_other",
+          "market": {
+            "regions": {},
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 73,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 0,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "efpeglenatide",
+      "name": "Efpeglenatide (LAPS-GLP1) - long-acting GLP-1 receptor agonist (Hanmi-only post-Sanofi return)",
+      "stage": "Phase 3 H.O.P.E. obesity (readout 2H26); also T2D",
+      "modality": "peptide.glp1.long_acting",
+      "targets": [],
+      "indications": [
+        {
+          "id": "obesity",
+          "name": "Obesity weight management (LAPS-GLP-1 once-weekly)",
+          "area": "cardio_metabolic.obesity.weight_management",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 45000,
+                "wtpPct": 35,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 8
+              },
+              "row": {
+                "patientsK": 250000,
+                "wtpPct": 5,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 35,
+                "priceK": 8
+              },
+              "eu": {
+                "reachPct": 0.3,
+                "wtpPct": 25,
+                "priceK": 5
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 5,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC ~$8K/yr if approved (vs Wegovy $14K/yr; Hanmi-priced lower)",
+              "us.reachPct": "Niche entry post-Wegovy/Mounjaro/CagriSema dominance"
+            },
+            "penPct": 10,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "efocipegtrutide",
+      "name": "Efocipegtrutide (HM15211) - LAPS triple agonist GLP-1/GIP/glucagon",
+      "stage": "Phase 2 MASH (biopsy readout 2H26)",
+      "modality": "peptide.multi_agonist.glp1_gip_glucagon",
+      "targets": [],
+      "indications": [
+        {
+          "id": "mash",
+          "name": "Metabolic dysfunction-associated steatohepatitis (MASH F2-F3)",
+          "area": "cardio_metabolic.liver.mash",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3000,
+                "wtpPct": 35,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 25,
+                "priceK": 8
+              },
+              "row": {
+                "patientsK": 20000,
+                "wtpPct": 8,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 35,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 0.3,
+                "wtpPct": 25,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 0.03,
+                "wtpPct": 5,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $25K/yr if approved (post-Resmetirom)",
+              "us.reachPct": "Niche post-Resmetirom + GLP-1-class competition"
+            },
+            "penPct": 8,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "hm15136",
+      "name": "HM15136 (efpegerglucagon) - long-acting glucagon analog",
+      "stage": "Phase 2 congenital hyperinsulinism (FDA Fast Track + orphan)",
+      "modality": "peptide.hormone.glucagon_analog",
+      "targets": [],
+      "indications": [
+        {
+          "id": "chi",
+          "name": "Congenital hyperinsulinism (rare pediatric ultra-orphan)",
+          "area": "rare_disease.endocrine.congenital_hyperinsulinism",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 80,
+                "priceK": 800
+              },
+              "eu": {
+                "patientsK": 1.5,
+                "wtpPct": 70,
+                "priceK": 500
+              },
+              "row": {
+                "patientsK": 5,
+                "wtpPct": 18,
+                "priceK": 150
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 30,
+                "wtpPct": 70,
+                "priceK": 600
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 60,
+                "priceK": 400
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 18,
+                "priceK": 120
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC ultra-orphan $500-700K/yr",
+              "us.reachPct": "First disease-modifying CHI; ~30% diagnosed treated"
+            },
+            "penPct": 18,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "hm15912",
+      "name": "HM15912 (efpeglutide) - long-acting GLP-2 analog",
+      "stage": "Phase 2 short bowel syndrome (FDA orphan)",
+      "modality": "peptide.hormone.glp2",
+      "targets": [],
+      "indications": [
+        {
+          "id": "sbs",
+          "name": "Short bowel syndrome (intestinal failure; SBS-IF parenteral support)",
+          "area": "rare_disease.gi.short_bowel_syndrome",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 15,
+                "wtpPct": 80,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 20,
+                "wtpPct": 70,
+                "priceK": 150
+              },
+              "row": {
+                "patientsK": 50,
+                "wtpPct": 18,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 50,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 40,
+                "priceK": 120
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 18,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $200K/yr (vs Gattex $400K/yr)",
+              "us.reachPct": "Post-Gattex 2nd-gen GLP-2 ~10% SBS-IF Rx"
+            },
+            "penPct": 12,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "belvarafenib",
+      "name": "Belvarafenib - pan-RAF inhibitor (Roche/Genentech-partnered)",
+      "stage": "Phase 1b/2 NRAS-mutant melanoma combos (Genentech-led)",
+      "modality": "small_molecule.kinase.pan_raf",
+      "targets": [],
+      "indications": [
+        {
+          "id": "nras_melanoma",
+          "name": "NRAS-mutant + KRAS-mutant solid tumors",
+          "area": "oncology.skin.melanoma",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 40,
+                "priceK": 40
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 15,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $60K/mo if approved",
+              "us.reachPct": "Hanmi royalty stream; Roche commercial"
+            },
+            "penPct": 65,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 12,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 2,
+        "commercialMult": 1.5,
+        "commercialRevM": 1507000,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "efpeglenatide": {
+          "obesity": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.3
+          }
+        },
+        "efocipegtrutide": {
+          "mash": {
+            "pos": 12,
+            "apr": 50,
+            "pen": 0.3
+          }
+        },
+        "hm15136": {
+          "chi": {
+            "pos": 18,
+            "apr": 50,
+            "pen": 0.3
+          }
+        },
+        "hm15912": {
+          "sbs": {
+            "pos": 15,
+            "apr": 50,
+            "pen": 0.3
+          }
+        },
+        "belvarafenib": {
+          "nras_melanoma": {
+            "pos": 12,
+            "apr": 50,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 3,
+        "commercialMult": 2.2,
+        "commercialRevM": 1616600,
+        "milestones": 25,
+        "dil": 0
+      },
+      "assumptions": {
+        "efpeglenatide": {
+          "obesity": {
+            "pos": 40,
+            "apr": 65,
+            "pen": 0.5
+          }
+        },
+        "efocipegtrutide": {
+          "mash": {
+            "pos": 22,
+            "apr": 65,
+            "pen": 0.5
+          }
+        },
+        "hm15136": {
+          "chi": {
+            "pos": 30,
+            "apr": 65,
+            "pen": 0.5
+          }
+        },
+        "hm15912": {
+          "sbs": {
+            "pos": 28,
+            "apr": 65,
+            "pen": 0.5
+          }
+        },
+        "belvarafenib": {
+          "nras_melanoma": {
+            "pos": 20,
+            "apr": 65,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 38,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 5,
+        "commercialMult": 3.0,
+        "commercialRevM": 1712500,
+        "milestones": 75,
+        "dil": 0
+      },
+      "assumptions": {
+        "efpeglenatide": {
+          "obesity": {
+            "pos": 55,
+            "apr": 80,
+            "pen": 0.8
+          }
+        },
+        "efocipegtrutide": {
+          "mash": {
+            "pos": 38,
+            "apr": 80,
+            "pen": 0.8
+          }
+        },
+        "hm15136": {
+          "chi": {
+            "pos": 50,
+            "apr": 80,
+            "pen": 0.8
+          }
+        },
+        "hm15912": {
+          "sbs": {
+            "pos": 45,
+            "apr": 80,
+            "pen": 0.8
+          }
+        },
+        "belvarafenib": {
+          "nras_melanoma": {
+            "pos": 35,
+            "apr": 80,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 8,
+        "commercialMult": 4.0,
+        "commercialRevM": 1918000,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "efpeglenatide": {
+          "obesity": {
+            "pos": 70,
+            "apr": 90,
+            "pen": 1.05
+          }
+        },
+        "efocipegtrutide": {
+          "mash": {
+            "pos": 55,
+            "apr": 90,
+            "pen": 1.05
+          }
+        },
+        "hm15136": {
+          "chi": {
+            "pos": 65,
+            "apr": 90,
+            "pen": 1.05
+          }
+        },
+        "hm15912": {
+          "sbs": {
+            "pos": 60,
+            "apr": 90,
+            "pen": 1.05
+          }
+        },
+        "belvarafenib": {
+          "nras_melanoma": {
+            "pos": 50,
+            "apr": 90,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 13,
+        "commercialMult": 5.5,
+        "commercialRevM": 2329000,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "efpeglenatide": {
+          "obesity": {
+            "pos": 80,
+            "apr": 95,
+            "pen": 1.25
+          }
+        },
+        "efocipegtrutide": {
+          "mash": {
+            "pos": 70,
+            "apr": 95,
+            "pen": 1.25
+          }
+        },
+        "hm15136": {
+          "chi": {
+            "pos": 78,
+            "apr": 95,
+            "pen": 1.25
+          }
+        },
+        "hm15912": {
+          "sbs": {
+            "pos": 75,
+            "apr": 95,
+            "pen": 1.25
+          }
+        },
+        "belvarafenib": {
+          "nras_melanoma": {
+            "pos": 65,
+            "apr": 95,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "efpeglenatide",
+      "indication": "obesity",
+      "title": "Efpeglenatide H.O.P.E. Ph3 obesity topline",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 25,
+      "fail_apr": 60,
+      "success_pos": 75,
+      "success_apr": 90,
+      "_source": "Hanmi pipeline",
+      "_confidence": "medium"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-12-15",
+      "asset": "efocipegtrutide",
+      "indication": "mash",
+      "title": "Efocipegtrutide MASH Ph2 biopsy readout",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 12,
+      "fail_apr": 50,
+      "success_pos": 50,
+      "success_apr": 80,
+      "_source": "Hanmi pipeline",
+      "_confidence": "medium"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-04-30",
+      "asset": "hm15136",
+      "indication": "chi",
+      "title": "HM15136 CHI Ph2 readout",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 18,
+      "fail_apr": 65,
+      "success_pos": 65,
+      "success_apr": 88,
+      "_source": "Hanmi pipeline",
+      "_confidence": "medium"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-11-30",
+      "asset": "hm15912",
+      "indication": "sbs",
+      "title": "HM15912 SBS Ph2 readout",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 15,
+      "fail_apr": 60,
+      "success_pos": 60,
+      "success_apr": 85,
+      "_source": "Hanmi pipeline",
+      "_confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,3007 @@
+{
+  "company": {
+    "ticker": "VTRS",
+    "name": "Viatris Inc.",
+    "currentPrice": 14.94,
+    "sharesOut": 1171,
+    "cash": -11160,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Spinout of Mylan + Pfizer Upjohn (Nov 2020). FY2025 revenue $14.25B (-2% cc) across Developed Markets ~$8.5B / Greater China ~$2.3B / Emerging Markets ~$2.2B / JANZ ~$1.2B. Top legacy brands: Lipitor $1.55B, Norvasc $710M, Lyrica $487M, EpiPen $470M, Viagra $408M, Creon $366M, Yupelri $267M. Idorsia partnership Ph3 pipeline (selatogrel, cenerimod). Heavy net debt ~$11.2B post-merger.",
+    "yahooTicker": "VTRS"
+  },
+  "assets": [
+    {
+      "id": "lipitor",
+      "name": "Lipitor (atorvastatin) - HMG-CoA reductase inhibitor (Pfizer Upjohn legacy)",
+      "stage": "Commercial (Viatris legacy brand)",
+      "modality": "small_molecule.enzyme.hmg_coa_reductase",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ldl_cv_risk",
+          "name": "LDL/CV risk reduction (post-LOE 2011 generic)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 17.1,
+                "wtpPct": 50,
+                "priceK": 0.7
+              },
+              "eu": {
+                "reachPct": 9.8,
+                "wtpPct": 35,
+                "priceK": 0.4
+              },
+              "row": {
+                "reachPct": 1.2,
+                "wtpPct": 12,
+                "priceK": 0.15
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Lipitor branded post-LOE residual ~3-4% LDL Rx volume",
+              "us.priceK": "Branded WAC ~$700/yr; rebated"
+            },
+            "penPct": 6,
+            "cagrPct": -8,
+            "peakYear": 2026,
+            "salesM": 1549,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "norvasc",
+      "name": "Norvasc (amlodipine) - CCB (Pfizer Upjohn legacy)",
+      "stage": "Commercial (Viatris legacy brand)",
+      "modality": "small_molecule.ion_channel.ccb",
+      "targets": [],
+      "indications": [
+        {
+          "id": "htn",
+          "name": "Hypertension (post-LOE residual brand)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4.8,
+                "wtpPct": 50,
+                "priceK": 0.4
+              },
+              "eu": {
+                "reachPct": 3.6,
+                "wtpPct": 30,
+                "priceK": 0.25
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 10,
+                "priceK": 0.08
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Norvasc residual brand ~2-3% antihypertensive Rx",
+              "us.priceK": "Branded ~$400/yr"
+            },
+            "penPct": 8,
+            "cagrPct": -10,
+            "peakYear": 2026,
+            "salesM": 710,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "lyrica",
+      "name": "Lyrica (pregabalin) - alpha-2-delta calcium channel modulator (Pfizer Upjohn)",
+      "stage": "Commercial (Viatris legacy brand)",
+      "modality": "small_molecule.ion_channel.cav_a2d",
+      "targets": [],
+      "indications": [
+        {
+          "id": "neuropathic_pain",
+          "name": "Neuropathic pain (post-LOE residual brand; Japan key)",
+          "area": "cns.pain.neuropathic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5000,
+                "wtpPct": 60,
+                "priceK": 1
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 50,
+                "priceK": 0.8
+              },
+              "row": {
+                "patientsK": 40000,
+                "wtpPct": 15,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10.6,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "eu": {
+                "reachPct": 7.1,
+                "wtpPct": 40,
+                "priceK": 1.0
+              },
+              "row": {
+                "reachPct": 1.3,
+                "wtpPct": 12,
+                "priceK": 0.4
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Lyrica Japan ~$300M residual brand pre-LOE",
+              "us.priceK": "Branded WAC ~$1500/yr"
+            },
+            "penPct": 30,
+            "cagrPct": -12,
+            "peakYear": 2026,
+            "salesM": 487,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "epipen",
+      "name": "EpiPen (epinephrine auto-injector) - emergency anaphylaxis treatment",
+      "stage": "Commercial (Viatris legacy brand)",
+      "modality": "small_molecule.gpcr.adrenergic",
+      "targets": [],
+      "indications": [
+        {
+          "id": "anaphylaxis",
+          "name": "Anaphylaxis emergency rescue (auto-injector)",
+          "area": "immunology.allergy.anaphylaxis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3000,
+                "wtpPct": 60,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 35,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 15000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 54.2,
+                "wtpPct": 60,
+                "priceK": 0.6
+              },
+              "eu": {
+                "reachPct": 20.3,
+                "wtpPct": 40,
+                "priceK": 0.4
+              },
+              "row": {
+                "reachPct": 2.0,
+                "wtpPct": 10,
+                "priceK": 0.2
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "EpiPen ~50% US epi auto-injector share (vs Auvi-Q, generics)",
+              "us.priceK": "EpiPen 2-pk WAC ~$650"
+            },
+            "penPct": 30,
+            "cagrPct": -3,
+            "peakYear": 2027,
+            "salesM": 470,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "viagra",
+      "name": "Viagra (sildenafil) - PDE5 inhibitor (Pfizer Upjohn legacy)",
+      "stage": "Commercial (Viatris legacy brand)",
+      "modality": "small_molecule.enzyme.pde5",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ed",
+          "name": "Erectile dysfunction (post-LOE residual brand)",
+          "area": "_established_products.viatris_legacy",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 40000,
+                "wtpPct": 18,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 8.7,
+                "wtpPct": 35,
+                "priceK": 0.5
+              },
+              "eu": {
+                "reachPct": 4.3,
+                "wtpPct": 25,
+                "priceK": 0.3
+              },
+              "row": {
+                "reachPct": 1.7,
+                "wtpPct": 8,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Viagra branded post-LOE residual ~$500/yr",
+              "row.reachPct": "Viagra residual brand $408M FY25, mostly emerging markets"
+            },
+            "penPct": 30,
+            "cagrPct": -10,
+            "peakYear": 2026,
+            "salesM": 408,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "creon",
+      "name": "Creon (pancrelipase) - porcine-derived pancreatic enzyme replacement",
+      "stage": "Commercial (Viatris legacy brand)",
+      "modality": "biological_extract.porcine.pancreatic_enzyme",
+      "targets": [],
+      "indications": [
+        {
+          "id": "epi",
+          "name": "Pancreatic exocrine insufficiency (chronic pancreatitis, CF, post-Whipple)",
+          "area": "rare_disease.gi.exocrine_pancreatic_insufficiency",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 200,
+                "wtpPct": 70,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 300,
+                "wtpPct": 60,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 1500,
+                "wtpPct": 15,
+                "priceK": 1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 60.5,
+                "wtpPct": 70,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 22.7,
+                "wtpPct": 60,
+                "priceK": 3
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 15,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Creon ~70% US PERT share (vs Zenpep, Pancreaze)",
+              "us.priceK": "Creon WAC ~$5K/yr"
+            },
+            "penPct": 30,
+            "cagrPct": 3,
+            "peakYear": 2030,
+            "salesM": 366,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "yupelri",
+      "name": "Yupelri (revefenacin) - long-acting nebulized LAMA bronchodilator (partnered Theravance)",
+      "stage": "Commercial (Viatris legacy brand)",
+      "modality": "small_molecule.gpcr.lama",
+      "targets": [],
+      "indications": [
+        {
+          "id": "copd_neb",
+          "name": "COPD nebulized LAMA (severe/uncooperative patients)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5.1,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 0.6,
+                "wtpPct": 30,
+                "priceK": 3
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 5,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Yupelri only nebulized LAMA in US; ~3-5% COPD nebulizer Rx",
+              "us.priceK": "Yupelri WAC ~$5K/yr"
+            },
+            "penPct": 10,
+            "cagrPct": 12,
+            "peakYear": 2030,
+            "salesM": 267,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "vtrs_us_generics",
+      "name": "Viatris US generics franchise",
+      "stage": "Commercial (FY25 ~$1.5B US generic SKUs ex-brands)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "totalSalesM": 1500,
+      "mixTemplate": "us_generics_developed_v1",
+      "indications": [
+        {
+          "id": "vtrs_us_generics_outpatient_generic",
+          "name": "vtrs_us_generics - outpatient generic (generic share)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 270,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 8,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_us_generics_ldl_cv_risk",
+          "name": "vtrs_us_generics - ldl cv risk (generic share)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 195,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 6,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_us_generics_t2d",
+          "name": "vtrs_us_generics - t2d (generic share)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 150,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_us_generics_depression",
+          "name": "vtrs_us_generics - depression (generic share)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 135,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_us_generics_anxiety",
+          "name": "vtrs_us_generics - anxiety (generic share)",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 65,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 25,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 60,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_us_generics_schizophrenia",
+          "name": "vtrs_us_generics - schizophrenia (generic share)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 60,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_us_generics_bipolar",
+          "name": "vtrs_us_generics - bipolar (generic share)",
+          "area": "cns.psychiatry.bipolar",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 10000,
+                "wtpPct": 28,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 8,
+                "priceK": 2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 30,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_us_generics_focal",
+          "name": "vtrs_us_generics - focal (generic share)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 60,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_us_generics_generalized",
+          "name": "vtrs_us_generics - generalized (generic share)",
+          "area": "cns.epilepsy.generalized",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 400,
+                "wtpPct": 85,
+                "priceK": 3
+              },
+              "eu": {
+                "patientsK": 900,
+                "wtpPct": 70,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 9000,
+                "wtpPct": 35,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 30,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 65,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_us_generics_migraine",
+          "name": "vtrs_us_generics - migraine (generic share)",
+          "area": "cns.pain.migraine",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 4000,
+                "wtpPct": 30,
+                "priceK": 3
+              },
+              "eu": {
+                "patientsK": 6000,
+                "wtpPct": 18,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 5,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 30,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 35,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_us_generics_copd",
+          "name": "vtrs_us_generics - copd (generic share)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 60,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_us_generics_asthma_severe",
+          "name": "vtrs_us_generics - asthma severe (generic share)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 60,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_us_generics_gerd_peptic",
+          "name": "vtrs_us_generics - gerd peptic (generic share)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 105,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_us_generics_other",
+          "name": "vtrs_us_generics other / un-mappable generics residual",
+          "area": "_established_products.vtrs_vtrs_us_generics_other",
+          "market": {
+            "regions": {},
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 255,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 0,
+            "_genericBucket": true,
+            "_genericTemplate": "us_generics_developed_v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "vtrs_eu_generics",
+      "name": "Viatris Europe generics + branded generics",
+      "stage": "Commercial (FY25 ~$2.2B Europe oral + injectable generics)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "totalSalesM": 2200,
+      "mixTemplate": "eu_generics_developed_v1",
+      "indications": [
+        {
+          "id": "vtrs_eu_generics_outpatient_generic",
+          "name": "vtrs_eu_generics - outpatient generic (generic share)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 440,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 8,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_eu_generics_ldl_cv_risk",
+          "name": "vtrs_eu_generics - ldl cv risk (generic share)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 264,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 6,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_eu_generics_t2d",
+          "name": "vtrs_eu_generics - t2d (generic share)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 198,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_eu_generics_depression",
+          "name": "vtrs_eu_generics - depression (generic share)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 154,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_eu_generics_anxiety",
+          "name": "vtrs_eu_generics - anxiety (generic share)",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 65,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 25,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 66,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_eu_generics_schizophrenia",
+          "name": "vtrs_eu_generics - schizophrenia (generic share)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 66,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_eu_generics_focal",
+          "name": "vtrs_eu_generics - focal (generic share)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 88,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_eu_generics_generalized",
+          "name": "vtrs_eu_generics - generalized (generic share)",
+          "area": "cns.epilepsy.generalized",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 400,
+                "wtpPct": 85,
+                "priceK": 3
+              },
+              "eu": {
+                "patientsK": 900,
+                "wtpPct": 70,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 9000,
+                "wtpPct": 35,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 44,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 65,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_eu_generics_copd",
+          "name": "vtrs_eu_generics - copd (generic share)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 110,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_eu_generics_asthma_severe",
+          "name": "vtrs_eu_generics - asthma severe (generic share)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 88,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_eu_generics_gerd_peptic",
+          "name": "vtrs_eu_generics - gerd peptic (generic share)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 176,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_eu_generics_osteoporosis",
+          "name": "vtrs_eu_generics - osteoporosis (generic share)",
+          "area": "musculoskeletal.bone_cartilage.osteoporosis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5000,
+                "wtpPct": 35,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 25,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 80000,
+                "wtpPct": 10,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 44,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_eu_generics_other",
+          "name": "vtrs_eu_generics other / un-mappable generics residual",
+          "area": "_established_products.vtrs_vtrs_eu_generics_other",
+          "market": {
+            "regions": {},
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 462,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 0,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "vtrs_janz",
+      "name": "Viatris JANZ (Japan + AU+NZ) franchise",
+      "stage": "Commercial (FY25 ~$0.55B Japan + Australia + NZ)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "totalSalesM": 550,
+      "mixTemplate": "eu_generics_developed_v1",
+      "indications": [
+        {
+          "id": "vtrs_janz_outpatient_generic",
+          "name": "vtrs_janz - outpatient generic (generic share)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 110,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 8,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_janz_ldl_cv_risk",
+          "name": "vtrs_janz - ldl cv risk (generic share)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 66,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 6,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_janz_t2d",
+          "name": "vtrs_janz - t2d (generic share)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 50,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_janz_depression",
+          "name": "vtrs_janz - depression (generic share)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 39,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_janz_anxiety",
+          "name": "vtrs_janz - anxiety (generic share)",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 65,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 25,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 16,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_janz_schizophrenia",
+          "name": "vtrs_janz - schizophrenia (generic share)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 16,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_janz_focal",
+          "name": "vtrs_janz - focal (generic share)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 22,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_janz_generalized",
+          "name": "vtrs_janz - generalized (generic share)",
+          "area": "cns.epilepsy.generalized",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 400,
+                "wtpPct": 85,
+                "priceK": 3
+              },
+              "eu": {
+                "patientsK": 900,
+                "wtpPct": 70,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 9000,
+                "wtpPct": 35,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 11,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 65,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_janz_copd",
+          "name": "vtrs_janz - copd (generic share)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 28,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_janz_asthma_severe",
+          "name": "vtrs_janz - asthma severe (generic share)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 22,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_janz_gerd_peptic",
+          "name": "vtrs_janz - gerd peptic (generic share)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 44,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_janz_osteoporosis",
+          "name": "vtrs_janz - osteoporosis (generic share)",
+          "area": "musculoskeletal.bone_cartilage.osteoporosis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5000,
+                "wtpPct": 35,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 25,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 80000,
+                "wtpPct": 10,
+                "priceK": 0.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 11,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        },
+        {
+          "id": "vtrs_janz_other",
+          "name": "vtrs_janz other / un-mappable generics residual",
+          "area": "_established_products.vtrs_vtrs_janz_other",
+          "market": {
+            "regions": {},
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 116,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 0,
+            "_genericBucket": true,
+            "_genericTemplate": "eu_generics_developed_v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "vtrs_china",
+      "name": "Viatris Greater China branded generics",
+      "stage": "Commercial (FY25 ~$2.3B Greater China; legacy Pfizer Upjohn brands)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "totalSalesM": 2300,
+      "mixTemplate": "emerging_markets_generics_v1",
+      "indications": [
+        {
+          "id": "vtrs_china_outpatient_generic",
+          "name": "vtrs_china - outpatient generic (generic share)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 506,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 8,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_china_ldl_cv_risk",
+          "name": "vtrs_china - ldl cv risk (generic share)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 230,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 6,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_china_t2d",
+          "name": "vtrs_china - t2d (generic share)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 299,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_china_depression",
+          "name": "vtrs_china - depression (generic share)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 92,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_china_schizophrenia",
+          "name": "vtrs_china - schizophrenia (generic share)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 69,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_china_anxiety",
+          "name": "vtrs_china - anxiety (generic share)",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 65,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 25,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 46,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_china_focal",
+          "name": "vtrs_china - focal (generic share)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 69,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_china_copd",
+          "name": "vtrs_china - copd (generic share)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 92,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_china_asthma_severe",
+          "name": "vtrs_china - asthma severe (generic share)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 92,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_china_gerd_peptic",
+          "name": "vtrs_china - gerd peptic (generic share)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 184,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_china_other",
+          "name": "vtrs_china other / un-mappable generics residual",
+          "area": "_established_products.vtrs_vtrs_china_other",
+          "market": {
+            "regions": {},
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 621,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 0,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "vtrs_em",
+      "name": "Viatris Emerging Markets franchise",
+      "stage": "Commercial (FY25 ~$2.2B EM ex-China)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "totalSalesM": 2200,
+      "mixTemplate": "emerging_markets_generics_v1",
+      "indications": [
+        {
+          "id": "vtrs_em_outpatient_generic",
+          "name": "vtrs_em - outpatient generic (generic share)",
+          "area": "cardio_metabolic.hypertension.outpatient_generic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 80000,
+                "wtpPct": 12,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 100000,
+                "wtpPct": 10,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 500000,
+                "wtpPct": 5,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 484,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 8,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_em_ldl_cv_risk",
+          "name": "vtrs_em - ldl cv risk (generic share)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 220,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 6,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_em_t2d",
+          "name": "vtrs_em - t2d (generic share)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 286,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_em_depression",
+          "name": "vtrs_em - depression (generic share)",
+          "area": "cns.psychiatry.depression",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 80,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 12000,
+                "wtpPct": 65,
+                "priceK": 0.7
+              },
+              "row": {
+                "patientsK": 280000,
+                "wtpPct": 25,
+                "priceK": 0.3
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 88,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_em_schizophrenia",
+          "name": "vtrs_em - schizophrenia (generic share)",
+          "area": "cns.psychiatry.schizophrenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 75,
+                "priceK": 10
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 60,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 24000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 66,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 60,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_em_anxiety",
+          "name": "vtrs_em - anxiety (generic share)",
+          "area": "cns.psychiatry.anxiety",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 6000,
+                "wtpPct": 75,
+                "priceK": 0.8
+              },
+              "eu": {
+                "patientsK": 8000,
+                "wtpPct": 65,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 300000,
+                "wtpPct": 25,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 44,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_em_focal",
+          "name": "vtrs_em - focal (generic share)",
+          "area": "cns.epilepsy.focal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1200,
+                "wtpPct": 85,
+                "priceK": 4
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 70,
+                "priceK": 2
+              },
+              "row": {
+                "patientsK": 18000,
+                "wtpPct": 35,
+                "priceK": 0.8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 66,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 70,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_em_copd",
+          "name": "vtrs_em - copd (generic share)",
+          "area": "respiratory.inflammatory.copd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 2500,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 3500,
+                "wtpPct": 30,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 25000,
+                "wtpPct": 10,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 88,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 10,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_em_asthma_severe",
+          "name": "vtrs_em - asthma severe (generic share)",
+          "area": "respiratory.inflammatory.asthma_severe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 600,
+                "wtpPct": 40,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 8
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 88,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 25,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_em_gerd_peptic",
+          "name": "vtrs_em - gerd peptic (generic share)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 176,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 30,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        },
+        {
+          "id": "vtrs_em_other",
+          "name": "vtrs_em other / un-mappable generics residual",
+          "area": "_established_products.vtrs_vtrs_em_other",
+          "market": {
+            "regions": {},
+            "company_slice": {},
+            "company_slice_sources": {},
+            "salesM": 594,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 0,
+            "penPct": 0,
+            "_genericBucket": true,
+            "_genericTemplate": "emerging_markets_generics_v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "selatogrel",
+      "name": "Selatogrel - oral self-administered P2Y12 inhibitor for AMI (Idorsia)",
+      "stage": "Phase 3 (SOS-AMI; SPA + Fast Track; readout 2027)",
+      "modality": "small_molecule.gpcr.p2y12_antagonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ami_self",
+          "name": "Acute myocardial infarction patient self-administration",
+          "area": "cardio_metabolic.cardiovascular.myocardial_infarction",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 80,
+                "priceK": 8
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 70,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 8000,
+                "wtpPct": 30,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 50,
+                "priceK": 1.5
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 40,
+                "priceK": 1
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 15,
+                "priceK": 0.4
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Selatogrel niche AMI self-admin pre-hospital; ~5-15% post-MI Rx",
+              "us.priceK": "Estimated WAC $1500/yr"
+            },
+            "penPct": 12,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "cenerimod",
+      "name": "Cenerimod - selective S1P1 modulator for SLE (Idorsia)",
+      "stage": "Phase 3 (OPUS-1/OPUS-2 SLE; readout 2026/27)",
+      "modality": "small_molecule.gpcr.s1p1_agonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "sle",
+          "name": "Systemic lupus erythematosus moderate-severe",
+          "area": "immunology.autoimmune.sle",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 300,
+                "wtpPct": 55,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 350,
+                "wtpPct": 38,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 4000,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 40,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 15,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Cenerimod novel oral S1P1 mechanism in SLE; ~5-10% SLE Rx if approved",
+              "us.priceK": "Estimated WAC $25K/yr"
+            },
+            "penPct": 25,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 15,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 2,
+        "commercialMult": 1.0,
+        "commercialRevM": 13000,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "lipitor": {
+          "ldl_cv_risk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "norvasc": {
+          "htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lyrica": {
+          "neuropathic_pain": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "epipen": {
+          "anaphylaxis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "viagra": {
+          "ed": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "creon": {
+          "epi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "yupelri": {
+          "copd_neb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "selatogrel": {
+          "ami_self": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.4
+          }
+        },
+        "cenerimod": {
+          "sle": {
+            "pos": 20,
+            "apr": 50,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 3,
+        "commercialMult": 1.4,
+        "commercialRevM": 13800,
+        "milestones": 25,
+        "dil": 0
+      },
+      "assumptions": {
+        "lipitor": {
+          "ldl_cv_risk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "norvasc": {
+          "htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lyrica": {
+          "neuropathic_pain": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "epipen": {
+          "anaphylaxis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "viagra": {
+          "ed": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "creon": {
+          "epi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "yupelri": {
+          "copd_neb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "selatogrel": {
+          "ami_self": {
+            "pos": 35,
+            "apr": 70,
+            "pen": 0.6
+          }
+        },
+        "cenerimod": {
+          "sle": {
+            "pos": 30,
+            "apr": 70,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 35,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 4,
+        "commercialMult": 1.8,
+        "commercialRevM": 14000,
+        "milestones": 75,
+        "dil": 0
+      },
+      "assumptions": {
+        "lipitor": {
+          "ldl_cv_risk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "norvasc": {
+          "htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lyrica": {
+          "neuropathic_pain": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "epipen": {
+          "anaphylaxis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "viagra": {
+          "ed": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "creon": {
+          "epi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "yupelri": {
+          "copd_neb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "selatogrel": {
+          "ami_self": {
+            "pos": 50,
+            "apr": 80,
+            "pen": 0.85
+          }
+        },
+        "cenerimod": {
+          "sle": {
+            "pos": 45,
+            "apr": 80,
+            "pen": 0.75
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 6,
+        "commercialMult": 2.4,
+        "commercialRevM": 15000,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "lipitor": {
+          "ldl_cv_risk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "norvasc": {
+          "htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lyrica": {
+          "neuropathic_pain": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "epipen": {
+          "anaphylaxis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "viagra": {
+          "ed": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "creon": {
+          "epi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "yupelri": {
+          "copd_neb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "selatogrel": {
+          "ami_self": {
+            "pos": 65,
+            "apr": 90,
+            "pen": 1.0
+          }
+        },
+        "cenerimod": {
+          "sle": {
+            "pos": 60,
+            "apr": 90,
+            "pen": 0.95
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 9,
+        "commercialMult": 3.2,
+        "commercialRevM": 16500,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "lipitor": {
+          "ldl_cv_risk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "norvasc": {
+          "htn": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lyrica": {
+          "neuropathic_pain": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "epipen": {
+          "anaphylaxis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "viagra": {
+          "ed": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "creon": {
+          "epi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "yupelri": {
+          "copd_neb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "selatogrel": {
+          "ami_self": {
+            "pos": 75,
+            "apr": 95,
+            "pen": 1.15
+          }
+        },
+        "cenerimod": {
+          "sle": {
+            "pos": 70,
+            "apr": 95,
+            "pen": 1.1
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Jul 2026",
+      "dateSort": "2026-07-30",
+      "asset": "vtrs_us_generics",
+      "indication": "vtrs_us_generics_outpatient_generic",
+      "title": "Contraceptive patch PDUFA (Jul 30, 2026)",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 0,
+      "fail_apr": 0,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Viatris FY25 release",
+      "_confidence": "high"
+    },
+    {
+      "date": "Oct 2026",
+      "dateSort": "2026-10-17",
+      "asset": "vtrs_us_generics",
+      "indication": "vtrs_us_generics_outpatient_generic",
+      "title": "MR-141 (phentolamine ophthalmic) PDUFA (Oct 17, 2026)",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 0,
+      "fail_apr": 0,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Viatris FY25 release",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2027",
+      "dateSort": "2027-09-30",
+      "asset": "selatogrel",
+      "indication": "ami_self",
+      "title": "Selatogrel SOS-AMI Ph3 readout",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 10,
+      "fail_apr": 30,
+      "success_pos": 70,
+      "success_apr": 90,
+      "_source": "Idorsia/Viatris collab",
+      "_confidence": "medium"
+    },
+    {
+      "date": "2026-2027",
+      "dateSort": "2027-06-30",
+      "asset": "cenerimod",
+      "indication": "sle",
+      "title": "Cenerimod OPUS-1/OPUS-2 SLE Ph3 readouts",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 10,
+      "fail_apr": 30,
+      "success_pos": 70,
+      "success_apr": 90,
+      "_source": "Idorsia/Viatris collab",
+      "_confidence": "medium"
+    }
+  ]
+}

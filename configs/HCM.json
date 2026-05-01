@@ -1,0 +1,778 @@
+{
+  "company": {
+    "ticker": "HCM",
+    "name": "HUTCHMED (China) Limited",
+    "currentPrice": 14.78,
+    "sharesOut": 172,
+    "cash": 1367,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "China oncology + Takeda Fruzaqla ex-China royalty. FY25 revenue $548.5M (vs $630M FY24 -- lumpy milestones); oncology/immunology consolidated $285.5M; FY26 oncology guide $330-450M. Products: FRUZAQLA (Takeda ex-China royalty + manufacturing + milestones) HCM rev $89.4M; global in-market $366.2M (+26% YoY). ELUNATE (fruquintinib China) $76.9M (-11%). SULANDA (surufatinib NETs) $27M (-45%). ORPATHYS (savolitinib AZ-partnered) $18.6M + AZ milestones $11M. TAZVERIK (tazemetostat) $2.5M (+158%). R&D services + milestones $71M. April 2025: SHPL JV divestment $608M ($416M after-tax gain) -- refocused on innovation; cash $1.367B (vs $836M YE24). Net profit FY25 $456.9M (one-time aided). PIPELINE: SAFFRON Ph3 (savolitinib + osimertinib post-Tagrisso MET-amp/over-expressed EGFRm NSCLC) -- enrollment complete Oct 2025; topline H1 2026 KEY CATALYST. SANOVO Ph3 (savolitinib + osimertinib 1L EGFRm/MET+ NSCLC) within 12 mo. FRUSICA-2 RCC 2L Ph3 POSITIVE PFS HR 0.37 ESMO 2025. Fanregratinib FGFR ihCC NDA accepted China priority. Sovleplenib (HMPL-523 SYK) ITP NDA accepted Feb 2026. Surufatinib PDAC Ph3 initiated. ATTC platform (PI3K/PIKK conjugates) HMPL-A251/A580 Ph1.",
+    "yahooTicker": "HCM"
+  },
+  "assets": [
+    {
+      "id": "fruzaqla",
+      "name": "FRUZAQLA (fruquintinib) Takeda ex-China royalty + manufacturing + milestones (FDA Nov 2023; EU/UK 2024; Japan Sep 2024)",
+      "stage": "Commercial royalty (Takeda licensed Jan 2023: $400M up + $730M milestones + tiered double-digit royalty; 38 countries launched)",
+      "modality": "small_molecule.kinase.multi_tki",
+      "targets": [],
+      "indications": [
+        {
+          "id": "crc_fruzaqla",
+          "name": "Metastatic CRC 4L+ (post-FOLFIRI/Stivarga/Lonsurf; oral VEGFR TKI)",
+          "area": "oncology.gi.colorectal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 55,
+                "wtpPct": 65,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 48,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 320,
+                "wtpPct": 16,
+                "priceK": 22
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 11.0,
+                "wtpPct": 50,
+                "priceK": 30
+              },
+              "eu": {
+                "reachPct": 5.5,
+                "wtpPct": 50,
+                "priceK": 20
+              },
+              "row": {
+                "reachPct": 0.9,
+                "wtpPct": 18,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Fruzaqla ~8% 4L+ mCRC niche post-Stivarga/Lonsurf",
+              "us.priceK": "Fruzaqla US WAC ~$30K/yr"
+            },
+            "penPct": 50,
+            "cagrPct": 30,
+            "peakYear": 2030,
+            "salesM": 89,
+            "salesYear": 2025,
+            "_genericBucket": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "elunate",
+      "name": "ELUNATE (fruquintinib) - China commercial 2018; multi-TKI VEGFR for mCRC + label expansions",
+      "stage": "Commercial China (-11% FY25 vs FY24 on competitive dynamics)",
+      "modality": "small_molecule.kinase.multi_tki",
+      "targets": [],
+      "indications": [
+        {
+          "id": "crc_elunate",
+          "name": "China mCRC 3L+ (oral VEGFR TKI; pricing pressure NRDL)",
+          "area": "oncology.gi.colorectal",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 55,
+                "wtpPct": 65,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 70,
+                "wtpPct": 48,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 320,
+                "wtpPct": 16,
+                "priceK": 22
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 12.0,
+                "wtpPct": 50,
+                "priceK": 6
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "Elunate China NRDL ~$6K/yr",
+              "row.reachPct": "Elunate ~8% China mCRC 3L+ share post-NRDL"
+            },
+            "penPct": 50,
+            "cagrPct": -5,
+            "peakYear": 2027,
+            "salesM": 77,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "sulanda",
+      "name": "SULANDA (surufatinib) - VEGFR/FGFR/CSF1R multi-TKI for neuroendocrine tumors China",
+      "stage": "Commercial China (-45% FY25 vs FY24 on competitive PDAC failure + pricing)",
+      "modality": "small_molecule.kinase.multi_tki",
+      "targets": [],
+      "indications": [
+        {
+          "id": "net_sulanda",
+          "name": "China neuroendocrine tumors (pNET + epNET; oral TKI)",
+          "area": "oncology.neuroendocrine.gi_pancreatic_net",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 25,
+                "priceK": 12
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 15,
+                "wtpPct": 50,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "Sulanda China NRDL ~$8K/yr"
+            },
+            "penPct": 20,
+            "cagrPct": -15,
+            "peakYear": 2027,
+            "salesM": 27,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "orpathys",
+      "name": "ORPATHYS (savolitinib) - selective MET inhibitor (AstraZeneca partnered; China NSCLC EGFR-resistant 2021)",
+      "stage": "Commercial China (HCM rev $18.6M FY25 + AZ milestones $11M; SAFFRON/SANOVO Ph3 ongoing)",
+      "modality": "small_molecule.kinase.met",
+      "targets": [],
+      "indications": [
+        {
+          "id": "nsclc_met",
+          "name": "China NSCLC MET-amplified (post-Tagrisso EGFRm) + 1L MET+",
+          "area": "oncology.lung.nsclc_driver",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 500,
+                "wtpPct": 18,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 2,
+                "wtpPct": 50,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "Orpathys China NRDL ~$25K/yr"
+            },
+            "penPct": 15,
+            "cagrPct": 20,
+            "peakYear": 2030,
+            "salesM": 30,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "saffron",
+      "name": "SAFFRON Ph3 (savolitinib + osimertinib post-Tagrisso MET-amp/over-expressed EGFRm NSCLC)",
+      "stage": "Phase 3 (enrollment complete Oct 31 2025; topline H1 2026 KEY CATALYST; AZ-partnered)",
+      "modality": "small_molecule.kinase.met",
+      "targets": [],
+      "indications": [
+        {
+          "id": "nsclc_saffron",
+          "name": "Post-Tagrisso MET-amp/over-expressed EGFRm NSCLC (vs platinum chemo)",
+          "area": "oncology.lung.nsclc_driver",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 80,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 15,
+                "wtpPct": 70,
+                "priceK": 130
+              },
+              "row": {
+                "patientsK": 60,
+                "wtpPct": 18,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 70
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 18,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Savolitinib + Tagrisso post-Tagrisso MET-amp niche (~30% post-osimertinib MET-amp resistance)",
+              "us.priceK": "Estimated WAC $100K/yr (combo; HCM royalty share via AZ)"
+            },
+            "penPct": 15,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "sovleplenib",
+      "name": "Sovleplenib (HMPL-523) - SYK inhibitor for chronic ITP",
+      "stage": "Commercial-pending China (NDA accepted Feb 2026; warm AIHA Ph3 positive)",
+      "modality": "small_molecule.kinase.syk",
+      "targets": [],
+      "indications": [
+        {
+          "id": "itp_syk",
+          "name": "Chronic immune thrombocytopenia (SYK; oral)",
+          "area": "rare_disease.hematology.thrombocytopenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 70,
+                "priceK": 30
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 60,
+                "priceK": 18
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 6
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 15,
+                "wtpPct": 50,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "Sovleplenib China estimated WAC $8K/yr"
+            },
+            "penPct": 12,
+            "cagrPct": 0,
+            "peakYear": 2031
+          }
+        }
+      ]
+    },
+    {
+      "id": "fanregratinib",
+      "name": "Fanregratinib (HMPL-453) - selective FGFR inhibitor for intrahepatic cholangiocarcinoma",
+      "stage": "NDA accepted China priority review (FGFR2-fusion ihCC)",
+      "modality": "small_molecule.kinase.fgfr",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ihcc_fgfr",
+          "name": "Intrahepatic cholangiocarcinoma FGFR2-fusion (vs Pemazyre, Truseltiq)",
+          "area": "oncology.gi.cholangiocarcinoma",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 55,
+                "priceK": 155
+              },
+              "eu": {
+                "patientsK": 12,
+                "wtpPct": 42,
+                "priceK": 90
+              },
+              "row": {
+                "patientsK": 60,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 10,
+                "wtpPct": 50,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "Fanregratinib China estimated $30K/yr"
+            },
+            "penPct": 42,
+            "cagrPct": 0,
+            "peakYear": 2031
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 12,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 3,
+        "commercialMult": 3,
+        "commercialRevM": 280,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "fruzaqla": {
+          "crc_fruzaqla": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "elunate": {
+          "crc_elunate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "sulanda": {
+          "net_sulanda": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "orpathys": {
+          "nsclc_met": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "saffron": {
+          "nsclc_saffron": {
+            "pos": 35,
+            "apr": 65,
+            "pen": 0.3
+          }
+        },
+        "sovleplenib": {
+          "itp_syk": {
+            "pos": 70,
+            "apr": 65,
+            "pen": 0.3
+          }
+        },
+        "fanregratinib": {
+          "ihcc_fgfr": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 5,
+        "commercialMult": 5,
+        "commercialRevM": 340,
+        "milestones": 25,
+        "dil": 0
+      },
+      "assumptions": {
+        "fruzaqla": {
+          "crc_fruzaqla": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "elunate": {
+          "crc_elunate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "sulanda": {
+          "net_sulanda": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "orpathys": {
+          "nsclc_met": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "saffron": {
+          "nsclc_saffron": {
+            "pos": 55,
+            "apr": 78,
+            "pen": 0.5
+          }
+        },
+        "sovleplenib": {
+          "itp_syk": {
+            "pos": 85,
+            "apr": 78,
+            "pen": 0.5
+          }
+        },
+        "fanregratinib": {
+          "ihcc_fgfr": {
+            "pos": 78,
+            "apr": 78,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 38,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 7,
+        "commercialMult": 7,
+        "commercialRevM": 400,
+        "milestones": 75,
+        "dil": 0
+      },
+      "assumptions": {
+        "fruzaqla": {
+          "crc_fruzaqla": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "elunate": {
+          "crc_elunate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "sulanda": {
+          "net_sulanda": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "orpathys": {
+          "nsclc_met": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "saffron": {
+          "nsclc_saffron": {
+            "pos": 75,
+            "apr": 88,
+            "pen": 0.8
+          }
+        },
+        "sovleplenib": {
+          "itp_syk": {
+            "pos": 95,
+            "apr": 88,
+            "pen": 0.8
+          }
+        },
+        "fanregratinib": {
+          "ihcc_fgfr": {
+            "pos": 90,
+            "apr": 88,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 11,
+        "commercialMult": 10,
+        "commercialRevM": 500,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "fruzaqla": {
+          "crc_fruzaqla": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "elunate": {
+          "crc_elunate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "sulanda": {
+          "net_sulanda": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "orpathys": {
+          "nsclc_met": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "saffron": {
+          "nsclc_saffron": {
+            "pos": 88,
+            "apr": 93,
+            "pen": 1.05
+          }
+        },
+        "sovleplenib": {
+          "itp_syk": {
+            "pos": 99,
+            "apr": 93,
+            "pen": 1.05
+          }
+        },
+        "fanregratinib": {
+          "ihcc_fgfr": {
+            "pos": 96,
+            "apr": 93,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 16,
+        "commercialMult": 14,
+        "commercialRevM": 700,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "fruzaqla": {
+          "crc_fruzaqla": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "elunate": {
+          "crc_elunate": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "sulanda": {
+          "net_sulanda": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "orpathys": {
+          "nsclc_met": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "saffron": {
+          "nsclc_saffron": {
+            "pos": 95,
+            "apr": 97,
+            "pen": 1.25
+          }
+        },
+        "sovleplenib": {
+          "itp_syk": {
+            "pos": 100,
+            "apr": 97,
+            "pen": 1.25
+          }
+        },
+        "fanregratinib": {
+          "ihcc_fgfr": {
+            "pos": 99,
+            "apr": 97,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-30",
+      "asset": "saffron",
+      "indication": "nsclc_saffron",
+      "title": "SAFFRON Ph3 topline (savolitinib+osimertinib post-Tagrisso MET-amp NSCLC; AZ-partnered)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 35,
+      "fail_apr": 70,
+      "success_pos": 88,
+      "success_apr": 92,
+      "_source": "HCM enrollment complete Oct 31 2025",
+      "_confidence": "high"
+    },
+    {
+      "date": "Feb 2026",
+      "dateSort": "2026-02-28",
+      "asset": "sovleplenib",
+      "indication": "itp_syk",
+      "title": "Sovleplenib SYK ITP NDA accepted China",
+      "type": "nda_submission",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "HCM Feb 2026",
+      "_confidence": "high"
+    },
+    {
+      "date": "Apr 2025",
+      "dateSort": "2025-04-15",
+      "asset": "fruzaqla",
+      "indication": "crc_fruzaqla",
+      "title": "SHPL JV divestment $608M ($416M after-tax gain; refocused on innovation)",
+      "type": "ma_close",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "HCM Apr 2025 PR",
+      "_confidence": "high"
+    }
+  ]
+}

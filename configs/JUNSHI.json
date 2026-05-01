@@ -1,0 +1,762 @@
+{
+  "company": {
+    "ticker": "JUNSHI",
+    "name": "Shanghai Junshi Biosciences Co. Ltd.",
+    "currentPrice": 20.96,
+    "sharesOut": 1030,
+    "cash": 3500,
+    "currency": "HKD",
+    "phase": "commercial",
+    "subtitle": "China PD-1 originator (toripalimab; Loqtorzi US via Coherus). FY25 revenue RMB 2,498M / ~$345M / ~HKD 2,750M (+28% YoY): Tuoyi (toripalimab China) RMB 2,068M (+38%) ~$285M dominant; VV116 oral COVID antiviral + Coherus Loqtorzi US royalty 20% (~$8M FY25 from Coherus' $40.8M) + LEO Pharma EU/UK distribution deal 2025. Toripalimab China: 12 approved indications -- NPC (2L+ + 1L combo), ESCC 1L combo, NSCLC 1L combo (sq+non-sq), urothelial 2L, melanoma 2L, perioperative NSCLC (neoadjuvant+adjuvant), HCC, RCC, TNBC, SCLC, GC/GEJ. R&D RMB 1,384M (+9%); net loss narrowing materially toward profitability inflection 2027/2028. PIPELINE: Tifcemalimab (TAB001 anti-BTLA, first-in-class checkpoint; sublicensed to Coherus US/Canada Mar 2024); JS001sc toripalimab subcutaneous Ph3 met primary 2025; JS207 PD-1xVEGF bispecific (competing Akeso ivonescimab) Ph2/3; JS212 EGFR/HER3 bispecific ADC FDA IND clearance Dec 2025; JS213 PD-1/IL-2 fusion; JS018-1 anti-IL-21; JT118 monkeypox vaccine NMPA-approved.",
+    "yahooTicker": "1877.HK"
+  },
+  "assets": [
+    {
+      "id": "tuoyi",
+      "name": "Tuoyi (toripalimab) - anti-PD-1 mAb (originator; 12 approved China indications)",
+      "stage": "Commercial China (multi-tumor PD-1 backbone; 1L+ NPC/ESCC/NSCLC/urothelial/melanoma/HCC/RCC/TNBC/SCLC/GC perioperative)",
+      "modality": "antibody.monoclonal.anti_pd1",
+      "targets": [
+        "PDCD1"
+      ],
+      "indications": [
+        {
+          "id": "npc_tori",
+          "name": "Nasopharyngeal carcinoma 2L+ + 1L combo (China NRDL)",
+          "area": "oncology.head_neck.npc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 2,
+                "wtpPct": 50,
+                "priceK": 120
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 25,
+                "priceK": 12
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 40,
+                "wtpPct": 60,
+                "priceK": 10
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "Toripalimab China NRDL ~$10K/yr",
+              "row.reachPct": "Toripalimab ~50% China NPC IO share"
+            },
+            "penPct": 60,
+            "cagrPct": 15,
+            "peakYear": 2030,
+            "salesM": 80,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "escc_nsclc_tori",
+          "name": "ESCC + NSCLC 1L combo + urothelial + melanoma + HCC + RCC + TNBC + SCLC + GC",
+          "area": "oncology.lung.nsclc_io",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 10
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "Toripalimab China NRDL ~$10K/yr blended multi-tumor",
+              "row.reachPct": "Toripalimab ~5% China multi-tumor PD-1 share (vs Tislelizumab + Sintilimab + Camrelizumab)"
+            },
+            "penPct": 20,
+            "cagrPct": 30,
+            "peakYear": 2030,
+            "salesM": 205,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "loqtorzi_royalty",
+      "name": "Loqtorzi (toripalimab US) Coherus royalty - 20% net sales US/Canada",
+      "stage": "Commercial royalty (Coherus license $150M up + $380M milestones + 20% royalty; Loqtorzi US $40.8M FY25 -> $8M JS royalty)",
+      "modality": "antibody.monoclonal.anti_pd1",
+      "targets": [],
+      "indications": [
+        {
+          "id": "us_loqtorzi_royalty",
+          "name": "Loqtorzi US/Canada royalty stream (Coherus markets)",
+          "area": "_platform.junshi_coherus_royalty",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 1,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "20% royalty on Coherus Loqtorzi US/CA net sales"
+            },
+            "penPct": 20,
+            "cagrPct": 30,
+            "peakYear": 2030,
+            "salesM": 8,
+            "salesYear": 2025,
+            "_genericBucket": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "vv116",
+      "name": "VV116 (deuremidevir hydrobromide) - oral RdRp inhibitor SARS-CoV-2",
+      "stage": "Commercial China (NMPA approved 2023; partnered with Vigonvita)",
+      "modality": "small_molecule.antiviral.rdrp",
+      "targets": [],
+      "indications": [
+        {
+          "id": "covid_vv116",
+          "name": "COVID-19 mild-to-moderate symptomatic (China)",
+          "area": "infectious_disease.viral.respiratory",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 5,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 30,
+                "priceK": 0.4
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "VV116 China WAC ~$400/course"
+            },
+            "penPct": 12,
+            "cagrPct": -10,
+            "peakYear": 2027,
+            "salesM": 30,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "tifcemalimab",
+      "name": "Tifcemalimab (TAB001) - first-in-class anti-BTLA checkpoint mAb (Coherus US/CA license Mar 2024)",
+      "stage": "Phase 2/3 (China + US development; combo with toripalimab)",
+      "modality": "antibody.monoclonal.anti_btla",
+      "targets": [],
+      "indications": [
+        {
+          "id": "io_btla",
+          "name": "Solid tumors + lymphoma (BTLA checkpoint; combo with PD-1)",
+          "area": "oncology.multi_tumor_io.pd1_pdl1_eligible",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 80,
+                "priceK": 150
+              },
+              "eu": {
+                "patientsK": 700,
+                "wtpPct": 70,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 40,
+                "priceK": 70
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 40,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $100K/yr in IO combo",
+              "row.priceK": "China NRDL ~$12K/yr"
+            },
+            "penPct": 10,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "js207",
+      "name": "JS207 - PD-1 x VEGF bispecific (Junshi's ivonescimab competitor)",
+      "stage": "Phase 2/3 (NSCLC + multi-tumor; competing with Akeso AK112)",
+      "modality": "antibody.bispecific.pd1_vegf",
+      "targets": [],
+      "indications": [
+        {
+          "id": "nsclc_js207",
+          "name": "1L NSCLC PD-1/VEGF (China; competing with ivonescimab)",
+          "area": "oncology.lung.nsclc_io",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 50,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "JS207 China estimated $12K/yr if approved",
+              "row.reachPct": "JS207 niche vs Akeso ivonescimab + Hutchmed-Astra savolitinib in NSCLC"
+            },
+            "penPct": 8,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "js212",
+      "name": "JS212 - EGFR/HER3 bispecific ADC",
+      "stage": "Phase 1 (FDA IND clearance Dec 2025; solid tumors)",
+      "modality": "adc.bispecific.egfr_her3",
+      "targets": [],
+      "indications": [
+        {
+          "id": "solid_js212",
+          "name": "Solid tumors (EGFR + HER3 bispecific ADC)",
+          "area": "oncology.multi_tumor_io.pd1_pdl1_eligible",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 80,
+                "priceK": 150
+              },
+              "eu": {
+                "patientsK": 700,
+                "wtpPct": 70,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.3,
+                "wtpPct": 50,
+                "priceK": 150
+              },
+              "eu": {
+                "reachPct": 0.1,
+                "wtpPct": 40,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 40,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $150K/yr (ADC class)"
+            },
+            "penPct": 6,
+            "cagrPct": 0,
+            "peakYear": 2034
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 12,
+      "val": {
+        "pipelineDR": 10,
+        "pipelineMult": 3,
+        "commercialMult": 3,
+        "commercialRevM": 2700,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "tuoyi": {
+          "npc_tori": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "escc_nsclc_tori": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "loqtorzi_royalty": {
+          "us_loqtorzi_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "vv116": {
+          "covid_vv116": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "tifcemalimab": {
+          "io_btla": {
+            "pos": 18,
+            "apr": 60,
+            "pen": 0.3
+          }
+        },
+        "js207": {
+          "nsclc_js207": {
+            "pos": 15,
+            "apr": 60,
+            "pen": 0.3
+          }
+        },
+        "js212": {
+          "solid_js212": {
+            "pos": 5,
+            "apr": 60,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 5,
+        "commercialMult": 5,
+        "commercialRevM": 3000,
+        "milestones": 25,
+        "dil": 0
+      },
+      "assumptions": {
+        "tuoyi": {
+          "npc_tori": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "escc_nsclc_tori": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "loqtorzi_royalty": {
+          "us_loqtorzi_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "vv116": {
+          "covid_vv116": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "tifcemalimab": {
+          "io_btla": {
+            "pos": 30,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "js207": {
+          "nsclc_js207": {
+            "pos": 28,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "js212": {
+          "solid_js212": {
+            "pos": 12,
+            "apr": 75,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 35,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 8,
+        "commercialMult": 7,
+        "commercialRevM": 3500,
+        "milestones": 75,
+        "dil": 0
+      },
+      "assumptions": {
+        "tuoyi": {
+          "npc_tori": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "escc_nsclc_tori": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "loqtorzi_royalty": {
+          "us_loqtorzi_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "vv116": {
+          "covid_vv116": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "tifcemalimab": {
+          "io_btla": {
+            "pos": 48,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "js207": {
+          "nsclc_js207": {
+            "pos": 45,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "js212": {
+          "solid_js212": {
+            "pos": 25,
+            "apr": 85,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 22,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 12,
+        "commercialMult": 10,
+        "commercialRevM": 4500,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "tuoyi": {
+          "npc_tori": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "escc_nsclc_tori": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "loqtorzi_royalty": {
+          "us_loqtorzi_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "vv116": {
+          "covid_vv116": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "tifcemalimab": {
+          "io_btla": {
+            "pos": 65,
+            "apr": 92,
+            "pen": 1.05
+          }
+        },
+        "js207": {
+          "nsclc_js207": {
+            "pos": 60,
+            "apr": 92,
+            "pen": 1.05
+          }
+        },
+        "js212": {
+          "solid_js212": {
+            "pos": 40,
+            "apr": 92,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 6,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 18,
+        "commercialMult": 14,
+        "commercialRevM": 6000,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "tuoyi": {
+          "npc_tori": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "escc_nsclc_tori": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "loqtorzi_royalty": {
+          "us_loqtorzi_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "vv116": {
+          "covid_vv116": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "tifcemalimab": {
+          "io_btla": {
+            "pos": 78,
+            "apr": 96,
+            "pen": 1.25
+          }
+        },
+        "js207": {
+          "nsclc_js207": {
+            "pos": 75,
+            "apr": 96,
+            "pen": 1.25
+          }
+        },
+        "js212": {
+          "solid_js212": {
+            "pos": 55,
+            "apr": 96,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "2025",
+      "dateSort": "2025-12-15",
+      "asset": "tuoyi",
+      "indication": "escc_nsclc_tori",
+      "title": "Toripalimab China NRDL expansion (12 indications cumulative; perioperative + GC + RCC + TNBC)",
+      "type": "label_expansion",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Junshi FY25 release",
+      "_confidence": "high"
+    },
+    {
+      "date": "Dec 2025",
+      "dateSort": "2025-12-15",
+      "asset": "js212",
+      "indication": "solid_js212",
+      "title": "JS212 EGFR/HER3 bispecific ADC FDA IND clearance",
+      "type": "phase1_start",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Junshi Dec 2025 PR",
+      "_confidence": "high"
+    },
+    {
+      "date": "2026-2027",
+      "dateSort": "2027-06-30",
+      "asset": "js207",
+      "indication": "nsclc_js207",
+      "title": "JS207 PD-1xVEGF bispecific Ph2/3 readouts (vs Akeso ivonescimab)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 15,
+      "fail_apr": 60,
+      "success_pos": 60,
+      "success_apr": 88,
+      "_source": "Junshi pipeline",
+      "_confidence": "low"
+    }
+  ]
+}

@@ -525,16 +525,19 @@ def build_INDV():
 
 
 def main():
-    write_config("APLS", build_APLS())
+    # NOTE: APLS (Apellis) was acquired by Biogen May 2026; config archived to
+    # configs/archive/APLS.json and assets transferred to BIIB. build_APLS()
+    # preserved for reference but no longer written.
     write_config("ASND", build_ASND())
     write_config("INDV", build_INDV())
 
     manifest_path = CONFIGS / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    for tk in ["APLS", "ASND", "INDV"]:
+    for tk in ["ASND", "INDV"]:
         if tk not in manifest:
             manifest.append(tk)
-    manifest = sorted(set(manifest))
+    # Defensive: ensure APLS is not in manifest (acquired)
+    manifest = sorted(set(t for t in manifest if t != "APLS"))
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     print(f"\n  manifest -> {len(manifest)} tickers")
 

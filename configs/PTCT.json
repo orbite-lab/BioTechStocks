@@ -1,0 +1,875 @@
+{
+  "company": {
+    "ticker": "PTCT",
+    "name": "PTC Therapeutics, Inc.",
+    "currentPrice": 70,
+    "sharesOut": 83,
+    "cash": 1950,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Rare-disease specialty + Novartis HD deal. FY25 revenue $1.731B includes $1.0B Novartis PTC518 upfront one-time; recurring product + royalty $831M: Translarna $235M (EMA CHMP NON-RENEWAL Apr 2025; EU residual wind-down + US NDA withdrawn; was $321M FY24), Emflaza $146M (deflazacort DMD; generics LOE; was $207M), Evrysdi (risdiplam SMA) Roche royalty $244M (PTC SOLD remaining royalty to Royalty Pharma Dec 2025: $240M up + $60M milestones; retained $150M earnout if Evrysdi reaches $2.5B), Sephience (sepiapterin PKU; FDA Jul 2025) $111M (Q4'25 alone $92M steep ramp), Upstaza (eladocagene exuparvovec AAV gene therapy AADC deficiency; EU 2022 + US Nov 2024) + Tegsedi/Waylivra small. PIPELINE: PTC518/votoplam (huntingtin lowering oral splice modulator) -- NOVARTIS Dec 2 2024 deal $1.0B upfront + $1.9B milestones + 40/60 US profit share + ex-US double-digit royalties; PIVOT-HD 24-mo data Apr 2026 showed 52% slowing of disease progression. Vatiquinone (Friedreich ataxia) -- FDA CRL Aug 19 2025; additional adequate study needed.",
+    "yahooTicker": "PTCT"
+  },
+  "assets": [
+    {
+      "id": "translarna",
+      "name": "Translarna (ataluren) - nonsense-mutation read-through for nmDMD",
+      "stage": "Commercial-declining (EMA CHMP non-renewal Apr 2025; EU residual wind-down; US NDA withdrawn)",
+      "modality": "small_molecule.various.readthrough_agent",
+      "targets": [],
+      "indications": [
+        {
+          "id": "nmdmd",
+          "name": "Nonsense-mutation Duchenne muscular dystrophy (EU only)",
+          "area": "musculoskeletal.neuromuscular.dmd_nonsense",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 3,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "row": {
+                "patientsK": 15,
+                "wtpPct": 18,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 94.4,
+                "wtpPct": 60,
+                "priceK": 200
+              },
+              "row": {
+                "reachPct": 11.8,
+                "wtpPct": 18,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "eu.priceK": "Translarna EU WAC ~$200K/yr (~13% nmDMD subset of DMD; 1L approved)",
+              "eu.reachPct": "EMA non-renewal Apr 2025 -- existing patients only; commercial wind-down"
+            },
+            "penPct": 25,
+            "cagrPct": -40,
+            "peakYear": 2025,
+            "salesM": 235,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "emflaza",
+      "name": "Emflaza (deflazacort) - corticosteroid for DMD (generics post-LOE)",
+      "stage": "Commercial-declining (deflazacort generics post-LOE; was $207M FY24 -> $146M FY25)",
+      "modality": "small_molecule.steroid.glucocorticoid",
+      "targets": [],
+      "indications": [
+        {
+          "id": "dmd_steroid",
+          "name": "Duchenne muscular dystrophy corticosteroid (residual brand post-LOE)",
+          "area": "musculoskeletal.neuromuscular.dmd",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 70,
+                "priceK": 30
+              },
+              "eu": {
+                "patientsK": 30,
+                "wtpPct": 60,
+                "priceK": 18
+              },
+              "row": {
+                "patientsK": 120,
+                "wtpPct": 18,
+                "priceK": 6
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 59.4,
+                "wtpPct": 50,
+                "priceK": 30
+              },
+              "eu": {
+                "reachPct": 17.8,
+                "wtpPct": 40,
+                "priceK": 18
+              },
+              "row": {
+                "reachPct": 1.8,
+                "wtpPct": 18,
+                "priceK": 6
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Emflaza WAC ~$30K/yr; generics taking share"
+            },
+            "penPct": 20,
+            "cagrPct": -25,
+            "peakYear": 2025,
+            "salesM": 146,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "evrysdi_royalty",
+      "name": "Evrysdi (risdiplam) - SMA splice modulator; PTC retains $150M earnout if Roche Evrysdi hits $2.5B (royalty stream sold to Royalty Pharma Dec 2025)",
+      "stage": "Commercial royalty (Roche partnership; royalty SOLD to Royalty Pharma Dec 2025 for $240M + $60M; PTC retained $150M Roche milestone right)",
+      "modality": "small_molecule.various.splice_modulator",
+      "targets": [],
+      "indications": [
+        {
+          "id": "sma_evrysdi",
+          "name": "Spinal muscular atrophy (SMN2 splice modifier; oral)",
+          "area": "musculoskeletal.neuromuscular.sma",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 75,
+                "priceK": 350
+              },
+              "eu": {
+                "patientsK": 14,
+                "wtpPct": 60,
+                "priceK": 220
+              },
+              "row": {
+                "patientsK": 50,
+                "wtpPct": 18,
+                "priceK": 80
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "PTC retained earnout: $150M one-time if Evrysdi hits $2.5B annual; otherwise zero recurring"
+            },
+            "penPct": 55,
+            "cagrPct": -50,
+            "peakYear": 2026,
+            "salesM": 244,
+            "salesYear": 2025,
+            "_genericBucket": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "sephience",
+      "name": "Sephience (sepiapterin) - oral synthetic BH4 precursor for phenylketonuria (PKU)",
+      "stage": "Commercial (FDA Jul 2025; EU earlier 2025; FY25 $111M of which Q4'25 alone $92M steep ramp)",
+      "modality": "small_molecule.cofactor.bh4_precursor",
+      "targets": [],
+      "indications": [
+        {
+          "id": "pku",
+          "name": "Phenylketonuria (PAH deficiency; alternative to Kuvan/sapropterin)",
+          "area": "endocrine.metabolic.pku",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 16,
+                "wtpPct": 70,
+                "priceK": 250
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 50,
+                "priceK": 150
+              },
+              "row": {
+                "patientsK": 100,
+                "wtpPct": 12,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 20,
+                "wtpPct": 65,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 55,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 18,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Sephience BH4-responsive PKU (improved efficacy + dosing convenience vs Kuvan generics)",
+              "us.priceK": "Sephience WAC ~$80K/yr"
+            },
+            "penPct": 30,
+            "cagrPct": 80,
+            "peakYear": 2030,
+            "salesM": 111,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "upstaza",
+      "name": "Upstaza (eladocagene exuparvovec) - AAV2 gene therapy for AADC deficiency",
+      "stage": "Commercial (EU 2022; FDA Nov 2024; one-time direct intracerebral infusion)",
+      "modality": "gene_therapy.aav.aav2_aadc",
+      "targets": [],
+      "indications": [
+        {
+          "id": "aadc_def",
+          "name": "AADC deficiency (rare ultra-orphan pediatric; AAV gene therapy)",
+          "area": "rare_disease.metabolic.aadc_deficiency",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 0.5,
+                "wtpPct": 80,
+                "priceK": 1500
+              },
+              "eu": {
+                "patientsK": 0.8,
+                "wtpPct": 70,
+                "priceK": 800
+              },
+              "row": {
+                "patientsK": 3,
+                "wtpPct": 18,
+                "priceK": 200
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 40,
+                "wtpPct": 70,
+                "priceK": 1500
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 60,
+                "priceK": 800
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 18,
+                "priceK": 200
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Upstaza WAC $3.4M one-time (similar to Zolgensma scale)",
+              "us.reachPct": "Upstaza first AADC gene therapy; ultra-orphan ~30 patients/yr globally"
+            },
+            "penPct": 15,
+            "cagrPct": 30,
+            "peakYear": 2030,
+            "salesM": 15,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "ptct_heritage",
+      "name": "PTC Therapeutics heritage portfolio (Tegsedi inotersen, Waylivra volanesorsen, Emflaza JIA, others)",
+      "stage": "Commercial (Akcea/Ionis legacy; small contribution)",
+      "modality": "nucleic_acid.aso.various",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ptct_heritage_tail",
+          "name": "Tegsedi/Waylivra inherited Akcea/Ionis ASO portfolio (peripheral neuropathy ATTR + FCS)",
+          "area": "_established_products.ptct_heritage",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 5,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "Bucket avg ~$200K/yr blended"
+            },
+            "penPct": 20,
+            "cagrPct": -10,
+            "peakYear": 2026,
+            "salesM": 70,
+            "salesYear": 2025,
+            "_genericBucket": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "ptc518",
+      "name": "PTC518 / votoplam (huntingtin lowering oral splice modulator; Novartis Dec 2024 deal $1B+$1.9B)",
+      "stage": "Phase 3 (PIVOT-HD 24-mo Apr 2026: 52% slowing of disease progression; Novartis ex-US + 40/60 US profit split)",
+      "modality": "small_molecule.various.splice_modulator",
+      "targets": [],
+      "indications": [
+        {
+          "id": "hd_votoplam",
+          "name": "Huntington's disease (huntingtin protein lowering; oral)",
+          "area": "cns.neurodegeneration.huntington",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 80,
+                "priceK": 50
+              },
+              "eu": {
+                "patientsK": 45,
+                "wtpPct": 70,
+                "priceK": 30
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 18,
+                "priceK": 8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 30,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 18,
+                "priceK": 15
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "PTC518 first oral huntingtin-lowering; vs ASO competitors (uniQure AMT-130, Roche tominersen)",
+              "us.priceK": "Estimated WAC $100K/yr"
+            },
+            "penPct": 20,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "vatiquinone",
+      "name": "Vatiquinone (15-LO inhibitor) - mitochondrial disease + Friedreich ataxia",
+      "stage": "Phase 3 (FDA CRL Aug 19 2025 -- additional adequate/well-controlled study needed; resubmission TBD)",
+      "modality": "small_molecule.enzyme.lipoxygenase_inhibitor",
+      "targets": [],
+      "indications": [
+        {
+          "id": "fa_vatiquinone",
+          "name": "Friedreich ataxia (mitochondrial dysfunction; vs Skyclarys omaveloxolone)",
+          "area": "cns.neurodegeneration.friedreich",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5,
+                "wtpPct": 80,
+                "priceK": 370
+              },
+              "eu": {
+                "patientsK": 7,
+                "wtpPct": 60,
+                "priceK": 230
+              },
+              "row": {
+                "patientsK": 25,
+                "wtpPct": 18,
+                "priceK": 80
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 40,
+                "priceK": 40
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 18,
+                "priceK": 10
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $60K/yr if eventually approved (vs Skyclarys $370K)"
+            },
+            "penPct": 50,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 12,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 3,
+        "commercialMult": 2.5,
+        "commercialRevM": 600,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "translarna": {
+          "nmdmd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "emflaza": {
+          "dmd_steroid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "evrysdi_royalty": {
+          "sma_evrysdi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "sephience": {
+          "pku": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "upstaza": {
+          "aadc_def": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ptct_heritage": {
+          "ptct_heritage_tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ptc518": {
+          "hd_votoplam": {
+            "pos": 30,
+            "apr": 60,
+            "pen": 0.3
+          }
+        },
+        "vatiquinone": {
+          "fa_vatiquinone": {
+            "pos": 5,
+            "apr": 60,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 4,
+        "commercialMult": 3.5,
+        "commercialRevM": 700,
+        "milestones": 100,
+        "dil": 0
+      },
+      "assumptions": {
+        "translarna": {
+          "nmdmd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "emflaza": {
+          "dmd_steroid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "evrysdi_royalty": {
+          "sma_evrysdi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "sephience": {
+          "pku": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "upstaza": {
+          "aadc_def": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ptct_heritage": {
+          "ptct_heritage_tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ptc518": {
+          "hd_votoplam": {
+            "pos": 50,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "vatiquinone": {
+          "fa_vatiquinone": {
+            "pos": 12,
+            "apr": 75,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 35,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 6,
+        "commercialMult": 5,
+        "commercialRevM": 800,
+        "milestones": 300,
+        "dil": 0
+      },
+      "assumptions": {
+        "translarna": {
+          "nmdmd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "emflaza": {
+          "dmd_steroid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "evrysdi_royalty": {
+          "sma_evrysdi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "sephience": {
+          "pku": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "upstaza": {
+          "aadc_def": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ptct_heritage": {
+          "ptct_heritage_tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ptc518": {
+          "hd_votoplam": {
+            "pos": 70,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "vatiquinone": {
+          "fa_vatiquinone": {
+            "pos": 25,
+            "apr": 85,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 22,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 9,
+        "commercialMult": 7,
+        "commercialRevM": 950,
+        "milestones": 750,
+        "dil": 0
+      },
+      "assumptions": {
+        "translarna": {
+          "nmdmd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "emflaza": {
+          "dmd_steroid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "evrysdi_royalty": {
+          "sma_evrysdi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "sephience": {
+          "pku": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "upstaza": {
+          "aadc_def": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ptct_heritage": {
+          "ptct_heritage_tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ptc518": {
+          "hd_votoplam": {
+            "pos": 85,
+            "apr": 92,
+            "pen": 1.05
+          }
+        },
+        "vatiquinone": {
+          "fa_vatiquinone": {
+            "pos": 40,
+            "apr": 92,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 6,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 14,
+        "commercialMult": 10,
+        "commercialRevM": 1200,
+        "milestones": 1500,
+        "dil": 0
+      },
+      "assumptions": {
+        "translarna": {
+          "nmdmd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "emflaza": {
+          "dmd_steroid": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "evrysdi_royalty": {
+          "sma_evrysdi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "sephience": {
+          "pku": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "upstaza": {
+          "aadc_def": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ptct_heritage": {
+          "ptct_heritage_tail": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ptc518": {
+          "hd_votoplam": {
+            "pos": 93,
+            "apr": 96,
+            "pen": 1.25
+          }
+        },
+        "vatiquinone": {
+          "fa_vatiquinone": {
+            "pos": 55,
+            "apr": 96,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Apr 2026",
+      "dateSort": "2026-04-30",
+      "asset": "ptc518",
+      "indication": "hd_votoplam",
+      "title": "PIVOT-HD 24-mo data: 52% slowing of disease progression (votoplam HD)",
+      "type": "phase2_data",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "PTC Apr 2026 PR",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "ptc518",
+      "indication": "hd_votoplam",
+      "title": "PTC518 PIVOT-HD Ph3 enrollment progress + Novartis ex-US development",
+      "type": "phase3_start",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Novartis Dec 2024 deal",
+      "_confidence": "medium"
+    },
+    {
+      "date": "2026-2027",
+      "dateSort": "2027-06-30",
+      "asset": "sephience",
+      "indication": "pku",
+      "title": "Sephience PKU US/EU launch trajectory + label expansions",
+      "type": "launch",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "PTC FY25 IR",
+      "_confidence": "high"
+    }
+  ]
+}

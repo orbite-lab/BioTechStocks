@@ -1,0 +1,409 @@
+{
+  "company": {
+    "ticker": "TGTX",
+    "name": "TG Therapeutics, Inc.",
+    "currentPrice": 33.78,
+    "sharesOut": 147.7,
+    "cash": 200,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Briumvi anti-CD20 MS pure-play. FY25 revenue $616.3M (+vs $239M FY24): Briumvi US net $594.1M (Q4'25 $182.7M +92% YoY) + Briumvi ex-US Neuraxpharm supply $12.8M + license/royalty ~$9M. FY26 guidance $875-900M total (Briumvi US $825-850M). Differentiator: 1-hour rapid IV infusion (vs Ocrevus 2.5-4hr), twice-yearly maintenance. Competing in $10B+ MS B-cell-depleter market vs Roche Ocrevus ($7B+) + Novartis Kesimpta SC ($3B+). Two consecutive $100M buybacks (Q3 2025 completed at $28.55 avg + Q1 2026 new authorization). Neuraxpharm ex-US deal: $140M up + $12.5M first launch + up to $492.5M milestones + royalties. PIPELINE: SC Briumvi Ph3 enrollment complete Apr 15 2026 (PK non-inferiority RMS, every 8w/12w dosing; topline YE2026/early 2027; potential approval 2028); azer-cel allogeneic CD19 CAR-T (Precision Bio license; Ph1 MS + autoimmune neuro).",
+    "yahooTicker": "TGTX"
+  },
+  "assets": [
+    {
+      "id": "briumvi",
+      "name": "Briumvi (ublituximab-xiiy) - glycoengineered anti-CD20 mAb for relapsing MS (1-hour IV infusion; q6mo maintenance)",
+      "stage": "Commercial (FDA Dec 2022; EU 2023 via Neuraxpharm)",
+      "modality": "antibody.monoclonal.anti_cd20",
+      "targets": [
+        "MS4A1"
+      ],
+      "indications": [
+        {
+          "id": "rms_briumvi",
+          "name": "Relapsing multiple sclerosis (RMS) anti-CD20 (vs Ocrevus + Kesimpta)",
+          "area": "immunology.demyelinating.multiple_sclerosis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 900,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 40,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 1500,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 50,
+                "priceK": 35
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 12,
+                "priceK": 10
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Briumvi ~6-8% RMS B-cell-depleter share vs Ocrevus (~$7B), Kesimpta (~$3B), Tysabri legacy",
+              "us.priceK": "Briumvi WAC ~$65K/yr (12% discount vs Ocrevus; 1-hr infusion advantage)"
+            },
+            "penPct": 25,
+            "cagrPct": 25,
+            "peakYear": 2030,
+            "salesM": 607,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "briumvi_sc",
+      "name": "SC Briumvi - subcutaneous formulation (q8w/q12w dosing)",
+      "stage": "Phase 3 (enrollment complete Apr 15 2026; PK non-inferiority RMS; topline YE2026/early 2027; potential approval 2028)",
+      "modality": "antibody.monoclonal.anti_cd20",
+      "targets": [],
+      "indications": [
+        {
+          "id": "rms_briumvi_sc",
+          "name": "RMS subcutaneous anti-CD20 (less frequent dosing vs IV)",
+          "area": "immunology.demyelinating.multiple_sclerosis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 900,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 40,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 1500,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2.5,
+                "wtpPct": 55,
+                "priceK": 55
+              },
+              "eu": {
+                "reachPct": 0.6,
+                "wtpPct": 45,
+                "priceK": 32
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated SC WAC $55K/yr (parity with IV; net of SC convenience premium)",
+              "us.reachPct": "SC Briumvi extends franchise; ~2.5% incremental MS B-cell-depleter share via dosing convenience vs Kesimpta SC"
+            },
+            "penPct": 25,
+            "cagrPct": 15,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "azer_cel",
+      "name": "Azer-cel (azercabtagene zapreleucel) - allogeneic CD19 CAR-T (Precision Bio license)",
+      "stage": "Phase 1 MS + autoimmune neuro (IND clearance 2025)",
+      "modality": "cell_therapy.car_t.allogeneic_cd19",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ms_azercel",
+          "name": "MS + autoimmune neuro indications (allogeneic CAR-T potential one-time treatment)",
+          "area": "immunology.demyelinating.multiple_sclerosis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 900,
+                "wtpPct": 60,
+                "priceK": 25
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 40,
+                "priceK": 15
+              },
+              "row": {
+                "patientsK": 1500,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.3,
+                "wtpPct": 50,
+                "priceK": 150
+              },
+              "eu": {
+                "reachPct": 0.1,
+                "wtpPct": 40,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 0.02,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $250K one-time CAR-T (vs $400K+ branded autologous)",
+              "us.reachPct": "Allogeneic off-the-shelf for autoimmune; novel approach"
+            },
+            "penPct": 25,
+            "cagrPct": 0,
+            "peakYear": 2034
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 10,
+        "pipelineMult": 2,
+        "commercialMult": 2.5,
+        "commercialRevM": 800,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "briumvi": {
+          "rms_briumvi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "briumvi_sc": {
+          "rms_briumvi_sc": {
+            "pos": 60,
+            "apr": 65,
+            "pen": 0.3
+          }
+        },
+        "azer_cel": {
+          "ms_azercel": {
+            "pos": 8,
+            "apr": 65,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 22,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 3,
+        "commercialMult": 3.5,
+        "commercialRevM": 900,
+        "milestones": 25,
+        "dil": 0
+      },
+      "assumptions": {
+        "briumvi": {
+          "rms_briumvi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "briumvi_sc": {
+          "rms_briumvi_sc": {
+            "pos": 75,
+            "apr": 78,
+            "pen": 0.5
+          }
+        },
+        "azer_cel": {
+          "ms_azercel": {
+            "pos": 18,
+            "apr": 78,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 38,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 5,
+        "commercialMult": 5,
+        "commercialRevM": 1050,
+        "milestones": 75,
+        "dil": 0
+      },
+      "assumptions": {
+        "briumvi": {
+          "rms_briumvi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "briumvi_sc": {
+          "rms_briumvi_sc": {
+            "pos": 88,
+            "apr": 88,
+            "pen": 0.8
+          }
+        },
+        "azer_cel": {
+          "ms_azercel": {
+            "pos": 32,
+            "apr": 88,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 7,
+        "commercialMult": 7,
+        "commercialRevM": 1300,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "briumvi": {
+          "rms_briumvi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "briumvi_sc": {
+          "rms_briumvi_sc": {
+            "pos": 95,
+            "apr": 93,
+            "pen": 1.05
+          }
+        },
+        "azer_cel": {
+          "ms_azercel": {
+            "pos": 48,
+            "apr": 93,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 11,
+        "commercialMult": 10,
+        "commercialRevM": 1700,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "briumvi": {
+          "rms_briumvi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "briumvi_sc": {
+          "rms_briumvi_sc": {
+            "pos": 99,
+            "apr": 97,
+            "pen": 1.25
+          }
+        },
+        "azer_cel": {
+          "ms_azercel": {
+            "pos": 65,
+            "apr": 97,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Apr 15 2026",
+      "dateSort": "2026-04-15",
+      "asset": "briumvi_sc",
+      "indication": "rms_briumvi_sc",
+      "title": "SC Briumvi Ph3 enrollment complete (PK non-inferiority RMS)",
+      "type": "phase3_start",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "TGTX Apr 15 2026 PR",
+      "_confidence": "high"
+    },
+    {
+      "date": "YE 2026",
+      "dateSort": "2026-12-15",
+      "asset": "briumvi_sc",
+      "indication": "rms_briumvi_sc",
+      "title": "SC Briumvi Ph3 PK non-inferiority topline (YE2026/early 2027)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 60,
+      "fail_apr": 80,
+      "success_pos": 92,
+      "success_apr": 95,
+      "_source": "TGTX pipeline",
+      "_confidence": "medium"
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-06-30",
+      "asset": "briumvi",
+      "indication": "rms_briumvi",
+      "title": "Briumvi label expansions (frontline 1L + pediatric); EU launches via Neuraxpharm",
+      "type": "label_expansion",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "TGTX pipeline + Neuraxpharm",
+      "_confidence": "medium"
+    }
+  ]
+}

@@ -10,10 +10,10 @@
       "Rare diseases get 'rare: true' on the indication object, not the area tag",
       "Commercial products need penPct set to actual market share (revenue / TAM)"
     ],
-    "area_count_l3": 312,
+    "area_count_l3": 316,
     "area_count_l4": 30,
-    "modality_count": 641,
-    "companies": 125
+    "modality_count": 652,
+    "companies": 128
   },
   "therapeutic_areas": {
     "cardio_metabolic": {
@@ -697,7 +697,15 @@
         },
         "friedreich": {
           "companies": [
-            "BIIB"
+            "BIIB",
+            "PTCT"
+          ],
+          "count": 2,
+          "rare": false
+        },
+        "huntington": {
+          "companies": [
+            "PTCT"
           ],
           "count": 1,
           "rare": false
@@ -1282,9 +1290,10 @@
       "metabolic": {
         "pku": {
           "companies": [
-            "BMRN"
+            "BMRN",
+            "PTCT"
           ],
-          "count": 1,
+          "count": 2,
           "rare": false
         }
       },
@@ -1596,9 +1605,10 @@
             "RHHBY",
             "SDZ",
             "SNY",
-            "TEVA"
+            "TEVA",
+            "TGTX"
           ],
-          "count": 12,
+          "count": 13,
           "rare": false
         },
         "nmosd": {
@@ -2127,9 +2137,10 @@
         "dmd": {
           "companies": [
             "PEPG",
+            "PTCT",
             "SRPT"
           ],
-          "count": 2,
+          "count": 3,
           "rare": true,
           "sub": {
             "exon45": {
@@ -2163,6 +2174,13 @@
             }
           }
         },
+        "dmd_nonsense": {
+          "companies": [
+            "PTCT"
+          ],
+          "count": 1,
+          "rare": false
+        },
         "fshd": {
           "companies": [
             "SRPT"
@@ -2183,9 +2201,10 @@
             "4519",
             "BIIB",
             "NVS",
+            "PTCT",
             "RHHBY"
           ],
-          "count": 4,
+          "count": 5,
           "rare": false
         }
       }
@@ -2553,6 +2572,7 @@
             "AZN",
             "BAYN",
             "BMY",
+            "CHRS",
             "EXEL",
             "GLMD",
             "IPN",
@@ -2560,7 +2580,7 @@
             "ONC",
             "RHHBY"
           ],
-          "count": 13,
+          "count": 14,
           "rare": false
         },
         "pancreatic": {
@@ -2626,19 +2646,21 @@
             "4503",
             "ASND",
             "BAYN",
+            "CHRS",
             "GMAB",
             "IMTX",
             "MRK",
             "MRK_DE"
           ],
-          "count": 7,
+          "count": 8,
           "rare": false
         },
         "npc": {
           "companies": [
-            "600276"
+            "600276",
+            "CHRS"
           ],
-          "count": 1,
+          "count": 2,
           "rare": false
         }
       },
@@ -2999,6 +3021,13 @@
             }
           }
         },
+        "nsclc_io": {
+          "companies": [
+            "CHRS"
+          ],
+          "count": 1,
+          "rare": false
+        },
         "nsclc_io_combo": {
           "companies": [
             "AMGN",
@@ -3055,9 +3084,10 @@
           "companies": [
             "4528",
             "ASND",
+            "CHRS",
             "SDZ"
           ],
-          "count": 3,
+          "count": 4,
           "rare": false
         }
       },
@@ -3378,6 +3408,15 @@
         "thrombocytopenia": {
           "companies": [
             "4507"
+          ],
+          "count": 1,
+          "rare": false
+        }
+      },
+      "metabolic": {
+        "aadc_deficiency": {
+          "companies": [
+            "PTCT"
           ],
           "count": 1,
           "rare": false
@@ -4340,6 +4379,12 @@
           ],
           "count": 1
         },
+        "anti_ccr8": {
+          "companies": [
+            "CHRS"
+          ],
+          "count": 1
+        },
         "anti_cd19": {
           "companies": [
             "AMGN",
@@ -4354,9 +4399,10 @@
             "DRREDDY",
             "GMAB",
             "NVS",
-            "RHHBY"
+            "RHHBY",
+            "TGTX"
           ],
-          "count": 5
+          "count": 6
         },
         "anti_cd38": {
           "companies": [
@@ -4489,6 +4535,12 @@
           ],
           "count": 3
         },
+        "anti_il27": {
+          "companies": [
+            "CHRS"
+          ],
+          "count": 1
+        },
         "anti_il36r": {
           "companies": [
             "BI"
@@ -4513,6 +4565,12 @@
             "CELLTRION"
           ],
           "count": 2
+        },
+        "anti_ilt4": {
+          "companies": [
+            "CHRS"
+          ],
+          "count": 1
         },
         "anti_lag3": {
           "companies": [
@@ -4545,12 +4603,13 @@
             "1801",
             "4528",
             "600276",
+            "CHRS",
             "DRREDDY",
             "ONC",
             "REGN",
             "SDZ"
           ],
-          "count": 7
+          "count": 8
         },
         "anti_pdl1": {
           "companies": [
@@ -4720,6 +4779,12 @@
         }
       },
       "car_t": {
+        "allogeneic_cd19": {
+          "companies": [
+            "TGTX"
+          ],
+          "count": 1
+        },
         "cd19": {
           "companies": [
             "GLPG"
@@ -4881,6 +4946,12 @@
     },
     "gene_therapy": {
       "aav": {
+        "aav2_aadc": {
+          "companies": [
+            "PTCT"
+          ],
+          "count": 1
+        },
         "aav5_fix": {
           "companies": [
             "CSL"
@@ -4981,6 +5052,12 @@
         "ttr_aso": {
           "companies": [
             "AZN"
+          ],
+          "count": 1
+        },
+        "various": {
+          "companies": [
+            "PTCT"
           ],
           "count": 1
         }
@@ -6011,6 +6088,12 @@
             "BMRN"
           ],
           "count": 1
+        },
+        "bh4_precursor": {
+          "companies": [
+            "PTCT"
+          ],
+          "count": 1
         }
       },
       "combination": {
@@ -6209,6 +6292,12 @@
         "integrase_inhibitor": {
           "companies": [
             "4507"
+          ],
+          "count": 1
+        },
+        "lipoxygenase_inhibitor": {
+          "companies": [
+            "PTCT"
           ],
           "count": 1
         },
@@ -7721,6 +7810,12 @@
           ],
           "count": 1
         },
+        "glucocorticoid": {
+          "companies": [
+            "PTCT"
+          ],
+          "count": 1
+        },
         "progestin": {
           "companies": [
             "MRK"
@@ -7884,6 +7979,18 @@
         "nlrp3_inhibitor": {
           "companies": [
             "ZYDUSLIFE"
+          ],
+          "count": 1
+        },
+        "readthrough_agent": {
+          "companies": [
+            "PTCT"
+          ],
+          "count": 1
+        },
+        "splice_modulator": {
+          "companies": [
+            "PTCT"
           ],
           "count": 1
         }

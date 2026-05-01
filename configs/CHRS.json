@@ -1,0 +1,575 @@
+{
+  "company": {
+    "ticker": "CHRS",
+    "name": "Coherus Oncology, Inc.",
+    "currentPrice": 1.66,
+    "sharesOut": 121,
+    "cash": 161,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Pure-play IO (rebranded 'Coherus Oncology' post-divestments). FY25 revenue mostly Loqtorzi $40.8M (toripalimab; PD-1 mAb licensed from Junshi for North America; FDA Oct 2023 NPC + frontline NSCLC + ESCC label expansion; +114% vs $19.1M FY24). Major restructuring 2024-2025: Cimerli (ranibizumab biosim) sold to Sandoz Mar 2024 ~$170M; Yusimry (adalimumab biosim) divested 2024; Udenyca (pegfilgrastim biosim) sold to Intas/Accord Apr 11 2025 for $483M up + $75M milestones. Convertible/secured debt cut ~90% from $480M to $38.8M YE2025. ~30% headcount reduction Apr 2025. PIPELINE: Casdozokitug (CHS-388) anti-IL-27 mAb (Surface Oncology acq Sept 2023) -- Ph2 HCC ASCO-GI 2025 ORR 38% / CR 17.2% in combo with atezo+bev; also Ph2 NSCLC. CHS-114 selective anti-CCR8 cytolytic mAb (Treg-depleting) -- Ph1b/2a HNSCC + gastric (combo with toripalimab); HNSCC dose-opt data H1 2026 KEY CATALYST. CHS-1000 anti-ILT4 (LILRB2) IND cleared Q2 2024.",
+    "yahooTicker": "CHRS"
+  },
+  "assets": [
+    {
+      "id": "loqtorzi",
+      "name": "Loqtorzi (toripalimab) - anti-PD-1 mAb (Junshi license for North America)",
+      "stage": "Commercial (FDA Oct 2023 NPC + frontline NSCLC + ESCC; FY25 $40.8M +114% YoY; Junshi originator)",
+      "modality": "antibody.monoclonal.anti_pd1",
+      "targets": [
+        "PDCD1"
+      ],
+      "indications": [
+        {
+          "id": "npc_io",
+          "name": "Nasopharyngeal carcinoma 1L+ (combo gemcitabine/cisplatin); FDA Oct 2023",
+          "area": "oncology.head_neck.npc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3,
+                "wtpPct": 70,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 2,
+                "wtpPct": 50,
+                "priceK": 120
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 25,
+                "priceK": 12
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 40,
+                "wtpPct": 60,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 18,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Loqtorzi ~30% NPC US share (post Junshi-derived FDA approval)",
+              "us.priceK": "Loqtorzi WAC ~$200K/yr (parallel to Keytruda/Opdivo)"
+            },
+            "penPct": 60,
+            "cagrPct": 30,
+            "peakYear": 2030,
+            "salesM": 25,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "nsclc_io",
+          "name": "NSCLC + ESCC + other label expansions (frontline IO combo)",
+          "area": "oncology.lung.nsclc_io",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 80,
+                "priceK": 150
+              },
+              "eu": {
+                "patientsK": 700,
+                "wtpPct": 70,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.4,
+                "wtpPct": 50,
+                "priceK": 150
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Loqtorzi NSCLC + ESCC WAC ~$150K/yr blended",
+              "us.reachPct": "Niche post-Keytruda/Opdivo entry; ~1% NSCLC IO share"
+            },
+            "penPct": 15,
+            "cagrPct": 40,
+            "peakYear": 2031,
+            "salesM": 16,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "casdozokitug",
+      "name": "Casdozokitug (CHS-388) - anti-IL-27 mAb (Surface Oncology acq Sept 2023)",
+      "stage": "Phase 2 (HCC ORR 38% CR 17.2% ASCO-GI 2025 in combo with atezo+bev; NSCLC Ph2 ongoing)",
+      "modality": "antibody.monoclonal.anti_il27",
+      "targets": [],
+      "indications": [
+        {
+          "id": "hcc_casdozo",
+          "name": "Hepatocellular carcinoma (1L combo with atezolizumab + bevacizumab)",
+          "area": "oncology.gi.hcc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 60,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 46,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 650,
+                "wtpPct": 22,
+                "priceK": 28
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 0.6,
+                "wtpPct": 40,
+                "priceK": 70
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 18,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $100K/yr (combo with atezo+bev)",
+              "us.reachPct": "Casdozo HCC niche; first-in-class IL-27 mAb but small player vs IO duopolists"
+            },
+            "penPct": 45,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "chs_114",
+      "name": "CHS-114 - selective anti-CCR8 cytolytic mAb (Treg-depleting; tumor-restricted)",
+      "stage": "Phase 1b/2a HNSCC + gastric (combo with toripalimab); HNSCC dose-opt data H1 2026",
+      "modality": "antibody.monoclonal.anti_ccr8",
+      "targets": [],
+      "indications": [
+        {
+          "id": "hnscc_ccr8",
+          "name": "HNSCC + gastric (post-PD-1 progression; CCR8-selective Treg depletion)",
+          "area": "oncology.head_neck.hnscc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 70,
+                "wtpPct": 65,
+                "priceK": 145
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 50,
+                "priceK": 85
+              },
+              "row": {
+                "patientsK": 600,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.0,
+                "wtpPct": 45,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 0.4,
+                "wtpPct": 35,
+                "priceK": 55
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 18,
+                "priceK": 15
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $100K/yr (combo with PD-1)",
+              "us.reachPct": "CHS-114 vs other CCR8 programs (Bristol BMS-986340, Pfizer-Sanofi)"
+            },
+            "penPct": 55,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "chs_1000",
+      "name": "CHS-1000 - anti-ILT4 (LILRB2) mAb (myeloid checkpoint)",
+      "stage": "Pre-clinical/Ph1 (IND cleared Q2 2024; FIH gated on portfolio prioritization)",
+      "modality": "antibody.monoclonal.anti_ilt4",
+      "targets": [],
+      "indications": [
+        {
+          "id": "solid_ilt4",
+          "name": "Solid tumors (myeloid checkpoint; ILT4/LILRB2)",
+          "area": "oncology.multi_tumor_io.pd1_pdl1_eligible",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 80,
+                "priceK": 150
+              },
+              "eu": {
+                "patientsK": 700,
+                "wtpPct": 70,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 40,
+                "priceK": 70
+              },
+              "row": {
+                "reachPct": 0.02,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $100K/yr in IO combo"
+            },
+            "penPct": 6,
+            "cagrPct": 0,
+            "peakYear": 2034
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 16,
+        "pipelineMult": 1,
+        "commercialMult": 0.5,
+        "commercialRevM": 50,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "loqtorzi": {
+          "npc_io": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "nsclc_io": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "casdozokitug": {
+          "hcc_casdozo": {
+            "pos": 12,
+            "apr": 55,
+            "pen": 0.3
+          }
+        },
+        "chs_114": {
+          "hnscc_ccr8": {
+            "pos": 8,
+            "apr": 55,
+            "pen": 0.3
+          }
+        },
+        "chs_1000": {
+          "solid_ilt4": {
+            "pos": 4,
+            "apr": 55,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 30,
+      "val": {
+        "pipelineDR": 14,
+        "pipelineMult": 1.5,
+        "commercialMult": 1.2,
+        "commercialRevM": 70,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "loqtorzi": {
+          "npc_io": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "nsclc_io": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "casdozokitug": {
+          "hcc_casdozo": {
+            "pos": 22,
+            "apr": 70,
+            "pen": 0.5
+          }
+        },
+        "chs_114": {
+          "hnscc_ccr8": {
+            "pos": 18,
+            "apr": 70,
+            "pen": 0.5
+          }
+        },
+        "chs_1000": {
+          "solid_ilt4": {
+            "pos": 10,
+            "apr": 70,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 12,
+        "pipelineMult": 2.5,
+        "commercialMult": 2.5,
+        "commercialRevM": 90,
+        "milestones": 10,
+        "dil": 0
+      },
+      "assumptions": {
+        "loqtorzi": {
+          "npc_io": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "nsclc_io": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "casdozokitug": {
+          "hcc_casdozo": {
+            "pos": 38,
+            "apr": 82,
+            "pen": 0.8
+          }
+        },
+        "chs_114": {
+          "hnscc_ccr8": {
+            "pos": 32,
+            "apr": 82,
+            "pen": 0.8
+          }
+        },
+        "chs_1000": {
+          "solid_ilt4": {
+            "pos": 22,
+            "apr": 82,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 15,
+      "val": {
+        "pipelineDR": 10,
+        "pipelineMult": 4,
+        "commercialMult": 4,
+        "commercialRevM": 130,
+        "milestones": 30,
+        "dil": 0
+      },
+      "assumptions": {
+        "loqtorzi": {
+          "npc_io": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "nsclc_io": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "casdozokitug": {
+          "hcc_casdozo": {
+            "pos": 55,
+            "apr": 90,
+            "pen": 1.05
+          }
+        },
+        "chs_114": {
+          "hnscc_ccr8": {
+            "pos": 48,
+            "apr": 90,
+            "pen": 1.05
+          }
+        },
+        "chs_1000": {
+          "solid_ilt4": {
+            "pos": 38,
+            "apr": 90,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 7,
+        "commercialMult": 6,
+        "commercialRevM": 200,
+        "milestones": 100,
+        "dil": 0
+      },
+      "assumptions": {
+        "loqtorzi": {
+          "npc_io": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "nsclc_io": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "casdozokitug": {
+          "hcc_casdozo": {
+            "pos": 70,
+            "apr": 95,
+            "pen": 1.25
+          }
+        },
+        "chs_114": {
+          "hnscc_ccr8": {
+            "pos": 65,
+            "apr": 95,
+            "pen": 1.25
+          }
+        },
+        "chs_1000": {
+          "solid_ilt4": {
+            "pos": 55,
+            "apr": 95,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-30",
+      "asset": "chs_114",
+      "indication": "hnscc_ccr8",
+      "title": "CHS-114 (anti-CCR8) HNSCC dose-opt data + toripalimab combo (KEY CATALYST)",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 8,
+      "fail_apr": 50,
+      "success_pos": 50,
+      "success_apr": 80,
+      "_source": "Coherus Oncology pipeline; CHS-114 program",
+      "_confidence": "low"
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "loqtorzi",
+      "indication": "nsclc_io",
+      "title": "Loqtorzi NSCLC + ESCC label expansion ramp; FY26 guide $60-80M",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Coherus IR",
+      "_confidence": "medium"
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-06-30",
+      "asset": "casdozokitug",
+      "indication": "hcc_casdozo",
+      "title": "Casdozokitug HCC pivotal Ph3 design / NSCLC Ph2 readout",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 12,
+      "fail_apr": 60,
+      "success_pos": 50,
+      "success_apr": 85,
+      "_source": "Coherus pipeline",
+      "_confidence": "low"
+    }
+  ]
+}

@@ -83,25 +83,25 @@ def write_config(ticker, cfg):
 def build_GLPG():
     co = od(
         ("ticker", "GLPG"),
-        ("name", "Galapagos NV"),
-        ("currentPrice", 29),  # EUR Brussels (Mechelen HQ; ADR ~$33)
+        ("name", "Galapagos NV (renaming to Lakefront Biotherapeutics May 8 2026)"),
+        ("currentPrice", 26.46),  # EUR Amsterdam (Mechelen HQ; primary listing GLPG.AS)
         ("sharesOut", 65.9),
-        # Reported cash EUR 3.0B but market applies ~40% haircut on BD-deployment
-        # risk (mcap EUR 1.91B vs full cash EUR 3.0B). Use credited cash EUR 1,700M
-        # so mega_bear scenario lands below current price (cash-anchored shell).
-        ("cash", 1700),  # EUR M -- credited cash post BD-deployment haircut
+        # Reported cash EUR 3.0B but market applies BD-deployment haircut.
+        # Mar 2026 Gilead Ouro deal: GLPG funds 50% of $2.1B = ~$1.05B / EUR 970M
+        # capital deployment now committed. Credited cash post deployment: EUR 1,700M.
+        ("cash", 1700),  # EUR M
         ("currency", "EUR"),
         ("phase", "phase3"),
-        ("subtitle", "Belgian biotech in radical restructuring. SpinCo split announced Jan 2025 then SCRAPPED May 2025; cell therapy entirely WOUND DOWN announced Oct 2025 (implementation Jan 2026 post works council). Now cash-rich shell: EUR 3.0B cash YE25 (vs ~EUR 2.0B mcap; deeply negative EV). FY25 revenue ~EUR 1.06B (one-time Gilead deferred income release EUR 1,069M; underlying small). FY26 guide: cash flow neutral-to-positive ex-BD. Lead assets post-wind-down: GLPG3667 (selective TYK2 oral; Ph2 SLE missed primary, dermatomyositis hit; Ph3-enabling readout early 2026), Jyseleca royalty (sold to Alfasigma Jan 2024; mid-single to mid-double-digit royalties), CAR-T residual (GLPG5101 ATALANTA-1 MCL 100% ORR / 96% CR ASH 2025; FDA RMAT; being out-licensed/sold). Strategic posture: cash redeployment via BD/M&A."),
-        ("yahooTicker", "GLPG"),
+        ("subtitle", "Belgian biotech transformed to BD shell (renaming Lakefront Biotherapeutics May 8 2026). SpinCo split scrapped May 2025; cell therapy entirely WOUND DOWN (implementation began Jan 2026; no buyer found). Headcount targeting ~35-40 employees by end-2026. Reported cash EUR 3.0B YE25 (vs EUR 1.74B mcap). MARCH 2026: GLPG funds 50% of Gilead's $2.1B Ouro Medicines acquisition (~$1.05B / EUR 970M deployment in T-cell engagers). FY25 operating profit EUR 295M (vs -EUR 188M FY24; driven by Gilead deferred income release). Lead remaining: GLPG3667 selective TYK2 -- Phase 3-enabling topline DEC 18 2025: dermatomyositis HIT primary (p=0.0848, borderline; ARGX Vyvgart ALKIVIA competition), SLE MISSED primary (Wk48 final Q2 2026); only remaining immunology asset. Jyseleca royalty (Alfasigma Jan 2024; mid-single to mid-double-digit). GLPG5101 CD19 CAR-T (ATALANTA-1 MCL 100% ORR ASH 2025) terminal: no buyer, winding down."),
+        ("yahooTicker", "GLPG.AS"),
     )
 
     assets = []
 
-    # GLPG3667 - lead remaining asset (TYK2)
+    # GLPG3667 - lead remaining asset (TYK2); readouts Dec 18 2025
     assets.append(asset(
         "glpg3667", "GLPG3667 - selective TYK2 inhibitor (oral; deuterium-modified pseudokinase domain selective)",
-        "Phase 3-enabling (Ph2 SLE missed primary; Ph2 dermatomyositis hit; topline early 2026)",
+        "Phase 3 design pending (Ph2 dermatomyositis HIT primary p=0.0848 borderline Dec 2025; SLE MISSED primary; SLE Wk48 final Q2 2026)",
         "small_molecule.kinase.tyk2",
         [
             innov_ind("sle_3667", "Systemic lupus erythematosus moderate-severe (Ph2 missed primary 2025; Ph3 design pending)",
@@ -133,10 +133,10 @@ def build_GLPG():
                     "eu.reachPct": "Jyseleca ~3-5% EU JAK1 share; Galapagos receives mid-teens royalty"},
                    salesM=30, salesYear=2025, peakYear=2028, cagrPct=5, penPct=20)]))
 
-    # CAR-T residual being wound down
+    # CAR-T residual: WIND-DOWN implementation Jan 2026; no buyer found; terminal value ~zero
     assets.append(asset(
         "glpg5101", "GLPG5101 - CD19 CAR-T (Cellpoint decentralized 7-day vein-to-vein platform)",
-        "Phase 2 (ATALANTA-1 MCL 100% ORR + 96% CR ASH 2025; FDA RMAT; Galapagos winding down cell therapy -- seeking buyer/out-license)",
+        "Wind-down implementation Jan 2026 (no buyer/licensee found; ATALANTA-1 MCL ASH 2025 100% ORR / 96% CR data + FDA RMAT not monetized)",
         "cell_therapy.car_t.cd19",
         [innov_ind("mcl_cart", "Mantle cell lymphoma R/R (post-BTKi); also NHL DLBCL/FL",
                    "oncology.hematology.nhl.mcl",
@@ -152,8 +152,10 @@ def build_GLPG():
 
     SCEN = ["mega_bear", "bear", "base", "bull", "psychedelic_bull"]
     pos_grid = {
-        "glpg3667": {"mega_bear": 25, "bear": 40, "base": 55, "bull": 70, "psychedelic_bull": 82},
-        "glpg5101": {"mega_bear": 15, "bear": 28, "base": 45, "bull": 60, "psychedelic_bull": 72},
+        # GLPG3667: Ph2 already readout (DM hit borderline, SLE missed); Ph3 design risk
+        "glpg3667": {"mega_bear": 30, "bear": 45, "base": 60, "bull": 75, "psychedelic_bull": 85},
+        # GLPG5101 CAR-T: wind-down, no buyer; near-zero terminal value
+        "glpg5101": {"mega_bear": 1, "bear": 3, "base": 8, "bull": 18, "psychedelic_bull": 35},
     }
     apr_grid = {a: {"mega_bear": 60, "bear": 75, "base": 85, "bull": 92, "psychedelic_bull": 96} for a in pos_grid}
     pen_grid = {a: {"mega_bear": 0.3, "bear": 0.5, "base": 0.8, "bull": 1.05, "psychedelic_bull": 1.25} for a in pos_grid}
@@ -194,24 +196,24 @@ def build_GLPG():
         )
 
     catalysts = [
-        od(("date", "Q1 2026"), ("dateSort", "2026-03-31"), ("asset", "glpg3667"),
-           ("indication", "dermatomyositis_3667"),
-           ("title", "GLPG3667 TYK2 Ph2 dermatomyositis topline + Ph3 design"),
-           ("type", "phase2_data"), ("binary", True),
-           ("fail_pos", 25), ("fail_apr", 65), ("success_pos", 75), ("success_apr", 88),
-           ("_source", "Galapagos pipeline; Q3 2025 update"), ("_confidence", "high")),
-        od(("date", "H1 2026"), ("dateSort", "2026-06-30"), ("asset", "glpg5101"),
-           ("indication", "mcl_cart"),
-           ("title", "GLPG5101 CAR-T out-licensing/sale (cell therapy wind-down implementation)"),
-           ("type", "partnership"), ("binary", True),
-           ("fail_pos", 15), ("fail_apr", 60), ("success_pos", 70), ("success_apr", 90),
-           ("_source", "Galapagos Oct 2025 wind-down announcement"), ("_confidence", "medium")),
-        od(("date", "2026"), ("dateSort", "2026-12-15"), ("asset", "glpg3667"),
+        od(("date", "Mar 2026"), ("dateSort", "2026-03-15"), ("asset", "glpg3667"),
            ("indication", "sle_3667"),
-           ("title", "Strategic BD/M&A capital deployment ($3B cash optionality)"),
+           ("title", "Gilead Ouro 50% co-investment ($1.05B; T-cell engager pipeline addition)"),
+           ("type", "m_and_a"), ("binary", False),
+           ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
+           ("_source", "Galapagos Mar 2026 announcement"), ("_confidence", "high")),
+        od(("date", "May 8 2026"), ("dateSort", "2026-05-08"), ("asset", "glpg3667"),
+           ("indication", "sle_3667"),
+           ("title", "Renaming to Lakefront Biotherapeutics (shareholder-approved)"),
            ("type", "milestone"), ("binary", False),
            ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
-           ("_source", "Galapagos FY25 release; CEO commentary"), ("_confidence", "medium")),
+           ("_source", "GLPG 2026 AGM resolutions"), ("_confidence", "high")),
+        od(("date", "Q2 2026"), ("dateSort", "2026-06-30"), ("asset", "glpg3667"),
+           ("indication", "sle_3667"),
+           ("title", "GLPG3667 SLE Wk48 final data (Wk32 SRI-4 missed primary Dec 2025)"),
+           ("type", "phase2_data"), ("binary", True),
+           ("fail_pos", 20), ("fail_apr", 60), ("success_pos", 65), ("success_apr", 85),
+           ("_source", "Galapagos Dec 18 2025 disclosure"), ("_confidence", "medium")),
     ]
 
     return od(("company", co), ("assets", assets),
@@ -226,14 +228,15 @@ def build_IDIA():
     co = od(
         ("ticker", "IDIA"),
         ("name", "Idorsia Pharmaceuticals Ltd."),
-        ("currentPrice", 3.62),
-        ("sharesOut", 295),
-        # Net debt CHF M after Feb 2025 CB restructuring + new financings.
-        # CB face ~CHF 800M restructured; cash ~CHF 350M post Oct 2025 raise; net ~-450
-        ("cash", -450),  # CHF M
+        ("currentPrice", 3.79),
+        ("sharesOut", 250),
+        # YE2025 actual: cash CHF 89M vs total indebtedness CHF 1,342M
+        # (CB residual 49M + convertible loan 335M + debt notes 753M + term loan 18M)
+        # = NET DEBT CHF -1,253M. Heavy debt overhang dominates valuation.
+        ("cash", -1253),  # CHF M -- per Feb 26 2026 release
         ("currency", "CHF"),
         ("phase", "commercial"),
-        ("subtitle", "Swiss specialty; emerging from heavy CB restructuring (Feb 2025: CHF 800M CB amendments + new money). FY25 revenue CHF 221M (+2x): Quviviq (daridorexant DORA insomnia FDA Apr 2022) CHF 134M (+>130%; EU growth driver), Tryvio (aprocitentan dual ETA/ETB resistant HTN FDA Mar 2024) ramping post REMS removal Mar 2025. Selatogrel + cenerimod outlicensed to Viatris Mar 2024 (USD 350M up + royalties; FY25 reduced milestones USD 250M). Lucerastat (Fabry GCS inhibitor) Ph3 design FDA-agreed Feb 2026. CEO Srishti Gupta. Cash runway extended to 2028 post Oct 2025 financing. Commercial profitability target 2026; overall profitability end 2027. ~636 FTE post-restructuring."),
+        ("subtitle", "Swiss specialty; emerging from CB restructuring but still heavily indebted (CHF -1,253M net debt: convertible loan 335M + debt notes 753M + CB residual 49M; cash only CHF 89M YE25). FY25 revenue CHF 221M (+2x): Quviviq daridorexant DORA insomnia CHF 134M (+>130%; FY26 guide CHF 200M; EU growth driver, US softer). Tryvio aprocitentan dual ETA/ETB resistant HTN (FDA Mar 2024; REMS removed Mar 2025) immaterial sales bundled. Contract revenue CHF 79M includes $100M Viatris CLAWBACK (Viatris RETURNED selatogrel + cenerimod rights -- both assets back to Idorsia). Lucerastat oral GCS inhibitor Fabry: FDA-agreed two-trial Ph3 design Feb 2026 (vs ERT comparator Fabrazyme/Replagal). CEO Srishti Gupta resigned Mar 16 2026; founder Jean-Paul Clozel interim CEO. ~487 FTE permanent post-restructuring. Tryvio partnership search ongoing -- exclusivity collapsed Feb 2025."),
         ("yahooTicker", "IDIA.SW"),
     )
 
@@ -265,18 +268,31 @@ def build_IDIA():
                     "us.reachPct": "Tryvio first new HTN MoA in 35 yrs; niche resistant HTN ramping"},
                    salesM=15, salesYear=2025, peakYear=2032, cagrPct=80, penPct=12)]))
 
-    # Selatogrel + Cenerimod royalty stream from Viatris
+    # Selatogrel (P2Y12 self-admin AMI) - back in Idorsia hands post Viatris return Mar 2025
     assets.append(asset(
-        "viatris_royalty", "Viatris collaboration - selatogrel (P2Y12 self-admin AMI Ph3) + cenerimod (S1P1 SLE Ph3) royalty stream",
-        "Royalty (Mar 2024 deal: USD 350M up + tiered mid-single to low-double-digit royalties + dev services contribution)",
-        "small_molecule.gpcr.various",
-        [innov_ind("viatris_pipeline_royalty", "Idorsia royalty share on Viatris-led Ph3 selatogrel + cenerimod (assets in VTRS config)",
-                   "_established_products.idia_viatris_royalty",
-                   regions((0.1, 1, 0.1), (0.1, 1, 0.1), (1, 50, 0.1)),
-                   slice_((0, 0, 0), (0, 0, 0), (10, 50, 0.1)),
-                   {"row.priceK": "Royalty proxy: low-double-digit on Viatris selatogrel + cenerimod sales"},
-                   salesM=5, salesYear=2025, peakYear=2030, cagrPct=10, penPct=15,
-                   generic_bucket=True)]))
+        "selatogrel", "Selatogrel - oral self-administered P2Y12 inhibitor for AMI patient self-injection pre-hospital",
+        "Phase 3 SOS-AMI (back in Idorsia hands post Viatris return Mar 2025; SPA + Fast Track; readout 2027)",
+        "small_molecule.gpcr.p2y12_antagonist",
+        [innov_ind("ami_self", "Acute myocardial infarction patient self-administration (pre-hospital)",
+                   "cardio_metabolic.cardiovascular.myocardial_infarction",
+                   regions((1500, 80, 8), (2000, 70, 5), (8000, 30, 2)),
+                   slice_((10, 50, 1.5), (5, 40, 1), (0.5, 15, 0.4)),
+                   {"us.reachPct": "Niche AMI pre-hospital self-admin ~5-15%",
+                    "us.priceK": "Estimated WAC $1.5K/yr if approved"},
+                   peakYear=2032, cagrPct=0, penPct=12)]))
+
+    # Cenerimod (S1P1 SLE) - back in Idorsia hands post Viatris return
+    assets.append(asset(
+        "cenerimod", "Cenerimod - selective S1P1 receptor modulator for SLE",
+        "Phase 3 OPUS-1/OPUS-2 SLE (back in Idorsia hands post Viatris return Mar 2025; readouts 2026/27)",
+        "small_molecule.gpcr.s1p1_agonist",
+        [innov_ind("sle", "Systemic lupus erythematosus moderate-severe",
+                   "immunology.autoimmune.sle",
+                   regions((350, 75, 25), (450, 60, 12), (2000, 20, 3)),
+                   slice_((4, 50, 25), (2, 40, 15), (0.3, 15, 5)),
+                   {"us.reachPct": "Cenerimod novel oral S1P1 in SLE; ~5-10% SLE Rx",
+                    "us.priceK": "Estimated WAC $25K/yr"},
+                   peakYear=2032, cagrPct=0, penPct=10)]))
 
     # Lucerastat - Fabry pipeline (Ph3 design FDA-agreed Feb 2026)
     assets.append(asset(
@@ -287,14 +303,15 @@ def build_IDIA():
                    "endocrine.lysosomal_storage.fabry",
                    regions((6, 80, 250), (10, 70, 150), (40, 18, 35)),
                    slice_((10, 50, 200), (5, 40, 120), (0.3, 18, 30)),
-                   {"us.priceK": "Estimated WAC $200K/yr oral SRT (vs Galafold migalastat ~$300K, ERT ~$300K)",
-                    "us.reachPct": "Lucerastat oral non-amenable Fabry; Sanofi Cerdelga competition (different LSD)"},
+                   {"us.priceK": "Estimated WAC $200K/yr oral SRT (vs ERT Fabrazyme/Replagal ~$300K)",
+                    "us.reachPct": "Lucerastat first oral therapy for ALL Fabry patients (vs Galafold amenable subset only); FDA-agreed two-trial design Feb 2026: baseline-controlled biopsy + ERT-comparator"},
                    peakYear=2032, cagrPct=0, penPct=12)]))
 
     # SOTP scenarios -- distressed but improving; high debt reflected in low multiples
     weights = {"mega_bear": 18, "bear": 28, "base": 32, "bull": 17, "psychedelic_bull": 5}
-    # FY25 CHF 221M; FY26 guide CHF 200M Quviviq + Tryvio + royalty ~CHF 230-250M
-    crev = {"mega_bear": 200, "bear": 250, "base": 320, "bull": 450, "psychedelic_bull": 700}
+    # FY25 CHF 221M total but CHF 79M was one-time Viatris clawback contract revenue.
+    # FY26: only Quviviq CHF 200M is guided; Tryvio + Viatris assets ramp 2027+
+    crev = {"mega_bear": 180, "bear": 220, "base": 280, "bull": 400, "psychedelic_bull": 600}
     # Quviviq doubling FY25; Tryvio post-REMS; market trades ~5-7x EV/sales
     # (mcap ~CHF 1.07B + net debt ~CHF 450M = CHF 1.52B EV vs FY25 CHF 221M)
     cmult = {"mega_bear": 2.5, "bear": 4.0, "base": 5.5, "bull": 7.5, "psychedelic_bull": 10.0}
@@ -305,15 +322,16 @@ def build_IDIA():
     SCEN = ["mega_bear", "bear", "base", "bull", "psychedelic_bull"]
     pos_grid = {
         "lucerastat": {"mega_bear": 30, "bear": 50, "base": 70, "bull": 85, "psychedelic_bull": 92},
+        "selatogrel": {"mega_bear": 25, "bear": 40, "base": 55, "bull": 70, "psychedelic_bull": 82},
+        "cenerimod":  {"mega_bear": 20, "bear": 35, "base": 50, "bull": 65, "psychedelic_bull": 78},
     }
     apr_grid = {a: {"mega_bear": 60, "bear": 75, "base": 85, "bull": 92, "psychedelic_bull": 96} for a in pos_grid}
     pen_grid = {a: {"mega_bear": 0.3, "bear": 0.5, "base": 0.8, "bull": 1.05, "psychedelic_bull": 1.25} for a in pos_grid}
-    ind_map = {"lucerastat": "fabry"}
+    ind_map = {"lucerastat": "fabry", "selatogrel": "ami_self", "cenerimod": "sle"}
 
     scenarios = od()
     commercial_inert = [
         ("quviviq", "insomnia"), ("tryvio", "resistant_htn"),
-        ("viatris_royalty", "viatris_pipeline_royalty"),
     ]
     for sk in SCEN:
         asmps = od()
@@ -339,9 +357,15 @@ def build_IDIA():
         )
 
     catalysts = [
+        od(("date", "Mar 16 2026"), ("dateSort", "2026-03-16"), ("asset", "quviviq"),
+           ("indication", "insomnia"),
+           ("title", "CEO transition: Srishti Gupta resigned; founder Jean-Paul Clozel interim CEO"),
+           ("type", "milestone"), ("binary", False),
+           ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
+           ("_source", "Idorsia Mar 16 2026 disclosure"), ("_confidence", "high")),
         od(("date", "2026"), ("dateSort", "2026-06-30"), ("asset", "tryvio"),
            ("indication", "resistant_htn"),
-           ("title", "Tryvio aprocitentan global partnership/licensing deal (post REMS removal)"),
+           ("title", "Tryvio aprocitentan global partnership/licensing deal (post REMS removal Mar 2025)"),
            ("type", "partnership"), ("binary", True),
            ("fail_pos", 60), ("fail_apr", 70), ("success_pos", 95), ("success_apr", 95),
            ("_source", "Idorsia FY25 release; partnership search ongoing"), ("_confidence", "medium")),

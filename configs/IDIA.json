@@ -2,12 +2,12 @@
   "company": {
     "ticker": "IDIA",
     "name": "Idorsia Pharmaceuticals Ltd.",
-    "currentPrice": 3.62,
-    "sharesOut": 295,
-    "cash": -450,
+    "currentPrice": 3.79,
+    "sharesOut": 250,
+    "cash": -1253,
     "currency": "CHF",
     "phase": "commercial",
-    "subtitle": "Swiss specialty; emerging from heavy CB restructuring (Feb 2025: CHF 800M CB amendments + new money). FY25 revenue CHF 221M (+2x): Quviviq (daridorexant DORA insomnia FDA Apr 2022) CHF 134M (+>130%; EU growth driver), Tryvio (aprocitentan dual ETA/ETB resistant HTN FDA Mar 2024) ramping post REMS removal Mar 2025. Selatogrel + cenerimod outlicensed to Viatris Mar 2024 (USD 350M up + royalties; FY25 reduced milestones USD 250M). Lucerastat (Fabry GCS inhibitor) Ph3 design FDA-agreed Feb 2026. CEO Srishti Gupta. Cash runway extended to 2028 post Oct 2025 financing. Commercial profitability target 2026; overall profitability end 2027. ~636 FTE post-restructuring.",
+    "subtitle": "Swiss specialty; emerging from CB restructuring but still heavily indebted (CHF -1,253M net debt: convertible loan 335M + debt notes 753M + CB residual 49M; cash only CHF 89M YE25). FY25 revenue CHF 221M (+2x): Quviviq daridorexant DORA insomnia CHF 134M (+>130%; FY26 guide CHF 200M; EU growth driver, US softer). Tryvio aprocitentan dual ETA/ETB resistant HTN (FDA Mar 2024; REMS removed Mar 2025) immaterial sales bundled. Contract revenue CHF 79M includes $100M Viatris CLAWBACK (Viatris RETURNED selatogrel + cenerimod rights -- both assets back to Idorsia). Lucerastat oral GCS inhibitor Fabry: FDA-agreed two-trial Ph3 design Feb 2026 (vs ERT comparator Fabrazyme/Replagal). CEO Srishti Gupta resigned Mar 16 2026; founder Jean-Paul Clozel interim CEO. ~487 FTE permanent post-restructuring. Tryvio partnership search ongoing -- exclusivity collapsed Feb 2025.",
     "yahooTicker": "IDIA.SW"
   },
   "assets": [
@@ -130,60 +130,115 @@
       ]
     },
     {
-      "id": "viatris_royalty",
-      "name": "Viatris collaboration - selatogrel (P2Y12 self-admin AMI Ph3) + cenerimod (S1P1 SLE Ph3) royalty stream",
-      "stage": "Royalty (Mar 2024 deal: USD 350M up + tiered mid-single to low-double-digit royalties + dev services contribution)",
-      "modality": "small_molecule.gpcr.various",
+      "id": "selatogrel",
+      "name": "Selatogrel - oral self-administered P2Y12 inhibitor for AMI patient self-injection pre-hospital",
+      "stage": "Phase 3 SOS-AMI (back in Idorsia hands post Viatris return Mar 2025; SPA + Fast Track; readout 2027)",
+      "modality": "small_molecule.gpcr.p2y12_antagonist",
       "targets": [],
       "indications": [
         {
-          "id": "viatris_pipeline_royalty",
-          "name": "Idorsia royalty share on Viatris-led Ph3 selatogrel + cenerimod (assets in VTRS config)",
-          "area": "_established_products.idia_viatris_royalty",
+          "id": "ami_self",
+          "name": "Acute myocardial infarction patient self-administration (pre-hospital)",
+          "area": "cardio_metabolic.cardiovascular.myocardial_infarction",
           "market": {
             "regions": {
               "us": {
-                "patientsK": 0.1,
-                "wtpPct": 1,
-                "priceK": 0.1
+                "patientsK": 1500,
+                "wtpPct": 80,
+                "priceK": 8
               },
               "eu": {
-                "patientsK": 0.1,
-                "wtpPct": 1,
-                "priceK": 0.1
+                "patientsK": 2000,
+                "wtpPct": 70,
+                "priceK": 5
               },
               "row": {
-                "patientsK": 1,
-                "wtpPct": 50,
-                "priceK": 0.1
+                "patientsK": 8000,
+                "wtpPct": 30,
+                "priceK": 2
               }
             },
             "company_slice": {
               "us": {
-                "reachPct": 0.0,
-                "wtpPct": 0,
-                "priceK": 0
+                "reachPct": 10,
+                "wtpPct": 50,
+                "priceK": 1.5
               },
               "eu": {
-                "reachPct": 0.0,
-                "wtpPct": 0,
-                "priceK": 0
+                "reachPct": 5,
+                "wtpPct": 40,
+                "priceK": 1
               },
               "row": {
-                "reachPct": 95,
-                "wtpPct": 50,
-                "priceK": 0.1
+                "reachPct": 0.5,
+                "wtpPct": 15,
+                "priceK": 0.4
               }
             },
             "company_slice_sources": {
-              "row.priceK": "Royalty proxy: low-double-digit on Viatris selatogrel + cenerimod sales"
+              "us.reachPct": "Niche AMI pre-hospital self-admin ~5-15%",
+              "us.priceK": "Estimated WAC $1.5K/yr if approved"
             },
-            "penPct": 15,
-            "cagrPct": 10,
-            "peakYear": 2030,
-            "salesM": 5,
-            "salesYear": 2025,
-            "_genericBucket": true
+            "penPct": 12,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "cenerimod",
+      "name": "Cenerimod - selective S1P1 receptor modulator for SLE",
+      "stage": "Phase 3 OPUS-1/OPUS-2 SLE (back in Idorsia hands post Viatris return Mar 2025; readouts 2026/27)",
+      "modality": "small_molecule.gpcr.s1p1_agonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "sle",
+          "name": "Systemic lupus erythematosus moderate-severe",
+          "area": "immunology.autoimmune.sle",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 300,
+                "wtpPct": 55,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 350,
+                "wtpPct": 38,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 4000,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 50,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 40,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 15,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Cenerimod novel oral S1P1 in SLE; ~5-10% SLE Rx",
+              "us.priceK": "Estimated WAC $25K/yr"
+            },
+            "penPct": 25,
+            "cagrPct": 0,
+            "peakYear": 2032
           }
         }
       ]
@@ -235,8 +290,8 @@
               }
             },
             "company_slice_sources": {
-              "us.priceK": "Estimated WAC $200K/yr oral SRT (vs Galafold migalastat ~$300K, ERT ~$300K)",
-              "us.reachPct": "Lucerastat oral non-amenable Fabry; Sanofi Cerdelga competition (different LSD)"
+              "us.priceK": "Estimated WAC $200K/yr oral SRT (vs ERT Fabrazyme/Replagal ~$300K)",
+              "us.reachPct": "Lucerastat first oral therapy for ALL Fabry patients (vs Galafold amenable subset only); FDA-agreed two-trial design Feb 2026: baseline-controlled biopsy + ERT-comparator"
             },
             "penPct": 55,
             "cagrPct": 0,
@@ -253,7 +308,7 @@
         "pipelineDR": 12,
         "pipelineMult": 2,
         "commercialMult": 2.5,
-        "commercialRevM": 200,
+        "commercialRevM": 180,
         "milestones": 0,
         "dil": 0
       },
@@ -272,16 +327,23 @@
             "pen": 1
           }
         },
-        "viatris_royalty": {
-          "viatris_pipeline_royalty": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1
-          }
-        },
         "lucerastat": {
           "fabry": {
             "pos": 30,
+            "apr": 60,
+            "pen": 0.3
+          }
+        },
+        "selatogrel": {
+          "ami_self": {
+            "pos": 25,
+            "apr": 60,
+            "pen": 0.3
+          }
+        },
+        "cenerimod": {
+          "sle": {
+            "pos": 20,
             "apr": 60,
             "pen": 0.3
           }
@@ -294,7 +356,7 @@
         "pipelineDR": 10,
         "pipelineMult": 3,
         "commercialMult": 4.0,
-        "commercialRevM": 250,
+        "commercialRevM": 220,
         "milestones": 50,
         "dil": 0
       },
@@ -313,16 +375,23 @@
             "pen": 1
           }
         },
-        "viatris_royalty": {
-          "viatris_pipeline_royalty": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1
-          }
-        },
         "lucerastat": {
           "fabry": {
             "pos": 50,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "selatogrel": {
+          "ami_self": {
+            "pos": 40,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "cenerimod": {
+          "sle": {
+            "pos": 35,
             "apr": 75,
             "pen": 0.5
           }
@@ -335,7 +404,7 @@
         "pipelineDR": 8,
         "pipelineMult": 5,
         "commercialMult": 5.5,
-        "commercialRevM": 320,
+        "commercialRevM": 280,
         "milestones": 150,
         "dil": 0
       },
@@ -354,16 +423,23 @@
             "pen": 1
           }
         },
-        "viatris_royalty": {
-          "viatris_pipeline_royalty": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1
-          }
-        },
         "lucerastat": {
           "fabry": {
             "pos": 70,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "selatogrel": {
+          "ami_self": {
+            "pos": 55,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "cenerimod": {
+          "sle": {
+            "pos": 50,
             "apr": 85,
             "pen": 0.8
           }
@@ -376,7 +452,7 @@
         "pipelineDR": 7,
         "pipelineMult": 8,
         "commercialMult": 7.5,
-        "commercialRevM": 450,
+        "commercialRevM": 400,
         "milestones": 350,
         "dil": 0
       },
@@ -395,16 +471,23 @@
             "pen": 1
           }
         },
-        "viatris_royalty": {
-          "viatris_pipeline_royalty": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1
-          }
-        },
         "lucerastat": {
           "fabry": {
             "pos": 85,
+            "apr": 92,
+            "pen": 1.05
+          }
+        },
+        "selatogrel": {
+          "ami_self": {
+            "pos": 70,
+            "apr": 92,
+            "pen": 1.05
+          }
+        },
+        "cenerimod": {
+          "sle": {
+            "pos": 65,
             "apr": 92,
             "pen": 1.05
           }
@@ -417,7 +500,7 @@
         "pipelineDR": 6,
         "pipelineMult": 13,
         "commercialMult": 10.0,
-        "commercialRevM": 700,
+        "commercialRevM": 600,
         "milestones": 700,
         "dil": 0
       },
@@ -436,16 +519,23 @@
             "pen": 1
           }
         },
-        "viatris_royalty": {
-          "viatris_pipeline_royalty": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1
-          }
-        },
         "lucerastat": {
           "fabry": {
             "pos": 92,
+            "apr": 96,
+            "pen": 1.25
+          }
+        },
+        "selatogrel": {
+          "ami_self": {
+            "pos": 82,
+            "apr": 96,
+            "pen": 1.25
+          }
+        },
+        "cenerimod": {
+          "sle": {
+            "pos": 78,
             "apr": 96,
             "pen": 1.25
           }
@@ -455,11 +545,26 @@
   },
   "catalysts": [
     {
+      "date": "Mar 16 2026",
+      "dateSort": "2026-03-16",
+      "asset": "quviviq",
+      "indication": "insomnia",
+      "title": "CEO transition: Srishti Gupta resigned; founder Jean-Paul Clozel interim CEO",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Idorsia Mar 16 2026 disclosure",
+      "_confidence": "high"
+    },
+    {
       "date": "2026",
       "dateSort": "2026-06-30",
       "asset": "tryvio",
       "indication": "resistant_htn",
-      "title": "Tryvio aprocitentan global partnership/licensing deal (post REMS removal)",
+      "title": "Tryvio aprocitentan global partnership/licensing deal (post REMS removal Mar 2025)",
       "type": "partnership",
       "binary": true,
       "fail_pos": 60,

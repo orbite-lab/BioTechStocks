@@ -1,20 +1,20 @@
 {
   "company": {
     "ticker": "GLPG",
-    "name": "Galapagos NV",
-    "currentPrice": 29,
+    "name": "Galapagos NV (renaming to Lakefront Biotherapeutics May 8 2026)",
+    "currentPrice": 26.46,
     "sharesOut": 65.9,
     "cash": 1700,
     "currency": "EUR",
-    "phase": "commercial",
-    "subtitle": "Belgian biotech in radical restructuring. SpinCo split announced Jan 2025 then SCRAPPED May 2025; cell therapy entirely WOUND DOWN announced Oct 2025 (implementation Jan 2026 post works council). Now cash-rich shell: EUR 3.0B cash YE25 (vs ~EUR 2.0B mcap; deeply negative EV). FY25 revenue ~EUR 1.06B (one-time Gilead deferred income release EUR 1,069M; underlying small). FY26 guide: cash flow neutral-to-positive ex-BD. Lead assets post-wind-down: GLPG3667 (selective TYK2 oral; Ph2 SLE missed primary, dermatomyositis hit; Ph3-enabling readout early 2026), Jyseleca royalty (sold to Alfasigma Jan 2024; mid-single to mid-double-digit royalties), CAR-T residual (GLPG5101 ATALANTA-1 MCL 100% ORR / 96% CR ASH 2025; FDA RMAT; being out-licensed/sold). Strategic posture: cash redeployment via BD/M&A.",
-    "yahooTicker": "GLPG"
+    "phase": "phase3",
+    "subtitle": "Belgian biotech transformed to BD shell (renaming Lakefront Biotherapeutics May 8 2026). SpinCo split scrapped May 2025; cell therapy entirely WOUND DOWN (implementation began Jan 2026; no buyer found). Headcount targeting ~35-40 employees by end-2026. Reported cash EUR 3.0B YE25 (vs EUR 1.74B mcap). MARCH 2026: GLPG funds 50% of Gilead's $2.1B Ouro Medicines acquisition (~$1.05B / EUR 970M deployment in T-cell engagers). FY25 operating profit EUR 295M (vs -EUR 188M FY24; driven by Gilead deferred income release). Lead remaining: GLPG3667 selective TYK2 -- Phase 3-enabling topline DEC 18 2025: dermatomyositis HIT primary (p=0.0848, borderline; ARGX Vyvgart ALKIVIA competition), SLE MISSED primary (Wk48 final Q2 2026); only remaining immunology asset. Jyseleca royalty (Alfasigma Jan 2024; mid-single to mid-double-digit). GLPG5101 CD19 CAR-T (ATALANTA-1 MCL 100% ORR ASH 2025) terminal: no buyer, winding down.",
+    "yahooTicker": "GLPG.AS"
   },
   "assets": [
     {
       "id": "glpg3667",
       "name": "GLPG3667 - selective TYK2 inhibitor (oral; deuterium-modified pseudokinase domain selective)",
-      "stage": "Phase 3-enabling (Ph2 SLE missed primary; Ph2 dermatomyositis hit; topline early 2026)",
+      "stage": "Phase 3 design pending (Ph2 dermatomyositis HIT primary p=0.0848 borderline Dec 2025; SLE MISSED primary; SLE Wk48 final Q2 2026)",
       "modality": "small_molecule.kinase.tyk2",
       "targets": [],
       "indications": [
@@ -178,7 +178,7 @@
     {
       "id": "glpg5101",
       "name": "GLPG5101 - CD19 CAR-T (Cellpoint decentralized 7-day vein-to-vein platform)",
-      "stage": "Phase 2 (ATALANTA-1 MCL 100% ORR + 96% CR ASH 2025; FDA RMAT; Galapagos winding down cell therapy -- seeking buyer/out-license)",
+      "stage": "Wind-down implementation Jan 2026 (no buyer/licensee found; ATALANTA-1 MCL ASH 2025 100% ORR / 96% CR data + FDA RMAT not monetized)",
       "modality": "cell_therapy.car_t.cd19",
       "targets": [],
       "indications": [
@@ -251,19 +251,19 @@
         },
         "glpg3667": {
           "sle_3667": {
-            "pos": 25,
+            "pos": 30,
             "apr": 60,
             "pen": 0.3
           },
           "dermatomyositis_3667": {
-            "pos": 25,
+            "pos": 30,
             "apr": 60,
             "pen": 0.3
           }
         },
         "glpg5101": {
           "mcl_cart": {
-            "pos": 15,
+            "pos": 1,
             "apr": 60,
             "pen": 0.3
           }
@@ -287,19 +287,19 @@
         },
         "glpg3667": {
           "sle_3667": {
-            "pos": 40,
+            "pos": 45,
             "apr": 75,
             "pen": 0.5
           },
           "dermatomyositis_3667": {
-            "pos": 40,
+            "pos": 45,
             "apr": 75,
             "pen": 0.5
           }
         },
         "glpg5101": {
           "mcl_cart": {
-            "pos": 28,
+            "pos": 3,
             "apr": 75,
             "pen": 0.5
           }
@@ -323,19 +323,19 @@
         },
         "glpg3667": {
           "sle_3667": {
-            "pos": 55,
+            "pos": 60,
             "apr": 85,
             "pen": 0.8
           },
           "dermatomyositis_3667": {
-            "pos": 55,
+            "pos": 60,
             "apr": 85,
             "pen": 0.8
           }
         },
         "glpg5101": {
           "mcl_cart": {
-            "pos": 45,
+            "pos": 8,
             "apr": 85,
             "pen": 0.8
           }
@@ -359,19 +359,19 @@
         },
         "glpg3667": {
           "sle_3667": {
-            "pos": 70,
+            "pos": 75,
             "apr": 92,
             "pen": 1.05
           },
           "dermatomyositis_3667": {
-            "pos": 70,
+            "pos": 75,
             "apr": 92,
             "pen": 1.05
           }
         },
         "glpg5101": {
           "mcl_cart": {
-            "pos": 60,
+            "pos": 18,
             "apr": 92,
             "pen": 1.05
           }
@@ -395,19 +395,19 @@
         },
         "glpg3667": {
           "sle_3667": {
-            "pos": 82,
+            "pos": 85,
             "apr": 96,
             "pen": 1.25
           },
           "dermatomyositis_3667": {
-            "pos": 82,
+            "pos": 85,
             "apr": 96,
             "pen": 1.25
           }
         },
         "glpg5101": {
           "mcl_cart": {
-            "pos": 72,
+            "pos": 35,
             "apr": 96,
             "pen": 1.25
           }
@@ -417,48 +417,48 @@
   },
   "catalysts": [
     {
-      "date": "Q1 2026",
-      "dateSort": "2026-03-31",
+      "date": "Mar 2026",
+      "dateSort": "2026-03-15",
       "asset": "glpg3667",
-      "indication": "dermatomyositis_3667",
-      "title": "GLPG3667 TYK2 Ph2 dermatomyositis topline + Ph3 design",
-      "type": "phase2_data",
-      "binary": true,
-      "fail_pos": 25,
-      "fail_apr": 65,
-      "success_pos": 75,
-      "success_apr": 88,
-      "_source": "Galapagos pipeline; Q3 2025 update",
+      "indication": "sle_3667",
+      "title": "Gilead Ouro 50% co-investment ($1.05B; T-cell engager pipeline addition)",
+      "type": "m_and_a",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Galapagos Mar 2026 announcement",
       "_confidence": "high"
     },
     {
-      "date": "H1 2026",
-      "dateSort": "2026-06-30",
-      "asset": "glpg5101",
-      "indication": "mcl_cart",
-      "title": "GLPG5101 CAR-T out-licensing/sale (cell therapy wind-down implementation)",
-      "type": "partnership",
-      "binary": true,
-      "fail_pos": 15,
-      "fail_apr": 60,
-      "success_pos": 70,
-      "success_apr": 90,
-      "_source": "Galapagos Oct 2025 wind-down announcement",
-      "_confidence": "medium"
-    },
-    {
-      "date": "2026",
-      "dateSort": "2026-12-15",
+      "date": "May 8 2026",
+      "dateSort": "2026-05-08",
       "asset": "glpg3667",
       "indication": "sle_3667",
-      "title": "Strategic BD/M&A capital deployment ($3B cash optionality)",
+      "title": "Renaming to Lakefront Biotherapeutics (shareholder-approved)",
       "type": "milestone",
       "binary": false,
       "fail_pos": 100,
       "fail_apr": 100,
       "success_pos": 100,
       "success_apr": 100,
-      "_source": "Galapagos FY25 release; CEO commentary",
+      "_source": "GLPG 2026 AGM resolutions",
+      "_confidence": "high"
+    },
+    {
+      "date": "Q2 2026",
+      "dateSort": "2026-06-30",
+      "asset": "glpg3667",
+      "indication": "sle_3667",
+      "title": "GLPG3667 SLE Wk48 final data (Wk32 SRI-4 missed primary Dec 2025)",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 20,
+      "fail_apr": 60,
+      "success_pos": 65,
+      "success_apr": 85,
+      "_source": "Galapagos Dec 18 2025 disclosure",
       "_confidence": "medium"
     }
   ]

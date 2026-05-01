@@ -884,20 +884,26 @@ async function main(){
     const r=[];
     for(const[tk,cfg]of Object.entries(configs)){
       const co=cfg.company;
+      const isPrivate=!!co.private;
       const lp=livePrices[tk];
-      const price=lp?lp.price:co.currentPrice;
+      // Private companies: no equity tradeable -> no price/TP/EV/cash makes sense.
+      // Show only sales + pipeline; null out market-derived fields.
+      const price=isPrivate?null:(lp?lp.price:co.currentPrice);
       const prevClose=lp?lp.prevClose:null;
-      const {results,weightedTP}=computeAll(cfg);
-      const tps={};SK.forEach(s=>{tps[s]=results[s]?results[s].tp:null;});
-      const cashPS=co.cash/co.sharesOut;
-      const ev=Math.max(0,price*co.sharesOut-co.cash);
-      const evUSD=toUSD(ev,co.currency||'USD')/1000; // in $B USD
-      const mcapUSDB=toUSD(price*co.sharesOut, co.currency||'USD')/1000; // in $B USD
-      // Market cap tier: mega >100, large 20-100, mid 5-20, small 1-5, micro <1 ($B USD)
-      const mcapTier=mcapUSDB>=100?'mega':mcapUSDB>=20?'large':mcapUSDB>=5?'mid':mcapUSDB>=1?'small':'micro';
-      const wtUp=((weightedTP-price)/price*100);
+      let tps={},weightedTP=null,wtUp=null,cashPS=null,ev=null,evUSD=null,mcapUSDB=null,mcapTier='private';
+      if(!isPrivate){
+        const r2=computeAll(cfg);
+        SK.forEach(s=>{tps[s]=r2.results[s]?r2.results[s].tp:null;});
+        weightedTP=r2.weightedTP;
+        cashPS=co.cash/co.sharesOut;
+        ev=Math.max(0,price*co.sharesOut-co.cash);
+        evUSD=toUSD(ev,co.currency||'USD')/1000;
+        mcapUSDB=toUSD(price*co.sharesOut,co.currency||'USD')/1000;
+        mcapTier=mcapUSDB>=100?'mega':mcapUSDB>=20?'large':mcapUSDB>=5?'mid':mcapUSDB>=1?'small':'micro';
+        wtUp=((weightedTP-price)/price*100);
+      }
       const meta=deriveCompanyMeta(cfg);
-      const catalysts=computeCatalysts(cfg,price);
+      const catalysts=isPrivate?[]:computeCatalysts(cfg,price);
       // Sum reported drug sales 2025 across all indications. Per CLAUDE.md convention,
       // m.salesM is in USD $M for ALL configs (regardless of company.currency).
       // Includes pseudo-area heritage tails (_established_products.*_heritage etc) so
@@ -911,7 +917,7 @@ async function main(){
         }
       }
       r.push({ticker:tk,name:co.name,ccy:ccySym(co.currency),dec:ccyDec(co.currency),
-        price,prevClose,configPrice:co.currentPrice,live:!!lp,cashPS,ev,evUSD,mcapUSDB,mcapTier,tps,weightedTP,wtUp,currency:co.currency,subtitle:co.subtitle||"",yahooTicker:co.yahooTicker||tk,meta,catalysts,salesM2025:salesM2025USD});
+        isPrivate,price,prevClose,configPrice:co.currentPrice,live:!!lp,cashPS,ev,evUSD,mcapUSDB,mcapTier,tps,weightedTP,wtUp,currency:co.currency,subtitle:co.subtitle||"",yahooTicker:co.yahooTicker||tk,meta,catalysts,salesM2025:salesM2025USD});
     }
     return r;
   }
@@ -929,13 +935,15 @@ async function main(){
     let items='';
     for(const[tk,cfg]of Object.entries(configs)){
       const co=cfg.company;
+      const isPrivate=!!co.private;
       const lp=livePrices[tk];
       const displayPrice=(lp&&lp.price>0)?lp.price:co.currentPrice;
       const isLive=!!(lp&&lp.price>0);
-      const priceColor=isLive?'var(--text)':'var(--text2)';
-      const priceOpacity=isLive?'1':'0.6';
-      const priceTitle=isLive?'live (prices.json)':'stale (config default)';
-      items+=`<a class="topbar-item" href="model.html?ticker=${tk}" style="text-decoration:none;color:inherit"><span><span class="t">${tk}</span><span class="n">${co.name}</span></span><span title="${priceTitle}" style="font-family:var(--mono);font-size:.7rem;color:${priceColor};opacity:${priceOpacity}">${ccySym(co.currency)}${Number(displayPrice).toFixed(2)}</span></a>`;
+      const priceColor=isPrivate?'#94a3b8':(isLive?'var(--text)':'var(--text2)');
+      const priceOpacity=isPrivate?'0.7':(isLive?'1':'0.6');
+      const priceTitle=isPrivate?'Private (no equity tradeable)':(isLive?'live (prices.json)':'stale (config default)');
+      const priceLabel=isPrivate?'Private':`${ccySym(co.currency)}${Number(displayPrice).toFixed(2)}`;
+      items+=`<a class="topbar-item" href="model.html?ticker=${tk}" style="text-decoration:none;color:inherit"><span><span class="t">${tk}</span><span class="n">${co.name}</span></span><span title="${priceTitle}" style="font-family:var(--mono);font-size:.7rem;color:${priceColor};opacity:${priceOpacity}">${priceLabel}</span></a>`;
     }
     tl.innerHTML=items;
   }
@@ -1014,8 +1022,11 @@ async function main(){
 
   let sortKey="wtUp",sortDir=-1;
   const doSort=()=>{rows.sort((a,b)=>{
+    // Push private rows to bottom of sorts that depend on price/TP/upside
+    const aPriv=a.isPrivate, bPriv=b.isPrivate;
+    if(aPriv!==bPriv && (sortKey==='wtUp'||sortKey==='price'||SK.includes(sortKey))) return aPriv?1:-1;
     let va,vb;
-    if(SK.includes(sortKey)){va=a.tps[sortKey]?((a.tps[sortKey]-a.price)/a.price):0;vb=b.tps[sortKey]?((b.tps[sortKey]-b.price)/b.price):0;}
+    if(SK.includes(sortKey)){va=a.tps[sortKey]&&a.price?((a.tps[sortKey]-a.price)/a.price):0;vb=b.tps[sortKey]&&b.price?((b.tps[sortKey]-b.price)/b.price):0;}
     else{va=a[sortKey];vb=b[sortKey];}
     if(typeof va==="string")return sortDir*va.localeCompare(vb);return sortDir*((va||0)-(vb||0));
   });};
@@ -1379,6 +1390,7 @@ async function main(){
   }
 
   function bucketOf(r){
+    if(r.isPrivate)return 'private';
     if(r.tps.bear!=null&&r.price<r.tps.bear)return 'below_bear';
     if(r.tps.base!=null&&r.price<r.tps.base)return 'bear_base';
     if(r.tps.bull!=null&&r.price<r.tps.bull)return 'base_bull';
@@ -3116,6 +3128,15 @@ async function main(){
         nameExtra=`<span class="purity-badge" style="background:#f59e0b22;color:#fbbf24;border-color:#f59e0b33">${rp}%</span>`;
       }
       h+=`<td style="color:var(--text2);font-size:.75rem;max-width:220px;overflow:hidden;text-overflow:ellipsis">${r.name}${nameExtra}</td>`;
+      if(r.isPrivate){
+        // Private: no price/EV/TP. Show "Private" badge; only sales 2025 visible.
+        h+=`<td class="r mono"><span style="font-size:.6rem;font-weight:700;padding:2px 6px;border-radius:3px;background:#94a3b822;color:#94a3b8" title="Private company / wholly-owned subsidiary -- no public equity tradeable">Private</span></td>`;
+        h+=`<td class="r mono" style="opacity:.3">\u2014</td>`;
+        h+=`<td class="r mono" style="opacity:.3">\u2014</td>`;
+        h+=`<td class="r mono" style="color:#22c55e">${r.salesM2025>0?Math.round(r.salesM2025).toLocaleString():'—'}</td>`;
+        SK.forEach(()=>{h+='<td class="r" style="opacity:.3">\u2014</td>';});
+        h+=`<td class="r mono" style="opacity:.3">\u2014</td>`;
+      }else{
       h+=`<td class="r mono">${c}${r.price.toFixed(d)}`;
       if(r.live&&r.prevClose){const chg=((r.price-r.prevClose)/r.prevClose*100);h+=`<span style="font-size:.65rem;margin-left:3px;color:${chg>=0?'#86efac':'#fca5a5'}">${chg>=0?'+':''}${chg.toFixed(1)}%</span>`;}
       if(r.live)h+=`<span style="font-size:.55rem;color:#22c55e;margin-left:2px" title="Live price">\u25CF</span>`;
@@ -3131,6 +3152,7 @@ async function main(){
       });
       const wc=r.wtUp>30?'#86efac':r.wtUp>0?'#fbbf24':'#fca5a5';
       h+=`<td class="r mono" style="color:${wc}">${r.wtUp>=0?'+':''}${r.wtUp.toFixed(0)}%</td>`;
+      }
       h+='</tr>';
     });
     h+='</tbody></table></div></div>';

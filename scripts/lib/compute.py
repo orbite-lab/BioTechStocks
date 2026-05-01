@@ -45,11 +45,14 @@ def _is_commercial(asset):
 
 def compute_tp(cfg, scenario_key):
     """Compute target price for one scenario. Mirrors computeScenario() in
-    index.html and model.html. Returns None if scenario missing."""
+    index.html and model.html. Returns None if scenario missing OR if the
+    company is private (no equity tradeable -- TP would be meaningless)."""
     scen = cfg.get("scenarios", {}).get(scenario_key)
     if not scen:
         return None
     co = cfg["company"]
+    if co.get("private"):
+        return None
     val = scen.get("val", {})
     is_sotp = val.get("pipelineDR") is not None
 

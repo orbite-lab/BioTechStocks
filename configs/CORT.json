@@ -2,9 +2,9 @@
   "company": {
     "ticker": "CORT",
     "name": "Corcept Therapeutics, Inc.",
-    "currentPrice": 45.04,
-    "sharesOut": 107.4,
-    "cash": 532,
+    "currentPrice": 38.2,
+    "sharesOut": 106.4,
+    "cash": 524,
     "currency": "USD",
     "phase": "commercial",
     "subtitle": "Cortisol modulator specialty (Korlym Cushing's franchise + relacorilant pivot). FY25 revenue $761.4M (+13% YoY): Korlym (mifepristone + AG) entire franchise -- only approved drug for Cushing's syndrome hyperglycemia (FDA 2012); tablets sold +37%. Profitable: Net income $99.7M ($0.82 EPS); $246M buybacks FY25; cash $532M no debt. RELACORILANT (selective oral GR antagonist; non-steroidal cortisol modulator): (1) CUSHING'S NDA -> FDA CRL Dec 30 2025 (additional efficacy evidence required; resubmission path TBD); GRACE Ph3 + GRADIENT confirmatory both positive. (2) PLATINUM-RESISTANT OVARIAN CANCER: relacorilant + nab-paclitaxel ROSELLA Ph3 positive (PFS + OS); FDA APPROVED Mar 25 2026 as 'LIFYORLI' (PDUFA originally Jul 11 2026; early approval). DAZUCORILANT (CORT113176) -- DAZALS Ph2 ALS missed primary endpoint Dec 2024 but 300mg survival HR 0.13 (p<0.0001) at 2-yr; ENCALS Jun 2025 follow-up. Earlier-stage GR antagonist platform CORT125281, CORT125329.",
@@ -191,7 +191,7 @@
     {
       "id": "dazucorilant",
       "name": "Dazucorilant (CORT113176) - selective GR antagonist for ALS",
-      "stage": "Phase 2 DAZALS (missed ALSFRS-R primary Dec 2024 but 300mg survival HR 0.13 p<0.0001 2-yr; ENCALS Jun 2025)",
+      "stage": "Phase 3 initiating (DAZALS Ph2 missed ALSFRS-R but strong survival HR 0.16 p=0.0009 1-yr; ENCALS Jun 2025; Ph3 announced per Q3 2025)",
       "modality": "small_molecule.nuclear_receptor.gr_antagonist",
       "targets": [],
       "indications": [
@@ -243,6 +243,103 @@
           }
         }
       ]
+    },
+    {
+      "id": "miricorilant",
+      "name": "Miricorilant (CORT118335) - selective GR antagonist for MASH/NASH",
+      "stage": "Phase 2b MONARCH (fully enrolled; topline expected late 2026)",
+      "modality": "small_molecule.nuclear_receptor.gr_antagonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "mash_miri",
+          "name": "Metabolic dysfunction-associated steatohepatitis (MASH/NASH)",
+          "area": "cardio_metabolic.liver.mash",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3000,
+                "wtpPct": 35,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 25,
+                "priceK": 8
+              },
+              "row": {
+                "patientsK": 20000,
+                "wtpPct": 8,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 3,
+                "wtpPct": 35,
+                "priceK": 18
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 25,
+                "priceK": 12
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 10,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC ~$18K/yr MASH oral SOC tier",
+              "us.reachPct": "Niche GR-antagonist mechanism behind Madrigal/incretins"
+            },
+            "penPct": 8,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "nenocorilant",
+      "name": "Nenocorilant - selective GR antagonist (Ph1b oncology IO combos)",
+      "stage": "Phase 1b (combinations with checkpoint inhibitors across solid tumors)",
+      "modality": "small_molecule.nuclear_receptor.gr_antagonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "neno_io",
+          "name": "Solid tumors IO combination (early-stage platform)",
+          "area": "oncology.multi_tumor",
+          "market": {
+            "regions": {},
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 30,
+                "priceK": 150
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 25,
+                "priceK": 90
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 10,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Branded oncology combo WAC band"
+            },
+            "penPct": 2,
+            "cagrPct": 0,
+            "peakYear": 2034
+          }
+        }
+      ]
     }
   ],
   "scenarios": {
@@ -283,6 +380,20 @@
             "pos": 6,
             "apr": 60,
             "pen": 0.3
+          }
+        },
+        "miricorilant": {
+          "mash_miri": {
+            "pos": 4,
+            "apr": 50,
+            "pen": 0.2
+          }
+        },
+        "nenocorilant": {
+          "neno_io": {
+            "pos": 2,
+            "apr": 30,
+            "pen": 0.15
           }
         }
       }
@@ -325,6 +436,20 @@
             "apr": 75,
             "pen": 0.5
           }
+        },
+        "miricorilant": {
+          "mash_miri": {
+            "pos": 10,
+            "apr": 65,
+            "pen": 0.4
+          }
+        },
+        "nenocorilant": {
+          "neno_io": {
+            "pos": 5,
+            "apr": 50,
+            "pen": 0.3
+          }
         }
       }
     },
@@ -365,6 +490,20 @@
             "pos": 25,
             "apr": 85,
             "pen": 0.8
+          }
+        },
+        "miricorilant": {
+          "mash_miri": {
+            "pos": 22,
+            "apr": 80,
+            "pen": 0.7
+          }
+        },
+        "nenocorilant": {
+          "neno_io": {
+            "pos": 10,
+            "apr": 70,
+            "pen": 0.5
           }
         }
       }
@@ -407,6 +546,20 @@
             "apr": 92,
             "pen": 1.05
           }
+        },
+        "miricorilant": {
+          "mash_miri": {
+            "pos": 35,
+            "apr": 88,
+            "pen": 0.9
+          }
+        },
+        "nenocorilant": {
+          "neno_io": {
+            "pos": 18,
+            "apr": 80,
+            "pen": 0.7
+          }
         }
       }
     },
@@ -448,6 +601,20 @@
             "apr": 96,
             "pen": 1.25
           }
+        },
+        "miricorilant": {
+          "mash_miri": {
+            "pos": 50,
+            "apr": 95,
+            "pen": 1.1
+          }
+        },
+        "nenocorilant": {
+          "neno_io": {
+            "pos": 28,
+            "apr": 88,
+            "pen": 0.9
+          }
         }
       }
     }
@@ -482,6 +649,21 @@
       "success_apr": 90,
       "_source": "Corcept Dec 30 2025 PR",
       "_confidence": "high"
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "miricorilant",
+      "indication": "mash_miri",
+      "title": "Miricorilant MONARCH Ph2b MASH topline (fully enrolled)",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 8,
+      "fail_apr": 50,
+      "success_pos": 55,
+      "success_apr": 80,
+      "_source": "Corcept pipeline page",
+      "_confidence": "medium"
     },
     {
       "date": "2026-2027",

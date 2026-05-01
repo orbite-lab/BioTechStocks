@@ -601,6 +601,40 @@ REGIONS = {
         "eu":  {"patientsK": 75,    "wtpPct": 70, "priceK": 4.5},
         "row": {"patientsK": 500,   "wtpPct": 25, "priceK": 1.5},
     },
+    # Non-cystic fibrosis bronchiectasis (NCFB): chronic inflammatory lung
+    # disease with permanent bronchial dilation, recurrent pulmonary
+    # exacerbations, sputum production, decline in FEV1. ~500K US
+    # diagnosed (climbing as CT detection rises), ~750K EU, ~3M ROW
+    # symptomatic. Distinct from cystic fibrosis (CFTR) — etiology
+    # heterogeneous (post-infection, immunodeficiency, ciliary dyskinesia,
+    # idiopathic). NO approved pharmacotherapy pre-2025; standard of care =
+    # airway clearance + macrolide prophylaxis off-label + inhaled antibiotics
+    # for chronic Pseudomonas. Sole upcoming branded therapy: brensocatib
+    # (Insmed DPP-1 inhibitor; Ph3 ASPEN positive May 2024; FDA filing
+    # late 2024 / PDUFA mid-2025; first-in-class neutrophil serine
+    # protease inhibitor reducing exacerbations). Class peak forecast
+    # ~$3-5B globally (premium orphan pricing ~$80-100K/yr).
+    # source: NORD bronchiectasis; Insmed 10-K + ASPEN NEJM 2024.
+    "respiratory.genetic.bronchiectasis_ncfb": {
+        "us":  {"patientsK": 500,  "wtpPct": 35, "priceK": 60},
+        "eu":  {"patientsK": 750,  "wtpPct": 25, "priceK": 38},
+        "row": {"patientsK": 3000, "wtpPct": 8,  "priceK": 15},
+    },
+    # Refractory nontuberculous mycobacterial (NTM) lung disease,
+    # specifically Mycobacterium avium complex (MAC): chronic mycobacterial
+    # infection of lungs distinct from TB; 6-month treatment-refractory
+    # population is the addressable subset. ~50K US prevalent NTM (rising;
+    # bronchiectasis comorbidity), ~30K EU, ~200K ROW; refractory MAC ~10K
+    # US treatable. Sole branded therapy: Arikayce (amikacin liposome
+    # inhalation suspension; Insmed FDA accel 2018, full 2020); ALIS via
+    # Lamira nebulizer. Pre-Arikayce SoC = oral macrolide + ethambutol +
+    # rifampin combo (poor tolerability + high failure rate). WAC ~$120K/yr.
+    # source: Insmed 10-K; ATS/IDSA NTM guidelines 2020.
+    "respiratory.genetic.ntm_lung": {
+        "us":  {"patientsK": 50,   "wtpPct": 40, "priceK": 75},
+        "eu":  {"patientsK": 30,   "wtpPct": 25, "priceK": 45},
+        "row": {"patientsK": 200,  "wtpPct": 8,  "priceK": 18},
+    },
     "respiratory.genetic.cystic_fibrosis": {
         "us":  {"patientsK": 40,  "wtpPct": 80, "priceK": 280},
         "eu":  {"patientsK": 50,  "wtpPct": 60, "priceK": 170},
@@ -975,6 +1009,8 @@ PEN_PCT = {
     "ophthalmology.anterior_neuro.uveitis": 18,
     "cardio_metabolic.thrombosis.thrombolytic": 70,
     "respiratory.genetic.cystic_fibrosis": 80,
+    "respiratory.genetic.bronchiectasis_ncfb": 25,
+    "respiratory.genetic.ntm_lung": 30,
     "respiratory.genetic.preterm_rds": 70,
     "musculoskeletal.crystal_arthropathy.gout": 35,
     "nephrology.glomerular.aav_anca": 45,

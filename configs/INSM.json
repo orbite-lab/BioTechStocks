@@ -1,0 +1,542 @@
+{
+  "company": {
+    "ticker": "INSM",
+    "name": "Insmed Incorporated",
+    "currentPrice": 80,
+    "sharesOut": 178,
+    "cash": 860,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Specialty rare pulmonary disease pharma. Commercial: Arikayce (amikacin liposome inhalation suspension ALIS via Lamira nebulizer; refractory MAC lung disease ~$370M FY24). Flagship pipeline: brensocatib (oral DPP-1 / dipeptidyl peptidase-1 inhibitor; first-in-class) Ph3 ASPEN POSITIVE May 2024 in non-CF bronchiectasis (NCFB; first-ever approved NCFB therapy if approved; FDA filing late 2024 / PDUFA mid-2025); also Ph2b CRSwNP. TPIP (treprostinil palmitil inhalation powder dry-powder formulation) Ph3 PAH + Ph2 PH-ILD competing with UTHR Tyvaso. Major launch year 2025-2026 with brensocatib.",
+    "yahooTicker": "INSM"
+  },
+  "assets": [
+    {
+      "id": "arikayce",
+      "name": "Arikayce (amikacin liposome inhalation suspension; ALIS) - aminoglycoside antibiotic in proprietary liposome formulation (via Lamira nebulizer)",
+      "stage": "Commercial (refractory MAC lung disease FDA accel 2018, full 2020); ENCORE Ph3 confirmatory + 1L MAC expansion ARISE Ph3 ongoing",
+      "modality": "small_molecule.antibiotic.aminoglycoside_liposomal",
+      "targets": [
+        "RPSL"
+      ],
+      "indications": [
+        {
+          "id": "mac_refractory",
+          "name": "Refractory Mycobacterium avium complex (MAC) lung disease (6-month treatment-refractory)",
+          "area": "respiratory.genetic.ntm_lung",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 40,
+                "priceK": 75
+              },
+              "eu": {
+                "patientsK": 30,
+                "wtpPct": 25,
+                "priceK": 45
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 8,
+                "priceK": 18
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 60,
+                "priceK": 120
+              },
+              "eu": {
+                "reachPct": 6,
+                "wtpPct": 40,
+                "priceK": 75
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 10,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Arikayce sole approved MAC therapy; ~12% of refractory MAC US treated; growing on ARISE 1L expansion + comorbid bronchiectasis pull-through",
+              "us.priceK": "Arikayce WAC ~$120K/yr (~$10K/mo)"
+            },
+            "penPct": 30,
+            "cagrPct": 6,
+            "peakYear": 2031,
+            "salesM": 370,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "brensocatib",
+      "name": "Brensocatib (INS-1007) - oral first-in-class dipeptidyl peptidase-1 (DPP-1 / cathepsin C) reversible inhibitor (ex-AstraZeneca; AZD7986)",
+      "stage": "Phase 3 ASPEN POSITIVE May 2024 NCFB (FDA filing late 2024; PDUFA mid-2025); Ph2b CRSwNP; flagship pipeline asset",
+      "modality": "small_molecule.enzyme.dpp1_inhibitor",
+      "targets": [
+        "DPP1"
+      ],
+      "indications": [
+        {
+          "id": "ncfb",
+          "name": "Non-cystic fibrosis bronchiectasis (NCFB; reduces pulmonary exacerbations; first-ever approved therapy)",
+          "area": "respiratory.genetic.bronchiectasis_ncfb",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 35,
+                "priceK": 60
+              },
+              "eu": {
+                "patientsK": 750,
+                "wtpPct": 25,
+                "priceK": 38
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 8,
+                "priceK": 15
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 18,
+                "wtpPct": 65,
+                "priceK": 90
+              },
+              "eu": {
+                "reachPct": 10,
+                "wtpPct": 45,
+                "priceK": 55
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Brensocatib first-ever NCFB therapy; ~18% reach if approved (PDUFA mid-2025); addressable ~500K US diagnosed pts; growing TAM as CT detection rises",
+              "us.priceK": "Brensocatib expected WAC ~$80-100K/yr (orphan rare-pulmonary pricing precedent)"
+            },
+            "penPct": 15,
+            "cagrPct": 35,
+            "peakYear": 2032,
+            "salesM": 30,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "crswnp",
+          "name": "Chronic rhinosinusitis with nasal polyps (Ph2b)",
+          "area": "respiratory.inflammatory.crswnp",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 750,
+                "wtpPct": 50,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 900,
+                "wtpPct": 35,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 8,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "reachPct": 0.7,
+                "wtpPct": 38,
+                "priceK": 22
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Brensocatib CRSwNP Ph2b; competitive vs Dupixent (REGN/SNY anti-IL-4/13) + Xhance (lugurin); novel oral DPP-1 differentiator if Ph3 confirmed",
+              "us.priceK": "Oral CRSwNP class pricing ~$30-40K/yr"
+            },
+            "penPct": 25,
+            "cagrPct": 15,
+            "peakYear": 2034
+          }
+        }
+      ]
+    },
+    {
+      "id": "tpip",
+      "name": "TPIP (treprostinil palmitil inhalation powder; INS-1009) - prostacyclin analog dry-powder inhaler",
+      "stage": "Phase 3 PAH (head-to-head vs Tyvaso DPI / nebulized; readout 2026); Phase 2 PH-ILD",
+      "modality": "small_molecule.gpcr.prostacyclin_agonist",
+      "targets": [
+        "PTGIR"
+      ],
+      "indications": [
+        {
+          "id": "pah",
+          "name": "Pulmonary arterial hypertension (Ph3 PAH; competing vs UTHR Tyvaso DPI Yutrepia LIQ861)",
+          "area": "cardio_metabolic.cardiopulmonary.pah",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 75,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 18,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 70,
+                "priceK": 130
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 50,
+                "priceK": 80
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "TPIP DPI competitive vs UTHR Tyvaso DPI (Yutrepia/LIQ861) + Tyvaso nebulized + Tyvaso/Trevyent; ~6% reach if Ph3 positive",
+              "us.priceK": "PAH inhaled prostacyclin ~$130K/yr"
+            },
+            "penPct": 65,
+            "cagrPct": 18,
+            "peakYear": 2033
+          }
+        },
+        {
+          "id": "ph_ild",
+          "name": "PH associated with interstitial lung disease (Ph2)",
+          "area": "cardio_metabolic.cardiopulmonary.ph_ild",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 50,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 30,
+                "priceK": 50
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 8,
+                "priceK": 15
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 60,
+                "priceK": 130
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 42,
+                "priceK": 80
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "TPIP PH-ILD Ph2; competitive vs UTHR Tyvaso INCREASE PH-ILD label",
+              "us.priceK": "Same PAH/PH-ILD inhaled pricing"
+            },
+            "penPct": 30,
+            "cagrPct": 18,
+            "peakYear": 2034
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "val": {
+        "mult": 1.0,
+        "dr": 14,
+        "cannib": 15
+      },
+      "assumptions": {
+        "arikayce": {
+          "mac_refractory": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "brensocatib": {
+          "ncfb": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 0.4
+          },
+          "crswnp": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.3
+          }
+        },
+        "tpip": {
+          "pah": {
+            "pos": 30,
+            "apr": 60,
+            "pen": 0.4
+          },
+          "ph_ild": {
+            "pos": 20,
+            "apr": 45,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 20,
+      "val": {
+        "mult": 1.5,
+        "dr": 12,
+        "cannib": 10
+      },
+      "assumptions": {
+        "arikayce": {
+          "mac_refractory": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "brensocatib": {
+          "ncfb": {
+            "pos": 92,
+            "apr": 95,
+            "pen": 0.6
+          },
+          "crswnp": {
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.5
+          }
+        },
+        "tpip": {
+          "pah": {
+            "pos": 50,
+            "apr": 75,
+            "pen": 0.55
+          },
+          "ph_ild": {
+            "pos": 40,
+            "apr": 65,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 45,
+      "val": {
+        "mult": 2.0,
+        "dr": 11,
+        "cannib": 5
+      },
+      "assumptions": {
+        "arikayce": {
+          "mac_refractory": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "brensocatib": {
+          "ncfb": {
+            "pos": 96,
+            "apr": 97,
+            "pen": 0.85
+          },
+          "crswnp": {
+            "pos": 65,
+            "apr": 82,
+            "pen": 0.7
+          }
+        },
+        "tpip": {
+          "pah": {
+            "pos": 70,
+            "apr": 88,
+            "pen": 0.75
+          },
+          "ph_ild": {
+            "pos": 60,
+            "apr": 80,
+            "pen": 0.65
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "mult": 3,
+        "dr": 10,
+        "cannib": 0
+      },
+      "assumptions": {
+        "arikayce": {
+          "mac_refractory": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "brensocatib": {
+          "ncfb": {
+            "pos": 99,
+            "apr": 99,
+            "pen": 1.05
+          },
+          "crswnp": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 0.9
+          }
+        },
+        "tpip": {
+          "pah": {
+            "pos": 85,
+            "apr": 94,
+            "pen": 0.95
+          },
+          "ph_ild": {
+            "pos": 78,
+            "apr": 88,
+            "pen": 0.85
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "mult": 5,
+        "dr": 9,
+        "cannib": 0
+      },
+      "assumptions": {
+        "arikayce": {
+          "mac_refractory": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "brensocatib": {
+          "ncfb": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "crswnp": {
+            "pos": 92,
+            "apr": 96,
+            "pen": 1.15
+          }
+        },
+        "tpip": {
+          "pah": {
+            "pos": 95,
+            "apr": 98,
+            "pen": 1.25
+          },
+          "ph_ild": {
+            "pos": 92,
+            "apr": 96,
+            "pen": 1.15
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Q3 2025",
+      "dateSort": "2025-09-15",
+      "asset": "brensocatib",
+      "indication": "ncfb",
+      "title": "Brensocatib NCFB PDUFA decision (FDA filing late 2024; expected approval mid-2025; first-ever NCFB therapy)",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 50,
+      "fail_apr": 70,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "https://www.insmed.com/investors/",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "brensocatib",
+      "indication": "ncfb",
+      "title": "Brensocatib NCFB launch ramp Year-1 trajectory + payer coverage update",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.insmed.com/investors/",
+      "_confidence": "high"
+    },
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-30",
+      "asset": "tpip",
+      "indication": "pah",
+      "title": "TPIP Ph3 PAH topline (head-to-head vs UTHR Tyvaso DPI competitive dynamics)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 50,
+      "success_pos": 90,
+      "success_apr": 95,
+      "_source": "https://www.insmed.com/investors/",
+      "_confidence": "medium"
+    }
+  ]
+}

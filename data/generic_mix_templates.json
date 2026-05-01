@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "description": "Disease-area mix templates for big generics + biosimilar makers (Teva, Viatris, Sandoz, Sun, Cipla, Aurobindo, Hikma, Celltrion, etc.). Used by scripts/ops/expand_generic_mixes.py to auto-populate indications[] from a single 'mixTemplate' + 'totalSalesM' field, splitting franchise revenue across real disease areas so Market Explorer reflects generic share per area. Weights sum to 1.0 per template.",
+    "rules": [
+      "Weights are rough industry-typical mixes (IQVIA prescription volume × generic share), not company-specific.",
+      "Override per-company unusual mix via 'mixOverrides' on the asset.",
+      "_other_minor weight goes to pseudo-area '_established_products.<ticker>_other_generics' for non-disease-mappable residual.",
+      "Updated when major class dynamics shift (e.g. branded LOE wave, biosim approvals)."
+    ],
+    "version": "v1_2026"
+  },
+  "us_generics_developed_v1": {
+    "_description": "Typical US Tier-1 oral generics maker mix (sertraline/atorvastatin/lisinopril/omeprazole/etc). Heavy CV + CNS + GI.",
+    "cardio_metabolic.hypertension.outpatient_generic": 0.18,
+    "cardio_metabolic.lipids.ldl_cv_risk": 0.13,
+    "cardio_metabolic.diabetes.t2d": 0.10,
+    "cns.psychiatry.depression": 0.09,
+    "cns.psychiatry.anxiety": 0.04,
+    "cns.psychiatry.schizophrenia": 0.04,
+    "cns.psychiatry.bipolar": 0.02,
+    "cns.epilepsy.focal": 0.04,
+    "cns.epilepsy.generalized": 0.02,
+    "cns.pain.migraine": 0.02,
+    "respiratory.inflammatory.copd": 0.04,
+    "respiratory.inflammatory.asthma_severe": 0.04,
+    "immunology.inflammatory_gi.gerd_peptic": 0.07,
+    "_other_minor": 0.17
+  },
+  "eu_generics_developed_v1": {
+    "_description": "Typical EU/UK Tier-1 generics maker mix; similar to US but heavier antibiotics + GI, lighter CNS.",
+    "cardio_metabolic.hypertension.outpatient_generic": 0.20,
+    "cardio_metabolic.lipids.ldl_cv_risk": 0.12,
+    "cardio_metabolic.diabetes.t2d": 0.09,
+    "cns.psychiatry.depression": 0.07,
+    "cns.psychiatry.anxiety": 0.03,
+    "cns.psychiatry.schizophrenia": 0.03,
+    "cns.epilepsy.focal": 0.04,
+    "cns.epilepsy.generalized": 0.02,
+    "respiratory.inflammatory.copd": 0.05,
+    "respiratory.inflammatory.asthma_severe": 0.04,
+    "immunology.inflammatory_gi.gerd_peptic": 0.08,
+    "musculoskeletal.bone_cartilage.osteoporosis": 0.02,
+    "_other_minor": 0.21
+  },
+  "emerging_markets_generics_v1": {
+    "_description": "Emerging markets (India + LATAM + MENA + SE Asia + Africa) generics mix; very heavy antibiotics + cardio + diabetes; lighter CNS.",
+    "cardio_metabolic.hypertension.outpatient_generic": 0.22,
+    "cardio_metabolic.lipids.ldl_cv_risk": 0.10,
+    "cardio_metabolic.diabetes.t2d": 0.13,
+    "cns.psychiatry.depression": 0.04,
+    "cns.psychiatry.schizophrenia": 0.03,
+    "cns.psychiatry.anxiety": 0.02,
+    "cns.epilepsy.focal": 0.03,
+    "respiratory.inflammatory.copd": 0.04,
+    "respiratory.inflammatory.asthma_severe": 0.04,
+    "immunology.inflammatory_gi.gerd_peptic": 0.08,
+    "_other_minor": 0.27
+  },
+  "biosimilars_oncology_supportive_v1": {
+    "_description": "Biosimilars portfolio mix (rituximab + bevacizumab + trastuzumab + adalimumab + filgrastim + pegfilgrastim + etanercept + epoetin classes). Heavy oncology + supportive care + autoimmune.",
+    "oncology.hematology.nhl.dlbcl": 0.10,
+    "oncology.hematology.nhl.fl": 0.04,
+    "oncology.hematology.nhl.mzl": 0.02,
+    "oncology.breast.her2_pos": 0.12,
+    "oncology.gi.colorectal": 0.10,
+    "oncology.lung.nsclc_io_resistant": 0.08,
+    "oncology.supportive_care.neutropenia": 0.18,
+    "nephrology.ckd.anemia": 0.08,
+    "immunology.inflammatory_systemic.rheumatoid_arthritis": 0.10,
+    "dermatology.inflammatory_derm.psoriasis_systemic": 0.04,
+    "immunology.inflammatory_gi.crohns": 0.04,
+    "immunology.inflammatory_gi.ulcerative_colitis": 0.03,
+    "ophthalmology.retina.nvamd": 0.03,
+    "_other_minor": 0.04
+  }
+}

@@ -120,7 +120,8 @@ def summarize_recent_past_catalysts(config, today, lookback_days=90):
     """Past catalysts in the last `lookback_days`. Used by the LLM to judge
     whether the subtitle thesis line is stale (e.g. last quarter's readout
     still framing today's narrative even though the event has landed)."""
-    cutoff = today - timedelta(days=lookback_days)
+    today_n = today.replace(tzinfo=None) if today.tzinfo else today
+    cutoff_n = today_n - timedelta(days=lookback_days)
     out = []
     for cat in config.get("catalysts", []):
         ds = cat.get("dateSort", "")
@@ -131,7 +132,7 @@ def summarize_recent_past_catalysts(config, today, lookback_days=90):
         if not cat_date:
             continue
         cat_date_n = cat_date.replace(tzinfo=None)
-        if cat_date_n < cutoff or cat_date_n > today.replace(tzinfo=None):
+        if cat_date_n < cutoff_n or cat_date_n > today_n:
             continue
         out.append({
             "title": cat.get("title", ""),

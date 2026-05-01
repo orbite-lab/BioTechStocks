@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated": "2026-05-01T08:42:13Z",
+    "generated": "2026-05-01T08:56:56Z",
     "target_count": 407,
-    "total_assets": 800,
-    "assets_with_targets": 730,
+    "total_assets": 806,
+    "assets_with_targets": 734,
     "multi_modality_count": 49,
     "multi_disease_count": 182
   },
@@ -4530,15 +4530,26 @@
     },
     "CSF3R": {
       "companies": [
+        "1093",
         "AMGN"
       ],
       "modalities": [
-        "recombinant_protein.cytokine.gcsf"
+        "recombinant_protein.cytokine.gcsf",
+        "recombinant_protein.cytokine.gcsf_pegylated"
       ],
       "areas": [
         "oncology.supportive_care.neutropenia"
       ],
       "assets": [
+        {
+          "ticker": "1093",
+          "asset": "duomeisu",
+          "name": "Duomeisu (Jinyouli; PEG-rhG-CSF) - pegylated recombinant human granulocyte colony-stimulating factor (pegfilgrastim biosim)",
+          "modality": "recombinant_protein.cytokine.gcsf_pegylated",
+          "areas": [
+            "oncology.supportive_care.neutropenia"
+          ]
+        },
         {
           "ticker": "AMGN",
           "asset": "neulasta",
@@ -4549,18 +4560,18 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "recombinant_protein"
       ],
       "totalTAM": 5900.0,
-      "totalSOM": 653.1,
-      "totalSales": 435.0,
-      "cagrPct": -15.0,
-      "peakYear": 2025
+      "totalSOM": 1223.1,
+      "totalSales": 935.0,
+      "cagrPct": -5.7,
+      "peakYear": 2027
     },
     "CTLA4": {
       "companies": [
@@ -5782,6 +5793,7 @@
     },
     "EGFR": {
       "companies": [
+        "1093",
         "4503",
         "600276",
         "AMGN",
@@ -5793,6 +5805,7 @@
         "MRK_DE"
       ],
       "modalities": [
+        "adc.egfr.dxd",
         "antibody.bispecific.egfr_lgr5",
         "antibody.bispecific.egfr_met",
         "antibody.bispecific.tumor_activated_tce",
@@ -5807,9 +5820,19 @@
         "oncology.gi.colorectal",
         "oncology.head_neck.hnscc",
         "oncology.lung.nsclc_driver.egfr",
-        "oncology.lung.nsclc_driver.her2"
+        "oncology.lung.nsclc_driver.her2",
+        "oncology.lung.nsclc_io_resistant"
       ],
       "assets": [
+        {
+          "ticker": "1093",
+          "asset": "sys6010",
+          "name": "SYS6010 (EGFR ADC) - first-in-class anti-EGFR antibody-drug conjugate (CSPC-discovered; AstraZeneca licensed Aug 2023 $100M upfront + $1.5B milestones)",
+          "modality": "adc.egfr.dxd",
+          "areas": [
+            "oncology.lung.nsclc_io_resistant"
+          ]
+        },
         {
           "ticker": "4503",
           "asset": "asp1929_pit",
@@ -5902,16 +5925,17 @@
           ]
         }
       ],
-      "assetCount": 10,
-      "modalityCount": 8,
-      "modalityClassCount": 2,
-      "areaCount": 5,
+      "assetCount": 11,
+      "modalityCount": 9,
+      "modalityClassCount": 3,
+      "areaCount": 6,
       "modalityClasses": [
+        "adc",
         "antibody",
         "small_molecule"
       ],
-      "totalTAM": 58136.2,
-      "totalSOM": 25649.1,
+      "totalTAM": 72005.2,
+      "totalSOM": 25657.9,
       "totalSales": 10661.0,
       "cagrPct": 6.6,
       "peakYear": 2030
@@ -19768,15 +19792,26 @@
     },
     "TOP2A": {
       "companies": [
+        "1093",
         "JAZZ"
       ],
       "modalities": [
+        "small_molecule.cytotoxic.liposomal_anthracycline",
         "small_molecule.cytotoxic.liposomal_combo_chemo"
       ],
       "areas": [
         "oncology.hematology.aml"
       ],
       "assets": [
+        {
+          "ticker": "1093",
+          "asset": "mitoxantrone_lipo",
+          "name": "Mitoxantrone HCl liposome (DUOMEISU; CSPC innovation) - liposomal anthracycline (anti-CD33-targeted indirect)",
+          "modality": "small_molecule.cytotoxic.liposomal_anthracycline",
+          "areas": [
+            "oncology.hematology.aml"
+          ]
+        },
         {
           "ticker": "JAZZ",
           "asset": "vyxeos",
@@ -19787,17 +19822,17 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
       "areaCount": 1,
       "modalityClasses": [
         "small_molecule"
       ],
       "totalTAM": 4240.2,
-      "totalSOM": 194.9,
-      "totalSales": 130.0,
-      "cagrPct": 2.0,
+      "totalSOM": 323.2,
+      "totalSales": 260.0,
+      "cagrPct": 4.4,
       "peakYear": 2029
     },
     "TRPV1": {
@@ -20045,16 +20080,28 @@
     },
     "TUBB": {
       "companies": [
+        "1093",
         "4523"
       ],
       "modalities": [
+        "small_molecule.cytotoxic.paclitaxel_albumin",
         "small_molecule.microtubule_inhibitor.eribulin_halichondrin"
       ],
       "areas": [
+        "oncology.breast.her2_pos",
         "oncology.breast.tnbc",
         "oncology.musculoskeletal.sts"
       ],
       "assets": [
+        {
+          "ticker": "1093",
+          "asset": "nab_paclitaxel",
+          "name": "Nab-paclitaxel for injection (Bailing) - albumin-bound paclitaxel biosimilar (of Abraxane)",
+          "modality": "small_molecule.cytotoxic.paclitaxel_albumin",
+          "areas": [
+            "oncology.breast.her2_pos"
+          ]
+        },
         {
           "ticker": "4523",
           "asset": "halaven",
@@ -20066,16 +20113,16 @@
           ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 2,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 2,
+      "areaCount": 3,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 22408.0,
-      "totalSOM": 2220.6,
-      "totalSales": 333.0,
+      "totalTAM": 44178.0,
+      "totalSOM": 2387.8,
+      "totalSales": 483.0,
       "cagrPct": -3.0,
       "peakYear": 2027
     },

@@ -1,0 +1,643 @@
+{
+  "company": {
+    "ticker": "1093",
+    "name": "CSPC Pharmaceutical Group Limited",
+    "currentPrice": 5.5,
+    "sharesOut": 11850,
+    "cash": 15000,
+    "currency": "HKD",
+    "phase": "commercial",
+    "subtitle": "Top-3 Chinese pharma (alongside Hengrui + Sino Bio); HKEX-listed; Shijiazhuang Hebei HQ. FY24 revenue ~RMB 31B (~$4.3B); innovative drug ~RMB 11B (35%); generics + anti-infectives + vitamin C legacy ~RMB 18B; functional foods ~RMB 1.5B. Flagship innovative: NBP (butylphthalide; first-in-class Chinese ischemic stroke neuroprotectant ~RMB 6-7B) + Duomeisu (PEG-rhG-CSF biosim) + mitoxantrone HCl liposome AML/NHL. Heavy ADC + biologics pipeline; SYS6010 (EGFR ADC) licensed to AstraZeneca 2023 ($100M upfront)",
+    "yahooTicker": "1093.HK"
+  },
+  "assets": [
+    {
+      "id": "nbp",
+      "name": "NBP / Enbipu (butylphthalide; dl-3-n-butylphthalide; NBP) - first-in-class Chinese small-molecule neuroprotectant (multi-mechanism mitochondrial + anti-apoptotic + anti-inflammatory)",
+      "stage": "Commercial (China acute ischemic stroke + chronic vascular cognitive impairment; CSPC-discovered flagship innovative)",
+      "modality": "small_molecule.neuroprotectant.phthalide",
+      "targets": [],
+      "indications": [
+        {
+          "id": "stroke_neuroprotection",
+          "name": "Acute ischemic stroke neuroprotection (China)",
+          "area": "cns.neurodegeneration.post_stroke_recovery",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 800,
+                "wtpPct": 90,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 1100,
+                "wtpPct": 80,
+                "priceK": 7
+              },
+              "row": {
+                "patientsK": 12000,
+                "wtpPct": 35,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 26.4,
+                "wtpPct": 30,
+                "priceK": 1.5
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "NBP China-only flagship; first-in-class ischemic stroke neuroprotectant (~RMB 6-7B FY24); NRDL-covered; class-leader China AIS Rx",
+              "row.priceK": "NBP NRDL pricing ~RMB 10K/yr (~$1.4K)",
+              "us.note": "Not US-marketed; CSPC China-only commercial; some ASEAN expansion"
+            },
+            "penPct": 40,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 950,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "duomeisu",
+      "name": "Duomeisu (Jinyouli; PEG-rhG-CSF) - pegylated recombinant human granulocyte colony-stimulating factor (pegfilgrastim biosim)",
+      "stage": "Commercial (China chemo-induced neutropenia prophylaxis; market leader; biosimilar of Neulasta)",
+      "modality": "recombinant_protein.cytokine.gcsf_pegylated",
+      "targets": [
+        "CSF3R"
+      ],
+      "indications": [
+        {
+          "id": "neutropenia",
+          "name": "Chemo-induced neutropenia / febrile neutropenia prophylaxis (China)",
+          "area": "oncology.supportive_care.neutropenia",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 600,
+                "wtpPct": 70,
+                "priceK": 8
+              },
+              "eu": {
+                "patientsK": 800,
+                "wtpPct": 50,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 1.5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 25,
+                "priceK": 0.8
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Duomeisu CSPC China-leader pegfilgrastim biosim; ~30% China G-CSF share; competitive vs Pelmeg + Genolar imports",
+              "row.priceK": "China pegfilgrastim biosim ~RMB 6K/dose (~$830)"
+            },
+            "penPct": 50,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 500,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "mitoxantrone_lipo",
+      "name": "Mitoxantrone HCl liposome (DUOMEISU; CSPC innovation) - liposomal anthracycline (anti-CD33-targeted indirect)",
+      "stage": "Commercial (China lymphoma + AML 2L+; CSPC innovative liposomal formulation)",
+      "modality": "small_molecule.cytotoxic.liposomal_anthracycline",
+      "targets": [
+        "TOP2A"
+      ],
+      "indications": [
+        {
+          "id": "lymphoma_aml",
+          "name": "Lymphoma + AML (China; liposomal mitoxantrone)",
+          "area": "oncology.hematology.aml",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 22,
+                "wtpPct": 62,
+                "priceK": 185
+              },
+              "eu": {
+                "patientsK": 27,
+                "wtpPct": 45,
+                "priceK": 105
+              },
+              "row": {
+                "patientsK": 90,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 25,
+                "priceK": 6
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Mitoxantrone liposome CSPC China commercial; competitive vs daunorubicin + idarubicin generics + Vyxeos imports",
+              "row.priceK": "China innovative cytotoxic ~RMB 50K/yr (~$7K)"
+            },
+            "penPct": 48,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 130,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "nab_paclitaxel",
+      "name": "Nab-paclitaxel for injection (Bailing) - albumin-bound paclitaxel biosimilar (of Abraxane)",
+      "stage": "Commercial (China multiple solid tumors: breast + NSCLC + pancreatic; biosim of Celgene/BMS Abraxane)",
+      "modality": "small_molecule.cytotoxic.paclitaxel_albumin",
+      "targets": [
+        "TUBB"
+      ],
+      "indications": [
+        {
+          "id": "solid_tumors",
+          "name": "Solid tumor mix (breast + NSCLC + pancreatic; nab-paclitaxel biosim China)",
+          "area": "oncology.breast.her2_pos",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 120,
+                "wtpPct": 70,
+                "priceK": 165
+              },
+              "eu": {
+                "patientsK": 140,
+                "wtpPct": 50,
+                "priceK": 95
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 22,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Bailing CSPC China nab-paclitaxel biosim; competitive vs Abraxane import + other Chinese biosims",
+              "row.priceK": "China nab-paclitaxel biosim ~RMB 30K/cycle (~$4K)"
+            },
+            "penPct": 65,
+            "cagrPct": -3,
+            "peakYear": 2027,
+            "salesM": 150,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "sys6010",
+      "name": "SYS6010 (EGFR ADC) - first-in-class anti-EGFR antibody-drug conjugate (CSPC-discovered; AstraZeneca licensed Aug 2023 $100M upfront + $1.5B milestones)",
+      "stage": "Phase 2 China (EGFR-mutant NSCLC; AZN ex-China rights; major out-licensing deal demonstrating CSPC innovative validation)",
+      "modality": "adc.egfr.dxd",
+      "targets": [
+        "EGFR"
+      ],
+      "indications": [
+        {
+          "id": "egfr_nsclc",
+          "name": "EGFR-mutant NSCLC (Ph2 China; Tagrisso-class competitive ADC strategy)",
+          "area": "oncology.lung.nsclc_io_resistant",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 70,
+                "wtpPct": 60,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 95,
+                "wtpPct": 44,
+                "priceK": 105
+              },
+              "row": {
+                "patientsK": 320,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 22,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "SYS6010 EGFR ADC China; AZN handles ex-China; ~0.5% China NSCLC reach if Ph3 positive",
+              "row.priceK": "China innovative ADC ~RMB 200K/yr (~$28K); AZN-led ex-China commercialization at premium global pricing"
+            },
+            "penPct": 35,
+            "cagrPct": 25,
+            "peakYear": 2034
+          }
+        }
+      ]
+    },
+    {
+      "id": "cspc_legacy",
+      "name": "CSPC legacy commercial portfolio - generics (irbesartan + atorvastatin + clopidogrel) + anti-infectives (penicillin + cephalosporins) + vitamin C / functional foods",
+      "stage": "Commercial (FY24 ~RMB 18B generics + RMB 1.5B vitamin C / functional foods)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "indications": [
+        {
+          "id": "legacy_bulk",
+          "name": "CSPC legacy bulk (generics + branded generics + anti-infectives + vitamin C + functional foods; ex-US)",
+          "area": "_established_products.cspc_heritage",
+          "market": {
+            "tamB": 60,
+            "penPct": 0,
+            "salesM": 2700,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": -2,
+            "notes": "Diversified Chinese pharma legacy: branded generics (Xuanning irbesartan ARB + atorvastatin + clopidogrel + amlodipine), anti-infectives (penicillin + cephalosporins; CSPC anti-infective division historical strength via Inner Mongolia plants), vitamin C + functional foods (CSPC originated as China's vitamin C producer; ~RMB 1.5B), respiratory + GI generics. NRDL pricing pressure offset by NBP + biosimilar growth.",
+            "company_slice": {},
+            "company_slice_sources": {}
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 4,
+        "commercialMult": 1.2,
+        "commercialRevM": 24000,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "nbp": {
+          "stroke_neuroprotection": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "duomeisu": {
+          "neutropenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "mitoxantrone_lipo": {
+          "lymphoma_aml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "nab_paclitaxel": {
+          "solid_tumors": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "sys6010": {
+          "egfr_nsclc": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.3
+          }
+        },
+        "cspc_legacy": {
+          "legacy_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 5,
+        "commercialMult": 2,
+        "commercialRevM": 28000,
+        "milestones": 100,
+        "dil": 0
+      },
+      "assumptions": {
+        "nbp": {
+          "stroke_neuroprotection": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "duomeisu": {
+          "neutropenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "mitoxantrone_lipo": {
+          "lymphoma_aml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "nab_paclitaxel": {
+          "solid_tumors": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "sys6010": {
+          "egfr_nsclc": {
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.5
+          }
+        },
+        "cspc_legacy": {
+          "legacy_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 35,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 7,
+        "commercialMult": 4.5,
+        "commercialRevM": 35000,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "nbp": {
+          "stroke_neuroprotection": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "duomeisu": {
+          "neutropenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "mitoxantrone_lipo": {
+          "lymphoma_aml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "nab_paclitaxel": {
+          "solid_tumors": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "sys6010": {
+          "egfr_nsclc": {
+            "pos": 65,
+            "apr": 82,
+            "pen": 0.7
+          }
+        },
+        "cspc_legacy": {
+          "legacy_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 10,
+        "commercialMult": 6,
+        "commercialRevM": 40000,
+        "milestones": 400,
+        "dil": 0
+      },
+      "assumptions": {
+        "nbp": {
+          "stroke_neuroprotection": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "duomeisu": {
+          "neutropenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "mitoxantrone_lipo": {
+          "lymphoma_aml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "nab_paclitaxel": {
+          "solid_tumors": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "sys6010": {
+          "egfr_nsclc": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 0.9
+          }
+        },
+        "cspc_legacy": {
+          "legacy_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 3,
+        "pipelineMult": 14,
+        "commercialMult": 8,
+        "commercialRevM": 50000,
+        "milestones": 800,
+        "dil": 0
+      },
+      "assumptions": {
+        "nbp": {
+          "stroke_neuroprotection": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "duomeisu": {
+          "neutropenia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "mitoxantrone_lipo": {
+          "lymphoma_aml": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "nab_paclitaxel": {
+          "solid_tumors": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "sys6010": {
+          "egfr_nsclc": {
+            "pos": 92,
+            "apr": 96,
+            "pen": 1.2
+          }
+        },
+        "cspc_legacy": {
+          "legacy_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "sys6010",
+      "indication": "egfr_nsclc",
+      "title": "SYS6010 EGFR ADC Ph2 China readout + AstraZeneca ex-China Ph3 design / start",
+      "type": "phase2_data",
+      "binary": false,
+      "_source": "https://www.cspc.com.cn/en/news",
+      "_confidence": "medium"
+    },
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "nbp",
+      "indication": "stroke_neuroprotection",
+      "title": "NBP butylphthalide patent cliff / generic entry timing in China + ex-China expansion update",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.cspc.com.cn/en/news",
+      "_confidence": "medium"
+    }
+  ]
+}

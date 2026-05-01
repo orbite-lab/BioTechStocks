@@ -1,0 +1,409 @@
+{
+  "company": {
+    "ticker": "FOLD",
+    "name": "Amicus Therapeutics, Inc.",
+    "currentPrice": 14.27,
+    "sharesOut": 308,
+    "cash": -107,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Lysosomal storage disease specialty (Fabry + Pompe). **BIOMARIN ACQUISITION ANNOUNCED Dec 2025 at $14.50/share cash**; FTC HSR cleared Feb 11 2026; close mid-2026 expected (deal arb at ~$14.27 vs $14.50). Per SLNO/APLS precedent, will archive once close confirmed. FY25 revenue $634.2M (+20% YoY, +17% CER): Galafold (migalastat oral chaperone for amenable Fabry mutations; FDA Aug 2018; ~50% Fabry pts amenable) $521.7M (+14%; +12% CER); Pombiliti+Opfolda (cipaglucosidase alfa + miglustat 2nd-gen ERT for late-onset Pompe; FDA Sep 2023, EU 2023) $112.5M ramping. Profitability inflection 2025 (near-GAAP profitable). Cash $293M minus Blackstone ~$400M term loan = net debt ~$107M. PIPELINE: DMX-200 (CCR2 inhibitor; Dimerix-licensed Apr 30 2025 US rights only) Ph3 ACTION3 in FSGS; deal terms $30M up + $75M reg + $35M first-sale + $410M sales milestones + low-teens/low-20s royalties.",
+    "yahooTicker": "FOLD"
+  },
+  "assets": [
+    {
+      "id": "galafold",
+      "name": "Galafold (migalastat) - oral pharmacological chaperone for amenable Fabry mutations",
+      "stage": "Commercial (FDA Aug 2018; ~50% Fabry pts amenable; IP defended composition-of-matter to ~2038 US)",
+      "modality": "small_molecule.chaperone.gla",
+      "targets": [],
+      "indications": [
+        {
+          "id": "fabry_galafold",
+          "name": "Fabry disease (alpha-galactosidase A deficiency; oral chaperone 50% amenable)",
+          "area": "endocrine.lysosomal_storage.fabry",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 5,
+                "wtpPct": 85,
+                "priceK": 350
+              },
+              "eu": {
+                "patientsK": 8,
+                "wtpPct": 75,
+                "priceK": 230
+              },
+              "row": {
+                "patientsK": 25,
+                "wtpPct": 18,
+                "priceK": 90
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 50,
+                "wtpPct": 70,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 25,
+                "wtpPct": 60,
+                "priceK": 220
+              },
+              "row": {
+                "reachPct": 1.5,
+                "wtpPct": 18,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Galafold WAC ~$350K/yr",
+              "us.reachPct": "Galafold ~50% amenable Fabry US treated; Sanofi Fabrazyme ERT for non-amenable"
+            },
+            "penPct": 55,
+            "cagrPct": 10,
+            "peakYear": 2030,
+            "salesM": 522,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "pombiliti_opfolda",
+      "name": "Pombiliti + Opfolda (cipaglucosidase alfa + miglustat) - 2nd-gen ERT for late-onset Pompe disease",
+      "stage": "Commercial (FDA Sep 2023; EU 2023; vs Sanofi Lumizyme/Nexviazyme)",
+      "modality": "recombinant_protein.enzyme.gaa",
+      "targets": [],
+      "indications": [
+        {
+          "id": "pompe_lopd",
+          "name": "Late-onset Pompe disease (LOPD; 2nd-gen ERT vs Sanofi Lumizyme/Nexviazyme)",
+          "area": "endocrine.lysosomal_storage.pompe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3.5,
+                "wtpPct": 90,
+                "priceK": 600
+              },
+              "eu": {
+                "patientsK": 5,
+                "wtpPct": 80,
+                "priceK": 400
+              },
+              "row": {
+                "patientsK": 15,
+                "wtpPct": 22,
+                "priceK": 150
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 65,
+                "priceK": 600
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 55,
+                "priceK": 380
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 18,
+                "priceK": 100
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Pombiliti+Opfolda WAC ~$600K/yr (vs Lumizyme $300K, Nexviazyme $650K)",
+              "us.reachPct": "Pombiliti+Opfolda ~25% LOPD US share post-launch"
+            },
+            "penPct": 55,
+            "cagrPct": 40,
+            "peakYear": 2030,
+            "salesM": 113,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "dmx_200",
+      "name": "DMX-200 (repagermanium) - CCR2 inhibitor for FSGS (Dimerix-licensed Apr 30 2025 US rights only)",
+      "stage": "Phase 3 ACTION3 (focal segmental glomerulosclerosis; deal $30M up + $75M reg + $35M first-sale + $410M sales milestones + low-teens/low-20s royalties)",
+      "modality": "small_molecule.gpcr.ccr2_antagonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "fsgs_dmx200",
+          "name": "Focal segmental glomerulosclerosis (rare progressive kidney; CCR2 monocyte/macrophage)",
+          "area": "nephrology.glomerular.fsgs",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 45,
+                "priceK": 90
+              },
+              "eu": {
+                "patientsK": 45,
+                "wtpPct": 30,
+                "priceK": 45
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 8,
+                "priceK": 8
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 45,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 40,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 0.2,
+                "wtpPct": 18,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $80K/yr if approved (vs Filspari sparsentan)",
+              "us.reachPct": "DMX-200 niche FSGS post-Filspari; CCR2 mechanism differentiated"
+            },
+            "penPct": 25,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 2,
+        "commercialMult": 4,
+        "commercialRevM": 600,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "galafold": {
+          "fabry_galafold": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "pombiliti_opfolda": {
+          "pompe_lopd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "dmx_200": {
+          "fsgs_dmx200": {
+            "pos": 30,
+            "apr": 60,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 3,
+        "commercialMult": 5.5,
+        "commercialRevM": 660,
+        "milestones": 25,
+        "dil": 0
+      },
+      "assumptions": {
+        "galafold": {
+          "fabry_galafold": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "pombiliti_opfolda": {
+          "pompe_lopd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "dmx_200": {
+          "fsgs_dmx200": {
+            "pos": 50,
+            "apr": 75,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 65,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 5,
+        "commercialMult": 7,
+        "commercialRevM": 720,
+        "milestones": 75,
+        "dil": 0
+      },
+      "assumptions": {
+        "galafold": {
+          "fabry_galafold": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "pombiliti_opfolda": {
+          "pompe_lopd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "dmx_200": {
+          "fsgs_dmx200": {
+            "pos": 70,
+            "apr": 85,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 15,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 8,
+        "commercialMult": 9,
+        "commercialRevM": 850,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "galafold": {
+          "fabry_galafold": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "pombiliti_opfolda": {
+          "pompe_lopd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "dmx_200": {
+          "fsgs_dmx200": {
+            "pos": 85,
+            "apr": 92,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 12,
+        "commercialMult": 13,
+        "commercialRevM": 1100,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "galafold": {
+          "fabry_galafold": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "pombiliti_opfolda": {
+          "pompe_lopd": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "dmx_200": {
+          "fsgs_dmx200": {
+            "pos": 92,
+            "apr": 96,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Mid 2026",
+      "dateSort": "2026-07-15",
+      "asset": "galafold",
+      "indication": "fabry_galafold",
+      "title": "BioMarin acquisition close at $14.50/share cash (FTC HSR cleared Feb 11 2026)",
+      "type": "ma_close",
+      "binary": true,
+      "fail_pos": 80,
+      "fail_apr": 90,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "BioMarin Dec 2025 PR",
+      "_confidence": "high"
+    },
+    {
+      "date": "Apr 30 2025",
+      "dateSort": "2025-04-30",
+      "asset": "dmx_200",
+      "indication": "fsgs_dmx200",
+      "title": "Dimerix DMX-200 FSGS license $30M up + $75M reg + $410M sales milestones (US rights)",
+      "type": "partnership",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Amicus-Dimerix Apr 30 2025 PR",
+      "_confidence": "high"
+    },
+    {
+      "date": "2026-2027",
+      "dateSort": "2027-06-30",
+      "asset": "dmx_200",
+      "indication": "fsgs_dmx200",
+      "title": "DMX-200 ACTION3 Ph3 FSGS readout",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 35,
+      "fail_apr": 70,
+      "success_pos": 88,
+      "success_apr": 92,
+      "_source": "Dimerix ACTION3 Ph3",
+      "_confidence": "medium"
+    }
+  ]
+}

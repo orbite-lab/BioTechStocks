@@ -1,0 +1,502 @@
+{
+  "company": {
+    "ticker": "CORT",
+    "name": "Corcept Therapeutics, Inc.",
+    "currentPrice": 45.04,
+    "sharesOut": 107.4,
+    "cash": 532,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Cortisol modulator specialty (Korlym Cushing's franchise + relacorilant pivot). FY25 revenue $761.4M (+13% YoY): Korlym (mifepristone + AG) entire franchise -- only approved drug for Cushing's syndrome hyperglycemia (FDA 2012); tablets sold +37%. Profitable: Net income $99.7M ($0.82 EPS); $246M buybacks FY25; cash $532M no debt. RELACORILANT (selective oral GR antagonist; non-steroidal cortisol modulator): (1) CUSHING'S NDA -> FDA CRL Dec 30 2025 (additional efficacy evidence required; resubmission path TBD); GRACE Ph3 + GRADIENT confirmatory both positive. (2) PLATINUM-RESISTANT OVARIAN CANCER: relacorilant + nab-paclitaxel ROSELLA Ph3 positive (PFS + OS); FDA APPROVED Mar 25 2026 as 'LIFYORLI' (PDUFA originally Jul 11 2026; early approval). DAZUCORILANT (CORT113176) -- DAZALS Ph2 ALS missed primary endpoint Dec 2024 but 300mg survival HR 0.13 (p<0.0001) at 2-yr; ENCALS Jun 2025 follow-up. Earlier-stage GR antagonist platform CORT125281, CORT125329.",
+    "yahooTicker": "CORT"
+  },
+  "assets": [
+    {
+      "id": "korlym",
+      "name": "Korlym (mifepristone) - GR/PR antagonist for Cushing's syndrome hyperglycemia (only FDA-approved Rx for endogenous Cushing's)",
+      "stage": "Commercial (FDA Feb 2012; Korlym + authorized generic)",
+      "modality": "small_molecule.nuclear_receptor.gr_antagonist",
+      "targets": [
+        "NR3C1"
+      ],
+      "indications": [
+        {
+          "id": "cushings_korlym",
+          "name": "Cushing's syndrome hyperglycemia (endogenous; only FDA-approved Rx)",
+          "area": "endocrine.pituitary.cushings",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 4,
+                "wtpPct": 80,
+                "priceK": 300
+              },
+              "eu": {
+                "patientsK": 5,
+                "wtpPct": 60,
+                "priceK": 180
+              },
+              "row": {
+                "patientsK": 12,
+                "wtpPct": 20,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 80,
+                "wtpPct": 80,
+                "priceK": 400
+              },
+              "eu": {
+                "reachPct": 15,
+                "wtpPct": 55,
+                "priceK": 200
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 25,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Korlym WAC ~$400K/yr blended including auth-generic + cumulative dose dependent; FY25 tablets sold +37%",
+              "us.reachPct": "Korlym ~80% diagnosed treated Cushing's hyperglycemia US (only approved Rx); ramping"
+            },
+            "penPct": 35,
+            "cagrPct": 10,
+            "peakYear": 2028,
+            "salesM": 761,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "lifyorli",
+      "name": "Lifyorli (relacorilant) - selective GR antagonist + nab-paclitaxel for platinum-resistant ovarian cancer",
+      "stage": "Commercial (FDA approved Mar 25 2026; ROSELLA Ph3 PFS + OS positive; combo with nab-paclitaxel)",
+      "modality": "small_molecule.nuclear_receptor.gr_antagonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ovarian_proc",
+          "name": "Platinum-resistant ovarian cancer (combo with nab-paclitaxel)",
+          "area": "oncology.gynecologic.ovarian",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 35,
+                "wtpPct": 65,
+                "priceK": 125
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 50,
+                "priceK": 72
+              },
+              "row": {
+                "patientsK": 90,
+                "wtpPct": 16,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 10,
+                "wtpPct": 60,
+                "priceK": 200
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 18,
+                "priceK": 35
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Lifyorli WAC ~$200K/yr (combo branded oncology)",
+              "us.reachPct": "Lifyorli ~10% PROC niche; first GR antagonist approved oncology"
+            },
+            "penPct": 52,
+            "cagrPct": 80,
+            "peakYear": 2031,
+            "salesM": 10,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "relacorilant_cushings",
+      "name": "Relacorilant - selective GR antagonist for Cushing's syndrome (CRL Dec 30 2025)",
+      "stage": "Phase 3 NDA pending resubmission (FDA CRL Dec 30 2025; GRACE + GRADIENT both positive; additional efficacy evidence required)",
+      "modality": "small_molecule.nuclear_receptor.gr_antagonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "cushings_rela",
+          "name": "Cushing's syndrome (next-gen non-steroidal selective GR antagonist; safer than mifepristone)",
+          "area": "endocrine.pituitary.cushings",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 4,
+                "wtpPct": 80,
+                "priceK": 300
+              },
+              "eu": {
+                "patientsK": 5,
+                "wtpPct": 60,
+                "priceK": 180
+              },
+              "row": {
+                "patientsK": 12,
+                "wtpPct": 20,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 20,
+                "wtpPct": 70,
+                "priceK": 250
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 60,
+                "priceK": 150
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 25,
+                "priceK": 40
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $250K/yr if approved",
+              "us.reachPct": "Relacorilant Cushing's ~20% share post-launch (vs Korlym + Recorlev/levoketoconazole)"
+            },
+            "penPct": 35,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "dazucorilant",
+      "name": "Dazucorilant (CORT113176) - selective GR antagonist for ALS",
+      "stage": "Phase 2 DAZALS (missed ALSFRS-R primary Dec 2024 but 300mg survival HR 0.13 p<0.0001 2-yr; ENCALS Jun 2025)",
+      "modality": "small_molecule.nuclear_receptor.gr_antagonist",
+      "targets": [],
+      "indications": [
+        {
+          "id": "als_dazu",
+          "name": "Amyotrophic lateral sclerosis (selective GR antagonist; survival benefit signal)",
+          "area": "cns.neurodegeneration.als",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 70,
+                "priceK": 40
+              },
+              "eu": {
+                "patientsK": 40,
+                "wtpPct": 45,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 220,
+                "wtpPct": 20,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 35,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 1,
+                "wtpPct": 30,
+                "priceK": 60
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 18,
+                "priceK": 15
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $100K/yr ALS"
+            },
+            "penPct": 25,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 3,
+        "commercialMult": 4,
+        "commercialRevM": 700,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "korlym": {
+          "cushings_korlym": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lifyorli": {
+          "ovarian_proc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "relacorilant_cushings": {
+          "cushings_rela": {
+            "pos": 25,
+            "apr": 60,
+            "pen": 0.3
+          }
+        },
+        "dazucorilant": {
+          "als_dazu": {
+            "pos": 6,
+            "apr": 60,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 22,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 5,
+        "commercialMult": 6,
+        "commercialRevM": 800,
+        "milestones": 25,
+        "dil": 0
+      },
+      "assumptions": {
+        "korlym": {
+          "cushings_korlym": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lifyorli": {
+          "ovarian_proc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "relacorilant_cushings": {
+          "cushings_rela": {
+            "pos": 40,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "dazucorilant": {
+          "als_dazu": {
+            "pos": 14,
+            "apr": 75,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 38,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 7,
+        "commercialMult": 8,
+        "commercialRevM": 950,
+        "milestones": 75,
+        "dil": 0
+      },
+      "assumptions": {
+        "korlym": {
+          "cushings_korlym": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lifyorli": {
+          "ovarian_proc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "relacorilant_cushings": {
+          "cushings_rela": {
+            "pos": 55,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "dazucorilant": {
+          "als_dazu": {
+            "pos": 25,
+            "apr": 85,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 10,
+        "commercialMult": 11,
+        "commercialRevM": 1200,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "korlym": {
+          "cushings_korlym": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lifyorli": {
+          "ovarian_proc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "relacorilant_cushings": {
+          "cushings_rela": {
+            "pos": 70,
+            "apr": 92,
+            "pen": 1.05
+          }
+        },
+        "dazucorilant": {
+          "als_dazu": {
+            "pos": 40,
+            "apr": 92,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 14,
+        "commercialMult": 15,
+        "commercialRevM": 1700,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "korlym": {
+          "cushings_korlym": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "lifyorli": {
+          "ovarian_proc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "relacorilant_cushings": {
+          "cushings_rela": {
+            "pos": 82,
+            "apr": 96,
+            "pen": 1.25
+          }
+        },
+        "dazucorilant": {
+          "als_dazu": {
+            "pos": 55,
+            "apr": 96,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Mar 25 2026",
+      "dateSort": "2026-03-25",
+      "asset": "lifyorli",
+      "indication": "ovarian_proc",
+      "title": "Lifyorli (relacorilant + nab-paclitaxel) FDA approval platinum-resistant ovarian cancer",
+      "type": "pdufa",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Corcept Mar 25 2026 PR",
+      "_confidence": "high"
+    },
+    {
+      "date": "Dec 30 2025",
+      "dateSort": "2025-12-30",
+      "asset": "relacorilant_cushings",
+      "indication": "cushings_rela",
+      "title": "Relacorilant Cushing's CRL (additional efficacy evidence required; resubmission TBD)",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 25,
+      "fail_apr": 65,
+      "success_pos": 80,
+      "success_apr": 90,
+      "_source": "Corcept Dec 30 2025 PR",
+      "_confidence": "high"
+    },
+    {
+      "date": "2026-2027",
+      "dateSort": "2027-06-30",
+      "asset": "relacorilant_cushings",
+      "indication": "cushings_rela",
+      "title": "Relacorilant Cushing's NDA resubmission post-CRL (path TBD)",
+      "type": "nda_submission",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 70,
+      "success_pos": 85,
+      "success_apr": 92,
+      "_source": "Corcept pipeline",
+      "_confidence": "low"
+    }
+  ]
+}

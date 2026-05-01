@@ -434,10 +434,14 @@ REGIONS = {
     # Novartis SOM agonist ~$50M), Isturisa (osilodrostat Recordati 11-beta-
     # hydroxylase inhibitor ~$200M), Korlym (mifepristone Corcept ~$500M),
     # Mifepristone Recorlev (Xeris ~$50M). Class globally ~$0.8B branded.
+    # Updated FY25 reality: Korlym CORT $761M (FY25 +13% YoY; +37% tablets),
+    # Isturisa REC ~$200M, Signifor LAR REC ~$100M, Recorlev Xeris ~$70M.
+    # Branded class globally ~$1.2-1.4B. Reflecting in higher US priceK + wtp
+    # (Korlym blended with auth-generic + cumulative dosing $250-400K/yr range).
     "endocrine.pituitary.cushings": {
-        "us":  {"patientsK": 3,     "wtpPct": 70, "priceK": 180},
-        "eu":  {"patientsK": 4,     "wtpPct": 55, "priceK": 110},
-        "row": {"patientsK": 10,    "wtpPct": 18, "priceK": 35},
+        "us":  {"patientsK": 4,     "wtpPct": 80, "priceK": 300},
+        "eu":  {"patientsK": 5,     "wtpPct": 60, "priceK": 180},
+        "row": {"patientsK": 12,    "wtpPct": 20, "priceK": 40},
     },
 
     # ==================== ENDOCRINE: THYROID ====================

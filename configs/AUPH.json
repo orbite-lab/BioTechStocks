@@ -1,0 +1,465 @@
+{
+  "company": {
+    "ticker": "AUPH",
+    "name": "Aurinia Pharmaceuticals Inc.",
+    "currentPrice": 14.21,
+    "sharesOut": 133,
+    "cash": 398,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Lupkynis lupus nephritis pure-play. FY25 revenue $283.1M (+20% YoY): Lupkynis US net product $271.3M (+25%) + Otsuka EU royalty/license ~$11.8M. Net income $287.2M (boosted $173M deferred tax allowance release); operating CF $135.7M (+206%); $98.2M buybacks FY25. FY26 guide: total revenue $315-325M / Lupkynis US $305-315M. Lupkynis (voclosporin) calcineurin inhibitor; FDA Jan 2021 first oral therapy specifically for active LN; standard regimen Lupkynis + MMF + low-dose steroids ('triple therapy') supported by 2024 KDIGO guideline updates driving 2025 acceleration. Competes with generic mycophenolate (Cellcept SoC backbone); GSK Benlysta/belimumab (LN labelled 2020); AZ Saphnelo/anifrolumab (SLE only). Cash $398M no debt. PIPELINE: AUR200 / aritinercept (dual BAFF/APRIL inhibitor TACI-Fc-like) -- Ph1 SAD complete (5-300mg n=61); Ph2 SLE + IgAN H1 2026 KEY CATALYST. AUR300 (CD206/M2 macrophage modulator) deprioritized. Strategic review 2024 concluded standalone; recurring buyout chatter (Sun Pharma rumors).",
+    "yahooTicker": "AUPH"
+  },
+  "assets": [
+    {
+      "id": "lupkynis",
+      "name": "Lupkynis (voclosporin) - calcineurin inhibitor for active lupus nephritis (first oral specifically for LN)",
+      "stage": "Commercial (FDA Jan 2021; triple therapy Lupkynis+MMF+steroids; KDIGO 2024 guidelines driving 2025 acceleration)",
+      "modality": "small_molecule.calcineurin_inhibitor.voclosporin",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ln_lupkynis",
+          "name": "Active lupus nephritis (oral cyclosporine derivative; vs MMF SoC)",
+          "area": "nephrology.glomerular.lupus_nephritis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 100,
+                "wtpPct": 60,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 120,
+                "wtpPct": 42,
+                "priceK": 27
+              },
+              "row": {
+                "patientsK": 600,
+                "wtpPct": 12,
+                "priceK": 9
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 70,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 8,
+                "wtpPct": 55,
+                "priceK": 65
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 18,
+                "priceK": 20
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Lupkynis WAC ~$100K/yr",
+              "us.reachPct": "Lupkynis ~25% LN treated population on triple therapy"
+            },
+            "penPct": 40,
+            "cagrPct": 18,
+            "peakYear": 2030,
+            "salesM": 271,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "otsuka_royalty",
+      "name": "Otsuka EU/Japan Lupkynis royalty stream",
+      "stage": "Commercial royalty (Otsuka commercializes Lupkynis EU + Japan; collaboration deepening)",
+      "modality": "small_molecule.calcineurin_inhibitor.voclosporin",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ln_otsuka_royalty",
+          "name": "Lupkynis EU + Japan royalty (Otsuka commercializes)",
+          "area": "_platform.auph_otsuka_royalty",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 1,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "Otsuka royalty + license tail on Lupkynis EU/Japan"
+            },
+            "penPct": 20,
+            "cagrPct": 20,
+            "peakYear": 2030,
+            "salesM": 12,
+            "salesYear": 2025,
+            "_genericBucket": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "aur200",
+      "name": "AUR200 (aritinercept) - dual BAFF/APRIL inhibitor (TACI-Fc-like fusion protein)",
+      "stage": "Phase 1 SAD complete (well tolerated 5-300mg n=61); Ph2 SLE + IgAN starts H1 2026",
+      "modality": "recombinant_protein.fusion.taci_fc",
+      "targets": [],
+      "indications": [
+        {
+          "id": "sle_aur200",
+          "name": "SLE moderate-severe (B-cell depletion via BAFF/APRIL)",
+          "area": "immunology.autoimmune.sle",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 300,
+                "wtpPct": 55,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 350,
+                "wtpPct": 38,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 4000,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.3,
+                "wtpPct": 35,
+                "priceK": 30
+              },
+              "eu": {
+                "reachPct": 0.1,
+                "wtpPct": 25,
+                "priceK": 18
+              },
+              "row": {
+                "reachPct": 0.02,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $30K/yr SC dosing"
+            },
+            "penPct": 25,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        },
+        {
+          "id": "igan_aur200",
+          "name": "IgA nephropathy (BAFF/APRIL central pathophysiology)",
+          "area": "nephrology.glomerular.iga_nephropathy",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 130,
+                "wtpPct": 50,
+                "priceK": 65
+              },
+              "eu": {
+                "patientsK": 150,
+                "wtpPct": 35,
+                "priceK": 32
+              },
+              "row": {
+                "patientsK": 1500,
+                "wtpPct": 10,
+                "priceK": 6
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1,
+                "wtpPct": 45,
+                "priceK": 40
+              },
+              "eu": {
+                "reachPct": 0.3,
+                "wtpPct": 35,
+                "priceK": 25
+              },
+              "row": {
+                "reachPct": 0.03,
+                "wtpPct": 18,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $40K/yr (vs Filspari sparsentan + Tarpeyo budesonide)"
+            },
+            "penPct": 50,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 9,
+        "pipelineMult": 3,
+        "commercialMult": 3,
+        "commercialRevM": 280,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "lupkynis": {
+          "ln_lupkynis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "otsuka_royalty": {
+          "ln_otsuka_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "aur200": {
+          "sle_aur200": {
+            "pos": 12,
+            "apr": 60,
+            "pen": 0.3
+          },
+          "igan_aur200": {
+            "pos": 15,
+            "apr": 60,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 22,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 4,
+        "commercialMult": 5,
+        "commercialRevM": 310,
+        "milestones": 25,
+        "dil": 0
+      },
+      "assumptions": {
+        "lupkynis": {
+          "ln_lupkynis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "otsuka_royalty": {
+          "ln_otsuka_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "aur200": {
+          "sle_aur200": {
+            "pos": 22,
+            "apr": 75,
+            "pen": 0.5
+          },
+          "igan_aur200": {
+            "pos": 25,
+            "apr": 75,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 38,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 6,
+        "commercialMult": 7,
+        "commercialRevM": 350,
+        "milestones": 75,
+        "dil": 0
+      },
+      "assumptions": {
+        "lupkynis": {
+          "ln_lupkynis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "otsuka_royalty": {
+          "ln_otsuka_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "aur200": {
+          "sle_aur200": {
+            "pos": 38,
+            "apr": 85,
+            "pen": 0.8
+          },
+          "igan_aur200": {
+            "pos": 42,
+            "apr": 85,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 9,
+        "commercialMult": 10,
+        "commercialRevM": 430,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "lupkynis": {
+          "ln_lupkynis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "otsuka_royalty": {
+          "ln_otsuka_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "aur200": {
+          "sle_aur200": {
+            "pos": 55,
+            "apr": 92,
+            "pen": 1.05
+          },
+          "igan_aur200": {
+            "pos": 58,
+            "apr": 92,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 13,
+        "commercialMult": 14,
+        "commercialRevM": 600,
+        "milestones": 500,
+        "dil": 0
+      },
+      "assumptions": {
+        "lupkynis": {
+          "ln_lupkynis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "otsuka_royalty": {
+          "ln_otsuka_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "aur200": {
+          "sle_aur200": {
+            "pos": 70,
+            "apr": 96,
+            "pen": 1.25
+          },
+          "igan_aur200": {
+            "pos": 72,
+            "apr": 96,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-30",
+      "asset": "aur200",
+      "indication": "sle_aur200",
+      "title": "AUR200 (aritinercept BAFF/APRIL) Ph2 SLE + IgAN initiation",
+      "type": "phase2_start",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Aurinia FY25 release",
+      "_confidence": "high"
+    },
+    {
+      "date": "FY 2026",
+      "dateSort": "2026-12-31",
+      "asset": "lupkynis",
+      "indication": "ln_lupkynis",
+      "title": "Lupkynis FY26 guide $305-315M US (mid-teens growth on KDIGO 2024 triple therapy adoption)",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Aurinia FY26 guidance",
+      "_confidence": "high"
+    }
+  ]
+}

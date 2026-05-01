@@ -1,0 +1,1040 @@
+{
+  "company": {
+    "ticker": "1801",
+    "name": "Innovent Biologics, Inc.",
+    "currentPrice": 45,
+    "sharesOut": 1640,
+    "cash": 14000,
+    "currency": "HKD",
+    "phase": "commercial",
+    "subtitle": "Chinese antibody biotech founded 2011 by Michael Yu; HKEX 1801.HK; Suzhou HQ. FY24 revenue ~RMB 9.4B (+44%); approaching profitability. Flagship Tyvyt (sintilimab anti-PD-1; multi-tumor China: cHL + NSCLC + HCC + esophageal + gastric) ~RMB 3-4B + biosimilars (Halpryza rituximab + Sulinno adalimumab + Byvasda bevacizumab) + Sintbilo (tafolecimab PCSK9 mAb). Major pipeline: mazdutide (IBI362; GLP-1/glucagon dual; Ph3 China obesity + T2D; Lilly co-developed); picankibart (IL-23 Ph3 psoriasis); IBI363 (PD-1/IL-2 bispecific Ph2 IO-resistant); IBI343 (CLDN18.2 ADC); limertinib (3rd-gen EGFR Ph3 NSCLC)",
+    "yahooTicker": "1801.HK"
+  },
+  "assets": [
+    {
+      "id": "tyvyt",
+      "name": "Tyvyt (sintilimab; IBI308) - anti-PD-1 humanized IgG4 mAb (Innovent-discovered; Lilly partnership returned 2022 post-FDA CRL)",
+      "stage": "Commercial (China multi-indication: cHL 2018 + nsq-NSCLC 1L 2021 + sq-NSCLC 1L 2022 + HCC 1L 2022 + esophageal SCC 1L 2023 + gastric 2024); EUR EMA approved + global ex-China expansion via various partners",
+      "modality": "antibody.monoclonal.anti_pd1",
+      "targets": [
+        "PDCD1"
+      ],
+      "indications": [
+        {
+          "id": "nsclc",
+          "name": "NSCLC 1L (China; multiple histology subtypes)",
+          "area": "oncology.lung.nsclc_io_resistant",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 70,
+                "wtpPct": 60,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 95,
+                "wtpPct": 44,
+                "priceK": 105
+              },
+              "row": {
+                "patientsK": 320,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 54.5,
+                "wtpPct": 25,
+                "priceK": 11
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Tyvyt China NSCLC IO; competitive crowded vs tislelizumab/cammrelizumab/penpulimab/serplulimab cluster",
+              "row.priceK": "China anti-PD-1 NRDL ~RMB 80K/yr (~$11K)"
+            },
+            "penPct": 35,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 320,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "hcc",
+          "name": "HCC 1L (China; combo with bevacizumab biosim Byvasda)",
+          "area": "oncology.gi.hcc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 20,
+                "wtpPct": 60,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 25,
+                "wtpPct": 46,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 650,
+                "wtpPct": 22,
+                "priceK": 28
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 9.0,
+                "wtpPct": 28,
+                "priceK": 11
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Tyvyt + Byvasda China HCC 1L; competitive vs atezolizumab/bevacizumab + cammrelizumab + nivolumab/ipi",
+              "row.priceK": "China anti-PD-1 + biosim combo pricing"
+            },
+            "penPct": 45,
+            "cagrPct": 10,
+            "peakYear": 2031,
+            "salesM": 120,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "esophageal",
+          "name": "Esophageal SCC 1L + gastric (China)",
+          "area": "oncology.gi.gastric_esoph",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 58,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 44,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 20,
+                "priceK": 32
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 10.2,
+                "wtpPct": 25,
+                "priceK": 11
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Tyvyt China esophageal + gastric IO; Chinese-endemic high-incidence populations",
+              "row.priceK": "Same Tyvyt China pricing"
+            },
+            "penPct": 48,
+            "cagrPct": 10,
+            "peakYear": 2031,
+            "salesM": 150,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "hodgkin",
+          "name": "Classical Hodgkin lymphoma R/R (China; first IO label 2018)",
+          "area": "oncology.hematology.hodgkin",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 9,
+                "wtpPct": 75,
+                "priceK": 200
+              },
+              "eu": {
+                "patientsK": 12,
+                "wtpPct": 55,
+                "priceK": 120
+              },
+              "row": {
+                "patientsK": 50,
+                "wtpPct": 14,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 48.7,
+                "wtpPct": 28,
+                "priceK": 11
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Tyvyt first China cHL IO 2018; mature niche",
+              "row.priceK": "Same Tyvyt China pricing"
+            },
+            "penPct": 70,
+            "cagrPct": 3,
+            "peakYear": 2028,
+            "salesM": 50,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "mazdutide",
+      "name": "Mazdutide (IBI362; LY3305677) - GLP-1 / glucagon dual receptor agonist (Innovent-Lilly co-developed; Innovent China rights, Lilly ex-China)",
+      "stage": "Phase 3 China obesity (DREAMS-1 + 2; readout 2025-2026; first-in-class China-developed dual agonist) + Ph3 T2D",
+      "modality": "peptide.synthetic.glp1_glucagon_dual",
+      "targets": [
+        "GLP1R",
+        "GCGR"
+      ],
+      "indications": [
+        {
+          "id": "obesity",
+          "name": "Obesity (Ph3 China DREAMS; first-in-class China dual GLP-1/glucagon)",
+          "area": "cardio_metabolic.obesity.general",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40000,
+                "wtpPct": 30,
+                "priceK": 9
+              },
+              "eu": {
+                "patientsK": 30000,
+                "wtpPct": 20,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 6,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 15,
+                "priceK": 6
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Mazdutide China-leader if approved; first China-developed dual GLP-1/glucagon; competitive vs Wegovy + Zepbound imports + Hengrui HRS9531",
+              "row.priceK": "China GLP-1 obesity pricing ~RMB 40K/yr (~$5.5K)"
+            },
+            "penPct": 5,
+            "cagrPct": 35,
+            "peakYear": 2034
+          }
+        },
+        {
+          "id": "t2d",
+          "name": "Type 2 diabetes (Ph3 China)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 18,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Mazdutide China T2D; competitive vs Ozempic/Trulicity imports + tirzepatide imports",
+              "row.priceK": "China GLP-1 T2D pricing ~RMB 30K/yr"
+            },
+            "penPct": 10,
+            "cagrPct": 25,
+            "peakYear": 2034
+          }
+        }
+      ]
+    },
+    {
+      "id": "sintbilo",
+      "name": "Sintbilo (tafolecimab; IBI306) - anti-PCSK9 humanized mAb (Innovent-discovered)",
+      "stage": "Commercial (China hypercholesterolemia + HoFH; Q4W subQ)",
+      "modality": "antibody.monoclonal.anti_pcsk9",
+      "targets": [
+        "PCSK9"
+      ],
+      "indications": [
+        {
+          "id": "hyperlipidemia",
+          "name": "LDL-C lowering CV risk (China; PCSK9 mAb)",
+          "area": "cardio_metabolic.lipids.ldl_cv_risk",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 25,
+                "priceK": 1.5
+              },
+              "eu": {
+                "patientsK": 35000,
+                "wtpPct": 20,
+                "priceK": 1
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 8,
+                "priceK": 0.2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 18,
+                "priceK": 6
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Sintbilo China PCSK9 niche; competitive vs Repatha (AMGN evolocumab imports) + Praluent imports + Inclisiran",
+              "row.priceK": "China PCSK9 NRDL ~RMB 40K/yr (~$5.5K)"
+            },
+            "penPct": 6,
+            "cagrPct": 18,
+            "peakYear": 2031,
+            "salesM": 80,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "picankibart",
+      "name": "Picankibart (IBI112) - anti-IL-23 (p19) humanized mAb (Innovent-discovered)",
+      "stage": "Commercial (China plaque psoriasis 2024); Ph3 PsA + axSpA + UC (potential 2026 expansion)",
+      "modality": "antibody.monoclonal.anti_il23",
+      "targets": [
+        "IL23A"
+      ],
+      "indications": [
+        {
+          "id": "psoriasis",
+          "name": "Plaque psoriasis (China; competitive vs Skyrizi/Tremfya/Ilumya imports)",
+          "area": "dermatology.inflammatory_derm.psoriasis_systemic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 55,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2000,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 10000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 22,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "row.reachPct": "Picankibart China IL-23 psoriasis; competitive vs Skyrizi (ABBV) + Tremfya (JNJ) + cammrelizumab + IL-17 class",
+              "row.priceK": "China IL-23 NRDL ~RMB 80-100K/yr (~$11-14K)"
+            },
+            "penPct": 40,
+            "cagrPct": 30,
+            "peakYear": 2034,
+            "salesM": 50,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "ibi363",
+      "name": "IBI363 - PD-1 / IL-2 alpha-bias bispecific antibody (first-in-class; Innovent-discovered)",
+      "stage": "Phase 2 China + global (IO-resistant solid tumors; melanoma + CRC + NSCLC)",
+      "modality": "antibody.bispecific.pd1_il2",
+      "targets": [
+        "PDCD1",
+        "IL2"
+      ],
+      "indications": [
+        {
+          "id": "io_resistant",
+          "name": "IO-resistant solid tumors (Ph2; melanoma + CRC + NSCLC)",
+          "area": "oncology.lung.nsclc_io_resistant",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 70,
+                "wtpPct": 60,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 95,
+                "wtpPct": 44,
+                "priceK": 105
+              },
+              "row": {
+                "patientsK": 320,
+                "wtpPct": 15,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1,
+                "wtpPct": 50,
+                "priceK": 80
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 35,
+                "priceK": 50
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 18,
+                "priceK": 18
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "IBI363 first-in-class PD-1/IL-2 bispecific; addressable IO-resistant subset; Innovent global rights potential",
+              "us.priceK": "Global novel bispecific IO ~$80K/yr if approved"
+            },
+            "penPct": 35,
+            "cagrPct": 30,
+            "peakYear": 2035
+          }
+        }
+      ]
+    },
+    {
+      "id": "ibi343",
+      "name": "IBI343 (claudin 18.2 ADC) - first-in-class anti-CLDN18.2 ADC (CMG901-class; topo-I payload)",
+      "stage": "Phase 2 China (gastric + pancreatic CLDN18.2-positive; competitive vs Astellas zolbetuximab + Daiichi/AZN ADCs)",
+      "modality": "adc.cldn18_2.topo1",
+      "targets": [
+        "CLDN18"
+      ],
+      "indications": [
+        {
+          "id": "gastric_cldn",
+          "name": "CLDN18.2+ gastric cancer 2L+ (Ph2 China; expansion to pancreatic)",
+          "area": "oncology.gi.gastric_esoph",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 58,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 44,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 20,
+                "priceK": 32
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 50,
+                "priceK": 130
+              },
+              "eu": {
+                "reachPct": 0.3,
+                "wtpPct": 35,
+                "priceK": 75
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 22,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "IBI343 CLDN18.2 ADC; competitive vs Vyloy (Astellas zolbetuximab anti-CLDN18.2 mAb) + emerging ADC class",
+              "us.priceK": "ADC global pricing ~$130K/yr"
+            },
+            "penPct": 48,
+            "cagrPct": 28,
+            "peakYear": 2034
+          }
+        }
+      ]
+    },
+    {
+      "id": "innovent_legacy",
+      "name": "Innovent biosimilars + ex-Tyvyt commercial portfolio - Halpryza (rituximab) + Sulinno (adalimumab) + Byvasda (bevacizumab)",
+      "stage": "Commercial (China biosimilars + smaller commercial assets)",
+      "modality": "antibody.monoclonal.various_biosimilar",
+      "targets": [],
+      "indications": [
+        {
+          "id": "biosim_bulk",
+          "name": "Innovent biosimilar + commercial bulk (rituximab + adalimumab + bevacizumab biosims; cervical mAb + smaller mAbs)",
+          "area": "_established_products.innovent_heritage",
+          "market": {
+            "tamB": 30,
+            "penPct": 0,
+            "salesM": 600,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 5,
+            "notes": "Innovent biosimilar portfolio: Halpryza (rituximab biosim of Rituxan; oncology + autoimmune), Sulinno (adalimumab biosim of Humira; immunology), Byvasda (bevacizumab biosim of Avastin; oncology multi-tumor combos with Tyvyt). Plus smaller mAb assets including IBI311 (anti-IGF-1R for thyroid eye disease), IBI112 (anti-IL-23 ulcerative colitis line extension). Mid-single-digit growth via NRDL coverage + indication expansion.",
+            "company_slice": {},
+            "company_slice_sources": {}
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 4,
+        "commercialMult": 4,
+        "commercialRevM": 8000,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "tyvyt": {
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "esophageal": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "hodgkin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "mazdutide": {
+          "obesity": {
+            "pos": 50,
+            "apr": 75,
+            "pen": 0.4
+          },
+          "t2d": {
+            "pos": 60,
+            "apr": 80,
+            "pen": 0.4
+          }
+        },
+        "sintbilo": {
+          "hyperlipidemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "picankibart": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "ibi363": {
+          "io_resistant": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.3
+          }
+        },
+        "ibi343": {
+          "gastric_cldn": {
+            "pos": 25,
+            "apr": 50,
+            "pen": 0.3
+          }
+        },
+        "innovent_legacy": {
+          "biosim_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 5,
+        "commercialMult": 6,
+        "commercialRevM": 9500,
+        "milestones": 100,
+        "dil": 0
+      },
+      "assumptions": {
+        "tyvyt": {
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "esophageal": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          },
+          "hodgkin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.65
+          }
+        },
+        "mazdutide": {
+          "obesity": {
+            "pos": 70,
+            "apr": 88,
+            "pen": 0.6
+          },
+          "t2d": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 0.55
+          }
+        },
+        "sintbilo": {
+          "hyperlipidemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "picankibart": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        },
+        "ibi363": {
+          "io_resistant": {
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.5
+          }
+        },
+        "ibi343": {
+          "gastric_cldn": {
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.5
+          }
+        },
+        "innovent_legacy": {
+          "biosim_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.55
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 35,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 7,
+        "commercialMult": 9,
+        "commercialRevM": 11500,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "tyvyt": {
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "esophageal": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          },
+          "hodgkin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "mazdutide": {
+          "obesity": {
+            "pos": 88,
+            "apr": 94,
+            "pen": 0.85
+          },
+          "t2d": {
+            "pos": 92,
+            "apr": 96,
+            "pen": 0.75
+          }
+        },
+        "sintbilo": {
+          "hyperlipidemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "picankibart": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "ibi363": {
+          "io_resistant": {
+            "pos": 65,
+            "apr": 82,
+            "pen": 0.7
+          }
+        },
+        "ibi343": {
+          "gastric_cldn": {
+            "pos": 65,
+            "apr": 82,
+            "pen": 0.7
+          }
+        },
+        "innovent_legacy": {
+          "biosim_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 10,
+        "commercialMult": 13,
+        "commercialRevM": 14000,
+        "milestones": 400,
+        "dil": 0
+      },
+      "assumptions": {
+        "tyvyt": {
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          },
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "esophageal": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "hodgkin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "mazdutide": {
+          "obesity": {
+            "pos": 95,
+            "apr": 97,
+            "pen": 1.05
+          },
+          "t2d": {
+            "pos": 96,
+            "apr": 98,
+            "pen": 0.9
+          }
+        },
+        "sintbilo": {
+          "hyperlipidemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "picankibart": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "ibi363": {
+          "io_resistant": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 0.9
+          }
+        },
+        "ibi343": {
+          "gastric_cldn": {
+            "pos": 80,
+            "apr": 90,
+            "pen": 0.9
+          }
+        },
+        "innovent_legacy": {
+          "biosim_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 14,
+        "commercialMult": 18,
+        "commercialRevM": 18000,
+        "milestones": 800,
+        "dil": 0
+      },
+      "assumptions": {
+        "tyvyt": {
+          "nsclc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "hcc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          },
+          "esophageal": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          },
+          "hodgkin": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "mazdutide": {
+          "obesity": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "sintbilo": {
+          "hyperlipidemia": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "picankibart": {
+          "psoriasis": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "ibi363": {
+          "io_resistant": {
+            "pos": 92,
+            "apr": 96,
+            "pen": 1.2
+          }
+        },
+        "ibi343": {
+          "gastric_cldn": {
+            "pos": 92,
+            "apr": 96,
+            "pen": 1.2
+          }
+        },
+        "innovent_legacy": {
+          "biosim_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "mazdutide",
+      "indication": "obesity",
+      "title": "Mazdutide GLP-1/glucagon dual Ph3 China DREAMS obesity readout (first-in-class China-developed; Lilly co-development)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 50,
+      "success_pos": 92,
+      "success_apr": 96,
+      "_source": "https://www.innoventbio.com/en/investor",
+      "_confidence": "high"
+    },
+    {
+      "date": "H1 2027",
+      "dateSort": "2027-06-30",
+      "asset": "ibi363",
+      "indication": "io_resistant",
+      "title": "IBI363 PD-1/IL-2 bispecific Ph2 readout IO-resistant tumors (first-in-class)",
+      "type": "phase2_data",
+      "binary": false,
+      "_source": "https://www.innoventbio.com/en/investor",
+      "_confidence": "medium"
+    }
+  ]
+}

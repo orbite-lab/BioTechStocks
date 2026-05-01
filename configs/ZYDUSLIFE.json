@@ -2,12 +2,12 @@
   "company": {
     "ticker": "ZYDUSLIFE",
     "name": "Zydus Lifesciences Ltd.",
-    "currentPrice": 925,
+    "currentPrice": 901.65,
     "sharesOut": 1010,
     "cash": 29400,
     "currency": "INR",
     "phase": "commercial",
-    "subtitle": "Indian pharma with strong US generics franchise + innovative pipeline. FY25 revenue INR 23,242 Cr / ~$2.78B (+19% YoY): US generics ~50% (~$1.39B; gVyvanse FDA Aug 2023 major contributor), India branded ~25-29% (~$700M; #6 in IPM), Consumer Wellness ~14% (Zydus Wellness consol), Emerging Markets + Europe + API ~11%. Net cash ~$350M; debt-free. Innovation pipeline: Saroglitazar (Lipaglyn) PPAR-α/γ -- EPICS-III Ph3 PBC HIT primary, US NDA Q1 2026; MASH Ph2b ongoing. Desidustat (Oxemia) HIF-PHI CKD anemia (India 2022, China NMPA Mar 2026). ZYIL1 NLRP3 Ph2 ALS/CAPS. ZyCoV-D DNA COVID vaccine (first DNA vaccine globally). Biosimilars: bevacizumab (Lucent), trastuzumab, ranibizumab, adalimumab (Exemptia).",
+    "subtitle": "Indian pharma with strong US generics franchise + innovative pipeline. FY25 consolidated revenue INR 23,242 Cr / ~$2.78B (+19% YoY): US generics ~50% (~$1.39B; gVyvanse internal estimate ~$300M), India branded ~$700M (#6 IPM; +11% Q4), Consumer Wellness ~$390M (+17%), Emerging Markets + Europe + API ~$300M. Net cash ~$350M; debt-free. INNOVATION: Saroglitazar (Lipaglyn/Bilypsa) PPAR-α/γ EPICS-III Ph2b/3 HIT primary Aug 29 2025 in PBC (48.5% treatment difference vs placebo p<0.001 + ALP normalization); US NDA filing planned Q1 2026 (vs Iqirvo elafibranor + Livdelzi seladelpar already approved). MASH Ph2b ongoing. Desidustat (Oxemia) HIF-PHI CKD anemia: India 2022; China NMPA approved Mar 13 2026 (CMS Holdings royalty). ZYIL1 NLRP3 Ph2 ALS/CAPS. NEW: Zylidac Bio LLC US biologics CDMO via Agenus facility acquisition + $141M BOT/BAL (botensilimab/balstilimab) collab. Dec 2025 Formycon partnership for biosimilar pembrolizumab US/Canada. Biosimilars: bevacizumab (Lucent), trastuzumab, ranibizumab (LucentDx), adalimumab (Exemptia ~32% India share). ZyCoV-D DNA COVID vaccine wound down.",
     "yahooTicker": "ZYDUSLIFE.NS"
   },
   "assets": [
@@ -1604,7 +1604,7 @@
     {
       "id": "saroglitazar",
       "name": "Saroglitazar (Lipaglyn / Bilypsa) - PPAR-alpha/gamma dual agonist (Zydus discovery)",
-      "stage": "Phase 3 PBC EPICS-III HIT primary 2025; US NDA Q1 2026; MASH Ph2b; India approved NASH/dyslipidemia",
+      "stage": "Phase 2b/3 PBC EPICS-III HIT primary Aug 29 2025; US NDA filing planned Q1 2026; MASH Ph2b; India approved NASH/dyslipidemia",
       "modality": "small_molecule.nuclear_receptor.ppar_dual",
       "targets": [],
       "indications": [
@@ -2055,11 +2055,26 @@
   },
   "catalysts": [
     {
+      "date": "Aug 29 2025",
+      "dateSort": "2025-08-29",
+      "asset": "saroglitazar",
+      "indication": "pbc",
+      "title": "Saroglitazar PBC EPICS-III Ph2b/3 HIT primary (48.5% treatment diff p<0.001)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 65,
+      "success_pos": 88,
+      "success_apr": 90,
+      "_source": "Zydus PR Aug 29 2025; BioSpace",
+      "_confidence": "high"
+    },
+    {
       "date": "Q1 2026",
       "dateSort": "2026-03-31",
       "asset": "saroglitazar",
       "indication": "pbc",
-      "title": "Saroglitazar PBC US NDA filing (post EPICS-III Ph3 hit)",
+      "title": "Saroglitazar PBC US NDA filing (planned)",
       "type": "nda_submission",
       "binary": false,
       "fail_pos": 100,
@@ -2070,19 +2085,19 @@
       "_confidence": "high"
     },
     {
-      "date": "H2 2026",
-      "dateSort": "2026-12-15",
-      "asset": "saroglitazar",
-      "indication": "pbc",
-      "title": "Saroglitazar PBC FDA acceptance + PDUFA 2027",
-      "type": "pdufa",
-      "binary": true,
-      "fail_pos": 50,
-      "fail_apr": 75,
-      "success_pos": 92,
-      "success_apr": 92,
-      "_source": "Zydus pipeline",
-      "_confidence": "medium"
+      "date": "Mar 13 2026",
+      "dateSort": "2026-03-13",
+      "asset": "desidustat",
+      "indication": "ckd_anemia",
+      "title": "Desidustat China NMPA approval (CMS Holdings royalty trigger)",
+      "type": "ema_approval",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "GlobeNewswire CMS Mar 13 2026",
+      "_confidence": "high"
     },
     {
       "date": "2026-2027",

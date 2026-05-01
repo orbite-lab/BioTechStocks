@@ -133,12 +133,12 @@ def build_ZYDUSLIFE():
     co = od(
         ("ticker", "ZYDUSLIFE"),
         ("name", "Zydus Lifesciences Ltd."),
-        ("currentPrice", 925),
+        ("currentPrice", 901.65),
         ("sharesOut", 1010),
         ("cash", round(350 * FX)),  # +$350M net cash
         ("currency", "INR"),
         ("phase", "commercial"),
-        ("subtitle", "Indian pharma with strong US generics franchise + innovative pipeline. FY25 revenue INR 23,242 Cr / ~$2.78B (+19% YoY): US generics ~50% (~$1.39B; gVyvanse FDA Aug 2023 major contributor), India branded ~25-29% (~$700M; #6 in IPM), Consumer Wellness ~14% (Zydus Wellness consol), Emerging Markets + Europe + API ~11%. Net cash ~$350M; debt-free. Innovation pipeline: Saroglitazar (Lipaglyn) PPAR-α/γ -- EPICS-III Ph3 PBC HIT primary, US NDA Q1 2026; MASH Ph2b ongoing. Desidustat (Oxemia) HIF-PHI CKD anemia (India 2022, China NMPA Mar 2026). ZYIL1 NLRP3 Ph2 ALS/CAPS. ZyCoV-D DNA COVID vaccine (first DNA vaccine globally). Biosimilars: bevacizumab (Lucent), trastuzumab, ranibizumab, adalimumab (Exemptia)."),
+        ("subtitle", "Indian pharma with strong US generics franchise + innovative pipeline. FY25 consolidated revenue INR 23,242 Cr / ~$2.78B (+19% YoY): US generics ~50% (~$1.39B; gVyvanse internal estimate ~$300M), India branded ~$700M (#6 IPM; +11% Q4), Consumer Wellness ~$390M (+17%), Emerging Markets + Europe + API ~$300M. Net cash ~$350M; debt-free. INNOVATION: Saroglitazar (Lipaglyn/Bilypsa) PPAR-α/γ EPICS-III Ph2b/3 HIT primary Aug 29 2025 in PBC (48.5% treatment difference vs placebo p<0.001 + ALP normalization); US NDA filing planned Q1 2026 (vs Iqirvo elafibranor + Livdelzi seladelpar already approved). MASH Ph2b ongoing. Desidustat (Oxemia) HIF-PHI CKD anemia: India 2022; China NMPA approved Mar 13 2026 (CMS Holdings royalty). ZYIL1 NLRP3 Ph2 ALS/CAPS. NEW: Zylidac Bio LLC US biologics CDMO via Agenus facility acquisition + $141M BOT/BAL (botensilimab/balstilimab) collab. Dec 2025 Formycon partnership for biosimilar pembrolizumab US/Canada. Biosimilars: bevacizumab (Lucent), trastuzumab, ranibizumab (LucentDx), adalimumab (Exemptia ~32% India share). ZyCoV-D DNA COVID vaccine wound down."),
         ("yahooTicker", "ZYDUSLIFE.NS"),
     )
 
@@ -179,7 +179,7 @@ def build_ZYDUSLIFE():
     # Innovative pipeline
     assets.append(asset(
         "saroglitazar", "Saroglitazar (Lipaglyn / Bilypsa) - PPAR-alpha/gamma dual agonist (Zydus discovery)",
-        "Phase 3 PBC EPICS-III HIT primary 2025; US NDA Q1 2026; MASH Ph2b; India approved NASH/dyslipidemia",
+        "Phase 2b/3 PBC EPICS-III HIT primary Aug 29 2025; US NDA filing planned Q1 2026; MASH Ph2b; India approved NASH/dyslipidemia",
         "small_molecule.nuclear_receptor.ppar_dual",
         [
             innov_ind("pbc", "Primary biliary cholangitis (anti-cholestatic)",
@@ -255,16 +255,21 @@ def build_ZYDUSLIFE():
                                      pipeline_asmp_by_scen=pipeline_asmps)
 
     catalysts = [
+        od(("date", "Aug 29 2025"), ("dateSort", "2025-08-29"), ("asset", "saroglitazar"),
+           ("indication", "pbc"), ("title", "Saroglitazar PBC EPICS-III Ph2b/3 HIT primary (48.5% treatment diff p<0.001)"),
+           ("type", "phase3_data"), ("binary", True),
+           ("fail_pos", 30), ("fail_apr", 65), ("success_pos", 88), ("success_apr", 90),
+           ("_source", "Zydus PR Aug 29 2025; BioSpace"), ("_confidence", "high")),
         od(("date", "Q1 2026"), ("dateSort", "2026-03-31"), ("asset", "saroglitazar"),
-           ("indication", "pbc"), ("title", "Saroglitazar PBC US NDA filing (post EPICS-III Ph3 hit)"),
+           ("indication", "pbc"), ("title", "Saroglitazar PBC US NDA filing (planned)"),
            ("type", "nda_submission"), ("binary", False),
            ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
            ("_source", "Zydus FY25 release"), ("_confidence", "high")),
-        od(("date", "H2 2026"), ("dateSort", "2026-12-15"), ("asset", "saroglitazar"),
-           ("indication", "pbc"), ("title", "Saroglitazar PBC FDA acceptance + PDUFA 2027"),
-           ("type", "pdufa"), ("binary", True),
-           ("fail_pos", 50), ("fail_apr", 75), ("success_pos", 92), ("success_apr", 92),
-           ("_source", "Zydus pipeline"), ("_confidence", "medium")),
+        od(("date", "Mar 13 2026"), ("dateSort", "2026-03-13"), ("asset", "desidustat"),
+           ("indication", "ckd_anemia"), ("title", "Desidustat China NMPA approval (CMS Holdings royalty trigger)"),
+           ("type", "ema_approval"), ("binary", False),
+           ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
+           ("_source", "GlobeNewswire CMS Mar 13 2026"), ("_confidence", "high")),
         od(("date", "2026-2027"), ("dateSort", "2027-06-30"), ("asset", "saroglitazar"),
            ("indication", "mash"), ("title", "Saroglitazar MASH Ph2b biopsy readout"),
            ("type", "phase2_data"), ("binary", True),
@@ -284,12 +289,12 @@ def build_BIOCON():
     co = od(
         ("ticker", "BIOCON"),
         ("name", "Biocon Ltd."),
-        ("currentPrice", 348.6),
-        ("sharesOut", 1581),
-        ("cash", round(-1350 * FX)),  # net debt $1.35B post-Viatris biosim acq Nov 2022
+        ("currentPrice", 362),
+        ("sharesOut", 1780),  # post-Jun 2025 QIP + Dec 2025 Viatris equity buyout
+        ("cash", round(-1400 * FX)),  # net debt ~$1.4B by Mar 2026 (S&P; post-deleveraging from $2.9B Sep 2025 peak)
         ("currency", "INR"),
         ("phase", "commercial"),
-        ("subtitle", "Indian biosimilars + insulin pure-play. FY25 revenue INR 9,017 Cr / ~$1.08B (+15% LFL): Biocon Biologics ~$880M (post Nov 2022 $3B Viatris biosim acq -- four products at $200M+ each), Biocon Pharma generics +8% YoY (statins + immunosuppressants), Syngene CRO (separately listed). Net debt ~$1.35B Sep 2025; deleveraging via biosim FCF. Biosimilars: Hulio (adalimumab, full global rights from FKB 2023), Semglee/Rezvoglar (insulin glargine first US interchangeable to Lantus), Fulphila (pegfilgrastim), Ogivri (trastuzumab), Abevmy/Kirsty (bevacizumab), Yesintek (ustekinumab US launched FY25), Yesafili (aflibercept FDA May 2024 first interchangeable; US launch H2 2026 per Regeneron settlement). Insulin Aspart, Lispro, Tresiba franchise. Pipeline: denosumab, omalizumab, rituximab, ocrelizumab biosim."),
+        ("subtitle", "Indian biosimilars + insulin pure-play. FY25 CONSOLIDATED revenue INR 16,500 Cr / ~$1.97B (NOT 1.08B): Biocon Biologics ~$1.10B + Biocon Pharma generics ~$400M (Q4 +46% on lenalidomide US launch) + Syngene CRO ~$435M (separately listed). MAJOR 2025/26 EVENTS: Jun 2025 QIP $525M for debt reduction; Dec 2025 Viatris convertible buyout $815M ($400M cash + $415M new equity, closes Q1 CY2026); Biocon Biologics IPO CANCELLED, full merger into BIOCON parent by Mar 31 2026. S&P expects debt $2.9B (Sep 2025) -> ~$1.4B (Mar 2026). Biosimilars: Hulio adalimumab (FKB 2023 global rights), Semglee/Rezvoglar (first US interchangeable Lantus), Fulphila pegfilgrastim, Ogivri trastuzumab, Abevmy/Kirsty bevacizumab, Yesintek ustekinumab (US launched Feb 24 2025; 100M+ lives May 2025), Yesafili aflibercept (FDA May 2024 first interchangeable; UK launched Jan 2026, RoW Mar 2026, US H2 2026 per Regeneron settlement). Insulin Aspart/Lispro/Tresiba franchise. Pipeline: trastuzumab SC, nivolumab biosim, pembrolizumab biosim, denosumab, omalizumab, rituximab, ocrelizumab."),
         ("yahooTicker", "BIOCON.NS"),
     )
 
@@ -390,7 +395,8 @@ def build_BIOCON():
                              200, "us_generics_developed_v1"))
 
     weights = {"mega_bear": 12, "bear": 25, "base": 38, "bull": 20, "psychedelic_bull": 5}
-    crev = {"mega_bear": 1000, "bear": 1100, "base": 1200, "bull": 1400, "psychedelic_bull": 1700}
+    # Consolidated FY25 ~$1.97B; FY26 expected ~$2.2B with biosim ramp + Yesafili
+    crev = {"mega_bear": 1850, "bear": 2000, "base": 2200, "bull": 2500, "psychedelic_bull": 3000}
     crev = {k: round(v * FX) for k, v in crev.items()}
     cmult = {"mega_bear": 3, "bear": 4.5, "base": 6, "bull": 8, "psychedelic_bull": 11}
     pmult = {"mega_bear": 2, "bear": 3, "base": 4, "bull": 6, "psychedelic_bull": 9}
@@ -433,11 +439,11 @@ def build_TORNTPHARM():
         ("ticker", "TORNTPHARM"),
         ("name", "Torrent Pharmaceuticals Ltd. (post JB Chem amalgamation)"),
         ("currentPrice", 4231.50),
-        ("sharesOut", 338.45),
-        ("cash", round(-1500 * FX)),  # post-JB Chem $1.39B + existing debt
+        ("sharesOut", 344),
+        ("cash", round(-1700 * FX)),  # post bond issue INR 12,500 Cr (~$1.5B) + existing debt = ~-$1.7B
         ("currency", "INR"),
         ("phase", "commercial"),
-        ("subtitle", "Indian branded + EU/Brazil specialty (#5 in IPM, #4 in cardio). FY25 revenue INR 116B / ~$1.39B (+9%): India 55% (~$770M; cardio + CNS + diabetes + GI dominant; Nikoran/Cilnidipine/Veloz/Glycomet/Pan/Pantop), Brazil 10%, US 10%, Germany 10%, RoW + CDMO 15% (#1 Indian player Brazil + Germany + Philippines). #2 Indian pharma post JB Chem amalgamation: announced 29-Jun-2025 ($1.39B / 46.39% stake from KKR; closed 21-Jan-2026; shareholder approvals Apr 2026; NCLT pending H2 2026). JB adds Cilacar/Razel/Rantac/Metrogyl/Nicardia (heavily cardio-overlapping). Net debt/EBITDA swung from 0.6x pre-deal to ~2.5-3x post-deal. NO innovative pipeline -- pure branded India + EU/Brazil + complex generics."),
+        ("subtitle", "Indian branded + EU/Brazil specialty (#5 in IPM, #4 in cardio). FY25 standalone revenue INR 11,516 Cr / ~$1.39B (+9%): India 55% (~$770M; cardio + CNS + diabetes + GI dominant; Nikoran/Cilnidipine/Veloz/Glycomet/Pan/Pantop + Vonoprazan PCAB Takeda-licensed Jun 2024), US 10% (~$130M), Germany 10% (~$140M), Brazil ~$48M (5% +cc; not 10%), RoW + CDMO ~$210M. #2 Indian pharma post JB Chem amalgamation: announced 29-Jun-2025 ($1.39B for 46.39% KKR block; 48.80% post Feb 3 2026 open offer); closed 21-Jan-2026; SH approvals Apr 28 2026; NCLT pending H2 2026. JB adds Cilacar/Razel/Rantac/Metrogyl/Nicardia (heavily cardio). Funded via INR 12,500 Cr (~$1.5B) NCD/CP bonds AA+ 7.15-7.5%. Net debt/EBITDA 0.6x pre -> ~2.5-3x post-deal. NO innovative R&D pipeline."),
         ("yahooTicker", "TORNTPHARM.NS"),
     )
 
@@ -455,9 +461,9 @@ def build_TORNTPHARM():
                               "cns.psychiatry.depression": 0.06,
                               "immunology.inflammatory_gi.gerd_peptic": 0.10}))
     assets.append(gen_bucket("torrent_brazil",
-                             "Torrent Brazil branded generics franchise (#1 Indian player Brazil)",
-                             "Commercial (FY25 ~$140M)",
-                             140, "emerging_markets_generics_v1"))
+                             "Torrent Brazil branded generics franchise",
+                             "Commercial (FY25 BRL 234M / ~$48M; +5% cc)",
+                             48, "emerging_markets_generics_v1"))
     assets.append(gen_bucket("torrent_us",
                              "Torrent US generics franchise",
                              "Commercial (FY25 ~$140M; Q4 +10% cc)",
@@ -472,8 +478,9 @@ def build_TORNTPHARM():
                              210, "emerging_markets_generics_v1"))
 
     weights = {"mega_bear": 10, "bear": 22, "base": 38, "bull": 25, "psychedelic_bull": 5}
-    # FY25 $1.39B + JB Chem $300M ramp = post-amalg run-rate $1.7B
-    crev = {"mega_bear": 1500, "bear": 1650, "base": 1800, "bull": 2050, "psychedelic_bull": 2500}
+    # FY25 standalone $1.39B + JB Chem $300M = post-amalg run-rate ~$1.7B
+    # Brazil cut to ~$48M trims base slightly
+    crev = {"mega_bear": 1450, "bear": 1600, "base": 1750, "bull": 2000, "psychedelic_bull": 2400}
     crev = {k: round(v * FX) for k, v in crev.items()}
     # Premium multiples reflecting #5 IPM + cardio dominance + JB synergies + dividend
     cmult = {"mega_bear": 6, "bear": 8, "base": 10, "bull": 13, "psychedelic_bull": 17}
@@ -517,7 +524,7 @@ def build_GLENMARK():
         ("cash", round(-60 * FX)),  # net debt $60M (cash $206M - debt $264M Mar 2025)
         ("currency", "INR"),
         ("phase", "commercial"),
-        ("subtitle", "Indian formulations specialist (post-Glenmark Life Sciences API divestment Nirma 2023). FY25 revenue INR 13,322 Cr / ~$1.60B (+13%): India 33% (~$540M; +32% YoY; derm + respiratory + cardio franchises), Europe 21% (~$343M; Ryaltris driver, +18% YoY), RoW 21% (~$339M), North America 19% (~$310M; -5% Q4 pricing pressure). Net debt $60M; deleveraged post-Nirma sale. INNOVATION: ISB 2001 (CD38xBCMAxCD3 trispecific T-cell engager via Ichnos Glenmark Innovation IGI NJ subsidiary) -- ASCO 2025 Ph1 r/r MM 79% ORR / 30% CR; FDA Fast Track May 2025; Orphan; AbbVie GLOBAL LICENSING DEAL Jul 2025 (oncology + autoimmune; milestones + royalties). Ryaltris (mometasone+olopatadine FDC nasal) FDA Jan 2022; commercialized 45+ markets."),
+        ("subtitle", "Indian formulations specialist (post-Glenmark Life Sciences API divestment to Nirma 2024 INR 5,651 Cr; 7.84% residual). FY25 revenue INR 13,322 Cr / ~$1.60B (+13%): India ~$540M (+32% YoY; derm + respi + cardio; outstanding +14% IPM growth), Europe ~$337M (+18% YoY; Ryaltris driver), RoW ~$333M (+1.7% YoY; flat), North America ~$317M (Q4 -5% pricing pressure). Net debt ~$60M post-Nirma. INNOVATION: ISB 2001 (CD38xBCMAxCD3 trispecific TCE via Ichnos Glenmark Innovation IGI NJ subsidiary) -- ASCO 2025 Ph1 r/r MM 79% ORR / 30% CR (n=33 evaluable); FDA Fast Track May 2025; Orphan. ABBVIE LICENSING DEAL Jul 10 2025: $700M upfront + up to $1.225B milestones + tiered double-digit royalties, TERRITORY = NA + EU + Japan + Greater China (NOT global; IGI retains RoW commercialization). Total $1.925B + royalties; oncology + autoimmune indications. Ryaltris (mometasone+olopatadine FDC nasal allergic rhinitis) FDA Jan 2022; commercialized 45+ markets. Q1 FY26 PAT -86% on one-time US settlement charge."),
         ("yahooTicker", "GLENMARK.NS"),
     )
 
@@ -560,16 +567,16 @@ def build_GLENMARK():
                               "respiratory.inflammatory.asthma_severe": 0.10}))
     assets.append(gen_bucket("glenmark_eu_ex_ryaltris",
                              "Glenmark Europe ex-Ryaltris franchise",
-                             "Commercial (FY25 ~$163M EU)",
-                             163, "eu_generics_developed_v1"))
+                             "Commercial (FY25 ~$157M EU ex-Ryaltris; total EU $337M +18% YoY)",
+                             157, "eu_generics_developed_v1"))
     assets.append(gen_bucket("glenmark_row",
                              "Glenmark RoW + Emerging Markets franchise",
-                             "Commercial (FY25 ~$339M)",
-                             339, "emerging_markets_generics_v1"))
+                             "Commercial (FY25 ~$333M; +1.7% YoY)",
+                             333, "emerging_markets_generics_v1"))
     assets.append(gen_bucket("glenmark_na",
                              "Glenmark North America generics franchise",
-                             "Commercial (FY25 ~$310M; Q4 -5% on pricing pressure; 51 ANDAs pending)",
-                             310, "us_generics_developed_v1"))
+                             "Commercial (FY25 ~$317M; Q4 -5% on pricing pressure; 51 ANDAs pending)",
+                             317, "us_generics_developed_v1"))
 
     weights = {"mega_bear": 10, "bear": 22, "base": 38, "bull": 25, "psychedelic_bull": 5}
     crev = {"mega_bear": 1500, "bear": 1650, "base": 1800, "bull": 2050, "psychedelic_bull": 2400}

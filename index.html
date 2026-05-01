@@ -1694,20 +1694,26 @@ async function main(){
               }
             }
             const sales = m.salesM || 0;
+            // Generic-bucket flag: indication is part of an auto-expanded
+            // generics/biosimilar mixTemplate franchise (vs a branded innovator)
+            const isGen = !!m._genericBucket;
             const parts = area.split('.');
             // Register at every level: L1, L1.L2, L1.L2.L3, L1.L2.L3.L4
             for (let depth = 1; depth <= parts.length; depth++) {
               const path = parts.slice(0, depth).join('.');
-              if (!areaData[path]) areaData[path] = { tamByLeaf: {}, som: 0, sales: 0, companies: [] };
+              if (!areaData[path]) areaData[path] = { tamByLeaf: {}, som: 0, sales: 0, salesBranded: 0, salesGeneric: 0, companies: [] };
               // TAM deduped per leaf area (so rolling up doesn't double-count)
               areaData[path].tamByLeaf[area] = tam;
               areaData[path].som += som;
               areaData[path].sales += sales;
+              if (isGen) areaData[path].salesGeneric += sales;
+              else areaData[path].salesBranded += sales;
               if (depth === parts.length) {
                 // At leaf level, register the company entry
                 areaData[path].companies.push({
                   ticker: tk, name: coName, asset: a.name, assetId: a.id,
-                  ind: ind.name, indId: ind.id, area, som, sales, tam, stage: a.stage || ''
+                  ind: ind.name, indId: ind.id, area, som, sales, tam,
+                  stage: a.stage || '', isGeneric: isGen
                 });
               }
             }
@@ -1748,9 +1754,18 @@ async function main(){
         const entries = areaData[p].companies || [];
         const pipe = isPipelineOnlyLeaf(entries);
         areaData[p].pipelineOnly = pipe;
+        // Generic share: % of total sales that comes from generic/biosimilar buckets
+        const totS = (areaData[p].salesBranded || 0) + (areaData[p].salesGeneric || 0);
+        areaData[p].genericSharePct = totS > 0 ? (areaData[p].salesGeneric / totS) * 100 : 0;
         // Only assign marketStatus for actual leaves (paths with entries)
         if (entries.length > 0) {
-          if (!pipe) areaData[p].marketStatus = 'branded_incumbent';
+          if (!pipe) {
+            // Auto-derive generic_incumbent when >=80% of leaf sales come from
+            // generic/biosimilar buckets (no real branded innovator dominates).
+            // Otherwise the leaf is genuinely contested by branded sponsors.
+            if (areaData[p].genericSharePct >= 80) areaData[p].marketStatus = 'generic_incumbent';
+            else areaData[p].marketStatus = 'branded_incumbent';
+          }
           else if (p in _ovExt) areaData[p].marketStatus = 'branded_incumbent_external';
           else if (p in _ovGen) areaData[p].marketStatus = 'generic_incumbent';
           else areaData[p].marketStatus = 'novel';
@@ -2000,10 +2015,14 @@ async function main(){
           const statusBadge = (() => {
             if (subAreas > 0) return '';  // branch node, no single status
             const ms = c.marketStatus;
+            const gShare = c.genericSharePct || 0;
             if (ms === 'novel') return ' <span style="color:#a3e635;font-weight:700" title="Truly novel: no covered drug + no known external incumbent">🌱 Novel</span>';
-            if (ms === 'generic_incumbent') return ' <span style="color:#94a3b8" title="Pipeline-only in coverage; generic SoC dominates">💊 Generic SoC</span>';
+            if (ms === 'generic_incumbent') return ` <span style="color:#94a3b8" title="Generic/biosimilar dominated: ${gShare.toFixed(0)}% of leaf sales come from generic-bucket attributions">💊 Generic SoC${gShare>0?' '+gShare.toFixed(0)+'%':''}</span>`;
             if (ms === 'branded_incumbent_external') return ' <span style="color:#fbbf24" title="Pipeline-only in coverage; branded incumbent exists outside coverage">🏷️ Ext. branded</span>';
-            if (ms === 'branded_incumbent') return ' <span style="color:#22c55e" title="Has commercial drug in coverage">✅ Commercial</span>';
+            if (ms === 'branded_incumbent') {
+              const gTag = gShare >= 20 ? ` <span style="color:#94a3b8;font-size:.55rem;font-weight:600" title="Generic/biosimilar share of total leaf sales">+ ${gShare.toFixed(0)}% Gx</span>` : '';
+              return ` <span style="color:#22c55e" title="Has commercial drug in coverage">✅ Commercial</span>${gTag}`;
+            }
             return '';
           })();
           const subTxt = subAreas > 0
@@ -2014,7 +2033,12 @@ async function main(){
           h+=`<div>`;
           h+=`<div style="display:flex;justify-content:space-between;font-size:${tierNum}rem;font-family:var(--mono);font-weight:700;margin-bottom:4px"><span style="color:#f97316">${fmtB(c.tam)}</span><span style="color:#a855f7" ${cardTitle}>${fmtB(c.som)}${cardFlag}</span></div>`;
           h+=`<div style="display:flex;justify-content:space-between;font-size:${tierSub}rem;font-family:var(--mono);color:var(--text2)"><span>TAM</span><span>SOM</span></div>`;
-          h+=`<div style="display:flex;justify-content:space-between;font-size:${tierSub}rem;font-family:var(--mono);color:var(--text2);margin-top:6px;padding-top:6px;border-top:1px solid #ffffff08"><span>Sales ${fmtB(c.sales)}</span><span>${penOfTam}% pen</span></div>`;
+          // Split sales: branded vs generic when leaf has both, with tooltip
+          const _sb = c.salesBranded || 0, _sg = c.salesGeneric || 0;
+          const salesLbl = (_sb > 0 && _sg > 0)
+            ? `Sales ${fmtB(c.sales)} <span style="color:#94a3b8;font-size:.55rem" title="Branded ${fmtB(_sb)} + Generic ${fmtB(_sg)}">(${fmtB(_sb)} br + ${fmtB(_sg)} Gx)</span>`
+            : `Sales ${fmtB(c.sales)}`;
+          h+=`<div style="display:flex;justify-content:space-between;font-size:${tierSub}rem;font-family:var(--mono);color:var(--text2);margin-top:6px;padding-top:6px;border-top:1px solid #ffffff08"><span>${salesLbl}</span><span>${penOfTam}% pen</span></div>`;
           h+='</div>';
           h+='</div>';
         });
@@ -2034,7 +2058,8 @@ async function main(){
           const pct = (c.som / maxSom) * 100;
           const stageCol = c.stage.toLowerCase().includes('commercial') ? '#22c55e' : c.stage.toLowerCase().includes('3')?'#f59e0b':c.stage.toLowerCase().includes('2')?'#fb923c':c.stage.toLowerCase().includes('1')?'#ef4444':'#6b7080';
           h+=`<div style="display:grid;grid-template-columns:60px 1fr 90px 90px 90px 70px;gap:8px;align-items:center;padding:8px 12px;background:#0f1117;border-radius:6px;border:1px solid #ffffff08;font-size:.7rem">`;
-          h+=`<a href="model.html?ticker=${c.ticker}" style="font-family:var(--mono);font-weight:700;color:#60a5fa;text-decoration:none">${c.ticker}</a>`;
+          const gxBadge = c.isGeneric ? ' <span style="font-size:.55rem;color:#94a3b8;font-weight:700;padding:1px 4px;background:#94a3b822;border-radius:3px" title="Generic/biosimilar bucket attribution (auto-expanded from mixTemplate franchise)">Gx</span>' : '';
+          h+=`<a href="model.html?ticker=${c.ticker}" style="font-family:var(--mono);font-weight:700;color:#60a5fa;text-decoration:none">${c.ticker}</a>${gxBadge}`;
           h+=`<div><div style="color:#e2e4ea;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.asset}</div><div style="color:var(--text2);font-size:.6rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.ind}</div></div>`;
           h+=`<div style="position:relative;height:6px;background:#161920;border-radius:2px;overflow:hidden" title="SOM $${Math.round(c.som)}M / max $${Math.round(maxSom)}M"><div style="position:absolute;top:0;left:0;height:100%;width:${pct}%;background:#a855f7"></div></div>`;
           h+=`<div style="text-align:right;font-family:var(--mono);color:#a855f7;font-weight:600" title="SOM">${fmtB(c.som)}</div>`;

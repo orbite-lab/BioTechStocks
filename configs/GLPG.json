@@ -1,0 +1,465 @@
+{
+  "company": {
+    "ticker": "GLPG",
+    "name": "Galapagos NV",
+    "currentPrice": 29,
+    "sharesOut": 65.9,
+    "cash": 1700,
+    "currency": "EUR",
+    "phase": "phase3",
+    "subtitle": "Belgian biotech in radical restructuring. SpinCo split announced Jan 2025 then SCRAPPED May 2025; cell therapy entirely WOUND DOWN announced Oct 2025 (implementation Jan 2026 post works council). Now cash-rich shell: EUR 3.0B cash YE25 (vs ~EUR 2.0B mcap; deeply negative EV). FY25 revenue ~EUR 1.06B (one-time Gilead deferred income release EUR 1,069M; underlying small). FY26 guide: cash flow neutral-to-positive ex-BD. Lead assets post-wind-down: GLPG3667 (selective TYK2 oral; Ph2 SLE missed primary, dermatomyositis hit; Ph3-enabling readout early 2026), Jyseleca royalty (sold to Alfasigma Jan 2024; mid-single to mid-double-digit royalties), CAR-T residual (GLPG5101 ATALANTA-1 MCL 100% ORR / 96% CR ASH 2025; FDA RMAT; being out-licensed/sold). Strategic posture: cash redeployment via BD/M&A.",
+    "yahooTicker": "GLPG"
+  },
+  "assets": [
+    {
+      "id": "glpg3667",
+      "name": "GLPG3667 - selective TYK2 inhibitor (oral; deuterium-modified pseudokinase domain selective)",
+      "stage": "Phase 3-enabling (Ph2 SLE missed primary; Ph2 dermatomyositis hit; topline early 2026)",
+      "modality": "small_molecule.kinase.tyk2",
+      "targets": [],
+      "indications": [
+        {
+          "id": "sle_3667",
+          "name": "Systemic lupus erythematosus moderate-severe (Ph2 missed primary 2025; Ph3 design pending)",
+          "area": "immunology.autoimmune.sle",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 300,
+                "wtpPct": 55,
+                "priceK": 45
+              },
+              "eu": {
+                "patientsK": 350,
+                "wtpPct": 38,
+                "priceK": 22
+              },
+              "row": {
+                "patientsK": 4000,
+                "wtpPct": 10,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 40,
+                "priceK": 25
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 30,
+                "priceK": 15
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 12,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $25K/yr (oral TYK2 in SLE; vs Saphnelo IV)",
+              "us.reachPct": "Niche oral TYK2 SLE entry post Ph2 miss"
+            },
+            "penPct": 25,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        },
+        {
+          "id": "dermatomyositis_3667",
+          "name": "Dermatomyositis (Ph2 hit primary 2025; differentiated indication)",
+          "area": "immunology.autoimmune.dermatomyositis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 70,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 60,
+                "wtpPct": 55,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6,
+                "wtpPct": 50,
+                "priceK": 20
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 40,
+                "priceK": 12
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 18,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $20K/yr",
+              "us.reachPct": "First oral TYK2 in DM if Ph3 succeeds; competing with ARGX Vyvgart ALKIVIA"
+            },
+            "penPct": 15,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    },
+    {
+      "id": "jyseleca_royalty",
+      "name": "Jyseleca (filgotinib) - JAK1 selective inhibitor; royalty stream from Alfasigma EU (sold Jan 2024)",
+      "stage": "Commercial royalty (sold to Alfasigma Jan 2024; mid-single to mid-double-digit royalty on EU sales + EUR 120M sales milestones)",
+      "modality": "small_molecule.kinase.jak1",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ra_uc_royalty",
+          "name": "RA + UC royalty stream (JAK1; EU only via Alfasigma)",
+          "area": "immunology.inflammatory_systemic.rheumatoid_arthritis",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1500,
+                "wtpPct": 50,
+                "priceK": 20
+              },
+              "eu": {
+                "patientsK": 2500,
+                "wtpPct": 35,
+                "priceK": 12
+              },
+              "row": {
+                "patientsK": 12000,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.9,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "row": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              }
+            },
+            "company_slice_sources": {
+              "eu.priceK": "Galapagos blended royalty proxy ~EUR 5K/yr-equivalent",
+              "eu.reachPct": "Jyseleca ~3-5% EU JAK1 share; Galapagos receives mid-teens royalty"
+            },
+            "penPct": 28,
+            "cagrPct": 5,
+            "peakYear": 2028,
+            "salesM": 30,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "glpg5101",
+      "name": "GLPG5101 - CD19 CAR-T (Cellpoint decentralized 7-day vein-to-vein platform)",
+      "stage": "Phase 2 (ATALANTA-1 MCL 100% ORR + 96% CR ASH 2025; FDA RMAT; Galapagos winding down cell therapy -- seeking buyer/out-license)",
+      "modality": "cell_therapy.car_t.cd19",
+      "targets": [],
+      "indications": [
+        {
+          "id": "mcl_cart",
+          "name": "Mantle cell lymphoma R/R (post-BTKi); also NHL DLBCL/FL",
+          "area": "oncology.hematology.nhl.mcl",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 15,
+                "wtpPct": 70,
+                "priceK": 175
+              },
+              "eu": {
+                "patientsK": 18,
+                "wtpPct": 52,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 40,
+                "wtpPct": 12,
+                "priceK": 35
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 40,
+                "priceK": 250
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 18,
+                "priceK": 70
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $350K one-time CAR-T",
+              "us.reachPct": "Niche post-BTKi MCL CAR-T (vs Tecartus, Carvykti adjacent)"
+            },
+            "penPct": 50,
+            "cagrPct": 0,
+            "peakYear": 2033
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 12,
+      "val": {
+        "mult": 1.0,
+        "dr": 14,
+        "cannib": 5
+      },
+      "assumptions": {
+        "jyseleca_royalty": {
+          "ra_uc_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "glpg3667": {
+          "sle_3667": {
+            "pos": 25,
+            "apr": 60,
+            "pen": 0.3
+          },
+          "dermatomyositis_3667": {
+            "pos": 25,
+            "apr": 60,
+            "pen": 0.3
+          }
+        },
+        "glpg5101": {
+          "mcl_cart": {
+            "pos": 15,
+            "apr": 60,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "mult": 2.0,
+        "dr": 12,
+        "cannib": 3
+      },
+      "assumptions": {
+        "jyseleca_royalty": {
+          "ra_uc_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "glpg3667": {
+          "sle_3667": {
+            "pos": 40,
+            "apr": 75,
+            "pen": 0.5
+          },
+          "dermatomyositis_3667": {
+            "pos": 40,
+            "apr": 75,
+            "pen": 0.5
+          }
+        },
+        "glpg5101": {
+          "mcl_cart": {
+            "pos": 28,
+            "apr": 75,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 38,
+      "val": {
+        "mult": 4.0,
+        "dr": 10,
+        "cannib": 1
+      },
+      "assumptions": {
+        "jyseleca_royalty": {
+          "ra_uc_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "glpg3667": {
+          "sle_3667": {
+            "pos": 55,
+            "apr": 85,
+            "pen": 0.8
+          },
+          "dermatomyositis_3667": {
+            "pos": 55,
+            "apr": 85,
+            "pen": 0.8
+          }
+        },
+        "glpg5101": {
+          "mcl_cart": {
+            "pos": 45,
+            "apr": 85,
+            "pen": 0.8
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "mult": 7.0,
+        "dr": 8,
+        "cannib": 0
+      },
+      "assumptions": {
+        "jyseleca_royalty": {
+          "ra_uc_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "glpg3667": {
+          "sle_3667": {
+            "pos": 70,
+            "apr": 92,
+            "pen": 1.05
+          },
+          "dermatomyositis_3667": {
+            "pos": 70,
+            "apr": 92,
+            "pen": 1.05
+          }
+        },
+        "glpg5101": {
+          "mcl_cart": {
+            "pos": 60,
+            "apr": 92,
+            "pen": 1.05
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "mult": 12.0,
+        "dr": 7,
+        "cannib": 0
+      },
+      "assumptions": {
+        "jyseleca_royalty": {
+          "ra_uc_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "glpg3667": {
+          "sle_3667": {
+            "pos": 82,
+            "apr": 96,
+            "pen": 1.25
+          },
+          "dermatomyositis_3667": {
+            "pos": 82,
+            "apr": 96,
+            "pen": 1.25
+          }
+        },
+        "glpg5101": {
+          "mcl_cart": {
+            "pos": 72,
+            "apr": 96,
+            "pen": 1.25
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Q1 2026",
+      "dateSort": "2026-03-31",
+      "asset": "glpg3667",
+      "indication": "dermatomyositis_3667",
+      "title": "GLPG3667 TYK2 Ph2 dermatomyositis topline + Ph3 design",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 25,
+      "fail_apr": 65,
+      "success_pos": 75,
+      "success_apr": 88,
+      "_source": "Galapagos pipeline; Q3 2025 update",
+      "_confidence": "high"
+    },
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-30",
+      "asset": "glpg5101",
+      "indication": "mcl_cart",
+      "title": "GLPG5101 CAR-T out-licensing/sale (cell therapy wind-down implementation)",
+      "type": "partnership",
+      "binary": true,
+      "fail_pos": 15,
+      "fail_apr": 60,
+      "success_pos": 70,
+      "success_apr": 90,
+      "_source": "Galapagos Oct 2025 wind-down announcement",
+      "_confidence": "medium"
+    },
+    {
+      "date": "2026",
+      "dateSort": "2026-12-15",
+      "asset": "glpg3667",
+      "indication": "sle_3667",
+      "title": "Strategic BD/M&A capital deployment ($3B cash optionality)",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Galapagos FY25 release; CEO commentary",
+      "_confidence": "medium"
+    }
+  ]
+}

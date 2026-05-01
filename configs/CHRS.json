@@ -2,12 +2,12 @@
   "company": {
     "ticker": "CHRS",
     "name": "Coherus Oncology, Inc.",
-    "currentPrice": 1.66,
-    "sharesOut": 121,
-    "cash": 161,
+    "currentPrice": 1.76,
+    "sharesOut": 154.22,
+    "cash": 172,
     "currency": "USD",
     "phase": "commercial",
-    "subtitle": "Pure-play IO (rebranded 'Coherus Oncology' post-divestments). FY25 revenue mostly Loqtorzi $40.8M (toripalimab; PD-1 mAb licensed from Junshi for North America; FDA Oct 2023 NPC + frontline NSCLC + ESCC label expansion; +114% vs $19.1M FY24). Major restructuring 2024-2025: Cimerli (ranibizumab biosim) sold to Sandoz Mar 2024 ~$170M; Yusimry (adalimumab biosim) divested 2024; Udenyca (pegfilgrastim biosim) sold to Intas/Accord Apr 11 2025 for $483M up + $75M milestones. Convertible/secured debt cut ~90% from $480M to $38.8M YE2025. ~30% headcount reduction Apr 2025. PIPELINE: Casdozokitug (CHS-388) anti-IL-27 mAb (Surface Oncology acq Sept 2023) -- Ph2 HCC ASCO-GI 2025 ORR 38% / CR 17.2% in combo with atezo+bev; also Ph2 NSCLC. CHS-114 selective anti-CCR8 cytolytic mAb (Treg-depleting) -- Ph1b/2a HNSCC + gastric (combo with toripalimab); HNSCC dose-opt data H1 2026 KEY CATALYST. CHS-1000 anti-ILT4 (LILRB2) IND cleared Q2 2024.",
+    "subtitle": "Pure-play IO (rebranded 'Coherus Oncology' May 2025 post-divestments). FY25 total revenue $42.2M (vs $26.4M FY24; +60%): Loqtorzi $40.8M (+113%; toripalimab licensed from Junshi for US/Canada -- $150M up + up to $380M milestones + 20% royalty US/Canada net sales; FDA Oct 2023 NPC ONLY -- NSCLC/ESCC are CHINA-only via Junshi, NOT US). Major restructuring 2024-2025: Cimerli (ranibizumab biosim) sold to Sandoz Mar 2024 ~$170M; Yusimry (adalimumab biosim) exit 2024; Udenyca (pegfilgrastim biosim) sold to Intas/Accord Apr 11 2025 for $483.4M up + $75M milestones (total deal $558.4M; announced Dec 2 2024). Convertible/secured debt cut ~92% from $480M to $38.8M YE2025. Net loss $183.1M (narrowed from $215.4M); ~2yr cash runway not flagged as going concern. Feb 2026 public offering raised capital (shares 121M -> 154M). PIPELINE: Casdozokitug (CHS-388) anti-IL-27 mAb (Surface Oncology acq Sept 2023) -- Ph2 HCC ASCO-GI 2025 ORR 38% / CR 17.2% (atezo+bev combo); NEW randomized Ph2 NCT06679985 with TORIPALIMAB (replacing atezo) + bev; Ph3 NOT yet planned. CHS-114 selective anti-CCR8 cytolytic mAb (Treg-depleting) -- Ph1b/2a HNSCC + gastric + ESCC (combo with toripalimab); H1 2026 dose-opt data KEY CATALYST. CHS-1000 anti-ILT4 (LILRB2) Ph1 dose escalation. NEW: Tagmokitug (J&J pasritamig clinical supply deal) -- top-3 priority alongside Loqtorzi + casdozo.",
     "yahooTicker": "CHRS"
   },
   "assets": [
@@ -72,7 +72,7 @@
         },
         {
           "id": "nsclc_io",
-          "name": "NSCLC + ESCC + other label expansions (frontline IO combo)",
+          "name": "NSCLC + ESCC label expansion (US-only commercial scope; CHRS pursuing post-Junshi China data; not yet approved US/CA)",
           "area": "oncology.lung.nsclc_io",
           "market": {
             "regions": {
@@ -94,30 +94,28 @@
             },
             "company_slice": {
               "us": {
-                "reachPct": 0.4,
-                "wtpPct": 50,
+                "reachPct": 0.1,
+                "wtpPct": 30,
                 "priceK": 150
               },
               "eu": {
-                "reachPct": 0.2,
-                "wtpPct": 50,
-                "priceK": 100
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
               },
               "row": {
-                "reachPct": 0.05,
-                "wtpPct": 12,
-                "priceK": 30
+                "reachPct": 0,
+                "wtpPct": 0,
+                "priceK": 0
               }
             },
             "company_slice_sources": {
-              "us.priceK": "Loqtorzi NSCLC + ESCC WAC ~$150K/yr blended",
-              "us.reachPct": "Niche post-Keytruda/Opdivo entry; ~1% NSCLC IO share"
+              "us.priceK": "Pipeline only US/CA -- NSCLC + ESCC China-only via Junshi (no Coherus US label as of YE2025)",
+              "us.reachPct": "Pipeline US/CA expansion; immaterial revenue until US approval"
             },
-            "penPct": 15,
-            "cagrPct": 40,
-            "peakYear": 2031,
-            "salesM": 16,
-            "salesYear": 2025
+            "penPct": 10,
+            "cagrPct": 0,
+            "peakYear": 2031
           }
         }
       ]
@@ -239,7 +237,7 @@
     {
       "id": "chs_1000",
       "name": "CHS-1000 - anti-ILT4 (LILRB2) mAb (myeloid checkpoint)",
-      "stage": "Pre-clinical/Ph1 (IND cleared Q2 2024; FIH gated on portfolio prioritization)",
+      "stage": "Phase 1 dose escalation (IND cleared Q2 2024; underway 2026)",
       "modality": "antibody.monoclonal.anti_ilt4",
       "targets": [],
       "indications": [
@@ -291,6 +289,63 @@
           }
         }
       ]
+    },
+    {
+      "id": "tagmokitug",
+      "name": "Tagmokitug - novel IO asset (Coherus top-3 priority alongside Loqtorzi + casdozo; J&J pasritamig clinical-supply collaboration)",
+      "stage": "Phase 1/2 (clinical-supply agreement with J&J pasritamig combo)",
+      "modality": "antibody.monoclonal.io_undisclosed",
+      "targets": [],
+      "indications": [
+        {
+          "id": "tagmo_solid",
+          "name": "Solid tumors (combo with J&J pasritamig)",
+          "area": "oncology.multi_tumor_io.pd1_pdl1_eligible",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 80,
+                "priceK": 150
+              },
+              "eu": {
+                "patientsK": 700,
+                "wtpPct": 70,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 12,
+                "priceK": 30
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.4,
+                "wtpPct": 45,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 0.15,
+                "wtpPct": 35,
+                "priceK": 70
+              },
+              "row": {
+                "reachPct": 0.02,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $100K/yr",
+              "us.reachPct": "Tagmokitug niche IO; J&J partnership for combo with pasritamig"
+            },
+            "penPct": 6,
+            "cagrPct": 0,
+            "peakYear": 2034
+          }
+        }
+      ]
     }
   ],
   "scenarios": {
@@ -312,14 +367,14 @@
             "pen": 1
           },
           "nsclc_io": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1
+            "pos": 30,
+            "apr": 55,
+            "pen": 0.3
           }
         },
         "casdozokitug": {
           "hcc_casdozo": {
-            "pos": 12,
+            "pos": 8,
             "apr": 55,
             "pen": 0.3
           }
@@ -334,6 +389,13 @@
         "chs_1000": {
           "solid_ilt4": {
             "pos": 4,
+            "apr": 55,
+            "pen": 0.3
+          }
+        },
+        "tagmokitug": {
+          "tagmo_solid": {
+            "pos": 3,
             "apr": 55,
             "pen": 0.3
           }
@@ -358,14 +420,14 @@
             "pen": 1
           },
           "nsclc_io": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1
+            "pos": 45,
+            "apr": 70,
+            "pen": 0.5
           }
         },
         "casdozokitug": {
           "hcc_casdozo": {
-            "pos": 22,
+            "pos": 18,
             "apr": 70,
             "pen": 0.5
           }
@@ -380,6 +442,13 @@
         "chs_1000": {
           "solid_ilt4": {
             "pos": 10,
+            "apr": 70,
+            "pen": 0.5
+          }
+        },
+        "tagmokitug": {
+          "tagmo_solid": {
+            "pos": 8,
             "apr": 70,
             "pen": 0.5
           }
@@ -404,14 +473,14 @@
             "pen": 1
           },
           "nsclc_io": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1
+            "pos": 60,
+            "apr": 82,
+            "pen": 0.8
           }
         },
         "casdozokitug": {
           "hcc_casdozo": {
-            "pos": 38,
+            "pos": 30,
             "apr": 82,
             "pen": 0.8
           }
@@ -426,6 +495,13 @@
         "chs_1000": {
           "solid_ilt4": {
             "pos": 22,
+            "apr": 82,
+            "pen": 0.8
+          }
+        },
+        "tagmokitug": {
+          "tagmo_solid": {
+            "pos": 18,
             "apr": 82,
             "pen": 0.8
           }
@@ -450,14 +526,14 @@
             "pen": 1
           },
           "nsclc_io": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1
+            "pos": 75,
+            "apr": 90,
+            "pen": 1.05
           }
         },
         "casdozokitug": {
           "hcc_casdozo": {
-            "pos": 55,
+            "pos": 45,
             "apr": 90,
             "pen": 1.05
           }
@@ -472,6 +548,13 @@
         "chs_1000": {
           "solid_ilt4": {
             "pos": 38,
+            "apr": 90,
+            "pen": 1.05
+          }
+        },
+        "tagmokitug": {
+          "tagmo_solid": {
+            "pos": 32,
             "apr": 90,
             "pen": 1.05
           }
@@ -496,14 +579,14 @@
             "pen": 1
           },
           "nsclc_io": {
-            "pos": 100,
-            "apr": 100,
-            "pen": 1
+            "pos": 88,
+            "apr": 95,
+            "pen": 1.25
           }
         },
         "casdozokitug": {
           "hcc_casdozo": {
-            "pos": 70,
+            "pos": 60,
             "apr": 95,
             "pen": 1.25
           }
@@ -518,6 +601,13 @@
         "chs_1000": {
           "solid_ilt4": {
             "pos": 55,
+            "apr": 95,
+            "pen": 1.25
+          }
+        },
+        "tagmokitug": {
+          "tagmo_solid": {
+            "pos": 48,
             "apr": 95,
             "pen": 1.25
           }
@@ -557,18 +647,18 @@
       "_confidence": "medium"
     },
     {
-      "date": "2027",
+      "date": "2026-2027",
       "dateSort": "2027-06-30",
       "asset": "casdozokitug",
       "indication": "hcc_casdozo",
-      "title": "Casdozokitug HCC pivotal Ph3 design / NSCLC Ph2 readout",
+      "title": "Casdozokitug HCC randomized Ph2 with toripalimab+bev (NCT06679985 ~72 pts; NOT yet pivotal Ph3)",
       "type": "phase2_data",
       "binary": true,
       "fail_pos": 12,
       "fail_apr": 60,
       "success_pos": 50,
       "success_apr": 85,
-      "_source": "Coherus pipeline",
+      "_source": "ClinicalTrials.gov NCT06679985",
       "_confidence": "low"
     }
   ]

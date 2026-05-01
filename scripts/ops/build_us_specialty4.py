@@ -116,7 +116,7 @@ def build_PTCT():
         ("cash", 1950),  # $1.95B YE25 post Royalty Pharma Evrysdi sale Dec 2025
         ("currency", "USD"),
         ("phase", "commercial"),
-        ("subtitle", "Rare-disease specialty + Novartis HD deal. FY25 revenue $1.731B includes $1.0B Novartis PTC518 upfront one-time; recurring product + royalty $831M: Translarna $235M (EMA CHMP NON-RENEWAL Apr 2025; EU residual wind-down + US NDA withdrawn; was $321M FY24), Emflaza $146M (deflazacort DMD; generics LOE; was $207M), Evrysdi (risdiplam SMA) Roche royalty $244M (PTC SOLD remaining royalty to Royalty Pharma Dec 2025: $240M up + $60M milestones; retained $150M earnout if Evrysdi reaches $2.5B), Sephience (sepiapterin PKU; FDA Jul 2025) $111M (Q4'25 alone $92M steep ramp), Upstaza (eladocagene exuparvovec AAV gene therapy AADC deficiency; EU 2022 + US Nov 2024) + Tegsedi/Waylivra small. PIPELINE: PTC518/votoplam (huntingtin lowering oral splice modulator) -- NOVARTIS Dec 2 2024 deal $1.0B upfront + $1.9B milestones + 40/60 US profit share + ex-US double-digit royalties; PIVOT-HD 24-mo data Apr 2026 showed 52% slowing of disease progression. Vatiquinone (Friedreich ataxia) -- FDA CRL Aug 19 2025; additional adequate study needed."),
+        ("subtitle", "Rare-disease specialty + Novartis HD deal. FY25 revenue $1.731B includes $1.0B Novartis PTC518 upfront one-time; recurring product + royalty $831M: Translarna $235M (EMA CHMP NON-RENEWAL Apr 2025; EC decision Mar 28 2025; EU residual wind-down + US NDA withdrawn; was $321M FY24), Emflaza $146M (deflazacort DMD; generics LOE; was $207M), Evrysdi (risdiplam SMA) Roche royalty $244M (PTC SOLD final residual to Royalty Pharma Dec 29 2025: $240M up + up to $60M sales milestones; bulk already sold Oct 2023 $1.5B), Sephience (sepiapterin PKU; FDA Jul 28 2025) $111M (Q4'25 alone $92M steep ramp), Upstaza (eladocagene exuparvovec AAV gene therapy AADC deficiency; EU 2022) + Tegsedi/Waylivra heritage small. PIPELINE: PTC518/votoplam (huntingtin lowering oral splice modulator) -- NOVARTIS Dec 2 2024 deal $1.0B upfront + $1.9B milestones + 40/60 US profit share + ex-US double-digit royalties; PIVOT-HD 24-mo Apr 2026: 52% slowing of disease progression at 10mg / 28% at 5mg Stage 2 cUHDRS; Stage 3 'potential signals' only; Phase 3 ahead, NO accelerated approval pathway -- mixed reception. Vatiquinone (Friedreich ataxia) -- FDA CRL Aug 19 2025 requires additional adequate/well-controlled study; effectively shelved (multi-year)."),
         ("yahooTicker", "PTCT"),
     )
 
@@ -245,7 +245,8 @@ def build_PTCT():
 
     pos_grid = {
         "ptc518":      {"mega_bear": 30, "bear": 50, "base": 70, "bull": 85, "psychedelic_bull": 93},
-        "vatiquinone": {"mega_bear": 5,  "bear": 12, "base": 25, "bull": 40, "psychedelic_bull": 55},
+        # Vatiquinone effectively shelved post Aug 19 2025 CRL (new Ph3 required)
+        "vatiquinone": {"mega_bear": 2,  "bear": 5,  "base": 12, "bull": 22, "psychedelic_bull": 35},
     }
     apr_default = {"mega_bear": 60, "bear": 75, "base": 85, "bull": 92, "psychedelic_bull": 96}
     pen_default = {"mega_bear": 0.3, "bear": 0.5, "base": 0.8, "bull": 1.05, "psychedelic_bull": 1.25}
@@ -332,17 +333,19 @@ def build_TGTX():
                     "us.reachPct": "SC Briumvi extends franchise; ~2.5% incremental MS B-cell-depleter share via dosing convenience vs Kesimpta SC"},
                    peakYear=2032, cagrPct=15, penPct=15)]))
 
-    # Azer-cel - allogeneic CD19 CAR-T MS Ph1
+    # Azer-cel - allogeneic CD19 CAR-T progressive MS Ph1 (PPMS/SPMS lead)
+    # Original Precision Bio deal Jan 2024: $17.5M up + $288M milestones; Mar 2026
+    # $7.5M milestone triggered by Ph1 progressive MS dosing progress.
     assets.append(asset(
-        "azer_cel", "Azer-cel (azercabtagene zapreleucel) - allogeneic CD19 CAR-T (Precision Bio license)",
-        "Phase 1 MS + autoimmune neuro (IND clearance 2025)",
+        "azer_cel", "Azer-cel (azercabtagene zapreleucel) - allogeneic CD19 CAR-T (Precision Bio license Jan 2024)",
+        "Phase 1 progressive MS (PPMS + non-active SPMS; recruiting 32 adults at 8 US sites; Mar 2026 $7.5M milestone)",
         "cell_therapy.car_t.allogeneic_cd19",
-        [innov_ind("ms_azercel", "MS + autoimmune neuro indications (allogeneic CAR-T potential one-time treatment)",
+        [innov_ind("progressive_ms", "Progressive MS (PPMS + non-active SPMS; allogeneic off-the-shelf CAR-T potential one-shot)",
                    "immunology.demyelinating.multiple_sclerosis",
-                   regions((900, 60, 60), (1500, 40, 35), (1500, 12, 10)),
-                   slice_((0.3, 50, 150), (0.1, 40, 100), (0.02, 12, 40)),
-                   {"us.priceK": "Estimated WAC $250K one-time CAR-T (vs $400K+ branded autologous)",
-                    "us.reachPct": "Allogeneic off-the-shelf for autoimmune; novel approach"},
+                   regions((150, 70, 60), (250, 50, 35), (300, 12, 10)),
+                   slice_((0.5, 45, 180), (0.2, 35, 120), (0.03, 12, 40)),
+                   {"us.priceK": "Estimated WAC $180K one-time allogeneic CAR-T (vs $400K+ autologous CAR-T)",
+                    "us.reachPct": "Progressive MS niche; Ocrevus only approved currently for PPMS; ~15% MS pts"},
                    peakYear=2034, cagrPct=0, penPct=8)]))
 
     # SOTP scenarios
@@ -358,7 +361,7 @@ def build_TGTX():
 
     pos_grid = {
         "briumvi_sc": {"mega_bear": 60, "bear": 75, "base": 88, "bull": 95, "psychedelic_bull": 99},
-        "azer_cel":   {"mega_bear": 8,  "bear": 18, "base": 32, "bull": 48, "psychedelic_bull": 65},
+        "azer_cel":   {"mega_bear": 6,  "bear": 14, "base": 25, "bull": 40, "psychedelic_bull": 58},
     }
     apr_default = {"mega_bear": 65, "bear": 78, "base": 88, "bull": 93, "psychedelic_bull": 97}
     pen_default = {"mega_bear": 0.3, "bear": 0.5, "base": 0.8, "bull": 1.05, "psychedelic_bull": 1.25}
@@ -367,7 +370,7 @@ def build_TGTX():
     for sk in ["mega_bear", "bear", "base", "bull", "psychedelic_bull"]:
         pipeline_asmps[sk] = {
             "briumvi_sc": OrderedDict([("rms_briumvi_sc", od(("pos", pos_grid["briumvi_sc"][sk]), ("apr", apr_default[sk]), ("pen", pen_default[sk])))]),
-            "azer_cel": OrderedDict([("ms_azercel", od(("pos", pos_grid["azer_cel"][sk]), ("apr", apr_default[sk]), ("pen", pen_default[sk])))]),
+            "azer_cel": OrderedDict([("progressive_ms", od(("pos", pos_grid["azer_cel"][sk]), ("apr", apr_default[sk]), ("pen", pen_default[sk])))]),
         }
 
     scenarios = commercial_scenarios(crev, cmult, pmult, pdr, weights, asset_inds,
@@ -406,13 +409,14 @@ def build_CHRS():
     co = od(
         ("ticker", "CHRS"),
         ("name", "Coherus Oncology, Inc."),
-        ("currentPrice", 1.66),
-        ("sharesOut", 121),
-        # Pro-forma ~$200M cash post Udenyca close Apr 2025; debt cut from $480M to $38.8M
-        ("cash", 161),
+        ("currentPrice", 1.76),
+        ("sharesOut", 154.22),
+        # YE2025 cash + investments $172.1M; debt cut from $480M to $38.8M
+        # (Feb 2026 public offering raised additional capital -> shares jumped to 154M)
+        ("cash", 172),
         ("currency", "USD"),
         ("phase", "commercial"),
-        ("subtitle", "Pure-play IO (rebranded 'Coherus Oncology' post-divestments). FY25 revenue mostly Loqtorzi $40.8M (toripalimab; PD-1 mAb licensed from Junshi for North America; FDA Oct 2023 NPC + frontline NSCLC + ESCC label expansion; +114% vs $19.1M FY24). Major restructuring 2024-2025: Cimerli (ranibizumab biosim) sold to Sandoz Mar 2024 ~$170M; Yusimry (adalimumab biosim) divested 2024; Udenyca (pegfilgrastim biosim) sold to Intas/Accord Apr 11 2025 for $483M up + $75M milestones. Convertible/secured debt cut ~90% from $480M to $38.8M YE2025. ~30% headcount reduction Apr 2025. PIPELINE: Casdozokitug (CHS-388) anti-IL-27 mAb (Surface Oncology acq Sept 2023) -- Ph2 HCC ASCO-GI 2025 ORR 38% / CR 17.2% in combo with atezo+bev; also Ph2 NSCLC. CHS-114 selective anti-CCR8 cytolytic mAb (Treg-depleting) -- Ph1b/2a HNSCC + gastric (combo with toripalimab); HNSCC dose-opt data H1 2026 KEY CATALYST. CHS-1000 anti-ILT4 (LILRB2) IND cleared Q2 2024."),
+        ("subtitle", "Pure-play IO (rebranded 'Coherus Oncology' May 2025 post-divestments). FY25 total revenue $42.2M (vs $26.4M FY24; +60%): Loqtorzi $40.8M (+113%; toripalimab licensed from Junshi for US/Canada -- $150M up + up to $380M milestones + 20% royalty US/Canada net sales; FDA Oct 2023 NPC ONLY -- NSCLC/ESCC are CHINA-only via Junshi, NOT US). Major restructuring 2024-2025: Cimerli (ranibizumab biosim) sold to Sandoz Mar 2024 ~$170M; Yusimry (adalimumab biosim) exit 2024; Udenyca (pegfilgrastim biosim) sold to Intas/Accord Apr 11 2025 for $483.4M up + $75M milestones (total deal $558.4M; announced Dec 2 2024). Convertible/secured debt cut ~92% from $480M to $38.8M YE2025. Net loss $183.1M (narrowed from $215.4M); ~2yr cash runway not flagged as going concern. Feb 2026 public offering raised capital (shares 121M -> 154M). PIPELINE: Casdozokitug (CHS-388) anti-IL-27 mAb (Surface Oncology acq Sept 2023) -- Ph2 HCC ASCO-GI 2025 ORR 38% / CR 17.2% (atezo+bev combo); NEW randomized Ph2 NCT06679985 with TORIPALIMAB (replacing atezo) + bev; Ph3 NOT yet planned. CHS-114 selective anti-CCR8 cytolytic mAb (Treg-depleting) -- Ph1b/2a HNSCC + gastric + ESCC (combo with toripalimab); H1 2026 dose-opt data KEY CATALYST. CHS-1000 anti-ILT4 (LILRB2) Ph1 dose escalation. NEW: Tagmokitug (J&J pasritamig clinical supply deal) -- top-3 priority alongside Loqtorzi + casdozo."),
         ("yahooTicker", "CHRS"),
     )
 
@@ -431,13 +435,13 @@ def build_CHRS():
                       {"us.reachPct": "Loqtorzi ~30% NPC US share (post Junshi-derived FDA approval)",
                        "us.priceK": "Loqtorzi WAC ~$200K/yr (parallel to Keytruda/Opdivo)"},
                       salesM=25, salesYear=2025, peakYear=2030, cagrPct=30, penPct=22),
-            innov_ind("nsclc_io", "NSCLC + ESCC + other label expansions (frontline IO combo)",
+            innov_ind("nsclc_io", "NSCLC + ESCC label expansion (US-only commercial scope; CHRS pursuing post-Junshi China data; not yet approved US/CA)",
                       "oncology.lung.nsclc_io",
                       regions((500, 80, 150), (700, 70, 100), (3000, 12, 30)),
-                      slice_((0.4, 50, 150), (0.2, 50, 100), (0.05, 12, 30)),
-                      {"us.priceK": "Loqtorzi NSCLC + ESCC WAC ~$150K/yr blended",
-                       "us.reachPct": "Niche post-Keytruda/Opdivo entry; ~1% NSCLC IO share"},
-                      salesM=16, salesYear=2025, peakYear=2031, cagrPct=40, penPct=15),
+                      slice_((0.1, 30, 150), (0, 0, 0), (0, 0, 0)),
+                      {"us.priceK": "Pipeline only US/CA -- NSCLC + ESCC China-only via Junshi (no Coherus US label as of YE2025)",
+                       "us.reachPct": "Pipeline US/CA expansion; immaterial revenue until US approval"},
+                      peakYear=2031, cagrPct=0, penPct=10),
         ],
         targets=["PDCD1"]))
 
@@ -470,13 +474,26 @@ def build_CHRS():
     # CHS-1000 - anti-ILT4 (LILRB2)
     assets.append(asset(
         "chs_1000", "CHS-1000 - anti-ILT4 (LILRB2) mAb (myeloid checkpoint)",
-        "Pre-clinical/Ph1 (IND cleared Q2 2024; FIH gated on portfolio prioritization)",
+        "Phase 1 dose escalation (IND cleared Q2 2024; underway 2026)",
         "antibody.monoclonal.anti_ilt4",
         [innov_ind("solid_ilt4", "Solid tumors (myeloid checkpoint; ILT4/LILRB2)",
                    "oncology.multi_tumor_io.pd1_pdl1_eligible",
                    regions((500, 80, 150), (700, 70, 100), (3000, 12, 30)),
                    slice_((0.5, 50, 100), (0.2, 40, 70), (0.02, 12, 25)),
                    {"us.priceK": "Estimated WAC $100K/yr in IO combo"},
+                   peakYear=2034, cagrPct=0, penPct=6)]))
+
+    # Tagmokitug - new top-3 priority asset; J&J pasritamig clinical supply deal
+    assets.append(asset(
+        "tagmokitug", "Tagmokitug - novel IO asset (Coherus top-3 priority alongside Loqtorzi + casdozo; J&J pasritamig clinical-supply collaboration)",
+        "Phase 1/2 (clinical-supply agreement with J&J pasritamig combo)",
+        "antibody.monoclonal.io_undisclosed",
+        [innov_ind("tagmo_solid", "Solid tumors (combo with J&J pasritamig)",
+                   "oncology.multi_tumor_io.pd1_pdl1_eligible",
+                   regions((500, 80, 150), (700, 70, 100), (3000, 12, 30)),
+                   slice_((0.4, 45, 100), (0.15, 35, 70), (0.02, 12, 25)),
+                   {"us.priceK": "Estimated WAC $100K/yr",
+                    "us.reachPct": "Tagmokitug niche IO; J&J partnership for combo with pasritamig"},
                    peakYear=2034, cagrPct=0, penPct=6)]))
 
     # Distressed micro-cap ~$200M mcap; market deeply skeptical of pipeline.
@@ -492,9 +509,10 @@ def build_CHRS():
     asset_inds = [("loqtorzi", ["npc_io", "nsclc_io"])]
 
     pos_grid = {
-        "casdozokitug": {"mega_bear": 12, "bear": 22, "base": 38, "bull": 55, "psychedelic_bull": 70},
+        "casdozokitug": {"mega_bear": 8,  "bear": 18, "base": 30, "bull": 45, "psychedelic_bull": 60},
         "chs_114":      {"mega_bear": 8,  "bear": 18, "base": 32, "bull": 48, "psychedelic_bull": 65},
         "chs_1000":     {"mega_bear": 4,  "bear": 10, "base": 22, "bull": 38, "psychedelic_bull": 55},
+        "tagmokitug":   {"mega_bear": 3,  "bear": 8,  "base": 18, "bull": 32, "psychedelic_bull": 48},
     }
     apr_default = {"mega_bear": 55, "bear": 70, "base": 82, "bull": 90, "psychedelic_bull": 95}
     pen_default = {"mega_bear": 0.3, "bear": 0.5, "base": 0.8, "bull": 1.05, "psychedelic_bull": 1.25}
@@ -502,10 +520,21 @@ def build_CHRS():
     pipeline_asmps = {}
     for sk in ["mega_bear", "bear", "base", "bull", "psychedelic_bull"]:
         pipeline_asmps[sk] = {
+            # Loqtorzi NSCLC pipeline (US/CA expansion)
+            "loqtorzi": OrderedDict([
+                ("npc_io", od(("pos", 100), ("apr", 100), ("pen", 1))),
+                ("nsclc_io", od(("pos", 30 if sk=="mega_bear" else 45 if sk=="bear" else 60 if sk=="base" else 75 if sk=="bull" else 88),
+                                ("apr", apr_default[sk]),
+                                ("pen", pen_default[sk]))),
+            ]),
             "casdozokitug": OrderedDict([("hcc_casdozo", od(("pos", pos_grid["casdozokitug"][sk]), ("apr", apr_default[sk]), ("pen", pen_default[sk])))]),
             "chs_114": OrderedDict([("hnscc_ccr8", od(("pos", pos_grid["chs_114"][sk]), ("apr", apr_default[sk]), ("pen", pen_default[sk])))]),
             "chs_1000": OrderedDict([("solid_ilt4", od(("pos", pos_grid["chs_1000"][sk]), ("apr", apr_default[sk]), ("pen", pen_default[sk])))]),
+            "tagmokitug": OrderedDict([("tagmo_solid", od(("pos", pos_grid["tagmokitug"][sk]), ("apr", apr_default[sk]), ("pen", pen_default[sk])))]),
         }
+
+    # Loqtorzi npc_io is commercial; remove from asset_inds inert block since now in pipeline
+    asset_inds = []  # all loqtorzi indications now scenario-driven via pipeline_asmps
 
     scenarios = commercial_scenarios(crev, cmult, pmult, pdr, weights, asset_inds,
                                      pipeline_asmp_by_scen=pipeline_asmps,
@@ -524,12 +553,12 @@ def build_CHRS():
            ("type", "milestone"), ("binary", False),
            ("fail_pos", 100), ("fail_apr", 100), ("success_pos", 100), ("success_apr", 100),
            ("_source", "Coherus IR"), ("_confidence", "medium")),
-        od(("date", "2027"), ("dateSort", "2027-06-30"), ("asset", "casdozokitug"),
+        od(("date", "2026-2027"), ("dateSort", "2027-06-30"), ("asset", "casdozokitug"),
            ("indication", "hcc_casdozo"),
-           ("title", "Casdozokitug HCC pivotal Ph3 design / NSCLC Ph2 readout"),
+           ("title", "Casdozokitug HCC randomized Ph2 with toripalimab+bev (NCT06679985 ~72 pts; NOT yet pivotal Ph3)"),
            ("type", "phase2_data"), ("binary", True),
            ("fail_pos", 12), ("fail_apr", 60), ("success_pos", 50), ("success_apr", 85),
-           ("_source", "Coherus pipeline"), ("_confidence", "low")),
+           ("_source", "ClinicalTrials.gov NCT06679985"), ("_confidence", "low")),
     ]
 
     return od(("company", co), ("assets", assets),

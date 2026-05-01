@@ -1,0 +1,323 @@
+{
+  "company": {
+    "ticker": "PRGO",
+    "name": "Perrigo Company plc",
+    "currentPrice": 25,
+    "sharesOut": 136,
+    "cash": -2100,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Pure consumer self-care company post-Rx divestiture 2021. CSCA (Consumer Self-Care Americas ~$2.6B) + CSCI (International ~$1.8B) = ~$4.4B FY24 total. Largest US store-brand OTC manufacturer (Walmart Equate / CVS / Target). Innovative growth: Opill (norgestrel) first OTC daily oral contraceptive in US (FDA Jul 2023, launched Mar 2024). Branded OTC: Prevacid 24HR, ScarAway, Mederma. Heavy net debt ~$2.1B; turnaround in progress",
+    "yahooTicker": "PRGO"
+  },
+  "assets": [
+    {
+      "id": "opill",
+      "name": "Opill (norgestrel) - oral progestin-only contraceptive (POP); first OTC daily oral contraceptive in US",
+      "stage": "Commercial (FDA Jul 2023, launched Mar 2024; OTC switch from Rx; major innovative launch)",
+      "modality": "small_molecule.nuclear_receptor.progestin",
+      "targets": [
+        "PGR"
+      ],
+      "indications": [
+        {
+          "id": "contraception_otc",
+          "name": "Daily oral contraception (OTC; first POP available without prescription in US)",
+          "area": "women_health.contraception.ocp",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 15000,
+                "wtpPct": 35,
+                "priceK": 0.4
+              },
+              "eu": {
+                "patientsK": 30000,
+                "wtpPct": 30,
+                "priceK": 0.25
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 18,
+                "priceK": 0.08
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 6.7,
+                "wtpPct": 30,
+                "priceK": 0.25
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              }
+            },
+            "company_slice_sources": {
+              "us.reachPct": "Opill OTC US-only; first daily OCP without Rx; ~1.5% of US contraception users post-launch ramping; consumer adoption slow due to OTC pricing not insurance-covered",
+              "us.priceK": "Opill OTC retail ~$20/mo (~$240/yr) cash-pay; not insurance-reimbursed",
+              "us.note": "Switch from Rx-Plan B legacy; competitive vs combined OCPs (Rx insurance-covered) + LARC + condoms"
+            },
+            "penPct": 25,
+            "cagrPct": 35,
+            "peakYear": 2031,
+            "salesM": 50,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "csca_portfolio",
+      "name": "CSCA Consumer Self-Care Americas portfolio - store-brand + branded OTC (US/Canada/Mexico)",
+      "stage": "Commercial (FY24 ~$2.6B; mature; largest US store-brand OTC manufacturer for Walmart Equate, CVS, Target etc + branded Prevacid 24HR + ScarAway + Mederma)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "indications": [
+        {
+          "id": "csca_otc_bulk",
+          "name": "CSCA OTC bulk (allergy/cough-cold/digestive/pain/skincare/nutrition; store-brand + branded)",
+          "area": "_established_products.perrigo_csca_otc",
+          "market": {
+            "tamB": 30,
+            "penPct": 0,
+            "salesM": 2600,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": -1,
+            "notes": "Heterogeneous OTC bucket: store-brand contracts (Walmart Equate top-line ~30% of CSCA, CVS/Target/etc) covering allergy (loratadine/cetirizine/fluticasone), cough-cold (DXM/guaifenesin), digestive (PPI omeprazole, antacids, laxatives), analgesics (acetaminophen, ibuprofen), skincare (sunscreens), infant nutrition (post-divestiture residual). Branded: Prevacid 24HR (lansoprazole OTC PPI), ScarAway (silicone gel), Mederma (scar gel). All non-disease-specific consumer self-care.",
+            "company_slice": {},
+            "company_slice_sources": {}
+          }
+        }
+      ]
+    },
+    {
+      "id": "csci_portfolio",
+      "name": "CSCI Consumer Self-Care International portfolio - branded OTC EU/UK/Australia/RoW",
+      "stage": "Commercial (FY24 ~$1.8B; mature; ~50 international brands across 70+ countries)",
+      "modality": "small_molecule.various.heritage",
+      "targets": [],
+      "indications": [
+        {
+          "id": "csci_otc_bulk",
+          "name": "CSCI international branded OTC (multi-category; EU/UK/Australia/RoW)",
+          "area": "_established_products.perrigo_csci_otc",
+          "market": {
+            "tamB": 25,
+            "penPct": 0,
+            "salesM": 1800,
+            "salesYear": 2025,
+            "peakYear": 2027,
+            "cagrPct": 1,
+            "notes": "International branded OTC portfolio: ACO (Sweden/Nordic skincare), Solpadeine (UK analgesic), Niquitin (UK smoking cessation NRT), Lamisil (UK antifungal), XLS-Medical (UK weight management), Silicea (Germany hair/nails supplements), Seven Seas (UK vitamins), various local market leaders. Mid-single-digit growth via brand mix + premium positioning vs CSCA store-brand commoditization.",
+            "company_slice": {},
+            "company_slice_sources": {}
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 15,
+      "val": {
+        "pipelineDR": 8,
+        "pipelineMult": 3,
+        "commercialMult": 0.8,
+        "commercialRevM": 3500,
+        "milestones": 0,
+        "dil": 0
+      },
+      "assumptions": {
+        "opill": {
+          "contraception_otc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "csca_portfolio": {
+          "csca_otc_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "csci_portfolio": {
+          "csci_otc_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 25,
+      "val": {
+        "pipelineDR": 7,
+        "pipelineMult": 4,
+        "commercialMult": 1.2,
+        "commercialRevM": 4000,
+        "milestones": 50,
+        "dil": 0
+      },
+      "assumptions": {
+        "opill": {
+          "contraception_otc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "csca_portfolio": {
+          "csca_otc_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        },
+        "csci_portfolio": {
+          "csci_otc_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 35,
+      "val": {
+        "pipelineDR": 6,
+        "pipelineMult": 5,
+        "commercialMult": 1.6,
+        "commercialRevM": 4400,
+        "milestones": 100,
+        "dil": 0
+      },
+      "assumptions": {
+        "opill": {
+          "contraception_otc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "csca_portfolio": {
+          "csca_otc_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "csci_portfolio": {
+          "csci_otc_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 20,
+      "val": {
+        "pipelineDR": 5,
+        "pipelineMult": 6,
+        "commercialMult": 2.2,
+        "commercialRevM": 4800,
+        "milestones": 200,
+        "dil": 0
+      },
+      "assumptions": {
+        "opill": {
+          "contraception_otc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "csca_portfolio": {
+          "csca_otc_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "csci_portfolio": {
+          "csci_otc_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "pipelineDR": 4,
+        "pipelineMult": 9,
+        "commercialMult": 3.2,
+        "commercialRevM": 5400,
+        "milestones": 400,
+        "dil": 0
+      },
+      "assumptions": {
+        "opill": {
+          "contraception_otc": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "csca_portfolio": {
+          "csca_otc_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "csci_portfolio": {
+          "csci_otc_bulk": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Q4 2026",
+      "dateSort": "2026-12-15",
+      "asset": "opill",
+      "indication": "contraception_otc",
+      "title": "Opill OTC contraception consumer adoption ramp + insurance-coverage advocacy update",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.perrigo.com/investor-relations",
+      "_confidence": "medium"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "csca_portfolio",
+      "indication": "csca_otc_bulk",
+      "title": "Perrigo Project Energize cost-out + margin expansion track update",
+      "type": "milestone",
+      "binary": false,
+      "_source": "https://www.perrigo.com/investor-relations",
+      "_confidence": "high"
+    }
+  ]
+}

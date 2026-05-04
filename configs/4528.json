@@ -21,52 +21,264 @@
       ],
       "indications": [
         {
-          "id": "io_japan",
-          "name": "PD-1 IO multi-tumor (NSCLC + melanoma + RCC + GI + HCC + esophageal in Japan/KR/TW)",
-          "area": "oncology.multi_tumor_io.pd1_pdl1_eligible",
+          "id": "nsclc_jp",
+          "name": "NSCLC (1L combo + perioperative; largest Japan Opdivo bucket)",
+          "area": "oncology.lung.nsclc_io",
+          "market": {
+            "regions": {},
+            "company_slice": {
+              "us": {
+                "reachPct": 0.64,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "eu": {
+                "reachPct": 0.48,
+                "wtpPct": 50,
+                "priceK": 40
+              },
+              "row": {
+                "reachPct": 0.16,
+                "wtpPct": 25,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Royalty proxy / blended share of franchise"
+            },
+            "penPct": 25,
+            "cagrPct": -3,
+            "peakYear": 2029,
+            "salesM": 205,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "gastric_jp",
+          "name": "Gastric/GEJ 1L combo (Japan)",
+          "area": "oncology.gi.gastric",
+          "market": {
+            "regions": {},
+            "company_slice": {
+              "us": {
+                "reachPct": 0.34,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "eu": {
+                "reachPct": 0.255,
+                "wtpPct": 50,
+                "priceK": 40
+              },
+              "row": {
+                "reachPct": 0.085,
+                "wtpPct": 25,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Royalty proxy / blended share of franchise"
+            },
+            "penPct": 25,
+            "cagrPct": -3,
+            "peakYear": 2029,
+            "salesM": 109,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "rcc_jp",
+          "name": "RCC 1L Opdivo+Yervoy / Opdivo+cabo (Japan)",
+          "area": "oncology.genitourinary.rcc",
           "market": {
             "regions": {
               "us": {
-                "patientsK": 0.1,
-                "wtpPct": 1,
-                "priceK": 0.1
+                "patientsK": 25,
+                "wtpPct": 68,
+                "priceK": 215
               },
               "eu": {
-                "patientsK": 0.1,
-                "wtpPct": 1,
-                "priceK": 0.1
+                "patientsK": 30,
+                "wtpPct": 50,
+                "priceK": 125
               },
               "row": {
-                "patientsK": 3000,
-                "wtpPct": 30,
-                "priceK": 70
+                "patientsK": 70,
+                "wtpPct": 16,
+                "priceK": 40
               }
             },
             "company_slice": {
               "us": {
-                "reachPct": 0,
-                "wtpPct": 0,
-                "priceK": 0
+                "reachPct": 8.4,
+                "wtpPct": 50,
+                "priceK": 60
               },
               "eu": {
-                "reachPct": 0,
-                "wtpPct": 0,
-                "priceK": 0
+                "reachPct": 6.3,
+                "wtpPct": 50,
+                "priceK": 40
               },
               "row": {
-                "reachPct": 1.5,
-                "wtpPct": 40,
-                "priceK": 60
+                "reachPct": 2.1,
+                "wtpPct": 25,
+                "priceK": 12
               }
             },
             "company_slice_sources": {
-              "row.reachPct": "Opdivo JP/KR/TW ~50% PD-1 share competing with Keytruda + Tecentriq",
-              "row.priceK": "Opdivo JP WAC ~¥3M/yr (~$20K)"
+              "us.priceK": "Royalty proxy / blended share of franchise"
             },
-            "penPct": 35,
+            "penPct": 58,
             "cagrPct": -3,
             "peakYear": 2029,
-            "salesM": 640,
+            "salesM": 70,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "esophageal_jp",
+          "name": "Esophageal squamous cell carcinoma (Japan)",
+          "area": "oncology.gi.gastric_esoph",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 58,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 44,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 20,
+                "priceK": 32
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 5.6,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "eu": {
+                "reachPct": 4.2,
+                "wtpPct": 50,
+                "priceK": 40
+              },
+              "row": {
+                "reachPct": 1.4,
+                "wtpPct": 25,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Royalty proxy / blended share of franchise"
+            },
+            "penPct": 48,
+            "cagrPct": -3,
+            "peakYear": 2029,
+            "salesM": 70,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "hnscc_jp",
+          "name": "Head & neck squamous cell carcinoma (Japan)",
+          "area": "oncology.head_neck.hnscc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 70,
+                "wtpPct": 65,
+                "priceK": 145
+              },
+              "eu": {
+                "patientsK": 80,
+                "wtpPct": 50,
+                "priceK": 85
+              },
+              "row": {
+                "patientsK": 600,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2.0,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 50,
+                "priceK": 40
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 25,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Royalty proxy / blended share of franchise"
+            },
+            "penPct": 55,
+            "cagrPct": -3,
+            "peakYear": 2029,
+            "salesM": 51,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "melanoma_jp",
+          "name": "Melanoma adjuvant + advanced + remaining tumors (urothelial, MSI-H CRC, HCC, Hodgkin, MPM)",
+          "area": "oncology.skin.melanoma",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 13.6,
+                "wtpPct": 50,
+                "priceK": 60
+              },
+              "eu": {
+                "reachPct": 10.2,
+                "wtpPct": 50,
+                "priceK": 40
+              },
+              "row": {
+                "reachPct": 3.4,
+                "wtpPct": 25,
+                "priceK": 12
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Royalty proxy / blended share of franchise"
+            },
+            "penPct": 65,
+            "cagrPct": -3,
+            "peakYear": 2029,
+            "salesM": 135,
             "salesYear": 2025
           }
         }
@@ -80,9 +292,9 @@
       "targets": [],
       "indications": [
         {
-          "id": "io_global_royalty",
-          "name": "PD-1 IO global royalty (BMS ex-JP commercialization)",
-          "area": "oncology.multi_tumor_io.pd1_pdl1_eligible",
+          "id": "nsclc_roy",
+          "name": "NSCLC 1L combo + perioperative (largest BMS Opdivo bucket; ~45%)",
+          "area": "oncology.lung.nsclc_io",
           "market": {
             "regions": {
               "us": {
@@ -103,29 +315,179 @@
             },
             "company_slice": {
               "us": {
-                "reachPct": 14.3,
+                "reachPct": 6.435,
                 "wtpPct": 50,
                 "priceK": 15
               },
               "eu": {
-                "reachPct": 12.0,
+                "reachPct": 5.4,
                 "wtpPct": 50,
                 "priceK": 10
               },
               "row": {
-                "reachPct": 0.7,
+                "reachPct": 0.315,
                 "wtpPct": 25,
                 "priceK": 5
               }
             },
             "company_slice_sources": {
-              "us.priceK": "Royalty proxy: ~12% of BMS Opdivo $9B = ~$1B Ono share",
-              "us.reachPct": "Opdivo holds ~30% global PD-1 share (vs Keytruda dominant)"
+              "us.priceK": "Royalty proxy: ~12% net royalty on BMS Opdivo global net sales",
+              "us.reachPct": "Allocated share of Opdivo $9B global franchise"
             },
             "penPct": 40,
             "cagrPct": -3,
             "peakYear": 2027,
-            "salesM": 767,
+            "salesM": 345,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "melanoma_roy",
+          "name": "Melanoma adjuvant Stage IIB-IV + Opdualag combo backbone (~17%)",
+          "area": "oncology.skin.melanoma",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 51.8,
+                "wtpPct": 50,
+                "priceK": 15
+              },
+              "eu": {
+                "reachPct": 43.4,
+                "wtpPct": 50,
+                "priceK": 10
+              },
+              "row": {
+                "reachPct": 2.5,
+                "wtpPct": 25,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Royalty proxy: ~12% net royalty on BMS Opdivo global net sales",
+              "us.reachPct": "Allocated share of Opdivo $9B global franchise"
+            },
+            "penPct": 65,
+            "cagrPct": -3,
+            "peakYear": 2027,
+            "salesM": 130,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "rcc_roy",
+          "name": "RCC 1L Opdivo+Yervoy + Opdivo+cabo (~12%)",
+          "area": "oncology.genitourinary.rcc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 68,
+                "priceK": 215
+              },
+              "eu": {
+                "patientsK": 30,
+                "wtpPct": 50,
+                "priceK": 125
+              },
+              "row": {
+                "patientsK": 70,
+                "wtpPct": 16,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 43.4,
+                "wtpPct": 50,
+                "priceK": 15
+              },
+              "eu": {
+                "reachPct": 36.5,
+                "wtpPct": 50,
+                "priceK": 10
+              },
+              "row": {
+                "reachPct": 2.1,
+                "wtpPct": 25,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Royalty proxy: ~12% net royalty on BMS Opdivo global net sales",
+              "us.reachPct": "Allocated share of Opdivo $9B global franchise"
+            },
+            "penPct": 58,
+            "cagrPct": -3,
+            "peakYear": 2027,
+            "salesM": 92,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "other_roy",
+          "name": "Other approved indications (esophageal/GEJ, urothelial, HCC, CRC MSI-H, classical Hodgkin, SCCHN; ~26%)",
+          "area": "oncology.gi.gastric_esoph",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 58,
+                "priceK": 135
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 44,
+                "priceK": 78
+              },
+              "row": {
+                "patientsK": 800,
+                "wtpPct": 20,
+                "priceK": 32
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 78.3,
+                "wtpPct": 50,
+                "priceK": 15
+              },
+              "eu": {
+                "reachPct": 65.7,
+                "wtpPct": 50,
+                "priceK": 10
+              },
+              "row": {
+                "reachPct": 3.8,
+                "wtpPct": 25,
+                "priceK": 5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Royalty proxy: ~12% net royalty on BMS Opdivo global net sales",
+              "us.reachPct": "Allocated share of Opdivo $9B global franchise"
+            },
+            "penPct": 48,
+            "cagrPct": -3,
+            "peakYear": 2027,
+            "salesM": 200,
             "salesYear": 2025
           }
         }
@@ -724,14 +1086,54 @@
       },
       "assumptions": {
         "opdivo_jp": {
-          "io_japan": {
+          "nsclc_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "gastric_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "rcc_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "esophageal_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "hnscc_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "melanoma_jp": {
             "pos": 100,
             "apr": 100,
             "pen": 1
           }
         },
         "opdivo_royalty": {
-          "io_global_royalty": {
+          "nsclc_roy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "melanoma_roy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "rcc_roy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "other_roy": {
             "pos": 100,
             "apr": 100,
             "pen": 1
@@ -821,14 +1223,54 @@
       },
       "assumptions": {
         "opdivo_jp": {
-          "io_japan": {
+          "nsclc_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "gastric_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "rcc_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "esophageal_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "hnscc_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "melanoma_jp": {
             "pos": 100,
             "apr": 100,
             "pen": 1
           }
         },
         "opdivo_royalty": {
-          "io_global_royalty": {
+          "nsclc_roy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "melanoma_roy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "rcc_roy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "other_roy": {
             "pos": 100,
             "apr": 100,
             "pen": 1
@@ -918,14 +1360,54 @@
       },
       "assumptions": {
         "opdivo_jp": {
-          "io_japan": {
+          "nsclc_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "gastric_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "rcc_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "esophageal_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "hnscc_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "melanoma_jp": {
             "pos": 100,
             "apr": 100,
             "pen": 1
           }
         },
         "opdivo_royalty": {
-          "io_global_royalty": {
+          "nsclc_roy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "melanoma_roy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "rcc_roy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "other_roy": {
             "pos": 100,
             "apr": 100,
             "pen": 1
@@ -1015,14 +1497,54 @@
       },
       "assumptions": {
         "opdivo_jp": {
-          "io_japan": {
+          "nsclc_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "gastric_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "rcc_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "esophageal_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "hnscc_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "melanoma_jp": {
             "pos": 100,
             "apr": 100,
             "pen": 1
           }
         },
         "opdivo_royalty": {
-          "io_global_royalty": {
+          "nsclc_roy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "melanoma_roy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "rcc_roy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "other_roy": {
             "pos": 100,
             "apr": 100,
             "pen": 1
@@ -1112,14 +1634,54 @@
       },
       "assumptions": {
         "opdivo_jp": {
-          "io_japan": {
+          "nsclc_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "gastric_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "rcc_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "esophageal_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "hnscc_jp": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "melanoma_jp": {
             "pos": 100,
             "apr": 100,
             "pen": 1
           }
         },
         "opdivo_royalty": {
-          "io_global_royalty": {
+          "nsclc_roy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "melanoma_roy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "rcc_roy": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          },
+          "other_roy": {
             "pos": 100,
             "apr": 100,
             "pen": 1

@@ -1662,49 +1662,127 @@
       "targets": [],
       "indications": [
         {
-          "id": "io_oncology",
-          "name": "IO-eligible solid tumors (multi-tumor PD-1/PD-L1)",
-          "area": "oncology.multi_tumor_io.pd1_pdl1_eligible",
+          "id": "nsclc_pembro_biosim",
+          "name": "NSCLC IO (largest Keytruda bucket; ~40-50% of $25B franchise)",
+          "area": "oncology.lung.nsclc_io",
           "market": {
-            "regions": {
-              "us": {
-                "patientsK": 500,
-                "wtpPct": 80,
-                "priceK": 150
-              },
-              "eu": {
-                "patientsK": 700,
-                "wtpPct": 70,
-                "priceK": 100
-              },
-              "row": {
-                "patientsK": 3000,
-                "wtpPct": 12,
-                "priceK": 30
-              }
-            },
+            "regions": {},
             "company_slice": {
               "us": {
-                "reachPct": 3,
+                "reachPct": 2,
                 "wtpPct": 50,
                 "priceK": 100
               },
               "eu": {
-                "reachPct": 2,
+                "reachPct": 1.5,
                 "wtpPct": 50,
                 "priceK": 70
               },
               "row": {
-                "reachPct": 0.2,
+                "reachPct": 0.15,
                 "wtpPct": 12,
                 "priceK": 25
               }
             },
             "company_slice_sources": {
               "us.priceK": "Pembro biosim ~30-50% discount vs Keytruda ~$175K/yr",
-              "us.reachPct": "Post-2028 EU LOE first; US LOE 2030; modest share v originator"
+              "us.reachPct": "Post-2028 EU LOE first; US LOE 2030; modest share vs originator"
             },
             "penPct": 15,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        },
+        {
+          "id": "melanoma_pembro_biosim",
+          "name": "Melanoma adjuvant + advanced (Keytruda 2nd-largest bucket)",
+          "area": "oncology.skin.melanoma",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 75,
+                "priceK": 180
+              },
+              "eu": {
+                "patientsK": 35,
+                "wtpPct": 60,
+                "priceK": 100
+              },
+              "row": {
+                "patientsK": 80,
+                "wtpPct": 12,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 50,
+                "priceK": 70
+              },
+              "row": {
+                "reachPct": 0.15,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Pembro biosim discount vs Keytruda"
+            },
+            "penPct": 65,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        },
+        {
+          "id": "rcc_pembro_biosim",
+          "name": "Renal cell carcinoma 1L combos (Keytruda + axitinib / lenvatinib)",
+          "area": "oncology.genitourinary.rcc",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25,
+                "wtpPct": 68,
+                "priceK": 215
+              },
+              "eu": {
+                "patientsK": 30,
+                "wtpPct": 50,
+                "priceK": 125
+              },
+              "row": {
+                "patientsK": 70,
+                "wtpPct": 16,
+                "priceK": 40
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2,
+                "wtpPct": 50,
+                "priceK": 100
+              },
+              "eu": {
+                "reachPct": 1.5,
+                "wtpPct": 50,
+                "priceK": 70
+              },
+              "row": {
+                "reachPct": 0.15,
+                "wtpPct": 12,
+                "priceK": 25
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Pembro biosim discount vs Keytruda"
+            },
+            "penPct": 58,
             "cagrPct": 0,
             "peakYear": 2032
           }
@@ -1774,7 +1852,17 @@
           }
         },
         "pembro_biosim": {
-          "io_oncology": {
+          "nsclc_pembro_biosim": {
+            "pos": 30,
+            "apr": 60,
+            "pen": 0.3
+          },
+          "melanoma_pembro_biosim": {
+            "pos": 30,
+            "apr": 60,
+            "pen": 0.3
+          },
+          "rcc_pembro_biosim": {
             "pos": 30,
             "apr": 60,
             "pen": 0.3
@@ -1843,7 +1931,17 @@
           }
         },
         "pembro_biosim": {
-          "io_oncology": {
+          "nsclc_pembro_biosim": {
+            "pos": 45,
+            "apr": 75,
+            "pen": 0.5
+          },
+          "melanoma_pembro_biosim": {
+            "pos": 45,
+            "apr": 75,
+            "pen": 0.5
+          },
+          "rcc_pembro_biosim": {
             "pos": 45,
             "apr": 75,
             "pen": 0.5
@@ -1912,7 +2010,17 @@
           }
         },
         "pembro_biosim": {
-          "io_oncology": {
+          "nsclc_pembro_biosim": {
+            "pos": 60,
+            "apr": 85,
+            "pen": 0.75
+          },
+          "melanoma_pembro_biosim": {
+            "pos": 60,
+            "apr": 85,
+            "pen": 0.75
+          },
+          "rcc_pembro_biosim": {
             "pos": 60,
             "apr": 85,
             "pen": 0.75
@@ -1981,7 +2089,17 @@
           }
         },
         "pembro_biosim": {
-          "io_oncology": {
+          "nsclc_pembro_biosim": {
+            "pos": 75,
+            "apr": 92,
+            "pen": 1.0
+          },
+          "melanoma_pembro_biosim": {
+            "pos": 75,
+            "apr": 92,
+            "pen": 1.0
+          },
+          "rcc_pembro_biosim": {
             "pos": 75,
             "apr": 92,
             "pen": 1.0
@@ -2050,7 +2168,17 @@
           }
         },
         "pembro_biosim": {
-          "io_oncology": {
+          "nsclc_pembro_biosim": {
+            "pos": 85,
+            "apr": 95,
+            "pen": 1.2
+          },
+          "melanoma_pembro_biosim": {
+            "pos": 85,
+            "apr": 95,
+            "pen": 1.2
+          },
+          "rcc_pembro_biosim": {
             "pos": 85,
             "apr": 95,
             "pen": 1.2
@@ -2079,7 +2207,7 @@
       "date": "2027",
       "dateSort": "2027-06-30",
       "asset": "pembro_biosim",
-      "indication": "io_oncology",
+      "indication": "nsclc_pembro_biosim",
       "title": "Pembrolizumab biosimilar BLA filing (post-2028 EU LOE)",
       "type": "bla_submission",
       "binary": false,

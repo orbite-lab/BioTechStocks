@@ -196,25 +196,25 @@
       "targets": [],
       "indications": [
         {
-          "id": "io_combo",
-          "name": "IO-eligible solid tumors (multi-tumor IL-2 + checkpoint combos)",
-          "area": "oncology.multi_tumor_io.pd1_pdl1_eligible",
+          "id": "melanoma_il2",
+          "name": "Post-anti-PD1 melanoma (IL-Believe Cohort 4 + TransCon TLR7/8; ASCO 2024)",
+          "area": "oncology.skin.melanoma",
           "market": {
             "regions": {
               "us": {
-                "patientsK": 500,
-                "wtpPct": 80,
-                "priceK": 150
+                "patientsK": 30,
+                "wtpPct": 75,
+                "priceK": 180
               },
               "eu": {
-                "patientsK": 700,
-                "wtpPct": 70,
+                "patientsK": 35,
+                "wtpPct": 60,
                 "priceK": 100
               },
               "row": {
-                "patientsK": 3000,
+                "patientsK": 80,
                 "wtpPct": 12,
-                "priceK": 30
+                "priceK": 40
               }
             },
             "company_slice": {
@@ -237,7 +237,7 @@
             "company_slice_sources": {
               "us.priceK": "Estimated WAC $100K/yr in IO combo"
             },
-            "penPct": 10,
+            "penPct": 65,
             "cagrPct": 0,
             "peakYear": 2033
           }
@@ -335,7 +335,7 @@
           }
         },
         "transcon_il2": {
-          "io_combo": {
+          "melanoma_il2": {
             "pos": 12,
             "apr": 60,
             "pen": 0.3
@@ -383,7 +383,7 @@
           }
         },
         "transcon_il2": {
-          "io_combo": {
+          "melanoma_il2": {
             "pos": 22,
             "apr": 75,
             "pen": 0.5
@@ -431,7 +431,7 @@
           }
         },
         "transcon_il2": {
-          "io_combo": {
+          "melanoma_il2": {
             "pos": 35,
             "apr": 85,
             "pen": 0.8
@@ -479,7 +479,7 @@
           }
         },
         "transcon_il2": {
-          "io_combo": {
+          "melanoma_il2": {
             "pos": 50,
             "apr": 92,
             "pen": 1.05
@@ -527,7 +527,7 @@
           }
         },
         "transcon_il2": {
-          "io_combo": {
+          "melanoma_il2": {
             "pos": 65,
             "apr": 96,
             "pen": 1.25
@@ -593,7 +593,7 @@
       "date": "2026-2027",
       "dateSort": "2027-06-30",
       "asset": "transcon_il2",
-      "indication": "io_combo",
+      "indication": "melanoma_il2",
       "title": "TransCon IL-2 β/γ Ph2 readouts (mono + pembro combos)",
       "type": "phase2_data",
       "binary": true,

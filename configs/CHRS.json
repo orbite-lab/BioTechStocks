@@ -242,25 +242,25 @@
       "targets": [],
       "indications": [
         {
-          "id": "solid_ilt4",
-          "name": "Solid tumors (myeloid checkpoint; ILT4/LILRB2)",
-          "area": "oncology.multi_tumor_io.pd1_pdl1_eligible",
+          "id": "hcc_ilt4",
+          "name": "HCC (myeloid checkpoint ILT4/LILRB2; Ph1 dose escalation; lead tumor signal from casdozokitug HCC franchise)",
+          "area": "oncology.gi.hcc",
           "market": {
             "regions": {
               "us": {
-                "patientsK": 500,
-                "wtpPct": 80,
-                "priceK": 150
+                "patientsK": 20,
+                "wtpPct": 60,
+                "priceK": 135
               },
               "eu": {
-                "patientsK": 700,
-                "wtpPct": 70,
-                "priceK": 100
+                "patientsK": 25,
+                "wtpPct": 46,
+                "priceK": 78
               },
               "row": {
-                "patientsK": 3000,
-                "wtpPct": 12,
-                "priceK": 30
+                "patientsK": 650,
+                "wtpPct": 22,
+                "priceK": 28
               }
             },
             "company_slice": {
@@ -283,7 +283,7 @@
             "company_slice_sources": {
               "us.priceK": "Estimated WAC $100K/yr in IO combo"
             },
-            "penPct": 6,
+            "penPct": 45,
             "cagrPct": 0,
             "peakYear": 2034
           }
@@ -298,25 +298,25 @@
       "targets": [],
       "indications": [
         {
-          "id": "tagmo_solid",
-          "name": "Solid tumors (combo with J&J pasritamig)",
-          "area": "oncology.multi_tumor_io.pd1_pdl1_eligible",
+          "id": "tagmo_mcrpc",
+          "name": "Metastatic castration-resistant prostate cancer (combo with J&J pasritamig PSMA-CD3 bispecific; Ph1b starting 2H 2026 per JNJ clinical-supply agreement)",
+          "area": "oncology.genitourinary.prostate",
           "market": {
             "regions": {
               "us": {
-                "patientsK": 500,
-                "wtpPct": 80,
-                "priceK": 150
+                "patientsK": 100,
+                "wtpPct": 70,
+                "priceK": 95
               },
               "eu": {
-                "patientsK": 700,
-                "wtpPct": 70,
-                "priceK": 100
+                "patientsK": 110,
+                "wtpPct": 52,
+                "priceK": 55
               },
               "row": {
-                "patientsK": 3000,
-                "wtpPct": 12,
-                "priceK": 30
+                "patientsK": 200,
+                "wtpPct": 18,
+                "priceK": 18
               }
             },
             "company_slice": {
@@ -340,7 +340,7 @@
               "us.priceK": "Estimated WAC $100K/yr",
               "us.reachPct": "Tagmokitug niche IO; J&J partnership for combo with pasritamig"
             },
-            "penPct": 6,
+            "penPct": 60,
             "cagrPct": 0,
             "peakYear": 2034
           }
@@ -387,14 +387,14 @@
           }
         },
         "chs_1000": {
-          "solid_ilt4": {
+          "hcc_ilt4": {
             "pos": 4,
             "apr": 55,
             "pen": 0.3
           }
         },
         "tagmokitug": {
-          "tagmo_solid": {
+          "tagmo_mcrpc": {
             "pos": 3,
             "apr": 55,
             "pen": 0.3
@@ -440,14 +440,14 @@
           }
         },
         "chs_1000": {
-          "solid_ilt4": {
+          "hcc_ilt4": {
             "pos": 10,
             "apr": 70,
             "pen": 0.5
           }
         },
         "tagmokitug": {
-          "tagmo_solid": {
+          "tagmo_mcrpc": {
             "pos": 8,
             "apr": 70,
             "pen": 0.5
@@ -493,14 +493,14 @@
           }
         },
         "chs_1000": {
-          "solid_ilt4": {
+          "hcc_ilt4": {
             "pos": 22,
             "apr": 82,
             "pen": 0.8
           }
         },
         "tagmokitug": {
-          "tagmo_solid": {
+          "tagmo_mcrpc": {
             "pos": 18,
             "apr": 82,
             "pen": 0.8
@@ -546,14 +546,14 @@
           }
         },
         "chs_1000": {
-          "solid_ilt4": {
+          "hcc_ilt4": {
             "pos": 38,
             "apr": 90,
             "pen": 1.05
           }
         },
         "tagmokitug": {
-          "tagmo_solid": {
+          "tagmo_mcrpc": {
             "pos": 32,
             "apr": 90,
             "pen": 1.05
@@ -599,14 +599,14 @@
           }
         },
         "chs_1000": {
-          "solid_ilt4": {
+          "hcc_ilt4": {
             "pos": 55,
             "apr": 95,
             "pen": 1.25
           }
         },
         "tagmokitug": {
-          "tagmo_solid": {
+          "tagmo_mcrpc": {
             "pos": 48,
             "apr": 95,
             "pen": 1.25

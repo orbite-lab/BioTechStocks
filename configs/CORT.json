@@ -309,11 +309,27 @@
       "targets": [],
       "indications": [
         {
-          "id": "neno_io",
-          "name": "Solid tumors IO combination (early-stage platform)",
-          "area": "oncology.multi_tumor_io.pd1_pdl1_eligible",
+          "id": "neno_ovarian",
+          "name": "Platinum-resistant ovarian cancer (Ph1b SYNERGY: nenocorilant + nivolumab; lead per relacorilant ROSELLA precedent)",
+          "area": "oncology.gynecologic.ovarian",
           "market": {
-            "regions": {},
+            "regions": {
+              "us": {
+                "patientsK": 35,
+                "wtpPct": 65,
+                "priceK": 125
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 50,
+                "priceK": 72
+              },
+              "row": {
+                "patientsK": 90,
+                "wtpPct": 16,
+                "priceK": 25
+              }
+            },
             "company_slice": {
               "us": {
                 "reachPct": 0.5,
@@ -334,7 +350,7 @@
             "company_slice_sources": {
               "us.priceK": "Branded oncology combo WAC band"
             },
-            "penPct": 2,
+            "penPct": 52,
             "cagrPct": 0,
             "peakYear": 2034
           }
@@ -390,7 +406,7 @@
           }
         },
         "nenocorilant": {
-          "neno_io": {
+          "neno_ovarian": {
             "pos": 2,
             "apr": 30,
             "pen": 0.15
@@ -445,7 +461,7 @@
           }
         },
         "nenocorilant": {
-          "neno_io": {
+          "neno_ovarian": {
             "pos": 5,
             "apr": 50,
             "pen": 0.3
@@ -500,7 +516,7 @@
           }
         },
         "nenocorilant": {
-          "neno_io": {
+          "neno_ovarian": {
             "pos": 10,
             "apr": 70,
             "pen": 0.5
@@ -555,7 +571,7 @@
           }
         },
         "nenocorilant": {
-          "neno_io": {
+          "neno_ovarian": {
             "pos": 18,
             "apr": 80,
             "pen": 0.7
@@ -610,7 +626,7 @@
           }
         },
         "nenocorilant": {
-          "neno_io": {
+          "neno_ovarian": {
             "pos": 28,
             "apr": 88,
             "pen": 0.9

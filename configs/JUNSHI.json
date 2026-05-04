@@ -362,24 +362,24 @@
       "targets": [],
       "indications": [
         {
-          "id": "solid_js212",
-          "name": "Solid tumors (EGFR + HER3 bispecific ADC)",
-          "area": "oncology.multi_tumor_io.pd1_pdl1_eligible",
+          "id": "tnbc_js212",
+          "name": "HER2-negative / TNBC breast cancer (FIH Ph1/2 AACR 2026: 50% ORR; lead solid-tumor signal)",
+          "area": "oncology.breast.tnbc",
           "market": {
             "regions": {
               "us": {
-                "patientsK": 500,
-                "wtpPct": 80,
-                "priceK": 150
+                "patientsK": 60,
+                "wtpPct": 65,
+                "priceK": 140
               },
               "eu": {
-                "patientsK": 700,
-                "wtpPct": 70,
-                "priceK": 100
+                "patientsK": 65,
+                "wtpPct": 48,
+                "priceK": 80
               },
               "row": {
-                "patientsK": 3000,
-                "wtpPct": 12,
+                "patientsK": 120,
+                "wtpPct": 15,
                 "priceK": 30
               }
             },
@@ -403,7 +403,7 @@
             "company_slice_sources": {
               "us.priceK": "Estimated WAC $150K/yr (ADC class)"
             },
-            "penPct": 6,
+            "penPct": 55,
             "cagrPct": 0,
             "peakYear": 2034
           }
@@ -464,7 +464,7 @@
           }
         },
         "js212": {
-          "solid_js212": {
+          "tnbc_js212": {
             "pos": 5,
             "apr": 60,
             "pen": 0.3
@@ -524,7 +524,7 @@
           }
         },
         "js212": {
-          "solid_js212": {
+          "tnbc_js212": {
             "pos": 12,
             "apr": 75,
             "pen": 0.5
@@ -584,7 +584,7 @@
           }
         },
         "js212": {
-          "solid_js212": {
+          "tnbc_js212": {
             "pos": 25,
             "apr": 85,
             "pen": 0.8
@@ -644,7 +644,7 @@
           }
         },
         "js212": {
-          "solid_js212": {
+          "tnbc_js212": {
             "pos": 40,
             "apr": 92,
             "pen": 1.05
@@ -704,7 +704,7 @@
           }
         },
         "js212": {
-          "solid_js212": {
+          "tnbc_js212": {
             "pos": 55,
             "apr": 96,
             "pen": 1.25
@@ -733,7 +733,7 @@
       "date": "Dec 2025",
       "dateSort": "2025-12-15",
       "asset": "js212",
-      "indication": "solid_js212",
+      "indication": "tnbc_js212",
       "title": "JS212 EGFR/HER3 bispecific ADC FDA IND clearance",
       "type": "phase1_start",
       "binary": false,

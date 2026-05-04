@@ -8,7 +8,8 @@
     "currentPrice": 1.61,
     "cashRunway": "2H 2027",
     "yahooTicker": "PEPG",
-    "phase": "phase2"
+    "phase": "phase2",
+    "currency": "USD"
   },
   "assets": [
     {
@@ -256,12 +257,12 @@
   "scenarios": {
     "mega_bear": {
       "wt": 7,
-      "narrative": "FDA hold permanent — EDO platform dead",
+      "narrative": "FDA hold permanent \u2014 EDO platform dead",
       "events": [
-        "✗ FDA clinical hold never lifts — hepatotoxicity signal confirmed",
-        "✗ EDO platform deemed unsafe across all indications",
-        "✗ Cash burns through 2027, no partner willing to license",
-        "→ Reverse merger or liquidation at cash value (~$2/share)"
+        "\u2717 FDA clinical hold never lifts \u2014 hepatotoxicity signal confirmed",
+        "\u2717 EDO platform deemed unsafe across all indications",
+        "\u2717 Cash burns through 2027, no partner willing to license",
+        "\u2192 Reverse merger or liquidation at cash value (~$2/share)"
       ],
       "assumptions": {
         "edodm1": {
@@ -291,10 +292,10 @@
       "wt": 25,
       "narrative": "Program fails",
       "events": [
-        "✗ FDA hold persists",
-        "✗ 10mg/kg disappoints",
-        "✗ Platform worthless",
-        "→ Cash floor"
+        "\u2717 FDA hold persists",
+        "\u2717 10mg/kg disappoints",
+        "\u2717 Platform worthless",
+        "\u2192 Cash floor"
       ],
       "assumptions": {
         "edodm1": {
@@ -324,10 +325,10 @@
       "wt": 45,
       "narrative": "Hold lifted + mixed 10mg",
       "events": [
-        "✓ FDA hold resolved",
+        "\u2713 FDA hold resolved",
         "~ 10mg modest splicing",
         "~ 12.5mg helps",
-        "→ Partnership talks"
+        "\u2192 Partnership talks"
       ],
       "assumptions": {
         "edodm1": {
@@ -357,10 +358,10 @@
       "wt": 20,
       "narrative": "Everything works",
       "events": [
-        "✓ Hold lifted fast",
-        "✓ 10mg >40% splicing",
-        "✓ Fast Ph3 + partnership",
-        "→ First-in-class DM1"
+        "\u2713 Hold lifted fast",
+        "\u2713 10mg >40% splicing",
+        "\u2713 Fast Ph3 + partnership",
+        "\u2192 First-in-class DM1"
       ],
       "assumptions": {
         "edodm1": {
@@ -388,12 +389,12 @@
     },
     "psychedelic_bull": {
       "wt": 3,
-      "narrative": "EDO platform validated across NMDs — Sarepta/Roche acquires",
+      "narrative": "EDO platform validated across NMDs \u2014 Sarepta/Roche acquires",
       "events": [
-        "✓ Hold lifted → 10mg/kg shows >50% splicing correction",
-        "✓ FDA grants Accelerated Approval pathway for DM1",
-        "✓ EDO51 DMD enters Phase 1 — platform validated for exon skipping",
-        "✓ Sarepta or Roche acquires PepGen for $3-5B (EDO platform value)"
+        "\u2713 Hold lifted \u2192 10mg/kg shows >50% splicing correction",
+        "\u2713 FDA grants Accelerated Approval pathway for DM1",
+        "\u2713 EDO51 DMD enters Phase 1 \u2014 platform validated for exon skipping",
+        "\u2713 Sarepta or Roche acquires PepGen for $3-5B (EDO platform value)"
       ],
       "assumptions": {
         "edodm1": {
@@ -443,7 +444,7 @@
     "risks": [
       "FDA partial hold",
       "Single-asset",
-      "$148M → 2H27",
+      "$148M \u2192 2H27",
       "n=8 at 10mg/kg"
     ]
   },
@@ -464,7 +465,7 @@
       "_sourceUrl": "https://investors.pepgen.com/news-releases/news-release-details/pepgen-announces-highest-mean-splicing-correction-reported-dm1",
       "_addedAt": "2026-04-14T07:58:57Z",
       "_confidence": "high",
-      "_rationale": "Company expects to report data from FREEDOM2 5 mg/kg cohort in Q1 2026 Data resolved Q1 2026 — modest splicing signal.",
+      "_rationale": "Company expects to report data from FREEDOM2 5 mg/kg cohort in Q1 2026 Data resolved Q1 2026 \u2014 modest splicing signal.",
       "_resolvedAt": "2026-04-29T12:00:00Z",
       "_outcome": "mixed",
       "_outcomeRationale": "FREEDOM2 5mg/kg MAD cohort: mean splicing correction 7.3% vs 6.8% placebo (one outlier); 22.9% excluding outlier. Safety clean, 10mg/kg cohort dosing.",

@@ -1037,7 +1037,7 @@
             };
             // Live EV/S: convert EV to USD using approximate FX, divide by company-level revenue (from financials.json,
             // which captures ALL revenue incl. products not broken out in config salesM like Daiichi Japan legacy).
-            const FX_TO_USD = { USD: 1, EUR: 1.08, JPY: 1/150, HKD: 1/7.8, SEK: 1/10.5, DKK: 1/6.95, GBP: 1.28, CHF: 1.12, AUD: 0.66 };
+            const FX_TO_USD = { USD: 1, EUR: 1.08, JPY: 1/150, HKD: 1/7.8, SEK: 1/10.5, DKK: 1/6.95, GBP: 1.28, CHF: 1.12, AUD: 0.66, INR: 1/84, KRW: 1/1370, CNY: 1/7.15 };
             const fx = FX_TO_USD[config.company.currency] || 1;
             const shares = config.company.sharesOut;
             const cash = state.cash;

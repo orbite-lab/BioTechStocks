@@ -782,6 +782,19 @@ REGIONS = {
         "eu":  {"patientsK": 500,    "wtpPct": 30, "priceK": 0.15},
         "row": {"patientsK": 100000, "wtpPct": 25, "priceK": 0.05},
     },
+    # Insomnia / narcolepsy / hypersomnia (CNS sleep disorders): branded class
+    # includes Belsomra (Merck suvorexant ~$300M), Quviviq (Idorsia/Tarsus
+    # daridorexant ~$80M), Dayvigo (Eisai lemborexant ~$390M), Wakix (Harmony
+    # pitolisant narcolepsy ~$700M), Xyrem/Xywav (Jazz oxybate ~$1.4B). Mostly
+    # generic Z-drugs (zolpidem, eszopiclone) dominate insomnia by volume.
+    # US: ~50M adults with chronic insomnia; ~200K narcolepsy; ~5M on branded
+    # CNS sleep agents. EU: ~30M; ROW: ~80M lifetime prevalence.
+    # Net branded blended ~$3K/yr (orexin DORAs $4K, narcolepsy Xywav $50K).
+    "cns.sleep.insomnia_narcolepsy_hypersomnia": {
+        "us":  {"patientsK": 5000,  "wtpPct": 35, "priceK": 3.0},
+        "eu":  {"patientsK": 4000,  "wtpPct": 25, "priceK": 1.5},
+        "row": {"patientsK": 30000, "wtpPct": 10, "priceK": 0.5},
+    },
     # Smallpox/mpox vaccines: Bavarian Nordic Jynneos/Imvanex/Imvamune (MVA-BN
     # live attenuated; only non-replicating smallpox vaccine FDA-approved 2019).
     # Demand is biodefense + outbreak response: US BARDA Strategic National
@@ -1035,6 +1048,7 @@ PEN_PCT = {
     "infectious_disease.vaccines.pertussis": 45,
     "infectious_disease.vaccines.polio_hib": 75,
     "infectious_disease.vaccines.meningococcal": 55,
+    "cns.sleep.insomnia_narcolepsy_hypersomnia": 25,
     "infectious_disease.vaccines.smallpox_mpox": 30,
     "infectious_disease.vaccines.rabies": 35,
     "infectious_disease.vaccines.tbe": 25,

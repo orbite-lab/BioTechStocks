@@ -1,0 +1,675 @@
+{
+  "company": {
+    "ticker": "ZEAL",
+    "name": "Zealand Pharma A/S",
+    "currentPrice": 301,
+    "sharesOut": 70.62,
+    "cash": 16600,
+    "currency": "DKK",
+    "phase": "phase3",
+    "subtitle": "Danish peptide platform (Soborg; Nasdaq Copenhagen). FOUR-ASSET CARDIOMETABOLIC + RARE DISEASE PIPELINE: (1) PETRELINTIDE (ZP8396, long-acting amylin analog SC weekly) -- Roche partnership Mar 12 2025 ($1.65B up = $1.4B closing + $250M anniversary + up to $1.2B dev milestones + sales/commercial milestones; total ~$5.3B; co-develop+co-commercialize global; includes fixed-dose combo with Roche CT-388 incretin). ZUPREME-1 Ph2 readout Mar 5 2026: 10.7% mean weight loss at 42 wks vs 1.7% placebo (efficacy estimand) -- below high-end consensus. ZUPREME-2 Ph2 obesity+T2D 28wk topline H2 2026. PHASE 3 INITIATING H2 2026 (triggers $575M Roche milestone). (2) SURVODUTIDE (BI 456906, GLP-1/glucagon dual agonist) -- BI partnership; mid-to-low-double-digit royalties. SYNCHRONIZE-1 Ph3 obesity POSITIVE Apr 28 2026: 16.6% weight loss at 76 wks vs 3.2% placebo; 85.1% achieved >=5%. ADA Jun 2026 full data. MASH Ph3 LIVERAGE + LIVERAGE-Cirrhosis ongoing (FDA Breakthrough Therapy). (3) DASIGLUCAGON (Zegalogue) severe hypoglycemia -- out-licensed Novo Nordisk Sept 2022 (DKK 265M milestones + HSD-LDD royalties; Q1 25 royalty DKK 7.7M; weak commercial). Plus FDA priority review for congenital hyperinsulinism (separate; Zealand-led). (4) GLEPAGLUTIDE long-acting GLP-2 SBS -- FDA CRL Dec 19 2024 (insufficient evidence at marketed dose); EASE-5 Ph3 confirmatory H2 2025+ for re-file; EU MAA submitted Jun 2 2025. Cash DKK ~16.6B post-Roche; 2026 OpEx guide DKK 2.7-3.3B; $700M potential 2026 Roche milestones ($575M Ph3 init + $125M anniversary).",
+    "yahooTicker": "ZEAL.CO"
+  },
+  "assets": [
+    {
+      "id": "petrelintide",
+      "name": "Petrelintide (ZP8396) - long-acting amylin analog SC weekly (Roche partnership)",
+      "stage": "Phase 3 initiating H2 2026 (ZUPREME-1 Ph2 +10.7% wt loss Mar 5 2026; ZUPREME-2 obesity+T2D readout H2 2026)",
+      "modality": "peptide.long_acting.amylin_analog",
+      "targets": [],
+      "indications": [
+        {
+          "id": "obesity_petr",
+          "name": "Obesity / chronic weight management (Roche partnership; co-develop+co-commercialize global; fixed-dose combo with Roche CT-388 incretin)",
+          "area": "cardio_metabolic.obesity.general",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40000,
+                "wtpPct": 30,
+                "priceK": 9
+              },
+              "eu": {
+                "patientsK": 30000,
+                "wtpPct": 20,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 6,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.5,
+                "wtpPct": 50,
+                "priceK": 6
+              },
+              "eu": {
+                "reachPct": 0.6,
+                "wtpPct": 35,
+                "priceK": 4
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 8,
+                "priceK": 1.5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Petrelintide WAC ~$12K/yr but ~50% net to Zealand via Roche split",
+              "us.reachPct": "Differentiated amylin mechanism vs incretins; Ph2 +10.7% vs incretins +20-25%; positions as add-on / GI-tolerable / muscle-sparing alternative"
+            },
+            "penPct": 5,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "survodutide_royalty",
+      "name": "Survodutide (BI 456906, GLP-1/glucagon dual agonist) - BI partnership royalty (mid-to-low-double-digit %)",
+      "stage": "Phase 3 (SYNCHRONIZE-1 obesity POSITIVE Apr 28 2026 +16.6% wt loss; LIVERAGE MASH Ph3 ongoing)",
+      "modality": "peptide.multi_agonist.glp1_glucagon",
+      "targets": [],
+      "indications": [
+        {
+          "id": "obesity_survo",
+          "name": "Obesity (BI commercializes; Zealand royalty stream)",
+          "area": "cardio_metabolic.obesity.general",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40000,
+                "wtpPct": 30,
+                "priceK": 9
+              },
+              "eu": {
+                "patientsK": 30000,
+                "wtpPct": 20,
+                "priceK": 5
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 6,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.4,
+                "wtpPct": 50,
+                "priceK": 1.5
+              },
+              "eu": {
+                "reachPct": 0.15,
+                "wtpPct": 35,
+                "priceK": 1.0
+              },
+              "row": {
+                "reachPct": 0.03,
+                "wtpPct": 10,
+                "priceK": 0.4
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Royalty proxy ~10% on BI list ~$15K/yr ~ $1.5K to Zealand",
+              "us.reachPct": "Survodutide ~3-5% obesity GLP-1/glucagon class share post-Wegovy/Zepbound dominance"
+            },
+            "penPct": 5,
+            "cagrPct": 0,
+            "peakYear": 2031
+          }
+        },
+        {
+          "id": "mash_survo",
+          "name": "MASH (LIVERAGE + LIVERAGE-Cirrhosis Ph3; FDA Breakthrough Therapy)",
+          "area": "cardio_metabolic.liver.mash",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3000,
+                "wtpPct": 35,
+                "priceK": 12
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 25,
+                "priceK": 8
+              },
+              "row": {
+                "patientsK": 20000,
+                "wtpPct": 8,
+                "priceK": 2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.0,
+                "wtpPct": 35,
+                "priceK": 1.8
+              },
+              "eu": {
+                "reachPct": 0.4,
+                "wtpPct": 25,
+                "priceK": 1.2
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 8,
+                "priceK": 0.4
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Royalty proxy on BI MASH WAC ~$18K/yr",
+              "us.reachPct": "Survodutide ~10% MASH class share if approved (vs Madrigal Resmetirom + incretins)"
+            },
+            "penPct": 8,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "dasiglucagon",
+      "name": "Dasiglucagon (Zegalogue) - long-acting glucagon analog SC autoinjector",
+      "stage": "Commercial (FDA Mar 2021 severe hypoglycemia; out-licensed Novo Sept 2022 SH; Zealand retains CHI; CHI FDA priority review)",
+      "modality": "peptide.long_acting.glucagon_analog",
+      "targets": [],
+      "indications": [
+        {
+          "id": "chi_dasi",
+          "name": "Congenital hyperinsulinism (CHI) - FDA priority review (Zealand-led; pediatric rare)",
+          "area": "rare_disease.endocrine.congenital_hyperinsulinism",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3,
+                "wtpPct": 70,
+                "priceK": 300
+              },
+              "eu": {
+                "patientsK": 5,
+                "wtpPct": 55,
+                "priceK": 200
+              },
+              "row": {
+                "patientsK": 30,
+                "wtpPct": 18,
+                "priceK": 50
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 60,
+                "wtpPct": 65,
+                "priceK": 300
+              },
+              "eu": {
+                "reachPct": 30,
+                "wtpPct": 50,
+                "priceK": 200
+              },
+              "row": {
+                "reachPct": 5,
+                "wtpPct": 15,
+                "priceK": 50
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Zegalogue rare-disease CHI WAC ~$300K/yr (chronic dosing)",
+              "us.reachPct": "Zegalogue first-in-class for chronic CHI suppression; 60% reach if FDA approved"
+            },
+            "penPct": 3,
+            "cagrPct": 0,
+            "peakYear": 2031
+          }
+        },
+        {
+          "id": "sh_novo_royalty",
+          "name": "Severe hypoglycemia (Zegalogue) - Novo Nordisk royalty stream HSD-LDD on global net sales",
+          "area": "_platform.zealand_novo_royalty",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "eu": {
+                "patientsK": 1,
+                "wtpPct": 1,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 1,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 0,
+                "priceK": 0
+              },
+              "row": {
+                "reachPct": 95,
+                "wtpPct": 50,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "row.priceK": "Novo royalty HSD-LDD on Zegalogue worldwide; Q1 25 DKK 7.7M (small)"
+            },
+            "penPct": 10,
+            "cagrPct": 5,
+            "peakYear": 2030,
+            "salesM": 5,
+            "salesYear": 2025,
+            "_genericBucket": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "glepaglutide",
+      "name": "Glepaglutide - long-acting GLP-2 analog SC weekly for short bowel syndrome",
+      "stage": "FDA CRL Dec 19 2024 (insufficient evidence at marketed dose); EASE-5 Ph3 confirmatory initiating H2 2025; EU MAA submitted Jun 2 2025",
+      "modality": "peptide.long_acting.glp2_analog",
+      "targets": [],
+      "indications": [
+        {
+          "id": "sbs_glep",
+          "name": "Short bowel syndrome (vs Takeda Gattex teduglutide; long-acting weekly vs daily)",
+          "area": "rare_disease.gi.short_bowel_syndrome",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 10,
+                "wtpPct": 65,
+                "priceK": 400
+              },
+              "eu": {
+                "patientsK": 12,
+                "wtpPct": 50,
+                "priceK": 250
+              },
+              "row": {
+                "patientsK": 50,
+                "wtpPct": 15,
+                "priceK": 80
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 15,
+                "wtpPct": 60,
+                "priceK": 350
+              },
+              "eu": {
+                "reachPct": 12,
+                "wtpPct": 45,
+                "priceK": 220
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 12,
+                "priceK": 70
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Glepaglutide WAC parity ~$350K/yr (vs Gattex ~$400K/yr)",
+              "us.reachPct": "Glepaglutide ~15% SBS share if approved -- weekly dosing convenience vs daily Gattex"
+            },
+            "penPct": 8,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 8,
+      "val": {
+        "mult": 2,
+        "dr": 16,
+        "cannib": 12
+      },
+      "assumptions": {
+        "petrelintide": {
+          "obesity_petr": {
+            "pos": 25,
+            "apr": 30,
+            "pen": 0.3
+          }
+        },
+        "survodutide_royalty": {
+          "obesity_survo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.5
+          },
+          "mash_survo": {
+            "pos": 30,
+            "apr": 40,
+            "pen": 0.3
+          }
+        },
+        "dasiglucagon": {
+          "chi_dasi": {
+            "pos": 50,
+            "apr": 50,
+            "pen": 0.4
+          },
+          "sh_novo_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
+        },
+        "glepaglutide": {
+          "sbs_glep": {
+            "pos": 15,
+            "apr": 25,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 18,
+      "val": {
+        "mult": 4,
+        "dr": 13,
+        "cannib": 6
+      },
+      "assumptions": {
+        "petrelintide": {
+          "obesity_petr": {
+            "pos": 50,
+            "apr": 55,
+            "pen": 0.55
+          }
+        },
+        "survodutide_royalty": {
+          "obesity_survo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "mash_survo": {
+            "pos": 50,
+            "apr": 60,
+            "pen": 0.5
+          }
+        },
+        "dasiglucagon": {
+          "chi_dasi": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 0.65
+          },
+          "sh_novo_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.85
+          }
+        },
+        "glepaglutide": {
+          "sbs_glep": {
+            "pos": 35,
+            "apr": 50,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 42,
+      "val": {
+        "mult": 6,
+        "dr": 11,
+        "cannib": 2
+      },
+      "assumptions": {
+        "petrelintide": {
+          "obesity_petr": {
+            "pos": 70,
+            "apr": 75,
+            "pen": 0.85
+          }
+        },
+        "survodutide_royalty": {
+          "obesity_survo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "mash_survo": {
+            "pos": 70,
+            "apr": 78,
+            "pen": 0.75
+          }
+        },
+        "dasiglucagon": {
+          "chi_dasi": {
+            "pos": 88,
+            "apr": 88,
+            "pen": 0.9
+          },
+          "sh_novo_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "glepaglutide": {
+          "sbs_glep": {
+            "pos": 55,
+            "apr": 70,
+            "pen": 0.7
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "mult": 8,
+        "dr": 9,
+        "cannib": 0
+      },
+      "assumptions": {
+        "petrelintide": {
+          "obesity_petr": {
+            "pos": 85,
+            "apr": 90,
+            "pen": 1.15
+          }
+        },
+        "survodutide_royalty": {
+          "obesity_survo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          },
+          "mash_survo": {
+            "pos": 85,
+            "apr": 90,
+            "pen": 1.05
+          }
+        },
+        "dasiglucagon": {
+          "chi_dasi": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.1
+          },
+          "sh_novo_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "glepaglutide": {
+          "sbs_glep": {
+            "pos": 70,
+            "apr": 85,
+            "pen": 0.9
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 7,
+      "val": {
+        "mult": 12,
+        "dr": 8,
+        "cannib": 0
+      },
+      "assumptions": {
+        "petrelintide": {
+          "obesity_petr": {
+            "pos": 92,
+            "apr": 95,
+            "pen": 1.5
+          }
+        },
+        "survodutide_royalty": {
+          "obesity_survo": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "mash_survo": {
+            "pos": 92,
+            "apr": 95,
+            "pen": 1.4
+          }
+        },
+        "dasiglucagon": {
+          "chi_dasi": {
+            "pos": 98,
+            "apr": 98,
+            "pen": 1.3
+          },
+          "sh_novo_royalty": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "glepaglutide": {
+          "sbs_glep": {
+            "pos": 85,
+            "apr": 92,
+            "pen": 1.15
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Jun 2026",
+      "dateSort": "2026-06-15",
+      "asset": "survodutide_royalty",
+      "indication": "obesity_survo",
+      "title": "Survodutide SYNCHRONIZE-1 Ph3 obesity full data (ADA 2026; topline +16.6% wt loss Apr 28 2026)",
+      "type": "phase3_data",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "BI Apr 28 2026 PR",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "petrelintide",
+      "indication": "obesity_petr",
+      "title": "Petrelintide ZUPREME-2 Ph2 obesity+T2D 28wk topline",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 35,
+      "fail_apr": 50,
+      "success_pos": 80,
+      "success_apr": 85,
+      "_source": "Zealand Apr 29 2026 PR",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-11-15",
+      "asset": "petrelintide",
+      "indication": "obesity_petr",
+      "title": "Petrelintide Phase 3a initiation (triggers $575M Roche development milestone)",
+      "type": "regulatory",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Zealand Apr 29 2026 PR",
+      "_confidence": "high"
+    },
+    {
+      "date": "2026-2027",
+      "dateSort": "2027-03-31",
+      "asset": "glepaglutide",
+      "indication": "sbs_glep",
+      "title": "Glepaglutide EU CHMP opinion (MAA submitted Jun 2 2025)",
+      "type": "regulatory",
+      "binary": true,
+      "fail_pos": 35,
+      "fail_apr": 25,
+      "success_pos": 75,
+      "success_apr": 92,
+      "_source": "Zealand MAA submission",
+      "_confidence": "medium"
+    },
+    {
+      "date": "2027",
+      "dateSort": "2027-09-30",
+      "asset": "survodutide_royalty",
+      "indication": "mash_survo",
+      "title": "Survodutide LIVERAGE MASH Ph3 readout (FDA Breakthrough Therapy)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 40,
+      "success_pos": 80,
+      "success_apr": 88,
+      "_source": "BI pipeline",
+      "_confidence": "medium"
+    },
+    {
+      "date": "FY 2026",
+      "dateSort": "2026-12-31",
+      "asset": "petrelintide",
+      "indication": "obesity_petr",
+      "title": "FY26 Roche milestones up to $700M ($575M Ph3 init + $125M anniversary Q2 2026)",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Zealand FY25 results Feb 19 2026",
+      "_confidence": "high"
+    }
+  ]
+}

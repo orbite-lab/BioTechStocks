@@ -782,6 +782,30 @@ REGIONS = {
         "eu":  {"patientsK": 500,    "wtpPct": 30, "priceK": 0.15},
         "row": {"patientsK": 100000, "wtpPct": 25, "priceK": 0.05},
     },
+    # Congenital hyperinsulinism (CHI): rare neonatal/pediatric disorder of
+    # unregulated insulin secretion causing severe persistent hypoglycemia.
+    # Incidence ~1:50,000 live births. ~3K US prevalent, ~5K EU, ~30K ROW.
+    # Class: dasiglucagon (Zealand, Ph3 + FDA priority review), HM15136
+    # exendin/glucagon (Hanmi Ph3), diazoxide (legacy off-label).
+    # Net branded ~$300K/yr (rare pediatric pricing).
+    # source: NORD CHI; Zealand 2025 AR.
+    "rare_disease.endocrine.congenital_hyperinsulinism": {
+        "us":  {"patientsK": 3,  "wtpPct": 70, "priceK": 300},
+        "eu":  {"patientsK": 5,  "wtpPct": 55, "priceK": 200},
+        "row": {"patientsK": 30, "wtpPct": 18, "priceK": 50},
+    },
+    # Short bowel syndrome (SBS): rare malabsorption from extensive bowel
+    # resection requiring parenteral nutrition (PN) dependence. ~10K US
+    # prevalent on PN, ~12K EU, ~50K ROW. Class: Gattex/Revestive
+    # (teduglutide, GLP-2 analog; Takeda ~$1B), Glepaglutide (Zealand long-
+    # acting GLP-2 analog, FDA CRL Dec 2024 pending re-file; EU MAA Jun 2025).
+    # Net branded ~$400K/yr (rare disease premium).
+    # source: NORD SBS; Takeda 10-K Gattex; Zealand 2025 AR.
+    "rare_disease.gi.short_bowel_syndrome": {
+        "us":  {"patientsK": 10, "wtpPct": 65, "priceK": 400},
+        "eu":  {"patientsK": 12, "wtpPct": 50, "priceK": 250},
+        "row": {"patientsK": 50, "wtpPct": 15, "priceK": 80},
+    },
     # Insomnia / narcolepsy / hypersomnia (CNS sleep disorders): branded class
     # includes Belsomra (Merck suvorexant ~$300M), Quviviq (Idorsia/Tarsus
     # daridorexant ~$80M), Dayvigo (Eisai lemborexant ~$390M), Wakix (Harmony
@@ -1049,6 +1073,8 @@ PEN_PCT = {
     "infectious_disease.vaccines.polio_hib": 75,
     "infectious_disease.vaccines.meningococcal": 55,
     "cns.sleep.insomnia_narcolepsy_hypersomnia": 25,
+    "rare_disease.endocrine.congenital_hyperinsulinism": 3,
+    "rare_disease.gi.short_bowel_syndrome": 8,
     "infectious_disease.vaccines.smallpox_mpox": 30,
     "infectious_disease.vaccines.rabies": 35,
     "infectious_disease.vaccines.tbe": 25,

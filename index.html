@@ -3121,7 +3121,7 @@ async function main(){
     h+='<th class="r" onclick="window._sort(\'chg1W\')" title="1-week price change (% vs ~5 trading days ago)">1W %</th>';
     h+='<th class="r" onclick="window._sort(\'chg1M\')" title="1-month price change (% vs ~21 trading days ago)">1M %</th>';
     h+='<th class="r" onclick="window._sort(\'chgYTD\')" title="Year-to-date price change (% vs first trading day of current year)">YTD %</th>';
-    h+='<th class="r" onclick="window._sort(\'ev\')">EV ($M)</th>';
+    h+='<th class="r" onclick="window._sort(\'evUSD\')" title="Enterprise Value in USD millions (mcap - cash, FX-converted to USD for cross-company comparison)">EV ($M USD)</th>';
     h+='<th class="r" onclick="window._sort(\'cashPS\')">Cash/Sh</th>';
     h+='<th class="r" onclick="window._sort(\'salesM2025\')" title="Sum of reported drug sales 2025 across all indications, USD $M">Sales 2025 ($M)</th>';
     SK.forEach(sk=>{h+=`<th class="r" style="color:${SC[sk]}" onclick="window._sort('${sk}')">${SN[sk]}</th>`;});
@@ -3174,7 +3174,7 @@ async function main(){
       h+=_chgCell(r.chg1W);
       h+=_chgCell(r.chg1M);
       h+=_chgCell(r.chgYTD);
-      h+=`<td class="r mono" style="color:var(--text2)">${Math.round(r.ev).toLocaleString()}</td>`;
+      h+=`<td class="r mono" style="color:var(--text2)" title="Local: ${r.ccy}${Math.round(r.ev).toLocaleString()}M">$${Math.round(r.evUSD*1000).toLocaleString()}</td>`;
       h+=`<td class="r mono" style="color:#c084fc">${c}${r.cashPS.toFixed(d)}</td>`;
       h+=`<td class="r mono" style="color:#22c55e">${r.salesM2025>0?Math.round(r.salesM2025).toLocaleString():'—'}</td>`;
       SK.forEach(sk=>{

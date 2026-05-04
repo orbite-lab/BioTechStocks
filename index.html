@@ -851,14 +851,27 @@ async function main(){
   let livePrices={};
   let pricesLoaded=false;
   let pricesFetchedAt=null;
-  // Fetch prices.json with one retry on failure (GitHub Pages can return 502 during degraded periods)
+  // Fetch prices.json with retries + tolerance for NaN tokens.
+  // (GitHub Pages can return 502 during degraded periods; and yfinance has been
+  // observed to write NaN for current price when Asian markets are closed --
+  // NaN is invalid JSON, so JSON.parse() throws SyntaxError on it. Replace NaN
+  // with null before parsing so the rest of the file still loads.)
   async function fetchPricesJson(retries){
     for(let attempt=0;attempt<=retries;attempt++){
       try{
         const pr=await fetch("data/prices.json?v="+Date.now());
         if(pr.ok){
-          const pj=await pr.json();
-          return pj;
+          const txt=await pr.text();
+          try{
+            return JSON.parse(txt);
+          }catch(e){
+            // Strict JSON failed -- try replacing bare NaN/Infinity tokens with null
+            try{
+              const cleaned=txt.replace(/:\s*-?(NaN|Infinity)\b/g,': null');
+              return JSON.parse(cleaned);
+            }catch{}
+            throw e;
+          }
         }
       }catch{/* try again */}
       if(attempt<retries)await new Promise(r=>setTimeout(r,500));

@@ -70,7 +70,19 @@ def fetch_one(config_ticker, yahoo_ticker):
         except Exception:
             pass
 
-        if price <= 0:
+        # Reject NaN (yfinance returns NaN for the most recent close when the
+        # market is closed and there's no real-time tick). NaN is INVALID JSON --
+        # JSON.parse() in browsers throws SyntaxError on it, breaking the entire
+        # page-side prices.json load. Fall back to prev_close instead.
+        import math
+        if isinstance(price, float) and math.isnan(price):
+            if isinstance(prev_close, float) and not math.isnan(prev_close) and prev_close > 0:
+                price = prev_close
+            else:
+                return None, "price NaN, no usable fallback"
+        if isinstance(prev_close, float) and math.isnan(prev_close):
+            prev_close = price  # use current as both
+        if price is None or price <= 0:
             return None, "price <= 0"
 
         # London Stock Exchange (.L) tickers report in pence (GBp) on Yahoo;
@@ -198,7 +210,10 @@ def main():
         print(f"\n[DRY RUN] Would write {len(prices)} tickers ({fetched} new, {failed} failed)")
         return
 
-    PRICES.write_text(json.dumps(out, indent=2) + "\n")
+    # allow_nan=False rejects NaN/Infinity at write time -- belt-and-braces in case
+    # any sanitizer above missed an entry. Better to fail the workflow than ship
+    # invalid JSON that breaks the browser parse.
+    PRICES.write_text(json.dumps(out, indent=2, allow_nan=False) + "\n")
     print(f"\n[OK] Wrote {PRICES} — {len(prices)} tickers ({fetched} fetched, {failed} failed/stale)")
 
 

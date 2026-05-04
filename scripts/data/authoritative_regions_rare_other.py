@@ -782,6 +782,59 @@ REGIONS = {
         "eu":  {"patientsK": 500,    "wtpPct": 30, "priceK": 0.15},
         "row": {"patientsK": 100000, "wtpPct": 25, "priceK": 0.05},
     },
+    # Smallpox/mpox vaccines: Bavarian Nordic Jynneos/Imvanex/Imvamune (MVA-BN
+    # live attenuated; only non-replicating smallpox vaccine FDA-approved 2019).
+    # Demand is biodefense + outbreak response: US BARDA Strategic National
+    # Stockpile ~13M doses cumulative ($1B+ during 2022 mpox; baseline ~$300M),
+    # EU HERA stockpiling ~10M doses, Canada PHAC, Africa CDC mpox response
+    # 2024-25. Class essentially monopoly (Bavarian Nordic). Pricing ~$70/dose
+    # blended government tender. source: FDA approval Sep 2019; HHS BARDA
+    # contracts 2022-2025; HERA Joint Procurement Apr 2024.
+    "infectious_disease.vaccines.smallpox_mpox": {
+        "us":  {"patientsK": 8000,   "wtpPct": 50, "priceK": 0.12},
+        "eu":  {"patientsK": 6000,   "wtpPct": 40, "priceK": 0.10},
+        "row": {"patientsK": 50000,  "wtpPct": 18, "priceK": 0.05},
+    },
+    # Rabies vaccines: Bavarian Nordic Rabipur/RabAvert (purified chick embryo
+    # cell, GSK-acquired 2019), Sanofi Imovax + Verorab (PVRV), Merck
+    # Imovax-RabAvert (US distribution). Two markets: pre-exposure (travelers,
+    # vets, lab workers; small-volume premium) + post-exposure prophylaxis (PEP;
+    # bite victims; price-sensitive). Global rabies kills ~59K/yr (95% in Asia
+    # + Africa). US ~30K PEP/yr at $300/dose (5-dose series); EU ~50K; India
+    # alone ~20M PEP exposures (subsidized) + China growing middle class.
+    # Class ~$1.5B global; Bavarian Rabipur grew +34% FY25.
+    # source: WHO rabies factsheet; CDC PEP guidelines; Bavarian Nordic 2025 AR.
+    "infectious_disease.vaccines.rabies": {
+        "us":  {"patientsK": 250,   "wtpPct": 70, "priceK": 0.50},
+        "eu":  {"patientsK": 400,   "wtpPct": 55, "priceK": 0.30},
+        "row": {"patientsK": 50000, "wtpPct": 30, "priceK": 0.06},
+    },
+    # Tick-borne encephalitis (TBE) vaccine: Bavarian Nordic Encepur (GSK-
+    # acquired 2019), Pfizer FSME-IMMUN/TicoVac. Endemic Central/Eastern
+    # Europe + Russia + Northern Asia + Hokkaido Japan. Population at risk:
+    # ~150M in endemic EU regions (Germany, Austria, Czech, Baltic, Nordic);
+    # Russia ~50M; expanding northward with climate change. Routine peds + adult
+    # vaccination in Austria/Germany endemic states; travelers elsewhere.
+    # Class ~$300-500M global. Bavarian Encepur grew +20% FY25.
+    # source: ECDC TBE annual report; Pfizer + Bavarian Nordic 10-Ks/ARs.
+    "infectious_disease.vaccines.tbe": {
+        "us":  {"patientsK": 50,    "wtpPct": 30, "priceK": 0.20},
+        "eu":  {"patientsK": 150000,"wtpPct": 25, "priceK": 0.15},
+        "row": {"patientsK": 80000, "wtpPct": 15, "priceK": 0.08},
+    },
+    # Epstein-Barr virus (EBV) vaccine: pipeline only (no approved EBV vaccine).
+    # EBV infects >95% of adults globally; primary infection peak adolescence
+    # (infectious mononucleosis); strong causal link to multiple sclerosis
+    # established 2022 (Bjornevik Science) + Burkitt + nasopharyngeal carcinoma.
+    # Target: adolescent universal immunization. Pipeline: Moderna mRNA-1189
+    # Ph1 (2022); Bavarian Nordic MVA-BN-EBV preclinical; NIAID Sangshin etc.
+    # If approved, addressable ~adolescent cohort ~80M US/EU + global.
+    # source: NIAID EBV vaccine programs; Moderna pipeline; Bjornevik 2022.
+    "infectious_disease.vaccines.ebv": {
+        "us":  {"patientsK": 4000,  "wtpPct": 50, "priceK": 0.30},
+        "eu":  {"patientsK": 5000,  "wtpPct": 40, "priceK": 0.20},
+        "row": {"patientsK": 80000, "wtpPct": 15, "priceK": 0.08},
+    },
     # Oral contraceptive pills (OCPs): combined estrogen-progestin or
     # progestin-only daily pills. US ~15M users, EU ~30M, ROW ~150M.
     # Class: Yaz/Yasmin franchise (Bayer drospirenone + estradiol),
@@ -982,6 +1035,10 @@ PEN_PCT = {
     "infectious_disease.vaccines.pertussis": 45,
     "infectious_disease.vaccines.polio_hib": 75,
     "infectious_disease.vaccines.meningococcal": 55,
+    "infectious_disease.vaccines.smallpox_mpox": 30,
+    "infectious_disease.vaccines.rabies": 35,
+    "infectious_disease.vaccines.tbe": 25,
+    "infectious_disease.vaccines.ebv": 0,
     "nephrology.ckd.phosphate_binder": 25,
     "ophthalmology.anterior_neuro.deb_ocular": 25,
     "ophthalmology.anterior_neuro.dry_eye": 15,

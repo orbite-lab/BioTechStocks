@@ -1,0 +1,766 @@
+{
+  "company": {
+    "ticker": "BAVA",
+    "name": "Bavarian Nordic A/S",
+    "currentPrice": 156.85,
+    "sharesOut": 77.51,
+    "cash": 3300,
+    "currency": "DKK",
+    "phase": "commercial",
+    "subtitle": "Danish vaccine specialty (Hellerup; Nasdaq Copenhagen). FY25 revenue DKK 6,244M (beat DKK 6,000M guide): Public Preparedness DKK 3,105M (Jynneos/Imvanex/Imvamune mpox/smallpox MVA-BN -- US BARDA + EU HERA + Canada PHAC government stockpiling) + Travel Health DKK 2,963M (Rabipur/RabAvert rabies +34%, Encepur TBE +20%, Vimkunya CHIKV first-year DKK 85M, Ixiaro/Vivotif/Vaxchora). EBITDA ex-PRV DKK 1,732M (28%). 2026 guide DKK 5.0-5.2B (mpox normalization vs blockbuster 2024-25 outbreak years). NORDIC CAPITAL/PERMIRA TAKEOVER FAILED Nov 6 2025: consortium raised offer to DKK 250 'best and final' but only ~60% tender vs 66.7% min threshold; offer withdrawn; BAVA continues independent. Stock declined DKK 250 deal price -> ~DKK 157 reflecting lost takeout premium + 2026 mpox normalization. PIPELINE: Vimkunya CHIKV pediatric Ph3 label expansion ongoing; Health Canada approval pending H1 2026; MVA-BN RSV DISCONTINUED (Ph3 missed co-primary endpoints); EBV vaccine + Lyme vaccine IND filings pushed to 2027. Cash DKK ~3.3B no debt.",
+    "yahooTicker": "BAVA.CO"
+  },
+  "assets": [
+    {
+      "id": "jynneos",
+      "name": "Jynneos / Imvanex / Imvamune (MVA-BN) - non-replicating live attenuated smallpox/mpox vaccine (only FDA-approved non-replicating smallpox vaccine)",
+      "stage": "Commercial (FDA Sep 2019 Jynneos; EMA Imvanex; Health Canada Imvamune; pediatric mpox sNDA submitted)",
+      "modality": "vaccine.viral_vector.mva",
+      "targets": [],
+      "indications": [
+        {
+          "id": "mpox_smallpox",
+          "name": "Mpox / smallpox biodefense + outbreak response (US BARDA + EU HERA + Canada PHAC stockpiling)",
+          "area": "infectious_disease.vaccines.smallpox_mpox",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 8000,
+                "wtpPct": 50,
+                "priceK": 0.12
+              },
+              "eu": {
+                "patientsK": 6000,
+                "wtpPct": 40,
+                "priceK": 0.1
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 18,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 50,
+                "priceK": 0.1
+              },
+              "eu": {
+                "reachPct": 95,
+                "wtpPct": 40,
+                "priceK": 0.08
+              },
+              "row": {
+                "reachPct": 16.1,
+                "wtpPct": 18,
+                "priceK": 0.04
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Jynneos government tender ~$70-110/dose (BARDA contracts)",
+              "us.reachPct": "Jynneos near-monopoly non-replicating smallpox vaccine US/EU/Canada"
+            },
+            "penPct": 30,
+            "cagrPct": -25,
+            "peakYear": 2025,
+            "salesM": 456,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "rabipur",
+      "name": "Rabipur / RabAvert (purified chick embryo cell rabies vaccine; GSK-acquired 2019)",
+      "stage": "Commercial (pre-exposure travelers + post-exposure prophylaxis; FY25 DKK ~1,070M +34% YoY)",
+      "modality": "vaccine.inactivated.rabies",
+      "targets": [],
+      "indications": [
+        {
+          "id": "rabies",
+          "name": "Rabies pre/post-exposure (PCEC vaccine; vs Sanofi Imovax + Verorab)",
+          "area": "infectious_disease.vaccines.rabies",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 250,
+                "wtpPct": 70,
+                "priceK": 0.5
+              },
+              "eu": {
+                "patientsK": 400,
+                "wtpPct": 55,
+                "priceK": 0.3
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 30,
+                "priceK": 0.06
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 95,
+                "wtpPct": 60,
+                "priceK": 0.3
+              },
+              "eu": {
+                "reachPct": 95,
+                "wtpPct": 50,
+                "priceK": 0.2
+              },
+              "row": {
+                "reachPct": 36.3,
+                "wtpPct": 22,
+                "priceK": 0.05
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Rabipur WAC ~$300/dose (5-dose post-exposure series)",
+              "us.reachPct": "Rabipur ~25% global rabies share (vs Sanofi Imovax dominant)"
+            },
+            "penPct": 35,
+            "cagrPct": 12,
+            "peakYear": 2030,
+            "salesM": 158,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "encepur",
+      "name": "Encepur (purified inactivated TBE vaccine; GSK-acquired 2019)",
+      "stage": "Commercial (TBE endemic Central/Eastern Europe + Russia + Northern Asia; FY25 DKK ~720M +20% YoY)",
+      "modality": "vaccine.inactivated.tbe",
+      "targets": [],
+      "indications": [
+        {
+          "id": "tbe",
+          "name": "Tick-borne encephalitis (vs Pfizer FSME-IMMUN/TicoVac)",
+          "area": "infectious_disease.vaccines.tbe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 30,
+                "priceK": 0.2
+              },
+              "eu": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.15
+              },
+              "row": {
+                "patientsK": 80000,
+                "wtpPct": 15,
+                "priceK": 0.08
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 53.8,
+                "wtpPct": 25,
+                "priceK": 0.2
+              },
+              "eu": {
+                "reachPct": 2.7,
+                "wtpPct": 25,
+                "priceK": 0.15
+              },
+              "row": {
+                "reachPct": 0.7,
+                "wtpPct": 15,
+                "priceK": 0.08
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Encepur WAC ~$150/dose (3-dose series)",
+              "us.reachPct": "Encepur ~40% TBE class share globally (vs Pfizer FSME-IMMUN)"
+            },
+            "penPct": 25,
+            "cagrPct": 12,
+            "peakYear": 2030,
+            "salesM": 106,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "vimkunya",
+      "name": "Vimkunya (chikungunya VLP vaccine) - virus-like particle CHIKV vaccine (FDA Feb 2025 >=12y)",
+      "stage": "Commercial (FDA Feb 2025; EU launches 2025; Health Canada H1 2026; pediatric Ph3 ongoing)",
+      "modality": "vaccine.protein_subunit.vlp",
+      "targets": [],
+      "indications": [
+        {
+          "id": "chikungunya",
+          "name": "Chikungunya prevention age >=12 (CHIKV VLP; vs Valneva Ixchiq live attenuated)",
+          "area": "infectious_disease.vaccines.chikungunya",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 500,
+                "wtpPct": 45,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 200,
+                "wtpPct": 35,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 3000,
+                "wtpPct": 20,
+                "priceK": 0.05
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 23.6,
+                "wtpPct": 45,
+                "priceK": 0.3
+              },
+              "eu": {
+                "reachPct": 17.7,
+                "wtpPct": 35,
+                "priceK": 0.2
+              },
+              "row": {
+                "reachPct": 3.0,
+                "wtpPct": 20,
+                "priceK": 0.06
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Vimkunya WAC ~$300/dose",
+              "us.reachPct": "Vimkunya VLP non-live competitor to Valneva Ixchiq; broader-eligibility safety"
+            },
+            "penPct": 30,
+            "cagrPct": 60,
+            "peakYear": 2032,
+            "salesM": 13,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "travel_jev_typhoid_cholera",
+      "name": "Ixiaro (Japanese encephalitis) + Vivotif (oral typhoid) + Vaxchora (oral cholera) - travel vaccine portfolio",
+      "stage": "Commercial (Ixiaro Valneva-acquired 2020; Vivotif + Vaxchora PaxVax-acquired 2020)",
+      "modality": "vaccine.inactivated.travel",
+      "targets": [],
+      "indications": [
+        {
+          "id": "travel_vaccines",
+          "name": "Travel vaccines portfolio (JEV + typhoid + cholera; combined ~DKK 860M FY25)",
+          "area": "infectious_disease.vaccines.travel",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30000,
+                "wtpPct": 55,
+                "priceK": 0.25
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 50,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 200000,
+                "wtpPct": 40,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 2.7,
+                "wtpPct": 50,
+                "priceK": 0.25
+              },
+              "eu": {
+                "reachPct": 1.1,
+                "wtpPct": 45,
+                "priceK": 0.2
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 30,
+                "priceK": 0.1
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Travel vaccines blended WAC $200-350/dose",
+              "us.reachPct": "Bavarian travel franchise: Ixiaro JEV ~50% market, Vivotif typhoid + Vaxchora cholera niche"
+            },
+            "penPct": 25,
+            "cagrPct": 4,
+            "peakYear": 2030,
+            "salesM": 127,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "ebv_vaccine",
+      "name": "MVA-BN-EBV - Epstein-Barr virus vaccine (preclinical; potential MS prevention)",
+      "stage": "Preclinical (IND filing pushed to 2027)",
+      "modality": "vaccine.viral_vector.mva",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ebv",
+          "name": "EBV adolescent universal immunization (mono prevention + MS causal link 2022)",
+          "area": "infectious_disease.vaccines.ebv",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 4000,
+                "wtpPct": 50,
+                "priceK": 0.3
+              },
+              "eu": {
+                "patientsK": 5000,
+                "wtpPct": 40,
+                "priceK": 0.2
+              },
+              "row": {
+                "patientsK": 80000,
+                "wtpPct": 15,
+                "priceK": 0.08
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1,
+                "wtpPct": 40,
+                "priceK": 0.3
+              },
+              "eu": {
+                "reachPct": 0.5,
+                "wtpPct": 30,
+                "priceK": 0.2
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 12,
+                "priceK": 0.06
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $300/dose (parallel to HPV adolescent series)"
+            },
+            "penPct": 0,
+            "cagrPct": 0,
+            "peakYear": 2035
+          }
+        }
+      ]
+    },
+    {
+      "id": "lyme_vaccine",
+      "name": "MVA-BN-Lyme - Lyme disease vaccine (preclinical)",
+      "stage": "Preclinical (IND filing pushed to 2027)",
+      "modality": "vaccine.viral_vector.mva",
+      "targets": [],
+      "indications": [
+        {
+          "id": "lyme",
+          "name": "Lyme disease vaccine (vs Pfizer/Valneva VLA15 Ph3)",
+          "area": "infectious_disease.vaccines.lyme",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 20000,
+                "wtpPct": 40,
+                "priceK": 0.2
+              },
+              "eu": {
+                "patientsK": 15000,
+                "wtpPct": 30,
+                "priceK": 0.15
+              },
+              "row": {
+                "patientsK": 50000,
+                "wtpPct": 15,
+                "priceK": 0.1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 35,
+                "priceK": 0.2
+              },
+              "eu": {
+                "reachPct": 0.3,
+                "wtpPct": 25,
+                "priceK": 0.15
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 10,
+                "priceK": 0.08
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $200/dose"
+            },
+            "penPct": 25,
+            "cagrPct": 0,
+            "peakYear": 2035
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 10,
+      "val": {
+        "mult": 3,
+        "dr": 13,
+        "cannib": 18
+      },
+      "assumptions": {
+        "jynneos": {
+          "mpox_smallpox": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "rabipur": {
+          "rabies": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "encepur": {
+          "tbe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "vimkunya": {
+          "chikungunya": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "travel_jev_typhoid_cholera": {
+          "travel_vaccines": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1
+          }
+        },
+        "ebv_vaccine": {
+          "ebv": {
+            "pos": 3,
+            "apr": 40,
+            "pen": 0.2
+          }
+        },
+        "lyme_vaccine": {
+          "lyme": {
+            "pos": 3,
+            "apr": 40,
+            "pen": 0.2
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 22,
+      "val": {
+        "mult": 5,
+        "dr": 11,
+        "cannib": 10
+      },
+      "assumptions": {
+        "jynneos": {
+          "mpox_smallpox": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "rabipur": {
+          "rabies": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "encepur": {
+          "tbe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "vimkunya": {
+          "chikungunya": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.95
+          }
+        },
+        "travel_jev_typhoid_cholera": {
+          "travel_vaccines": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "ebv_vaccine": {
+          "ebv": {
+            "pos": 8,
+            "apr": 60,
+            "pen": 0.4
+          }
+        },
+        "lyme_vaccine": {
+          "lyme": {
+            "pos": 8,
+            "apr": 60,
+            "pen": 0.4
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 38,
+      "val": {
+        "mult": 7,
+        "dr": 9,
+        "cannib": 5
+      },
+      "assumptions": {
+        "jynneos": {
+          "mpox_smallpox": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.9
+          }
+        },
+        "rabipur": {
+          "rabies": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "encepur": {
+          "tbe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.15
+          }
+        },
+        "vimkunya": {
+          "chikungunya": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "travel_jev_typhoid_cholera": {
+          "travel_vaccines": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.1
+          }
+        },
+        "ebv_vaccine": {
+          "ebv": {
+            "pos": 18,
+            "apr": 78,
+            "pen": 0.65
+          }
+        },
+        "lyme_vaccine": {
+          "lyme": {
+            "pos": 18,
+            "apr": 78,
+            "pen": 0.65
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "mult": 10,
+        "dr": 8,
+        "cannib": 2
+      },
+      "assumptions": {
+        "jynneos": {
+          "mpox_smallpox": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "rabipur": {
+          "rabies": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "encepur": {
+          "tbe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "vimkunya": {
+          "chikungunya": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "travel_jev_typhoid_cholera": {
+          "travel_vaccines": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          }
+        },
+        "ebv_vaccine": {
+          "ebv": {
+            "pos": 32,
+            "apr": 88,
+            "pen": 0.95
+          }
+        },
+        "lyme_vaccine": {
+          "lyme": {
+            "pos": 30,
+            "apr": 86,
+            "pen": 0.9
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "mult": 14,
+        "dr": 7,
+        "cannib": 0
+      },
+      "assumptions": {
+        "jynneos": {
+          "mpox_smallpox": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "rabipur": {
+          "rabies": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "encepur": {
+          "tbe": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "vimkunya": {
+          "chikungunya": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "travel_jev_typhoid_cholera": {
+          "travel_vaccines": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.4
+          }
+        },
+        "ebv_vaccine": {
+          "ebv": {
+            "pos": 50,
+            "apr": 94,
+            "pen": 1.2
+          }
+        },
+        "lyme_vaccine": {
+          "lyme": {
+            "pos": 48,
+            "apr": 92,
+            "pen": 1.15
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "H1 2026",
+      "dateSort": "2026-06-30",
+      "asset": "vimkunya",
+      "indication": "chikungunya",
+      "title": "Vimkunya Health Canada approval (CHIKV VLP)",
+      "type": "regulatory",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Bavarian Nordic FY25 AR",
+      "_confidence": "high"
+    },
+    {
+      "date": "FY 2026",
+      "dateSort": "2026-12-31",
+      "asset": "jynneos",
+      "indication": "mpox_smallpox",
+      "title": "FY26 revenue guide DKK 5.0-5.2B (mpox normalization vs DKK 6.24B FY25); Public Preparedness DKK 1.8-2.0B",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Bavarian Nordic FY26 guidance",
+      "_confidence": "high"
+    },
+    {
+      "date": "Nov 6 2025",
+      "dateSort": "2025-11-06",
+      "asset": "jynneos",
+      "indication": "mpox_smallpox",
+      "title": "Nordic Capital + Permira takeover withdrawn (DKK 250 final offer; ~60% tender vs 66.7% min); BAVA continues independent",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "GlobeNewswire Nov 6 2025",
+      "_confidence": "high"
+    }
+  ]
+}

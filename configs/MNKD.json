@@ -7,7 +7,7 @@
     "cash": 176,
     "currency": "USD",
     "phase": "commercial",
-    "subtitle": "Inhaled-drug + cardiometabolic specialty (Technosphere DPI platform). FY25 revenue $349M (+22%): Tyvaso DPI royalty $128M (+25%; ~9% net royalty UTHR partnership; sole manufacturer Danbury CT) + Afrezza inhaled mealtime insulin $75M (+16%) + FUROSCIX subQ furosemide infuser ~$23M Q4 partial (scPharmaceuticals acq Oct 2025 $360M; HF + CKD label Mar 2025; ReadyFlow autoinjector sNDA filed Q3 2025) + V-Go declining. 2026 guide $450M+. PIPELINE: Pediatric Afrezza sBLA accepted PDUFA May 29 2026 (ages 4-17 T1D/T2D; INHALE-1 topline Dec 2024); MNKD-101 nebulized clofazimine NTM Phase 3 ICoN-1 DISCONTINUED Nov 2025 (futility 0/46 sputum culture conversions); MNKD-102 clofazimine DPI Ph1 reallocating; MNKD-201 nintedanib DPI IPF preclinical. CRITICAL TYVASO DPI EXPANSION: UTHR TETON-1 (Mar 2026 +130mL FVC) + TETON-2 (Sep 2025 +95mL) IPF BOTH POSITIVE; UTHR planning IPF sNDA -- massive royalty TAM expansion (Tyvaso PAH $1.4B + PH-ILD ~$1B + IPF potential $2-3B+ greenfield). Cash $176M post-scPharma close. Stock down ~40% post Q4 on Tyvaso DPI competitive concerns (~$2.70 from $6.51 52w high).",
+    "subtitle": "Inhaled-drug + cardiometabolic specialty (Technosphere DPI platform). FY25 revenue $349M (+22%): Tyvaso DPI royalty $128M (+25%; ~9% net royalty UTHR partnership; sole manufacturer Danbury CT) + Afrezza inhaled mealtime insulin $75M (+16%) + FUROSCIX subQ furosemide infuser ~$23M Q4 partial (scPharmaceuticals acq close Oct 7 2025 $360M; HF + CKD label Mar 2025; ReadyFlow autoinjector sNDA filed Q3 2025) + V-Go declining. 2026 guide $450M+. PIPELINE: Pediatric Afrezza sBLA accepted PDUFA May 29 2026 (ages 4-17 T1D/T2D; INHALE-1 topline Dec 2024); MNKD-101 nebulized clofazimine NTM Phase 3 ICoN-1 DISCONTINUED Nov 2025 (futility 0/46 sputum culture conversions); MNKD-102 clofazimine DPI Ph1 reallocating; MNKD-201 nintedanib DPI IPF preclinical. TETON IPF DATA NUANCE: UTHR TETON-1 (Mar 2026 +130mL FVC) + TETON-2 (Sep 2025 +95mL) BOTH POSITIVE -- but for NEBULIZED Tyvaso, NOT Tyvaso DPI. MNKD 9% royalty applies only to DPI; nebulized has zero MNKD economics. IPF upside requires UTHR to develop SEPARATE DPI-for-IPF program (not currently announced; multi-year delay risk). UTHR planning nebulized IPF sNDA by end summer 2026. Cash $176M post-scPharma close. Stock down ~40% post Q4 on Tyvaso DPI competitive concerns (~$2.70 from $6.51 52w high).",
     "yahooTicker": "MNKD"
   },
   "assets": [
@@ -120,7 +120,7 @@
         },
         {
           "id": "ipf_dpi",
-          "name": "IPF Tyvaso DPI label expansion (UTHR TETON-1 + TETON-2 BOTH POSITIVE 2025-26; sNDA pending; massive TAM expansion)",
+          "name": "IPF Tyvaso DPI INDIRECT royalty (UTHR TETON-1 + TETON-2 are NEBULIZED Tyvaso; MNKD 9% royalty is DPI-only; upside requires UTHR to launch separate DPI-for-IPF program -- not currently in clinic; multi-year delay risk)",
           "area": "respiratory.fibrotic.ipf",
           "market": {
             "regions": {
@@ -142,28 +142,28 @@
             },
             "company_slice": {
               "us": {
-                "reachPct": 12,
-                "wtpPct": 50,
+                "reachPct": 3,
+                "wtpPct": 25,
                 "priceK": 16
               },
               "eu": {
-                "reachPct": 2,
-                "wtpPct": 35,
+                "reachPct": 0.5,
+                "wtpPct": 15,
                 "priceK": 11
               },
               "row": {
-                "reachPct": 0.3,
-                "wtpPct": 10,
+                "reachPct": 0.1,
+                "wtpPct": 5,
                 "priceK": 4
               }
             },
             "company_slice_sources": {
-              "us.priceK": "Royalty proxy on UTHR Tyvaso IPF if approved",
-              "us.reachPct": "TETON-1 + TETON-2 hit; IPF $2-3B+ greenfield TAM (vs Ofev/Esbriet); royalty share TBD"
+              "us.priceK": "Royalty proxy IF UTHR develops separate DPI-for-IPF program (NOT currently announced)",
+              "us.reachPct": "TETON validates mechanism but is NEBULIZED Tyvaso -- MNKD has zero royalty on nebulized; DPI IPF program would need separate UTHR development cycle"
             },
             "penPct": 35,
             "cagrPct": 0,
-            "peakYear": 2032
+            "peakYear": 2034
           }
         }
       ]
@@ -504,6 +504,65 @@
           }
         }
       ]
+    },
+    {
+      "id": "v_go",
+      "name": "V-Go (insulin patch pump) - acquired from Zealand 2022; basal+bolus insulin delivery patch",
+      "stage": "Commercial (declining; small revenue contributor; legacy insulin device)",
+      "modality": "formulation_modifier.insulin.patch_pump",
+      "targets": [],
+      "indications": [
+        {
+          "id": "vgo_t2d",
+          "name": "T2D insulin-requiring (V-Go disposable insulin patch)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.02,
+                "wtpPct": 30,
+                "priceK": 4
+              },
+              "eu": {
+                "reachPct": 0.001,
+                "wtpPct": 5,
+                "priceK": 0.5
+              },
+              "row": {
+                "reachPct": 0.001,
+                "wtpPct": 5,
+                "priceK": 0.5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "V-Go WAC ~$4K/yr",
+              "us.reachPct": "V-Go niche T2D patch pump; declining"
+            },
+            "penPct": 10,
+            "cagrPct": -8,
+            "peakYear": 2026,
+            "salesM": 5,
+            "salesYear": 2025
+          }
+        }
+      ]
     }
   ],
   "scenarios": {
@@ -570,6 +629,13 @@
             "pos": 1,
             "apr": 15,
             "pen": 0.1
+          }
+        },
+        "v_go": {
+          "vgo_t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
           }
         }
       }
@@ -638,6 +704,13 @@
             "apr": 50,
             "pen": 0.3
           }
+        },
+        "v_go": {
+          "vgo_t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.7
+          }
         }
       }
     },
@@ -704,6 +777,13 @@
             "pos": 18,
             "apr": 65,
             "pen": 0.5
+          }
+        },
+        "v_go": {
+          "vgo_t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
           }
         }
       }
@@ -772,6 +852,13 @@
             "apr": 78,
             "pen": 0.75
           }
+        },
+        "v_go": {
+          "vgo_t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
         }
       }
     },
@@ -838,6 +925,13 @@
             "pos": 48,
             "apr": 90,
             "pen": 1.05
+          }
+        },
+        "v_go": {
+          "vgo_t2d": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
           }
         }
       }

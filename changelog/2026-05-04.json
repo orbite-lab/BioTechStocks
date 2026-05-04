@@ -1,0 +1,225 @@
+[
+  {
+    "timestamp": "2026-05-04T14:36:05Z",
+    "ticker": "CELC",
+    "news": "Celcuity announced positive topline results from Phase 3 VIKTORIA-1 trial showing statistically significant PFS improvement for gedatolisib in PIK3CA-mutant advanced breast cancer versus control arms, with both triplet and doublet regimens demonstrating clinically meaningful benefits.",
+    "source": "https://www.investing.com/news/analyst-ratings/stifel-raises-celcuity-stock-price-target-on-trial-data-strength-93CH-4655820",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.geda_mt.bc_mt.pos",
+        "old_value": 55,
+        "new_value": 70,
+        "reason": "Positive Phase 3 VIKTORIA-1 PIK3CA mutant topline data showing statistically significant PFS benefits increases probability of regulatory success",
+        "old_actual": 55
+      },
+      {
+        "path": "scenarios.bear.assumptions.geda_mt.bc_mt.pos",
+        "old_value": 25,
+        "new_value": 40,
+        "reason": "Even in bear case, positive topline data reduces regulatory risk for PIK3CA mutant cohort",
+        "old_actual": 25
+      },
+      {
+        "path": "scenarios.bull.assumptions.geda_mt.bc_mt.pos",
+        "old_value": 65,
+        "new_value": 80,
+        "reason": "Strong Phase 3 data supports higher probability of approval in bull scenario",
+        "old_actual": 65
+      },
+      {
+        "path": "catalysts.0.dateSort",
+        "old_value": "2026-05-15",
+        "new_value": "2026-04-14",
+        "reason": "Event has occurred - updating to actual topline announcement date",
+        "old_actual": "2026-05-15"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-05-04T14:36:05Z",
+    "ticker": "NOVO",
+    "news": "Eli Lilly reported strong Q1 2026 results with Mounjaro and Zepbound sales growth, plus FDA approval of Foundayo (once-daily oral GLP-1), intensifying competition for Novo Nordisk's GLP-1 franchise.",
+    "source": "https://www.fool.com/investing/2026/05/04/eli-lilly-just-announced-fantastic-news-for-shareh/",
+    "changes": [
+      {
+        "path": "scenarios.bear.assumptions.wegovy.obesity.pen",
+        "old_value": 0.75,
+        "new_value": 0.7,
+        "reason": "Foundayo oral GLP-1 approval intensifies competition for Wegovy, reducing market penetration in bear case",
+        "old_actual": 0.75
+      },
+      {
+        "path": "scenarios.base.assumptions.wegovy.obesity.pen",
+        "old_value": 0.9,
+        "new_value": 0.85,
+        "reason": "Strong LLY franchise growth with new oral option pressures Wegovy market share assumptions",
+        "old_actual": 0.9
+      },
+      {
+        "path": "scenarios.bear.assumptions.ozempic.t2d.pen",
+        "old_value": 0.85,
+        "new_value": 0.8,
+        "reason": "Mounjaro's 125% growth demonstrates continued T2D market pressure on Ozempic",
+        "old_actual": 0.85
+      },
+      {
+        "path": "scenarios.base.assumptions.ozempic.t2d.pen",
+        "old_value": 1.0,
+        "new_value": 0.95,
+        "reason": "LLY's sustained momentum in GLP-1 space reduces Ozempic's base case penetration",
+        "old_actual": 1.0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-05-04T14:36:05Z",
+    "ticker": "HANMI",
+    "news": "Eli Lilly reported strong Q1 2026 GLP-1 sales and FDA approval of Foundayo, a once-daily oral GLP-1 pill, intensifying competition for Hanmi's efpeglenatide obesity program.",
+    "source": "https://www.fool.com/investing/2026/05/04/eli-lilly-just-announced-fantastic-news-for-shareh/",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.efpeglenatide.obesity.pos",
+        "old_value": 55,
+        "new_value": 45,
+        "reason": "FDA approval of Foundayo oral GLP-1 pill significantly increases competitive landscape for efpeglenatide, reducing probability of success in crowded obesity market",
+        "old_actual": 55
+      },
+      {
+        "path": "scenarios.bear.assumptions.efpeglenatide.obesity.pos",
+        "old_value": 40,
+        "new_value": 30,
+        "reason": "Downside scenario reflects even lower probability given new oral competition from established player Lilly",
+        "old_actual": 40
+      },
+      {
+        "path": "scenarios.bull.assumptions.efpeglenatide.obesity.pos",
+        "old_value": 70,
+        "new_value": 60,
+        "reason": "Even optimistic scenario must account for Foundayo's market entry reducing efpeglenatide's competitive positioning",
+        "old_actual": 70
+      },
+      {
+        "path": "scenarios.base.assumptions.efpeglenatide.obesity.pen",
+        "old_value": 0.8,
+        "new_value": 0.6,
+        "reason": "Market penetration potential reduced as oral GLP-1 options may capture significant share from injectable competitors",
+        "old_actual": 0.8
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-05-04T14:36:05Z",
+    "ticker": "LLY",
+    "news": "Eli Lilly reported Q1 2026 revenue of $19.8B (+56% YoY) with strong Mounjaro/Zepbound sales and confirmed Foundayo oral GLP-1 FDA approval with 20,000+ patients already treated.",
+    "source": "https://www.fool.com/investing/2026/05/04/eli-lilly-just-announced-fantastic-news-for-shareh/",
+    "changes": [
+      {
+        "path": "scenarios.base.assumptions.orforglipron.oral_glp1.pos",
+        "old_value": 100,
+        "new_value": 100,
+        "reason": "FDA approval already reflected in base case",
+        "old_actual": 100
+      },
+      {
+        "path": "scenarios.base.assumptions.orforglipron.oral_glp1.pen",
+        "old_value": 0.8,
+        "new_value": 0.9,
+        "reason": "Strong early uptake with 20K+ patients weeks after launch indicates faster penetration than modeled",
+        "old_actual": 0.8
+      },
+      {
+        "path": "scenarios.bull.assumptions.orforglipron.oral_glp1.pen",
+        "old_value": 1.1,
+        "new_value": 1.2,
+        "reason": "Exceptional early adoption supports higher bull case penetration",
+        "old_actual": 1.1
+      },
+      {
+        "path": "scenarios.base.val.commercialRevM",
+        "old_value": 83500,
+        "new_value": 85000,
+        "reason": "Q1 beat ($19.8B vs ~$18B expected) suggests 2026 guidance may be conservative",
+        "old_actual": 83500
+      },
+      {
+        "path": "scenarios.bull.val.commercialRevM",
+        "old_value": 110000,
+        "new_value": 115000,
+        "reason": "Continued strong momentum in tirzepatide franchise supports higher bull case revenue",
+        "old_actual": 110000
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-05-04T14:36:05Z",
+    "ticker": "MRK",
+    "news": "Merck reported Q1 2026 revenue of $16.3 billion with strong oncology and animal health performance, received FDA approval for IDVYNSO HIV treatment, and presented positive Phase 3 cardio-pulmonary data.",
+    "source": "https://www.sci-tech-today.com/news/merck-co-inc-q1-2026-earnings/",
+    "changes": [
+      {
+        "path": "company.currentPrice",
+        "old_value": 110.23,
+        "new_value": 113.5,
+        "reason": "Strong Q1 earnings beat with $16.3B revenue likely above guidance midpoint of $16.25B",
+        "old_actual": 110.23
+      },
+      {
+        "path": "scenarios.base.val.commercialRevM",
+        "old_value": 65000,
+        "new_value": 66000,
+        "reason": "Strong oncology performance suggests slightly higher revenue trajectory",
+        "old_actual": 65000
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-05-04T14:36:05Z",
+    "ticker": "UCB",
+    "news": "UCB acquired Candid Therapeutics for $2 billion upfront plus up to $200 million in milestones, adding novel T-cell engager technology to their pipeline.",
+    "source": "https://www.cov.com/en/news-and-insights/news/2026/05/covington-represents-ucb-in-its-acquisition-of-candid-therapeutics-for-up-to-2-2-billion",
+    "changes": [
+      {
+        "path": "company.cash",
+        "old_value": 3000,
+        "new_value": 1000,
+        "reason": "$2 billion upfront payment reduces cash position significantly",
+        "old_actual": 3000
+      },
+      {
+        "path": "scenarios.base.val.milestones",
+        "old_value": 0,
+        "new_value": 200,
+        "reason": "Up to $200M in potential milestone payments from Candid acquisition",
+        "old_actual": 0
+      },
+      {
+        "path": "scenarios.bear.val.milestones",
+        "old_value": 0,
+        "new_value": 100,
+        "reason": "Conservative milestone achievement probability in bear case",
+        "old_actual": 0
+      },
+      {
+        "path": "scenarios.bull.val.milestones",
+        "old_value": 0,
+        "new_value": 200,
+        "reason": "Full milestone potential in bull scenario",
+        "old_actual": 0
+      },
+      {
+        "path": "scenarios.base.val.pipelineMult",
+        "old_value": 5,
+        "new_value": 5.5,
+        "reason": "T-cell engager platform adds to pipeline value multiple through novel oncology modality",
+        "old_actual": 5
+      },
+      {
+        "path": "scenarios.bull.val.pipelineMult",
+        "old_value": 6,
+        "new_value": 6.5,
+        "reason": "Enhanced pipeline multiple in bull case with successful T-cell engager development",
+        "old_actual": 6
+      }
+    ]
+  }
+]

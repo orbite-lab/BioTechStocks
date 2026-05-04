@@ -779,14 +779,44 @@ const CORS_PROXIES=[
 ];
 async function fetchLivePrice(yahooTicker){
   if(!yahooTicker)return null;
-  const url="https://query1.finance.yahoo.com/v8/finance/chart/"+yahooTicker+"?interval=1d&range=1d";
+  // Fetch 1y range so we can extract 1W (~5d), 1M (~21d), and YTD anchors --
+  // matches the data shape of prices.json (which is built by fetch_prices.py).
+  // Without these, 1W/1M/YTD columns stay em-dash forever when the server-side
+  // prices.json cache fails (Pages outage etc.).
+  const url="https://query1.finance.yahoo.com/v8/finance/chart/"+yahooTicker+"?interval=1d&range=1y";
   for(const proxy of CORS_PROXIES){
     try{
-      const res=await fetch(proxy(url),{signal:AbortSignal.timeout(5000)});
+      const res=await fetch(proxy(url),{signal:AbortSignal.timeout(8000)});
       if(!res.ok)continue;
       const data=await res.json();
-      const meta=data?.chart?.result?.[0]?.meta;
-      if(meta?.regularMarketPrice)return{price:meta.regularMarketPrice,prevClose:meta.chartPreviousClose||meta.previousClose};
+      const result=data?.chart?.result?.[0];
+      const meta=result?.meta;
+      if(!meta?.regularMarketPrice)continue;
+      const out={price:meta.regularMarketPrice,prevClose:meta.chartPreviousClose||meta.previousClose||null};
+      // LSE pence -> pounds (matches fetch_prices.py)
+      const isLSE=yahooTicker.endsWith(".L");
+      if(isLSE){out.price/=100;if(out.prevClose)out.prevClose/=100;}
+      // Extract historical anchors from the price series
+      const ts=result.timestamp||[];
+      const closes=result.indicators?.quote?.[0]?.close||[];
+      const valid=[];
+      for(let i=0;i<ts.length;i++){if(closes[i]!=null)valid.push({t:ts[i]*1000,c:closes[i]});}
+      if(valid.length>0){
+        const lastIdx=valid.length-1;
+        const at=n=>valid[Math.max(0,lastIdx-n)]?.c||null;
+        out.price1W=at(5);
+        out.price1M=at(21);
+        // YTD: first valid close in the current calendar year
+        const yearStart=new Date(new Date().getFullYear(),0,1).getTime();
+        const ytdEntry=valid.find(v=>v.t>=yearStart);
+        out.priceYTD=ytdEntry?ytdEntry.c:valid[0]?.c||null;
+        if(isLSE){
+          if(out.price1W)out.price1W/=100;
+          if(out.price1M)out.price1M/=100;
+          if(out.priceYTD)out.priceYTD/=100;
+        }
+      }
+      return out;
     }catch{}
   }
   return null;

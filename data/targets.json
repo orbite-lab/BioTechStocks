@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "generated": "2026-05-04T10:20:27Z",
+    "generated": "2026-05-04T10:44:55Z",
     "target_count": 418,
-    "total_assets": 1073,
-    "assets_with_targets": 774,
+    "total_assets": 1081,
+    "assets_with_targets": 776,
     "multi_modality_count": 51,
-    "multi_disease_count": 185
+    "multi_disease_count": 186
   },
   "targets": {
     "ABCC8": {
@@ -1558,12 +1558,15 @@
     },
     "ATP4A": {
       "companies": [
-        "4523"
+        "4523",
+        "PHAT"
       ],
       "modalities": [
-        "small_molecule.enzyme_inhibitor.h_k_atpase"
+        "small_molecule.enzyme_inhibitor.h_k_atpase",
+        "small_molecule.gpcr_or_ion_channel.proton_pump"
       ],
       "areas": [
+        "immunology.inflammatory_gi.eoe",
         "immunology.inflammatory_gi.gerd_peptic"
       ],
       "assets": [
@@ -1575,20 +1578,38 @@
           "areas": [
             "immunology.inflammatory_gi.gerd_peptic"
           ]
+        },
+        {
+          "ticker": "PHAT",
+          "asset": "voquezna_gerd",
+          "name": "Voquezna (vonoprazan) - potassium-competitive acid blocker (P-CAB; Takeda NA license)",
+          "modality": "small_molecule.gpcr_or_ion_channel.proton_pump",
+          "areas": [
+            "immunology.inflammatory_gi.gerd_peptic"
+          ]
+        },
+        {
+          "ticker": "PHAT",
+          "asset": "voquezna_eoe",
+          "name": "Voquezna (vonoprazan) - eosinophilic esophagitis label expansion",
+          "modality": "small_molecule.gpcr_or_ion_channel.proton_pump",
+          "areas": [
+            "immunology.inflammatory_gi.eoe"
+          ]
         }
       ],
-      "assetCount": 1,
-      "modalityCount": 1,
+      "assetCount": 3,
+      "modalityCount": 2,
       "modalityClassCount": 1,
-      "areaCount": 1,
+      "areaCount": 2,
       "modalityClasses": [
         "small_molecule"
       ],
-      "totalTAM": 19560.0,
-      "totalSOM": 121.6,
-      "totalSales": 80.0,
-      "cagrPct": -5.0,
-      "peakYear": 2025
+      "totalTAM": 23362.5,
+      "totalSOM": 1312.3,
+      "totalSales": 255.0,
+      "cagrPct": 12.9,
+      "peakYear": 2030
     },
     "AVPR2": {
       "companies": [

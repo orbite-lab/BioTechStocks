@@ -2,9 +2,11 @@ name: Fetch Prices
 
 on:
   schedule:
-    # Every 30 min, 1pm–9pm UTC, Mon–Fri.
+    # Every 30 min, 1pm–9pm UTC, Mon–Fri (offset to :07 and :37 to avoid the
+    # high-load :00/:30 slots where GitHub-Actions cron commonly drops runs --
+    # GitHub docs explicitly recommend off-peak minutes for scheduled jobs).
     # Covers US market hours 9:30–16:00 ET with buffer for both EST (UTC-5) and EDT (UTC-4).
-    - cron: '0,30 13-21 * * 1-5'
+    - cron: '7,37 13-21 * * 1-5'
   workflow_dispatch: {}
 
 # Prevent overlapping runs — if a run is in progress, the next one waits (or cancels).

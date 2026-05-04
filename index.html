@@ -821,26 +821,37 @@ async function main(){
   let livePrices={};
   let pricesLoaded=false;
   let pricesFetchedAt=null;
-  try{
-    const pr=await fetch("data/prices.json?v="+Date.now());
-    if(pr.ok){
-      const pj=await pr.json();
-      if(pj._meta&&pj._meta.fetchedAt)pricesFetchedAt=pj._meta.fetchedAt;
-      for(const[tk,rec]of Object.entries(pj)){
-        if(tk==="_meta"||!configs[tk])continue;
-        if(rec&&typeof rec.price==="number"&&rec.price>0){
-          livePrices[tk]={
-            price:rec.price,
-            prevClose:rec.prevClose||null,
-            price1W:rec.price1W||null,
-            price1M:rec.price1M||null,
-            priceYTD:rec.priceYTD||null,
-          };
+  // Fetch prices.json with one retry on failure (GitHub Pages can return 502 during degraded periods)
+  async function fetchPricesJson(retries){
+    for(let attempt=0;attempt<=retries;attempt++){
+      try{
+        const pr=await fetch("data/prices.json?v="+Date.now());
+        if(pr.ok){
+          const pj=await pr.json();
+          return pj;
         }
-      }
-      if(Object.keys(livePrices).length>0)pricesLoaded=true;
+      }catch{/* try again */}
+      if(attempt<retries)await new Promise(r=>setTimeout(r,500));
     }
-  }catch{/* prices cache not available — fall back to live fetch */}
+    return null;
+  }
+  const pj=await fetchPricesJson(2);
+  if(pj){
+    if(pj._meta&&pj._meta.fetchedAt)pricesFetchedAt=pj._meta.fetchedAt;
+    for(const[tk,rec]of Object.entries(pj)){
+      if(tk==="_meta"||!configs[tk])continue;
+      if(rec&&typeof rec.price==="number"&&rec.price>0){
+        livePrices[tk]={
+          price:rec.price,
+          prevClose:rec.prevClose||null,
+          price1W:rec.price1W||null,
+          price1M:rec.price1M||null,
+          priceYTD:rec.priceYTD||null,
+        };
+      }
+    }
+    if(Object.keys(livePrices).length>0)pricesLoaded=true;
+  }
 
   // Load target index (auto-rebuilt by CI from asset.targets[] in configs)
   let targetsIdx={};
@@ -3522,12 +3533,24 @@ async function main(){
     }
   })();
 
-  // Background: fetch live prices for any tickers missing from prices.json cache
+  // Background: fetch live prices for any tickers missing from prices.json cache.
+  // Runs only when prices.json was unavailable (GitHub Pages degraded) or for newly
+  // added configs not yet in the cache.
   (async()=>{
-    const tickers=Object.keys(configs).filter(tk=>!livePrices[tk]);
+    const tickers=Object.keys(configs).filter(tk=>!livePrices[tk]&&!configs[tk].company.private);
     if(tickers.length===0){pricesLoaded=true;return;}
-    const BATCH=6;
+    // Larger batch (cross-origin yfinance fetches don't share the same-origin
+    // 6-connection limit); debounced re-render to avoid 20+ table redraws.
+    const BATCH=20;
     let updated=0;
+    let pendingRender=null;
+    const scheduleRender=()=>{
+      if(pendingRender)return;
+      pendingRender=setTimeout(()=>{
+        pendingRender=null;
+        rows=buildRows();doSort();render();populateTopbar();renderSignalBadges();
+      },300);
+    };
     for(let i=0;i<tickers.length;i+=BATCH){
       const batch=tickers.slice(i,i+BATCH);
       const results=await Promise.all(batch.map(tk=>{
@@ -3535,9 +3558,9 @@ async function main(){
         return fetchLivePrice(yt).then(r=>r?[tk,r]:null);
       }));
       results.filter(Boolean).forEach(([tk,lp])=>{livePrices[tk]=lp;updated++;});
-      if(updated>0){rows=buildRows();doSort();render();populateTopbar();renderSignalBadges();}
+      if(updated>0)scheduleRender();
     }
-    if(updated>0){pricesLoaded=true;rows=buildRows();doSort();render();populateTopbar();renderSignalBadges();}
+    if(updated>0){pricesLoaded=true;if(pendingRender)clearTimeout(pendingRender);rows=buildRows();doSort();render();populateTopbar();renderSignalBadges();}
   })();
 }
 main();

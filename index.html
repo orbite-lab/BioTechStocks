@@ -3161,7 +3161,7 @@ async function main(){
         SK.forEach(()=>{h+='<td class="r" style="opacity:.3">\u2014</td>';});
         h+=`<td class="r mono" style="opacity:.3">\u2014</td>`;
       }else{
-      h+=`<td class="r mono">${c}${r.price.toFixed(d)}`;
+      h+=`<td class="r mono">${(r.price!=null&&isFinite(r.price))?(c+Number(r.price).toFixed(d)):'\u2014'}`;
       if(r.live)h+=`<span style="font-size:.55rem;color:#22c55e;margin-left:2px" title="Live price">\u25CF</span>`;
       h+=`</td>`;
       // 1D / 1W / 1M / YTD %
@@ -3174,8 +3174,12 @@ async function main(){
       h+=_chgCell(r.chg1W);
       h+=_chgCell(r.chg1M);
       h+=_chgCell(r.chgYTD);
-      h+=`<td class="r mono" style="color:var(--text2)" title="Local: ${r.ccy}${Math.round(r.ev).toLocaleString()}M">$${Math.round(r.evUSD*1000).toLocaleString()}</td>`;
-      h+=`<td class="r mono" style="color:#c084fc">${c}${r.cashPS.toFixed(d)}</td>`;
+      {
+        const evL=(r.ev!=null&&isFinite(r.ev))?Math.round(r.ev).toLocaleString():'—';
+        const evU=(r.evUSD!=null&&isFinite(r.evUSD))?'$'+Math.round(r.evUSD*1000).toLocaleString():'—';
+        h+=`<td class="r mono" style="color:var(--text2)" title="Local: ${r.ccy||'$'}${evL}M">${evU}</td>`;
+      }
+      h+=`<td class="r mono" style="color:#c084fc">${(r.cashPS!=null&&isFinite(r.cashPS))?(c+Number(r.cashPS).toFixed(d)):'—'}</td>`;
       h+=`<td class="r mono" style="color:#22c55e">${r.salesM2025>0?Math.round(r.salesM2025).toLocaleString():'—'}</td>`;
       SK.forEach(sk=>{
         const tp=r.tps[sk];if(tp==null){h+='<td class="r" style="opacity:.3">\u2014</td>';return;}
@@ -3183,8 +3187,9 @@ async function main(){
         const col=up>30?'#86efac':up>0?'#fbbf24':up>-20?'#fdba74':'#fca5a5';
         h+=`<td class="r mono" style="color:${col}">${c}${tp.toFixed(d)}</td>`;
       });
-      const wc=r.wtUp>30?'#86efac':r.wtUp>0?'#fbbf24':'#fca5a5';
-      h+=`<td class="r mono" style="color:${wc}">${r.wtUp>=0?'+':''}${r.wtUp.toFixed(0)}%</td>`;
+      const wtUpOk=r.wtUp!=null&&isFinite(r.wtUp);
+      const wc=wtUpOk?(r.wtUp>30?'#86efac':r.wtUp>0?'#fbbf24':'#fca5a5'):'#94a3b8';
+      h+=`<td class="r mono" style="color:${wc}">${wtUpOk?((r.wtUp>=0?'+':'')+r.wtUp.toFixed(0)+'%'):'—'}</td>`;
       }
       h+='</tr>';
     });

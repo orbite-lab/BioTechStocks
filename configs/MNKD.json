@@ -1,0 +1,893 @@
+{
+  "company": {
+    "ticker": "MNKD",
+    "name": "MannKind Corporation",
+    "currentPrice": 2.7,
+    "sharesOut": 303.5,
+    "cash": 176,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Inhaled-drug + cardiometabolic specialty (Technosphere DPI platform). FY25 revenue $349M (+22%): Tyvaso DPI royalty $128M (+25%; ~9% net royalty UTHR partnership; sole manufacturer Danbury CT) + Afrezza inhaled mealtime insulin $75M (+16%) + FUROSCIX subQ furosemide infuser ~$23M Q4 partial (scPharmaceuticals acq Oct 2025 $360M; HF + CKD label Mar 2025; ReadyFlow autoinjector sNDA filed Q3 2025) + V-Go declining. 2026 guide $450M+. PIPELINE: Pediatric Afrezza sBLA accepted PDUFA May 29 2026 (ages 4-17 T1D/T2D; INHALE-1 topline Dec 2024); MNKD-101 nebulized clofazimine NTM Phase 3 ICoN-1 DISCONTINUED Nov 2025 (futility 0/46 sputum culture conversions); MNKD-102 clofazimine DPI Ph1 reallocating; MNKD-201 nintedanib DPI IPF preclinical. CRITICAL TYVASO DPI EXPANSION: UTHR TETON-1 (Mar 2026 +130mL FVC) + TETON-2 (Sep 2025 +95mL) IPF BOTH POSITIVE; UTHR planning IPF sNDA -- massive royalty TAM expansion (Tyvaso PAH $1.4B + PH-ILD ~$1B + IPF potential $2-3B+ greenfield). Cash $176M post-scPharma close. Stock down ~40% post Q4 on Tyvaso DPI competitive concerns (~$2.70 from $6.51 52w high).",
+    "yahooTicker": "MNKD"
+  },
+  "assets": [
+    {
+      "id": "tyvaso_dpi",
+      "name": "Tyvaso DPI (treprostinil) - dry powder inhaler PAH/PH-ILD royalty (UTHR partnership; MannKind sole manufacturer; ~9% net royalty)",
+      "stage": "Commercial royalty (Tyvaso DPI FDA May 2022 PAH + PH-ILD; UTHR markets; MannKind manufactures Danbury CT)",
+      "modality": "formulation_modifier.inhaled.dpi",
+      "targets": [],
+      "indications": [
+        {
+          "id": "pah_dpi",
+          "name": "PAH (pulmonary arterial hypertension) Tyvaso DPI royalty + manufacturing",
+          "area": "cardio_metabolic.cardiopulmonary.pah",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 40,
+                "wtpPct": 75,
+                "priceK": 110
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 60,
+                "priceK": 65
+              },
+              "row": {
+                "patientsK": 150,
+                "wtpPct": 18,
+                "priceK": 25
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 35,
+                "wtpPct": 65,
+                "priceK": 18
+              },
+              "eu": {
+                "reachPct": 5,
+                "wtpPct": 50,
+                "priceK": 12
+              },
+              "row": {
+                "reachPct": 1,
+                "wtpPct": 15,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Tyvaso DPI royalty proxy: ~9% net of UTHR ~$200K/yr WAC",
+              "us.reachPct": "Tyvaso franchise ~35% PAH share; DPI taking share from neb"
+            },
+            "penPct": 65,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 80,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "ph_ild_dpi",
+          "name": "PH-ILD Tyvaso DPI royalty (FDA Mar 2021 nebulized + 2022 DPI)",
+          "area": "cardio_metabolic.cardiopulmonary.ph_ild",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 30,
+                "wtpPct": 50,
+                "priceK": 80
+              },
+              "eu": {
+                "patientsK": 50,
+                "wtpPct": 30,
+                "priceK": 50
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 8,
+                "priceK": 15
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 25,
+                "wtpPct": 60,
+                "priceK": 18
+              },
+              "eu": {
+                "reachPct": 3,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "row": {
+                "reachPct": 0.5,
+                "wtpPct": 12,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Tyvaso DPI royalty proxy ~$18K/yr equivalent",
+              "us.reachPct": "Tyvaso only approved PH-ILD agent; rapid uptake post-INCREASE Ph3"
+            },
+            "penPct": 30,
+            "cagrPct": 12,
+            "peakYear": 2030,
+            "salesM": 48,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "ipf_dpi",
+          "name": "IPF Tyvaso DPI label expansion (UTHR TETON-1 + TETON-2 BOTH POSITIVE 2025-26; sNDA pending; massive TAM expansion)",
+          "area": "respiratory.fibrotic.ipf",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 150,
+                "wtpPct": 65,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 200,
+                "wtpPct": 50,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 1000,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 12,
+                "wtpPct": 50,
+                "priceK": 16
+              },
+              "eu": {
+                "reachPct": 2,
+                "wtpPct": 35,
+                "priceK": 11
+              },
+              "row": {
+                "reachPct": 0.3,
+                "wtpPct": 10,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Royalty proxy on UTHR Tyvaso IPF if approved",
+              "us.reachPct": "TETON-1 + TETON-2 hit; IPF $2-3B+ greenfield TAM (vs Ofev/Esbriet); royalty share TBD"
+            },
+            "penPct": 35,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "afrezza",
+      "name": "Afrezza (insulin human inhalation powder) - Technosphere DPI mealtime insulin",
+      "stage": "Commercial (FDA Jun 2014 adult T1D/T2D; pediatric sBLA accepted PDUFA May 29 2026)",
+      "modality": "formulation_modifier.inhaled.dpi",
+      "targets": [],
+      "indications": [
+        {
+          "id": "t1d_afrezza",
+          "name": "T1D adult mealtime insulin (vs SC rapid-acting Humalog/NovoLog)",
+          "area": "cardio_metabolic.diabetes.t1d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1900,
+                "wtpPct": 85,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 80,
+                "priceK": 2.5
+              },
+              "row": {
+                "patientsK": 8000,
+                "wtpPct": 40,
+                "priceK": 1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.6,
+                "wtpPct": 50,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 0.1,
+                "wtpPct": 5,
+                "priceK": 0.5
+              },
+              "row": {
+                "reachPct": 0.1,
+                "wtpPct": 5,
+                "priceK": 0.5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Afrezza WAC ~$5K/yr",
+              "us.reachPct": "Afrezza ~0.5% T1D mealtime share; growing slowly post-pediatric data"
+            },
+            "penPct": 12,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 50,
+            "salesYear": 2025
+          }
+        },
+        {
+          "id": "t2d_afrezza",
+          "name": "T2D adult mealtime insulin (insulin-requiring T2D)",
+          "area": "cardio_metabolic.diabetes.t2d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 25000,
+                "wtpPct": 70,
+                "priceK": 2.5
+              },
+              "eu": {
+                "patientsK": 22000,
+                "wtpPct": 60,
+                "priceK": 1.5
+              },
+              "row": {
+                "patientsK": 150000,
+                "wtpPct": 25,
+                "priceK": 0.4
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.1,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 0.0,
+                "wtpPct": 5,
+                "priceK": 0.5
+              },
+              "row": {
+                "reachPct": 0.0,
+                "wtpPct": 5,
+                "priceK": 0.5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Afrezza WAC ~$5K/yr",
+              "us.reachPct": "Afrezza tiny T2D share; insulin-requiring T2D niche"
+            },
+            "penPct": 10,
+            "cagrPct": 8,
+            "peakYear": 2030,
+            "salesM": 25,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "furoscix",
+      "name": "FUROSCIX (furosemide subQ on-body infuser) - decompensated HF + CKD outpatient diuresis",
+      "stage": "Commercial (acquired scPharmaceuticals Oct 2025 $360M; FDA HF Oct 2022 + CKD Mar 2025; ReadyFlow autoinjector sNDA filed Q3 2025)",
+      "modality": "small_molecule.diuretic.loop",
+      "targets": [],
+      "indications": [
+        {
+          "id": "hf_furoscix",
+          "name": "Chronic heart failure decompensation (outpatient subQ diuresis vs IV admission)",
+          "area": "cardio_metabolic.heart_failure.hfref",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 3000,
+                "wtpPct": 55,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 4000,
+                "wtpPct": 42,
+                "priceK": 3
+              },
+              "row": {
+                "patientsK": 15000,
+                "wtpPct": 12,
+                "priceK": 1.2
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1.2,
+                "wtpPct": 45,
+                "priceK": 12
+              },
+              "eu": {
+                "reachPct": 0.05,
+                "wtpPct": 5,
+                "priceK": 1
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 5,
+                "priceK": 1
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "FUROSCIX WAC ~$12K per acute episode (multi-dose pack)",
+              "us.reachPct": "FUROSCIX +96% YoY pre-acq; outpatient diuresis avoids ER admission"
+            },
+            "penPct": 25,
+            "cagrPct": 35,
+            "peakYear": 2031,
+            "salesM": 70,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "afrezza_ped",
+      "name": "Afrezza pediatric (ages 4-17 T1D/T2D) - sBLA accepted PDUFA May 29 2026",
+      "stage": "Phase 3 INHALE-1 positive Dec 2024; sBLA accepted; PDUFA May 29 2026",
+      "modality": "formulation_modifier.inhaled.dpi",
+      "targets": [],
+      "indications": [
+        {
+          "id": "t1d_ped_afrezza",
+          "name": "Pediatric T1D mealtime insulin (4-17 yrs)",
+          "area": "cardio_metabolic.diabetes.t1d",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 1900,
+                "wtpPct": 85,
+                "priceK": 5
+              },
+              "eu": {
+                "patientsK": 1500,
+                "wtpPct": 80,
+                "priceK": 2.5
+              },
+              "row": {
+                "patientsK": 8000,
+                "wtpPct": 40,
+                "priceK": 1
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.4,
+                "wtpPct": 40,
+                "priceK": 5
+              },
+              "eu": {
+                "reachPct": 0.03,
+                "wtpPct": 5,
+                "priceK": 0.5
+              },
+              "row": {
+                "reachPct": 0.03,
+                "wtpPct": 5,
+                "priceK": 0.5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Afrezza pediatric WAC parity ~$5K/yr",
+              "us.reachPct": "Pediatric T1D ~200K US; INHALE-1 positive needle-avoidance benefit"
+            },
+            "penPct": 12,
+            "cagrPct": 10,
+            "peakYear": 2032
+          }
+        }
+      ]
+    },
+    {
+      "id": "mnkd_102",
+      "name": "MNKD-102 (clofazimine DPI) - Technosphere clofazimine for NTM lung disease (replaces ICoN-1 nebulized program)",
+      "stage": "Preclinical/Phase 1 (MNKD-101 nebulized clofazimine ICoN-1 DISCONTINUED Nov 2025 futility; MNKD-102 DPI reallocating)",
+      "modality": "formulation_modifier.inhaled.dpi",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ntm_dpi",
+          "name": "Non-tuberculous mycobacterial (NTM) lung infection",
+          "area": "respiratory.genetic.ntm_lung",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 50,
+                "wtpPct": 40,
+                "priceK": 75
+              },
+              "eu": {
+                "patientsK": 30,
+                "wtpPct": 25,
+                "priceK": 45
+              },
+              "row": {
+                "patientsK": 200,
+                "wtpPct": 8,
+                "priceK": 18
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 1,
+                "wtpPct": 35,
+                "priceK": 50
+              },
+              "eu": {
+                "reachPct": 0.3,
+                "wtpPct": 25,
+                "priceK": 30
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 10,
+                "priceK": 8
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC $50K/yr (parallel to Insmed Arikayce)"
+            },
+            "penPct": 30,
+            "cagrPct": 0,
+            "peakYear": 2034
+          }
+        }
+      ]
+    },
+    {
+      "id": "mnkd_201",
+      "name": "MNKD-201 (nintedanib DPI) - Technosphere nintedanib for IPF",
+      "stage": "Preclinical",
+      "modality": "formulation_modifier.inhaled.dpi",
+      "targets": [],
+      "indications": [
+        {
+          "id": "ipf_201",
+          "name": "Idiopathic pulmonary fibrosis (inhaled nintedanib reformulation)",
+          "area": "respiratory.fibrotic.ipf",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 150,
+                "wtpPct": 65,
+                "priceK": 95
+              },
+              "eu": {
+                "patientsK": 200,
+                "wtpPct": 50,
+                "priceK": 55
+              },
+              "row": {
+                "patientsK": 1000,
+                "wtpPct": 12,
+                "priceK": 22
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 30,
+                "priceK": 18
+              },
+              "eu": {
+                "reachPct": 0.2,
+                "wtpPct": 25,
+                "priceK": 12
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 10,
+                "priceK": 4
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Estimated WAC parity nintedanib ~$110K/yr; inhaled reformulation premium"
+            },
+            "penPct": 35,
+            "cagrPct": 0,
+            "peakYear": 2035
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 8,
+      "val": {
+        "mult": 1.5,
+        "dr": 18,
+        "cannib": 25
+      },
+      "assumptions": {
+        "tyvaso_dpi": {
+          "pah_dpi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "ph_ild_dpi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "ipf_dpi": {
+            "pos": 30,
+            "apr": 30,
+            "pen": 0.15
+          }
+        },
+        "afrezza": {
+          "t1d_afrezza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          },
+          "t2d_afrezza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "furoscix": {
+          "hf_furoscix": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.4
+          }
+        },
+        "afrezza_ped": {
+          "t1d_ped_afrezza": {
+            "pos": 50,
+            "apr": 30,
+            "pen": 0.2
+          }
+        },
+        "mnkd_102": {
+          "ntm_dpi": {
+            "pos": 2,
+            "apr": 20,
+            "pen": 0.1
+          }
+        },
+        "mnkd_201": {
+          "ipf_201": {
+            "pos": 1,
+            "apr": 15,
+            "pen": 0.1
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 18,
+      "val": {
+        "mult": 2.5,
+        "dr": 14,
+        "cannib": 12
+      },
+      "assumptions": {
+        "tyvaso_dpi": {
+          "pah_dpi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "ph_ild_dpi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "ipf_dpi": {
+            "pos": 60,
+            "apr": 60,
+            "pen": 0.45
+          }
+        },
+        "afrezza": {
+          "t1d_afrezza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          },
+          "t2d_afrezza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.75
+          }
+        },
+        "furoscix": {
+          "hf_furoscix": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.8
+          }
+        },
+        "afrezza_ped": {
+          "t1d_ped_afrezza": {
+            "pos": 85,
+            "apr": 80,
+            "pen": 0.6
+          }
+        },
+        "mnkd_102": {
+          "ntm_dpi": {
+            "pos": 12,
+            "apr": 50,
+            "pen": 0.35
+          }
+        },
+        "mnkd_201": {
+          "ipf_201": {
+            "pos": 8,
+            "apr": 50,
+            "pen": 0.3
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 42,
+      "val": {
+        "mult": 4,
+        "dr": 11,
+        "cannib": 4
+      },
+      "assumptions": {
+        "tyvaso_dpi": {
+          "pah_dpi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ph_ild_dpi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "ipf_dpi": {
+            "pos": 88,
+            "apr": 90,
+            "pen": 0.85
+          }
+        },
+        "afrezza": {
+          "t1d_afrezza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          },
+          "t2d_afrezza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.0
+          }
+        },
+        "furoscix": {
+          "hf_furoscix": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "afrezza_ped": {
+          "t1d_ped_afrezza": {
+            "pos": 92,
+            "apr": 92,
+            "pen": 0.9
+          }
+        },
+        "mnkd_102": {
+          "ntm_dpi": {
+            "pos": 22,
+            "apr": 70,
+            "pen": 0.55
+          }
+        },
+        "mnkd_201": {
+          "ipf_201": {
+            "pos": 18,
+            "apr": 65,
+            "pen": 0.5
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "mult": 6,
+        "dr": 9,
+        "cannib": 1
+      },
+      "assumptions": {
+        "tyvaso_dpi": {
+          "pah_dpi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.2
+          },
+          "ph_ild_dpi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          },
+          "ipf_dpi": {
+            "pos": 95,
+            "apr": 95,
+            "pen": 1.15
+          }
+        },
+        "afrezza": {
+          "t1d_afrezza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          },
+          "t2d_afrezza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.25
+          }
+        },
+        "furoscix": {
+          "hf_furoscix": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "afrezza_ped": {
+          "t1d_ped_afrezza": {
+            "pos": 96,
+            "apr": 96,
+            "pen": 1.15
+          }
+        },
+        "mnkd_102": {
+          "ntm_dpi": {
+            "pos": 38,
+            "apr": 82,
+            "pen": 0.85
+          }
+        },
+        "mnkd_201": {
+          "ipf_201": {
+            "pos": 30,
+            "apr": 78,
+            "pen": 0.75
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 7,
+      "val": {
+        "mult": 9,
+        "dr": 8,
+        "cannib": 0
+      },
+      "assumptions": {
+        "tyvaso_dpi": {
+          "pah_dpi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "ph_ild_dpi": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "ipf_dpi": {
+            "pos": 98,
+            "apr": 98,
+            "pen": 1.5
+          }
+        },
+        "afrezza": {
+          "t1d_afrezza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          },
+          "t2d_afrezza": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.5
+          }
+        },
+        "furoscix": {
+          "hf_furoscix": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.6
+          }
+        },
+        "afrezza_ped": {
+          "t1d_ped_afrezza": {
+            "pos": 98,
+            "apr": 98,
+            "pen": 1.4
+          }
+        },
+        "mnkd_102": {
+          "ntm_dpi": {
+            "pos": 55,
+            "apr": 92,
+            "pen": 1.15
+          }
+        },
+        "mnkd_201": {
+          "ipf_201": {
+            "pos": 48,
+            "apr": 90,
+            "pen": 1.05
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "May 29 2026",
+      "dateSort": "2026-05-29",
+      "asset": "afrezza_ped",
+      "indication": "t1d_ped_afrezza",
+      "title": "Afrezza pediatric (4-17y T1D/T2D) PDUFA decision",
+      "type": "pdufa",
+      "binary": true,
+      "fail_pos": 30,
+      "fail_apr": 20,
+      "success_pos": 95,
+      "success_apr": 95,
+      "_source": "MannKind sBLA acceptance PR",
+      "_confidence": "high"
+    },
+    {
+      "date": "H2 2026",
+      "dateSort": "2026-09-30",
+      "asset": "tyvaso_dpi",
+      "indication": "ipf_dpi",
+      "title": "UTHR IPF Tyvaso sNDA filing (TETON-1 +130mL Mar 2026 + TETON-2 +95mL Sep 2025 BOTH POSITIVE) -- royalty TAM expansion catalyst",
+      "type": "regulatory",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "UTHR Mar 2026 PR",
+      "_confidence": "high"
+    },
+    {
+      "date": "FY 2026",
+      "dateSort": "2026-12-31",
+      "asset": "tyvaso_dpi",
+      "indication": "pah_dpi",
+      "title": "FY26 revenue guide $450M+ (Tyvaso DPI royalty + Afrezza + FUROSCIX scaling)",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "MannKind FY26 guidance",
+      "_confidence": "high"
+    }
+  ]
+}

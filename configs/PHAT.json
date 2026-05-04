@@ -1,0 +1,289 @@
+{
+  "company": {
+    "ticker": "PHAT",
+    "name": "Phathom Pharmaceuticals, Inc.",
+    "currentPrice": 11.79,
+    "sharesOut": 82.05,
+    "cash": 181,
+    "currency": "USD",
+    "phase": "commercial",
+    "subtitle": "Single-asset commercial specialty (Voquezna vonoprazan P-CAB North America; in-licensed from Takeda). FY25 net product revenue $175.1M (+217% YoY vs $55.3M FY24); Q-trajectory $28.5M -> $39.5M -> $49.5M -> $57.6M -> $58.3M Q1'26 (+104% YoY). FDA labels: H. pylori Triple/Dual Pak May 2022, Erosive Esophagitis Nov 2023, Non-Erosive GERD Jul 2024. ~1.35M cumulative scripts mid-Apr 2026; 268K Q1'26 scripts (+115%); covered prescriptions 63% mix (+91%). 2026 guide: $320-345M revenue, ~80% GM, opex $235-255M (non-GAAP); operating profitability inflection Q3'26. PIPELINE: Eosinophilic esophagitis (EoE) Ph2 pHalcon-EoE-201 enrolling ahead of schedule; topline late Q4'26 / early Q1'27 KEY LABEL EXPANSION CATALYST. Class PIP for younger pediatric vonoprazan ongoing. CAPITAL: Hercules+Sagard+NovaQuest term loan ~$175M YE25 (modified Feb 2026; $55.8M repaid; maturity Feb 2029); Sagard Revenue Interest Financing fully drawn $300M (cap 2.0x invested). Stockholders' deficit $(438M) reflects launch losses + RIFA liability. Cash $181M post-Jan 2026 raise ($122M net). Asia launches via Takeda/Eisai (Takecab; outside PHAT NA license).",
+    "yahooTicker": "PHAT"
+  },
+  "assets": [
+    {
+      "id": "voquezna_gerd",
+      "name": "Voquezna (vonoprazan) - potassium-competitive acid blocker (P-CAB; Takeda NA license)",
+      "stage": "Commercial (FDA H. pylori May 2022 + Erosive Esophagitis Nov 2023 + Non-Erosive GERD Jul 2024)",
+      "modality": "small_molecule.gpcr_or_ion_channel.proton_pump",
+      "targets": [
+        "ATP4A"
+      ],
+      "indications": [
+        {
+          "id": "gerd_voquezna",
+          "name": "GERD: erosive esophagitis (EE) + non-erosive GERD (NERD) + H. pylori (combined commercial; bulk of revenue NERD/EE post-Jul 2024 launch)",
+          "area": "immunology.inflammatory_gi.gerd_peptic",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 60000,
+                "wtpPct": 25,
+                "priceK": 0.6
+              },
+              "eu": {
+                "patientsK": 80000,
+                "wtpPct": 18,
+                "priceK": 0.4
+              },
+              "row": {
+                "patientsK": 400000,
+                "wtpPct": 8,
+                "priceK": 0.15
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 0.5,
+                "wtpPct": 60,
+                "priceK": 6.5
+              },
+              "eu": {
+                "reachPct": 0.01,
+                "wtpPct": 5,
+                "priceK": 0.5
+              },
+              "row": {
+                "reachPct": 0.01,
+                "wtpPct": 5,
+                "priceK": 0.5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Voquezna WAC ~$8K/yr blended; net ~$6.5K post-rebates",
+              "us.reachPct": "Voquezna ~268K Q1'26 scripts ~1M patient-equiv/yr = 0.5% of 60M GERD pop; 63% covered; ramping vs PPI generics"
+            },
+            "penPct": 30,
+            "cagrPct": 15,
+            "peakYear": 2030,
+            "salesM": 175,
+            "salesYear": 2025
+          }
+        }
+      ]
+    },
+    {
+      "id": "voquezna_eoe",
+      "name": "Voquezna (vonoprazan) - eosinophilic esophagitis label expansion",
+      "stage": "Phase 2 pHalcon-EoE-201 (enrolling ahead of schedule; topline late Q4'26 / early Q1'27)",
+      "modality": "small_molecule.gpcr_or_ion_channel.proton_pump",
+      "targets": [
+        "ATP4A"
+      ],
+      "indications": [
+        {
+          "id": "eoe_voquezna",
+          "name": "Eosinophilic esophagitis (EoE) - acid suppression mechanism (vs Dupixent biologic SoC)",
+          "area": "immunology.inflammatory_gi.eoe",
+          "market": {
+            "regions": {
+              "us": {
+                "patientsK": 150,
+                "wtpPct": 55,
+                "priceK": 35
+              },
+              "eu": {
+                "patientsK": 120,
+                "wtpPct": 35,
+                "priceK": 20
+              },
+              "row": {
+                "patientsK": 250,
+                "wtpPct": 6,
+                "priceK": 5
+              }
+            },
+            "company_slice": {
+              "us": {
+                "reachPct": 4,
+                "wtpPct": 50,
+                "priceK": 6.5
+              },
+              "eu": {
+                "reachPct": 0.05,
+                "wtpPct": 5,
+                "priceK": 0.5
+              },
+              "row": {
+                "reachPct": 0.05,
+                "wtpPct": 5,
+                "priceK": 0.5
+              }
+            },
+            "company_slice_sources": {
+              "us.priceK": "Voquezna EoE WAC parity ~$8K/yr; oral SoC vs Dupixent $35K/yr biologic",
+              "us.reachPct": "EoE ~150K diagnosed US; PPI failures ~50% = potential P-CAB switch population"
+            },
+            "penPct": 30,
+            "cagrPct": 0,
+            "peakYear": 2032
+          }
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "mega_bear": {
+      "wt": 8,
+      "val": {
+        "mult": 1.5,
+        "dr": 18,
+        "cannib": 18
+      },
+      "assumptions": {
+        "voquezna_gerd": {
+          "gerd_voquezna": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.3
+          }
+        },
+        "voquezna_eoe": {
+          "eoe_voquezna": {
+            "pos": 8,
+            "apr": 20,
+            "pen": 0.1
+          }
+        }
+      }
+    },
+    "bear": {
+      "wt": 20,
+      "val": {
+        "mult": 2.5,
+        "dr": 14,
+        "cannib": 10
+      },
+      "assumptions": {
+        "voquezna_gerd": {
+          "gerd_voquezna": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 0.6
+          }
+        },
+        "voquezna_eoe": {
+          "eoe_voquezna": {
+            "pos": 30,
+            "apr": 50,
+            "pen": 0.4
+          }
+        }
+      }
+    },
+    "base": {
+      "wt": 42,
+      "val": {
+        "mult": 4,
+        "dr": 11,
+        "cannib": 4
+      },
+      "assumptions": {
+        "voquezna_gerd": {
+          "gerd_voquezna": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.05
+          }
+        },
+        "voquezna_eoe": {
+          "eoe_voquezna": {
+            "pos": 50,
+            "apr": 75,
+            "pen": 0.7
+          }
+        }
+      }
+    },
+    "bull": {
+      "wt": 25,
+      "val": {
+        "mult": 6,
+        "dr": 9,
+        "cannib": 1
+      },
+      "assumptions": {
+        "voquezna_gerd": {
+          "gerd_voquezna": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.3
+          }
+        },
+        "voquezna_eoe": {
+          "eoe_voquezna": {
+            "pos": 70,
+            "apr": 88,
+            "pen": 1.0
+          }
+        }
+      }
+    },
+    "psychedelic_bull": {
+      "wt": 5,
+      "val": {
+        "mult": 7,
+        "dr": 8,
+        "cannib": 0
+      },
+      "assumptions": {
+        "voquezna_gerd": {
+          "gerd_voquezna": {
+            "pos": 100,
+            "apr": 100,
+            "pen": 1.6
+          }
+        },
+        "voquezna_eoe": {
+          "eoe_voquezna": {
+            "pos": 85,
+            "apr": 95,
+            "pen": 1.3
+          }
+        }
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Q3 2026",
+      "dateSort": "2026-09-15",
+      "asset": "voquezna_gerd",
+      "indication": "gerd_voquezna",
+      "title": "Operating profitability inflection (FY26 guide $320-345M revenue, 80% GM)",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Phathom FY26 guidance Feb 2026",
+      "_confidence": "high"
+    },
+    {
+      "date": "Q4 2026 / Q1 2027",
+      "dateSort": "2027-01-15",
+      "asset": "voquezna_eoe",
+      "indication": "eoe_voquezna",
+      "title": "pHalcon-EoE-201 Phase 2 topline (eosinophilic esophagitis label expansion)",
+      "type": "phase2_data",
+      "binary": true,
+      "fail_pos": 25,
+      "fail_apr": 50,
+      "success_pos": 75,
+      "success_apr": 88,
+      "_source": "Phathom Q1 2026 update",
+      "_confidence": "medium"
+    }
+  ]
+}

@@ -7,7 +7,7 @@
     "cash": 3300,
     "currency": "DKK",
     "phase": "commercial",
-    "subtitle": "Danish vaccine specialty (Hellerup; Nasdaq Copenhagen). FY25 revenue DKK 6,244M (beat DKK 6,000M guide): Public Preparedness DKK 3,105M (Jynneos/Imvanex/Imvamune mpox/smallpox MVA-BN -- US BARDA + EU HERA + Canada PHAC government stockpiling) + Travel Health DKK 2,963M (Rabipur/RabAvert rabies +34%, Encepur TBE +20%, Vimkunya CHIKV first-year DKK 85M, Ixiaro/Vivotif/Vaxchora). EBITDA ex-PRV DKK 1,732M (28%). 2026 guide DKK 5.0-5.2B (mpox normalization vs blockbuster 2024-25 outbreak years). NORDIC CAPITAL/PERMIRA TAKEOVER FAILED Nov 6 2025: consortium raised offer to DKK 250 'best and final' but only ~60% tender vs 66.7% min threshold; offer withdrawn; BAVA continues independent. Stock declined DKK 250 deal price -> ~DKK 157 reflecting lost takeout premium + 2026 mpox normalization. PIPELINE: Vimkunya CHIKV pediatric Ph3 label expansion ongoing; Health Canada approval pending H1 2026; MVA-BN RSV DISCONTINUED (Ph3 missed co-primary endpoints); EBV vaccine + Lyme vaccine IND filings pushed to 2027. Cash DKK ~3.3B no debt.",
+    "subtitle": "Danish vaccine specialty (Hellerup; Nasdaq Copenhagen). FY25 revenue DKK 6,244M (beat DKK 6,000M guide): Public Preparedness DKK 3,105M (Jynneos/Imvanex/Imvamune mpox/smallpox MVA-BN -- US BARDA + EU HERA + Canada PHAC government stockpiling) + Travel Health DKK 2,963M (Rabipur/RabAvert rabies +34%, Encepur TBE +20%, Vimkunya CHIKV first-year DKK ~92M / $13.4M (FDA Feb 14 2025; EU Feb 28 2025; PRV awarded + monetized FY25 -- explains EBITDA ex-PRV split), Ixiaro/Vivotif/Vaxchora). EBITDA ex-PRV DKK 1,732M (28%). 2026 guide DKK 5.0-5.2B (mpox normalization vs blockbuster 2024-25 outbreak years). NORDIC CAPITAL/PERMIRA TAKEOVER FAILED Nov 6 2025: consortium raised offer to DKK 250 'best and final' but only ~60% tender vs 66.7% min threshold; offer withdrawn; BAVA continues independent. Stock declined DKK 250 deal price -> ~DKK 157 reflecting lost takeout premium + 2026 mpox normalization. PIPELINE: Vimkunya CHIKV pediatric Ph3 label expansion ongoing; Health Canada approval pending H1 2026; MVA-BN RSV DISCONTINUED Jul 2023 (Ph3 missed co-primary on severe LRTD; historical event, not 2025); EBV vaccine + Lyme vaccine IND filings pushed to 2027. Cash DKK ~3.3B no debt.",
     "yahooTicker": "BAVA.CO"
   },
   "assets": [
@@ -73,7 +73,7 @@
     {
       "id": "rabipur",
       "name": "Rabipur / RabAvert (purified chick embryo cell rabies vaccine; GSK-acquired 2019)",
-      "stage": "Commercial (pre-exposure travelers + post-exposure prophylaxis; FY25 DKK ~1,070M +34% YoY)",
+      "stage": "Commercial (pre-exposure travelers + post-exposure prophylaxis; FY25 DKK ~1,800M +34% YoY; 9M YTD DKK 1,424M +30%)",
       "modality": "vaccine.inactivated.rabies",
       "targets": [],
       "indications": [
@@ -111,7 +111,7 @@
                 "priceK": 0.2
               },
               "row": {
-                "reachPct": 36.3,
+                "reachPct": 51.5,
                 "wtpPct": 22,
                 "priceK": 0.05
               }
@@ -123,7 +123,7 @@
             "penPct": 35,
             "cagrPct": 12,
             "peakYear": 2030,
-            "salesM": 158,
+            "salesM": 265,
             "salesYear": 2025
           }
         }
@@ -298,9 +298,9 @@
               "us.reachPct": "Bavarian travel franchise: Ixiaro JEV ~50% market, Vivotif typhoid + Vaxchora cholera niche"
             },
             "penPct": 25,
-            "cagrPct": 4,
-            "peakYear": 2030,
-            "salesM": 127,
+            "cagrPct": -3,
+            "peakYear": 2027,
+            "salesM": 50,
             "salesYear": 2025
           }
         }
@@ -746,6 +746,36 @@
       "success_apr": 100,
       "_source": "Bavarian Nordic FY26 guidance",
       "_confidence": "high"
+    },
+    {
+      "date": "May 6 2025",
+      "dateSort": "2025-05-06",
+      "asset": "jynneos",
+      "indication": "mpox_smallpox",
+      "title": "BARDA freeze-dried MVA-BN smallpox/mpox contract option awarded (Public Preparedness backbone)",
+      "type": "milestone",
+      "binary": false,
+      "fail_pos": 100,
+      "fail_apr": 100,
+      "success_pos": 100,
+      "success_apr": 100,
+      "_source": "Bavarian Nordic May 6 2025 PR",
+      "_confidence": "high"
+    },
+    {
+      "date": "2026-2027",
+      "dateSort": "2027-06-30",
+      "asset": "vimkunya",
+      "indication": "chikungunya",
+      "title": "Vimkunya pediatric Ph3 readout (CHIKV VLP label expansion <12y)",
+      "type": "phase3_data",
+      "binary": true,
+      "fail_pos": 60,
+      "fail_apr": 80,
+      "success_pos": 95,
+      "success_apr": 95,
+      "_source": "Bavarian Nordic pipeline",
+      "_confidence": "medium"
     },
     {
       "date": "Nov 6 2025",

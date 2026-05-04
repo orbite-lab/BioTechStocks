@@ -73,6 +73,13 @@ def fetch_one(config_ticker, yahoo_ticker):
         if price <= 0:
             return None, "price <= 0"
 
+        # London Stock Exchange (.L) tickers report in pence (GBp) on Yahoo;
+        # convert to pounds (GBP) so the unit matches config.currentPrice.
+        # E.g. HIK.L returns 1408 (pence) -> store 14.08 (pounds).
+        if yahoo_ticker.endswith(".L"):
+            price /= 100.0
+            prev_close /= 100.0
+
         # Helper: lookup close N trading days back (positive N)
         def close_n_back(n):
             try:
@@ -86,6 +93,11 @@ def fetch_one(config_ticker, yahoo_ticker):
         price_1w = close_n_back(5)
         price_1m = close_n_back(21)
 
+        # Apply same pence->pounds conversion to historical lookbacks
+        if yahoo_ticker.endswith(".L"):
+            if price_1w is not None: price_1w /= 100.0
+            if price_1m is not None: price_1m /= 100.0
+
         # YTD: first close of current calendar year (last close of prior year as fallback)
         price_ytd = None
         try:
@@ -97,6 +109,8 @@ def fetch_one(config_ticker, yahoo_ticker):
             else:
                 # If no current-year prints yet (early Jan), use prior-year last close
                 price_ytd = float(hist["Close"].iloc[0])
+            if yahoo_ticker.endswith(".L") and price_ytd is not None:
+                price_ytd /= 100.0
         except Exception:
             pass
 
